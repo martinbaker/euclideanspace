@@ -1,0 +1,9 @@
+grammar com.euclideanspace.spad.Editor with org.eclipse.xtext.common.Terminals
+
+generate editor "http://www.euclideanspace.com/spad/Editor"
+
+Model:
+	greetings+=Greeting*;
+	
+Greeting:
+	'Hello' name=ID '!';
