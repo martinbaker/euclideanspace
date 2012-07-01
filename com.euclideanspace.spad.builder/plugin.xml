@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.ui.newWizards">
+      <category
+            id="com.euclideanspace.spad.builder.category.wizards"
+            name="Builder">
+      </category>
+      <wizard
+            category="com.euclideanspace.spad.builder.category.wizards"
+            class="com.euclideanspace.spad.builder.BuilderNewWizard"
+            id="builder.wizard.new.custom"
+            name="Builder">
+      </wizard>
+   </extension>
+
+</plugin>
