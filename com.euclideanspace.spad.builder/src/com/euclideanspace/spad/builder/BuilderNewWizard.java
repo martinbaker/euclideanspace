@@ -65,9 +65,10 @@ public class BuilderNewWizard extends Wizard implements INewWizard {
         String fricasFiles = _pageOne.getFriCASFiles();
 		System.out.println("BuilderNewWizard.performFinish: "+
                 " fricasFiles="+fricasFiles);
-
-        Translate t = new Translate();
-    	t.trans(srcFolder,fricasFiles);
+        if (fricasFiles != null && !"".equals(fricasFiles)) {
+          Translate t = new Translate();
+    	  t.trans(srcFolder,fricasFiles);
+        }
 	    return true;
 	}
 

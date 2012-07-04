@@ -189,8 +189,8 @@ public class InitilisationLocationDialog {
 
 		String selectedDirectory = null;
 		String dirName = getPathFromLocationField();
-		System.out.println("InitilisationLocationDialog.handleLocationBrowseButtonPressed: "+
-                locationPathField+ " dirName="+dirName);
+		//System.out.println("InitilisationLocationDialog.handleLocationBrowseButtonPressed: "+
+        //        locationPathField+ " dirName="+dirName);
 
 
 		FileSystemConfiguration config = getSelectedConfiguration();
@@ -201,16 +201,16 @@ public class InitilisationLocationDialog {
 					locationPathField.getShell(), SWT.SHEET);
 			dialog.setMessage("directory Label");
 			dialog.setFilterPath(dirName);
-			System.out.println("InitilisationLocationDialog.handleLocationBrowseButtonPressed: "+
-	                " setFilterPath="+dirName);
+			//System.out.println("InitilisationLocationDialog.handleLocationBrowseButtonPressed: "+
+	        //        " setFilterPath="+dirName);
 
 			selectedDirectory = dialog.open();
 
 		} else {
 			URI uri = getSelectedConfiguration().getContributor()
 					.browseFileSystem(dirName, browseButton.getShell());
-			System.out.println("InitilisationLocationDialog.handleLocationBrowseButtonPressed: "+
-	                " uri="+uri);
+			//System.out.println("InitilisationLocationDialog.handleLocationBrowseButtonPressed: "+
+	        //        " uri="+uri);
 			if (uri != null)
 				selectedDirectory = uri.toString();
 		}

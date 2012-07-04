@@ -6,17 +6,12 @@ import java.util.concurrent.*;
 import java.util.Set;
 import java.util.Map;
 import java.util.HashMap;
-//import java.util.regex.Matcher;
-import javax.swing.*;
-import javax.swing.filechooser.*;
 
 import org.eclipse.core.resources.IFolder;
 
-public class Translate extends JFrame {
-	static final long serialVersionUID = 0;
+public class Translate {
 	File inFile = null;
 	File texFile = null;
-	File directoryFile = null;
 	File outFile = null;
 	/** holds status while reading a file
 	 * DOCUM means << .... >>= has not yet been encountered so we are reading documentation
@@ -42,26 +37,20 @@ public class Translate extends JFrame {
 	 * allows a pamphlet file or whole directory to be translated
 	 */
     public void trans(IFolder srcFolder,String fricasFiles) {
-      String nam = null;
-  	  JFileChooser chooser = new JFileChooser();
-  	  chooser.setFileSelectionMode(JFileChooser.FILES_AND_DIRECTORIES);
-  	  FileNameExtensionFilter filter = new FileNameExtensionFilter(
-  	        "pamphlet file", "pamphlet");
-      chooser.setFileFilter(filter);
-      int returnVal = chooser.showOpenDialog(this);
-  	  if(returnVal == JFileChooser.APPROVE_OPTION) {
-  	     inFile = chooser.getSelectedFile();
-  	     String nm = inFile.getName();
-  	     int ind = nm.indexOf(".");
-  	     if (ind > -1) {
-  	  	   nam = nm.substring(0,ind);
-  	     }
-  	     System.out.println("Opening: " +nam +"("+nm+")");
-  	  	 if (inFile.isFile()) {
-  		    directoryFile = new File(System.getProperty("user.home")+"/workspace/test/src",nam);
-  	  		transPamphlet(nam,directoryFile,inFile);
-  	  	 }
-  	  	 else if (inFile.isDirectory()) {
+      inFile = new File(fricasFiles);
+      File directoryFile = new File(srcFolder.getLocationURI());
+      //System.out.println("inFile="+inFile);
+      //System.out.println("directoryFile="+directoryFile);
+      String nm = inFile.getName();
+      String nam = nm;
+      int ind = nm.indexOf(".");
+      if (ind > -1) {
+        nam = nm.substring(0,ind);
+      }
+      if (inFile.isFile()) {
+  		//directoryFile = new File(System.getProperty("user.home")+"/workspace/test/src",nam);
+  	    transPamphlet(nam,directoryFile,inFile);
+  	  } else if (inFile.isDirectory()) {
   	  		//System.out.println("filename: "+inFile.getName());
   	  		 if ("fricas".equals(inFile.getName())) {
   	  			 File subdir = new File(inFile,"src");
@@ -80,15 +69,14 @@ public class Translate extends JFrame {
   	    	       if (s.endsWith("spad.pamphlet")) {
   	    	  	     nam = s.substring(0,inds);
   	    	  	     File pamphFile = new File(inFile,s);
-  	  	  		     directoryFile = new File(System.getProperty("user.home")+"/workspace/test/src",nam);
-  	  	    	     System.out.println("File: " + nam +" directory:"+directoryFile);
-  	  	  	  		 transPamphlet(nam,directoryFile,pamphFile);
+  	  	  		     File subDirectoryFile = new File(directoryFile,nam);
+  	  	    	     System.out.println("File: " + nam +" directory:"+subDirectoryFile);
+  	  	  	  		 transPamphlet(nam,subDirectoryFile,pamphFile);
   	    	       }
   	    	     } 	  			 
   	  		 }
   	  		 System.out.println("Completed translation of: "+inFile);
   	  	 }
-  	  }
     }
     
     /**
@@ -97,22 +85,22 @@ public class Translate extends JFrame {
      * @param nm 
      * @param directoryFile
      */
-    public void transPamphlet(String nm,File directoryFile,File inFile) {
-    	if (directoryFile == null) {
+    public void transPamphlet(String nm,File subDirectoryFile,File inFile) {
+    	if (subDirectoryFile == null) {
     		System.err.println("no output directory selected");
     		return;
     	}
-	    System.out.println("Set output directory: " + directoryFile.getName());
-	    boolean success = directoryFile.mkdirs();
+	    System.out.println("Set output directory: " + subDirectoryFile.getName());
+	    boolean success = subDirectoryFile.mkdirs();
 	    if (success) {
-	      System.out.println("Create output directory: " + directoryFile.getName() + "("+directoryFile+")");
+	      System.out.println("Create output directory: " + subDirectoryFile.getName() + "("+subDirectoryFile+")");
 	    }
     	//chooseOut();
     	if (inFile == null) {
     		System.err.println("no input file selected");
     		return;
     	}
-    	texFile = new File(directoryFile,nm+".txt");
+    	texFile = new File(subDirectoryFile,nm+".txt");
     	Writer output = null;
     	Writer texOutput = null;
     	BufferedReader input = null;
@@ -124,7 +112,7 @@ public class Translate extends JFrame {
       	  while ((line = input.readLine()) != null) {
       	    //System.out.println(line);
       		switch (mode) {
-      		  case DOCUM: output = transDOCUM(line,texOutput);
+      		  case DOCUM: output = transDOCUM(line,texOutput,subDirectoryFile);
       		              if (output == null && mode==Mode.HEAD) System.err.println("open returns null " + line + "("+outFile+")");
       		              break;
       		  case HEAD: output = transHEAD(line,output);break;
@@ -190,7 +178,7 @@ public class Translate extends JFrame {
      * @param line String being read
      * @return Writer if this is the start of a code block otherwise null.
      */
-    public Writer transDOCUM(String line,Writer texOutput){
+    public Writer transDOCUM(String line,Writer texOutput,File subDirectoryFile){
   	    try {
   	      texOutput.write(line + "\n");
 	    } catch (IOException ioException) {
@@ -206,7 +194,7 @@ public class Translate extends JFrame {
     	  String nam = st[2];
     	  mode=Mode.HEAD;
     	  try {
-    		outFile = new File(directoryFile,nam+".spad");
+    		outFile = new File(subDirectoryFile,nam+".spad");
     		if (outFile.exists()) {
     			System.err.println("transDOCUM: " + nam + "is duplicated");
     			mode=Mode.DOCUM;
@@ -434,26 +422,6 @@ public class Translate extends JFrame {
     }
 
     /**
-     * choose a directory to hold output files
-     */
-    /*public void chooseOut() {
-	  JFileChooser chooser = new JFileChooser();
-	  chooser.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
-	  //FileNameExtensionFilter filter = new FileNameExtensionFilter(
-	  //      "text file", "txt");
-	  //  chooser.setFileFilter(filter);
-	    int returnVal = chooser.showOpenDialog(this);
-	    if(returnVal == JFileChooser.APPROVE_OPTION) {
-	      directoryFile = chooser.getSelectedFile();
-	      System.out.println("Creating directory: " + directoryFile.getName());
-	      boolean success = directoryFile.mkdirs();
-	      if (success) {
-	        System.out.println("Directories: " + directoryFile + " created");
-	      }
-	    }
-    }*/
-
-    /**
      * when a line like:
      * <<package REALSOLV RealSolvePackage>>=
      * is read then we need to construct a file called RealSolvePackage.spad
@@ -462,7 +430,7 @@ public class Translate extends JFrame {
      * @param n name of file to be created
      * @return file created
      */
-    public File outputFile(String n) {
-    	return new File(directoryFile,n+".spad");
+    public File outputFile(String n,File subDirectoryFile) {
+    	return new File(subDirectoryFile,n+".spad");
     }
 }
