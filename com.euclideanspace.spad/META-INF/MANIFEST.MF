@@ -1,10 +1,9 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
-Bundle-Name: com.euclideanspace.spad
-Bundle-Vendor: My Company
+Bundle-Name: %Bundle-Name
+Bundle-Vendor: %Bundle-Vendor
 Bundle-Version: 1.0.0.qualifier
 Bundle-SymbolicName: com.euclideanspace.spad; singleton:=true
-Bundle-ActivationPolicy: lazy
 Require-Bundle: org.eclipse.xtext;visibility:=reexport,
  org.eclipse.xtext.xbase;resolution:=optional;visibility:=reexport,
  org.eclipse.xtext.generator;resolution:=optional,
@@ -21,14 +20,14 @@ Import-Package: org.apache.log4j,
  org.eclipse.xtext.xbase.lib
 Bundle-RequiredExecutionEnvironment: J2SE-1.5
 Export-Package: com.euclideanspace.spad,
- com.euclideanspace.spad.services,
  com.euclideanspace.spad.editor,
  com.euclideanspace.spad.editor.impl,
  com.euclideanspace.spad.editor.util,
- com.euclideanspace.spad.serializer,
- com.euclideanspace.spad.parser.antlr,
- com.euclideanspace.spad.parser.antlr.internal,
- com.euclideanspace.spad.validation,
- com.euclideanspace.spad.scoping,
+ com.euclideanspace.spad.formatting,
  com.euclideanspace.spad.generator,
- com.euclideanspace.spad.formatting
+ com.euclideanspace.spad.parser.antlr,
+ com.euclideanspace.spad.parser.antlr.internal;x-internal:=true,
+ com.euclideanspace.spad.scoping,
+ com.euclideanspace.spad.serializer,
+ com.euclideanspace.spad.services,
+ com.euclideanspace.spad.validation

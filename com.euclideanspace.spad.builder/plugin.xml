@@ -5,13 +5,13 @@
          point="org.eclipse.ui.newWizards">
       <category
             id="com.euclideanspace.spad.builder.category.wizards"
-            name="SPAD">
+            name="%category.name">
       </category>
       <wizard
             category="com.euclideanspace.spad.builder.category.wizards"
             class="com.euclideanspace.spad.builder.BuilderNewWizard"
             id="builder.wizard.new.custom"
-            name="SPAD project">
+            name="%wizard.name">
       </wizard>
    </extension>
 
