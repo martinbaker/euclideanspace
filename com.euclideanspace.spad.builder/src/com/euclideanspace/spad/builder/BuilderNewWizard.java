@@ -26,14 +26,12 @@ import org.eclipse.ui.IWorkbench;
 
 import java.net.URI;
 
-import org.eclipse.core.resources.IContainer;
 import org.eclipse.core.resources.IFolder;
 import org.eclipse.core.resources.IProject;
 import org.eclipse.core.resources.IProjectDescription;
 import org.eclipse.core.resources.ResourcesPlugin;
 import org.eclipse.core.runtime.Assert;
 import org.eclipse.core.runtime.CoreException;
-//import org.eclipse.core.runtime.IProgressMonitor;
 
 //import customplugin.natures.ProjectNature;
 
@@ -41,7 +39,11 @@ import org.eclipse.core.runtime.CoreException;
 public class BuilderNewWizard extends Wizard implements INewWizard {
 	
 	private WizardNewSPADProjectCreationPage _pageOne;
-
+	/**
+	 * a reference to the project that we will create
+	 */
+	private IProject project;
+	
 	public BuilderNewWizard() {
 		setWindowTitle("spad project");
 	}
@@ -68,24 +70,17 @@ public class BuilderNewWizard extends Wizard implements INewWizard {
         Assert.isNotNull(projectName);
         Assert.isTrue(projectName.trim().length() > 0);
         // first create the project
-        IProject project = createBaseProject(projectName, location);
+        project = createBaseProject(projectName, location);
         // now populate project with folders and files
         IFolder srcFolder = null;
-        try {
-	      srcFolder = project.getFolder("src");
-	      createFolder(srcFolder);
-	      IFolder srcgenFolder = project.getFolder("src-gen");
-	      createFolder(srcgenFolder);
-	    } catch (CoreException e) {
-	      e.printStackTrace();
-	      project = null;
-	    }
+	    srcFolder = createFolder("src",null);
+	    IFolder srcgenFolder = createFolder("src-gen",null);
         String fricasFiles = _pageOne.getFriCASFiles();
 		System.out.println("BuilderNewWizard.performFinish: "+
                 " fricasFiles="+fricasFiles);
         if (fricasFiles != null && !"".equals(fricasFiles)) {
           Translate t = new Translate();
-    	  t.trans(srcFolder,fricasFiles);
+    	  t.trans(srcFolder,fricasFiles,this);
         }
 	    return true;
 	}
@@ -130,15 +125,33 @@ public class BuilderNewWizard extends Wizard implements INewWizard {
       return newProject;
     }
 
-	    private void createFolder(IFolder folder) throws CoreException {
-	        IContainer parent = folder.getParent();
-	        if (parent instanceof IFolder) {
-	            createFolder((IFolder) parent);
-	        }
-	        if (!folder.exists()) {
-	            folder.create(false, true, null);
-	        }
+	/**
+	 * create a folder with a given name in the given parent folder
+	 * @param name is name of folder to be created
+	 * @param parent is folder which will contain folder to be created
+	 * @return the created folder
+	 * @throws CoreException
+	 */
+    public IFolder createFolder(String name,IFolder parent) {
+	  IFolder folder = null;
+	  try {
+	    if (parent == null) folder = project.getFolder(name);
+	    else folder = parent.getFolder(name);
+	    if (!folder.exists()) {
+	      folder.create(false, true, null);
 	    }
-
+      } catch (CoreException e) {
+	    e.printStackTrace();
+	  }
+	  return folder;
+    }
+    
+	public void StartProgress(String fileName,int index) {
+		_pageOne.StartProgress(fileName,index);
+	}
+	
+	public void UpdateProgress(String fileName,int index) {
+		_pageOne.UpdateProgress(fileName,index);
+	}
 
 }

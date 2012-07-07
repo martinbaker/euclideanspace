@@ -28,6 +28,8 @@ import org.eclipse.ui.internal.ide.IDEWorkbenchPlugin;
 import org.eclipse.ui.internal.ide.IIDEHelpContextIds;
 import org.eclipse.ui.internal.ide.dialogs.ProjectContentsLocationArea;
 import org.eclipse.ui.internal.ide.dialogs.ProjectContentsLocationArea.IErrorMessageReporter;
+import org.eclipse.core.runtime.IProgressMonitor;
+import org.eclipse.jface.wizard.ProgressMonitorPart;
 
 
     /**
@@ -46,12 +48,16 @@ import org.eclipse.ui.internal.ide.dialogs.ProjectContentsLocationArea.IErrorMes
      */
     public class WizardNewSPADProjectCreationPage extends WizardPage {
 
-           // initial value stores
+        // initial value stores
         private String initialProjectFieldValue;
 
         // widgets
         Text projectNameField;
 
+        ProgressMonitorPart progressMonitorPart;
+        
+        Label fromLabel;
+        
         private Listener nameModifyListener = new Listener() {
             public void handleEvent(Event e) {
             	setLocationForSelection();
@@ -100,9 +106,6 @@ import org.eclipse.ui.internal.ide.dialogs.ProjectContentsLocationArea.IErrorMes
     			locationArea.updateProjectName(initialProjectFieldValue);
     		}
             
-            Label fromLabel = new Label(composite, SWT.NONE);
-            fromLabel.setText("Initialise from FriCAS files");
-            fromLabel.setFont(parent.getFont());
             
             fromArea = new InitilisationLocationDialog(composite);
 			//System.out.println("WizardNewSPADProjectCreationPage.createControl: "+
@@ -110,6 +113,16 @@ import org.eclipse.ui.internal.ide.dialogs.ProjectContentsLocationArea.IErrorMes
 
     		// Scale the button based on the rest of the dialog
     		setButtonLayoutData(locationArea.getBrowseButton());
+    		
+    		progressMonitorPart=
+              new ProgressMonitorPart(composite,null);
+    		progressMonitorPart.setLayoutData(new GridData(GridData.FILL_HORIZONTAL));
+    		progressMonitorPart.setFont(parent.getFont());
+    		progressMonitorPart.setVisible(true);
+    		
+            fromLabel = new Label(composite, SWT.NONE);
+            fromLabel.setText("                                                ");
+            fromLabel.setFont(parent.getFont());
     		
             setPageComplete(validatePage());
             // Show description on opening
@@ -167,6 +180,19 @@ import org.eclipse.ui.internal.ide.dialogs.ProjectContentsLocationArea.IErrorMes
     				setPageComplete(valid);
     			}
     		};
+    	}
+    	
+    	public void StartProgress(String fileName,int index) {
+    		//System.out.println("WizardNewSPADProjectCreationPage.StartProgress: "+
+    		//		fileName+":"+index);
+    		progressMonitorPart.beginTask(fileName,index);
+    	}
+    	
+    	public void UpdateProgress(String fileName,int index) {
+    		//System.out.println("WizardNewSPADProjectCreationPage.UpdateProgress: "+
+    		//		fileName+":"+index);
+    		progressMonitorPart.worked(1);
+    		fromLabel.setText(fileName);
     	}
 
         /**

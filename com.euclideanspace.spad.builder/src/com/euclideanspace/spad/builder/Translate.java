@@ -29,8 +29,7 @@ import org.eclipse.core.resources.IFolder;
 
 public class Translate {
 	File inFile = null;
-	File texFile = null;
-	File outFile = null;
+	EclipseFileWriter texFile = null;
 	/** holds status while reading a file
 	 * DOCUM means << .... >>= has not yet been encountered so we are reading documentation
 	 * HEAD means << .... has been read and we are looking for )abbrev .... 
@@ -52,13 +51,13 @@ public class Translate {
 	Map<String,String> macros = new HashMap<String,String>();
 	
 	/**
-	 * allows a pamphlet file or whole directory to be translated
+	 * translate a pamphlet file or whole directory
+	 * 
+	 * @param srcFolder
+	 * @param fricasFiles
 	 */
-    public void trans(IFolder srcFolder,String fricasFiles) {
+    public void trans(IFolder srcFolder,String fricasFiles,BuilderNewWizard callback) {
       inFile = new File(fricasFiles);
-      File directoryFile = new File(srcFolder.getLocationURI());
-      //System.out.println("inFile="+inFile);
-      //System.out.println("directoryFile="+directoryFile);
       String nm = inFile.getName();
       String nam = nm;
       int ind = nm.indexOf(".");
@@ -66,8 +65,7 @@ public class Translate {
         nam = nm.substring(0,ind);
       }
       if (inFile.isFile()) {
-  		//directoryFile = new File(System.getProperty("user.home")+"/workspace/test/src",nam);
-  	    transPamphlet(nam,directoryFile,inFile);
+  	    transPamphlet(nam,srcFolder,inFile,callback);
   	  } else if (inFile.isDirectory()) {
   	  		//System.out.println("filename: "+inFile.getName());
   	  		 if ("fricas".equals(inFile.getName())) {
@@ -81,57 +79,55 @@ public class Translate {
   	  			 if (subdir.exists()) inFile = subdir;
   	  		 }
   	  		 String dirFiles[] = inFile.list();
+  	  		 callback.StartProgress("progress",dirFiles.length);
+  	  		 //int progressIndex=0;
   	  		 for (String s:dirFiles) {
+  	  			 callback.UpdateProgress(s,1);
   	    	     int inds = s.indexOf(".");
   	    	     if (inds > -1) {
   	    	       if (s.endsWith("spad.pamphlet")) {
   	    	  	     nam = s.substring(0,inds);
   	    	  	     File pamphFile = new File(inFile,s);
-  	  	  		     File subDirectoryFile = new File(directoryFile,nam);
-  	  	    	     System.out.println("File: " + nam +" directory:"+subDirectoryFile);
-  	  	  	  		 transPamphlet(nam,subDirectoryFile,pamphFile);
+  	  	    	     //System.out.println("File: " + nam +
+  	  	    	     //		 " directory:"+srcFolder +
+  	  	    	     //		 " "+progressIndex +
+  	  	    	     //		 " of "+dirFiles.length);
+  	  	  	  		 transPamphlet(nam,srcFolder,pamphFile,callback);
   	    	       }
   	    	     } 	  			 
   	  		 }
   	  		 System.out.println("Completed translation of: "+inFile);
   	  	 }
     }
-    
+
     /**
      * transform a single pamphlet file into a directory containing
      * various spad and tex files.
-     * @param nm 
-     * @param directoryFile
+     * @param nm name of pamphlet file 
+     * @param subDirectoryFile
+     * @param inFile
      */
-    public void transPamphlet(String nm,File subDirectoryFile,File inFile) {
+    public void transPamphlet(String nm,IFolder directoryFile,File inFile,BuilderNewWizard callback) {
+	  	IFolder subDirectoryFile = callback.createFolder(nm,directoryFile);
     	if (subDirectoryFile == null) {
     		System.err.println("no output directory selected");
     		return;
     	}
-	    System.out.println("Set output directory: " + subDirectoryFile.getName());
-	    boolean success = subDirectoryFile.mkdirs();
-	    if (success) {
-	      System.out.println("Create output directory: " + subDirectoryFile.getName() + "("+subDirectoryFile+")");
-	    }
-    	//chooseOut();
     	if (inFile == null) {
     		System.err.println("no input file selected");
     		return;
     	}
-    	texFile = new File(subDirectoryFile,nm+".txt");
-    	Writer output = null;
-    	Writer texOutput = null;
+    	texFile = new EclipseFileWriter(nm+".txt",subDirectoryFile);
+    	EclipseFileWriter output = null;
     	BufferedReader input = null;
     	try {
-    	  //FileInputStream input = new FileInputStream(inFile);
       	  input = new BufferedReader(new FileReader(inFile));     
-      	  texOutput = new BufferedWriter(new FileWriter(texFile));
       	  String line = null;
       	  while ((line = input.readLine()) != null) {
       	    //System.out.println(line);
       		switch (mode) {
-      		  case DOCUM: output = transDOCUM(line,texOutput,subDirectoryFile);
-      		              if (output == null && mode==Mode.HEAD) System.err.println("open returns null " + line + "("+outFile+")");
+      		  case DOCUM: output = transDOCUM(line,texFile,subDirectoryFile);
+      		              if (output == null && mode==Mode.HEAD) System.err.println("open returns null " + line);
       		              break;
       		  case HEAD: output = transHEAD(line,output);break;
       		  case CODE: output = transCODE(line,output,input);break;
@@ -148,7 +144,7 @@ public class Translate {
      	  try {
       	  //System.out.println("finally");
       	    if (input != null) input.close();
-      	    if (texOutput != null) texOutput.close();
+      	    if (texFile != null) texFile.close();
       	    if (output != null) output.close();
     	  } catch (Exception exception) {
     		System.err.println("cannot close due to "+ exception);
@@ -162,9 +158,8 @@ public class Translate {
      * @param line just read
      * @param output stream
      */
-    Writer transHEAD(String line,Writer output){
+    EclipseFileWriter transHEAD(String line,EclipseFileWriter output){
       try {
-    		
   	    if (line.startsWith(")abbrev")) {
   	      mode=Mode.CODE;
   	      output.write(line + "\n");
@@ -172,7 +167,7 @@ public class Translate {
   	    } else if (line.startsWith("@")) {
   	  	  while (! lineHold.isEmpty()) output.write(lineHold.poll());	
     	  output.write(line);
-    	  System.out.println("macros: " + macros);
+    	  //System.out.println("macros: " + macros);
     	  macros.clear(); // don't use macros in next file
     	  mode=Mode.DOCUM;
     	  output.close();
@@ -196,11 +191,11 @@ public class Translate {
      * @param line String being read
      * @return Writer if this is the start of a code block otherwise null.
      */
-    public Writer transDOCUM(String line,Writer texOutput,File subDirectoryFile){
+    public EclipseFileWriter transDOCUM(String line,EclipseFileWriter texOutput,IFolder subDirectoryFile){
   	    try {
   	      texOutput.write(line + "\n");
-	    } catch (IOException ioException) {
-		  System.err.println("transDOCUM cannot write: " +line +" due to "+ ioException);
+	    } catch (Exception e) {
+		  System.err.println("transDOCUM cannot write: " +line +" due to "+ e);
 	    }
   	    String tline = line.trim();
     	if (tline.startsWith("<<") && tline.endsWith(">>=")) {
@@ -212,17 +207,10 @@ public class Translate {
     	  String nam = st[2];
     	  mode=Mode.HEAD;
     	  try {
-    		outFile = new File(subDirectoryFile,nam+".spad");
-    		if (outFile.exists()) {
-    			System.err.println("transDOCUM: " + nam + "is duplicated");
-    			mode=Mode.DOCUM;
-    			return null;
-    		}
-      	    System.out.println("open: " + nam + "("+outFile+")");
-    		Writer output = new BufferedWriter(new FileWriter(outFile));
+    		EclipseFileWriter output = new EclipseFileWriter(nam+".spad",subDirectoryFile);
     		return output;
-    	  } catch (IOException ioException) {
-    		System.err.println("transDOCUM cannot open: " + nam +" due to "+ ioException);
+    	  } catch (Exception e) {
+    		System.err.println("transDOCUM cannot open: " + nam +" due to "+ e);
     		mode=Mode.DOCUM;
     	    return null;
     	  }
@@ -235,8 +223,7 @@ public class Translate {
      * @param line
      * @param output
      */
-    Writer transCODE(String line,Writer output,BufferedReader input){
-      try {
+    EclipseFileWriter transCODE(String line,EclipseFileWriter output,BufferedReader input){
   		if (line.startsWith("@")) {
 		  while (!pile.empty()) {
 			pile.pop();
@@ -245,7 +232,7 @@ public class Translate {
 		  }
 	  	  while (! lineHold.isEmpty()) output.write(lineHold.poll());	
   		  output.write(line);
-  		  System.out.println("macros: " + macros);
+  		  //System.out.println("macros: " + macros);
   		  macros.clear(); // don't use macros in next file
   		  mode=Mode.DOCUM;
   		  output.close();
@@ -271,8 +258,7 @@ public class Translate {
           trimedLine.equals("") ||
           trimedLine.length() == 0 ||
           continuationLine) {
-        	lineHold.offer("\n" + line);
-    		//output.write("\n" + line);
+          lineHold.offer("\n" + line);
     	 } else {
     		  int cmtInd = line.indexOf("--");
     		  if (cmtInd<0) cmtInd = line.indexOf("++");
@@ -307,15 +293,7 @@ public class Translate {
     	}
     	if (trimedLine.endsWith("_")) continuationLine =true;
     	else continuationLine =false;
-    	//String st = line.replace("\"","");//.split(",");
-    	//System.out.println(st);
-    	//output.write(st + "\n");    	
-      } catch (IOException ioException) {
-          System.err.println("cannot process: " + output.toString()+" due to "+ ioException);
-  		  output = null;
-  		  return null;
-      }
-      return output;
+        return output;
     }
     
     /**
@@ -374,7 +352,6 @@ public class Translate {
 	  	int dollar = value.indexOf("$");
 	  	while (dollar > 0) {
 	  	  StringBuffer v=new StringBuffer(value);
-	  	  //v.insert(dollar+1,"{pageContext.request.contextPath}/");
 	  	  v.insert(dollar,"\\");
 	  	  value = v.toString();
 	  	  dollar = value.indexOf("$",dollar+2);
@@ -396,13 +373,8 @@ public class Translate {
      * @param ind = number of spaces
      * @param output
      */
-    public void writeIndent(int ind,Writer output){
-      try {
-    	for (int x=0;x<ind;x++) output.write(" ");
-	  } catch (IOException ioException) {
-		System.err.println("cannot process: " + output.toString()+" due to "+ ioException);
-		return;
-	  }
+    public void writeIndent(int ind,EclipseFileWriter output){
+   	  for (int x=0;x<ind;x++) output.write(" ");
     }
     
     /**
@@ -437,18 +409,5 @@ public class Translate {
     		line = sb.toString();
     	}
     	return line;
-    }
-
-    /**
-     * when a line like:
-     * <<package REALSOLV RealSolvePackage>>=
-     * is read then we need to construct a file called RealSolvePackage.spad
-     * in the current directory.
-     * 
-     * @param n name of file to be created
-     * @return file created
-     */
-    public File outputFile(String n,File subDirectoryFile) {
-    	return new File(subDirectoryFile,n+".spad");
     }
 }
