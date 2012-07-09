@@ -1,0 +1,86 @@
+/* Copyright 2012 Martin John Baker
+ * 
+ * This file is part of EuclideanSpace.
+ *
+ *  EuclideanSpace is free software: you can redistribute it and/or modify
+ *  it under the terms of the GNU Affero General Public License as published by
+ *  the Free Software Foundation, either version 3 of the License, or
+ *  (at your option) any later version.
+ *
+ *  EuclideanSpace is distributed in the hope that it will be useful,
+ *  but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *  GNU Affero General Public License for more details.
+ *
+ *  You should have received a copy of the GNU Affero General Public License
+ *  along with EuclideanSpace.  If not, see <http://www.gnu.org/licenses/>.
+ */
+
+grammar com.euclideanspace.euclid.Editor with org.eclipse.xtext.xbase.Xbase
+
+generate editor "http://www.euclideanspace.com/euclid/Editor"
+
+import "http://www.eclipse.org/xtext/common/JavaVMTypes" as jvmTypes
+
+Domainmodel:
+  (packages += PackageDeclaration)*
+  (imports += Import)*
+  (classes += Class)*
+;
+
+PackageDeclaration:
+  'package' name = QualifiedName
+;
+
+Import:
+  'import' importedNamespace = QualifiedNameWithWildcard
+;
+  
+QualifiedNameWithWildcard:
+  QualifiedName '.*'?
+;
+  
+Class:
+  'class' name = ID 
+              ('extends' superType = JvmTypeReference)?
+  '{'
+    (variables += VariableDef |
+     values += ValueDef |
+     references += Reference |
+     functions += FunctionDef 
+    )*
+  '}'
+;
+
+/**
+ * This is a variable (mutable) at the algebra level
+ */
+VariableDef:
+  'var' varname = ID ':' type = JvmTypeReference '='
+    vars += XExpression
+; 
+ 
+/**
+ * This is a value (immutable) at the algebra level
+ */
+ValueDef:
+  'val' valname = ID ':' type = JvmTypeReference 
+  	('=' vals += XExpression)?
+; 
+
+/**
+ * This is a variable (mutable) at the type level
+ */
+Reference:
+  'ref' refname = ID ':' type = JvmTypeReference
+    ('=' refs += XExpression)?
+; 
+ 
+/**
+ * this is a function definition
+ */
+FunctionDef:
+  'def' defname = ID ':' type = JvmTypeReference '{'
+    (features += XExpression)*
+  '}'
+; 

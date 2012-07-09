@@ -22,6 +22,8 @@ import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.jface.wizard.Wizard;
 import org.eclipse.ui.INewWizard;
 import org.eclipse.ui.IWorkbench;
+//import org.eclipse.jdt.core.IPackageFragmentRoot;
+//import org.eclipse.jst.j2ee.internal.common.operations.INewJavaClassDataModelProperties;
 //import org.eclipse.ui.dialogs.WizardNewProjectCreationPage;
 
 import java.net.URI;
@@ -32,7 +34,6 @@ import org.eclipse.core.resources.IProjectDescription;
 import org.eclipse.core.resources.ResourcesPlugin;
 import org.eclipse.core.runtime.Assert;
 import org.eclipse.core.runtime.CoreException;
-
 //import customplugin.natures.ProjectNature;
 
 
@@ -130,16 +131,30 @@ public class BuilderNewWizard extends Wizard implements INewWizard {
 	 * @param name is name of folder to be created
 	 * @param parent is folder which will contain folder to be created
 	 * @return the created folder
-	 * @throws CoreException
 	 */
     public IFolder createFolder(String name,IFolder parent) {
 	  IFolder folder = null;
 	  try {
-	    if (parent == null) folder = project.getFolder(name);
+	    if (parent == null) {
+	        //String folderFullPath = project.getStringProperty(INewJavaClassDataModelProperties.SOURCE_FOLDER);
+	    	//folder = project.getFolder(new Path(folderFullPath));
+	    	folder = project.getFolder(name);
+	    }
 	    else folder = parent.getFolder(name);
 	    if (!folder.exists()) {
-	      folder.create(false, true, null);
+	      folder.create(false,true, null);
 	    }
+/* I would like the option of creating eclipse 'source' folders. I don't
+ * know how to do this. I think is needs some code like the following but
+ * I don't understand it and it seems to require org.eclipse.jdt.core
+ * which I don't have installed.
+ */
+/*	    IPackageFragmentRoot srcRoot = project.getPackageFragmentRoot(folder);
+	    IClasspathEntry[] oldEntries = project.getRawClasspath();
+	    IClasspathEntry[] newEntries = new IClasspathEntry[oldEntries.length + 1];
+	    System.arraycopy(oldEntries, 0, newEntries, 0, oldEntries.length);
+	    newEntries[oldEntries.length] = JavaCore.newSourceEntry(srcRoot.getPath());
+	    project.setRawClasspath(newEntries, null);*/
       } catch (CoreException e) {
 	    e.printStackTrace();
 	  }
