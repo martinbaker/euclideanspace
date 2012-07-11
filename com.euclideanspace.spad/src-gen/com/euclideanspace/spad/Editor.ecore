@@ -16,8 +16,11 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="longname2" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="cp" eType="#//TypeParameterList"
         containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="implName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="wh" eType="#//WherePart"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="implName" eType="#//TypeArguments"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="w" eType="#//WithPart"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="wh5" eType="#//WherePart"
         containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="PackageDef">
@@ -31,6 +34,8 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="implName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="w" eType="#//WithPart"
         containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="wh5" eType="#//WherePart"
+        containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="DomainDef">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -41,6 +46,8 @@
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="exportName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="implName5" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="w" eType="#//WithPart"
+        containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="wh5" eType="#//WherePart"
         containment="true"/>
   </eClassifiers>

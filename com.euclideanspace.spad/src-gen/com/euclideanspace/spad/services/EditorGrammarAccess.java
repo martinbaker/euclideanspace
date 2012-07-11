@@ -32,7 +32,23 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cDDomainDefParserRuleCall_2_2_0 = (RuleCall)cDAssignment_2_2.eContents().get(0);
 		private final RuleCall cATTerminalRuleCall_3 = (RuleCall)cGroup.eContents().get(3);
 		
-		/// * SPAD parsing is done by a type of parser known as a 'Pratt' parser.
+		/// * Copyright 2012 Martin John Baker
+		// * 
+		// * This file is part of EuclideanSpace.
+		// *
+		// *  EuclideanSpace is free software: you can redistribute it and/or modify
+		// *  it under the terms of the GNU Affero General Public License as published by
+		// *  the Free Software Foundation, either version 3 of the License, or
+		// *  (at your option) any later version.
+		// *
+		// *  EuclideanSpace is distributed in the hope that it will be useful,
+		// *  but WITHOUT ANY WARRANTY; without even the implied warranty of
+		// *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+		// *  GNU Affero General Public License for more details.
+		// *
+		// *  You should have received a copy of the GNU Affero General Public License
+		// *  along with EuclideanSpace.  If not, see <http://www.gnu.org/licenses/>.
+		// * / / * FriCAS does SPAD parsing by a type of parser known as a 'Pratt' parser.
 		// * In this type of parser each operator has different binding powers for
 		// * its left and right. The SPAD parser also has 'special handlers' for
 		// * certain operators. In this type of parser there is less distinction made
@@ -204,21 +220,24 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cCategoryKeyword_6 = (Keyword)cGroup.eContents().get(6);
 		private final RuleCall cDEFTerminalRuleCall_7 = (RuleCall)cGroup.eContents().get(7);
 		private final Assignment cImplNameAssignment_8 = (Assignment)cGroup.eContents().get(8);
-		private final RuleCall cImplNameIDTerminalRuleCall_8_0 = (RuleCall)cImplNameAssignment_8.eContents().get(0);
-		private final Assignment cWhAssignment_9 = (Assignment)cGroup.eContents().get(9);
-		private final RuleCall cWhWherePartParserRuleCall_9_0 = (RuleCall)cWhAssignment_9.eContents().get(0);
+		private final RuleCall cImplNameTypeArgumentsParserRuleCall_8_0 = (RuleCall)cImplNameAssignment_8.eContents().get(0);
+		private final Alternatives cAlternatives_9 = (Alternatives)cGroup.eContents().get(9);
+		private final Assignment cWAssignment_9_0 = (Assignment)cAlternatives_9.eContents().get(0);
+		private final RuleCall cWWithPartParserRuleCall_9_0_0 = (RuleCall)cWAssignment_9_0.eContents().get(0);
+		private final Assignment cWh5Assignment_9_1 = (Assignment)cAlternatives_9.eContents().get(1);
+		private final RuleCall cWh5WherePartParserRuleCall_9_1_0 = (RuleCall)cWh5Assignment_9_1.eContents().get(0);
 		
 		//////////// end of lexer rules ///////////////
 		/// *
 		// * longname and longname2 should both be ID and have the same value. Since the
 		// * runtime values can't be checked by the parser this must be checked later.
 		// * / CategoryDef hidden(WS, NL, SL_COMMENT):
-		//	name="category" shortname=ID longname=ID longname2= / *[CategoryDef]* / ID cp=TypeParameterList COLON "Category" DEF
-		//	implName=ID wh=WherePart;
+		//	name="category" shortname=ID longname=ID longname2= / *[CategoryDef]* / ID cp=TypeParameterList? COLON "Category" DEF
+		//	implName=TypeArguments (w=WithPart / * | wh2=WithImplied* / | wh5=WherePart);
 		public ParserRule getRule() { return rule; }
 
-		//name="category" shortname=ID longname=ID longname2= / *[CategoryDef]* / ID cp=TypeParameterList COLON "Category" DEF
-		//implName=ID wh=WherePart
+		//name="category" shortname=ID longname=ID longname2= / *[CategoryDef]* / ID cp=TypeParameterList? COLON "Category" DEF
+		//implName=TypeArguments (w=WithPart / * | wh2=WithImplied* / | wh5=WherePart)
 		public Group getGroup() { return cGroup; }
 
 		//name="category"
@@ -245,7 +264,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		/// *[CategoryDef]* / ID
 		public RuleCall getLongname2IDTerminalRuleCall_3_0() { return cLongname2IDTerminalRuleCall_3_0; }
 
-		//cp=TypeParameterList
+		//cp=TypeParameterList?
 		public Assignment getCpAssignment_4() { return cCpAssignment_4; }
 
 		//TypeParameterList
@@ -260,17 +279,26 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		//DEF
 		public RuleCall getDEFTerminalRuleCall_7() { return cDEFTerminalRuleCall_7; }
 
-		//implName=ID
+		//implName=TypeArguments
 		public Assignment getImplNameAssignment_8() { return cImplNameAssignment_8; }
 
-		//ID
-		public RuleCall getImplNameIDTerminalRuleCall_8_0() { return cImplNameIDTerminalRuleCall_8_0; }
+		//TypeArguments
+		public RuleCall getImplNameTypeArgumentsParserRuleCall_8_0() { return cImplNameTypeArgumentsParserRuleCall_8_0; }
 
-		//wh=WherePart
-		public Assignment getWhAssignment_9() { return cWhAssignment_9; }
+		//w=WithPart / * | wh2=WithImplied* / | wh5=WherePart
+		public Alternatives getAlternatives_9() { return cAlternatives_9; }
+
+		//w=WithPart
+		public Assignment getWAssignment_9_0() { return cWAssignment_9_0; }
+
+		//WithPart
+		public RuleCall getWWithPartParserRuleCall_9_0_0() { return cWWithPartParserRuleCall_9_0_0; }
+
+		//wh5=WherePart
+		public Assignment getWh5Assignment_9_1() { return cWh5Assignment_9_1; }
 
 		//WherePart
-		public RuleCall getWhWherePartParserRuleCall_9_0() { return cWhWherePartParserRuleCall_9_0; }
+		public RuleCall getWh5WherePartParserRuleCall_9_1_0() { return cWh5WherePartParserRuleCall_9_1_0; }
 	}
 
 	public class PackageDefElements extends AbstractParserRuleElementFinder {
@@ -292,19 +320,22 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cDEFTerminalRuleCall_7 = (RuleCall)cGroup.eContents().get(7);
 		private final Assignment cImplNameAssignment_8 = (Assignment)cGroup.eContents().get(8);
 		private final RuleCall cImplNameIDTerminalRuleCall_8_0 = (RuleCall)cImplNameAssignment_8.eContents().get(0);
-		private final Assignment cWAssignment_9 = (Assignment)cGroup.eContents().get(9);
-		private final RuleCall cWWithPartParserRuleCall_9_0 = (RuleCall)cWAssignment_9.eContents().get(0);
+		private final Alternatives cAlternatives_9 = (Alternatives)cGroup.eContents().get(9);
+		private final Assignment cWAssignment_9_0 = (Assignment)cAlternatives_9.eContents().get(0);
+		private final RuleCall cWWithPartParserRuleCall_9_0_0 = (RuleCall)cWAssignment_9_0.eContents().get(0);
+		private final Assignment cWh5Assignment_9_1 = (Assignment)cAlternatives_9.eContents().get(1);
+		private final RuleCall cWh5WherePartParserRuleCall_9_1_0 = (RuleCall)cWh5Assignment_9_1.eContents().get(0);
 		
 		/// *
 		// * longname and longname2 should both be ID and have the same value. Since the
 		// * runtime values can't be checked by the parser this must be checked later.
 		// * / PackageDef hidden(WS, NL, SL_COMMENT):
-		//	name="package" shortname=ID longname=ID longname2=ID / *[PackageDef]* / cp=TypeParameterList COLON exportName=ID DEF
-		//	implName=ID w=WithPart;
+		//	name="package" shortname=ID longname=ID longname2= / *[PackageDef]* / ID cp=TypeParameterList? COLON exportName=ID DEF
+		//	implName=ID (w=WithPart | wh5=WherePart);
 		public ParserRule getRule() { return rule; }
 
-		//name="package" shortname=ID longname=ID longname2=ID / *[PackageDef]* / cp=TypeParameterList COLON exportName=ID DEF
-		//implName=ID w=WithPart
+		//name="package" shortname=ID longname=ID longname2= / *[PackageDef]* / ID cp=TypeParameterList? COLON exportName=ID DEF
+		//implName=ID (w=WithPart | wh5=WherePart)
 		public Group getGroup() { return cGroup; }
 
 		//name="package"
@@ -325,13 +356,13 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		//ID
 		public RuleCall getLongnameIDTerminalRuleCall_2_0() { return cLongnameIDTerminalRuleCall_2_0; }
 
-		//longname2=ID
+		//longname2= / *[PackageDef]* / ID
 		public Assignment getLongname2Assignment_3() { return cLongname2Assignment_3; }
 
-		//ID
+		/// *[PackageDef]* / ID
 		public RuleCall getLongname2IDTerminalRuleCall_3_0() { return cLongname2IDTerminalRuleCall_3_0; }
 
-		/// *[PackageDef]* / cp=TypeParameterList
+		//cp=TypeParameterList?
 		public Assignment getCpAssignment_4() { return cCpAssignment_4; }
 
 		//TypeParameterList
@@ -355,11 +386,20 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		//ID
 		public RuleCall getImplNameIDTerminalRuleCall_8_0() { return cImplNameIDTerminalRuleCall_8_0; }
 
+		//w=WithPart | wh5=WherePart
+		public Alternatives getAlternatives_9() { return cAlternatives_9; }
+
 		//w=WithPart
-		public Assignment getWAssignment_9() { return cWAssignment_9; }
+		public Assignment getWAssignment_9_0() { return cWAssignment_9_0; }
 
 		//WithPart
-		public RuleCall getWWithPartParserRuleCall_9_0() { return cWWithPartParserRuleCall_9_0; }
+		public RuleCall getWWithPartParserRuleCall_9_0_0() { return cWWithPartParserRuleCall_9_0_0; }
+
+		//wh5=WherePart
+		public Assignment getWh5Assignment_9_1() { return cWh5Assignment_9_1; }
+
+		//WherePart
+		public RuleCall getWh5WherePartParserRuleCall_9_1_0() { return cWh5WherePartParserRuleCall_9_1_0; }
 	}
 
 	public class DomainDefElements extends AbstractParserRuleElementFinder {
@@ -381,19 +421,22 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cDEFTerminalRuleCall_7 = (RuleCall)cGroup.eContents().get(7);
 		private final Assignment cImplName5Assignment_8 = (Assignment)cGroup.eContents().get(8);
 		private final RuleCall cImplName5IDTerminalRuleCall_8_0 = (RuleCall)cImplName5Assignment_8.eContents().get(0);
-		private final Assignment cWh5Assignment_9 = (Assignment)cGroup.eContents().get(9);
-		private final RuleCall cWh5WherePartParserRuleCall_9_0 = (RuleCall)cWh5Assignment_9.eContents().get(0);
+		private final Alternatives cAlternatives_9 = (Alternatives)cGroup.eContents().get(9);
+		private final Assignment cWAssignment_9_0 = (Assignment)cAlternatives_9.eContents().get(0);
+		private final RuleCall cWWithPartParserRuleCall_9_0_0 = (RuleCall)cWAssignment_9_0.eContents().get(0);
+		private final Assignment cWh5Assignment_9_1 = (Assignment)cAlternatives_9.eContents().get(1);
+		private final RuleCall cWh5WherePartParserRuleCall_9_1_0 = (RuleCall)cWh5Assignment_9_1.eContents().get(0);
 		
 		/// *
 		// * longname and longname2 should both be ID and have the same value. Since the
 		// * runtime values can't be checked by the parser this must be checked later.
 		// * / DomainDef hidden(WS, NL, SL_COMMENT):
-		//	name="domain" shortname5=ID longname5=ID longname6= / *[DomainDef]* / ID cp5=TypeParameterList COLON exportName=ID DEF
-		//	implName5=ID wh5=WherePart;
+		//	name="domain" shortname5=ID longname5=ID longname6= / *[DomainDef]* / ID cp5=TypeParameterList? COLON exportName=ID DEF
+		//	implName5=ID (w=WithPart | wh5=WherePart);
 		public ParserRule getRule() { return rule; }
 
-		//name="domain" shortname5=ID longname5=ID longname6= / *[DomainDef]* / ID cp5=TypeParameterList COLON exportName=ID DEF
-		//implName5=ID wh5=WherePart
+		//name="domain" shortname5=ID longname5=ID longname6= / *[DomainDef]* / ID cp5=TypeParameterList? COLON exportName=ID DEF
+		//implName5=ID (w=WithPart | wh5=WherePart)
 		public Group getGroup() { return cGroup; }
 
 		//name="domain"
@@ -420,7 +463,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		/// *[DomainDef]* / ID
 		public RuleCall getLongname6IDTerminalRuleCall_3_0() { return cLongname6IDTerminalRuleCall_3_0; }
 
-		//cp5=TypeParameterList
+		//cp5=TypeParameterList?
 		public Assignment getCp5Assignment_4() { return cCp5Assignment_4; }
 
 		//TypeParameterList
@@ -444,11 +487,20 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		//ID
 		public RuleCall getImplName5IDTerminalRuleCall_8_0() { return cImplName5IDTerminalRuleCall_8_0; }
 
+		//w=WithPart | wh5=WherePart
+		public Alternatives getAlternatives_9() { return cAlternatives_9; }
+
+		//w=WithPart
+		public Assignment getWAssignment_9_0() { return cWAssignment_9_0; }
+
+		//WithPart
+		public RuleCall getWWithPartParserRuleCall_9_0_0() { return cWWithPartParserRuleCall_9_0_0; }
+
 		//wh5=WherePart
-		public Assignment getWh5Assignment_9() { return cWh5Assignment_9; }
+		public Assignment getWh5Assignment_9_1() { return cWh5Assignment_9_1; }
 
 		//WherePart
-		public RuleCall getWh5WherePartParserRuleCall_9_0() { return cWh5WherePartParserRuleCall_9_0; }
+		public RuleCall getWh5WherePartParserRuleCall_9_1_0() { return cWh5WherePartParserRuleCall_9_1_0; }
 	}
 
 	public class WherePartElements extends AbstractParserRuleElementFinder {
@@ -704,6 +756,14 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cNLTerminalRuleCall_6 = (RuleCall)cGroup.eContents().get(6);
 		
 		/// *
+		// * In a category, if we don't combine with an existing type then the
+		// * 'with' keyword is not needed.
+		//WithImplied hidden(WS,SL_COMMENT):
+		//	NL* b=LBRACE NL*
+		//    (fundec += VariableDeclaration (NL|SEMICOLON)+)*
+		//    RBRACE NL*
+		//;
+		// * / / *
 		// * the 'where' part contains a 'add' part which holds function and other
 		// * declarations.
 		// * / AddPart hidden(WS, SL_COMMENT):
@@ -4820,7 +4880,23 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 	
 
 	
-	/// * SPAD parsing is done by a type of parser known as a 'Pratt' parser.
+	/// * Copyright 2012 Martin John Baker
+	// * 
+	// * This file is part of EuclideanSpace.
+	// *
+	// *  EuclideanSpace is free software: you can redistribute it and/or modify
+	// *  it under the terms of the GNU Affero General Public License as published by
+	// *  the Free Software Foundation, either version 3 of the License, or
+	// *  (at your option) any later version.
+	// *
+	// *  EuclideanSpace is distributed in the hope that it will be useful,
+	// *  but WITHOUT ANY WARRANTY; without even the implied warranty of
+	// *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+	// *  GNU Affero General Public License for more details.
+	// *
+	// *  You should have received a copy of the GNU Affero General Public License
+	// *  along with EuclideanSpace.  If not, see <http://www.gnu.org/licenses/>.
+	// * / / * FriCAS does SPAD parsing by a type of parser known as a 'Pratt' parser.
 	// * In this type of parser each operator has different binding powers for
 	// * its left and right. The SPAD parser also has 'special handlers' for
 	// * certain operators. In this type of parser there is less distinction made
@@ -5337,8 +5413,8 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 	// * longname and longname2 should both be ID and have the same value. Since the
 	// * runtime values can't be checked by the parser this must be checked later.
 	// * / CategoryDef hidden(WS, NL, SL_COMMENT):
-	//	name="category" shortname=ID longname=ID longname2= / *[CategoryDef]* / ID cp=TypeParameterList COLON "Category" DEF
-	//	implName=ID wh=WherePart;
+	//	name="category" shortname=ID longname=ID longname2= / *[CategoryDef]* / ID cp=TypeParameterList? COLON "Category" DEF
+	//	implName=TypeArguments (w=WithPart / * | wh2=WithImplied* / | wh5=WherePart);
 	public CategoryDefElements getCategoryDefAccess() {
 		return (pCategoryDef != null) ? pCategoryDef : (pCategoryDef = new CategoryDefElements());
 	}
@@ -5351,8 +5427,8 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 	// * longname and longname2 should both be ID and have the same value. Since the
 	// * runtime values can't be checked by the parser this must be checked later.
 	// * / PackageDef hidden(WS, NL, SL_COMMENT):
-	//	name="package" shortname=ID longname=ID longname2=ID / *[PackageDef]* / cp=TypeParameterList COLON exportName=ID DEF
-	//	implName=ID w=WithPart;
+	//	name="package" shortname=ID longname=ID longname2= / *[PackageDef]* / ID cp=TypeParameterList? COLON exportName=ID DEF
+	//	implName=ID (w=WithPart | wh5=WherePart);
 	public PackageDefElements getPackageDefAccess() {
 		return (pPackageDef != null) ? pPackageDef : (pPackageDef = new PackageDefElements());
 	}
@@ -5365,8 +5441,8 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 	// * longname and longname2 should both be ID and have the same value. Since the
 	// * runtime values can't be checked by the parser this must be checked later.
 	// * / DomainDef hidden(WS, NL, SL_COMMENT):
-	//	name="domain" shortname5=ID longname5=ID longname6= / *[DomainDef]* / ID cp5=TypeParameterList COLON exportName=ID DEF
-	//	implName5=ID wh5=WherePart;
+	//	name="domain" shortname5=ID longname5=ID longname6= / *[DomainDef]* / ID cp5=TypeParameterList? COLON exportName=ID DEF
+	//	implName5=ID (w=WithPart | wh5=WherePart);
 	public DomainDefElements getDomainDefAccess() {
 		return (pDomainDef != null) ? pDomainDef : (pDomainDef = new DomainDefElements());
 	}
@@ -5416,6 +5492,14 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	/// *
+	// * In a category, if we don't combine with an existing type then the
+	// * 'with' keyword is not needed.
+	//WithImplied hidden(WS,SL_COMMENT):
+	//	NL* b=LBRACE NL*
+	//    (fundec += VariableDeclaration (NL|SEMICOLON)+)*
+	//    RBRACE NL*
+	//;
+	// * / / *
 	// * the 'where' part contains a 'add' part which holds function and other
 	// * declarations.
 	// * / AddPart hidden(WS, SL_COMMENT):

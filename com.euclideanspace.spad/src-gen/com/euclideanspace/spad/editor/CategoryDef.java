@@ -18,7 +18,8 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link com.euclideanspace.spad.editor.CategoryDef#getLongname2 <em>Longname2</em>}</li>
  *   <li>{@link com.euclideanspace.spad.editor.CategoryDef#getCp <em>Cp</em>}</li>
  *   <li>{@link com.euclideanspace.spad.editor.CategoryDef#getImplName <em>Impl Name</em>}</li>
- *   <li>{@link com.euclideanspace.spad.editor.CategoryDef#getWh <em>Wh</em>}</li>
+ *   <li>{@link com.euclideanspace.spad.editor.CategoryDef#getW <em>W</em>}</li>
+ *   <li>{@link com.euclideanspace.spad.editor.CategoryDef#getWh5 <em>Wh5</em>}</li>
  * </ul>
  * </p>
  *
@@ -159,55 +160,81 @@ public interface CategoryDef extends EObject
   void setCp(TypeParameterList value);
 
   /**
-   * Returns the value of the '<em><b>Impl Name</b></em>' attribute.
+   * Returns the value of the '<em><b>Impl Name</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Impl Name</em>' attribute isn't clear,
+   * If the meaning of the '<em>Impl Name</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Impl Name</em>' attribute.
-   * @see #setImplName(String)
+   * @return the value of the '<em>Impl Name</em>' containment reference.
+   * @see #setImplName(TypeArguments)
    * @see com.euclideanspace.spad.editor.EditorPackage#getCategoryDef_ImplName()
-   * @model
-   * @generated
-   */
-  String getImplName();
-
-  /**
-   * Sets the value of the '{@link com.euclideanspace.spad.editor.CategoryDef#getImplName <em>Impl Name</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Impl Name</em>' attribute.
-   * @see #getImplName()
-   * @generated
-   */
-  void setImplName(String value);
-
-  /**
-   * Returns the value of the '<em><b>Wh</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Wh</em>' containment reference isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Wh</em>' containment reference.
-   * @see #setWh(WherePart)
-   * @see com.euclideanspace.spad.editor.EditorPackage#getCategoryDef_Wh()
    * @model containment="true"
    * @generated
    */
-  WherePart getWh();
+  TypeArguments getImplName();
 
   /**
-   * Sets the value of the '{@link com.euclideanspace.spad.editor.CategoryDef#getWh <em>Wh</em>}' containment reference.
+   * Sets the value of the '{@link com.euclideanspace.spad.editor.CategoryDef#getImplName <em>Impl Name</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Wh</em>' containment reference.
-   * @see #getWh()
+   * @param value the new value of the '<em>Impl Name</em>' containment reference.
+   * @see #getImplName()
    * @generated
    */
-  void setWh(WherePart value);
+  void setImplName(TypeArguments value);
+
+  /**
+   * Returns the value of the '<em><b>W</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>W</em>' containment reference isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>W</em>' containment reference.
+   * @see #setW(WithPart)
+   * @see com.euclideanspace.spad.editor.EditorPackage#getCategoryDef_W()
+   * @model containment="true"
+   * @generated
+   */
+  WithPart getW();
+
+  /**
+   * Sets the value of the '{@link com.euclideanspace.spad.editor.CategoryDef#getW <em>W</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>W</em>' containment reference.
+   * @see #getW()
+   * @generated
+   */
+  void setW(WithPart value);
+
+  /**
+   * Returns the value of the '<em><b>Wh5</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Wh5</em>' containment reference isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Wh5</em>' containment reference.
+   * @see #setWh5(WherePart)
+   * @see com.euclideanspace.spad.editor.EditorPackage#getCategoryDef_Wh5()
+   * @model containment="true"
+   * @generated
+   */
+  WherePart getWh5();
+
+  /**
+   * Sets the value of the '{@link com.euclideanspace.spad.editor.CategoryDef#getWh5 <em>Wh5</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Wh5</em>' containment reference.
+   * @see #getWh5()
+   * @generated
+   */
+  void setWh5(WherePart value);
 
 } // CategoryDef

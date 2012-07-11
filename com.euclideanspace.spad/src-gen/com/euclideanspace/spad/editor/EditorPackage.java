@@ -158,7 +158,7 @@ public interface EditorPackage extends EPackage
   int CATEGORY_DEF__CP = 4;
 
   /**
-   * The feature id for the '<em><b>Impl Name</b></em>' attribute.
+   * The feature id for the '<em><b>Impl Name</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -167,13 +167,22 @@ public interface EditorPackage extends EPackage
   int CATEGORY_DEF__IMPL_NAME = 5;
 
   /**
-   * The feature id for the '<em><b>Wh</b></em>' containment reference.
+   * The feature id for the '<em><b>W</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int CATEGORY_DEF__WH = 6;
+  int CATEGORY_DEF__W = 6;
+
+  /**
+   * The feature id for the '<em><b>Wh5</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CATEGORY_DEF__WH5 = 7;
 
   /**
    * The number of structural features of the '<em>Category Def</em>' class.
@@ -182,7 +191,7 @@ public interface EditorPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CATEGORY_DEF_FEATURE_COUNT = 7;
+  int CATEGORY_DEF_FEATURE_COUNT = 8;
 
   /**
    * The meta object id for the '{@link com.euclideanspace.spad.editor.impl.PackageDefImpl <em>Package Def</em>}' class.
@@ -267,13 +276,22 @@ public interface EditorPackage extends EPackage
   int PACKAGE_DEF__W = 7;
 
   /**
+   * The feature id for the '<em><b>Wh5</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PACKAGE_DEF__WH5 = 8;
+
+  /**
    * The number of structural features of the '<em>Package Def</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int PACKAGE_DEF_FEATURE_COUNT = 8;
+  int PACKAGE_DEF_FEATURE_COUNT = 9;
 
   /**
    * The meta object id for the '{@link com.euclideanspace.spad.editor.impl.DomainDefImpl <em>Domain Def</em>}' class.
@@ -349,13 +367,22 @@ public interface EditorPackage extends EPackage
   int DOMAIN_DEF__IMPL_NAME5 = 6;
 
   /**
+   * The feature id for the '<em><b>W</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DOMAIN_DEF__W = 7;
+
+  /**
    * The feature id for the '<em><b>Wh5</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int DOMAIN_DEF__WH5 = 7;
+  int DOMAIN_DEF__WH5 = 8;
 
   /**
    * The number of structural features of the '<em>Domain Def</em>' class.
@@ -364,7 +391,7 @@ public interface EditorPackage extends EPackage
    * @generated
    * @ordered
    */
-  int DOMAIN_DEF_FEATURE_COUNT = 8;
+  int DOMAIN_DEF_FEATURE_COUNT = 9;
 
   /**
    * The meta object id for the '{@link com.euclideanspace.spad.editor.impl.WherePartImpl <em>Where Part</em>}' class.
@@ -5087,26 +5114,37 @@ public interface EditorPackage extends EPackage
   EReference getCategoryDef_Cp();
 
   /**
-   * Returns the meta object for the attribute '{@link com.euclideanspace.spad.editor.CategoryDef#getImplName <em>Impl Name</em>}'.
+   * Returns the meta object for the containment reference '{@link com.euclideanspace.spad.editor.CategoryDef#getImplName <em>Impl Name</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Impl Name</em>'.
+   * @return the meta object for the containment reference '<em>Impl Name</em>'.
    * @see com.euclideanspace.spad.editor.CategoryDef#getImplName()
    * @see #getCategoryDef()
    * @generated
    */
-  EAttribute getCategoryDef_ImplName();
+  EReference getCategoryDef_ImplName();
 
   /**
-   * Returns the meta object for the containment reference '{@link com.euclideanspace.spad.editor.CategoryDef#getWh <em>Wh</em>}'.
+   * Returns the meta object for the containment reference '{@link com.euclideanspace.spad.editor.CategoryDef#getW <em>W</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Wh</em>'.
-   * @see com.euclideanspace.spad.editor.CategoryDef#getWh()
+   * @return the meta object for the containment reference '<em>W</em>'.
+   * @see com.euclideanspace.spad.editor.CategoryDef#getW()
    * @see #getCategoryDef()
    * @generated
    */
-  EReference getCategoryDef_Wh();
+  EReference getCategoryDef_W();
+
+  /**
+   * Returns the meta object for the containment reference '{@link com.euclideanspace.spad.editor.CategoryDef#getWh5 <em>Wh5</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Wh5</em>'.
+   * @see com.euclideanspace.spad.editor.CategoryDef#getWh5()
+   * @see #getCategoryDef()
+   * @generated
+   */
+  EReference getCategoryDef_Wh5();
 
   /**
    * Returns the meta object for class '{@link com.euclideanspace.spad.editor.PackageDef <em>Package Def</em>}'.
@@ -5207,6 +5245,17 @@ public interface EditorPackage extends EPackage
   EReference getPackageDef_W();
 
   /**
+   * Returns the meta object for the containment reference '{@link com.euclideanspace.spad.editor.PackageDef#getWh5 <em>Wh5</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Wh5</em>'.
+   * @see com.euclideanspace.spad.editor.PackageDef#getWh5()
+   * @see #getPackageDef()
+   * @generated
+   */
+  EReference getPackageDef_Wh5();
+
+  /**
    * Returns the meta object for class '{@link com.euclideanspace.spad.editor.DomainDef <em>Domain Def</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -5292,6 +5341,17 @@ public interface EditorPackage extends EPackage
    * @generated
    */
   EAttribute getDomainDef_ImplName5();
+
+  /**
+   * Returns the meta object for the containment reference '{@link com.euclideanspace.spad.editor.DomainDef#getW <em>W</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>W</em>'.
+   * @see com.euclideanspace.spad.editor.DomainDef#getW()
+   * @see #getDomainDef()
+   * @generated
+   */
+  EReference getDomainDef_W();
 
   /**
    * Returns the meta object for the containment reference '{@link com.euclideanspace.spad.editor.DomainDef#getWh5 <em>Wh5</em>}'.
@@ -8437,20 +8497,28 @@ public interface EditorPackage extends EPackage
     EReference CATEGORY_DEF__CP = eINSTANCE.getCategoryDef_Cp();
 
     /**
-     * The meta object literal for the '<em><b>Impl Name</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Impl Name</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute CATEGORY_DEF__IMPL_NAME = eINSTANCE.getCategoryDef_ImplName();
+    EReference CATEGORY_DEF__IMPL_NAME = eINSTANCE.getCategoryDef_ImplName();
 
     /**
-     * The meta object literal for the '<em><b>Wh</b></em>' containment reference feature.
+     * The meta object literal for the '<em><b>W</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference CATEGORY_DEF__WH = eINSTANCE.getCategoryDef_Wh();
+    EReference CATEGORY_DEF__W = eINSTANCE.getCategoryDef_W();
+
+    /**
+     * The meta object literal for the '<em><b>Wh5</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference CATEGORY_DEF__WH5 = eINSTANCE.getCategoryDef_Wh5();
 
     /**
      * The meta object literal for the '{@link com.euclideanspace.spad.editor.impl.PackageDefImpl <em>Package Def</em>}' class.
@@ -8527,6 +8595,14 @@ public interface EditorPackage extends EPackage
     EReference PACKAGE_DEF__W = eINSTANCE.getPackageDef_W();
 
     /**
+     * The meta object literal for the '<em><b>Wh5</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference PACKAGE_DEF__WH5 = eINSTANCE.getPackageDef_Wh5();
+
+    /**
      * The meta object literal for the '{@link com.euclideanspace.spad.editor.impl.DomainDefImpl <em>Domain Def</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -8591,6 +8667,14 @@ public interface EditorPackage extends EPackage
      * @generated
      */
     EAttribute DOMAIN_DEF__IMPL_NAME5 = eINSTANCE.getDomainDef_ImplName5();
+
+    /**
+     * The meta object literal for the '<em><b>W</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference DOMAIN_DEF__W = eINSTANCE.getDomainDef_W();
 
     /**
      * The meta object literal for the '<em><b>Wh5</b></em>' containment reference feature.

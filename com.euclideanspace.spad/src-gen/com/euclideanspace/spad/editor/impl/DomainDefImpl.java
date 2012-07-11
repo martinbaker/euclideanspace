@@ -6,6 +6,7 @@ import com.euclideanspace.spad.editor.DomainDef;
 import com.euclideanspace.spad.editor.EditorPackage;
 import com.euclideanspace.spad.editor.TypeParameterList;
 import com.euclideanspace.spad.editor.WherePart;
+import com.euclideanspace.spad.editor.WithPart;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
@@ -30,6 +31,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  *   <li>{@link com.euclideanspace.spad.editor.impl.DomainDefImpl#getCp5 <em>Cp5</em>}</li>
  *   <li>{@link com.euclideanspace.spad.editor.impl.DomainDefImpl#getExportName <em>Export Name</em>}</li>
  *   <li>{@link com.euclideanspace.spad.editor.impl.DomainDefImpl#getImplName5 <em>Impl Name5</em>}</li>
+ *   <li>{@link com.euclideanspace.spad.editor.impl.DomainDefImpl#getW <em>W</em>}</li>
  *   <li>{@link com.euclideanspace.spad.editor.impl.DomainDefImpl#getWh5 <em>Wh5</em>}</li>
  * </ul>
  * </p>
@@ -167,6 +169,16 @@ public class DomainDefImpl extends MinimalEObjectImpl.Container implements Domai
    * @ordered
    */
   protected String implName5 = IMPL_NAME5_EDEFAULT;
+
+  /**
+   * The cached value of the '{@link #getW() <em>W</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getW()
+   * @generated
+   * @ordered
+   */
+  protected WithPart w;
 
   /**
    * The cached value of the '{@link #getWh5() <em>Wh5</em>}' containment reference.
@@ -390,6 +402,54 @@ public class DomainDefImpl extends MinimalEObjectImpl.Container implements Domai
    * <!-- end-user-doc -->
    * @generated
    */
+  public WithPart getW()
+  {
+    return w;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetW(WithPart newW, NotificationChain msgs)
+  {
+    WithPart oldW = w;
+    w = newW;
+    if (eNotificationRequired())
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, EditorPackage.DOMAIN_DEF__W, oldW, newW);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setW(WithPart newW)
+  {
+    if (newW != w)
+    {
+      NotificationChain msgs = null;
+      if (w != null)
+        msgs = ((InternalEObject)w).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - EditorPackage.DOMAIN_DEF__W, null, msgs);
+      if (newW != null)
+        msgs = ((InternalEObject)newW).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - EditorPackage.DOMAIN_DEF__W, null, msgs);
+      msgs = basicSetW(newW, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, EditorPackage.DOMAIN_DEF__W, newW, newW));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public WherePart getWh5()
   {
     return wh5;
@@ -445,6 +505,8 @@ public class DomainDefImpl extends MinimalEObjectImpl.Container implements Domai
     {
       case EditorPackage.DOMAIN_DEF__CP5:
         return basicSetCp5(null, msgs);
+      case EditorPackage.DOMAIN_DEF__W:
+        return basicSetW(null, msgs);
       case EditorPackage.DOMAIN_DEF__WH5:
         return basicSetWh5(null, msgs);
     }
@@ -475,6 +537,8 @@ public class DomainDefImpl extends MinimalEObjectImpl.Container implements Domai
         return getExportName();
       case EditorPackage.DOMAIN_DEF__IMPL_NAME5:
         return getImplName5();
+      case EditorPackage.DOMAIN_DEF__W:
+        return getW();
       case EditorPackage.DOMAIN_DEF__WH5:
         return getWh5();
     }
@@ -511,6 +575,9 @@ public class DomainDefImpl extends MinimalEObjectImpl.Container implements Domai
         return;
       case EditorPackage.DOMAIN_DEF__IMPL_NAME5:
         setImplName5((String)newValue);
+        return;
+      case EditorPackage.DOMAIN_DEF__W:
+        setW((WithPart)newValue);
         return;
       case EditorPackage.DOMAIN_DEF__WH5:
         setWh5((WherePart)newValue);
@@ -550,6 +617,9 @@ public class DomainDefImpl extends MinimalEObjectImpl.Container implements Domai
       case EditorPackage.DOMAIN_DEF__IMPL_NAME5:
         setImplName5(IMPL_NAME5_EDEFAULT);
         return;
+      case EditorPackage.DOMAIN_DEF__W:
+        setW((WithPart)null);
+        return;
       case EditorPackage.DOMAIN_DEF__WH5:
         setWh5((WherePart)null);
         return;
@@ -581,6 +651,8 @@ public class DomainDefImpl extends MinimalEObjectImpl.Container implements Domai
         return EXPORT_NAME_EDEFAULT == null ? exportName != null : !EXPORT_NAME_EDEFAULT.equals(exportName);
       case EditorPackage.DOMAIN_DEF__IMPL_NAME5:
         return IMPL_NAME5_EDEFAULT == null ? implName5 != null : !IMPL_NAME5_EDEFAULT.equals(implName5);
+      case EditorPackage.DOMAIN_DEF__W:
+        return w != null;
       case EditorPackage.DOMAIN_DEF__WH5:
         return wh5 != null;
     }

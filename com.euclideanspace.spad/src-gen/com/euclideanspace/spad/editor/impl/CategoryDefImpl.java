@@ -4,8 +4,10 @@ package com.euclideanspace.spad.editor.impl;
 
 import com.euclideanspace.spad.editor.CategoryDef;
 import com.euclideanspace.spad.editor.EditorPackage;
+import com.euclideanspace.spad.editor.TypeArguments;
 import com.euclideanspace.spad.editor.TypeParameterList;
 import com.euclideanspace.spad.editor.WherePart;
+import com.euclideanspace.spad.editor.WithPart;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
@@ -29,7 +31,8 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  *   <li>{@link com.euclideanspace.spad.editor.impl.CategoryDefImpl#getLongname2 <em>Longname2</em>}</li>
  *   <li>{@link com.euclideanspace.spad.editor.impl.CategoryDefImpl#getCp <em>Cp</em>}</li>
  *   <li>{@link com.euclideanspace.spad.editor.impl.CategoryDefImpl#getImplName <em>Impl Name</em>}</li>
- *   <li>{@link com.euclideanspace.spad.editor.impl.CategoryDefImpl#getWh <em>Wh</em>}</li>
+ *   <li>{@link com.euclideanspace.spad.editor.impl.CategoryDefImpl#getW <em>W</em>}</li>
+ *   <li>{@link com.euclideanspace.spad.editor.impl.CategoryDefImpl#getWh5 <em>Wh5</em>}</li>
  * </ul>
  * </p>
  *
@@ -128,34 +131,34 @@ public class CategoryDefImpl extends MinimalEObjectImpl.Container implements Cat
   protected TypeParameterList cp;
 
   /**
-   * The default value of the '{@link #getImplName() <em>Impl Name</em>}' attribute.
+   * The cached value of the '{@link #getImplName() <em>Impl Name</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getImplName()
    * @generated
    * @ordered
    */
-  protected static final String IMPL_NAME_EDEFAULT = null;
+  protected TypeArguments implName;
 
   /**
-   * The cached value of the '{@link #getImplName() <em>Impl Name</em>}' attribute.
+   * The cached value of the '{@link #getW() <em>W</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getImplName()
+   * @see #getW()
    * @generated
    * @ordered
    */
-  protected String implName = IMPL_NAME_EDEFAULT;
+  protected WithPart w;
 
   /**
-   * The cached value of the '{@link #getWh() <em>Wh</em>}' containment reference.
+   * The cached value of the '{@link #getWh5() <em>Wh5</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getWh()
+   * @see #getWh5()
    * @generated
    * @ordered
    */
-  protected WherePart wh;
+  protected WherePart wh5;
 
   /**
    * <!-- begin-user-doc -->
@@ -323,7 +326,7 @@ public class CategoryDefImpl extends MinimalEObjectImpl.Container implements Cat
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getImplName()
+  public TypeArguments getImplName()
   {
     return implName;
   }
@@ -333,36 +336,13 @@ public class CategoryDefImpl extends MinimalEObjectImpl.Container implements Cat
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setImplName(String newImplName)
+  public NotificationChain basicSetImplName(TypeArguments newImplName, NotificationChain msgs)
   {
-    String oldImplName = implName;
+    TypeArguments oldImplName = implName;
     implName = newImplName;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, EditorPackage.CATEGORY_DEF__IMPL_NAME, oldImplName, implName));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public WherePart getWh()
-  {
-    return wh;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public NotificationChain basicSetWh(WherePart newWh, NotificationChain msgs)
-  {
-    WherePart oldWh = wh;
-    wh = newWh;
-    if (eNotificationRequired())
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, EditorPackage.CATEGORY_DEF__WH, oldWh, newWh);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, EditorPackage.CATEGORY_DEF__IMPL_NAME, oldImplName, newImplName);
       if (msgs == null) msgs = notification; else msgs.add(notification);
     }
     return msgs;
@@ -373,20 +353,116 @@ public class CategoryDefImpl extends MinimalEObjectImpl.Container implements Cat
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setWh(WherePart newWh)
+  public void setImplName(TypeArguments newImplName)
   {
-    if (newWh != wh)
+    if (newImplName != implName)
     {
       NotificationChain msgs = null;
-      if (wh != null)
-        msgs = ((InternalEObject)wh).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - EditorPackage.CATEGORY_DEF__WH, null, msgs);
-      if (newWh != null)
-        msgs = ((InternalEObject)newWh).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - EditorPackage.CATEGORY_DEF__WH, null, msgs);
-      msgs = basicSetWh(newWh, msgs);
+      if (implName != null)
+        msgs = ((InternalEObject)implName).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - EditorPackage.CATEGORY_DEF__IMPL_NAME, null, msgs);
+      if (newImplName != null)
+        msgs = ((InternalEObject)newImplName).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - EditorPackage.CATEGORY_DEF__IMPL_NAME, null, msgs);
+      msgs = basicSetImplName(newImplName, msgs);
       if (msgs != null) msgs.dispatch();
     }
     else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, EditorPackage.CATEGORY_DEF__WH, newWh, newWh));
+      eNotify(new ENotificationImpl(this, Notification.SET, EditorPackage.CATEGORY_DEF__IMPL_NAME, newImplName, newImplName));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public WithPart getW()
+  {
+    return w;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetW(WithPart newW, NotificationChain msgs)
+  {
+    WithPart oldW = w;
+    w = newW;
+    if (eNotificationRequired())
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, EditorPackage.CATEGORY_DEF__W, oldW, newW);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setW(WithPart newW)
+  {
+    if (newW != w)
+    {
+      NotificationChain msgs = null;
+      if (w != null)
+        msgs = ((InternalEObject)w).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - EditorPackage.CATEGORY_DEF__W, null, msgs);
+      if (newW != null)
+        msgs = ((InternalEObject)newW).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - EditorPackage.CATEGORY_DEF__W, null, msgs);
+      msgs = basicSetW(newW, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, EditorPackage.CATEGORY_DEF__W, newW, newW));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public WherePart getWh5()
+  {
+    return wh5;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetWh5(WherePart newWh5, NotificationChain msgs)
+  {
+    WherePart oldWh5 = wh5;
+    wh5 = newWh5;
+    if (eNotificationRequired())
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, EditorPackage.CATEGORY_DEF__WH5, oldWh5, newWh5);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setWh5(WherePart newWh5)
+  {
+    if (newWh5 != wh5)
+    {
+      NotificationChain msgs = null;
+      if (wh5 != null)
+        msgs = ((InternalEObject)wh5).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - EditorPackage.CATEGORY_DEF__WH5, null, msgs);
+      if (newWh5 != null)
+        msgs = ((InternalEObject)newWh5).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - EditorPackage.CATEGORY_DEF__WH5, null, msgs);
+      msgs = basicSetWh5(newWh5, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, EditorPackage.CATEGORY_DEF__WH5, newWh5, newWh5));
   }
 
   /**
@@ -401,8 +477,12 @@ public class CategoryDefImpl extends MinimalEObjectImpl.Container implements Cat
     {
       case EditorPackage.CATEGORY_DEF__CP:
         return basicSetCp(null, msgs);
-      case EditorPackage.CATEGORY_DEF__WH:
-        return basicSetWh(null, msgs);
+      case EditorPackage.CATEGORY_DEF__IMPL_NAME:
+        return basicSetImplName(null, msgs);
+      case EditorPackage.CATEGORY_DEF__W:
+        return basicSetW(null, msgs);
+      case EditorPackage.CATEGORY_DEF__WH5:
+        return basicSetWh5(null, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -429,8 +509,10 @@ public class CategoryDefImpl extends MinimalEObjectImpl.Container implements Cat
         return getCp();
       case EditorPackage.CATEGORY_DEF__IMPL_NAME:
         return getImplName();
-      case EditorPackage.CATEGORY_DEF__WH:
-        return getWh();
+      case EditorPackage.CATEGORY_DEF__W:
+        return getW();
+      case EditorPackage.CATEGORY_DEF__WH5:
+        return getWh5();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -461,10 +543,13 @@ public class CategoryDefImpl extends MinimalEObjectImpl.Container implements Cat
         setCp((TypeParameterList)newValue);
         return;
       case EditorPackage.CATEGORY_DEF__IMPL_NAME:
-        setImplName((String)newValue);
+        setImplName((TypeArguments)newValue);
         return;
-      case EditorPackage.CATEGORY_DEF__WH:
-        setWh((WherePart)newValue);
+      case EditorPackage.CATEGORY_DEF__W:
+        setW((WithPart)newValue);
+        return;
+      case EditorPackage.CATEGORY_DEF__WH5:
+        setWh5((WherePart)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -496,10 +581,13 @@ public class CategoryDefImpl extends MinimalEObjectImpl.Container implements Cat
         setCp((TypeParameterList)null);
         return;
       case EditorPackage.CATEGORY_DEF__IMPL_NAME:
-        setImplName(IMPL_NAME_EDEFAULT);
+        setImplName((TypeArguments)null);
         return;
-      case EditorPackage.CATEGORY_DEF__WH:
-        setWh((WherePart)null);
+      case EditorPackage.CATEGORY_DEF__W:
+        setW((WithPart)null);
+        return;
+      case EditorPackage.CATEGORY_DEF__WH5:
+        setWh5((WherePart)null);
         return;
     }
     super.eUnset(featureID);
@@ -526,9 +614,11 @@ public class CategoryDefImpl extends MinimalEObjectImpl.Container implements Cat
       case EditorPackage.CATEGORY_DEF__CP:
         return cp != null;
       case EditorPackage.CATEGORY_DEF__IMPL_NAME:
-        return IMPL_NAME_EDEFAULT == null ? implName != null : !IMPL_NAME_EDEFAULT.equals(implName);
-      case EditorPackage.CATEGORY_DEF__WH:
-        return wh != null;
+        return implName != null;
+      case EditorPackage.CATEGORY_DEF__W:
+        return w != null;
+      case EditorPackage.CATEGORY_DEF__WH5:
+        return wh5 != null;
     }
     return super.eIsSet(featureID);
   }
@@ -552,8 +642,6 @@ public class CategoryDefImpl extends MinimalEObjectImpl.Container implements Cat
     result.append(longname);
     result.append(", longname2: ");
     result.append(longname2);
-    result.append(", implName: ");
-    result.append(implName);
     result.append(')');
     return result.toString();
   }

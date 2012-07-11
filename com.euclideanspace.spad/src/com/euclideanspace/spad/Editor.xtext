@@ -22,7 +22,7 @@ generate editor "http://www.euclideanspace.com/spad/Editor"
  *  along with EuclideanSpace.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-/* SPAD parsing is done by a type of parser known as a 'Pratt' parser.
+/* FriCAS does SPAD parsing by a type of parser known as a 'Pratt' parser.
  * In this type of parser each operator has different binding powers for
  * its left and right. The SPAD parser also has 'special handlers' for
  * certain operators. In this type of parser there is less distinction made
@@ -287,10 +287,10 @@ terminal ANY_OTHER: .;
 CategoryDef hidden(WS,NL,SL_COMMENT):
 	name='category' shortname=ID longname=ID
 	longname2=ID /*[CategoryDef]*/
-    cp=TypeParameterList
+    (cp=TypeParameterList)?
     COLON 'Category'
-    DEF implName=ID
-    wh=WherePart
+    DEF implName=TypeArguments
+    (w=WithPart | wh5=WherePart /* | wh2=WithImplied*/)
 ;
 	
 /*
@@ -299,8 +299,9 @@ CategoryDef hidden(WS,NL,SL_COMMENT):
  */
 PackageDef hidden(WS,NL,SL_COMMENT):
 	name='package' shortname=ID longname=ID
-	longname2=ID /*[PackageDef]*/ cp=TypeParameterList
-    COLON exportName=ID DEF implName=ID w=WithPart
+	longname2=ID /*[PackageDef]*/
+    (cp=TypeParameterList)? COLON exportName=ID DEF implName=ID
+    (w=WithPart | wh5=WherePart)
 ;
 
 /*
@@ -310,7 +311,8 @@ PackageDef hidden(WS,NL,SL_COMMENT):
 DomainDef hidden(WS,NL,SL_COMMENT):
 	name='domain' shortname5=ID longname5=ID
 	longname6=ID /*[DomainDef]*/
-    cp5=TypeParameterList COLON exportName=ID DEF implName5=ID wh5=WherePart
+    (cp5=TypeParameterList)? COLON exportName=ID DEF implName5=ID
+    (w=WithPart | wh5=WherePart)
 ;
 
 /*
@@ -342,6 +344,16 @@ WithPart hidden(WS,SL_COMMENT):
     (fundec += VariableDeclaration (NL|SEMICOLON)+)*
     RBRACE NL*
 ;
+
+/*
+ * In a category, if we don't combine with an existing type then the
+ * 'with' keyword is not needed.
+WithImplied hidden(WS,SL_COMMENT):
+	NL* b=LBRACE NL*
+    (fundec += VariableDeclaration (NL|SEMICOLON)+)*
+    RBRACE NL*
+;
+*/
 
 /*
  * the 'where' part contains a 'add' part which holds function and other

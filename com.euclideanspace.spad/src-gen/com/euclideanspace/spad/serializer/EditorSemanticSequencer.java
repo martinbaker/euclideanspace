@@ -1374,38 +1374,13 @@ public class EditorSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	 *         shortname=ID 
 	 *         longname=ID 
 	 *         longname2=ID 
-	 *         cp=TypeParameterList 
-	 *         implName=ID 
-	 *         wh=WherePart
+	 *         cp=TypeParameterList? 
+	 *         implName=TypeArguments 
+	 *         (w=WithPart | wh5=WherePart)
 	 *     )
 	 */
 	protected void sequence_CategoryDef(EObject context, CategoryDef semanticObject) {
-		if(errorAcceptor != null) {
-			if(transientValues.isValueTransient(semanticObject, EditorPackage.Literals.CATEGORY_DEF__NAME) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, EditorPackage.Literals.CATEGORY_DEF__NAME));
-			if(transientValues.isValueTransient(semanticObject, EditorPackage.Literals.CATEGORY_DEF__SHORTNAME) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, EditorPackage.Literals.CATEGORY_DEF__SHORTNAME));
-			if(transientValues.isValueTransient(semanticObject, EditorPackage.Literals.CATEGORY_DEF__LONGNAME) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, EditorPackage.Literals.CATEGORY_DEF__LONGNAME));
-			if(transientValues.isValueTransient(semanticObject, EditorPackage.Literals.CATEGORY_DEF__LONGNAME2) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, EditorPackage.Literals.CATEGORY_DEF__LONGNAME2));
-			if(transientValues.isValueTransient(semanticObject, EditorPackage.Literals.CATEGORY_DEF__CP) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, EditorPackage.Literals.CATEGORY_DEF__CP));
-			if(transientValues.isValueTransient(semanticObject, EditorPackage.Literals.CATEGORY_DEF__IMPL_NAME) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, EditorPackage.Literals.CATEGORY_DEF__IMPL_NAME));
-			if(transientValues.isValueTransient(semanticObject, EditorPackage.Literals.CATEGORY_DEF__WH) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, EditorPackage.Literals.CATEGORY_DEF__WH));
-		}
-		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
-		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getCategoryDefAccess().getNameCategoryKeyword_0_0(), semanticObject.getName());
-		feeder.accept(grammarAccess.getCategoryDefAccess().getShortnameIDTerminalRuleCall_1_0(), semanticObject.getShortname());
-		feeder.accept(grammarAccess.getCategoryDefAccess().getLongnameIDTerminalRuleCall_2_0(), semanticObject.getLongname());
-		feeder.accept(grammarAccess.getCategoryDefAccess().getLongname2IDTerminalRuleCall_3_0(), semanticObject.getLongname2());
-		feeder.accept(grammarAccess.getCategoryDefAccess().getCpTypeParameterListParserRuleCall_4_0(), semanticObject.getCp());
-		feeder.accept(grammarAccess.getCategoryDefAccess().getImplNameIDTerminalRuleCall_8_0(), semanticObject.getImplName());
-		feeder.accept(grammarAccess.getCategoryDefAccess().getWhWherePartParserRuleCall_9_0(), semanticObject.getWh());
-		feeder.finish();
+		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
@@ -1474,42 +1449,14 @@ public class EditorSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	 *         shortname5=ID 
 	 *         longname5=ID 
 	 *         longname6=ID 
-	 *         cp5=TypeParameterList 
+	 *         cp5=TypeParameterList? 
 	 *         exportName=ID 
 	 *         implName5=ID 
-	 *         wh5=WherePart
+	 *         (w=WithPart | wh5=WherePart)
 	 *     )
 	 */
 	protected void sequence_DomainDef(EObject context, DomainDef semanticObject) {
-		if(errorAcceptor != null) {
-			if(transientValues.isValueTransient(semanticObject, EditorPackage.Literals.DOMAIN_DEF__NAME) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, EditorPackage.Literals.DOMAIN_DEF__NAME));
-			if(transientValues.isValueTransient(semanticObject, EditorPackage.Literals.DOMAIN_DEF__SHORTNAME5) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, EditorPackage.Literals.DOMAIN_DEF__SHORTNAME5));
-			if(transientValues.isValueTransient(semanticObject, EditorPackage.Literals.DOMAIN_DEF__LONGNAME5) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, EditorPackage.Literals.DOMAIN_DEF__LONGNAME5));
-			if(transientValues.isValueTransient(semanticObject, EditorPackage.Literals.DOMAIN_DEF__LONGNAME6) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, EditorPackage.Literals.DOMAIN_DEF__LONGNAME6));
-			if(transientValues.isValueTransient(semanticObject, EditorPackage.Literals.DOMAIN_DEF__CP5) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, EditorPackage.Literals.DOMAIN_DEF__CP5));
-			if(transientValues.isValueTransient(semanticObject, EditorPackage.Literals.DOMAIN_DEF__EXPORT_NAME) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, EditorPackage.Literals.DOMAIN_DEF__EXPORT_NAME));
-			if(transientValues.isValueTransient(semanticObject, EditorPackage.Literals.DOMAIN_DEF__IMPL_NAME5) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, EditorPackage.Literals.DOMAIN_DEF__IMPL_NAME5));
-			if(transientValues.isValueTransient(semanticObject, EditorPackage.Literals.DOMAIN_DEF__WH5) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, EditorPackage.Literals.DOMAIN_DEF__WH5));
-		}
-		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
-		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getDomainDefAccess().getNameDomainKeyword_0_0(), semanticObject.getName());
-		feeder.accept(grammarAccess.getDomainDefAccess().getShortname5IDTerminalRuleCall_1_0(), semanticObject.getShortname5());
-		feeder.accept(grammarAccess.getDomainDefAccess().getLongname5IDTerminalRuleCall_2_0(), semanticObject.getLongname5());
-		feeder.accept(grammarAccess.getDomainDefAccess().getLongname6IDTerminalRuleCall_3_0(), semanticObject.getLongname6());
-		feeder.accept(grammarAccess.getDomainDefAccess().getCp5TypeParameterListParserRuleCall_4_0(), semanticObject.getCp5());
-		feeder.accept(grammarAccess.getDomainDefAccess().getExportNameIDTerminalRuleCall_6_0(), semanticObject.getExportName());
-		feeder.accept(grammarAccess.getDomainDefAccess().getImplName5IDTerminalRuleCall_8_0(), semanticObject.getImplName5());
-		feeder.accept(grammarAccess.getDomainDefAccess().getWh5WherePartParserRuleCall_9_0(), semanticObject.getWh5());
-		feeder.finish();
+		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
@@ -1873,42 +1820,14 @@ public class EditorSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	 *         shortname=ID 
 	 *         longname=ID 
 	 *         longname2=ID 
-	 *         cp=TypeParameterList 
+	 *         cp=TypeParameterList? 
 	 *         exportName=ID 
 	 *         implName=ID 
-	 *         w=WithPart
+	 *         (w=WithPart | wh5=WherePart)
 	 *     )
 	 */
 	protected void sequence_PackageDef(EObject context, PackageDef semanticObject) {
-		if(errorAcceptor != null) {
-			if(transientValues.isValueTransient(semanticObject, EditorPackage.Literals.PACKAGE_DEF__NAME) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, EditorPackage.Literals.PACKAGE_DEF__NAME));
-			if(transientValues.isValueTransient(semanticObject, EditorPackage.Literals.PACKAGE_DEF__SHORTNAME) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, EditorPackage.Literals.PACKAGE_DEF__SHORTNAME));
-			if(transientValues.isValueTransient(semanticObject, EditorPackage.Literals.PACKAGE_DEF__LONGNAME) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, EditorPackage.Literals.PACKAGE_DEF__LONGNAME));
-			if(transientValues.isValueTransient(semanticObject, EditorPackage.Literals.PACKAGE_DEF__LONGNAME2) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, EditorPackage.Literals.PACKAGE_DEF__LONGNAME2));
-			if(transientValues.isValueTransient(semanticObject, EditorPackage.Literals.PACKAGE_DEF__CP) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, EditorPackage.Literals.PACKAGE_DEF__CP));
-			if(transientValues.isValueTransient(semanticObject, EditorPackage.Literals.PACKAGE_DEF__EXPORT_NAME) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, EditorPackage.Literals.PACKAGE_DEF__EXPORT_NAME));
-			if(transientValues.isValueTransient(semanticObject, EditorPackage.Literals.PACKAGE_DEF__IMPL_NAME) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, EditorPackage.Literals.PACKAGE_DEF__IMPL_NAME));
-			if(transientValues.isValueTransient(semanticObject, EditorPackage.Literals.PACKAGE_DEF__W) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, EditorPackage.Literals.PACKAGE_DEF__W));
-		}
-		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
-		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getPackageDefAccess().getNamePackageKeyword_0_0(), semanticObject.getName());
-		feeder.accept(grammarAccess.getPackageDefAccess().getShortnameIDTerminalRuleCall_1_0(), semanticObject.getShortname());
-		feeder.accept(grammarAccess.getPackageDefAccess().getLongnameIDTerminalRuleCall_2_0(), semanticObject.getLongname());
-		feeder.accept(grammarAccess.getPackageDefAccess().getLongname2IDTerminalRuleCall_3_0(), semanticObject.getLongname2());
-		feeder.accept(grammarAccess.getPackageDefAccess().getCpTypeParameterListParserRuleCall_4_0(), semanticObject.getCp());
-		feeder.accept(grammarAccess.getPackageDefAccess().getExportNameIDTerminalRuleCall_6_0(), semanticObject.getExportName());
-		feeder.accept(grammarAccess.getPackageDefAccess().getImplNameIDTerminalRuleCall_8_0(), semanticObject.getImplName());
-		feeder.accept(grammarAccess.getPackageDefAccess().getWWithPartParserRuleCall_9_0(), semanticObject.getW());
-		feeder.finish();
+		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	

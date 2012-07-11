@@ -122,7 +122,8 @@ class EditorGenerator implements IGenerator {
       compile(f.cp)»«ENDIF»{
       /* extends «f.name» 
       «IF f.implName != null» «f.implName» «ENDIF»*/
-      «IF f.wh != null» «compile(f.wh)» «ENDIF»
+      «IF f.w != null» «compile(f.w)» «ENDIF»
+      «IF f.wh5 != null» «compile(f.wh5)» «ENDIF»
     }'''
  
     /* PackageDef */
@@ -133,6 +134,7 @@ class EditorGenerator implements IGenerator {
       «IF f.exportName != null» «f.exportName» «ENDIF»
       «IF f.implName != null» «f.implName» «ENDIF»*/
       «IF f.w != null» «compile(f.w)» «ENDIF»
+      «IF f.wh5 != null» «compile(f.wh5)» «ENDIF»
     }'''
 
     /* DomainDef */
@@ -141,6 +143,7 @@ class EditorGenerator implements IGenerator {
       /* extends «f.name» 
       «IF f.exportName != null» «f.exportName» «ENDIF»
       «IF f.implName5 != null» «f.implName5» «ENDIF»*/
+      «IF f.w != null» «compile(f.w)» «ENDIF»
       «IF f.wh5 != null» «compile(f.wh5)» «ENDIF»
     }'''
 

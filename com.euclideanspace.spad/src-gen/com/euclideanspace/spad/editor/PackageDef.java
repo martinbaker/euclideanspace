@@ -20,6 +20,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link com.euclideanspace.spad.editor.PackageDef#getExportName <em>Export Name</em>}</li>
  *   <li>{@link com.euclideanspace.spad.editor.PackageDef#getImplName <em>Impl Name</em>}</li>
  *   <li>{@link com.euclideanspace.spad.editor.PackageDef#getW <em>W</em>}</li>
+ *   <li>{@link com.euclideanspace.spad.editor.PackageDef#getWh5 <em>Wh5</em>}</li>
  * </ul>
  * </p>
  *
@@ -236,5 +237,31 @@ public interface PackageDef extends EObject
    * @generated
    */
   void setW(WithPart value);
+
+  /**
+   * Returns the value of the '<em><b>Wh5</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Wh5</em>' containment reference isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Wh5</em>' containment reference.
+   * @see #setWh5(WherePart)
+   * @see com.euclideanspace.spad.editor.EditorPackage#getPackageDef_Wh5()
+   * @model containment="true"
+   * @generated
+   */
+  WherePart getWh5();
+
+  /**
+   * Sets the value of the '{@link com.euclideanspace.spad.editor.PackageDef#getWh5 <em>Wh5</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Wh5</em>' containment reference.
+   * @see #getWh5()
+   * @generated
+   */
+  void setWh5(WherePart value);
 
 } // PackageDef

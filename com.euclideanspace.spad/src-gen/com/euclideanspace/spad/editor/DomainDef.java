@@ -19,6 +19,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link com.euclideanspace.spad.editor.DomainDef#getCp5 <em>Cp5</em>}</li>
  *   <li>{@link com.euclideanspace.spad.editor.DomainDef#getExportName <em>Export Name</em>}</li>
  *   <li>{@link com.euclideanspace.spad.editor.DomainDef#getImplName5 <em>Impl Name5</em>}</li>
+ *   <li>{@link com.euclideanspace.spad.editor.DomainDef#getW <em>W</em>}</li>
  *   <li>{@link com.euclideanspace.spad.editor.DomainDef#getWh5 <em>Wh5</em>}</li>
  * </ul>
  * </p>
@@ -210,6 +211,32 @@ public interface DomainDef extends EObject
    * @generated
    */
   void setImplName5(String value);
+
+  /**
+   * Returns the value of the '<em><b>W</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>W</em>' containment reference isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>W</em>' containment reference.
+   * @see #setW(WithPart)
+   * @see com.euclideanspace.spad.editor.EditorPackage#getDomainDef_W()
+   * @model containment="true"
+   * @generated
+   */
+  WithPart getW();
+
+  /**
+   * Sets the value of the '{@link com.euclideanspace.spad.editor.DomainDef#getW <em>W</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>W</em>' containment reference.
+   * @see #getW()
+   * @generated
+   */
+  void setW(WithPart value);
 
   /**
    * Returns the value of the '<em><b>Wh5</b></em>' containment reference.

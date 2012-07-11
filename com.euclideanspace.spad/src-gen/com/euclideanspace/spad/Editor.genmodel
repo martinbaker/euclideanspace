@@ -18,8 +18,9 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Editor.ecore#//CategoryDef/longname"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Editor.ecore#//CategoryDef/longname2"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//CategoryDef/cp"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Editor.ecore#//CategoryDef/implName"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//CategoryDef/wh"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//CategoryDef/implName"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//CategoryDef/w"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//CategoryDef/wh5"/>
     </genClasses>
     <genClasses ecoreClass="Editor.ecore#//PackageDef">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Editor.ecore#//PackageDef/name"/>
@@ -30,6 +31,7 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Editor.ecore#//PackageDef/exportName"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Editor.ecore#//PackageDef/implName"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//PackageDef/w"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//PackageDef/wh5"/>
     </genClasses>
     <genClasses ecoreClass="Editor.ecore#//DomainDef">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Editor.ecore#//DomainDef/name"/>
@@ -39,6 +41,7 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//DomainDef/cp5"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Editor.ecore#//DomainDef/exportName"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Editor.ecore#//DomainDef/implName5"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//DomainDef/w"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//DomainDef/wh5"/>
     </genClasses>
     <genClasses ecoreClass="Editor.ecore#//WherePart">

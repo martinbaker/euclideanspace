@@ -748,9 +748,9 @@ public class EditorPackageImpl extends EPackageImpl implements EditorPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getCategoryDef_ImplName()
+  public EReference getCategoryDef_ImplName()
   {
-    return (EAttribute)categoryDefEClass.getEStructuralFeatures().get(5);
+    return (EReference)categoryDefEClass.getEStructuralFeatures().get(5);
   }
 
   /**
@@ -758,9 +758,19 @@ public class EditorPackageImpl extends EPackageImpl implements EditorPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getCategoryDef_Wh()
+  public EReference getCategoryDef_W()
   {
     return (EReference)categoryDefEClass.getEStructuralFeatures().get(6);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getCategoryDef_Wh5()
+  {
+    return (EReference)categoryDefEClass.getEStructuralFeatures().get(7);
   }
 
   /**
@@ -858,6 +868,16 @@ public class EditorPackageImpl extends EPackageImpl implements EditorPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  public EReference getPackageDef_Wh5()
+  {
+    return (EReference)packageDefEClass.getEStructuralFeatures().get(8);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EClass getDomainDef()
   {
     return domainDefEClass;
@@ -938,9 +958,19 @@ public class EditorPackageImpl extends EPackageImpl implements EditorPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getDomainDef_Wh5()
+  public EReference getDomainDef_W()
   {
     return (EReference)domainDefEClass.getEStructuralFeatures().get(7);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getDomainDef_Wh5()
+  {
+    return (EReference)domainDefEClass.getEStructuralFeatures().get(8);
   }
 
   /**
@@ -3794,8 +3824,9 @@ public class EditorPackageImpl extends EPackageImpl implements EditorPackage
     createEAttribute(categoryDefEClass, CATEGORY_DEF__LONGNAME);
     createEAttribute(categoryDefEClass, CATEGORY_DEF__LONGNAME2);
     createEReference(categoryDefEClass, CATEGORY_DEF__CP);
-    createEAttribute(categoryDefEClass, CATEGORY_DEF__IMPL_NAME);
-    createEReference(categoryDefEClass, CATEGORY_DEF__WH);
+    createEReference(categoryDefEClass, CATEGORY_DEF__IMPL_NAME);
+    createEReference(categoryDefEClass, CATEGORY_DEF__W);
+    createEReference(categoryDefEClass, CATEGORY_DEF__WH5);
 
     packageDefEClass = createEClass(PACKAGE_DEF);
     createEAttribute(packageDefEClass, PACKAGE_DEF__NAME);
@@ -3806,6 +3837,7 @@ public class EditorPackageImpl extends EPackageImpl implements EditorPackage
     createEAttribute(packageDefEClass, PACKAGE_DEF__EXPORT_NAME);
     createEAttribute(packageDefEClass, PACKAGE_DEF__IMPL_NAME);
     createEReference(packageDefEClass, PACKAGE_DEF__W);
+    createEReference(packageDefEClass, PACKAGE_DEF__WH5);
 
     domainDefEClass = createEClass(DOMAIN_DEF);
     createEAttribute(domainDefEClass, DOMAIN_DEF__NAME);
@@ -3815,6 +3847,7 @@ public class EditorPackageImpl extends EPackageImpl implements EditorPackage
     createEReference(domainDefEClass, DOMAIN_DEF__CP5);
     createEAttribute(domainDefEClass, DOMAIN_DEF__EXPORT_NAME);
     createEAttribute(domainDefEClass, DOMAIN_DEF__IMPL_NAME5);
+    createEReference(domainDefEClass, DOMAIN_DEF__W);
     createEReference(domainDefEClass, DOMAIN_DEF__WH5);
 
     wherePartEClass = createEClass(WHERE_PART);
@@ -4248,8 +4281,9 @@ public class EditorPackageImpl extends EPackageImpl implements EditorPackage
     initEAttribute(getCategoryDef_Longname(), ecorePackage.getEString(), "longname", null, 0, 1, CategoryDef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getCategoryDef_Longname2(), ecorePackage.getEString(), "longname2", null, 0, 1, CategoryDef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getCategoryDef_Cp(), this.getTypeParameterList(), null, "cp", null, 0, 1, CategoryDef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getCategoryDef_ImplName(), ecorePackage.getEString(), "implName", null, 0, 1, CategoryDef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getCategoryDef_Wh(), this.getWherePart(), null, "wh", null, 0, 1, CategoryDef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getCategoryDef_ImplName(), this.getTypeArguments(), null, "implName", null, 0, 1, CategoryDef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getCategoryDef_W(), this.getWithPart(), null, "w", null, 0, 1, CategoryDef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getCategoryDef_Wh5(), this.getWherePart(), null, "wh5", null, 0, 1, CategoryDef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(packageDefEClass, PackageDef.class, "PackageDef", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getPackageDef_Name(), ecorePackage.getEString(), "name", null, 0, 1, PackageDef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -4260,6 +4294,7 @@ public class EditorPackageImpl extends EPackageImpl implements EditorPackage
     initEAttribute(getPackageDef_ExportName(), ecorePackage.getEString(), "exportName", null, 0, 1, PackageDef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getPackageDef_ImplName(), ecorePackage.getEString(), "implName", null, 0, 1, PackageDef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getPackageDef_W(), this.getWithPart(), null, "w", null, 0, 1, PackageDef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getPackageDef_Wh5(), this.getWherePart(), null, "wh5", null, 0, 1, PackageDef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(domainDefEClass, DomainDef.class, "DomainDef", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getDomainDef_Name(), ecorePackage.getEString(), "name", null, 0, 1, DomainDef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -4269,6 +4304,7 @@ public class EditorPackageImpl extends EPackageImpl implements EditorPackage
     initEReference(getDomainDef_Cp5(), this.getTypeParameterList(), null, "cp5", null, 0, 1, DomainDef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getDomainDef_ExportName(), ecorePackage.getEString(), "exportName", null, 0, 1, DomainDef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getDomainDef_ImplName5(), ecorePackage.getEString(), "implName5", null, 0, 1, DomainDef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getDomainDef_W(), this.getWithPart(), null, "w", null, 0, 1, DomainDef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getDomainDef_Wh5(), this.getWherePart(), null, "wh5", null, 0, 1, DomainDef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(wherePartEClass, WherePart.class, "WherePart", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);

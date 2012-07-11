@@ -260,7 +260,7 @@ ruleCategoryDef returns [EObject current=null]
 	    }
 
 )
-)this_COLON_5=RULE_COLON
+)?this_COLON_5=RULE_COLON
     { 
     newLeafNode(this_COLON_5, grammarAccess.getCategoryDefAccess().getCOLONTerminalRuleCall_5()); 
     }
@@ -274,41 +274,60 @@ this_DEF_7=RULE_DEF
     }
 (
 (
-		lv_implName_8_0=RULE_ID
-		{
-			newLeafNode(lv_implName_8_0, grammarAccess.getCategoryDefAccess().getImplNameIDTerminalRuleCall_8_0()); 
-		}
-		{
-	        if ($current==null) {
-	            $current = createModelElement(grammarAccess.getCategoryDefRule());
-	        }
-       		setWithLastConsumed(
-       			$current, 
-       			"implName",
-        		lv_implName_8_0, 
-        		"ID");
-	    }
-
-)
-)(
-(
 		{ 
-	        newCompositeNode(grammarAccess.getCategoryDefAccess().getWhWherePartParserRuleCall_9_0()); 
+	        newCompositeNode(grammarAccess.getCategoryDefAccess().getImplNameTypeArgumentsParserRuleCall_8_0()); 
 	    }
-		lv_wh_9_0=ruleWherePart		{
+		lv_implName_8_0=ruleTypeArguments		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getCategoryDefRule());
 	        }
        		set(
        			$current, 
-       			"wh",
-        		lv_wh_9_0, 
+       			"implName",
+        		lv_implName_8_0, 
+        		"TypeArguments");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+)((
+(
+		{ 
+	        newCompositeNode(grammarAccess.getCategoryDefAccess().getWWithPartParserRuleCall_9_0_0()); 
+	    }
+		lv_w_9_0=ruleWithPart		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getCategoryDefRule());
+	        }
+       		set(
+       			$current, 
+       			"w",
+        		lv_w_9_0, 
+        		"WithPart");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+)
+    |(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getCategoryDefAccess().getWh5WherePartParserRuleCall_9_1_0()); 
+	    }
+		lv_wh5_10_0=ruleWherePart		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getCategoryDefRule());
+	        }
+       		set(
+       			$current, 
+       			"wh5",
+        		lv_wh5_10_0, 
         		"WherePart");
 	        afterParserOrEnumRuleCall();
 	    }
 
 )
-))
+)))
 ;
 finally {
 	myHiddenTokenState.restore();
@@ -426,7 +445,7 @@ rulePackageDef returns [EObject current=null]
 	    }
 
 )
-)this_COLON_5=RULE_COLON
+)?this_COLON_5=RULE_COLON
     { 
     newLeafNode(this_COLON_5, grammarAccess.getPackageDefAccess().getCOLONTerminalRuleCall_5()); 
     }
@@ -470,10 +489,10 @@ rulePackageDef returns [EObject current=null]
 	    }
 
 )
-)(
+)((
 (
 		{ 
-	        newCompositeNode(grammarAccess.getPackageDefAccess().getWWithPartParserRuleCall_9_0()); 
+	        newCompositeNode(grammarAccess.getPackageDefAccess().getWWithPartParserRuleCall_9_0_0()); 
 	    }
 		lv_w_9_0=ruleWithPart		{
 	        if ($current==null) {
@@ -488,7 +507,26 @@ rulePackageDef returns [EObject current=null]
 	    }
 
 )
-))
+)
+    |(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getPackageDefAccess().getWh5WherePartParserRuleCall_9_1_0()); 
+	    }
+		lv_wh5_10_0=ruleWherePart		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getPackageDefRule());
+	        }
+       		set(
+       			$current, 
+       			"wh5",
+        		lv_wh5_10_0, 
+        		"WherePart");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+)))
 ;
 finally {
 	myHiddenTokenState.restore();
@@ -606,7 +644,7 @@ ruleDomainDef returns [EObject current=null]
 	    }
 
 )
-)this_COLON_5=RULE_COLON
+)?this_COLON_5=RULE_COLON
     { 
     newLeafNode(this_COLON_5, grammarAccess.getDomainDefAccess().getCOLONTerminalRuleCall_5()); 
     }
@@ -650,25 +688,44 @@ ruleDomainDef returns [EObject current=null]
 	    }
 
 )
-)(
+)((
 (
 		{ 
-	        newCompositeNode(grammarAccess.getDomainDefAccess().getWh5WherePartParserRuleCall_9_0()); 
+	        newCompositeNode(grammarAccess.getDomainDefAccess().getWWithPartParserRuleCall_9_0_0()); 
 	    }
-		lv_wh5_9_0=ruleWherePart		{
+		lv_w_9_0=ruleWithPart		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getDomainDefRule());
+	        }
+       		set(
+       			$current, 
+       			"w",
+        		lv_w_9_0, 
+        		"WithPart");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+)
+    |(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getDomainDefAccess().getWh5WherePartParserRuleCall_9_1_0()); 
+	    }
+		lv_wh5_10_0=ruleWherePart		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getDomainDefRule());
 	        }
        		set(
        			$current, 
        			"wh5",
-        		lv_wh5_9_0, 
+        		lv_wh5_10_0, 
         		"WherePart");
 	        afterParserOrEnumRuleCall();
 	    }
 
 )
-))
+)))
 ;
 finally {
 	myHiddenTokenState.restore();

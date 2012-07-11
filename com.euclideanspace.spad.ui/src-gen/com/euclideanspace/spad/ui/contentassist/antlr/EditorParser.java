@@ -38,6 +38,9 @@ public class EditorParser extends AbstractContentAssistParser {
 				private static final long serialVersionUID = 1L;
 				{
 					put(grammarAccess.getModelAccess().getAlternatives_2(), "rule__Model__Alternatives_2");
+					put(grammarAccess.getCategoryDefAccess().getAlternatives_9(), "rule__CategoryDef__Alternatives_9");
+					put(grammarAccess.getPackageDefAccess().getAlternatives_9(), "rule__PackageDef__Alternatives_9");
+					put(grammarAccess.getDomainDefAccess().getAlternatives_9(), "rule__DomainDef__Alternatives_9");
 					put(grammarAccess.getWherePartAccess().getAlternatives_4_1(), "rule__WherePart__Alternatives_4_1");
 					put(grammarAccess.getWherePartAccess().getAlternatives_5_1_0(), "rule__WherePart__Alternatives_5_1_0");
 					put(grammarAccess.getWherePartAccess().getAlternatives_6_1(), "rule__WherePart__Alternatives_6_1");
@@ -221,7 +224,8 @@ public class EditorParser extends AbstractContentAssistParser {
 					put(grammarAccess.getCategoryDefAccess().getLongname2Assignment_3(), "rule__CategoryDef__Longname2Assignment_3");
 					put(grammarAccess.getCategoryDefAccess().getCpAssignment_4(), "rule__CategoryDef__CpAssignment_4");
 					put(grammarAccess.getCategoryDefAccess().getImplNameAssignment_8(), "rule__CategoryDef__ImplNameAssignment_8");
-					put(grammarAccess.getCategoryDefAccess().getWhAssignment_9(), "rule__CategoryDef__WhAssignment_9");
+					put(grammarAccess.getCategoryDefAccess().getWAssignment_9_0(), "rule__CategoryDef__WAssignment_9_0");
+					put(grammarAccess.getCategoryDefAccess().getWh5Assignment_9_1(), "rule__CategoryDef__Wh5Assignment_9_1");
 					put(grammarAccess.getPackageDefAccess().getNameAssignment_0(), "rule__PackageDef__NameAssignment_0");
 					put(grammarAccess.getPackageDefAccess().getShortnameAssignment_1(), "rule__PackageDef__ShortnameAssignment_1");
 					put(grammarAccess.getPackageDefAccess().getLongnameAssignment_2(), "rule__PackageDef__LongnameAssignment_2");
@@ -229,7 +233,8 @@ public class EditorParser extends AbstractContentAssistParser {
 					put(grammarAccess.getPackageDefAccess().getCpAssignment_4(), "rule__PackageDef__CpAssignment_4");
 					put(grammarAccess.getPackageDefAccess().getExportNameAssignment_6(), "rule__PackageDef__ExportNameAssignment_6");
 					put(grammarAccess.getPackageDefAccess().getImplNameAssignment_8(), "rule__PackageDef__ImplNameAssignment_8");
-					put(grammarAccess.getPackageDefAccess().getWAssignment_9(), "rule__PackageDef__WAssignment_9");
+					put(grammarAccess.getPackageDefAccess().getWAssignment_9_0(), "rule__PackageDef__WAssignment_9_0");
+					put(grammarAccess.getPackageDefAccess().getWh5Assignment_9_1(), "rule__PackageDef__Wh5Assignment_9_1");
 					put(grammarAccess.getDomainDefAccess().getNameAssignment_0(), "rule__DomainDef__NameAssignment_0");
 					put(grammarAccess.getDomainDefAccess().getShortname5Assignment_1(), "rule__DomainDef__Shortname5Assignment_1");
 					put(grammarAccess.getDomainDefAccess().getLongname5Assignment_2(), "rule__DomainDef__Longname5Assignment_2");
@@ -237,7 +242,8 @@ public class EditorParser extends AbstractContentAssistParser {
 					put(grammarAccess.getDomainDefAccess().getCp5Assignment_4(), "rule__DomainDef__Cp5Assignment_4");
 					put(grammarAccess.getDomainDefAccess().getExportNameAssignment_6(), "rule__DomainDef__ExportNameAssignment_6");
 					put(grammarAccess.getDomainDefAccess().getImplName5Assignment_8(), "rule__DomainDef__ImplName5Assignment_8");
-					put(grammarAccess.getDomainDefAccess().getWh5Assignment_9(), "rule__DomainDef__Wh5Assignment_9");
+					put(grammarAccess.getDomainDefAccess().getWAssignment_9_0(), "rule__DomainDef__WAssignment_9_0");
+					put(grammarAccess.getDomainDefAccess().getWh5Assignment_9_1(), "rule__DomainDef__Wh5Assignment_9_1");
 					put(grammarAccess.getWherePartAccess().getNameAssignment_0(), "rule__WherePart__NameAssignment_0");
 					put(grammarAccess.getWherePartAccess().getWhereAssigAssignment_4_0(), "rule__WherePart__WhereAssigAssignment_4_0");
 					put(grammarAccess.getWherePartAccess().getLongname8Assignment_5_0(), "rule__WherePart__Longname8Assignment_5_0");
