@@ -17,6 +17,7 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link com.euclideanspace.spad.editor.FunctionSignature#getFnNam <em>Fn Nam</em>}</li>
  *   <li>{@link com.euclideanspace.spad.editor.FunctionSignature#getPar2 <em>Par2</em>}</li>
  *   <li>{@link com.euclideanspace.spad.editor.FunctionSignature#getPar3 <em>Par3</em>}</li>
+ *   <li>{@link com.euclideanspace.spad.editor.FunctionSignature#getPar <em>Par</em>}</li>
  *   <li>{@link com.euclideanspace.spad.editor.FunctionSignature#getT4 <em>T4</em>}</li>
  *   <li>{@link com.euclideanspace.spad.editor.FunctionSignature#getB1 <em>B1</em>}</li>
  *   <li>{@link com.euclideanspace.spad.editor.FunctionSignature#getT5 <em>T5</em>}</li>
@@ -150,6 +151,32 @@ public interface FunctionSignature extends FunctionDefinition
    * @generated
    */
   EList<VariableDeclaration> getPar3();
+
+  /**
+   * Returns the value of the '<em><b>Par</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Par</em>' attribute isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Par</em>' attribute.
+   * @see #setPar(String)
+   * @see com.euclideanspace.spad.editor.EditorPackage#getFunctionSignature_Par()
+   * @model
+   * @generated
+   */
+  String getPar();
+
+  /**
+   * Sets the value of the '{@link com.euclideanspace.spad.editor.FunctionSignature#getPar <em>Par</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Par</em>' attribute.
+   * @see #getPar()
+   * @generated
+   */
+  void setPar(String value);
 
   /**
    * Returns the value of the '<em><b>T4</b></em>' attribute.

@@ -190,6 +190,11 @@ public class EditorAdapterFactory extends AdapterFactoryImpl
         return createTypeNameOrFunctionCallAdapter();
       }
       @Override
+      public Adapter caseTupleDefinition(TupleDefinition object)
+      {
+        return createTupleDefinitionAdapter();
+      }
+      @Override
       public Adapter caseTypeLiteral(TypeLiteral object)
       {
         return createTypeLiteralAdapter();
@@ -258,11 +263,6 @@ public class EditorAdapterFactory extends AdapterFactoryImpl
       public Adapter caseExpr(Expr object)
       {
         return createExprAdapter();
-      }
-      @Override
-      public Adapter caseMapDefinition(MapDefinition object)
-      {
-        return createMapDefinitionAdapter();
       }
       @Override
       public Adapter casePrimaryPrefix(PrimaryPrefix object)
@@ -393,6 +393,11 @@ public class EditorAdapterFactory extends AdapterFactoryImpl
       public Adapter caseExponentExpression(ExponentExpression object)
       {
         return createExponentExpressionAdapter();
+      }
+      @Override
+      public Adapter caseMapDefinition(MapDefinition object)
+      {
+        return createMapDefinitionAdapter();
       }
       @Override
       public Adapter casePretendExpression(PretendExpression object)
@@ -792,6 +797,21 @@ public class EditorAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
+   * Creates a new adapter for an object of class '{@link com.euclideanspace.spad.editor.TupleDefinition <em>Tuple Definition</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see com.euclideanspace.spad.editor.TupleDefinition
+   * @generated
+   */
+  public Adapter createTupleDefinitionAdapter()
+  {
+    return null;
+  }
+
+  /**
    * Creates a new adapter for an object of class '{@link com.euclideanspace.spad.editor.TypeLiteral <em>Type Literal</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
@@ -997,21 +1017,6 @@ public class EditorAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createExprAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link com.euclideanspace.spad.editor.MapDefinition <em>Map Definition</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see com.euclideanspace.spad.editor.MapDefinition
-   * @generated
-   */
-  public Adapter createMapDefinitionAdapter()
   {
     return null;
   }
@@ -1402,6 +1407,21 @@ public class EditorAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createExponentExpressionAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link com.euclideanspace.spad.editor.MapDefinition <em>Map Definition</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see com.euclideanspace.spad.editor.MapDefinition
+   * @generated
+   */
+  public Adapter createMapDefinitionAdapter()
   {
     return null;
   }

@@ -197,11 +197,9 @@ class EditorGenerator implements IGenerator {
         '''
 
     /* MapDefinition */
-    def compile(MapDefinition f) '''
-        // MapDefinition
-        «IF f.fnSig != null» «compile(f.fnSig)» «ENDIF»
-        «IF f.par4 != null» «compile(f.par4)» «ENDIF»
-        «IF f.par5 != null» «compile(f.par5)» «ENDIF»
+    def compile(MapDefinition f) 
+       '''«IF f instanceof FunctionSignature»«
+       compile(f as FunctionSignature)»«ENDIF»
         '''
     
     /* FunctionSignature 
@@ -272,9 +270,9 @@ class EditorGenerator implements IGenerator {
         IF f.t4 != null»<«compile(f.t4)»«
           FOR x:f.t16 »,«compile(x)» «ENDFOR»>«ENDIF»«
         IF f.t6 != null»Record(«compile(f.t6)»«
-          FOR x:f.t7 »,«compile(x)» «ENDFOR»)«ENDIF»«
-        IF f.t9 != null»Union(«compile(f.t9)»«
-          FOR x:f.t10 »,«compile(x)» «ENDFOR»)«ENDIF»«
+          FOR x:f.t22 »,«compile(x)» «ENDFOR»)«ENDIF»«
+        IF f.t10 != null»Union(«compile(f.t10)»«
+          FOR x:f.t25 »,«compile(x)» «ENDFOR»)«ENDIF»«
         IF f.t12 != null»Join(«compile(f.t12)»«
           FOR x:f.t13 »,«compile(x)» «ENDFOR»)«ENDIF»«
         IF f.t15 != null»<«compile(f.t15)»>«ENDIF»'''
@@ -284,9 +282,9 @@ class EditorGenerator implements IGenerator {
       '''«IF f.t != null»«compile(f.t)»«ENDIF»«
       IF f.t2 != null»«f.t2»«ENDIF»«
       IF f.tyname != null»«f.tyname» «ENDIF»«
-      IF f.t6 != null»Record («compile(f.t6)»)«
-      ENDIF»«IF f.t9 != null»Union («
-      compile(f.t9)»)«ENDIF»«
+      IF f.t7 != null»Record («compile(f.t7)»)«
+      ENDIF»«IF f.t10 != null»Union («
+      compile(f.t10)»)«ENDIF»«
       IF f.t12 != null»Join («compile(f.t12)»)«
       ENDIF»«
       IF f.t15 != null»«compile(f.t15)»«ENDIF»'''

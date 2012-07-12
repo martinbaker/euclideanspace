@@ -35,6 +35,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link com.euclideanspace.spad.editor.impl.FunctionSignatureImpl#getFnNam <em>Fn Nam</em>}</li>
  *   <li>{@link com.euclideanspace.spad.editor.impl.FunctionSignatureImpl#getPar2 <em>Par2</em>}</li>
  *   <li>{@link com.euclideanspace.spad.editor.impl.FunctionSignatureImpl#getPar3 <em>Par3</em>}</li>
+ *   <li>{@link com.euclideanspace.spad.editor.impl.FunctionSignatureImpl#getPar <em>Par</em>}</li>
  *   <li>{@link com.euclideanspace.spad.editor.impl.FunctionSignatureImpl#getT4 <em>T4</em>}</li>
  *   <li>{@link com.euclideanspace.spad.editor.impl.FunctionSignatureImpl#getB1 <em>B1</em>}</li>
  *   <li>{@link com.euclideanspace.spad.editor.impl.FunctionSignatureImpl#getT5 <em>T5</em>}</li>
@@ -106,6 +107,26 @@ public class FunctionSignatureImpl extends FunctionDefinitionImpl implements Fun
    * @ordered
    */
   protected EList<VariableDeclaration> par3;
+
+  /**
+   * The default value of the '{@link #getPar() <em>Par</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getPar()
+   * @generated
+   * @ordered
+   */
+  protected static final String PAR_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getPar() <em>Par</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getPar()
+   * @generated
+   * @ordered
+   */
+  protected String par = PAR_EDEFAULT;
 
   /**
    * The default value of the '{@link #getT4() <em>T4</em>}' attribute.
@@ -414,6 +435,29 @@ public class FunctionSignatureImpl extends FunctionDefinitionImpl implements Fun
    * <!-- end-user-doc -->
    * @generated
    */
+  public String getPar()
+  {
+    return par;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setPar(String newPar)
+  {
+    String oldPar = par;
+    par = newPar;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, EditorPackage.FUNCTION_SIGNATURE__PAR, oldPar, par));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public String getT4()
   {
     return t4;
@@ -566,6 +610,8 @@ public class FunctionSignatureImpl extends FunctionDefinitionImpl implements Fun
         return getPar2();
       case EditorPackage.FUNCTION_SIGNATURE__PAR3:
         return getPar3();
+      case EditorPackage.FUNCTION_SIGNATURE__PAR:
+        return getPar();
       case EditorPackage.FUNCTION_SIGNATURE__T4:
         return getT4();
       case EditorPackage.FUNCTION_SIGNATURE__B1:
@@ -606,6 +652,9 @@ public class FunctionSignatureImpl extends FunctionDefinitionImpl implements Fun
       case EditorPackage.FUNCTION_SIGNATURE__PAR3:
         getPar3().clear();
         getPar3().addAll((Collection<? extends VariableDeclaration>)newValue);
+        return;
+      case EditorPackage.FUNCTION_SIGNATURE__PAR:
+        setPar((String)newValue);
         return;
       case EditorPackage.FUNCTION_SIGNATURE__T4:
         setT4((String)newValue);
@@ -651,6 +700,9 @@ public class FunctionSignatureImpl extends FunctionDefinitionImpl implements Fun
       case EditorPackage.FUNCTION_SIGNATURE__PAR3:
         getPar3().clear();
         return;
+      case EditorPackage.FUNCTION_SIGNATURE__PAR:
+        setPar(PAR_EDEFAULT);
+        return;
       case EditorPackage.FUNCTION_SIGNATURE__T4:
         setT4(T4_EDEFAULT);
         return;
@@ -690,6 +742,8 @@ public class FunctionSignatureImpl extends FunctionDefinitionImpl implements Fun
         return par2 != null;
       case EditorPackage.FUNCTION_SIGNATURE__PAR3:
         return par3 != null && !par3.isEmpty();
+      case EditorPackage.FUNCTION_SIGNATURE__PAR:
+        return PAR_EDEFAULT == null ? par != null : !PAR_EDEFAULT.equals(par);
       case EditorPackage.FUNCTION_SIGNATURE__T4:
         return T4_EDEFAULT == null ? t4 != null : !T4_EDEFAULT.equals(t4);
       case EditorPackage.FUNCTION_SIGNATURE__B1:
@@ -717,6 +771,8 @@ public class FunctionSignatureImpl extends FunctionDefinitionImpl implements Fun
     StringBuffer result = new StringBuffer(super.toString());
     result.append(" (fnNam: ");
     result.append(fnNam);
+    result.append(", par: ");
+    result.append(par);
     result.append(", t4: ");
     result.append(t4);
     result.append(", b1: ");

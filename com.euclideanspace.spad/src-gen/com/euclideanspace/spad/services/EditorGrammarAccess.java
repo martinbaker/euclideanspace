@@ -543,13 +543,17 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		// * both category and domain can have 'where' part which holds overall information
 		// * such as category/domain parameter information and general macros. This is
 		// * followed by export('with') and import ('add') information.
+		// * Forms allowed include:
+		// * Exports == PlottablePlaneCurveCategory with {
+		// * Exports ==> PlottablePlaneCurveCategory with {
+		// * Exports ==> with {
 		// * / WherePart hidden(WS, SL_COMMENT):
 		//	name="where" NL* LBRACE NL* (whereAssig+=WhereAssignments (NL | SEMICOLON)+)* (longname8=ID ((DEF | MDEF)
-		//	imp=TypeExpression)? w8=WithPart)? (longname9=ID (DEF | MDEF)? add=AddPart)? RBRACE NL+;
+		//	imp=TypeExpression?)? w8=WithPart)? (longname9=ID (DEF | MDEF)? add=AddPart)? RBRACE NL+;
 		public ParserRule getRule() { return rule; }
 
 		//name="where" NL* LBRACE NL* (whereAssig+=WhereAssignments (NL | SEMICOLON)+)* (longname8=ID ((DEF | MDEF)
-		//imp=TypeExpression)? w8=WithPart)? (longname9=ID (DEF | MDEF)? add=AddPart)? RBRACE NL+
+		//imp=TypeExpression?)? w8=WithPart)? (longname9=ID (DEF | MDEF)? add=AddPart)? RBRACE NL+
 		public Group getGroup() { return cGroup; }
 
 		//name="where"
@@ -585,7 +589,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		//SEMICOLON
 		public RuleCall getSEMICOLONTerminalRuleCall_4_1_1() { return cSEMICOLONTerminalRuleCall_4_1_1; }
 
-		//(longname8=ID ((DEF | MDEF) imp=TypeExpression)? w8=WithPart)?
+		//(longname8=ID ((DEF | MDEF) imp=TypeExpression?)? w8=WithPart)?
 		public Group getGroup_5() { return cGroup_5; }
 
 		//longname8=ID
@@ -594,7 +598,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		//ID
 		public RuleCall getLongname8IDTerminalRuleCall_5_0_0() { return cLongname8IDTerminalRuleCall_5_0_0; }
 
-		//((DEF | MDEF) imp=TypeExpression)?
+		//((DEF | MDEF) imp=TypeExpression?)?
 		public Group getGroup_5_1() { return cGroup_5_1; }
 
 		//DEF | MDEF
@@ -606,7 +610,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		//MDEF
 		public RuleCall getMDEFTerminalRuleCall_5_1_0_1() { return cMDEFTerminalRuleCall_5_1_0_1; }
 
-		//imp=TypeExpression
+		//imp=TypeExpression?
 		public Assignment getImpAssignment_5_1_1() { return cImpAssignment_5_1_1; }
 
 		//TypeExpression
@@ -654,14 +658,15 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
 		private final RuleCall cVariableDeclarationParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
 		private final RuleCall cMacroDefParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
+		private final RuleCall cImportParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
 		
 		/// * each one must be on a separate line or separated by ';'
 		// * need to add name=
 		// * / WhereAssignments hidden(WS):
-		//	VariableDeclaration | MacroDef;
+		//	VariableDeclaration | MacroDef | Import;
 		public ParserRule getRule() { return rule; }
 
-		//VariableDeclaration | MacroDef
+		//VariableDeclaration | MacroDef | Import
 		public Alternatives getAlternatives() { return cAlternatives; }
 
 		//VariableDeclaration
@@ -669,6 +674,9 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 
 		//MacroDef
 		public RuleCall getMacroDefParserRuleCall_1() { return cMacroDefParserRuleCall_1; }
+
+		//Import
+		public RuleCall getImportParserRuleCall_2() { return cImportParserRuleCall_2; }
 	}
 
 	public class WithPartElements extends AbstractParserRuleElementFinder {
@@ -819,14 +827,15 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cVariableDeclarationAssignParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
 		private final RuleCall cFunctionDefinitionParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
 		private final RuleCall cMacroDefParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
+		private final RuleCall cImportParserRuleCall_3 = (RuleCall)cAlternatives.eContents().get(3);
 		
 		/// *
 		// * The add section of domain or package may contain multiple lines
 		// * / AddStatements hidden(WS, SL_COMMENT):
-		//	VariableDeclarationAssign | FunctionDefinition | MacroDef;
+		//	VariableDeclarationAssign | FunctionDefinition | MacroDef | Import;
 		public ParserRule getRule() { return rule; }
 
-		//VariableDeclarationAssign | FunctionDefinition | MacroDef
+		//VariableDeclarationAssign | FunctionDefinition | MacroDef | Import
 		public Alternatives getAlternatives() { return cAlternatives; }
 
 		//VariableDeclarationAssign
@@ -837,6 +846,9 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 
 		//MacroDef
 		public RuleCall getMacroDefParserRuleCall_2() { return cMacroDefParserRuleCall_2; }
+
+		//Import
+		public RuleCall getImportParserRuleCall_3() { return cImportParserRuleCall_3; }
 	}
 
 	public class FunctionDefinitionElements extends AbstractParserRuleElementFinder {
@@ -908,58 +920,69 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cPar3VariableDeclarationParserRuleCall_0_3_1_0 = (RuleCall)cPar3Assignment_0_3_1.eContents().get(0);
 		private final RuleCall cRPARENTerminalRuleCall_0_4 = (RuleCall)cGroup_0.eContents().get(4);
 		private final Group cGroup_1 = (Group)cAlternatives.eContents().get(1);
-		private final Assignment cT4Assignment_1_0 = (Assignment)cGroup_1.eContents().get(0);
-		private final RuleCall cT4IDTerminalRuleCall_1_0_0 = (RuleCall)cT4Assignment_1_0.eContents().get(0);
-		private final Alternatives cAlternatives_1_1 = (Alternatives)cGroup_1.eContents().get(1);
-		private final Assignment cB1Assignment_1_1_0 = (Assignment)cAlternatives_1_1.eContents().get(0);
-		private final RuleCall cB1EQUALTerminalRuleCall_1_1_0_0 = (RuleCall)cB1Assignment_1_1_0.eContents().get(0);
-		private final Assignment cB1Assignment_1_1_1 = (Assignment)cAlternatives_1_1.eContents().get(1);
-		private final RuleCall cB1LTTerminalRuleCall_1_1_1_0 = (RuleCall)cB1Assignment_1_1_1.eContents().get(0);
-		private final Assignment cB1Assignment_1_1_2 = (Assignment)cAlternatives_1_1.eContents().get(2);
-		private final RuleCall cB1GTTerminalRuleCall_1_1_2_0 = (RuleCall)cB1Assignment_1_1_2.eContents().get(0);
-		private final Assignment cB1Assignment_1_1_3 = (Assignment)cAlternatives_1_1.eContents().get(3);
-		private final RuleCall cB1LETerminalRuleCall_1_1_3_0 = (RuleCall)cB1Assignment_1_1_3.eContents().get(0);
-		private final Assignment cB1Assignment_1_1_4 = (Assignment)cAlternatives_1_1.eContents().get(4);
-		private final RuleCall cB1GETerminalRuleCall_1_1_4_0 = (RuleCall)cB1Assignment_1_1_4.eContents().get(0);
-		private final Assignment cB1Assignment_1_1_5 = (Assignment)cAlternatives_1_1.eContents().get(5);
-		private final RuleCall cB1PLUSTerminalRuleCall_1_1_5_0 = (RuleCall)cB1Assignment_1_1_5.eContents().get(0);
-		private final Assignment cB1Assignment_1_1_6 = (Assignment)cAlternatives_1_1.eContents().get(6);
-		private final RuleCall cB1MINUSTerminalRuleCall_1_1_6_0 = (RuleCall)cB1Assignment_1_1_6.eContents().get(0);
-		private final Assignment cB1Assignment_1_1_7 = (Assignment)cAlternatives_1_1.eContents().get(7);
-		private final RuleCall cB1TIMESTerminalRuleCall_1_1_7_0 = (RuleCall)cB1Assignment_1_1_7.eContents().get(0);
-		private final Assignment cB1Assignment_1_1_8 = (Assignment)cAlternatives_1_1.eContents().get(8);
-		private final RuleCall cB1SLASHTerminalRuleCall_1_1_8_0 = (RuleCall)cB1Assignment_1_1_8.eContents().get(0);
-		private final Assignment cB1Assignment_1_1_9 = (Assignment)cAlternatives_1_1.eContents().get(9);
-		private final RuleCall cB1AMPERSANDTerminalRuleCall_1_1_9_0 = (RuleCall)cB1Assignment_1_1_9.eContents().get(0);
-		private final Assignment cB1Assignment_1_1_10 = (Assignment)cAlternatives_1_1.eContents().get(10);
-		private final RuleCall cB1BARTerminalRuleCall_1_1_10_0 = (RuleCall)cB1Assignment_1_1_10.eContents().get(0);
-		private final Assignment cB1Assignment_1_1_11 = (Assignment)cAlternatives_1_1.eContents().get(11);
-		private final RuleCall cB1CARATTerminalRuleCall_1_1_11_0 = (RuleCall)cB1Assignment_1_1_11.eContents().get(0);
-		private final Assignment cT5Assignment_1_2 = (Assignment)cGroup_1.eContents().get(2);
-		private final RuleCall cT5IDTerminalRuleCall_1_2_0 = (RuleCall)cT5Assignment_1_2.eContents().get(0);
+		private final Assignment cFnNamAssignment_1_0 = (Assignment)cGroup_1.eContents().get(0);
+		private final RuleCall cFnNamIDTerminalRuleCall_1_0_0 = (RuleCall)cFnNamAssignment_1_0.eContents().get(0);
+		private final Assignment cParAssignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
+		private final RuleCall cParIDTerminalRuleCall_1_1_0 = (RuleCall)cParAssignment_1_1.eContents().get(0);
 		private final Group cGroup_2 = (Group)cAlternatives.eContents().get(2);
-		private final Assignment cB2Assignment_2_0 = (Assignment)cGroup_2.eContents().get(0);
-		private final RuleCall cB2MINUSTerminalRuleCall_2_0_0 = (RuleCall)cB2Assignment_2_0.eContents().get(0);
-		private final Assignment cT6Assignment_2_1 = (Assignment)cGroup_2.eContents().get(1);
-		private final RuleCall cT6IDTerminalRuleCall_2_1_0 = (RuleCall)cT6Assignment_2_1.eContents().get(0);
+		private final Assignment cT4Assignment_2_0 = (Assignment)cGroup_2.eContents().get(0);
+		private final RuleCall cT4IDTerminalRuleCall_2_0_0 = (RuleCall)cT4Assignment_2_0.eContents().get(0);
+		private final Alternatives cAlternatives_2_1 = (Alternatives)cGroup_2.eContents().get(1);
+		private final Assignment cB1Assignment_2_1_0 = (Assignment)cAlternatives_2_1.eContents().get(0);
+		private final RuleCall cB1EQUALTerminalRuleCall_2_1_0_0 = (RuleCall)cB1Assignment_2_1_0.eContents().get(0);
+		private final Assignment cB1Assignment_2_1_1 = (Assignment)cAlternatives_2_1.eContents().get(1);
+		private final RuleCall cB1LTTerminalRuleCall_2_1_1_0 = (RuleCall)cB1Assignment_2_1_1.eContents().get(0);
+		private final Assignment cB1Assignment_2_1_2 = (Assignment)cAlternatives_2_1.eContents().get(2);
+		private final RuleCall cB1GTTerminalRuleCall_2_1_2_0 = (RuleCall)cB1Assignment_2_1_2.eContents().get(0);
+		private final Assignment cB1Assignment_2_1_3 = (Assignment)cAlternatives_2_1.eContents().get(3);
+		private final RuleCall cB1LETerminalRuleCall_2_1_3_0 = (RuleCall)cB1Assignment_2_1_3.eContents().get(0);
+		private final Assignment cB1Assignment_2_1_4 = (Assignment)cAlternatives_2_1.eContents().get(4);
+		private final RuleCall cB1GETerminalRuleCall_2_1_4_0 = (RuleCall)cB1Assignment_2_1_4.eContents().get(0);
+		private final Assignment cB1Assignment_2_1_5 = (Assignment)cAlternatives_2_1.eContents().get(5);
+		private final RuleCall cB1PLUSTerminalRuleCall_2_1_5_0 = (RuleCall)cB1Assignment_2_1_5.eContents().get(0);
+		private final Assignment cB1Assignment_2_1_6 = (Assignment)cAlternatives_2_1.eContents().get(6);
+		private final RuleCall cB1MINUSTerminalRuleCall_2_1_6_0 = (RuleCall)cB1Assignment_2_1_6.eContents().get(0);
+		private final Assignment cB1Assignment_2_1_7 = (Assignment)cAlternatives_2_1.eContents().get(7);
+		private final RuleCall cB1TIMESTerminalRuleCall_2_1_7_0 = (RuleCall)cB1Assignment_2_1_7.eContents().get(0);
+		private final Assignment cB1Assignment_2_1_8 = (Assignment)cAlternatives_2_1.eContents().get(8);
+		private final RuleCall cB1SLASHTerminalRuleCall_2_1_8_0 = (RuleCall)cB1Assignment_2_1_8.eContents().get(0);
+		private final Assignment cB1Assignment_2_1_9 = (Assignment)cAlternatives_2_1.eContents().get(9);
+		private final RuleCall cB1AMPERSANDTerminalRuleCall_2_1_9_0 = (RuleCall)cB1Assignment_2_1_9.eContents().get(0);
+		private final Assignment cB1Assignment_2_1_10 = (Assignment)cAlternatives_2_1.eContents().get(10);
+		private final RuleCall cB1BARTerminalRuleCall_2_1_10_0 = (RuleCall)cB1Assignment_2_1_10.eContents().get(0);
+		private final Assignment cB1Assignment_2_1_11 = (Assignment)cAlternatives_2_1.eContents().get(11);
+		private final RuleCall cB1CARATTerminalRuleCall_2_1_11_0 = (RuleCall)cB1Assignment_2_1_11.eContents().get(0);
+		private final Assignment cT5Assignment_2_2 = (Assignment)cGroup_2.eContents().get(2);
+		private final RuleCall cT5IDTerminalRuleCall_2_2_0 = (RuleCall)cT5Assignment_2_2.eContents().get(0);
+		private final Group cGroup_3 = (Group)cAlternatives.eContents().get(3);
+		private final Assignment cB2Assignment_3_0 = (Assignment)cGroup_3.eContents().get(0);
+		private final RuleCall cB2MINUSTerminalRuleCall_3_0_0 = (RuleCall)cB2Assignment_3_0.eContents().get(0);
+		private final Assignment cT6Assignment_3_1 = (Assignment)cGroup_3.eContents().get(1);
+		private final RuleCall cT6IDTerminalRuleCall_3_1_0 = (RuleCall)cT6Assignment_3_1.eContents().get(0);
 		
-		/// * this is the first part of the function definition without the return type or
+		/// * This is the first part of the function definition without the return type or
 		// * the function implementation. Usually the function signature has a form like:
 		// * name(params)
-		// * but we allow some alternative forms to represent infix operators like:
+		// * We allow a single parameter to be given without brackets:
+		// * name param
+		// * We also allow some alternative forms to represent infix operators like:
 		// * a = b to represent _=(a,b)
 		// * or
 		// * a > b to represent _>(a,b)
+		// * 0 or 1 can be used as a function signature as a short form of
+		// * _0() or _1()
 		// * / // 0 or 1 can be used as a function signature as a short form of
 		//// _0() or _1() but that confuses the parser
 		//// | b3?='0' | b4?='1'
 		//FunctionSignature hidden(WS):
-		//	fnNam=ID LPAREN par2=VariableDeclaration? (COMMA par3+=VariableDeclaration)* RPAREN | t4=ID (b1=EQUAL | b1=LT | b1=GT
-		//	| b1=LE | b1=GE | b1=PLUS | b1=MINUS | b1=TIMES | b1=SLASH | b1=AMPERSAND | b1=BAR | b1=CARAT) t5=ID | b2=MINUS t6=ID;
+		//	fnNam=ID LPAREN par2=VariableDeclaration? (COMMA par3+=VariableDeclaration)* RPAREN | // fnNam=ID par2=VariableDeclaration this causes recursive defintion
+		//	fnNam=ID par=ID | t4=ID (b1=EQUAL | b1=LT | b1=GT | b1=LE | b1=GE | b1=PLUS | b1=MINUS | b1=TIMES | b1=SLASH |
+		//	b1=AMPERSAND | b1=BAR | b1=CARAT) t5=ID | b2=MINUS t6=ID;
 		public ParserRule getRule() { return rule; }
 
-		//fnNam=ID LPAREN par2=VariableDeclaration? (COMMA par3+=VariableDeclaration)* RPAREN | t4=ID (b1=EQUAL | b1=LT | b1=GT |
-		//b1=LE | b1=GE | b1=PLUS | b1=MINUS | b1=TIMES | b1=SLASH | b1=AMPERSAND | b1=BAR | b1=CARAT) t5=ID | b2=MINUS t6=ID
+		//fnNam=ID LPAREN par2=VariableDeclaration? (COMMA par3+=VariableDeclaration)* RPAREN | // fnNam=ID par2=VariableDeclaration this causes recursive defintion
+		//fnNam=ID par=ID | t4=ID (b1=EQUAL | b1=LT | b1=GT | b1=LE | b1=GE | b1=PLUS | b1=MINUS | b1=TIMES | b1=SLASH |
+		//b1=AMPERSAND | b1=BAR | b1=CARAT) t5=ID | b2=MINUS t6=ID
 		public Alternatives getAlternatives() { return cAlternatives; }
 
 		//fnNam=ID LPAREN par2=VariableDeclaration? (COMMA par3+=VariableDeclaration)* RPAREN
@@ -995,111 +1018,128 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		//RPAREN
 		public RuleCall getRPARENTerminalRuleCall_0_4() { return cRPARENTerminalRuleCall_0_4; }
 
-		//t4=ID (b1=EQUAL | b1=LT | b1=GT | b1=LE | b1=GE | b1=PLUS | b1=MINUS | b1=TIMES | b1=SLASH | b1=AMPERSAND | b1=BAR |
-		//b1=CARAT) t5=ID
+		//// fnNam=ID par2=VariableDeclaration this causes recursive defintion
+		//fnNam=ID par=ID
 		public Group getGroup_1() { return cGroup_1; }
 
-		//t4=ID
-		public Assignment getT4Assignment_1_0() { return cT4Assignment_1_0; }
+		//// fnNam=ID par2=VariableDeclaration this causes recursive defintion
+		//fnNam=ID
+		public Assignment getFnNamAssignment_1_0() { return cFnNamAssignment_1_0; }
 
 		//ID
-		public RuleCall getT4IDTerminalRuleCall_1_0_0() { return cT4IDTerminalRuleCall_1_0_0; }
+		public RuleCall getFnNamIDTerminalRuleCall_1_0_0() { return cFnNamIDTerminalRuleCall_1_0_0; }
 
-		//b1=EQUAL | b1=LT | b1=GT | b1=LE | b1=GE | b1=PLUS | b1=MINUS | b1=TIMES | b1=SLASH | b1=AMPERSAND | b1=BAR | b1=CARAT
-		public Alternatives getAlternatives_1_1() { return cAlternatives_1_1; }
-
-		//b1=EQUAL
-		public Assignment getB1Assignment_1_1_0() { return cB1Assignment_1_1_0; }
-
-		//EQUAL
-		public RuleCall getB1EQUALTerminalRuleCall_1_1_0_0() { return cB1EQUALTerminalRuleCall_1_1_0_0; }
-
-		//b1=LT
-		public Assignment getB1Assignment_1_1_1() { return cB1Assignment_1_1_1; }
-
-		//LT
-		public RuleCall getB1LTTerminalRuleCall_1_1_1_0() { return cB1LTTerminalRuleCall_1_1_1_0; }
-
-		//b1=GT
-		public Assignment getB1Assignment_1_1_2() { return cB1Assignment_1_1_2; }
-
-		//GT
-		public RuleCall getB1GTTerminalRuleCall_1_1_2_0() { return cB1GTTerminalRuleCall_1_1_2_0; }
-
-		//b1=LE
-		public Assignment getB1Assignment_1_1_3() { return cB1Assignment_1_1_3; }
-
-		//LE
-		public RuleCall getB1LETerminalRuleCall_1_1_3_0() { return cB1LETerminalRuleCall_1_1_3_0; }
-
-		//b1=GE
-		public Assignment getB1Assignment_1_1_4() { return cB1Assignment_1_1_4; }
-
-		//GE
-		public RuleCall getB1GETerminalRuleCall_1_1_4_0() { return cB1GETerminalRuleCall_1_1_4_0; }
-
-		//b1=PLUS
-		public Assignment getB1Assignment_1_1_5() { return cB1Assignment_1_1_5; }
-
-		//PLUS
-		public RuleCall getB1PLUSTerminalRuleCall_1_1_5_0() { return cB1PLUSTerminalRuleCall_1_1_5_0; }
-
-		//b1=MINUS
-		public Assignment getB1Assignment_1_1_6() { return cB1Assignment_1_1_6; }
-
-		//MINUS
-		public RuleCall getB1MINUSTerminalRuleCall_1_1_6_0() { return cB1MINUSTerminalRuleCall_1_1_6_0; }
-
-		//b1=TIMES
-		public Assignment getB1Assignment_1_1_7() { return cB1Assignment_1_1_7; }
-
-		//TIMES
-		public RuleCall getB1TIMESTerminalRuleCall_1_1_7_0() { return cB1TIMESTerminalRuleCall_1_1_7_0; }
-
-		//b1=SLASH
-		public Assignment getB1Assignment_1_1_8() { return cB1Assignment_1_1_8; }
-
-		//SLASH
-		public RuleCall getB1SLASHTerminalRuleCall_1_1_8_0() { return cB1SLASHTerminalRuleCall_1_1_8_0; }
-
-		//b1=AMPERSAND
-		public Assignment getB1Assignment_1_1_9() { return cB1Assignment_1_1_9; }
-
-		//AMPERSAND
-		public RuleCall getB1AMPERSANDTerminalRuleCall_1_1_9_0() { return cB1AMPERSANDTerminalRuleCall_1_1_9_0; }
-
-		//b1=BAR
-		public Assignment getB1Assignment_1_1_10() { return cB1Assignment_1_1_10; }
-
-		//BAR
-		public RuleCall getB1BARTerminalRuleCall_1_1_10_0() { return cB1BARTerminalRuleCall_1_1_10_0; }
-
-		//b1=CARAT
-		public Assignment getB1Assignment_1_1_11() { return cB1Assignment_1_1_11; }
-
-		//CARAT
-		public RuleCall getB1CARATTerminalRuleCall_1_1_11_0() { return cB1CARATTerminalRuleCall_1_1_11_0; }
-
-		//t5=ID
-		public Assignment getT5Assignment_1_2() { return cT5Assignment_1_2; }
+		//par=ID
+		public Assignment getParAssignment_1_1() { return cParAssignment_1_1; }
 
 		//ID
-		public RuleCall getT5IDTerminalRuleCall_1_2_0() { return cT5IDTerminalRuleCall_1_2_0; }
+		public RuleCall getParIDTerminalRuleCall_1_1_0() { return cParIDTerminalRuleCall_1_1_0; }
 
-		//b2=MINUS t6=ID
+		//t4=ID (b1=EQUAL | b1=LT | b1=GT | b1=LE | b1=GE | b1=PLUS | b1=MINUS | b1=TIMES | b1=SLASH | b1=AMPERSAND | b1=BAR |
+		//b1=CARAT) t5=ID
 		public Group getGroup_2() { return cGroup_2; }
 
-		//b2=MINUS
-		public Assignment getB2Assignment_2_0() { return cB2Assignment_2_0; }
-
-		//MINUS
-		public RuleCall getB2MINUSTerminalRuleCall_2_0_0() { return cB2MINUSTerminalRuleCall_2_0_0; }
-
-		//t6=ID
-		public Assignment getT6Assignment_2_1() { return cT6Assignment_2_1; }
+		//t4=ID
+		public Assignment getT4Assignment_2_0() { return cT4Assignment_2_0; }
 
 		//ID
-		public RuleCall getT6IDTerminalRuleCall_2_1_0() { return cT6IDTerminalRuleCall_2_1_0; }
+		public RuleCall getT4IDTerminalRuleCall_2_0_0() { return cT4IDTerminalRuleCall_2_0_0; }
+
+		//b1=EQUAL | b1=LT | b1=GT | b1=LE | b1=GE | b1=PLUS | b1=MINUS | b1=TIMES | b1=SLASH | b1=AMPERSAND | b1=BAR | b1=CARAT
+		public Alternatives getAlternatives_2_1() { return cAlternatives_2_1; }
+
+		//b1=EQUAL
+		public Assignment getB1Assignment_2_1_0() { return cB1Assignment_2_1_0; }
+
+		//EQUAL
+		public RuleCall getB1EQUALTerminalRuleCall_2_1_0_0() { return cB1EQUALTerminalRuleCall_2_1_0_0; }
+
+		//b1=LT
+		public Assignment getB1Assignment_2_1_1() { return cB1Assignment_2_1_1; }
+
+		//LT
+		public RuleCall getB1LTTerminalRuleCall_2_1_1_0() { return cB1LTTerminalRuleCall_2_1_1_0; }
+
+		//b1=GT
+		public Assignment getB1Assignment_2_1_2() { return cB1Assignment_2_1_2; }
+
+		//GT
+		public RuleCall getB1GTTerminalRuleCall_2_1_2_0() { return cB1GTTerminalRuleCall_2_1_2_0; }
+
+		//b1=LE
+		public Assignment getB1Assignment_2_1_3() { return cB1Assignment_2_1_3; }
+
+		//LE
+		public RuleCall getB1LETerminalRuleCall_2_1_3_0() { return cB1LETerminalRuleCall_2_1_3_0; }
+
+		//b1=GE
+		public Assignment getB1Assignment_2_1_4() { return cB1Assignment_2_1_4; }
+
+		//GE
+		public RuleCall getB1GETerminalRuleCall_2_1_4_0() { return cB1GETerminalRuleCall_2_1_4_0; }
+
+		//b1=PLUS
+		public Assignment getB1Assignment_2_1_5() { return cB1Assignment_2_1_5; }
+
+		//PLUS
+		public RuleCall getB1PLUSTerminalRuleCall_2_1_5_0() { return cB1PLUSTerminalRuleCall_2_1_5_0; }
+
+		//b1=MINUS
+		public Assignment getB1Assignment_2_1_6() { return cB1Assignment_2_1_6; }
+
+		//MINUS
+		public RuleCall getB1MINUSTerminalRuleCall_2_1_6_0() { return cB1MINUSTerminalRuleCall_2_1_6_0; }
+
+		//b1=TIMES
+		public Assignment getB1Assignment_2_1_7() { return cB1Assignment_2_1_7; }
+
+		//TIMES
+		public RuleCall getB1TIMESTerminalRuleCall_2_1_7_0() { return cB1TIMESTerminalRuleCall_2_1_7_0; }
+
+		//b1=SLASH
+		public Assignment getB1Assignment_2_1_8() { return cB1Assignment_2_1_8; }
+
+		//SLASH
+		public RuleCall getB1SLASHTerminalRuleCall_2_1_8_0() { return cB1SLASHTerminalRuleCall_2_1_8_0; }
+
+		//b1=AMPERSAND
+		public Assignment getB1Assignment_2_1_9() { return cB1Assignment_2_1_9; }
+
+		//AMPERSAND
+		public RuleCall getB1AMPERSANDTerminalRuleCall_2_1_9_0() { return cB1AMPERSANDTerminalRuleCall_2_1_9_0; }
+
+		//b1=BAR
+		public Assignment getB1Assignment_2_1_10() { return cB1Assignment_2_1_10; }
+
+		//BAR
+		public RuleCall getB1BARTerminalRuleCall_2_1_10_0() { return cB1BARTerminalRuleCall_2_1_10_0; }
+
+		//b1=CARAT
+		public Assignment getB1Assignment_2_1_11() { return cB1Assignment_2_1_11; }
+
+		//CARAT
+		public RuleCall getB1CARATTerminalRuleCall_2_1_11_0() { return cB1CARATTerminalRuleCall_2_1_11_0; }
+
+		//t5=ID
+		public Assignment getT5Assignment_2_2() { return cT5Assignment_2_2; }
+
+		//ID
+		public RuleCall getT5IDTerminalRuleCall_2_2_0() { return cT5IDTerminalRuleCall_2_2_0; }
+
+		//b2=MINUS t6=ID
+		public Group getGroup_3() { return cGroup_3; }
+
+		//b2=MINUS
+		public Assignment getB2Assignment_3_0() { return cB2Assignment_3_0; }
+
+		//MINUS
+		public RuleCall getB2MINUSTerminalRuleCall_3_0_0() { return cB2MINUSTerminalRuleCall_3_0_0; }
+
+		//t6=ID
+		public Assignment getT6Assignment_3_1() { return cT6Assignment_3_1; }
+
+		//ID
+		public RuleCall getT6IDTerminalRuleCall_3_1_0() { return cT6IDTerminalRuleCall_3_1_0; }
 	}
 
 	public class MacroDefElements extends AbstractParserRuleElementFinder {
@@ -1142,16 +1182,16 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		/// *
 		// * import domain
 		// * / Import hidden(WS):
-		//	"import" impname=ID;
+		//	"import" impname+=ID+;
 		public ParserRule getRule() { return rule; }
 
-		//"import" impname=ID
+		//"import" impname+=ID+
 		public Group getGroup() { return cGroup; }
 
 		//"import"
 		public Keyword getImportKeyword_0() { return cImportKeyword_0; }
 
-		//impname=ID
+		//impname+=ID+
 		public Assignment getImpnameAssignment_1() { return cImpnameAssignment_1; }
 
 		//ID
@@ -1168,7 +1208,13 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cTypAssignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
 		private final RuleCall cTypTypeExpressionParserRuleCall_1_1_0 = (RuleCall)cTypAssignment_1_1.eContents().get(0);
 		
-		/// * Variable declaration in where and with sections and function signature
+		/// * Variable declaration in where and with sections and function signature:
+		// * A 'variable' can be simple like:
+		// * x:Float
+		// * or something more complicated like:
+		// * x:Record(newPt: Pt,type:  String)
+		// * or it can be a function like:
+		// * x:(Float,Integer) -> Float
 		// * / VariableDeclaration hidden(WS): // if I just use name=ID then, when the ui program is running, I get:
 		//// Duplicate VariableDeclaration 'coerce' in WithPart 'with'
 		//	varName=ID (COLON typ=TypeExpression)?;
@@ -1355,6 +1401,13 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		// * (Expression can also be of type) but if we know that
 		// * this is a type we can exclude some possibilities.
 		// * 
+		// * A 'typeExpression' can be simple like:
+		// * Float
+		// * or something more complicated like:
+		// * Record(newPt: Pt,type:  String)
+		// * or it can be a function like:
+		// * (Float,Integer) -> Float
+		// * 
 		// * first we check for a function like: Integer -> Integer
 		// * / TypeExpression hidden(WS):
 		//	=> (t2=TypeArguments ARROW t3=TypeResult) | TypePrimaryExpression;
@@ -1466,21 +1519,37 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cT6Assignment_4_2 = (Assignment)cGroup_4.eContents().get(2);
 		private final RuleCall cT6TypeExpressionParserRuleCall_4_2_0 = (RuleCall)cT6Assignment_4_2.eContents().get(0);
 		private final Group cGroup_4_3 = (Group)cGroup_4.eContents().get(3);
-		private final RuleCall cCOMMATerminalRuleCall_4_3_0 = (RuleCall)cGroup_4_3.eContents().get(0);
-		private final Assignment cT7Assignment_4_3_1 = (Assignment)cGroup_4_3.eContents().get(1);
-		private final RuleCall cT7TypeExpressionParserRuleCall_4_3_1_0 = (RuleCall)cT7Assignment_4_3_1.eContents().get(0);
-		private final RuleCall cRPARENTerminalRuleCall_4_4 = (RuleCall)cGroup_4.eContents().get(4);
+		private final RuleCall cCOLONTerminalRuleCall_4_3_0 = (RuleCall)cGroup_4_3.eContents().get(0);
+		private final Assignment cT22Assignment_4_3_1 = (Assignment)cGroup_4_3.eContents().get(1);
+		private final RuleCall cT22TypeExpressionParserRuleCall_4_3_1_0 = (RuleCall)cT22Assignment_4_3_1.eContents().get(0);
+		private final Group cGroup_4_4 = (Group)cGroup_4.eContents().get(4);
+		private final RuleCall cCOMMATerminalRuleCall_4_4_0 = (RuleCall)cGroup_4_4.eContents().get(0);
+		private final Assignment cT21Assignment_4_4_1 = (Assignment)cGroup_4_4.eContents().get(1);
+		private final RuleCall cT21TypeExpressionParserRuleCall_4_4_1_0 = (RuleCall)cT21Assignment_4_4_1.eContents().get(0);
+		private final Group cGroup_4_4_2 = (Group)cGroup_4_4.eContents().get(2);
+		private final RuleCall cCOLONTerminalRuleCall_4_4_2_0 = (RuleCall)cGroup_4_4_2.eContents().get(0);
+		private final Assignment cT23Assignment_4_4_2_1 = (Assignment)cGroup_4_4_2.eContents().get(1);
+		private final RuleCall cT23TypeExpressionParserRuleCall_4_4_2_1_0 = (RuleCall)cT23Assignment_4_4_2_1.eContents().get(0);
+		private final RuleCall cRPARENTerminalRuleCall_4_5 = (RuleCall)cGroup_4.eContents().get(5);
 		private final Group cGroup_5 = (Group)cAlternatives.eContents().get(5);
-		private final Assignment cT8Assignment_5_0 = (Assignment)cGroup_5.eContents().get(0);
-		private final Keyword cT8UnionKeyword_5_0_0 = (Keyword)cT8Assignment_5_0.eContents().get(0);
+		private final Assignment cT9Assignment_5_0 = (Assignment)cGroup_5.eContents().get(0);
+		private final Keyword cT9UnionKeyword_5_0_0 = (Keyword)cT9Assignment_5_0.eContents().get(0);
 		private final RuleCall cLPARENTerminalRuleCall_5_1 = (RuleCall)cGroup_5.eContents().get(1);
-		private final Assignment cT9Assignment_5_2 = (Assignment)cGroup_5.eContents().get(2);
-		private final RuleCall cT9TypeExpressionParserRuleCall_5_2_0 = (RuleCall)cT9Assignment_5_2.eContents().get(0);
+		private final Assignment cT10Assignment_5_2 = (Assignment)cGroup_5.eContents().get(2);
+		private final RuleCall cT10TypeExpressionParserRuleCall_5_2_0 = (RuleCall)cT10Assignment_5_2.eContents().get(0);
 		private final Group cGroup_5_3 = (Group)cGroup_5.eContents().get(3);
-		private final RuleCall cCOMMATerminalRuleCall_5_3_0 = (RuleCall)cGroup_5_3.eContents().get(0);
-		private final Assignment cT10Assignment_5_3_1 = (Assignment)cGroup_5_3.eContents().get(1);
-		private final RuleCall cT10TypeExpressionParserRuleCall_5_3_1_0 = (RuleCall)cT10Assignment_5_3_1.eContents().get(0);
-		private final RuleCall cRPARENTerminalRuleCall_5_4 = (RuleCall)cGroup_5.eContents().get(4);
+		private final RuleCall cCOLONTerminalRuleCall_5_3_0 = (RuleCall)cGroup_5_3.eContents().get(0);
+		private final Assignment cT25Assignment_5_3_1 = (Assignment)cGroup_5_3.eContents().get(1);
+		private final RuleCall cT25TypeExpressionParserRuleCall_5_3_1_0 = (RuleCall)cT25Assignment_5_3_1.eContents().get(0);
+		private final Group cGroup_5_4 = (Group)cGroup_5.eContents().get(4);
+		private final RuleCall cCOMMATerminalRuleCall_5_4_0 = (RuleCall)cGroup_5_4.eContents().get(0);
+		private final Assignment cT24Assignment_5_4_1 = (Assignment)cGroup_5_4.eContents().get(1);
+		private final RuleCall cT24TypeExpressionParserRuleCall_5_4_1_0 = (RuleCall)cT24Assignment_5_4_1.eContents().get(0);
+		private final Group cGroup_5_4_2 = (Group)cGroup_5_4.eContents().get(2);
+		private final RuleCall cCOLONTerminalRuleCall_5_4_2_0 = (RuleCall)cGroup_5_4_2.eContents().get(0);
+		private final Assignment cT26Assignment_5_4_2_1 = (Assignment)cGroup_5_4_2.eContents().get(1);
+		private final RuleCall cT26TypeExpressionParserRuleCall_5_4_2_1_0 = (RuleCall)cT26Assignment_5_4_2_1.eContents().get(0);
+		private final RuleCall cRPARENTerminalRuleCall_5_5 = (RuleCall)cGroup_5.eContents().get(5);
 		private final Group cGroup_6 = (Group)cAlternatives.eContents().get(6);
 		private final Assignment cT11Assignment_6_0 = (Assignment)cGroup_6.eContents().get(0);
 		private final Keyword cT11JoinKeyword_6_0_0 = (Keyword)cT11Assignment_6_0.eContents().get(0);
@@ -1498,19 +1567,25 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		/// *
 		// * we use type arguments for first part of function type, that is
 		// * x in x-> y
+		// * usually this is enclosed in parenthesis
+		// * (x) in (x)-> y
+		// * but if x is a single argument (Including Record, Union, etc.) then it does
+		// * not need to be in parenthesis.
 		// * / TypeArguments hidden(WS):
 		//	t=TypeLiteral | t2=PERCENT | t3="Type" | // usually, but not always type arguments are in parenthesis, and empty
 		//	// parenthesis are allowed
-		//	b1?=LPAREN t4=TypeExpression? (COMMA t16+=TypeExpression)* RPAREN | t5="Record" LPAREN t6=TypeExpression (COMMA
-		//	t7+=TypeExpression)* RPAREN | t8="Union" LPAREN t9=TypeExpression (COMMA t10+=TypeExpression)* RPAREN | t11="Join"
-		//	LPAREN t12=TypeExpression (COMMA t13+=TypeExpression)* RPAREN | t15=TypeNameOrFunctionCall;
+		//	b1?=LPAREN t4=TypeExpression? (COMMA t16+=TypeExpression)* RPAREN | t5="Record" LPAREN t6=TypeExpression (COLON
+		//	t22+=TypeExpression)? (COMMA t21+=TypeExpression (COLON t23+=TypeExpression)?)* RPAREN | t9="Union" LPAREN
+		//	t10=TypeExpression (COLON t25+=TypeExpression)? (COMMA t24+=TypeExpression (COLON t26+=TypeExpression)?)* RPAREN |
+		//	t11="Join" LPAREN t12=TypeExpression (COMMA t13+=TypeExpression)* RPAREN | t15=TypeNameOrFunctionCall;
 		public ParserRule getRule() { return rule; }
 
 		//t=TypeLiteral | t2=PERCENT | t3="Type" | // usually, but not always type arguments are in parenthesis, and empty
 		//// parenthesis are allowed
-		//b1?=LPAREN t4=TypeExpression? (COMMA t16+=TypeExpression)* RPAREN | t5="Record" LPAREN t6=TypeExpression (COMMA
-		//t7+=TypeExpression)* RPAREN | t8="Union" LPAREN t9=TypeExpression (COMMA t10+=TypeExpression)* RPAREN | t11="Join"
-		//LPAREN t12=TypeExpression (COMMA t13+=TypeExpression)* RPAREN | t15=TypeNameOrFunctionCall
+		//b1?=LPAREN t4=TypeExpression? (COMMA t16+=TypeExpression)* RPAREN | t5="Record" LPAREN t6=TypeExpression (COLON
+		//t22+=TypeExpression)? (COMMA t21+=TypeExpression (COLON t23+=TypeExpression)?)* RPAREN | t9="Union" LPAREN
+		//t10=TypeExpression (COLON t25+=TypeExpression)? (COMMA t24+=TypeExpression (COLON t26+=TypeExpression)?)* RPAREN |
+		//t11="Join" LPAREN t12=TypeExpression (COMMA t13+=TypeExpression)* RPAREN | t15=TypeNameOrFunctionCall
 		public Alternatives getAlternatives() { return cAlternatives; }
 
 		//t=TypeLiteral
@@ -1565,7 +1640,8 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		//RPAREN
 		public RuleCall getRPARENTerminalRuleCall_3_3() { return cRPARENTerminalRuleCall_3_3; }
 
-		//t5="Record" LPAREN t6=TypeExpression (COMMA t7+=TypeExpression)* RPAREN
+		//t5="Record" LPAREN t6=TypeExpression (COLON t22+=TypeExpression)? (COMMA t21+=TypeExpression (COLON
+		//t23+=TypeExpression)?)* RPAREN
 		public Group getGroup_4() { return cGroup_4; }
 
 		//t5="Record"
@@ -1583,53 +1659,102 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		//TypeExpression
 		public RuleCall getT6TypeExpressionParserRuleCall_4_2_0() { return cT6TypeExpressionParserRuleCall_4_2_0; }
 
-		//(COMMA t7+=TypeExpression)*
+		//(COLON t22+=TypeExpression)?
 		public Group getGroup_4_3() { return cGroup_4_3; }
 
-		//COMMA
-		public RuleCall getCOMMATerminalRuleCall_4_3_0() { return cCOMMATerminalRuleCall_4_3_0; }
+		//COLON
+		public RuleCall getCOLONTerminalRuleCall_4_3_0() { return cCOLONTerminalRuleCall_4_3_0; }
 
-		//t7+=TypeExpression
-		public Assignment getT7Assignment_4_3_1() { return cT7Assignment_4_3_1; }
+		//t22+=TypeExpression
+		public Assignment getT22Assignment_4_3_1() { return cT22Assignment_4_3_1; }
 
 		//TypeExpression
-		public RuleCall getT7TypeExpressionParserRuleCall_4_3_1_0() { return cT7TypeExpressionParserRuleCall_4_3_1_0; }
+		public RuleCall getT22TypeExpressionParserRuleCall_4_3_1_0() { return cT22TypeExpressionParserRuleCall_4_3_1_0; }
+
+		//(COMMA t21+=TypeExpression (COLON t23+=TypeExpression)?)*
+		public Group getGroup_4_4() { return cGroup_4_4; }
+
+		//COMMA
+		public RuleCall getCOMMATerminalRuleCall_4_4_0() { return cCOMMATerminalRuleCall_4_4_0; }
+
+		//t21+=TypeExpression
+		public Assignment getT21Assignment_4_4_1() { return cT21Assignment_4_4_1; }
+
+		//TypeExpression
+		public RuleCall getT21TypeExpressionParserRuleCall_4_4_1_0() { return cT21TypeExpressionParserRuleCall_4_4_1_0; }
+
+		//(COLON t23+=TypeExpression)?
+		public Group getGroup_4_4_2() { return cGroup_4_4_2; }
+
+		//COLON
+		public RuleCall getCOLONTerminalRuleCall_4_4_2_0() { return cCOLONTerminalRuleCall_4_4_2_0; }
+
+		//t23+=TypeExpression
+		public Assignment getT23Assignment_4_4_2_1() { return cT23Assignment_4_4_2_1; }
+
+		//TypeExpression
+		public RuleCall getT23TypeExpressionParserRuleCall_4_4_2_1_0() { return cT23TypeExpressionParserRuleCall_4_4_2_1_0; }
 
 		//RPAREN
-		public RuleCall getRPARENTerminalRuleCall_4_4() { return cRPARENTerminalRuleCall_4_4; }
+		public RuleCall getRPARENTerminalRuleCall_4_5() { return cRPARENTerminalRuleCall_4_5; }
 
-		//t8="Union" LPAREN t9=TypeExpression (COMMA t10+=TypeExpression)* RPAREN
+		//t9="Union" LPAREN t10=TypeExpression (COLON t25+=TypeExpression)? (COMMA t24+=TypeExpression (COLON
+		//t26+=TypeExpression)?)* RPAREN
 		public Group getGroup_5() { return cGroup_5; }
 
-		//t8="Union"
-		public Assignment getT8Assignment_5_0() { return cT8Assignment_5_0; }
+		//t9="Union"
+		public Assignment getT9Assignment_5_0() { return cT9Assignment_5_0; }
 
 		//"Union"
-		public Keyword getT8UnionKeyword_5_0_0() { return cT8UnionKeyword_5_0_0; }
+		public Keyword getT9UnionKeyword_5_0_0() { return cT9UnionKeyword_5_0_0; }
 
 		//LPAREN
 		public RuleCall getLPARENTerminalRuleCall_5_1() { return cLPARENTerminalRuleCall_5_1; }
 
-		//t9=TypeExpression
-		public Assignment getT9Assignment_5_2() { return cT9Assignment_5_2; }
+		//t10=TypeExpression
+		public Assignment getT10Assignment_5_2() { return cT10Assignment_5_2; }
 
 		//TypeExpression
-		public RuleCall getT9TypeExpressionParserRuleCall_5_2_0() { return cT9TypeExpressionParserRuleCall_5_2_0; }
+		public RuleCall getT10TypeExpressionParserRuleCall_5_2_0() { return cT10TypeExpressionParserRuleCall_5_2_0; }
 
-		//(COMMA t10+=TypeExpression)*
+		//(COLON t25+=TypeExpression)?
 		public Group getGroup_5_3() { return cGroup_5_3; }
 
-		//COMMA
-		public RuleCall getCOMMATerminalRuleCall_5_3_0() { return cCOMMATerminalRuleCall_5_3_0; }
+		//COLON
+		public RuleCall getCOLONTerminalRuleCall_5_3_0() { return cCOLONTerminalRuleCall_5_3_0; }
 
-		//t10+=TypeExpression
-		public Assignment getT10Assignment_5_3_1() { return cT10Assignment_5_3_1; }
+		//t25+=TypeExpression
+		public Assignment getT25Assignment_5_3_1() { return cT25Assignment_5_3_1; }
 
 		//TypeExpression
-		public RuleCall getT10TypeExpressionParserRuleCall_5_3_1_0() { return cT10TypeExpressionParserRuleCall_5_3_1_0; }
+		public RuleCall getT25TypeExpressionParserRuleCall_5_3_1_0() { return cT25TypeExpressionParserRuleCall_5_3_1_0; }
+
+		//(COMMA t24+=TypeExpression (COLON t26+=TypeExpression)?)*
+		public Group getGroup_5_4() { return cGroup_5_4; }
+
+		//COMMA
+		public RuleCall getCOMMATerminalRuleCall_5_4_0() { return cCOMMATerminalRuleCall_5_4_0; }
+
+		//t24+=TypeExpression
+		public Assignment getT24Assignment_5_4_1() { return cT24Assignment_5_4_1; }
+
+		//TypeExpression
+		public RuleCall getT24TypeExpressionParserRuleCall_5_4_1_0() { return cT24TypeExpressionParserRuleCall_5_4_1_0; }
+
+		//(COLON t26+=TypeExpression)?
+		public Group getGroup_5_4_2() { return cGroup_5_4_2; }
+
+		//COLON
+		public RuleCall getCOLONTerminalRuleCall_5_4_2_0() { return cCOLONTerminalRuleCall_5_4_2_0; }
+
+		//t26+=TypeExpression
+		public Assignment getT26Assignment_5_4_2_1() { return cT26Assignment_5_4_2_1; }
+
+		//TypeExpression
+		public RuleCall getT26TypeExpressionParserRuleCall_5_4_2_1_0() { return cT26TypeExpressionParserRuleCall_5_4_2_1_0; }
 
 		//RPAREN
-		public RuleCall getRPARENTerminalRuleCall_5_4() { return cRPARENTerminalRuleCall_5_4; }
+		public RuleCall getRPARENTerminalRuleCall_5_5() { return cRPARENTerminalRuleCall_5_5; }
 
 		//t11="Join" LPAREN t12=TypeExpression (COMMA t13+=TypeExpression)* RPAREN
 		public Group getGroup_6() { return cGroup_6; }
@@ -1684,24 +1809,40 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cNameAssignment_3_0 = (Assignment)cGroup_3.eContents().get(0);
 		private final Keyword cNameRecordKeyword_3_0_0 = (Keyword)cNameAssignment_3_0.eContents().get(0);
 		private final RuleCall cLPARENTerminalRuleCall_3_1 = (RuleCall)cGroup_3.eContents().get(1);
-		private final Assignment cT6Assignment_3_2 = (Assignment)cGroup_3.eContents().get(2);
-		private final RuleCall cT6TypeExpressionParserRuleCall_3_2_0 = (RuleCall)cT6Assignment_3_2.eContents().get(0);
+		private final Assignment cT7Assignment_3_2 = (Assignment)cGroup_3.eContents().get(2);
+		private final RuleCall cT7TypeExpressionParserRuleCall_3_2_0 = (RuleCall)cT7Assignment_3_2.eContents().get(0);
 		private final Group cGroup_3_3 = (Group)cGroup_3.eContents().get(3);
-		private final RuleCall cCOMMATerminalRuleCall_3_3_0 = (RuleCall)cGroup_3_3.eContents().get(0);
-		private final Assignment cT7Assignment_3_3_1 = (Assignment)cGroup_3_3.eContents().get(1);
-		private final RuleCall cT7TypeExpressionParserRuleCall_3_3_1_0 = (RuleCall)cT7Assignment_3_3_1.eContents().get(0);
-		private final RuleCall cRPARENTerminalRuleCall_3_4 = (RuleCall)cGroup_3.eContents().get(4);
+		private final RuleCall cCOLONTerminalRuleCall_3_3_0 = (RuleCall)cGroup_3_3.eContents().get(0);
+		private final Assignment cT8Assignment_3_3_1 = (Assignment)cGroup_3_3.eContents().get(1);
+		private final RuleCall cT8TypeExpressionParserRuleCall_3_3_1_0 = (RuleCall)cT8Assignment_3_3_1.eContents().get(0);
+		private final Group cGroup_3_4 = (Group)cGroup_3.eContents().get(4);
+		private final RuleCall cCOMMATerminalRuleCall_3_4_0 = (RuleCall)cGroup_3_4.eContents().get(0);
+		private final Assignment cT21Assignment_3_4_1 = (Assignment)cGroup_3_4.eContents().get(1);
+		private final RuleCall cT21TypeExpressionParserRuleCall_3_4_1_0 = (RuleCall)cT21Assignment_3_4_1.eContents().get(0);
+		private final Group cGroup_3_4_2 = (Group)cGroup_3_4.eContents().get(2);
+		private final RuleCall cCOLONTerminalRuleCall_3_4_2_0 = (RuleCall)cGroup_3_4_2.eContents().get(0);
+		private final Assignment cT23Assignment_3_4_2_1 = (Assignment)cGroup_3_4_2.eContents().get(1);
+		private final RuleCall cT23TypeExpressionParserRuleCall_3_4_2_1_0 = (RuleCall)cT23Assignment_3_4_2_1.eContents().get(0);
+		private final RuleCall cRPARENTerminalRuleCall_3_5 = (RuleCall)cGroup_3.eContents().get(5);
 		private final Group cGroup_4 = (Group)cAlternatives.eContents().get(4);
 		private final Assignment cNameAssignment_4_0 = (Assignment)cGroup_4.eContents().get(0);
 		private final Keyword cNameUnionKeyword_4_0_0 = (Keyword)cNameAssignment_4_0.eContents().get(0);
 		private final RuleCall cLPARENTerminalRuleCall_4_1 = (RuleCall)cGroup_4.eContents().get(1);
-		private final Assignment cT9Assignment_4_2 = (Assignment)cGroup_4.eContents().get(2);
-		private final RuleCall cT9TypeExpressionParserRuleCall_4_2_0 = (RuleCall)cT9Assignment_4_2.eContents().get(0);
+		private final Assignment cT10Assignment_4_2 = (Assignment)cGroup_4.eContents().get(2);
+		private final RuleCall cT10TypeExpressionParserRuleCall_4_2_0 = (RuleCall)cT10Assignment_4_2.eContents().get(0);
 		private final Group cGroup_4_3 = (Group)cGroup_4.eContents().get(3);
-		private final RuleCall cCOMMATerminalRuleCall_4_3_0 = (RuleCall)cGroup_4_3.eContents().get(0);
-		private final Assignment cT10Assignment_4_3_1 = (Assignment)cGroup_4_3.eContents().get(1);
-		private final RuleCall cT10TypeExpressionParserRuleCall_4_3_1_0 = (RuleCall)cT10Assignment_4_3_1.eContents().get(0);
-		private final RuleCall cRPARENTerminalRuleCall_4_4 = (RuleCall)cGroup_4.eContents().get(4);
+		private final RuleCall cCOLONTerminalRuleCall_4_3_0 = (RuleCall)cGroup_4_3.eContents().get(0);
+		private final Assignment cT11Assignment_4_3_1 = (Assignment)cGroup_4_3.eContents().get(1);
+		private final RuleCall cT11TypeExpressionParserRuleCall_4_3_1_0 = (RuleCall)cT11Assignment_4_3_1.eContents().get(0);
+		private final Group cGroup_4_4 = (Group)cGroup_4.eContents().get(4);
+		private final RuleCall cCOMMATerminalRuleCall_4_4_0 = (RuleCall)cGroup_4_4.eContents().get(0);
+		private final Assignment cT24Assignment_4_4_1 = (Assignment)cGroup_4_4.eContents().get(1);
+		private final RuleCall cT24TypeExpressionParserRuleCall_4_4_1_0 = (RuleCall)cT24Assignment_4_4_1.eContents().get(0);
+		private final Group cGroup_4_4_2 = (Group)cGroup_4_4.eContents().get(2);
+		private final RuleCall cCOLONTerminalRuleCall_4_4_2_0 = (RuleCall)cGroup_4_4_2.eContents().get(0);
+		private final Assignment cT26Assignment_4_4_2_1 = (Assignment)cGroup_4_4_2.eContents().get(1);
+		private final RuleCall cT26TypeExpressionParserRuleCall_4_4_2_1_0 = (RuleCall)cT26Assignment_4_4_2_1.eContents().get(0);
+		private final RuleCall cRPARENTerminalRuleCall_4_5 = (RuleCall)cGroup_4.eContents().get(5);
 		private final Group cGroup_5 = (Group)cAlternatives.eContents().get(5);
 		private final Assignment cNameAssignment_5_0 = (Assignment)cGroup_5.eContents().get(0);
 		private final Keyword cNameJoinKeyword_5_0_0 = (Keyword)cNameAssignment_5_0.eContents().get(0);
@@ -1721,15 +1862,17 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		// * y in x-> y
 		// * / TypeResult hidden(WS):
 		//	t=TypeLiteral | t2=PERCENT | tyname="Type" | // | LPAREN t4=TypePrimaryExpression ( COMMA t16 += TypePrimaryExpression)* RPAREN
-		//	name="Record" LPAREN t6=TypeExpression (COMMA t7+=TypeExpression)* RPAREN | name="Union" LPAREN t9=TypeExpression
-		//	(COMMA t10+=TypeExpression)* RPAREN | name="Join" LPAREN t12=TypeExpression (COMMA t13+=TypeExpression)* RPAREN |
-		//	t15=TypeNameOrFunctionCall;
+		//	name="Record" LPAREN t7=TypeExpression (COLON t8+=TypeExpression)? (COMMA t21+=TypeExpression (COLON
+		//	t23+=TypeExpression)?)* RPAREN | name="Union" LPAREN t10=TypeExpression (COLON t11+=TypeExpression)? (COMMA
+		//	t24+=TypeExpression (COLON t26+=TypeExpression)?)* RPAREN | name="Join" LPAREN t12=TypeExpression (COMMA
+		//	t13+=TypeExpression)* RPAREN | t15=TypeNameOrFunctionCall;
 		public ParserRule getRule() { return rule; }
 
 		//t=TypeLiteral | t2=PERCENT | tyname="Type" | // | LPAREN t4=TypePrimaryExpression ( COMMA t16 += TypePrimaryExpression)* RPAREN
-		//name="Record" LPAREN t6=TypeExpression (COMMA t7+=TypeExpression)* RPAREN | name="Union" LPAREN t9=TypeExpression (COMMA
-		//t10+=TypeExpression)* RPAREN | name="Join" LPAREN t12=TypeExpression (COMMA t13+=TypeExpression)* RPAREN |
-		//t15=TypeNameOrFunctionCall
+		//name="Record" LPAREN t7=TypeExpression (COLON t8+=TypeExpression)? (COMMA t21+=TypeExpression (COLON
+		//t23+=TypeExpression)?)* RPAREN | name="Union" LPAREN t10=TypeExpression (COLON t11+=TypeExpression)? (COMMA
+		//t24+=TypeExpression (COLON t26+=TypeExpression)?)* RPAREN | name="Join" LPAREN t12=TypeExpression (COMMA
+		//t13+=TypeExpression)* RPAREN | t15=TypeNameOrFunctionCall
 		public Alternatives getAlternatives() { return cAlternatives; }
 
 		//t=TypeLiteral
@@ -1751,7 +1894,8 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		public Keyword getTynameTypeKeyword_2_0() { return cTynameTypeKeyword_2_0; }
 
 		//// | LPAREN t4=TypePrimaryExpression ( COMMA t16 += TypePrimaryExpression)* RPAREN
-		//name="Record" LPAREN t6=TypeExpression (COMMA t7+=TypeExpression)* RPAREN
+		//name="Record" LPAREN t7=TypeExpression (COLON t8+=TypeExpression)? (COMMA t21+=TypeExpression (COLON
+		//t23+=TypeExpression)?)* RPAREN
 		public Group getGroup_3() { return cGroup_3; }
 
 		//// | LPAREN t4=TypePrimaryExpression ( COMMA t16 += TypePrimaryExpression)* RPAREN
@@ -1764,28 +1908,53 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		//LPAREN
 		public RuleCall getLPARENTerminalRuleCall_3_1() { return cLPARENTerminalRuleCall_3_1; }
 
-		//t6=TypeExpression
-		public Assignment getT6Assignment_3_2() { return cT6Assignment_3_2; }
+		//t7=TypeExpression
+		public Assignment getT7Assignment_3_2() { return cT7Assignment_3_2; }
 
 		//TypeExpression
-		public RuleCall getT6TypeExpressionParserRuleCall_3_2_0() { return cT6TypeExpressionParserRuleCall_3_2_0; }
+		public RuleCall getT7TypeExpressionParserRuleCall_3_2_0() { return cT7TypeExpressionParserRuleCall_3_2_0; }
 
-		//(COMMA t7+=TypeExpression)*
+		//(COLON t8+=TypeExpression)?
 		public Group getGroup_3_3() { return cGroup_3_3; }
 
-		//COMMA
-		public RuleCall getCOMMATerminalRuleCall_3_3_0() { return cCOMMATerminalRuleCall_3_3_0; }
+		//COLON
+		public RuleCall getCOLONTerminalRuleCall_3_3_0() { return cCOLONTerminalRuleCall_3_3_0; }
 
-		//t7+=TypeExpression
-		public Assignment getT7Assignment_3_3_1() { return cT7Assignment_3_3_1; }
+		//t8+=TypeExpression
+		public Assignment getT8Assignment_3_3_1() { return cT8Assignment_3_3_1; }
 
 		//TypeExpression
-		public RuleCall getT7TypeExpressionParserRuleCall_3_3_1_0() { return cT7TypeExpressionParserRuleCall_3_3_1_0; }
+		public RuleCall getT8TypeExpressionParserRuleCall_3_3_1_0() { return cT8TypeExpressionParserRuleCall_3_3_1_0; }
+
+		//(COMMA t21+=TypeExpression (COLON t23+=TypeExpression)?)*
+		public Group getGroup_3_4() { return cGroup_3_4; }
+
+		//COMMA
+		public RuleCall getCOMMATerminalRuleCall_3_4_0() { return cCOMMATerminalRuleCall_3_4_0; }
+
+		//t21+=TypeExpression
+		public Assignment getT21Assignment_3_4_1() { return cT21Assignment_3_4_1; }
+
+		//TypeExpression
+		public RuleCall getT21TypeExpressionParserRuleCall_3_4_1_0() { return cT21TypeExpressionParserRuleCall_3_4_1_0; }
+
+		//(COLON t23+=TypeExpression)?
+		public Group getGroup_3_4_2() { return cGroup_3_4_2; }
+
+		//COLON
+		public RuleCall getCOLONTerminalRuleCall_3_4_2_0() { return cCOLONTerminalRuleCall_3_4_2_0; }
+
+		//t23+=TypeExpression
+		public Assignment getT23Assignment_3_4_2_1() { return cT23Assignment_3_4_2_1; }
+
+		//TypeExpression
+		public RuleCall getT23TypeExpressionParserRuleCall_3_4_2_1_0() { return cT23TypeExpressionParserRuleCall_3_4_2_1_0; }
 
 		//RPAREN
-		public RuleCall getRPARENTerminalRuleCall_3_4() { return cRPARENTerminalRuleCall_3_4; }
+		public RuleCall getRPARENTerminalRuleCall_3_5() { return cRPARENTerminalRuleCall_3_5; }
 
-		//name="Union" LPAREN t9=TypeExpression (COMMA t10+=TypeExpression)* RPAREN
+		//name="Union" LPAREN t10=TypeExpression (COLON t11+=TypeExpression)? (COMMA t24+=TypeExpression (COLON
+		//t26+=TypeExpression)?)* RPAREN
 		public Group getGroup_4() { return cGroup_4; }
 
 		//name="Union"
@@ -1797,26 +1966,50 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		//LPAREN
 		public RuleCall getLPARENTerminalRuleCall_4_1() { return cLPARENTerminalRuleCall_4_1; }
 
-		//t9=TypeExpression
-		public Assignment getT9Assignment_4_2() { return cT9Assignment_4_2; }
+		//t10=TypeExpression
+		public Assignment getT10Assignment_4_2() { return cT10Assignment_4_2; }
 
 		//TypeExpression
-		public RuleCall getT9TypeExpressionParserRuleCall_4_2_0() { return cT9TypeExpressionParserRuleCall_4_2_0; }
+		public RuleCall getT10TypeExpressionParserRuleCall_4_2_0() { return cT10TypeExpressionParserRuleCall_4_2_0; }
 
-		//(COMMA t10+=TypeExpression)*
+		//(COLON t11+=TypeExpression)?
 		public Group getGroup_4_3() { return cGroup_4_3; }
 
-		//COMMA
-		public RuleCall getCOMMATerminalRuleCall_4_3_0() { return cCOMMATerminalRuleCall_4_3_0; }
+		//COLON
+		public RuleCall getCOLONTerminalRuleCall_4_3_0() { return cCOLONTerminalRuleCall_4_3_0; }
 
-		//t10+=TypeExpression
-		public Assignment getT10Assignment_4_3_1() { return cT10Assignment_4_3_1; }
+		//t11+=TypeExpression
+		public Assignment getT11Assignment_4_3_1() { return cT11Assignment_4_3_1; }
 
 		//TypeExpression
-		public RuleCall getT10TypeExpressionParserRuleCall_4_3_1_0() { return cT10TypeExpressionParserRuleCall_4_3_1_0; }
+		public RuleCall getT11TypeExpressionParserRuleCall_4_3_1_0() { return cT11TypeExpressionParserRuleCall_4_3_1_0; }
+
+		//(COMMA t24+=TypeExpression (COLON t26+=TypeExpression)?)*
+		public Group getGroup_4_4() { return cGroup_4_4; }
+
+		//COMMA
+		public RuleCall getCOMMATerminalRuleCall_4_4_0() { return cCOMMATerminalRuleCall_4_4_0; }
+
+		//t24+=TypeExpression
+		public Assignment getT24Assignment_4_4_1() { return cT24Assignment_4_4_1; }
+
+		//TypeExpression
+		public RuleCall getT24TypeExpressionParserRuleCall_4_4_1_0() { return cT24TypeExpressionParserRuleCall_4_4_1_0; }
+
+		//(COLON t26+=TypeExpression)?
+		public Group getGroup_4_4_2() { return cGroup_4_4_2; }
+
+		//COLON
+		public RuleCall getCOLONTerminalRuleCall_4_4_2_0() { return cCOLONTerminalRuleCall_4_4_2_0; }
+
+		//t26+=TypeExpression
+		public Assignment getT26Assignment_4_4_2_1() { return cT26Assignment_4_4_2_1; }
+
+		//TypeExpression
+		public RuleCall getT26TypeExpressionParserRuleCall_4_4_2_1_0() { return cT26TypeExpressionParserRuleCall_4_4_2_1_0; }
 
 		//RPAREN
-		public RuleCall getRPARENTerminalRuleCall_4_4() { return cRPARENTerminalRuleCall_4_4; }
+		public RuleCall getRPARENTerminalRuleCall_4_5() { return cRPARENTerminalRuleCall_4_5; }
 
 		//name="Join" LPAREN t12=TypeExpression (COMMA t13+=TypeExpression)* RPAREN
 		public Group getGroup_5() { return cGroup_5; }
@@ -1933,26 +2126,27 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cT14TypeExpressionParserRuleCall_7_4_1_0 = (RuleCall)cT14Assignment_7_4_1.eContents().get(0);
 		private final RuleCall cRPARENTerminalRuleCall_7_5 = (RuleCall)cGroup_7.eContents().get(5);
 		private final RuleCall cTypeNameOrFunctionCallParserRuleCall_8 = (RuleCall)cAlternatives.eContents().get(8);
+		private final RuleCall cTupleDefinitionParserRuleCall_9 = (RuleCall)cAlternatives.eContents().get(9);
 		
 		//TypePrimaryExpression hidden(WS):
-		//	TypeLiteral // 'Type' is top of the category heirarchy
+		//	TypeLiteral // 'Type' is top of the category hierarchy
 		//	// 'Lisp' is used for native lisp function calls such as Say$Lisp
 		//	| {TypePrimaryExpression} t32=PERCENT | {TypePrimaryExpression} tyname="Type" | {TypePrimaryExpression} tyname="Lisp" |
 		//	{TypePrimaryExpression} LPAREN t5=TypeExpression RPAREN | {TypePrimaryExpression} tyname="Record" LPAREN
 		//	t7=TypeExpression (COLON t8+=TypeExpression)? (COMMA t21+=TypeExpression (COLON t23+=TypeExpression)?)* RPAREN |
 		//	{TypePrimaryExpression} tyname="Union" LPAREN t10=TypeExpression (COLON t11+=TypeExpression)? (COMMA
 		//	t24+=TypeExpression (COLON t26+=TypeExpression)?)* RPAREN | {TypePrimaryExpression} tyname="Join" LPAREN
-		//	t13=TypeExpression (COMMA t14+=TypeExpression)* RPAREN | TypeNameOrFunctionCall;
+		//	t13=TypeExpression (COMMA t14+=TypeExpression)* RPAREN | TypeNameOrFunctionCall | => TupleDefinition;
 		public ParserRule getRule() { return rule; }
 
-		//TypeLiteral // 'Type' is top of the category heirarchy
+		//TypeLiteral // 'Type' is top of the category hierarchy
 		//// 'Lisp' is used for native lisp function calls such as Say$Lisp
 		//| {TypePrimaryExpression} t32=PERCENT | {TypePrimaryExpression} tyname="Type" | {TypePrimaryExpression} tyname="Lisp" |
 		//{TypePrimaryExpression} LPAREN t5=TypeExpression RPAREN | {TypePrimaryExpression} tyname="Record" LPAREN
 		//t7=TypeExpression (COLON t8+=TypeExpression)? (COMMA t21+=TypeExpression (COLON t23+=TypeExpression)?)* RPAREN |
 		//{TypePrimaryExpression} tyname="Union" LPAREN t10=TypeExpression (COLON t11+=TypeExpression)? (COMMA
 		//t24+=TypeExpression (COLON t26+=TypeExpression)?)* RPAREN | {TypePrimaryExpression} tyname="Join" LPAREN
-		//t13=TypeExpression (COMMA t14+=TypeExpression)* RPAREN | TypeNameOrFunctionCall
+		//t13=TypeExpression (COMMA t14+=TypeExpression)* RPAREN | TypeNameOrFunctionCall | => TupleDefinition
 		public Alternatives getAlternatives() { return cAlternatives; }
 
 		//TypeLiteral
@@ -2172,6 +2366,9 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 
 		//TypeNameOrFunctionCall
 		public RuleCall getTypeNameOrFunctionCallParserRuleCall_8() { return cTypeNameOrFunctionCallParserRuleCall_8; }
+
+		//=> TupleDefinition
+		public RuleCall getTupleDefinitionParserRuleCall_9() { return cTupleDefinitionParserRuleCall_9; }
 	}
 
 	public class TypeNameOrFunctionCallElements extends AbstractParserRuleElementFinder {
@@ -2192,7 +2389,9 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cT6Assignment_1_1 = (Assignment)cAlternatives_1.eContents().get(1);
 		private final RuleCall cT6TypePrimaryExpressionParserRuleCall_1_1_0 = (RuleCall)cT6Assignment_1_1.eContents().get(0);
 		
-		/// * function call such as List(Integer)
+		/// * Will match with ID on its own like:
+		// * Integer
+		// * or type function call such as List(Integer)
 		// * known as a parameterised type or functor (not necessarily a true functor since
 		// * it may not obey the axioms of a functor)
 		// * if there is only one parameter then the parenthesis are optional
@@ -2249,6 +2448,52 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 
 		//TypePrimaryExpression
 		public RuleCall getT6TypePrimaryExpressionParserRuleCall_1_1_0() { return cT6TypePrimaryExpressionParserRuleCall_1_1_0; }
+	}
+
+	public class TupleDefinitionElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "TupleDefinition");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final RuleCall cLPARENTerminalRuleCall_0 = (RuleCall)cGroup.eContents().get(0);
+		private final Assignment cT4Assignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cT4TypeExpressionParserRuleCall_1_0 = (RuleCall)cT4Assignment_1.eContents().get(0);
+		private final Group cGroup_2 = (Group)cGroup.eContents().get(2);
+		private final RuleCall cCOMMATerminalRuleCall_2_0 = (RuleCall)cGroup_2.eContents().get(0);
+		private final Assignment cT25Assignment_2_1 = (Assignment)cGroup_2.eContents().get(1);
+		private final RuleCall cT25TypeExpressionParserRuleCall_2_1_0 = (RuleCall)cT25Assignment_2_1.eContents().get(0);
+		private final RuleCall cRPARENTerminalRuleCall_3 = (RuleCall)cGroup.eContents().get(3);
+		
+		/// * This has a form like: (Integer,Float,String)
+		// * like an array where each entry can be of a different type
+		// * / TupleDefinition hidden(WS):
+		//	LPAREN t4=TypeExpression (COMMA t25+=TypeExpression)* RPAREN;
+		public ParserRule getRule() { return rule; }
+
+		//LPAREN t4=TypeExpression (COMMA t25+=TypeExpression)* RPAREN
+		public Group getGroup() { return cGroup; }
+
+		//LPAREN
+		public RuleCall getLPARENTerminalRuleCall_0() { return cLPARENTerminalRuleCall_0; }
+
+		//t4=TypeExpression
+		public Assignment getT4Assignment_1() { return cT4Assignment_1; }
+
+		//TypeExpression
+		public RuleCall getT4TypeExpressionParserRuleCall_1_0() { return cT4TypeExpressionParserRuleCall_1_0; }
+
+		//(COMMA t25+=TypeExpression)*
+		public Group getGroup_2() { return cGroup_2; }
+
+		//COMMA
+		public RuleCall getCOMMATerminalRuleCall_2_0() { return cCOMMATerminalRuleCall_2_0; }
+
+		//t25+=TypeExpression
+		public Assignment getT25Assignment_2_1() { return cT25Assignment_2_1; }
+
+		//TypeExpression
+		public RuleCall getT25TypeExpressionParserRuleCall_2_1_0() { return cT25TypeExpressionParserRuleCall_2_1_0; }
+
+		//RPAREN
+		public RuleCall getRPARENTerminalRuleCall_3() { return cRPARENTerminalRuleCall_3; }
 	}
 
 	public class TypeLiteralElements extends AbstractParserRuleElementFinder {
@@ -3158,7 +3403,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		// * "\/", BACKSLASHSLASH precedence: 200, 201
 		// * 
 		// * the backslash is duplicated here because it is the escape character for
-		// * strings, it will not be dupicated when used. 
+		// * strings, it will not be duplicated when used. 
 		// * / InnerProdExpression returns Expr hidden(WS, SL_COMMENT):
 		//	OuterProdExpression ({InnerProdExpression.left=current} op=BACKSLASHSLASH right=OuterProdExpression)*;
 		public ParserRule getRule() { return rule; }
@@ -3854,7 +4099,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cRightExponentExpressionParserRuleCall_1_2_0 = (RuleCall)cRightAssignment_1_2.eContents().get(0);
 		
 		/// *
-		// * multipication expression
+		// * multiplication expression
 		// * a * b * c
 		// * 
 		// * "*", precedence: 800, 801
@@ -3890,7 +4135,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 	public class ExponentExpressionElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "ExponentExpression");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final RuleCall cPretendExpressionParserRuleCall_0 = (RuleCall)cGroup.eContents().get(0);
+		private final RuleCall cMapDefinitionParserRuleCall_0 = (RuleCall)cGroup.eContents().get(0);
 		private final Group cGroup_1 = (Group)cGroup.eContents().get(1);
 		private final Action cExponentExpressionLeftAction_1_0 = (Action)cGroup_1.eContents().get(0);
 		private final Alternatives cAlternatives_1_1 = (Alternatives)cGroup_1.eContents().get(1);
@@ -3899,23 +4144,23 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cOpAssignment_1_1_1 = (Assignment)cAlternatives_1_1.eContents().get(1);
 		private final RuleCall cOpPOWERTerminalRuleCall_1_1_1_0 = (RuleCall)cOpAssignment_1_1_1.eContents().get(0);
 		private final Assignment cRightAssignment_1_2 = (Assignment)cGroup_1.eContents().get(2);
-		private final RuleCall cRightPretendExpressionParserRuleCall_1_2_0 = (RuleCall)cRightAssignment_1_2.eContents().get(0);
+		private final RuleCall cRightMapDefinitionParserRuleCall_1_2_0 = (RuleCall)cRightAssignment_1_2.eContents().get(0);
 		
 		/// * 
 		// *
 		// * "^", precedence: 901, 900
 		// * "**", precedence: 901, 900
 		// * / ExponentExpression returns Expr hidden(WS, SL_COMMENT):
-		//	PretendExpression ({ExponentExpression.left=current} (op=CARAT | op=POWER) right=PretendExpression)*;
+		//	MapDefinition ({ExponentExpression.left=current} (op=CARAT | op=POWER) right=MapDefinition)*;
 		public ParserRule getRule() { return rule; }
 
-		//PretendExpression ({ExponentExpression.left=current} (op=CARAT | op=POWER) right=PretendExpression)*
+		//MapDefinition ({ExponentExpression.left=current} (op=CARAT | op=POWER) right=MapDefinition)*
 		public Group getGroup() { return cGroup; }
 
-		//PretendExpression
-		public RuleCall getPretendExpressionParserRuleCall_0() { return cPretendExpressionParserRuleCall_0; }
+		//MapDefinition
+		public RuleCall getMapDefinitionParserRuleCall_0() { return cMapDefinitionParserRuleCall_0; }
 
-		//({ExponentExpression.left=current} (op=CARAT | op=POWER) right=PretendExpression)*
+		//({ExponentExpression.left=current} (op=CARAT | op=POWER) right=MapDefinition)*
 		public Group getGroup_1() { return cGroup_1; }
 
 		//{ExponentExpression.left=current}
@@ -3936,27 +4181,25 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		//POWER
 		public RuleCall getOpPOWERTerminalRuleCall_1_1_1_0() { return cOpPOWERTerminalRuleCall_1_1_1_0; }
 
-		//right=PretendExpression
+		//right=MapDefinition
 		public Assignment getRightAssignment_1_2() { return cRightAssignment_1_2; }
 
-		//PretendExpression
-		public RuleCall getRightPretendExpressionParserRuleCall_1_2_0() { return cRightPretendExpressionParserRuleCall_1_2_0; }
+		//MapDefinition
+		public RuleCall getRightMapDefinitionParserRuleCall_1_2_0() { return cRightMapDefinitionParserRuleCall_1_2_0; }
 	}
 
 	public class MapDefinitionElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "MapDefinition");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Assignment cFnSigAssignment_0 = (Assignment)cGroup.eContents().get(0);
-		private final RuleCall cFnSigFunctionSignatureParserRuleCall_0_0 = (RuleCall)cFnSigAssignment_0.eContents().get(0);
+		private final RuleCall cPretendExpressionParserRuleCall_0 = (RuleCall)cGroup.eContents().get(0);
 		private final Group cGroup_1 = (Group)cGroup.eContents().get(1);
-		private final RuleCall cCOLONTerminalRuleCall_1_0 = (RuleCall)cGroup_1.eContents().get(0);
-		private final Assignment cPar4Assignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
-		private final RuleCall cPar4TypeExpressionParserRuleCall_1_1_0 = (RuleCall)cPar4Assignment_1_1.eContents().get(0);
-		private final RuleCall cGIVESTerminalRuleCall_2 = (RuleCall)cGroup.eContents().get(2);
-		private final Assignment cPar5Assignment_3 = (Assignment)cGroup.eContents().get(3);
-		private final RuleCall cPar5StatementParserRuleCall_3_0 = (RuleCall)cPar5Assignment_3.eContents().get(0);
+		private final Action cMapDefinitionLeftAction_1_0 = (Action)cGroup_1.eContents().get(0);
+		private final Assignment cOpAssignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
+		private final RuleCall cOpGIVESTerminalRuleCall_1_1_0 = (RuleCall)cOpAssignment_1_1.eContents().get(0);
+		private final Assignment cRightAssignment_1_2 = (Assignment)cGroup_1.eContents().get(2);
+		private final RuleCall cRightPretendExpressionParserRuleCall_1_2_0 = (RuleCall)cRightAssignment_1_2.eContents().get(0);
 		
-		/// *
+		/// * Map or Lambda expression
 		// * var +-> function 	
 		// * 
 		// * +-> is an infix operator meaning 'maps-to'
@@ -3967,39 +4210,33 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		// * x +-> if x >0 then x else -x
 		// * 
 		// *  * "+->", precedence: 995, 112
-		// * / MapDefinition hidden(WS):
-		//	fnSig=FunctionSignature (COLON par4=TypeExpression)? GIVES par5=Statement;
+		// * / MapDefinition returns Expr hidden(WS, SL_COMMENT):
+		//	PretendExpression ({MapDefinition.left=current} op=GIVES right=PretendExpression)*;
 		public ParserRule getRule() { return rule; }
 
-		//fnSig=FunctionSignature (COLON par4=TypeExpression)? GIVES par5=Statement
+		//PretendExpression ({MapDefinition.left=current} op=GIVES right=PretendExpression)*
 		public Group getGroup() { return cGroup; }
 
-		//fnSig=FunctionSignature
-		public Assignment getFnSigAssignment_0() { return cFnSigAssignment_0; }
+		//PretendExpression
+		public RuleCall getPretendExpressionParserRuleCall_0() { return cPretendExpressionParserRuleCall_0; }
 
-		//FunctionSignature
-		public RuleCall getFnSigFunctionSignatureParserRuleCall_0_0() { return cFnSigFunctionSignatureParserRuleCall_0_0; }
-
-		//(COLON par4=TypeExpression)?
+		//({MapDefinition.left=current} op=GIVES right=PretendExpression)*
 		public Group getGroup_1() { return cGroup_1; }
 
-		//COLON
-		public RuleCall getCOLONTerminalRuleCall_1_0() { return cCOLONTerminalRuleCall_1_0; }
+		//{MapDefinition.left=current}
+		public Action getMapDefinitionLeftAction_1_0() { return cMapDefinitionLeftAction_1_0; }
 
-		//par4=TypeExpression
-		public Assignment getPar4Assignment_1_1() { return cPar4Assignment_1_1; }
-
-		//TypeExpression
-		public RuleCall getPar4TypeExpressionParserRuleCall_1_1_0() { return cPar4TypeExpressionParserRuleCall_1_1_0; }
+		//op=GIVES
+		public Assignment getOpAssignment_1_1() { return cOpAssignment_1_1; }
 
 		//GIVES
-		public RuleCall getGIVESTerminalRuleCall_2() { return cGIVESTerminalRuleCall_2; }
+		public RuleCall getOpGIVESTerminalRuleCall_1_1_0() { return cOpGIVESTerminalRuleCall_1_1_0; }
 
-		//par5=Statement
-		public Assignment getPar5Assignment_3() { return cPar5Assignment_3; }
+		//right=PretendExpression
+		public Assignment getRightAssignment_1_2() { return cRightAssignment_1_2; }
 
-		//Statement
-		public RuleCall getPar5StatementParserRuleCall_3_0() { return cPar5StatementParserRuleCall_3_0; }
+		//PretendExpression
+		public RuleCall getRightPretendExpressionParserRuleCall_1_2_0() { return cRightPretendExpressionParserRuleCall_1_2_0; }
 	}
 
 	public class PretendExpressionElements extends AbstractParserRuleElementFinder {
@@ -4013,7 +4250,11 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cRightTypeAssignment_1_2 = (Assignment)cGroup_1.eContents().get(2);
 		private final RuleCall cRightTypeTypeExpressionParserRuleCall_1_2_0 = (RuleCall)cRightTypeAssignment_1_2.eContents().get(0);
 		
-		/// *
+		/// *MapDefinition hidden(WS):
+		//	fnSig=FunctionSignature
+		//    (COLON par4=TypeExpression)?
+		//    GIVES par5=Statement
+		//;* / / *
 		// * pretend Type: treat one type as another,
 		// * only works if they have the same internal structure.
 		// * 
@@ -4265,6 +4506,59 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cUopHASHTerminalRuleCall_4_1_0 = (RuleCall)cUopAssignment_4_1.eContents().get(0);
 		private final Assignment cExprAssignment_4_2 = (Assignment)cGroup_4.eContents().get(2);
 		private final RuleCall cExprUnaryExpressionParserRuleCall_4_2_0 = (RuleCall)cExprAssignment_4_2.eContents().get(0);
+		private final Assignment cE2Assignment_5 = (Assignment)cAlternatives.eContents().get(5);
+		private final RuleCall cE2PERCENTTerminalRuleCall_5_0 = (RuleCall)cE2Assignment_5.eContents().get(0);
+		private final Assignment cE3Assignment_6 = (Assignment)cAlternatives.eContents().get(6);
+		private final Keyword cE3TypeKeyword_6_0 = (Keyword)cE3Assignment_6.eContents().get(0);
+		private final Group cGroup_7 = (Group)cAlternatives.eContents().get(7);
+		private final Assignment cE5Assignment_7_0 = (Assignment)cGroup_7.eContents().get(0);
+		private final Keyword cE5RecordKeyword_7_0_0 = (Keyword)cE5Assignment_7_0.eContents().get(0);
+		private final RuleCall cLPARENTerminalRuleCall_7_1 = (RuleCall)cGroup_7.eContents().get(1);
+		private final Assignment cE6Assignment_7_2 = (Assignment)cGroup_7.eContents().get(2);
+		private final RuleCall cE6TypeExpressionParserRuleCall_7_2_0 = (RuleCall)cE6Assignment_7_2.eContents().get(0);
+		private final Group cGroup_7_3 = (Group)cGroup_7.eContents().get(3);
+		private final RuleCall cCOLONTerminalRuleCall_7_3_0 = (RuleCall)cGroup_7_3.eContents().get(0);
+		private final Assignment cE22Assignment_7_3_1 = (Assignment)cGroup_7_3.eContents().get(1);
+		private final RuleCall cE22TypeExpressionParserRuleCall_7_3_1_0 = (RuleCall)cE22Assignment_7_3_1.eContents().get(0);
+		private final Group cGroup_7_4 = (Group)cGroup_7.eContents().get(4);
+		private final RuleCall cCOMMATerminalRuleCall_7_4_0 = (RuleCall)cGroup_7_4.eContents().get(0);
+		private final Assignment cE21Assignment_7_4_1 = (Assignment)cGroup_7_4.eContents().get(1);
+		private final RuleCall cE21TypeExpressionParserRuleCall_7_4_1_0 = (RuleCall)cE21Assignment_7_4_1.eContents().get(0);
+		private final Group cGroup_7_4_2 = (Group)cGroup_7_4.eContents().get(2);
+		private final RuleCall cCOLONTerminalRuleCall_7_4_2_0 = (RuleCall)cGroup_7_4_2.eContents().get(0);
+		private final Assignment cE23Assignment_7_4_2_1 = (Assignment)cGroup_7_4_2.eContents().get(1);
+		private final RuleCall cE23TypeExpressionParserRuleCall_7_4_2_1_0 = (RuleCall)cE23Assignment_7_4_2_1.eContents().get(0);
+		private final RuleCall cRPARENTerminalRuleCall_7_5 = (RuleCall)cGroup_7.eContents().get(5);
+		private final Group cGroup_8 = (Group)cAlternatives.eContents().get(8);
+		private final Assignment cE9Assignment_8_0 = (Assignment)cGroup_8.eContents().get(0);
+		private final Keyword cE9UnionKeyword_8_0_0 = (Keyword)cE9Assignment_8_0.eContents().get(0);
+		private final RuleCall cLPARENTerminalRuleCall_8_1 = (RuleCall)cGroup_8.eContents().get(1);
+		private final Assignment cE10Assignment_8_2 = (Assignment)cGroup_8.eContents().get(2);
+		private final RuleCall cE10TypeExpressionParserRuleCall_8_2_0 = (RuleCall)cE10Assignment_8_2.eContents().get(0);
+		private final Group cGroup_8_3 = (Group)cGroup_8.eContents().get(3);
+		private final RuleCall cCOLONTerminalRuleCall_8_3_0 = (RuleCall)cGroup_8_3.eContents().get(0);
+		private final Assignment cE25Assignment_8_3_1 = (Assignment)cGroup_8_3.eContents().get(1);
+		private final RuleCall cE25TypeExpressionParserRuleCall_8_3_1_0 = (RuleCall)cE25Assignment_8_3_1.eContents().get(0);
+		private final Group cGroup_8_4 = (Group)cGroup_8.eContents().get(4);
+		private final RuleCall cCOMMATerminalRuleCall_8_4_0 = (RuleCall)cGroup_8_4.eContents().get(0);
+		private final Assignment cE24Assignment_8_4_1 = (Assignment)cGroup_8_4.eContents().get(1);
+		private final RuleCall cE24TypeExpressionParserRuleCall_8_4_1_0 = (RuleCall)cE24Assignment_8_4_1.eContents().get(0);
+		private final Group cGroup_8_4_2 = (Group)cGroup_8_4.eContents().get(2);
+		private final RuleCall cCOLONTerminalRuleCall_8_4_2_0 = (RuleCall)cGroup_8_4_2.eContents().get(0);
+		private final Assignment cE26Assignment_8_4_2_1 = (Assignment)cGroup_8_4_2.eContents().get(1);
+		private final RuleCall cE26TypeExpressionParserRuleCall_8_4_2_1_0 = (RuleCall)cE26Assignment_8_4_2_1.eContents().get(0);
+		private final RuleCall cRPARENTerminalRuleCall_8_5 = (RuleCall)cGroup_8.eContents().get(5);
+		private final Group cGroup_9 = (Group)cAlternatives.eContents().get(9);
+		private final Assignment cE11Assignment_9_0 = (Assignment)cGroup_9.eContents().get(0);
+		private final Keyword cE11JoinKeyword_9_0_0 = (Keyword)cE11Assignment_9_0.eContents().get(0);
+		private final RuleCall cLPARENTerminalRuleCall_9_1 = (RuleCall)cGroup_9.eContents().get(1);
+		private final Assignment cE12Assignment_9_2 = (Assignment)cGroup_9.eContents().get(2);
+		private final RuleCall cE12TypeExpressionParserRuleCall_9_2_0 = (RuleCall)cE12Assignment_9_2.eContents().get(0);
+		private final Group cGroup_9_3 = (Group)cGroup_9.eContents().get(3);
+		private final RuleCall cCOMMATerminalRuleCall_9_3_0 = (RuleCall)cGroup_9_3.eContents().get(0);
+		private final Assignment cE13Assignment_9_3_1 = (Assignment)cGroup_9_3.eContents().get(1);
+		private final RuleCall cE13TypeExpressionParserRuleCall_9_3_1_0 = (RuleCall)cE13Assignment_9_3_1.eContents().get(0);
+		private final RuleCall cRPARENTerminalRuleCall_9_4 = (RuleCall)cGroup_9.eContents().get(4);
 		
 		/// * UnaryExpression
 		// * "~" TILDE : precedence  260, 259, nil
@@ -4275,11 +4569,18 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		// * / UnaryExpression returns Expr hidden(WS, SL_COMMENT):
 		//	PrimaryExpression | {UnaryExpression} uop=TILDE expr=UnaryExpression | {UnaryExpression} uop=COLON
 		//	expr=UnaryExpression | {UnaryExpression} uop=MINUS expr=UnaryExpression | {UnaryExpression} uop=HASH
-		//	expr=UnaryExpression;
+		//	expr=UnaryExpression | e2=PERCENT | e3="Type" | e5="Record" LPAREN e6=TypeExpression (COLON e22+=TypeExpression)?
+		//	(COMMA e21+=TypeExpression (COLON e23+=TypeExpression)?)* RPAREN | e9="Union" LPAREN e10=TypeExpression (COLON
+		//	e25+=TypeExpression)? (COMMA e24+=TypeExpression (COLON e26+=TypeExpression)?)* RPAREN | e11="Join" LPAREN
+		//	e12=TypeExpression (COMMA e13+=TypeExpression)* RPAREN;
 		public ParserRule getRule() { return rule; }
 
 		//PrimaryExpression | {UnaryExpression} uop=TILDE expr=UnaryExpression | {UnaryExpression} uop=COLON expr=UnaryExpression
-		//| {UnaryExpression} uop=MINUS expr=UnaryExpression | {UnaryExpression} uop=HASH expr=UnaryExpression
+		//| {UnaryExpression} uop=MINUS expr=UnaryExpression | {UnaryExpression} uop=HASH expr=UnaryExpression | e2=PERCENT |
+		//e3="Type" | e5="Record" LPAREN e6=TypeExpression (COLON e22+=TypeExpression)? (COMMA e21+=TypeExpression (COLON
+		//e23+=TypeExpression)?)* RPAREN | e9="Union" LPAREN e10=TypeExpression (COLON e25+=TypeExpression)? (COMMA
+		//e24+=TypeExpression (COLON e26+=TypeExpression)?)* RPAREN | e11="Join" LPAREN e12=TypeExpression (COMMA
+		//e13+=TypeExpression)* RPAREN
 		public Alternatives getAlternatives() { return cAlternatives; }
 
 		//PrimaryExpression
@@ -4356,6 +4657,167 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 
 		//UnaryExpression
 		public RuleCall getExprUnaryExpressionParserRuleCall_4_2_0() { return cExprUnaryExpressionParserRuleCall_4_2_0; }
+
+		//e2=PERCENT
+		public Assignment getE2Assignment_5() { return cE2Assignment_5; }
+
+		//PERCENT
+		public RuleCall getE2PERCENTTerminalRuleCall_5_0() { return cE2PERCENTTerminalRuleCall_5_0; }
+
+		//e3="Type"
+		public Assignment getE3Assignment_6() { return cE3Assignment_6; }
+
+		//"Type"
+		public Keyword getE3TypeKeyword_6_0() { return cE3TypeKeyword_6_0; }
+
+		//e5="Record" LPAREN e6=TypeExpression (COLON e22+=TypeExpression)? (COMMA e21+=TypeExpression (COLON
+		//e23+=TypeExpression)?)* RPAREN
+		public Group getGroup_7() { return cGroup_7; }
+
+		//e5="Record"
+		public Assignment getE5Assignment_7_0() { return cE5Assignment_7_0; }
+
+		//"Record"
+		public Keyword getE5RecordKeyword_7_0_0() { return cE5RecordKeyword_7_0_0; }
+
+		//LPAREN
+		public RuleCall getLPARENTerminalRuleCall_7_1() { return cLPARENTerminalRuleCall_7_1; }
+
+		//e6=TypeExpression
+		public Assignment getE6Assignment_7_2() { return cE6Assignment_7_2; }
+
+		//TypeExpression
+		public RuleCall getE6TypeExpressionParserRuleCall_7_2_0() { return cE6TypeExpressionParserRuleCall_7_2_0; }
+
+		//(COLON e22+=TypeExpression)?
+		public Group getGroup_7_3() { return cGroup_7_3; }
+
+		//COLON
+		public RuleCall getCOLONTerminalRuleCall_7_3_0() { return cCOLONTerminalRuleCall_7_3_0; }
+
+		//e22+=TypeExpression
+		public Assignment getE22Assignment_7_3_1() { return cE22Assignment_7_3_1; }
+
+		//TypeExpression
+		public RuleCall getE22TypeExpressionParserRuleCall_7_3_1_0() { return cE22TypeExpressionParserRuleCall_7_3_1_0; }
+
+		//(COMMA e21+=TypeExpression (COLON e23+=TypeExpression)?)*
+		public Group getGroup_7_4() { return cGroup_7_4; }
+
+		//COMMA
+		public RuleCall getCOMMATerminalRuleCall_7_4_0() { return cCOMMATerminalRuleCall_7_4_0; }
+
+		//e21+=TypeExpression
+		public Assignment getE21Assignment_7_4_1() { return cE21Assignment_7_4_1; }
+
+		//TypeExpression
+		public RuleCall getE21TypeExpressionParserRuleCall_7_4_1_0() { return cE21TypeExpressionParserRuleCall_7_4_1_0; }
+
+		//(COLON e23+=TypeExpression)?
+		public Group getGroup_7_4_2() { return cGroup_7_4_2; }
+
+		//COLON
+		public RuleCall getCOLONTerminalRuleCall_7_4_2_0() { return cCOLONTerminalRuleCall_7_4_2_0; }
+
+		//e23+=TypeExpression
+		public Assignment getE23Assignment_7_4_2_1() { return cE23Assignment_7_4_2_1; }
+
+		//TypeExpression
+		public RuleCall getE23TypeExpressionParserRuleCall_7_4_2_1_0() { return cE23TypeExpressionParserRuleCall_7_4_2_1_0; }
+
+		//RPAREN
+		public RuleCall getRPARENTerminalRuleCall_7_5() { return cRPARENTerminalRuleCall_7_5; }
+
+		//e9="Union" LPAREN e10=TypeExpression (COLON e25+=TypeExpression)? (COMMA e24+=TypeExpression (COLON
+		//e26+=TypeExpression)?)* RPAREN
+		public Group getGroup_8() { return cGroup_8; }
+
+		//e9="Union"
+		public Assignment getE9Assignment_8_0() { return cE9Assignment_8_0; }
+
+		//"Union"
+		public Keyword getE9UnionKeyword_8_0_0() { return cE9UnionKeyword_8_0_0; }
+
+		//LPAREN
+		public RuleCall getLPARENTerminalRuleCall_8_1() { return cLPARENTerminalRuleCall_8_1; }
+
+		//e10=TypeExpression
+		public Assignment getE10Assignment_8_2() { return cE10Assignment_8_2; }
+
+		//TypeExpression
+		public RuleCall getE10TypeExpressionParserRuleCall_8_2_0() { return cE10TypeExpressionParserRuleCall_8_2_0; }
+
+		//(COLON e25+=TypeExpression)?
+		public Group getGroup_8_3() { return cGroup_8_3; }
+
+		//COLON
+		public RuleCall getCOLONTerminalRuleCall_8_3_0() { return cCOLONTerminalRuleCall_8_3_0; }
+
+		//e25+=TypeExpression
+		public Assignment getE25Assignment_8_3_1() { return cE25Assignment_8_3_1; }
+
+		//TypeExpression
+		public RuleCall getE25TypeExpressionParserRuleCall_8_3_1_0() { return cE25TypeExpressionParserRuleCall_8_3_1_0; }
+
+		//(COMMA e24+=TypeExpression (COLON e26+=TypeExpression)?)*
+		public Group getGroup_8_4() { return cGroup_8_4; }
+
+		//COMMA
+		public RuleCall getCOMMATerminalRuleCall_8_4_0() { return cCOMMATerminalRuleCall_8_4_0; }
+
+		//e24+=TypeExpression
+		public Assignment getE24Assignment_8_4_1() { return cE24Assignment_8_4_1; }
+
+		//TypeExpression
+		public RuleCall getE24TypeExpressionParserRuleCall_8_4_1_0() { return cE24TypeExpressionParserRuleCall_8_4_1_0; }
+
+		//(COLON e26+=TypeExpression)?
+		public Group getGroup_8_4_2() { return cGroup_8_4_2; }
+
+		//COLON
+		public RuleCall getCOLONTerminalRuleCall_8_4_2_0() { return cCOLONTerminalRuleCall_8_4_2_0; }
+
+		//e26+=TypeExpression
+		public Assignment getE26Assignment_8_4_2_1() { return cE26Assignment_8_4_2_1; }
+
+		//TypeExpression
+		public RuleCall getE26TypeExpressionParserRuleCall_8_4_2_1_0() { return cE26TypeExpressionParserRuleCall_8_4_2_1_0; }
+
+		//RPAREN
+		public RuleCall getRPARENTerminalRuleCall_8_5() { return cRPARENTerminalRuleCall_8_5; }
+
+		//e11="Join" LPAREN e12=TypeExpression (COMMA e13+=TypeExpression)* RPAREN
+		public Group getGroup_9() { return cGroup_9; }
+
+		//e11="Join"
+		public Assignment getE11Assignment_9_0() { return cE11Assignment_9_0; }
+
+		//"Join"
+		public Keyword getE11JoinKeyword_9_0_0() { return cE11JoinKeyword_9_0_0; }
+
+		//LPAREN
+		public RuleCall getLPARENTerminalRuleCall_9_1() { return cLPARENTerminalRuleCall_9_1; }
+
+		//e12=TypeExpression
+		public Assignment getE12Assignment_9_2() { return cE12Assignment_9_2; }
+
+		//TypeExpression
+		public RuleCall getE12TypeExpressionParserRuleCall_9_2_0() { return cE12TypeExpressionParserRuleCall_9_2_0; }
+
+		//(COMMA e13+=TypeExpression)*
+		public Group getGroup_9_3() { return cGroup_9_3; }
+
+		//COMMA
+		public RuleCall getCOMMATerminalRuleCall_9_3_0() { return cCOMMATerminalRuleCall_9_3_0; }
+
+		//e13+=TypeExpression
+		public Assignment getE13Assignment_9_3_1() { return cE13Assignment_9_3_1; }
+
+		//TypeExpression
+		public RuleCall getE13TypeExpressionParserRuleCall_9_3_1_0() { return cE13TypeExpressionParserRuleCall_9_3_1_0; }
+
+		//RPAREN
+		public RuleCall getRPARENTerminalRuleCall_9_4() { return cRPARENTerminalRuleCall_9_4; }
 	}
 
 	public class PrimaryExpressionElements extends AbstractParserRuleElementFinder {
@@ -4802,6 +5264,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 	private TypeResultElements pTypeResult;
 	private TypePrimaryExpressionElements pTypePrimaryExpression;
 	private TypeNameOrFunctionCallElements pTypeNameOrFunctionCall;
+	private TupleDefinitionElements pTupleDefinition;
 	private TypeLiteralElements pTypeLiteral;
 	private StatementElements pStatement;
 	private BlockElements pBlock;
@@ -5455,9 +5918,13 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 	// * both category and domain can have 'where' part which holds overall information
 	// * such as category/domain parameter information and general macros. This is
 	// * followed by export('with') and import ('add') information.
+	// * Forms allowed include:
+	// * Exports == PlottablePlaneCurveCategory with {
+	// * Exports ==> PlottablePlaneCurveCategory with {
+	// * Exports ==> with {
 	// * / WherePart hidden(WS, SL_COMMENT):
 	//	name="where" NL* LBRACE NL* (whereAssig+=WhereAssignments (NL | SEMICOLON)+)* (longname8=ID ((DEF | MDEF)
-	//	imp=TypeExpression)? w8=WithPart)? (longname9=ID (DEF | MDEF)? add=AddPart)? RBRACE NL+;
+	//	imp=TypeExpression?)? w8=WithPart)? (longname9=ID (DEF | MDEF)? add=AddPart)? RBRACE NL+;
 	public WherePartElements getWherePartAccess() {
 		return (pWherePart != null) ? pWherePart : (pWherePart = new WherePartElements());
 	}
@@ -5469,7 +5936,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 	/// * each one must be on a separate line or separated by ';'
 	// * need to add name=
 	// * / WhereAssignments hidden(WS):
-	//	VariableDeclaration | MacroDef;
+	//	VariableDeclaration | MacroDef | Import;
 	public WhereAssignmentsElements getWhereAssignmentsAccess() {
 		return (pWhereAssignments != null) ? pWhereAssignments : (pWhereAssignments = new WhereAssignmentsElements());
 	}
@@ -5515,7 +5982,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 	/// *
 	// * The add section of domain or package may contain multiple lines
 	// * / AddStatements hidden(WS, SL_COMMENT):
-	//	VariableDeclarationAssign | FunctionDefinition | MacroDef;
+	//	VariableDeclarationAssign | FunctionDefinition | MacroDef | Import;
 	public AddStatementsElements getAddStatementsAccess() {
 		return (pAddStatements != null) ? pAddStatements : (pAddStatements = new AddStatementsElements());
 	}
@@ -5544,19 +6011,24 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		return getFunctionDefinitionAccess().getRule();
 	}
 
-	/// * this is the first part of the function definition without the return type or
+	/// * This is the first part of the function definition without the return type or
 	// * the function implementation. Usually the function signature has a form like:
 	// * name(params)
-	// * but we allow some alternative forms to represent infix operators like:
+	// * We allow a single parameter to be given without brackets:
+	// * name param
+	// * We also allow some alternative forms to represent infix operators like:
 	// * a = b to represent _=(a,b)
 	// * or
 	// * a > b to represent _>(a,b)
+	// * 0 or 1 can be used as a function signature as a short form of
+	// * _0() or _1()
 	// * / // 0 or 1 can be used as a function signature as a short form of
 	//// _0() or _1() but that confuses the parser
 	//// | b3?='0' | b4?='1'
 	//FunctionSignature hidden(WS):
-	//	fnNam=ID LPAREN par2=VariableDeclaration? (COMMA par3+=VariableDeclaration)* RPAREN | t4=ID (b1=EQUAL | b1=LT | b1=GT
-	//	| b1=LE | b1=GE | b1=PLUS | b1=MINUS | b1=TIMES | b1=SLASH | b1=AMPERSAND | b1=BAR | b1=CARAT) t5=ID | b2=MINUS t6=ID;
+	//	fnNam=ID LPAREN par2=VariableDeclaration? (COMMA par3+=VariableDeclaration)* RPAREN | // fnNam=ID par2=VariableDeclaration this causes recursive defintion
+	//	fnNam=ID par=ID | t4=ID (b1=EQUAL | b1=LT | b1=GT | b1=LE | b1=GE | b1=PLUS | b1=MINUS | b1=TIMES | b1=SLASH |
+	//	b1=AMPERSAND | b1=BAR | b1=CARAT) t5=ID | b2=MINUS t6=ID;
 	public FunctionSignatureElements getFunctionSignatureAccess() {
 		return (pFunctionSignature != null) ? pFunctionSignature : (pFunctionSignature = new FunctionSignatureElements());
 	}
@@ -5584,7 +6056,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 	/// *
 	// * import domain
 	// * / Import hidden(WS):
-	//	"import" impname=ID;
+	//	"import" impname+=ID+;
 	public ImportElements getImportAccess() {
 		return (pImport != null) ? pImport : (pImport = new ImportElements());
 	}
@@ -5593,7 +6065,13 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		return getImportAccess().getRule();
 	}
 
-	/// * Variable declaration in where and with sections and function signature
+	/// * Variable declaration in where and with sections and function signature:
+	// * A 'variable' can be simple like:
+	// * x:Float
+	// * or something more complicated like:
+	// * x:Record(newPt: Pt,type:  String)
+	// * or it can be a function like:
+	// * x:(Float,Integer) -> Float
 	// * / VariableDeclaration hidden(WS): // if I just use name=ID then, when the ui program is running, I get:
 	//// Duplicate VariableDeclaration 'coerce' in WithPart 'with'
 	//	varName=ID (COLON typ=TypeExpression)?;
@@ -5655,6 +6133,13 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 	// * (Expression can also be of type) but if we know that
 	// * this is a type we can exclude some possibilities.
 	// * 
+	// * A 'typeExpression' can be simple like:
+	// * Float
+	// * or something more complicated like:
+	// * Record(newPt: Pt,type:  String)
+	// * or it can be a function like:
+	// * (Float,Integer) -> Float
+	// * 
 	// * first we check for a function like: Integer -> Integer
 	// * / TypeExpression hidden(WS):
 	//	=> (t2=TypeArguments ARROW t3=TypeResult) | TypePrimaryExpression;
@@ -5683,12 +6168,17 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 	/// *
 	// * we use type arguments for first part of function type, that is
 	// * x in x-> y
+	// * usually this is enclosed in parenthesis
+	// * (x) in (x)-> y
+	// * but if x is a single argument (Including Record, Union, etc.) then it does
+	// * not need to be in parenthesis.
 	// * / TypeArguments hidden(WS):
 	//	t=TypeLiteral | t2=PERCENT | t3="Type" | // usually, but not always type arguments are in parenthesis, and empty
 	//	// parenthesis are allowed
-	//	b1?=LPAREN t4=TypeExpression? (COMMA t16+=TypeExpression)* RPAREN | t5="Record" LPAREN t6=TypeExpression (COMMA
-	//	t7+=TypeExpression)* RPAREN | t8="Union" LPAREN t9=TypeExpression (COMMA t10+=TypeExpression)* RPAREN | t11="Join"
-	//	LPAREN t12=TypeExpression (COMMA t13+=TypeExpression)* RPAREN | t15=TypeNameOrFunctionCall;
+	//	b1?=LPAREN t4=TypeExpression? (COMMA t16+=TypeExpression)* RPAREN | t5="Record" LPAREN t6=TypeExpression (COLON
+	//	t22+=TypeExpression)? (COMMA t21+=TypeExpression (COLON t23+=TypeExpression)?)* RPAREN | t9="Union" LPAREN
+	//	t10=TypeExpression (COLON t25+=TypeExpression)? (COMMA t24+=TypeExpression (COLON t26+=TypeExpression)?)* RPAREN |
+	//	t11="Join" LPAREN t12=TypeExpression (COMMA t13+=TypeExpression)* RPAREN | t15=TypeNameOrFunctionCall;
 	public TypeArgumentsElements getTypeArgumentsAccess() {
 		return (pTypeArguments != null) ? pTypeArguments : (pTypeArguments = new TypeArgumentsElements());
 	}
@@ -5702,9 +6192,10 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 	// * y in x-> y
 	// * / TypeResult hidden(WS):
 	//	t=TypeLiteral | t2=PERCENT | tyname="Type" | // | LPAREN t4=TypePrimaryExpression ( COMMA t16 += TypePrimaryExpression)* RPAREN
-	//	name="Record" LPAREN t6=TypeExpression (COMMA t7+=TypeExpression)* RPAREN | name="Union" LPAREN t9=TypeExpression
-	//	(COMMA t10+=TypeExpression)* RPAREN | name="Join" LPAREN t12=TypeExpression (COMMA t13+=TypeExpression)* RPAREN |
-	//	t15=TypeNameOrFunctionCall;
+	//	name="Record" LPAREN t7=TypeExpression (COLON t8+=TypeExpression)? (COMMA t21+=TypeExpression (COLON
+	//	t23+=TypeExpression)?)* RPAREN | name="Union" LPAREN t10=TypeExpression (COLON t11+=TypeExpression)? (COMMA
+	//	t24+=TypeExpression (COLON t26+=TypeExpression)?)* RPAREN | name="Join" LPAREN t12=TypeExpression (COMMA
+	//	t13+=TypeExpression)* RPAREN | t15=TypeNameOrFunctionCall;
 	public TypeResultElements getTypeResultAccess() {
 		return (pTypeResult != null) ? pTypeResult : (pTypeResult = new TypeResultElements());
 	}
@@ -5714,14 +6205,14 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//TypePrimaryExpression hidden(WS):
-	//	TypeLiteral // 'Type' is top of the category heirarchy
+	//	TypeLiteral // 'Type' is top of the category hierarchy
 	//	// 'Lisp' is used for native lisp function calls such as Say$Lisp
 	//	| {TypePrimaryExpression} t32=PERCENT | {TypePrimaryExpression} tyname="Type" | {TypePrimaryExpression} tyname="Lisp" |
 	//	{TypePrimaryExpression} LPAREN t5=TypeExpression RPAREN | {TypePrimaryExpression} tyname="Record" LPAREN
 	//	t7=TypeExpression (COLON t8+=TypeExpression)? (COMMA t21+=TypeExpression (COLON t23+=TypeExpression)?)* RPAREN |
 	//	{TypePrimaryExpression} tyname="Union" LPAREN t10=TypeExpression (COLON t11+=TypeExpression)? (COMMA
 	//	t24+=TypeExpression (COLON t26+=TypeExpression)?)* RPAREN | {TypePrimaryExpression} tyname="Join" LPAREN
-	//	t13=TypeExpression (COMMA t14+=TypeExpression)* RPAREN | TypeNameOrFunctionCall;
+	//	t13=TypeExpression (COMMA t14+=TypeExpression)* RPAREN | TypeNameOrFunctionCall | => TupleDefinition;
 	public TypePrimaryExpressionElements getTypePrimaryExpressionAccess() {
 		return (pTypePrimaryExpression != null) ? pTypePrimaryExpression : (pTypePrimaryExpression = new TypePrimaryExpressionElements());
 	}
@@ -5730,7 +6221,9 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		return getTypePrimaryExpressionAccess().getRule();
 	}
 
-	/// * function call such as List(Integer)
+	/// * Will match with ID on its own like:
+	// * Integer
+	// * or type function call such as List(Integer)
 	// * known as a parameterised type or functor (not necessarily a true functor since
 	// * it may not obey the axioms of a functor)
 	// * if there is only one parameter then the parenthesis are optional
@@ -5745,6 +6238,18 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 	
 	public ParserRule getTypeNameOrFunctionCallRule() {
 		return getTypeNameOrFunctionCallAccess().getRule();
+	}
+
+	/// * This has a form like: (Integer,Float,String)
+	// * like an array where each entry can be of a different type
+	// * / TupleDefinition hidden(WS):
+	//	LPAREN t4=TypeExpression (COMMA t25+=TypeExpression)* RPAREN;
+	public TupleDefinitionElements getTupleDefinitionAccess() {
+		return (pTupleDefinition != null) ? pTupleDefinition : (pTupleDefinition = new TupleDefinitionElements());
+	}
+	
+	public ParserRule getTupleDefinitionRule() {
+		return getTupleDefinitionAccess().getRule();
 	}
 
 	/// * Since SPAD supports dependent types then numbers and strings can occur here.
@@ -6012,7 +6517,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 	// * "\/", BACKSLASHSLASH precedence: 200, 201
 	// * 
 	// * the backslash is duplicated here because it is the escape character for
-	// * strings, it will not be dupicated when used. 
+	// * strings, it will not be duplicated when used. 
 	// * / InnerProdExpression returns Expr hidden(WS, SL_COMMENT):
 	//	OuterProdExpression ({InnerProdExpression.left=current} op=BACKSLASHSLASH right=OuterProdExpression)*;
 	public InnerProdExpressionElements getInnerProdExpressionAccess() {
@@ -6215,7 +6720,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	/// *
-	// * multipication expression
+	// * multiplication expression
 	// * a * b * c
 	// * 
 	// * "*", precedence: 800, 801
@@ -6234,7 +6739,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 	// * "^", precedence: 901, 900
 	// * "**", precedence: 901, 900
 	// * / ExponentExpression returns Expr hidden(WS, SL_COMMENT):
-	//	PretendExpression ({ExponentExpression.left=current} (op=CARAT | op=POWER) right=PretendExpression)*;
+	//	MapDefinition ({ExponentExpression.left=current} (op=CARAT | op=POWER) right=MapDefinition)*;
 	public ExponentExpressionElements getExponentExpressionAccess() {
 		return (pExponentExpression != null) ? pExponentExpression : (pExponentExpression = new ExponentExpressionElements());
 	}
@@ -6243,7 +6748,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		return getExponentExpressionAccess().getRule();
 	}
 
-	/// *
+	/// * Map or Lambda expression
 	// * var +-> function 	
 	// * 
 	// * +-> is an infix operator meaning 'maps-to'
@@ -6254,8 +6759,8 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 	// * x +-> if x >0 then x else -x
 	// * 
 	// *  * "+->", precedence: 995, 112
-	// * / MapDefinition hidden(WS):
-	//	fnSig=FunctionSignature (COLON par4=TypeExpression)? GIVES par5=Statement;
+	// * / MapDefinition returns Expr hidden(WS, SL_COMMENT):
+	//	PretendExpression ({MapDefinition.left=current} op=GIVES right=PretendExpression)*;
 	public MapDefinitionElements getMapDefinitionAccess() {
 		return (pMapDefinition != null) ? pMapDefinition : (pMapDefinition = new MapDefinitionElements());
 	}
@@ -6264,7 +6769,11 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		return getMapDefinitionAccess().getRule();
 	}
 
-	/// *
+	/// *MapDefinition hidden(WS):
+	//	fnSig=FunctionSignature
+	//    (COLON par4=TypeExpression)?
+	//    GIVES par5=Statement
+	//;* / / *
 	// * pretend Type: treat one type as another,
 	// * only works if they have the same internal structure.
 	// * 
@@ -6358,7 +6867,10 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 	// * / UnaryExpression returns Expr hidden(WS, SL_COMMENT):
 	//	PrimaryExpression | {UnaryExpression} uop=TILDE expr=UnaryExpression | {UnaryExpression} uop=COLON
 	//	expr=UnaryExpression | {UnaryExpression} uop=MINUS expr=UnaryExpression | {UnaryExpression} uop=HASH
-	//	expr=UnaryExpression;
+	//	expr=UnaryExpression | e2=PERCENT | e3="Type" | e5="Record" LPAREN e6=TypeExpression (COLON e22+=TypeExpression)?
+	//	(COMMA e21+=TypeExpression (COLON e23+=TypeExpression)?)* RPAREN | e9="Union" LPAREN e10=TypeExpression (COLON
+	//	e25+=TypeExpression)? (COMMA e24+=TypeExpression (COLON e26+=TypeExpression)?)* RPAREN | e11="Join" LPAREN
+	//	e12=TypeExpression (COMMA e13+=TypeExpression)* RPAREN;
 	public UnaryExpressionElements getUnaryExpressionAccess() {
 		return (pUnaryExpression != null) ? pUnaryExpression : (pUnaryExpression = new UnaryExpressionElements());
 	}

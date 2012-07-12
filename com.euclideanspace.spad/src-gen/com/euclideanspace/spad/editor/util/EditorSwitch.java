@@ -165,6 +165,8 @@ public class EditorSwitch<T> extends Switch<T>
       {
         Import import_ = (Import)theEObject;
         T result = caseImport(import_);
+        if (result == null) result = caseWhereAssignments(import_);
+        if (result == null) result = caseAddStatements(import_);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -240,6 +242,15 @@ public class EditorSwitch<T> extends Switch<T>
         T result = caseTypeNameOrFunctionCall(typeNameOrFunctionCall);
         if (result == null) result = caseTypePrimaryExpression(typeNameOrFunctionCall);
         if (result == null) result = caseTypeExpression(typeNameOrFunctionCall);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case EditorPackage.TUPLE_DEFINITION:
+      {
+        TupleDefinition tupleDefinition = (TupleDefinition)theEObject;
+        T result = caseTupleDefinition(tupleDefinition);
+        if (result == null) result = caseTypePrimaryExpression(tupleDefinition);
+        if (result == null) result = caseTypeExpression(tupleDefinition);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -341,13 +352,6 @@ public class EditorSwitch<T> extends Switch<T>
       {
         Expr expr = (Expr)theEObject;
         T result = caseExpr(expr);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case EditorPackage.MAP_DEFINITION:
-      {
-        MapDefinition mapDefinition = (MapDefinition)theEObject;
-        T result = caseMapDefinition(mapDefinition);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -562,6 +566,14 @@ public class EditorSwitch<T> extends Switch<T>
         ExponentExpression exponentExpression = (ExponentExpression)theEObject;
         T result = caseExponentExpression(exponentExpression);
         if (result == null) result = caseExpr(exponentExpression);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case EditorPackage.MAP_DEFINITION:
+      {
+        MapDefinition mapDefinition = (MapDefinition)theEObject;
+        T result = caseMapDefinition(mapDefinition);
+        if (result == null) result = caseExpr(mapDefinition);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -986,6 +998,22 @@ public class EditorSwitch<T> extends Switch<T>
   }
 
   /**
+   * Returns the result of interpreting the object as an instance of '<em>Tuple Definition</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Tuple Definition</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseTupleDefinition(TupleDefinition object)
+  {
+    return null;
+  }
+
+  /**
    * Returns the result of interpreting the object as an instance of '<em>Type Literal</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
@@ -1205,22 +1233,6 @@ public class EditorSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseExpr(Expr object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Map Definition</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Map Definition</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseMapDefinition(MapDefinition object)
   {
     return null;
   }
@@ -1637,6 +1649,22 @@ public class EditorSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseExponentExpression(ExponentExpression object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Map Definition</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Map Definition</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseMapDefinition(MapDefinition object)
   {
     return null;
   }

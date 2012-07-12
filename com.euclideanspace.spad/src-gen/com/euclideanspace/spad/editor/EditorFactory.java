@@ -230,6 +230,15 @@ public interface EditorFactory extends EFactory
   TypeNameOrFunctionCall createTypeNameOrFunctionCall();
 
   /**
+   * Returns a new object of class '<em>Tuple Definition</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Tuple Definition</em>'.
+   * @generated
+   */
+  TupleDefinition createTupleDefinition();
+
+  /**
    * Returns a new object of class '<em>Type Literal</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -354,15 +363,6 @@ public interface EditorFactory extends EFactory
    * @generated
    */
   Expr createExpr();
-
-  /**
-   * Returns a new object of class '<em>Map Definition</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Map Definition</em>'.
-   * @generated
-   */
-  MapDefinition createMapDefinition();
 
   /**
    * Returns a new object of class '<em>Primary Prefix</em>'.
@@ -597,6 +597,15 @@ public interface EditorFactory extends EFactory
    * @generated
    */
   ExponentExpression createExponentExpression();
+
+  /**
+   * Returns a new object of class '<em>Map Definition</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Map Definition</em>'.
+   * @generated
+   */
+  MapDefinition createMapDefinition();
 
   /**
    * Returns a new object of class '<em>Pretend Expression</em>'.

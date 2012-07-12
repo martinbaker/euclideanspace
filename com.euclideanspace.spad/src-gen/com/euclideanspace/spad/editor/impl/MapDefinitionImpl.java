@@ -3,10 +3,8 @@
 package com.euclideanspace.spad.editor.impl;
 
 import com.euclideanspace.spad.editor.EditorPackage;
-import com.euclideanspace.spad.editor.FunctionSignature;
+import com.euclideanspace.spad.editor.Expr;
 import com.euclideanspace.spad.editor.MapDefinition;
-import com.euclideanspace.spad.editor.Statement;
-import com.euclideanspace.spad.editor.TypeExpression;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
@@ -15,7 +13,6 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -24,45 +21,55 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link com.euclideanspace.spad.editor.impl.MapDefinitionImpl#getFnSig <em>Fn Sig</em>}</li>
- *   <li>{@link com.euclideanspace.spad.editor.impl.MapDefinitionImpl#getPar4 <em>Par4</em>}</li>
- *   <li>{@link com.euclideanspace.spad.editor.impl.MapDefinitionImpl#getPar5 <em>Par5</em>}</li>
+ *   <li>{@link com.euclideanspace.spad.editor.impl.MapDefinitionImpl#getLeft <em>Left</em>}</li>
+ *   <li>{@link com.euclideanspace.spad.editor.impl.MapDefinitionImpl#getOp <em>Op</em>}</li>
+ *   <li>{@link com.euclideanspace.spad.editor.impl.MapDefinitionImpl#getRight <em>Right</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class MapDefinitionImpl extends MinimalEObjectImpl.Container implements MapDefinition
+public class MapDefinitionImpl extends ExprImpl implements MapDefinition
 {
   /**
-   * The cached value of the '{@link #getFnSig() <em>Fn Sig</em>}' containment reference.
+   * The cached value of the '{@link #getLeft() <em>Left</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getFnSig()
+   * @see #getLeft()
    * @generated
    * @ordered
    */
-  protected FunctionSignature fnSig;
+  protected Expr left;
 
   /**
-   * The cached value of the '{@link #getPar4() <em>Par4</em>}' containment reference.
+   * The default value of the '{@link #getOp() <em>Op</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getPar4()
+   * @see #getOp()
    * @generated
    * @ordered
    */
-  protected TypeExpression par4;
+  protected static final String OP_EDEFAULT = null;
 
   /**
-   * The cached value of the '{@link #getPar5() <em>Par5</em>}' containment reference.
+   * The cached value of the '{@link #getOp() <em>Op</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getPar5()
+   * @see #getOp()
    * @generated
    * @ordered
    */
-  protected Statement par5;
+  protected String op = OP_EDEFAULT;
+
+  /**
+   * The cached value of the '{@link #getRight() <em>Right</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getRight()
+   * @generated
+   * @ordered
+   */
+  protected Expr right;
 
   /**
    * <!-- begin-user-doc -->
@@ -90,9 +97,9 @@ public class MapDefinitionImpl extends MinimalEObjectImpl.Container implements M
    * <!-- end-user-doc -->
    * @generated
    */
-  public FunctionSignature getFnSig()
+  public Expr getLeft()
   {
-    return fnSig;
+    return left;
   }
 
   /**
@@ -100,13 +107,13 @@ public class MapDefinitionImpl extends MinimalEObjectImpl.Container implements M
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetFnSig(FunctionSignature newFnSig, NotificationChain msgs)
+  public NotificationChain basicSetLeft(Expr newLeft, NotificationChain msgs)
   {
-    FunctionSignature oldFnSig = fnSig;
-    fnSig = newFnSig;
+    Expr oldLeft = left;
+    left = newLeft;
     if (eNotificationRequired())
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, EditorPackage.MAP_DEFINITION__FN_SIG, oldFnSig, newFnSig);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, EditorPackage.MAP_DEFINITION__LEFT, oldLeft, newLeft);
       if (msgs == null) msgs = notification; else msgs.add(notification);
     }
     return msgs;
@@ -117,20 +124,20 @@ public class MapDefinitionImpl extends MinimalEObjectImpl.Container implements M
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setFnSig(FunctionSignature newFnSig)
+  public void setLeft(Expr newLeft)
   {
-    if (newFnSig != fnSig)
+    if (newLeft != left)
     {
       NotificationChain msgs = null;
-      if (fnSig != null)
-        msgs = ((InternalEObject)fnSig).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - EditorPackage.MAP_DEFINITION__FN_SIG, null, msgs);
-      if (newFnSig != null)
-        msgs = ((InternalEObject)newFnSig).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - EditorPackage.MAP_DEFINITION__FN_SIG, null, msgs);
-      msgs = basicSetFnSig(newFnSig, msgs);
+      if (left != null)
+        msgs = ((InternalEObject)left).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - EditorPackage.MAP_DEFINITION__LEFT, null, msgs);
+      if (newLeft != null)
+        msgs = ((InternalEObject)newLeft).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - EditorPackage.MAP_DEFINITION__LEFT, null, msgs);
+      msgs = basicSetLeft(newLeft, msgs);
       if (msgs != null) msgs.dispatch();
     }
     else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, EditorPackage.MAP_DEFINITION__FN_SIG, newFnSig, newFnSig));
+      eNotify(new ENotificationImpl(this, Notification.SET, EditorPackage.MAP_DEFINITION__LEFT, newLeft, newLeft));
   }
 
   /**
@@ -138,9 +145,9 @@ public class MapDefinitionImpl extends MinimalEObjectImpl.Container implements M
    * <!-- end-user-doc -->
    * @generated
    */
-  public TypeExpression getPar4()
+  public String getOp()
   {
-    return par4;
+    return op;
   }
 
   /**
@@ -148,13 +155,36 @@ public class MapDefinitionImpl extends MinimalEObjectImpl.Container implements M
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetPar4(TypeExpression newPar4, NotificationChain msgs)
+  public void setOp(String newOp)
   {
-    TypeExpression oldPar4 = par4;
-    par4 = newPar4;
+    String oldOp = op;
+    op = newOp;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, EditorPackage.MAP_DEFINITION__OP, oldOp, op));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Expr getRight()
+  {
+    return right;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetRight(Expr newRight, NotificationChain msgs)
+  {
+    Expr oldRight = right;
+    right = newRight;
     if (eNotificationRequired())
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, EditorPackage.MAP_DEFINITION__PAR4, oldPar4, newPar4);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, EditorPackage.MAP_DEFINITION__RIGHT, oldRight, newRight);
       if (msgs == null) msgs = notification; else msgs.add(notification);
     }
     return msgs;
@@ -165,68 +195,20 @@ public class MapDefinitionImpl extends MinimalEObjectImpl.Container implements M
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setPar4(TypeExpression newPar4)
+  public void setRight(Expr newRight)
   {
-    if (newPar4 != par4)
+    if (newRight != right)
     {
       NotificationChain msgs = null;
-      if (par4 != null)
-        msgs = ((InternalEObject)par4).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - EditorPackage.MAP_DEFINITION__PAR4, null, msgs);
-      if (newPar4 != null)
-        msgs = ((InternalEObject)newPar4).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - EditorPackage.MAP_DEFINITION__PAR4, null, msgs);
-      msgs = basicSetPar4(newPar4, msgs);
+      if (right != null)
+        msgs = ((InternalEObject)right).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - EditorPackage.MAP_DEFINITION__RIGHT, null, msgs);
+      if (newRight != null)
+        msgs = ((InternalEObject)newRight).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - EditorPackage.MAP_DEFINITION__RIGHT, null, msgs);
+      msgs = basicSetRight(newRight, msgs);
       if (msgs != null) msgs.dispatch();
     }
     else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, EditorPackage.MAP_DEFINITION__PAR4, newPar4, newPar4));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public Statement getPar5()
-  {
-    return par5;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public NotificationChain basicSetPar5(Statement newPar5, NotificationChain msgs)
-  {
-    Statement oldPar5 = par5;
-    par5 = newPar5;
-    if (eNotificationRequired())
-    {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, EditorPackage.MAP_DEFINITION__PAR5, oldPar5, newPar5);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setPar5(Statement newPar5)
-  {
-    if (newPar5 != par5)
-    {
-      NotificationChain msgs = null;
-      if (par5 != null)
-        msgs = ((InternalEObject)par5).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - EditorPackage.MAP_DEFINITION__PAR5, null, msgs);
-      if (newPar5 != null)
-        msgs = ((InternalEObject)newPar5).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - EditorPackage.MAP_DEFINITION__PAR5, null, msgs);
-      msgs = basicSetPar5(newPar5, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, EditorPackage.MAP_DEFINITION__PAR5, newPar5, newPar5));
+      eNotify(new ENotificationImpl(this, Notification.SET, EditorPackage.MAP_DEFINITION__RIGHT, newRight, newRight));
   }
 
   /**
@@ -239,12 +221,10 @@ public class MapDefinitionImpl extends MinimalEObjectImpl.Container implements M
   {
     switch (featureID)
     {
-      case EditorPackage.MAP_DEFINITION__FN_SIG:
-        return basicSetFnSig(null, msgs);
-      case EditorPackage.MAP_DEFINITION__PAR4:
-        return basicSetPar4(null, msgs);
-      case EditorPackage.MAP_DEFINITION__PAR5:
-        return basicSetPar5(null, msgs);
+      case EditorPackage.MAP_DEFINITION__LEFT:
+        return basicSetLeft(null, msgs);
+      case EditorPackage.MAP_DEFINITION__RIGHT:
+        return basicSetRight(null, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -259,12 +239,12 @@ public class MapDefinitionImpl extends MinimalEObjectImpl.Container implements M
   {
     switch (featureID)
     {
-      case EditorPackage.MAP_DEFINITION__FN_SIG:
-        return getFnSig();
-      case EditorPackage.MAP_DEFINITION__PAR4:
-        return getPar4();
-      case EditorPackage.MAP_DEFINITION__PAR5:
-        return getPar5();
+      case EditorPackage.MAP_DEFINITION__LEFT:
+        return getLeft();
+      case EditorPackage.MAP_DEFINITION__OP:
+        return getOp();
+      case EditorPackage.MAP_DEFINITION__RIGHT:
+        return getRight();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -279,14 +259,14 @@ public class MapDefinitionImpl extends MinimalEObjectImpl.Container implements M
   {
     switch (featureID)
     {
-      case EditorPackage.MAP_DEFINITION__FN_SIG:
-        setFnSig((FunctionSignature)newValue);
+      case EditorPackage.MAP_DEFINITION__LEFT:
+        setLeft((Expr)newValue);
         return;
-      case EditorPackage.MAP_DEFINITION__PAR4:
-        setPar4((TypeExpression)newValue);
+      case EditorPackage.MAP_DEFINITION__OP:
+        setOp((String)newValue);
         return;
-      case EditorPackage.MAP_DEFINITION__PAR5:
-        setPar5((Statement)newValue);
+      case EditorPackage.MAP_DEFINITION__RIGHT:
+        setRight((Expr)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -302,14 +282,14 @@ public class MapDefinitionImpl extends MinimalEObjectImpl.Container implements M
   {
     switch (featureID)
     {
-      case EditorPackage.MAP_DEFINITION__FN_SIG:
-        setFnSig((FunctionSignature)null);
+      case EditorPackage.MAP_DEFINITION__LEFT:
+        setLeft((Expr)null);
         return;
-      case EditorPackage.MAP_DEFINITION__PAR4:
-        setPar4((TypeExpression)null);
+      case EditorPackage.MAP_DEFINITION__OP:
+        setOp(OP_EDEFAULT);
         return;
-      case EditorPackage.MAP_DEFINITION__PAR5:
-        setPar5((Statement)null);
+      case EditorPackage.MAP_DEFINITION__RIGHT:
+        setRight((Expr)null);
         return;
     }
     super.eUnset(featureID);
@@ -325,14 +305,31 @@ public class MapDefinitionImpl extends MinimalEObjectImpl.Container implements M
   {
     switch (featureID)
     {
-      case EditorPackage.MAP_DEFINITION__FN_SIG:
-        return fnSig != null;
-      case EditorPackage.MAP_DEFINITION__PAR4:
-        return par4 != null;
-      case EditorPackage.MAP_DEFINITION__PAR5:
-        return par5 != null;
+      case EditorPackage.MAP_DEFINITION__LEFT:
+        return left != null;
+      case EditorPackage.MAP_DEFINITION__OP:
+        return OP_EDEFAULT == null ? op != null : !OP_EDEFAULT.equals(op);
+      case EditorPackage.MAP_DEFINITION__RIGHT:
+        return right != null;
     }
     return super.eIsSet(featureID);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String toString()
+  {
+    if (eIsProxy()) return super.toString();
+
+    StringBuffer result = new StringBuffer(super.toString());
+    result.append(" (op: ");
+    result.append(op);
+    result.append(')');
+    return result.toString();
   }
 
 } //MapDefinitionImpl

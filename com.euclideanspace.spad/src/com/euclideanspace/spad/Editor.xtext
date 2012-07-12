@@ -319,11 +319,15 @@ DomainDef hidden(WS,NL,SL_COMMENT):
  * both category and domain can have 'where' part which holds overall information
  * such as category/domain parameter information and general macros. This is
  * followed by export('with') and import ('add') information.
+ * Forms allowed include:
+ * Exports == PlottablePlaneCurveCategory with {
+ * Exports ==> PlottablePlaneCurveCategory with {
+ * Exports ==> with {
  */
 WherePart hidden(WS,SL_COMMENT):
 	name='where' NL* LBRACE NL*
     (whereAssig +=WhereAssignments (NL|SEMICOLON)+)*
-    (longname8=ID ((DEF | MDEF) imp=TypeExpression)? w8=WithPart)?
+    (longname8=ID ((DEF | MDEF) (imp=TypeExpression)?)? w8=WithPart)?
     (longname9=ID (DEF | MDEF)? add=AddPart)?
     RBRACE NL+
 ;
@@ -332,7 +336,7 @@ WherePart hidden(WS,SL_COMMENT):
  * need to add name=
  */
 WhereAssignments hidden(WS):
-	VariableDeclaration | MacroDef
+	VariableDeclaration | MacroDef |Import
 ;
 
 /*
@@ -371,6 +375,7 @@ AddStatements hidden(WS,SL_COMMENT):
    VariableDeclarationAssign
    | FunctionDefinition
    | MacroDef
+   | Import
 ;
 
 /* function definition in add part
@@ -391,13 +396,17 @@ FunctionDefinition hidden(WS):
 ;
 
 
-/* this is the first part of the function definition without the return type or
+/* This is the first part of the function definition without the return type or
  * the function implementation. Usually the function signature has a form like:
  * name(params)
- * but we allow some alternative forms to represent infix operators like:
+ * We allow a single parameter to be given without brackets:
+ * name param
+ * We also allow some alternative forms to represent infix operators like:
  * a = b to represent _=(a,b)
  * or
  * a > b to represent _>(a,b)
+ * 0 or 1 can be used as a function signature as a short form of
+ * _0() or _1()
  */
 FunctionSignature hidden(WS):
   (
@@ -406,6 +415,9 @@ FunctionSignature hidden(WS):
     par2=VariableDeclaration?
     (COMMA par3 += VariableDeclaration)*
     RPAREN
+  ) | (
+  	// fnNam=ID par2=VariableDeclaration this causes recursive defintion
+  	fnNam=ID par=ID
   ) | (
   	t4=ID ( b1=EQUAL | b1=LT | b1=GT | b1=LE | b1=GE |
             b1=PLUS | b1=MINUS | b1=TIMES | b1=SLASH | b1=AMPERSAND |
@@ -430,11 +442,17 @@ MacroDef: macroname=ID MACROVALUE ; //MACRO val=ID NL;
  * import domain
  */
 Import hidden(WS):
-	'import' impname=ID
+	'import' (impname += ID)+
 ;
 
-/* Variable declaration in where and with sections and function signature
-*/
+/* Variable declaration in where and with sections and function signature:
+ * A 'variable' can be simple like:
+ * x:Float
+ * or something more complicated like:
+ * x:Record(newPt: Pt,type:  String)
+ * or it can be a function like:
+ * x:(Float,Integer) -> Float
+ */
 VariableDeclaration hidden(WS):
   // if I just use name=ID then, when the ui program is running, I get:
   // Duplicate VariableDeclaration 'coerce' in WithPart 'with'
@@ -476,6 +494,13 @@ LocalVariable hidden(WS):
  * (Expression can also be of type) but if we know that
  * this is a type we can exclude some possibilities.
  * 
+ * A 'typeExpression' can be simple like:
+ * Float
+ * or something more complicated like:
+ * Record(newPt: Pt,type:  String)
+ * or it can be a function like:
+ * (Float,Integer) -> Float
+ * 
  * first we check for a function like: Integer -> Integer
  */
 TypeExpression hidden(WS):
@@ -494,6 +519,10 @@ TypeParameterList hidden(WS):
 /*
  * we use type arguments for first part of function type, that is
  * x in x-> y
+ * usually this is enclosed in parenthesis
+ * (x) in (x)-> y
+ * but if x is a single argument (Including Record, Union, etc.) then it does
+ * not need to be in parenthesis.
  */
 TypeArguments hidden(WS):
 	t=TypeLiteral |
@@ -502,8 +531,14 @@ TypeArguments hidden(WS):
   // usually, but not always type arguments are in parenthesis, and empty
   // parenthesis are allowed
   b1 ?= LPAREN t4=TypeExpression? ( COMMA t16 += TypeExpression)* RPAREN |
-  t5='Record' LPAREN t6=TypeExpression (COMMA t7+=TypeExpression)* RPAREN |
-  t8='Union' LPAREN t9=TypeExpression (COMMA t10+=TypeExpression)* RPAREN |
+  t5='Record' LPAREN t6=TypeExpression
+               (COLON t22+=TypeExpression)?
+               (COMMA t21+=TypeExpression (COLON t23+=TypeExpression)?)*
+                RPAREN |
+  t9='Union' LPAREN t10=TypeExpression
+              (COLON t25+=TypeExpression)?
+              (COMMA t24+=TypeExpression (COLON t26+=TypeExpression)?)*
+              RPAREN |
   t11='Join' LPAREN t12=TypeExpression (COMMA t13+=TypeExpression)* RPAREN |
   t15=TypeNameOrFunctionCall
 ;
@@ -517,8 +552,14 @@ TypeResult hidden(WS):
   t2=PERCENT |
   tyname='Type' |
 // | LPAREN t4=TypePrimaryExpression ( COMMA t16 += TypePrimaryExpression)* RPAREN
-  name='Record' LPAREN t6=TypeExpression (COMMA t7+=TypeExpression)* RPAREN |
-  name='Union' LPAREN t9=TypeExpression (COMMA t10+=TypeExpression)* RPAREN |
+  name='Record' LPAREN t7=TypeExpression
+               (COLON t8+=TypeExpression)?
+               (COMMA t21+=TypeExpression (COLON t23+=TypeExpression)?)*
+                RPAREN |
+  name='Union' LPAREN t10=TypeExpression
+              (COLON t11+=TypeExpression)?
+              (COMMA t24+=TypeExpression (COLON t26+=TypeExpression)?)*
+              RPAREN |
   name='Join' LPAREN t12=TypeExpression (COMMA t13+=TypeExpression)* RPAREN |
   t15=TypeNameOrFunctionCall
 ;
@@ -526,7 +567,7 @@ TypeResult hidden(WS):
 TypePrimaryExpression hidden(WS):
  TypeLiteral
  | ({TypePrimaryExpression}t32=PERCENT)
- | ({TypePrimaryExpression}tyname='Type') // 'Type' is top of the category heirarchy
+ | ({TypePrimaryExpression}tyname='Type') // 'Type' is top of the category hierarchy
  | ({TypePrimaryExpression}tyname='Lisp') // 'Lisp' is used for native lisp function calls such as Say$Lisp
  | ({TypePrimaryExpression}LPAREN t5=TypeExpression RPAREN)
  | ({TypePrimaryExpression}tyname='Record' LPAREN t7=TypeExpression
@@ -540,9 +581,12 @@ TypePrimaryExpression hidden(WS):
  | ({TypePrimaryExpression}tyname='Join'
     LPAREN t13=TypeExpression (COMMA t14+=TypeExpression)* RPAREN)
  | TypeNameOrFunctionCall
+ | => TupleDefinition
 ;
 
-/* function call such as List(Integer)
+/* Will match with ID on its own like:
+ * Integer
+ * or type function call such as List(Integer)
  * known as a parameterised type or functor (not necessarily a true functor since
  * it may not obey the axioms of a functor)
  * if there is only one parameter then the parenthesis are optional
@@ -554,6 +598,13 @@ TypeNameOrFunctionCall hidden(WS):
   ((LPAREN t4=TypeExpression? (COMMA t25+=TypeExpression)* RPAREN)
   // option of no parenthesis for single parameter
   | => t6=TypePrimaryExpression)?
+;
+
+/* This has a form like: (Integer,Float,String)
+ * like an array where each entry can be of a different type
+ */
+TupleDefinition hidden(WS):
+  (LPAREN t4=TypeExpression (COMMA t25+=TypeExpression)* RPAREN)
 ;
 
 /* Since SPAD supports dependent types then numbers and strings can occur here.
@@ -766,7 +817,7 @@ ConditionExpression returns Expr hidden(WS,SL_COMMENT):
  * "\/", BACKSLASHSLASH precedence: 200, 201
  * 
  * the backslash is duplicated here because it is the escape character for
- * strings, it will not be dupicated when used. 
+ * strings, it will not be duplicated when used. 
  */
 InnerProdExpression returns Expr  hidden(WS,SL_COMMENT):
   OuterProdExpression
@@ -919,7 +970,7 @@ RemExpression returns Expr hidden(WS,SL_COMMENT):
 ;
 
 /*
- * multipication expression
+ * multiplication expression
  * a * b * c
  * 
  * "*", precedence: 800, 801
@@ -935,11 +986,11 @@ MultiplicativeExpression returns Expr hidden(WS,SL_COMMENT):
  * "**", precedence: 901, 900
  */
 ExponentExpression returns Expr hidden(WS,SL_COMMENT):
-  PretendExpression
-  ({ExponentExpression.left=current} (op=CARAT | op=POWER) right = PretendExpression)*
+  MapDefinition
+  ({ExponentExpression.left=current} (op=CARAT | op=POWER) right = MapDefinition)*
 ;
 
-/*
+/* Map or Lambda expression
  * var +-> function 	
  * 
  * +-> is an infix operator meaning 'maps-to'
@@ -951,11 +1002,17 @@ ExponentExpression returns Expr hidden(WS,SL_COMMENT):
  * 
  *  * "+->", precedence: 995, 112
  */
-MapDefinition hidden(WS):
+MapDefinition returns Expr hidden(WS,SL_COMMENT):
+  PretendExpression
+  ({MapDefinition.left=current} op=GIVES right = PretendExpression)*
+;
+
+
+/*MapDefinition hidden(WS):
 	fnSig=FunctionSignature
     (COLON par4=TypeExpression)?
     GIVES par5=Statement
-;
+;*/
 
 /*
  * pretend Type: treat one type as another,
@@ -1045,7 +1102,18 @@ UnaryExpression returns Expr hidden(WS,SL_COMMENT):
   ({UnaryExpression} uop=TILDE expr=UnaryExpression) |
   ({UnaryExpression} uop=COLON expr=UnaryExpression) |
   ({UnaryExpression} uop=MINUS expr=UnaryExpression) |
-  ({UnaryExpression} uop=HASH expr=UnaryExpression)
+  ({UnaryExpression} uop=HASH expr=UnaryExpression) |
+   e2=PERCENT |
+  e3='Type' |
+  e5='Record' LPAREN e6=TypeExpression
+               (COLON e22+=TypeExpression)?
+               (COMMA e21+=TypeExpression (COLON e23+=TypeExpression)?)*
+                RPAREN |
+  e9='Union' LPAREN e10=TypeExpression
+              (COLON e25+=TypeExpression)?
+              (COMMA e24+=TypeExpression (COLON e26+=TypeExpression)?)*
+              RPAREN |
+  e11='Join' LPAREN e12=TypeExpression (COMMA e13+=TypeExpression)* RPAREN
 ;
 
 /* 

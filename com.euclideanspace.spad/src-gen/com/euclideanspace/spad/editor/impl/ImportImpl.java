@@ -5,12 +5,13 @@ package com.euclideanspace.spad.editor.impl;
 import com.euclideanspace.spad.editor.EditorPackage;
 import com.euclideanspace.spad.editor.Import;
 
-import org.eclipse.emf.common.notify.Notification;
+import java.util.Collection;
+
+import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+import org.eclipse.emf.ecore.util.EDataTypeEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -25,27 +26,17 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  *
  * @generated
  */
-public class ImportImpl extends MinimalEObjectImpl.Container implements Import
+public class ImportImpl extends WhereAssignmentsImpl implements Import
 {
   /**
-   * The default value of the '{@link #getImpname() <em>Impname</em>}' attribute.
+   * The cached value of the '{@link #getImpname() <em>Impname</em>}' attribute list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getImpname()
    * @generated
    * @ordered
    */
-  protected static final String IMPNAME_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getImpname() <em>Impname</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getImpname()
-   * @generated
-   * @ordered
-   */
-  protected String impname = IMPNAME_EDEFAULT;
+  protected EList<String> impname;
 
   /**
    * <!-- begin-user-doc -->
@@ -73,22 +64,13 @@ public class ImportImpl extends MinimalEObjectImpl.Container implements Import
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getImpname()
+  public EList<String> getImpname()
   {
+    if (impname == null)
+    {
+      impname = new EDataTypeEList<String>(String.class, this, EditorPackage.IMPORT__IMPNAME);
+    }
     return impname;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setImpname(String newImpname)
-  {
-    String oldImpname = impname;
-    impname = newImpname;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, EditorPackage.IMPORT__IMPNAME, oldImpname, impname));
   }
 
   /**
@@ -112,13 +94,15 @@ public class ImportImpl extends MinimalEObjectImpl.Container implements Import
    * <!-- end-user-doc -->
    * @generated
    */
+  @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue)
   {
     switch (featureID)
     {
       case EditorPackage.IMPORT__IMPNAME:
-        setImpname((String)newValue);
+        getImpname().clear();
+        getImpname().addAll((Collection<? extends String>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -135,7 +119,7 @@ public class ImportImpl extends MinimalEObjectImpl.Container implements Import
     switch (featureID)
     {
       case EditorPackage.IMPORT__IMPNAME:
-        setImpname(IMPNAME_EDEFAULT);
+        getImpname().clear();
         return;
     }
     super.eUnset(featureID);
@@ -152,7 +136,7 @@ public class ImportImpl extends MinimalEObjectImpl.Container implements Import
     switch (featureID)
     {
       case EditorPackage.IMPORT__IMPNAME:
-        return IMPNAME_EDEFAULT == null ? impname != null : !IMPNAME_EDEFAULT.equals(impname);
+        return impname != null && !impname.isEmpty();
     }
     return super.eIsSet(featureID);
   }

@@ -2,7 +2,6 @@
  */
 package com.euclideanspace.spad.editor;
 
-import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
@@ -12,9 +11,9 @@ import org.eclipse.emf.ecore.EObject;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link com.euclideanspace.spad.editor.MapDefinition#getFnSig <em>Fn Sig</em>}</li>
- *   <li>{@link com.euclideanspace.spad.editor.MapDefinition#getPar4 <em>Par4</em>}</li>
- *   <li>{@link com.euclideanspace.spad.editor.MapDefinition#getPar5 <em>Par5</em>}</li>
+ *   <li>{@link com.euclideanspace.spad.editor.MapDefinition#getLeft <em>Left</em>}</li>
+ *   <li>{@link com.euclideanspace.spad.editor.MapDefinition#getOp <em>Op</em>}</li>
+ *   <li>{@link com.euclideanspace.spad.editor.MapDefinition#getRight <em>Right</em>}</li>
  * </ul>
  * </p>
  *
@@ -22,84 +21,84 @@ import org.eclipse.emf.ecore.EObject;
  * @model
  * @generated
  */
-public interface MapDefinition extends EObject
+public interface MapDefinition extends Expr
 {
   /**
-   * Returns the value of the '<em><b>Fn Sig</b></em>' containment reference.
+   * Returns the value of the '<em><b>Left</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Fn Sig</em>' containment reference isn't clear,
+   * If the meaning of the '<em>Left</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Fn Sig</em>' containment reference.
-   * @see #setFnSig(FunctionSignature)
-   * @see com.euclideanspace.spad.editor.EditorPackage#getMapDefinition_FnSig()
+   * @return the value of the '<em>Left</em>' containment reference.
+   * @see #setLeft(Expr)
+   * @see com.euclideanspace.spad.editor.EditorPackage#getMapDefinition_Left()
    * @model containment="true"
    * @generated
    */
-  FunctionSignature getFnSig();
+  Expr getLeft();
 
   /**
-   * Sets the value of the '{@link com.euclideanspace.spad.editor.MapDefinition#getFnSig <em>Fn Sig</em>}' containment reference.
+   * Sets the value of the '{@link com.euclideanspace.spad.editor.MapDefinition#getLeft <em>Left</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Fn Sig</em>' containment reference.
-   * @see #getFnSig()
+   * @param value the new value of the '<em>Left</em>' containment reference.
+   * @see #getLeft()
    * @generated
    */
-  void setFnSig(FunctionSignature value);
+  void setLeft(Expr value);
 
   /**
-   * Returns the value of the '<em><b>Par4</b></em>' containment reference.
+   * Returns the value of the '<em><b>Op</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Par4</em>' containment reference isn't clear,
+   * If the meaning of the '<em>Op</em>' attribute isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Par4</em>' containment reference.
-   * @see #setPar4(TypeExpression)
-   * @see com.euclideanspace.spad.editor.EditorPackage#getMapDefinition_Par4()
-   * @model containment="true"
+   * @return the value of the '<em>Op</em>' attribute.
+   * @see #setOp(String)
+   * @see com.euclideanspace.spad.editor.EditorPackage#getMapDefinition_Op()
+   * @model
    * @generated
    */
-  TypeExpression getPar4();
+  String getOp();
 
   /**
-   * Sets the value of the '{@link com.euclideanspace.spad.editor.MapDefinition#getPar4 <em>Par4</em>}' containment reference.
+   * Sets the value of the '{@link com.euclideanspace.spad.editor.MapDefinition#getOp <em>Op</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Par4</em>' containment reference.
-   * @see #getPar4()
+   * @param value the new value of the '<em>Op</em>' attribute.
+   * @see #getOp()
    * @generated
    */
-  void setPar4(TypeExpression value);
+  void setOp(String value);
 
   /**
-   * Returns the value of the '<em><b>Par5</b></em>' containment reference.
+   * Returns the value of the '<em><b>Right</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Par5</em>' containment reference isn't clear,
+   * If the meaning of the '<em>Right</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Par5</em>' containment reference.
-   * @see #setPar5(Statement)
-   * @see com.euclideanspace.spad.editor.EditorPackage#getMapDefinition_Par5()
+   * @return the value of the '<em>Right</em>' containment reference.
+   * @see #setRight(Expr)
+   * @see com.euclideanspace.spad.editor.EditorPackage#getMapDefinition_Right()
    * @model containment="true"
    * @generated
    */
-  Statement getPar5();
+  Expr getRight();
 
   /**
-   * Sets the value of the '{@link com.euclideanspace.spad.editor.MapDefinition#getPar5 <em>Par5</em>}' containment reference.
+   * Sets the value of the '{@link com.euclideanspace.spad.editor.MapDefinition#getRight <em>Right</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Par5</em>' containment reference.
-   * @see #getPar5()
+   * @param value the new value of the '<em>Right</em>' containment reference.
+   * @see #getRight()
    * @generated
    */
-  void setPar5(Statement value);
+  void setRight(Expr value);
 
 } // MapDefinition

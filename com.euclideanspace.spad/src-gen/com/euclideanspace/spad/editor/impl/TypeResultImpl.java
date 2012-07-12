@@ -35,10 +35,14 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link com.euclideanspace.spad.editor.impl.TypeResultImpl#getT2 <em>T2</em>}</li>
  *   <li>{@link com.euclideanspace.spad.editor.impl.TypeResultImpl#getTyname <em>Tyname</em>}</li>
  *   <li>{@link com.euclideanspace.spad.editor.impl.TypeResultImpl#getName <em>Name</em>}</li>
- *   <li>{@link com.euclideanspace.spad.editor.impl.TypeResultImpl#getT6 <em>T6</em>}</li>
  *   <li>{@link com.euclideanspace.spad.editor.impl.TypeResultImpl#getT7 <em>T7</em>}</li>
- *   <li>{@link com.euclideanspace.spad.editor.impl.TypeResultImpl#getT9 <em>T9</em>}</li>
+ *   <li>{@link com.euclideanspace.spad.editor.impl.TypeResultImpl#getT8 <em>T8</em>}</li>
+ *   <li>{@link com.euclideanspace.spad.editor.impl.TypeResultImpl#getT21 <em>T21</em>}</li>
+ *   <li>{@link com.euclideanspace.spad.editor.impl.TypeResultImpl#getT23 <em>T23</em>}</li>
  *   <li>{@link com.euclideanspace.spad.editor.impl.TypeResultImpl#getT10 <em>T10</em>}</li>
+ *   <li>{@link com.euclideanspace.spad.editor.impl.TypeResultImpl#getT11 <em>T11</em>}</li>
+ *   <li>{@link com.euclideanspace.spad.editor.impl.TypeResultImpl#getT24 <em>T24</em>}</li>
+ *   <li>{@link com.euclideanspace.spad.editor.impl.TypeResultImpl#getT26 <em>T26</em>}</li>
  *   <li>{@link com.euclideanspace.spad.editor.impl.TypeResultImpl#getT12 <em>T12</em>}</li>
  *   <li>{@link com.euclideanspace.spad.editor.impl.TypeResultImpl#getT13 <em>T13</em>}</li>
  *   <li>{@link com.euclideanspace.spad.editor.impl.TypeResultImpl#getT15 <em>T15</em>}</li>
@@ -120,44 +124,84 @@ public class TypeResultImpl extends MinimalEObjectImpl.Container implements Type
   protected String name = NAME_EDEFAULT;
 
   /**
-   * The cached value of the '{@link #getT6() <em>T6</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getT6()
-   * @generated
-   * @ordered
-   */
-  protected TypeExpression t6;
-
-  /**
-   * The cached value of the '{@link #getT7() <em>T7</em>}' containment reference list.
+   * The cached value of the '{@link #getT7() <em>T7</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getT7()
    * @generated
    * @ordered
    */
-  protected EList<TypeExpression> t7;
+  protected TypeExpression t7;
 
   /**
-   * The cached value of the '{@link #getT9() <em>T9</em>}' containment reference.
+   * The cached value of the '{@link #getT8() <em>T8</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getT9()
+   * @see #getT8()
    * @generated
    * @ordered
    */
-  protected TypeExpression t9;
+  protected EList<TypeExpression> t8;
 
   /**
-   * The cached value of the '{@link #getT10() <em>T10</em>}' containment reference list.
+   * The cached value of the '{@link #getT21() <em>T21</em>}' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getT21()
+   * @generated
+   * @ordered
+   */
+  protected EList<TypeExpression> t21;
+
+  /**
+   * The cached value of the '{@link #getT23() <em>T23</em>}' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getT23()
+   * @generated
+   * @ordered
+   */
+  protected EList<TypeExpression> t23;
+
+  /**
+   * The cached value of the '{@link #getT10() <em>T10</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getT10()
    * @generated
    * @ordered
    */
-  protected EList<TypeExpression> t10;
+  protected TypeExpression t10;
+
+  /**
+   * The cached value of the '{@link #getT11() <em>T11</em>}' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getT11()
+   * @generated
+   * @ordered
+   */
+  protected EList<TypeExpression> t11;
+
+  /**
+   * The cached value of the '{@link #getT24() <em>T24</em>}' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getT24()
+   * @generated
+   * @ordered
+   */
+  protected EList<TypeExpression> t24;
+
+  /**
+   * The cached value of the '{@link #getT26() <em>T26</em>}' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getT26()
+   * @generated
+   * @ordered
+   */
+  protected EList<TypeExpression> t26;
 
   /**
    * The cached value of the '{@link #getT12() <em>T12</em>}' containment reference.
@@ -332,60 +376,8 @@ public class TypeResultImpl extends MinimalEObjectImpl.Container implements Type
    * <!-- end-user-doc -->
    * @generated
    */
-  public TypeExpression getT6()
+  public TypeExpression getT7()
   {
-    return t6;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public NotificationChain basicSetT6(TypeExpression newT6, NotificationChain msgs)
-  {
-    TypeExpression oldT6 = t6;
-    t6 = newT6;
-    if (eNotificationRequired())
-    {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, EditorPackage.TYPE_RESULT__T6, oldT6, newT6);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setT6(TypeExpression newT6)
-  {
-    if (newT6 != t6)
-    {
-      NotificationChain msgs = null;
-      if (t6 != null)
-        msgs = ((InternalEObject)t6).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - EditorPackage.TYPE_RESULT__T6, null, msgs);
-      if (newT6 != null)
-        msgs = ((InternalEObject)newT6).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - EditorPackage.TYPE_RESULT__T6, null, msgs);
-      msgs = basicSetT6(newT6, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, EditorPackage.TYPE_RESULT__T6, newT6, newT6));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EList<TypeExpression> getT7()
-  {
-    if (t7 == null)
-    {
-      t7 = new EObjectContainmentEList<TypeExpression>(TypeExpression.class, this, EditorPackage.TYPE_RESULT__T7);
-    }
     return t7;
   }
 
@@ -394,23 +386,13 @@ public class TypeResultImpl extends MinimalEObjectImpl.Container implements Type
    * <!-- end-user-doc -->
    * @generated
    */
-  public TypeExpression getT9()
+  public NotificationChain basicSetT7(TypeExpression newT7, NotificationChain msgs)
   {
-    return t9;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public NotificationChain basicSetT9(TypeExpression newT9, NotificationChain msgs)
-  {
-    TypeExpression oldT9 = t9;
-    t9 = newT9;
+    TypeExpression oldT7 = t7;
+    t7 = newT7;
     if (eNotificationRequired())
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, EditorPackage.TYPE_RESULT__T9, oldT9, newT9);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, EditorPackage.TYPE_RESULT__T7, oldT7, newT7);
       if (msgs == null) msgs = notification; else msgs.add(notification);
     }
     return msgs;
@@ -421,20 +403,20 @@ public class TypeResultImpl extends MinimalEObjectImpl.Container implements Type
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setT9(TypeExpression newT9)
+  public void setT7(TypeExpression newT7)
   {
-    if (newT9 != t9)
+    if (newT7 != t7)
     {
       NotificationChain msgs = null;
-      if (t9 != null)
-        msgs = ((InternalEObject)t9).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - EditorPackage.TYPE_RESULT__T9, null, msgs);
-      if (newT9 != null)
-        msgs = ((InternalEObject)newT9).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - EditorPackage.TYPE_RESULT__T9, null, msgs);
-      msgs = basicSetT9(newT9, msgs);
+      if (t7 != null)
+        msgs = ((InternalEObject)t7).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - EditorPackage.TYPE_RESULT__T7, null, msgs);
+      if (newT7 != null)
+        msgs = ((InternalEObject)newT7).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - EditorPackage.TYPE_RESULT__T7, null, msgs);
+      msgs = basicSetT7(newT7, msgs);
       if (msgs != null) msgs.dispatch();
     }
     else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, EditorPackage.TYPE_RESULT__T9, newT9, newT9));
+      eNotify(new ENotificationImpl(this, Notification.SET, EditorPackage.TYPE_RESULT__T7, newT7, newT7));
   }
 
   /**
@@ -442,13 +424,131 @@ public class TypeResultImpl extends MinimalEObjectImpl.Container implements Type
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<TypeExpression> getT10()
+  public EList<TypeExpression> getT8()
   {
-    if (t10 == null)
+    if (t8 == null)
     {
-      t10 = new EObjectContainmentEList<TypeExpression>(TypeExpression.class, this, EditorPackage.TYPE_RESULT__T10);
+      t8 = new EObjectContainmentEList<TypeExpression>(TypeExpression.class, this, EditorPackage.TYPE_RESULT__T8);
     }
+    return t8;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EList<TypeExpression> getT21()
+  {
+    if (t21 == null)
+    {
+      t21 = new EObjectContainmentEList<TypeExpression>(TypeExpression.class, this, EditorPackage.TYPE_RESULT__T21);
+    }
+    return t21;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EList<TypeExpression> getT23()
+  {
+    if (t23 == null)
+    {
+      t23 = new EObjectContainmentEList<TypeExpression>(TypeExpression.class, this, EditorPackage.TYPE_RESULT__T23);
+    }
+    return t23;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public TypeExpression getT10()
+  {
     return t10;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetT10(TypeExpression newT10, NotificationChain msgs)
+  {
+    TypeExpression oldT10 = t10;
+    t10 = newT10;
+    if (eNotificationRequired())
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, EditorPackage.TYPE_RESULT__T10, oldT10, newT10);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setT10(TypeExpression newT10)
+  {
+    if (newT10 != t10)
+    {
+      NotificationChain msgs = null;
+      if (t10 != null)
+        msgs = ((InternalEObject)t10).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - EditorPackage.TYPE_RESULT__T10, null, msgs);
+      if (newT10 != null)
+        msgs = ((InternalEObject)newT10).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - EditorPackage.TYPE_RESULT__T10, null, msgs);
+      msgs = basicSetT10(newT10, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, EditorPackage.TYPE_RESULT__T10, newT10, newT10));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EList<TypeExpression> getT11()
+  {
+    if (t11 == null)
+    {
+      t11 = new EObjectContainmentEList<TypeExpression>(TypeExpression.class, this, EditorPackage.TYPE_RESULT__T11);
+    }
+    return t11;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EList<TypeExpression> getT24()
+  {
+    if (t24 == null)
+    {
+      t24 = new EObjectContainmentEList<TypeExpression>(TypeExpression.class, this, EditorPackage.TYPE_RESULT__T24);
+    }
+    return t24;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EList<TypeExpression> getT26()
+  {
+    if (t26 == null)
+    {
+      t26 = new EObjectContainmentEList<TypeExpression>(TypeExpression.class, this, EditorPackage.TYPE_RESULT__T26);
+    }
+    return t26;
   }
 
   /**
@@ -573,14 +673,22 @@ public class TypeResultImpl extends MinimalEObjectImpl.Container implements Type
     {
       case EditorPackage.TYPE_RESULT__T:
         return basicSetT(null, msgs);
-      case EditorPackage.TYPE_RESULT__T6:
-        return basicSetT6(null, msgs);
       case EditorPackage.TYPE_RESULT__T7:
-        return ((InternalEList<?>)getT7()).basicRemove(otherEnd, msgs);
-      case EditorPackage.TYPE_RESULT__T9:
-        return basicSetT9(null, msgs);
+        return basicSetT7(null, msgs);
+      case EditorPackage.TYPE_RESULT__T8:
+        return ((InternalEList<?>)getT8()).basicRemove(otherEnd, msgs);
+      case EditorPackage.TYPE_RESULT__T21:
+        return ((InternalEList<?>)getT21()).basicRemove(otherEnd, msgs);
+      case EditorPackage.TYPE_RESULT__T23:
+        return ((InternalEList<?>)getT23()).basicRemove(otherEnd, msgs);
       case EditorPackage.TYPE_RESULT__T10:
-        return ((InternalEList<?>)getT10()).basicRemove(otherEnd, msgs);
+        return basicSetT10(null, msgs);
+      case EditorPackage.TYPE_RESULT__T11:
+        return ((InternalEList<?>)getT11()).basicRemove(otherEnd, msgs);
+      case EditorPackage.TYPE_RESULT__T24:
+        return ((InternalEList<?>)getT24()).basicRemove(otherEnd, msgs);
+      case EditorPackage.TYPE_RESULT__T26:
+        return ((InternalEList<?>)getT26()).basicRemove(otherEnd, msgs);
       case EditorPackage.TYPE_RESULT__T12:
         return basicSetT12(null, msgs);
       case EditorPackage.TYPE_RESULT__T13:
@@ -609,14 +717,22 @@ public class TypeResultImpl extends MinimalEObjectImpl.Container implements Type
         return getTyname();
       case EditorPackage.TYPE_RESULT__NAME:
         return getName();
-      case EditorPackage.TYPE_RESULT__T6:
-        return getT6();
       case EditorPackage.TYPE_RESULT__T7:
         return getT7();
-      case EditorPackage.TYPE_RESULT__T9:
-        return getT9();
+      case EditorPackage.TYPE_RESULT__T8:
+        return getT8();
+      case EditorPackage.TYPE_RESULT__T21:
+        return getT21();
+      case EditorPackage.TYPE_RESULT__T23:
+        return getT23();
       case EditorPackage.TYPE_RESULT__T10:
         return getT10();
+      case EditorPackage.TYPE_RESULT__T11:
+        return getT11();
+      case EditorPackage.TYPE_RESULT__T24:
+        return getT24();
+      case EditorPackage.TYPE_RESULT__T26:
+        return getT26();
       case EditorPackage.TYPE_RESULT__T12:
         return getT12();
       case EditorPackage.TYPE_RESULT__T13:
@@ -650,19 +766,35 @@ public class TypeResultImpl extends MinimalEObjectImpl.Container implements Type
       case EditorPackage.TYPE_RESULT__NAME:
         setName((String)newValue);
         return;
-      case EditorPackage.TYPE_RESULT__T6:
-        setT6((TypeExpression)newValue);
-        return;
       case EditorPackage.TYPE_RESULT__T7:
-        getT7().clear();
-        getT7().addAll((Collection<? extends TypeExpression>)newValue);
+        setT7((TypeExpression)newValue);
         return;
-      case EditorPackage.TYPE_RESULT__T9:
-        setT9((TypeExpression)newValue);
+      case EditorPackage.TYPE_RESULT__T8:
+        getT8().clear();
+        getT8().addAll((Collection<? extends TypeExpression>)newValue);
+        return;
+      case EditorPackage.TYPE_RESULT__T21:
+        getT21().clear();
+        getT21().addAll((Collection<? extends TypeExpression>)newValue);
+        return;
+      case EditorPackage.TYPE_RESULT__T23:
+        getT23().clear();
+        getT23().addAll((Collection<? extends TypeExpression>)newValue);
         return;
       case EditorPackage.TYPE_RESULT__T10:
-        getT10().clear();
-        getT10().addAll((Collection<? extends TypeExpression>)newValue);
+        setT10((TypeExpression)newValue);
+        return;
+      case EditorPackage.TYPE_RESULT__T11:
+        getT11().clear();
+        getT11().addAll((Collection<? extends TypeExpression>)newValue);
+        return;
+      case EditorPackage.TYPE_RESULT__T24:
+        getT24().clear();
+        getT24().addAll((Collection<? extends TypeExpression>)newValue);
+        return;
+      case EditorPackage.TYPE_RESULT__T26:
+        getT26().clear();
+        getT26().addAll((Collection<? extends TypeExpression>)newValue);
         return;
       case EditorPackage.TYPE_RESULT__T12:
         setT12((TypeExpression)newValue);
@@ -700,17 +832,29 @@ public class TypeResultImpl extends MinimalEObjectImpl.Container implements Type
       case EditorPackage.TYPE_RESULT__NAME:
         setName(NAME_EDEFAULT);
         return;
-      case EditorPackage.TYPE_RESULT__T6:
-        setT6((TypeExpression)null);
-        return;
       case EditorPackage.TYPE_RESULT__T7:
-        getT7().clear();
+        setT7((TypeExpression)null);
         return;
-      case EditorPackage.TYPE_RESULT__T9:
-        setT9((TypeExpression)null);
+      case EditorPackage.TYPE_RESULT__T8:
+        getT8().clear();
+        return;
+      case EditorPackage.TYPE_RESULT__T21:
+        getT21().clear();
+        return;
+      case EditorPackage.TYPE_RESULT__T23:
+        getT23().clear();
         return;
       case EditorPackage.TYPE_RESULT__T10:
-        getT10().clear();
+        setT10((TypeExpression)null);
+        return;
+      case EditorPackage.TYPE_RESULT__T11:
+        getT11().clear();
+        return;
+      case EditorPackage.TYPE_RESULT__T24:
+        getT24().clear();
+        return;
+      case EditorPackage.TYPE_RESULT__T26:
+        getT26().clear();
         return;
       case EditorPackage.TYPE_RESULT__T12:
         setT12((TypeExpression)null);
@@ -743,14 +887,22 @@ public class TypeResultImpl extends MinimalEObjectImpl.Container implements Type
         return TYNAME_EDEFAULT == null ? tyname != null : !TYNAME_EDEFAULT.equals(tyname);
       case EditorPackage.TYPE_RESULT__NAME:
         return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-      case EditorPackage.TYPE_RESULT__T6:
-        return t6 != null;
       case EditorPackage.TYPE_RESULT__T7:
-        return t7 != null && !t7.isEmpty();
-      case EditorPackage.TYPE_RESULT__T9:
-        return t9 != null;
+        return t7 != null;
+      case EditorPackage.TYPE_RESULT__T8:
+        return t8 != null && !t8.isEmpty();
+      case EditorPackage.TYPE_RESULT__T21:
+        return t21 != null && !t21.isEmpty();
+      case EditorPackage.TYPE_RESULT__T23:
+        return t23 != null && !t23.isEmpty();
       case EditorPackage.TYPE_RESULT__T10:
-        return t10 != null && !t10.isEmpty();
+        return t10 != null;
+      case EditorPackage.TYPE_RESULT__T11:
+        return t11 != null && !t11.isEmpty();
+      case EditorPackage.TYPE_RESULT__T24:
+        return t24 != null && !t24.isEmpty();
+      case EditorPackage.TYPE_RESULT__T26:
+        return t26 != null && !t26.isEmpty();
       case EditorPackage.TYPE_RESULT__T12:
         return t12 != null;
       case EditorPackage.TYPE_RESULT__T13:

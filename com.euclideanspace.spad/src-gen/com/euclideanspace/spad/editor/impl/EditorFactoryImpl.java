@@ -87,6 +87,7 @@ public class EditorFactoryImpl extends EFactoryImpl implements EditorFactory
       case EditorPackage.TYPE_RESULT: return createTypeResult();
       case EditorPackage.TYPE_PRIMARY_EXPRESSION: return createTypePrimaryExpression();
       case EditorPackage.TYPE_NAME_OR_FUNCTION_CALL: return createTypeNameOrFunctionCall();
+      case EditorPackage.TUPLE_DEFINITION: return createTupleDefinition();
       case EditorPackage.TYPE_LITERAL: return createTypeLiteral();
       case EditorPackage.STATEMENT: return createStatement();
       case EditorPackage.BLOCK: return createBlock();
@@ -101,7 +102,6 @@ public class EditorFactoryImpl extends EFactoryImpl implements EditorFactory
       case EditorPackage.PREDICATE: return createPredicate();
       case EditorPackage.PREDICATE_PRIMARY: return createPredicatePrimary();
       case EditorPackage.EXPR: return createExpr();
-      case EditorPackage.MAP_DEFINITION: return createMapDefinition();
       case EditorPackage.PRIMARY_PREFIX: return createPrimaryPrefix();
       case EditorPackage.NAME_OR_FUNCTION_CALL: return createNameOrFunctionCall();
       case EditorPackage.LITERAL: return createLiteral();
@@ -128,6 +128,7 @@ public class EditorFactoryImpl extends EFactoryImpl implements EditorFactory
       case EditorPackage.REM_EXPRESSION: return createRemExpression();
       case EditorPackage.MULTIPLICATIVE_EXPRESSION: return createMultiplicativeExpression();
       case EditorPackage.EXPONENT_EXPRESSION: return createExponentExpression();
+      case EditorPackage.MAP_DEFINITION: return createMapDefinition();
       case EditorPackage.PRETEND_EXPRESSION: return createPretendExpression();
       case EditorPackage.HINT_TYPE_EXPRESSION: return createHintTypeExpression();
       case EditorPackage.COERCE_EXPRESSION: return createCoerceExpression();
@@ -397,6 +398,17 @@ public class EditorFactoryImpl extends EFactoryImpl implements EditorFactory
    * <!-- end-user-doc -->
    * @generated
    */
+  public TupleDefinition createTupleDefinition()
+  {
+    TupleDefinitionImpl tupleDefinition = new TupleDefinitionImpl();
+    return tupleDefinition;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public TypeLiteral createTypeLiteral()
   {
     TypeLiteralImpl typeLiteral = new TypeLiteralImpl();
@@ -544,17 +556,6 @@ public class EditorFactoryImpl extends EFactoryImpl implements EditorFactory
   {
     ExprImpl expr = new ExprImpl();
     return expr;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public MapDefinition createMapDefinition()
-  {
-    MapDefinitionImpl mapDefinition = new MapDefinitionImpl();
-    return mapDefinition;
   }
 
   /**
@@ -841,6 +842,17 @@ public class EditorFactoryImpl extends EFactoryImpl implements EditorFactory
   {
     ExponentExpressionImpl exponentExpression = new ExponentExpressionImpl();
     return exponentExpression;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public MapDefinition createMapDefinition()
+  {
+    MapDefinitionImpl mapDefinition = new MapDefinitionImpl();
+    return mapDefinition;
   }
 
   /**

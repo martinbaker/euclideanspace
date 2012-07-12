@@ -662,13 +662,22 @@ public interface EditorPackage extends EPackage
   int FUNCTION_SIGNATURE__PAR3 = FUNCTION_DEFINITION_FEATURE_COUNT + 4;
 
   /**
+   * The feature id for the '<em><b>Par</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FUNCTION_SIGNATURE__PAR = FUNCTION_DEFINITION_FEATURE_COUNT + 5;
+
+  /**
    * The feature id for the '<em><b>T4</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int FUNCTION_SIGNATURE__T4 = FUNCTION_DEFINITION_FEATURE_COUNT + 5;
+  int FUNCTION_SIGNATURE__T4 = FUNCTION_DEFINITION_FEATURE_COUNT + 6;
 
   /**
    * The feature id for the '<em><b>B1</b></em>' attribute.
@@ -677,7 +686,7 @@ public interface EditorPackage extends EPackage
    * @generated
    * @ordered
    */
-  int FUNCTION_SIGNATURE__B1 = FUNCTION_DEFINITION_FEATURE_COUNT + 6;
+  int FUNCTION_SIGNATURE__B1 = FUNCTION_DEFINITION_FEATURE_COUNT + 7;
 
   /**
    * The feature id for the '<em><b>T5</b></em>' attribute.
@@ -686,7 +695,7 @@ public interface EditorPackage extends EPackage
    * @generated
    * @ordered
    */
-  int FUNCTION_SIGNATURE__T5 = FUNCTION_DEFINITION_FEATURE_COUNT + 7;
+  int FUNCTION_SIGNATURE__T5 = FUNCTION_DEFINITION_FEATURE_COUNT + 8;
 
   /**
    * The feature id for the '<em><b>B2</b></em>' attribute.
@@ -695,7 +704,7 @@ public interface EditorPackage extends EPackage
    * @generated
    * @ordered
    */
-  int FUNCTION_SIGNATURE__B2 = FUNCTION_DEFINITION_FEATURE_COUNT + 8;
+  int FUNCTION_SIGNATURE__B2 = FUNCTION_DEFINITION_FEATURE_COUNT + 9;
 
   /**
    * The feature id for the '<em><b>T6</b></em>' attribute.
@@ -704,7 +713,7 @@ public interface EditorPackage extends EPackage
    * @generated
    * @ordered
    */
-  int FUNCTION_SIGNATURE__T6 = FUNCTION_DEFINITION_FEATURE_COUNT + 9;
+  int FUNCTION_SIGNATURE__T6 = FUNCTION_DEFINITION_FEATURE_COUNT + 10;
 
   /**
    * The number of structural features of the '<em>Function Signature</em>' class.
@@ -713,7 +722,7 @@ public interface EditorPackage extends EPackage
    * @generated
    * @ordered
    */
-  int FUNCTION_SIGNATURE_FEATURE_COUNT = FUNCTION_DEFINITION_FEATURE_COUNT + 10;
+  int FUNCTION_SIGNATURE_FEATURE_COUNT = FUNCTION_DEFINITION_FEATURE_COUNT + 11;
 
   /**
    * The meta object id for the '{@link com.euclideanspace.spad.editor.impl.MacroDefImpl <em>Macro Def</em>}' class.
@@ -754,13 +763,13 @@ public interface EditorPackage extends EPackage
   int IMPORT = 12;
 
   /**
-   * The feature id for the '<em><b>Impname</b></em>' attribute.
+   * The feature id for the '<em><b>Impname</b></em>' attribute list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int IMPORT__IMPNAME = 0;
+  int IMPORT__IMPNAME = WHERE_ASSIGNMENTS_FEATURE_COUNT + 0;
 
   /**
    * The number of structural features of the '<em>Import</em>' class.
@@ -769,7 +778,7 @@ public interface EditorPackage extends EPackage
    * @generated
    * @ordered
    */
-  int IMPORT_FEATURE_COUNT = 1;
+  int IMPORT_FEATURE_COUNT = WHERE_ASSIGNMENTS_FEATURE_COUNT + 1;
 
   /**
    * The meta object id for the '{@link com.euclideanspace.spad.editor.impl.VariableDeclarationImpl <em>Variable Declaration</em>}' class.
@@ -1085,40 +1094,76 @@ public interface EditorPackage extends EPackage
   int TYPE_ARGUMENTS__T6 = 7;
 
   /**
-   * The feature id for the '<em><b>T7</b></em>' containment reference list.
+   * The feature id for the '<em><b>T22</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int TYPE_ARGUMENTS__T7 = 8;
+  int TYPE_ARGUMENTS__T22 = 8;
 
   /**
-   * The feature id for the '<em><b>T8</b></em>' attribute.
+   * The feature id for the '<em><b>T21</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int TYPE_ARGUMENTS__T8 = 9;
+  int TYPE_ARGUMENTS__T21 = 9;
 
   /**
-   * The feature id for the '<em><b>T9</b></em>' containment reference.
+   * The feature id for the '<em><b>T23</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int TYPE_ARGUMENTS__T9 = 10;
+  int TYPE_ARGUMENTS__T23 = 10;
 
   /**
-   * The feature id for the '<em><b>T10</b></em>' containment reference list.
+   * The feature id for the '<em><b>T9</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int TYPE_ARGUMENTS__T10 = 11;
+  int TYPE_ARGUMENTS__T9 = 11;
+
+  /**
+   * The feature id for the '<em><b>T10</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TYPE_ARGUMENTS__T10 = 12;
+
+  /**
+   * The feature id for the '<em><b>T25</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TYPE_ARGUMENTS__T25 = 13;
+
+  /**
+   * The feature id for the '<em><b>T24</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TYPE_ARGUMENTS__T24 = 14;
+
+  /**
+   * The feature id for the '<em><b>T26</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TYPE_ARGUMENTS__T26 = 15;
 
   /**
    * The feature id for the '<em><b>T11</b></em>' attribute.
@@ -1127,7 +1172,7 @@ public interface EditorPackage extends EPackage
    * @generated
    * @ordered
    */
-  int TYPE_ARGUMENTS__T11 = 12;
+  int TYPE_ARGUMENTS__T11 = 16;
 
   /**
    * The feature id for the '<em><b>T12</b></em>' containment reference.
@@ -1136,7 +1181,7 @@ public interface EditorPackage extends EPackage
    * @generated
    * @ordered
    */
-  int TYPE_ARGUMENTS__T12 = 13;
+  int TYPE_ARGUMENTS__T12 = 17;
 
   /**
    * The feature id for the '<em><b>T13</b></em>' containment reference list.
@@ -1145,7 +1190,7 @@ public interface EditorPackage extends EPackage
    * @generated
    * @ordered
    */
-  int TYPE_ARGUMENTS__T13 = 14;
+  int TYPE_ARGUMENTS__T13 = 18;
 
   /**
    * The feature id for the '<em><b>T15</b></em>' containment reference.
@@ -1154,7 +1199,7 @@ public interface EditorPackage extends EPackage
    * @generated
    * @ordered
    */
-  int TYPE_ARGUMENTS__T15 = 15;
+  int TYPE_ARGUMENTS__T15 = 19;
 
   /**
    * The number of structural features of the '<em>Type Arguments</em>' class.
@@ -1163,7 +1208,7 @@ public interface EditorPackage extends EPackage
    * @generated
    * @ordered
    */
-  int TYPE_ARGUMENTS_FEATURE_COUNT = 16;
+  int TYPE_ARGUMENTS_FEATURE_COUNT = 20;
 
   /**
    * The meta object id for the '{@link com.euclideanspace.spad.editor.impl.TypeResultImpl <em>Type Result</em>}' class.
@@ -1212,40 +1257,76 @@ public interface EditorPackage extends EPackage
   int TYPE_RESULT__NAME = 3;
 
   /**
-   * The feature id for the '<em><b>T6</b></em>' containment reference.
+   * The feature id for the '<em><b>T7</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int TYPE_RESULT__T6 = 4;
+  int TYPE_RESULT__T7 = 4;
 
   /**
-   * The feature id for the '<em><b>T7</b></em>' containment reference list.
+   * The feature id for the '<em><b>T8</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int TYPE_RESULT__T7 = 5;
+  int TYPE_RESULT__T8 = 5;
 
   /**
-   * The feature id for the '<em><b>T9</b></em>' containment reference.
+   * The feature id for the '<em><b>T21</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int TYPE_RESULT__T9 = 6;
+  int TYPE_RESULT__T21 = 6;
 
   /**
-   * The feature id for the '<em><b>T10</b></em>' containment reference list.
+   * The feature id for the '<em><b>T23</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int TYPE_RESULT__T10 = 7;
+  int TYPE_RESULT__T23 = 7;
+
+  /**
+   * The feature id for the '<em><b>T10</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TYPE_RESULT__T10 = 8;
+
+  /**
+   * The feature id for the '<em><b>T11</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TYPE_RESULT__T11 = 9;
+
+  /**
+   * The feature id for the '<em><b>T24</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TYPE_RESULT__T24 = 10;
+
+  /**
+   * The feature id for the '<em><b>T26</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TYPE_RESULT__T26 = 11;
 
   /**
    * The feature id for the '<em><b>T12</b></em>' containment reference.
@@ -1254,7 +1335,7 @@ public interface EditorPackage extends EPackage
    * @generated
    * @ordered
    */
-  int TYPE_RESULT__T12 = 8;
+  int TYPE_RESULT__T12 = 12;
 
   /**
    * The feature id for the '<em><b>T13</b></em>' containment reference list.
@@ -1263,7 +1344,7 @@ public interface EditorPackage extends EPackage
    * @generated
    * @ordered
    */
-  int TYPE_RESULT__T13 = 9;
+  int TYPE_RESULT__T13 = 13;
 
   /**
    * The feature id for the '<em><b>T15</b></em>' containment reference.
@@ -1272,7 +1353,7 @@ public interface EditorPackage extends EPackage
    * @generated
    * @ordered
    */
-  int TYPE_RESULT__T15 = 10;
+  int TYPE_RESULT__T15 = 14;
 
   /**
    * The number of structural features of the '<em>Type Result</em>' class.
@@ -1281,7 +1362,7 @@ public interface EditorPackage extends EPackage
    * @generated
    * @ordered
    */
-  int TYPE_RESULT_FEATURE_COUNT = 11;
+  int TYPE_RESULT_FEATURE_COUNT = 15;
 
   /**
    * The meta object id for the '{@link com.euclideanspace.spad.editor.impl.TypePrimaryExpressionImpl <em>Type Primary Expression</em>}' class.
@@ -1628,6 +1709,178 @@ public interface EditorPackage extends EPackage
   int TYPE_NAME_OR_FUNCTION_CALL_FEATURE_COUNT = TYPE_PRIMARY_EXPRESSION_FEATURE_COUNT + 4;
 
   /**
+   * The meta object id for the '{@link com.euclideanspace.spad.editor.impl.TupleDefinitionImpl <em>Tuple Definition</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see com.euclideanspace.spad.editor.impl.TupleDefinitionImpl
+   * @see com.euclideanspace.spad.editor.impl.EditorPackageImpl#getTupleDefinition()
+   * @generated
+   */
+  int TUPLE_DEFINITION = 23;
+
+  /**
+   * The feature id for the '<em><b>T2</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TUPLE_DEFINITION__T2 = TYPE_PRIMARY_EXPRESSION__T2;
+
+  /**
+   * The feature id for the '<em><b>T3</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TUPLE_DEFINITION__T3 = TYPE_PRIMARY_EXPRESSION__T3;
+
+  /**
+   * The feature id for the '<em><b>T32</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TUPLE_DEFINITION__T32 = TYPE_PRIMARY_EXPRESSION__T32;
+
+  /**
+   * The feature id for the '<em><b>Tyname</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TUPLE_DEFINITION__TYNAME = TYPE_PRIMARY_EXPRESSION__TYNAME;
+
+  /**
+   * The feature id for the '<em><b>T5</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TUPLE_DEFINITION__T5 = TYPE_PRIMARY_EXPRESSION__T5;
+
+  /**
+   * The feature id for the '<em><b>T7</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TUPLE_DEFINITION__T7 = TYPE_PRIMARY_EXPRESSION__T7;
+
+  /**
+   * The feature id for the '<em><b>T8</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TUPLE_DEFINITION__T8 = TYPE_PRIMARY_EXPRESSION__T8;
+
+  /**
+   * The feature id for the '<em><b>T21</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TUPLE_DEFINITION__T21 = TYPE_PRIMARY_EXPRESSION__T21;
+
+  /**
+   * The feature id for the '<em><b>T23</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TUPLE_DEFINITION__T23 = TYPE_PRIMARY_EXPRESSION__T23;
+
+  /**
+   * The feature id for the '<em><b>T10</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TUPLE_DEFINITION__T10 = TYPE_PRIMARY_EXPRESSION__T10;
+
+  /**
+   * The feature id for the '<em><b>T11</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TUPLE_DEFINITION__T11 = TYPE_PRIMARY_EXPRESSION__T11;
+
+  /**
+   * The feature id for the '<em><b>T24</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TUPLE_DEFINITION__T24 = TYPE_PRIMARY_EXPRESSION__T24;
+
+  /**
+   * The feature id for the '<em><b>T26</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TUPLE_DEFINITION__T26 = TYPE_PRIMARY_EXPRESSION__T26;
+
+  /**
+   * The feature id for the '<em><b>T13</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TUPLE_DEFINITION__T13 = TYPE_PRIMARY_EXPRESSION__T13;
+
+  /**
+   * The feature id for the '<em><b>T14</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TUPLE_DEFINITION__T14 = TYPE_PRIMARY_EXPRESSION__T14;
+
+  /**
+   * The feature id for the '<em><b>T4</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TUPLE_DEFINITION__T4 = TYPE_PRIMARY_EXPRESSION_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>T25</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TUPLE_DEFINITION__T25 = TYPE_PRIMARY_EXPRESSION_FEATURE_COUNT + 1;
+
+  /**
+   * The number of structural features of the '<em>Tuple Definition</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TUPLE_DEFINITION_FEATURE_COUNT = TYPE_PRIMARY_EXPRESSION_FEATURE_COUNT + 2;
+
+  /**
    * The meta object id for the '{@link com.euclideanspace.spad.editor.impl.TypeLiteralImpl <em>Type Literal</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1635,7 +1888,7 @@ public interface EditorPackage extends EPackage
    * @see com.euclideanspace.spad.editor.impl.EditorPackageImpl#getTypeLiteral()
    * @generated
    */
-  int TYPE_LITERAL = 23;
+  int TYPE_LITERAL = 24;
 
   /**
    * The feature id for the '<em><b>T2</b></em>' containment reference.
@@ -1825,7 +2078,7 @@ public interface EditorPackage extends EPackage
    * @see com.euclideanspace.spad.editor.impl.EditorPackageImpl#getStatement()
    * @generated
    */
-  int STATEMENT = 24;
+  int STATEMENT = 25;
 
   /**
    * The feature id for the '<em><b>S1</b></em>' containment reference.
@@ -1925,7 +2178,7 @@ public interface EditorPackage extends EPackage
    * @see com.euclideanspace.spad.editor.impl.EditorPackageImpl#getBlock()
    * @generated
    */
-  int BLOCK = 25;
+  int BLOCK = 26;
 
   /**
    * The feature id for the '<em><b>Stname</b></em>' attribute.
@@ -1962,7 +2215,7 @@ public interface EditorPackage extends EPackage
    * @see com.euclideanspace.spad.editor.impl.EditorPackageImpl#getStatementExpression()
    * @generated
    */
-  int STATEMENT_EXPRESSION = 26;
+  int STATEMENT_EXPRESSION = 27;
 
   /**
    * The feature id for the '<em><b>T</b></em>' containment reference.
@@ -2017,7 +2270,7 @@ public interface EditorPackage extends EPackage
    * @see com.euclideanspace.spad.editor.impl.EditorPackageImpl#getForStatement()
    * @generated
    */
-  int FOR_STATEMENT = 27;
+  int FOR_STATEMENT = 28;
 
   /**
    * The feature id for the '<em><b>Stname</b></em>' attribute.
@@ -2063,7 +2316,7 @@ public interface EditorPackage extends EPackage
    * @see com.euclideanspace.spad.editor.impl.EditorPackageImpl#getWhileStatement()
    * @generated
    */
-  int WHILE_STATEMENT = 28;
+  int WHILE_STATEMENT = 29;
 
   /**
    * The feature id for the '<em><b>Stname</b></em>' attribute.
@@ -2109,7 +2362,7 @@ public interface EditorPackage extends EPackage
    * @see com.euclideanspace.spad.editor.impl.EditorPackageImpl#getDoStatement()
    * @generated
    */
-  int DO_STATEMENT = 29;
+  int DO_STATEMENT = 30;
 
   /**
    * The feature id for the '<em><b>Stname</b></em>' attribute.
@@ -2155,7 +2408,7 @@ public interface EditorPackage extends EPackage
    * @see com.euclideanspace.spad.editor.impl.EditorPackageImpl#getIterateStatement()
    * @generated
    */
-  int ITERATE_STATEMENT = 30;
+  int ITERATE_STATEMENT = 31;
 
   /**
    * The feature id for the '<em><b>Stname</b></em>' attribute.
@@ -2183,7 +2436,7 @@ public interface EditorPackage extends EPackage
    * @see com.euclideanspace.spad.editor.impl.EditorPackageImpl#getBreakStatement()
    * @generated
    */
-  int BREAK_STATEMENT = 31;
+  int BREAK_STATEMENT = 32;
 
   /**
    * The feature id for the '<em><b>Stname</b></em>' attribute.
@@ -2211,7 +2464,7 @@ public interface EditorPackage extends EPackage
    * @see com.euclideanspace.spad.editor.impl.EditorPackageImpl#getReturnStatement()
    * @generated
    */
-  int RETURN_STATEMENT = 32;
+  int RETURN_STATEMENT = 33;
 
   /**
    * The feature id for the '<em><b>Stname</b></em>' attribute.
@@ -2248,7 +2501,7 @@ public interface EditorPackage extends EPackage
    * @see com.euclideanspace.spad.editor.impl.EditorPackageImpl#getIfStatement()
    * @generated
    */
-  int IF_STATEMENT = 33;
+  int IF_STATEMENT = 34;
 
   /**
    * The feature id for the '<em><b>T2</b></em>' containment reference.
@@ -2294,7 +2547,7 @@ public interface EditorPackage extends EPackage
    * @see com.euclideanspace.spad.editor.impl.EditorPackageImpl#getPredicate()
    * @generated
    */
-  int PREDICATE = 34;
+  int PREDICATE = 35;
 
   /**
    * The number of structural features of the '<em>Predicate</em>' class.
@@ -2313,7 +2566,7 @@ public interface EditorPackage extends EPackage
    * @see com.euclideanspace.spad.editor.impl.EditorPackageImpl#getPredicatePrimary()
    * @generated
    */
-  int PREDICATE_PRIMARY = 35;
+  int PREDICATE_PRIMARY = 36;
 
   /**
    * The feature id for the '<em><b>T</b></em>' containment reference.
@@ -2350,7 +2603,7 @@ public interface EditorPackage extends EPackage
    * @see com.euclideanspace.spad.editor.impl.EditorPackageImpl#getExpr()
    * @generated
    */
-  int EXPR = 36;
+  int EXPR = 37;
 
   /**
    * The feature id for the '<em><b>Ifname</b></em>' attribute.
@@ -2389,59 +2642,148 @@ public interface EditorPackage extends EPackage
   int EXPR__ELSEEXP = 3;
 
   /**
+   * The feature id for the '<em><b>E2</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EXPR__E2 = 4;
+
+  /**
+   * The feature id for the '<em><b>E3</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EXPR__E3 = 5;
+
+  /**
+   * The feature id for the '<em><b>E5</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EXPR__E5 = 6;
+
+  /**
+   * The feature id for the '<em><b>E6</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EXPR__E6 = 7;
+
+  /**
+   * The feature id for the '<em><b>E22</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EXPR__E22 = 8;
+
+  /**
+   * The feature id for the '<em><b>E21</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EXPR__E21 = 9;
+
+  /**
+   * The feature id for the '<em><b>E23</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EXPR__E23 = 10;
+
+  /**
+   * The feature id for the '<em><b>E9</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EXPR__E9 = 11;
+
+  /**
+   * The feature id for the '<em><b>E10</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EXPR__E10 = 12;
+
+  /**
+   * The feature id for the '<em><b>E25</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EXPR__E25 = 13;
+
+  /**
+   * The feature id for the '<em><b>E24</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EXPR__E24 = 14;
+
+  /**
+   * The feature id for the '<em><b>E26</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EXPR__E26 = 15;
+
+  /**
+   * The feature id for the '<em><b>E11</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EXPR__E11 = 16;
+
+  /**
+   * The feature id for the '<em><b>E12</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EXPR__E12 = 17;
+
+  /**
+   * The feature id for the '<em><b>E13</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EXPR__E13 = 18;
+
+  /**
    * The number of structural features of the '<em>Expr</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int EXPR_FEATURE_COUNT = 4;
-
-  /**
-   * The meta object id for the '{@link com.euclideanspace.spad.editor.impl.MapDefinitionImpl <em>Map Definition</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see com.euclideanspace.spad.editor.impl.MapDefinitionImpl
-   * @see com.euclideanspace.spad.editor.impl.EditorPackageImpl#getMapDefinition()
-   * @generated
-   */
-  int MAP_DEFINITION = 37;
-
-  /**
-   * The feature id for the '<em><b>Fn Sig</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int MAP_DEFINITION__FN_SIG = 0;
-
-  /**
-   * The feature id for the '<em><b>Par4</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int MAP_DEFINITION__PAR4 = 1;
-
-  /**
-   * The feature id for the '<em><b>Par5</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int MAP_DEFINITION__PAR5 = 2;
-
-  /**
-   * The number of structural features of the '<em>Map Definition</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int MAP_DEFINITION_FEATURE_COUNT = 3;
+  int EXPR_FEATURE_COUNT = 19;
 
   /**
    * The meta object id for the '{@link com.euclideanspace.spad.editor.impl.PrimaryPrefixImpl <em>Primary Prefix</em>}' class.
@@ -2488,6 +2830,141 @@ public interface EditorPackage extends EPackage
    * @ordered
    */
   int PRIMARY_PREFIX__ELSEEXP = EXPR__ELSEEXP;
+
+  /**
+   * The feature id for the '<em><b>E2</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PRIMARY_PREFIX__E2 = EXPR__E2;
+
+  /**
+   * The feature id for the '<em><b>E3</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PRIMARY_PREFIX__E3 = EXPR__E3;
+
+  /**
+   * The feature id for the '<em><b>E5</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PRIMARY_PREFIX__E5 = EXPR__E5;
+
+  /**
+   * The feature id for the '<em><b>E6</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PRIMARY_PREFIX__E6 = EXPR__E6;
+
+  /**
+   * The feature id for the '<em><b>E22</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PRIMARY_PREFIX__E22 = EXPR__E22;
+
+  /**
+   * The feature id for the '<em><b>E21</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PRIMARY_PREFIX__E21 = EXPR__E21;
+
+  /**
+   * The feature id for the '<em><b>E23</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PRIMARY_PREFIX__E23 = EXPR__E23;
+
+  /**
+   * The feature id for the '<em><b>E9</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PRIMARY_PREFIX__E9 = EXPR__E9;
+
+  /**
+   * The feature id for the '<em><b>E10</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PRIMARY_PREFIX__E10 = EXPR__E10;
+
+  /**
+   * The feature id for the '<em><b>E25</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PRIMARY_PREFIX__E25 = EXPR__E25;
+
+  /**
+   * The feature id for the '<em><b>E24</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PRIMARY_PREFIX__E24 = EXPR__E24;
+
+  /**
+   * The feature id for the '<em><b>E26</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PRIMARY_PREFIX__E26 = EXPR__E26;
+
+  /**
+   * The feature id for the '<em><b>E11</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PRIMARY_PREFIX__E11 = EXPR__E11;
+
+  /**
+   * The feature id for the '<em><b>E12</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PRIMARY_PREFIX__E12 = EXPR__E12;
+
+  /**
+   * The feature id for the '<em><b>E13</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PRIMARY_PREFIX__E13 = EXPR__E13;
 
   /**
    * The feature id for the '<em><b>T4</b></em>' containment reference.
@@ -2627,6 +3104,141 @@ public interface EditorPackage extends EPackage
   int LITERAL__ELSEEXP = PRIMARY_PREFIX__ELSEEXP;
 
   /**
+   * The feature id for the '<em><b>E2</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LITERAL__E2 = PRIMARY_PREFIX__E2;
+
+  /**
+   * The feature id for the '<em><b>E3</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LITERAL__E3 = PRIMARY_PREFIX__E3;
+
+  /**
+   * The feature id for the '<em><b>E5</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LITERAL__E5 = PRIMARY_PREFIX__E5;
+
+  /**
+   * The feature id for the '<em><b>E6</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LITERAL__E6 = PRIMARY_PREFIX__E6;
+
+  /**
+   * The feature id for the '<em><b>E22</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LITERAL__E22 = PRIMARY_PREFIX__E22;
+
+  /**
+   * The feature id for the '<em><b>E21</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LITERAL__E21 = PRIMARY_PREFIX__E21;
+
+  /**
+   * The feature id for the '<em><b>E23</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LITERAL__E23 = PRIMARY_PREFIX__E23;
+
+  /**
+   * The feature id for the '<em><b>E9</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LITERAL__E9 = PRIMARY_PREFIX__E9;
+
+  /**
+   * The feature id for the '<em><b>E10</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LITERAL__E10 = PRIMARY_PREFIX__E10;
+
+  /**
+   * The feature id for the '<em><b>E25</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LITERAL__E25 = PRIMARY_PREFIX__E25;
+
+  /**
+   * The feature id for the '<em><b>E24</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LITERAL__E24 = PRIMARY_PREFIX__E24;
+
+  /**
+   * The feature id for the '<em><b>E26</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LITERAL__E26 = PRIMARY_PREFIX__E26;
+
+  /**
+   * The feature id for the '<em><b>E11</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LITERAL__E11 = PRIMARY_PREFIX__E11;
+
+  /**
+   * The feature id for the '<em><b>E12</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LITERAL__E12 = PRIMARY_PREFIX__E12;
+
+  /**
+   * The feature id for the '<em><b>E13</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LITERAL__E13 = PRIMARY_PREFIX__E13;
+
+  /**
    * The feature id for the '<em><b>T4</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -2716,6 +3328,141 @@ public interface EditorPackage extends EPackage
    * @ordered
    */
   int CHARACTER_LITERAL__ELSEEXP = LITERAL__ELSEEXP;
+
+  /**
+   * The feature id for the '<em><b>E2</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CHARACTER_LITERAL__E2 = LITERAL__E2;
+
+  /**
+   * The feature id for the '<em><b>E3</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CHARACTER_LITERAL__E3 = LITERAL__E3;
+
+  /**
+   * The feature id for the '<em><b>E5</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CHARACTER_LITERAL__E5 = LITERAL__E5;
+
+  /**
+   * The feature id for the '<em><b>E6</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CHARACTER_LITERAL__E6 = LITERAL__E6;
+
+  /**
+   * The feature id for the '<em><b>E22</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CHARACTER_LITERAL__E22 = LITERAL__E22;
+
+  /**
+   * The feature id for the '<em><b>E21</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CHARACTER_LITERAL__E21 = LITERAL__E21;
+
+  /**
+   * The feature id for the '<em><b>E23</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CHARACTER_LITERAL__E23 = LITERAL__E23;
+
+  /**
+   * The feature id for the '<em><b>E9</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CHARACTER_LITERAL__E9 = LITERAL__E9;
+
+  /**
+   * The feature id for the '<em><b>E10</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CHARACTER_LITERAL__E10 = LITERAL__E10;
+
+  /**
+   * The feature id for the '<em><b>E25</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CHARACTER_LITERAL__E25 = LITERAL__E25;
+
+  /**
+   * The feature id for the '<em><b>E24</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CHARACTER_LITERAL__E24 = LITERAL__E24;
+
+  /**
+   * The feature id for the '<em><b>E26</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CHARACTER_LITERAL__E26 = LITERAL__E26;
+
+  /**
+   * The feature id for the '<em><b>E11</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CHARACTER_LITERAL__E11 = LITERAL__E11;
+
+  /**
+   * The feature id for the '<em><b>E12</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CHARACTER_LITERAL__E12 = LITERAL__E12;
+
+  /**
+   * The feature id for the '<em><b>E13</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CHARACTER_LITERAL__E13 = LITERAL__E13;
 
   /**
    * The feature id for the '<em><b>T4</b></em>' containment reference.
@@ -2818,6 +3565,141 @@ public interface EditorPackage extends EPackage
   int BOOLEAN_LITERAL__ELSEEXP = LITERAL__ELSEEXP;
 
   /**
+   * The feature id for the '<em><b>E2</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int BOOLEAN_LITERAL__E2 = LITERAL__E2;
+
+  /**
+   * The feature id for the '<em><b>E3</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int BOOLEAN_LITERAL__E3 = LITERAL__E3;
+
+  /**
+   * The feature id for the '<em><b>E5</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int BOOLEAN_LITERAL__E5 = LITERAL__E5;
+
+  /**
+   * The feature id for the '<em><b>E6</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int BOOLEAN_LITERAL__E6 = LITERAL__E6;
+
+  /**
+   * The feature id for the '<em><b>E22</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int BOOLEAN_LITERAL__E22 = LITERAL__E22;
+
+  /**
+   * The feature id for the '<em><b>E21</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int BOOLEAN_LITERAL__E21 = LITERAL__E21;
+
+  /**
+   * The feature id for the '<em><b>E23</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int BOOLEAN_LITERAL__E23 = LITERAL__E23;
+
+  /**
+   * The feature id for the '<em><b>E9</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int BOOLEAN_LITERAL__E9 = LITERAL__E9;
+
+  /**
+   * The feature id for the '<em><b>E10</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int BOOLEAN_LITERAL__E10 = LITERAL__E10;
+
+  /**
+   * The feature id for the '<em><b>E25</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int BOOLEAN_LITERAL__E25 = LITERAL__E25;
+
+  /**
+   * The feature id for the '<em><b>E24</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int BOOLEAN_LITERAL__E24 = LITERAL__E24;
+
+  /**
+   * The feature id for the '<em><b>E26</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int BOOLEAN_LITERAL__E26 = LITERAL__E26;
+
+  /**
+   * The feature id for the '<em><b>E11</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int BOOLEAN_LITERAL__E11 = LITERAL__E11;
+
+  /**
+   * The feature id for the '<em><b>E12</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int BOOLEAN_LITERAL__E12 = LITERAL__E12;
+
+  /**
+   * The feature id for the '<em><b>E13</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int BOOLEAN_LITERAL__E13 = LITERAL__E13;
+
+  /**
    * The feature id for the '<em><b>T4</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -2916,6 +3798,141 @@ public interface EditorPackage extends EPackage
    * @ordered
    */
   int LIST_LITERAL__ELSEEXP = LITERAL__ELSEEXP;
+
+  /**
+   * The feature id for the '<em><b>E2</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LIST_LITERAL__E2 = LITERAL__E2;
+
+  /**
+   * The feature id for the '<em><b>E3</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LIST_LITERAL__E3 = LITERAL__E3;
+
+  /**
+   * The feature id for the '<em><b>E5</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LIST_LITERAL__E5 = LITERAL__E5;
+
+  /**
+   * The feature id for the '<em><b>E6</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LIST_LITERAL__E6 = LITERAL__E6;
+
+  /**
+   * The feature id for the '<em><b>E22</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LIST_LITERAL__E22 = LITERAL__E22;
+
+  /**
+   * The feature id for the '<em><b>E21</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LIST_LITERAL__E21 = LITERAL__E21;
+
+  /**
+   * The feature id for the '<em><b>E23</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LIST_LITERAL__E23 = LITERAL__E23;
+
+  /**
+   * The feature id for the '<em><b>E9</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LIST_LITERAL__E9 = LITERAL__E9;
+
+  /**
+   * The feature id for the '<em><b>E10</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LIST_LITERAL__E10 = LITERAL__E10;
+
+  /**
+   * The feature id for the '<em><b>E25</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LIST_LITERAL__E25 = LITERAL__E25;
+
+  /**
+   * The feature id for the '<em><b>E24</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LIST_LITERAL__E24 = LITERAL__E24;
+
+  /**
+   * The feature id for the '<em><b>E26</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LIST_LITERAL__E26 = LITERAL__E26;
+
+  /**
+   * The feature id for the '<em><b>E11</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LIST_LITERAL__E11 = LITERAL__E11;
+
+  /**
+   * The feature id for the '<em><b>E12</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LIST_LITERAL__E12 = LITERAL__E12;
+
+  /**
+   * The feature id for the '<em><b>E13</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LIST_LITERAL__E13 = LITERAL__E13;
 
   /**
    * The feature id for the '<em><b>T4</b></em>' containment reference.
@@ -3174,6 +4191,141 @@ public interface EditorPackage extends EPackage
   int CONDITION_EXPRESSION__ELSEEXP = EXPR__ELSEEXP;
 
   /**
+   * The feature id for the '<em><b>E2</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CONDITION_EXPRESSION__E2 = EXPR__E2;
+
+  /**
+   * The feature id for the '<em><b>E3</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CONDITION_EXPRESSION__E3 = EXPR__E3;
+
+  /**
+   * The feature id for the '<em><b>E5</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CONDITION_EXPRESSION__E5 = EXPR__E5;
+
+  /**
+   * The feature id for the '<em><b>E6</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CONDITION_EXPRESSION__E6 = EXPR__E6;
+
+  /**
+   * The feature id for the '<em><b>E22</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CONDITION_EXPRESSION__E22 = EXPR__E22;
+
+  /**
+   * The feature id for the '<em><b>E21</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CONDITION_EXPRESSION__E21 = EXPR__E21;
+
+  /**
+   * The feature id for the '<em><b>E23</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CONDITION_EXPRESSION__E23 = EXPR__E23;
+
+  /**
+   * The feature id for the '<em><b>E9</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CONDITION_EXPRESSION__E9 = EXPR__E9;
+
+  /**
+   * The feature id for the '<em><b>E10</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CONDITION_EXPRESSION__E10 = EXPR__E10;
+
+  /**
+   * The feature id for the '<em><b>E25</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CONDITION_EXPRESSION__E25 = EXPR__E25;
+
+  /**
+   * The feature id for the '<em><b>E24</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CONDITION_EXPRESSION__E24 = EXPR__E24;
+
+  /**
+   * The feature id for the '<em><b>E26</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CONDITION_EXPRESSION__E26 = EXPR__E26;
+
+  /**
+   * The feature id for the '<em><b>E11</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CONDITION_EXPRESSION__E11 = EXPR__E11;
+
+  /**
+   * The feature id for the '<em><b>E12</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CONDITION_EXPRESSION__E12 = EXPR__E12;
+
+  /**
+   * The feature id for the '<em><b>E13</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CONDITION_EXPRESSION__E13 = EXPR__E13;
+
+  /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -3254,6 +4406,141 @@ public interface EditorPackage extends EPackage
    * @ordered
    */
   int INNER_PROD_EXPRESSION__ELSEEXP = EXPR__ELSEEXP;
+
+  /**
+   * The feature id for the '<em><b>E2</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int INNER_PROD_EXPRESSION__E2 = EXPR__E2;
+
+  /**
+   * The feature id for the '<em><b>E3</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int INNER_PROD_EXPRESSION__E3 = EXPR__E3;
+
+  /**
+   * The feature id for the '<em><b>E5</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int INNER_PROD_EXPRESSION__E5 = EXPR__E5;
+
+  /**
+   * The feature id for the '<em><b>E6</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int INNER_PROD_EXPRESSION__E6 = EXPR__E6;
+
+  /**
+   * The feature id for the '<em><b>E22</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int INNER_PROD_EXPRESSION__E22 = EXPR__E22;
+
+  /**
+   * The feature id for the '<em><b>E21</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int INNER_PROD_EXPRESSION__E21 = EXPR__E21;
+
+  /**
+   * The feature id for the '<em><b>E23</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int INNER_PROD_EXPRESSION__E23 = EXPR__E23;
+
+  /**
+   * The feature id for the '<em><b>E9</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int INNER_PROD_EXPRESSION__E9 = EXPR__E9;
+
+  /**
+   * The feature id for the '<em><b>E10</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int INNER_PROD_EXPRESSION__E10 = EXPR__E10;
+
+  /**
+   * The feature id for the '<em><b>E25</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int INNER_PROD_EXPRESSION__E25 = EXPR__E25;
+
+  /**
+   * The feature id for the '<em><b>E24</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int INNER_PROD_EXPRESSION__E24 = EXPR__E24;
+
+  /**
+   * The feature id for the '<em><b>E26</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int INNER_PROD_EXPRESSION__E26 = EXPR__E26;
+
+  /**
+   * The feature id for the '<em><b>E11</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int INNER_PROD_EXPRESSION__E11 = EXPR__E11;
+
+  /**
+   * The feature id for the '<em><b>E12</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int INNER_PROD_EXPRESSION__E12 = EXPR__E12;
+
+  /**
+   * The feature id for the '<em><b>E13</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int INNER_PROD_EXPRESSION__E13 = EXPR__E13;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -3338,6 +4625,141 @@ public interface EditorPackage extends EPackage
   int OUTER_PROD_EXPRESSION__ELSEEXP = EXPR__ELSEEXP;
 
   /**
+   * The feature id for the '<em><b>E2</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int OUTER_PROD_EXPRESSION__E2 = EXPR__E2;
+
+  /**
+   * The feature id for the '<em><b>E3</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int OUTER_PROD_EXPRESSION__E3 = EXPR__E3;
+
+  /**
+   * The feature id for the '<em><b>E5</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int OUTER_PROD_EXPRESSION__E5 = EXPR__E5;
+
+  /**
+   * The feature id for the '<em><b>E6</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int OUTER_PROD_EXPRESSION__E6 = EXPR__E6;
+
+  /**
+   * The feature id for the '<em><b>E22</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int OUTER_PROD_EXPRESSION__E22 = EXPR__E22;
+
+  /**
+   * The feature id for the '<em><b>E21</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int OUTER_PROD_EXPRESSION__E21 = EXPR__E21;
+
+  /**
+   * The feature id for the '<em><b>E23</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int OUTER_PROD_EXPRESSION__E23 = EXPR__E23;
+
+  /**
+   * The feature id for the '<em><b>E9</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int OUTER_PROD_EXPRESSION__E9 = EXPR__E9;
+
+  /**
+   * The feature id for the '<em><b>E10</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int OUTER_PROD_EXPRESSION__E10 = EXPR__E10;
+
+  /**
+   * The feature id for the '<em><b>E25</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int OUTER_PROD_EXPRESSION__E25 = EXPR__E25;
+
+  /**
+   * The feature id for the '<em><b>E24</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int OUTER_PROD_EXPRESSION__E24 = EXPR__E24;
+
+  /**
+   * The feature id for the '<em><b>E26</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int OUTER_PROD_EXPRESSION__E26 = EXPR__E26;
+
+  /**
+   * The feature id for the '<em><b>E11</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int OUTER_PROD_EXPRESSION__E11 = EXPR__E11;
+
+  /**
+   * The feature id for the '<em><b>E12</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int OUTER_PROD_EXPRESSION__E12 = EXPR__E12;
+
+  /**
+   * The feature id for the '<em><b>E13</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int OUTER_PROD_EXPRESSION__E13 = EXPR__E13;
+
+  /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -3418,6 +4840,141 @@ public interface EditorPackage extends EPackage
    * @ordered
    */
   int HAS_EXPRESSION__ELSEEXP = EXPR__ELSEEXP;
+
+  /**
+   * The feature id for the '<em><b>E2</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int HAS_EXPRESSION__E2 = EXPR__E2;
+
+  /**
+   * The feature id for the '<em><b>E3</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int HAS_EXPRESSION__E3 = EXPR__E3;
+
+  /**
+   * The feature id for the '<em><b>E5</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int HAS_EXPRESSION__E5 = EXPR__E5;
+
+  /**
+   * The feature id for the '<em><b>E6</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int HAS_EXPRESSION__E6 = EXPR__E6;
+
+  /**
+   * The feature id for the '<em><b>E22</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int HAS_EXPRESSION__E22 = EXPR__E22;
+
+  /**
+   * The feature id for the '<em><b>E21</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int HAS_EXPRESSION__E21 = EXPR__E21;
+
+  /**
+   * The feature id for the '<em><b>E23</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int HAS_EXPRESSION__E23 = EXPR__E23;
+
+  /**
+   * The feature id for the '<em><b>E9</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int HAS_EXPRESSION__E9 = EXPR__E9;
+
+  /**
+   * The feature id for the '<em><b>E10</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int HAS_EXPRESSION__E10 = EXPR__E10;
+
+  /**
+   * The feature id for the '<em><b>E25</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int HAS_EXPRESSION__E25 = EXPR__E25;
+
+  /**
+   * The feature id for the '<em><b>E24</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int HAS_EXPRESSION__E24 = EXPR__E24;
+
+  /**
+   * The feature id for the '<em><b>E26</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int HAS_EXPRESSION__E26 = EXPR__E26;
+
+  /**
+   * The feature id for the '<em><b>E11</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int HAS_EXPRESSION__E11 = EXPR__E11;
+
+  /**
+   * The feature id for the '<em><b>E12</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int HAS_EXPRESSION__E12 = EXPR__E12;
+
+  /**
+   * The feature id for the '<em><b>E13</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int HAS_EXPRESSION__E13 = EXPR__E13;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -3502,6 +5059,141 @@ public interface EditorPackage extends EPackage
   int CASE_EXPRESSION__ELSEEXP = EXPR__ELSEEXP;
 
   /**
+   * The feature id for the '<em><b>E2</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CASE_EXPRESSION__E2 = EXPR__E2;
+
+  /**
+   * The feature id for the '<em><b>E3</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CASE_EXPRESSION__E3 = EXPR__E3;
+
+  /**
+   * The feature id for the '<em><b>E5</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CASE_EXPRESSION__E5 = EXPR__E5;
+
+  /**
+   * The feature id for the '<em><b>E6</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CASE_EXPRESSION__E6 = EXPR__E6;
+
+  /**
+   * The feature id for the '<em><b>E22</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CASE_EXPRESSION__E22 = EXPR__E22;
+
+  /**
+   * The feature id for the '<em><b>E21</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CASE_EXPRESSION__E21 = EXPR__E21;
+
+  /**
+   * The feature id for the '<em><b>E23</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CASE_EXPRESSION__E23 = EXPR__E23;
+
+  /**
+   * The feature id for the '<em><b>E9</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CASE_EXPRESSION__E9 = EXPR__E9;
+
+  /**
+   * The feature id for the '<em><b>E10</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CASE_EXPRESSION__E10 = EXPR__E10;
+
+  /**
+   * The feature id for the '<em><b>E25</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CASE_EXPRESSION__E25 = EXPR__E25;
+
+  /**
+   * The feature id for the '<em><b>E24</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CASE_EXPRESSION__E24 = EXPR__E24;
+
+  /**
+   * The feature id for the '<em><b>E26</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CASE_EXPRESSION__E26 = EXPR__E26;
+
+  /**
+   * The feature id for the '<em><b>E11</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CASE_EXPRESSION__E11 = EXPR__E11;
+
+  /**
+   * The feature id for the '<em><b>E12</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CASE_EXPRESSION__E12 = EXPR__E12;
+
+  /**
+   * The feature id for the '<em><b>E13</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CASE_EXPRESSION__E13 = EXPR__E13;
+
+  /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -3582,6 +5274,141 @@ public interface EditorPackage extends EPackage
    * @ordered
    */
   int EQUALITY_EXPRESSION__ELSEEXP = EXPR__ELSEEXP;
+
+  /**
+   * The feature id for the '<em><b>E2</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EQUALITY_EXPRESSION__E2 = EXPR__E2;
+
+  /**
+   * The feature id for the '<em><b>E3</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EQUALITY_EXPRESSION__E3 = EXPR__E3;
+
+  /**
+   * The feature id for the '<em><b>E5</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EQUALITY_EXPRESSION__E5 = EXPR__E5;
+
+  /**
+   * The feature id for the '<em><b>E6</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EQUALITY_EXPRESSION__E6 = EXPR__E6;
+
+  /**
+   * The feature id for the '<em><b>E22</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EQUALITY_EXPRESSION__E22 = EXPR__E22;
+
+  /**
+   * The feature id for the '<em><b>E21</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EQUALITY_EXPRESSION__E21 = EXPR__E21;
+
+  /**
+   * The feature id for the '<em><b>E23</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EQUALITY_EXPRESSION__E23 = EXPR__E23;
+
+  /**
+   * The feature id for the '<em><b>E9</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EQUALITY_EXPRESSION__E9 = EXPR__E9;
+
+  /**
+   * The feature id for the '<em><b>E10</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EQUALITY_EXPRESSION__E10 = EXPR__E10;
+
+  /**
+   * The feature id for the '<em><b>E25</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EQUALITY_EXPRESSION__E25 = EXPR__E25;
+
+  /**
+   * The feature id for the '<em><b>E24</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EQUALITY_EXPRESSION__E24 = EXPR__E24;
+
+  /**
+   * The feature id for the '<em><b>E26</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EQUALITY_EXPRESSION__E26 = EXPR__E26;
+
+  /**
+   * The feature id for the '<em><b>E11</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EQUALITY_EXPRESSION__E11 = EXPR__E11;
+
+  /**
+   * The feature id for the '<em><b>E12</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EQUALITY_EXPRESSION__E12 = EXPR__E12;
+
+  /**
+   * The feature id for the '<em><b>E13</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EQUALITY_EXPRESSION__E13 = EXPR__E13;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -3666,6 +5493,141 @@ public interface EditorPackage extends EPackage
   int RELATIONAL_EXPRESSION__ELSEEXP = EXPR__ELSEEXP;
 
   /**
+   * The feature id for the '<em><b>E2</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int RELATIONAL_EXPRESSION__E2 = EXPR__E2;
+
+  /**
+   * The feature id for the '<em><b>E3</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int RELATIONAL_EXPRESSION__E3 = EXPR__E3;
+
+  /**
+   * The feature id for the '<em><b>E5</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int RELATIONAL_EXPRESSION__E5 = EXPR__E5;
+
+  /**
+   * The feature id for the '<em><b>E6</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int RELATIONAL_EXPRESSION__E6 = EXPR__E6;
+
+  /**
+   * The feature id for the '<em><b>E22</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int RELATIONAL_EXPRESSION__E22 = EXPR__E22;
+
+  /**
+   * The feature id for the '<em><b>E21</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int RELATIONAL_EXPRESSION__E21 = EXPR__E21;
+
+  /**
+   * The feature id for the '<em><b>E23</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int RELATIONAL_EXPRESSION__E23 = EXPR__E23;
+
+  /**
+   * The feature id for the '<em><b>E9</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int RELATIONAL_EXPRESSION__E9 = EXPR__E9;
+
+  /**
+   * The feature id for the '<em><b>E10</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int RELATIONAL_EXPRESSION__E10 = EXPR__E10;
+
+  /**
+   * The feature id for the '<em><b>E25</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int RELATIONAL_EXPRESSION__E25 = EXPR__E25;
+
+  /**
+   * The feature id for the '<em><b>E24</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int RELATIONAL_EXPRESSION__E24 = EXPR__E24;
+
+  /**
+   * The feature id for the '<em><b>E26</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int RELATIONAL_EXPRESSION__E26 = EXPR__E26;
+
+  /**
+   * The feature id for the '<em><b>E11</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int RELATIONAL_EXPRESSION__E11 = EXPR__E11;
+
+  /**
+   * The feature id for the '<em><b>E12</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int RELATIONAL_EXPRESSION__E12 = EXPR__E12;
+
+  /**
+   * The feature id for the '<em><b>E13</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int RELATIONAL_EXPRESSION__E13 = EXPR__E13;
+
+  /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -3746,6 +5708,141 @@ public interface EditorPackage extends EPackage
    * @ordered
    */
   int IS_EXPRESSION__ELSEEXP = EXPR__ELSEEXP;
+
+  /**
+   * The feature id for the '<em><b>E2</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int IS_EXPRESSION__E2 = EXPR__E2;
+
+  /**
+   * The feature id for the '<em><b>E3</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int IS_EXPRESSION__E3 = EXPR__E3;
+
+  /**
+   * The feature id for the '<em><b>E5</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int IS_EXPRESSION__E5 = EXPR__E5;
+
+  /**
+   * The feature id for the '<em><b>E6</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int IS_EXPRESSION__E6 = EXPR__E6;
+
+  /**
+   * The feature id for the '<em><b>E22</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int IS_EXPRESSION__E22 = EXPR__E22;
+
+  /**
+   * The feature id for the '<em><b>E21</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int IS_EXPRESSION__E21 = EXPR__E21;
+
+  /**
+   * The feature id for the '<em><b>E23</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int IS_EXPRESSION__E23 = EXPR__E23;
+
+  /**
+   * The feature id for the '<em><b>E9</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int IS_EXPRESSION__E9 = EXPR__E9;
+
+  /**
+   * The feature id for the '<em><b>E10</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int IS_EXPRESSION__E10 = EXPR__E10;
+
+  /**
+   * The feature id for the '<em><b>E25</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int IS_EXPRESSION__E25 = EXPR__E25;
+
+  /**
+   * The feature id for the '<em><b>E24</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int IS_EXPRESSION__E24 = EXPR__E24;
+
+  /**
+   * The feature id for the '<em><b>E26</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int IS_EXPRESSION__E26 = EXPR__E26;
+
+  /**
+   * The feature id for the '<em><b>E11</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int IS_EXPRESSION__E11 = EXPR__E11;
+
+  /**
+   * The feature id for the '<em><b>E12</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int IS_EXPRESSION__E12 = EXPR__E12;
+
+  /**
+   * The feature id for the '<em><b>E13</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int IS_EXPRESSION__E13 = EXPR__E13;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -3830,6 +5927,141 @@ public interface EditorPackage extends EPackage
   int SEGMENT_EXPRESSION__ELSEEXP = EXPR__ELSEEXP;
 
   /**
+   * The feature id for the '<em><b>E2</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SEGMENT_EXPRESSION__E2 = EXPR__E2;
+
+  /**
+   * The feature id for the '<em><b>E3</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SEGMENT_EXPRESSION__E3 = EXPR__E3;
+
+  /**
+   * The feature id for the '<em><b>E5</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SEGMENT_EXPRESSION__E5 = EXPR__E5;
+
+  /**
+   * The feature id for the '<em><b>E6</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SEGMENT_EXPRESSION__E6 = EXPR__E6;
+
+  /**
+   * The feature id for the '<em><b>E22</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SEGMENT_EXPRESSION__E22 = EXPR__E22;
+
+  /**
+   * The feature id for the '<em><b>E21</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SEGMENT_EXPRESSION__E21 = EXPR__E21;
+
+  /**
+   * The feature id for the '<em><b>E23</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SEGMENT_EXPRESSION__E23 = EXPR__E23;
+
+  /**
+   * The feature id for the '<em><b>E9</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SEGMENT_EXPRESSION__E9 = EXPR__E9;
+
+  /**
+   * The feature id for the '<em><b>E10</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SEGMENT_EXPRESSION__E10 = EXPR__E10;
+
+  /**
+   * The feature id for the '<em><b>E25</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SEGMENT_EXPRESSION__E25 = EXPR__E25;
+
+  /**
+   * The feature id for the '<em><b>E24</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SEGMENT_EXPRESSION__E24 = EXPR__E24;
+
+  /**
+   * The feature id for the '<em><b>E26</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SEGMENT_EXPRESSION__E26 = EXPR__E26;
+
+  /**
+   * The feature id for the '<em><b>E11</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SEGMENT_EXPRESSION__E11 = EXPR__E11;
+
+  /**
+   * The feature id for the '<em><b>E12</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SEGMENT_EXPRESSION__E12 = EXPR__E12;
+
+  /**
+   * The feature id for the '<em><b>E13</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SEGMENT_EXPRESSION__E13 = EXPR__E13;
+
+  /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -3910,6 +6142,141 @@ public interface EditorPackage extends EPackage
    * @ordered
    */
   int ADDITIVE_EXPRESSION__ELSEEXP = EXPR__ELSEEXP;
+
+  /**
+   * The feature id for the '<em><b>E2</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ADDITIVE_EXPRESSION__E2 = EXPR__E2;
+
+  /**
+   * The feature id for the '<em><b>E3</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ADDITIVE_EXPRESSION__E3 = EXPR__E3;
+
+  /**
+   * The feature id for the '<em><b>E5</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ADDITIVE_EXPRESSION__E5 = EXPR__E5;
+
+  /**
+   * The feature id for the '<em><b>E6</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ADDITIVE_EXPRESSION__E6 = EXPR__E6;
+
+  /**
+   * The feature id for the '<em><b>E22</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ADDITIVE_EXPRESSION__E22 = EXPR__E22;
+
+  /**
+   * The feature id for the '<em><b>E21</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ADDITIVE_EXPRESSION__E21 = EXPR__E21;
+
+  /**
+   * The feature id for the '<em><b>E23</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ADDITIVE_EXPRESSION__E23 = EXPR__E23;
+
+  /**
+   * The feature id for the '<em><b>E9</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ADDITIVE_EXPRESSION__E9 = EXPR__E9;
+
+  /**
+   * The feature id for the '<em><b>E10</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ADDITIVE_EXPRESSION__E10 = EXPR__E10;
+
+  /**
+   * The feature id for the '<em><b>E25</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ADDITIVE_EXPRESSION__E25 = EXPR__E25;
+
+  /**
+   * The feature id for the '<em><b>E24</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ADDITIVE_EXPRESSION__E24 = EXPR__E24;
+
+  /**
+   * The feature id for the '<em><b>E26</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ADDITIVE_EXPRESSION__E26 = EXPR__E26;
+
+  /**
+   * The feature id for the '<em><b>E11</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ADDITIVE_EXPRESSION__E11 = EXPR__E11;
+
+  /**
+   * The feature id for the '<em><b>E12</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ADDITIVE_EXPRESSION__E12 = EXPR__E12;
+
+  /**
+   * The feature id for the '<em><b>E13</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ADDITIVE_EXPRESSION__E13 = EXPR__E13;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -3994,6 +6361,141 @@ public interface EditorPackage extends EPackage
   int EXQUO_EXPRESSION__ELSEEXP = EXPR__ELSEEXP;
 
   /**
+   * The feature id for the '<em><b>E2</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EXQUO_EXPRESSION__E2 = EXPR__E2;
+
+  /**
+   * The feature id for the '<em><b>E3</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EXQUO_EXPRESSION__E3 = EXPR__E3;
+
+  /**
+   * The feature id for the '<em><b>E5</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EXQUO_EXPRESSION__E5 = EXPR__E5;
+
+  /**
+   * The feature id for the '<em><b>E6</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EXQUO_EXPRESSION__E6 = EXPR__E6;
+
+  /**
+   * The feature id for the '<em><b>E22</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EXQUO_EXPRESSION__E22 = EXPR__E22;
+
+  /**
+   * The feature id for the '<em><b>E21</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EXQUO_EXPRESSION__E21 = EXPR__E21;
+
+  /**
+   * The feature id for the '<em><b>E23</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EXQUO_EXPRESSION__E23 = EXPR__E23;
+
+  /**
+   * The feature id for the '<em><b>E9</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EXQUO_EXPRESSION__E9 = EXPR__E9;
+
+  /**
+   * The feature id for the '<em><b>E10</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EXQUO_EXPRESSION__E10 = EXPR__E10;
+
+  /**
+   * The feature id for the '<em><b>E25</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EXQUO_EXPRESSION__E25 = EXPR__E25;
+
+  /**
+   * The feature id for the '<em><b>E24</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EXQUO_EXPRESSION__E24 = EXPR__E24;
+
+  /**
+   * The feature id for the '<em><b>E26</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EXQUO_EXPRESSION__E26 = EXPR__E26;
+
+  /**
+   * The feature id for the '<em><b>E11</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EXQUO_EXPRESSION__E11 = EXPR__E11;
+
+  /**
+   * The feature id for the '<em><b>E12</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EXQUO_EXPRESSION__E12 = EXPR__E12;
+
+  /**
+   * The feature id for the '<em><b>E13</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EXQUO_EXPRESSION__E13 = EXPR__E13;
+
+  /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -4074,6 +6576,141 @@ public interface EditorPackage extends EPackage
    * @ordered
    */
   int DIVISION_EXPRESSION__ELSEEXP = EXPR__ELSEEXP;
+
+  /**
+   * The feature id for the '<em><b>E2</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DIVISION_EXPRESSION__E2 = EXPR__E2;
+
+  /**
+   * The feature id for the '<em><b>E3</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DIVISION_EXPRESSION__E3 = EXPR__E3;
+
+  /**
+   * The feature id for the '<em><b>E5</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DIVISION_EXPRESSION__E5 = EXPR__E5;
+
+  /**
+   * The feature id for the '<em><b>E6</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DIVISION_EXPRESSION__E6 = EXPR__E6;
+
+  /**
+   * The feature id for the '<em><b>E22</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DIVISION_EXPRESSION__E22 = EXPR__E22;
+
+  /**
+   * The feature id for the '<em><b>E21</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DIVISION_EXPRESSION__E21 = EXPR__E21;
+
+  /**
+   * The feature id for the '<em><b>E23</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DIVISION_EXPRESSION__E23 = EXPR__E23;
+
+  /**
+   * The feature id for the '<em><b>E9</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DIVISION_EXPRESSION__E9 = EXPR__E9;
+
+  /**
+   * The feature id for the '<em><b>E10</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DIVISION_EXPRESSION__E10 = EXPR__E10;
+
+  /**
+   * The feature id for the '<em><b>E25</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DIVISION_EXPRESSION__E25 = EXPR__E25;
+
+  /**
+   * The feature id for the '<em><b>E24</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DIVISION_EXPRESSION__E24 = EXPR__E24;
+
+  /**
+   * The feature id for the '<em><b>E26</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DIVISION_EXPRESSION__E26 = EXPR__E26;
+
+  /**
+   * The feature id for the '<em><b>E11</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DIVISION_EXPRESSION__E11 = EXPR__E11;
+
+  /**
+   * The feature id for the '<em><b>E12</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DIVISION_EXPRESSION__E12 = EXPR__E12;
+
+  /**
+   * The feature id for the '<em><b>E13</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DIVISION_EXPRESSION__E13 = EXPR__E13;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -4158,6 +6795,141 @@ public interface EditorPackage extends EPackage
   int QUO_EXPRESSION__ELSEEXP = EXPR__ELSEEXP;
 
   /**
+   * The feature id for the '<em><b>E2</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int QUO_EXPRESSION__E2 = EXPR__E2;
+
+  /**
+   * The feature id for the '<em><b>E3</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int QUO_EXPRESSION__E3 = EXPR__E3;
+
+  /**
+   * The feature id for the '<em><b>E5</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int QUO_EXPRESSION__E5 = EXPR__E5;
+
+  /**
+   * The feature id for the '<em><b>E6</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int QUO_EXPRESSION__E6 = EXPR__E6;
+
+  /**
+   * The feature id for the '<em><b>E22</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int QUO_EXPRESSION__E22 = EXPR__E22;
+
+  /**
+   * The feature id for the '<em><b>E21</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int QUO_EXPRESSION__E21 = EXPR__E21;
+
+  /**
+   * The feature id for the '<em><b>E23</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int QUO_EXPRESSION__E23 = EXPR__E23;
+
+  /**
+   * The feature id for the '<em><b>E9</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int QUO_EXPRESSION__E9 = EXPR__E9;
+
+  /**
+   * The feature id for the '<em><b>E10</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int QUO_EXPRESSION__E10 = EXPR__E10;
+
+  /**
+   * The feature id for the '<em><b>E25</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int QUO_EXPRESSION__E25 = EXPR__E25;
+
+  /**
+   * The feature id for the '<em><b>E24</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int QUO_EXPRESSION__E24 = EXPR__E24;
+
+  /**
+   * The feature id for the '<em><b>E26</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int QUO_EXPRESSION__E26 = EXPR__E26;
+
+  /**
+   * The feature id for the '<em><b>E11</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int QUO_EXPRESSION__E11 = EXPR__E11;
+
+  /**
+   * The feature id for the '<em><b>E12</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int QUO_EXPRESSION__E12 = EXPR__E12;
+
+  /**
+   * The feature id for the '<em><b>E13</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int QUO_EXPRESSION__E13 = EXPR__E13;
+
+  /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -4238,6 +7010,141 @@ public interface EditorPackage extends EPackage
    * @ordered
    */
   int MOD_EXPRESSION__ELSEEXP = EXPR__ELSEEXP;
+
+  /**
+   * The feature id for the '<em><b>E2</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MOD_EXPRESSION__E2 = EXPR__E2;
+
+  /**
+   * The feature id for the '<em><b>E3</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MOD_EXPRESSION__E3 = EXPR__E3;
+
+  /**
+   * The feature id for the '<em><b>E5</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MOD_EXPRESSION__E5 = EXPR__E5;
+
+  /**
+   * The feature id for the '<em><b>E6</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MOD_EXPRESSION__E6 = EXPR__E6;
+
+  /**
+   * The feature id for the '<em><b>E22</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MOD_EXPRESSION__E22 = EXPR__E22;
+
+  /**
+   * The feature id for the '<em><b>E21</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MOD_EXPRESSION__E21 = EXPR__E21;
+
+  /**
+   * The feature id for the '<em><b>E23</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MOD_EXPRESSION__E23 = EXPR__E23;
+
+  /**
+   * The feature id for the '<em><b>E9</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MOD_EXPRESSION__E9 = EXPR__E9;
+
+  /**
+   * The feature id for the '<em><b>E10</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MOD_EXPRESSION__E10 = EXPR__E10;
+
+  /**
+   * The feature id for the '<em><b>E25</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MOD_EXPRESSION__E25 = EXPR__E25;
+
+  /**
+   * The feature id for the '<em><b>E24</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MOD_EXPRESSION__E24 = EXPR__E24;
+
+  /**
+   * The feature id for the '<em><b>E26</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MOD_EXPRESSION__E26 = EXPR__E26;
+
+  /**
+   * The feature id for the '<em><b>E11</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MOD_EXPRESSION__E11 = EXPR__E11;
+
+  /**
+   * The feature id for the '<em><b>E12</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MOD_EXPRESSION__E12 = EXPR__E12;
+
+  /**
+   * The feature id for the '<em><b>E13</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MOD_EXPRESSION__E13 = EXPR__E13;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -4322,6 +7229,141 @@ public interface EditorPackage extends EPackage
   int REM_EXPRESSION__ELSEEXP = EXPR__ELSEEXP;
 
   /**
+   * The feature id for the '<em><b>E2</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int REM_EXPRESSION__E2 = EXPR__E2;
+
+  /**
+   * The feature id for the '<em><b>E3</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int REM_EXPRESSION__E3 = EXPR__E3;
+
+  /**
+   * The feature id for the '<em><b>E5</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int REM_EXPRESSION__E5 = EXPR__E5;
+
+  /**
+   * The feature id for the '<em><b>E6</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int REM_EXPRESSION__E6 = EXPR__E6;
+
+  /**
+   * The feature id for the '<em><b>E22</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int REM_EXPRESSION__E22 = EXPR__E22;
+
+  /**
+   * The feature id for the '<em><b>E21</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int REM_EXPRESSION__E21 = EXPR__E21;
+
+  /**
+   * The feature id for the '<em><b>E23</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int REM_EXPRESSION__E23 = EXPR__E23;
+
+  /**
+   * The feature id for the '<em><b>E9</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int REM_EXPRESSION__E9 = EXPR__E9;
+
+  /**
+   * The feature id for the '<em><b>E10</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int REM_EXPRESSION__E10 = EXPR__E10;
+
+  /**
+   * The feature id for the '<em><b>E25</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int REM_EXPRESSION__E25 = EXPR__E25;
+
+  /**
+   * The feature id for the '<em><b>E24</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int REM_EXPRESSION__E24 = EXPR__E24;
+
+  /**
+   * The feature id for the '<em><b>E26</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int REM_EXPRESSION__E26 = EXPR__E26;
+
+  /**
+   * The feature id for the '<em><b>E11</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int REM_EXPRESSION__E11 = EXPR__E11;
+
+  /**
+   * The feature id for the '<em><b>E12</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int REM_EXPRESSION__E12 = EXPR__E12;
+
+  /**
+   * The feature id for the '<em><b>E13</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int REM_EXPRESSION__E13 = EXPR__E13;
+
+  /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -4402,6 +7444,141 @@ public interface EditorPackage extends EPackage
    * @ordered
    */
   int MULTIPLICATIVE_EXPRESSION__ELSEEXP = EXPR__ELSEEXP;
+
+  /**
+   * The feature id for the '<em><b>E2</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MULTIPLICATIVE_EXPRESSION__E2 = EXPR__E2;
+
+  /**
+   * The feature id for the '<em><b>E3</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MULTIPLICATIVE_EXPRESSION__E3 = EXPR__E3;
+
+  /**
+   * The feature id for the '<em><b>E5</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MULTIPLICATIVE_EXPRESSION__E5 = EXPR__E5;
+
+  /**
+   * The feature id for the '<em><b>E6</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MULTIPLICATIVE_EXPRESSION__E6 = EXPR__E6;
+
+  /**
+   * The feature id for the '<em><b>E22</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MULTIPLICATIVE_EXPRESSION__E22 = EXPR__E22;
+
+  /**
+   * The feature id for the '<em><b>E21</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MULTIPLICATIVE_EXPRESSION__E21 = EXPR__E21;
+
+  /**
+   * The feature id for the '<em><b>E23</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MULTIPLICATIVE_EXPRESSION__E23 = EXPR__E23;
+
+  /**
+   * The feature id for the '<em><b>E9</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MULTIPLICATIVE_EXPRESSION__E9 = EXPR__E9;
+
+  /**
+   * The feature id for the '<em><b>E10</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MULTIPLICATIVE_EXPRESSION__E10 = EXPR__E10;
+
+  /**
+   * The feature id for the '<em><b>E25</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MULTIPLICATIVE_EXPRESSION__E25 = EXPR__E25;
+
+  /**
+   * The feature id for the '<em><b>E24</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MULTIPLICATIVE_EXPRESSION__E24 = EXPR__E24;
+
+  /**
+   * The feature id for the '<em><b>E26</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MULTIPLICATIVE_EXPRESSION__E26 = EXPR__E26;
+
+  /**
+   * The feature id for the '<em><b>E11</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MULTIPLICATIVE_EXPRESSION__E11 = EXPR__E11;
+
+  /**
+   * The feature id for the '<em><b>E12</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MULTIPLICATIVE_EXPRESSION__E12 = EXPR__E12;
+
+  /**
+   * The feature id for the '<em><b>E13</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MULTIPLICATIVE_EXPRESSION__E13 = EXPR__E13;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -4486,6 +7663,141 @@ public interface EditorPackage extends EPackage
   int EXPONENT_EXPRESSION__ELSEEXP = EXPR__ELSEEXP;
 
   /**
+   * The feature id for the '<em><b>E2</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EXPONENT_EXPRESSION__E2 = EXPR__E2;
+
+  /**
+   * The feature id for the '<em><b>E3</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EXPONENT_EXPRESSION__E3 = EXPR__E3;
+
+  /**
+   * The feature id for the '<em><b>E5</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EXPONENT_EXPRESSION__E5 = EXPR__E5;
+
+  /**
+   * The feature id for the '<em><b>E6</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EXPONENT_EXPRESSION__E6 = EXPR__E6;
+
+  /**
+   * The feature id for the '<em><b>E22</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EXPONENT_EXPRESSION__E22 = EXPR__E22;
+
+  /**
+   * The feature id for the '<em><b>E21</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EXPONENT_EXPRESSION__E21 = EXPR__E21;
+
+  /**
+   * The feature id for the '<em><b>E23</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EXPONENT_EXPRESSION__E23 = EXPR__E23;
+
+  /**
+   * The feature id for the '<em><b>E9</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EXPONENT_EXPRESSION__E9 = EXPR__E9;
+
+  /**
+   * The feature id for the '<em><b>E10</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EXPONENT_EXPRESSION__E10 = EXPR__E10;
+
+  /**
+   * The feature id for the '<em><b>E25</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EXPONENT_EXPRESSION__E25 = EXPR__E25;
+
+  /**
+   * The feature id for the '<em><b>E24</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EXPONENT_EXPRESSION__E24 = EXPR__E24;
+
+  /**
+   * The feature id for the '<em><b>E26</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EXPONENT_EXPRESSION__E26 = EXPR__E26;
+
+  /**
+   * The feature id for the '<em><b>E11</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EXPONENT_EXPRESSION__E11 = EXPR__E11;
+
+  /**
+   * The feature id for the '<em><b>E12</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EXPONENT_EXPRESSION__E12 = EXPR__E12;
+
+  /**
+   * The feature id for the '<em><b>E13</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EXPONENT_EXPRESSION__E13 = EXPR__E13;
+
+  /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -4522,6 +7834,223 @@ public interface EditorPackage extends EPackage
   int EXPONENT_EXPRESSION_FEATURE_COUNT = EXPR_FEATURE_COUNT + 3;
 
   /**
+   * The meta object id for the '{@link com.euclideanspace.spad.editor.impl.MapDefinitionImpl <em>Map Definition</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see com.euclideanspace.spad.editor.impl.MapDefinitionImpl
+   * @see com.euclideanspace.spad.editor.impl.EditorPackageImpl#getMapDefinition()
+   * @generated
+   */
+  int MAP_DEFINITION = 64;
+
+  /**
+   * The feature id for the '<em><b>Ifname</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MAP_DEFINITION__IFNAME = EXPR__IFNAME;
+
+  /**
+   * The feature id for the '<em><b>Ifpred</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MAP_DEFINITION__IFPRED = EXPR__IFPRED;
+
+  /**
+   * The feature id for the '<em><b>Thenexp</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MAP_DEFINITION__THENEXP = EXPR__THENEXP;
+
+  /**
+   * The feature id for the '<em><b>Elseexp</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MAP_DEFINITION__ELSEEXP = EXPR__ELSEEXP;
+
+  /**
+   * The feature id for the '<em><b>E2</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MAP_DEFINITION__E2 = EXPR__E2;
+
+  /**
+   * The feature id for the '<em><b>E3</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MAP_DEFINITION__E3 = EXPR__E3;
+
+  /**
+   * The feature id for the '<em><b>E5</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MAP_DEFINITION__E5 = EXPR__E5;
+
+  /**
+   * The feature id for the '<em><b>E6</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MAP_DEFINITION__E6 = EXPR__E6;
+
+  /**
+   * The feature id for the '<em><b>E22</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MAP_DEFINITION__E22 = EXPR__E22;
+
+  /**
+   * The feature id for the '<em><b>E21</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MAP_DEFINITION__E21 = EXPR__E21;
+
+  /**
+   * The feature id for the '<em><b>E23</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MAP_DEFINITION__E23 = EXPR__E23;
+
+  /**
+   * The feature id for the '<em><b>E9</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MAP_DEFINITION__E9 = EXPR__E9;
+
+  /**
+   * The feature id for the '<em><b>E10</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MAP_DEFINITION__E10 = EXPR__E10;
+
+  /**
+   * The feature id for the '<em><b>E25</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MAP_DEFINITION__E25 = EXPR__E25;
+
+  /**
+   * The feature id for the '<em><b>E24</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MAP_DEFINITION__E24 = EXPR__E24;
+
+  /**
+   * The feature id for the '<em><b>E26</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MAP_DEFINITION__E26 = EXPR__E26;
+
+  /**
+   * The feature id for the '<em><b>E11</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MAP_DEFINITION__E11 = EXPR__E11;
+
+  /**
+   * The feature id for the '<em><b>E12</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MAP_DEFINITION__E12 = EXPR__E12;
+
+  /**
+   * The feature id for the '<em><b>E13</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MAP_DEFINITION__E13 = EXPR__E13;
+
+  /**
+   * The feature id for the '<em><b>Left</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MAP_DEFINITION__LEFT = EXPR_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Op</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MAP_DEFINITION__OP = EXPR_FEATURE_COUNT + 1;
+
+  /**
+   * The feature id for the '<em><b>Right</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MAP_DEFINITION__RIGHT = EXPR_FEATURE_COUNT + 2;
+
+  /**
+   * The number of structural features of the '<em>Map Definition</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MAP_DEFINITION_FEATURE_COUNT = EXPR_FEATURE_COUNT + 3;
+
+  /**
    * The meta object id for the '{@link com.euclideanspace.spad.editor.impl.PretendExpressionImpl <em>Pretend Expression</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -4529,7 +8058,7 @@ public interface EditorPackage extends EPackage
    * @see com.euclideanspace.spad.editor.impl.EditorPackageImpl#getPretendExpression()
    * @generated
    */
-  int PRETEND_EXPRESSION = 64;
+  int PRETEND_EXPRESSION = 65;
 
   /**
    * The feature id for the '<em><b>Ifname</b></em>' attribute.
@@ -4566,6 +8095,141 @@ public interface EditorPackage extends EPackage
    * @ordered
    */
   int PRETEND_EXPRESSION__ELSEEXP = EXPR__ELSEEXP;
+
+  /**
+   * The feature id for the '<em><b>E2</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PRETEND_EXPRESSION__E2 = EXPR__E2;
+
+  /**
+   * The feature id for the '<em><b>E3</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PRETEND_EXPRESSION__E3 = EXPR__E3;
+
+  /**
+   * The feature id for the '<em><b>E5</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PRETEND_EXPRESSION__E5 = EXPR__E5;
+
+  /**
+   * The feature id for the '<em><b>E6</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PRETEND_EXPRESSION__E6 = EXPR__E6;
+
+  /**
+   * The feature id for the '<em><b>E22</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PRETEND_EXPRESSION__E22 = EXPR__E22;
+
+  /**
+   * The feature id for the '<em><b>E21</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PRETEND_EXPRESSION__E21 = EXPR__E21;
+
+  /**
+   * The feature id for the '<em><b>E23</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PRETEND_EXPRESSION__E23 = EXPR__E23;
+
+  /**
+   * The feature id for the '<em><b>E9</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PRETEND_EXPRESSION__E9 = EXPR__E9;
+
+  /**
+   * The feature id for the '<em><b>E10</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PRETEND_EXPRESSION__E10 = EXPR__E10;
+
+  /**
+   * The feature id for the '<em><b>E25</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PRETEND_EXPRESSION__E25 = EXPR__E25;
+
+  /**
+   * The feature id for the '<em><b>E24</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PRETEND_EXPRESSION__E24 = EXPR__E24;
+
+  /**
+   * The feature id for the '<em><b>E26</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PRETEND_EXPRESSION__E26 = EXPR__E26;
+
+  /**
+   * The feature id for the '<em><b>E11</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PRETEND_EXPRESSION__E11 = EXPR__E11;
+
+  /**
+   * The feature id for the '<em><b>E12</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PRETEND_EXPRESSION__E12 = EXPR__E12;
+
+  /**
+   * The feature id for the '<em><b>E13</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PRETEND_EXPRESSION__E13 = EXPR__E13;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -4611,7 +8275,7 @@ public interface EditorPackage extends EPackage
    * @see com.euclideanspace.spad.editor.impl.EditorPackageImpl#getHintTypeExpression()
    * @generated
    */
-  int HINT_TYPE_EXPRESSION = 65;
+  int HINT_TYPE_EXPRESSION = 66;
 
   /**
    * The feature id for the '<em><b>Ifname</b></em>' attribute.
@@ -4648,6 +8312,141 @@ public interface EditorPackage extends EPackage
    * @ordered
    */
   int HINT_TYPE_EXPRESSION__ELSEEXP = EXPR__ELSEEXP;
+
+  /**
+   * The feature id for the '<em><b>E2</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int HINT_TYPE_EXPRESSION__E2 = EXPR__E2;
+
+  /**
+   * The feature id for the '<em><b>E3</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int HINT_TYPE_EXPRESSION__E3 = EXPR__E3;
+
+  /**
+   * The feature id for the '<em><b>E5</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int HINT_TYPE_EXPRESSION__E5 = EXPR__E5;
+
+  /**
+   * The feature id for the '<em><b>E6</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int HINT_TYPE_EXPRESSION__E6 = EXPR__E6;
+
+  /**
+   * The feature id for the '<em><b>E22</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int HINT_TYPE_EXPRESSION__E22 = EXPR__E22;
+
+  /**
+   * The feature id for the '<em><b>E21</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int HINT_TYPE_EXPRESSION__E21 = EXPR__E21;
+
+  /**
+   * The feature id for the '<em><b>E23</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int HINT_TYPE_EXPRESSION__E23 = EXPR__E23;
+
+  /**
+   * The feature id for the '<em><b>E9</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int HINT_TYPE_EXPRESSION__E9 = EXPR__E9;
+
+  /**
+   * The feature id for the '<em><b>E10</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int HINT_TYPE_EXPRESSION__E10 = EXPR__E10;
+
+  /**
+   * The feature id for the '<em><b>E25</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int HINT_TYPE_EXPRESSION__E25 = EXPR__E25;
+
+  /**
+   * The feature id for the '<em><b>E24</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int HINT_TYPE_EXPRESSION__E24 = EXPR__E24;
+
+  /**
+   * The feature id for the '<em><b>E26</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int HINT_TYPE_EXPRESSION__E26 = EXPR__E26;
+
+  /**
+   * The feature id for the '<em><b>E11</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int HINT_TYPE_EXPRESSION__E11 = EXPR__E11;
+
+  /**
+   * The feature id for the '<em><b>E12</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int HINT_TYPE_EXPRESSION__E12 = EXPR__E12;
+
+  /**
+   * The feature id for the '<em><b>E13</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int HINT_TYPE_EXPRESSION__E13 = EXPR__E13;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -4693,7 +8492,7 @@ public interface EditorPackage extends EPackage
    * @see com.euclideanspace.spad.editor.impl.EditorPackageImpl#getCoerceExpression()
    * @generated
    */
-  int COERCE_EXPRESSION = 66;
+  int COERCE_EXPRESSION = 67;
 
   /**
    * The feature id for the '<em><b>Ifname</b></em>' attribute.
@@ -4730,6 +8529,141 @@ public interface EditorPackage extends EPackage
    * @ordered
    */
   int COERCE_EXPRESSION__ELSEEXP = EXPR__ELSEEXP;
+
+  /**
+   * The feature id for the '<em><b>E2</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int COERCE_EXPRESSION__E2 = EXPR__E2;
+
+  /**
+   * The feature id for the '<em><b>E3</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int COERCE_EXPRESSION__E3 = EXPR__E3;
+
+  /**
+   * The feature id for the '<em><b>E5</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int COERCE_EXPRESSION__E5 = EXPR__E5;
+
+  /**
+   * The feature id for the '<em><b>E6</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int COERCE_EXPRESSION__E6 = EXPR__E6;
+
+  /**
+   * The feature id for the '<em><b>E22</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int COERCE_EXPRESSION__E22 = EXPR__E22;
+
+  /**
+   * The feature id for the '<em><b>E21</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int COERCE_EXPRESSION__E21 = EXPR__E21;
+
+  /**
+   * The feature id for the '<em><b>E23</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int COERCE_EXPRESSION__E23 = EXPR__E23;
+
+  /**
+   * The feature id for the '<em><b>E9</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int COERCE_EXPRESSION__E9 = EXPR__E9;
+
+  /**
+   * The feature id for the '<em><b>E10</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int COERCE_EXPRESSION__E10 = EXPR__E10;
+
+  /**
+   * The feature id for the '<em><b>E25</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int COERCE_EXPRESSION__E25 = EXPR__E25;
+
+  /**
+   * The feature id for the '<em><b>E24</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int COERCE_EXPRESSION__E24 = EXPR__E24;
+
+  /**
+   * The feature id for the '<em><b>E26</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int COERCE_EXPRESSION__E26 = EXPR__E26;
+
+  /**
+   * The feature id for the '<em><b>E11</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int COERCE_EXPRESSION__E11 = EXPR__E11;
+
+  /**
+   * The feature id for the '<em><b>E12</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int COERCE_EXPRESSION__E12 = EXPR__E12;
+
+  /**
+   * The feature id for the '<em><b>E13</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int COERCE_EXPRESSION__E13 = EXPR__E13;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -4775,7 +8709,7 @@ public interface EditorPackage extends EPackage
    * @see com.euclideanspace.spad.editor.impl.EditorPackageImpl#getEltExpression()
    * @generated
    */
-  int ELT_EXPRESSION = 67;
+  int ELT_EXPRESSION = 68;
 
   /**
    * The feature id for the '<em><b>Ifname</b></em>' attribute.
@@ -4812,6 +8746,141 @@ public interface EditorPackage extends EPackage
    * @ordered
    */
   int ELT_EXPRESSION__ELSEEXP = EXPR__ELSEEXP;
+
+  /**
+   * The feature id for the '<em><b>E2</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ELT_EXPRESSION__E2 = EXPR__E2;
+
+  /**
+   * The feature id for the '<em><b>E3</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ELT_EXPRESSION__E3 = EXPR__E3;
+
+  /**
+   * The feature id for the '<em><b>E5</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ELT_EXPRESSION__E5 = EXPR__E5;
+
+  /**
+   * The feature id for the '<em><b>E6</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ELT_EXPRESSION__E6 = EXPR__E6;
+
+  /**
+   * The feature id for the '<em><b>E22</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ELT_EXPRESSION__E22 = EXPR__E22;
+
+  /**
+   * The feature id for the '<em><b>E21</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ELT_EXPRESSION__E21 = EXPR__E21;
+
+  /**
+   * The feature id for the '<em><b>E23</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ELT_EXPRESSION__E23 = EXPR__E23;
+
+  /**
+   * The feature id for the '<em><b>E9</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ELT_EXPRESSION__E9 = EXPR__E9;
+
+  /**
+   * The feature id for the '<em><b>E10</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ELT_EXPRESSION__E10 = EXPR__E10;
+
+  /**
+   * The feature id for the '<em><b>E25</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ELT_EXPRESSION__E25 = EXPR__E25;
+
+  /**
+   * The feature id for the '<em><b>E24</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ELT_EXPRESSION__E24 = EXPR__E24;
+
+  /**
+   * The feature id for the '<em><b>E26</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ELT_EXPRESSION__E26 = EXPR__E26;
+
+  /**
+   * The feature id for the '<em><b>E11</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ELT_EXPRESSION__E11 = EXPR__E11;
+
+  /**
+   * The feature id for the '<em><b>E12</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ELT_EXPRESSION__E12 = EXPR__E12;
+
+  /**
+   * The feature id for the '<em><b>E13</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ELT_EXPRESSION__E13 = EXPR__E13;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -4857,7 +8926,7 @@ public interface EditorPackage extends EPackage
    * @see com.euclideanspace.spad.editor.impl.EditorPackageImpl#getExplicitTypeExpression()
    * @generated
    */
-  int EXPLICIT_TYPE_EXPRESSION = 68;
+  int EXPLICIT_TYPE_EXPRESSION = 69;
 
   /**
    * The feature id for the '<em><b>Ifname</b></em>' attribute.
@@ -4894,6 +8963,141 @@ public interface EditorPackage extends EPackage
    * @ordered
    */
   int EXPLICIT_TYPE_EXPRESSION__ELSEEXP = EXPR__ELSEEXP;
+
+  /**
+   * The feature id for the '<em><b>E2</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EXPLICIT_TYPE_EXPRESSION__E2 = EXPR__E2;
+
+  /**
+   * The feature id for the '<em><b>E3</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EXPLICIT_TYPE_EXPRESSION__E3 = EXPR__E3;
+
+  /**
+   * The feature id for the '<em><b>E5</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EXPLICIT_TYPE_EXPRESSION__E5 = EXPR__E5;
+
+  /**
+   * The feature id for the '<em><b>E6</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EXPLICIT_TYPE_EXPRESSION__E6 = EXPR__E6;
+
+  /**
+   * The feature id for the '<em><b>E22</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EXPLICIT_TYPE_EXPRESSION__E22 = EXPR__E22;
+
+  /**
+   * The feature id for the '<em><b>E21</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EXPLICIT_TYPE_EXPRESSION__E21 = EXPR__E21;
+
+  /**
+   * The feature id for the '<em><b>E23</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EXPLICIT_TYPE_EXPRESSION__E23 = EXPR__E23;
+
+  /**
+   * The feature id for the '<em><b>E9</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EXPLICIT_TYPE_EXPRESSION__E9 = EXPR__E9;
+
+  /**
+   * The feature id for the '<em><b>E10</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EXPLICIT_TYPE_EXPRESSION__E10 = EXPR__E10;
+
+  /**
+   * The feature id for the '<em><b>E25</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EXPLICIT_TYPE_EXPRESSION__E25 = EXPR__E25;
+
+  /**
+   * The feature id for the '<em><b>E24</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EXPLICIT_TYPE_EXPRESSION__E24 = EXPR__E24;
+
+  /**
+   * The feature id for the '<em><b>E26</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EXPLICIT_TYPE_EXPRESSION__E26 = EXPR__E26;
+
+  /**
+   * The feature id for the '<em><b>E11</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EXPLICIT_TYPE_EXPRESSION__E11 = EXPR__E11;
+
+  /**
+   * The feature id for the '<em><b>E12</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EXPLICIT_TYPE_EXPRESSION__E12 = EXPR__E12;
+
+  /**
+   * The feature id for the '<em><b>E13</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EXPLICIT_TYPE_EXPRESSION__E13 = EXPR__E13;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -4939,7 +9143,7 @@ public interface EditorPackage extends EPackage
    * @see com.euclideanspace.spad.editor.impl.EditorPackageImpl#getUnaryExpression()
    * @generated
    */
-  int UNARY_EXPRESSION = 69;
+  int UNARY_EXPRESSION = 70;
 
   /**
    * The feature id for the '<em><b>Ifname</b></em>' attribute.
@@ -4976,6 +9180,141 @@ public interface EditorPackage extends EPackage
    * @ordered
    */
   int UNARY_EXPRESSION__ELSEEXP = EXPR__ELSEEXP;
+
+  /**
+   * The feature id for the '<em><b>E2</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int UNARY_EXPRESSION__E2 = EXPR__E2;
+
+  /**
+   * The feature id for the '<em><b>E3</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int UNARY_EXPRESSION__E3 = EXPR__E3;
+
+  /**
+   * The feature id for the '<em><b>E5</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int UNARY_EXPRESSION__E5 = EXPR__E5;
+
+  /**
+   * The feature id for the '<em><b>E6</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int UNARY_EXPRESSION__E6 = EXPR__E6;
+
+  /**
+   * The feature id for the '<em><b>E22</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int UNARY_EXPRESSION__E22 = EXPR__E22;
+
+  /**
+   * The feature id for the '<em><b>E21</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int UNARY_EXPRESSION__E21 = EXPR__E21;
+
+  /**
+   * The feature id for the '<em><b>E23</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int UNARY_EXPRESSION__E23 = EXPR__E23;
+
+  /**
+   * The feature id for the '<em><b>E9</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int UNARY_EXPRESSION__E9 = EXPR__E9;
+
+  /**
+   * The feature id for the '<em><b>E10</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int UNARY_EXPRESSION__E10 = EXPR__E10;
+
+  /**
+   * The feature id for the '<em><b>E25</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int UNARY_EXPRESSION__E25 = EXPR__E25;
+
+  /**
+   * The feature id for the '<em><b>E24</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int UNARY_EXPRESSION__E24 = EXPR__E24;
+
+  /**
+   * The feature id for the '<em><b>E26</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int UNARY_EXPRESSION__E26 = EXPR__E26;
+
+  /**
+   * The feature id for the '<em><b>E11</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int UNARY_EXPRESSION__E11 = EXPR__E11;
+
+  /**
+   * The feature id for the '<em><b>E12</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int UNARY_EXPRESSION__E12 = EXPR__E12;
+
+  /**
+   * The feature id for the '<em><b>E13</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int UNARY_EXPRESSION__E13 = EXPR__E13;
 
   /**
    * The feature id for the '<em><b>Uop</b></em>' attribute.
@@ -5611,6 +9950,17 @@ public interface EditorPackage extends EPackage
   EReference getFunctionSignature_Par3();
 
   /**
+   * Returns the meta object for the attribute '{@link com.euclideanspace.spad.editor.FunctionSignature#getPar <em>Par</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Par</em>'.
+   * @see com.euclideanspace.spad.editor.FunctionSignature#getPar()
+   * @see #getFunctionSignature()
+   * @generated
+   */
+  EAttribute getFunctionSignature_Par();
+
+  /**
    * Returns the meta object for the attribute '{@link com.euclideanspace.spad.editor.FunctionSignature#getT4 <em>T4</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -5697,10 +10047,10 @@ public interface EditorPackage extends EPackage
   EClass getImport();
 
   /**
-   * Returns the meta object for the attribute '{@link com.euclideanspace.spad.editor.Import#getImpname <em>Impname</em>}'.
+   * Returns the meta object for the attribute list '{@link com.euclideanspace.spad.editor.Import#getImpname <em>Impname</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Impname</em>'.
+   * @return the meta object for the attribute list '<em>Impname</em>'.
    * @see com.euclideanspace.spad.editor.Import#getImpname()
    * @see #getImport()
    * @generated
@@ -6009,48 +10359,92 @@ public interface EditorPackage extends EPackage
   EReference getTypeArguments_T6();
 
   /**
-   * Returns the meta object for the containment reference list '{@link com.euclideanspace.spad.editor.TypeArguments#getT7 <em>T7</em>}'.
+   * Returns the meta object for the containment reference list '{@link com.euclideanspace.spad.editor.TypeArguments#getT22 <em>T22</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>T7</em>'.
-   * @see com.euclideanspace.spad.editor.TypeArguments#getT7()
+   * @return the meta object for the containment reference list '<em>T22</em>'.
+   * @see com.euclideanspace.spad.editor.TypeArguments#getT22()
    * @see #getTypeArguments()
    * @generated
    */
-  EReference getTypeArguments_T7();
+  EReference getTypeArguments_T22();
 
   /**
-   * Returns the meta object for the attribute '{@link com.euclideanspace.spad.editor.TypeArguments#getT8 <em>T8</em>}'.
+   * Returns the meta object for the containment reference list '{@link com.euclideanspace.spad.editor.TypeArguments#getT21 <em>T21</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>T8</em>'.
-   * @see com.euclideanspace.spad.editor.TypeArguments#getT8()
+   * @return the meta object for the containment reference list '<em>T21</em>'.
+   * @see com.euclideanspace.spad.editor.TypeArguments#getT21()
    * @see #getTypeArguments()
    * @generated
    */
-  EAttribute getTypeArguments_T8();
+  EReference getTypeArguments_T21();
 
   /**
-   * Returns the meta object for the containment reference '{@link com.euclideanspace.spad.editor.TypeArguments#getT9 <em>T9</em>}'.
+   * Returns the meta object for the containment reference list '{@link com.euclideanspace.spad.editor.TypeArguments#getT23 <em>T23</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>T9</em>'.
+   * @return the meta object for the containment reference list '<em>T23</em>'.
+   * @see com.euclideanspace.spad.editor.TypeArguments#getT23()
+   * @see #getTypeArguments()
+   * @generated
+   */
+  EReference getTypeArguments_T23();
+
+  /**
+   * Returns the meta object for the attribute '{@link com.euclideanspace.spad.editor.TypeArguments#getT9 <em>T9</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>T9</em>'.
    * @see com.euclideanspace.spad.editor.TypeArguments#getT9()
    * @see #getTypeArguments()
    * @generated
    */
-  EReference getTypeArguments_T9();
+  EAttribute getTypeArguments_T9();
 
   /**
-   * Returns the meta object for the containment reference list '{@link com.euclideanspace.spad.editor.TypeArguments#getT10 <em>T10</em>}'.
+   * Returns the meta object for the containment reference '{@link com.euclideanspace.spad.editor.TypeArguments#getT10 <em>T10</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>T10</em>'.
+   * @return the meta object for the containment reference '<em>T10</em>'.
    * @see com.euclideanspace.spad.editor.TypeArguments#getT10()
    * @see #getTypeArguments()
    * @generated
    */
   EReference getTypeArguments_T10();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link com.euclideanspace.spad.editor.TypeArguments#getT25 <em>T25</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>T25</em>'.
+   * @see com.euclideanspace.spad.editor.TypeArguments#getT25()
+   * @see #getTypeArguments()
+   * @generated
+   */
+  EReference getTypeArguments_T25();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link com.euclideanspace.spad.editor.TypeArguments#getT24 <em>T24</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>T24</em>'.
+   * @see com.euclideanspace.spad.editor.TypeArguments#getT24()
+   * @see #getTypeArguments()
+   * @generated
+   */
+  EReference getTypeArguments_T24();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link com.euclideanspace.spad.editor.TypeArguments#getT26 <em>T26</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>T26</em>'.
+   * @see com.euclideanspace.spad.editor.TypeArguments#getT26()
+   * @see #getTypeArguments()
+   * @generated
+   */
+  EReference getTypeArguments_T26();
 
   /**
    * Returns the meta object for the attribute '{@link com.euclideanspace.spad.editor.TypeArguments#getT11 <em>T11</em>}'.
@@ -6151,21 +10545,10 @@ public interface EditorPackage extends EPackage
   EAttribute getTypeResult_Name();
 
   /**
-   * Returns the meta object for the containment reference '{@link com.euclideanspace.spad.editor.TypeResult#getT6 <em>T6</em>}'.
+   * Returns the meta object for the containment reference '{@link com.euclideanspace.spad.editor.TypeResult#getT7 <em>T7</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>T6</em>'.
-   * @see com.euclideanspace.spad.editor.TypeResult#getT6()
-   * @see #getTypeResult()
-   * @generated
-   */
-  EReference getTypeResult_T6();
-
-  /**
-   * Returns the meta object for the containment reference list '{@link com.euclideanspace.spad.editor.TypeResult#getT7 <em>T7</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>T7</em>'.
+   * @return the meta object for the containment reference '<em>T7</em>'.
    * @see com.euclideanspace.spad.editor.TypeResult#getT7()
    * @see #getTypeResult()
    * @generated
@@ -6173,26 +10556,81 @@ public interface EditorPackage extends EPackage
   EReference getTypeResult_T7();
 
   /**
-   * Returns the meta object for the containment reference '{@link com.euclideanspace.spad.editor.TypeResult#getT9 <em>T9</em>}'.
+   * Returns the meta object for the containment reference list '{@link com.euclideanspace.spad.editor.TypeResult#getT8 <em>T8</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>T9</em>'.
-   * @see com.euclideanspace.spad.editor.TypeResult#getT9()
+   * @return the meta object for the containment reference list '<em>T8</em>'.
+   * @see com.euclideanspace.spad.editor.TypeResult#getT8()
    * @see #getTypeResult()
    * @generated
    */
-  EReference getTypeResult_T9();
+  EReference getTypeResult_T8();
 
   /**
-   * Returns the meta object for the containment reference list '{@link com.euclideanspace.spad.editor.TypeResult#getT10 <em>T10</em>}'.
+   * Returns the meta object for the containment reference list '{@link com.euclideanspace.spad.editor.TypeResult#getT21 <em>T21</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>T10</em>'.
+   * @return the meta object for the containment reference list '<em>T21</em>'.
+   * @see com.euclideanspace.spad.editor.TypeResult#getT21()
+   * @see #getTypeResult()
+   * @generated
+   */
+  EReference getTypeResult_T21();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link com.euclideanspace.spad.editor.TypeResult#getT23 <em>T23</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>T23</em>'.
+   * @see com.euclideanspace.spad.editor.TypeResult#getT23()
+   * @see #getTypeResult()
+   * @generated
+   */
+  EReference getTypeResult_T23();
+
+  /**
+   * Returns the meta object for the containment reference '{@link com.euclideanspace.spad.editor.TypeResult#getT10 <em>T10</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>T10</em>'.
    * @see com.euclideanspace.spad.editor.TypeResult#getT10()
    * @see #getTypeResult()
    * @generated
    */
   EReference getTypeResult_T10();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link com.euclideanspace.spad.editor.TypeResult#getT11 <em>T11</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>T11</em>'.
+   * @see com.euclideanspace.spad.editor.TypeResult#getT11()
+   * @see #getTypeResult()
+   * @generated
+   */
+  EReference getTypeResult_T11();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link com.euclideanspace.spad.editor.TypeResult#getT24 <em>T24</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>T24</em>'.
+   * @see com.euclideanspace.spad.editor.TypeResult#getT24()
+   * @see #getTypeResult()
+   * @generated
+   */
+  EReference getTypeResult_T24();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link com.euclideanspace.spad.editor.TypeResult#getT26 <em>T26</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>T26</em>'.
+   * @see com.euclideanspace.spad.editor.TypeResult#getT26()
+   * @see #getTypeResult()
+   * @generated
+   */
+  EReference getTypeResult_T26();
 
   /**
    * Returns the meta object for the containment reference '{@link com.euclideanspace.spad.editor.TypeResult#getT12 <em>T12</em>}'.
@@ -6433,6 +10871,38 @@ public interface EditorPackage extends EPackage
    * @generated
    */
   EReference getTypeNameOrFunctionCall_T6();
+
+  /**
+   * Returns the meta object for class '{@link com.euclideanspace.spad.editor.TupleDefinition <em>Tuple Definition</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Tuple Definition</em>'.
+   * @see com.euclideanspace.spad.editor.TupleDefinition
+   * @generated
+   */
+  EClass getTupleDefinition();
+
+  /**
+   * Returns the meta object for the containment reference '{@link com.euclideanspace.spad.editor.TupleDefinition#getT4 <em>T4</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>T4</em>'.
+   * @see com.euclideanspace.spad.editor.TupleDefinition#getT4()
+   * @see #getTupleDefinition()
+   * @generated
+   */
+  EReference getTupleDefinition_T4();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link com.euclideanspace.spad.editor.TupleDefinition#getT25 <em>T25</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>T25</em>'.
+   * @see com.euclideanspace.spad.editor.TupleDefinition#getT25()
+   * @see #getTupleDefinition()
+   * @generated
+   */
+  EReference getTupleDefinition_T25();
 
   /**
    * Returns the meta object for class '{@link com.euclideanspace.spad.editor.TypeLiteral <em>Type Literal</em>}'.
@@ -7026,47 +11496,169 @@ public interface EditorPackage extends EPackage
   EReference getExpr_Elseexp();
 
   /**
-   * Returns the meta object for class '{@link com.euclideanspace.spad.editor.MapDefinition <em>Map Definition</em>}'.
+   * Returns the meta object for the attribute '{@link com.euclideanspace.spad.editor.Expr#getE2 <em>E2</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Map Definition</em>'.
-   * @see com.euclideanspace.spad.editor.MapDefinition
+   * @return the meta object for the attribute '<em>E2</em>'.
+   * @see com.euclideanspace.spad.editor.Expr#getE2()
+   * @see #getExpr()
    * @generated
    */
-  EClass getMapDefinition();
+  EAttribute getExpr_E2();
 
   /**
-   * Returns the meta object for the containment reference '{@link com.euclideanspace.spad.editor.MapDefinition#getFnSig <em>Fn Sig</em>}'.
+   * Returns the meta object for the attribute '{@link com.euclideanspace.spad.editor.Expr#getE3 <em>E3</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Fn Sig</em>'.
-   * @see com.euclideanspace.spad.editor.MapDefinition#getFnSig()
-   * @see #getMapDefinition()
+   * @return the meta object for the attribute '<em>E3</em>'.
+   * @see com.euclideanspace.spad.editor.Expr#getE3()
+   * @see #getExpr()
    * @generated
    */
-  EReference getMapDefinition_FnSig();
+  EAttribute getExpr_E3();
 
   /**
-   * Returns the meta object for the containment reference '{@link com.euclideanspace.spad.editor.MapDefinition#getPar4 <em>Par4</em>}'.
+   * Returns the meta object for the attribute '{@link com.euclideanspace.spad.editor.Expr#getE5 <em>E5</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Par4</em>'.
-   * @see com.euclideanspace.spad.editor.MapDefinition#getPar4()
-   * @see #getMapDefinition()
+   * @return the meta object for the attribute '<em>E5</em>'.
+   * @see com.euclideanspace.spad.editor.Expr#getE5()
+   * @see #getExpr()
    * @generated
    */
-  EReference getMapDefinition_Par4();
+  EAttribute getExpr_E5();
 
   /**
-   * Returns the meta object for the containment reference '{@link com.euclideanspace.spad.editor.MapDefinition#getPar5 <em>Par5</em>}'.
+   * Returns the meta object for the containment reference '{@link com.euclideanspace.spad.editor.Expr#getE6 <em>E6</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Par5</em>'.
-   * @see com.euclideanspace.spad.editor.MapDefinition#getPar5()
-   * @see #getMapDefinition()
+   * @return the meta object for the containment reference '<em>E6</em>'.
+   * @see com.euclideanspace.spad.editor.Expr#getE6()
+   * @see #getExpr()
    * @generated
    */
-  EReference getMapDefinition_Par5();
+  EReference getExpr_E6();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link com.euclideanspace.spad.editor.Expr#getE22 <em>E22</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>E22</em>'.
+   * @see com.euclideanspace.spad.editor.Expr#getE22()
+   * @see #getExpr()
+   * @generated
+   */
+  EReference getExpr_E22();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link com.euclideanspace.spad.editor.Expr#getE21 <em>E21</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>E21</em>'.
+   * @see com.euclideanspace.spad.editor.Expr#getE21()
+   * @see #getExpr()
+   * @generated
+   */
+  EReference getExpr_E21();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link com.euclideanspace.spad.editor.Expr#getE23 <em>E23</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>E23</em>'.
+   * @see com.euclideanspace.spad.editor.Expr#getE23()
+   * @see #getExpr()
+   * @generated
+   */
+  EReference getExpr_E23();
+
+  /**
+   * Returns the meta object for the attribute '{@link com.euclideanspace.spad.editor.Expr#getE9 <em>E9</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>E9</em>'.
+   * @see com.euclideanspace.spad.editor.Expr#getE9()
+   * @see #getExpr()
+   * @generated
+   */
+  EAttribute getExpr_E9();
+
+  /**
+   * Returns the meta object for the containment reference '{@link com.euclideanspace.spad.editor.Expr#getE10 <em>E10</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>E10</em>'.
+   * @see com.euclideanspace.spad.editor.Expr#getE10()
+   * @see #getExpr()
+   * @generated
+   */
+  EReference getExpr_E10();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link com.euclideanspace.spad.editor.Expr#getE25 <em>E25</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>E25</em>'.
+   * @see com.euclideanspace.spad.editor.Expr#getE25()
+   * @see #getExpr()
+   * @generated
+   */
+  EReference getExpr_E25();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link com.euclideanspace.spad.editor.Expr#getE24 <em>E24</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>E24</em>'.
+   * @see com.euclideanspace.spad.editor.Expr#getE24()
+   * @see #getExpr()
+   * @generated
+   */
+  EReference getExpr_E24();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link com.euclideanspace.spad.editor.Expr#getE26 <em>E26</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>E26</em>'.
+   * @see com.euclideanspace.spad.editor.Expr#getE26()
+   * @see #getExpr()
+   * @generated
+   */
+  EReference getExpr_E26();
+
+  /**
+   * Returns the meta object for the attribute '{@link com.euclideanspace.spad.editor.Expr#getE11 <em>E11</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>E11</em>'.
+   * @see com.euclideanspace.spad.editor.Expr#getE11()
+   * @see #getExpr()
+   * @generated
+   */
+  EAttribute getExpr_E11();
+
+  /**
+   * Returns the meta object for the containment reference '{@link com.euclideanspace.spad.editor.Expr#getE12 <em>E12</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>E12</em>'.
+   * @see com.euclideanspace.spad.editor.Expr#getE12()
+   * @see #getExpr()
+   * @generated
+   */
+  EReference getExpr_E12();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link com.euclideanspace.spad.editor.Expr#getE13 <em>E13</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>E13</em>'.
+   * @see com.euclideanspace.spad.editor.Expr#getE13()
+   * @see #getExpr()
+   * @generated
+   */
+  EReference getExpr_E13();
 
   /**
    * Returns the meta object for class '{@link com.euclideanspace.spad.editor.PrimaryPrefix <em>Primary Prefix</em>}'.
@@ -8143,6 +12735,49 @@ public interface EditorPackage extends EPackage
   EReference getExponentExpression_Right();
 
   /**
+   * Returns the meta object for class '{@link com.euclideanspace.spad.editor.MapDefinition <em>Map Definition</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Map Definition</em>'.
+   * @see com.euclideanspace.spad.editor.MapDefinition
+   * @generated
+   */
+  EClass getMapDefinition();
+
+  /**
+   * Returns the meta object for the containment reference '{@link com.euclideanspace.spad.editor.MapDefinition#getLeft <em>Left</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Left</em>'.
+   * @see com.euclideanspace.spad.editor.MapDefinition#getLeft()
+   * @see #getMapDefinition()
+   * @generated
+   */
+  EReference getMapDefinition_Left();
+
+  /**
+   * Returns the meta object for the attribute '{@link com.euclideanspace.spad.editor.MapDefinition#getOp <em>Op</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Op</em>'.
+   * @see com.euclideanspace.spad.editor.MapDefinition#getOp()
+   * @see #getMapDefinition()
+   * @generated
+   */
+  EAttribute getMapDefinition_Op();
+
+  /**
+   * Returns the meta object for the containment reference '{@link com.euclideanspace.spad.editor.MapDefinition#getRight <em>Right</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Right</em>'.
+   * @see com.euclideanspace.spad.editor.MapDefinition#getRight()
+   * @see #getMapDefinition()
+   * @generated
+   */
+  EReference getMapDefinition_Right();
+
+  /**
    * Returns the meta object for class '{@link com.euclideanspace.spad.editor.PretendExpression <em>Pretend Expression</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -8883,6 +13518,14 @@ public interface EditorPackage extends EPackage
     EReference FUNCTION_SIGNATURE__PAR3 = eINSTANCE.getFunctionSignature_Par3();
 
     /**
+     * The meta object literal for the '<em><b>Par</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute FUNCTION_SIGNATURE__PAR = eINSTANCE.getFunctionSignature_Par();
+
+    /**
      * The meta object literal for the '<em><b>T4</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -8951,7 +13594,7 @@ public interface EditorPackage extends EPackage
     EClass IMPORT = eINSTANCE.getImport();
 
     /**
-     * The meta object literal for the '<em><b>Impname</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Impname</b></em>' attribute list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
@@ -9197,36 +13840,68 @@ public interface EditorPackage extends EPackage
     EReference TYPE_ARGUMENTS__T6 = eINSTANCE.getTypeArguments_T6();
 
     /**
-     * The meta object literal for the '<em><b>T7</b></em>' containment reference list feature.
+     * The meta object literal for the '<em><b>T22</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference TYPE_ARGUMENTS__T7 = eINSTANCE.getTypeArguments_T7();
+    EReference TYPE_ARGUMENTS__T22 = eINSTANCE.getTypeArguments_T22();
 
     /**
-     * The meta object literal for the '<em><b>T8</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>T21</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute TYPE_ARGUMENTS__T8 = eINSTANCE.getTypeArguments_T8();
+    EReference TYPE_ARGUMENTS__T21 = eINSTANCE.getTypeArguments_T21();
 
     /**
-     * The meta object literal for the '<em><b>T9</b></em>' containment reference feature.
+     * The meta object literal for the '<em><b>T23</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference TYPE_ARGUMENTS__T9 = eINSTANCE.getTypeArguments_T9();
+    EReference TYPE_ARGUMENTS__T23 = eINSTANCE.getTypeArguments_T23();
 
     /**
-     * The meta object literal for the '<em><b>T10</b></em>' containment reference list feature.
+     * The meta object literal for the '<em><b>T9</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute TYPE_ARGUMENTS__T9 = eINSTANCE.getTypeArguments_T9();
+
+    /**
+     * The meta object literal for the '<em><b>T10</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
     EReference TYPE_ARGUMENTS__T10 = eINSTANCE.getTypeArguments_T10();
+
+    /**
+     * The meta object literal for the '<em><b>T25</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference TYPE_ARGUMENTS__T25 = eINSTANCE.getTypeArguments_T25();
+
+    /**
+     * The meta object literal for the '<em><b>T24</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference TYPE_ARGUMENTS__T24 = eINSTANCE.getTypeArguments_T24();
+
+    /**
+     * The meta object literal for the '<em><b>T26</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference TYPE_ARGUMENTS__T26 = eINSTANCE.getTypeArguments_T26();
 
     /**
      * The meta object literal for the '<em><b>T11</b></em>' attribute feature.
@@ -9303,15 +13978,7 @@ public interface EditorPackage extends EPackage
     EAttribute TYPE_RESULT__NAME = eINSTANCE.getTypeResult_Name();
 
     /**
-     * The meta object literal for the '<em><b>T6</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference TYPE_RESULT__T6 = eINSTANCE.getTypeResult_T6();
-
-    /**
-     * The meta object literal for the '<em><b>T7</b></em>' containment reference list feature.
+     * The meta object literal for the '<em><b>T7</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
@@ -9319,20 +13986,60 @@ public interface EditorPackage extends EPackage
     EReference TYPE_RESULT__T7 = eINSTANCE.getTypeResult_T7();
 
     /**
-     * The meta object literal for the '<em><b>T9</b></em>' containment reference feature.
+     * The meta object literal for the '<em><b>T8</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference TYPE_RESULT__T9 = eINSTANCE.getTypeResult_T9();
+    EReference TYPE_RESULT__T8 = eINSTANCE.getTypeResult_T8();
 
     /**
-     * The meta object literal for the '<em><b>T10</b></em>' containment reference list feature.
+     * The meta object literal for the '<em><b>T21</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference TYPE_RESULT__T21 = eINSTANCE.getTypeResult_T21();
+
+    /**
+     * The meta object literal for the '<em><b>T23</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference TYPE_RESULT__T23 = eINSTANCE.getTypeResult_T23();
+
+    /**
+     * The meta object literal for the '<em><b>T10</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
     EReference TYPE_RESULT__T10 = eINSTANCE.getTypeResult_T10();
+
+    /**
+     * The meta object literal for the '<em><b>T11</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference TYPE_RESULT__T11 = eINSTANCE.getTypeResult_T11();
+
+    /**
+     * The meta object literal for the '<em><b>T24</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference TYPE_RESULT__T24 = eINSTANCE.getTypeResult_T24();
+
+    /**
+     * The meta object literal for the '<em><b>T26</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference TYPE_RESULT__T26 = eINSTANCE.getTypeResult_T26();
 
     /**
      * The meta object literal for the '<em><b>T12</b></em>' containment reference feature.
@@ -9513,6 +14220,32 @@ public interface EditorPackage extends EPackage
      * @generated
      */
     EReference TYPE_NAME_OR_FUNCTION_CALL__T6 = eINSTANCE.getTypeNameOrFunctionCall_T6();
+
+    /**
+     * The meta object literal for the '{@link com.euclideanspace.spad.editor.impl.TupleDefinitionImpl <em>Tuple Definition</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see com.euclideanspace.spad.editor.impl.TupleDefinitionImpl
+     * @see com.euclideanspace.spad.editor.impl.EditorPackageImpl#getTupleDefinition()
+     * @generated
+     */
+    EClass TUPLE_DEFINITION = eINSTANCE.getTupleDefinition();
+
+    /**
+     * The meta object literal for the '<em><b>T4</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference TUPLE_DEFINITION__T4 = eINSTANCE.getTupleDefinition_T4();
+
+    /**
+     * The meta object literal for the '<em><b>T25</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference TUPLE_DEFINITION__T25 = eINSTANCE.getTupleDefinition_T25();
 
     /**
      * The meta object literal for the '{@link com.euclideanspace.spad.editor.impl.TypeLiteralImpl <em>Type Literal</em>}' class.
@@ -9983,38 +14716,124 @@ public interface EditorPackage extends EPackage
     EReference EXPR__ELSEEXP = eINSTANCE.getExpr_Elseexp();
 
     /**
-     * The meta object literal for the '{@link com.euclideanspace.spad.editor.impl.MapDefinitionImpl <em>Map Definition</em>}' class.
+     * The meta object literal for the '<em><b>E2</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see com.euclideanspace.spad.editor.impl.MapDefinitionImpl
-     * @see com.euclideanspace.spad.editor.impl.EditorPackageImpl#getMapDefinition()
      * @generated
      */
-    EClass MAP_DEFINITION = eINSTANCE.getMapDefinition();
+    EAttribute EXPR__E2 = eINSTANCE.getExpr_E2();
 
     /**
-     * The meta object literal for the '<em><b>Fn Sig</b></em>' containment reference feature.
+     * The meta object literal for the '<em><b>E3</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference MAP_DEFINITION__FN_SIG = eINSTANCE.getMapDefinition_FnSig();
+    EAttribute EXPR__E3 = eINSTANCE.getExpr_E3();
 
     /**
-     * The meta object literal for the '<em><b>Par4</b></em>' containment reference feature.
+     * The meta object literal for the '<em><b>E5</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference MAP_DEFINITION__PAR4 = eINSTANCE.getMapDefinition_Par4();
+    EAttribute EXPR__E5 = eINSTANCE.getExpr_E5();
 
     /**
-     * The meta object literal for the '<em><b>Par5</b></em>' containment reference feature.
+     * The meta object literal for the '<em><b>E6</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference MAP_DEFINITION__PAR5 = eINSTANCE.getMapDefinition_Par5();
+    EReference EXPR__E6 = eINSTANCE.getExpr_E6();
+
+    /**
+     * The meta object literal for the '<em><b>E22</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference EXPR__E22 = eINSTANCE.getExpr_E22();
+
+    /**
+     * The meta object literal for the '<em><b>E21</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference EXPR__E21 = eINSTANCE.getExpr_E21();
+
+    /**
+     * The meta object literal for the '<em><b>E23</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference EXPR__E23 = eINSTANCE.getExpr_E23();
+
+    /**
+     * The meta object literal for the '<em><b>E9</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute EXPR__E9 = eINSTANCE.getExpr_E9();
+
+    /**
+     * The meta object literal for the '<em><b>E10</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference EXPR__E10 = eINSTANCE.getExpr_E10();
+
+    /**
+     * The meta object literal for the '<em><b>E25</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference EXPR__E25 = eINSTANCE.getExpr_E25();
+
+    /**
+     * The meta object literal for the '<em><b>E24</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference EXPR__E24 = eINSTANCE.getExpr_E24();
+
+    /**
+     * The meta object literal for the '<em><b>E26</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference EXPR__E26 = eINSTANCE.getExpr_E26();
+
+    /**
+     * The meta object literal for the '<em><b>E11</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute EXPR__E11 = eINSTANCE.getExpr_E11();
+
+    /**
+     * The meta object literal for the '<em><b>E12</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference EXPR__E12 = eINSTANCE.getExpr_E12();
+
+    /**
+     * The meta object literal for the '<em><b>E13</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference EXPR__E13 = eINSTANCE.getExpr_E13();
 
     /**
      * The meta object literal for the '{@link com.euclideanspace.spad.editor.impl.PrimaryPrefixImpl <em>Primary Prefix</em>}' class.
@@ -10867,6 +15686,40 @@ public interface EditorPackage extends EPackage
      * @generated
      */
     EReference EXPONENT_EXPRESSION__RIGHT = eINSTANCE.getExponentExpression_Right();
+
+    /**
+     * The meta object literal for the '{@link com.euclideanspace.spad.editor.impl.MapDefinitionImpl <em>Map Definition</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see com.euclideanspace.spad.editor.impl.MapDefinitionImpl
+     * @see com.euclideanspace.spad.editor.impl.EditorPackageImpl#getMapDefinition()
+     * @generated
+     */
+    EClass MAP_DEFINITION = eINSTANCE.getMapDefinition();
+
+    /**
+     * The meta object literal for the '<em><b>Left</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference MAP_DEFINITION__LEFT = eINSTANCE.getMapDefinition_Left();
+
+    /**
+     * The meta object literal for the '<em><b>Op</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute MAP_DEFINITION__OP = eINSTANCE.getMapDefinition_Op();
+
+    /**
+     * The meta object literal for the '<em><b>Right</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference MAP_DEFINITION__RIGHT = eINSTANCE.getMapDefinition_Right();
 
     /**
      * The meta object literal for the '{@link com.euclideanspace.spad.editor.impl.PretendExpressionImpl <em>Pretend Expression</em>}' class.
