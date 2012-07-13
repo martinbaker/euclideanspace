@@ -4,7 +4,7 @@ package com.euclideanspace.spad.editor.impl;
 
 import com.euclideanspace.spad.editor.DoStatement;
 import com.euclideanspace.spad.editor.EditorPackage;
-import com.euclideanspace.spad.editor.Predicate;
+import com.euclideanspace.spad.editor.Expr;
 import com.euclideanspace.spad.editor.Statement;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -71,7 +71,7 @@ public class DoStatementImpl extends MinimalEObjectImpl.Container implements DoS
    * @generated
    * @ordered
    */
-  protected Predicate t2;
+  protected Expr t2;
 
   /**
    * <!-- begin-user-doc -->
@@ -170,7 +170,7 @@ public class DoStatementImpl extends MinimalEObjectImpl.Container implements DoS
    * <!-- end-user-doc -->
    * @generated
    */
-  public Predicate getT2()
+  public Expr getT2()
   {
     return t2;
   }
@@ -180,9 +180,9 @@ public class DoStatementImpl extends MinimalEObjectImpl.Container implements DoS
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetT2(Predicate newT2, NotificationChain msgs)
+  public NotificationChain basicSetT2(Expr newT2, NotificationChain msgs)
   {
-    Predicate oldT2 = t2;
+    Expr oldT2 = t2;
     t2 = newT2;
     if (eNotificationRequired())
     {
@@ -197,7 +197,7 @@ public class DoStatementImpl extends MinimalEObjectImpl.Container implements DoS
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setT2(Predicate newT2)
+  public void setT2(Expr newT2)
   {
     if (newT2 != t2)
     {
@@ -268,7 +268,7 @@ public class DoStatementImpl extends MinimalEObjectImpl.Container implements DoS
         setS1((Statement)newValue);
         return;
       case EditorPackage.DO_STATEMENT__T2:
-        setT2((Predicate)newValue);
+        setT2((Expr)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -291,7 +291,7 @@ public class DoStatementImpl extends MinimalEObjectImpl.Container implements DoS
         setS1((Statement)null);
         return;
       case EditorPackage.DO_STATEMENT__T2:
-        setT2((Predicate)null);
+        setT2((Expr)null);
         return;
     }
     super.eUnset(featureID);

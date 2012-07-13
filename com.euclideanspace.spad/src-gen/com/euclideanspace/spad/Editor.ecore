@@ -229,6 +229,10 @@
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="t25" upperBound="-1" eType="#//TypeExpression"
         containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="t44" upperBound="-1" eType="#//StatementExpression"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="t45" upperBound="-1" eType="#//Expr"
+        containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="t6" eType="#//TypePrimaryExpression"
         containment="true"/>
   </eClassifiers>
@@ -275,7 +279,8 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="t2" eType="#//TypeExpression"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="t3" eType="#//Expr" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="t4" eType="#//Expr" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="t4" eType="#//Statement"
+        containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ForStatement">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="stname" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -285,8 +290,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="WhileStatement">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="stname" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="t2" eType="#//Predicate"
-        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="t2" eType="#//Expr" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="s1" eType="#//Statement"
         containment="true"/>
   </eClassifiers>
@@ -294,8 +298,7 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="stname" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="s1" eType="#//Statement"
         containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="t2" eType="#//Predicate"
-        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="t2" eType="#//Expr" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="IterateStatement">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="stname" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -308,22 +311,15 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="t2" eType="#//Expr" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="IfStatement">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="t2" eType="#//Predicate"
-        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="t2" eType="#//Expr" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="s1" eType="#//Statement"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="s2" eType="#//Statement"
         containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Predicate"/>
-  <eClassifiers xsi:type="ecore:EClass" name="PredicatePrimary" eSuperTypes="#//Predicate">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="t" eType="#//Predicate"
-        containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="t2" eType="#//Expr" containment="true"/>
-  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Expr">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="ifname" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="ifpred" eType="#//Predicate"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ifpred" eType="#//Expr"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="thenexp" eType="#//Expr"
         containment="true"/>
@@ -356,15 +352,21 @@
         containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="PrimaryPrefix" eSuperTypes="#//Expr">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="t4" eType="#//Expr" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="t4" eType="#//StatementExpression"
+        containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="t7" eType="#//NameOrFunctionCall"
         containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="NameOrFunctionCall">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="fnname" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="lsp" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="t4" eType="#//Expr" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="t4" eType="#//StatementExpression"
+        containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="t5" upperBound="-1" eType="#//Expr"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="t14" upperBound="-1" eType="#//StatementExpression"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="t15" upperBound="-1" eType="#//Expr"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="t6" eType="#//Expr" containment="true"/>
   </eClassifiers>
@@ -388,28 +390,16 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="l5" upperBound="-1" eType="#//Expr"
         containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="PredicateOr" eSuperTypes="#//Predicate">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="left" eType="#//Predicate"
-        containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="prname" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="right" eType="#//Predicate"
-        containment="true"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="PredicateAnd" eSuperTypes="#//Predicate">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="left" eType="#//Predicate"
-        containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="prname" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="right" eType="#//Predicate"
-        containment="true"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="PredicateNot" eSuperTypes="#//Predicate">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="t2" eType="#//PredicatePrimary"
-        containment="true"/>
-  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ConditionExpression" eSuperTypes="#//Expr">
     <eStructuralFeatures xsi:type="ecore:EReference" name="left" eType="#//Expr" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="op" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="right" eType="#//Predicate"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="right" eType="#//Expr"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AndExpression" eSuperTypes="#//Expr">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="left" eType="#//Expr" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="op" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="right" eType="#//Expr"
         containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="InnerProdExpression" eSuperTypes="#//Expr">

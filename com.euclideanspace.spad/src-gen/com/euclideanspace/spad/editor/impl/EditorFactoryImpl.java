@@ -99,8 +99,6 @@ public class EditorFactoryImpl extends EFactoryImpl implements EditorFactory
       case EditorPackage.BREAK_STATEMENT: return createBreakStatement();
       case EditorPackage.RETURN_STATEMENT: return createReturnStatement();
       case EditorPackage.IF_STATEMENT: return createIfStatement();
-      case EditorPackage.PREDICATE: return createPredicate();
-      case EditorPackage.PREDICATE_PRIMARY: return createPredicatePrimary();
       case EditorPackage.EXPR: return createExpr();
       case EditorPackage.PRIMARY_PREFIX: return createPrimaryPrefix();
       case EditorPackage.NAME_OR_FUNCTION_CALL: return createNameOrFunctionCall();
@@ -108,10 +106,8 @@ public class EditorFactoryImpl extends EFactoryImpl implements EditorFactory
       case EditorPackage.CHARACTER_LITERAL: return createCharacterLiteral();
       case EditorPackage.BOOLEAN_LITERAL: return createBooleanLiteral();
       case EditorPackage.LIST_LITERAL: return createListLiteral();
-      case EditorPackage.PREDICATE_OR: return createPredicateOr();
-      case EditorPackage.PREDICATE_AND: return createPredicateAnd();
-      case EditorPackage.PREDICATE_NOT: return createPredicateNot();
       case EditorPackage.CONDITION_EXPRESSION: return createConditionExpression();
+      case EditorPackage.AND_EXPRESSION: return createAndExpression();
       case EditorPackage.INNER_PROD_EXPRESSION: return createInnerProdExpression();
       case EditorPackage.OUTER_PROD_EXPRESSION: return createOuterProdExpression();
       case EditorPackage.HAS_EXPRESSION: return createHasExpression();
@@ -530,28 +526,6 @@ public class EditorFactoryImpl extends EFactoryImpl implements EditorFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public Predicate createPredicate()
-  {
-    PredicateImpl predicate = new PredicateImpl();
-    return predicate;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public PredicatePrimary createPredicatePrimary()
-  {
-    PredicatePrimaryImpl predicatePrimary = new PredicatePrimaryImpl();
-    return predicatePrimary;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public Expr createExpr()
   {
     ExprImpl expr = new ExprImpl();
@@ -629,43 +603,21 @@ public class EditorFactoryImpl extends EFactoryImpl implements EditorFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public PredicateOr createPredicateOr()
-  {
-    PredicateOrImpl predicateOr = new PredicateOrImpl();
-    return predicateOr;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public PredicateAnd createPredicateAnd()
-  {
-    PredicateAndImpl predicateAnd = new PredicateAndImpl();
-    return predicateAnd;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public PredicateNot createPredicateNot()
-  {
-    PredicateNotImpl predicateNot = new PredicateNotImpl();
-    return predicateNot;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public ConditionExpression createConditionExpression()
   {
     ConditionExpressionImpl conditionExpression = new ConditionExpressionImpl();
     return conditionExpression;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public AndExpression createAndExpression()
+  {
+    AndExpressionImpl andExpression = new AndExpressionImpl();
+    return andExpression;
   }
 
   /**

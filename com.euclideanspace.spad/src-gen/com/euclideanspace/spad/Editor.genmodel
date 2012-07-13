@@ -166,6 +166,8 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Editor.ecore#//TypeNameOrFunctionCall/tfnname"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//TypeNameOrFunctionCall/t4"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//TypeNameOrFunctionCall/t25"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//TypeNameOrFunctionCall/t44"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//TypeNameOrFunctionCall/t45"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//TypeNameOrFunctionCall/t6"/>
     </genClasses>
     <genClasses ecoreClass="Editor.ecore#//TupleDefinition">
@@ -229,11 +231,6 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//IfStatement/s1"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//IfStatement/s2"/>
     </genClasses>
-    <genClasses ecoreClass="Editor.ecore#//Predicate"/>
-    <genClasses ecoreClass="Editor.ecore#//PredicatePrimary">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//PredicatePrimary/t"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//PredicatePrimary/t2"/>
-    </genClasses>
     <genClasses ecoreClass="Editor.ecore#//Expr">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Editor.ecore#//Expr/ifname"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//Expr/ifpred"/>
@@ -264,6 +261,8 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Editor.ecore#//NameOrFunctionCall/lsp"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//NameOrFunctionCall/t4"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//NameOrFunctionCall/t5"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//NameOrFunctionCall/t14"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//NameOrFunctionCall/t15"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//NameOrFunctionCall/t6"/>
     </genClasses>
     <genClasses ecoreClass="Editor.ecore#//Literal">
@@ -283,23 +282,15 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//ListLiteral/t14"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//ListLiteral/l5"/>
     </genClasses>
-    <genClasses ecoreClass="Editor.ecore#//PredicateOr">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//PredicateOr/left"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Editor.ecore#//PredicateOr/prname"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//PredicateOr/right"/>
-    </genClasses>
-    <genClasses ecoreClass="Editor.ecore#//PredicateAnd">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//PredicateAnd/left"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Editor.ecore#//PredicateAnd/prname"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//PredicateAnd/right"/>
-    </genClasses>
-    <genClasses ecoreClass="Editor.ecore#//PredicateNot">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//PredicateNot/t2"/>
-    </genClasses>
     <genClasses ecoreClass="Editor.ecore#//ConditionExpression">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//ConditionExpression/left"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Editor.ecore#//ConditionExpression/op"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//ConditionExpression/right"/>
+    </genClasses>
+    <genClasses ecoreClass="Editor.ecore#//AndExpression">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//AndExpression/left"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Editor.ecore#//AndExpression/op"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//AndExpression/right"/>
     </genClasses>
     <genClasses ecoreClass="Editor.ecore#//InnerProdExpression">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//InnerProdExpression/left"/>

@@ -4,7 +4,6 @@ package com.euclideanspace.spad.editor.impl;
 
 import com.euclideanspace.spad.editor.EditorPackage;
 import com.euclideanspace.spad.editor.Expr;
-import com.euclideanspace.spad.editor.Predicate;
 import com.euclideanspace.spad.editor.TypeExpression;
 
 import java.util.Collection;
@@ -84,7 +83,7 @@ public class ExprImpl extends MinimalEObjectImpl.Container implements Expr
    * @generated
    * @ordered
    */
-  protected Predicate ifpred;
+  protected Expr ifpred;
 
   /**
    * The cached value of the '{@link #getThenexp() <em>Thenexp</em>}' containment reference.
@@ -355,7 +354,7 @@ public class ExprImpl extends MinimalEObjectImpl.Container implements Expr
    * <!-- end-user-doc -->
    * @generated
    */
-  public Predicate getIfpred()
+  public Expr getIfpred()
   {
     return ifpred;
   }
@@ -365,9 +364,9 @@ public class ExprImpl extends MinimalEObjectImpl.Container implements Expr
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetIfpred(Predicate newIfpred, NotificationChain msgs)
+  public NotificationChain basicSetIfpred(Expr newIfpred, NotificationChain msgs)
   {
-    Predicate oldIfpred = ifpred;
+    Expr oldIfpred = ifpred;
     ifpred = newIfpred;
     if (eNotificationRequired())
     {
@@ -382,7 +381,7 @@ public class ExprImpl extends MinimalEObjectImpl.Container implements Expr
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setIfpred(Predicate newIfpred)
+  public void setIfpred(Expr newIfpred)
   {
     if (newIfpred != ifpred)
     {
@@ -958,7 +957,7 @@ public class ExprImpl extends MinimalEObjectImpl.Container implements Expr
         setIfname((String)newValue);
         return;
       case EditorPackage.EXPR__IFPRED:
-        setIfpred((Predicate)newValue);
+        setIfpred((Expr)newValue);
         return;
       case EditorPackage.EXPR__THENEXP:
         setThenexp((Expr)newValue);
@@ -1036,7 +1035,7 @@ public class ExprImpl extends MinimalEObjectImpl.Container implements Expr
         setIfname(IFNAME_EDEFAULT);
         return;
       case EditorPackage.EXPR__IFPRED:
-        setIfpred((Predicate)null);
+        setIfpred((Expr)null);
         return;
       case EditorPackage.EXPR__THENEXP:
         setThenexp((Expr)null);

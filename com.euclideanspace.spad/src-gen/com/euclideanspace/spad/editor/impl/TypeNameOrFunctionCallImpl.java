@@ -3,6 +3,8 @@
 package com.euclideanspace.spad.editor.impl;
 
 import com.euclideanspace.spad.editor.EditorPackage;
+import com.euclideanspace.spad.editor.Expr;
+import com.euclideanspace.spad.editor.StatementExpression;
 import com.euclideanspace.spad.editor.TypeExpression;
 import com.euclideanspace.spad.editor.TypeNameOrFunctionCall;
 import com.euclideanspace.spad.editor.TypePrimaryExpression;
@@ -32,6 +34,8 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link com.euclideanspace.spad.editor.impl.TypeNameOrFunctionCallImpl#getTfnname <em>Tfnname</em>}</li>
  *   <li>{@link com.euclideanspace.spad.editor.impl.TypeNameOrFunctionCallImpl#getT4 <em>T4</em>}</li>
  *   <li>{@link com.euclideanspace.spad.editor.impl.TypeNameOrFunctionCallImpl#getT25 <em>T25</em>}</li>
+ *   <li>{@link com.euclideanspace.spad.editor.impl.TypeNameOrFunctionCallImpl#getT44 <em>T44</em>}</li>
+ *   <li>{@link com.euclideanspace.spad.editor.impl.TypeNameOrFunctionCallImpl#getT45 <em>T45</em>}</li>
  *   <li>{@link com.euclideanspace.spad.editor.impl.TypeNameOrFunctionCallImpl#getT6 <em>T6</em>}</li>
  * </ul>
  * </p>
@@ -79,6 +83,26 @@ public class TypeNameOrFunctionCallImpl extends TypePrimaryExpressionImpl implem
    * @ordered
    */
   protected EList<TypeExpression> t25;
+
+  /**
+   * The cached value of the '{@link #getT44() <em>T44</em>}' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getT44()
+   * @generated
+   * @ordered
+   */
+  protected EList<StatementExpression> t44;
+
+  /**
+   * The cached value of the '{@link #getT45() <em>T45</em>}' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getT45()
+   * @generated
+   * @ordered
+   */
+  protected EList<Expr> t45;
 
   /**
    * The cached value of the '{@link #getT6() <em>T6</em>}' containment reference.
@@ -201,6 +225,34 @@ public class TypeNameOrFunctionCallImpl extends TypePrimaryExpressionImpl implem
    * <!-- end-user-doc -->
    * @generated
    */
+  public EList<StatementExpression> getT44()
+  {
+    if (t44 == null)
+    {
+      t44 = new EObjectContainmentEList<StatementExpression>(StatementExpression.class, this, EditorPackage.TYPE_NAME_OR_FUNCTION_CALL__T44);
+    }
+    return t44;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EList<Expr> getT45()
+  {
+    if (t45 == null)
+    {
+      t45 = new EObjectContainmentEList<Expr>(Expr.class, this, EditorPackage.TYPE_NAME_OR_FUNCTION_CALL__T45);
+    }
+    return t45;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public TypePrimaryExpression getT6()
   {
     return t6;
@@ -258,6 +310,10 @@ public class TypeNameOrFunctionCallImpl extends TypePrimaryExpressionImpl implem
         return basicSetT4(null, msgs);
       case EditorPackage.TYPE_NAME_OR_FUNCTION_CALL__T25:
         return ((InternalEList<?>)getT25()).basicRemove(otherEnd, msgs);
+      case EditorPackage.TYPE_NAME_OR_FUNCTION_CALL__T44:
+        return ((InternalEList<?>)getT44()).basicRemove(otherEnd, msgs);
+      case EditorPackage.TYPE_NAME_OR_FUNCTION_CALL__T45:
+        return ((InternalEList<?>)getT45()).basicRemove(otherEnd, msgs);
       case EditorPackage.TYPE_NAME_OR_FUNCTION_CALL__T6:
         return basicSetT6(null, msgs);
     }
@@ -280,6 +336,10 @@ public class TypeNameOrFunctionCallImpl extends TypePrimaryExpressionImpl implem
         return getT4();
       case EditorPackage.TYPE_NAME_OR_FUNCTION_CALL__T25:
         return getT25();
+      case EditorPackage.TYPE_NAME_OR_FUNCTION_CALL__T44:
+        return getT44();
+      case EditorPackage.TYPE_NAME_OR_FUNCTION_CALL__T45:
+        return getT45();
       case EditorPackage.TYPE_NAME_OR_FUNCTION_CALL__T6:
         return getT6();
     }
@@ -307,6 +367,14 @@ public class TypeNameOrFunctionCallImpl extends TypePrimaryExpressionImpl implem
         getT25().clear();
         getT25().addAll((Collection<? extends TypeExpression>)newValue);
         return;
+      case EditorPackage.TYPE_NAME_OR_FUNCTION_CALL__T44:
+        getT44().clear();
+        getT44().addAll((Collection<? extends StatementExpression>)newValue);
+        return;
+      case EditorPackage.TYPE_NAME_OR_FUNCTION_CALL__T45:
+        getT45().clear();
+        getT45().addAll((Collection<? extends Expr>)newValue);
+        return;
       case EditorPackage.TYPE_NAME_OR_FUNCTION_CALL__T6:
         setT6((TypePrimaryExpression)newValue);
         return;
@@ -333,6 +401,12 @@ public class TypeNameOrFunctionCallImpl extends TypePrimaryExpressionImpl implem
       case EditorPackage.TYPE_NAME_OR_FUNCTION_CALL__T25:
         getT25().clear();
         return;
+      case EditorPackage.TYPE_NAME_OR_FUNCTION_CALL__T44:
+        getT44().clear();
+        return;
+      case EditorPackage.TYPE_NAME_OR_FUNCTION_CALL__T45:
+        getT45().clear();
+        return;
       case EditorPackage.TYPE_NAME_OR_FUNCTION_CALL__T6:
         setT6((TypePrimaryExpression)null);
         return;
@@ -356,6 +430,10 @@ public class TypeNameOrFunctionCallImpl extends TypePrimaryExpressionImpl implem
         return t4 != null;
       case EditorPackage.TYPE_NAME_OR_FUNCTION_CALL__T25:
         return t25 != null && !t25.isEmpty();
+      case EditorPackage.TYPE_NAME_OR_FUNCTION_CALL__T44:
+        return t44 != null && !t44.isEmpty();
+      case EditorPackage.TYPE_NAME_OR_FUNCTION_CALL__T45:
+        return t45 != null && !t45.isEmpty();
       case EditorPackage.TYPE_NAME_OR_FUNCTION_CALL__T6:
         return t6 != null;
     }

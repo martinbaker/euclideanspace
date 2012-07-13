@@ -250,16 +250,6 @@ public class EditorAdapterFactory extends AdapterFactoryImpl
         return createIfStatementAdapter();
       }
       @Override
-      public Adapter casePredicate(Predicate object)
-      {
-        return createPredicateAdapter();
-      }
-      @Override
-      public Adapter casePredicatePrimary(PredicatePrimary object)
-      {
-        return createPredicatePrimaryAdapter();
-      }
-      @Override
       public Adapter caseExpr(Expr object)
       {
         return createExprAdapter();
@@ -295,24 +285,14 @@ public class EditorAdapterFactory extends AdapterFactoryImpl
         return createListLiteralAdapter();
       }
       @Override
-      public Adapter casePredicateOr(PredicateOr object)
-      {
-        return createPredicateOrAdapter();
-      }
-      @Override
-      public Adapter casePredicateAnd(PredicateAnd object)
-      {
-        return createPredicateAndAdapter();
-      }
-      @Override
-      public Adapter casePredicateNot(PredicateNot object)
-      {
-        return createPredicateNotAdapter();
-      }
-      @Override
       public Adapter caseConditionExpression(ConditionExpression object)
       {
         return createConditionExpressionAdapter();
+      }
+      @Override
+      public Adapter caseAndExpression(AndExpression object)
+      {
+        return createAndExpressionAdapter();
       }
       @Override
       public Adapter caseInnerProdExpression(InnerProdExpression object)
@@ -977,36 +957,6 @@ public class EditorAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link com.euclideanspace.spad.editor.Predicate <em>Predicate</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see com.euclideanspace.spad.editor.Predicate
-   * @generated
-   */
-  public Adapter createPredicateAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link com.euclideanspace.spad.editor.PredicatePrimary <em>Predicate Primary</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see com.euclideanspace.spad.editor.PredicatePrimary
-   * @generated
-   */
-  public Adapter createPredicatePrimaryAdapter()
-  {
-    return null;
-  }
-
-  /**
    * Creates a new adapter for an object of class '{@link com.euclideanspace.spad.editor.Expr <em>Expr</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
@@ -1112,51 +1062,6 @@ public class EditorAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link com.euclideanspace.spad.editor.PredicateOr <em>Predicate Or</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see com.euclideanspace.spad.editor.PredicateOr
-   * @generated
-   */
-  public Adapter createPredicateOrAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link com.euclideanspace.spad.editor.PredicateAnd <em>Predicate And</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see com.euclideanspace.spad.editor.PredicateAnd
-   * @generated
-   */
-  public Adapter createPredicateAndAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link com.euclideanspace.spad.editor.PredicateNot <em>Predicate Not</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see com.euclideanspace.spad.editor.PredicateNot
-   * @generated
-   */
-  public Adapter createPredicateNotAdapter()
-  {
-    return null;
-  }
-
-  /**
    * Creates a new adapter for an object of class '{@link com.euclideanspace.spad.editor.ConditionExpression <em>Condition Expression</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
@@ -1167,6 +1072,21 @@ public class EditorAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createConditionExpressionAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link com.euclideanspace.spad.editor.AndExpression <em>And Expression</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see com.euclideanspace.spad.editor.AndExpression
+   * @generated
+   */
+  public Adapter createAndExpressionAdapter()
   {
     return null;
   }

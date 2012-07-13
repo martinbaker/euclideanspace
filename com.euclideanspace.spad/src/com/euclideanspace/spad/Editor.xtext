@@ -22,7 +22,7 @@ generate editor "http://www.euclideanspace.com/spad/Editor"
  *  along with EuclideanSpace.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-/* FriCAS does SPAD parsing by a type of parser known as a 'Pratt' parser.
+/* FriCAS parses SPAD using a type of parser known as a 'Pratt' parser.
  * In this type of parser each operator has different binding powers for
  * its left and right. The SPAD parser also has 'special handlers' for
  * certain operators. In this type of parser there is less distinction made
@@ -596,6 +596,8 @@ TypePrimaryExpression hidden(WS):
 TypeNameOrFunctionCall hidden(WS):
   tfnname=ID
   ((LPAREN t4=TypeExpression? (COMMA t25+=TypeExpression)* RPAREN)
+  // optional curried function:
+  (LPAREN t44+=StatementExpression? (COMMA t45+=Expression)* RPAREN)*
   // option of no parenthesis for single parameter
   | => t6=TypePrimaryExpression)?
 ;
@@ -641,7 +643,7 @@ Statement hidden(WS,SL_COMMENT):
     s7=ForStatement |
     s8=BreakStatement |
     s9= IterateStatement |
-//    s1= ContinueStatement|
+//    s11= ContinueStatement|
     s10= ReturnStatement
 ;
 
@@ -663,7 +665,7 @@ StatementExpression hidden(WS,SL_COMMENT):
     // control leaves the block.
     // Put it here so that it can only occur at the top level of an expression
     // not inside some complicated expression.
-    (EXIT t4=Expression)?
+    (EXIT t4=Statement)?
 ;
 
 /*
@@ -685,7 +687,7 @@ ForStatement hidden(WS,SL_COMMENT):
  */
 WhileStatement hidden(WS,SL_COMMENT):
 	stname='while' (
-       t2=PredicateOr
+       t2=Expression /*PredicateOr*/
 	) 'repeat' NL? s1=Statement
 ;
 
@@ -695,7 +697,7 @@ WhileStatement hidden(WS,SL_COMMENT):
 DoStatement hidden(WS,SL_COMMENT):
 	stname='do' (
        s1=Statement
-	) 'while' NL? t2=PredicateOr
+	) 'while' NL? t2=Expression /*PredicateOr*/
 ;
 
 /*
@@ -739,42 +741,10 @@ ReturnStatement hidden(WS):
  * if myUnion case mtType then ...
  */
 IfStatement hidden(WS,SL_COMMENT):
-	'if' t2=PredicateOr
+	'if' t2=Expression
     'then' NL? s1=Statement
+    // NL? we need to enable this but it will be matched multiple ways
     (=> 'else' NL? s2=Statement)?
-;
-
-/*
- * "or", precedence: 200, 201
- *
- */
-PredicateOr returns Predicate hidden(WS):
-	PredicateAnd
-    ({PredicateOr.left=current} prname='or' right=PredicateAnd)*
-;
-
-/*
- *  "and", precedence: 250, 251
- */
-PredicateAnd returns Predicate hidden(WS):
-	PredicateNot
-    ({PredicateAnd.left=current} prname='and' right=PredicateNot)*
-;
-
-/*
- * allow optional 'not' as prefix operator
- */
-PredicateNot returns Predicate hidden(WS):
-	PredicatePrimary |
-	({PredicateNot}'not' t2 = PredicatePrimary)
-;
-
-/*
- * PredicatePrimary
- */
-PredicatePrimary hidden(WS):
-	=>(LPAREN t = PredicateOr RPAREN)
-	| t2 = EqualityExpression
 ;
 
 ///////////// Expression syntax follows //////////////
@@ -791,7 +761,7 @@ Expression returns Expr hidden(WS,SL_COMMENT):
  * a primary expression.  Consider adding a semantic predicate to work
  * around this.
  */
-  (ifname='if' ifpred=PredicateOr 'then' thenexp=Expression 'else' elseexp=Expression)
+  (ifname='if' ifpred=Expression /*PredicateOr*/ 'then' thenexp=Expression 'else' elseexp=Expression)
   | ConditionExpression
 ;
 
@@ -799,8 +769,8 @@ Expression returns Expr hidden(WS,SL_COMMENT):
  * BAR "|" precedence: 108, 111
  */
 ConditionExpression returns Expr hidden(WS,SL_COMMENT):
-  InnerProdExpression
-  ({ConditionExpression.left=current} op=BAR right = PredicateOr )*
+  OrExpression
+  ({ConditionExpression.left=current} op=BAR right = OrExpression )*
 ;
 
 /* 
@@ -812,6 +782,28 @@ ConditionExpression returns Expr hidden(WS,SL_COMMENT):
 //;
 
 /*
+ * There is also another rule that looks for 'or' which is PredicateOr,
+ * this version is used in a general expression and the other version is
+ * used when we know we have a predicate.
+ * "or", precedence: 200, 201
+ */
+OrExpression returns Expr hidden(WS,SL_COMMENT):
+  AndExpression
+  ( {AndExpression.left=current} op='or' right = AndExpression)*
+;
+
+/*
+ * There is also another rule that looks for 'and' which is PredicateAnd,
+ * this version is used in a general expression and the other version is
+ * used when we know we have a predicate.
+ * "and", precedence: 250, 251
+ */
+AndExpression returns Expr hidden(WS,SL_COMMENT):
+  InnerProdExpression
+  ( {InnerProdExpression.left=current} op='and' right = InnerProdExpression)*
+;
+
+/*
  * This has multiple uses such as inner product and logical or.
  * 
  * "\/", BACKSLASHSLASH precedence: 200, 201
@@ -819,7 +811,7 @@ ConditionExpression returns Expr hidden(WS,SL_COMMENT):
  * the backslash is duplicated here because it is the escape character for
  * strings, it will not be duplicated when used. 
  */
-InnerProdExpression returns Expr  hidden(WS,SL_COMMENT):
+InnerProdExpression returns Expr hidden(WS,SL_COMMENT):
   OuterProdExpression
   ( {InnerProdExpression.left=current} op=BACKSLASHSLASH right = OuterProdExpression)*
 ;
@@ -921,7 +913,6 @@ SegmentExpression returns Expr hidden(WS,SL_COMMENT):
  * 
  * "-",  precedence: 700, 701
  * "+",  precedence: 700, 701
- 
  */
 AdditiveExpression returns Expr hidden(WS,SL_COMMENT):
   ExquoExpression
@@ -1006,13 +997,6 @@ MapDefinition returns Expr hidden(WS,SL_COMMENT):
   PretendExpression
   ({MapDefinition.left=current} op=GIVES right = PretendExpression)*
 ;
-
-
-/*MapDefinition hidden(WS):
-	fnSig=FunctionSignature
-    (COLON par4=TypeExpression)?
-    GIVES par5=Statement
-;*/
 
 /*
  * pretend Type: treat one type as another,
@@ -1103,6 +1087,7 @@ UnaryExpression returns Expr hidden(WS,SL_COMMENT):
   ({UnaryExpression} uop=COLON expr=UnaryExpression) |
   ({UnaryExpression} uop=MINUS expr=UnaryExpression) |
   ({UnaryExpression} uop=HASH expr=UnaryExpression) |
+  ({UnaryExpression} uop='not' expr=PrimaryExpression) |
    e2=PERCENT |
   e3='Type' |
   e5='Record' LPAREN e6=TypeExpression
@@ -1132,17 +1117,14 @@ PrimaryExpression returns Expr hidden(WS,SL_COMMENT):
 ;
 
 /* 
- *
+ * Can contain an expression in parenthesis, this expression is
+ * 'StatementExpression' which means that it can contain an
+ * inner assignment.
  */
 PrimaryPrefix hidden(WS,SL_COMMENT):
  Literal
-// | t2='this'
-// | 'super' DOT t3 = ID
- | LPAREN t4=Expression RPAREN
-// | t5=AllocationExpression // constructor (new ...)
-// | DOT 'class' t4=ResultType DOT 'class'
+ | LPAREN t4=StatementExpression RPAREN
  | t7=NameOrFunctionCall
-// | t8=FunctionCall
 ;
 
 /* function call such as List(Integer)
@@ -1155,7 +1137,9 @@ PrimaryPrefix hidden(WS,SL_COMMENT):
 NameOrFunctionCall hidden(WS,SL_COMMENT):
   fnname=ID (=> lsp=DOLAR 'Lisp'/*t2=TypeExpression*/)?
   //  option for parameters in parenthesis
-  ((LPAREN t4=Expression? (COMMA t5+=Expression)* RPAREN)
+  ((LPAREN t4=StatementExpression? (COMMA t5+=Expression)* RPAREN)
+  // optional curried function:
+  (LPAREN t14+=StatementExpression? (COMMA t15+=Expression)* RPAREN)*
   // option of no parenthesis for single parameter
   | => t6=PrimaryExpression)?
 ;

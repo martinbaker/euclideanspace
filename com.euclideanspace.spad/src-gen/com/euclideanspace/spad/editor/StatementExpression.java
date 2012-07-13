@@ -112,12 +112,12 @@ public interface StatementExpression extends EObject
    * </p>
    * <!-- end-user-doc -->
    * @return the value of the '<em>T4</em>' containment reference.
-   * @see #setT4(Expr)
+   * @see #setT4(Statement)
    * @see com.euclideanspace.spad.editor.EditorPackage#getStatementExpression_T4()
    * @model containment="true"
    * @generated
    */
-  Expr getT4();
+  Statement getT4();
 
   /**
    * Sets the value of the '{@link com.euclideanspace.spad.editor.StatementExpression#getT4 <em>T4</em>}' containment reference.
@@ -127,6 +127,6 @@ public interface StatementExpression extends EObject
    * @see #getT4()
    * @generated
    */
-  void setT4(Expr value);
+  void setT4(Statement value);
 
 } // StatementExpression

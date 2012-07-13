@@ -3,7 +3,7 @@
 package com.euclideanspace.spad.editor.impl;
 
 import com.euclideanspace.spad.editor.EditorPackage;
-import com.euclideanspace.spad.editor.Predicate;
+import com.euclideanspace.spad.editor.Expr;
 import com.euclideanspace.spad.editor.Statement;
 import com.euclideanspace.spad.editor.WhileStatement;
 
@@ -61,7 +61,7 @@ public class WhileStatementImpl extends MinimalEObjectImpl.Container implements 
    * @generated
    * @ordered
    */
-  protected Predicate t2;
+  protected Expr t2;
 
   /**
    * The cached value of the '{@link #getS1() <em>S1</em>}' containment reference.
@@ -122,7 +122,7 @@ public class WhileStatementImpl extends MinimalEObjectImpl.Container implements 
    * <!-- end-user-doc -->
    * @generated
    */
-  public Predicate getT2()
+  public Expr getT2()
   {
     return t2;
   }
@@ -132,9 +132,9 @@ public class WhileStatementImpl extends MinimalEObjectImpl.Container implements 
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetT2(Predicate newT2, NotificationChain msgs)
+  public NotificationChain basicSetT2(Expr newT2, NotificationChain msgs)
   {
-    Predicate oldT2 = t2;
+    Expr oldT2 = t2;
     t2 = newT2;
     if (eNotificationRequired())
     {
@@ -149,7 +149,7 @@ public class WhileStatementImpl extends MinimalEObjectImpl.Container implements 
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setT2(Predicate newT2)
+  public void setT2(Expr newT2)
   {
     if (newT2 != t2)
     {
@@ -265,7 +265,7 @@ public class WhileStatementImpl extends MinimalEObjectImpl.Container implements 
         setStname((String)newValue);
         return;
       case EditorPackage.WHILE_STATEMENT__T2:
-        setT2((Predicate)newValue);
+        setT2((Expr)newValue);
         return;
       case EditorPackage.WHILE_STATEMENT__S1:
         setS1((Statement)newValue);
@@ -288,7 +288,7 @@ public class WhileStatementImpl extends MinimalEObjectImpl.Container implements 
         setStname(STNAME_EDEFAULT);
         return;
       case EditorPackage.WHILE_STATEMENT__T2:
-        setT2((Predicate)null);
+        setT2((Expr)null);
         return;
       case EditorPackage.WHILE_STATEMENT__S1:
         setS1((Statement)null);

@@ -2,9 +2,9 @@
  */
 package com.euclideanspace.spad.editor.impl;
 
+import com.euclideanspace.spad.editor.AndExpression;
 import com.euclideanspace.spad.editor.EditorPackage;
-import com.euclideanspace.spad.editor.Predicate;
-import com.euclideanspace.spad.editor.PredicateAnd;
+import com.euclideanspace.spad.editor.Expr;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
@@ -16,20 +16,20 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Predicate And</b></em>'.
+ * An implementation of the model object '<em><b>And Expression</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link com.euclideanspace.spad.editor.impl.PredicateAndImpl#getLeft <em>Left</em>}</li>
- *   <li>{@link com.euclideanspace.spad.editor.impl.PredicateAndImpl#getPrname <em>Prname</em>}</li>
- *   <li>{@link com.euclideanspace.spad.editor.impl.PredicateAndImpl#getRight <em>Right</em>}</li>
+ *   <li>{@link com.euclideanspace.spad.editor.impl.AndExpressionImpl#getLeft <em>Left</em>}</li>
+ *   <li>{@link com.euclideanspace.spad.editor.impl.AndExpressionImpl#getOp <em>Op</em>}</li>
+ *   <li>{@link com.euclideanspace.spad.editor.impl.AndExpressionImpl#getRight <em>Right</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class PredicateAndImpl extends PredicateImpl implements PredicateAnd
+public class AndExpressionImpl extends ExprImpl implements AndExpression
 {
   /**
    * The cached value of the '{@link #getLeft() <em>Left</em>}' containment reference.
@@ -39,27 +39,27 @@ public class PredicateAndImpl extends PredicateImpl implements PredicateAnd
    * @generated
    * @ordered
    */
-  protected Predicate left;
+  protected Expr left;
 
   /**
-   * The default value of the '{@link #getPrname() <em>Prname</em>}' attribute.
+   * The default value of the '{@link #getOp() <em>Op</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getPrname()
+   * @see #getOp()
    * @generated
    * @ordered
    */
-  protected static final String PRNAME_EDEFAULT = null;
+  protected static final String OP_EDEFAULT = null;
 
   /**
-   * The cached value of the '{@link #getPrname() <em>Prname</em>}' attribute.
+   * The cached value of the '{@link #getOp() <em>Op</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getPrname()
+   * @see #getOp()
    * @generated
    * @ordered
    */
-  protected String prname = PRNAME_EDEFAULT;
+  protected String op = OP_EDEFAULT;
 
   /**
    * The cached value of the '{@link #getRight() <em>Right</em>}' containment reference.
@@ -69,14 +69,14 @@ public class PredicateAndImpl extends PredicateImpl implements PredicateAnd
    * @generated
    * @ordered
    */
-  protected Predicate right;
+  protected Expr right;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  protected PredicateAndImpl()
+  protected AndExpressionImpl()
   {
     super();
   }
@@ -89,7 +89,7 @@ public class PredicateAndImpl extends PredicateImpl implements PredicateAnd
   @Override
   protected EClass eStaticClass()
   {
-    return EditorPackage.Literals.PREDICATE_AND;
+    return EditorPackage.Literals.AND_EXPRESSION;
   }
 
   /**
@@ -97,7 +97,7 @@ public class PredicateAndImpl extends PredicateImpl implements PredicateAnd
    * <!-- end-user-doc -->
    * @generated
    */
-  public Predicate getLeft()
+  public Expr getLeft()
   {
     return left;
   }
@@ -107,13 +107,13 @@ public class PredicateAndImpl extends PredicateImpl implements PredicateAnd
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetLeft(Predicate newLeft, NotificationChain msgs)
+  public NotificationChain basicSetLeft(Expr newLeft, NotificationChain msgs)
   {
-    Predicate oldLeft = left;
+    Expr oldLeft = left;
     left = newLeft;
     if (eNotificationRequired())
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, EditorPackage.PREDICATE_AND__LEFT, oldLeft, newLeft);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, EditorPackage.AND_EXPRESSION__LEFT, oldLeft, newLeft);
       if (msgs == null) msgs = notification; else msgs.add(notification);
     }
     return msgs;
@@ -124,20 +124,20 @@ public class PredicateAndImpl extends PredicateImpl implements PredicateAnd
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setLeft(Predicate newLeft)
+  public void setLeft(Expr newLeft)
   {
     if (newLeft != left)
     {
       NotificationChain msgs = null;
       if (left != null)
-        msgs = ((InternalEObject)left).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - EditorPackage.PREDICATE_AND__LEFT, null, msgs);
+        msgs = ((InternalEObject)left).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - EditorPackage.AND_EXPRESSION__LEFT, null, msgs);
       if (newLeft != null)
-        msgs = ((InternalEObject)newLeft).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - EditorPackage.PREDICATE_AND__LEFT, null, msgs);
+        msgs = ((InternalEObject)newLeft).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - EditorPackage.AND_EXPRESSION__LEFT, null, msgs);
       msgs = basicSetLeft(newLeft, msgs);
       if (msgs != null) msgs.dispatch();
     }
     else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, EditorPackage.PREDICATE_AND__LEFT, newLeft, newLeft));
+      eNotify(new ENotificationImpl(this, Notification.SET, EditorPackage.AND_EXPRESSION__LEFT, newLeft, newLeft));
   }
 
   /**
@@ -145,9 +145,9 @@ public class PredicateAndImpl extends PredicateImpl implements PredicateAnd
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getPrname()
+  public String getOp()
   {
-    return prname;
+    return op;
   }
 
   /**
@@ -155,12 +155,12 @@ public class PredicateAndImpl extends PredicateImpl implements PredicateAnd
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setPrname(String newPrname)
+  public void setOp(String newOp)
   {
-    String oldPrname = prname;
-    prname = newPrname;
+    String oldOp = op;
+    op = newOp;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, EditorPackage.PREDICATE_AND__PRNAME, oldPrname, prname));
+      eNotify(new ENotificationImpl(this, Notification.SET, EditorPackage.AND_EXPRESSION__OP, oldOp, op));
   }
 
   /**
@@ -168,7 +168,7 @@ public class PredicateAndImpl extends PredicateImpl implements PredicateAnd
    * <!-- end-user-doc -->
    * @generated
    */
-  public Predicate getRight()
+  public Expr getRight()
   {
     return right;
   }
@@ -178,13 +178,13 @@ public class PredicateAndImpl extends PredicateImpl implements PredicateAnd
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetRight(Predicate newRight, NotificationChain msgs)
+  public NotificationChain basicSetRight(Expr newRight, NotificationChain msgs)
   {
-    Predicate oldRight = right;
+    Expr oldRight = right;
     right = newRight;
     if (eNotificationRequired())
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, EditorPackage.PREDICATE_AND__RIGHT, oldRight, newRight);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, EditorPackage.AND_EXPRESSION__RIGHT, oldRight, newRight);
       if (msgs == null) msgs = notification; else msgs.add(notification);
     }
     return msgs;
@@ -195,20 +195,20 @@ public class PredicateAndImpl extends PredicateImpl implements PredicateAnd
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setRight(Predicate newRight)
+  public void setRight(Expr newRight)
   {
     if (newRight != right)
     {
       NotificationChain msgs = null;
       if (right != null)
-        msgs = ((InternalEObject)right).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - EditorPackage.PREDICATE_AND__RIGHT, null, msgs);
+        msgs = ((InternalEObject)right).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - EditorPackage.AND_EXPRESSION__RIGHT, null, msgs);
       if (newRight != null)
-        msgs = ((InternalEObject)newRight).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - EditorPackage.PREDICATE_AND__RIGHT, null, msgs);
+        msgs = ((InternalEObject)newRight).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - EditorPackage.AND_EXPRESSION__RIGHT, null, msgs);
       msgs = basicSetRight(newRight, msgs);
       if (msgs != null) msgs.dispatch();
     }
     else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, EditorPackage.PREDICATE_AND__RIGHT, newRight, newRight));
+      eNotify(new ENotificationImpl(this, Notification.SET, EditorPackage.AND_EXPRESSION__RIGHT, newRight, newRight));
   }
 
   /**
@@ -221,9 +221,9 @@ public class PredicateAndImpl extends PredicateImpl implements PredicateAnd
   {
     switch (featureID)
     {
-      case EditorPackage.PREDICATE_AND__LEFT:
+      case EditorPackage.AND_EXPRESSION__LEFT:
         return basicSetLeft(null, msgs);
-      case EditorPackage.PREDICATE_AND__RIGHT:
+      case EditorPackage.AND_EXPRESSION__RIGHT:
         return basicSetRight(null, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
@@ -239,11 +239,11 @@ public class PredicateAndImpl extends PredicateImpl implements PredicateAnd
   {
     switch (featureID)
     {
-      case EditorPackage.PREDICATE_AND__LEFT:
+      case EditorPackage.AND_EXPRESSION__LEFT:
         return getLeft();
-      case EditorPackage.PREDICATE_AND__PRNAME:
-        return getPrname();
-      case EditorPackage.PREDICATE_AND__RIGHT:
+      case EditorPackage.AND_EXPRESSION__OP:
+        return getOp();
+      case EditorPackage.AND_EXPRESSION__RIGHT:
         return getRight();
     }
     return super.eGet(featureID, resolve, coreType);
@@ -259,14 +259,14 @@ public class PredicateAndImpl extends PredicateImpl implements PredicateAnd
   {
     switch (featureID)
     {
-      case EditorPackage.PREDICATE_AND__LEFT:
-        setLeft((Predicate)newValue);
+      case EditorPackage.AND_EXPRESSION__LEFT:
+        setLeft((Expr)newValue);
         return;
-      case EditorPackage.PREDICATE_AND__PRNAME:
-        setPrname((String)newValue);
+      case EditorPackage.AND_EXPRESSION__OP:
+        setOp((String)newValue);
         return;
-      case EditorPackage.PREDICATE_AND__RIGHT:
-        setRight((Predicate)newValue);
+      case EditorPackage.AND_EXPRESSION__RIGHT:
+        setRight((Expr)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -282,14 +282,14 @@ public class PredicateAndImpl extends PredicateImpl implements PredicateAnd
   {
     switch (featureID)
     {
-      case EditorPackage.PREDICATE_AND__LEFT:
-        setLeft((Predicate)null);
+      case EditorPackage.AND_EXPRESSION__LEFT:
+        setLeft((Expr)null);
         return;
-      case EditorPackage.PREDICATE_AND__PRNAME:
-        setPrname(PRNAME_EDEFAULT);
+      case EditorPackage.AND_EXPRESSION__OP:
+        setOp(OP_EDEFAULT);
         return;
-      case EditorPackage.PREDICATE_AND__RIGHT:
-        setRight((Predicate)null);
+      case EditorPackage.AND_EXPRESSION__RIGHT:
+        setRight((Expr)null);
         return;
     }
     super.eUnset(featureID);
@@ -305,11 +305,11 @@ public class PredicateAndImpl extends PredicateImpl implements PredicateAnd
   {
     switch (featureID)
     {
-      case EditorPackage.PREDICATE_AND__LEFT:
+      case EditorPackage.AND_EXPRESSION__LEFT:
         return left != null;
-      case EditorPackage.PREDICATE_AND__PRNAME:
-        return PRNAME_EDEFAULT == null ? prname != null : !PRNAME_EDEFAULT.equals(prname);
-      case EditorPackage.PREDICATE_AND__RIGHT:
+      case EditorPackage.AND_EXPRESSION__OP:
+        return OP_EDEFAULT == null ? op != null : !OP_EDEFAULT.equals(op);
+      case EditorPackage.AND_EXPRESSION__RIGHT:
         return right != null;
     }
     return super.eIsSet(featureID);
@@ -326,10 +326,10 @@ public class PredicateAndImpl extends PredicateImpl implements PredicateAnd
     if (eIsProxy()) return super.toString();
 
     StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (prname: ");
-    result.append(prname);
+    result.append(" (op: ");
+    result.append(op);
     result.append(')');
     return result.toString();
   }
 
-} //PredicateAndImpl
+} //AndExpressionImpl

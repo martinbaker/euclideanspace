@@ -338,24 +338,6 @@ public interface EditorFactory extends EFactory
   IfStatement createIfStatement();
 
   /**
-   * Returns a new object of class '<em>Predicate</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Predicate</em>'.
-   * @generated
-   */
-  Predicate createPredicate();
-
-  /**
-   * Returns a new object of class '<em>Predicate Primary</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Predicate Primary</em>'.
-   * @generated
-   */
-  PredicatePrimary createPredicatePrimary();
-
-  /**
    * Returns a new object of class '<em>Expr</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -419,33 +401,6 @@ public interface EditorFactory extends EFactory
   ListLiteral createListLiteral();
 
   /**
-   * Returns a new object of class '<em>Predicate Or</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Predicate Or</em>'.
-   * @generated
-   */
-  PredicateOr createPredicateOr();
-
-  /**
-   * Returns a new object of class '<em>Predicate And</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Predicate And</em>'.
-   * @generated
-   */
-  PredicateAnd createPredicateAnd();
-
-  /**
-   * Returns a new object of class '<em>Predicate Not</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Predicate Not</em>'.
-   * @generated
-   */
-  PredicateNot createPredicateNot();
-
-  /**
    * Returns a new object of class '<em>Condition Expression</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -453,6 +408,15 @@ public interface EditorFactory extends EFactory
    * @generated
    */
   ConditionExpression createConditionExpression();
+
+  /**
+   * Returns a new object of class '<em>And Expression</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>And Expression</em>'.
+   * @generated
+   */
+  AndExpression createAndExpression();
 
   /**
    * Returns a new object of class '<em>Inner Prod Expression</em>'.

@@ -18,6 +18,8 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link com.euclideanspace.spad.editor.NameOrFunctionCall#getLsp <em>Lsp</em>}</li>
  *   <li>{@link com.euclideanspace.spad.editor.NameOrFunctionCall#getT4 <em>T4</em>}</li>
  *   <li>{@link com.euclideanspace.spad.editor.NameOrFunctionCall#getT5 <em>T5</em>}</li>
+ *   <li>{@link com.euclideanspace.spad.editor.NameOrFunctionCall#getT14 <em>T14</em>}</li>
+ *   <li>{@link com.euclideanspace.spad.editor.NameOrFunctionCall#getT15 <em>T15</em>}</li>
  *   <li>{@link com.euclideanspace.spad.editor.NameOrFunctionCall#getT6 <em>T6</em>}</li>
  * </ul>
  * </p>
@@ -89,12 +91,12 @@ public interface NameOrFunctionCall extends EObject
    * </p>
    * <!-- end-user-doc -->
    * @return the value of the '<em>T4</em>' containment reference.
-   * @see #setT4(Expr)
+   * @see #setT4(StatementExpression)
    * @see com.euclideanspace.spad.editor.EditorPackage#getNameOrFunctionCall_T4()
    * @model containment="true"
    * @generated
    */
-  Expr getT4();
+  StatementExpression getT4();
 
   /**
    * Sets the value of the '{@link com.euclideanspace.spad.editor.NameOrFunctionCall#getT4 <em>T4</em>}' containment reference.
@@ -104,7 +106,7 @@ public interface NameOrFunctionCall extends EObject
    * @see #getT4()
    * @generated
    */
-  void setT4(Expr value);
+  void setT4(StatementExpression value);
 
   /**
    * Returns the value of the '<em><b>T5</b></em>' containment reference list.
@@ -121,6 +123,38 @@ public interface NameOrFunctionCall extends EObject
    * @generated
    */
   EList<Expr> getT5();
+
+  /**
+   * Returns the value of the '<em><b>T14</b></em>' containment reference list.
+   * The list contents are of type {@link com.euclideanspace.spad.editor.StatementExpression}.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>T14</em>' containment reference list isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>T14</em>' containment reference list.
+   * @see com.euclideanspace.spad.editor.EditorPackage#getNameOrFunctionCall_T14()
+   * @model containment="true"
+   * @generated
+   */
+  EList<StatementExpression> getT14();
+
+  /**
+   * Returns the value of the '<em><b>T15</b></em>' containment reference list.
+   * The list contents are of type {@link com.euclideanspace.spad.editor.Expr}.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>T15</em>' containment reference list isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>T15</em>' containment reference list.
+   * @see com.euclideanspace.spad.editor.EditorPackage#getNameOrFunctionCall_T15()
+   * @model containment="true"
+   * @generated
+   */
+  EList<Expr> getT15();
 
   /**
    * Returns the value of the '<em><b>T6</b></em>' containment reference.

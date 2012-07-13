@@ -28,9 +28,16 @@ public class EditorSyntacticSequencer extends AbstractSyntacticSequencer {
 	protected AbstractElementAlias match_DoStatement_NLTerminalRuleCall_3_q;
 	protected AbstractElementAlias match_ForStatement_NLTerminalRuleCall_3_q;
 	protected AbstractElementAlias match_IfStatement_NLTerminalRuleCall_3_q;
-	protected AbstractElementAlias match_IfStatement_NLTerminalRuleCall_5_1_q;
-	protected AbstractElementAlias match_NameOrFunctionCall___LPARENTerminalRuleCall_2_0_0_RPARENTerminalRuleCall_2_0_3__q;
-	protected AbstractElementAlias match_TypeNameOrFunctionCall___LPARENTerminalRuleCall_1_0_0_RPARENTerminalRuleCall_1_0_3__q;
+	protected AbstractElementAlias match_IfStatement_NLTerminalRuleCall_5_0_1_q;
+	protected AbstractElementAlias match_IfStatement_NLTerminalRuleCall_5_1_2_q;
+	protected AbstractElementAlias match_NameOrFunctionCall___LPARENTerminalRuleCall_2_0_0_0_RPARENTerminalRuleCall_2_0_0_3___LPARENTerminalRuleCall_2_0_1_0_RPARENTerminalRuleCall_2_0_1_3__a__q;
+	protected AbstractElementAlias match_NameOrFunctionCall___LPARENTerminalRuleCall_2_0_1_0_RPARENTerminalRuleCall_2_0_1_3__a;
+	protected AbstractElementAlias match_NameOrFunctionCall___RPARENTerminalRuleCall_2_0_1_3_LPARENTerminalRuleCall_2_0_1_0__a;
+	protected AbstractElementAlias match_NameOrFunctionCall___RPARENTerminalRuleCall_2_0_1_3_LPARENTerminalRuleCall_2_0_1_0__p;
+	protected AbstractElementAlias match_TypeNameOrFunctionCall___LPARENTerminalRuleCall_1_0_0_0_RPARENTerminalRuleCall_1_0_0_3___LPARENTerminalRuleCall_1_0_1_0_RPARENTerminalRuleCall_1_0_1_3__a__q;
+	protected AbstractElementAlias match_TypeNameOrFunctionCall___LPARENTerminalRuleCall_1_0_1_0_RPARENTerminalRuleCall_1_0_1_3__a;
+	protected AbstractElementAlias match_TypeNameOrFunctionCall___RPARENTerminalRuleCall_1_0_1_3_LPARENTerminalRuleCall_1_0_1_0__a;
+	protected AbstractElementAlias match_TypeNameOrFunctionCall___RPARENTerminalRuleCall_1_0_1_3_LPARENTerminalRuleCall_1_0_1_0__p;
 	protected AbstractElementAlias match_WherePart_DEFTerminalRuleCall_5_1_0_0_or_MDEFTerminalRuleCall_5_1_0_1;
 	protected AbstractElementAlias match_WherePart_NLTerminalRuleCall_1_a;
 	protected AbstractElementAlias match_WherePart_NLTerminalRuleCall_3_a;
@@ -56,9 +63,16 @@ public class EditorSyntacticSequencer extends AbstractSyntacticSequencer {
 		match_DoStatement_NLTerminalRuleCall_3_q = new TokenAlias(false, true, grammarAccess.getDoStatementAccess().getNLTerminalRuleCall_3());
 		match_ForStatement_NLTerminalRuleCall_3_q = new TokenAlias(false, true, grammarAccess.getForStatementAccess().getNLTerminalRuleCall_3());
 		match_IfStatement_NLTerminalRuleCall_3_q = new TokenAlias(false, true, grammarAccess.getIfStatementAccess().getNLTerminalRuleCall_3());
-		match_IfStatement_NLTerminalRuleCall_5_1_q = new TokenAlias(false, true, grammarAccess.getIfStatementAccess().getNLTerminalRuleCall_5_1());
-		match_NameOrFunctionCall___LPARENTerminalRuleCall_2_0_0_RPARENTerminalRuleCall_2_0_3__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getNameOrFunctionCallAccess().getLPARENTerminalRuleCall_2_0_0()), new TokenAlias(false, false, grammarAccess.getNameOrFunctionCallAccess().getRPARENTerminalRuleCall_2_0_3()));
-		match_TypeNameOrFunctionCall___LPARENTerminalRuleCall_1_0_0_RPARENTerminalRuleCall_1_0_3__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getTypeNameOrFunctionCallAccess().getLPARENTerminalRuleCall_1_0_0()), new TokenAlias(false, false, grammarAccess.getTypeNameOrFunctionCallAccess().getRPARENTerminalRuleCall_1_0_3()));
+		match_IfStatement_NLTerminalRuleCall_5_0_1_q = new TokenAlias(false, true, grammarAccess.getIfStatementAccess().getNLTerminalRuleCall_5_0_1());
+		match_IfStatement_NLTerminalRuleCall_5_1_2_q = new TokenAlias(false, true, grammarAccess.getIfStatementAccess().getNLTerminalRuleCall_5_1_2());
+		match_NameOrFunctionCall___LPARENTerminalRuleCall_2_0_0_0_RPARENTerminalRuleCall_2_0_0_3___LPARENTerminalRuleCall_2_0_1_0_RPARENTerminalRuleCall_2_0_1_3__a__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getNameOrFunctionCallAccess().getLPARENTerminalRuleCall_2_0_0_0()), new TokenAlias(false, false, grammarAccess.getNameOrFunctionCallAccess().getRPARENTerminalRuleCall_2_0_0_3()), new GroupAlias(true, true, new TokenAlias(false, false, grammarAccess.getNameOrFunctionCallAccess().getLPARENTerminalRuleCall_2_0_1_0()), new TokenAlias(false, false, grammarAccess.getNameOrFunctionCallAccess().getRPARENTerminalRuleCall_2_0_1_3())));
+		match_NameOrFunctionCall___LPARENTerminalRuleCall_2_0_1_0_RPARENTerminalRuleCall_2_0_1_3__a = new GroupAlias(true, true, new TokenAlias(false, false, grammarAccess.getNameOrFunctionCallAccess().getLPARENTerminalRuleCall_2_0_1_0()), new TokenAlias(false, false, grammarAccess.getNameOrFunctionCallAccess().getRPARENTerminalRuleCall_2_0_1_3()));
+		match_NameOrFunctionCall___RPARENTerminalRuleCall_2_0_1_3_LPARENTerminalRuleCall_2_0_1_0__a = new GroupAlias(true, true, new TokenAlias(false, false, grammarAccess.getNameOrFunctionCallAccess().getRPARENTerminalRuleCall_2_0_1_3()), new TokenAlias(false, false, grammarAccess.getNameOrFunctionCallAccess().getLPARENTerminalRuleCall_2_0_1_0()));
+		match_NameOrFunctionCall___RPARENTerminalRuleCall_2_0_1_3_LPARENTerminalRuleCall_2_0_1_0__p = new GroupAlias(true, false, new TokenAlias(false, false, grammarAccess.getNameOrFunctionCallAccess().getRPARENTerminalRuleCall_2_0_1_3()), new TokenAlias(false, false, grammarAccess.getNameOrFunctionCallAccess().getLPARENTerminalRuleCall_2_0_1_0()));
+		match_TypeNameOrFunctionCall___LPARENTerminalRuleCall_1_0_0_0_RPARENTerminalRuleCall_1_0_0_3___LPARENTerminalRuleCall_1_0_1_0_RPARENTerminalRuleCall_1_0_1_3__a__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getTypeNameOrFunctionCallAccess().getLPARENTerminalRuleCall_1_0_0_0()), new TokenAlias(false, false, grammarAccess.getTypeNameOrFunctionCallAccess().getRPARENTerminalRuleCall_1_0_0_3()), new GroupAlias(true, true, new TokenAlias(false, false, grammarAccess.getTypeNameOrFunctionCallAccess().getLPARENTerminalRuleCall_1_0_1_0()), new TokenAlias(false, false, grammarAccess.getTypeNameOrFunctionCallAccess().getRPARENTerminalRuleCall_1_0_1_3())));
+		match_TypeNameOrFunctionCall___LPARENTerminalRuleCall_1_0_1_0_RPARENTerminalRuleCall_1_0_1_3__a = new GroupAlias(true, true, new TokenAlias(false, false, grammarAccess.getTypeNameOrFunctionCallAccess().getLPARENTerminalRuleCall_1_0_1_0()), new TokenAlias(false, false, grammarAccess.getTypeNameOrFunctionCallAccess().getRPARENTerminalRuleCall_1_0_1_3()));
+		match_TypeNameOrFunctionCall___RPARENTerminalRuleCall_1_0_1_3_LPARENTerminalRuleCall_1_0_1_0__a = new GroupAlias(true, true, new TokenAlias(false, false, grammarAccess.getTypeNameOrFunctionCallAccess().getRPARENTerminalRuleCall_1_0_1_3()), new TokenAlias(false, false, grammarAccess.getTypeNameOrFunctionCallAccess().getLPARENTerminalRuleCall_1_0_1_0()));
+		match_TypeNameOrFunctionCall___RPARENTerminalRuleCall_1_0_1_3_LPARENTerminalRuleCall_1_0_1_0__p = new GroupAlias(true, false, new TokenAlias(false, false, grammarAccess.getTypeNameOrFunctionCallAccess().getRPARENTerminalRuleCall_1_0_1_3()), new TokenAlias(false, false, grammarAccess.getTypeNameOrFunctionCallAccess().getLPARENTerminalRuleCall_1_0_1_0()));
 		match_WherePart_DEFTerminalRuleCall_5_1_0_0_or_MDEFTerminalRuleCall_5_1_0_1 = new AlternativeAlias(false, false, new TokenAlias(false, false, grammarAccess.getWherePartAccess().getDEFTerminalRuleCall_5_1_0_0()), new TokenAlias(false, false, grammarAccess.getWherePartAccess().getMDEFTerminalRuleCall_5_1_0_1()));
 		match_WherePart_NLTerminalRuleCall_1_a = new TokenAlias(true, true, grammarAccess.getWherePartAccess().getNLTerminalRuleCall_1());
 		match_WherePart_NLTerminalRuleCall_3_a = new TokenAlias(true, true, grammarAccess.getWherePartAccess().getNLTerminalRuleCall_3());
@@ -290,12 +304,26 @@ public class EditorSyntacticSequencer extends AbstractSyntacticSequencer {
 				emit_ForStatement_NLTerminalRuleCall_3_q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if(match_IfStatement_NLTerminalRuleCall_3_q.equals(syntax))
 				emit_IfStatement_NLTerminalRuleCall_3_q(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if(match_IfStatement_NLTerminalRuleCall_5_1_q.equals(syntax))
-				emit_IfStatement_NLTerminalRuleCall_5_1_q(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if(match_NameOrFunctionCall___LPARENTerminalRuleCall_2_0_0_RPARENTerminalRuleCall_2_0_3__q.equals(syntax))
-				emit_NameOrFunctionCall___LPARENTerminalRuleCall_2_0_0_RPARENTerminalRuleCall_2_0_3__q(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if(match_TypeNameOrFunctionCall___LPARENTerminalRuleCall_1_0_0_RPARENTerminalRuleCall_1_0_3__q.equals(syntax))
-				emit_TypeNameOrFunctionCall___LPARENTerminalRuleCall_1_0_0_RPARENTerminalRuleCall_1_0_3__q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if(match_IfStatement_NLTerminalRuleCall_5_0_1_q.equals(syntax))
+				emit_IfStatement_NLTerminalRuleCall_5_0_1_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if(match_IfStatement_NLTerminalRuleCall_5_1_2_q.equals(syntax))
+				emit_IfStatement_NLTerminalRuleCall_5_1_2_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if(match_NameOrFunctionCall___LPARENTerminalRuleCall_2_0_0_0_RPARENTerminalRuleCall_2_0_0_3___LPARENTerminalRuleCall_2_0_1_0_RPARENTerminalRuleCall_2_0_1_3__a__q.equals(syntax))
+				emit_NameOrFunctionCall___LPARENTerminalRuleCall_2_0_0_0_RPARENTerminalRuleCall_2_0_0_3___LPARENTerminalRuleCall_2_0_1_0_RPARENTerminalRuleCall_2_0_1_3__a__q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if(match_NameOrFunctionCall___LPARENTerminalRuleCall_2_0_1_0_RPARENTerminalRuleCall_2_0_1_3__a.equals(syntax))
+				emit_NameOrFunctionCall___LPARENTerminalRuleCall_2_0_1_0_RPARENTerminalRuleCall_2_0_1_3__a(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if(match_NameOrFunctionCall___RPARENTerminalRuleCall_2_0_1_3_LPARENTerminalRuleCall_2_0_1_0__a.equals(syntax))
+				emit_NameOrFunctionCall___RPARENTerminalRuleCall_2_0_1_3_LPARENTerminalRuleCall_2_0_1_0__a(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if(match_NameOrFunctionCall___RPARENTerminalRuleCall_2_0_1_3_LPARENTerminalRuleCall_2_0_1_0__p.equals(syntax))
+				emit_NameOrFunctionCall___RPARENTerminalRuleCall_2_0_1_3_LPARENTerminalRuleCall_2_0_1_0__p(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if(match_TypeNameOrFunctionCall___LPARENTerminalRuleCall_1_0_0_0_RPARENTerminalRuleCall_1_0_0_3___LPARENTerminalRuleCall_1_0_1_0_RPARENTerminalRuleCall_1_0_1_3__a__q.equals(syntax))
+				emit_TypeNameOrFunctionCall___LPARENTerminalRuleCall_1_0_0_0_RPARENTerminalRuleCall_1_0_0_3___LPARENTerminalRuleCall_1_0_1_0_RPARENTerminalRuleCall_1_0_1_3__a__q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if(match_TypeNameOrFunctionCall___LPARENTerminalRuleCall_1_0_1_0_RPARENTerminalRuleCall_1_0_1_3__a.equals(syntax))
+				emit_TypeNameOrFunctionCall___LPARENTerminalRuleCall_1_0_1_0_RPARENTerminalRuleCall_1_0_1_3__a(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if(match_TypeNameOrFunctionCall___RPARENTerminalRuleCall_1_0_1_3_LPARENTerminalRuleCall_1_0_1_0__a.equals(syntax))
+				emit_TypeNameOrFunctionCall___RPARENTerminalRuleCall_1_0_1_3_LPARENTerminalRuleCall_1_0_1_0__a(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if(match_TypeNameOrFunctionCall___RPARENTerminalRuleCall_1_0_1_3_LPARENTerminalRuleCall_1_0_1_0__p.equals(syntax))
+				emit_TypeNameOrFunctionCall___RPARENTerminalRuleCall_1_0_1_3_LPARENTerminalRuleCall_1_0_1_0__p(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if(match_WherePart_DEFTerminalRuleCall_5_1_0_0_or_MDEFTerminalRuleCall_5_1_0_1.equals(syntax))
 				emit_WherePart_DEFTerminalRuleCall_5_1_0_0_or_MDEFTerminalRuleCall_5_1_0_1(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if(match_WherePart_NLTerminalRuleCall_1_a.equals(syntax))
@@ -366,7 +394,7 @@ public class EditorSyntacticSequencer extends AbstractSyntacticSequencer {
 	
 	/**
 	 * Syntax:
-	 *     (NL | SEMICOLON)+
+	 *     (SEMICOLON | NL)+
 	 */
 	protected void emit_Block___NLTerminalRuleCall_2_1_0_or_SEMICOLONTerminalRuleCall_2_1_1__p(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
@@ -400,23 +428,79 @@ public class EditorSyntacticSequencer extends AbstractSyntacticSequencer {
 	 * Syntax:
 	 *     NL?
 	 */
-	protected void emit_IfStatement_NLTerminalRuleCall_5_1_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+	protected void emit_IfStatement_NLTerminalRuleCall_5_0_1_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
 	/**
 	 * Syntax:
-	 *     (LPAREN RPAREN)?
+	 *     NL?
 	 */
-	protected void emit_NameOrFunctionCall___LPARENTerminalRuleCall_2_0_0_RPARENTerminalRuleCall_2_0_3__q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+	protected void emit_IfStatement_NLTerminalRuleCall_5_1_2_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
 	/**
 	 * Syntax:
-	 *     (LPAREN RPAREN)?
+	 *     (LPAREN RPAREN (LPAREN RPAREN)*)?
 	 */
-	protected void emit_TypeNameOrFunctionCall___LPARENTerminalRuleCall_1_0_0_RPARENTerminalRuleCall_1_0_3__q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+	protected void emit_NameOrFunctionCall___LPARENTerminalRuleCall_2_0_0_0_RPARENTerminalRuleCall_2_0_0_3___LPARENTerminalRuleCall_2_0_1_0_RPARENTerminalRuleCall_2_0_1_3__a__q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * Syntax:
+	 *     (LPAREN RPAREN)*
+	 */
+	protected void emit_NameOrFunctionCall___LPARENTerminalRuleCall_2_0_1_0_RPARENTerminalRuleCall_2_0_1_3__a(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * Syntax:
+	 *     (RPAREN LPAREN)*
+	 */
+	protected void emit_NameOrFunctionCall___RPARENTerminalRuleCall_2_0_1_3_LPARENTerminalRuleCall_2_0_1_0__a(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * Syntax:
+	 *     (RPAREN LPAREN)+
+	 */
+	protected void emit_NameOrFunctionCall___RPARENTerminalRuleCall_2_0_1_3_LPARENTerminalRuleCall_2_0_1_0__p(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * Syntax:
+	 *     (LPAREN RPAREN (LPAREN RPAREN)*)?
+	 */
+	protected void emit_TypeNameOrFunctionCall___LPARENTerminalRuleCall_1_0_0_0_RPARENTerminalRuleCall_1_0_0_3___LPARENTerminalRuleCall_1_0_1_0_RPARENTerminalRuleCall_1_0_1_3__a__q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * Syntax:
+	 *     (LPAREN RPAREN)*
+	 */
+	protected void emit_TypeNameOrFunctionCall___LPARENTerminalRuleCall_1_0_1_0_RPARENTerminalRuleCall_1_0_1_3__a(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * Syntax:
+	 *     (RPAREN LPAREN)*
+	 */
+	protected void emit_TypeNameOrFunctionCall___RPARENTerminalRuleCall_1_0_1_3_LPARENTerminalRuleCall_1_0_1_0__a(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * Syntax:
+	 *     (RPAREN LPAREN)+
+	 */
+	protected void emit_TypeNameOrFunctionCall___RPARENTerminalRuleCall_1_0_1_3_LPARENTerminalRuleCall_1_0_1_0__p(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
@@ -462,7 +546,7 @@ public class EditorSyntacticSequencer extends AbstractSyntacticSequencer {
 	
 	/**
 	 * Syntax:
-	 *     (DEF | MDEF)?
+	 *     (MDEF | DEF)?
 	 */
 	protected void emit_WherePart___DEFTerminalRuleCall_6_1_0_or_MDEFTerminalRuleCall_6_1_1__q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);

@@ -37,8 +37,6 @@ public class Translate {
 	 */
 	enum Mode {DOCUM,HEAD,CODE}
 	Mode mode = Mode.DOCUM;
-	/** continuationLine is set to true if previous line ended with '_' */
-	boolean continuationLine = false;
 	/** holds previous indent values */
 	Stack<Integer> pile = new Stack<Integer>();
 	/** lineHold is store for lines that have been read but not processed
@@ -47,6 +45,10 @@ public class Translate {
      * comments and empty lines and held pending '}'
      */
 	LinkedBlockingQueue<String> lineHold = new LinkedBlockingQueue<String>();
+	/** when we have a continuation we need to use the indent for the first part
+	 * of the line
+	 */
+	int indentForContinuation = -1;
 	/** store macros */
 	Map<String,String> macros = new HashMap<String,String>();
 	
@@ -224,7 +226,9 @@ public class Translate {
      * @param output
      */
     EclipseFileWriter transCODE(String line,EclipseFileWriter output,BufferedReader input){
-  		if (line.startsWith("@")) {
+  		if (line == null) return null;
+    	if (line.startsWith("@")) {
+    	  if (!pile.empty()) output.write("\n");
 		  while (!pile.empty()) {
 			pile.pop();
 			if (!pile.empty()) writeIndent(pile.peek(),output);
@@ -245,21 +249,44 @@ public class Translate {
         /** indent is current indent setting (previous indent) */
         int indent = 0;
         if (!pile.empty()) indent = pile.peek();
+        // calculate current indent
         while (line.startsWith(prefix)) {
           prefix = prefix+" ";
           ind++;
         }
-		line =applyMacroes(line,input); // apply here so macroes don't affect indent
-		line =bracketedStatements(line);
+		line =applyMacroes(line,input); // apply here so macros don't affect indent
+		line =bracketedStatements(line); // where statements are grouped together by
+                                         // brackets then change to use braces instead.
         String trimedLine = line.trim();
+        // if line contains comment (not just starts with comment) then
+        // set following
+        boolean containsComment = false;
+        if (line.lastIndexOf("++") >= 0) containsComment = true;
+        if (line.lastIndexOf("--") >= 0) containsComment = true;
+        if (!containsComment && (trimedLine.endsWith("+") 
+        		                 ||trimedLine.endsWith("-"))) {
+        	// implied continuation
+        	line = line + " _";
+        	trimedLine = line.trim();
+        }
+    	/** continuationLine is set to true if line ends with '_' */
+    	boolean continuationLine = trimedLine.endsWith("_");
+        if (continuationLine && indentForContinuation<0){
+        	indentForContinuation = ind;
+        }
+        // if we have just read a comment, or an empty line, or a continuation
+        // line (ends with _) then put it into holding stack otherwise process it.
         if (trimedLine.startsWith("--") ||
           trimedLine.startsWith("++") ||
-          line == null ||
           trimedLine.equals("") ||
           trimedLine.length() == 0 ||
           continuationLine) {
-          lineHold.offer("\n" + line);
-    	 } else {
+            lineHold.offer("\n" + line);
+    	} else {
+    		  if (indentForContinuation >= 0){
+    			  ind = indentForContinuation;
+    			  indentForContinuation = -1;
+    		  }
     		  int cmtInd = line.indexOf("--");
     		  if (cmtInd<0) cmtInd = line.indexOf("++");
     		  if (cmtInd > -1) {
@@ -291,8 +318,6 @@ public class Translate {
       			  output.write("\n" + line);
     		  }
     	}
-    	if (trimedLine.endsWith("_")) continuationLine =true;
-    	else continuationLine =false;
         return output;
     }
     

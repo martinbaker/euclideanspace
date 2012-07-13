@@ -5,23 +5,23 @@ package com.euclideanspace.spad.editor;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>Predicate And</b></em>'.
+ * A representation of the model object '<em><b>And Expression</b></em>'.
  * <!-- end-user-doc -->
  *
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link com.euclideanspace.spad.editor.PredicateAnd#getLeft <em>Left</em>}</li>
- *   <li>{@link com.euclideanspace.spad.editor.PredicateAnd#getPrname <em>Prname</em>}</li>
- *   <li>{@link com.euclideanspace.spad.editor.PredicateAnd#getRight <em>Right</em>}</li>
+ *   <li>{@link com.euclideanspace.spad.editor.AndExpression#getLeft <em>Left</em>}</li>
+ *   <li>{@link com.euclideanspace.spad.editor.AndExpression#getOp <em>Op</em>}</li>
+ *   <li>{@link com.euclideanspace.spad.editor.AndExpression#getRight <em>Right</em>}</li>
  * </ul>
  * </p>
  *
- * @see com.euclideanspace.spad.editor.EditorPackage#getPredicateAnd()
+ * @see com.euclideanspace.spad.editor.EditorPackage#getAndExpression()
  * @model
  * @generated
  */
-public interface PredicateAnd extends Predicate
+public interface AndExpression extends Expr
 {
   /**
    * Returns the value of the '<em><b>Left</b></em>' containment reference.
@@ -32,48 +32,48 @@ public interface PredicateAnd extends Predicate
    * </p>
    * <!-- end-user-doc -->
    * @return the value of the '<em>Left</em>' containment reference.
-   * @see #setLeft(Predicate)
-   * @see com.euclideanspace.spad.editor.EditorPackage#getPredicateAnd_Left()
+   * @see #setLeft(Expr)
+   * @see com.euclideanspace.spad.editor.EditorPackage#getAndExpression_Left()
    * @model containment="true"
    * @generated
    */
-  Predicate getLeft();
+  Expr getLeft();
 
   /**
-   * Sets the value of the '{@link com.euclideanspace.spad.editor.PredicateAnd#getLeft <em>Left</em>}' containment reference.
+   * Sets the value of the '{@link com.euclideanspace.spad.editor.AndExpression#getLeft <em>Left</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the new value of the '<em>Left</em>' containment reference.
    * @see #getLeft()
    * @generated
    */
-  void setLeft(Predicate value);
+  void setLeft(Expr value);
 
   /**
-   * Returns the value of the '<em><b>Prname</b></em>' attribute.
+   * Returns the value of the '<em><b>Op</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Prname</em>' attribute isn't clear,
+   * If the meaning of the '<em>Op</em>' attribute isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Prname</em>' attribute.
-   * @see #setPrname(String)
-   * @see com.euclideanspace.spad.editor.EditorPackage#getPredicateAnd_Prname()
+   * @return the value of the '<em>Op</em>' attribute.
+   * @see #setOp(String)
+   * @see com.euclideanspace.spad.editor.EditorPackage#getAndExpression_Op()
    * @model
    * @generated
    */
-  String getPrname();
+  String getOp();
 
   /**
-   * Sets the value of the '{@link com.euclideanspace.spad.editor.PredicateAnd#getPrname <em>Prname</em>}' attribute.
+   * Sets the value of the '{@link com.euclideanspace.spad.editor.AndExpression#getOp <em>Op</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Prname</em>' attribute.
-   * @see #getPrname()
+   * @param value the new value of the '<em>Op</em>' attribute.
+   * @see #getOp()
    * @generated
    */
-  void setPrname(String value);
+  void setOp(String value);
 
   /**
    * Returns the value of the '<em><b>Right</b></em>' containment reference.
@@ -84,21 +84,21 @@ public interface PredicateAnd extends Predicate
    * </p>
    * <!-- end-user-doc -->
    * @return the value of the '<em>Right</em>' containment reference.
-   * @see #setRight(Predicate)
-   * @see com.euclideanspace.spad.editor.EditorPackage#getPredicateAnd_Right()
+   * @see #setRight(Expr)
+   * @see com.euclideanspace.spad.editor.EditorPackage#getAndExpression_Right()
    * @model containment="true"
    * @generated
    */
-  Predicate getRight();
+  Expr getRight();
 
   /**
-   * Sets the value of the '{@link com.euclideanspace.spad.editor.PredicateAnd#getRight <em>Right</em>}' containment reference.
+   * Sets the value of the '{@link com.euclideanspace.spad.editor.AndExpression#getRight <em>Right</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the new value of the '<em>Right</em>' containment reference.
    * @see #getRight()
    * @generated
    */
-  void setRight(Predicate value);
+  void setRight(Expr value);
 
-} // PredicateAnd
+} // AndExpression

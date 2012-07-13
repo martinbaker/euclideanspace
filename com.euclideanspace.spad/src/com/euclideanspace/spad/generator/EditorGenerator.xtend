@@ -64,11 +64,11 @@ import com.euclideanspace.spad.editor.MultiplicativeExpression;
 import com.euclideanspace.spad.editor.NameOrFunctionCall;
 import com.euclideanspace.spad.editor.OuterProdExpression;
 import com.euclideanspace.spad.editor.PackageDef;
-import com.euclideanspace.spad.editor.Predicate;
-import com.euclideanspace.spad.editor.PredicateAnd;
-import com.euclideanspace.spad.editor.PredicateNot;
-import com.euclideanspace.spad.editor.PredicateOr;
-import com.euclideanspace.spad.editor.PredicatePrimary;
+//import com.euclideanspace.spad.editor.Predicate;
+//import com.euclideanspace.spad.editor.PredicateAnd;
+//import com.euclideanspace.spad.editor.PredicateNot;
+//import com.euclideanspace.spad.editor.PredicateOr;
+//import com.euclideanspace.spad.editor.PredicatePrimary;
 import com.euclideanspace.spad.editor.PretendExpression;
 import com.euclideanspace.spad.editor.PrimaryPrefix;
 import com.euclideanspace.spad.editor.QuoExpression;
@@ -416,7 +416,7 @@ class EditorGenerator implements IGenerator {
         ENDIF»'''
 
     /* Predicate */
-    def compile(Predicate f)
+/*    def compile(Predicate f)
         '''«IF f instanceof PredicateOr»«
         compile(f as PredicateOr)»«ENDIF»«
         IF f instanceof PredicateAnd»«
@@ -424,28 +424,28 @@ class EditorGenerator implements IGenerator {
         IF f instanceof PredicateNot»«
         compile(f as PredicateNot)»«ENDIF»«
         IF f instanceof PredicatePrimary»«
-        compile(f as PredicatePrimary)»«ENDIF»'''
+        compile(f as PredicatePrimary)»«ENDIF»'''*/
         
     /* PredicateOr */
-    def compile(PredicateOr f)
+/*    def compile(PredicateOr f)
         '''«compile(f.left)»«
         IF f.right != null»or «
-        compile(f.right)»«ENDIF»'''
+        compile(f.right)»«ENDIF»'''*/
 
     /* PredicateAnd */
-    def compile(PredicateAnd f)
+/*    def compile(PredicateAnd f)
         '''«compile(f.left)»«
         IF f.right != null»and «
-        compile(f.right)»«ENDIF»'''
+        compile(f.right)»«ENDIF»'''*/
 
     /* PredicateNot */
-    def compile(PredicateNot f)
-       '''«IF f.t2 != null»not «compile(f.t2)»«ENDIF»'''
+/*    def compile(PredicateNot f)
+       '''«IF f.t2 != null»not «compile(f.t2)»«ENDIF»'''*/
   
     /* PredicatePrimary */
-    def compile(PredicatePrimary f) 
+/*    def compile(PredicatePrimary f) 
        '''«IF f.t != null»(«compile(f.t)»)«ENDIF»«
-       IF f.t2 != null»(«compile(f.t2)»)«ENDIF»'''
+       IF f.t2 != null»(«compile(f.t2)»)«ENDIF»'''*/
 
     /* Expr */
     def compile(Expr f)

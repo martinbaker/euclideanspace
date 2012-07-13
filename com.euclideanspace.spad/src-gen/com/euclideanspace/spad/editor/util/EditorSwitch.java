@@ -333,21 +333,6 @@ public class EditorSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case EditorPackage.PREDICATE:
-      {
-        Predicate predicate = (Predicate)theEObject;
-        T result = casePredicate(predicate);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case EditorPackage.PREDICATE_PRIMARY:
-      {
-        PredicatePrimary predicatePrimary = (PredicatePrimary)theEObject;
-        T result = casePredicatePrimary(predicatePrimary);
-        if (result == null) result = casePredicate(predicatePrimary);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
       case EditorPackage.EXPR:
       {
         Expr expr = (Expr)theEObject;
@@ -409,35 +394,19 @@ public class EditorSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case EditorPackage.PREDICATE_OR:
-      {
-        PredicateOr predicateOr = (PredicateOr)theEObject;
-        T result = casePredicateOr(predicateOr);
-        if (result == null) result = casePredicate(predicateOr);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case EditorPackage.PREDICATE_AND:
-      {
-        PredicateAnd predicateAnd = (PredicateAnd)theEObject;
-        T result = casePredicateAnd(predicateAnd);
-        if (result == null) result = casePredicate(predicateAnd);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case EditorPackage.PREDICATE_NOT:
-      {
-        PredicateNot predicateNot = (PredicateNot)theEObject;
-        T result = casePredicateNot(predicateNot);
-        if (result == null) result = casePredicate(predicateNot);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
       case EditorPackage.CONDITION_EXPRESSION:
       {
         ConditionExpression conditionExpression = (ConditionExpression)theEObject;
         T result = caseConditionExpression(conditionExpression);
         if (result == null) result = caseExpr(conditionExpression);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case EditorPackage.AND_EXPRESSION:
+      {
+        AndExpression andExpression = (AndExpression)theEObject;
+        T result = caseAndExpression(andExpression);
+        if (result == null) result = caseExpr(andExpression);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -1190,38 +1159,6 @@ public class EditorSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Predicate</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Predicate</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T casePredicate(Predicate object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Predicate Primary</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Predicate Primary</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T casePredicatePrimary(PredicatePrimary object)
-  {
-    return null;
-  }
-
-  /**
    * Returns the result of interpreting the object as an instance of '<em>Expr</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
@@ -1334,54 +1271,6 @@ public class EditorSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Predicate Or</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Predicate Or</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T casePredicateOr(PredicateOr object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Predicate And</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Predicate And</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T casePredicateAnd(PredicateAnd object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Predicate Not</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Predicate Not</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T casePredicateNot(PredicateNot object)
-  {
-    return null;
-  }
-
-  /**
    * Returns the result of interpreting the object as an instance of '<em>Condition Expression</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
@@ -1393,6 +1282,22 @@ public class EditorSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseConditionExpression(ConditionExpression object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>And Expression</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>And Expression</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseAndExpression(AndExpression object)
   {
     return null;
   }

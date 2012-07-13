@@ -4,6 +4,7 @@ package com.euclideanspace.spad.editor.impl;
 
 import com.euclideanspace.spad.editor.EditorPackage;
 import com.euclideanspace.spad.editor.Expr;
+import com.euclideanspace.spad.editor.Statement;
 import com.euclideanspace.spad.editor.StatementExpression;
 import com.euclideanspace.spad.editor.TypeExpression;
 
@@ -72,7 +73,7 @@ public class StatementExpressionImpl extends MinimalEObjectImpl.Container implem
    * @generated
    * @ordered
    */
-  protected Expr t4;
+  protected Statement t4;
 
   /**
    * <!-- begin-user-doc -->
@@ -244,7 +245,7 @@ public class StatementExpressionImpl extends MinimalEObjectImpl.Container implem
    * <!-- end-user-doc -->
    * @generated
    */
-  public Expr getT4()
+  public Statement getT4()
   {
     return t4;
   }
@@ -254,9 +255,9 @@ public class StatementExpressionImpl extends MinimalEObjectImpl.Container implem
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetT4(Expr newT4, NotificationChain msgs)
+  public NotificationChain basicSetT4(Statement newT4, NotificationChain msgs)
   {
-    Expr oldT4 = t4;
+    Statement oldT4 = t4;
     t4 = newT4;
     if (eNotificationRequired())
     {
@@ -271,7 +272,7 @@ public class StatementExpressionImpl extends MinimalEObjectImpl.Container implem
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setT4(Expr newT4)
+  public void setT4(Statement newT4)
   {
     if (newT4 != t4)
     {
@@ -351,7 +352,7 @@ public class StatementExpressionImpl extends MinimalEObjectImpl.Container implem
         setT3((Expr)newValue);
         return;
       case EditorPackage.STATEMENT_EXPRESSION__T4:
-        setT4((Expr)newValue);
+        setT4((Statement)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -377,7 +378,7 @@ public class StatementExpressionImpl extends MinimalEObjectImpl.Container implem
         setT3((Expr)null);
         return;
       case EditorPackage.STATEMENT_EXPRESSION__T4:
-        setT4((Expr)null);
+        setT4((Statement)null);
         return;
     }
     super.eUnset(featureID);

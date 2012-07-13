@@ -108,7 +108,7 @@ public class EditorLabelProvider extends DefaultEObjectLabelProvider {
 	}
 
 	String text(MapDefinition ele) {
-		  return "MapDefinition :"+ele.getFnSig();
+		  return "MapDefinition :";
 	}
 
 	String text(FunctionSignature ele) {
@@ -242,7 +242,7 @@ public class EditorLabelProvider extends DefaultEObjectLabelProvider {
 		  return "IfStatement :";
 	}
 
-	String text(PredicateOr ele) {
+/*	String text(PredicateOr ele) {
 		  return "PredicateOr :";
 	}
 
@@ -256,7 +256,7 @@ public class EditorLabelProvider extends DefaultEObjectLabelProvider {
 
 	String text(PredicatePrimary ele) {
 		  return "PredicatePrimary :";
-	}
+	}*/
 
 	String text(Expr ele) {
 		  return "Expr :"+ele.getIfname();

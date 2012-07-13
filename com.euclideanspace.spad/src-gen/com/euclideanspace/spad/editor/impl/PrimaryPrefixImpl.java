@@ -3,9 +3,9 @@
 package com.euclideanspace.spad.editor.impl;
 
 import com.euclideanspace.spad.editor.EditorPackage;
-import com.euclideanspace.spad.editor.Expr;
 import com.euclideanspace.spad.editor.NameOrFunctionCall;
 import com.euclideanspace.spad.editor.PrimaryPrefix;
+import com.euclideanspace.spad.editor.StatementExpression;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
@@ -39,7 +39,7 @@ public class PrimaryPrefixImpl extends ExprImpl implements PrimaryPrefix
    * @generated
    * @ordered
    */
-  protected Expr t4;
+  protected StatementExpression t4;
 
   /**
    * The cached value of the '{@link #getT7() <em>T7</em>}' containment reference.
@@ -77,7 +77,7 @@ public class PrimaryPrefixImpl extends ExprImpl implements PrimaryPrefix
    * <!-- end-user-doc -->
    * @generated
    */
-  public Expr getT4()
+  public StatementExpression getT4()
   {
     return t4;
   }
@@ -87,9 +87,9 @@ public class PrimaryPrefixImpl extends ExprImpl implements PrimaryPrefix
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetT4(Expr newT4, NotificationChain msgs)
+  public NotificationChain basicSetT4(StatementExpression newT4, NotificationChain msgs)
   {
-    Expr oldT4 = t4;
+    StatementExpression oldT4 = t4;
     t4 = newT4;
     if (eNotificationRequired())
     {
@@ -104,7 +104,7 @@ public class PrimaryPrefixImpl extends ExprImpl implements PrimaryPrefix
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setT4(Expr newT4)
+  public void setT4(StatementExpression newT4)
   {
     if (newT4 != t4)
     {
@@ -215,7 +215,7 @@ public class PrimaryPrefixImpl extends ExprImpl implements PrimaryPrefix
     switch (featureID)
     {
       case EditorPackage.PRIMARY_PREFIX__T4:
-        setT4((Expr)newValue);
+        setT4((StatementExpression)newValue);
         return;
       case EditorPackage.PRIMARY_PREFIX__T7:
         setT7((NameOrFunctionCall)newValue);
@@ -235,7 +235,7 @@ public class PrimaryPrefixImpl extends ExprImpl implements PrimaryPrefix
     switch (featureID)
     {
       case EditorPackage.PRIMARY_PREFIX__T4:
-        setT4((Expr)null);
+        setT4((StatementExpression)null);
         return;
       case EditorPackage.PRIMARY_PREFIX__T7:
         setT7((NameOrFunctionCall)null);

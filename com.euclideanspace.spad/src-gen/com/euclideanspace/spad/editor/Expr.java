@@ -77,12 +77,12 @@ public interface Expr extends EObject
    * </p>
    * <!-- end-user-doc -->
    * @return the value of the '<em>Ifpred</em>' containment reference.
-   * @see #setIfpred(Predicate)
+   * @see #setIfpred(Expr)
    * @see com.euclideanspace.spad.editor.EditorPackage#getExpr_Ifpred()
    * @model containment="true"
    * @generated
    */
-  Predicate getIfpred();
+  Expr getIfpred();
 
   /**
    * Sets the value of the '{@link com.euclideanspace.spad.editor.Expr#getIfpred <em>Ifpred</em>}' containment reference.
@@ -92,7 +92,7 @@ public interface Expr extends EObject
    * @see #getIfpred()
    * @generated
    */
-  void setIfpred(Predicate value);
+  void setIfpred(Expr value);
 
   /**
    * Returns the value of the '<em><b>Thenexp</b></em>' containment reference.

@@ -59,12 +59,12 @@ public interface WhileStatement extends EObject
    * </p>
    * <!-- end-user-doc -->
    * @return the value of the '<em>T2</em>' containment reference.
-   * @see #setT2(Predicate)
+   * @see #setT2(Expr)
    * @see com.euclideanspace.spad.editor.EditorPackage#getWhileStatement_T2()
    * @model containment="true"
    * @generated
    */
-  Predicate getT2();
+  Expr getT2();
 
   /**
    * Sets the value of the '{@link com.euclideanspace.spad.editor.WhileStatement#getT2 <em>T2</em>}' containment reference.
@@ -74,7 +74,7 @@ public interface WhileStatement extends EObject
    * @see #getT2()
    * @generated
    */
-  void setT2(Predicate value);
+  void setT2(Expr value);
 
   /**
    * Returns the value of the '<em><b>S1</b></em>' containment reference.

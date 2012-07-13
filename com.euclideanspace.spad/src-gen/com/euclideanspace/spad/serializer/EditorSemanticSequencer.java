@@ -2,6 +2,7 @@ package com.euclideanspace.spad.serializer;
 
 import com.euclideanspace.spad.editor.AddPart;
 import com.euclideanspace.spad.editor.AdditiveExpression;
+import com.euclideanspace.spad.editor.AndExpression;
 import com.euclideanspace.spad.editor.Block;
 import com.euclideanspace.spad.editor.BooleanLiteral;
 import com.euclideanspace.spad.editor.BreakStatement;
@@ -41,10 +42,6 @@ import com.euclideanspace.spad.editor.MultiplicativeExpression;
 import com.euclideanspace.spad.editor.NameOrFunctionCall;
 import com.euclideanspace.spad.editor.OuterProdExpression;
 import com.euclideanspace.spad.editor.PackageDef;
-import com.euclideanspace.spad.editor.PredicateAnd;
-import com.euclideanspace.spad.editor.PredicateNot;
-import com.euclideanspace.spad.editor.PredicateOr;
-import com.euclideanspace.spad.editor.PredicatePrimary;
 import com.euclideanspace.spad.editor.PretendExpression;
 import com.euclideanspace.spad.editor.PrimaryPrefix;
 import com.euclideanspace.spad.editor.QuoExpression;
@@ -100,6 +97,8 @@ public class EditorSemanticSequencer extends AbstractDelegatingSemanticSequencer
 			case EditorPackage.ADDITIVE_EXPRESSION:
 				if(context == grammarAccess.getAdditiveExpressionRule() ||
 				   context == grammarAccess.getAdditiveExpressionAccess().getAdditiveExpressionLeftAction_1_0() ||
+				   context == grammarAccess.getAndExpressionRule() ||
+				   context == grammarAccess.getAndExpressionAccess().getInnerProdExpressionLeftAction_1_0() ||
 				   context == grammarAccess.getCaseExpressionRule() ||
 				   context == grammarAccess.getCaseExpressionAccess().getCaseExpressionLeftAction_1_0() ||
 				   context == grammarAccess.getConditionExpressionRule() ||
@@ -113,6 +112,8 @@ public class EditorSemanticSequencer extends AbstractDelegatingSemanticSequencer
 				   context == grammarAccess.getInnerProdExpressionAccess().getInnerProdExpressionLeftAction_1_0() ||
 				   context == grammarAccess.getIsExpressionRule() ||
 				   context == grammarAccess.getIsExpressionAccess().getIsExpressionLeftAction_1_0() ||
+				   context == grammarAccess.getOrExpressionRule() ||
+				   context == grammarAccess.getOrExpressionAccess().getAndExpressionLeftAction_1_0() ||
 				   context == grammarAccess.getOuterProdExpressionRule() ||
 				   context == grammarAccess.getOuterProdExpressionAccess().getOuterProdExpressionLeftAction_1_0() ||
 				   context == grammarAccess.getRelationalExpressionRule() ||
@@ -120,6 +121,16 @@ public class EditorSemanticSequencer extends AbstractDelegatingSemanticSequencer
 				   context == grammarAccess.getSegmentExpressionRule() ||
 				   context == grammarAccess.getSegmentExpressionAccess().getSegmentExpressionLeftAction_1_0()) {
 					sequence_AdditiveExpression(context, (AdditiveExpression) semanticObject); 
+					return; 
+				}
+				else break;
+			case EditorPackage.AND_EXPRESSION:
+				if(context == grammarAccess.getConditionExpressionRule() ||
+				   context == grammarAccess.getConditionExpressionAccess().getConditionExpressionLeftAction_1_0() ||
+				   context == grammarAccess.getExpressionRule() ||
+				   context == grammarAccess.getOrExpressionRule() ||
+				   context == grammarAccess.getOrExpressionAccess().getAndExpressionLeftAction_1_0()) {
+					sequence_OrExpression(context, (AndExpression) semanticObject); 
 					return; 
 				}
 				else break;
@@ -132,6 +143,8 @@ public class EditorSemanticSequencer extends AbstractDelegatingSemanticSequencer
 			case EditorPackage.BOOLEAN_LITERAL:
 				if(context == grammarAccess.getAdditiveExpressionRule() ||
 				   context == grammarAccess.getAdditiveExpressionAccess().getAdditiveExpressionLeftAction_1_0() ||
+				   context == grammarAccess.getAndExpressionRule() ||
+				   context == grammarAccess.getAndExpressionAccess().getInnerProdExpressionLeftAction_1_0() ||
 				   context == grammarAccess.getBooleanLiteralRule() ||
 				   context == grammarAccess.getCaseExpressionRule() ||
 				   context == grammarAccess.getCaseExpressionAccess().getCaseExpressionLeftAction_1_0() ||
@@ -167,6 +180,8 @@ public class EditorSemanticSequencer extends AbstractDelegatingSemanticSequencer
 				   context == grammarAccess.getModExpressionAccess().getModExpressionLeftAction_1_0() ||
 				   context == grammarAccess.getMultiplicativeExpressionRule() ||
 				   context == grammarAccess.getMultiplicativeExpressionAccess().getMultiplicativeExpressionLeftAction_1_0() ||
+				   context == grammarAccess.getOrExpressionRule() ||
+				   context == grammarAccess.getOrExpressionAccess().getAndExpressionLeftAction_1_0() ||
 				   context == grammarAccess.getOuterProdExpressionRule() ||
 				   context == grammarAccess.getOuterProdExpressionAccess().getOuterProdExpressionLeftAction_1_0() ||
 				   context == grammarAccess.getPretendExpressionRule() ||
@@ -193,7 +208,9 @@ public class EditorSemanticSequencer extends AbstractDelegatingSemanticSequencer
 				}
 				else break;
 			case EditorPackage.CASE_EXPRESSION:
-				if(context == grammarAccess.getCaseExpressionRule() ||
+				if(context == grammarAccess.getAndExpressionRule() ||
+				   context == grammarAccess.getAndExpressionAccess().getInnerProdExpressionLeftAction_1_0() ||
+				   context == grammarAccess.getCaseExpressionRule() ||
 				   context == grammarAccess.getConditionExpressionRule() ||
 				   context == grammarAccess.getConditionExpressionAccess().getConditionExpressionLeftAction_1_0() ||
 				   context == grammarAccess.getExpressionRule() ||
@@ -201,6 +218,8 @@ public class EditorSemanticSequencer extends AbstractDelegatingSemanticSequencer
 				   context == grammarAccess.getHasExpressionAccess().getHasExpressionLeftAction_1_0() ||
 				   context == grammarAccess.getInnerProdExpressionRule() ||
 				   context == grammarAccess.getInnerProdExpressionAccess().getInnerProdExpressionLeftAction_1_0() ||
+				   context == grammarAccess.getOrExpressionRule() ||
+				   context == grammarAccess.getOrExpressionAccess().getAndExpressionLeftAction_1_0() ||
 				   context == grammarAccess.getOuterProdExpressionRule() ||
 				   context == grammarAccess.getOuterProdExpressionAccess().getOuterProdExpressionLeftAction_1_0()) {
 					sequence_CaseExpression(context, (CaseExpression) semanticObject); 
@@ -216,6 +235,8 @@ public class EditorSemanticSequencer extends AbstractDelegatingSemanticSequencer
 			case EditorPackage.CHARACTER_LITERAL:
 				if(context == grammarAccess.getAdditiveExpressionRule() ||
 				   context == grammarAccess.getAdditiveExpressionAccess().getAdditiveExpressionLeftAction_1_0() ||
+				   context == grammarAccess.getAndExpressionRule() ||
+				   context == grammarAccess.getAndExpressionAccess().getInnerProdExpressionLeftAction_1_0() ||
 				   context == grammarAccess.getCaseExpressionRule() ||
 				   context == grammarAccess.getCaseExpressionAccess().getCaseExpressionLeftAction_1_0() ||
 				   context == grammarAccess.getCharacterLiteralRule() ||
@@ -251,6 +272,8 @@ public class EditorSemanticSequencer extends AbstractDelegatingSemanticSequencer
 				   context == grammarAccess.getModExpressionAccess().getModExpressionLeftAction_1_0() ||
 				   context == grammarAccess.getMultiplicativeExpressionRule() ||
 				   context == grammarAccess.getMultiplicativeExpressionAccess().getMultiplicativeExpressionLeftAction_1_0() ||
+				   context == grammarAccess.getOrExpressionRule() ||
+				   context == grammarAccess.getOrExpressionAccess().getAndExpressionLeftAction_1_0() ||
 				   context == grammarAccess.getOuterProdExpressionRule() ||
 				   context == grammarAccess.getOuterProdExpressionAccess().getOuterProdExpressionLeftAction_1_0() ||
 				   context == grammarAccess.getPretendExpressionRule() ||
@@ -273,6 +296,8 @@ public class EditorSemanticSequencer extends AbstractDelegatingSemanticSequencer
 			case EditorPackage.COERCE_EXPRESSION:
 				if(context == grammarAccess.getAdditiveExpressionRule() ||
 				   context == grammarAccess.getAdditiveExpressionAccess().getAdditiveExpressionLeftAction_1_0() ||
+				   context == grammarAccess.getAndExpressionRule() ||
+				   context == grammarAccess.getAndExpressionAccess().getInnerProdExpressionLeftAction_1_0() ||
 				   context == grammarAccess.getCaseExpressionRule() ||
 				   context == grammarAccess.getCaseExpressionAccess().getCaseExpressionLeftAction_1_0() ||
 				   context == grammarAccess.getCoerceExpressionRule() ||
@@ -302,6 +327,8 @@ public class EditorSemanticSequencer extends AbstractDelegatingSemanticSequencer
 				   context == grammarAccess.getModExpressionAccess().getModExpressionLeftAction_1_0() ||
 				   context == grammarAccess.getMultiplicativeExpressionRule() ||
 				   context == grammarAccess.getMultiplicativeExpressionAccess().getMultiplicativeExpressionLeftAction_1_0() ||
+				   context == grammarAccess.getOrExpressionRule() ||
+				   context == grammarAccess.getOrExpressionAccess().getAndExpressionLeftAction_1_0() ||
 				   context == grammarAccess.getOuterProdExpressionRule() ||
 				   context == grammarAccess.getOuterProdExpressionAccess().getOuterProdExpressionLeftAction_1_0() ||
 				   context == grammarAccess.getPretendExpressionRule() ||
@@ -329,6 +356,8 @@ public class EditorSemanticSequencer extends AbstractDelegatingSemanticSequencer
 			case EditorPackage.DIVISION_EXPRESSION:
 				if(context == grammarAccess.getAdditiveExpressionRule() ||
 				   context == grammarAccess.getAdditiveExpressionAccess().getAdditiveExpressionLeftAction_1_0() ||
+				   context == grammarAccess.getAndExpressionRule() ||
+				   context == grammarAccess.getAndExpressionAccess().getInnerProdExpressionLeftAction_1_0() ||
 				   context == grammarAccess.getCaseExpressionRule() ||
 				   context == grammarAccess.getCaseExpressionAccess().getCaseExpressionLeftAction_1_0() ||
 				   context == grammarAccess.getConditionExpressionRule() ||
@@ -346,6 +375,8 @@ public class EditorSemanticSequencer extends AbstractDelegatingSemanticSequencer
 				   context == grammarAccess.getInnerProdExpressionAccess().getInnerProdExpressionLeftAction_1_0() ||
 				   context == grammarAccess.getIsExpressionRule() ||
 				   context == grammarAccess.getIsExpressionAccess().getIsExpressionLeftAction_1_0() ||
+				   context == grammarAccess.getOrExpressionRule() ||
+				   context == grammarAccess.getOrExpressionAccess().getAndExpressionLeftAction_1_0() ||
 				   context == grammarAccess.getOuterProdExpressionRule() ||
 				   context == grammarAccess.getOuterProdExpressionAccess().getOuterProdExpressionLeftAction_1_0() ||
 				   context == grammarAccess.getRelationalExpressionRule() ||
@@ -371,6 +402,8 @@ public class EditorSemanticSequencer extends AbstractDelegatingSemanticSequencer
 			case EditorPackage.ELT_EXPRESSION:
 				if(context == grammarAccess.getAdditiveExpressionRule() ||
 				   context == grammarAccess.getAdditiveExpressionAccess().getAdditiveExpressionLeftAction_1_0() ||
+				   context == grammarAccess.getAndExpressionRule() ||
+				   context == grammarAccess.getAndExpressionAccess().getInnerProdExpressionLeftAction_1_0() ||
 				   context == grammarAccess.getCaseExpressionRule() ||
 				   context == grammarAccess.getCaseExpressionAccess().getCaseExpressionLeftAction_1_0() ||
 				   context == grammarAccess.getCoerceExpressionRule() ||
@@ -402,6 +435,8 @@ public class EditorSemanticSequencer extends AbstractDelegatingSemanticSequencer
 				   context == grammarAccess.getModExpressionAccess().getModExpressionLeftAction_1_0() ||
 				   context == grammarAccess.getMultiplicativeExpressionRule() ||
 				   context == grammarAccess.getMultiplicativeExpressionAccess().getMultiplicativeExpressionLeftAction_1_0() ||
+				   context == grammarAccess.getOrExpressionRule() ||
+				   context == grammarAccess.getOrExpressionAccess().getAndExpressionLeftAction_1_0() ||
 				   context == grammarAccess.getOuterProdExpressionRule() ||
 				   context == grammarAccess.getOuterProdExpressionAccess().getOuterProdExpressionLeftAction_1_0() ||
 				   context == grammarAccess.getPretendExpressionRule() ||
@@ -419,7 +454,9 @@ public class EditorSemanticSequencer extends AbstractDelegatingSemanticSequencer
 				}
 				else break;
 			case EditorPackage.EQUALITY_EXPRESSION:
-				if(context == grammarAccess.getCaseExpressionRule() ||
+				if(context == grammarAccess.getAndExpressionRule() ||
+				   context == grammarAccess.getAndExpressionAccess().getInnerProdExpressionLeftAction_1_0() ||
+				   context == grammarAccess.getCaseExpressionRule() ||
 				   context == grammarAccess.getCaseExpressionAccess().getCaseExpressionLeftAction_1_0() ||
 				   context == grammarAccess.getConditionExpressionRule() ||
 				   context == grammarAccess.getConditionExpressionAccess().getConditionExpressionLeftAction_1_0() ||
@@ -430,6 +467,8 @@ public class EditorSemanticSequencer extends AbstractDelegatingSemanticSequencer
 				   context == grammarAccess.getHasExpressionAccess().getHasExpressionLeftAction_1_0() ||
 				   context == grammarAccess.getInnerProdExpressionRule() ||
 				   context == grammarAccess.getInnerProdExpressionAccess().getInnerProdExpressionLeftAction_1_0() ||
+				   context == grammarAccess.getOrExpressionRule() ||
+				   context == grammarAccess.getOrExpressionAccess().getAndExpressionLeftAction_1_0() ||
 				   context == grammarAccess.getOuterProdExpressionRule() ||
 				   context == grammarAccess.getOuterProdExpressionAccess().getOuterProdExpressionLeftAction_1_0()) {
 					sequence_EqualityExpression(context, (EqualityExpression) semanticObject); 
@@ -439,6 +478,8 @@ public class EditorSemanticSequencer extends AbstractDelegatingSemanticSequencer
 			case EditorPackage.EXPLICIT_TYPE_EXPRESSION:
 				if(context == grammarAccess.getAdditiveExpressionRule() ||
 				   context == grammarAccess.getAdditiveExpressionAccess().getAdditiveExpressionLeftAction_1_0() ||
+				   context == grammarAccess.getAndExpressionRule() ||
+				   context == grammarAccess.getAndExpressionAccess().getInnerProdExpressionLeftAction_1_0() ||
 				   context == grammarAccess.getCaseExpressionRule() ||
 				   context == grammarAccess.getCaseExpressionAccess().getCaseExpressionLeftAction_1_0() ||
 				   context == grammarAccess.getCoerceExpressionRule() ||
@@ -471,6 +512,8 @@ public class EditorSemanticSequencer extends AbstractDelegatingSemanticSequencer
 				   context == grammarAccess.getModExpressionAccess().getModExpressionLeftAction_1_0() ||
 				   context == grammarAccess.getMultiplicativeExpressionRule() ||
 				   context == grammarAccess.getMultiplicativeExpressionAccess().getMultiplicativeExpressionLeftAction_1_0() ||
+				   context == grammarAccess.getOrExpressionRule() ||
+				   context == grammarAccess.getOrExpressionAccess().getAndExpressionLeftAction_1_0() ||
 				   context == grammarAccess.getOuterProdExpressionRule() ||
 				   context == grammarAccess.getOuterProdExpressionAccess().getOuterProdExpressionLeftAction_1_0() ||
 				   context == grammarAccess.getPretendExpressionRule() ||
@@ -490,6 +533,8 @@ public class EditorSemanticSequencer extends AbstractDelegatingSemanticSequencer
 			case EditorPackage.EXPONENT_EXPRESSION:
 				if(context == grammarAccess.getAdditiveExpressionRule() ||
 				   context == grammarAccess.getAdditiveExpressionAccess().getAdditiveExpressionLeftAction_1_0() ||
+				   context == grammarAccess.getAndExpressionRule() ||
+				   context == grammarAccess.getAndExpressionAccess().getInnerProdExpressionLeftAction_1_0() ||
 				   context == grammarAccess.getCaseExpressionRule() ||
 				   context == grammarAccess.getCaseExpressionAccess().getCaseExpressionLeftAction_1_0() ||
 				   context == grammarAccess.getConditionExpressionRule() ||
@@ -513,6 +558,8 @@ public class EditorSemanticSequencer extends AbstractDelegatingSemanticSequencer
 				   context == grammarAccess.getModExpressionAccess().getModExpressionLeftAction_1_0() ||
 				   context == grammarAccess.getMultiplicativeExpressionRule() ||
 				   context == grammarAccess.getMultiplicativeExpressionAccess().getMultiplicativeExpressionLeftAction_1_0() ||
+				   context == grammarAccess.getOrExpressionRule() ||
+				   context == grammarAccess.getOrExpressionAccess().getAndExpressionLeftAction_1_0() ||
 				   context == grammarAccess.getOuterProdExpressionRule() ||
 				   context == grammarAccess.getOuterProdExpressionAccess().getOuterProdExpressionLeftAction_1_0() ||
 				   context == grammarAccess.getQuoExpressionRule() ||
@@ -530,6 +577,8 @@ public class EditorSemanticSequencer extends AbstractDelegatingSemanticSequencer
 			case EditorPackage.EXPR:
 				if(context == grammarAccess.getAdditiveExpressionRule() ||
 				   context == grammarAccess.getAdditiveExpressionAccess().getAdditiveExpressionLeftAction_1_0() ||
+				   context == grammarAccess.getAndExpressionRule() ||
+				   context == grammarAccess.getAndExpressionAccess().getInnerProdExpressionLeftAction_1_0() ||
 				   context == grammarAccess.getCaseExpressionRule() ||
 				   context == grammarAccess.getCaseExpressionAccess().getCaseExpressionLeftAction_1_0() ||
 				   context == grammarAccess.getCoerceExpressionRule() ||
@@ -563,6 +612,8 @@ public class EditorSemanticSequencer extends AbstractDelegatingSemanticSequencer
 				   context == grammarAccess.getModExpressionAccess().getModExpressionLeftAction_1_0() ||
 				   context == grammarAccess.getMultiplicativeExpressionRule() ||
 				   context == grammarAccess.getMultiplicativeExpressionAccess().getMultiplicativeExpressionLeftAction_1_0() ||
+				   context == grammarAccess.getOrExpressionRule() ||
+				   context == grammarAccess.getOrExpressionAccess().getAndExpressionLeftAction_1_0() ||
 				   context == grammarAccess.getOuterProdExpressionRule() ||
 				   context == grammarAccess.getOuterProdExpressionAccess().getOuterProdExpressionLeftAction_1_0() ||
 				   context == grammarAccess.getPretendExpressionRule() ||
@@ -583,6 +634,8 @@ public class EditorSemanticSequencer extends AbstractDelegatingSemanticSequencer
 			case EditorPackage.EXQUO_EXPRESSION:
 				if(context == grammarAccess.getAdditiveExpressionRule() ||
 				   context == grammarAccess.getAdditiveExpressionAccess().getAdditiveExpressionLeftAction_1_0() ||
+				   context == grammarAccess.getAndExpressionRule() ||
+				   context == grammarAccess.getAndExpressionAccess().getInnerProdExpressionLeftAction_1_0() ||
 				   context == grammarAccess.getCaseExpressionRule() ||
 				   context == grammarAccess.getCaseExpressionAccess().getCaseExpressionLeftAction_1_0() ||
 				   context == grammarAccess.getConditionExpressionRule() ||
@@ -598,6 +651,8 @@ public class EditorSemanticSequencer extends AbstractDelegatingSemanticSequencer
 				   context == grammarAccess.getInnerProdExpressionAccess().getInnerProdExpressionLeftAction_1_0() ||
 				   context == grammarAccess.getIsExpressionRule() ||
 				   context == grammarAccess.getIsExpressionAccess().getIsExpressionLeftAction_1_0() ||
+				   context == grammarAccess.getOrExpressionRule() ||
+				   context == grammarAccess.getOrExpressionAccess().getAndExpressionLeftAction_1_0() ||
 				   context == grammarAccess.getOuterProdExpressionRule() ||
 				   context == grammarAccess.getOuterProdExpressionAccess().getOuterProdExpressionLeftAction_1_0() ||
 				   context == grammarAccess.getRelationalExpressionRule() ||
@@ -632,13 +687,17 @@ public class EditorSemanticSequencer extends AbstractDelegatingSemanticSequencer
 				}
 				else break;
 			case EditorPackage.HAS_EXPRESSION:
-				if(context == grammarAccess.getConditionExpressionRule() ||
+				if(context == grammarAccess.getAndExpressionRule() ||
+				   context == grammarAccess.getAndExpressionAccess().getInnerProdExpressionLeftAction_1_0() ||
+				   context == grammarAccess.getConditionExpressionRule() ||
 				   context == grammarAccess.getConditionExpressionAccess().getConditionExpressionLeftAction_1_0() ||
 				   context == grammarAccess.getExpressionRule() ||
 				   context == grammarAccess.getHasExpressionRule() ||
 				   context == grammarAccess.getHasExpressionAccess().getHasExpressionLeftAction_1_0() ||
 				   context == grammarAccess.getInnerProdExpressionRule() ||
 				   context == grammarAccess.getInnerProdExpressionAccess().getInnerProdExpressionLeftAction_1_0() ||
+				   context == grammarAccess.getOrExpressionRule() ||
+				   context == grammarAccess.getOrExpressionAccess().getAndExpressionLeftAction_1_0() ||
 				   context == grammarAccess.getOuterProdExpressionRule() ||
 				   context == grammarAccess.getOuterProdExpressionAccess().getOuterProdExpressionLeftAction_1_0()) {
 					sequence_HasExpression(context, (HasExpression) semanticObject); 
@@ -648,6 +707,8 @@ public class EditorSemanticSequencer extends AbstractDelegatingSemanticSequencer
 			case EditorPackage.HINT_TYPE_EXPRESSION:
 				if(context == grammarAccess.getAdditiveExpressionRule() ||
 				   context == grammarAccess.getAdditiveExpressionAccess().getAdditiveExpressionLeftAction_1_0() ||
+				   context == grammarAccess.getAndExpressionRule() ||
+				   context == grammarAccess.getAndExpressionAccess().getInnerProdExpressionLeftAction_1_0() ||
 				   context == grammarAccess.getCaseExpressionRule() ||
 				   context == grammarAccess.getCaseExpressionAccess().getCaseExpressionLeftAction_1_0() ||
 				   context == grammarAccess.getConditionExpressionRule() ||
@@ -674,6 +735,8 @@ public class EditorSemanticSequencer extends AbstractDelegatingSemanticSequencer
 				   context == grammarAccess.getModExpressionAccess().getModExpressionLeftAction_1_0() ||
 				   context == grammarAccess.getMultiplicativeExpressionRule() ||
 				   context == grammarAccess.getMultiplicativeExpressionAccess().getMultiplicativeExpressionLeftAction_1_0() ||
+				   context == grammarAccess.getOrExpressionRule() ||
+				   context == grammarAccess.getOrExpressionAccess().getAndExpressionLeftAction_1_0() ||
 				   context == grammarAccess.getOuterProdExpressionRule() ||
 				   context == grammarAccess.getOuterProdExpressionAccess().getOuterProdExpressionLeftAction_1_0() ||
 				   context == grammarAccess.getPretendExpressionRule() ||
@@ -705,17 +768,26 @@ public class EditorSemanticSequencer extends AbstractDelegatingSemanticSequencer
 				}
 				else break;
 			case EditorPackage.INNER_PROD_EXPRESSION:
-				if(context == grammarAccess.getConditionExpressionRule() ||
+				if(context == grammarAccess.getAndExpressionRule() ||
+				   context == grammarAccess.getAndExpressionAccess().getInnerProdExpressionLeftAction_1_0() ||
+				   context == grammarAccess.getConditionExpressionRule() ||
 				   context == grammarAccess.getConditionExpressionAccess().getConditionExpressionLeftAction_1_0() ||
 				   context == grammarAccess.getExpressionRule() ||
-				   context == grammarAccess.getInnerProdExpressionRule() ||
+				   context == grammarAccess.getOrExpressionRule() ||
+				   context == grammarAccess.getOrExpressionAccess().getAndExpressionLeftAction_1_0()) {
+					sequence_AndExpression_InnerProdExpression(context, (InnerProdExpression) semanticObject); 
+					return; 
+				}
+				else if(context == grammarAccess.getInnerProdExpressionRule() ||
 				   context == grammarAccess.getInnerProdExpressionAccess().getInnerProdExpressionLeftAction_1_0()) {
 					sequence_InnerProdExpression(context, (InnerProdExpression) semanticObject); 
 					return; 
 				}
 				else break;
 			case EditorPackage.IS_EXPRESSION:
-				if(context == grammarAccess.getCaseExpressionRule() ||
+				if(context == grammarAccess.getAndExpressionRule() ||
+				   context == grammarAccess.getAndExpressionAccess().getInnerProdExpressionLeftAction_1_0() ||
+				   context == grammarAccess.getCaseExpressionRule() ||
 				   context == grammarAccess.getCaseExpressionAccess().getCaseExpressionLeftAction_1_0() ||
 				   context == grammarAccess.getConditionExpressionRule() ||
 				   context == grammarAccess.getConditionExpressionAccess().getConditionExpressionLeftAction_1_0() ||
@@ -728,6 +800,8 @@ public class EditorSemanticSequencer extends AbstractDelegatingSemanticSequencer
 				   context == grammarAccess.getInnerProdExpressionAccess().getInnerProdExpressionLeftAction_1_0() ||
 				   context == grammarAccess.getIsExpressionRule() ||
 				   context == grammarAccess.getIsExpressionAccess().getIsExpressionLeftAction_1_0() ||
+				   context == grammarAccess.getOrExpressionRule() ||
+				   context == grammarAccess.getOrExpressionAccess().getAndExpressionLeftAction_1_0() ||
 				   context == grammarAccess.getOuterProdExpressionRule() ||
 				   context == grammarAccess.getOuterProdExpressionAccess().getOuterProdExpressionLeftAction_1_0() ||
 				   context == grammarAccess.getRelationalExpressionRule() ||
@@ -745,6 +819,8 @@ public class EditorSemanticSequencer extends AbstractDelegatingSemanticSequencer
 			case EditorPackage.LIST_LITERAL:
 				if(context == grammarAccess.getAdditiveExpressionRule() ||
 				   context == grammarAccess.getAdditiveExpressionAccess().getAdditiveExpressionLeftAction_1_0() ||
+				   context == grammarAccess.getAndExpressionRule() ||
+				   context == grammarAccess.getAndExpressionAccess().getInnerProdExpressionLeftAction_1_0() ||
 				   context == grammarAccess.getCaseExpressionRule() ||
 				   context == grammarAccess.getCaseExpressionAccess().getCaseExpressionLeftAction_1_0() ||
 				   context == grammarAccess.getCoerceExpressionRule() ||
@@ -780,6 +856,8 @@ public class EditorSemanticSequencer extends AbstractDelegatingSemanticSequencer
 				   context == grammarAccess.getModExpressionAccess().getModExpressionLeftAction_1_0() ||
 				   context == grammarAccess.getMultiplicativeExpressionRule() ||
 				   context == grammarAccess.getMultiplicativeExpressionAccess().getMultiplicativeExpressionLeftAction_1_0() ||
+				   context == grammarAccess.getOrExpressionRule() ||
+				   context == grammarAccess.getOrExpressionAccess().getAndExpressionLeftAction_1_0() ||
 				   context == grammarAccess.getOuterProdExpressionRule() ||
 				   context == grammarAccess.getOuterProdExpressionAccess().getOuterProdExpressionLeftAction_1_0() ||
 				   context == grammarAccess.getPretendExpressionRule() ||
@@ -802,6 +880,8 @@ public class EditorSemanticSequencer extends AbstractDelegatingSemanticSequencer
 			case EditorPackage.LITERAL:
 				if(context == grammarAccess.getAdditiveExpressionRule() ||
 				   context == grammarAccess.getAdditiveExpressionAccess().getAdditiveExpressionLeftAction_1_0() ||
+				   context == grammarAccess.getAndExpressionRule() ||
+				   context == grammarAccess.getAndExpressionAccess().getInnerProdExpressionLeftAction_1_0() ||
 				   context == grammarAccess.getCaseExpressionRule() ||
 				   context == grammarAccess.getCaseExpressionAccess().getCaseExpressionLeftAction_1_0() ||
 				   context == grammarAccess.getCoerceExpressionRule() ||
@@ -836,6 +916,8 @@ public class EditorSemanticSequencer extends AbstractDelegatingSemanticSequencer
 				   context == grammarAccess.getModExpressionAccess().getModExpressionLeftAction_1_0() ||
 				   context == grammarAccess.getMultiplicativeExpressionRule() ||
 				   context == grammarAccess.getMultiplicativeExpressionAccess().getMultiplicativeExpressionLeftAction_1_0() ||
+				   context == grammarAccess.getOrExpressionRule() ||
+				   context == grammarAccess.getOrExpressionAccess().getAndExpressionLeftAction_1_0() ||
 				   context == grammarAccess.getOuterProdExpressionRule() ||
 				   context == grammarAccess.getOuterProdExpressionAccess().getOuterProdExpressionLeftAction_1_0() ||
 				   context == grammarAccess.getPretendExpressionRule() ||
@@ -872,6 +954,8 @@ public class EditorSemanticSequencer extends AbstractDelegatingSemanticSequencer
 			case EditorPackage.MAP_DEFINITION:
 				if(context == grammarAccess.getAdditiveExpressionRule() ||
 				   context == grammarAccess.getAdditiveExpressionAccess().getAdditiveExpressionLeftAction_1_0() ||
+				   context == grammarAccess.getAndExpressionRule() ||
+				   context == grammarAccess.getAndExpressionAccess().getInnerProdExpressionLeftAction_1_0() ||
 				   context == grammarAccess.getCaseExpressionRule() ||
 				   context == grammarAccess.getCaseExpressionAccess().getCaseExpressionLeftAction_1_0() ||
 				   context == grammarAccess.getConditionExpressionRule() ||
@@ -897,6 +981,8 @@ public class EditorSemanticSequencer extends AbstractDelegatingSemanticSequencer
 				   context == grammarAccess.getModExpressionAccess().getModExpressionLeftAction_1_0() ||
 				   context == grammarAccess.getMultiplicativeExpressionRule() ||
 				   context == grammarAccess.getMultiplicativeExpressionAccess().getMultiplicativeExpressionLeftAction_1_0() ||
+				   context == grammarAccess.getOrExpressionRule() ||
+				   context == grammarAccess.getOrExpressionAccess().getAndExpressionLeftAction_1_0() ||
 				   context == grammarAccess.getOuterProdExpressionRule() ||
 				   context == grammarAccess.getOuterProdExpressionAccess().getOuterProdExpressionLeftAction_1_0() ||
 				   context == grammarAccess.getQuoExpressionRule() ||
@@ -914,6 +1000,8 @@ public class EditorSemanticSequencer extends AbstractDelegatingSemanticSequencer
 			case EditorPackage.MOD_EXPRESSION:
 				if(context == grammarAccess.getAdditiveExpressionRule() ||
 				   context == grammarAccess.getAdditiveExpressionAccess().getAdditiveExpressionLeftAction_1_0() ||
+				   context == grammarAccess.getAndExpressionRule() ||
+				   context == grammarAccess.getAndExpressionAccess().getInnerProdExpressionLeftAction_1_0() ||
 				   context == grammarAccess.getCaseExpressionRule() ||
 				   context == grammarAccess.getCaseExpressionAccess().getCaseExpressionLeftAction_1_0() ||
 				   context == grammarAccess.getConditionExpressionRule() ||
@@ -933,6 +1021,8 @@ public class EditorSemanticSequencer extends AbstractDelegatingSemanticSequencer
 				   context == grammarAccess.getIsExpressionAccess().getIsExpressionLeftAction_1_0() ||
 				   context == grammarAccess.getModExpressionRule() ||
 				   context == grammarAccess.getModExpressionAccess().getModExpressionLeftAction_1_0() ||
+				   context == grammarAccess.getOrExpressionRule() ||
+				   context == grammarAccess.getOrExpressionAccess().getAndExpressionLeftAction_1_0() ||
 				   context == grammarAccess.getOuterProdExpressionRule() ||
 				   context == grammarAccess.getOuterProdExpressionAccess().getOuterProdExpressionLeftAction_1_0() ||
 				   context == grammarAccess.getQuoExpressionRule() ||
@@ -954,6 +1044,8 @@ public class EditorSemanticSequencer extends AbstractDelegatingSemanticSequencer
 			case EditorPackage.MULTIPLICATIVE_EXPRESSION:
 				if(context == grammarAccess.getAdditiveExpressionRule() ||
 				   context == grammarAccess.getAdditiveExpressionAccess().getAdditiveExpressionLeftAction_1_0() ||
+				   context == grammarAccess.getAndExpressionRule() ||
+				   context == grammarAccess.getAndExpressionAccess().getInnerProdExpressionLeftAction_1_0() ||
 				   context == grammarAccess.getCaseExpressionRule() ||
 				   context == grammarAccess.getCaseExpressionAccess().getCaseExpressionLeftAction_1_0() ||
 				   context == grammarAccess.getConditionExpressionRule() ||
@@ -975,6 +1067,8 @@ public class EditorSemanticSequencer extends AbstractDelegatingSemanticSequencer
 				   context == grammarAccess.getModExpressionAccess().getModExpressionLeftAction_1_0() ||
 				   context == grammarAccess.getMultiplicativeExpressionRule() ||
 				   context == grammarAccess.getMultiplicativeExpressionAccess().getMultiplicativeExpressionLeftAction_1_0() ||
+				   context == grammarAccess.getOrExpressionRule() ||
+				   context == grammarAccess.getOrExpressionAccess().getAndExpressionLeftAction_1_0() ||
 				   context == grammarAccess.getOuterProdExpressionRule() ||
 				   context == grammarAccess.getOuterProdExpressionAccess().getOuterProdExpressionLeftAction_1_0() ||
 				   context == grammarAccess.getQuoExpressionRule() ||
@@ -996,11 +1090,15 @@ public class EditorSemanticSequencer extends AbstractDelegatingSemanticSequencer
 				}
 				else break;
 			case EditorPackage.OUTER_PROD_EXPRESSION:
-				if(context == grammarAccess.getConditionExpressionRule() ||
+				if(context == grammarAccess.getAndExpressionRule() ||
+				   context == grammarAccess.getAndExpressionAccess().getInnerProdExpressionLeftAction_1_0() ||
+				   context == grammarAccess.getConditionExpressionRule() ||
 				   context == grammarAccess.getConditionExpressionAccess().getConditionExpressionLeftAction_1_0() ||
 				   context == grammarAccess.getExpressionRule() ||
 				   context == grammarAccess.getInnerProdExpressionRule() ||
 				   context == grammarAccess.getInnerProdExpressionAccess().getInnerProdExpressionLeftAction_1_0() ||
+				   context == grammarAccess.getOrExpressionRule() ||
+				   context == grammarAccess.getOrExpressionAccess().getAndExpressionLeftAction_1_0() ||
 				   context == grammarAccess.getOuterProdExpressionRule() ||
 				   context == grammarAccess.getOuterProdExpressionAccess().getOuterProdExpressionLeftAction_1_0()) {
 					sequence_OuterProdExpression(context, (OuterProdExpression) semanticObject); 
@@ -1013,46 +1111,11 @@ public class EditorSemanticSequencer extends AbstractDelegatingSemanticSequencer
 					return; 
 				}
 				else break;
-			case EditorPackage.PREDICATE_AND:
-				if(context == grammarAccess.getPredicateAndRule() ||
-				   context == grammarAccess.getPredicateAndAccess().getPredicateAndLeftAction_1_0() ||
-				   context == grammarAccess.getPredicateOrRule() ||
-				   context == grammarAccess.getPredicateOrAccess().getPredicateOrLeftAction_1_0()) {
-					sequence_PredicateAnd(context, (PredicateAnd) semanticObject); 
-					return; 
-				}
-				else break;
-			case EditorPackage.PREDICATE_NOT:
-				if(context == grammarAccess.getPredicateAndRule() ||
-				   context == grammarAccess.getPredicateAndAccess().getPredicateAndLeftAction_1_0() ||
-				   context == grammarAccess.getPredicateNotRule() ||
-				   context == grammarAccess.getPredicateOrRule() ||
-				   context == grammarAccess.getPredicateOrAccess().getPredicateOrLeftAction_1_0()) {
-					sequence_PredicateNot(context, (PredicateNot) semanticObject); 
-					return; 
-				}
-				else break;
-			case EditorPackage.PREDICATE_OR:
-				if(context == grammarAccess.getPredicateOrRule() ||
-				   context == grammarAccess.getPredicateOrAccess().getPredicateOrLeftAction_1_0()) {
-					sequence_PredicateOr(context, (PredicateOr) semanticObject); 
-					return; 
-				}
-				else break;
-			case EditorPackage.PREDICATE_PRIMARY:
-				if(context == grammarAccess.getPredicateAndRule() ||
-				   context == grammarAccess.getPredicateAndAccess().getPredicateAndLeftAction_1_0() ||
-				   context == grammarAccess.getPredicateNotRule() ||
-				   context == grammarAccess.getPredicateOrRule() ||
-				   context == grammarAccess.getPredicateOrAccess().getPredicateOrLeftAction_1_0() ||
-				   context == grammarAccess.getPredicatePrimaryRule()) {
-					sequence_PredicatePrimary(context, (PredicatePrimary) semanticObject); 
-					return; 
-				}
-				else break;
 			case EditorPackage.PRETEND_EXPRESSION:
 				if(context == grammarAccess.getAdditiveExpressionRule() ||
 				   context == grammarAccess.getAdditiveExpressionAccess().getAdditiveExpressionLeftAction_1_0() ||
+				   context == grammarAccess.getAndExpressionRule() ||
+				   context == grammarAccess.getAndExpressionAccess().getInnerProdExpressionLeftAction_1_0() ||
 				   context == grammarAccess.getCaseExpressionRule() ||
 				   context == grammarAccess.getCaseExpressionAccess().getCaseExpressionLeftAction_1_0() ||
 				   context == grammarAccess.getConditionExpressionRule() ||
@@ -1078,6 +1141,8 @@ public class EditorSemanticSequencer extends AbstractDelegatingSemanticSequencer
 				   context == grammarAccess.getModExpressionAccess().getModExpressionLeftAction_1_0() ||
 				   context == grammarAccess.getMultiplicativeExpressionRule() ||
 				   context == grammarAccess.getMultiplicativeExpressionAccess().getMultiplicativeExpressionLeftAction_1_0() ||
+				   context == grammarAccess.getOrExpressionRule() ||
+				   context == grammarAccess.getOrExpressionAccess().getAndExpressionLeftAction_1_0() ||
 				   context == grammarAccess.getOuterProdExpressionRule() ||
 				   context == grammarAccess.getOuterProdExpressionAccess().getOuterProdExpressionLeftAction_1_0() ||
 				   context == grammarAccess.getPretendExpressionRule() ||
@@ -1097,6 +1162,8 @@ public class EditorSemanticSequencer extends AbstractDelegatingSemanticSequencer
 			case EditorPackage.PRIMARY_PREFIX:
 				if(context == grammarAccess.getAdditiveExpressionRule() ||
 				   context == grammarAccess.getAdditiveExpressionAccess().getAdditiveExpressionLeftAction_1_0() ||
+				   context == grammarAccess.getAndExpressionRule() ||
+				   context == grammarAccess.getAndExpressionAccess().getInnerProdExpressionLeftAction_1_0() ||
 				   context == grammarAccess.getCaseExpressionRule() ||
 				   context == grammarAccess.getCaseExpressionAccess().getCaseExpressionLeftAction_1_0() ||
 				   context == grammarAccess.getCoerceExpressionRule() ||
@@ -1130,6 +1197,8 @@ public class EditorSemanticSequencer extends AbstractDelegatingSemanticSequencer
 				   context == grammarAccess.getModExpressionAccess().getModExpressionLeftAction_1_0() ||
 				   context == grammarAccess.getMultiplicativeExpressionRule() ||
 				   context == grammarAccess.getMultiplicativeExpressionAccess().getMultiplicativeExpressionLeftAction_1_0() ||
+				   context == grammarAccess.getOrExpressionRule() ||
+				   context == grammarAccess.getOrExpressionAccess().getAndExpressionLeftAction_1_0() ||
 				   context == grammarAccess.getOuterProdExpressionRule() ||
 				   context == grammarAccess.getOuterProdExpressionAccess().getOuterProdExpressionLeftAction_1_0() ||
 				   context == grammarAccess.getPretendExpressionRule() ||
@@ -1152,6 +1221,8 @@ public class EditorSemanticSequencer extends AbstractDelegatingSemanticSequencer
 			case EditorPackage.QUO_EXPRESSION:
 				if(context == grammarAccess.getAdditiveExpressionRule() ||
 				   context == grammarAccess.getAdditiveExpressionAccess().getAdditiveExpressionLeftAction_1_0() ||
+				   context == grammarAccess.getAndExpressionRule() ||
+				   context == grammarAccess.getAndExpressionAccess().getInnerProdExpressionLeftAction_1_0() ||
 				   context == grammarAccess.getCaseExpressionRule() ||
 				   context == grammarAccess.getCaseExpressionAccess().getCaseExpressionLeftAction_1_0() ||
 				   context == grammarAccess.getConditionExpressionRule() ||
@@ -1169,6 +1240,8 @@ public class EditorSemanticSequencer extends AbstractDelegatingSemanticSequencer
 				   context == grammarAccess.getInnerProdExpressionAccess().getInnerProdExpressionLeftAction_1_0() ||
 				   context == grammarAccess.getIsExpressionRule() ||
 				   context == grammarAccess.getIsExpressionAccess().getIsExpressionLeftAction_1_0() ||
+				   context == grammarAccess.getOrExpressionRule() ||
+				   context == grammarAccess.getOrExpressionAccess().getAndExpressionLeftAction_1_0() ||
 				   context == grammarAccess.getOuterProdExpressionRule() ||
 				   context == grammarAccess.getOuterProdExpressionAccess().getOuterProdExpressionLeftAction_1_0() ||
 				   context == grammarAccess.getQuoExpressionRule() ||
@@ -1182,7 +1255,9 @@ public class EditorSemanticSequencer extends AbstractDelegatingSemanticSequencer
 				}
 				else break;
 			case EditorPackage.RELATIONAL_EXPRESSION:
-				if(context == grammarAccess.getCaseExpressionRule() ||
+				if(context == grammarAccess.getAndExpressionRule() ||
+				   context == grammarAccess.getAndExpressionAccess().getInnerProdExpressionLeftAction_1_0() ||
+				   context == grammarAccess.getCaseExpressionRule() ||
 				   context == grammarAccess.getCaseExpressionAccess().getCaseExpressionLeftAction_1_0() ||
 				   context == grammarAccess.getConditionExpressionRule() ||
 				   context == grammarAccess.getConditionExpressionAccess().getConditionExpressionLeftAction_1_0() ||
@@ -1193,6 +1268,8 @@ public class EditorSemanticSequencer extends AbstractDelegatingSemanticSequencer
 				   context == grammarAccess.getHasExpressionAccess().getHasExpressionLeftAction_1_0() ||
 				   context == grammarAccess.getInnerProdExpressionRule() ||
 				   context == grammarAccess.getInnerProdExpressionAccess().getInnerProdExpressionLeftAction_1_0() ||
+				   context == grammarAccess.getOrExpressionRule() ||
+				   context == grammarAccess.getOrExpressionAccess().getAndExpressionLeftAction_1_0() ||
 				   context == grammarAccess.getOuterProdExpressionRule() ||
 				   context == grammarAccess.getOuterProdExpressionAccess().getOuterProdExpressionLeftAction_1_0() ||
 				   context == grammarAccess.getRelationalExpressionRule()) {
@@ -1203,6 +1280,8 @@ public class EditorSemanticSequencer extends AbstractDelegatingSemanticSequencer
 			case EditorPackage.REM_EXPRESSION:
 				if(context == grammarAccess.getAdditiveExpressionRule() ||
 				   context == grammarAccess.getAdditiveExpressionAccess().getAdditiveExpressionLeftAction_1_0() ||
+				   context == grammarAccess.getAndExpressionRule() ||
+				   context == grammarAccess.getAndExpressionAccess().getInnerProdExpressionLeftAction_1_0() ||
 				   context == grammarAccess.getCaseExpressionRule() ||
 				   context == grammarAccess.getCaseExpressionAccess().getCaseExpressionLeftAction_1_0() ||
 				   context == grammarAccess.getConditionExpressionRule() ||
@@ -1222,6 +1301,8 @@ public class EditorSemanticSequencer extends AbstractDelegatingSemanticSequencer
 				   context == grammarAccess.getIsExpressionAccess().getIsExpressionLeftAction_1_0() ||
 				   context == grammarAccess.getModExpressionRule() ||
 				   context == grammarAccess.getModExpressionAccess().getModExpressionLeftAction_1_0() ||
+				   context == grammarAccess.getOrExpressionRule() ||
+				   context == grammarAccess.getOrExpressionAccess().getAndExpressionLeftAction_1_0() ||
 				   context == grammarAccess.getOuterProdExpressionRule() ||
 				   context == grammarAccess.getOuterProdExpressionAccess().getOuterProdExpressionLeftAction_1_0() ||
 				   context == grammarAccess.getQuoExpressionRule() ||
@@ -1243,7 +1324,9 @@ public class EditorSemanticSequencer extends AbstractDelegatingSemanticSequencer
 				}
 				else break;
 			case EditorPackage.SEGMENT_EXPRESSION:
-				if(context == grammarAccess.getCaseExpressionRule() ||
+				if(context == grammarAccess.getAndExpressionRule() ||
+				   context == grammarAccess.getAndExpressionAccess().getInnerProdExpressionLeftAction_1_0() ||
+				   context == grammarAccess.getCaseExpressionRule() ||
 				   context == grammarAccess.getCaseExpressionAccess().getCaseExpressionLeftAction_1_0() ||
 				   context == grammarAccess.getConditionExpressionRule() ||
 				   context == grammarAccess.getConditionExpressionAccess().getConditionExpressionLeftAction_1_0() ||
@@ -1256,6 +1339,8 @@ public class EditorSemanticSequencer extends AbstractDelegatingSemanticSequencer
 				   context == grammarAccess.getInnerProdExpressionAccess().getInnerProdExpressionLeftAction_1_0() ||
 				   context == grammarAccess.getIsExpressionRule() ||
 				   context == grammarAccess.getIsExpressionAccess().getIsExpressionLeftAction_1_0() ||
+				   context == grammarAccess.getOrExpressionRule() ||
+				   context == grammarAccess.getOrExpressionAccess().getAndExpressionLeftAction_1_0() ||
 				   context == grammarAccess.getOuterProdExpressionRule() ||
 				   context == grammarAccess.getOuterProdExpressionAccess().getOuterProdExpressionLeftAction_1_0() ||
 				   context == grammarAccess.getRelationalExpressionRule() ||
@@ -1336,6 +1421,8 @@ public class EditorSemanticSequencer extends AbstractDelegatingSemanticSequencer
 			case EditorPackage.UNARY_EXPRESSION:
 				if(context == grammarAccess.getAdditiveExpressionRule() ||
 				   context == grammarAccess.getAdditiveExpressionAccess().getAdditiveExpressionLeftAction_1_0() ||
+				   context == grammarAccess.getAndExpressionRule() ||
+				   context == grammarAccess.getAndExpressionAccess().getInnerProdExpressionLeftAction_1_0() ||
 				   context == grammarAccess.getCaseExpressionRule() ||
 				   context == grammarAccess.getCaseExpressionAccess().getCaseExpressionLeftAction_1_0() ||
 				   context == grammarAccess.getCoerceExpressionRule() ||
@@ -1369,6 +1456,8 @@ public class EditorSemanticSequencer extends AbstractDelegatingSemanticSequencer
 				   context == grammarAccess.getModExpressionAccess().getModExpressionLeftAction_1_0() ||
 				   context == grammarAccess.getMultiplicativeExpressionRule() ||
 				   context == grammarAccess.getMultiplicativeExpressionAccess().getMultiplicativeExpressionLeftAction_1_0() ||
+				   context == grammarAccess.getOrExpressionRule() ||
+				   context == grammarAccess.getOrExpressionAccess().getAndExpressionLeftAction_1_0() ||
 				   context == grammarAccess.getOuterProdExpressionRule() ||
 				   context == grammarAccess.getOuterProdExpressionAccess().getOuterProdExpressionLeftAction_1_0() ||
 				   context == grammarAccess.getPretendExpressionRule() ||
@@ -1436,6 +1525,18 @@ public class EditorSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	 *     (left=AdditiveExpression_AdditiveExpression_1_0 (op=PLUS | op=MINUS) right=ExquoExpression)
 	 */
 	protected void sequence_AdditiveExpression(EObject context, AdditiveExpression semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (
+	 *         (left=AndExpression_InnerProdExpression_1_0 op='and' right=InnerProdExpression) | 
+	 *         (left=InnerProdExpression_InnerProdExpression_1_0 op=BACKSLASHSLASH right=OuterProdExpression)
+	 *     )
+	 */
+	protected void sequence_AndExpression_InnerProdExpression(EObject context, InnerProdExpression semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -1520,7 +1621,7 @@ public class EditorSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	
 	/**
 	 * Constraint:
-	 *     (left=ConditionExpression_ConditionExpression_1_0 op=BAR right=PredicateOr)
+	 *     (left=ConditionExpression_ConditionExpression_1_0 op=BAR right=OrExpression)
 	 */
 	protected void sequence_ConditionExpression(EObject context, ConditionExpression semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -1538,7 +1639,7 @@ public class EditorSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	
 	/**
 	 * Constraint:
-	 *     (stname='do' s1=Statement t2=PredicateOr)
+	 *     (stname='do' s1=Statement t2=Expression)
 	 */
 	protected void sequence_DoStatement(EObject context, DoStatement semanticObject) {
 		if(errorAcceptor != null) {
@@ -1553,7 +1654,7 @@ public class EditorSemanticSequencer extends AbstractDelegatingSemanticSequencer
 		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
 		feeder.accept(grammarAccess.getDoStatementAccess().getStnameDoKeyword_0_0(), semanticObject.getStname());
 		feeder.accept(grammarAccess.getDoStatementAccess().getS1StatementParserRuleCall_1_0(), semanticObject.getS1());
-		feeder.accept(grammarAccess.getDoStatementAccess().getT2PredicateOrParserRuleCall_4_0(), semanticObject.getT2());
+		feeder.accept(grammarAccess.getDoStatementAccess().getT2ExpressionParserRuleCall_4_0(), semanticObject.getT2());
 		feeder.finish();
 	}
 	
@@ -1745,7 +1846,7 @@ public class EditorSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	
 	/**
 	 * Constraint:
-	 *     (t2=PredicateOr s1=Statement s2=Statement?)
+	 *     (t2=Expression s1=Statement (s2=Statement | s2=Statement)?)
 	 */
 	protected void sequence_IfStatement(EObject context, IfStatement semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -1883,9 +1984,18 @@ public class EditorSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	
 	/**
 	 * Constraint:
-	 *     (fnname=ID lsp=DOLAR? ((t4=Expression? t5+=Expression*) | t6=PrimaryExpression)?)
+	 *     (fnname=ID lsp=DOLAR? ((t4=StatementExpression? t5+=Expression* (t14+=StatementExpression? t15+=Expression*)*) | t6=PrimaryExpression)?)
 	 */
 	protected void sequence_NameOrFunctionCall(EObject context, NameOrFunctionCall semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (left=OrExpression_AndExpression_1_0 op='or' right=AndExpression)
+	 */
+	protected void sequence_OrExpression(EObject context, AndExpression semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -1919,75 +2029,6 @@ public class EditorSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	
 	/**
 	 * Constraint:
-	 *     (left=PredicateAnd_PredicateAnd_1_0 prname='and' right=PredicateNot)
-	 */
-	protected void sequence_PredicateAnd(EObject context, PredicateAnd semanticObject) {
-		if(errorAcceptor != null) {
-			if(transientValues.isValueTransient(semanticObject, EditorPackage.Literals.PREDICATE_AND__LEFT) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, EditorPackage.Literals.PREDICATE_AND__LEFT));
-			if(transientValues.isValueTransient(semanticObject, EditorPackage.Literals.PREDICATE_AND__PRNAME) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, EditorPackage.Literals.PREDICATE_AND__PRNAME));
-			if(transientValues.isValueTransient(semanticObject, EditorPackage.Literals.PREDICATE_AND__RIGHT) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, EditorPackage.Literals.PREDICATE_AND__RIGHT));
-		}
-		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
-		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getPredicateAndAccess().getPredicateAndLeftAction_1_0(), semanticObject.getLeft());
-		feeder.accept(grammarAccess.getPredicateAndAccess().getPrnameAndKeyword_1_1_0(), semanticObject.getPrname());
-		feeder.accept(grammarAccess.getPredicateAndAccess().getRightPredicateNotParserRuleCall_1_2_0(), semanticObject.getRight());
-		feeder.finish();
-	}
-	
-	
-	/**
-	 * Constraint:
-	 *     t2=PredicatePrimary
-	 */
-	protected void sequence_PredicateNot(EObject context, PredicateNot semanticObject) {
-		if(errorAcceptor != null) {
-			if(transientValues.isValueTransient(semanticObject, EditorPackage.Literals.PREDICATE_NOT__T2) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, EditorPackage.Literals.PREDICATE_NOT__T2));
-		}
-		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
-		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getPredicateNotAccess().getT2PredicatePrimaryParserRuleCall_1_2_0(), semanticObject.getT2());
-		feeder.finish();
-	}
-	
-	
-	/**
-	 * Constraint:
-	 *     (left=PredicateOr_PredicateOr_1_0 prname='or' right=PredicateAnd)
-	 */
-	protected void sequence_PredicateOr(EObject context, PredicateOr semanticObject) {
-		if(errorAcceptor != null) {
-			if(transientValues.isValueTransient(semanticObject, EditorPackage.Literals.PREDICATE_OR__LEFT) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, EditorPackage.Literals.PREDICATE_OR__LEFT));
-			if(transientValues.isValueTransient(semanticObject, EditorPackage.Literals.PREDICATE_OR__PRNAME) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, EditorPackage.Literals.PREDICATE_OR__PRNAME));
-			if(transientValues.isValueTransient(semanticObject, EditorPackage.Literals.PREDICATE_OR__RIGHT) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, EditorPackage.Literals.PREDICATE_OR__RIGHT));
-		}
-		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
-		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getPredicateOrAccess().getPredicateOrLeftAction_1_0(), semanticObject.getLeft());
-		feeder.accept(grammarAccess.getPredicateOrAccess().getPrnameOrKeyword_1_1_0(), semanticObject.getPrname());
-		feeder.accept(grammarAccess.getPredicateOrAccess().getRightPredicateAndParserRuleCall_1_2_0(), semanticObject.getRight());
-		feeder.finish();
-	}
-	
-	
-	/**
-	 * Constraint:
-	 *     (t=PredicateOr | t2=EqualityExpression)
-	 */
-	protected void sequence_PredicatePrimary(EObject context, PredicatePrimary semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * Constraint:
 	 *     (left=PretendExpression_PretendExpression_1_0 op='pretend' rightType=TypeExpression)
 	 */
 	protected void sequence_PretendExpression(EObject context, PretendExpression semanticObject) {
@@ -1997,7 +2038,7 @@ public class EditorSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	
 	/**
 	 * Constraint:
-	 *     (t4=Expression | t7=NameOrFunctionCall)
+	 *     (t4=StatementExpression | t7=NameOrFunctionCall)
 	 */
 	protected void sequence_PrimaryPrefix(EObject context, PrimaryPrefix semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -2061,7 +2102,7 @@ public class EditorSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	
 	/**
 	 * Constraint:
-	 *     (t=Expression t2=TypeExpression? t3=Expression? t4=Expression?)
+	 *     (t=Expression t2=TypeExpression? t3=Expression? t4=Statement?)
 	 */
 	protected void sequence_StatementExpression(EObject context, StatementExpression semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -2144,7 +2185,7 @@ public class EditorSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	
 	/**
 	 * Constraint:
-	 *     (tfnname=ID ((t4=TypeExpression? t25+=TypeExpression*) | t6=TypePrimaryExpression)?)
+	 *     (tfnname=ID ((t4=TypeExpression? t25+=TypeExpression* (t44+=StatementExpression? t45+=Expression*)*) | t6=TypePrimaryExpression)?)
 	 */
 	protected void sequence_TypeNameOrFunctionCall(EObject context, TypeNameOrFunctionCall semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -2211,7 +2252,13 @@ public class EditorSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	
 	/**
 	 * Constraint:
-	 *     ((uop=TILDE expr=UnaryExpression) | (uop=COLON expr=UnaryExpression) | (uop=MINUS expr=UnaryExpression) | (uop=HASH expr=UnaryExpression))
+	 *     (
+	 *         (uop=TILDE expr=UnaryExpression) | 
+	 *         (uop=COLON expr=UnaryExpression) | 
+	 *         (uop=MINUS expr=UnaryExpression) | 
+	 *         (uop=HASH expr=UnaryExpression) | 
+	 *         (uop='not' expr=PrimaryExpression)
+	 *     )
 	 */
 	protected void sequence_UnaryExpression(EObject context, UnaryExpression semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -2247,7 +2294,7 @@ public class EditorSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	
 	/**
 	 * Constraint:
-	 *     (stname='while' t2=PredicateOr s1=Statement)
+	 *     (stname='while' t2=Expression s1=Statement)
 	 */
 	protected void sequence_WhileStatement(EObject context, WhileStatement semanticObject) {
 		if(errorAcceptor != null) {
@@ -2261,7 +2308,7 @@ public class EditorSemanticSequencer extends AbstractDelegatingSemanticSequencer
 		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
 		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
 		feeder.accept(grammarAccess.getWhileStatementAccess().getStnameWhileKeyword_0_0(), semanticObject.getStname());
-		feeder.accept(grammarAccess.getWhileStatementAccess().getT2PredicateOrParserRuleCall_1_0(), semanticObject.getT2());
+		feeder.accept(grammarAccess.getWhileStatementAccess().getT2ExpressionParserRuleCall_1_0(), semanticObject.getT2());
 		feeder.accept(grammarAccess.getWhileStatementAccess().getS1StatementParserRuleCall_4_0(), semanticObject.getS1());
 		feeder.finish();
 	}

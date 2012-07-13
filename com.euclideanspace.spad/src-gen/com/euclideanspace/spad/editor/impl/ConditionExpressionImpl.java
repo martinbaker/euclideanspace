@@ -5,7 +5,6 @@ package com.euclideanspace.spad.editor.impl;
 import com.euclideanspace.spad.editor.ConditionExpression;
 import com.euclideanspace.spad.editor.EditorPackage;
 import com.euclideanspace.spad.editor.Expr;
-import com.euclideanspace.spad.editor.Predicate;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
@@ -70,7 +69,7 @@ public class ConditionExpressionImpl extends ExprImpl implements ConditionExpres
    * @generated
    * @ordered
    */
-  protected Predicate right;
+  protected Expr right;
 
   /**
    * <!-- begin-user-doc -->
@@ -169,7 +168,7 @@ public class ConditionExpressionImpl extends ExprImpl implements ConditionExpres
    * <!-- end-user-doc -->
    * @generated
    */
-  public Predicate getRight()
+  public Expr getRight()
   {
     return right;
   }
@@ -179,9 +178,9 @@ public class ConditionExpressionImpl extends ExprImpl implements ConditionExpres
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetRight(Predicate newRight, NotificationChain msgs)
+  public NotificationChain basicSetRight(Expr newRight, NotificationChain msgs)
   {
-    Predicate oldRight = right;
+    Expr oldRight = right;
     right = newRight;
     if (eNotificationRequired())
     {
@@ -196,7 +195,7 @@ public class ConditionExpressionImpl extends ExprImpl implements ConditionExpres
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setRight(Predicate newRight)
+  public void setRight(Expr newRight)
   {
     if (newRight != right)
     {
@@ -267,7 +266,7 @@ public class ConditionExpressionImpl extends ExprImpl implements ConditionExpres
         setOp((String)newValue);
         return;
       case EditorPackage.CONDITION_EXPRESSION__RIGHT:
-        setRight((Predicate)newValue);
+        setRight((Expr)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -290,7 +289,7 @@ public class ConditionExpressionImpl extends ExprImpl implements ConditionExpres
         setOp(OP_EDEFAULT);
         return;
       case EditorPackage.CONDITION_EXPRESSION__RIGHT:
-        setRight((Predicate)null);
+        setRight((Expr)null);
         return;
     }
     super.eUnset(featureID);

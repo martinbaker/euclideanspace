@@ -85,12 +85,12 @@ public interface DoStatement extends EObject
    * </p>
    * <!-- end-user-doc -->
    * @return the value of the '<em>T2</em>' containment reference.
-   * @see #setT2(Predicate)
+   * @see #setT2(Expr)
    * @see com.euclideanspace.spad.editor.EditorPackage#getDoStatement_T2()
    * @model containment="true"
    * @generated
    */
-  Predicate getT2();
+  Expr getT2();
 
   /**
    * Sets the value of the '{@link com.euclideanspace.spad.editor.DoStatement#getT2 <em>T2</em>}' containment reference.
@@ -100,6 +100,6 @@ public interface DoStatement extends EObject
    * @see #getT2()
    * @generated
    */
-  void setT2(Predicate value);
+  void setT2(Expr value);
 
 } // DoStatement

@@ -84,12 +84,12 @@ public interface ConditionExpression extends Expr
    * </p>
    * <!-- end-user-doc -->
    * @return the value of the '<em>Right</em>' containment reference.
-   * @see #setRight(Predicate)
+   * @see #setRight(Expr)
    * @see com.euclideanspace.spad.editor.EditorPackage#getConditionExpression_Right()
    * @model containment="true"
    * @generated
    */
-  Predicate getRight();
+  Expr getRight();
 
   /**
    * Sets the value of the '{@link com.euclideanspace.spad.editor.ConditionExpression#getRight <em>Right</em>}' containment reference.
@@ -99,6 +99,6 @@ public interface ConditionExpression extends Expr
    * @see #getRight()
    * @generated
    */
-  void setRight(Predicate value);
+  void setRight(Expr value);
 
 } // ConditionExpression

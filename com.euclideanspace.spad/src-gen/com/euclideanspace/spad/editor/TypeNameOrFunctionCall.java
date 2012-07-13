@@ -15,6 +15,8 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link com.euclideanspace.spad.editor.TypeNameOrFunctionCall#getTfnname <em>Tfnname</em>}</li>
  *   <li>{@link com.euclideanspace.spad.editor.TypeNameOrFunctionCall#getT4 <em>T4</em>}</li>
  *   <li>{@link com.euclideanspace.spad.editor.TypeNameOrFunctionCall#getT25 <em>T25</em>}</li>
+ *   <li>{@link com.euclideanspace.spad.editor.TypeNameOrFunctionCall#getT44 <em>T44</em>}</li>
+ *   <li>{@link com.euclideanspace.spad.editor.TypeNameOrFunctionCall#getT45 <em>T45</em>}</li>
  *   <li>{@link com.euclideanspace.spad.editor.TypeNameOrFunctionCall#getT6 <em>T6</em>}</li>
  * </ul>
  * </p>
@@ -92,6 +94,38 @@ public interface TypeNameOrFunctionCall extends TypePrimaryExpression
    * @generated
    */
   EList<TypeExpression> getT25();
+
+  /**
+   * Returns the value of the '<em><b>T44</b></em>' containment reference list.
+   * The list contents are of type {@link com.euclideanspace.spad.editor.StatementExpression}.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>T44</em>' containment reference list isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>T44</em>' containment reference list.
+   * @see com.euclideanspace.spad.editor.EditorPackage#getTypeNameOrFunctionCall_T44()
+   * @model containment="true"
+   * @generated
+   */
+  EList<StatementExpression> getT44();
+
+  /**
+   * Returns the value of the '<em><b>T45</b></em>' containment reference list.
+   * The list contents are of type {@link com.euclideanspace.spad.editor.Expr}.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>T45</em>' containment reference list isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>T45</em>' containment reference list.
+   * @see com.euclideanspace.spad.editor.EditorPackage#getTypeNameOrFunctionCall_T45()
+   * @model containment="true"
+   * @generated
+   */
+  EList<Expr> getT45();
 
   /**
    * Returns the value of the '<em><b>T6</b></em>' containment reference.
