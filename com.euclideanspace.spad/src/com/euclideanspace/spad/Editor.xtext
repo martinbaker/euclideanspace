@@ -169,7 +169,7 @@ terminal ID : ('a'..'z'|'A'..'Z'|('_'.)) ('a'..'z'|'A'..'Z'|('_'.)|'0'..'9')*'!'
  */
 terminal WS : (' '|'\t')+;
 
-/* at least one newline or carrage return character.
+/* at least one newline or carriage return character.
  * This is not included with WS because whitespace is significant in SPAD.
  * We usually absorb newlines like this: NL+ which absorbs any number of
  * blank lines and it also supports both the Linux and the Windows forms of
@@ -178,8 +178,8 @@ terminal WS : (' '|'\t')+;
 terminal NL: ('\r'|'\n') ;
 
 /* overwriting SL_COMMENTS we do not want Java syntax (//) but spad syntax (--)
- * This absorbs everthing from '--' or '++' to the end of the line (but not
- * including the newline or carrage return characters)
+ * This absorbs everything from '--' or '++' to the end of the line (but not
+ * including the newline or carriage return characters)
  */
 terminal SL_COMMENT :
   ('--'|'++') !('\n'|'\r')* ;//('\r'|'\n')?;
@@ -228,25 +228,35 @@ terminal LBANANABRACE '{|';
 terminal RBANANABRACE '|}';
 terminal EBANANABRACE '{|__|}';
 terminal EBANANABRACE2 '{||}'; */
+/* << */
 terminal OANGLE: '<<';
+/* >> */
 terminal CANGLE: '>>';
 /*terminal QUOTE "'";
 terminal BACKQUOTE "`";*/
 
 // operators
-
+/* ==> */
 terminal MDEF: '==>';
+/* | */
 terminal BAR: '|';
+/* . */
 terminal DOT: '.';
+/* :: */
 terminal COERCE: '::';
+/* : */
 terminal COLON: ':';
-terminal COLONDASH: ':-';
+/* @ */
 terminal AT: '@';
-terminal ATAT: '@@';
+/* , */
 terminal COMMA: ',';
+/* ; */
 terminal SEMICOLON: ';';
+/* ** */
 terminal POWER: '**';
+/* * */
 terminal TIMES: '*';
+/* + */
 terminal PLUS: '+';
 terminal MINUS: '-';
 terminal LT: '<';
@@ -268,10 +278,14 @@ terminal BACKSLASHBACKSLASH: '\\\\';
 terminal SLASHBACKSLASH: '/\\';
 terminal BACKSLASHSLASH: '\\/';
 terminal EXIT: '=>';
+/* := */
 terminal BECOMES: ':=';
+/* == */
 terminal DEF: '==';
+/* -> */
 terminal ARROW: '->';
 terminal LARROW: '<-';
+/* +-> */
 terminal GIVES: '+->';
 
 terminal PERCENT: '%';
@@ -389,7 +403,7 @@ AddStatements hidden(WS,SL_COMMENT):
  *     statement
  * }
  */
-FunctionDefinition hidden(WS):
+FunctionDefinition hidden(WS,SL_COMMENT):
 	FunctionSignature
     (COLON par4=TypeExpression)?
     DEF par5=Statement
@@ -408,7 +422,7 @@ FunctionDefinition hidden(WS):
  * 0 or 1 can be used as a function signature as a short form of
  * _0() or _1()
  */
-FunctionSignature hidden(WS):
+FunctionSignature hidden(WS,SL_COMMENT):
   (
 	fnNam=ID
     LPAREN
@@ -453,7 +467,7 @@ Import hidden(WS):
  * or it can be a function like:
  * x:(Float,Integer) -> Float
  */
-VariableDeclaration hidden(WS):
+VariableDeclaration hidden(WS,SL_COMMENT):
   // if I just use name=ID then, when the ui program is running, I get:
   // Duplicate VariableDeclaration 'coerce' in WithPart 'with'
 	varName=ID (COLON typ=TypeExpression)? 
@@ -462,17 +476,23 @@ VariableDeclaration hidden(WS):
 /* in add part we can declare and assign in same part
  * such as:
  * a := 3
- * a,b,c := 0@Integer
  * a:Integer := 3
  * a := sin(x)
+ * 
+ * There are two forms of multiple assignment:
+ * a,b,c := 0@Integer
+ * or:
+ * a := b := c := 0@Integer
  */
 VariableDeclarationAssign hidden(WS):
   varName=ID // name of variable
   // if I just use name=ID then, when the ui program is running, I get:
   // Duplicate xxx 'coerce' in yyy
-  (COMMA t2+=ID)* // multiple declarations in same line
-  (COLON typ=TypeExpression)? // option to explicitly define type
-  (BECOMES t4=Expression)?
+  (
+    (COMMA t2+=ID)* // multiple declarations in same line
+    (COLON typ=TypeExpression)? // option to explicitly define type
+    (BECOMES t4=Expression)?
+  ) | (BECOMES t2+=ID)+ BECOMES t4=Expression
 ;
 
 /*
@@ -638,10 +658,12 @@ Statement hidden(WS,SL_COMMENT):
                                  // a statement so we use '=>' to choose
                                  // expression if there is any ambiguity
     s4=IfStatement |
+    s4b=IfElseStatement |
     s5=WhileStatement |
     s6=DoStatement |
     s7=ForStatement |
     s8=BreakStatement |
+    s12=RepeatStatement |
     s9= IterateStatement |
 //    s11= ContinueStatement|
     s10= ReturnStatement
@@ -660,7 +682,8 @@ Block hidden(WS,SL_COMMENT):
 StatementExpression hidden(WS,SL_COMMENT):
   t=Expression
     (COLON t2=TypeExpression)?
-    (BECOMES t3=Expression)?
+    (BECOMES t3=Expression (BECOMES t33+=Expression)*)?
+    (BECOMES t5=Block)?
     // breaks out of a block if predicate before '=>' is true then program
     // control leaves the block.
     // Put it here so that it can only occur at the top level of an expression
@@ -698,6 +721,15 @@ DoStatement hidden(WS,SL_COMMENT):
 	stname='do' (
        s1=Statement
 	) 'while' NL? t2=Expression /*PredicateOr*/
+;
+
+/*
+ *  will repeat until we jump out. For instance by calling return.
+ */
+RepeatStatement hidden(WS,SL_COMMENT):
+	stname='repeat' (
+       s1=Statement
+	)
 ;
 
 /*
@@ -747,21 +779,25 @@ IfStatement hidden(WS,SL_COMMENT):
     (=> 'else' NL? s2=Statement)?
 ;
 
+IfElseStatement hidden(WS,SL_COMMENT):
+	'else' NL? s2=Statement
+;
+
 ///////////// Expression syntax follows //////////////
 
-// expressions contain no newlines unless preceded by underscore
-// (which is handled by WS)
-Expression returns Expr hidden(WS,SL_COMMENT):
-/*
- * This expansion has been written this way instead of:
- *   Assignment() | ConditionalExpression()
- * for performance reasons.
- * However, it is a weakening of the grammar for it allows the LHS of
- * assignments to be any conditional expression whereas it can only be
- * a primary expression.  Consider adding a semantic predicate to work
- * around this.
+/* This is the top level for expressions
+ * 
+ * This level handles special cases such as:
+ * if x then y else z
+ * (x,y) +-> z
+ * 
+ * We can consider expressions as elements of statements 
+ * expressions contain no newlines unless preceded by underscore
+ * (which is handled by WS)
  */
-  (ifname='if' ifpred=Expression /*PredicateOr*/ 'then' thenexp=Expression 'else' elseexp=Expression)
+Expression returns Expr hidden(WS,SL_COMMENT):
+  (ifname='if' ifpred=Expression 'then' thenexp=Expression 'else' elseexp=Expression)
+//  | LPAREN t24=ConditionExpression (COMMA t25+=Expression)+ RPAREN GIVES Expression
   | ConditionExpression
 ;
 
@@ -988,12 +1024,16 @@ ExponentExpression returns Expr hidden(WS,SL_COMMENT):
  * It can be used to create a function literal (an anonymous function), so
  * instead of:
  * myFunct(x:Type):Type == if x >0 then x else -x
- * we can have:
+ * we can have forms such as:
  * x +-> if x >0 then x else -x
+ * or:
+ * (x,y) +-> if x >0 then y else -x
  * 
- *  * "+->", precedence: 995, 112
+ * fricas compatibility:
+ * "+->", precedence: 995, 112
  */
 MapDefinition returns Expr hidden(WS,SL_COMMENT):
+//  (PretendExpression | LPAREN PretendExpression (COMMA t25+=PretendExpression)+ RPAREN)
   PretendExpression
   ({MapDefinition.left=current} op=GIVES right = PretendExpression)*
 ;
@@ -1120,10 +1160,12 @@ PrimaryExpression returns Expr hidden(WS,SL_COMMENT):
  * Can contain an expression in parenthesis, this expression is
  * 'StatementExpression' which means that it can contain an
  * inner assignment.
+ * 
+ * The comma option allows us to define a tuple
  */
 PrimaryPrefix hidden(WS,SL_COMMENT):
  Literal
- | LPAREN t4=StatementExpression RPAREN
+ | LPAREN t4=StatementExpression (COMMA t25+=Expression)* RPAREN
  | t7=NameOrFunctionCall
 ;
 

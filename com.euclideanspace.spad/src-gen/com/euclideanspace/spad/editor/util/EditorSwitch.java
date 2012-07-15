@@ -305,6 +305,13 @@ public class EditorSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case EditorPackage.REPEAT_STATEMENT:
+      {
+        RepeatStatement repeatStatement = (RepeatStatement)theEObject;
+        T result = caseRepeatStatement(repeatStatement);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case EditorPackage.ITERATE_STATEMENT:
       {
         IterateStatement iterateStatement = (IterateStatement)theEObject;
@@ -330,6 +337,13 @@ public class EditorSwitch<T> extends Switch<T>
       {
         IfStatement ifStatement = (IfStatement)theEObject;
         T result = caseIfStatement(ifStatement);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case EditorPackage.IF_ELSE_STATEMENT:
+      {
+        IfElseStatement ifElseStatement = (IfElseStatement)theEObject;
+        T result = caseIfElseStatement(ifElseStatement);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -1095,6 +1109,22 @@ public class EditorSwitch<T> extends Switch<T>
   }
 
   /**
+   * Returns the result of interpreting the object as an instance of '<em>Repeat Statement</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Repeat Statement</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseRepeatStatement(RepeatStatement object)
+  {
+    return null;
+  }
+
+  /**
    * Returns the result of interpreting the object as an instance of '<em>Iterate Statement</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
@@ -1154,6 +1184,22 @@ public class EditorSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseIfStatement(IfStatement object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>If Else Statement</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>If Else Statement</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseIfElseStatement(IfElseStatement object)
   {
     return null;
   }

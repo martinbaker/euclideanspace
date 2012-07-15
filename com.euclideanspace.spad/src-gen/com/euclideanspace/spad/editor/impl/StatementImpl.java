@@ -7,8 +7,10 @@ import com.euclideanspace.spad.editor.BreakStatement;
 import com.euclideanspace.spad.editor.DoStatement;
 import com.euclideanspace.spad.editor.EditorPackage;
 import com.euclideanspace.spad.editor.ForStatement;
+import com.euclideanspace.spad.editor.IfElseStatement;
 import com.euclideanspace.spad.editor.IfStatement;
 import com.euclideanspace.spad.editor.IterateStatement;
+import com.euclideanspace.spad.editor.RepeatStatement;
 import com.euclideanspace.spad.editor.ReturnStatement;
 import com.euclideanspace.spad.editor.Statement;
 import com.euclideanspace.spad.editor.StatementExpression;
@@ -33,10 +35,12 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  *   <li>{@link com.euclideanspace.spad.editor.impl.StatementImpl#getS1 <em>S1</em>}</li>
  *   <li>{@link com.euclideanspace.spad.editor.impl.StatementImpl#getS3 <em>S3</em>}</li>
  *   <li>{@link com.euclideanspace.spad.editor.impl.StatementImpl#getS4 <em>S4</em>}</li>
+ *   <li>{@link com.euclideanspace.spad.editor.impl.StatementImpl#getS4b <em>S4b</em>}</li>
  *   <li>{@link com.euclideanspace.spad.editor.impl.StatementImpl#getS5 <em>S5</em>}</li>
  *   <li>{@link com.euclideanspace.spad.editor.impl.StatementImpl#getS6 <em>S6</em>}</li>
  *   <li>{@link com.euclideanspace.spad.editor.impl.StatementImpl#getS7 <em>S7</em>}</li>
  *   <li>{@link com.euclideanspace.spad.editor.impl.StatementImpl#getS8 <em>S8</em>}</li>
+ *   <li>{@link com.euclideanspace.spad.editor.impl.StatementImpl#getS12 <em>S12</em>}</li>
  *   <li>{@link com.euclideanspace.spad.editor.impl.StatementImpl#getS9 <em>S9</em>}</li>
  *   <li>{@link com.euclideanspace.spad.editor.impl.StatementImpl#getS10 <em>S10</em>}</li>
  * </ul>
@@ -77,6 +81,16 @@ public class StatementImpl extends MinimalEObjectImpl.Container implements State
   protected IfStatement s4;
 
   /**
+   * The cached value of the '{@link #getS4b() <em>S4b</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getS4b()
+   * @generated
+   * @ordered
+   */
+  protected IfElseStatement s4b;
+
+  /**
    * The cached value of the '{@link #getS5() <em>S5</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -115,6 +129,16 @@ public class StatementImpl extends MinimalEObjectImpl.Container implements State
    * @ordered
    */
   protected BreakStatement s8;
+
+  /**
+   * The cached value of the '{@link #getS12() <em>S12</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getS12()
+   * @generated
+   * @ordered
+   */
+  protected RepeatStatement s12;
 
   /**
    * The cached value of the '{@link #getS9() <em>S9</em>}' containment reference.
@@ -299,6 +323,54 @@ public class StatementImpl extends MinimalEObjectImpl.Container implements State
     }
     else if (eNotificationRequired())
       eNotify(new ENotificationImpl(this, Notification.SET, EditorPackage.STATEMENT__S4, newS4, newS4));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public IfElseStatement getS4b()
+  {
+    return s4b;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetS4b(IfElseStatement newS4b, NotificationChain msgs)
+  {
+    IfElseStatement oldS4b = s4b;
+    s4b = newS4b;
+    if (eNotificationRequired())
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, EditorPackage.STATEMENT__S4B, oldS4b, newS4b);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setS4b(IfElseStatement newS4b)
+  {
+    if (newS4b != s4b)
+    {
+      NotificationChain msgs = null;
+      if (s4b != null)
+        msgs = ((InternalEObject)s4b).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - EditorPackage.STATEMENT__S4B, null, msgs);
+      if (newS4b != null)
+        msgs = ((InternalEObject)newS4b).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - EditorPackage.STATEMENT__S4B, null, msgs);
+      msgs = basicSetS4b(newS4b, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, EditorPackage.STATEMENT__S4B, newS4b, newS4b));
   }
 
   /**
@@ -498,6 +570,54 @@ public class StatementImpl extends MinimalEObjectImpl.Container implements State
    * <!-- end-user-doc -->
    * @generated
    */
+  public RepeatStatement getS12()
+  {
+    return s12;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetS12(RepeatStatement newS12, NotificationChain msgs)
+  {
+    RepeatStatement oldS12 = s12;
+    s12 = newS12;
+    if (eNotificationRequired())
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, EditorPackage.STATEMENT__S12, oldS12, newS12);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setS12(RepeatStatement newS12)
+  {
+    if (newS12 != s12)
+    {
+      NotificationChain msgs = null;
+      if (s12 != null)
+        msgs = ((InternalEObject)s12).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - EditorPackage.STATEMENT__S12, null, msgs);
+      if (newS12 != null)
+        msgs = ((InternalEObject)newS12).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - EditorPackage.STATEMENT__S12, null, msgs);
+      msgs = basicSetS12(newS12, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, EditorPackage.STATEMENT__S12, newS12, newS12));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public IterateStatement getS9()
   {
     return s9;
@@ -605,6 +725,8 @@ public class StatementImpl extends MinimalEObjectImpl.Container implements State
         return basicSetS3(null, msgs);
       case EditorPackage.STATEMENT__S4:
         return basicSetS4(null, msgs);
+      case EditorPackage.STATEMENT__S4B:
+        return basicSetS4b(null, msgs);
       case EditorPackage.STATEMENT__S5:
         return basicSetS5(null, msgs);
       case EditorPackage.STATEMENT__S6:
@@ -613,6 +735,8 @@ public class StatementImpl extends MinimalEObjectImpl.Container implements State
         return basicSetS7(null, msgs);
       case EditorPackage.STATEMENT__S8:
         return basicSetS8(null, msgs);
+      case EditorPackage.STATEMENT__S12:
+        return basicSetS12(null, msgs);
       case EditorPackage.STATEMENT__S9:
         return basicSetS9(null, msgs);
       case EditorPackage.STATEMENT__S10:
@@ -637,6 +761,8 @@ public class StatementImpl extends MinimalEObjectImpl.Container implements State
         return getS3();
       case EditorPackage.STATEMENT__S4:
         return getS4();
+      case EditorPackage.STATEMENT__S4B:
+        return getS4b();
       case EditorPackage.STATEMENT__S5:
         return getS5();
       case EditorPackage.STATEMENT__S6:
@@ -645,6 +771,8 @@ public class StatementImpl extends MinimalEObjectImpl.Container implements State
         return getS7();
       case EditorPackage.STATEMENT__S8:
         return getS8();
+      case EditorPackage.STATEMENT__S12:
+        return getS12();
       case EditorPackage.STATEMENT__S9:
         return getS9();
       case EditorPackage.STATEMENT__S10:
@@ -672,6 +800,9 @@ public class StatementImpl extends MinimalEObjectImpl.Container implements State
       case EditorPackage.STATEMENT__S4:
         setS4((IfStatement)newValue);
         return;
+      case EditorPackage.STATEMENT__S4B:
+        setS4b((IfElseStatement)newValue);
+        return;
       case EditorPackage.STATEMENT__S5:
         setS5((WhileStatement)newValue);
         return;
@@ -683,6 +814,9 @@ public class StatementImpl extends MinimalEObjectImpl.Container implements State
         return;
       case EditorPackage.STATEMENT__S8:
         setS8((BreakStatement)newValue);
+        return;
+      case EditorPackage.STATEMENT__S12:
+        setS12((RepeatStatement)newValue);
         return;
       case EditorPackage.STATEMENT__S9:
         setS9((IterateStatement)newValue);
@@ -713,6 +847,9 @@ public class StatementImpl extends MinimalEObjectImpl.Container implements State
       case EditorPackage.STATEMENT__S4:
         setS4((IfStatement)null);
         return;
+      case EditorPackage.STATEMENT__S4B:
+        setS4b((IfElseStatement)null);
+        return;
       case EditorPackage.STATEMENT__S5:
         setS5((WhileStatement)null);
         return;
@@ -724,6 +861,9 @@ public class StatementImpl extends MinimalEObjectImpl.Container implements State
         return;
       case EditorPackage.STATEMENT__S8:
         setS8((BreakStatement)null);
+        return;
+      case EditorPackage.STATEMENT__S12:
+        setS12((RepeatStatement)null);
         return;
       case EditorPackage.STATEMENT__S9:
         setS9((IterateStatement)null);
@@ -751,6 +891,8 @@ public class StatementImpl extends MinimalEObjectImpl.Container implements State
         return s3 != null;
       case EditorPackage.STATEMENT__S4:
         return s4 != null;
+      case EditorPackage.STATEMENT__S4B:
+        return s4b != null;
       case EditorPackage.STATEMENT__S5:
         return s5 != null;
       case EditorPackage.STATEMENT__S6:
@@ -759,6 +901,8 @@ public class StatementImpl extends MinimalEObjectImpl.Container implements State
         return s7 != null;
       case EditorPackage.STATEMENT__S8:
         return s8 != null;
+      case EditorPackage.STATEMENT__S12:
+        return s12 != null;
       case EditorPackage.STATEMENT__S9:
         return s9 != null;
       case EditorPackage.STATEMENT__S10:

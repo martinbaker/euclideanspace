@@ -184,10 +184,12 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//Statement/s1"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//Statement/s3"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//Statement/s4"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//Statement/s4b"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//Statement/s5"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//Statement/s6"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//Statement/s7"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//Statement/s8"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//Statement/s12"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//Statement/s9"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//Statement/s10"/>
     </genClasses>
@@ -199,6 +201,8 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//StatementExpression/t"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//StatementExpression/t2"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//StatementExpression/t3"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//StatementExpression/t33"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//StatementExpression/t5"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//StatementExpression/t4"/>
     </genClasses>
     <genClasses ecoreClass="Editor.ecore#//ForStatement">
@@ -216,6 +220,10 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//DoStatement/s1"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//DoStatement/t2"/>
     </genClasses>
+    <genClasses ecoreClass="Editor.ecore#//RepeatStatement">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Editor.ecore#//RepeatStatement/stname"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//RepeatStatement/s1"/>
+    </genClasses>
     <genClasses ecoreClass="Editor.ecore#//IterateStatement">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Editor.ecore#//IterateStatement/stname"/>
     </genClasses>
@@ -230,6 +238,9 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//IfStatement/t2"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//IfStatement/s1"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//IfStatement/s2"/>
+    </genClasses>
+    <genClasses ecoreClass="Editor.ecore#//IfElseStatement">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//IfElseStatement/s2"/>
     </genClasses>
     <genClasses ecoreClass="Editor.ecore#//Expr">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Editor.ecore#//Expr/ifname"/>
@@ -254,6 +265,7 @@
     </genClasses>
     <genClasses ecoreClass="Editor.ecore#//PrimaryPrefix">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//PrimaryPrefix/t4"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//PrimaryPrefix/t25"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//PrimaryPrefix/t7"/>
     </genClasses>
     <genClasses ecoreClass="Editor.ecore#//NameOrFunctionCall">

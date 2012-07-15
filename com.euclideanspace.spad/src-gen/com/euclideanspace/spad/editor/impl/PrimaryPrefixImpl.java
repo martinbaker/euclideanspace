@@ -3,17 +3,25 @@
 package com.euclideanspace.spad.editor.impl;
 
 import com.euclideanspace.spad.editor.EditorPackage;
+import com.euclideanspace.spad.editor.Expr;
 import com.euclideanspace.spad.editor.NameOrFunctionCall;
 import com.euclideanspace.spad.editor.PrimaryPrefix;
 import com.euclideanspace.spad.editor.StatementExpression;
 
+import java.util.Collection;
+
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
+
+import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -23,6 +31,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * <ul>
  *   <li>{@link com.euclideanspace.spad.editor.impl.PrimaryPrefixImpl#getT4 <em>T4</em>}</li>
+ *   <li>{@link com.euclideanspace.spad.editor.impl.PrimaryPrefixImpl#getT25 <em>T25</em>}</li>
  *   <li>{@link com.euclideanspace.spad.editor.impl.PrimaryPrefixImpl#getT7 <em>T7</em>}</li>
  * </ul>
  * </p>
@@ -40,6 +49,16 @@ public class PrimaryPrefixImpl extends ExprImpl implements PrimaryPrefix
    * @ordered
    */
   protected StatementExpression t4;
+
+  /**
+   * The cached value of the '{@link #getT25() <em>T25</em>}' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getT25()
+   * @generated
+   * @ordered
+   */
+  protected EList<Expr> t25;
 
   /**
    * The cached value of the '{@link #getT7() <em>T7</em>}' containment reference.
@@ -125,6 +144,20 @@ public class PrimaryPrefixImpl extends ExprImpl implements PrimaryPrefix
    * <!-- end-user-doc -->
    * @generated
    */
+  public EList<Expr> getT25()
+  {
+    if (t25 == null)
+    {
+      t25 = new EObjectContainmentEList<Expr>(Expr.class, this, EditorPackage.PRIMARY_PREFIX__T25);
+    }
+    return t25;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public NameOrFunctionCall getT7()
   {
     return t7;
@@ -180,6 +213,8 @@ public class PrimaryPrefixImpl extends ExprImpl implements PrimaryPrefix
     {
       case EditorPackage.PRIMARY_PREFIX__T4:
         return basicSetT4(null, msgs);
+      case EditorPackage.PRIMARY_PREFIX__T25:
+        return ((InternalEList<?>)getT25()).basicRemove(otherEnd, msgs);
       case EditorPackage.PRIMARY_PREFIX__T7:
         return basicSetT7(null, msgs);
     }
@@ -198,6 +233,8 @@ public class PrimaryPrefixImpl extends ExprImpl implements PrimaryPrefix
     {
       case EditorPackage.PRIMARY_PREFIX__T4:
         return getT4();
+      case EditorPackage.PRIMARY_PREFIX__T25:
+        return getT25();
       case EditorPackage.PRIMARY_PREFIX__T7:
         return getT7();
     }
@@ -209,6 +246,7 @@ public class PrimaryPrefixImpl extends ExprImpl implements PrimaryPrefix
    * <!-- end-user-doc -->
    * @generated
    */
+  @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue)
   {
@@ -216,6 +254,10 @@ public class PrimaryPrefixImpl extends ExprImpl implements PrimaryPrefix
     {
       case EditorPackage.PRIMARY_PREFIX__T4:
         setT4((StatementExpression)newValue);
+        return;
+      case EditorPackage.PRIMARY_PREFIX__T25:
+        getT25().clear();
+        getT25().addAll((Collection<? extends Expr>)newValue);
         return;
       case EditorPackage.PRIMARY_PREFIX__T7:
         setT7((NameOrFunctionCall)newValue);
@@ -237,6 +279,9 @@ public class PrimaryPrefixImpl extends ExprImpl implements PrimaryPrefix
       case EditorPackage.PRIMARY_PREFIX__T4:
         setT4((StatementExpression)null);
         return;
+      case EditorPackage.PRIMARY_PREFIX__T25:
+        getT25().clear();
+        return;
       case EditorPackage.PRIMARY_PREFIX__T7:
         setT7((NameOrFunctionCall)null);
         return;
@@ -256,6 +301,8 @@ public class PrimaryPrefixImpl extends ExprImpl implements PrimaryPrefix
     {
       case EditorPackage.PRIMARY_PREFIX__T4:
         return t4 != null;
+      case EditorPackage.PRIMARY_PREFIX__T25:
+        return t25 != null && !t25.isEmpty();
       case EditorPackage.PRIMARY_PREFIX__T7:
         return t7 != null;
     }

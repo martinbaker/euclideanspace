@@ -2,6 +2,7 @@
  */
 package com.euclideanspace.spad.editor;
 
+import org.eclipse.emf.common.util.EList;
 
 /**
  * <!-- begin-user-doc -->
@@ -12,6 +13,7 @@ package com.euclideanspace.spad.editor;
  * The following features are supported:
  * <ul>
  *   <li>{@link com.euclideanspace.spad.editor.PrimaryPrefix#getT4 <em>T4</em>}</li>
+ *   <li>{@link com.euclideanspace.spad.editor.PrimaryPrefix#getT25 <em>T25</em>}</li>
  *   <li>{@link com.euclideanspace.spad.editor.PrimaryPrefix#getT7 <em>T7</em>}</li>
  * </ul>
  * </p>
@@ -47,6 +49,22 @@ public interface PrimaryPrefix extends Expr
    * @generated
    */
   void setT4(StatementExpression value);
+
+  /**
+   * Returns the value of the '<em><b>T25</b></em>' containment reference list.
+   * The list contents are of type {@link com.euclideanspace.spad.editor.Expr}.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>T25</em>' containment reference list isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>T25</em>' containment reference list.
+   * @see com.euclideanspace.spad.editor.EditorPackage#getPrimaryPrefix_T25()
+   * @model containment="true"
+   * @generated
+   */
+  EList<Expr> getT25();
 
   /**
    * Returns the value of the '<em><b>T7</b></em>' containment reference.

@@ -39,19 +39,26 @@ public class Translate {
 	Mode mode = Mode.DOCUM;
 	/** holds previous indent values */
 	Stack<Integer> pile = new Stack<Integer>();
-	/** lineHold is store for lines that have been read but not processed
-     * including:
-     * any comments before )abbrev
-     * comments and empty lines and held pending '}'
-     */
-	LinkedBlockingQueue<String> lineHold = new LinkedBlockingQueue<String>();
 	/** when we have a continuation we need to use the indent for the first part
 	 * of the line
 	 */
 	int indentForContinuation = -1;
 	/** store macros */
 	Map<String,String> macros = new HashMap<String,String>();
-	
+	/**
+	 * line type
+	 */
+	enum LineType {COMMENT,EMPTY,CONTINUED,CODE}
+	/** lineHold is store for lines that have been read but not processed
+     * including:
+     * any comments before )abbrev
+     * comments and empty lines and held pending '}'
+     */
+	LinkedBlockingQueue<String> lineHold = new LinkedBlockingQueue<String>();
+	/** lineHoldType has an entry for each entry in lineHold to record
+	 * what type the corresponding line is.
+     */
+	LinkedBlockingQueue<LineType> lineHoldType = new LinkedBlockingQueue<LineType>();
 	/**
 	 * translate a pamphlet file or whole directory
 	 * 
@@ -165,10 +172,9 @@ public class Translate {
   	    if (line.startsWith(")abbrev")) {
   	      mode=Mode.CODE;
   	      output.write(line + "\n");
-  	      while (! lineHold.isEmpty()) output.write(lineHold.poll());	
+  	      flushLineHold(output,null);
   	    } else if (line.startsWith("@")) {
-  	  	  while (! lineHold.isEmpty()) output.write(lineHold.poll());	
-    	  output.write(line);
+  	      flushLineHold(output,line);
     	  //System.out.println("macros: " + macros);
     	  macros.clear(); // don't use macros in next file
     	  mode=Mode.DOCUM;
@@ -176,7 +182,8 @@ public class Translate {
     	  output = null;
     	  return null;
 		} else {
-  		  lineHold.offer("\n" + line);
+  		  lineHold.offer(line);
+  		  lineHoldType.offer(LineType.CODE);
   	   }
 	  } catch (Exception exception) {
 		System.err.println("cannot process: " + output +" due to "+ exception);
@@ -226,6 +233,8 @@ public class Translate {
      * @param output
      */
     EclipseFileWriter transCODE(String line,EclipseFileWriter output,BufferedReader input){
+  	  try{
+		//System.out.println("transCODE 0");
   		if (line == null) return null;
     	if (line.startsWith("@")) {
     	  if (!pile.empty()) output.write("\n");
@@ -234,8 +243,7 @@ public class Translate {
 			if (!pile.empty()) writeIndent(pile.peek(),output);
   			output.write("}" + "\n");
 		  }
-	  	  while (! lineHold.isEmpty()) output.write(lineHold.poll());	
-  		  output.write(line);
+		  flushLineHold(output,line);
   		  //System.out.println("macros: " + macros);
   		  macros.clear(); // don't use macros in next file
   		  mode=Mode.DOCUM;
@@ -276,12 +284,19 @@ public class Translate {
         }
         // if we have just read a comment, or an empty line, or a continuation
         // line (ends with _) then put it into holding stack otherwise process it.
-        if (trimedLine.startsWith("--") ||
-          trimedLine.startsWith("++") ||
-          trimedLine.equals("") ||
-          trimedLine.length() == 0 ||
-          continuationLine) {
-            lineHold.offer("\n" + line);
+    	LineType lineType = LineType.CODE;
+    	if (continuationLine) lineType = LineType.CONTINUED;
+    	if (trimedLine.startsWith("--") ||
+    	          trimedLine.startsWith("++")) lineType = LineType.COMMENT;
+    	if (trimedLine.equals("") ||
+    	          trimedLine.length() == 0) lineType = LineType.EMPTY;
+        if (lineType != LineType.CODE) {
+        	// remove the trailing '_'
+        	if (lineType == LineType.CONTINUED) {
+        		line = line.substring(0,line.length()-1);
+        	}
+            lineHold.offer(line);
+            lineHoldType.offer(lineType);
     	} else {
     		  if (indentForContinuation >= 0){
     			  ind = indentForContinuation;
@@ -292,17 +307,16 @@ public class Translate {
     		  if (cmtInd > -1) {
     			  String cmt = line.substring(cmtInd,line.length());
                   lineHold.offer(cmt);
+                  lineHoldType.offer(LineType.COMMENT);
                   line = line.substring(0,cmtInd);
     		  }
     		  //System.out.println(line2);
     		  if (ind == indent) { // indent unchanged so no brace
-    		  	  while (! lineHold.isEmpty()) output.write(lineHold.poll());	
-    			  output.write("\n" + line);
+    			  flushLineHold(output,line);
     		  } else if (ind > indent) { // indent increased so insert '{'
     			  output.write(" {"); // put brace before any pending comments
-    		  	  while (! lineHold.isEmpty()) output.write(lineHold.poll());	
+    			  flushLineHold(output,line);
     			  //output.write("push ind=" +ind+" indent="+ indent);
-    			  output.write("\n" +  line);
     			  pile.push(ind);
     		  } else if (ind < indent) { // indent reduced so insert '}'
     			  while (!pile.empty() && ind < indent) {
@@ -314,17 +328,51 @@ public class Translate {
        			    output.write("}");
        			    //output.write(" ind=" + ind +" pop indent="+ indent);
     			  }
-    		  	  while (! lineHold.isEmpty()) output.write(lineHold.poll());	
-      			  output.write("\n" + line);
+    			  flushLineHold(output,line);
     		  }
     	}
-        return output;
+      } catch (Exception e) {
+        System.err.println("error in transCODE: " + line +" due to "+ e);
+      }
+      return output;
     }
-    
+
+    /**
+     * output any pending lines in lineHold, then output supplied line if
+     * it is not null.
+     * @param output where to output
+     * @param line if not null this line will be appended to flushed output
+     */
+    void flushLineHold(EclipseFileWriter output,String line){
+      boolean continuation = false;
+      try {
+	    while (! lineHold.isEmpty()) {
+		  String li = lineHold.poll();
+	      LineType t=lineHoldType.poll();
+		  if (!continuation) {
+			  output.write("\n"+li);
+		  } else {
+			  if (li.length() > 0) output.write(" "+li.trim());
+		  }
+	      continuation = (t==LineType.CONTINUED);
+	    }
+	    if (line != null) {
+	      if (!continuation) {
+	    	  output.write("\n"+line);
+	      } else{
+	    	  if (line.length() > 0) output.write(" "+line.trim());
+	      }
+	    }
+      } catch (Exception e) {
+        System.err.println("error in flushLineHold: " + line +" due to "+ e);
+      }
+    }
+
     /**
      * a macro can be defined by '==>' or keyword 'Macro'
      * @param line possibly containing macro definition or which
      *        may be expanded using existing macros.
+     * @param input
      * @return line with macros applied.
      */
     public String applyMacroes(String line,BufferedReader input){

@@ -26,6 +26,7 @@ import com.euclideanspace.spad.editor.FreeVariable;
 import com.euclideanspace.spad.editor.FunctionSignature;
 import com.euclideanspace.spad.editor.HasExpression;
 import com.euclideanspace.spad.editor.HintTypeExpression;
+import com.euclideanspace.spad.editor.IfElseStatement;
 import com.euclideanspace.spad.editor.IfStatement;
 import com.euclideanspace.spad.editor.Import;
 import com.euclideanspace.spad.editor.InnerProdExpression;
@@ -47,6 +48,7 @@ import com.euclideanspace.spad.editor.PrimaryPrefix;
 import com.euclideanspace.spad.editor.QuoExpression;
 import com.euclideanspace.spad.editor.RelationalExpression;
 import com.euclideanspace.spad.editor.RemExpression;
+import com.euclideanspace.spad.editor.RepeatStatement;
 import com.euclideanspace.spad.editor.ReturnStatement;
 import com.euclideanspace.spad.editor.SegmentExpression;
 import com.euclideanspace.spad.editor.Statement;
@@ -753,6 +755,12 @@ public class EditorSemanticSequencer extends AbstractDelegatingSemanticSequencer
 					return; 
 				}
 				else break;
+			case EditorPackage.IF_ELSE_STATEMENT:
+				if(context == grammarAccess.getIfElseStatementRule()) {
+					sequence_IfElseStatement(context, (IfElseStatement) semanticObject); 
+					return; 
+				}
+				else break;
 			case EditorPackage.IF_STATEMENT:
 				if(context == grammarAccess.getIfStatementRule()) {
 					sequence_IfStatement(context, (IfStatement) semanticObject); 
@@ -1317,6 +1325,12 @@ public class EditorSemanticSequencer extends AbstractDelegatingSemanticSequencer
 					return; 
 				}
 				else break;
+			case EditorPackage.REPEAT_STATEMENT:
+				if(context == grammarAccess.getRepeatStatementRule()) {
+					sequence_RepeatStatement(context, (RepeatStatement) semanticObject); 
+					return; 
+				}
+				else break;
 			case EditorPackage.RETURN_STATEMENT:
 				if(context == grammarAccess.getReturnStatementRule()) {
 					sequence_ReturnStatement(context, (ReturnStatement) semanticObject); 
@@ -1846,7 +1860,23 @@ public class EditorSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	
 	/**
 	 * Constraint:
-	 *     (t2=Expression s1=Statement (s2=Statement | s2=Statement)?)
+	 *     s2=Statement
+	 */
+	protected void sequence_IfElseStatement(EObject context, IfElseStatement semanticObject) {
+		if(errorAcceptor != null) {
+			if(transientValues.isValueTransient(semanticObject, EditorPackage.Literals.IF_ELSE_STATEMENT__S2) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, EditorPackage.Literals.IF_ELSE_STATEMENT__S2));
+		}
+		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
+		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
+		feeder.accept(grammarAccess.getIfElseStatementAccess().getS2StatementParserRuleCall_2_0(), semanticObject.getS2());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (t2=Expression s1=Statement s2=Statement?)
 	 */
 	protected void sequence_IfStatement(EObject context, IfStatement semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -2038,7 +2068,7 @@ public class EditorSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	
 	/**
 	 * Constraint:
-	 *     (t4=StatementExpression | t7=NameOrFunctionCall)
+	 *     ((t4=StatementExpression t25+=Expression*) | t7=NameOrFunctionCall)
 	 */
 	protected void sequence_PrimaryPrefix(EObject context, PrimaryPrefix semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -2074,6 +2104,25 @@ public class EditorSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	
 	/**
 	 * Constraint:
+	 *     (stname='repeat' s1=Statement)
+	 */
+	protected void sequence_RepeatStatement(EObject context, RepeatStatement semanticObject) {
+		if(errorAcceptor != null) {
+			if(transientValues.isValueTransient(semanticObject, EditorPackage.Literals.REPEAT_STATEMENT__STNAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, EditorPackage.Literals.REPEAT_STATEMENT__STNAME));
+			if(transientValues.isValueTransient(semanticObject, EditorPackage.Literals.REPEAT_STATEMENT__S1) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, EditorPackage.Literals.REPEAT_STATEMENT__S1));
+		}
+		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
+		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
+		feeder.accept(grammarAccess.getRepeatStatementAccess().getStnameRepeatKeyword_0_0(), semanticObject.getStname());
+		feeder.accept(grammarAccess.getRepeatStatementAccess().getS1StatementParserRuleCall_1_0(), semanticObject.getS1());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Constraint:
 	 *     (stname='return' t2=Expression)
 	 */
 	protected void sequence_ReturnStatement(EObject context, ReturnStatement semanticObject) {
@@ -2102,7 +2151,7 @@ public class EditorSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	
 	/**
 	 * Constraint:
-	 *     (t=Expression t2=TypeExpression? t3=Expression? t4=Statement?)
+	 *     (t=Expression t2=TypeExpression? (t3=Expression t33+=Expression*)? t5=Block? t4=Statement?)
 	 */
 	protected void sequence_StatementExpression(EObject context, StatementExpression semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -2115,10 +2164,12 @@ public class EditorSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	 *         s1=Block | 
 	 *         s3=StatementExpression | 
 	 *         s4=IfStatement | 
+	 *         s4b=IfElseStatement | 
 	 *         s5=WhileStatement | 
 	 *         s6=DoStatement | 
 	 *         s7=ForStatement | 
 	 *         s8=BreakStatement | 
+	 *         s12=RepeatStatement | 
 	 *         s9=IterateStatement | 
 	 *         s10=ReturnStatement
 	 *     )
@@ -2267,7 +2318,7 @@ public class EditorSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	
 	/**
 	 * Constraint:
-	 *     (varName=ID t2+=ID* typ=TypeExpression? t4=Expression?)
+	 *     ((varName=ID t2+=ID* typ=TypeExpression? t4=Expression?) | (t2+=ID+ t4=Expression))
 	 */
 	protected void sequence_VariableDeclarationAssign(EObject context, VariableDeclarationAssign semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

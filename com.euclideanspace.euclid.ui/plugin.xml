@@ -12,7 +12,7 @@
             extensions="euclid"
             id="com.euclideanspace.euclid.Editor"
             matchingStrategy="com.euclideanspace.euclid.ui.EditorExecutableExtensionFactory:org.eclipse.xtext.xbase.ui.editor.JavaEditorInputMatcher"
-            name="Editor Editor">
+            name="%editor.name">
         </editor>
     </extension>
     <extension
@@ -53,21 +53,21 @@
         <page
             class="com.euclideanspace.euclid.ui.EditorExecutableExtensionFactory:org.eclipse.xtext.ui.editor.preferences.LanguageRootPreferencePage"
             id="com.euclideanspace.euclid.Editor"
-            name="Editor">
+            name="%page.name">
             <keywordReference id="com.euclideanspace.euclid.ui.keyword_Editor"/>
         </page>
         <page
             category="com.euclideanspace.euclid.Editor"
             class="com.euclideanspace.euclid.ui.EditorExecutableExtensionFactory:org.eclipse.xtext.ui.editor.syntaxcoloring.SyntaxColoringPreferencePage"
             id="com.euclideanspace.euclid.Editor.coloring"
-            name="Syntax Coloring">
+            name="%page.name.0">
             <keywordReference id="com.euclideanspace.euclid.ui.keyword_Editor"/>
         </page>
         <page
             category="com.euclideanspace.euclid.Editor"
             class="com.euclideanspace.euclid.ui.EditorExecutableExtensionFactory:org.eclipse.xtext.ui.editor.templates.XtextTemplatePreferencePage"
             id="com.euclideanspace.euclid.Editor.templates"
-            name="Templates">
+            name="%page.name.1">
             <keywordReference id="com.euclideanspace.euclid.ui.keyword_Editor"/>
         </page>
     </extension>
@@ -76,7 +76,7 @@
         <page
             class="com.euclideanspace.euclid.ui.EditorExecutableExtensionFactory:org.eclipse.xtext.ui.editor.preferences.LanguageRootPreferencePage"
             id="com.euclideanspace.euclid.Editor"
-            name="Editor">
+            name="%page.name.2">
             <keywordReference id="com.euclideanspace.euclid.ui.keyword_Editor"/>
             <enabledWhen>
 	            <adapt type="org.eclipse.core.resources.IProject"/>
@@ -88,14 +88,14 @@
         point="org.eclipse.ui.keywords">
         <keyword
             id="com.euclideanspace.euclid.ui.keyword_Editor"
-            label="Editor"/>
+            label="%keyword.label"/>
     </extension>
     <extension
          point="org.eclipse.ui.commands">
       <command
-            description="Trigger expensive validation"
+            description="%command.description"
             id="com.euclideanspace.euclid.Editor.validate"
-            name="Validate">
+            name="%command.name">
       </command>
     </extension>
     <extension point="org.eclipse.ui.menus">
@@ -104,7 +104,7 @@
              <command
                  commandId="com.euclideanspace.euclid.Editor.validate"
                  style="push"
-                 tooltip="Trigger expensive validation">
+                 tooltip="%command.tooltip">
             <visibleWhen checkEnabled="false">
                 <reference
                     definitionId="com.euclideanspace.euclid.Editor.Editor.opened">
@@ -155,21 +155,21 @@
     <!-- marker definitions for com.euclideanspace.euclid.Editor -->
     <extension
             id="editor.check.fast"
-            name="Editor Problem"
+            name="%extension.name"
             point="org.eclipse.core.resources.markers">
         <super type="org.eclipse.xtext.ui.check.fast"/>
         <persistent value="true"/>
     </extension>
     <extension
             id="editor.check.normal"
-            name="Editor Problem"
+            name="%extension.name.0"
             point="org.eclipse.core.resources.markers">
         <super type="org.eclipse.xtext.ui.check.normal"/>
         <persistent value="true"/>
     </extension>
     <extension
             id="editor.check.expensive"
-            name="Editor Problem"
+            name="%extension.name.1"
             point="org.eclipse.core.resources.markers">
         <super type="org.eclipse.xtext.ui.check.expensive"/>
         <persistent value="true"/>
@@ -187,7 +187,7 @@
             category="com.euclideanspace.euclid.Editor"
             class="com.euclideanspace.euclid.ui.EditorExecutableExtensionFactory:org.eclipse.xtext.builder.preferences.BuilderPreferencePage"
             id="com.euclideanspace.euclid.Editor.compiler.preferencePage"
-            name="Compiler">
+            name="%page.name.3">
             <keywordReference id="com.euclideanspace.euclid.ui.keyword_Editor"/>
         </page>
     </extension>
@@ -197,7 +197,7 @@
             category="com.euclideanspace.euclid.Editor"
             class="com.euclideanspace.euclid.ui.EditorExecutableExtensionFactory:org.eclipse.xtext.builder.preferences.BuilderPreferencePage"
             id="com.euclideanspace.euclid.Editor.compiler.propertyPage"
-            name="Compiler">
+            name="%page.name.4">
             <keywordReference id="com.euclideanspace.euclid.ui.keyword_Editor"/>
             <enabledWhen>
 	            <adapt type="org.eclipse.core.resources.IProject"/>
@@ -222,9 +222,9 @@
 	<extension
 		point="org.eclipse.ui.commands">
 		<command
-			description="Open the quick outline."
+			description="%command.description.0"
 			id="org.eclipse.xtext.ui.editor.outline.QuickOutline"
-			name="Quick Outline">
+			name="%command.name.0">
 		</command>
 	</extension>
 	<extension point="org.eclipse.ui.menus">
@@ -232,7 +232,7 @@
 			locationURI="popup:#TextEditorContext?after=group.open">
 			<command commandId="org.eclipse.xtext.ui.editor.outline.QuickOutline"
 				style="push"
-				tooltip="Open Quick Outline">
+				tooltip="%command.tooltip.0">
 				<visibleWhen checkEnabled="false">
 					<reference definitionId="com.euclideanspace.euclid.Editor.Editor.opened"/>
 				</visibleWhen>
@@ -297,7 +297,7 @@
 	        category="com.euclideanspace.euclid.Editor"
 	        class="com.euclideanspace.euclid.ui.EditorExecutableExtensionFactory:org.eclipse.xtext.ui.refactoring.ui.RefactoringPreferencePage"
 	        id="com.euclideanspace.euclid.Editor.refactoring"
-	        name="Refactoring">
+	        name="%page.name.5">
 	        <keywordReference id="com.euclideanspace.euclid.ui.keyword_Editor"/>
 	    </page>
 	</extension>
@@ -329,7 +329,7 @@
 			locationURI="popup:#TextEditorContext?after=group.open">
 			<command commandId="org.eclipse.xtext.xbase.ui.hierarchy.OpenTypeHierarchy"
 				style="push"
-				tooltip="Open Type Hierarchy">
+				tooltip="%command.tooltip.1">
 				<visibleWhen checkEnabled="false">
 					<reference definitionId="com.euclideanspace.euclid.Editor.Editor.opened"/>
 				</visibleWhen>
@@ -339,7 +339,7 @@
 			locationURI="popup:#TextEditorContext?after=group.open">
 			<command commandId="org.eclipse.xtext.xbase.ui.hierarchy.QuickTypeHierarchy"
 				style="push"
-				tooltip="Quick Type Hierarchy">
+				tooltip="%command.tooltip.2">
 				<visibleWhen checkEnabled="false">
 					<reference definitionId="com.euclideanspace.euclid.Editor.Editor.opened"/>
 				</visibleWhen>
@@ -365,7 +365,7 @@
 			locationURI="popup:#TextEditorContext?after=group.open">
 			<command commandId="org.eclipse.xtext.xbase.ui.hierarchy.OpenCallHierarchy"
 				style="push"
-				tooltip="Open Call Hierarchy">
+				tooltip="%command.tooltip.3">
 				<visibleWhen checkEnabled="false">
 					<reference definitionId="com.euclideanspace.euclid.Editor.Editor.opened"/>
 				</visibleWhen>
@@ -383,7 +383,7 @@
       <editorContribution targetID="com.euclideanspace.euclid.Editor" 
                           id="com.euclideanspace.euclid.Editor.ide.rulerActions">
 	     <action
-	             label="Not Used"
+	             label="%action.label"
 	             class="com.euclideanspace.euclid.ui.EditorExecutableExtensionFactory:org.eclipse.debug.ui.actions.RulerToggleBreakpointActionDelegate"
 	             style="push"
 	             actionID="RulerDoubleClick"
@@ -395,7 +395,7 @@
          targetID="example.rulerContextMenuId"
          id="com.euclideanspace.euclid.Editor.ide.RulerPopupActions">
          <action
-            label="Toggle Breakpoint"
+            label="%action.label.0"
             class="com.euclideanspace.euclid.ui.EditorExecutableExtensionFactory:org.eclipse.debug.ui.actions.RulerToggleBreakpointActionDelegate"
             menubarPath="additions"
             id="com.euclideanspace.euclid.Editor.ide.rulerContextMenu.toggleBreakpointAction">
@@ -412,7 +412,7 @@
   <extension point="org.eclipse.compare.contentMergeViewers">
     <viewer id="com.euclideanspace.euclid.Editor.compare.contentMergeViewers"
             class="com.euclideanspace.euclid.ui.EditorExecutableExtensionFactory:org.eclipse.xtext.ui.compare.InjectableViewerCreator"
-            extensions="euclid" label="Editor Compare">
+            extensions="euclid" label="%viewer.label">
      </viewer>
   </extension>
   <extension point="org.eclipse.ui.editors.documentProviders">

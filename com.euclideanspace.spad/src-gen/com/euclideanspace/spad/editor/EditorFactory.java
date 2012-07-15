@@ -302,6 +302,15 @@ public interface EditorFactory extends EFactory
   DoStatement createDoStatement();
 
   /**
+   * Returns a new object of class '<em>Repeat Statement</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Repeat Statement</em>'.
+   * @generated
+   */
+  RepeatStatement createRepeatStatement();
+
+  /**
    * Returns a new object of class '<em>Iterate Statement</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -336,6 +345,15 @@ public interface EditorFactory extends EFactory
    * @generated
    */
   IfStatement createIfStatement();
+
+  /**
+   * Returns a new object of class '<em>If Else Statement</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>If Else Statement</em>'.
+   * @generated
+   */
+  IfElseStatement createIfElseStatement();
 
   /**
    * Returns a new object of class '<em>Expr</em>'.

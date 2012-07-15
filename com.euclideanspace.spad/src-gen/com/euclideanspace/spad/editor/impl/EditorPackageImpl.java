@@ -31,6 +31,7 @@ import com.euclideanspace.spad.editor.FunctionDefinition;
 import com.euclideanspace.spad.editor.FunctionSignature;
 import com.euclideanspace.spad.editor.HasExpression;
 import com.euclideanspace.spad.editor.HintTypeExpression;
+import com.euclideanspace.spad.editor.IfElseStatement;
 import com.euclideanspace.spad.editor.IfStatement;
 import com.euclideanspace.spad.editor.Import;
 import com.euclideanspace.spad.editor.InnerProdExpression;
@@ -52,6 +53,7 @@ import com.euclideanspace.spad.editor.PrimaryPrefix;
 import com.euclideanspace.spad.editor.QuoExpression;
 import com.euclideanspace.spad.editor.RelationalExpression;
 import com.euclideanspace.spad.editor.RemExpression;
+import com.euclideanspace.spad.editor.RepeatStatement;
 import com.euclideanspace.spad.editor.ReturnStatement;
 import com.euclideanspace.spad.editor.SegmentExpression;
 import com.euclideanspace.spad.editor.Statement;
@@ -309,6 +311,13 @@ public class EditorPackageImpl extends EPackageImpl implements EditorPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  private EClass repeatStatementEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   private EClass iterateStatementEClass = null;
 
   /**
@@ -331,6 +340,13 @@ public class EditorPackageImpl extends EPackageImpl implements EditorPackage
    * @generated
    */
   private EClass ifStatementEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass ifElseStatementEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -2174,7 +2190,7 @@ public class EditorPackageImpl extends EPackageImpl implements EditorPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getStatement_S5()
+  public EReference getStatement_S4b()
   {
     return (EReference)statementEClass.getEStructuralFeatures().get(3);
   }
@@ -2184,7 +2200,7 @@ public class EditorPackageImpl extends EPackageImpl implements EditorPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getStatement_S6()
+  public EReference getStatement_S5()
   {
     return (EReference)statementEClass.getEStructuralFeatures().get(4);
   }
@@ -2194,7 +2210,7 @@ public class EditorPackageImpl extends EPackageImpl implements EditorPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getStatement_S7()
+  public EReference getStatement_S6()
   {
     return (EReference)statementEClass.getEStructuralFeatures().get(5);
   }
@@ -2204,7 +2220,7 @@ public class EditorPackageImpl extends EPackageImpl implements EditorPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getStatement_S8()
+  public EReference getStatement_S7()
   {
     return (EReference)statementEClass.getEStructuralFeatures().get(6);
   }
@@ -2214,7 +2230,7 @@ public class EditorPackageImpl extends EPackageImpl implements EditorPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getStatement_S9()
+  public EReference getStatement_S8()
   {
     return (EReference)statementEClass.getEStructuralFeatures().get(7);
   }
@@ -2224,9 +2240,29 @@ public class EditorPackageImpl extends EPackageImpl implements EditorPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getStatement_S10()
+  public EReference getStatement_S12()
   {
     return (EReference)statementEClass.getEStructuralFeatures().get(8);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getStatement_S9()
+  {
+    return (EReference)statementEClass.getEStructuralFeatures().get(9);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getStatement_S10()
+  {
+    return (EReference)statementEClass.getEStructuralFeatures().get(10);
   }
 
   /**
@@ -2304,9 +2340,29 @@ public class EditorPackageImpl extends EPackageImpl implements EditorPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getStatementExpression_T4()
+  public EReference getStatementExpression_T33()
   {
     return (EReference)statementExpressionEClass.getEStructuralFeatures().get(3);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getStatementExpression_T5()
+  {
+    return (EReference)statementExpressionEClass.getEStructuralFeatures().get(4);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getStatementExpression_T4()
+  {
+    return (EReference)statementExpressionEClass.getEStructuralFeatures().get(5);
   }
 
   /**
@@ -2434,6 +2490,36 @@ public class EditorPackageImpl extends EPackageImpl implements EditorPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  public EClass getRepeatStatement()
+  {
+    return repeatStatementEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getRepeatStatement_Stname()
+  {
+    return (EAttribute)repeatStatementEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getRepeatStatement_S1()
+  {
+    return (EReference)repeatStatementEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EClass getIterateStatement()
   {
     return iterateStatementEClass;
@@ -2537,6 +2623,26 @@ public class EditorPackageImpl extends EPackageImpl implements EditorPackage
   public EReference getIfStatement_S2()
   {
     return (EReference)ifStatementEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getIfElseStatement()
+  {
+    return ifElseStatementEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getIfElseStatement_S2()
+  {
+    return (EReference)ifElseStatementEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -2764,9 +2870,19 @@ public class EditorPackageImpl extends EPackageImpl implements EditorPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getPrimaryPrefix_T7()
+  public EReference getPrimaryPrefix_T25()
   {
     return (EReference)primaryPrefixEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getPrimaryPrefix_T7()
+  {
+    return (EReference)primaryPrefixEClass.getEStructuralFeatures().get(2);
   }
 
   /**
@@ -4179,10 +4295,12 @@ public class EditorPackageImpl extends EPackageImpl implements EditorPackage
     createEReference(statementEClass, STATEMENT__S1);
     createEReference(statementEClass, STATEMENT__S3);
     createEReference(statementEClass, STATEMENT__S4);
+    createEReference(statementEClass, STATEMENT__S4B);
     createEReference(statementEClass, STATEMENT__S5);
     createEReference(statementEClass, STATEMENT__S6);
     createEReference(statementEClass, STATEMENT__S7);
     createEReference(statementEClass, STATEMENT__S8);
+    createEReference(statementEClass, STATEMENT__S12);
     createEReference(statementEClass, STATEMENT__S9);
     createEReference(statementEClass, STATEMENT__S10);
 
@@ -4194,6 +4312,8 @@ public class EditorPackageImpl extends EPackageImpl implements EditorPackage
     createEReference(statementExpressionEClass, STATEMENT_EXPRESSION__T);
     createEReference(statementExpressionEClass, STATEMENT_EXPRESSION__T2);
     createEReference(statementExpressionEClass, STATEMENT_EXPRESSION__T3);
+    createEReference(statementExpressionEClass, STATEMENT_EXPRESSION__T33);
+    createEReference(statementExpressionEClass, STATEMENT_EXPRESSION__T5);
     createEReference(statementExpressionEClass, STATEMENT_EXPRESSION__T4);
 
     forStatementEClass = createEClass(FOR_STATEMENT);
@@ -4211,6 +4331,10 @@ public class EditorPackageImpl extends EPackageImpl implements EditorPackage
     createEReference(doStatementEClass, DO_STATEMENT__S1);
     createEReference(doStatementEClass, DO_STATEMENT__T2);
 
+    repeatStatementEClass = createEClass(REPEAT_STATEMENT);
+    createEAttribute(repeatStatementEClass, REPEAT_STATEMENT__STNAME);
+    createEReference(repeatStatementEClass, REPEAT_STATEMENT__S1);
+
     iterateStatementEClass = createEClass(ITERATE_STATEMENT);
     createEAttribute(iterateStatementEClass, ITERATE_STATEMENT__STNAME);
 
@@ -4225,6 +4349,9 @@ public class EditorPackageImpl extends EPackageImpl implements EditorPackage
     createEReference(ifStatementEClass, IF_STATEMENT__T2);
     createEReference(ifStatementEClass, IF_STATEMENT__S1);
     createEReference(ifStatementEClass, IF_STATEMENT__S2);
+
+    ifElseStatementEClass = createEClass(IF_ELSE_STATEMENT);
+    createEReference(ifElseStatementEClass, IF_ELSE_STATEMENT__S2);
 
     exprEClass = createEClass(EXPR);
     createEAttribute(exprEClass, EXPR__IFNAME);
@@ -4249,6 +4376,7 @@ public class EditorPackageImpl extends EPackageImpl implements EditorPackage
 
     primaryPrefixEClass = createEClass(PRIMARY_PREFIX);
     createEReference(primaryPrefixEClass, PRIMARY_PREFIX__T4);
+    createEReference(primaryPrefixEClass, PRIMARY_PREFIX__T25);
     createEReference(primaryPrefixEClass, PRIMARY_PREFIX__T7);
 
     nameOrFunctionCallEClass = createEClass(NAME_OR_FUNCTION_CALL);
@@ -4655,10 +4783,12 @@ public class EditorPackageImpl extends EPackageImpl implements EditorPackage
     initEReference(getStatement_S1(), this.getBlock(), null, "s1", null, 0, 1, Statement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getStatement_S3(), this.getStatementExpression(), null, "s3", null, 0, 1, Statement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getStatement_S4(), this.getIfStatement(), null, "s4", null, 0, 1, Statement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getStatement_S4b(), this.getIfElseStatement(), null, "s4b", null, 0, 1, Statement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getStatement_S5(), this.getWhileStatement(), null, "s5", null, 0, 1, Statement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getStatement_S6(), this.getDoStatement(), null, "s6", null, 0, 1, Statement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getStatement_S7(), this.getForStatement(), null, "s7", null, 0, 1, Statement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getStatement_S8(), this.getBreakStatement(), null, "s8", null, 0, 1, Statement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getStatement_S12(), this.getRepeatStatement(), null, "s12", null, 0, 1, Statement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getStatement_S9(), this.getIterateStatement(), null, "s9", null, 0, 1, Statement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getStatement_S10(), this.getReturnStatement(), null, "s10", null, 0, 1, Statement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
@@ -4670,6 +4800,8 @@ public class EditorPackageImpl extends EPackageImpl implements EditorPackage
     initEReference(getStatementExpression_T(), this.getExpr(), null, "t", null, 0, 1, StatementExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getStatementExpression_T2(), this.getTypeExpression(), null, "t2", null, 0, 1, StatementExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getStatementExpression_T3(), this.getExpr(), null, "t3", null, 0, 1, StatementExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getStatementExpression_T33(), this.getExpr(), null, "t33", null, 0, -1, StatementExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getStatementExpression_T5(), this.getBlock(), null, "t5", null, 0, 1, StatementExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getStatementExpression_T4(), this.getStatement(), null, "t4", null, 0, 1, StatementExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(forStatementEClass, ForStatement.class, "ForStatement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -4687,6 +4819,10 @@ public class EditorPackageImpl extends EPackageImpl implements EditorPackage
     initEReference(getDoStatement_S1(), this.getStatement(), null, "s1", null, 0, 1, DoStatement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getDoStatement_T2(), this.getExpr(), null, "t2", null, 0, 1, DoStatement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
+    initEClass(repeatStatementEClass, RepeatStatement.class, "RepeatStatement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getRepeatStatement_Stname(), ecorePackage.getEString(), "stname", null, 0, 1, RepeatStatement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getRepeatStatement_S1(), this.getStatement(), null, "s1", null, 0, 1, RepeatStatement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
     initEClass(iterateStatementEClass, IterateStatement.class, "IterateStatement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getIterateStatement_Stname(), ecorePackage.getEString(), "stname", null, 0, 1, IterateStatement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
@@ -4701,6 +4837,9 @@ public class EditorPackageImpl extends EPackageImpl implements EditorPackage
     initEReference(getIfStatement_T2(), this.getExpr(), null, "t2", null, 0, 1, IfStatement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getIfStatement_S1(), this.getStatement(), null, "s1", null, 0, 1, IfStatement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getIfStatement_S2(), this.getStatement(), null, "s2", null, 0, 1, IfStatement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(ifElseStatementEClass, IfElseStatement.class, "IfElseStatement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getIfElseStatement_S2(), this.getStatement(), null, "s2", null, 0, 1, IfElseStatement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(exprEClass, Expr.class, "Expr", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getExpr_Ifname(), ecorePackage.getEString(), "ifname", null, 0, 1, Expr.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -4725,6 +4864,7 @@ public class EditorPackageImpl extends EPackageImpl implements EditorPackage
 
     initEClass(primaryPrefixEClass, PrimaryPrefix.class, "PrimaryPrefix", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getPrimaryPrefix_T4(), this.getStatementExpression(), null, "t4", null, 0, 1, PrimaryPrefix.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getPrimaryPrefix_T25(), this.getExpr(), null, "t25", null, 0, -1, PrimaryPrefix.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getPrimaryPrefix_T7(), this.getNameOrFunctionCall(), null, "t7", null, 0, 1, PrimaryPrefix.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(nameOrFunctionCallEClass, NameOrFunctionCall.class, "NameOrFunctionCall", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);

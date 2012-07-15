@@ -256,6 +256,8 @@
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="s4" eType="#//IfStatement"
         containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="s4b" eType="#//IfElseStatement"
+        containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="s5" eType="#//WhileStatement"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="s6" eType="#//DoStatement"
@@ -263,6 +265,8 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="s7" eType="#//ForStatement"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="s8" eType="#//BreakStatement"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="s12" eType="#//RepeatStatement"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="s9" eType="#//IterateStatement"
         containment="true"/>
@@ -279,6 +283,9 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="t2" eType="#//TypeExpression"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="t3" eType="#//Expr" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="t33" upperBound="-1" eType="#//Expr"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="t5" eType="#//Block" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="t4" eType="#//Statement"
         containment="true"/>
   </eClassifiers>
@@ -300,6 +307,11 @@
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="t2" eType="#//Expr" containment="true"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="RepeatStatement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="stname" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="s1" eType="#//Statement"
+        containment="true"/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="IterateStatement">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="stname" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
@@ -314,6 +326,10 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="t2" eType="#//Expr" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="s1" eType="#//Statement"
         containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="s2" eType="#//Statement"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="IfElseStatement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="s2" eType="#//Statement"
         containment="true"/>
   </eClassifiers>
@@ -353,6 +369,8 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="PrimaryPrefix" eSuperTypes="#//Expr">
     <eStructuralFeatures xsi:type="ecore:EReference" name="t4" eType="#//StatementExpression"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="t25" upperBound="-1" eType="#//Expr"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="t7" eType="#//NameOrFunctionCall"
         containment="true"/>

@@ -230,6 +230,11 @@ public class EditorAdapterFactory extends AdapterFactoryImpl
         return createDoStatementAdapter();
       }
       @Override
+      public Adapter caseRepeatStatement(RepeatStatement object)
+      {
+        return createRepeatStatementAdapter();
+      }
+      @Override
       public Adapter caseIterateStatement(IterateStatement object)
       {
         return createIterateStatementAdapter();
@@ -248,6 +253,11 @@ public class EditorAdapterFactory extends AdapterFactoryImpl
       public Adapter caseIfStatement(IfStatement object)
       {
         return createIfStatementAdapter();
+      }
+      @Override
+      public Adapter caseIfElseStatement(IfElseStatement object)
+      {
+        return createIfElseStatementAdapter();
       }
       @Override
       public Adapter caseExpr(Expr object)
@@ -897,6 +907,21 @@ public class EditorAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
+   * Creates a new adapter for an object of class '{@link com.euclideanspace.spad.editor.RepeatStatement <em>Repeat Statement</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see com.euclideanspace.spad.editor.RepeatStatement
+   * @generated
+   */
+  public Adapter createRepeatStatementAdapter()
+  {
+    return null;
+  }
+
+  /**
    * Creates a new adapter for an object of class '{@link com.euclideanspace.spad.editor.IterateStatement <em>Iterate Statement</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
@@ -952,6 +977,21 @@ public class EditorAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createIfStatementAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link com.euclideanspace.spad.editor.IfElseStatement <em>If Else Statement</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see com.euclideanspace.spad.editor.IfElseStatement
+   * @generated
+   */
+  public Adapter createIfElseStatementAdapter()
   {
     return null;
   }

@@ -15,10 +15,12 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link com.euclideanspace.spad.editor.Statement#getS1 <em>S1</em>}</li>
  *   <li>{@link com.euclideanspace.spad.editor.Statement#getS3 <em>S3</em>}</li>
  *   <li>{@link com.euclideanspace.spad.editor.Statement#getS4 <em>S4</em>}</li>
+ *   <li>{@link com.euclideanspace.spad.editor.Statement#getS4b <em>S4b</em>}</li>
  *   <li>{@link com.euclideanspace.spad.editor.Statement#getS5 <em>S5</em>}</li>
  *   <li>{@link com.euclideanspace.spad.editor.Statement#getS6 <em>S6</em>}</li>
  *   <li>{@link com.euclideanspace.spad.editor.Statement#getS7 <em>S7</em>}</li>
  *   <li>{@link com.euclideanspace.spad.editor.Statement#getS8 <em>S8</em>}</li>
+ *   <li>{@link com.euclideanspace.spad.editor.Statement#getS12 <em>S12</em>}</li>
  *   <li>{@link com.euclideanspace.spad.editor.Statement#getS9 <em>S9</em>}</li>
  *   <li>{@link com.euclideanspace.spad.editor.Statement#getS10 <em>S10</em>}</li>
  * </ul>
@@ -107,6 +109,32 @@ public interface Statement extends EObject
    * @generated
    */
   void setS4(IfStatement value);
+
+  /**
+   * Returns the value of the '<em><b>S4b</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>S4b</em>' containment reference isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>S4b</em>' containment reference.
+   * @see #setS4b(IfElseStatement)
+   * @see com.euclideanspace.spad.editor.EditorPackage#getStatement_S4b()
+   * @model containment="true"
+   * @generated
+   */
+  IfElseStatement getS4b();
+
+  /**
+   * Sets the value of the '{@link com.euclideanspace.spad.editor.Statement#getS4b <em>S4b</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>S4b</em>' containment reference.
+   * @see #getS4b()
+   * @generated
+   */
+  void setS4b(IfElseStatement value);
 
   /**
    * Returns the value of the '<em><b>S5</b></em>' containment reference.
@@ -211,6 +239,32 @@ public interface Statement extends EObject
    * @generated
    */
   void setS8(BreakStatement value);
+
+  /**
+   * Returns the value of the '<em><b>S12</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>S12</em>' containment reference isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>S12</em>' containment reference.
+   * @see #setS12(RepeatStatement)
+   * @see com.euclideanspace.spad.editor.EditorPackage#getStatement_S12()
+   * @model containment="true"
+   * @generated
+   */
+  RepeatStatement getS12();
+
+  /**
+   * Sets the value of the '{@link com.euclideanspace.spad.editor.Statement#getS12 <em>S12</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>S12</em>' containment reference.
+   * @see #getS12()
+   * @generated
+   */
+  void setS12(RepeatStatement value);
 
   /**
    * Returns the value of the '<em><b>S9</b></em>' containment reference.

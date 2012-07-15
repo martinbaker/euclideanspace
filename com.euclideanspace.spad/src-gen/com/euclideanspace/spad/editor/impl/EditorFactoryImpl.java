@@ -95,10 +95,12 @@ public class EditorFactoryImpl extends EFactoryImpl implements EditorFactory
       case EditorPackage.FOR_STATEMENT: return createForStatement();
       case EditorPackage.WHILE_STATEMENT: return createWhileStatement();
       case EditorPackage.DO_STATEMENT: return createDoStatement();
+      case EditorPackage.REPEAT_STATEMENT: return createRepeatStatement();
       case EditorPackage.ITERATE_STATEMENT: return createIterateStatement();
       case EditorPackage.BREAK_STATEMENT: return createBreakStatement();
       case EditorPackage.RETURN_STATEMENT: return createReturnStatement();
       case EditorPackage.IF_STATEMENT: return createIfStatement();
+      case EditorPackage.IF_ELSE_STATEMENT: return createIfElseStatement();
       case EditorPackage.EXPR: return createExpr();
       case EditorPackage.PRIMARY_PREFIX: return createPrimaryPrefix();
       case EditorPackage.NAME_OR_FUNCTION_CALL: return createNameOrFunctionCall();
@@ -482,6 +484,17 @@ public class EditorFactoryImpl extends EFactoryImpl implements EditorFactory
    * <!-- end-user-doc -->
    * @generated
    */
+  public RepeatStatement createRepeatStatement()
+  {
+    RepeatStatementImpl repeatStatement = new RepeatStatementImpl();
+    return repeatStatement;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public IterateStatement createIterateStatement()
   {
     IterateStatementImpl iterateStatement = new IterateStatementImpl();
@@ -519,6 +532,17 @@ public class EditorFactoryImpl extends EFactoryImpl implements EditorFactory
   {
     IfStatementImpl ifStatement = new IfStatementImpl();
     return ifStatement;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public IfElseStatement createIfElseStatement()
+  {
+    IfElseStatementImpl ifElseStatement = new IfElseStatementImpl();
+    return ifElseStatement;
   }
 
   /**
