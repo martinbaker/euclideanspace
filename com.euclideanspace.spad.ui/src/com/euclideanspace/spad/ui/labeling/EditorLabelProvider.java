@@ -124,6 +124,10 @@ public class EditorLabelProvider extends DefaultEObjectLabelProvider {
 	}
 
 	String text(VariableDeclaration ele) {
+		  return "VariableDeclaration :"+ele.getV1();
+	}
+
+	String text(VariableTyped ele) {
 		  return "VariableDeclaration :"+ele.getVarName();
 	}
 

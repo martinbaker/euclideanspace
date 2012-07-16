@@ -2,6 +2,7 @@
  */
 package com.euclideanspace.spad.editor.impl;
 
+import com.euclideanspace.spad.editor.AddPart;
 import com.euclideanspace.spad.editor.CategoryDef;
 import com.euclideanspace.spad.editor.EditorPackage;
 import com.euclideanspace.spad.editor.TypeArguments;
@@ -32,6 +33,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  *   <li>{@link com.euclideanspace.spad.editor.impl.CategoryDefImpl#getCp <em>Cp</em>}</li>
  *   <li>{@link com.euclideanspace.spad.editor.impl.CategoryDefImpl#getImplName <em>Impl Name</em>}</li>
  *   <li>{@link com.euclideanspace.spad.editor.impl.CategoryDefImpl#getW <em>W</em>}</li>
+ *   <li>{@link com.euclideanspace.spad.editor.impl.CategoryDefImpl#getA <em>A</em>}</li>
  *   <li>{@link com.euclideanspace.spad.editor.impl.CategoryDefImpl#getWh5 <em>Wh5</em>}</li>
  * </ul>
  * </p>
@@ -149,6 +151,16 @@ public class CategoryDefImpl extends MinimalEObjectImpl.Container implements Cat
    * @ordered
    */
   protected WithPart w;
+
+  /**
+   * The cached value of the '{@link #getA() <em>A</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getA()
+   * @generated
+   * @ordered
+   */
+  protected AddPart a;
 
   /**
    * The cached value of the '{@link #getWh5() <em>Wh5</em>}' containment reference.
@@ -422,6 +434,54 @@ public class CategoryDefImpl extends MinimalEObjectImpl.Container implements Cat
    * <!-- end-user-doc -->
    * @generated
    */
+  public AddPart getA()
+  {
+    return a;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetA(AddPart newA, NotificationChain msgs)
+  {
+    AddPart oldA = a;
+    a = newA;
+    if (eNotificationRequired())
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, EditorPackage.CATEGORY_DEF__A, oldA, newA);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setA(AddPart newA)
+  {
+    if (newA != a)
+    {
+      NotificationChain msgs = null;
+      if (a != null)
+        msgs = ((InternalEObject)a).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - EditorPackage.CATEGORY_DEF__A, null, msgs);
+      if (newA != null)
+        msgs = ((InternalEObject)newA).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - EditorPackage.CATEGORY_DEF__A, null, msgs);
+      msgs = basicSetA(newA, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, EditorPackage.CATEGORY_DEF__A, newA, newA));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public WherePart getWh5()
   {
     return wh5;
@@ -481,6 +541,8 @@ public class CategoryDefImpl extends MinimalEObjectImpl.Container implements Cat
         return basicSetImplName(null, msgs);
       case EditorPackage.CATEGORY_DEF__W:
         return basicSetW(null, msgs);
+      case EditorPackage.CATEGORY_DEF__A:
+        return basicSetA(null, msgs);
       case EditorPackage.CATEGORY_DEF__WH5:
         return basicSetWh5(null, msgs);
     }
@@ -511,6 +573,8 @@ public class CategoryDefImpl extends MinimalEObjectImpl.Container implements Cat
         return getImplName();
       case EditorPackage.CATEGORY_DEF__W:
         return getW();
+      case EditorPackage.CATEGORY_DEF__A:
+        return getA();
       case EditorPackage.CATEGORY_DEF__WH5:
         return getWh5();
     }
@@ -547,6 +611,9 @@ public class CategoryDefImpl extends MinimalEObjectImpl.Container implements Cat
         return;
       case EditorPackage.CATEGORY_DEF__W:
         setW((WithPart)newValue);
+        return;
+      case EditorPackage.CATEGORY_DEF__A:
+        setA((AddPart)newValue);
         return;
       case EditorPackage.CATEGORY_DEF__WH5:
         setWh5((WherePart)newValue);
@@ -586,6 +653,9 @@ public class CategoryDefImpl extends MinimalEObjectImpl.Container implements Cat
       case EditorPackage.CATEGORY_DEF__W:
         setW((WithPart)null);
         return;
+      case EditorPackage.CATEGORY_DEF__A:
+        setA((AddPart)null);
+        return;
       case EditorPackage.CATEGORY_DEF__WH5:
         setWh5((WherePart)null);
         return;
@@ -617,6 +687,8 @@ public class CategoryDefImpl extends MinimalEObjectImpl.Container implements Cat
         return implName != null;
       case EditorPackage.CATEGORY_DEF__W:
         return w != null;
+      case EditorPackage.CATEGORY_DEF__A:
+        return a != null;
       case EditorPackage.CATEGORY_DEF__WH5:
         return wh5 != null;
     }

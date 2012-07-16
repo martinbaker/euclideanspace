@@ -87,6 +87,7 @@ import com.euclideanspace.spad.editor.TypePrimaryExpression;
 import com.euclideanspace.spad.editor.TypeResult;
 import com.euclideanspace.spad.editor.UnaryExpression;
 import com.euclideanspace.spad.editor.VariableDeclaration;
+import com.euclideanspace.spad.editor.VariableTyped;
 import com.euclideanspace.spad.editor.VariableDeclarationAssign;
 import com.euclideanspace.spad.editor.WhereAssignments;
 import com.euclideanspace.spad.editor.WherePart;
@@ -213,9 +214,9 @@ class EditorGenerator implements IGenerator {
         IF f.t4 != null»(«f.t4»«ENDIF»«
         IF f.t5 != null»,«f.t5»)«ENDIF»«
         IF f.b2 != null»«f.b2»«ENDIF»«
-        IF f.t6 != null»«f.t6»«ENDIF»«
-        IF f.par4 != null»:«compile(f.par4)» «ENDIF»«
-        IF f.par5 != null»->«compile(f.par5)» «ENDIF»'''
+        IF f.t6 != null»«f.t6»«ENDIF»''' //«
+       // IF f.par4 != null»:«compile(f.par4)» «ENDIF»«
+       // IF f.par5 != null»->«compile(f.par5)» «ENDIF»'''
         
   
     /* MacroDef */
@@ -230,6 +231,11 @@ class EditorGenerator implements IGenerator {
 
     /* VariableDeclaration */
     def compile(VariableDeclaration f) 
+        '''«IF f.v1 != null» «
+        compile(f.v1)»«ENDIF»'''
+
+    /* VariableTyped */
+    def compile(VariableTyped f) 
         '''«IF f.varName != null» «
         f.varName»«ENDIF»«IF f.typ != null»:«
         compile(f.typ)»«ENDIF»'''

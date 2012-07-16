@@ -1,6 +1,7 @@
 package com.euclideanspace.spad.serializer;
 
 import com.euclideanspace.spad.editor.AddPart;
+import com.euclideanspace.spad.editor.AddStatements;
 import com.euclideanspace.spad.editor.AdditiveExpression;
 import com.euclideanspace.spad.editor.AndExpression;
 import com.euclideanspace.spad.editor.Block;
@@ -23,6 +24,8 @@ import com.euclideanspace.spad.editor.Expr;
 import com.euclideanspace.spad.editor.ExquoExpression;
 import com.euclideanspace.spad.editor.ForStatement;
 import com.euclideanspace.spad.editor.FreeVariable;
+import com.euclideanspace.spad.editor.FunctionDefinition;
+import com.euclideanspace.spad.editor.FunctionDefinitionBlock;
 import com.euclideanspace.spad.editor.FunctionSignature;
 import com.euclideanspace.spad.editor.HasExpression;
 import com.euclideanspace.spad.editor.HintTypeExpression;
@@ -64,6 +67,8 @@ import com.euclideanspace.spad.editor.TypeResult;
 import com.euclideanspace.spad.editor.UnaryExpression;
 import com.euclideanspace.spad.editor.VariableDeclaration;
 import com.euclideanspace.spad.editor.VariableDeclarationAssign;
+import com.euclideanspace.spad.editor.VariableDeclarationBlock;
+import com.euclideanspace.spad.editor.VariableTyped;
 import com.euclideanspace.spad.editor.WherePart;
 import com.euclideanspace.spad.editor.WhileStatement;
 import com.euclideanspace.spad.editor.WithPart;
@@ -93,6 +98,12 @@ public class EditorSemanticSequencer extends AbstractDelegatingSemanticSequencer
 			case EditorPackage.ADD_PART:
 				if(context == grammarAccess.getAddPartRule()) {
 					sequence_AddPart(context, (AddPart) semanticObject); 
+					return; 
+				}
+				else break;
+			case EditorPackage.ADD_STATEMENTS:
+				if(context == grammarAccess.getAddStatementsRule()) {
+					sequence_AddStatements(context, (AddStatements) semanticObject); 
 					return; 
 				}
 				else break;
@@ -677,13 +688,21 @@ public class EditorSemanticSequencer extends AbstractDelegatingSemanticSequencer
 					return; 
 				}
 				else break;
-			case EditorPackage.FUNCTION_SIGNATURE:
+			case EditorPackage.FUNCTION_DEFINITION:
 				if(context == grammarAccess.getAddStatementsRule() ||
 				   context == grammarAccess.getFunctionDefinitionRule()) {
-					sequence_FunctionDefinition_FunctionSignature(context, (FunctionSignature) semanticObject); 
+					sequence_FunctionDefinition(context, (FunctionDefinition) semanticObject); 
 					return; 
 				}
-				else if(context == grammarAccess.getFunctionSignatureRule()) {
+				else break;
+			case EditorPackage.FUNCTION_DEFINITION_BLOCK:
+				if(context == grammarAccess.getFunctionDefinitionBlockRule()) {
+					sequence_FunctionDefinitionBlock(context, (FunctionDefinitionBlock) semanticObject); 
+					return; 
+				}
+				else break;
+			case EditorPackage.FUNCTION_SIGNATURE:
+				if(context == grammarAccess.getFunctionSignatureRule()) {
 					sequence_FunctionSignature(context, (FunctionSignature) semanticObject); 
 					return; 
 				}
@@ -1503,6 +1522,18 @@ public class EditorSemanticSequencer extends AbstractDelegatingSemanticSequencer
 					return; 
 				}
 				else break;
+			case EditorPackage.VARIABLE_DECLARATION_BLOCK:
+				if(context == grammarAccess.getVariableDeclarationBlockRule()) {
+					sequence_VariableDeclarationBlock(context, (VariableDeclarationBlock) semanticObject); 
+					return; 
+				}
+				else break;
+			case EditorPackage.VARIABLE_TYPED:
+				if(context == grammarAccess.getVariableTypedRule()) {
+					sequence_VariableTyped(context, (VariableTyped) semanticObject); 
+					return; 
+				}
+				else break;
 			case EditorPackage.WHERE_PART:
 				if(context == grammarAccess.getWherePartRule()) {
 					sequence_WherePart(context, (WherePart) semanticObject); 
@@ -1531,6 +1562,28 @@ public class EditorSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	 */
 	protected void sequence_AddPart(EObject context, AddPart semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (t1=TypeExpression t12=TypeExpression t13=FunctionDefinitionBlock)
+	 */
+	protected void sequence_AddStatements(EObject context, AddStatements semanticObject) {
+		if(errorAcceptor != null) {
+			if(transientValues.isValueTransient(semanticObject, EditorPackage.Literals.ADD_STATEMENTS__T1) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, EditorPackage.Literals.ADD_STATEMENTS__T1));
+			if(transientValues.isValueTransient(semanticObject, EditorPackage.Literals.ADD_STATEMENTS__T12) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, EditorPackage.Literals.ADD_STATEMENTS__T12));
+			if(transientValues.isValueTransient(semanticObject, EditorPackage.Literals.ADD_STATEMENTS__T13) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, EditorPackage.Literals.ADD_STATEMENTS__T13));
+		}
+		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
+		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
+		feeder.accept(grammarAccess.getAddStatementsAccess().getT1TypeExpressionParserRuleCall_2_1_0(), semanticObject.getT1());
+		feeder.accept(grammarAccess.getAddStatementsAccess().getT12TypeExpressionParserRuleCall_2_3_0(), semanticObject.getT12());
+		feeder.accept(grammarAccess.getAddStatementsAccess().getT13FunctionDefinitionBlockParserRuleCall_2_5_0(), semanticObject.getT13());
+		feeder.finish();
 	}
 	
 	
@@ -1607,7 +1660,7 @@ public class EditorSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	 *         longname2=ID 
 	 *         cp=TypeParameterList? 
 	 *         implName=TypeArguments 
-	 *         (w=WithPart | wh5=WherePart)
+	 *         ((w=WithPart? a=AddPart?) | wh5=WherePart)
 	 *     )
 	 */
 	protected void sequence_CategoryDef(EObject context, CategoryDef semanticObject) {
@@ -1776,35 +1829,18 @@ public class EditorSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	
 	/**
 	 * Constraint:
-	 *     (
-	 *         (
-	 *             (fnNam=ID par2=VariableDeclaration? par3+=VariableDeclaration*) | 
-	 *             (fnNam=ID par=ID) | 
-	 *             (
-	 *                 t4=ID 
-	 *                 (
-	 *                     b1=EQUAL | 
-	 *                     b1=LT | 
-	 *                     b1=GT | 
-	 *                     b1=LE | 
-	 *                     b1=GE | 
-	 *                     b1=PLUS | 
-	 *                     b1=MINUS | 
-	 *                     b1=TIMES | 
-	 *                     b1=SLASH | 
-	 *                     b1=AMPERSAND | 
-	 *                     b1=BAR | 
-	 *                     b1=CARAT
-	 *                 ) 
-	 *                 t5=ID
-	 *             ) | 
-	 *             (b2=MINUS t6=ID)
-	 *         ) 
-	 *         par4=TypeExpression? 
-	 *         par5=Statement
-	 *     )
+	 *     (fnDecBr=LBRACE fnDecBk+=FunctionDefinition*)
 	 */
-	protected void sequence_FunctionDefinition_FunctionSignature(EObject context, FunctionSignature semanticObject) {
+	protected void sequence_FunctionDefinitionBlock(EObject context, FunctionDefinitionBlock semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (par3=FunctionSignature par4=TypeExpression? par5=Statement)
+	 */
+	protected void sequence_FunctionDefinition(EObject context, FunctionDefinition semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -1812,7 +1848,7 @@ public class EditorSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	/**
 	 * Constraint:
 	 *     (
-	 *         (fnNam=ID par2=VariableDeclaration? par3+=VariableDeclaration*) | 
+	 *         (fnNam=ID par2=VariableTyped? par3+=VariableTyped*) | 
 	 *         (fnNam=ID par=ID) | 
 	 *         (
 	 *             t4=ID 
@@ -1965,14 +2001,7 @@ public class EditorSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	 *     macroname=ID
 	 */
 	protected void sequence_MacroDef(EObject context, MacroDef semanticObject) {
-		if(errorAcceptor != null) {
-			if(transientValues.isValueTransient(semanticObject, EditorPackage.Literals.MACRO_DEF__MACRONAME) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, EditorPackage.Literals.MACRO_DEF__MACRONAME));
-		}
-		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
-		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getMacroDefAccess().getMacronameIDTerminalRuleCall_0_0(), semanticObject.getMacroname());
-		feeder.finish();
+		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
@@ -2245,7 +2274,7 @@ public class EditorSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	
 	/**
 	 * Constraint:
-	 *     (tyname=LPAREN par=ID? par2+=ID*)
+	 *     (tyname=LPAREN par=ID? par22+=TypeExpression? (par2+=ID par22+=TypeExpression?)*)
 	 */
 	protected void sequence_TypeParameterList(EObject context, TypeParameterList semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -2327,9 +2356,27 @@ public class EditorSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	
 	/**
 	 * Constraint:
-	 *     (varName=ID typ=TypeExpression?)
+	 *     (vardecbr=LBRACE vardecBlk+=VariableDeclaration*)
+	 */
+	protected void sequence_VariableDeclarationBlock(EObject context, VariableDeclarationBlock semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     ((t1=TypeExpression t2=TypeExpression)? (v1=VariableTyped | v2=VariableDeclarationBlock))
 	 */
 	protected void sequence_VariableDeclaration(EObject context, VariableDeclaration semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     ((varName=ID | varNameSt=STRING) typ=TypeExpression?)
+	 */
+	protected void sequence_VariableTyped(EObject context, VariableTyped semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	

@@ -113,6 +113,15 @@ public interface EditorFactory extends EFactory
   FunctionDefinition createFunctionDefinition();
 
   /**
+   * Returns a new object of class '<em>Function Definition Block</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Function Definition Block</em>'.
+   * @generated
+   */
+  FunctionDefinitionBlock createFunctionDefinitionBlock();
+
+  /**
    * Returns a new object of class '<em>Function Signature</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -140,6 +149,15 @@ public interface EditorFactory extends EFactory
   Import createImport();
 
   /**
+   * Returns a new object of class '<em>Variable Declaration Block</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Variable Declaration Block</em>'.
+   * @generated
+   */
+  VariableDeclarationBlock createVariableDeclarationBlock();
+
+  /**
    * Returns a new object of class '<em>Variable Declaration</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -147,6 +165,15 @@ public interface EditorFactory extends EFactory
    * @generated
    */
   VariableDeclaration createVariableDeclaration();
+
+  /**
+   * Returns a new object of class '<em>Variable Typed</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Variable Typed</em>'.
+   * @generated
+   */
+  VariableTyped createVariableTyped();
 
   /**
    * Returns a new object of class '<em>Variable Declaration Assign</em>'.

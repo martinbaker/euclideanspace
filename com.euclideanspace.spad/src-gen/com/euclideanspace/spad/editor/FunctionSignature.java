@@ -4,6 +4,8 @@ package com.euclideanspace.spad.editor;
 
 import org.eclipse.emf.common.util.EList;
 
+import org.eclipse.emf.ecore.EObject;
+
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Function Signature</b></em>'.
@@ -12,8 +14,6 @@ import org.eclipse.emf.common.util.EList;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link com.euclideanspace.spad.editor.FunctionSignature#getPar4 <em>Par4</em>}</li>
- *   <li>{@link com.euclideanspace.spad.editor.FunctionSignature#getPar5 <em>Par5</em>}</li>
  *   <li>{@link com.euclideanspace.spad.editor.FunctionSignature#getFnNam <em>Fn Nam</em>}</li>
  *   <li>{@link com.euclideanspace.spad.editor.FunctionSignature#getPar2 <em>Par2</em>}</li>
  *   <li>{@link com.euclideanspace.spad.editor.FunctionSignature#getPar3 <em>Par3</em>}</li>
@@ -30,60 +30,8 @@ import org.eclipse.emf.common.util.EList;
  * @model
  * @generated
  */
-public interface FunctionSignature extends FunctionDefinition
+public interface FunctionSignature extends EObject
 {
-  /**
-   * Returns the value of the '<em><b>Par4</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Par4</em>' containment reference isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Par4</em>' containment reference.
-   * @see #setPar4(TypeExpression)
-   * @see com.euclideanspace.spad.editor.EditorPackage#getFunctionSignature_Par4()
-   * @model containment="true"
-   * @generated
-   */
-  TypeExpression getPar4();
-
-  /**
-   * Sets the value of the '{@link com.euclideanspace.spad.editor.FunctionSignature#getPar4 <em>Par4</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Par4</em>' containment reference.
-   * @see #getPar4()
-   * @generated
-   */
-  void setPar4(TypeExpression value);
-
-  /**
-   * Returns the value of the '<em><b>Par5</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Par5</em>' containment reference isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Par5</em>' containment reference.
-   * @see #setPar5(Statement)
-   * @see com.euclideanspace.spad.editor.EditorPackage#getFunctionSignature_Par5()
-   * @model containment="true"
-   * @generated
-   */
-  Statement getPar5();
-
-  /**
-   * Sets the value of the '{@link com.euclideanspace.spad.editor.FunctionSignature#getPar5 <em>Par5</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Par5</em>' containment reference.
-   * @see #getPar5()
-   * @generated
-   */
-  void setPar5(Statement value);
-
   /**
    * Returns the value of the '<em><b>Fn Nam</b></em>' attribute.
    * <!-- begin-user-doc -->
@@ -119,12 +67,12 @@ public interface FunctionSignature extends FunctionDefinition
    * </p>
    * <!-- end-user-doc -->
    * @return the value of the '<em>Par2</em>' containment reference.
-   * @see #setPar2(VariableDeclaration)
+   * @see #setPar2(VariableTyped)
    * @see com.euclideanspace.spad.editor.EditorPackage#getFunctionSignature_Par2()
    * @model containment="true"
    * @generated
    */
-  VariableDeclaration getPar2();
+  VariableTyped getPar2();
 
   /**
    * Sets the value of the '{@link com.euclideanspace.spad.editor.FunctionSignature#getPar2 <em>Par2</em>}' containment reference.
@@ -134,11 +82,11 @@ public interface FunctionSignature extends FunctionDefinition
    * @see #getPar2()
    * @generated
    */
-  void setPar2(VariableDeclaration value);
+  void setPar2(VariableTyped value);
 
   /**
    * Returns the value of the '<em><b>Par3</b></em>' containment reference list.
-   * The list contents are of type {@link com.euclideanspace.spad.editor.VariableDeclaration}.
+   * The list contents are of type {@link com.euclideanspace.spad.editor.VariableTyped}.
    * <!-- begin-user-doc -->
    * <p>
    * If the meaning of the '<em>Par3</em>' containment reference list isn't clear,
@@ -150,7 +98,7 @@ public interface FunctionSignature extends FunctionDefinition
    * @model containment="true"
    * @generated
    */
-  EList<VariableDeclaration> getPar3();
+  EList<VariableTyped> getPar3();
 
   /**
    * Returns the value of the '<em><b>Par</b></em>' attribute.

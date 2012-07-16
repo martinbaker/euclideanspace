@@ -74,10 +74,13 @@ public class EditorFactoryImpl extends EFactoryImpl implements EditorFactory
       case EditorPackage.ADD_PART: return createAddPart();
       case EditorPackage.ADD_STATEMENTS: return createAddStatements();
       case EditorPackage.FUNCTION_DEFINITION: return createFunctionDefinition();
+      case EditorPackage.FUNCTION_DEFINITION_BLOCK: return createFunctionDefinitionBlock();
       case EditorPackage.FUNCTION_SIGNATURE: return createFunctionSignature();
       case EditorPackage.MACRO_DEF: return createMacroDef();
       case EditorPackage.IMPORT: return createImport();
+      case EditorPackage.VARIABLE_DECLARATION_BLOCK: return createVariableDeclarationBlock();
       case EditorPackage.VARIABLE_DECLARATION: return createVariableDeclaration();
+      case EditorPackage.VARIABLE_TYPED: return createVariableTyped();
       case EditorPackage.VARIABLE_DECLARATION_ASSIGN: return createVariableDeclarationAssign();
       case EditorPackage.FREE_VARIABLE: return createFreeVariable();
       case EditorPackage.LOCAL_VARIABLE: return createLocalVariable();
@@ -253,6 +256,17 @@ public class EditorFactoryImpl extends EFactoryImpl implements EditorFactory
    * <!-- end-user-doc -->
    * @generated
    */
+  public FunctionDefinitionBlock createFunctionDefinitionBlock()
+  {
+    FunctionDefinitionBlockImpl functionDefinitionBlock = new FunctionDefinitionBlockImpl();
+    return functionDefinitionBlock;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public FunctionSignature createFunctionSignature()
   {
     FunctionSignatureImpl functionSignature = new FunctionSignatureImpl();
@@ -286,10 +300,32 @@ public class EditorFactoryImpl extends EFactoryImpl implements EditorFactory
    * <!-- end-user-doc -->
    * @generated
    */
+  public VariableDeclarationBlock createVariableDeclarationBlock()
+  {
+    VariableDeclarationBlockImpl variableDeclarationBlock = new VariableDeclarationBlockImpl();
+    return variableDeclarationBlock;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public VariableDeclaration createVariableDeclaration()
   {
     VariableDeclarationImpl variableDeclaration = new VariableDeclarationImpl();
     return variableDeclaration;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public VariableTyped createVariableTyped()
+  {
+    VariableTypedImpl variableTyped = new VariableTypedImpl();
+    return variableTyped;
   }
 
   /**

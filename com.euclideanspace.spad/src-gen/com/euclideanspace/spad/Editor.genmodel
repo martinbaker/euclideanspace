@@ -20,6 +20,7 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//CategoryDef/cp"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//CategoryDef/implName"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//CategoryDef/w"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//CategoryDef/a"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//CategoryDef/wh5"/>
     </genClasses>
     <genClasses ecoreClass="Editor.ecore#//PackageDef">
@@ -62,11 +63,21 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Editor.ecore#//AddPart/name"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//AddPart/t"/>
     </genClasses>
-    <genClasses ecoreClass="Editor.ecore#//AddStatements"/>
-    <genClasses ecoreClass="Editor.ecore#//FunctionDefinition"/>
+    <genClasses ecoreClass="Editor.ecore#//AddStatements">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//AddStatements/t1"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//AddStatements/t12"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//AddStatements/t13"/>
+    </genClasses>
+    <genClasses ecoreClass="Editor.ecore#//FunctionDefinition">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//FunctionDefinition/par3"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//FunctionDefinition/par4"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//FunctionDefinition/par5"/>
+    </genClasses>
+    <genClasses ecoreClass="Editor.ecore#//FunctionDefinitionBlock">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Editor.ecore#//FunctionDefinitionBlock/fnDecBr"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//FunctionDefinitionBlock/fnDecBk"/>
+    </genClasses>
     <genClasses ecoreClass="Editor.ecore#//FunctionSignature">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//FunctionSignature/par4"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//FunctionSignature/par5"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Editor.ecore#//FunctionSignature/fnNam"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//FunctionSignature/par2"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//FunctionSignature/par3"/>
@@ -83,9 +94,20 @@
     <genClasses ecoreClass="Editor.ecore#//Import">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Editor.ecore#//Import/impname"/>
     </genClasses>
+    <genClasses ecoreClass="Editor.ecore#//VariableDeclarationBlock">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Editor.ecore#//VariableDeclarationBlock/vardecbr"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//VariableDeclarationBlock/vardecBlk"/>
+    </genClasses>
     <genClasses ecoreClass="Editor.ecore#//VariableDeclaration">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Editor.ecore#//VariableDeclaration/varName"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//VariableDeclaration/typ"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//VariableDeclaration/t1"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//VariableDeclaration/t2"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//VariableDeclaration/v1"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//VariableDeclaration/v2"/>
+    </genClasses>
+    <genClasses ecoreClass="Editor.ecore#//VariableTyped">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Editor.ecore#//VariableTyped/varName"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Editor.ecore#//VariableTyped/varNameSt"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//VariableTyped/typ"/>
     </genClasses>
     <genClasses ecoreClass="Editor.ecore#//VariableDeclarationAssign">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Editor.ecore#//VariableDeclarationAssign/varName"/>
@@ -106,6 +128,7 @@
     <genClasses ecoreClass="Editor.ecore#//TypeParameterList">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Editor.ecore#//TypeParameterList/tyname"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Editor.ecore#//TypeParameterList/par"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//TypeParameterList/par22"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Editor.ecore#//TypeParameterList/par2"/>
     </genClasses>
     <genClasses ecoreClass="Editor.ecore#//TypeArguments">

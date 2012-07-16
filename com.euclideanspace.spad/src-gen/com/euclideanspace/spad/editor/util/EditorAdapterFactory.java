@@ -125,6 +125,11 @@ public class EditorAdapterFactory extends AdapterFactoryImpl
         return createFunctionDefinitionAdapter();
       }
       @Override
+      public Adapter caseFunctionDefinitionBlock(FunctionDefinitionBlock object)
+      {
+        return createFunctionDefinitionBlockAdapter();
+      }
+      @Override
       public Adapter caseFunctionSignature(FunctionSignature object)
       {
         return createFunctionSignatureAdapter();
@@ -140,9 +145,19 @@ public class EditorAdapterFactory extends AdapterFactoryImpl
         return createImportAdapter();
       }
       @Override
+      public Adapter caseVariableDeclarationBlock(VariableDeclarationBlock object)
+      {
+        return createVariableDeclarationBlockAdapter();
+      }
+      @Override
       public Adapter caseVariableDeclaration(VariableDeclaration object)
       {
         return createVariableDeclarationAdapter();
+      }
+      @Override
+      public Adapter caseVariableTyped(VariableTyped object)
+      {
+        return createVariableTypedAdapter();
       }
       @Override
       public Adapter caseVariableDeclarationAssign(VariableDeclarationAssign object)
@@ -592,6 +607,21 @@ public class EditorAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
+   * Creates a new adapter for an object of class '{@link com.euclideanspace.spad.editor.FunctionDefinitionBlock <em>Function Definition Block</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see com.euclideanspace.spad.editor.FunctionDefinitionBlock
+   * @generated
+   */
+  public Adapter createFunctionDefinitionBlockAdapter()
+  {
+    return null;
+  }
+
+  /**
    * Creates a new adapter for an object of class '{@link com.euclideanspace.spad.editor.FunctionSignature <em>Function Signature</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
@@ -637,6 +667,21 @@ public class EditorAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
+   * Creates a new adapter for an object of class '{@link com.euclideanspace.spad.editor.VariableDeclarationBlock <em>Variable Declaration Block</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see com.euclideanspace.spad.editor.VariableDeclarationBlock
+   * @generated
+   */
+  public Adapter createVariableDeclarationBlockAdapter()
+  {
+    return null;
+  }
+
+  /**
    * Creates a new adapter for an object of class '{@link com.euclideanspace.spad.editor.VariableDeclaration <em>Variable Declaration</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
@@ -647,6 +692,21 @@ public class EditorAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createVariableDeclarationAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link com.euclideanspace.spad.editor.VariableTyped <em>Variable Typed</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see com.euclideanspace.spad.editor.VariableTyped
+   * @generated
+   */
+  public Adapter createVariableTypedAdapter()
   {
     return null;
   }

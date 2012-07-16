@@ -143,12 +143,17 @@ public class EditorSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case EditorPackage.FUNCTION_DEFINITION_BLOCK:
+      {
+        FunctionDefinitionBlock functionDefinitionBlock = (FunctionDefinitionBlock)theEObject;
+        T result = caseFunctionDefinitionBlock(functionDefinitionBlock);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case EditorPackage.FUNCTION_SIGNATURE:
       {
         FunctionSignature functionSignature = (FunctionSignature)theEObject;
         T result = caseFunctionSignature(functionSignature);
-        if (result == null) result = caseFunctionDefinition(functionSignature);
-        if (result == null) result = caseAddStatements(functionSignature);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -170,11 +175,25 @@ public class EditorSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case EditorPackage.VARIABLE_DECLARATION_BLOCK:
+      {
+        VariableDeclarationBlock variableDeclarationBlock = (VariableDeclarationBlock)theEObject;
+        T result = caseVariableDeclarationBlock(variableDeclarationBlock);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case EditorPackage.VARIABLE_DECLARATION:
       {
         VariableDeclaration variableDeclaration = (VariableDeclaration)theEObject;
         T result = caseVariableDeclaration(variableDeclaration);
         if (result == null) result = caseWhereAssignments(variableDeclaration);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case EditorPackage.VARIABLE_TYPED:
+      {
+        VariableTyped variableTyped = (VariableTyped)theEObject;
+        T result = caseVariableTyped(variableTyped);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -773,6 +792,22 @@ public class EditorSwitch<T> extends Switch<T>
   }
 
   /**
+   * Returns the result of interpreting the object as an instance of '<em>Function Definition Block</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Function Definition Block</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseFunctionDefinitionBlock(FunctionDefinitionBlock object)
+  {
+    return null;
+  }
+
+  /**
    * Returns the result of interpreting the object as an instance of '<em>Function Signature</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
@@ -821,6 +856,22 @@ public class EditorSwitch<T> extends Switch<T>
   }
 
   /**
+   * Returns the result of interpreting the object as an instance of '<em>Variable Declaration Block</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Variable Declaration Block</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseVariableDeclarationBlock(VariableDeclarationBlock object)
+  {
+    return null;
+  }
+
+  /**
    * Returns the result of interpreting the object as an instance of '<em>Variable Declaration</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
@@ -832,6 +883,22 @@ public class EditorSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseVariableDeclaration(VariableDeclaration object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Variable Typed</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Variable Typed</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseVariableTyped(VariableTyped object)
   {
     return null;
   }

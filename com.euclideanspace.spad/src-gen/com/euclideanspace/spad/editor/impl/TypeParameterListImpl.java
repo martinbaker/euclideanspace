@@ -3,20 +3,25 @@
 package com.euclideanspace.spad.editor.impl;
 
 import com.euclideanspace.spad.editor.EditorPackage;
+import com.euclideanspace.spad.editor.TypeExpression;
 import com.euclideanspace.spad.editor.TypeParameterList;
 
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.emf.ecore.util.EDataTypeEList;
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -27,6 +32,7 @@ import org.eclipse.emf.ecore.util.EDataTypeEList;
  * <ul>
  *   <li>{@link com.euclideanspace.spad.editor.impl.TypeParameterListImpl#getTyname <em>Tyname</em>}</li>
  *   <li>{@link com.euclideanspace.spad.editor.impl.TypeParameterListImpl#getPar <em>Par</em>}</li>
+ *   <li>{@link com.euclideanspace.spad.editor.impl.TypeParameterListImpl#getPar22 <em>Par22</em>}</li>
  *   <li>{@link com.euclideanspace.spad.editor.impl.TypeParameterListImpl#getPar2 <em>Par2</em>}</li>
  * </ul>
  * </p>
@@ -74,6 +80,16 @@ public class TypeParameterListImpl extends MinimalEObjectImpl.Container implemen
    * @ordered
    */
   protected String par = PAR_EDEFAULT;
+
+  /**
+   * The cached value of the '{@link #getPar22() <em>Par22</em>}' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getPar22()
+   * @generated
+   * @ordered
+   */
+  protected EList<TypeExpression> par22;
 
   /**
    * The cached value of the '{@link #getPar2() <em>Par2</em>}' attribute list.
@@ -157,6 +173,20 @@ public class TypeParameterListImpl extends MinimalEObjectImpl.Container implemen
    * <!-- end-user-doc -->
    * @generated
    */
+  public EList<TypeExpression> getPar22()
+  {
+    if (par22 == null)
+    {
+      par22 = new EObjectContainmentEList<TypeExpression>(TypeExpression.class, this, EditorPackage.TYPE_PARAMETER_LIST__PAR22);
+    }
+    return par22;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EList<String> getPar2()
   {
     if (par2 == null)
@@ -164,6 +194,22 @@ public class TypeParameterListImpl extends MinimalEObjectImpl.Container implemen
       par2 = new EDataTypeEList<String>(String.class, this, EditorPackage.TYPE_PARAMETER_LIST__PAR2);
     }
     return par2;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
+  {
+    switch (featureID)
+    {
+      case EditorPackage.TYPE_PARAMETER_LIST__PAR22:
+        return ((InternalEList<?>)getPar22()).basicRemove(otherEnd, msgs);
+    }
+    return super.eInverseRemove(otherEnd, featureID, msgs);
   }
 
   /**
@@ -180,6 +226,8 @@ public class TypeParameterListImpl extends MinimalEObjectImpl.Container implemen
         return getTyname();
       case EditorPackage.TYPE_PARAMETER_LIST__PAR:
         return getPar();
+      case EditorPackage.TYPE_PARAMETER_LIST__PAR22:
+        return getPar22();
       case EditorPackage.TYPE_PARAMETER_LIST__PAR2:
         return getPar2();
     }
@@ -202,6 +250,10 @@ public class TypeParameterListImpl extends MinimalEObjectImpl.Container implemen
         return;
       case EditorPackage.TYPE_PARAMETER_LIST__PAR:
         setPar((String)newValue);
+        return;
+      case EditorPackage.TYPE_PARAMETER_LIST__PAR22:
+        getPar22().clear();
+        getPar22().addAll((Collection<? extends TypeExpression>)newValue);
         return;
       case EditorPackage.TYPE_PARAMETER_LIST__PAR2:
         getPar2().clear();
@@ -227,6 +279,9 @@ public class TypeParameterListImpl extends MinimalEObjectImpl.Container implemen
       case EditorPackage.TYPE_PARAMETER_LIST__PAR:
         setPar(PAR_EDEFAULT);
         return;
+      case EditorPackage.TYPE_PARAMETER_LIST__PAR22:
+        getPar22().clear();
+        return;
       case EditorPackage.TYPE_PARAMETER_LIST__PAR2:
         getPar2().clear();
         return;
@@ -248,6 +303,8 @@ public class TypeParameterListImpl extends MinimalEObjectImpl.Container implemen
         return TYNAME_EDEFAULT == null ? tyname != null : !TYNAME_EDEFAULT.equals(tyname);
       case EditorPackage.TYPE_PARAMETER_LIST__PAR:
         return PAR_EDEFAULT == null ? par != null : !PAR_EDEFAULT.equals(par);
+      case EditorPackage.TYPE_PARAMETER_LIST__PAR22:
+        return par22 != null && !par22.isEmpty();
       case EditorPackage.TYPE_PARAMETER_LIST__PAR2:
         return par2 != null && !par2.isEmpty();
     }

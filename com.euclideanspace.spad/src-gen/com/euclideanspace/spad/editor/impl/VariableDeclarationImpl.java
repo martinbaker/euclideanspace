@@ -5,6 +5,8 @@ package com.euclideanspace.spad.editor.impl;
 import com.euclideanspace.spad.editor.EditorPackage;
 import com.euclideanspace.spad.editor.TypeExpression;
 import com.euclideanspace.spad.editor.VariableDeclaration;
+import com.euclideanspace.spad.editor.VariableDeclarationBlock;
+import com.euclideanspace.spad.editor.VariableTyped;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
@@ -21,8 +23,10 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link com.euclideanspace.spad.editor.impl.VariableDeclarationImpl#getVarName <em>Var Name</em>}</li>
- *   <li>{@link com.euclideanspace.spad.editor.impl.VariableDeclarationImpl#getTyp <em>Typ</em>}</li>
+ *   <li>{@link com.euclideanspace.spad.editor.impl.VariableDeclarationImpl#getT1 <em>T1</em>}</li>
+ *   <li>{@link com.euclideanspace.spad.editor.impl.VariableDeclarationImpl#getT2 <em>T2</em>}</li>
+ *   <li>{@link com.euclideanspace.spad.editor.impl.VariableDeclarationImpl#getV1 <em>V1</em>}</li>
+ *   <li>{@link com.euclideanspace.spad.editor.impl.VariableDeclarationImpl#getV2 <em>V2</em>}</li>
  * </ul>
  * </p>
  *
@@ -31,34 +35,44 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 public class VariableDeclarationImpl extends WhereAssignmentsImpl implements VariableDeclaration
 {
   /**
-   * The default value of the '{@link #getVarName() <em>Var Name</em>}' attribute.
+   * The cached value of the '{@link #getT1() <em>T1</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getVarName()
+   * @see #getT1()
    * @generated
    * @ordered
    */
-  protected static final String VAR_NAME_EDEFAULT = null;
+  protected TypeExpression t1;
 
   /**
-   * The cached value of the '{@link #getVarName() <em>Var Name</em>}' attribute.
+   * The cached value of the '{@link #getT2() <em>T2</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getVarName()
+   * @see #getT2()
    * @generated
    * @ordered
    */
-  protected String varName = VAR_NAME_EDEFAULT;
+  protected TypeExpression t2;
 
   /**
-   * The cached value of the '{@link #getTyp() <em>Typ</em>}' containment reference.
+   * The cached value of the '{@link #getV1() <em>V1</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getTyp()
+   * @see #getV1()
    * @generated
    * @ordered
    */
-  protected TypeExpression typ;
+  protected VariableTyped v1;
+
+  /**
+   * The cached value of the '{@link #getV2() <em>V2</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getV2()
+   * @generated
+   * @ordered
+   */
+  protected VariableDeclarationBlock v2;
 
   /**
    * <!-- begin-user-doc -->
@@ -86,9 +100,9 @@ public class VariableDeclarationImpl extends WhereAssignmentsImpl implements Var
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getVarName()
+  public TypeExpression getT1()
   {
-    return varName;
+    return t1;
   }
 
   /**
@@ -96,36 +110,13 @@ public class VariableDeclarationImpl extends WhereAssignmentsImpl implements Var
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setVarName(String newVarName)
+  public NotificationChain basicSetT1(TypeExpression newT1, NotificationChain msgs)
   {
-    String oldVarName = varName;
-    varName = newVarName;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, EditorPackage.VARIABLE_DECLARATION__VAR_NAME, oldVarName, varName));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public TypeExpression getTyp()
-  {
-    return typ;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public NotificationChain basicSetTyp(TypeExpression newTyp, NotificationChain msgs)
-  {
-    TypeExpression oldTyp = typ;
-    typ = newTyp;
+    TypeExpression oldT1 = t1;
+    t1 = newT1;
     if (eNotificationRequired())
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, EditorPackage.VARIABLE_DECLARATION__TYP, oldTyp, newTyp);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, EditorPackage.VARIABLE_DECLARATION__T1, oldT1, newT1);
       if (msgs == null) msgs = notification; else msgs.add(notification);
     }
     return msgs;
@@ -136,20 +127,164 @@ public class VariableDeclarationImpl extends WhereAssignmentsImpl implements Var
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setTyp(TypeExpression newTyp)
+  public void setT1(TypeExpression newT1)
   {
-    if (newTyp != typ)
+    if (newT1 != t1)
     {
       NotificationChain msgs = null;
-      if (typ != null)
-        msgs = ((InternalEObject)typ).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - EditorPackage.VARIABLE_DECLARATION__TYP, null, msgs);
-      if (newTyp != null)
-        msgs = ((InternalEObject)newTyp).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - EditorPackage.VARIABLE_DECLARATION__TYP, null, msgs);
-      msgs = basicSetTyp(newTyp, msgs);
+      if (t1 != null)
+        msgs = ((InternalEObject)t1).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - EditorPackage.VARIABLE_DECLARATION__T1, null, msgs);
+      if (newT1 != null)
+        msgs = ((InternalEObject)newT1).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - EditorPackage.VARIABLE_DECLARATION__T1, null, msgs);
+      msgs = basicSetT1(newT1, msgs);
       if (msgs != null) msgs.dispatch();
     }
     else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, EditorPackage.VARIABLE_DECLARATION__TYP, newTyp, newTyp));
+      eNotify(new ENotificationImpl(this, Notification.SET, EditorPackage.VARIABLE_DECLARATION__T1, newT1, newT1));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public TypeExpression getT2()
+  {
+    return t2;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetT2(TypeExpression newT2, NotificationChain msgs)
+  {
+    TypeExpression oldT2 = t2;
+    t2 = newT2;
+    if (eNotificationRequired())
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, EditorPackage.VARIABLE_DECLARATION__T2, oldT2, newT2);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setT2(TypeExpression newT2)
+  {
+    if (newT2 != t2)
+    {
+      NotificationChain msgs = null;
+      if (t2 != null)
+        msgs = ((InternalEObject)t2).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - EditorPackage.VARIABLE_DECLARATION__T2, null, msgs);
+      if (newT2 != null)
+        msgs = ((InternalEObject)newT2).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - EditorPackage.VARIABLE_DECLARATION__T2, null, msgs);
+      msgs = basicSetT2(newT2, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, EditorPackage.VARIABLE_DECLARATION__T2, newT2, newT2));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public VariableTyped getV1()
+  {
+    return v1;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetV1(VariableTyped newV1, NotificationChain msgs)
+  {
+    VariableTyped oldV1 = v1;
+    v1 = newV1;
+    if (eNotificationRequired())
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, EditorPackage.VARIABLE_DECLARATION__V1, oldV1, newV1);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setV1(VariableTyped newV1)
+  {
+    if (newV1 != v1)
+    {
+      NotificationChain msgs = null;
+      if (v1 != null)
+        msgs = ((InternalEObject)v1).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - EditorPackage.VARIABLE_DECLARATION__V1, null, msgs);
+      if (newV1 != null)
+        msgs = ((InternalEObject)newV1).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - EditorPackage.VARIABLE_DECLARATION__V1, null, msgs);
+      msgs = basicSetV1(newV1, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, EditorPackage.VARIABLE_DECLARATION__V1, newV1, newV1));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public VariableDeclarationBlock getV2()
+  {
+    return v2;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetV2(VariableDeclarationBlock newV2, NotificationChain msgs)
+  {
+    VariableDeclarationBlock oldV2 = v2;
+    v2 = newV2;
+    if (eNotificationRequired())
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, EditorPackage.VARIABLE_DECLARATION__V2, oldV2, newV2);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setV2(VariableDeclarationBlock newV2)
+  {
+    if (newV2 != v2)
+    {
+      NotificationChain msgs = null;
+      if (v2 != null)
+        msgs = ((InternalEObject)v2).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - EditorPackage.VARIABLE_DECLARATION__V2, null, msgs);
+      if (newV2 != null)
+        msgs = ((InternalEObject)newV2).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - EditorPackage.VARIABLE_DECLARATION__V2, null, msgs);
+      msgs = basicSetV2(newV2, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, EditorPackage.VARIABLE_DECLARATION__V2, newV2, newV2));
   }
 
   /**
@@ -162,8 +297,14 @@ public class VariableDeclarationImpl extends WhereAssignmentsImpl implements Var
   {
     switch (featureID)
     {
-      case EditorPackage.VARIABLE_DECLARATION__TYP:
-        return basicSetTyp(null, msgs);
+      case EditorPackage.VARIABLE_DECLARATION__T1:
+        return basicSetT1(null, msgs);
+      case EditorPackage.VARIABLE_DECLARATION__T2:
+        return basicSetT2(null, msgs);
+      case EditorPackage.VARIABLE_DECLARATION__V1:
+        return basicSetV1(null, msgs);
+      case EditorPackage.VARIABLE_DECLARATION__V2:
+        return basicSetV2(null, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -178,10 +319,14 @@ public class VariableDeclarationImpl extends WhereAssignmentsImpl implements Var
   {
     switch (featureID)
     {
-      case EditorPackage.VARIABLE_DECLARATION__VAR_NAME:
-        return getVarName();
-      case EditorPackage.VARIABLE_DECLARATION__TYP:
-        return getTyp();
+      case EditorPackage.VARIABLE_DECLARATION__T1:
+        return getT1();
+      case EditorPackage.VARIABLE_DECLARATION__T2:
+        return getT2();
+      case EditorPackage.VARIABLE_DECLARATION__V1:
+        return getV1();
+      case EditorPackage.VARIABLE_DECLARATION__V2:
+        return getV2();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -196,11 +341,17 @@ public class VariableDeclarationImpl extends WhereAssignmentsImpl implements Var
   {
     switch (featureID)
     {
-      case EditorPackage.VARIABLE_DECLARATION__VAR_NAME:
-        setVarName((String)newValue);
+      case EditorPackage.VARIABLE_DECLARATION__T1:
+        setT1((TypeExpression)newValue);
         return;
-      case EditorPackage.VARIABLE_DECLARATION__TYP:
-        setTyp((TypeExpression)newValue);
+      case EditorPackage.VARIABLE_DECLARATION__T2:
+        setT2((TypeExpression)newValue);
+        return;
+      case EditorPackage.VARIABLE_DECLARATION__V1:
+        setV1((VariableTyped)newValue);
+        return;
+      case EditorPackage.VARIABLE_DECLARATION__V2:
+        setV2((VariableDeclarationBlock)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -216,11 +367,17 @@ public class VariableDeclarationImpl extends WhereAssignmentsImpl implements Var
   {
     switch (featureID)
     {
-      case EditorPackage.VARIABLE_DECLARATION__VAR_NAME:
-        setVarName(VAR_NAME_EDEFAULT);
+      case EditorPackage.VARIABLE_DECLARATION__T1:
+        setT1((TypeExpression)null);
         return;
-      case EditorPackage.VARIABLE_DECLARATION__TYP:
-        setTyp((TypeExpression)null);
+      case EditorPackage.VARIABLE_DECLARATION__T2:
+        setT2((TypeExpression)null);
+        return;
+      case EditorPackage.VARIABLE_DECLARATION__V1:
+        setV1((VariableTyped)null);
+        return;
+      case EditorPackage.VARIABLE_DECLARATION__V2:
+        setV2((VariableDeclarationBlock)null);
         return;
     }
     super.eUnset(featureID);
@@ -236,29 +393,16 @@ public class VariableDeclarationImpl extends WhereAssignmentsImpl implements Var
   {
     switch (featureID)
     {
-      case EditorPackage.VARIABLE_DECLARATION__VAR_NAME:
-        return VAR_NAME_EDEFAULT == null ? varName != null : !VAR_NAME_EDEFAULT.equals(varName);
-      case EditorPackage.VARIABLE_DECLARATION__TYP:
-        return typ != null;
+      case EditorPackage.VARIABLE_DECLARATION__T1:
+        return t1 != null;
+      case EditorPackage.VARIABLE_DECLARATION__T2:
+        return t2 != null;
+      case EditorPackage.VARIABLE_DECLARATION__V1:
+        return v1 != null;
+      case EditorPackage.VARIABLE_DECLARATION__V2:
+        return v2 != null;
     }
     return super.eIsSet(featureID);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public String toString()
-  {
-    if (eIsProxy()) return super.toString();
-
-    StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (varName: ");
-    result.append(varName);
-    result.append(')');
-    return result.toString();
   }
 
 } //VariableDeclarationImpl

@@ -4,9 +4,7 @@ package com.euclideanspace.spad.editor.impl;
 
 import com.euclideanspace.spad.editor.EditorPackage;
 import com.euclideanspace.spad.editor.FunctionSignature;
-import com.euclideanspace.spad.editor.Statement;
-import com.euclideanspace.spad.editor.TypeExpression;
-import com.euclideanspace.spad.editor.VariableDeclaration;
+import com.euclideanspace.spad.editor.VariableTyped;
 
 import java.util.Collection;
 
@@ -19,6 +17,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
@@ -30,8 +29,6 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link com.euclideanspace.spad.editor.impl.FunctionSignatureImpl#getPar4 <em>Par4</em>}</li>
- *   <li>{@link com.euclideanspace.spad.editor.impl.FunctionSignatureImpl#getPar5 <em>Par5</em>}</li>
  *   <li>{@link com.euclideanspace.spad.editor.impl.FunctionSignatureImpl#getFnNam <em>Fn Nam</em>}</li>
  *   <li>{@link com.euclideanspace.spad.editor.impl.FunctionSignatureImpl#getPar2 <em>Par2</em>}</li>
  *   <li>{@link com.euclideanspace.spad.editor.impl.FunctionSignatureImpl#getPar3 <em>Par3</em>}</li>
@@ -46,28 +43,8 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *
  * @generated
  */
-public class FunctionSignatureImpl extends FunctionDefinitionImpl implements FunctionSignature
+public class FunctionSignatureImpl extends MinimalEObjectImpl.Container implements FunctionSignature
 {
-  /**
-   * The cached value of the '{@link #getPar4() <em>Par4</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getPar4()
-   * @generated
-   * @ordered
-   */
-  protected TypeExpression par4;
-
-  /**
-   * The cached value of the '{@link #getPar5() <em>Par5</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getPar5()
-   * @generated
-   * @ordered
-   */
-  protected Statement par5;
-
   /**
    * The default value of the '{@link #getFnNam() <em>Fn Nam</em>}' attribute.
    * <!-- begin-user-doc -->
@@ -96,7 +73,7 @@ public class FunctionSignatureImpl extends FunctionDefinitionImpl implements Fun
    * @generated
    * @ordered
    */
-  protected VariableDeclaration par2;
+  protected VariableTyped par2;
 
   /**
    * The cached value of the '{@link #getPar3() <em>Par3</em>}' containment reference list.
@@ -106,7 +83,7 @@ public class FunctionSignatureImpl extends FunctionDefinitionImpl implements Fun
    * @generated
    * @ordered
    */
-  protected EList<VariableDeclaration> par3;
+  protected EList<VariableTyped> par3;
 
   /**
    * The default value of the '{@link #getPar() <em>Par</em>}' attribute.
@@ -254,102 +231,6 @@ public class FunctionSignatureImpl extends FunctionDefinitionImpl implements Fun
    * <!-- end-user-doc -->
    * @generated
    */
-  public TypeExpression getPar4()
-  {
-    return par4;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public NotificationChain basicSetPar4(TypeExpression newPar4, NotificationChain msgs)
-  {
-    TypeExpression oldPar4 = par4;
-    par4 = newPar4;
-    if (eNotificationRequired())
-    {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, EditorPackage.FUNCTION_SIGNATURE__PAR4, oldPar4, newPar4);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setPar4(TypeExpression newPar4)
-  {
-    if (newPar4 != par4)
-    {
-      NotificationChain msgs = null;
-      if (par4 != null)
-        msgs = ((InternalEObject)par4).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - EditorPackage.FUNCTION_SIGNATURE__PAR4, null, msgs);
-      if (newPar4 != null)
-        msgs = ((InternalEObject)newPar4).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - EditorPackage.FUNCTION_SIGNATURE__PAR4, null, msgs);
-      msgs = basicSetPar4(newPar4, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, EditorPackage.FUNCTION_SIGNATURE__PAR4, newPar4, newPar4));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public Statement getPar5()
-  {
-    return par5;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public NotificationChain basicSetPar5(Statement newPar5, NotificationChain msgs)
-  {
-    Statement oldPar5 = par5;
-    par5 = newPar5;
-    if (eNotificationRequired())
-    {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, EditorPackage.FUNCTION_SIGNATURE__PAR5, oldPar5, newPar5);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setPar5(Statement newPar5)
-  {
-    if (newPar5 != par5)
-    {
-      NotificationChain msgs = null;
-      if (par5 != null)
-        msgs = ((InternalEObject)par5).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - EditorPackage.FUNCTION_SIGNATURE__PAR5, null, msgs);
-      if (newPar5 != null)
-        msgs = ((InternalEObject)newPar5).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - EditorPackage.FUNCTION_SIGNATURE__PAR5, null, msgs);
-      msgs = basicSetPar5(newPar5, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, EditorPackage.FUNCTION_SIGNATURE__PAR5, newPar5, newPar5));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public String getFnNam()
   {
     return fnNam;
@@ -373,7 +254,7 @@ public class FunctionSignatureImpl extends FunctionDefinitionImpl implements Fun
    * <!-- end-user-doc -->
    * @generated
    */
-  public VariableDeclaration getPar2()
+  public VariableTyped getPar2()
   {
     return par2;
   }
@@ -383,9 +264,9 @@ public class FunctionSignatureImpl extends FunctionDefinitionImpl implements Fun
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetPar2(VariableDeclaration newPar2, NotificationChain msgs)
+  public NotificationChain basicSetPar2(VariableTyped newPar2, NotificationChain msgs)
   {
-    VariableDeclaration oldPar2 = par2;
+    VariableTyped oldPar2 = par2;
     par2 = newPar2;
     if (eNotificationRequired())
     {
@@ -400,7 +281,7 @@ public class FunctionSignatureImpl extends FunctionDefinitionImpl implements Fun
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setPar2(VariableDeclaration newPar2)
+  public void setPar2(VariableTyped newPar2)
   {
     if (newPar2 != par2)
     {
@@ -421,11 +302,11 @@ public class FunctionSignatureImpl extends FunctionDefinitionImpl implements Fun
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<VariableDeclaration> getPar3()
+  public EList<VariableTyped> getPar3()
   {
     if (par3 == null)
     {
-      par3 = new EObjectContainmentEList<VariableDeclaration>(VariableDeclaration.class, this, EditorPackage.FUNCTION_SIGNATURE__PAR3);
+      par3 = new EObjectContainmentEList<VariableTyped>(VariableTyped.class, this, EditorPackage.FUNCTION_SIGNATURE__PAR3);
     }
     return par3;
   }
@@ -578,10 +459,6 @@ public class FunctionSignatureImpl extends FunctionDefinitionImpl implements Fun
   {
     switch (featureID)
     {
-      case EditorPackage.FUNCTION_SIGNATURE__PAR4:
-        return basicSetPar4(null, msgs);
-      case EditorPackage.FUNCTION_SIGNATURE__PAR5:
-        return basicSetPar5(null, msgs);
       case EditorPackage.FUNCTION_SIGNATURE__PAR2:
         return basicSetPar2(null, msgs);
       case EditorPackage.FUNCTION_SIGNATURE__PAR3:
@@ -600,10 +477,6 @@ public class FunctionSignatureImpl extends FunctionDefinitionImpl implements Fun
   {
     switch (featureID)
     {
-      case EditorPackage.FUNCTION_SIGNATURE__PAR4:
-        return getPar4();
-      case EditorPackage.FUNCTION_SIGNATURE__PAR5:
-        return getPar5();
       case EditorPackage.FUNCTION_SIGNATURE__FN_NAM:
         return getFnNam();
       case EditorPackage.FUNCTION_SIGNATURE__PAR2:
@@ -637,21 +510,15 @@ public class FunctionSignatureImpl extends FunctionDefinitionImpl implements Fun
   {
     switch (featureID)
     {
-      case EditorPackage.FUNCTION_SIGNATURE__PAR4:
-        setPar4((TypeExpression)newValue);
-        return;
-      case EditorPackage.FUNCTION_SIGNATURE__PAR5:
-        setPar5((Statement)newValue);
-        return;
       case EditorPackage.FUNCTION_SIGNATURE__FN_NAM:
         setFnNam((String)newValue);
         return;
       case EditorPackage.FUNCTION_SIGNATURE__PAR2:
-        setPar2((VariableDeclaration)newValue);
+        setPar2((VariableTyped)newValue);
         return;
       case EditorPackage.FUNCTION_SIGNATURE__PAR3:
         getPar3().clear();
-        getPar3().addAll((Collection<? extends VariableDeclaration>)newValue);
+        getPar3().addAll((Collection<? extends VariableTyped>)newValue);
         return;
       case EditorPackage.FUNCTION_SIGNATURE__PAR:
         setPar((String)newValue);
@@ -685,17 +552,11 @@ public class FunctionSignatureImpl extends FunctionDefinitionImpl implements Fun
   {
     switch (featureID)
     {
-      case EditorPackage.FUNCTION_SIGNATURE__PAR4:
-        setPar4((TypeExpression)null);
-        return;
-      case EditorPackage.FUNCTION_SIGNATURE__PAR5:
-        setPar5((Statement)null);
-        return;
       case EditorPackage.FUNCTION_SIGNATURE__FN_NAM:
         setFnNam(FN_NAM_EDEFAULT);
         return;
       case EditorPackage.FUNCTION_SIGNATURE__PAR2:
-        setPar2((VariableDeclaration)null);
+        setPar2((VariableTyped)null);
         return;
       case EditorPackage.FUNCTION_SIGNATURE__PAR3:
         getPar3().clear();
@@ -732,10 +593,6 @@ public class FunctionSignatureImpl extends FunctionDefinitionImpl implements Fun
   {
     switch (featureID)
     {
-      case EditorPackage.FUNCTION_SIGNATURE__PAR4:
-        return par4 != null;
-      case EditorPackage.FUNCTION_SIGNATURE__PAR5:
-        return par5 != null;
       case EditorPackage.FUNCTION_SIGNATURE__FN_NAM:
         return FN_NAM_EDEFAULT == null ? fnNam != null : !FN_NAM_EDEFAULT.equals(fnNam);
       case EditorPackage.FUNCTION_SIGNATURE__PAR2:

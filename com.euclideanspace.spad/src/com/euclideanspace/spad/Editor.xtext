@@ -304,9 +304,9 @@ CategoryDef hidden(WS,NL,SL_COMMENT):
     (cp=TypeParameterList)?
     COLON 'Category'
     DEF implName=TypeArguments
-    (w=WithPart | wh5=WherePart /* | wh2=WithImplied*/)
+    ((w=WithPart? a=AddPart?)| wh5=WherePart /* | wh2=WithImplied*/)
 ;
-	
+
 /*
  * longname and longname2 should both be ID and have the same value. Since the
  * runtime values can't be checked by the parser this must be checked later.
@@ -364,16 +364,6 @@ WithPart hidden(WS,SL_COMMENT):
 ;
 
 /*
- * In a category, if we don't combine with an existing type then the
- * 'with' keyword is not needed.
-WithImplied hidden(WS,SL_COMMENT):
-	NL* b=LBRACE NL*
-    (fundec += VariableDeclaration (NL|SEMICOLON)+)*
-    RBRACE NL*
-;
-*/
-
-/*
  * the 'where' part contains a 'add' part which holds function and other
  * declarations.
  */
@@ -388,6 +378,9 @@ AddPart hidden(WS,SL_COMMENT):
 AddStatements hidden(WS,SL_COMMENT):
    VariableDeclarationAssign
    | FunctionDefinition
+   | ('if' t1=TypeExpression
+      'has' t12=TypeExpression
+      'then' t13=FunctionDefinitionBlock)
    | MacroDef
    | Import
 ;
@@ -402,13 +395,21 @@ AddStatements hidden(WS,SL_COMMENT):
  *     statement
  *     statement
  * }
+ * some function definitions may be conditional like this:
+ * if % has finiteAggregate then {
+ * ... }
  */
 FunctionDefinition hidden(WS,SL_COMMENT):
-	FunctionSignature
+	par3=FunctionSignature
     (COLON par4=TypeExpression)?
     DEF par5=Statement
 ;
 
+FunctionDefinitionBlock hidden(WS,SL_COMMENT):
+    fnDecBr=LBRACE NL*
+      (fnDecBk += FunctionDefinition (NL|SEMICOLON)+)*
+      RBRACE	
+;
 
 /* This is the first part of the function definition without the return type or
  * the function implementation. Usually the function signature has a form like:
@@ -426,8 +427,8 @@ FunctionSignature hidden(WS,SL_COMMENT):
   (
 	fnNam=ID
     LPAREN
-    par2=VariableDeclaration?
-    (COMMA par3 += VariableDeclaration)*
+    par2=VariableTyped?
+    (COMMA par3 += VariableTyped)*
     RPAREN
   ) | (
   	// fnNam=ID par2=VariableDeclaration this causes recursive defintion
@@ -459,7 +460,39 @@ Import hidden(WS):
 	'import' (impname += ID)+
 ;
 
-/* Variable declaration in where and with sections and function signature:
+/* Variable declaration in where and with sections:
+ * A 'variable' can be simple like:
+ * x:Float
+ * or something more complicated like:
+ * x:Record(newPt: Pt,type:  String)
+ * or it can be a function like:
+ * x:(Float,Integer) -> Float
+ * or it can be conditional like:
+ * if 
+ */
+VariableDeclarationBlock hidden(WS,SL_COMMENT):
+    vardecbr=LBRACE NL*
+      (vardecBlk += VariableDeclaration (NL|SEMICOLON)+)*
+      RBRACE	
+;
+
+/* Variable declaration in where and with sections:
+ * A 'variable' can be simple like:
+ * x:Float
+ * or something more complicated like:
+ * x:Record(newPt: Pt,type:  String)
+ * or it can be a function like:
+ * x:(Float,Integer) -> Float
+ * or it can be conditional like:
+ * if 
+ */
+VariableDeclaration hidden(WS,SL_COMMENT):
+    ('if' t1=TypeExpression 'has' t2=TypeExpression 'then')?
+	(v1=VariableTyped | v2=VariableDeclarationBlock)
+;
+
+/* Variable name with optional type. This is used in function signature
+ * and also by VariableDeclaration:
  * A 'variable' can be simple like:
  * x:Float
  * or something more complicated like:
@@ -467,10 +500,8 @@ Import hidden(WS):
  * or it can be a function like:
  * x:(Float,Integer) -> Float
  */
-VariableDeclaration hidden(WS,SL_COMMENT):
-  // if I just use name=ID then, when the ui program is running, I get:
-  // Duplicate VariableDeclaration 'coerce' in WithPart 'with'
-	varName=ID (COLON typ=TypeExpression)? 
+VariableTyped hidden(WS,SL_COMMENT):
+	(varName=ID | varNameSt=STRING) (COLON typ=TypeExpression)? 
 ;
 
 /* in add part we can declare and assign in same part
@@ -530,11 +561,20 @@ TypeExpression hidden(WS):
 
 /*
  * we use a type parameter list for parameters of category, package or domains
- * 
+ * Parameter list may be empty '()'.
  * in this case parameters may be just ID or they may be nameID:typeID
+ * 
+ * examples are:
+ * ()
+ * (String)
+ * (s:String)
+ * (String,Integer)
+ * (s:String,i:Integer)
  */
 TypeParameterList hidden(WS):
-	tyname=LPAREN par=ID? (COMMA par2 += ID)* RPAREN;
+	tyname=LPAREN par=ID? 
+	(COLON par22+=TypeExpression)?
+	(COMMA par2 += ID (COLON par22+=TypeExpression)?)* RPAREN;
 
 /*
  * we use type arguments for first part of function type, that is
