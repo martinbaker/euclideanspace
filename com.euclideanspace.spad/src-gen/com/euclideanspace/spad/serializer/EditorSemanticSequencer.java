@@ -1567,22 +1567,19 @@ public class EditorSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	
 	/**
 	 * Constraint:
-	 *     (t1=TypeExpression t12=TypeExpression t13=FunctionDefinitionBlock)
+	 *     (t1=Expression t13=FunctionDefinitionBlock)
 	 */
 	protected void sequence_AddStatements(EObject context, AddStatements semanticObject) {
 		if(errorAcceptor != null) {
 			if(transientValues.isValueTransient(semanticObject, EditorPackage.Literals.ADD_STATEMENTS__T1) == ValueTransient.YES)
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, EditorPackage.Literals.ADD_STATEMENTS__T1));
-			if(transientValues.isValueTransient(semanticObject, EditorPackage.Literals.ADD_STATEMENTS__T12) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, EditorPackage.Literals.ADD_STATEMENTS__T12));
 			if(transientValues.isValueTransient(semanticObject, EditorPackage.Literals.ADD_STATEMENTS__T13) == ValueTransient.YES)
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, EditorPackage.Literals.ADD_STATEMENTS__T13));
 		}
 		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
 		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getAddStatementsAccess().getT1TypeExpressionParserRuleCall_2_1_0(), semanticObject.getT1());
-		feeder.accept(grammarAccess.getAddStatementsAccess().getT12TypeExpressionParserRuleCall_2_3_0(), semanticObject.getT12());
-		feeder.accept(grammarAccess.getAddStatementsAccess().getT13FunctionDefinitionBlockParserRuleCall_2_5_0(), semanticObject.getT13());
+		feeder.accept(grammarAccess.getAddStatementsAccess().getT1ExpressionParserRuleCall_2_1_0(), semanticObject.getT1());
+		feeder.accept(grammarAccess.getAddStatementsAccess().getT13FunctionDefinitionBlockParserRuleCall_2_3_0(), semanticObject.getT13());
 		feeder.finish();
 	}
 	
@@ -1659,8 +1656,7 @@ public class EditorSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	 *         longname=ID 
 	 *         longname2=ID 
 	 *         cp=TypeParameterList? 
-	 *         implName=TypeArguments 
-	 *         ((w=WithPart? a=AddPart?) | wh5=WherePart)
+	 *         ((implName=TypeArguments ((w=WithPart? a=AddPart?) | wh5=WherePart)) | (implName=TypeArguments ((w=WithPart? a=AddPart?) | wh5=WherePart)))
 	 *     )
 	 */
 	protected void sequence_CategoryDef(EObject context, CategoryDef semanticObject) {
@@ -1868,6 +1864,7 @@ public class EditorSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	 *             ) 
 	 *             t5=ID
 	 *         ) | 
+	 *         b3=INT | 
 	 *         (b2=MINUS t6=ID)
 	 *     )
 	 */
@@ -2365,7 +2362,7 @@ public class EditorSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	
 	/**
 	 * Constraint:
-	 *     ((t1=TypeExpression t2=TypeExpression)? (v1=VariableTyped | v2=VariableDeclarationBlock))
+	 *     (t1=Expression? (v1=VariableTyped | v2=VariableDeclarationBlock))
 	 */
 	protected void sequence_VariableDeclaration(EObject context, VariableDeclaration semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

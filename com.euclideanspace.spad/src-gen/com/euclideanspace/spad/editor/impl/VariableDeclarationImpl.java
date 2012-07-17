@@ -3,7 +3,7 @@
 package com.euclideanspace.spad.editor.impl;
 
 import com.euclideanspace.spad.editor.EditorPackage;
-import com.euclideanspace.spad.editor.TypeExpression;
+import com.euclideanspace.spad.editor.Expr;
 import com.euclideanspace.spad.editor.VariableDeclaration;
 import com.euclideanspace.spad.editor.VariableDeclarationBlock;
 import com.euclideanspace.spad.editor.VariableTyped;
@@ -24,7 +24,6 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * <ul>
  *   <li>{@link com.euclideanspace.spad.editor.impl.VariableDeclarationImpl#getT1 <em>T1</em>}</li>
- *   <li>{@link com.euclideanspace.spad.editor.impl.VariableDeclarationImpl#getT2 <em>T2</em>}</li>
  *   <li>{@link com.euclideanspace.spad.editor.impl.VariableDeclarationImpl#getV1 <em>V1</em>}</li>
  *   <li>{@link com.euclideanspace.spad.editor.impl.VariableDeclarationImpl#getV2 <em>V2</em>}</li>
  * </ul>
@@ -42,17 +41,7 @@ public class VariableDeclarationImpl extends WhereAssignmentsImpl implements Var
    * @generated
    * @ordered
    */
-  protected TypeExpression t1;
-
-  /**
-   * The cached value of the '{@link #getT2() <em>T2</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getT2()
-   * @generated
-   * @ordered
-   */
-  protected TypeExpression t2;
+  protected Expr t1;
 
   /**
    * The cached value of the '{@link #getV1() <em>V1</em>}' containment reference.
@@ -100,7 +89,7 @@ public class VariableDeclarationImpl extends WhereAssignmentsImpl implements Var
    * <!-- end-user-doc -->
    * @generated
    */
-  public TypeExpression getT1()
+  public Expr getT1()
   {
     return t1;
   }
@@ -110,9 +99,9 @@ public class VariableDeclarationImpl extends WhereAssignmentsImpl implements Var
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetT1(TypeExpression newT1, NotificationChain msgs)
+  public NotificationChain basicSetT1(Expr newT1, NotificationChain msgs)
   {
-    TypeExpression oldT1 = t1;
+    Expr oldT1 = t1;
     t1 = newT1;
     if (eNotificationRequired())
     {
@@ -127,7 +116,7 @@ public class VariableDeclarationImpl extends WhereAssignmentsImpl implements Var
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setT1(TypeExpression newT1)
+  public void setT1(Expr newT1)
   {
     if (newT1 != t1)
     {
@@ -141,54 +130,6 @@ public class VariableDeclarationImpl extends WhereAssignmentsImpl implements Var
     }
     else if (eNotificationRequired())
       eNotify(new ENotificationImpl(this, Notification.SET, EditorPackage.VARIABLE_DECLARATION__T1, newT1, newT1));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public TypeExpression getT2()
-  {
-    return t2;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public NotificationChain basicSetT2(TypeExpression newT2, NotificationChain msgs)
-  {
-    TypeExpression oldT2 = t2;
-    t2 = newT2;
-    if (eNotificationRequired())
-    {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, EditorPackage.VARIABLE_DECLARATION__T2, oldT2, newT2);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setT2(TypeExpression newT2)
-  {
-    if (newT2 != t2)
-    {
-      NotificationChain msgs = null;
-      if (t2 != null)
-        msgs = ((InternalEObject)t2).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - EditorPackage.VARIABLE_DECLARATION__T2, null, msgs);
-      if (newT2 != null)
-        msgs = ((InternalEObject)newT2).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - EditorPackage.VARIABLE_DECLARATION__T2, null, msgs);
-      msgs = basicSetT2(newT2, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, EditorPackage.VARIABLE_DECLARATION__T2, newT2, newT2));
   }
 
   /**
@@ -299,8 +240,6 @@ public class VariableDeclarationImpl extends WhereAssignmentsImpl implements Var
     {
       case EditorPackage.VARIABLE_DECLARATION__T1:
         return basicSetT1(null, msgs);
-      case EditorPackage.VARIABLE_DECLARATION__T2:
-        return basicSetT2(null, msgs);
       case EditorPackage.VARIABLE_DECLARATION__V1:
         return basicSetV1(null, msgs);
       case EditorPackage.VARIABLE_DECLARATION__V2:
@@ -321,8 +260,6 @@ public class VariableDeclarationImpl extends WhereAssignmentsImpl implements Var
     {
       case EditorPackage.VARIABLE_DECLARATION__T1:
         return getT1();
-      case EditorPackage.VARIABLE_DECLARATION__T2:
-        return getT2();
       case EditorPackage.VARIABLE_DECLARATION__V1:
         return getV1();
       case EditorPackage.VARIABLE_DECLARATION__V2:
@@ -342,10 +279,7 @@ public class VariableDeclarationImpl extends WhereAssignmentsImpl implements Var
     switch (featureID)
     {
       case EditorPackage.VARIABLE_DECLARATION__T1:
-        setT1((TypeExpression)newValue);
-        return;
-      case EditorPackage.VARIABLE_DECLARATION__T2:
-        setT2((TypeExpression)newValue);
+        setT1((Expr)newValue);
         return;
       case EditorPackage.VARIABLE_DECLARATION__V1:
         setV1((VariableTyped)newValue);
@@ -368,10 +302,7 @@ public class VariableDeclarationImpl extends WhereAssignmentsImpl implements Var
     switch (featureID)
     {
       case EditorPackage.VARIABLE_DECLARATION__T1:
-        setT1((TypeExpression)null);
-        return;
-      case EditorPackage.VARIABLE_DECLARATION__T2:
-        setT2((TypeExpression)null);
+        setT1((Expr)null);
         return;
       case EditorPackage.VARIABLE_DECLARATION__V1:
         setV1((VariableTyped)null);
@@ -395,8 +326,6 @@ public class VariableDeclarationImpl extends WhereAssignmentsImpl implements Var
     {
       case EditorPackage.VARIABLE_DECLARATION__T1:
         return t1 != null;
-      case EditorPackage.VARIABLE_DECLARATION__T2:
-        return t2 != null;
       case EditorPackage.VARIABLE_DECLARATION__V1:
         return v1 != null;
       case EditorPackage.VARIABLE_DECLARATION__V2:

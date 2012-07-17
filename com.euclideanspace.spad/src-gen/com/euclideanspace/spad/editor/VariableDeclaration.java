@@ -12,7 +12,6 @@ package com.euclideanspace.spad.editor;
  * The following features are supported:
  * <ul>
  *   <li>{@link com.euclideanspace.spad.editor.VariableDeclaration#getT1 <em>T1</em>}</li>
- *   <li>{@link com.euclideanspace.spad.editor.VariableDeclaration#getT2 <em>T2</em>}</li>
  *   <li>{@link com.euclideanspace.spad.editor.VariableDeclaration#getV1 <em>V1</em>}</li>
  *   <li>{@link com.euclideanspace.spad.editor.VariableDeclaration#getV2 <em>V2</em>}</li>
  * </ul>
@@ -33,12 +32,12 @@ public interface VariableDeclaration extends WhereAssignments
    * </p>
    * <!-- end-user-doc -->
    * @return the value of the '<em>T1</em>' containment reference.
-   * @see #setT1(TypeExpression)
+   * @see #setT1(Expr)
    * @see com.euclideanspace.spad.editor.EditorPackage#getVariableDeclaration_T1()
    * @model containment="true"
    * @generated
    */
-  TypeExpression getT1();
+  Expr getT1();
 
   /**
    * Sets the value of the '{@link com.euclideanspace.spad.editor.VariableDeclaration#getT1 <em>T1</em>}' containment reference.
@@ -48,33 +47,7 @@ public interface VariableDeclaration extends WhereAssignments
    * @see #getT1()
    * @generated
    */
-  void setT1(TypeExpression value);
-
-  /**
-   * Returns the value of the '<em><b>T2</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>T2</em>' containment reference isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>T2</em>' containment reference.
-   * @see #setT2(TypeExpression)
-   * @see com.euclideanspace.spad.editor.EditorPackage#getVariableDeclaration_T2()
-   * @model containment="true"
-   * @generated
-   */
-  TypeExpression getT2();
-
-  /**
-   * Sets the value of the '{@link com.euclideanspace.spad.editor.VariableDeclaration#getT2 <em>T2</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>T2</em>' containment reference.
-   * @see #getT2()
-   * @generated
-   */
-  void setT2(TypeExpression value);
+  void setT1(Expr value);
 
   /**
    * Returns the value of the '<em><b>V1</b></em>' containment reference.

@@ -21,6 +21,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link com.euclideanspace.spad.editor.FunctionSignature#getT4 <em>T4</em>}</li>
  *   <li>{@link com.euclideanspace.spad.editor.FunctionSignature#getB1 <em>B1</em>}</li>
  *   <li>{@link com.euclideanspace.spad.editor.FunctionSignature#getT5 <em>T5</em>}</li>
+ *   <li>{@link com.euclideanspace.spad.editor.FunctionSignature#getB3 <em>B3</em>}</li>
  *   <li>{@link com.euclideanspace.spad.editor.FunctionSignature#getB2 <em>B2</em>}</li>
  *   <li>{@link com.euclideanspace.spad.editor.FunctionSignature#getT6 <em>T6</em>}</li>
  * </ul>
@@ -203,6 +204,32 @@ public interface FunctionSignature extends EObject
    * @generated
    */
   void setT5(String value);
+
+  /**
+   * Returns the value of the '<em><b>B3</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>B3</em>' attribute isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>B3</em>' attribute.
+   * @see #setB3(int)
+   * @see com.euclideanspace.spad.editor.EditorPackage#getFunctionSignature_B3()
+   * @model
+   * @generated
+   */
+  int getB3();
+
+  /**
+   * Sets the value of the '{@link com.euclideanspace.spad.editor.FunctionSignature#getB3 <em>B3</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>B3</em>' attribute.
+   * @see #getB3()
+   * @generated
+   */
+  void setB3(int value);
 
   /**
    * Returns the value of the '<em><b>B2</b></em>' attribute.

@@ -77,10 +77,7 @@
         containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="AddStatements">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="t1" eType="#//TypeExpression"
-        containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="t12" eType="#//TypeExpression"
-        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="t1" eType="#//Expr" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="t13" eType="#//FunctionDefinitionBlock"
         containment="true"/>
   </eClassifiers>
@@ -107,6 +104,7 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="t4" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="b1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="t5" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="b3" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="b2" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="t6" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
@@ -123,10 +121,7 @@
         eType="#//VariableDeclaration" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="VariableDeclaration" eSuperTypes="#//WhereAssignments">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="t1" eType="#//TypeExpression"
-        containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="t2" eType="#//TypeExpression"
-        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="t1" eType="#//Expr" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="v1" eType="#//VariableTyped"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="v2" eType="#//VariableDeclarationBlock"

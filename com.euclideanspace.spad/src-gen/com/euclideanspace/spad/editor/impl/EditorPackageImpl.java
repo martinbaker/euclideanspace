@@ -1174,19 +1174,9 @@ public class EditorPackageImpl extends EPackageImpl implements EditorPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getAddStatements_T12()
-  {
-    return (EReference)addStatementsEClass.getEStructuralFeatures().get(1);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public EReference getAddStatements_T13()
   {
-    return (EReference)addStatementsEClass.getEStructuralFeatures().get(2);
+    return (EReference)addStatementsEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -1344,7 +1334,7 @@ public class EditorPackageImpl extends EPackageImpl implements EditorPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getFunctionSignature_B2()
+  public EAttribute getFunctionSignature_B3()
   {
     return (EAttribute)functionSignatureEClass.getEStructuralFeatures().get(7);
   }
@@ -1354,9 +1344,19 @@ public class EditorPackageImpl extends EPackageImpl implements EditorPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getFunctionSignature_T6()
+  public EAttribute getFunctionSignature_B2()
   {
     return (EAttribute)functionSignatureEClass.getEStructuralFeatures().get(8);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getFunctionSignature_T6()
+  {
+    return (EAttribute)functionSignatureEClass.getEStructuralFeatures().get(9);
   }
 
   /**
@@ -1454,7 +1454,7 @@ public class EditorPackageImpl extends EPackageImpl implements EditorPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getVariableDeclaration_T2()
+  public EReference getVariableDeclaration_V1()
   {
     return (EReference)variableDeclarationEClass.getEStructuralFeatures().get(1);
   }
@@ -1464,19 +1464,9 @@ public class EditorPackageImpl extends EPackageImpl implements EditorPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getVariableDeclaration_V1()
-  {
-    return (EReference)variableDeclarationEClass.getEStructuralFeatures().get(2);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public EReference getVariableDeclaration_V2()
   {
-    return (EReference)variableDeclarationEClass.getEStructuralFeatures().get(3);
+    return (EReference)variableDeclarationEClass.getEStructuralFeatures().get(2);
   }
 
   /**
@@ -4378,7 +4368,6 @@ public class EditorPackageImpl extends EPackageImpl implements EditorPackage
 
     addStatementsEClass = createEClass(ADD_STATEMENTS);
     createEReference(addStatementsEClass, ADD_STATEMENTS__T1);
-    createEReference(addStatementsEClass, ADD_STATEMENTS__T12);
     createEReference(addStatementsEClass, ADD_STATEMENTS__T13);
 
     functionDefinitionEClass = createEClass(FUNCTION_DEFINITION);
@@ -4398,6 +4387,7 @@ public class EditorPackageImpl extends EPackageImpl implements EditorPackage
     createEAttribute(functionSignatureEClass, FUNCTION_SIGNATURE__T4);
     createEAttribute(functionSignatureEClass, FUNCTION_SIGNATURE__B1);
     createEAttribute(functionSignatureEClass, FUNCTION_SIGNATURE__T5);
+    createEAttribute(functionSignatureEClass, FUNCTION_SIGNATURE__B3);
     createEAttribute(functionSignatureEClass, FUNCTION_SIGNATURE__B2);
     createEAttribute(functionSignatureEClass, FUNCTION_SIGNATURE__T6);
 
@@ -4413,7 +4403,6 @@ public class EditorPackageImpl extends EPackageImpl implements EditorPackage
 
     variableDeclarationEClass = createEClass(VARIABLE_DECLARATION);
     createEReference(variableDeclarationEClass, VARIABLE_DECLARATION__T1);
-    createEReference(variableDeclarationEClass, VARIABLE_DECLARATION__T2);
     createEReference(variableDeclarationEClass, VARIABLE_DECLARATION__V1);
     createEReference(variableDeclarationEClass, VARIABLE_DECLARATION__V2);
 
@@ -4885,8 +4874,7 @@ public class EditorPackageImpl extends EPackageImpl implements EditorPackage
     initEReference(getAddPart_T(), this.getAddStatements(), null, "t", null, 0, -1, AddPart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(addStatementsEClass, AddStatements.class, "AddStatements", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getAddStatements_T1(), this.getTypeExpression(), null, "t1", null, 0, 1, AddStatements.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getAddStatements_T12(), this.getTypeExpression(), null, "t12", null, 0, 1, AddStatements.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getAddStatements_T1(), this.getExpr(), null, "t1", null, 0, 1, AddStatements.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getAddStatements_T13(), this.getFunctionDefinitionBlock(), null, "t13", null, 0, 1, AddStatements.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(functionDefinitionEClass, FunctionDefinition.class, "FunctionDefinition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -4906,6 +4894,7 @@ public class EditorPackageImpl extends EPackageImpl implements EditorPackage
     initEAttribute(getFunctionSignature_T4(), ecorePackage.getEString(), "t4", null, 0, 1, FunctionSignature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getFunctionSignature_B1(), ecorePackage.getEString(), "b1", null, 0, 1, FunctionSignature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getFunctionSignature_T5(), ecorePackage.getEString(), "t5", null, 0, 1, FunctionSignature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getFunctionSignature_B3(), ecorePackage.getEInt(), "b3", null, 0, 1, FunctionSignature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getFunctionSignature_B2(), ecorePackage.getEString(), "b2", null, 0, 1, FunctionSignature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getFunctionSignature_T6(), ecorePackage.getEString(), "t6", null, 0, 1, FunctionSignature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
@@ -4920,8 +4909,7 @@ public class EditorPackageImpl extends EPackageImpl implements EditorPackage
     initEReference(getVariableDeclarationBlock_VardecBlk(), this.getVariableDeclaration(), null, "vardecBlk", null, 0, -1, VariableDeclarationBlock.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(variableDeclarationEClass, VariableDeclaration.class, "VariableDeclaration", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getVariableDeclaration_T1(), this.getTypeExpression(), null, "t1", null, 0, 1, VariableDeclaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getVariableDeclaration_T2(), this.getTypeExpression(), null, "t2", null, 0, 1, VariableDeclaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getVariableDeclaration_T1(), this.getExpr(), null, "t1", null, 0, 1, VariableDeclaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getVariableDeclaration_V1(), this.getVariableTyped(), null, "v1", null, 0, 1, VariableDeclaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getVariableDeclaration_V2(), this.getVariableDeclarationBlock(), null, "v2", null, 0, 1, VariableDeclaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 

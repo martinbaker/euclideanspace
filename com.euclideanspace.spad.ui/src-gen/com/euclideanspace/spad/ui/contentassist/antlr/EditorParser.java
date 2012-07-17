@@ -38,7 +38,9 @@ public class EditorParser extends AbstractContentAssistParser {
 				private static final long serialVersionUID = 1L;
 				{
 					put(grammarAccess.getModelAccess().getAlternatives_2(), "rule__Model__Alternatives_2");
-					put(grammarAccess.getCategoryDefAccess().getAlternatives_9(), "rule__CategoryDef__Alternatives_9");
+					put(grammarAccess.getCategoryDefAccess().getAlternatives_8(), "rule__CategoryDef__Alternatives_8");
+					put(grammarAccess.getCategoryDefAccess().getAlternatives_8_0_1(), "rule__CategoryDef__Alternatives_8_0_1");
+					put(grammarAccess.getCategoryDefAccess().getAlternatives_8_1_3(), "rule__CategoryDef__Alternatives_8_1_3");
 					put(grammarAccess.getPackageDefAccess().getAlternatives_9(), "rule__PackageDef__Alternatives_9");
 					put(grammarAccess.getDomainDefAccess().getAlternatives_9(), "rule__DomainDef__Alternatives_9");
 					put(grammarAccess.getWherePartAccess().getAlternatives_4_1(), "rule__WherePart__Alternatives_4_1");
@@ -76,7 +78,10 @@ public class EditorParser extends AbstractContentAssistParser {
 					put(grammarAccess.getBooleanLiteralAccess().getAlternatives(), "rule__BooleanLiteral__Alternatives");
 					put(grammarAccess.getModelAccess().getGroup(), "rule__Model__Group__0");
 					put(grammarAccess.getCategoryDefAccess().getGroup(), "rule__CategoryDef__Group__0");
-					put(grammarAccess.getCategoryDefAccess().getGroup_9_0(), "rule__CategoryDef__Group_9_0__0");
+					put(grammarAccess.getCategoryDefAccess().getGroup_8_0(), "rule__CategoryDef__Group_8_0__0");
+					put(grammarAccess.getCategoryDefAccess().getGroup_8_0_1_0(), "rule__CategoryDef__Group_8_0_1_0__0");
+					put(grammarAccess.getCategoryDefAccess().getGroup_8_1(), "rule__CategoryDef__Group_8_1__0");
+					put(grammarAccess.getCategoryDefAccess().getGroup_8_1_3_0(), "rule__CategoryDef__Group_8_1_3_0__0");
 					put(grammarAccess.getPackageDefAccess().getGroup(), "rule__PackageDef__Group__0");
 					put(grammarAccess.getDomainDefAccess().getGroup(), "rule__DomainDef__Group__0");
 					put(grammarAccess.getWherePartAccess().getGroup(), "rule__WherePart__Group__0");
@@ -97,7 +102,7 @@ public class EditorParser extends AbstractContentAssistParser {
 					put(grammarAccess.getFunctionSignatureAccess().getGroup_0_3(), "rule__FunctionSignature__Group_0_3__0");
 					put(grammarAccess.getFunctionSignatureAccess().getGroup_1(), "rule__FunctionSignature__Group_1__0");
 					put(grammarAccess.getFunctionSignatureAccess().getGroup_2(), "rule__FunctionSignature__Group_2__0");
-					put(grammarAccess.getFunctionSignatureAccess().getGroup_3(), "rule__FunctionSignature__Group_3__0");
+					put(grammarAccess.getFunctionSignatureAccess().getGroup_4(), "rule__FunctionSignature__Group_4__0");
 					put(grammarAccess.getMacroDefAccess().getGroup(), "rule__MacroDef__Group__0");
 					put(grammarAccess.getImportAccess().getGroup(), "rule__Import__Group__0");
 					put(grammarAccess.getVariableDeclarationBlockAccess().getGroup(), "rule__VariableDeclarationBlock__Group__0");
@@ -269,10 +274,14 @@ public class EditorParser extends AbstractContentAssistParser {
 					put(grammarAccess.getCategoryDefAccess().getLongnameAssignment_2(), "rule__CategoryDef__LongnameAssignment_2");
 					put(grammarAccess.getCategoryDefAccess().getLongname2Assignment_3(), "rule__CategoryDef__Longname2Assignment_3");
 					put(grammarAccess.getCategoryDefAccess().getCpAssignment_4(), "rule__CategoryDef__CpAssignment_4");
-					put(grammarAccess.getCategoryDefAccess().getImplNameAssignment_8(), "rule__CategoryDef__ImplNameAssignment_8");
-					put(grammarAccess.getCategoryDefAccess().getWAssignment_9_0_0(), "rule__CategoryDef__WAssignment_9_0_0");
-					put(grammarAccess.getCategoryDefAccess().getAAssignment_9_0_1(), "rule__CategoryDef__AAssignment_9_0_1");
-					put(grammarAccess.getCategoryDefAccess().getWh5Assignment_9_1(), "rule__CategoryDef__Wh5Assignment_9_1");
+					put(grammarAccess.getCategoryDefAccess().getImplNameAssignment_8_0_0(), "rule__CategoryDef__ImplNameAssignment_8_0_0");
+					put(grammarAccess.getCategoryDefAccess().getWAssignment_8_0_1_0_0(), "rule__CategoryDef__WAssignment_8_0_1_0_0");
+					put(grammarAccess.getCategoryDefAccess().getAAssignment_8_0_1_0_1(), "rule__CategoryDef__AAssignment_8_0_1_0_1");
+					put(grammarAccess.getCategoryDefAccess().getWh5Assignment_8_0_1_1(), "rule__CategoryDef__Wh5Assignment_8_0_1_1");
+					put(grammarAccess.getCategoryDefAccess().getImplNameAssignment_8_1_2(), "rule__CategoryDef__ImplNameAssignment_8_1_2");
+					put(grammarAccess.getCategoryDefAccess().getWAssignment_8_1_3_0_0(), "rule__CategoryDef__WAssignment_8_1_3_0_0");
+					put(grammarAccess.getCategoryDefAccess().getAAssignment_8_1_3_0_1(), "rule__CategoryDef__AAssignment_8_1_3_0_1");
+					put(grammarAccess.getCategoryDefAccess().getWh5Assignment_8_1_3_1(), "rule__CategoryDef__Wh5Assignment_8_1_3_1");
 					put(grammarAccess.getPackageDefAccess().getNameAssignment_0(), "rule__PackageDef__NameAssignment_0");
 					put(grammarAccess.getPackageDefAccess().getShortnameAssignment_1(), "rule__PackageDef__ShortnameAssignment_1");
 					put(grammarAccess.getPackageDefAccess().getLongnameAssignment_2(), "rule__PackageDef__LongnameAssignment_2");
@@ -303,8 +312,7 @@ public class EditorParser extends AbstractContentAssistParser {
 					put(grammarAccess.getAddPartAccess().getNameAssignment_0(), "rule__AddPart__NameAssignment_0");
 					put(grammarAccess.getAddPartAccess().getTAssignment_4_0(), "rule__AddPart__TAssignment_4_0");
 					put(grammarAccess.getAddStatementsAccess().getT1Assignment_2_1(), "rule__AddStatements__T1Assignment_2_1");
-					put(grammarAccess.getAddStatementsAccess().getT12Assignment_2_3(), "rule__AddStatements__T12Assignment_2_3");
-					put(grammarAccess.getAddStatementsAccess().getT13Assignment_2_5(), "rule__AddStatements__T13Assignment_2_5");
+					put(grammarAccess.getAddStatementsAccess().getT13Assignment_2_3(), "rule__AddStatements__T13Assignment_2_3");
 					put(grammarAccess.getFunctionDefinitionAccess().getPar3Assignment_0(), "rule__FunctionDefinition__Par3Assignment_0");
 					put(grammarAccess.getFunctionDefinitionAccess().getPar4Assignment_1_1(), "rule__FunctionDefinition__Par4Assignment_1_1");
 					put(grammarAccess.getFunctionDefinitionAccess().getPar5Assignment_3(), "rule__FunctionDefinition__Par5Assignment_3");
@@ -329,14 +337,14 @@ public class EditorParser extends AbstractContentAssistParser {
 					put(grammarAccess.getFunctionSignatureAccess().getB1Assignment_2_1_10(), "rule__FunctionSignature__B1Assignment_2_1_10");
 					put(grammarAccess.getFunctionSignatureAccess().getB1Assignment_2_1_11(), "rule__FunctionSignature__B1Assignment_2_1_11");
 					put(grammarAccess.getFunctionSignatureAccess().getT5Assignment_2_2(), "rule__FunctionSignature__T5Assignment_2_2");
-					put(grammarAccess.getFunctionSignatureAccess().getB2Assignment_3_0(), "rule__FunctionSignature__B2Assignment_3_0");
-					put(grammarAccess.getFunctionSignatureAccess().getT6Assignment_3_1(), "rule__FunctionSignature__T6Assignment_3_1");
+					put(grammarAccess.getFunctionSignatureAccess().getB3Assignment_3(), "rule__FunctionSignature__B3Assignment_3");
+					put(grammarAccess.getFunctionSignatureAccess().getB2Assignment_4_0(), "rule__FunctionSignature__B2Assignment_4_0");
+					put(grammarAccess.getFunctionSignatureAccess().getT6Assignment_4_1(), "rule__FunctionSignature__T6Assignment_4_1");
 					put(grammarAccess.getMacroDefAccess().getMacronameAssignment_0(), "rule__MacroDef__MacronameAssignment_0");
 					put(grammarAccess.getImportAccess().getImpnameAssignment_1(), "rule__Import__ImpnameAssignment_1");
 					put(grammarAccess.getVariableDeclarationBlockAccess().getVardecbrAssignment_0(), "rule__VariableDeclarationBlock__VardecbrAssignment_0");
 					put(grammarAccess.getVariableDeclarationBlockAccess().getVardecBlkAssignment_2_0(), "rule__VariableDeclarationBlock__VardecBlkAssignment_2_0");
 					put(grammarAccess.getVariableDeclarationAccess().getT1Assignment_0_1(), "rule__VariableDeclaration__T1Assignment_0_1");
-					put(grammarAccess.getVariableDeclarationAccess().getT2Assignment_0_3(), "rule__VariableDeclaration__T2Assignment_0_3");
 					put(grammarAccess.getVariableDeclarationAccess().getV1Assignment_1_0(), "rule__VariableDeclaration__V1Assignment_1_0");
 					put(grammarAccess.getVariableDeclarationAccess().getV2Assignment_1_1(), "rule__VariableDeclaration__V2Assignment_1_1");
 					put(grammarAccess.getVariableTypedAccess().getVarNameAssignment_0_0(), "rule__VariableTyped__VarNameAssignment_0_0");

@@ -36,6 +36,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link com.euclideanspace.spad.editor.impl.FunctionSignatureImpl#getT4 <em>T4</em>}</li>
  *   <li>{@link com.euclideanspace.spad.editor.impl.FunctionSignatureImpl#getB1 <em>B1</em>}</li>
  *   <li>{@link com.euclideanspace.spad.editor.impl.FunctionSignatureImpl#getT5 <em>T5</em>}</li>
+ *   <li>{@link com.euclideanspace.spad.editor.impl.FunctionSignatureImpl#getB3 <em>B3</em>}</li>
  *   <li>{@link com.euclideanspace.spad.editor.impl.FunctionSignatureImpl#getB2 <em>B2</em>}</li>
  *   <li>{@link com.euclideanspace.spad.editor.impl.FunctionSignatureImpl#getT6 <em>T6</em>}</li>
  * </ul>
@@ -164,6 +165,26 @@ public class FunctionSignatureImpl extends MinimalEObjectImpl.Container implemen
    * @ordered
    */
   protected String t5 = T5_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #getB3() <em>B3</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getB3()
+   * @generated
+   * @ordered
+   */
+  protected static final int B3_EDEFAULT = 0;
+
+  /**
+   * The cached value of the '{@link #getB3() <em>B3</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getB3()
+   * @generated
+   * @ordered
+   */
+  protected int b3 = B3_EDEFAULT;
 
   /**
    * The default value of the '{@link #getB2() <em>B2</em>}' attribute.
@@ -408,6 +429,29 @@ public class FunctionSignatureImpl extends MinimalEObjectImpl.Container implemen
    * <!-- end-user-doc -->
    * @generated
    */
+  public int getB3()
+  {
+    return b3;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setB3(int newB3)
+  {
+    int oldB3 = b3;
+    b3 = newB3;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, EditorPackage.FUNCTION_SIGNATURE__B3, oldB3, b3));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public String getB2()
   {
     return b2;
@@ -491,6 +535,8 @@ public class FunctionSignatureImpl extends MinimalEObjectImpl.Container implemen
         return getB1();
       case EditorPackage.FUNCTION_SIGNATURE__T5:
         return getT5();
+      case EditorPackage.FUNCTION_SIGNATURE__B3:
+        return getB3();
       case EditorPackage.FUNCTION_SIGNATURE__B2:
         return getB2();
       case EditorPackage.FUNCTION_SIGNATURE__T6:
@@ -531,6 +577,9 @@ public class FunctionSignatureImpl extends MinimalEObjectImpl.Container implemen
         return;
       case EditorPackage.FUNCTION_SIGNATURE__T5:
         setT5((String)newValue);
+        return;
+      case EditorPackage.FUNCTION_SIGNATURE__B3:
+        setB3((Integer)newValue);
         return;
       case EditorPackage.FUNCTION_SIGNATURE__B2:
         setB2((String)newValue);
@@ -573,6 +622,9 @@ public class FunctionSignatureImpl extends MinimalEObjectImpl.Container implemen
       case EditorPackage.FUNCTION_SIGNATURE__T5:
         setT5(T5_EDEFAULT);
         return;
+      case EditorPackage.FUNCTION_SIGNATURE__B3:
+        setB3(B3_EDEFAULT);
+        return;
       case EditorPackage.FUNCTION_SIGNATURE__B2:
         setB2(B2_EDEFAULT);
         return;
@@ -607,6 +659,8 @@ public class FunctionSignatureImpl extends MinimalEObjectImpl.Container implemen
         return B1_EDEFAULT == null ? b1 != null : !B1_EDEFAULT.equals(b1);
       case EditorPackage.FUNCTION_SIGNATURE__T5:
         return T5_EDEFAULT == null ? t5 != null : !T5_EDEFAULT.equals(t5);
+      case EditorPackage.FUNCTION_SIGNATURE__B3:
+        return b3 != B3_EDEFAULT;
       case EditorPackage.FUNCTION_SIGNATURE__B2:
         return B2_EDEFAULT == null ? b2 != null : !B2_EDEFAULT.equals(b2);
       case EditorPackage.FUNCTION_SIGNATURE__T6:
@@ -636,6 +690,8 @@ public class FunctionSignatureImpl extends MinimalEObjectImpl.Container implemen
     result.append(b1);
     result.append(", t5: ");
     result.append(t5);
+    result.append(", b3: ");
+    result.append(b3);
     result.append(", b2: ");
     result.append(b2);
     result.append(", t6: ");

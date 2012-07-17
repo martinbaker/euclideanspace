@@ -4,8 +4,8 @@ package com.euclideanspace.spad.editor.impl;
 
 import com.euclideanspace.spad.editor.AddStatements;
 import com.euclideanspace.spad.editor.EditorPackage;
+import com.euclideanspace.spad.editor.Expr;
 import com.euclideanspace.spad.editor.FunctionDefinitionBlock;
-import com.euclideanspace.spad.editor.TypeExpression;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
@@ -24,7 +24,6 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * The following features are implemented:
  * <ul>
  *   <li>{@link com.euclideanspace.spad.editor.impl.AddStatementsImpl#getT1 <em>T1</em>}</li>
- *   <li>{@link com.euclideanspace.spad.editor.impl.AddStatementsImpl#getT12 <em>T12</em>}</li>
  *   <li>{@link com.euclideanspace.spad.editor.impl.AddStatementsImpl#getT13 <em>T13</em>}</li>
  * </ul>
  * </p>
@@ -41,17 +40,7 @@ public class AddStatementsImpl extends MinimalEObjectImpl.Container implements A
    * @generated
    * @ordered
    */
-  protected TypeExpression t1;
-
-  /**
-   * The cached value of the '{@link #getT12() <em>T12</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getT12()
-   * @generated
-   * @ordered
-   */
-  protected TypeExpression t12;
+  protected Expr t1;
 
   /**
    * The cached value of the '{@link #getT13() <em>T13</em>}' containment reference.
@@ -89,7 +78,7 @@ public class AddStatementsImpl extends MinimalEObjectImpl.Container implements A
    * <!-- end-user-doc -->
    * @generated
    */
-  public TypeExpression getT1()
+  public Expr getT1()
   {
     return t1;
   }
@@ -99,9 +88,9 @@ public class AddStatementsImpl extends MinimalEObjectImpl.Container implements A
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetT1(TypeExpression newT1, NotificationChain msgs)
+  public NotificationChain basicSetT1(Expr newT1, NotificationChain msgs)
   {
-    TypeExpression oldT1 = t1;
+    Expr oldT1 = t1;
     t1 = newT1;
     if (eNotificationRequired())
     {
@@ -116,7 +105,7 @@ public class AddStatementsImpl extends MinimalEObjectImpl.Container implements A
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setT1(TypeExpression newT1)
+  public void setT1(Expr newT1)
   {
     if (newT1 != t1)
     {
@@ -130,54 +119,6 @@ public class AddStatementsImpl extends MinimalEObjectImpl.Container implements A
     }
     else if (eNotificationRequired())
       eNotify(new ENotificationImpl(this, Notification.SET, EditorPackage.ADD_STATEMENTS__T1, newT1, newT1));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public TypeExpression getT12()
-  {
-    return t12;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public NotificationChain basicSetT12(TypeExpression newT12, NotificationChain msgs)
-  {
-    TypeExpression oldT12 = t12;
-    t12 = newT12;
-    if (eNotificationRequired())
-    {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, EditorPackage.ADD_STATEMENTS__T12, oldT12, newT12);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setT12(TypeExpression newT12)
-  {
-    if (newT12 != t12)
-    {
-      NotificationChain msgs = null;
-      if (t12 != null)
-        msgs = ((InternalEObject)t12).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - EditorPackage.ADD_STATEMENTS__T12, null, msgs);
-      if (newT12 != null)
-        msgs = ((InternalEObject)newT12).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - EditorPackage.ADD_STATEMENTS__T12, null, msgs);
-      msgs = basicSetT12(newT12, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, EditorPackage.ADD_STATEMENTS__T12, newT12, newT12));
   }
 
   /**
@@ -240,8 +181,6 @@ public class AddStatementsImpl extends MinimalEObjectImpl.Container implements A
     {
       case EditorPackage.ADD_STATEMENTS__T1:
         return basicSetT1(null, msgs);
-      case EditorPackage.ADD_STATEMENTS__T12:
-        return basicSetT12(null, msgs);
       case EditorPackage.ADD_STATEMENTS__T13:
         return basicSetT13(null, msgs);
     }
@@ -260,8 +199,6 @@ public class AddStatementsImpl extends MinimalEObjectImpl.Container implements A
     {
       case EditorPackage.ADD_STATEMENTS__T1:
         return getT1();
-      case EditorPackage.ADD_STATEMENTS__T12:
-        return getT12();
       case EditorPackage.ADD_STATEMENTS__T13:
         return getT13();
     }
@@ -279,10 +216,7 @@ public class AddStatementsImpl extends MinimalEObjectImpl.Container implements A
     switch (featureID)
     {
       case EditorPackage.ADD_STATEMENTS__T1:
-        setT1((TypeExpression)newValue);
-        return;
-      case EditorPackage.ADD_STATEMENTS__T12:
-        setT12((TypeExpression)newValue);
+        setT1((Expr)newValue);
         return;
       case EditorPackage.ADD_STATEMENTS__T13:
         setT13((FunctionDefinitionBlock)newValue);
@@ -302,10 +236,7 @@ public class AddStatementsImpl extends MinimalEObjectImpl.Container implements A
     switch (featureID)
     {
       case EditorPackage.ADD_STATEMENTS__T1:
-        setT1((TypeExpression)null);
-        return;
-      case EditorPackage.ADD_STATEMENTS__T12:
-        setT12((TypeExpression)null);
+        setT1((Expr)null);
         return;
       case EditorPackage.ADD_STATEMENTS__T13:
         setT13((FunctionDefinitionBlock)null);
@@ -326,8 +257,6 @@ public class AddStatementsImpl extends MinimalEObjectImpl.Container implements A
     {
       case EditorPackage.ADD_STATEMENTS__T1:
         return t1 != null;
-      case EditorPackage.ADD_STATEMENTS__T12:
-        return t12 != null;
       case EditorPackage.ADD_STATEMENTS__T13:
         return t13 != null;
     }

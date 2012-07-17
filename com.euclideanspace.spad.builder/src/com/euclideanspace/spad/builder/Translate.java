@@ -265,15 +265,20 @@ public class Translate {
 		line =applyMacroes(line,input); // apply here so macros don't affect indent
 		line =bracketedStatements(line); // where statements are grouped together by
                                          // brackets then change to use braces instead.
-        String trimedLine = line.trim();
+		line =SubstituteStringEscape(line);  // in java the '/' character is considered
+	                                     // an escape character so we need to duplicate
+		                                 // it when it occurs in a string.
+		String trimedLine = line.trim();
         // if line contains comment (not just starts with comment) then
         // set following
         boolean containsComment = false;
         if (line.lastIndexOf("++") >= 0) containsComment = true;
         if (line.lastIndexOf("--") >= 0) containsComment = true;
+        // if line ends with '+','-' or ',' then we treat this as
+        // an implication that the following line will be a continuation
         if (!containsComment && (trimedLine.endsWith("+") 
-        		                 ||trimedLine.endsWith("-"))) {
-        	// implied continuation
+        		                 || trimedLine.endsWith("-")
+                                 || trimedLine.endsWith(","))) {
         	line = line + " _";
         	trimedLine = line.trim();
         }
@@ -302,22 +307,32 @@ public class Translate {
     			  ind = indentForContinuation;
     			  indentForContinuation = -1;
     		  }
+    		  // if line contains comment then split into two separate
+    		  // strings
     		  int cmtInd = line.indexOf("--");
     		  if (cmtInd<0) cmtInd = line.indexOf("++");
     		  if (cmtInd > -1) {
+    			if (lineHoldType.peek() == LineType.CONTINUED){
     			  String cmt = line.substring(cmtInd,line.length());
+                  line = line.substring(0,cmtInd);
+                  lineHold.offer(line);
+                  lineHoldType.offer(LineType.CODE);
+                  line = cmt.toString()+"\n";
+    			} else {
+      			  String cmt = line.substring(cmtInd,line.length());
+                  line = line.substring(0,cmtInd);
                   lineHold.offer(cmt);
                   lineHoldType.offer(LineType.COMMENT);
-                  line = line.substring(0,cmtInd);
+      			}
     		  }
     		  //System.out.println(line2);
     		  if (ind == indent) { // indent unchanged so no brace
     			  flushLineHold(output,line);
     		  } else if (ind > indent) { // indent increased so insert '{'
-    			  output.write(" {"); // put brace before any pending comments
-    			  flushLineHold(output,line);
-    			  //output.write("push ind=" +ind+" indent="+ indent);
-    			  pile.push(ind);
+   			    output.write(" {"); // put brace before any pending comments
+    			    flushLineHold(output,line);
+    			    //output.write("push ind=" +ind+" indent="+ indent);
+    			    pile.push(ind);
     		  } else if (ind < indent) { // indent reduced so insert '}'
     			  while (!pile.empty() && ind < indent) {
                     pile.pop();
@@ -439,6 +454,28 @@ public class Translate {
         }
     }
 	  return shortText;
+    }
+
+    /**
+     * in java the '/' character is considered an escape character
+     * so we need to duplicate it when it occurs in a string.
+     * @param lineIn line to be processed
+     * @return line with '/' character duplicated
+     */
+    public String SubstituteStringEscape(String lineIn){
+    	StringBuffer line = new StringBuffer(lineIn);
+        boolean inSrt = false;
+        // iterate backwards so that inserts do not affect position of
+        // characters not yet processed
+    	for (int i=line.length()-1;i > -1;i--) {
+    		Character c=line.charAt(i);
+    		if (c=='"') {
+    			inSrt = !inSrt;
+    		} else if (c=='\\' && inSrt) {
+    			line.insert(i,'\\');
+    		}
+    	}
+    	return line.toString();
     }
     
     /**

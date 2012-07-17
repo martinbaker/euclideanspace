@@ -303,8 +303,13 @@ CategoryDef hidden(WS,NL,SL_COMMENT):
 	longname2=ID /*[CategoryDef]*/
     (cp=TypeParameterList)?
     COLON 'Category'
-    DEF implName=TypeArguments
-    ((w=WithPart? a=AddPart?)| wh5=WherePart /* | wh2=WithImplied*/)
+    DEF 
+    (
+    implName=TypeArguments ((w=WithPart? a=AddPart?)| wh5=WherePart)
+    | LBRACE NL*
+      implName=TypeArguments ((w=WithPart? a=AddPart?)| wh5=WherePart)
+      RBRACE NL*
+    )
 ;
 
 /*
@@ -378,14 +383,13 @@ AddPart hidden(WS,SL_COMMENT):
 AddStatements hidden(WS,SL_COMMENT):
    VariableDeclarationAssign
    | FunctionDefinition
-   | ('if' t1=TypeExpression
-      'has' t12=TypeExpression
+   | ('if' t1=Expression // expression has form 'x has y'
       'then' t13=FunctionDefinitionBlock)
    | MacroDef
    | Import
 ;
 
-/* function definition in add part
+/* function definition in add part (called by AddStatements)
  * has a form like:
  * name(params) == statement
  * or, for infix operators,
@@ -400,9 +404,11 @@ AddStatements hidden(WS,SL_COMMENT):
  * ... }
  */
 FunctionDefinition hidden(WS,SL_COMMENT):
+  (
 	par3=FunctionSignature
     (COLON par4=TypeExpression)?
     DEF par5=Statement
+   ) 
 ;
 
 FunctionDefinitionBlock hidden(WS,SL_COMMENT):
@@ -431,18 +437,19 @@ FunctionSignature hidden(WS,SL_COMMENT):
     (COMMA par3 += VariableTyped)*
     RPAREN
   ) | (
-  	// fnNam=ID par2=VariableDeclaration this causes recursive defintion
+  	// fnNam=ID par2=VariableDeclaration causes recursive definition so use:
   	fnNam=ID par=ID
   ) | (
   	t4=ID ( b1=EQUAL | b1=LT | b1=GT | b1=LE | b1=GE |
             b1=PLUS | b1=MINUS | b1=TIMES | b1=SLASH | b1=AMPERSAND |
             b1=BAR | b1=CARAT)  t5=ID
   ) | (
+  	b3=INT // allows special form of function signature using '0' or '1'
+  	       // can't specify '0' or '1' explicitly as this would affect lex
+  	       // order
+  ) | (
   	b2=MINUS t6=ID
-  ) 
-  // 0 or 1 can be used as a function signature as a short form of
-  // _0() or _1() but that confuses the parser
-  // | b3?='0' | b4?='1'
+  )
 ;
 
 /* macros provide a general textual substitution
@@ -487,7 +494,7 @@ VariableDeclarationBlock hidden(WS,SL_COMMENT):
  * if 
  */
 VariableDeclaration hidden(WS,SL_COMMENT):
-    ('if' t1=TypeExpression 'has' t2=TypeExpression 'then')?
+    ('if' t1=Expression 'then')? // expression has form 'x has y'
 	(v1=VariableTyped | v2=VariableDeclarationBlock)
 ;
 
@@ -943,7 +950,7 @@ CaseExpression returns Expr hidden(WS,SL_COMMENT):
  */
 EqualityExpression returns Expr hidden(WS,SL_COMMENT):
   RelationalExpression
-// ambigous because EQ can be in top level expression
+// ambiguous because EQ can be in top level expression
   ( {EqualityExpression.left=current}( op=EQUAL | op=NOTEQUAL | op='^=') right = RelationalExpression)*
 ;
 

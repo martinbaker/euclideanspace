@@ -597,22 +597,13 @@ public interface EditorPackage extends EPackage
   int ADD_STATEMENTS__T1 = 0;
 
   /**
-   * The feature id for the '<em><b>T12</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ADD_STATEMENTS__T12 = 1;
-
-  /**
    * The feature id for the '<em><b>T13</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int ADD_STATEMENTS__T13 = 2;
+  int ADD_STATEMENTS__T13 = 1;
 
   /**
    * The number of structural features of the '<em>Add Statements</em>' class.
@@ -621,7 +612,7 @@ public interface EditorPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ADD_STATEMENTS_FEATURE_COUNT = 3;
+  int ADD_STATEMENTS_FEATURE_COUNT = 2;
 
   /**
    * The meta object id for the '{@link com.euclideanspace.spad.editor.impl.FunctionDefinitionImpl <em>Function Definition</em>}' class.
@@ -641,15 +632,6 @@ public interface EditorPackage extends EPackage
    * @ordered
    */
   int FUNCTION_DEFINITION__T1 = ADD_STATEMENTS__T1;
-
-  /**
-   * The feature id for the '<em><b>T12</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int FUNCTION_DEFINITION__T12 = ADD_STATEMENTS__T12;
 
   /**
    * The feature id for the '<em><b>T13</b></em>' containment reference.
@@ -807,13 +789,22 @@ public interface EditorPackage extends EPackage
   int FUNCTION_SIGNATURE__T5 = 6;
 
   /**
+   * The feature id for the '<em><b>B3</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FUNCTION_SIGNATURE__B3 = 7;
+
+  /**
    * The feature id for the '<em><b>B2</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int FUNCTION_SIGNATURE__B2 = 7;
+  int FUNCTION_SIGNATURE__B2 = 8;
 
   /**
    * The feature id for the '<em><b>T6</b></em>' attribute.
@@ -822,7 +813,7 @@ public interface EditorPackage extends EPackage
    * @generated
    * @ordered
    */
-  int FUNCTION_SIGNATURE__T6 = 8;
+  int FUNCTION_SIGNATURE__T6 = 9;
 
   /**
    * The number of structural features of the '<em>Function Signature</em>' class.
@@ -831,7 +822,7 @@ public interface EditorPackage extends EPackage
    * @generated
    * @ordered
    */
-  int FUNCTION_SIGNATURE_FEATURE_COUNT = 9;
+  int FUNCTION_SIGNATURE_FEATURE_COUNT = 10;
 
   /**
    * The meta object id for the '{@link com.euclideanspace.spad.editor.impl.MacroDefImpl <em>Macro Def</em>}' class.
@@ -853,22 +844,13 @@ public interface EditorPackage extends EPackage
   int MACRO_DEF__T1 = WHERE_ASSIGNMENTS_FEATURE_COUNT + 0;
 
   /**
-   * The feature id for the '<em><b>T12</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int MACRO_DEF__T12 = WHERE_ASSIGNMENTS_FEATURE_COUNT + 1;
-
-  /**
    * The feature id for the '<em><b>T13</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int MACRO_DEF__T13 = WHERE_ASSIGNMENTS_FEATURE_COUNT + 2;
+  int MACRO_DEF__T13 = WHERE_ASSIGNMENTS_FEATURE_COUNT + 1;
 
   /**
    * The feature id for the '<em><b>Macroname</b></em>' attribute.
@@ -877,7 +859,7 @@ public interface EditorPackage extends EPackage
    * @generated
    * @ordered
    */
-  int MACRO_DEF__MACRONAME = WHERE_ASSIGNMENTS_FEATURE_COUNT + 3;
+  int MACRO_DEF__MACRONAME = WHERE_ASSIGNMENTS_FEATURE_COUNT + 2;
 
   /**
    * The number of structural features of the '<em>Macro Def</em>' class.
@@ -886,7 +868,7 @@ public interface EditorPackage extends EPackage
    * @generated
    * @ordered
    */
-  int MACRO_DEF_FEATURE_COUNT = WHERE_ASSIGNMENTS_FEATURE_COUNT + 4;
+  int MACRO_DEF_FEATURE_COUNT = WHERE_ASSIGNMENTS_FEATURE_COUNT + 3;
 
   /**
    * The meta object id for the '{@link com.euclideanspace.spad.editor.impl.ImportImpl <em>Import</em>}' class.
@@ -908,22 +890,13 @@ public interface EditorPackage extends EPackage
   int IMPORT__T1 = WHERE_ASSIGNMENTS_FEATURE_COUNT + 0;
 
   /**
-   * The feature id for the '<em><b>T12</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int IMPORT__T12 = WHERE_ASSIGNMENTS_FEATURE_COUNT + 1;
-
-  /**
    * The feature id for the '<em><b>T13</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int IMPORT__T13 = WHERE_ASSIGNMENTS_FEATURE_COUNT + 2;
+  int IMPORT__T13 = WHERE_ASSIGNMENTS_FEATURE_COUNT + 1;
 
   /**
    * The feature id for the '<em><b>Impname</b></em>' attribute list.
@@ -932,7 +905,7 @@ public interface EditorPackage extends EPackage
    * @generated
    * @ordered
    */
-  int IMPORT__IMPNAME = WHERE_ASSIGNMENTS_FEATURE_COUNT + 3;
+  int IMPORT__IMPNAME = WHERE_ASSIGNMENTS_FEATURE_COUNT + 2;
 
   /**
    * The number of structural features of the '<em>Import</em>' class.
@@ -941,7 +914,7 @@ public interface EditorPackage extends EPackage
    * @generated
    * @ordered
    */
-  int IMPORT_FEATURE_COUNT = WHERE_ASSIGNMENTS_FEATURE_COUNT + 4;
+  int IMPORT_FEATURE_COUNT = WHERE_ASSIGNMENTS_FEATURE_COUNT + 3;
 
   /**
    * The meta object id for the '{@link com.euclideanspace.spad.editor.impl.VariableDeclarationBlockImpl <em>Variable Declaration Block</em>}' class.
@@ -1000,22 +973,13 @@ public interface EditorPackage extends EPackage
   int VARIABLE_DECLARATION__T1 = WHERE_ASSIGNMENTS_FEATURE_COUNT + 0;
 
   /**
-   * The feature id for the '<em><b>T2</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int VARIABLE_DECLARATION__T2 = WHERE_ASSIGNMENTS_FEATURE_COUNT + 1;
-
-  /**
    * The feature id for the '<em><b>V1</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int VARIABLE_DECLARATION__V1 = WHERE_ASSIGNMENTS_FEATURE_COUNT + 2;
+  int VARIABLE_DECLARATION__V1 = WHERE_ASSIGNMENTS_FEATURE_COUNT + 1;
 
   /**
    * The feature id for the '<em><b>V2</b></em>' containment reference.
@@ -1024,7 +988,7 @@ public interface EditorPackage extends EPackage
    * @generated
    * @ordered
    */
-  int VARIABLE_DECLARATION__V2 = WHERE_ASSIGNMENTS_FEATURE_COUNT + 3;
+  int VARIABLE_DECLARATION__V2 = WHERE_ASSIGNMENTS_FEATURE_COUNT + 2;
 
   /**
    * The number of structural features of the '<em>Variable Declaration</em>' class.
@@ -1033,7 +997,7 @@ public interface EditorPackage extends EPackage
    * @generated
    * @ordered
    */
-  int VARIABLE_DECLARATION_FEATURE_COUNT = WHERE_ASSIGNMENTS_FEATURE_COUNT + 4;
+  int VARIABLE_DECLARATION_FEATURE_COUNT = WHERE_ASSIGNMENTS_FEATURE_COUNT + 3;
 
   /**
    * The meta object id for the '{@link com.euclideanspace.spad.editor.impl.VariableTypedImpl <em>Variable Typed</em>}' class.
@@ -1099,15 +1063,6 @@ public interface EditorPackage extends EPackage
    * @ordered
    */
   int VARIABLE_DECLARATION_ASSIGN__T1 = ADD_STATEMENTS__T1;
-
-  /**
-   * The feature id for the '<em><b>T12</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int VARIABLE_DECLARATION_ASSIGN__T12 = ADD_STATEMENTS__T12;
 
   /**
    * The feature id for the '<em><b>T13</b></em>' containment reference.
@@ -10420,17 +10375,6 @@ public interface EditorPackage extends EPackage
   EReference getAddStatements_T1();
 
   /**
-   * Returns the meta object for the containment reference '{@link com.euclideanspace.spad.editor.AddStatements#getT12 <em>T12</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>T12</em>'.
-   * @see com.euclideanspace.spad.editor.AddStatements#getT12()
-   * @see #getAddStatements()
-   * @generated
-   */
-  EReference getAddStatements_T12();
-
-  /**
    * Returns the meta object for the containment reference '{@link com.euclideanspace.spad.editor.AddStatements#getT13 <em>T13</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -10604,6 +10548,17 @@ public interface EditorPackage extends EPackage
   EAttribute getFunctionSignature_T5();
 
   /**
+   * Returns the meta object for the attribute '{@link com.euclideanspace.spad.editor.FunctionSignature#getB3 <em>B3</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>B3</em>'.
+   * @see com.euclideanspace.spad.editor.FunctionSignature#getB3()
+   * @see #getFunctionSignature()
+   * @generated
+   */
+  EAttribute getFunctionSignature_B3();
+
+  /**
    * Returns the meta object for the attribute '{@link com.euclideanspace.spad.editor.FunctionSignature#getB2 <em>B2</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -10719,17 +10674,6 @@ public interface EditorPackage extends EPackage
    * @generated
    */
   EReference getVariableDeclaration_T1();
-
-  /**
-   * Returns the meta object for the containment reference '{@link com.euclideanspace.spad.editor.VariableDeclaration#getT2 <em>T2</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>T2</em>'.
-   * @see com.euclideanspace.spad.editor.VariableDeclaration#getT2()
-   * @see #getVariableDeclaration()
-   * @generated
-   */
-  EReference getVariableDeclaration_T2();
 
   /**
    * Returns the meta object for the containment reference '{@link com.euclideanspace.spad.editor.VariableDeclaration#getV1 <em>V1</em>}'.
@@ -14238,14 +14182,6 @@ public interface EditorPackage extends EPackage
     EReference ADD_STATEMENTS__T1 = eINSTANCE.getAddStatements_T1();
 
     /**
-     * The meta object literal for the '<em><b>T12</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference ADD_STATEMENTS__T12 = eINSTANCE.getAddStatements_T12();
-
-    /**
      * The meta object literal for the '<em><b>T13</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -14380,6 +14316,14 @@ public interface EditorPackage extends EPackage
     EAttribute FUNCTION_SIGNATURE__T5 = eINSTANCE.getFunctionSignature_T5();
 
     /**
+     * The meta object literal for the '<em><b>B3</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute FUNCTION_SIGNATURE__B3 = eINSTANCE.getFunctionSignature_B3();
+
+    /**
      * The meta object literal for the '<em><b>B2</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -14474,14 +14418,6 @@ public interface EditorPackage extends EPackage
      * @generated
      */
     EReference VARIABLE_DECLARATION__T1 = eINSTANCE.getVariableDeclaration_T1();
-
-    /**
-     * The meta object literal for the '<em><b>T2</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference VARIABLE_DECLARATION__T2 = eINSTANCE.getVariableDeclaration_T2();
 
     /**
      * The meta object literal for the '<em><b>V1</b></em>' containment reference feature.

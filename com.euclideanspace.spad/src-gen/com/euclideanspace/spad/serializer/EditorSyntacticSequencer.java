@@ -25,6 +25,8 @@ public class EditorSyntacticSequencer extends AbstractSyntacticSequencer {
 	protected AbstractElementAlias match_AddPart___NLTerminalRuleCall_4_1_0_or_SEMICOLONTerminalRuleCall_4_1_1__p;
 	protected AbstractElementAlias match_Block_NLTerminalRuleCall_1_a;
 	protected AbstractElementAlias match_Block___NLTerminalRuleCall_2_1_0_or_SEMICOLONTerminalRuleCall_2_1_1__p;
+	protected AbstractElementAlias match_CategoryDef_NLTerminalRuleCall_8_1_1_a;
+	protected AbstractElementAlias match_CategoryDef_NLTerminalRuleCall_8_1_5_a;
 	protected AbstractElementAlias match_DoStatement_NLTerminalRuleCall_3_q;
 	protected AbstractElementAlias match_ForStatement_NLTerminalRuleCall_3_q;
 	protected AbstractElementAlias match_FunctionDefinitionBlock_NLTerminalRuleCall_1_a;
@@ -64,6 +66,8 @@ public class EditorSyntacticSequencer extends AbstractSyntacticSequencer {
 		match_AddPart___NLTerminalRuleCall_4_1_0_or_SEMICOLONTerminalRuleCall_4_1_1__p = new AlternativeAlias(true, false, new TokenAlias(false, false, grammarAccess.getAddPartAccess().getNLTerminalRuleCall_4_1_0()), new TokenAlias(false, false, grammarAccess.getAddPartAccess().getSEMICOLONTerminalRuleCall_4_1_1()));
 		match_Block_NLTerminalRuleCall_1_a = new TokenAlias(true, true, grammarAccess.getBlockAccess().getNLTerminalRuleCall_1());
 		match_Block___NLTerminalRuleCall_2_1_0_or_SEMICOLONTerminalRuleCall_2_1_1__p = new AlternativeAlias(true, false, new TokenAlias(false, false, grammarAccess.getBlockAccess().getNLTerminalRuleCall_2_1_0()), new TokenAlias(false, false, grammarAccess.getBlockAccess().getSEMICOLONTerminalRuleCall_2_1_1()));
+		match_CategoryDef_NLTerminalRuleCall_8_1_1_a = new TokenAlias(true, true, grammarAccess.getCategoryDefAccess().getNLTerminalRuleCall_8_1_1());
+		match_CategoryDef_NLTerminalRuleCall_8_1_5_a = new TokenAlias(true, true, grammarAccess.getCategoryDefAccess().getNLTerminalRuleCall_8_1_5());
 		match_DoStatement_NLTerminalRuleCall_3_q = new TokenAlias(false, true, grammarAccess.getDoStatementAccess().getNLTerminalRuleCall_3());
 		match_ForStatement_NLTerminalRuleCall_3_q = new TokenAlias(false, true, grammarAccess.getForStatementAccess().getNLTerminalRuleCall_3());
 		match_FunctionDefinitionBlock_NLTerminalRuleCall_1_a = new TokenAlias(true, true, grammarAccess.getFunctionDefinitionBlockAccess().getNLTerminalRuleCall_1());
@@ -306,6 +310,10 @@ public class EditorSyntacticSequencer extends AbstractSyntacticSequencer {
 				emit_Block_NLTerminalRuleCall_1_a(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if(match_Block___NLTerminalRuleCall_2_1_0_or_SEMICOLONTerminalRuleCall_2_1_1__p.equals(syntax))
 				emit_Block___NLTerminalRuleCall_2_1_0_or_SEMICOLONTerminalRuleCall_2_1_1__p(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if(match_CategoryDef_NLTerminalRuleCall_8_1_1_a.equals(syntax))
+				emit_CategoryDef_NLTerminalRuleCall_8_1_1_a(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if(match_CategoryDef_NLTerminalRuleCall_8_1_5_a.equals(syntax))
+				emit_CategoryDef_NLTerminalRuleCall_8_1_5_a(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if(match_DoStatement_NLTerminalRuleCall_3_q.equals(syntax))
 				emit_DoStatement_NLTerminalRuleCall_3_q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if(match_ForStatement_NLTerminalRuleCall_3_q.equals(syntax))
@@ -394,7 +402,7 @@ public class EditorSyntacticSequencer extends AbstractSyntacticSequencer {
 	
 	/**
 	 * Syntax:
-	 *     (SEMICOLON | NL)+
+	 *     (NL | SEMICOLON)+
 	 */
 	protected void emit_AddPart___NLTerminalRuleCall_4_1_0_or_SEMICOLONTerminalRuleCall_4_1_1__p(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
@@ -410,9 +418,25 @@ public class EditorSyntacticSequencer extends AbstractSyntacticSequencer {
 	
 	/**
 	 * Syntax:
-	 *     (NL | SEMICOLON)+
+	 *     (SEMICOLON | NL)+
 	 */
 	protected void emit_Block___NLTerminalRuleCall_2_1_0_or_SEMICOLONTerminalRuleCall_2_1_1__p(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * Syntax:
+	 *     NL*
+	 */
+	protected void emit_CategoryDef_NLTerminalRuleCall_8_1_1_a(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * Syntax:
+	 *     NL*
+	 */
+	protected void emit_CategoryDef_NLTerminalRuleCall_8_1_5_a(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
@@ -442,7 +466,7 @@ public class EditorSyntacticSequencer extends AbstractSyntacticSequencer {
 	
 	/**
 	 * Syntax:
-	 *     (SEMICOLON | NL)+
+	 *     (NL | SEMICOLON)+
 	 */
 	protected void emit_FunctionDefinitionBlock___NLTerminalRuleCall_2_1_0_or_SEMICOLONTerminalRuleCall_2_1_1__p(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
@@ -602,7 +626,7 @@ public class EditorSyntacticSequencer extends AbstractSyntacticSequencer {
 	
 	/**
 	 * Syntax:
-	 *     (SEMICOLON | NL)+
+	 *     (NL | SEMICOLON)+
 	 */
 	protected void emit_WherePart___NLTerminalRuleCall_4_1_0_or_SEMICOLONTerminalRuleCall_4_1_1__p(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
