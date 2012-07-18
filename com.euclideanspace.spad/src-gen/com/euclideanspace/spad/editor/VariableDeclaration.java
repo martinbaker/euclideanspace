@@ -58,12 +58,12 @@ public interface VariableDeclaration extends WhereAssignments
    * </p>
    * <!-- end-user-doc -->
    * @return the value of the '<em>V1</em>' containment reference.
-   * @see #setV1(VariableTyped)
+   * @see #setV1(TypeWithName)
    * @see com.euclideanspace.spad.editor.EditorPackage#getVariableDeclaration_V1()
    * @model containment="true"
    * @generated
    */
-  VariableTyped getV1();
+  TypeWithName getV1();
 
   /**
    * Sets the value of the '{@link com.euclideanspace.spad.editor.VariableDeclaration#getV1 <em>V1</em>}' containment reference.
@@ -73,7 +73,7 @@ public interface VariableDeclaration extends WhereAssignments
    * @see #getV1()
    * @generated
    */
-  void setV1(VariableTyped value);
+  void setV1(TypeWithName value);
 
   /**
    * Returns the value of the '<em><b>V2</b></em>' containment reference.

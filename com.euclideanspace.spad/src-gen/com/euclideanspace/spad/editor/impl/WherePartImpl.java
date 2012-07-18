@@ -22,6 +22,7 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
+import org.eclipse.emf.ecore.util.EDataTypeEList;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
@@ -38,6 +39,9 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link com.euclideanspace.spad.editor.impl.WherePartImpl#getImp <em>Imp</em>}</li>
  *   <li>{@link com.euclideanspace.spad.editor.impl.WherePartImpl#getW8 <em>W8</em>}</li>
  *   <li>{@link com.euclideanspace.spad.editor.impl.WherePartImpl#getLongname9 <em>Longname9</em>}</li>
+ *   <li>{@link com.euclideanspace.spad.editor.impl.WherePartImpl#getFs <em>Fs</em>}</li>
+ *   <li>{@link com.euclideanspace.spad.editor.impl.WherePartImpl#getPar2 <em>Par2</em>}</li>
+ *   <li>{@link com.euclideanspace.spad.editor.impl.WherePartImpl#getPar3 <em>Par3</em>}</li>
  *   <li>{@link com.euclideanspace.spad.editor.impl.WherePartImpl#getAdd <em>Add</em>}</li>
  * </ul>
  * </p>
@@ -135,6 +139,56 @@ public class WherePartImpl extends MinimalEObjectImpl.Container implements Where
    * @ordered
    */
   protected String longname9 = LONGNAME9_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #getFs() <em>Fs</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getFs()
+   * @generated
+   * @ordered
+   */
+  protected static final String FS_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getFs() <em>Fs</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getFs()
+   * @generated
+   * @ordered
+   */
+  protected String fs = FS_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #getPar2() <em>Par2</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getPar2()
+   * @generated
+   * @ordered
+   */
+  protected static final String PAR2_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getPar2() <em>Par2</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getPar2()
+   * @generated
+   * @ordered
+   */
+  protected String par2 = PAR2_EDEFAULT;
+
+  /**
+   * The cached value of the '{@link #getPar3() <em>Par3</em>}' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getPar3()
+   * @generated
+   * @ordered
+   */
+  protected EList<String> par3;
 
   /**
    * The cached value of the '{@link #getAdd() <em>Add</em>}' containment reference.
@@ -351,6 +405,66 @@ public class WherePartImpl extends MinimalEObjectImpl.Container implements Where
    * <!-- end-user-doc -->
    * @generated
    */
+  public String getFs()
+  {
+    return fs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setFs(String newFs)
+  {
+    String oldFs = fs;
+    fs = newFs;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, EditorPackage.WHERE_PART__FS, oldFs, fs));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public String getPar2()
+  {
+    return par2;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setPar2(String newPar2)
+  {
+    String oldPar2 = par2;
+    par2 = newPar2;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, EditorPackage.WHERE_PART__PAR2, oldPar2, par2));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EList<String> getPar3()
+  {
+    if (par3 == null)
+    {
+      par3 = new EDataTypeEList<String>(String.class, this, EditorPackage.WHERE_PART__PAR3);
+    }
+    return par3;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public AddPart getAdd()
   {
     return add;
@@ -438,6 +552,12 @@ public class WherePartImpl extends MinimalEObjectImpl.Container implements Where
         return getW8();
       case EditorPackage.WHERE_PART__LONGNAME9:
         return getLongname9();
+      case EditorPackage.WHERE_PART__FS:
+        return getFs();
+      case EditorPackage.WHERE_PART__PAR2:
+        return getPar2();
+      case EditorPackage.WHERE_PART__PAR3:
+        return getPar3();
       case EditorPackage.WHERE_PART__ADD:
         return getAdd();
     }
@@ -474,6 +594,16 @@ public class WherePartImpl extends MinimalEObjectImpl.Container implements Where
       case EditorPackage.WHERE_PART__LONGNAME9:
         setLongname9((String)newValue);
         return;
+      case EditorPackage.WHERE_PART__FS:
+        setFs((String)newValue);
+        return;
+      case EditorPackage.WHERE_PART__PAR2:
+        setPar2((String)newValue);
+        return;
+      case EditorPackage.WHERE_PART__PAR3:
+        getPar3().clear();
+        getPar3().addAll((Collection<? extends String>)newValue);
+        return;
       case EditorPackage.WHERE_PART__ADD:
         setAdd((AddPart)newValue);
         return;
@@ -509,6 +639,15 @@ public class WherePartImpl extends MinimalEObjectImpl.Container implements Where
       case EditorPackage.WHERE_PART__LONGNAME9:
         setLongname9(LONGNAME9_EDEFAULT);
         return;
+      case EditorPackage.WHERE_PART__FS:
+        setFs(FS_EDEFAULT);
+        return;
+      case EditorPackage.WHERE_PART__PAR2:
+        setPar2(PAR2_EDEFAULT);
+        return;
+      case EditorPackage.WHERE_PART__PAR3:
+        getPar3().clear();
+        return;
       case EditorPackage.WHERE_PART__ADD:
         setAdd((AddPart)null);
         return;
@@ -538,6 +677,12 @@ public class WherePartImpl extends MinimalEObjectImpl.Container implements Where
         return w8 != null;
       case EditorPackage.WHERE_PART__LONGNAME9:
         return LONGNAME9_EDEFAULT == null ? longname9 != null : !LONGNAME9_EDEFAULT.equals(longname9);
+      case EditorPackage.WHERE_PART__FS:
+        return FS_EDEFAULT == null ? fs != null : !FS_EDEFAULT.equals(fs);
+      case EditorPackage.WHERE_PART__PAR2:
+        return PAR2_EDEFAULT == null ? par2 != null : !PAR2_EDEFAULT.equals(par2);
+      case EditorPackage.WHERE_PART__PAR3:
+        return par3 != null && !par3.isEmpty();
       case EditorPackage.WHERE_PART__ADD:
         return add != null;
     }
@@ -561,6 +706,12 @@ public class WherePartImpl extends MinimalEObjectImpl.Container implements Where
     result.append(longname8);
     result.append(", longname9: ");
     result.append(longname9);
+    result.append(", fs: ");
+    result.append(fs);
+    result.append(", par2: ");
+    result.append(par2);
+    result.append(", par3: ");
+    result.append(par3);
     result.append(')');
     return result.toString();
   }

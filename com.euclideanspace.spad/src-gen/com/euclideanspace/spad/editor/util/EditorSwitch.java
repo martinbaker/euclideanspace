@@ -190,6 +190,13 @@ public class EditorSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case EditorPackage.TYPE_WITH_NAME:
+      {
+        TypeWithName typeWithName = (TypeWithName)theEObject;
+        T result = caseTypeWithName(typeWithName);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case EditorPackage.VARIABLE_TYPED:
       {
         VariableTyped variableTyped = (VariableTyped)theEObject;
@@ -883,6 +890,22 @@ public class EditorSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseVariableDeclaration(VariableDeclaration object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Type With Name</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Type With Name</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseTypeWithName(TypeWithName object)
   {
     return null;
   }

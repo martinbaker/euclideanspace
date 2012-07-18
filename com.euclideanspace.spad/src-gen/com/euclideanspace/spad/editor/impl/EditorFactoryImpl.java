@@ -80,6 +80,7 @@ public class EditorFactoryImpl extends EFactoryImpl implements EditorFactory
       case EditorPackage.IMPORT: return createImport();
       case EditorPackage.VARIABLE_DECLARATION_BLOCK: return createVariableDeclarationBlock();
       case EditorPackage.VARIABLE_DECLARATION: return createVariableDeclaration();
+      case EditorPackage.TYPE_WITH_NAME: return createTypeWithName();
       case EditorPackage.VARIABLE_TYPED: return createVariableTyped();
       case EditorPackage.VARIABLE_DECLARATION_ASSIGN: return createVariableDeclarationAssign();
       case EditorPackage.FREE_VARIABLE: return createFreeVariable();
@@ -315,6 +316,17 @@ public class EditorFactoryImpl extends EFactoryImpl implements EditorFactory
   {
     VariableDeclarationImpl variableDeclaration = new VariableDeclarationImpl();
     return variableDeclaration;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public TypeWithName createTypeWithName()
+  {
+    TypeWithNameImpl typeWithName = new TypeWithNameImpl();
+    return typeWithName;
   }
 
   /**

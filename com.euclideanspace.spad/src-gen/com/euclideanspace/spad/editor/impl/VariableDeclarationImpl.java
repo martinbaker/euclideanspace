@@ -4,9 +4,9 @@ package com.euclideanspace.spad.editor.impl;
 
 import com.euclideanspace.spad.editor.EditorPackage;
 import com.euclideanspace.spad.editor.Expr;
+import com.euclideanspace.spad.editor.TypeWithName;
 import com.euclideanspace.spad.editor.VariableDeclaration;
 import com.euclideanspace.spad.editor.VariableDeclarationBlock;
-import com.euclideanspace.spad.editor.VariableTyped;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
@@ -51,7 +51,7 @@ public class VariableDeclarationImpl extends WhereAssignmentsImpl implements Var
    * @generated
    * @ordered
    */
-  protected VariableTyped v1;
+  protected TypeWithName v1;
 
   /**
    * The cached value of the '{@link #getV2() <em>V2</em>}' containment reference.
@@ -137,7 +137,7 @@ public class VariableDeclarationImpl extends WhereAssignmentsImpl implements Var
    * <!-- end-user-doc -->
    * @generated
    */
-  public VariableTyped getV1()
+  public TypeWithName getV1()
   {
     return v1;
   }
@@ -147,9 +147,9 @@ public class VariableDeclarationImpl extends WhereAssignmentsImpl implements Var
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetV1(VariableTyped newV1, NotificationChain msgs)
+  public NotificationChain basicSetV1(TypeWithName newV1, NotificationChain msgs)
   {
-    VariableTyped oldV1 = v1;
+    TypeWithName oldV1 = v1;
     v1 = newV1;
     if (eNotificationRequired())
     {
@@ -164,7 +164,7 @@ public class VariableDeclarationImpl extends WhereAssignmentsImpl implements Var
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setV1(VariableTyped newV1)
+  public void setV1(TypeWithName newV1)
   {
     if (newV1 != v1)
     {
@@ -282,7 +282,7 @@ public class VariableDeclarationImpl extends WhereAssignmentsImpl implements Var
         setT1((Expr)newValue);
         return;
       case EditorPackage.VARIABLE_DECLARATION__V1:
-        setV1((VariableTyped)newValue);
+        setV1((TypeWithName)newValue);
         return;
       case EditorPackage.VARIABLE_DECLARATION__V2:
         setV2((VariableDeclarationBlock)newValue);
@@ -305,7 +305,7 @@ public class VariableDeclarationImpl extends WhereAssignmentsImpl implements Var
         setT1((Expr)null);
         return;
       case EditorPackage.VARIABLE_DECLARATION__V1:
-        setV1((VariableTyped)null);
+        setV1((TypeWithName)null);
         return;
       case EditorPackage.VARIABLE_DECLARATION__V2:
         setV2((VariableDeclarationBlock)null);

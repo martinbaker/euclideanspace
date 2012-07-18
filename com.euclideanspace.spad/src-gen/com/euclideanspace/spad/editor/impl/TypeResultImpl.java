@@ -34,7 +34,6 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link com.euclideanspace.spad.editor.impl.TypeResultImpl#getT <em>T</em>}</li>
  *   <li>{@link com.euclideanspace.spad.editor.impl.TypeResultImpl#getT2 <em>T2</em>}</li>
  *   <li>{@link com.euclideanspace.spad.editor.impl.TypeResultImpl#getTyname <em>Tyname</em>}</li>
- *   <li>{@link com.euclideanspace.spad.editor.impl.TypeResultImpl#getName <em>Name</em>}</li>
  *   <li>{@link com.euclideanspace.spad.editor.impl.TypeResultImpl#getT7 <em>T7</em>}</li>
  *   <li>{@link com.euclideanspace.spad.editor.impl.TypeResultImpl#getT8 <em>T8</em>}</li>
  *   <li>{@link com.euclideanspace.spad.editor.impl.TypeResultImpl#getT21 <em>T21</em>}</li>
@@ -102,26 +101,6 @@ public class TypeResultImpl extends MinimalEObjectImpl.Container implements Type
    * @ordered
    */
   protected String tyname = TYNAME_EDEFAULT;
-
-  /**
-   * The default value of the '{@link #getName() <em>Name</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getName()
-   * @generated
-   * @ordered
-   */
-  protected static final String NAME_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getName()
-   * @generated
-   * @ordered
-   */
-  protected String name = NAME_EDEFAULT;
 
   /**
    * The cached value of the '{@link #getT7() <em>T7</em>}' containment reference.
@@ -346,29 +325,6 @@ public class TypeResultImpl extends MinimalEObjectImpl.Container implements Type
     tyname = newTyname;
     if (eNotificationRequired())
       eNotify(new ENotificationImpl(this, Notification.SET, EditorPackage.TYPE_RESULT__TYNAME, oldTyname, tyname));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public String getName()
-  {
-    return name;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setName(String newName)
-  {
-    String oldName = name;
-    name = newName;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, EditorPackage.TYPE_RESULT__NAME, oldName, name));
   }
 
   /**
@@ -715,8 +671,6 @@ public class TypeResultImpl extends MinimalEObjectImpl.Container implements Type
         return getT2();
       case EditorPackage.TYPE_RESULT__TYNAME:
         return getTyname();
-      case EditorPackage.TYPE_RESULT__NAME:
-        return getName();
       case EditorPackage.TYPE_RESULT__T7:
         return getT7();
       case EditorPackage.TYPE_RESULT__T8:
@@ -762,9 +716,6 @@ public class TypeResultImpl extends MinimalEObjectImpl.Container implements Type
         return;
       case EditorPackage.TYPE_RESULT__TYNAME:
         setTyname((String)newValue);
-        return;
-      case EditorPackage.TYPE_RESULT__NAME:
-        setName((String)newValue);
         return;
       case EditorPackage.TYPE_RESULT__T7:
         setT7((TypeExpression)newValue);
@@ -829,9 +780,6 @@ public class TypeResultImpl extends MinimalEObjectImpl.Container implements Type
       case EditorPackage.TYPE_RESULT__TYNAME:
         setTyname(TYNAME_EDEFAULT);
         return;
-      case EditorPackage.TYPE_RESULT__NAME:
-        setName(NAME_EDEFAULT);
-        return;
       case EditorPackage.TYPE_RESULT__T7:
         setT7((TypeExpression)null);
         return;
@@ -885,8 +833,6 @@ public class TypeResultImpl extends MinimalEObjectImpl.Container implements Type
         return T2_EDEFAULT == null ? t2 != null : !T2_EDEFAULT.equals(t2);
       case EditorPackage.TYPE_RESULT__TYNAME:
         return TYNAME_EDEFAULT == null ? tyname != null : !TYNAME_EDEFAULT.equals(tyname);
-      case EditorPackage.TYPE_RESULT__NAME:
-        return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
       case EditorPackage.TYPE_RESULT__T7:
         return t7 != null;
       case EditorPackage.TYPE_RESULT__T8:
@@ -928,8 +874,6 @@ public class TypeResultImpl extends MinimalEObjectImpl.Container implements Type
     result.append(t2);
     result.append(", tyname: ");
     result.append(tyname);
-    result.append(", name: ");
-    result.append(name);
     result.append(')');
     return result.toString();
   }

@@ -128,9 +128,17 @@ public class EditorLabelProvider extends DefaultEObjectLabelProvider {
 	}
 
 	String text(VariableTyped ele) {
-		  return "VariableDeclaration :"+ele.getVarName();
+		  return "VariableTyped :"+ele.getVarName();
 	}
 
+	String text(TypeWithName ele) {
+		  return "TypeWithName :"+ele.getTyp();
+	}
+
+	String text(VariableDeclarationBlock ele) {
+		  return "VariableDeclarationBlock";
+	}
+	
 	String text(VariableDeclarationAssign ele) {
 		  return "VariableDeclarationAssign :"+ele.getVarName();
 	}
@@ -144,7 +152,7 @@ public class EditorLabelProvider extends DefaultEObjectLabelProvider {
 	}
 
 	String text(TypeExpression ele) {
-		  return "TypeExpression :";
+		  return "TypeExpression :"+ele;
 	}
 
 	String text(TypeParameterList ele) {
@@ -152,15 +160,16 @@ public class EditorLabelProvider extends DefaultEObjectLabelProvider {
 	}
 
 	String text(TypeArguments ele) {
-		  return "TypeArguments :";
+		if (ele.isB1()) return "TypeArguments("+ele.getT4()+")";
+		  return "TypeArguments";
 	}
 
 	String text(TypeResult ele) {
-		  return "TypeResult :"+ele.getName();
+		  return "TypeResult :"+ele.getTyname();
 	}
 
 	String text(TypePrimaryExpression ele) {
-		  return commonTPE(ele,"TP");
+	  return "TypePrimaryExpression" + ele;
 	}
 
 	/* TypeNameOrFunctionCall
@@ -170,11 +179,11 @@ public class EditorLabelProvider extends DefaultEObjectLabelProvider {
   |  * t6=TypePrimaryExpression)?
 	 */
 	String text(TypeNameOrFunctionCall ele) {
-		if (ele.getTfnname() != null) return "TypeNameOrFunctionCall1 :"+ele.getTfnname();
-		  if (ele.getT4() != null) return "TypeNameOrFunctionCall2 : "+ele.getT4();
-		  if (ele.getT6() != null) return "TypeNameOrFunctionCall : contains primary expression";
-		  //if (ele.getT25() != null) return "TypeNameOrFunctionCall4 :"+ele.getT25();
-		return commonTPE(ele,"TNFC");		  
+		String n="TypeNameOrFunctionCall:"+ele.getTfnname();
+		if (ele.getT4() != null) n=n+"t4="+ele.getT4();
+		if (ele.getT6() != null) n=n+"t6="+ele.getT4();
+		return n;		  
+		//return commonTPE(ele,"TNFC");		  
 	}
 
 	String commonTPE(TypePrimaryExpression ele,String caller) {

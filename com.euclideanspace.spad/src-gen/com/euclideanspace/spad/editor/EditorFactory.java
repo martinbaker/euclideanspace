@@ -167,6 +167,15 @@ public interface EditorFactory extends EFactory
   VariableDeclaration createVariableDeclaration();
 
   /**
+   * Returns a new object of class '<em>Type With Name</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Type With Name</em>'.
+   * @generated
+   */
+  TypeWithName createTypeWithName();
+
+  /**
    * Returns a new object of class '<em>Variable Typed</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

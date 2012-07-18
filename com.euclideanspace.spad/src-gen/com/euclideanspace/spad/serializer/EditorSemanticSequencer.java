@@ -64,6 +64,7 @@ import com.euclideanspace.spad.editor.TypeNameOrFunctionCall;
 import com.euclideanspace.spad.editor.TypeParameterList;
 import com.euclideanspace.spad.editor.TypePrimaryExpression;
 import com.euclideanspace.spad.editor.TypeResult;
+import com.euclideanspace.spad.editor.TypeWithName;
 import com.euclideanspace.spad.editor.UnaryExpression;
 import com.euclideanspace.spad.editor.VariableDeclaration;
 import com.euclideanspace.spad.editor.VariableDeclarationAssign;
@@ -1451,6 +1452,12 @@ public class EditorSemanticSequencer extends AbstractDelegatingSemanticSequencer
 					return; 
 				}
 				else break;
+			case EditorPackage.TYPE_WITH_NAME:
+				if(context == grammarAccess.getTypeWithNameRule()) {
+					sequence_TypeWithName(context, (TypeWithName) semanticObject); 
+					return; 
+				}
+				else break;
 			case EditorPackage.UNARY_EXPRESSION:
 				if(context == grammarAccess.getAdditiveExpressionRule() ||
 				   context == grammarAccess.getAdditiveExpressionAccess().getAdditiveExpressionLeftAction_1_0() ||
@@ -1616,7 +1623,7 @@ public class EditorSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	
 	/**
 	 * Constraint:
-	 *     (litname='true' | litname='false')
+	 *     (litname='true' | litname='false' | litname='true' | litname='false')
 	 */
 	protected void sequence_BooleanLiteral(EObject context, BooleanLiteral semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -2301,13 +2308,22 @@ public class EditorSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	 *         t=TypeLiteral | 
 	 *         t2=PERCENT | 
 	 *         tyname='Type' | 
-	 *         (name='Record' t7=TypeExpression t8+=TypeExpression? (t21+=TypeExpression t23+=TypeExpression?)*) | 
-	 *         (name='Union' t10=TypeExpression t11+=TypeExpression? (t24+=TypeExpression t26+=TypeExpression?)*) | 
-	 *         (name='Join' t12=TypeExpression t13+=TypeExpression*) | 
+	 *         (tyname='Record' t7=TypeExpression t8+=TypeExpression? (t21+=TypeExpression t23+=TypeExpression?)*) | 
+	 *         (tyname='Union' t10=TypeExpression t11+=TypeExpression? (t24+=TypeExpression t26+=TypeExpression?)*) | 
+	 *         (tyname='Join' t12=TypeExpression t13+=TypeExpression*) | 
 	 *         t15=TypeNameOrFunctionCall
 	 *     )
 	 */
 	protected void sequence_TypeResult(EObject context, TypeResult semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     ((varName=ID | varNameSt=STRING)? typ=TypeExpression)
+	 */
+	protected void sequence_TypeWithName(EObject context, TypeWithName semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -2362,7 +2378,7 @@ public class EditorSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	
 	/**
 	 * Constraint:
-	 *     (t1=Expression? (v1=VariableTyped | v2=VariableDeclarationBlock))
+	 *     (t1=Expression? (v1=TypeWithName | v2=VariableDeclarationBlock))
 	 */
 	protected void sequence_VariableDeclaration(EObject context, VariableDeclaration semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -2380,7 +2396,12 @@ public class EditorSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	
 	/**
 	 * Constraint:
-	 *     (name='where' whereAssig+=WhereAssignments* (longname8=ID imp=TypeExpression? w8=WithPart)? (longname9=ID add=AddPart)?)
+	 *     (
+	 *         name='where' 
+	 *         whereAssig+=WhereAssignments* 
+	 *         (longname8=ID imp=TypeExpression? w8=WithPart)? 
+	 *         (longname9=ID (fs=ID par2=ID? par3+=ID*)? add=AddPart)?
+	 *     )
 	 */
 	protected void sequence_WherePart(EObject context, WherePart semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

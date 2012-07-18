@@ -85,6 +85,7 @@ import com.euclideanspace.spad.editor.TypeNameOrFunctionCall;
 import com.euclideanspace.spad.editor.TypeParameterList;
 import com.euclideanspace.spad.editor.TypePrimaryExpression;
 import com.euclideanspace.spad.editor.TypeResult;
+import com.euclideanspace.spad.editor.TypeWithName;
 import com.euclideanspace.spad.editor.UnaryExpression;
 import com.euclideanspace.spad.editor.VariableDeclaration;
 import com.euclideanspace.spad.editor.VariableTyped;
@@ -233,6 +234,11 @@ class EditorGenerator implements IGenerator {
     def compile(VariableDeclaration f) 
         '''«IF f.v1 != null» «
         compile(f.v1)»«ENDIF»'''
+        
+    /* TypeWithName */
+    def compile(TypeWithName f) 
+        '''«IF f.typ != null» «
+        compile(f.typ)»«ENDIF»'''
 
     /* VariableTyped */
     def compile(VariableTyped f) 

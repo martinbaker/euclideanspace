@@ -17,7 +17,6 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link com.euclideanspace.spad.editor.TypeResult#getT <em>T</em>}</li>
  *   <li>{@link com.euclideanspace.spad.editor.TypeResult#getT2 <em>T2</em>}</li>
  *   <li>{@link com.euclideanspace.spad.editor.TypeResult#getTyname <em>Tyname</em>}</li>
- *   <li>{@link com.euclideanspace.spad.editor.TypeResult#getName <em>Name</em>}</li>
  *   <li>{@link com.euclideanspace.spad.editor.TypeResult#getT7 <em>T7</em>}</li>
  *   <li>{@link com.euclideanspace.spad.editor.TypeResult#getT8 <em>T8</em>}</li>
  *   <li>{@link com.euclideanspace.spad.editor.TypeResult#getT21 <em>T21</em>}</li>
@@ -115,32 +114,6 @@ public interface TypeResult extends EObject
    * @generated
    */
   void setTyname(String value);
-
-  /**
-   * Returns the value of the '<em><b>Name</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Name</em>' attribute isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Name</em>' attribute.
-   * @see #setName(String)
-   * @see com.euclideanspace.spad.editor.EditorPackage#getTypeResult_Name()
-   * @model
-   * @generated
-   */
-  String getName();
-
-  /**
-   * Sets the value of the '{@link com.euclideanspace.spad.editor.TypeResult#getName <em>Name</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Name</em>' attribute.
-   * @see #getName()
-   * @generated
-   */
-  void setName(String value);
 
   /**
    * Returns the value of the '<em><b>T7</b></em>' containment reference.

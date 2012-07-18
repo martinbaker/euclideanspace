@@ -20,6 +20,9 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link com.euclideanspace.spad.editor.WherePart#getImp <em>Imp</em>}</li>
  *   <li>{@link com.euclideanspace.spad.editor.WherePart#getW8 <em>W8</em>}</li>
  *   <li>{@link com.euclideanspace.spad.editor.WherePart#getLongname9 <em>Longname9</em>}</li>
+ *   <li>{@link com.euclideanspace.spad.editor.WherePart#getFs <em>Fs</em>}</li>
+ *   <li>{@link com.euclideanspace.spad.editor.WherePart#getPar2 <em>Par2</em>}</li>
+ *   <li>{@link com.euclideanspace.spad.editor.WherePart#getPar3 <em>Par3</em>}</li>
  *   <li>{@link com.euclideanspace.spad.editor.WherePart#getAdd <em>Add</em>}</li>
  * </ul>
  * </p>
@@ -175,6 +178,74 @@ public interface WherePart extends EObject
    * @generated
    */
   void setLongname9(String value);
+
+  /**
+   * Returns the value of the '<em><b>Fs</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Fs</em>' attribute isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Fs</em>' attribute.
+   * @see #setFs(String)
+   * @see com.euclideanspace.spad.editor.EditorPackage#getWherePart_Fs()
+   * @model
+   * @generated
+   */
+  String getFs();
+
+  /**
+   * Sets the value of the '{@link com.euclideanspace.spad.editor.WherePart#getFs <em>Fs</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Fs</em>' attribute.
+   * @see #getFs()
+   * @generated
+   */
+  void setFs(String value);
+
+  /**
+   * Returns the value of the '<em><b>Par2</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Par2</em>' attribute isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Par2</em>' attribute.
+   * @see #setPar2(String)
+   * @see com.euclideanspace.spad.editor.EditorPackage#getWherePart_Par2()
+   * @model
+   * @generated
+   */
+  String getPar2();
+
+  /**
+   * Sets the value of the '{@link com.euclideanspace.spad.editor.WherePart#getPar2 <em>Par2</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Par2</em>' attribute.
+   * @see #getPar2()
+   * @generated
+   */
+  void setPar2(String value);
+
+  /**
+   * Returns the value of the '<em><b>Par3</b></em>' attribute list.
+   * The list contents are of type {@link java.lang.String}.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Par3</em>' attribute list isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Par3</em>' attribute list.
+   * @see com.euclideanspace.spad.editor.EditorPackage#getWherePart_Par3()
+   * @model unique="false"
+   * @generated
+   */
+  EList<String> getPar3();
 
   /**
    * Returns the value of the '<em><b>Add</b></em>' containment reference.

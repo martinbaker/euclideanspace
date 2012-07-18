@@ -62,6 +62,10 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="w8" eType="#//WithPart"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="longname9" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="fs" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="par2" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="par3" unique="false" upperBound="-1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="add" eType="#//AddPart"
         containment="true"/>
   </eClassifiers>
@@ -122,9 +126,15 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="VariableDeclaration" eSuperTypes="#//WhereAssignments">
     <eStructuralFeatures xsi:type="ecore:EReference" name="t1" eType="#//Expr" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="v1" eType="#//VariableTyped"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="v1" eType="#//TypeWithName"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="v2" eType="#//VariableDeclarationBlock"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TypeWithName">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="varName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="varNameSt" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="typ" eType="#//TypeExpression"
         containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="VariableTyped">
@@ -202,7 +212,6 @@
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="t2" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="tyname" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="t7" eType="#//TypeExpression"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="t8" upperBound="-1" eType="#//TypeExpression"

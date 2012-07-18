@@ -67,6 +67,7 @@ import com.euclideanspace.spad.editor.TypeNameOrFunctionCall;
 import com.euclideanspace.spad.editor.TypeParameterList;
 import com.euclideanspace.spad.editor.TypePrimaryExpression;
 import com.euclideanspace.spad.editor.TypeResult;
+import com.euclideanspace.spad.editor.TypeWithName;
 import com.euclideanspace.spad.editor.UnaryExpression;
 import com.euclideanspace.spad.editor.VariableDeclaration;
 import com.euclideanspace.spad.editor.VariableDeclarationAssign;
@@ -203,6 +204,13 @@ public class EditorPackageImpl extends EPackageImpl implements EditorPackage
    * @generated
    */
   private EClass variableDeclarationEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass typeWithNameEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -1074,9 +1082,39 @@ public class EditorPackageImpl extends EPackageImpl implements EditorPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  public EAttribute getWherePart_Fs()
+  {
+    return (EAttribute)wherePartEClass.getEStructuralFeatures().get(6);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getWherePart_Par2()
+  {
+    return (EAttribute)wherePartEClass.getEStructuralFeatures().get(7);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getWherePart_Par3()
+  {
+    return (EAttribute)wherePartEClass.getEStructuralFeatures().get(8);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EReference getWherePart_Add()
   {
-    return (EReference)wherePartEClass.getEStructuralFeatures().get(6);
+    return (EReference)wherePartEClass.getEStructuralFeatures().get(9);
   }
 
   /**
@@ -1467,6 +1505,46 @@ public class EditorPackageImpl extends EPackageImpl implements EditorPackage
   public EReference getVariableDeclaration_V2()
   {
     return (EReference)variableDeclarationEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getTypeWithName()
+  {
+    return typeWithNameEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getTypeWithName_VarName()
+  {
+    return (EAttribute)typeWithNameEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getTypeWithName_VarNameSt()
+  {
+    return (EAttribute)typeWithNameEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getTypeWithName_Typ()
+  {
+    return (EReference)typeWithNameEClass.getEStructuralFeatures().get(2);
   }
 
   /**
@@ -1934,19 +2012,9 @@ public class EditorPackageImpl extends EPackageImpl implements EditorPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getTypeResult_Name()
-  {
-    return (EAttribute)typeResultEClass.getEStructuralFeatures().get(3);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public EReference getTypeResult_T7()
   {
-    return (EReference)typeResultEClass.getEStructuralFeatures().get(4);
+    return (EReference)typeResultEClass.getEStructuralFeatures().get(3);
   }
 
   /**
@@ -1956,7 +2024,7 @@ public class EditorPackageImpl extends EPackageImpl implements EditorPackage
    */
   public EReference getTypeResult_T8()
   {
-    return (EReference)typeResultEClass.getEStructuralFeatures().get(5);
+    return (EReference)typeResultEClass.getEStructuralFeatures().get(4);
   }
 
   /**
@@ -1966,7 +2034,7 @@ public class EditorPackageImpl extends EPackageImpl implements EditorPackage
    */
   public EReference getTypeResult_T21()
   {
-    return (EReference)typeResultEClass.getEStructuralFeatures().get(6);
+    return (EReference)typeResultEClass.getEStructuralFeatures().get(5);
   }
 
   /**
@@ -1976,7 +2044,7 @@ public class EditorPackageImpl extends EPackageImpl implements EditorPackage
    */
   public EReference getTypeResult_T23()
   {
-    return (EReference)typeResultEClass.getEStructuralFeatures().get(7);
+    return (EReference)typeResultEClass.getEStructuralFeatures().get(6);
   }
 
   /**
@@ -1986,7 +2054,7 @@ public class EditorPackageImpl extends EPackageImpl implements EditorPackage
    */
   public EReference getTypeResult_T10()
   {
-    return (EReference)typeResultEClass.getEStructuralFeatures().get(8);
+    return (EReference)typeResultEClass.getEStructuralFeatures().get(7);
   }
 
   /**
@@ -1996,7 +2064,7 @@ public class EditorPackageImpl extends EPackageImpl implements EditorPackage
    */
   public EReference getTypeResult_T11()
   {
-    return (EReference)typeResultEClass.getEStructuralFeatures().get(9);
+    return (EReference)typeResultEClass.getEStructuralFeatures().get(8);
   }
 
   /**
@@ -2006,7 +2074,7 @@ public class EditorPackageImpl extends EPackageImpl implements EditorPackage
    */
   public EReference getTypeResult_T24()
   {
-    return (EReference)typeResultEClass.getEStructuralFeatures().get(10);
+    return (EReference)typeResultEClass.getEStructuralFeatures().get(9);
   }
 
   /**
@@ -2016,7 +2084,7 @@ public class EditorPackageImpl extends EPackageImpl implements EditorPackage
    */
   public EReference getTypeResult_T26()
   {
-    return (EReference)typeResultEClass.getEStructuralFeatures().get(11);
+    return (EReference)typeResultEClass.getEStructuralFeatures().get(10);
   }
 
   /**
@@ -2026,7 +2094,7 @@ public class EditorPackageImpl extends EPackageImpl implements EditorPackage
    */
   public EReference getTypeResult_T12()
   {
-    return (EReference)typeResultEClass.getEStructuralFeatures().get(12);
+    return (EReference)typeResultEClass.getEStructuralFeatures().get(11);
   }
 
   /**
@@ -2036,7 +2104,7 @@ public class EditorPackageImpl extends EPackageImpl implements EditorPackage
    */
   public EReference getTypeResult_T13()
   {
-    return (EReference)typeResultEClass.getEStructuralFeatures().get(13);
+    return (EReference)typeResultEClass.getEStructuralFeatures().get(12);
   }
 
   /**
@@ -2046,7 +2114,7 @@ public class EditorPackageImpl extends EPackageImpl implements EditorPackage
    */
   public EReference getTypeResult_T15()
   {
-    return (EReference)typeResultEClass.getEStructuralFeatures().get(14);
+    return (EReference)typeResultEClass.getEStructuralFeatures().get(13);
   }
 
   /**
@@ -4354,6 +4422,9 @@ public class EditorPackageImpl extends EPackageImpl implements EditorPackage
     createEReference(wherePartEClass, WHERE_PART__IMP);
     createEReference(wherePartEClass, WHERE_PART__W8);
     createEAttribute(wherePartEClass, WHERE_PART__LONGNAME9);
+    createEAttribute(wherePartEClass, WHERE_PART__FS);
+    createEAttribute(wherePartEClass, WHERE_PART__PAR2);
+    createEAttribute(wherePartEClass, WHERE_PART__PAR3);
     createEReference(wherePartEClass, WHERE_PART__ADD);
 
     whereAssignmentsEClass = createEClass(WHERE_ASSIGNMENTS);
@@ -4405,6 +4476,11 @@ public class EditorPackageImpl extends EPackageImpl implements EditorPackage
     createEReference(variableDeclarationEClass, VARIABLE_DECLARATION__T1);
     createEReference(variableDeclarationEClass, VARIABLE_DECLARATION__V1);
     createEReference(variableDeclarationEClass, VARIABLE_DECLARATION__V2);
+
+    typeWithNameEClass = createEClass(TYPE_WITH_NAME);
+    createEAttribute(typeWithNameEClass, TYPE_WITH_NAME__VAR_NAME);
+    createEAttribute(typeWithNameEClass, TYPE_WITH_NAME__VAR_NAME_ST);
+    createEReference(typeWithNameEClass, TYPE_WITH_NAME__TYP);
 
     variableTypedEClass = createEClass(VARIABLE_TYPED);
     createEAttribute(variableTypedEClass, VARIABLE_TYPED__VAR_NAME);
@@ -4459,7 +4535,6 @@ public class EditorPackageImpl extends EPackageImpl implements EditorPackage
     createEReference(typeResultEClass, TYPE_RESULT__T);
     createEAttribute(typeResultEClass, TYPE_RESULT__T2);
     createEAttribute(typeResultEClass, TYPE_RESULT__TYNAME);
-    createEAttribute(typeResultEClass, TYPE_RESULT__NAME);
     createEReference(typeResultEClass, TYPE_RESULT__T7);
     createEReference(typeResultEClass, TYPE_RESULT__T8);
     createEReference(typeResultEClass, TYPE_RESULT__T21);
@@ -4861,6 +4936,9 @@ public class EditorPackageImpl extends EPackageImpl implements EditorPackage
     initEReference(getWherePart_Imp(), this.getTypeExpression(), null, "imp", null, 0, 1, WherePart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getWherePart_W8(), this.getWithPart(), null, "w8", null, 0, 1, WherePart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getWherePart_Longname9(), ecorePackage.getEString(), "longname9", null, 0, 1, WherePart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getWherePart_Fs(), ecorePackage.getEString(), "fs", null, 0, 1, WherePart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getWherePart_Par2(), ecorePackage.getEString(), "par2", null, 0, 1, WherePart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getWherePart_Par3(), ecorePackage.getEString(), "par3", null, 0, -1, WherePart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getWherePart_Add(), this.getAddPart(), null, "add", null, 0, 1, WherePart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(whereAssignmentsEClass, WhereAssignments.class, "WhereAssignments", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -4910,8 +4988,13 @@ public class EditorPackageImpl extends EPackageImpl implements EditorPackage
 
     initEClass(variableDeclarationEClass, VariableDeclaration.class, "VariableDeclaration", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getVariableDeclaration_T1(), this.getExpr(), null, "t1", null, 0, 1, VariableDeclaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getVariableDeclaration_V1(), this.getVariableTyped(), null, "v1", null, 0, 1, VariableDeclaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getVariableDeclaration_V1(), this.getTypeWithName(), null, "v1", null, 0, 1, VariableDeclaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getVariableDeclaration_V2(), this.getVariableDeclarationBlock(), null, "v2", null, 0, 1, VariableDeclaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(typeWithNameEClass, TypeWithName.class, "TypeWithName", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getTypeWithName_VarName(), ecorePackage.getEString(), "varName", null, 0, 1, TypeWithName.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getTypeWithName_VarNameSt(), ecorePackage.getEString(), "varNameSt", null, 0, 1, TypeWithName.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getTypeWithName_Typ(), this.getTypeExpression(), null, "typ", null, 0, 1, TypeWithName.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(variableTypedEClass, VariableTyped.class, "VariableTyped", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getVariableTyped_VarName(), ecorePackage.getEString(), "varName", null, 0, 1, VariableTyped.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -4966,7 +5049,6 @@ public class EditorPackageImpl extends EPackageImpl implements EditorPackage
     initEReference(getTypeResult_T(), this.getTypeLiteral(), null, "t", null, 0, 1, TypeResult.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getTypeResult_T2(), ecorePackage.getEString(), "t2", null, 0, 1, TypeResult.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getTypeResult_Tyname(), ecorePackage.getEString(), "tyname", null, 0, 1, TypeResult.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getTypeResult_Name(), ecorePackage.getEString(), "name", null, 0, 1, TypeResult.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getTypeResult_T7(), this.getTypeExpression(), null, "t7", null, 0, 1, TypeResult.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getTypeResult_T8(), this.getTypeExpression(), null, "t8", null, 0, -1, TypeResult.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getTypeResult_T21(), this.getTypeExpression(), null, "t21", null, 0, -1, TypeResult.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

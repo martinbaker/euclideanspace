@@ -347,7 +347,14 @@ WherePart hidden(WS,SL_COMMENT):
 	name='where' NL* LBRACE NL*
     (whereAssig +=WhereAssignments (NL|SEMICOLON)+)*
     (longname8=ID ((DEF | MDEF) (imp=TypeExpression)?)? w8=WithPart)?
-    (longname9=ID (DEF | MDEF)? add=AddPart)?
+    (longname9=ID (DEF | MDEF)?
+    (fs=ID LPAREN
+    par2=ID?
+    (COMMA par3 += ID)*
+    RPAREN)?
+    add=AddPart)?
+    //(longname9=ID (DEF | MDEF)? add=AddPart)?
+    //(longname9=ID (DEF | MDEF)? =>(fs=FunctionSignature)? add=AddPart)?
     RBRACE NL+
 ;
 
@@ -495,8 +502,19 @@ VariableDeclarationBlock hidden(WS,SL_COMMENT):
  */
 VariableDeclaration hidden(WS,SL_COMMENT):
     ('if' t1=Expression 'then')? // expression has form 'x has y'
-	(v1=VariableTyped | v2=VariableDeclarationBlock)
+	(v1=TypeWithName | v2=VariableDeclarationBlock)
 ;
+
+/*
+ * This rule is used where a type is expected like:
+ * Float
+ * but it may also have an optional name like:
+ * x:Float
+ */
+TypeWithName hidden(WS,SL_COMMENT):
+	((varName=ID | varNameSt=STRING) COLON)? typ=TypeExpression 
+;
+
 
 /* Variable name with optional type. This is used in function signature
  * and also by VariableDeclaration:
@@ -592,12 +610,12 @@ TypeParameterList hidden(WS):
  * not need to be in parenthesis.
  */
 TypeArguments hidden(WS):
-	t=TypeLiteral |
+  t=TypeLiteral |
   t2=PERCENT |
   t3='Type' |
   // usually, but not always type arguments are in parenthesis, and empty
   // parenthesis are allowed
-  b1 ?= LPAREN t4=TypeExpression? ( COMMA t16 += TypeExpression)* RPAREN |
+  b1 ?= LPAREN ((ID COLON)? t4=TypeExpression)? ( COMMA (ID COLON)? t16 +=TypeExpression)* RPAREN |
   t5='Record' LPAREN t6=TypeExpression
                (COLON t22+=TypeExpression)?
                (COMMA t21+=TypeExpression (COLON t23+=TypeExpression)?)*
@@ -619,15 +637,15 @@ TypeResult hidden(WS):
   t2=PERCENT |
   tyname='Type' |
 // | LPAREN t4=TypePrimaryExpression ( COMMA t16 += TypePrimaryExpression)* RPAREN
-  name='Record' LPAREN t7=TypeExpression
+  tyname='Record' LPAREN t7=TypeExpression
                (COLON t8+=TypeExpression)?
                (COMMA t21+=TypeExpression (COLON t23+=TypeExpression)?)*
                 RPAREN |
-  name='Union' LPAREN t10=TypeExpression
+  tyname='Union' LPAREN t10=TypeExpression
               (COLON t11+=TypeExpression)?
               (COMMA t24+=TypeExpression (COLON t26+=TypeExpression)?)*
               RPAREN |
-  name='Join' LPAREN t12=TypeExpression (COMMA t13+=TypeExpression)* RPAREN |
+  tyname='Join' LPAREN t12=TypeExpression (COMMA t13+=TypeExpression)* RPAREN |
   t15=TypeNameOrFunctionCall
 ;
 
@@ -651,22 +669,25 @@ TypePrimaryExpression hidden(WS):
  | => TupleDefinition
 ;
 
-/* Will match with ID on its own like:
- * Integer
- * or type function call such as List(Integer)
- * known as a parameterised type or functor (not necessarily a true functor since
- * it may not obey the axioms of a functor)
- * if there is only one parameter then the parenthesis are optional
+/* This rule will match:
+ * Float - an ID representation of a type
+ * List(Float) - a type function call
+ * List Float - a non-parenthesis form if only one parameter
  * 
- * function binds most tightly
+ * The second two forms are known as a parameterised type or
+ * functor (not necessarily a true
+ * functor since it may not obey the axioms of a functor).
+ * If there is only one parameter then the parenthesis are optional
  */
 TypeNameOrFunctionCall hidden(WS):
   tfnname=ID
-  ((LPAREN t4=TypeExpression? (COMMA t25+=TypeExpression)* RPAREN)
-  // optional curried function:
-  (LPAREN t44+=StatementExpression? (COMMA t45+=Expression)* RPAREN)*
-  // option of no parenthesis for single parameter
-  | => t6=TypePrimaryExpression)?
+  (
+    (LPAREN (ID COLON)? t4=TypeExpression? (COMMA (ID COLON)? t25+=TypeExpression)* RPAREN)
+    // optional curried function:
+    (LPAREN t44+=StatementExpression? (COMMA t45+=Expression)* RPAREN)*
+    // option of no parenthesis for single parameter
+    | => t6=TypePrimaryExpression
+  )?
 ;
 
 /* This has a form like: (Integer,Float,String)
@@ -1226,11 +1247,13 @@ PrimaryPrefix hidden(WS,SL_COMMENT):
 NameOrFunctionCall hidden(WS,SL_COMMENT):
   fnname=ID (=> lsp=DOLAR 'Lisp'/*t2=TypeExpression*/)?
   //  option for parameters in parenthesis
-  ((LPAREN t4=StatementExpression? (COMMA t5+=Expression)* RPAREN)
-  // optional curried function:
-  (LPAREN t14+=StatementExpression? (COMMA t15+=Expression)* RPAREN)*
-  // option of no parenthesis for single parameter
-  | => t6=PrimaryExpression)?
+  (
+    (LPAREN t4=StatementExpression? (COMMA t5+=Expression)* RPAREN)
+    // optional curried function:
+    (LPAREN t14+=StatementExpression? (COMMA t15+=Expression)* RPAREN)*
+    // option of no parenthesis for single parameter
+    | => t6=PrimaryExpression
+  )?
 ;
 
 /* Literals are actual values of a given type 
@@ -1266,6 +1289,8 @@ CharacterLiteral hidden(WS,SL_COMMENT):
 */
 BooleanLiteral hidden(WS,SL_COMMENT):
  litname = 'true' | litname = 'false'
+ | litname = 'true' LPAREN RPAREN
+ | litname = 'false' LPAREN RPAREN
 ;
 
 /*
