@@ -252,7 +252,11 @@ public class EditorLabelProvider extends DefaultEObjectLabelProvider {
 	}
 
 	String text(IfStatement ele) {
-		  return "IfStatement :";
+		return "IfStatement:";
+//		if (ele.isB()) return "IfStatement: s11="+ele.getS11()+
+//				  " s12="+ele.getS12();
+//		return "IfStatement: s1="+ele.getS1()+
+//				  " s2="+ele.getS2();
 	}
 
 /*	String text(PredicateOr ele) {

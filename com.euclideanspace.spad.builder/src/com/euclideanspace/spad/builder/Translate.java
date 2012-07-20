@@ -278,6 +278,8 @@ public class Translate {
         // an implication that the following line will be a continuation
         if (!containsComment && (trimedLine.endsWith("+") 
         		                 || trimedLine.endsWith("-")
+//      		                 || trimedLine.endsWith("=>") don't do
+// this since block may follow '=>'
                                  || trimedLine.endsWith(","))) {
         	line = line + " _";
         	trimedLine = line.trim();

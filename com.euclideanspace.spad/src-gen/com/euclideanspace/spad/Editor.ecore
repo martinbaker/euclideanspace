@@ -366,6 +366,11 @@
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="s2" eType="#//Statement"
         containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="b" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="s11" eType="#//Statement"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="s12" eType="#//Statement"
+        containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="IfElseStatement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="s2" eType="#//Statement"
@@ -406,8 +411,7 @@
         containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="PrimaryPrefix" eSuperTypes="#//Expr">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="t4" eType="#//StatementExpression"
-        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="t4" eType="#//Expr" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="t25" upperBound="-1" eType="#//Expr"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="t7" eType="#//NameOrFunctionCall"

@@ -6,7 +6,6 @@ import com.euclideanspace.spad.editor.EditorPackage;
 import com.euclideanspace.spad.editor.Expr;
 import com.euclideanspace.spad.editor.NameOrFunctionCall;
 import com.euclideanspace.spad.editor.PrimaryPrefix;
-import com.euclideanspace.spad.editor.StatementExpression;
 
 import java.util.Collection;
 
@@ -48,7 +47,7 @@ public class PrimaryPrefixImpl extends ExprImpl implements PrimaryPrefix
    * @generated
    * @ordered
    */
-  protected StatementExpression t4;
+  protected Expr t4;
 
   /**
    * The cached value of the '{@link #getT25() <em>T25</em>}' containment reference list.
@@ -96,7 +95,7 @@ public class PrimaryPrefixImpl extends ExprImpl implements PrimaryPrefix
    * <!-- end-user-doc -->
    * @generated
    */
-  public StatementExpression getT4()
+  public Expr getT4()
   {
     return t4;
   }
@@ -106,9 +105,9 @@ public class PrimaryPrefixImpl extends ExprImpl implements PrimaryPrefix
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetT4(StatementExpression newT4, NotificationChain msgs)
+  public NotificationChain basicSetT4(Expr newT4, NotificationChain msgs)
   {
-    StatementExpression oldT4 = t4;
+    Expr oldT4 = t4;
     t4 = newT4;
     if (eNotificationRequired())
     {
@@ -123,7 +122,7 @@ public class PrimaryPrefixImpl extends ExprImpl implements PrimaryPrefix
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setT4(StatementExpression newT4)
+  public void setT4(Expr newT4)
   {
     if (newT4 != t4)
     {
@@ -253,7 +252,7 @@ public class PrimaryPrefixImpl extends ExprImpl implements PrimaryPrefix
     switch (featureID)
     {
       case EditorPackage.PRIMARY_PREFIX__T4:
-        setT4((StatementExpression)newValue);
+        setT4((Expr)newValue);
         return;
       case EditorPackage.PRIMARY_PREFIX__T25:
         getT25().clear();
@@ -277,7 +276,7 @@ public class PrimaryPrefixImpl extends ExprImpl implements PrimaryPrefix
     switch (featureID)
     {
       case EditorPackage.PRIMARY_PREFIX__T4:
-        setT4((StatementExpression)null);
+        setT4((Expr)null);
         return;
       case EditorPackage.PRIMARY_PREFIX__T25:
         getT25().clear();

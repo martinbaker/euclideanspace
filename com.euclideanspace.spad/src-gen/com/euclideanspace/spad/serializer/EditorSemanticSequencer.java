@@ -1909,14 +1909,14 @@ public class EditorSemanticSequencer extends AbstractDelegatingSemanticSequencer
 		}
 		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
 		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getIfElseStatementAccess().getS2StatementParserRuleCall_2_0(), semanticObject.getS2());
+		feeder.accept(grammarAccess.getIfElseStatementAccess().getS2StatementParserRuleCall_1_0(), semanticObject.getS2());
 		feeder.finish();
 	}
 	
 	
 	/**
 	 * Constraint:
-	 *     (t2=Expression s1=Statement s2=Statement?)
+	 *     (t2=Expression ((s1=Statement s2=Statement?) | (b?=LBRACE s11=Statement s12=Statement?)))
 	 */
 	protected void sequence_IfStatement(EObject context, IfStatement semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -2101,7 +2101,7 @@ public class EditorSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	
 	/**
 	 * Constraint:
-	 *     ((t4=StatementExpression t25+=Expression*) | t7=NameOrFunctionCall)
+	 *     ((t4=Expression t25+=Expression*) | t7=NameOrFunctionCall)
 	 */
 	protected void sequence_PrimaryPrefix(EObject context, PrimaryPrefix semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -2184,7 +2184,7 @@ public class EditorSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	
 	/**
 	 * Constraint:
-	 *     (t=Expression t2=TypeExpression? (t3=Expression t33+=Expression*)? t5=Block? t4=Statement?)
+	 *     (t=ConditionExpression t2=TypeExpression? (t3=Expression t33+=Expression*)? t5=Block? t4=Statement?)
 	 */
 	protected void sequence_StatementExpression(EObject context, StatementExpression semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

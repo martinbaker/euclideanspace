@@ -2941,13 +2941,40 @@ public interface EditorPackage extends EPackage
   int IF_STATEMENT__S2 = 2;
 
   /**
+   * The feature id for the '<em><b>B</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int IF_STATEMENT__B = 3;
+
+  /**
+   * The feature id for the '<em><b>S11</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int IF_STATEMENT__S11 = 4;
+
+  /**
+   * The feature id for the '<em><b>S12</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int IF_STATEMENT__S12 = 5;
+
+  /**
    * The number of structural features of the '<em>If Statement</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int IF_STATEMENT_FEATURE_COUNT = 3;
+  int IF_STATEMENT_FEATURE_COUNT = 6;
 
   /**
    * The meta object id for the '{@link com.euclideanspace.spad.editor.impl.IfElseStatementImpl <em>If Else Statement</em>}' class.
@@ -12289,6 +12316,39 @@ public interface EditorPackage extends EPackage
   EReference getIfStatement_S2();
 
   /**
+   * Returns the meta object for the attribute '{@link com.euclideanspace.spad.editor.IfStatement#isB <em>B</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>B</em>'.
+   * @see com.euclideanspace.spad.editor.IfStatement#isB()
+   * @see #getIfStatement()
+   * @generated
+   */
+  EAttribute getIfStatement_B();
+
+  /**
+   * Returns the meta object for the containment reference '{@link com.euclideanspace.spad.editor.IfStatement#getS11 <em>S11</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>S11</em>'.
+   * @see com.euclideanspace.spad.editor.IfStatement#getS11()
+   * @see #getIfStatement()
+   * @generated
+   */
+  EReference getIfStatement_S11();
+
+  /**
+   * Returns the meta object for the containment reference '{@link com.euclideanspace.spad.editor.IfStatement#getS12 <em>S12</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>S12</em>'.
+   * @see com.euclideanspace.spad.editor.IfStatement#getS12()
+   * @see #getIfStatement()
+   * @generated
+   */
+  EReference getIfStatement_S12();
+
+  /**
    * Returns the meta object for class '{@link com.euclideanspace.spad.editor.IfElseStatement <em>If Else Statement</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -15739,6 +15799,30 @@ public interface EditorPackage extends EPackage
      * @generated
      */
     EReference IF_STATEMENT__S2 = eINSTANCE.getIfStatement_S2();
+
+    /**
+     * The meta object literal for the '<em><b>B</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute IF_STATEMENT__B = eINSTANCE.getIfStatement_B();
+
+    /**
+     * The meta object literal for the '<em><b>S11</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference IF_STATEMENT__S11 = eINSTANCE.getIfStatement_S11();
+
+    /**
+     * The meta object literal for the '<em><b>S12</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference IF_STATEMENT__S12 = eINSTANCE.getIfStatement_S12();
 
     /**
      * The meta object literal for the '{@link com.euclideanspace.spad.editor.impl.IfElseStatementImpl <em>If Else Statement</em>}' class.

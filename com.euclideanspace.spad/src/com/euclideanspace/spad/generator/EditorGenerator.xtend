@@ -422,8 +422,9 @@ class EditorGenerator implements IGenerator {
         
     /* IfStatement */
     def compile(IfStatement f) 
-      '''if «compile(f.t2)»then «
-        compile(f.s1)»'''
+      '''return'''
+//      '''if «compile(f.t2)»then «
+//        compile(f.s1)»'''
 //        IF f.s2 != null»else «compile(f.s2)»«
 //        «ENDIF»
 

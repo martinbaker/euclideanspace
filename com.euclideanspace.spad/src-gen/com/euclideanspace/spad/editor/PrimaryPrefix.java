@@ -33,12 +33,12 @@ public interface PrimaryPrefix extends Expr
    * </p>
    * <!-- end-user-doc -->
    * @return the value of the '<em>T4</em>' containment reference.
-   * @see #setT4(StatementExpression)
+   * @see #setT4(Expr)
    * @see com.euclideanspace.spad.editor.EditorPackage#getPrimaryPrefix_T4()
    * @model containment="true"
    * @generated
    */
-  StatementExpression getT4();
+  Expr getT4();
 
   /**
    * Sets the value of the '{@link com.euclideanspace.spad.editor.PrimaryPrefix#getT4 <em>T4</em>}' containment reference.
@@ -48,7 +48,7 @@ public interface PrimaryPrefix extends Expr
    * @see #getT4()
    * @generated
    */
-  void setT4(StatementExpression value);
+  void setT4(Expr value);
 
   /**
    * Returns the value of the '<em><b>T25</b></em>' containment reference list.

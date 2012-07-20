@@ -207,11 +207,17 @@ terminal STRING	:
 terminal INT returns ecore::EInt: ('0'..'9')+;
 
 // grouping
+/* ( */
 terminal LPAREN: '(';
+/* ) */
 terminal RPAREN: ')';
+/* { */
 terminal LBRACE: '{';
+/* } */
 terminal RBRACE: '}';
+/* [ */
 terminal LBRACKET: '[';
+/* ] */
 terminal RBRACKET: ']';
 /*
 terminal LBANANA '(|';
@@ -275,8 +281,11 @@ terminal SLASH: '/';
 terminal BACKSLASH: '\\';
 terminal SLASHSLASH: '//';
 terminal BACKSLASHBACKSLASH: '\\\\';
+/* '/\\' */
 terminal SLASHBACKSLASH: '/\\';
+/* \\/ */
 terminal BACKSLASHSLASH: '\\/';
+/* '=>' */
 terminal EXIT: '=>';
 /* := */
 terminal BECOMES: ':=';
@@ -287,8 +296,9 @@ terminal ARROW: '->';
 terminal LARROW: '<-';
 /* +-> */
 terminal GIVES: '+->';
-
+/* % */
 terminal PERCENT: '%';
+/* ... */
 terminal ELLIPSIS: '...';
 terminal ANY_OTHER: .;
 
@@ -722,11 +732,13 @@ TypeLiteral hidden(WS):
  */
 Statement hidden(WS,SL_COMMENT):
     s1=Block |
-    => s3= StatementExpression | // 'if' can occur in an expression or in
-                                 // a statement so we use '=>' to choose
-                                 // expression if there is any ambiguity
+    s3= StatementExpression |
+    // 'if' can occur in an expression or in
+    // a statement so we use '=>' to choose
+    // expression if there is any ambiguity
     s4=IfStatement |
     s4b=IfElseStatement |
+//    s4c=IfThenStatement |
     s5=WhileStatement |
     s6=DoStatement |
     s7=ForStatement |
@@ -745,10 +757,18 @@ Block hidden(WS,SL_COMMENT):
 ;
 
 /*
- * gives a value or assigns a value to a variable
+ * Gives a value or assigns a value to a variable or does conditional exit
+ * 
+ * examples:
+ * x
+ * x:Int
+ * x:Int := 3
+ * 
+ * x=y => 3
  */
 StatementExpression hidden(WS,SL_COMMENT):
-  t=Expression
+  t=ConditionExpression // was Expression but changed so that 'if' statement
+                        // does not clash with if-then-else expression
     (COLON t2=TypeExpression)?
     (BECOMES t3=Expression (BECOMES t33+=Expression)*)?
     (BECOMES t5=Block)?
@@ -839,16 +859,37 @@ ReturnStatement hidden(WS):
  * a:= if x >0 then x else -x
  * if R has Field then ... 	  	 
  * if myUnion case mtType then ...
+ * 
+ * we also need to allow a form like this:
+ * if x >0 {
+ *   then x
+ *   else -x
+ * }
+ * 
+ * also this form (this requires IfElseStatement rule):
+ * if x >0 then {
+ *   x
+ * }
+ * else {
+ *   -x
+ * }
  */
 IfStatement hidden(WS,SL_COMMENT):
-	'if' t2=Expression
-    'then' NL? s1=Statement
-    // NL? we need to enable this but it will be matched multiple ways
-    (=> 'else' NL? s2=Statement)?
+  'if' t2=Expression
+//  'if' t2=ConditionExpression
+  (
+    'then' s1=Statement
+    (=> 'else' s2=Statement)?
+   |
+    b?=LBRACE
+    NL+ 'then' s11=Statement NL*
+    (=>'else' s12=Statement NL*)?
+    RBRACE
+  )
 ;
 
 IfElseStatement hidden(WS,SL_COMMENT):
-	'else' NL? s2=Statement
+	'else' s2=Statement
 ;
 
 ///////////// Expression syntax follows //////////////
@@ -1233,7 +1274,7 @@ PrimaryExpression returns Expr hidden(WS,SL_COMMENT):
  */
 PrimaryPrefix hidden(WS,SL_COMMENT):
  Literal
- | LPAREN t4=StatementExpression (COMMA t25+=Expression)* RPAREN
+ | LPAREN t4=Expression (COMMA t25+=Expression)* RPAREN
  | t7=NameOrFunctionCall
 ;
 
@@ -1245,6 +1286,7 @@ PrimaryPrefix hidden(WS,SL_COMMENT):
  * function binds most tightly
  */
 NameOrFunctionCall hidden(WS,SL_COMMENT):
+  ("'")?
   fnname=ID (=> lsp=DOLAR 'Lisp'/*t2=TypeExpression*/)?
   //  option for parameters in parenthesis
   (

@@ -15,6 +15,9 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link com.euclideanspace.spad.editor.IfStatement#getT2 <em>T2</em>}</li>
  *   <li>{@link com.euclideanspace.spad.editor.IfStatement#getS1 <em>S1</em>}</li>
  *   <li>{@link com.euclideanspace.spad.editor.IfStatement#getS2 <em>S2</em>}</li>
+ *   <li>{@link com.euclideanspace.spad.editor.IfStatement#isB <em>B</em>}</li>
+ *   <li>{@link com.euclideanspace.spad.editor.IfStatement#getS11 <em>S11</em>}</li>
+ *   <li>{@link com.euclideanspace.spad.editor.IfStatement#getS12 <em>S12</em>}</li>
  * </ul>
  * </p>
  *
@@ -101,5 +104,83 @@ public interface IfStatement extends EObject
    * @generated
    */
   void setS2(Statement value);
+
+  /**
+   * Returns the value of the '<em><b>B</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>B</em>' attribute isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>B</em>' attribute.
+   * @see #setB(boolean)
+   * @see com.euclideanspace.spad.editor.EditorPackage#getIfStatement_B()
+   * @model
+   * @generated
+   */
+  boolean isB();
+
+  /**
+   * Sets the value of the '{@link com.euclideanspace.spad.editor.IfStatement#isB <em>B</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>B</em>' attribute.
+   * @see #isB()
+   * @generated
+   */
+  void setB(boolean value);
+
+  /**
+   * Returns the value of the '<em><b>S11</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>S11</em>' containment reference isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>S11</em>' containment reference.
+   * @see #setS11(Statement)
+   * @see com.euclideanspace.spad.editor.EditorPackage#getIfStatement_S11()
+   * @model containment="true"
+   * @generated
+   */
+  Statement getS11();
+
+  /**
+   * Sets the value of the '{@link com.euclideanspace.spad.editor.IfStatement#getS11 <em>S11</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>S11</em>' containment reference.
+   * @see #getS11()
+   * @generated
+   */
+  void setS11(Statement value);
+
+  /**
+   * Returns the value of the '<em><b>S12</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>S12</em>' containment reference isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>S12</em>' containment reference.
+   * @see #setS12(Statement)
+   * @see com.euclideanspace.spad.editor.EditorPackage#getIfStatement_S12()
+   * @model containment="true"
+   * @generated
+   */
+  Statement getS12();
+
+  /**
+   * Sets the value of the '{@link com.euclideanspace.spad.editor.IfStatement#getS12 <em>S12</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>S12</em>' containment reference.
+   * @see #getS12()
+   * @generated
+   */
+  void setS12(Statement value);
 
 } // IfStatement

@@ -119,9 +119,9 @@ RULE_WS=8
 'quo'=92
 '^='=88
 'and'=85
-'Lisp'=68
+'Lisp'=69
 'break'=82
-'\''=69
+'\''=68
 'package'=71
 'domain'=72
 'false'=98
