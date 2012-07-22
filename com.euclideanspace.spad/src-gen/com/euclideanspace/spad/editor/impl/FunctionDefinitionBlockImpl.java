@@ -3,6 +3,7 @@
 package com.euclideanspace.spad.editor.impl;
 
 import com.euclideanspace.spad.editor.EditorPackage;
+import com.euclideanspace.spad.editor.Expr;
 import com.euclideanspace.spad.editor.FunctionDefinition;
 import com.euclideanspace.spad.editor.FunctionDefinitionBlock;
 
@@ -31,6 +32,8 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <ul>
  *   <li>{@link com.euclideanspace.spad.editor.impl.FunctionDefinitionBlockImpl#getFnDecBr <em>Fn Dec Br</em>}</li>
  *   <li>{@link com.euclideanspace.spad.editor.impl.FunctionDefinitionBlockImpl#getFnDecBk <em>Fn Dec Bk</em>}</li>
+ *   <li>{@link com.euclideanspace.spad.editor.impl.FunctionDefinitionBlockImpl#getT1 <em>T1</em>}</li>
+ *   <li>{@link com.euclideanspace.spad.editor.impl.FunctionDefinitionBlockImpl#getT13 <em>T13</em>}</li>
  * </ul>
  * </p>
  *
@@ -67,6 +70,26 @@ public class FunctionDefinitionBlockImpl extends MinimalEObjectImpl.Container im
    * @ordered
    */
   protected EList<FunctionDefinition> fnDecBk;
+
+  /**
+   * The cached value of the '{@link #getT1() <em>T1</em>}' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getT1()
+   * @generated
+   * @ordered
+   */
+  protected EList<Expr> t1;
+
+  /**
+   * The cached value of the '{@link #getT13() <em>T13</em>}' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getT13()
+   * @generated
+   * @ordered
+   */
+  protected EList<FunctionDefinitionBlock> t13;
 
   /**
    * <!-- begin-user-doc -->
@@ -131,6 +154,34 @@ public class FunctionDefinitionBlockImpl extends MinimalEObjectImpl.Container im
    * <!-- end-user-doc -->
    * @generated
    */
+  public EList<Expr> getT1()
+  {
+    if (t1 == null)
+    {
+      t1 = new EObjectContainmentEList<Expr>(Expr.class, this, EditorPackage.FUNCTION_DEFINITION_BLOCK__T1);
+    }
+    return t1;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EList<FunctionDefinitionBlock> getT13()
+  {
+    if (t13 == null)
+    {
+      t13 = new EObjectContainmentEList<FunctionDefinitionBlock>(FunctionDefinitionBlock.class, this, EditorPackage.FUNCTION_DEFINITION_BLOCK__T13);
+    }
+    return t13;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
@@ -138,6 +189,10 @@ public class FunctionDefinitionBlockImpl extends MinimalEObjectImpl.Container im
     {
       case EditorPackage.FUNCTION_DEFINITION_BLOCK__FN_DEC_BK:
         return ((InternalEList<?>)getFnDecBk()).basicRemove(otherEnd, msgs);
+      case EditorPackage.FUNCTION_DEFINITION_BLOCK__T1:
+        return ((InternalEList<?>)getT1()).basicRemove(otherEnd, msgs);
+      case EditorPackage.FUNCTION_DEFINITION_BLOCK__T13:
+        return ((InternalEList<?>)getT13()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -156,6 +211,10 @@ public class FunctionDefinitionBlockImpl extends MinimalEObjectImpl.Container im
         return getFnDecBr();
       case EditorPackage.FUNCTION_DEFINITION_BLOCK__FN_DEC_BK:
         return getFnDecBk();
+      case EditorPackage.FUNCTION_DEFINITION_BLOCK__T1:
+        return getT1();
+      case EditorPackage.FUNCTION_DEFINITION_BLOCK__T13:
+        return getT13();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -178,6 +237,14 @@ public class FunctionDefinitionBlockImpl extends MinimalEObjectImpl.Container im
         getFnDecBk().clear();
         getFnDecBk().addAll((Collection<? extends FunctionDefinition>)newValue);
         return;
+      case EditorPackage.FUNCTION_DEFINITION_BLOCK__T1:
+        getT1().clear();
+        getT1().addAll((Collection<? extends Expr>)newValue);
+        return;
+      case EditorPackage.FUNCTION_DEFINITION_BLOCK__T13:
+        getT13().clear();
+        getT13().addAll((Collection<? extends FunctionDefinitionBlock>)newValue);
+        return;
     }
     super.eSet(featureID, newValue);
   }
@@ -198,6 +265,12 @@ public class FunctionDefinitionBlockImpl extends MinimalEObjectImpl.Container im
       case EditorPackage.FUNCTION_DEFINITION_BLOCK__FN_DEC_BK:
         getFnDecBk().clear();
         return;
+      case EditorPackage.FUNCTION_DEFINITION_BLOCK__T1:
+        getT1().clear();
+        return;
+      case EditorPackage.FUNCTION_DEFINITION_BLOCK__T13:
+        getT13().clear();
+        return;
     }
     super.eUnset(featureID);
   }
@@ -216,6 +289,10 @@ public class FunctionDefinitionBlockImpl extends MinimalEObjectImpl.Container im
         return FN_DEC_BR_EDEFAULT == null ? fnDecBr != null : !FN_DEC_BR_EDEFAULT.equals(fnDecBr);
       case EditorPackage.FUNCTION_DEFINITION_BLOCK__FN_DEC_BK:
         return fnDecBk != null && !fnDecBk.isEmpty();
+      case EditorPackage.FUNCTION_DEFINITION_BLOCK__T1:
+        return t1 != null && !t1.isEmpty();
+      case EditorPackage.FUNCTION_DEFINITION_BLOCK__T13:
+        return t13 != null && !t13.isEmpty();
     }
     return super.eIsSet(featureID);
   }

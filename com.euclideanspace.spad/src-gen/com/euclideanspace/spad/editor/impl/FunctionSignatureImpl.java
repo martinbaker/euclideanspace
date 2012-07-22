@@ -39,6 +39,10 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link com.euclideanspace.spad.editor.impl.FunctionSignatureImpl#getB3 <em>B3</em>}</li>
  *   <li>{@link com.euclideanspace.spad.editor.impl.FunctionSignatureImpl#getB2 <em>B2</em>}</li>
  *   <li>{@link com.euclideanspace.spad.editor.impl.FunctionSignatureImpl#getT6 <em>T6</em>}</li>
+ *   <li>{@link com.euclideanspace.spad.editor.impl.FunctionSignatureImpl#getB4 <em>B4</em>}</li>
+ *   <li>{@link com.euclideanspace.spad.editor.impl.FunctionSignatureImpl#getT7 <em>T7</em>}</li>
+ *   <li>{@link com.euclideanspace.spad.editor.impl.FunctionSignatureImpl#getB5 <em>B5</em>}</li>
+ *   <li>{@link com.euclideanspace.spad.editor.impl.FunctionSignatureImpl#getT8 <em>T8</em>}</li>
  * </ul>
  * </p>
  *
@@ -225,6 +229,86 @@ public class FunctionSignatureImpl extends MinimalEObjectImpl.Container implemen
    * @ordered
    */
   protected String t6 = T6_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #getB4() <em>B4</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getB4()
+   * @generated
+   * @ordered
+   */
+  protected static final String B4_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getB4() <em>B4</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getB4()
+   * @generated
+   * @ordered
+   */
+  protected String b4 = B4_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #getT7() <em>T7</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getT7()
+   * @generated
+   * @ordered
+   */
+  protected static final String T7_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getT7() <em>T7</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getT7()
+   * @generated
+   * @ordered
+   */
+  protected String t7 = T7_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #getB5() <em>B5</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getB5()
+   * @generated
+   * @ordered
+   */
+  protected static final String B5_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getB5() <em>B5</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getB5()
+   * @generated
+   * @ordered
+   */
+  protected String b5 = B5_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #getT8() <em>T8</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getT8()
+   * @generated
+   * @ordered
+   */
+  protected static final String T8_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getT8() <em>T8</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getT8()
+   * @generated
+   * @ordered
+   */
+  protected String t8 = T8_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
@@ -498,6 +582,98 @@ public class FunctionSignatureImpl extends MinimalEObjectImpl.Container implemen
    * <!-- end-user-doc -->
    * @generated
    */
+  public String getB4()
+  {
+    return b4;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setB4(String newB4)
+  {
+    String oldB4 = b4;
+    b4 = newB4;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, EditorPackage.FUNCTION_SIGNATURE__B4, oldB4, b4));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public String getT7()
+  {
+    return t7;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setT7(String newT7)
+  {
+    String oldT7 = t7;
+    t7 = newT7;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, EditorPackage.FUNCTION_SIGNATURE__T7, oldT7, t7));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public String getB5()
+  {
+    return b5;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setB5(String newB5)
+  {
+    String oldB5 = b5;
+    b5 = newB5;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, EditorPackage.FUNCTION_SIGNATURE__B5, oldB5, b5));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public String getT8()
+  {
+    return t8;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setT8(String newT8)
+  {
+    String oldT8 = t8;
+    t8 = newT8;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, EditorPackage.FUNCTION_SIGNATURE__T8, oldT8, t8));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
@@ -541,6 +717,14 @@ public class FunctionSignatureImpl extends MinimalEObjectImpl.Container implemen
         return getB2();
       case EditorPackage.FUNCTION_SIGNATURE__T6:
         return getT6();
+      case EditorPackage.FUNCTION_SIGNATURE__B4:
+        return getB4();
+      case EditorPackage.FUNCTION_SIGNATURE__T7:
+        return getT7();
+      case EditorPackage.FUNCTION_SIGNATURE__B5:
+        return getB5();
+      case EditorPackage.FUNCTION_SIGNATURE__T8:
+        return getT8();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -587,6 +771,18 @@ public class FunctionSignatureImpl extends MinimalEObjectImpl.Container implemen
       case EditorPackage.FUNCTION_SIGNATURE__T6:
         setT6((String)newValue);
         return;
+      case EditorPackage.FUNCTION_SIGNATURE__B4:
+        setB4((String)newValue);
+        return;
+      case EditorPackage.FUNCTION_SIGNATURE__T7:
+        setT7((String)newValue);
+        return;
+      case EditorPackage.FUNCTION_SIGNATURE__B5:
+        setB5((String)newValue);
+        return;
+      case EditorPackage.FUNCTION_SIGNATURE__T8:
+        setT8((String)newValue);
+        return;
     }
     super.eSet(featureID, newValue);
   }
@@ -631,6 +827,18 @@ public class FunctionSignatureImpl extends MinimalEObjectImpl.Container implemen
       case EditorPackage.FUNCTION_SIGNATURE__T6:
         setT6(T6_EDEFAULT);
         return;
+      case EditorPackage.FUNCTION_SIGNATURE__B4:
+        setB4(B4_EDEFAULT);
+        return;
+      case EditorPackage.FUNCTION_SIGNATURE__T7:
+        setT7(T7_EDEFAULT);
+        return;
+      case EditorPackage.FUNCTION_SIGNATURE__B5:
+        setB5(B5_EDEFAULT);
+        return;
+      case EditorPackage.FUNCTION_SIGNATURE__T8:
+        setT8(T8_EDEFAULT);
+        return;
     }
     super.eUnset(featureID);
   }
@@ -665,6 +873,14 @@ public class FunctionSignatureImpl extends MinimalEObjectImpl.Container implemen
         return B2_EDEFAULT == null ? b2 != null : !B2_EDEFAULT.equals(b2);
       case EditorPackage.FUNCTION_SIGNATURE__T6:
         return T6_EDEFAULT == null ? t6 != null : !T6_EDEFAULT.equals(t6);
+      case EditorPackage.FUNCTION_SIGNATURE__B4:
+        return B4_EDEFAULT == null ? b4 != null : !B4_EDEFAULT.equals(b4);
+      case EditorPackage.FUNCTION_SIGNATURE__T7:
+        return T7_EDEFAULT == null ? t7 != null : !T7_EDEFAULT.equals(t7);
+      case EditorPackage.FUNCTION_SIGNATURE__B5:
+        return B5_EDEFAULT == null ? b5 != null : !B5_EDEFAULT.equals(b5);
+      case EditorPackage.FUNCTION_SIGNATURE__T8:
+        return T8_EDEFAULT == null ? t8 != null : !T8_EDEFAULT.equals(t8);
     }
     return super.eIsSet(featureID);
   }
@@ -696,6 +912,14 @@ public class FunctionSignatureImpl extends MinimalEObjectImpl.Container implemen
     result.append(b2);
     result.append(", t6: ");
     result.append(t6);
+    result.append(", b4: ");
+    result.append(b4);
+    result.append(", t7: ");
+    result.append(t7);
+    result.append(", b5: ");
+    result.append(b5);
+    result.append(", t8: ");
+    result.append(t8);
     result.append(')');
     return result.toString();
   }

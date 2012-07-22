@@ -24,6 +24,10 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link com.euclideanspace.spad.editor.FunctionSignature#getB3 <em>B3</em>}</li>
  *   <li>{@link com.euclideanspace.spad.editor.FunctionSignature#getB2 <em>B2</em>}</li>
  *   <li>{@link com.euclideanspace.spad.editor.FunctionSignature#getT6 <em>T6</em>}</li>
+ *   <li>{@link com.euclideanspace.spad.editor.FunctionSignature#getB4 <em>B4</em>}</li>
+ *   <li>{@link com.euclideanspace.spad.editor.FunctionSignature#getT7 <em>T7</em>}</li>
+ *   <li>{@link com.euclideanspace.spad.editor.FunctionSignature#getB5 <em>B5</em>}</li>
+ *   <li>{@link com.euclideanspace.spad.editor.FunctionSignature#getT8 <em>T8</em>}</li>
  * </ul>
  * </p>
  *
@@ -282,5 +286,109 @@ public interface FunctionSignature extends EObject
    * @generated
    */
   void setT6(String value);
+
+  /**
+   * Returns the value of the '<em><b>B4</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>B4</em>' attribute isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>B4</em>' attribute.
+   * @see #setB4(String)
+   * @see com.euclideanspace.spad.editor.EditorPackage#getFunctionSignature_B4()
+   * @model
+   * @generated
+   */
+  String getB4();
+
+  /**
+   * Sets the value of the '{@link com.euclideanspace.spad.editor.FunctionSignature#getB4 <em>B4</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>B4</em>' attribute.
+   * @see #getB4()
+   * @generated
+   */
+  void setB4(String value);
+
+  /**
+   * Returns the value of the '<em><b>T7</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>T7</em>' attribute isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>T7</em>' attribute.
+   * @see #setT7(String)
+   * @see com.euclideanspace.spad.editor.EditorPackage#getFunctionSignature_T7()
+   * @model
+   * @generated
+   */
+  String getT7();
+
+  /**
+   * Sets the value of the '{@link com.euclideanspace.spad.editor.FunctionSignature#getT7 <em>T7</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>T7</em>' attribute.
+   * @see #getT7()
+   * @generated
+   */
+  void setT7(String value);
+
+  /**
+   * Returns the value of the '<em><b>B5</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>B5</em>' attribute isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>B5</em>' attribute.
+   * @see #setB5(String)
+   * @see com.euclideanspace.spad.editor.EditorPackage#getFunctionSignature_B5()
+   * @model
+   * @generated
+   */
+  String getB5();
+
+  /**
+   * Sets the value of the '{@link com.euclideanspace.spad.editor.FunctionSignature#getB5 <em>B5</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>B5</em>' attribute.
+   * @see #getB5()
+   * @generated
+   */
+  void setB5(String value);
+
+  /**
+   * Returns the value of the '<em><b>T8</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>T8</em>' attribute isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>T8</em>' attribute.
+   * @see #setT8(String)
+   * @see com.euclideanspace.spad.editor.EditorPackage#getFunctionSignature_T8()
+   * @model
+   * @generated
+   */
+  String getT8();
+
+  /**
+   * Sets the value of the '{@link com.euclideanspace.spad.editor.FunctionSignature#getT8 <em>T8</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>T8</em>' attribute.
+   * @see #getT8()
+   * @generated
+   */
+  void setT8(String value);
 
 } // FunctionSignature

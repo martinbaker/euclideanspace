@@ -78,6 +78,8 @@
     <genClasses ecoreClass="Editor.ecore#//FunctionDefinitionBlock">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Editor.ecore#//FunctionDefinitionBlock/fnDecBr"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//FunctionDefinitionBlock/fnDecBk"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//FunctionDefinitionBlock/t1"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//FunctionDefinitionBlock/t13"/>
     </genClasses>
     <genClasses ecoreClass="Editor.ecore#//FunctionSignature">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Editor.ecore#//FunctionSignature/fnNam"/>
@@ -90,6 +92,10 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Editor.ecore#//FunctionSignature/b3"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Editor.ecore#//FunctionSignature/b2"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Editor.ecore#//FunctionSignature/t6"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Editor.ecore#//FunctionSignature/b4"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Editor.ecore#//FunctionSignature/t7"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Editor.ecore#//FunctionSignature/b5"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Editor.ecore#//FunctionSignature/t8"/>
     </genClasses>
     <genClasses ecoreClass="Editor.ecore#//MacroDef">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Editor.ecore#//MacroDef/macroname"/>
@@ -237,6 +243,8 @@
     <genClasses ecoreClass="Editor.ecore#//ForStatement">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Editor.ecore#//ForStatement/stname"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//ForStatement/t1"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Editor.ecore#//ForStatement/stname2"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//ForStatement/t2"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//ForStatement/s1"/>
     </genClasses>
     <genClasses ecoreClass="Editor.ecore#//WhileStatement">

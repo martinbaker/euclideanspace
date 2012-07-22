@@ -7,14 +7,22 @@ import com.euclideanspace.spad.editor.Expr;
 import com.euclideanspace.spad.editor.ForStatement;
 import com.euclideanspace.spad.editor.Statement;
 
+import java.util.Collection;
+
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
+
+import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+
+import org.eclipse.emf.ecore.util.EDataTypeEList;
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -25,6 +33,8 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * <ul>
  *   <li>{@link com.euclideanspace.spad.editor.impl.ForStatementImpl#getStname <em>Stname</em>}</li>
  *   <li>{@link com.euclideanspace.spad.editor.impl.ForStatementImpl#getT1 <em>T1</em>}</li>
+ *   <li>{@link com.euclideanspace.spad.editor.impl.ForStatementImpl#getStname2 <em>Stname2</em>}</li>
+ *   <li>{@link com.euclideanspace.spad.editor.impl.ForStatementImpl#getT2 <em>T2</em>}</li>
  *   <li>{@link com.euclideanspace.spad.editor.impl.ForStatementImpl#getS1 <em>S1</em>}</li>
  * </ul>
  * </p>
@@ -62,6 +72,26 @@ public class ForStatementImpl extends MinimalEObjectImpl.Container implements Fo
    * @ordered
    */
   protected Expr t1;
+
+  /**
+   * The cached value of the '{@link #getStname2() <em>Stname2</em>}' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getStname2()
+   * @generated
+   * @ordered
+   */
+  protected EList<String> stname2;
+
+  /**
+   * The cached value of the '{@link #getT2() <em>T2</em>}' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getT2()
+   * @generated
+   * @ordered
+   */
+  protected EList<Expr> t2;
 
   /**
    * The cached value of the '{@link #getS1() <em>S1</em>}' containment reference.
@@ -170,6 +200,34 @@ public class ForStatementImpl extends MinimalEObjectImpl.Container implements Fo
    * <!-- end-user-doc -->
    * @generated
    */
+  public EList<String> getStname2()
+  {
+    if (stname2 == null)
+    {
+      stname2 = new EDataTypeEList<String>(String.class, this, EditorPackage.FOR_STATEMENT__STNAME2);
+    }
+    return stname2;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EList<Expr> getT2()
+  {
+    if (t2 == null)
+    {
+      t2 = new EObjectContainmentEList<Expr>(Expr.class, this, EditorPackage.FOR_STATEMENT__T2);
+    }
+    return t2;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public Statement getS1()
   {
     return s1;
@@ -225,6 +283,8 @@ public class ForStatementImpl extends MinimalEObjectImpl.Container implements Fo
     {
       case EditorPackage.FOR_STATEMENT__T1:
         return basicSetT1(null, msgs);
+      case EditorPackage.FOR_STATEMENT__T2:
+        return ((InternalEList<?>)getT2()).basicRemove(otherEnd, msgs);
       case EditorPackage.FOR_STATEMENT__S1:
         return basicSetS1(null, msgs);
     }
@@ -245,6 +305,10 @@ public class ForStatementImpl extends MinimalEObjectImpl.Container implements Fo
         return getStname();
       case EditorPackage.FOR_STATEMENT__T1:
         return getT1();
+      case EditorPackage.FOR_STATEMENT__STNAME2:
+        return getStname2();
+      case EditorPackage.FOR_STATEMENT__T2:
+        return getT2();
       case EditorPackage.FOR_STATEMENT__S1:
         return getS1();
     }
@@ -256,6 +320,7 @@ public class ForStatementImpl extends MinimalEObjectImpl.Container implements Fo
    * <!-- end-user-doc -->
    * @generated
    */
+  @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue)
   {
@@ -266,6 +331,14 @@ public class ForStatementImpl extends MinimalEObjectImpl.Container implements Fo
         return;
       case EditorPackage.FOR_STATEMENT__T1:
         setT1((Expr)newValue);
+        return;
+      case EditorPackage.FOR_STATEMENT__STNAME2:
+        getStname2().clear();
+        getStname2().addAll((Collection<? extends String>)newValue);
+        return;
+      case EditorPackage.FOR_STATEMENT__T2:
+        getT2().clear();
+        getT2().addAll((Collection<? extends Expr>)newValue);
         return;
       case EditorPackage.FOR_STATEMENT__S1:
         setS1((Statement)newValue);
@@ -290,6 +363,12 @@ public class ForStatementImpl extends MinimalEObjectImpl.Container implements Fo
       case EditorPackage.FOR_STATEMENT__T1:
         setT1((Expr)null);
         return;
+      case EditorPackage.FOR_STATEMENT__STNAME2:
+        getStname2().clear();
+        return;
+      case EditorPackage.FOR_STATEMENT__T2:
+        getT2().clear();
+        return;
       case EditorPackage.FOR_STATEMENT__S1:
         setS1((Statement)null);
         return;
@@ -311,6 +390,10 @@ public class ForStatementImpl extends MinimalEObjectImpl.Container implements Fo
         return STNAME_EDEFAULT == null ? stname != null : !STNAME_EDEFAULT.equals(stname);
       case EditorPackage.FOR_STATEMENT__T1:
         return t1 != null;
+      case EditorPackage.FOR_STATEMENT__STNAME2:
+        return stname2 != null && !stname2.isEmpty();
+      case EditorPackage.FOR_STATEMENT__T2:
+        return t2 != null && !t2.isEmpty();
       case EditorPackage.FOR_STATEMENT__S1:
         return s1 != null;
     }
@@ -330,6 +413,8 @@ public class ForStatementImpl extends MinimalEObjectImpl.Container implements Fo
     StringBuffer result = new StringBuffer(super.toString());
     result.append(" (stname: ");
     result.append(stname);
+    result.append(", stname2: ");
+    result.append(stname2);
     result.append(')');
     return result.toString();
   }

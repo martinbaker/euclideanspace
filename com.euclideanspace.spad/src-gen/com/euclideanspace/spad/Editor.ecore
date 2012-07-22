@@ -97,6 +97,10 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="fnDecBr" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="fnDecBk" upperBound="-1"
         eType="#//FunctionDefinition" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="t1" upperBound="-1" eType="#//Expr"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="t13" upperBound="-1" eType="#//FunctionDefinitionBlock"
+        containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="FunctionSignature">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="fnNam" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -111,6 +115,10 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="b3" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="b2" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="t6" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="b4" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="t7" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="b5" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="t8" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="MacroDef" eSuperTypes="#//WhereAssignments #//AddStatements">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="macroname" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -330,6 +338,10 @@
   <eClassifiers xsi:type="ecore:EClass" name="ForStatement">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="stname" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="t1" eType="#//Expr" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="stname2" unique="false"
+        upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="t2" upperBound="-1" eType="#//Expr"
+        containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="s1" eType="#//Statement"
         containment="true"/>
   </eClassifiers>

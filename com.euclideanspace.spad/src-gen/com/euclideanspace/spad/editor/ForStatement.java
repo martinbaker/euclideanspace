@@ -2,6 +2,8 @@
  */
 package com.euclideanspace.spad.editor;
 
+import org.eclipse.emf.common.util.EList;
+
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -14,6 +16,8 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link com.euclideanspace.spad.editor.ForStatement#getStname <em>Stname</em>}</li>
  *   <li>{@link com.euclideanspace.spad.editor.ForStatement#getT1 <em>T1</em>}</li>
+ *   <li>{@link com.euclideanspace.spad.editor.ForStatement#getStname2 <em>Stname2</em>}</li>
+ *   <li>{@link com.euclideanspace.spad.editor.ForStatement#getT2 <em>T2</em>}</li>
  *   <li>{@link com.euclideanspace.spad.editor.ForStatement#getS1 <em>S1</em>}</li>
  * </ul>
  * </p>
@@ -75,6 +79,38 @@ public interface ForStatement extends EObject
    * @generated
    */
   void setT1(Expr value);
+
+  /**
+   * Returns the value of the '<em><b>Stname2</b></em>' attribute list.
+   * The list contents are of type {@link java.lang.String}.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Stname2</em>' attribute list isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Stname2</em>' attribute list.
+   * @see com.euclideanspace.spad.editor.EditorPackage#getForStatement_Stname2()
+   * @model unique="false"
+   * @generated
+   */
+  EList<String> getStname2();
+
+  /**
+   * Returns the value of the '<em><b>T2</b></em>' containment reference list.
+   * The list contents are of type {@link com.euclideanspace.spad.editor.Expr}.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>T2</em>' containment reference list isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>T2</em>' containment reference list.
+   * @see com.euclideanspace.spad.editor.EditorPackage#getForStatement_T2()
+   * @model containment="true"
+   * @generated
+   */
+  EList<Expr> getT2();
 
   /**
    * Returns the value of the '<em><b>S1</b></em>' containment reference.

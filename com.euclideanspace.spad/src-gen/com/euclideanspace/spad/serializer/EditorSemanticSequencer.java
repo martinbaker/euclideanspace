@@ -1794,23 +1794,10 @@ public class EditorSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	
 	/**
 	 * Constraint:
-	 *     (stname=ID t1=Expression s1=Statement)
+	 *     (stname=ID t1=Expression (stname2+=ID t2+=Expression)* s1=Statement)
 	 */
 	protected void sequence_ForStatement(EObject context, ForStatement semanticObject) {
-		if(errorAcceptor != null) {
-			if(transientValues.isValueTransient(semanticObject, EditorPackage.Literals.FOR_STATEMENT__STNAME) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, EditorPackage.Literals.FOR_STATEMENT__STNAME));
-			if(transientValues.isValueTransient(semanticObject, EditorPackage.Literals.FOR_STATEMENT__T1) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, EditorPackage.Literals.FOR_STATEMENT__T1));
-			if(transientValues.isValueTransient(semanticObject, EditorPackage.Literals.FOR_STATEMENT__S1) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, EditorPackage.Literals.FOR_STATEMENT__S1));
-		}
-		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
-		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getForStatementAccess().getStnameIDTerminalRuleCall_1_0_0(), semanticObject.getStname());
-		feeder.accept(grammarAccess.getForStatementAccess().getT1ExpressionParserRuleCall_1_2_0(), semanticObject.getT1());
-		feeder.accept(grammarAccess.getForStatementAccess().getS1StatementParserRuleCall_4_0(), semanticObject.getS1());
-		feeder.finish();
+		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
@@ -1832,7 +1819,7 @@ public class EditorSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	
 	/**
 	 * Constraint:
-	 *     (fnDecBr=LBRACE fnDecBk+=FunctionDefinition*)
+	 *     (fnDecBr=LBRACE (fnDecBk+=FunctionDefinition | (t1+=Expression t13+=FunctionDefinitionBlock))*)
 	 */
 	protected void sequence_FunctionDefinitionBlock(EObject context, FunctionDefinitionBlock semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -1872,7 +1859,9 @@ public class EditorSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	 *             t5=ID
 	 *         ) | 
 	 *         b3=INT | 
-	 *         (b2=MINUS t6=ID)
+	 *         (b2=MINUS t6=ID) | 
+	 *         (b4=TILDE t7=ID) | 
+	 *         (b5='not' t8=ID)
 	 *     )
 	 */
 	protected void sequence_FunctionSignature(EObject context, FunctionSignature semanticObject) {
@@ -2400,7 +2389,7 @@ public class EditorSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	 *         name='where' 
 	 *         whereAssig+=WhereAssignments* 
 	 *         (longname8=ID imp=TypeExpression? w8=WithPart)? 
-	 *         (longname9=ID (fs=ID par2=ID? par3+=ID*)? add=AddPart)?
+	 *         (longname9=ID? (fs=ID par2=ID? par3+=ID*)? add=AddPart)?
 	 *     )
 	 */
 	protected void sequence_WherePart(EObject context, WherePart semanticObject) {

@@ -312,8 +312,7 @@ CategoryDef hidden(WS,NL,SL_COMMENT):
 	name='category' shortname=ID longname=ID
 	longname2=ID /*[CategoryDef]*/
     (cp=TypeParameterList)?
-    COLON 'Category'
-    DEF 
+    COLON 'Category' DEF 
     (
     implName=TypeArguments ((w=WithPart? a=AddPart?)| wh5=WherePart)
     | LBRACE NL*
@@ -356,15 +355,14 @@ DomainDef hidden(WS,NL,SL_COMMENT):
 WherePart hidden(WS,SL_COMMENT):
 	name='where' NL* LBRACE NL*
     (whereAssig +=WhereAssignments (NL|SEMICOLON)+)*
+    // with part
     (longname8=ID ((DEF | MDEF) (imp=TypeExpression)?)? w8=WithPart)?
-    (longname9=ID (DEF | MDEF)?
-    (fs=ID LPAREN
-    par2=ID?
-    (COMMA par3 += ID)*
-    RPAREN)?
-    add=AddPart)?
-    //(longname9=ID (DEF | MDEF)? add=AddPart)?
-    //(longname9=ID (DEF | MDEF)? =>(fs=FunctionSignature)? add=AddPart)?
+    // add part
+    (
+    	(longname9=ID (DEF | MDEF))?
+        (fs=ID LPAREN par2=ID? (COMMA par3 += ID)* RPAREN)?
+        add=AddPart
+    )?
     RBRACE NL+
 ;
 
@@ -428,9 +426,18 @@ FunctionDefinition hidden(WS,SL_COMMENT):
    ) 
 ;
 
+/*
+ * called by 'AddStatements' rule.
+ * allows more add statements inside:
+ * if a has y then 'more add statements'
+ */
 FunctionDefinitionBlock hidden(WS,SL_COMMENT):
     fnDecBr=LBRACE NL*
-      (fnDecBk += FunctionDefinition (NL|SEMICOLON)+)*
+      (
+      	fnDecBk += FunctionDefinition (NL|SEMICOLON)+
+     | ('if' t1+=Expression // expression has form 'x has y'
+        'then' t13+=FunctionDefinitionBlock (NL|SEMICOLON)+)      	
+      )*
       RBRACE	
 ;
 
@@ -466,6 +473,10 @@ FunctionSignature hidden(WS,SL_COMMENT):
   	       // order
   ) | (
   	b2=MINUS t6=ID
+  ) | (
+  	b4=TILDE t7=ID
+  ) | (
+  	b5='not' t8=ID
   )
 ;
 
@@ -783,13 +794,23 @@ StatementExpression hidden(WS,SL_COMMENT):
  * for i in n..m repeat ... is 1
  * for i in n..m by s repeat ...
  * for i in list repeat ...
+ * for i in list for i in 1..length() repeat ...
+ * for i in list for i in 1.. repeat ...
  * for j in n..m repeat loopBody
- * for j in n..m | odd? j repeat 
+ * for j in n..m | odd? j repeat
+ * 
+ * To Do
+ * -----
+ * As a temporary measure we check for '..' as a suffix operator
+ * here, but we should really put this into expression?
+ * 
+ * We need to allow conditions using BAR '|'
  */
 ForStatement hidden(WS,SL_COMMENT):
 	'for' (
-       stname=ID 'in' t1=Expression //(=> '..' t2=Expression)?
+       stname=ID 'in' t1=Expression SEG? //(=> '..' t2=Expression)?
 //       (=> BAR t2=PredicateOr)? // condition
+       ('for' stname2+=ID 'in' t2+=Expression SEG?)*
 	) 'repeat' NL? s1=Statement //('is' s2=Statement)?
 ;
 
@@ -1043,6 +1064,11 @@ IsExpression returns Expr hidden(WS,SL_COMMENT):
 ;
 
 /* 
+ * this is used to indicate a range:
+ * 1..4 means the range from 1 to 4
+ * 1.. means the range from 1 to infinity. This is used in cases where
+ * no top bounds is necessary, when the end point is determined by other
+ * means.
  * "..", "SEGMENT",  precedence: 401, 699, ["parse_Seg"]
  */
 SegmentExpression returns Expr hidden(WS,SL_COMMENT):

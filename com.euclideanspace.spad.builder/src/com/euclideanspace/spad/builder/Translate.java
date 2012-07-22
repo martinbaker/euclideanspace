@@ -59,6 +59,25 @@ public class Translate {
 	 * what type the corresponding line is.
      */
 	LinkedBlockingQueue<LineType> lineHoldType = new LinkedBlockingQueue<LineType>();
+    /**
+     * bracketDebth and parenthesisDebth are counters which are incremented when
+     * bracket closes, therefore positive value tells us that not all brackets
+     * are closed and therefore implies that line is continued.
+     * 
+     * the values are class wide to allow values to roll over to following
+     * lines.
+     */
+	int bracketDebth = 0;
+    /**
+     * bracketDebth and parenthesisDebth are counters which are incremented when
+     * bracket closes, therefore positive value tells us that not all brackets
+     * are closed and therefore implies that line is continued.
+     * 
+     * the values are class wide to allow values to roll over to following
+     * lines.
+     */
+	int parenthesisDebth = 0;
+	
 	/**
 	 * translate a pamphlet file or whole directory
 	 * 
@@ -249,6 +268,7 @@ public class Translate {
   		  mode=Mode.DOCUM;
   		  output.close();
   		  output = null;
+      	  bracketDebth = parenthesisDebth = 0;
   		  return null;
   		}
         String prefix = " ";
@@ -271,24 +291,18 @@ public class Translate {
 		String trimedLine = line.trim();
         // if line contains comment (not just starts with comment) then
         // set following
-        boolean containsComment = false;
-        if (line.lastIndexOf("++") >= 0) containsComment = true;
-        if (line.lastIndexOf("--") >= 0) containsComment = true;
-        // if line ends with '+','-' or ',' then we treat this as
-        // an implication that the following line will be a continuation
-        if (!containsComment && (trimedLine.endsWith("+") 
-        		                 || trimedLine.endsWith("-")
-//      		                 || trimedLine.endsWith("=>") don't do
-// this since block may follow '=>'
-                                 || trimedLine.endsWith(","))) {
-        	line = line + " _";
+        //boolean containsComment =  (getCommentIndex(line) >= 0);
+    	/** continuationLine is set to true if line ends with '_' */
+    	boolean continuationLine = impliedContinuation(trimedLine);
+    	// remove the trailing '_'
+    	if (trimedLine.endsWith("_")) {
+        	line = line.substring(0,line.length()-1);
         	trimedLine = line.trim();
         }
-    	/** continuationLine is set to true if line ends with '_' */
-    	boolean continuationLine = trimedLine.endsWith("_");
         if (continuationLine && indentForContinuation<0){
         	indentForContinuation = ind;
         }
+        if (!continuationLine) bracketDebth = parenthesisDebth = 0;
         // if we have just read a comment, or an empty line, or a continuation
         // line (ends with _) then put it into holding stack otherwise process it.
     	LineType lineType = LineType.CODE;
@@ -298,10 +312,6 @@ public class Translate {
     	if (trimedLine.equals("") ||
     	          trimedLine.length() == 0) lineType = LineType.EMPTY;
         if (lineType != LineType.CODE) {
-        	// remove the trailing '_'
-        	if (lineType == LineType.CONTINUED) {
-        		line = line.substring(0,line.length()-1);
-        	}
             lineHold.offer(line);
             lineHoldType.offer(lineType);
     	} else {
@@ -311,8 +321,7 @@ public class Translate {
     		  }
     		  // if line contains comment then split into two separate
     		  // strings
-    		  int cmtInd = line.indexOf("--");
-    		  if (cmtInd<0) cmtInd = line.indexOf("++");
+    		  int cmtInd = getCommentIndex(line);
     		  if (cmtInd > -1) {
     			if (lineHoldType.peek() == LineType.CONTINUED){
     			  String cmt = line.substring(cmtInd,line.length());
@@ -352,6 +361,63 @@ public class Translate {
         System.err.println("error in transCODE: " + line +" due to "+ e);
       }
       return output;
+    }
+
+    /**
+     * If line contains a comment, indicated by "++" or "--", then
+     * return its index. Otherwise return -1
+     * If "++" or "--" is part of a string then its not a comment.
+     * @param line input line
+     * @return index of comment or -1
+     */
+    int getCommentIndex(String line){
+    	boolean inStr =false;
+    	for (int i=0;i<(line.length()-1);i++) {
+    		char c = line.charAt(i);
+    		if (c=='"') inStr=!inStr;
+    		if (!inStr) {
+    			if (c=='-' && line.charAt(i+1)=='-') return i;
+    			if (c=='+' && line.charAt(i+1)=='+') return i;
+    		}
+    	}
+    	return -1;
+   }
+
+    /**
+     * Check if line ends with '+','-' or ','
+     * or does not close all brackets or parenthesis
+     * if it does not then we will assume that it is continued on
+     * next line
+     * @param line to be checked for continuation
+     * @return true if more opening than closing
+     */
+    boolean impliedContinuation(String line){
+    	// return false if line contains comment
+    	if  (getCommentIndex(line) >= 0) return false;
+    	// don't count brackets in strings
+    	boolean inStr =false;
+    	//int bracketDebth = 0;
+    	//int parenthesisDebth = 0;
+    	for (int i=0;i<(line.length());i++) {
+    		char c = line.charAt(i);
+    		if (c=='"') inStr=!inStr;
+    		if (inStr) continue;
+    		//if (i<(line.length()-1)) {
+    		//	if (c=='-' && line.charAt(i+1)=='-') return false;
+    		//	if (c=='+' && line.charAt(i+1)=='+') return false;
+    		//}
+    		if (c=='(') ++parenthesisDebth;
+    		if (c==')') --parenthesisDebth;
+    		if (c=='[') ++bracketDebth;
+    		if (c==']') --bracketDebth;
+    	}
+    	//if ((bracketDebth > 0)||(parenthesisDebth > 0)) 
+    	//	System.out.println("containsHangingBracket: " + line + " "+((bracketDebth > 0)||(parenthesisDebth > 0)));
+    	if (line.endsWith("_")) return true;
+    	if (line.endsWith("+")) return true;
+    	if (line.endsWith("-")) return true;
+    	if (line.endsWith(",")) return true;
+    	return ((bracketDebth > 0)||(parenthesisDebth > 0));
     }
 
     /**
