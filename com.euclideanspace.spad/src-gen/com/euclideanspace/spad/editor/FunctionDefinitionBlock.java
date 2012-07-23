@@ -16,6 +16,7 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link com.euclideanspace.spad.editor.FunctionDefinitionBlock#getFnDecBr <em>Fn Dec Br</em>}</li>
  *   <li>{@link com.euclideanspace.spad.editor.FunctionDefinitionBlock#getFnDecBk <em>Fn Dec Bk</em>}</li>
+ *   <li>{@link com.euclideanspace.spad.editor.FunctionDefinitionBlock#getVars <em>Vars</em>}</li>
  *   <li>{@link com.euclideanspace.spad.editor.FunctionDefinitionBlock#getT1 <em>T1</em>}</li>
  *   <li>{@link com.euclideanspace.spad.editor.FunctionDefinitionBlock#getT13 <em>T13</em>}</li>
  * </ul>
@@ -68,6 +69,22 @@ public interface FunctionDefinitionBlock extends EObject
    * @generated
    */
   EList<FunctionDefinition> getFnDecBk();
+
+  /**
+   * Returns the value of the '<em><b>Vars</b></em>' containment reference list.
+   * The list contents are of type {@link com.euclideanspace.spad.editor.VariableDeclarationAssign}.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Vars</em>' containment reference list isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Vars</em>' containment reference list.
+   * @see com.euclideanspace.spad.editor.EditorPackage#getFunctionDefinitionBlock_Vars()
+   * @model containment="true"
+   * @generated
+   */
+  EList<VariableDeclarationAssign> getVars();
 
   /**
    * Returns the value of the '<em><b>T1</b></em>' containment reference list.

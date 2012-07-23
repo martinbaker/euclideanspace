@@ -6,6 +6,7 @@ import com.euclideanspace.spad.editor.EditorPackage;
 import com.euclideanspace.spad.editor.Expr;
 import com.euclideanspace.spad.editor.FunctionDefinition;
 import com.euclideanspace.spad.editor.FunctionDefinitionBlock;
+import com.euclideanspace.spad.editor.VariableDeclarationAssign;
 
 import java.util.Collection;
 
@@ -32,6 +33,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <ul>
  *   <li>{@link com.euclideanspace.spad.editor.impl.FunctionDefinitionBlockImpl#getFnDecBr <em>Fn Dec Br</em>}</li>
  *   <li>{@link com.euclideanspace.spad.editor.impl.FunctionDefinitionBlockImpl#getFnDecBk <em>Fn Dec Bk</em>}</li>
+ *   <li>{@link com.euclideanspace.spad.editor.impl.FunctionDefinitionBlockImpl#getVars <em>Vars</em>}</li>
  *   <li>{@link com.euclideanspace.spad.editor.impl.FunctionDefinitionBlockImpl#getT1 <em>T1</em>}</li>
  *   <li>{@link com.euclideanspace.spad.editor.impl.FunctionDefinitionBlockImpl#getT13 <em>T13</em>}</li>
  * </ul>
@@ -70,6 +72,16 @@ public class FunctionDefinitionBlockImpl extends MinimalEObjectImpl.Container im
    * @ordered
    */
   protected EList<FunctionDefinition> fnDecBk;
+
+  /**
+   * The cached value of the '{@link #getVars() <em>Vars</em>}' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getVars()
+   * @generated
+   * @ordered
+   */
+  protected EList<VariableDeclarationAssign> vars;
 
   /**
    * The cached value of the '{@link #getT1() <em>T1</em>}' containment reference list.
@@ -154,6 +166,20 @@ public class FunctionDefinitionBlockImpl extends MinimalEObjectImpl.Container im
    * <!-- end-user-doc -->
    * @generated
    */
+  public EList<VariableDeclarationAssign> getVars()
+  {
+    if (vars == null)
+    {
+      vars = new EObjectContainmentEList<VariableDeclarationAssign>(VariableDeclarationAssign.class, this, EditorPackage.FUNCTION_DEFINITION_BLOCK__VARS);
+    }
+    return vars;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EList<Expr> getT1()
   {
     if (t1 == null)
@@ -189,6 +215,8 @@ public class FunctionDefinitionBlockImpl extends MinimalEObjectImpl.Container im
     {
       case EditorPackage.FUNCTION_DEFINITION_BLOCK__FN_DEC_BK:
         return ((InternalEList<?>)getFnDecBk()).basicRemove(otherEnd, msgs);
+      case EditorPackage.FUNCTION_DEFINITION_BLOCK__VARS:
+        return ((InternalEList<?>)getVars()).basicRemove(otherEnd, msgs);
       case EditorPackage.FUNCTION_DEFINITION_BLOCK__T1:
         return ((InternalEList<?>)getT1()).basicRemove(otherEnd, msgs);
       case EditorPackage.FUNCTION_DEFINITION_BLOCK__T13:
@@ -211,6 +239,8 @@ public class FunctionDefinitionBlockImpl extends MinimalEObjectImpl.Container im
         return getFnDecBr();
       case EditorPackage.FUNCTION_DEFINITION_BLOCK__FN_DEC_BK:
         return getFnDecBk();
+      case EditorPackage.FUNCTION_DEFINITION_BLOCK__VARS:
+        return getVars();
       case EditorPackage.FUNCTION_DEFINITION_BLOCK__T1:
         return getT1();
       case EditorPackage.FUNCTION_DEFINITION_BLOCK__T13:
@@ -236,6 +266,10 @@ public class FunctionDefinitionBlockImpl extends MinimalEObjectImpl.Container im
       case EditorPackage.FUNCTION_DEFINITION_BLOCK__FN_DEC_BK:
         getFnDecBk().clear();
         getFnDecBk().addAll((Collection<? extends FunctionDefinition>)newValue);
+        return;
+      case EditorPackage.FUNCTION_DEFINITION_BLOCK__VARS:
+        getVars().clear();
+        getVars().addAll((Collection<? extends VariableDeclarationAssign>)newValue);
         return;
       case EditorPackage.FUNCTION_DEFINITION_BLOCK__T1:
         getT1().clear();
@@ -265,6 +299,9 @@ public class FunctionDefinitionBlockImpl extends MinimalEObjectImpl.Container im
       case EditorPackage.FUNCTION_DEFINITION_BLOCK__FN_DEC_BK:
         getFnDecBk().clear();
         return;
+      case EditorPackage.FUNCTION_DEFINITION_BLOCK__VARS:
+        getVars().clear();
+        return;
       case EditorPackage.FUNCTION_DEFINITION_BLOCK__T1:
         getT1().clear();
         return;
@@ -289,6 +326,8 @@ public class FunctionDefinitionBlockImpl extends MinimalEObjectImpl.Container im
         return FN_DEC_BR_EDEFAULT == null ? fnDecBr != null : !FN_DEC_BR_EDEFAULT.equals(fnDecBr);
       case EditorPackage.FUNCTION_DEFINITION_BLOCK__FN_DEC_BK:
         return fnDecBk != null && !fnDecBk.isEmpty();
+      case EditorPackage.FUNCTION_DEFINITION_BLOCK__VARS:
+        return vars != null && !vars.isEmpty();
       case EditorPackage.FUNCTION_DEFINITION_BLOCK__T1:
         return t1 != null && !t1.isEmpty();
       case EditorPackage.FUNCTION_DEFINITION_BLOCK__T13:

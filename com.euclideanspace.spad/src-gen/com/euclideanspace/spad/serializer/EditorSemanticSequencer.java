@@ -1663,7 +1663,10 @@ public class EditorSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	 *         longname=ID 
 	 *         longname2=ID 
 	 *         cp=TypeParameterList? 
-	 *         ((implName=TypeArguments ((w=WithPart? a=AddPart?) | wh5=WherePart)) | (implName=TypeArguments ((w=WithPart? a=AddPart?) | wh5=WherePart)))
+	 *         (
+	 *             (implName=TypeArguments ((w=WithPart? a=AddPart?) | wh5=WherePart)) | 
+	 *             (implName=TypeArguments ((w=WithPart? a=AddPart?) | wh5=WherePart) a2=AddPart?)
+	 *         )
 	 *     )
 	 */
 	protected void sequence_CategoryDef(EObject context, CategoryDef semanticObject) {
@@ -1819,7 +1822,7 @@ public class EditorSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	
 	/**
 	 * Constraint:
-	 *     (fnDecBr=LBRACE (fnDecBk+=FunctionDefinition | (t1+=Expression t13+=FunctionDefinitionBlock))*)
+	 *     (fnDecBr=LBRACE (fnDecBk+=FunctionDefinition | vars+=VariableDeclarationAssign | (t1+=Expression t13+=FunctionDefinitionBlock))*)
 	 */
 	protected void sequence_FunctionDefinitionBlock(EObject context, FunctionDefinitionBlock semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -1861,7 +1864,8 @@ public class EditorSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	 *         b3=INT | 
 	 *         (b2=MINUS t6=ID) | 
 	 *         (b4=TILDE t7=ID) | 
-	 *         (b5='not' t8=ID)
+	 *         (b5='not' t8=ID) | 
+	 *         (b6=HASH t8=ID)
 	 *     )
 	 */
 	protected void sequence_FunctionSignature(EObject context, FunctionSignature semanticObject) {

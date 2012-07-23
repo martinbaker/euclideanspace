@@ -35,6 +35,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  *   <li>{@link com.euclideanspace.spad.editor.impl.CategoryDefImpl#getW <em>W</em>}</li>
  *   <li>{@link com.euclideanspace.spad.editor.impl.CategoryDefImpl#getA <em>A</em>}</li>
  *   <li>{@link com.euclideanspace.spad.editor.impl.CategoryDefImpl#getWh5 <em>Wh5</em>}</li>
+ *   <li>{@link com.euclideanspace.spad.editor.impl.CategoryDefImpl#getA2 <em>A2</em>}</li>
  * </ul>
  * </p>
  *
@@ -171,6 +172,16 @@ public class CategoryDefImpl extends MinimalEObjectImpl.Container implements Cat
    * @ordered
    */
   protected WherePart wh5;
+
+  /**
+   * The cached value of the '{@link #getA2() <em>A2</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getA2()
+   * @generated
+   * @ordered
+   */
+  protected AddPart a2;
 
   /**
    * <!-- begin-user-doc -->
@@ -530,6 +541,54 @@ public class CategoryDefImpl extends MinimalEObjectImpl.Container implements Cat
    * <!-- end-user-doc -->
    * @generated
    */
+  public AddPart getA2()
+  {
+    return a2;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetA2(AddPart newA2, NotificationChain msgs)
+  {
+    AddPart oldA2 = a2;
+    a2 = newA2;
+    if (eNotificationRequired())
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, EditorPackage.CATEGORY_DEF__A2, oldA2, newA2);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setA2(AddPart newA2)
+  {
+    if (newA2 != a2)
+    {
+      NotificationChain msgs = null;
+      if (a2 != null)
+        msgs = ((InternalEObject)a2).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - EditorPackage.CATEGORY_DEF__A2, null, msgs);
+      if (newA2 != null)
+        msgs = ((InternalEObject)newA2).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - EditorPackage.CATEGORY_DEF__A2, null, msgs);
+      msgs = basicSetA2(newA2, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, EditorPackage.CATEGORY_DEF__A2, newA2, newA2));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
@@ -545,6 +604,8 @@ public class CategoryDefImpl extends MinimalEObjectImpl.Container implements Cat
         return basicSetA(null, msgs);
       case EditorPackage.CATEGORY_DEF__WH5:
         return basicSetWh5(null, msgs);
+      case EditorPackage.CATEGORY_DEF__A2:
+        return basicSetA2(null, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -577,6 +638,8 @@ public class CategoryDefImpl extends MinimalEObjectImpl.Container implements Cat
         return getA();
       case EditorPackage.CATEGORY_DEF__WH5:
         return getWh5();
+      case EditorPackage.CATEGORY_DEF__A2:
+        return getA2();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -617,6 +680,9 @@ public class CategoryDefImpl extends MinimalEObjectImpl.Container implements Cat
         return;
       case EditorPackage.CATEGORY_DEF__WH5:
         setWh5((WherePart)newValue);
+        return;
+      case EditorPackage.CATEGORY_DEF__A2:
+        setA2((AddPart)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -659,6 +725,9 @@ public class CategoryDefImpl extends MinimalEObjectImpl.Container implements Cat
       case EditorPackage.CATEGORY_DEF__WH5:
         setWh5((WherePart)null);
         return;
+      case EditorPackage.CATEGORY_DEF__A2:
+        setA2((AddPart)null);
+        return;
     }
     super.eUnset(featureID);
   }
@@ -691,6 +760,8 @@ public class CategoryDefImpl extends MinimalEObjectImpl.Container implements Cat
         return a != null;
       case EditorPackage.CATEGORY_DEF__WH5:
         return wh5 != null;
+      case EditorPackage.CATEGORY_DEF__A2:
+        return a2 != null;
     }
     return super.eIsSet(featureID);
   }

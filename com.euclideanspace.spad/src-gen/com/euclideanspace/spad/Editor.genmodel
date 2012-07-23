@@ -22,6 +22,7 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//CategoryDef/w"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//CategoryDef/a"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//CategoryDef/wh5"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//CategoryDef/a2"/>
     </genClasses>
     <genClasses ecoreClass="Editor.ecore#//PackageDef">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Editor.ecore#//PackageDef/name"/>
@@ -78,6 +79,7 @@
     <genClasses ecoreClass="Editor.ecore#//FunctionDefinitionBlock">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Editor.ecore#//FunctionDefinitionBlock/fnDecBr"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//FunctionDefinitionBlock/fnDecBk"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//FunctionDefinitionBlock/vars"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//FunctionDefinitionBlock/t1"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//FunctionDefinitionBlock/t13"/>
     </genClasses>
@@ -96,6 +98,7 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Editor.ecore#//FunctionSignature/t7"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Editor.ecore#//FunctionSignature/b5"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Editor.ecore#//FunctionSignature/t8"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Editor.ecore#//FunctionSignature/b6"/>
     </genClasses>
     <genClasses ecoreClass="Editor.ecore#//MacroDef">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Editor.ecore#//MacroDef/macroname"/>

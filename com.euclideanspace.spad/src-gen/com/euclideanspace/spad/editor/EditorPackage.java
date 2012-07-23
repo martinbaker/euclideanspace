@@ -194,13 +194,22 @@ public interface EditorPackage extends EPackage
   int CATEGORY_DEF__WH5 = 8;
 
   /**
+   * The feature id for the '<em><b>A2</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CATEGORY_DEF__A2 = 9;
+
+  /**
    * The number of structural features of the '<em>Category Def</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int CATEGORY_DEF_FEATURE_COUNT = 9;
+  int CATEGORY_DEF_FEATURE_COUNT = 10;
 
   /**
    * The meta object id for the '{@link com.euclideanspace.spad.editor.impl.PackageDefImpl <em>Package Def</em>}' class.
@@ -734,13 +743,22 @@ public interface EditorPackage extends EPackage
   int FUNCTION_DEFINITION_BLOCK__FN_DEC_BK = 1;
 
   /**
+   * The feature id for the '<em><b>Vars</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FUNCTION_DEFINITION_BLOCK__VARS = 2;
+
+  /**
    * The feature id for the '<em><b>T1</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int FUNCTION_DEFINITION_BLOCK__T1 = 2;
+  int FUNCTION_DEFINITION_BLOCK__T1 = 3;
 
   /**
    * The feature id for the '<em><b>T13</b></em>' containment reference list.
@@ -749,7 +767,7 @@ public interface EditorPackage extends EPackage
    * @generated
    * @ordered
    */
-  int FUNCTION_DEFINITION_BLOCK__T13 = 3;
+  int FUNCTION_DEFINITION_BLOCK__T13 = 4;
 
   /**
    * The number of structural features of the '<em>Function Definition Block</em>' class.
@@ -758,7 +776,7 @@ public interface EditorPackage extends EPackage
    * @generated
    * @ordered
    */
-  int FUNCTION_DEFINITION_BLOCK_FEATURE_COUNT = 4;
+  int FUNCTION_DEFINITION_BLOCK_FEATURE_COUNT = 5;
 
   /**
    * The meta object id for the '{@link com.euclideanspace.spad.editor.impl.FunctionSignatureImpl <em>Function Signature</em>}' class.
@@ -897,13 +915,22 @@ public interface EditorPackage extends EPackage
   int FUNCTION_SIGNATURE__T8 = 13;
 
   /**
+   * The feature id for the '<em><b>B6</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FUNCTION_SIGNATURE__B6 = 14;
+
+  /**
    * The number of structural features of the '<em>Function Signature</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int FUNCTION_SIGNATURE_FEATURE_COUNT = 14;
+  int FUNCTION_SIGNATURE_FEATURE_COUNT = 15;
 
   /**
    * The meta object id for the '{@link com.euclideanspace.spad.editor.impl.MacroDefImpl <em>Macro Def</em>}' class.
@@ -10138,6 +10165,17 @@ public interface EditorPackage extends EPackage
   EReference getCategoryDef_Wh5();
 
   /**
+   * Returns the meta object for the containment reference '{@link com.euclideanspace.spad.editor.CategoryDef#getA2 <em>A2</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>A2</em>'.
+   * @see com.euclideanspace.spad.editor.CategoryDef#getA2()
+   * @see #getCategoryDef()
+   * @generated
+   */
+  EReference getCategoryDef_A2();
+
+  /**
    * Returns the meta object for class '{@link com.euclideanspace.spad.editor.PackageDef <em>Package Def</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -10657,6 +10695,17 @@ public interface EditorPackage extends EPackage
   EReference getFunctionDefinitionBlock_FnDecBk();
 
   /**
+   * Returns the meta object for the containment reference list '{@link com.euclideanspace.spad.editor.FunctionDefinitionBlock#getVars <em>Vars</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Vars</em>'.
+   * @see com.euclideanspace.spad.editor.FunctionDefinitionBlock#getVars()
+   * @see #getFunctionDefinitionBlock()
+   * @generated
+   */
+  EReference getFunctionDefinitionBlock_Vars();
+
+  /**
    * Returns the meta object for the containment reference list '{@link com.euclideanspace.spad.editor.FunctionDefinitionBlock#getT1 <em>T1</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -10841,6 +10890,17 @@ public interface EditorPackage extends EPackage
    * @generated
    */
   EAttribute getFunctionSignature_T8();
+
+  /**
+   * Returns the meta object for the attribute '{@link com.euclideanspace.spad.editor.FunctionSignature#getB6 <em>B6</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>B6</em>'.
+   * @see com.euclideanspace.spad.editor.FunctionSignature#getB6()
+   * @see #getFunctionSignature()
+   * @generated
+   */
+  EAttribute getFunctionSignature_B6();
 
   /**
    * Returns the meta object for class '{@link com.euclideanspace.spad.editor.MacroDef <em>Macro Def</em>}'.
@@ -14221,6 +14281,14 @@ public interface EditorPackage extends EPackage
     EReference CATEGORY_DEF__WH5 = eINSTANCE.getCategoryDef_Wh5();
 
     /**
+     * The meta object literal for the '<em><b>A2</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference CATEGORY_DEF__A2 = eINSTANCE.getCategoryDef_A2();
+
+    /**
      * The meta object literal for the '{@link com.euclideanspace.spad.editor.impl.PackageDefImpl <em>Package Def</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -14623,6 +14691,14 @@ public interface EditorPackage extends EPackage
     EReference FUNCTION_DEFINITION_BLOCK__FN_DEC_BK = eINSTANCE.getFunctionDefinitionBlock_FnDecBk();
 
     /**
+     * The meta object literal for the '<em><b>Vars</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference FUNCTION_DEFINITION_BLOCK__VARS = eINSTANCE.getFunctionDefinitionBlock_Vars();
+
+    /**
      * The meta object literal for the '<em><b>T1</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -14759,6 +14835,14 @@ public interface EditorPackage extends EPackage
      * @generated
      */
     EAttribute FUNCTION_SIGNATURE__T8 = eINSTANCE.getFunctionSignature_T8();
+
+    /**
+     * The meta object literal for the '<em><b>B6</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute FUNCTION_SIGNATURE__B6 = eINSTANCE.getFunctionSignature_B6();
 
     /**
      * The meta object literal for the '{@link com.euclideanspace.spad.editor.impl.MacroDefImpl <em>Macro Def</em>}' class.

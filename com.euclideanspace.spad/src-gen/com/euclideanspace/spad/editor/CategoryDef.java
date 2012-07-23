@@ -21,6 +21,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link com.euclideanspace.spad.editor.CategoryDef#getW <em>W</em>}</li>
  *   <li>{@link com.euclideanspace.spad.editor.CategoryDef#getA <em>A</em>}</li>
  *   <li>{@link com.euclideanspace.spad.editor.CategoryDef#getWh5 <em>Wh5</em>}</li>
+ *   <li>{@link com.euclideanspace.spad.editor.CategoryDef#getA2 <em>A2</em>}</li>
  * </ul>
  * </p>
  *
@@ -263,5 +264,31 @@ public interface CategoryDef extends EObject
    * @generated
    */
   void setWh5(WherePart value);
+
+  /**
+   * Returns the value of the '<em><b>A2</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>A2</em>' containment reference isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>A2</em>' containment reference.
+   * @see #setA2(AddPart)
+   * @see com.euclideanspace.spad.editor.EditorPackage#getCategoryDef_A2()
+   * @model containment="true"
+   * @generated
+   */
+  AddPart getA2();
+
+  /**
+   * Sets the value of the '{@link com.euclideanspace.spad.editor.CategoryDef#getA2 <em>A2</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>A2</em>' containment reference.
+   * @see #getA2()
+   * @generated
+   */
+  void setA2(AddPart value);
 
 } // CategoryDef

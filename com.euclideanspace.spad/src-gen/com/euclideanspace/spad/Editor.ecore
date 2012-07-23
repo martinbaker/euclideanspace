@@ -23,6 +23,8 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="a" eType="#//AddPart" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="wh5" eType="#//WherePart"
         containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="a2" eType="#//AddPart"
+        containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="PackageDef">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -97,6 +99,8 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="fnDecBr" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="fnDecBk" upperBound="-1"
         eType="#//FunctionDefinition" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="vars" upperBound="-1" eType="#//VariableDeclarationAssign"
+        containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="t1" upperBound="-1" eType="#//Expr"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="t13" upperBound="-1" eType="#//FunctionDefinitionBlock"
@@ -119,6 +123,7 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="t7" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="b5" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="t8" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="b6" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="MacroDef" eSuperTypes="#//WhereAssignments #//AddStatements">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="macroname" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>

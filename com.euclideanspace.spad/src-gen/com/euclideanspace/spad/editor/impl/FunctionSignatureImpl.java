@@ -43,6 +43,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link com.euclideanspace.spad.editor.impl.FunctionSignatureImpl#getT7 <em>T7</em>}</li>
  *   <li>{@link com.euclideanspace.spad.editor.impl.FunctionSignatureImpl#getB5 <em>B5</em>}</li>
  *   <li>{@link com.euclideanspace.spad.editor.impl.FunctionSignatureImpl#getT8 <em>T8</em>}</li>
+ *   <li>{@link com.euclideanspace.spad.editor.impl.FunctionSignatureImpl#getB6 <em>B6</em>}</li>
  * </ul>
  * </p>
  *
@@ -309,6 +310,26 @@ public class FunctionSignatureImpl extends MinimalEObjectImpl.Container implemen
    * @ordered
    */
   protected String t8 = T8_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #getB6() <em>B6</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getB6()
+   * @generated
+   * @ordered
+   */
+  protected static final String B6_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getB6() <em>B6</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getB6()
+   * @generated
+   * @ordered
+   */
+  protected String b6 = B6_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
@@ -674,6 +695,29 @@ public class FunctionSignatureImpl extends MinimalEObjectImpl.Container implemen
    * <!-- end-user-doc -->
    * @generated
    */
+  public String getB6()
+  {
+    return b6;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setB6(String newB6)
+  {
+    String oldB6 = b6;
+    b6 = newB6;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, EditorPackage.FUNCTION_SIGNATURE__B6, oldB6, b6));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
@@ -725,6 +769,8 @@ public class FunctionSignatureImpl extends MinimalEObjectImpl.Container implemen
         return getB5();
       case EditorPackage.FUNCTION_SIGNATURE__T8:
         return getT8();
+      case EditorPackage.FUNCTION_SIGNATURE__B6:
+        return getB6();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -783,6 +829,9 @@ public class FunctionSignatureImpl extends MinimalEObjectImpl.Container implemen
       case EditorPackage.FUNCTION_SIGNATURE__T8:
         setT8((String)newValue);
         return;
+      case EditorPackage.FUNCTION_SIGNATURE__B6:
+        setB6((String)newValue);
+        return;
     }
     super.eSet(featureID, newValue);
   }
@@ -839,6 +888,9 @@ public class FunctionSignatureImpl extends MinimalEObjectImpl.Container implemen
       case EditorPackage.FUNCTION_SIGNATURE__T8:
         setT8(T8_EDEFAULT);
         return;
+      case EditorPackage.FUNCTION_SIGNATURE__B6:
+        setB6(B6_EDEFAULT);
+        return;
     }
     super.eUnset(featureID);
   }
@@ -881,6 +933,8 @@ public class FunctionSignatureImpl extends MinimalEObjectImpl.Container implemen
         return B5_EDEFAULT == null ? b5 != null : !B5_EDEFAULT.equals(b5);
       case EditorPackage.FUNCTION_SIGNATURE__T8:
         return T8_EDEFAULT == null ? t8 != null : !T8_EDEFAULT.equals(t8);
+      case EditorPackage.FUNCTION_SIGNATURE__B6:
+        return B6_EDEFAULT == null ? b6 != null : !B6_EDEFAULT.equals(b6);
     }
     return super.eIsSet(featureID);
   }
@@ -920,6 +974,8 @@ public class FunctionSignatureImpl extends MinimalEObjectImpl.Container implemen
     result.append(b5);
     result.append(", t8: ");
     result.append(t8);
+    result.append(", b6: ");
+    result.append(b6);
     result.append(')');
     return result.toString();
   }

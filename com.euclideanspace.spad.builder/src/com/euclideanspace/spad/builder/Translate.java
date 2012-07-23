@@ -417,6 +417,7 @@ public class Translate {
     	if (line.endsWith("+")) return true;
     	if (line.endsWith("-")) return true;
     	if (line.endsWith(",")) return true;
+    	if (line.endsWith(":")) return true;
     	return ((bracketDebth > 0)||(parenthesisDebth > 0));
     }
 

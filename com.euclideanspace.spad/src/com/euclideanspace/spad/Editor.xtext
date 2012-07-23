@@ -264,19 +264,33 @@ terminal POWER: '**';
 terminal TIMES: '*';
 /* + */
 terminal PLUS: '+';
+/* - */
 terminal MINUS: '-';
+/* < */
 terminal LT: '<';
+/* > */
 terminal GT: '>';
+/* <= */
 terminal LE: '<=';
+/* >= */
 terminal GE: '>=';
+/* = */
 terminal EQUAL: '=';
+/* ~= */
 terminal NOTEQUAL: '~=';
+/* ~ */
 terminal TILDE: '~';
+/* ^ */
 terminal CARAT: '^';
+/* .. */
 terminal SEG: '..';
+/* # */
 terminal HASH: '#';
+/* & */
 terminal AMPERSAND: '&';
+/* $ */
 terminal DOLAR: '$';
+/* / */
 terminal SLASH: '/';
 terminal BACKSLASH: '\\';
 terminal SLASHSLASH: '//';
@@ -317,7 +331,7 @@ CategoryDef hidden(WS,NL,SL_COMMENT):
     implName=TypeArguments ((w=WithPart? a=AddPart?)| wh5=WherePart)
     | LBRACE NL*
       implName=TypeArguments ((w=WithPart? a=AddPart?)| wh5=WherePart)
-      RBRACE NL*
+      RBRACE NL* a2=AddPart?
     )
 ;
 
@@ -435,6 +449,8 @@ FunctionDefinitionBlock hidden(WS,SL_COMMENT):
     fnDecBr=LBRACE NL*
       (
       	fnDecBk += FunctionDefinition (NL|SEMICOLON)+
+      	|
+      	vars+=VariableDeclarationAssign (NL|SEMICOLON)+
      | ('if' t1+=Expression // expression has form 'x has y'
         'then' t13+=FunctionDefinitionBlock (NL|SEMICOLON)+)      	
       )*
@@ -477,6 +493,8 @@ FunctionSignature hidden(WS,SL_COMMENT):
   	b4=TILDE t7=ID
   ) | (
   	b5='not' t8=ID
+  ) | (
+  	b6=HASH t8=ID
   )
 ;
 
@@ -927,7 +945,7 @@ IfElseStatement hidden(WS,SL_COMMENT):
  */
 Expression returns Expr hidden(WS,SL_COMMENT):
   (ifname='if' ifpred=Expression 'then' thenexp=Expression 'else' elseexp=Expression)
-//  | LPAREN t24=ConditionExpression (COMMA t25+=Expression)+ RPAREN GIVES Expression
+//  | LPAREN t24=ConditionExpression (COMMA t25+=ConditionExpression)+ RPAREN (COLON rightType2 =TypeExpression)? GIVES ConditionExpression
   | ConditionExpression
 ;
 
@@ -1168,7 +1186,7 @@ ExponentExpression returns Expr hidden(WS,SL_COMMENT):
  * "+->", precedence: 995, 112
  */
 MapDefinition returns Expr hidden(WS,SL_COMMENT):
-//  (PretendExpression | LPAREN PretendExpression (COMMA t25+=PretendExpression)+ RPAREN)
+//  (PretendExpression | LPAREN PretendExpression (COMMA t25+=PretendExpression)+ RPAREN) (COLON rightType2 =TypeExpression)?
   PretendExpression
   ({MapDefinition.left=current} op=GIVES right = PretendExpression)*
 ;
@@ -1316,7 +1334,7 @@ NameOrFunctionCall hidden(WS,SL_COMMENT):
   fnname=ID (=> lsp=DOLAR 'Lisp'/*t2=TypeExpression*/)?
   //  option for parameters in parenthesis
   (
-    (LPAREN t4=StatementExpression? (COMMA t5+=Expression)* RPAREN)
+    LPAREN t4=StatementExpression? (COMMA t5+=Expression)* RPAREN //(COLON rightType2 =TypeExpression)?
     // optional curried function:
     (LPAREN t14+=StatementExpression? (COMMA t15+=Expression)* RPAREN)*
     // option of no parenthesis for single parameter
