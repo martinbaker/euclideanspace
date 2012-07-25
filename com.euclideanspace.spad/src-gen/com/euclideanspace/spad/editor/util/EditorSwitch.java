@@ -586,6 +586,14 @@ public class EditorSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case EditorPackage.ASSIGN_EXPRESSION:
+      {
+        AssignExpression assignExpression = (AssignExpression)theEObject;
+        T result = caseAssignExpression(assignExpression);
+        if (result == null) result = caseExpr(assignExpression);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case EditorPackage.PRETEND_EXPRESSION:
       {
         PretendExpression pretendExpression = (PretendExpression)theEObject;
@@ -594,19 +602,19 @@ public class EditorSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case EditorPackage.HINT_TYPE_EXPRESSION:
-      {
-        HintTypeExpression hintTypeExpression = (HintTypeExpression)theEObject;
-        T result = caseHintTypeExpression(hintTypeExpression);
-        if (result == null) result = caseExpr(hintTypeExpression);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
       case EditorPackage.COERCE_EXPRESSION:
       {
         CoerceExpression coerceExpression = (CoerceExpression)theEObject;
         T result = caseCoerceExpression(coerceExpression);
         if (result == null) result = caseExpr(coerceExpression);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case EditorPackage.HINT_TYPE_EXPRESSION:
+      {
+        HintTypeExpression hintTypeExpression = (HintTypeExpression)theEObject;
+        T result = caseHintTypeExpression(hintTypeExpression);
+        if (result == null) result = caseExpr(hintTypeExpression);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -1711,6 +1719,22 @@ public class EditorSwitch<T> extends Switch<T>
   }
 
   /**
+   * Returns the result of interpreting the object as an instance of '<em>Assign Expression</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Assign Expression</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseAssignExpression(AssignExpression object)
+  {
+    return null;
+  }
+
+  /**
    * Returns the result of interpreting the object as an instance of '<em>Pretend Expression</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
@@ -1727,22 +1751,6 @@ public class EditorSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Hint Type Expression</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Hint Type Expression</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseHintTypeExpression(HintTypeExpression object)
-  {
-    return null;
-  }
-
-  /**
    * Returns the result of interpreting the object as an instance of '<em>Coerce Expression</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
@@ -1754,6 +1762,22 @@ public class EditorSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseCoerceExpression(CoerceExpression object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Hint Type Expression</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Hint Type Expression</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseHintTypeExpression(HintTypeExpression object)
   {
     return null;
   }

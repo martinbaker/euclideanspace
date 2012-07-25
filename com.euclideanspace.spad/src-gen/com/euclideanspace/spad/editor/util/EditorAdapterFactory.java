@@ -410,19 +410,24 @@ public class EditorAdapterFactory extends AdapterFactoryImpl
         return createMapDefinitionAdapter();
       }
       @Override
+      public Adapter caseAssignExpression(AssignExpression object)
+      {
+        return createAssignExpressionAdapter();
+      }
+      @Override
       public Adapter casePretendExpression(PretendExpression object)
       {
         return createPretendExpressionAdapter();
       }
       @Override
-      public Adapter caseHintTypeExpression(HintTypeExpression object)
-      {
-        return createHintTypeExpressionAdapter();
-      }
-      @Override
       public Adapter caseCoerceExpression(CoerceExpression object)
       {
         return createCoerceExpressionAdapter();
+      }
+      @Override
+      public Adapter caseHintTypeExpression(HintTypeExpression object)
+      {
+        return createHintTypeExpressionAdapter();
       }
       @Override
       public Adapter caseEltExpression(EltExpression object)
@@ -1467,6 +1472,21 @@ public class EditorAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
+   * Creates a new adapter for an object of class '{@link com.euclideanspace.spad.editor.AssignExpression <em>Assign Expression</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see com.euclideanspace.spad.editor.AssignExpression
+   * @generated
+   */
+  public Adapter createAssignExpressionAdapter()
+  {
+    return null;
+  }
+
+  /**
    * Creates a new adapter for an object of class '{@link com.euclideanspace.spad.editor.PretendExpression <em>Pretend Expression</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
@@ -1482,21 +1502,6 @@ public class EditorAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link com.euclideanspace.spad.editor.HintTypeExpression <em>Hint Type Expression</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see com.euclideanspace.spad.editor.HintTypeExpression
-   * @generated
-   */
-  public Adapter createHintTypeExpressionAdapter()
-  {
-    return null;
-  }
-
-  /**
    * Creates a new adapter for an object of class '{@link com.euclideanspace.spad.editor.CoerceExpression <em>Coerce Expression</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
@@ -1507,6 +1512,21 @@ public class EditorAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createCoerceExpressionAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link com.euclideanspace.spad.editor.HintTypeExpression <em>Hint Type Expression</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see com.euclideanspace.spad.editor.HintTypeExpression
+   * @generated
+   */
+  public Adapter createHintTypeExpressionAdapter()
   {
     return null;
   }

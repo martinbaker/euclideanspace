@@ -6,6 +6,7 @@ import com.euclideanspace.spad.editor.EditorPackage;
 import com.euclideanspace.spad.editor.Expr;
 import com.euclideanspace.spad.editor.NameOrFunctionCall;
 import com.euclideanspace.spad.editor.StatementExpression;
+import com.euclideanspace.spad.editor.TypeExpression;
 
 import java.util.Collection;
 
@@ -37,6 +38,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link com.euclideanspace.spad.editor.impl.NameOrFunctionCallImpl#getT14 <em>T14</em>}</li>
  *   <li>{@link com.euclideanspace.spad.editor.impl.NameOrFunctionCallImpl#getT15 <em>T15</em>}</li>
  *   <li>{@link com.euclideanspace.spad.editor.impl.NameOrFunctionCallImpl#getT6 <em>T6</em>}</li>
+ *   <li>{@link com.euclideanspace.spad.editor.impl.NameOrFunctionCallImpl#getRightType2 <em>Right Type2</em>}</li>
  * </ul>
  * </p>
  *
@@ -133,6 +135,16 @@ public class NameOrFunctionCallImpl extends MinimalEObjectImpl.Container impleme
    * @ordered
    */
   protected Expr t6;
+
+  /**
+   * The cached value of the '{@link #getRightType2() <em>Right Type2</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getRightType2()
+   * @generated
+   * @ordered
+   */
+  protected TypeExpression rightType2;
 
   /**
    * <!-- begin-user-doc -->
@@ -344,6 +356,54 @@ public class NameOrFunctionCallImpl extends MinimalEObjectImpl.Container impleme
    * <!-- end-user-doc -->
    * @generated
    */
+  public TypeExpression getRightType2()
+  {
+    return rightType2;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetRightType2(TypeExpression newRightType2, NotificationChain msgs)
+  {
+    TypeExpression oldRightType2 = rightType2;
+    rightType2 = newRightType2;
+    if (eNotificationRequired())
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, EditorPackage.NAME_OR_FUNCTION_CALL__RIGHT_TYPE2, oldRightType2, newRightType2);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setRightType2(TypeExpression newRightType2)
+  {
+    if (newRightType2 != rightType2)
+    {
+      NotificationChain msgs = null;
+      if (rightType2 != null)
+        msgs = ((InternalEObject)rightType2).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - EditorPackage.NAME_OR_FUNCTION_CALL__RIGHT_TYPE2, null, msgs);
+      if (newRightType2 != null)
+        msgs = ((InternalEObject)newRightType2).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - EditorPackage.NAME_OR_FUNCTION_CALL__RIGHT_TYPE2, null, msgs);
+      msgs = basicSetRightType2(newRightType2, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, EditorPackage.NAME_OR_FUNCTION_CALL__RIGHT_TYPE2, newRightType2, newRightType2));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
@@ -359,6 +419,8 @@ public class NameOrFunctionCallImpl extends MinimalEObjectImpl.Container impleme
         return ((InternalEList<?>)getT15()).basicRemove(otherEnd, msgs);
       case EditorPackage.NAME_OR_FUNCTION_CALL__T6:
         return basicSetT6(null, msgs);
+      case EditorPackage.NAME_OR_FUNCTION_CALL__RIGHT_TYPE2:
+        return basicSetRightType2(null, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -387,6 +449,8 @@ public class NameOrFunctionCallImpl extends MinimalEObjectImpl.Container impleme
         return getT15();
       case EditorPackage.NAME_OR_FUNCTION_CALL__T6:
         return getT6();
+      case EditorPackage.NAME_OR_FUNCTION_CALL__RIGHT_TYPE2:
+        return getRightType2();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -426,6 +490,9 @@ public class NameOrFunctionCallImpl extends MinimalEObjectImpl.Container impleme
       case EditorPackage.NAME_OR_FUNCTION_CALL__T6:
         setT6((Expr)newValue);
         return;
+      case EditorPackage.NAME_OR_FUNCTION_CALL__RIGHT_TYPE2:
+        setRightType2((TypeExpression)newValue);
+        return;
     }
     super.eSet(featureID, newValue);
   }
@@ -461,6 +528,9 @@ public class NameOrFunctionCallImpl extends MinimalEObjectImpl.Container impleme
       case EditorPackage.NAME_OR_FUNCTION_CALL__T6:
         setT6((Expr)null);
         return;
+      case EditorPackage.NAME_OR_FUNCTION_CALL__RIGHT_TYPE2:
+        setRightType2((TypeExpression)null);
+        return;
     }
     super.eUnset(featureID);
   }
@@ -489,6 +559,8 @@ public class NameOrFunctionCallImpl extends MinimalEObjectImpl.Container impleme
         return t15 != null && !t15.isEmpty();
       case EditorPackage.NAME_OR_FUNCTION_CALL__T6:
         return t6 != null;
+      case EditorPackage.NAME_OR_FUNCTION_CALL__RIGHT_TYPE2:
+        return rightType2 != null;
     }
     return super.eIsSet(featureID);
   }

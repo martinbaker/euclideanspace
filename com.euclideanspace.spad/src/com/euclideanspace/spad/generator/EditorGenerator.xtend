@@ -57,7 +57,7 @@ import com.euclideanspace.spad.editor.ListLiteral;
 import com.euclideanspace.spad.editor.Literal;
 import com.euclideanspace.spad.editor.LocalVariable;
 import com.euclideanspace.spad.editor.MacroDef;
-import com.euclideanspace.spad.editor.MapDefinition;
+//import com.euclideanspace.spad.editor.MapDefinition;
 import com.euclideanspace.spad.editor.ModExpression;
 import com.euclideanspace.spad.editor.Model;
 import com.euclideanspace.spad.editor.MultiplicativeExpression;
@@ -199,10 +199,10 @@ class EditorGenerator implements IGenerator {
         '''
 
     /* MapDefinition */
-    def compile(MapDefinition f) 
+/*     def compile(MapDefinition f) 
        '''«IF f instanceof FunctionSignature»«
        compile(f as FunctionSignature)»«ENDIF»
-        '''
+        '''*/
     
     /* FunctionSignature 
      * par4 and par5 inherit from FunctionDefinition*/
@@ -389,8 +389,8 @@ class EditorGenerator implements IGenerator {
      * t:t2 := t3 => t4*/
     def compile(StatementExpression f) 
         '''«IF f.t != null»«compile(f.t)»«ENDIF»«
-        IF f.t2 != null»:«compile(f.t2)»«ENDIF»«
-        IF f.t3 != null»=«compile(f.t3)»«ENDIF»«
+     //   IF f.t2 != null»:«compile(f.t2)»«ENDIF»«
+//        IF f.t3 != null»=«compile(f.t3)»«ENDIF»«
         IF f.t4 != null»=>«compile(f.t4)»«ENDIF»'''
 
     /* ForStatement */

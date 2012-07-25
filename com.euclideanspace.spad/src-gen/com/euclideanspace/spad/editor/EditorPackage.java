@@ -1016,13 +1016,22 @@ public interface EditorPackage extends EPackage
   int IMPORT__IMPNAME = WHERE_ASSIGNMENTS_FEATURE_COUNT + 2;
 
   /**
+   * The feature id for the '<em><b>Par22</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int IMPORT__PAR22 = WHERE_ASSIGNMENTS_FEATURE_COUNT + 3;
+
+  /**
    * The number of structural features of the '<em>Import</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int IMPORT_FEATURE_COUNT = WHERE_ASSIGNMENTS_FEATURE_COUNT + 3;
+  int IMPORT_FEATURE_COUNT = WHERE_ASSIGNMENTS_FEATURE_COUNT + 4;
 
   /**
    * The meta object id for the '{@link com.euclideanspace.spad.editor.impl.VariableDeclarationBlockImpl <em>Variable Declaration Block</em>}' class.
@@ -2663,40 +2672,13 @@ public interface EditorPackage extends EPackage
   int STATEMENT_EXPRESSION__T = 0;
 
   /**
-   * The feature id for the '<em><b>T2</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int STATEMENT_EXPRESSION__T2 = 1;
-
-  /**
-   * The feature id for the '<em><b>T3</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int STATEMENT_EXPRESSION__T3 = 2;
-
-  /**
-   * The feature id for the '<em><b>T33</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int STATEMENT_EXPRESSION__T33 = 3;
-
-  /**
    * The feature id for the '<em><b>T5</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int STATEMENT_EXPRESSION__T5 = 4;
+  int STATEMENT_EXPRESSION__T5 = 1;
 
   /**
    * The feature id for the '<em><b>T4</b></em>' containment reference.
@@ -2705,7 +2687,7 @@ public interface EditorPackage extends EPackage
    * @generated
    * @ordered
    */
-  int STATEMENT_EXPRESSION__T4 = 5;
+  int STATEMENT_EXPRESSION__T4 = 2;
 
   /**
    * The number of structural features of the '<em>Statement Expression</em>' class.
@@ -2714,7 +2696,7 @@ public interface EditorPackage extends EPackage
    * @generated
    * @ordered
    */
-  int STATEMENT_EXPRESSION_FEATURE_COUNT = 6;
+  int STATEMENT_EXPRESSION_FEATURE_COUNT = 3;
 
   /**
    * The meta object id for the '{@link com.euclideanspace.spad.editor.impl.ForStatementImpl <em>For Statement</em>}' class.
@@ -3493,13 +3475,22 @@ public interface EditorPackage extends EPackage
   int PRIMARY_PREFIX__T25 = EXPR_FEATURE_COUNT + 1;
 
   /**
+   * The feature id for the '<em><b>Right Type3</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PRIMARY_PREFIX__RIGHT_TYPE3 = EXPR_FEATURE_COUNT + 2;
+
+  /**
    * The feature id for the '<em><b>T7</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int PRIMARY_PREFIX__T7 = EXPR_FEATURE_COUNT + 2;
+  int PRIMARY_PREFIX__T7 = EXPR_FEATURE_COUNT + 3;
 
   /**
    * The number of structural features of the '<em>Primary Prefix</em>' class.
@@ -3508,7 +3499,7 @@ public interface EditorPackage extends EPackage
    * @generated
    * @ordered
    */
-  int PRIMARY_PREFIX_FEATURE_COUNT = EXPR_FEATURE_COUNT + 3;
+  int PRIMARY_PREFIX_FEATURE_COUNT = EXPR_FEATURE_COUNT + 4;
 
   /**
    * The meta object id for the '{@link com.euclideanspace.spad.editor.impl.NameOrFunctionCallImpl <em>Name Or Function Call</em>}' class.
@@ -3584,13 +3575,22 @@ public interface EditorPackage extends EPackage
   int NAME_OR_FUNCTION_CALL__T6 = 6;
 
   /**
+   * The feature id for the '<em><b>Right Type2</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int NAME_OR_FUNCTION_CALL__RIGHT_TYPE2 = 7;
+
+  /**
    * The number of structural features of the '<em>Name Or Function Call</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int NAME_OR_FUNCTION_CALL_FEATURE_COUNT = 7;
+  int NAME_OR_FUNCTION_CALL_FEATURE_COUNT = 8;
 
   /**
    * The meta object id for the '{@link com.euclideanspace.spad.editor.impl.LiteralImpl <em>Literal</em>}' class.
@@ -3792,6 +3792,15 @@ public interface EditorPackage extends EPackage
   int LITERAL__T25 = PRIMARY_PREFIX__T25;
 
   /**
+   * The feature id for the '<em><b>Right Type3</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LITERAL__RIGHT_TYPE3 = PRIMARY_PREFIX__RIGHT_TYPE3;
+
+  /**
    * The feature id for the '<em><b>T7</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -3819,13 +3828,40 @@ public interface EditorPackage extends EPackage
   int LITERAL__T2 = PRIMARY_PREFIX_FEATURE_COUNT + 1;
 
   /**
+   * The feature id for the '<em><b>E1</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LITERAL__E1 = PRIMARY_PREFIX_FEATURE_COUNT + 2;
+
+  /**
+   * The feature id for the '<em><b>T31</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LITERAL__T31 = PRIMARY_PREFIX_FEATURE_COUNT + 3;
+
+  /**
+   * The feature id for the '<em><b>E4</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LITERAL__E4 = PRIMARY_PREFIX_FEATURE_COUNT + 4;
+
+  /**
    * The number of structural features of the '<em>Literal</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int LITERAL_FEATURE_COUNT = PRIMARY_PREFIX_FEATURE_COUNT + 2;
+  int LITERAL_FEATURE_COUNT = PRIMARY_PREFIX_FEATURE_COUNT + 5;
 
   /**
    * The meta object id for the '{@link com.euclideanspace.spad.editor.impl.CharacterLiteralImpl <em>Character Literal</em>}' class.
@@ -4027,6 +4063,15 @@ public interface EditorPackage extends EPackage
   int CHARACTER_LITERAL__T25 = LITERAL__T25;
 
   /**
+   * The feature id for the '<em><b>Right Type3</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CHARACTER_LITERAL__RIGHT_TYPE3 = LITERAL__RIGHT_TYPE3;
+
+  /**
    * The feature id for the '<em><b>T7</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -4052,6 +4097,33 @@ public interface EditorPackage extends EPackage
    * @ordered
    */
   int CHARACTER_LITERAL__T2 = LITERAL__T2;
+
+  /**
+   * The feature id for the '<em><b>E1</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CHARACTER_LITERAL__E1 = LITERAL__E1;
+
+  /**
+   * The feature id for the '<em><b>T31</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CHARACTER_LITERAL__T31 = LITERAL__T31;
+
+  /**
+   * The feature id for the '<em><b>E4</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CHARACTER_LITERAL__E4 = LITERAL__E4;
 
   /**
    * The feature id for the '<em><b>C1</b></em>' attribute.
@@ -4271,6 +4343,15 @@ public interface EditorPackage extends EPackage
   int BOOLEAN_LITERAL__T25 = LITERAL__T25;
 
   /**
+   * The feature id for the '<em><b>Right Type3</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int BOOLEAN_LITERAL__RIGHT_TYPE3 = LITERAL__RIGHT_TYPE3;
+
+  /**
    * The feature id for the '<em><b>T7</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -4296,6 +4377,33 @@ public interface EditorPackage extends EPackage
    * @ordered
    */
   int BOOLEAN_LITERAL__T2 = LITERAL__T2;
+
+  /**
+   * The feature id for the '<em><b>E1</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int BOOLEAN_LITERAL__E1 = LITERAL__E1;
+
+  /**
+   * The feature id for the '<em><b>T31</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int BOOLEAN_LITERAL__T31 = LITERAL__T31;
+
+  /**
+   * The feature id for the '<em><b>E4</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int BOOLEAN_LITERAL__E4 = LITERAL__E4;
 
   /**
    * The feature id for the '<em><b>Litname</b></em>' attribute.
@@ -4515,6 +4623,15 @@ public interface EditorPackage extends EPackage
   int LIST_LITERAL__T25 = LITERAL__T25;
 
   /**
+   * The feature id for the '<em><b>Right Type3</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LIST_LITERAL__RIGHT_TYPE3 = LITERAL__RIGHT_TYPE3;
+
+  /**
    * The feature id for the '<em><b>T7</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -4540,6 +4657,33 @@ public interface EditorPackage extends EPackage
    * @ordered
    */
   int LIST_LITERAL__T2 = LITERAL__T2;
+
+  /**
+   * The feature id for the '<em><b>E1</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LIST_LITERAL__E1 = LITERAL__E1;
+
+  /**
+   * The feature id for the '<em><b>T31</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LIST_LITERAL__T31 = LITERAL__T31;
+
+  /**
+   * The feature id for the '<em><b>E4</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LIST_LITERAL__E4 = LITERAL__E4;
 
   /**
    * The feature id for the '<em><b>Litname</b></em>' attribute.
@@ -8719,6 +8863,223 @@ public interface EditorPackage extends EPackage
   int MAP_DEFINITION_FEATURE_COUNT = EXPR_FEATURE_COUNT + 3;
 
   /**
+   * The meta object id for the '{@link com.euclideanspace.spad.editor.impl.AssignExpressionImpl <em>Assign Expression</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see com.euclideanspace.spad.editor.impl.AssignExpressionImpl
+   * @see com.euclideanspace.spad.editor.impl.EditorPackageImpl#getAssignExpression()
+   * @generated
+   */
+  int ASSIGN_EXPRESSION = 67;
+
+  /**
+   * The feature id for the '<em><b>Ifname</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ASSIGN_EXPRESSION__IFNAME = EXPR__IFNAME;
+
+  /**
+   * The feature id for the '<em><b>Ifpred</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ASSIGN_EXPRESSION__IFPRED = EXPR__IFPRED;
+
+  /**
+   * The feature id for the '<em><b>Thenexp</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ASSIGN_EXPRESSION__THENEXP = EXPR__THENEXP;
+
+  /**
+   * The feature id for the '<em><b>Elseexp</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ASSIGN_EXPRESSION__ELSEEXP = EXPR__ELSEEXP;
+
+  /**
+   * The feature id for the '<em><b>E2</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ASSIGN_EXPRESSION__E2 = EXPR__E2;
+
+  /**
+   * The feature id for the '<em><b>E3</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ASSIGN_EXPRESSION__E3 = EXPR__E3;
+
+  /**
+   * The feature id for the '<em><b>E5</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ASSIGN_EXPRESSION__E5 = EXPR__E5;
+
+  /**
+   * The feature id for the '<em><b>E6</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ASSIGN_EXPRESSION__E6 = EXPR__E6;
+
+  /**
+   * The feature id for the '<em><b>E22</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ASSIGN_EXPRESSION__E22 = EXPR__E22;
+
+  /**
+   * The feature id for the '<em><b>E21</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ASSIGN_EXPRESSION__E21 = EXPR__E21;
+
+  /**
+   * The feature id for the '<em><b>E23</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ASSIGN_EXPRESSION__E23 = EXPR__E23;
+
+  /**
+   * The feature id for the '<em><b>E9</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ASSIGN_EXPRESSION__E9 = EXPR__E9;
+
+  /**
+   * The feature id for the '<em><b>E10</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ASSIGN_EXPRESSION__E10 = EXPR__E10;
+
+  /**
+   * The feature id for the '<em><b>E25</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ASSIGN_EXPRESSION__E25 = EXPR__E25;
+
+  /**
+   * The feature id for the '<em><b>E24</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ASSIGN_EXPRESSION__E24 = EXPR__E24;
+
+  /**
+   * The feature id for the '<em><b>E26</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ASSIGN_EXPRESSION__E26 = EXPR__E26;
+
+  /**
+   * The feature id for the '<em><b>E11</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ASSIGN_EXPRESSION__E11 = EXPR__E11;
+
+  /**
+   * The feature id for the '<em><b>E12</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ASSIGN_EXPRESSION__E12 = EXPR__E12;
+
+  /**
+   * The feature id for the '<em><b>E13</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ASSIGN_EXPRESSION__E13 = EXPR__E13;
+
+  /**
+   * The feature id for the '<em><b>Left</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ASSIGN_EXPRESSION__LEFT = EXPR_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Op</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ASSIGN_EXPRESSION__OP = EXPR_FEATURE_COUNT + 1;
+
+  /**
+   * The feature id for the '<em><b>Right</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ASSIGN_EXPRESSION__RIGHT = EXPR_FEATURE_COUNT + 2;
+
+  /**
+   * The number of structural features of the '<em>Assign Expression</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ASSIGN_EXPRESSION_FEATURE_COUNT = EXPR_FEATURE_COUNT + 3;
+
+  /**
    * The meta object id for the '{@link com.euclideanspace.spad.editor.impl.PretendExpressionImpl <em>Pretend Expression</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -8726,7 +9087,7 @@ public interface EditorPackage extends EPackage
    * @see com.euclideanspace.spad.editor.impl.EditorPackageImpl#getPretendExpression()
    * @generated
    */
-  int PRETEND_EXPRESSION = 67;
+  int PRETEND_EXPRESSION = 68;
 
   /**
    * The feature id for the '<em><b>Ifname</b></em>' attribute.
@@ -8934,223 +9295,6 @@ public interface EditorPackage extends EPackage
    * @ordered
    */
   int PRETEND_EXPRESSION_FEATURE_COUNT = EXPR_FEATURE_COUNT + 3;
-
-  /**
-   * The meta object id for the '{@link com.euclideanspace.spad.editor.impl.HintTypeExpressionImpl <em>Hint Type Expression</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see com.euclideanspace.spad.editor.impl.HintTypeExpressionImpl
-   * @see com.euclideanspace.spad.editor.impl.EditorPackageImpl#getHintTypeExpression()
-   * @generated
-   */
-  int HINT_TYPE_EXPRESSION = 68;
-
-  /**
-   * The feature id for the '<em><b>Ifname</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int HINT_TYPE_EXPRESSION__IFNAME = EXPR__IFNAME;
-
-  /**
-   * The feature id for the '<em><b>Ifpred</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int HINT_TYPE_EXPRESSION__IFPRED = EXPR__IFPRED;
-
-  /**
-   * The feature id for the '<em><b>Thenexp</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int HINT_TYPE_EXPRESSION__THENEXP = EXPR__THENEXP;
-
-  /**
-   * The feature id for the '<em><b>Elseexp</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int HINT_TYPE_EXPRESSION__ELSEEXP = EXPR__ELSEEXP;
-
-  /**
-   * The feature id for the '<em><b>E2</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int HINT_TYPE_EXPRESSION__E2 = EXPR__E2;
-
-  /**
-   * The feature id for the '<em><b>E3</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int HINT_TYPE_EXPRESSION__E3 = EXPR__E3;
-
-  /**
-   * The feature id for the '<em><b>E5</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int HINT_TYPE_EXPRESSION__E5 = EXPR__E5;
-
-  /**
-   * The feature id for the '<em><b>E6</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int HINT_TYPE_EXPRESSION__E6 = EXPR__E6;
-
-  /**
-   * The feature id for the '<em><b>E22</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int HINT_TYPE_EXPRESSION__E22 = EXPR__E22;
-
-  /**
-   * The feature id for the '<em><b>E21</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int HINT_TYPE_EXPRESSION__E21 = EXPR__E21;
-
-  /**
-   * The feature id for the '<em><b>E23</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int HINT_TYPE_EXPRESSION__E23 = EXPR__E23;
-
-  /**
-   * The feature id for the '<em><b>E9</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int HINT_TYPE_EXPRESSION__E9 = EXPR__E9;
-
-  /**
-   * The feature id for the '<em><b>E10</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int HINT_TYPE_EXPRESSION__E10 = EXPR__E10;
-
-  /**
-   * The feature id for the '<em><b>E25</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int HINT_TYPE_EXPRESSION__E25 = EXPR__E25;
-
-  /**
-   * The feature id for the '<em><b>E24</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int HINT_TYPE_EXPRESSION__E24 = EXPR__E24;
-
-  /**
-   * The feature id for the '<em><b>E26</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int HINT_TYPE_EXPRESSION__E26 = EXPR__E26;
-
-  /**
-   * The feature id for the '<em><b>E11</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int HINT_TYPE_EXPRESSION__E11 = EXPR__E11;
-
-  /**
-   * The feature id for the '<em><b>E12</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int HINT_TYPE_EXPRESSION__E12 = EXPR__E12;
-
-  /**
-   * The feature id for the '<em><b>E13</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int HINT_TYPE_EXPRESSION__E13 = EXPR__E13;
-
-  /**
-   * The feature id for the '<em><b>Left</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int HINT_TYPE_EXPRESSION__LEFT = EXPR_FEATURE_COUNT + 0;
-
-  /**
-   * The feature id for the '<em><b>Op</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int HINT_TYPE_EXPRESSION__OP = EXPR_FEATURE_COUNT + 1;
-
-  /**
-   * The feature id for the '<em><b>Right Type</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int HINT_TYPE_EXPRESSION__RIGHT_TYPE = EXPR_FEATURE_COUNT + 2;
-
-  /**
-   * The number of structural features of the '<em>Hint Type Expression</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int HINT_TYPE_EXPRESSION_FEATURE_COUNT = EXPR_FEATURE_COUNT + 3;
 
   /**
    * The meta object id for the '{@link com.euclideanspace.spad.editor.impl.CoerceExpressionImpl <em>Coerce Expression</em>}' class.
@@ -9370,6 +9514,223 @@ public interface EditorPackage extends EPackage
   int COERCE_EXPRESSION_FEATURE_COUNT = EXPR_FEATURE_COUNT + 3;
 
   /**
+   * The meta object id for the '{@link com.euclideanspace.spad.editor.impl.HintTypeExpressionImpl <em>Hint Type Expression</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see com.euclideanspace.spad.editor.impl.HintTypeExpressionImpl
+   * @see com.euclideanspace.spad.editor.impl.EditorPackageImpl#getHintTypeExpression()
+   * @generated
+   */
+  int HINT_TYPE_EXPRESSION = 70;
+
+  /**
+   * The feature id for the '<em><b>Ifname</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int HINT_TYPE_EXPRESSION__IFNAME = EXPR__IFNAME;
+
+  /**
+   * The feature id for the '<em><b>Ifpred</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int HINT_TYPE_EXPRESSION__IFPRED = EXPR__IFPRED;
+
+  /**
+   * The feature id for the '<em><b>Thenexp</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int HINT_TYPE_EXPRESSION__THENEXP = EXPR__THENEXP;
+
+  /**
+   * The feature id for the '<em><b>Elseexp</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int HINT_TYPE_EXPRESSION__ELSEEXP = EXPR__ELSEEXP;
+
+  /**
+   * The feature id for the '<em><b>E2</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int HINT_TYPE_EXPRESSION__E2 = EXPR__E2;
+
+  /**
+   * The feature id for the '<em><b>E3</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int HINT_TYPE_EXPRESSION__E3 = EXPR__E3;
+
+  /**
+   * The feature id for the '<em><b>E5</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int HINT_TYPE_EXPRESSION__E5 = EXPR__E5;
+
+  /**
+   * The feature id for the '<em><b>E6</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int HINT_TYPE_EXPRESSION__E6 = EXPR__E6;
+
+  /**
+   * The feature id for the '<em><b>E22</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int HINT_TYPE_EXPRESSION__E22 = EXPR__E22;
+
+  /**
+   * The feature id for the '<em><b>E21</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int HINT_TYPE_EXPRESSION__E21 = EXPR__E21;
+
+  /**
+   * The feature id for the '<em><b>E23</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int HINT_TYPE_EXPRESSION__E23 = EXPR__E23;
+
+  /**
+   * The feature id for the '<em><b>E9</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int HINT_TYPE_EXPRESSION__E9 = EXPR__E9;
+
+  /**
+   * The feature id for the '<em><b>E10</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int HINT_TYPE_EXPRESSION__E10 = EXPR__E10;
+
+  /**
+   * The feature id for the '<em><b>E25</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int HINT_TYPE_EXPRESSION__E25 = EXPR__E25;
+
+  /**
+   * The feature id for the '<em><b>E24</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int HINT_TYPE_EXPRESSION__E24 = EXPR__E24;
+
+  /**
+   * The feature id for the '<em><b>E26</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int HINT_TYPE_EXPRESSION__E26 = EXPR__E26;
+
+  /**
+   * The feature id for the '<em><b>E11</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int HINT_TYPE_EXPRESSION__E11 = EXPR__E11;
+
+  /**
+   * The feature id for the '<em><b>E12</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int HINT_TYPE_EXPRESSION__E12 = EXPR__E12;
+
+  /**
+   * The feature id for the '<em><b>E13</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int HINT_TYPE_EXPRESSION__E13 = EXPR__E13;
+
+  /**
+   * The feature id for the '<em><b>Left</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int HINT_TYPE_EXPRESSION__LEFT = EXPR_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Op</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int HINT_TYPE_EXPRESSION__OP = EXPR_FEATURE_COUNT + 1;
+
+  /**
+   * The feature id for the '<em><b>Right Type</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int HINT_TYPE_EXPRESSION__RIGHT_TYPE = EXPR_FEATURE_COUNT + 2;
+
+  /**
+   * The number of structural features of the '<em>Hint Type Expression</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int HINT_TYPE_EXPRESSION_FEATURE_COUNT = EXPR_FEATURE_COUNT + 3;
+
+  /**
    * The meta object id for the '{@link com.euclideanspace.spad.editor.impl.EltExpressionImpl <em>Elt Expression</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -9377,7 +9738,7 @@ public interface EditorPackage extends EPackage
    * @see com.euclideanspace.spad.editor.impl.EditorPackageImpl#getEltExpression()
    * @generated
    */
-  int ELT_EXPRESSION = 70;
+  int ELT_EXPRESSION = 71;
 
   /**
    * The feature id for the '<em><b>Ifname</b></em>' attribute.
@@ -9594,7 +9955,7 @@ public interface EditorPackage extends EPackage
    * @see com.euclideanspace.spad.editor.impl.EditorPackageImpl#getExplicitTypeExpression()
    * @generated
    */
-  int EXPLICIT_TYPE_EXPRESSION = 71;
+  int EXPLICIT_TYPE_EXPRESSION = 72;
 
   /**
    * The feature id for the '<em><b>Ifname</b></em>' attribute.
@@ -9811,7 +10172,7 @@ public interface EditorPackage extends EPackage
    * @see com.euclideanspace.spad.editor.impl.EditorPackageImpl#getUnaryExpression()
    * @generated
    */
-  int UNARY_EXPRESSION = 72;
+  int UNARY_EXPRESSION = 73;
 
   /**
    * The feature id for the '<em><b>Ifname</b></em>' attribute.
@@ -10943,6 +11304,17 @@ public interface EditorPackage extends EPackage
    * @generated
    */
   EAttribute getImport_Impname();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link com.euclideanspace.spad.editor.Import#getPar22 <em>Par22</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Par22</em>'.
+   * @see com.euclideanspace.spad.editor.Import#getPar22()
+   * @see #getImport()
+   * @generated
+   */
+  EReference getImport_Par22();
 
   /**
    * Returns the meta object for class '{@link com.euclideanspace.spad.editor.VariableDeclarationBlock <em>Variable Declaration Block</em>}'.
@@ -12181,39 +12553,6 @@ public interface EditorPackage extends EPackage
   EReference getStatementExpression_T();
 
   /**
-   * Returns the meta object for the containment reference '{@link com.euclideanspace.spad.editor.StatementExpression#getT2 <em>T2</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>T2</em>'.
-   * @see com.euclideanspace.spad.editor.StatementExpression#getT2()
-   * @see #getStatementExpression()
-   * @generated
-   */
-  EReference getStatementExpression_T2();
-
-  /**
-   * Returns the meta object for the containment reference '{@link com.euclideanspace.spad.editor.StatementExpression#getT3 <em>T3</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>T3</em>'.
-   * @see com.euclideanspace.spad.editor.StatementExpression#getT3()
-   * @see #getStatementExpression()
-   * @generated
-   */
-  EReference getStatementExpression_T3();
-
-  /**
-   * Returns the meta object for the containment reference list '{@link com.euclideanspace.spad.editor.StatementExpression#getT33 <em>T33</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>T33</em>'.
-   * @see com.euclideanspace.spad.editor.StatementExpression#getT33()
-   * @see #getStatementExpression()
-   * @generated
-   */
-  EReference getStatementExpression_T33();
-
-  /**
    * Returns the meta object for the containment reference '{@link com.euclideanspace.spad.editor.StatementExpression#getT5 <em>T5</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -12841,6 +13180,17 @@ public interface EditorPackage extends EPackage
   EReference getPrimaryPrefix_T25();
 
   /**
+   * Returns the meta object for the containment reference '{@link com.euclideanspace.spad.editor.PrimaryPrefix#getRightType3 <em>Right Type3</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Right Type3</em>'.
+   * @see com.euclideanspace.spad.editor.PrimaryPrefix#getRightType3()
+   * @see #getPrimaryPrefix()
+   * @generated
+   */
+  EReference getPrimaryPrefix_RightType3();
+
+  /**
    * Returns the meta object for the containment reference '{@link com.euclideanspace.spad.editor.PrimaryPrefix#getT7 <em>T7</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -12939,6 +13289,17 @@ public interface EditorPackage extends EPackage
   EReference getNameOrFunctionCall_T6();
 
   /**
+   * Returns the meta object for the containment reference '{@link com.euclideanspace.spad.editor.NameOrFunctionCall#getRightType2 <em>Right Type2</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Right Type2</em>'.
+   * @see com.euclideanspace.spad.editor.NameOrFunctionCall#getRightType2()
+   * @see #getNameOrFunctionCall()
+   * @generated
+   */
+  EReference getNameOrFunctionCall_RightType2();
+
+  /**
    * Returns the meta object for class '{@link com.euclideanspace.spad.editor.Literal <em>Literal</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -12969,6 +13330,39 @@ public interface EditorPackage extends EPackage
    * @generated
    */
   EAttribute getLiteral_T2();
+
+  /**
+   * Returns the meta object for the containment reference '{@link com.euclideanspace.spad.editor.Literal#getE1 <em>E1</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>E1</em>'.
+   * @see com.euclideanspace.spad.editor.Literal#getE1()
+   * @see #getLiteral()
+   * @generated
+   */
+  EReference getLiteral_E1();
+
+  /**
+   * Returns the meta object for the attribute list '{@link com.euclideanspace.spad.editor.Literal#getT31 <em>T31</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute list '<em>T31</em>'.
+   * @see com.euclideanspace.spad.editor.Literal#getT31()
+   * @see #getLiteral()
+   * @generated
+   */
+  EAttribute getLiteral_T31();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link com.euclideanspace.spad.editor.Literal#getE4 <em>E4</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>E4</em>'.
+   * @see com.euclideanspace.spad.editor.Literal#getE4()
+   * @see #getLiteral()
+   * @generated
+   */
+  EReference getLiteral_E4();
 
   /**
    * Returns the meta object for class '{@link com.euclideanspace.spad.editor.CharacterLiteral <em>Character Literal</em>}'.
@@ -13895,6 +14289,49 @@ public interface EditorPackage extends EPackage
   EReference getMapDefinition_Right();
 
   /**
+   * Returns the meta object for class '{@link com.euclideanspace.spad.editor.AssignExpression <em>Assign Expression</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Assign Expression</em>'.
+   * @see com.euclideanspace.spad.editor.AssignExpression
+   * @generated
+   */
+  EClass getAssignExpression();
+
+  /**
+   * Returns the meta object for the containment reference '{@link com.euclideanspace.spad.editor.AssignExpression#getLeft <em>Left</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Left</em>'.
+   * @see com.euclideanspace.spad.editor.AssignExpression#getLeft()
+   * @see #getAssignExpression()
+   * @generated
+   */
+  EReference getAssignExpression_Left();
+
+  /**
+   * Returns the meta object for the attribute '{@link com.euclideanspace.spad.editor.AssignExpression#getOp <em>Op</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Op</em>'.
+   * @see com.euclideanspace.spad.editor.AssignExpression#getOp()
+   * @see #getAssignExpression()
+   * @generated
+   */
+  EAttribute getAssignExpression_Op();
+
+  /**
+   * Returns the meta object for the containment reference '{@link com.euclideanspace.spad.editor.AssignExpression#getRight <em>Right</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Right</em>'.
+   * @see com.euclideanspace.spad.editor.AssignExpression#getRight()
+   * @see #getAssignExpression()
+   * @generated
+   */
+  EReference getAssignExpression_Right();
+
+  /**
    * Returns the meta object for class '{@link com.euclideanspace.spad.editor.PretendExpression <em>Pretend Expression</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -13938,49 +14375,6 @@ public interface EditorPackage extends EPackage
   EReference getPretendExpression_RightType();
 
   /**
-   * Returns the meta object for class '{@link com.euclideanspace.spad.editor.HintTypeExpression <em>Hint Type Expression</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Hint Type Expression</em>'.
-   * @see com.euclideanspace.spad.editor.HintTypeExpression
-   * @generated
-   */
-  EClass getHintTypeExpression();
-
-  /**
-   * Returns the meta object for the containment reference '{@link com.euclideanspace.spad.editor.HintTypeExpression#getLeft <em>Left</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Left</em>'.
-   * @see com.euclideanspace.spad.editor.HintTypeExpression#getLeft()
-   * @see #getHintTypeExpression()
-   * @generated
-   */
-  EReference getHintTypeExpression_Left();
-
-  /**
-   * Returns the meta object for the attribute '{@link com.euclideanspace.spad.editor.HintTypeExpression#getOp <em>Op</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Op</em>'.
-   * @see com.euclideanspace.spad.editor.HintTypeExpression#getOp()
-   * @see #getHintTypeExpression()
-   * @generated
-   */
-  EAttribute getHintTypeExpression_Op();
-
-  /**
-   * Returns the meta object for the containment reference '{@link com.euclideanspace.spad.editor.HintTypeExpression#getRightType <em>Right Type</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Right Type</em>'.
-   * @see com.euclideanspace.spad.editor.HintTypeExpression#getRightType()
-   * @see #getHintTypeExpression()
-   * @generated
-   */
-  EReference getHintTypeExpression_RightType();
-
-  /**
    * Returns the meta object for class '{@link com.euclideanspace.spad.editor.CoerceExpression <em>Coerce Expression</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -14022,6 +14416,49 @@ public interface EditorPackage extends EPackage
    * @generated
    */
   EReference getCoerceExpression_RightType();
+
+  /**
+   * Returns the meta object for class '{@link com.euclideanspace.spad.editor.HintTypeExpression <em>Hint Type Expression</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Hint Type Expression</em>'.
+   * @see com.euclideanspace.spad.editor.HintTypeExpression
+   * @generated
+   */
+  EClass getHintTypeExpression();
+
+  /**
+   * Returns the meta object for the containment reference '{@link com.euclideanspace.spad.editor.HintTypeExpression#getLeft <em>Left</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Left</em>'.
+   * @see com.euclideanspace.spad.editor.HintTypeExpression#getLeft()
+   * @see #getHintTypeExpression()
+   * @generated
+   */
+  EReference getHintTypeExpression_Left();
+
+  /**
+   * Returns the meta object for the attribute '{@link com.euclideanspace.spad.editor.HintTypeExpression#getOp <em>Op</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Op</em>'.
+   * @see com.euclideanspace.spad.editor.HintTypeExpression#getOp()
+   * @see #getHintTypeExpression()
+   * @generated
+   */
+  EAttribute getHintTypeExpression_Op();
+
+  /**
+   * Returns the meta object for the containment reference '{@link com.euclideanspace.spad.editor.HintTypeExpression#getRightType <em>Right Type</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Right Type</em>'.
+   * @see com.euclideanspace.spad.editor.HintTypeExpression#getRightType()
+   * @see #getHintTypeExpression()
+   * @generated
+   */
+  EReference getHintTypeExpression_RightType();
 
   /**
    * Returns the meta object for class '{@link com.euclideanspace.spad.editor.EltExpression <em>Elt Expression</em>}'.
@@ -14879,6 +15316,14 @@ public interface EditorPackage extends EPackage
      * @generated
      */
     EAttribute IMPORT__IMPNAME = eINSTANCE.getImport_Impname();
+
+    /**
+     * The meta object literal for the '<em><b>Par22</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference IMPORT__PAR22 = eINSTANCE.getImport_Par22();
 
     /**
      * The meta object literal for the '{@link com.euclideanspace.spad.editor.impl.VariableDeclarationBlockImpl <em>Variable Declaration Block</em>}' class.
@@ -15829,30 +16274,6 @@ public interface EditorPackage extends EPackage
     EReference STATEMENT_EXPRESSION__T = eINSTANCE.getStatementExpression_T();
 
     /**
-     * The meta object literal for the '<em><b>T2</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference STATEMENT_EXPRESSION__T2 = eINSTANCE.getStatementExpression_T2();
-
-    /**
-     * The meta object literal for the '<em><b>T3</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference STATEMENT_EXPRESSION__T3 = eINSTANCE.getStatementExpression_T3();
-
-    /**
-     * The meta object literal for the '<em><b>T33</b></em>' containment reference list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference STATEMENT_EXPRESSION__T33 = eINSTANCE.getStatementExpression_T33();
-
-    /**
      * The meta object literal for the '<em><b>T5</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -16339,6 +16760,14 @@ public interface EditorPackage extends EPackage
     EReference PRIMARY_PREFIX__T25 = eINSTANCE.getPrimaryPrefix_T25();
 
     /**
+     * The meta object literal for the '<em><b>Right Type3</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference PRIMARY_PREFIX__RIGHT_TYPE3 = eINSTANCE.getPrimaryPrefix_RightType3();
+
+    /**
      * The meta object literal for the '<em><b>T7</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -16413,6 +16842,14 @@ public interface EditorPackage extends EPackage
     EReference NAME_OR_FUNCTION_CALL__T6 = eINSTANCE.getNameOrFunctionCall_T6();
 
     /**
+     * The meta object literal for the '<em><b>Right Type2</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference NAME_OR_FUNCTION_CALL__RIGHT_TYPE2 = eINSTANCE.getNameOrFunctionCall_RightType2();
+
+    /**
      * The meta object literal for the '{@link com.euclideanspace.spad.editor.impl.LiteralImpl <em>Literal</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -16437,6 +16874,30 @@ public interface EditorPackage extends EPackage
      * @generated
      */
     EAttribute LITERAL__T2 = eINSTANCE.getLiteral_T2();
+
+    /**
+     * The meta object literal for the '<em><b>E1</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference LITERAL__E1 = eINSTANCE.getLiteral_E1();
+
+    /**
+     * The meta object literal for the '<em><b>T31</b></em>' attribute list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute LITERAL__T31 = eINSTANCE.getLiteral_T31();
+
+    /**
+     * The meta object literal for the '<em><b>E4</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference LITERAL__E4 = eINSTANCE.getLiteral_E4();
 
     /**
      * The meta object literal for the '{@link com.euclideanspace.spad.editor.impl.CharacterLiteralImpl <em>Character Literal</em>}' class.
@@ -17171,6 +17632,40 @@ public interface EditorPackage extends EPackage
     EReference MAP_DEFINITION__RIGHT = eINSTANCE.getMapDefinition_Right();
 
     /**
+     * The meta object literal for the '{@link com.euclideanspace.spad.editor.impl.AssignExpressionImpl <em>Assign Expression</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see com.euclideanspace.spad.editor.impl.AssignExpressionImpl
+     * @see com.euclideanspace.spad.editor.impl.EditorPackageImpl#getAssignExpression()
+     * @generated
+     */
+    EClass ASSIGN_EXPRESSION = eINSTANCE.getAssignExpression();
+
+    /**
+     * The meta object literal for the '<em><b>Left</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference ASSIGN_EXPRESSION__LEFT = eINSTANCE.getAssignExpression_Left();
+
+    /**
+     * The meta object literal for the '<em><b>Op</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute ASSIGN_EXPRESSION__OP = eINSTANCE.getAssignExpression_Op();
+
+    /**
+     * The meta object literal for the '<em><b>Right</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference ASSIGN_EXPRESSION__RIGHT = eINSTANCE.getAssignExpression_Right();
+
+    /**
      * The meta object literal for the '{@link com.euclideanspace.spad.editor.impl.PretendExpressionImpl <em>Pretend Expression</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -17205,40 +17700,6 @@ public interface EditorPackage extends EPackage
     EReference PRETEND_EXPRESSION__RIGHT_TYPE = eINSTANCE.getPretendExpression_RightType();
 
     /**
-     * The meta object literal for the '{@link com.euclideanspace.spad.editor.impl.HintTypeExpressionImpl <em>Hint Type Expression</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see com.euclideanspace.spad.editor.impl.HintTypeExpressionImpl
-     * @see com.euclideanspace.spad.editor.impl.EditorPackageImpl#getHintTypeExpression()
-     * @generated
-     */
-    EClass HINT_TYPE_EXPRESSION = eINSTANCE.getHintTypeExpression();
-
-    /**
-     * The meta object literal for the '<em><b>Left</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference HINT_TYPE_EXPRESSION__LEFT = eINSTANCE.getHintTypeExpression_Left();
-
-    /**
-     * The meta object literal for the '<em><b>Op</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute HINT_TYPE_EXPRESSION__OP = eINSTANCE.getHintTypeExpression_Op();
-
-    /**
-     * The meta object literal for the '<em><b>Right Type</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference HINT_TYPE_EXPRESSION__RIGHT_TYPE = eINSTANCE.getHintTypeExpression_RightType();
-
-    /**
      * The meta object literal for the '{@link com.euclideanspace.spad.editor.impl.CoerceExpressionImpl <em>Coerce Expression</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -17271,6 +17732,40 @@ public interface EditorPackage extends EPackage
      * @generated
      */
     EReference COERCE_EXPRESSION__RIGHT_TYPE = eINSTANCE.getCoerceExpression_RightType();
+
+    /**
+     * The meta object literal for the '{@link com.euclideanspace.spad.editor.impl.HintTypeExpressionImpl <em>Hint Type Expression</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see com.euclideanspace.spad.editor.impl.HintTypeExpressionImpl
+     * @see com.euclideanspace.spad.editor.impl.EditorPackageImpl#getHintTypeExpression()
+     * @generated
+     */
+    EClass HINT_TYPE_EXPRESSION = eINSTANCE.getHintTypeExpression();
+
+    /**
+     * The meta object literal for the '<em><b>Left</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference HINT_TYPE_EXPRESSION__LEFT = eINSTANCE.getHintTypeExpression_Left();
+
+    /**
+     * The meta object literal for the '<em><b>Op</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute HINT_TYPE_EXPRESSION__OP = eINSTANCE.getHintTypeExpression_Op();
+
+    /**
+     * The meta object literal for the '<em><b>Right Type</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference HINT_TYPE_EXPRESSION__RIGHT_TYPE = eINSTANCE.getHintTypeExpression_RightType();
 
     /**
      * The meta object literal for the '{@link com.euclideanspace.spad.editor.impl.EltExpressionImpl <em>Elt Expression</em>}' class.

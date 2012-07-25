@@ -6,6 +6,7 @@ import com.euclideanspace.spad.editor.EditorPackage;
 import com.euclideanspace.spad.editor.Expr;
 import com.euclideanspace.spad.editor.NameOrFunctionCall;
 import com.euclideanspace.spad.editor.PrimaryPrefix;
+import com.euclideanspace.spad.editor.TypeExpression;
 
 import java.util.Collection;
 
@@ -31,6 +32,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <ul>
  *   <li>{@link com.euclideanspace.spad.editor.impl.PrimaryPrefixImpl#getT4 <em>T4</em>}</li>
  *   <li>{@link com.euclideanspace.spad.editor.impl.PrimaryPrefixImpl#getT25 <em>T25</em>}</li>
+ *   <li>{@link com.euclideanspace.spad.editor.impl.PrimaryPrefixImpl#getRightType3 <em>Right Type3</em>}</li>
  *   <li>{@link com.euclideanspace.spad.editor.impl.PrimaryPrefixImpl#getT7 <em>T7</em>}</li>
  * </ul>
  * </p>
@@ -58,6 +60,16 @@ public class PrimaryPrefixImpl extends ExprImpl implements PrimaryPrefix
    * @ordered
    */
   protected EList<Expr> t25;
+
+  /**
+   * The cached value of the '{@link #getRightType3() <em>Right Type3</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getRightType3()
+   * @generated
+   * @ordered
+   */
+  protected TypeExpression rightType3;
 
   /**
    * The cached value of the '{@link #getT7() <em>T7</em>}' containment reference.
@@ -157,6 +169,54 @@ public class PrimaryPrefixImpl extends ExprImpl implements PrimaryPrefix
    * <!-- end-user-doc -->
    * @generated
    */
+  public TypeExpression getRightType3()
+  {
+    return rightType3;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetRightType3(TypeExpression newRightType3, NotificationChain msgs)
+  {
+    TypeExpression oldRightType3 = rightType3;
+    rightType3 = newRightType3;
+    if (eNotificationRequired())
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, EditorPackage.PRIMARY_PREFIX__RIGHT_TYPE3, oldRightType3, newRightType3);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setRightType3(TypeExpression newRightType3)
+  {
+    if (newRightType3 != rightType3)
+    {
+      NotificationChain msgs = null;
+      if (rightType3 != null)
+        msgs = ((InternalEObject)rightType3).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - EditorPackage.PRIMARY_PREFIX__RIGHT_TYPE3, null, msgs);
+      if (newRightType3 != null)
+        msgs = ((InternalEObject)newRightType3).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - EditorPackage.PRIMARY_PREFIX__RIGHT_TYPE3, null, msgs);
+      msgs = basicSetRightType3(newRightType3, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, EditorPackage.PRIMARY_PREFIX__RIGHT_TYPE3, newRightType3, newRightType3));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public NameOrFunctionCall getT7()
   {
     return t7;
@@ -214,6 +274,8 @@ public class PrimaryPrefixImpl extends ExprImpl implements PrimaryPrefix
         return basicSetT4(null, msgs);
       case EditorPackage.PRIMARY_PREFIX__T25:
         return ((InternalEList<?>)getT25()).basicRemove(otherEnd, msgs);
+      case EditorPackage.PRIMARY_PREFIX__RIGHT_TYPE3:
+        return basicSetRightType3(null, msgs);
       case EditorPackage.PRIMARY_PREFIX__T7:
         return basicSetT7(null, msgs);
     }
@@ -234,6 +296,8 @@ public class PrimaryPrefixImpl extends ExprImpl implements PrimaryPrefix
         return getT4();
       case EditorPackage.PRIMARY_PREFIX__T25:
         return getT25();
+      case EditorPackage.PRIMARY_PREFIX__RIGHT_TYPE3:
+        return getRightType3();
       case EditorPackage.PRIMARY_PREFIX__T7:
         return getT7();
     }
@@ -258,6 +322,9 @@ public class PrimaryPrefixImpl extends ExprImpl implements PrimaryPrefix
         getT25().clear();
         getT25().addAll((Collection<? extends Expr>)newValue);
         return;
+      case EditorPackage.PRIMARY_PREFIX__RIGHT_TYPE3:
+        setRightType3((TypeExpression)newValue);
+        return;
       case EditorPackage.PRIMARY_PREFIX__T7:
         setT7((NameOrFunctionCall)newValue);
         return;
@@ -281,6 +348,9 @@ public class PrimaryPrefixImpl extends ExprImpl implements PrimaryPrefix
       case EditorPackage.PRIMARY_PREFIX__T25:
         getT25().clear();
         return;
+      case EditorPackage.PRIMARY_PREFIX__RIGHT_TYPE3:
+        setRightType3((TypeExpression)null);
+        return;
       case EditorPackage.PRIMARY_PREFIX__T7:
         setT7((NameOrFunctionCall)null);
         return;
@@ -302,6 +372,8 @@ public class PrimaryPrefixImpl extends ExprImpl implements PrimaryPrefix
         return t4 != null;
       case EditorPackage.PRIMARY_PREFIX__T25:
         return t25 != null && !t25.isEmpty();
+      case EditorPackage.PRIMARY_PREFIX__RIGHT_TYPE3:
+        return rightType3 != null;
       case EditorPackage.PRIMARY_PREFIX__T7:
         return t7 != null;
     }

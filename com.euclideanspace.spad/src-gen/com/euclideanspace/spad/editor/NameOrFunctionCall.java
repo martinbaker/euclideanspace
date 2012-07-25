@@ -21,6 +21,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link com.euclideanspace.spad.editor.NameOrFunctionCall#getT14 <em>T14</em>}</li>
  *   <li>{@link com.euclideanspace.spad.editor.NameOrFunctionCall#getT15 <em>T15</em>}</li>
  *   <li>{@link com.euclideanspace.spad.editor.NameOrFunctionCall#getT6 <em>T6</em>}</li>
+ *   <li>{@link com.euclideanspace.spad.editor.NameOrFunctionCall#getRightType2 <em>Right Type2</em>}</li>
  * </ul>
  * </p>
  *
@@ -181,5 +182,31 @@ public interface NameOrFunctionCall extends EObject
    * @generated
    */
   void setT6(Expr value);
+
+  /**
+   * Returns the value of the '<em><b>Right Type2</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Right Type2</em>' containment reference isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Right Type2</em>' containment reference.
+   * @see #setRightType2(TypeExpression)
+   * @see com.euclideanspace.spad.editor.EditorPackage#getNameOrFunctionCall_RightType2()
+   * @model containment="true"
+   * @generated
+   */
+  TypeExpression getRightType2();
+
+  /**
+   * Sets the value of the '{@link com.euclideanspace.spad.editor.NameOrFunctionCall#getRightType2 <em>Right Type2</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Right Type2</em>' containment reference.
+   * @see #getRightType2()
+   * @generated
+   */
+  void setRightType2(TypeExpression value);
 
 } // NameOrFunctionCall

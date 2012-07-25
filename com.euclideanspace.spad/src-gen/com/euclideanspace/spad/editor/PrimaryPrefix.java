@@ -14,6 +14,7 @@ import org.eclipse.emf.common.util.EList;
  * <ul>
  *   <li>{@link com.euclideanspace.spad.editor.PrimaryPrefix#getT4 <em>T4</em>}</li>
  *   <li>{@link com.euclideanspace.spad.editor.PrimaryPrefix#getT25 <em>T25</em>}</li>
+ *   <li>{@link com.euclideanspace.spad.editor.PrimaryPrefix#getRightType3 <em>Right Type3</em>}</li>
  *   <li>{@link com.euclideanspace.spad.editor.PrimaryPrefix#getT7 <em>T7</em>}</li>
  * </ul>
  * </p>
@@ -65,6 +66,32 @@ public interface PrimaryPrefix extends Expr
    * @generated
    */
   EList<Expr> getT25();
+
+  /**
+   * Returns the value of the '<em><b>Right Type3</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Right Type3</em>' containment reference isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Right Type3</em>' containment reference.
+   * @see #setRightType3(TypeExpression)
+   * @see com.euclideanspace.spad.editor.EditorPackage#getPrimaryPrefix_RightType3()
+   * @model containment="true"
+   * @generated
+   */
+  TypeExpression getRightType3();
+
+  /**
+   * Sets the value of the '{@link com.euclideanspace.spad.editor.PrimaryPrefix#getRightType3 <em>Right Type3</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Right Type3</em>' containment reference.
+   * @see #getRightType3()
+   * @generated
+   */
+  void setRightType3(TypeExpression value);
 
   /**
    * Returns the value of the '<em><b>T7</b></em>' containment reference.

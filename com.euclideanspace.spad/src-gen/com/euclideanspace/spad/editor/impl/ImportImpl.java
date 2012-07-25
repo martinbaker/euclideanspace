@@ -7,6 +7,7 @@ import com.euclideanspace.spad.editor.EditorPackage;
 import com.euclideanspace.spad.editor.Expr;
 import com.euclideanspace.spad.editor.FunctionDefinitionBlock;
 import com.euclideanspace.spad.editor.Import;
+import com.euclideanspace.spad.editor.TypeExpression;
 
 import java.util.Collection;
 
@@ -21,6 +22,8 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import org.eclipse.emf.ecore.util.EDataTypeEList;
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -32,6 +35,7 @@ import org.eclipse.emf.ecore.util.EDataTypeEList;
  *   <li>{@link com.euclideanspace.spad.editor.impl.ImportImpl#getT1 <em>T1</em>}</li>
  *   <li>{@link com.euclideanspace.spad.editor.impl.ImportImpl#getT13 <em>T13</em>}</li>
  *   <li>{@link com.euclideanspace.spad.editor.impl.ImportImpl#getImpname <em>Impname</em>}</li>
+ *   <li>{@link com.euclideanspace.spad.editor.impl.ImportImpl#getPar22 <em>Par22</em>}</li>
  * </ul>
  * </p>
  *
@@ -68,6 +72,16 @@ public class ImportImpl extends WhereAssignmentsImpl implements Import
    * @ordered
    */
   protected EList<String> impname;
+
+  /**
+   * The cached value of the '{@link #getPar22() <em>Par22</em>}' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getPar22()
+   * @generated
+   * @ordered
+   */
+  protected EList<TypeExpression> par22;
 
   /**
    * <!-- begin-user-doc -->
@@ -205,6 +219,20 @@ public class ImportImpl extends WhereAssignmentsImpl implements Import
    * <!-- end-user-doc -->
    * @generated
    */
+  public EList<TypeExpression> getPar22()
+  {
+    if (par22 == null)
+    {
+      par22 = new EObjectContainmentEList<TypeExpression>(TypeExpression.class, this, EditorPackage.IMPORT__PAR22);
+    }
+    return par22;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
@@ -214,6 +242,8 @@ public class ImportImpl extends WhereAssignmentsImpl implements Import
         return basicSetT1(null, msgs);
       case EditorPackage.IMPORT__T13:
         return basicSetT13(null, msgs);
+      case EditorPackage.IMPORT__PAR22:
+        return ((InternalEList<?>)getPar22()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -234,6 +264,8 @@ public class ImportImpl extends WhereAssignmentsImpl implements Import
         return getT13();
       case EditorPackage.IMPORT__IMPNAME:
         return getImpname();
+      case EditorPackage.IMPORT__PAR22:
+        return getPar22();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -259,6 +291,10 @@ public class ImportImpl extends WhereAssignmentsImpl implements Import
         getImpname().clear();
         getImpname().addAll((Collection<? extends String>)newValue);
         return;
+      case EditorPackage.IMPORT__PAR22:
+        getPar22().clear();
+        getPar22().addAll((Collection<? extends TypeExpression>)newValue);
+        return;
     }
     super.eSet(featureID, newValue);
   }
@@ -282,6 +318,9 @@ public class ImportImpl extends WhereAssignmentsImpl implements Import
       case EditorPackage.IMPORT__IMPNAME:
         getImpname().clear();
         return;
+      case EditorPackage.IMPORT__PAR22:
+        getPar22().clear();
+        return;
     }
     super.eUnset(featureID);
   }
@@ -302,6 +341,8 @@ public class ImportImpl extends WhereAssignmentsImpl implements Import
         return t13 != null;
       case EditorPackage.IMPORT__IMPNAME:
         return impname != null && !impname.isEmpty();
+      case EditorPackage.IMPORT__PAR22:
+        return par22 != null && !par22.isEmpty();
     }
     return super.eIsSet(featureID);
   }

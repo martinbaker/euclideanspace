@@ -131,9 +131,10 @@ public class EditorFactoryImpl extends EFactoryImpl implements EditorFactory
       case EditorPackage.MULTIPLICATIVE_EXPRESSION: return createMultiplicativeExpression();
       case EditorPackage.EXPONENT_EXPRESSION: return createExponentExpression();
       case EditorPackage.MAP_DEFINITION: return createMapDefinition();
+      case EditorPackage.ASSIGN_EXPRESSION: return createAssignExpression();
       case EditorPackage.PRETEND_EXPRESSION: return createPretendExpression();
-      case EditorPackage.HINT_TYPE_EXPRESSION: return createHintTypeExpression();
       case EditorPackage.COERCE_EXPRESSION: return createCoerceExpression();
+      case EditorPackage.HINT_TYPE_EXPRESSION: return createHintTypeExpression();
       case EditorPackage.ELT_EXPRESSION: return createEltExpression();
       case EditorPackage.EXPLICIT_TYPE_EXPRESSION: return createExplicitTypeExpression();
       case EditorPackage.UNARY_EXPRESSION: return createUnaryExpression();
@@ -884,6 +885,17 @@ public class EditorFactoryImpl extends EFactoryImpl implements EditorFactory
    * <!-- end-user-doc -->
    * @generated
    */
+  public AssignExpression createAssignExpression()
+  {
+    AssignExpressionImpl assignExpression = new AssignExpressionImpl();
+    return assignExpression;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public PretendExpression createPretendExpression()
   {
     PretendExpressionImpl pretendExpression = new PretendExpressionImpl();
@@ -895,10 +907,10 @@ public class EditorFactoryImpl extends EFactoryImpl implements EditorFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public HintTypeExpression createHintTypeExpression()
+  public CoerceExpression createCoerceExpression()
   {
-    HintTypeExpressionImpl hintTypeExpression = new HintTypeExpressionImpl();
-    return hintTypeExpression;
+    CoerceExpressionImpl coerceExpression = new CoerceExpressionImpl();
+    return coerceExpression;
   }
 
   /**
@@ -906,10 +918,10 @@ public class EditorFactoryImpl extends EFactoryImpl implements EditorFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public CoerceExpression createCoerceExpression()
+  public HintTypeExpression createHintTypeExpression()
   {
-    CoerceExpressionImpl coerceExpression = new CoerceExpressionImpl();
-    return coerceExpression;
+    HintTypeExpressionImpl hintTypeExpression = new HintTypeExpressionImpl();
+    return hintTypeExpression;
   }
 
   /**

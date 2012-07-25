@@ -77,6 +77,10 @@ public class Translate {
      * lines.
      */
 	int parenthesisDebth = 0;
+	/**
+	 * keep name of last file so we only delete when really changed
+	 */
+	String lastFile = null;
 	
 	/**
 	 * translate a pamphlet file or whole directory
@@ -161,6 +165,7 @@ public class Translate {
       		  case CODE: output = transCODE(line,output,input);break;
       		}
       	  }
+      	  // no more lines to read so close all blocks with '}'
 		  while (!pile.empty()) {
 			 pile.pop();
 			 if (!pile.empty()) writeIndent(pile.peek(),output);
@@ -174,10 +179,23 @@ public class Translate {
       	    if (input != null) input.close();
       	    if (texFile != null) texFile.close();
       	    if (output != null) output.close();
+      	    if (lastFile != null) markFileEnd(lastFile+".spad",subDirectoryFile);
+      	    lastFile = null;
     	  } catch (Exception exception) {
     		System.err.println("cannot close due to "+ exception);
      	  }
       	}
+    }
+
+    /**
+     * output '@' to specified file to mark end of file.
+     * @param n
+     * @param p
+     */
+    void markFileEnd(String n,IFolder p) {
+    	EclipseFileWriter stub = new EclipseFileWriter(n,p);
+    	stub.write("\n@");
+    	stub.close();
     }
 
     /**
@@ -193,7 +211,7 @@ public class Translate {
   	      output.write(line + "\n");
   	      flushLineHold(output,null);
   	    } else if (line.startsWith("@")) {
-  	      flushLineHold(output,line);
+  	      flushLineHold(output,null);
     	  //System.out.println("macros: " + macros);
     	  macros.clear(); // don't use macros in next file
     	  mode=Mode.DOCUM;
@@ -233,9 +251,12 @@ public class Translate {
     	  String[] st = tline.split("[ ]+"); // any number of spaces are single separator
     	  if (st.length != 3) return null;
     	  String nam = st[2];
-    	  mode=Mode.HEAD;
     	  try {
+    		if (lastFile != null) if (!lastFile.equals(nam)) markFileEnd(lastFile+".spad",subDirectoryFile);
+    		lastFile = nam;
     		EclipseFileWriter output = new EclipseFileWriter(nam+".spad",subDirectoryFile);
+    		if (output.exists()) mode=Mode.CODE;
+    		else mode=Mode.HEAD;
     		return output;
     	  } catch (Exception e) {
     		System.err.println("transDOCUM cannot open: " + nam +" due to "+ e);
@@ -262,7 +283,8 @@ public class Translate {
 			if (!pile.empty()) writeIndent(pile.peek(),output);
   			output.write("}" + "\n");
 		  }
-		  flushLineHold(output,line);
+		  flushLineHold(output,null); // don't write '@' in case file
+		                              // is continued.
   		  //System.out.println("macros: " + macros);
   		  macros.clear(); // don't use macros in next file
   		  mode=Mode.DOCUM;
@@ -384,6 +406,10 @@ public class Translate {
    }
 
     /**
+     * Originally this checked for conditions where a new block
+     * would not be created, it has now been replaced by a version
+     * which checks that a block can be created.
+     * 
      * Check if line ends with '+','-' or ','
      * or does not close all brackets or parenthesis
      * if it does not then we will assume that it is continued on
@@ -391,7 +417,7 @@ public class Translate {
      * @param line to be checked for continuation
      * @return true if more opening than closing
      */
-    boolean impliedContinuation(String line){
+/*    boolean impliedContinuation(String line){
     	// return false if line contains comment
     	if  (getCommentIndex(line) >= 0) return false;
     	// don't count brackets in strings
@@ -419,6 +445,32 @@ public class Translate {
     	if (line.endsWith(",")) return true;
     	if (line.endsWith(":")) return true;
     	return ((bracketDebth > 0)||(parenthesisDebth > 0));
+    }*/
+
+    /**
+     * Check if line ends with '+','-' or ','
+     * or does not close all brackets or parenthesis
+     * if it does not then we will assume that it is continued on
+     * next line
+     * @param line to be checked for continuation
+     * @return true if more opening than closing
+     */
+    boolean impliedContinuation(String line){
+    	// return false if line contains comment
+    	if  (getCommentIndex(line) >= 0) return false;
+    	// don't count brackets in strings
+    	if (line.endsWith("_")) return true;
+    	if (line.endsWith("where")) return false;
+    	if (line.endsWith("with")) return false;
+    	if (line.endsWith("add")) return false;
+    	if (line.endsWith("==")) return false;
+    	if (line.endsWith("=>")) return false;
+    	if (line.endsWith("repeat")) return false;
+    	if (line.endsWith("then")) return false;
+    	if (line.endsWith("else")) return false;
+    	if (line.endsWith("while")) return false;
+    	if (line.endsWith("do")) return false;
+    	return true;
     }
 
     /**
@@ -567,9 +619,15 @@ public class Translate {
     	int depth = 0;
     	int openIndex = -1;
     	int closeIndex = -1;
+    	boolean inStr =false;
     	for (int i=0;i<line.length();i++) {
     		Character c=line.charAt(i);
-    		if (c=='(') {
+    		if (c=='"') {
+    			inStr=!inStr;
+    		}
+    		// ignore '(',';' and ')' if they occur in strings
+    		if (inStr) continue;
+            if (c=='(') {
     			if (depth == 0) openIndex=i;
     			depth++;
     		} else if (c==')') {

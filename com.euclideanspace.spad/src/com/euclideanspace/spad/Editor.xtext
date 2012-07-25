@@ -328,7 +328,7 @@ CategoryDef hidden(WS,NL,SL_COMMENT):
     (cp=TypeParameterList)?
     COLON 'Category' DEF 
     (
-    implName=TypeArguments ((w=WithPart? a=AddPart?)| wh5=WherePart)
+    implName=TypeArguments? ((w=WithPart? a=AddPart?)| wh5=WherePart)
     | LBRACE NL*
       implName=TypeArguments ((w=WithPart? a=AddPart?)| wh5=WherePart)
       RBRACE NL* a2=AddPart?
@@ -510,7 +510,8 @@ MacroDef: macroname=ID MACROVALUE ; //MACRO val=ID NL;
  * import domain
  */
 Import hidden(WS):
-	'import' (impname += ID)+
+	'import' (impname += ID)+ (LPAREN par22+=TypeExpression
+	(COMMA par22+=TypeExpression)* RPAREN)?
 ;
 
 /* Variable declaration in where and with sections:
@@ -587,7 +588,7 @@ VariableDeclarationAssign hidden(WS):
     (COMMA t2+=ID)* // multiple declarations in same line
     (COLON typ=TypeExpression)? // option to explicitly define type
     (BECOMES t4=Expression)?
-  ) | (BECOMES t2+=ID)+ BECOMES t4=Expression
+  )// | (BECOMES t2+=ID)+ BECOMES t4=Expression
 ;
 
 /*
@@ -798,8 +799,8 @@ Block hidden(WS,SL_COMMENT):
 StatementExpression hidden(WS,SL_COMMENT):
   t=ConditionExpression // was Expression but changed so that 'if' statement
                         // does not clash with if-then-else expression
-    (COLON t2=TypeExpression)?
-    (BECOMES t3=Expression (BECOMES t33+=Expression)*)?
+//    (COLON t2=TypeExpression)?
+//    (BECOMES t3=Expression (BECOMES t33+=Expression)*)?
     (BECOMES t5=Block)?
     // breaks out of a block if predicate before '=>' is true then program
     // control leaves the block.
@@ -829,6 +830,7 @@ ForStatement hidden(WS,SL_COMMENT):
        stname=ID 'in' t1=Expression SEG? //(=> '..' t2=Expression)?
 //       (=> BAR t2=PredicateOr)? // condition
        ('for' stname2+=ID 'in' t2+=Expression SEG?)*
+       ('while' t2+=Expression)*
 	) 'repeat' NL? s1=Statement //('is' s2=Statement)?
 ;
 
@@ -1187,8 +1189,28 @@ ExponentExpression returns Expr hidden(WS,SL_COMMENT):
  */
 MapDefinition returns Expr hidden(WS,SL_COMMENT):
 //  (PretendExpression | LPAREN PretendExpression (COMMA t25+=PretendExpression)+ RPAREN) (COLON rightType2 =TypeExpression)?
+  AssignExpression
+  ({MapDefinition.left=current} op=GIVES right = AssignExpression)*
+;
+
+/*
+ * an assign expression like this:
+ * x := y
+ * can also be an inner assign like this:
+ * x := (y := z)
+ * or just:
+ *  x := y := z
+ * 
+ * right is expression to allow forms like
+ * x := if y<0 then -y else y
+ */
+AssignExpression returns Expr hidden(WS,SL_COMMENT):
   PretendExpression
-  ({MapDefinition.left=current} op=GIVES right = PretendExpression)*
+  ({AssignExpression.left=current} op=BECOMES (
+  	right = PretendExpression
+  	| ifname='if' ifpred=ConditionExpression 'then' thenexp=ConditionExpression 'else' elseexp=PretendExpression
+  	)
+  )*
 ;
 
 /*
@@ -1201,24 +1223,28 @@ MapDefinition returns Expr hidden(WS,SL_COMMENT):
  * "pretend", precedence: 995, 996
  */
  PretendExpression returns Expr hidden(WS,SL_COMMENT):
-  HintTypeExpression
+  CoerceExpression
   ({PretendExpression.left=current} op='pretend' rightType = TypeExpression)*
+;
+
+/* 
+ * "::", precedence: 996, 997
+ * 
+ * although '::' and '@' apparently have the same precidence we want
+ * '@' to bind more tightly than '::'. As we can see in the following example:
+ * "dictionary"@String :: OutputForm.
+ */
+CoerceExpression returns Expr hidden(WS,SL_COMMENT):
+  HintTypeExpression
+  ({CoerceExpression.left=current} op=COERCE rightType = TypeExpression)*
 ;
 
 /* 
  * "@", precedence: 996, 997
  */
 HintTypeExpression returns Expr hidden(WS,SL_COMMENT):
-  CoerceExpression
-  ( {HintTypeExpression.left=current} op=AT rightType = TypeExpression)?
-;
-
-/* 
- * "::", precedence: 996, 997
- */
-CoerceExpression returns Expr hidden(WS,SL_COMMENT):
   EltExpression
-  ({CoerceExpression.left=current} op=COERCE rightType = TypeExpression)*
+  ( {HintTypeExpression.left=current} op=AT rightType = TypeExpression)?
 ;
 
 /* We treat these as part of the language
@@ -1277,7 +1303,7 @@ ExplicitTypeExpression returns Expr hidden(WS,SL_COMMENT):
 UnaryExpression returns Expr hidden(WS,SL_COMMENT):
   PrimaryExpression |
   ({UnaryExpression} uop=TILDE expr=UnaryExpression) |
-  ({UnaryExpression} uop=COLON expr=UnaryExpression) |
+//  ({UnaryExpression} uop=COLON expr=UnaryExpression) |
   ({UnaryExpression} uop=MINUS expr=UnaryExpression) |
   ({UnaryExpression} uop=HASH expr=UnaryExpression) |
   ({UnaryExpression} uop='not' expr=PrimaryExpression) |
@@ -1318,7 +1344,7 @@ PrimaryExpression returns Expr hidden(WS,SL_COMMENT):
  */
 PrimaryPrefix hidden(WS,SL_COMMENT):
  Literal
- | LPAREN t4=Expression (COMMA t25+=Expression)* RPAREN
+ | LPAREN t4=Expression (COMMA t25+=Expression)* RPAREN =>(COLON rightType3 =TypeExpression)?
  | t7=NameOrFunctionCall
 ;
 
@@ -1340,6 +1366,8 @@ NameOrFunctionCall hidden(WS,SL_COMMENT):
     // option of no parenthesis for single parameter
     | => t6=PrimaryExpression
   )?
+  => (COLON rightType2 =TypeExpression)?
+  //=>(op=GIVES lambda = Expression 'xxx')?
 ;
 
 /* Literals are actual values of a given type 
@@ -1356,7 +1384,7 @@ NameOrFunctionCall hidden(WS,SL_COMMENT):
  */
 Literal hidden(WS,SL_COMMENT):
   value=INT
-  | t2=STRING
+  | t2=STRING (=> e1=NameOrFunctionCall =>(t31+=STRING (=> e4+=NameOrFunctionCall)?)*)?
 //  | t3=FloatLiteral // conflicts with use of '.' for elt
   | ListLiteral
   | CharacterLiteral

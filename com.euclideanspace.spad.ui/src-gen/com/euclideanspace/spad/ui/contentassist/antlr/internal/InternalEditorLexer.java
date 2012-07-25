@@ -987,10 +987,10 @@ public class InternalEditorLexer extends Lexer {
         try {
             int _type = RULE_ID;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.euclideanspace.spad.ui/src-gen/com/euclideanspace/spad/ui/contentassist/antlr/internal/InternalEditor.g:29210:9: ( ( 'a' .. 'z' | 'A' .. 'Z' | '_' . ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' . | '0' .. '9' )* ( '!' )? ( '?' )? )
-            // ../com.euclideanspace.spad.ui/src-gen/com/euclideanspace/spad/ui/contentassist/antlr/internal/InternalEditor.g:29210:11: ( 'a' .. 'z' | 'A' .. 'Z' | '_' . ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' . | '0' .. '9' )* ( '!' )? ( '?' )?
+            // ../com.euclideanspace.spad.ui/src-gen/com/euclideanspace/spad/ui/contentassist/antlr/internal/InternalEditor.g:29933:9: ( ( 'a' .. 'z' | 'A' .. 'Z' | '_' . ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' . | '0' .. '9' )* ( '!' )? ( '?' )? )
+            // ../com.euclideanspace.spad.ui/src-gen/com/euclideanspace/spad/ui/contentassist/antlr/internal/InternalEditor.g:29933:11: ( 'a' .. 'z' | 'A' .. 'Z' | '_' . ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' . | '0' .. '9' )* ( '!' )? ( '?' )?
             {
-            // ../com.euclideanspace.spad.ui/src-gen/com/euclideanspace/spad/ui/contentassist/antlr/internal/InternalEditor.g:29210:11: ( 'a' .. 'z' | 'A' .. 'Z' | '_' . )
+            // ../com.euclideanspace.spad.ui/src-gen/com/euclideanspace/spad/ui/contentassist/antlr/internal/InternalEditor.g:29933:11: ( 'a' .. 'z' | 'A' .. 'Z' | '_' . )
             int alt1=3;
             switch ( input.LA(1) ) {
             case 'a':
@@ -1067,21 +1067,21 @@ public class InternalEditorLexer extends Lexer {
 
             switch (alt1) {
                 case 1 :
-                    // ../com.euclideanspace.spad.ui/src-gen/com/euclideanspace/spad/ui/contentassist/antlr/internal/InternalEditor.g:29210:12: 'a' .. 'z'
+                    // ../com.euclideanspace.spad.ui/src-gen/com/euclideanspace/spad/ui/contentassist/antlr/internal/InternalEditor.g:29933:12: 'a' .. 'z'
                     {
                     matchRange('a','z'); 
 
                     }
                     break;
                 case 2 :
-                    // ../com.euclideanspace.spad.ui/src-gen/com/euclideanspace/spad/ui/contentassist/antlr/internal/InternalEditor.g:29210:21: 'A' .. 'Z'
+                    // ../com.euclideanspace.spad.ui/src-gen/com/euclideanspace/spad/ui/contentassist/antlr/internal/InternalEditor.g:29933:21: 'A' .. 'Z'
                     {
                     matchRange('A','Z'); 
 
                     }
                     break;
                 case 3 :
-                    // ../com.euclideanspace.spad.ui/src-gen/com/euclideanspace/spad/ui/contentassist/antlr/internal/InternalEditor.g:29210:30: '_' .
+                    // ../com.euclideanspace.spad.ui/src-gen/com/euclideanspace/spad/ui/contentassist/antlr/internal/InternalEditor.g:29933:30: '_' .
                     {
                     match('_'); 
                     matchAny(); 
@@ -1091,7 +1091,7 @@ public class InternalEditorLexer extends Lexer {
 
             }
 
-            // ../com.euclideanspace.spad.ui/src-gen/com/euclideanspace/spad/ui/contentassist/antlr/internal/InternalEditor.g:29210:37: ( 'a' .. 'z' | 'A' .. 'Z' | '_' . | '0' .. '9' )*
+            // ../com.euclideanspace.spad.ui/src-gen/com/euclideanspace/spad/ui/contentassist/antlr/internal/InternalEditor.g:29933:37: ( 'a' .. 'z' | 'A' .. 'Z' | '_' . | '0' .. '9' )*
             loop2:
             do {
                 int alt2=5;
@@ -1180,21 +1180,21 @@ public class InternalEditorLexer extends Lexer {
 
                 switch (alt2) {
             	case 1 :
-            	    // ../com.euclideanspace.spad.ui/src-gen/com/euclideanspace/spad/ui/contentassist/antlr/internal/InternalEditor.g:29210:38: 'a' .. 'z'
+            	    // ../com.euclideanspace.spad.ui/src-gen/com/euclideanspace/spad/ui/contentassist/antlr/internal/InternalEditor.g:29933:38: 'a' .. 'z'
             	    {
             	    matchRange('a','z'); 
 
             	    }
             	    break;
             	case 2 :
-            	    // ../com.euclideanspace.spad.ui/src-gen/com/euclideanspace/spad/ui/contentassist/antlr/internal/InternalEditor.g:29210:47: 'A' .. 'Z'
+            	    // ../com.euclideanspace.spad.ui/src-gen/com/euclideanspace/spad/ui/contentassist/antlr/internal/InternalEditor.g:29933:47: 'A' .. 'Z'
             	    {
             	    matchRange('A','Z'); 
 
             	    }
             	    break;
             	case 3 :
-            	    // ../com.euclideanspace.spad.ui/src-gen/com/euclideanspace/spad/ui/contentassist/antlr/internal/InternalEditor.g:29210:56: '_' .
+            	    // ../com.euclideanspace.spad.ui/src-gen/com/euclideanspace/spad/ui/contentassist/antlr/internal/InternalEditor.g:29933:56: '_' .
             	    {
             	    match('_'); 
             	    matchAny(); 
@@ -1202,7 +1202,7 @@ public class InternalEditorLexer extends Lexer {
             	    }
             	    break;
             	case 4 :
-            	    // ../com.euclideanspace.spad.ui/src-gen/com/euclideanspace/spad/ui/contentassist/antlr/internal/InternalEditor.g:29210:62: '0' .. '9'
+            	    // ../com.euclideanspace.spad.ui/src-gen/com/euclideanspace/spad/ui/contentassist/antlr/internal/InternalEditor.g:29933:62: '0' .. '9'
             	    {
             	    matchRange('0','9'); 
 
@@ -1214,7 +1214,7 @@ public class InternalEditorLexer extends Lexer {
                 }
             } while (true);
 
-            // ../com.euclideanspace.spad.ui/src-gen/com/euclideanspace/spad/ui/contentassist/antlr/internal/InternalEditor.g:29210:73: ( '!' )?
+            // ../com.euclideanspace.spad.ui/src-gen/com/euclideanspace/spad/ui/contentassist/antlr/internal/InternalEditor.g:29933:73: ( '!' )?
             int alt3=2;
             int LA3_0 = input.LA(1);
 
@@ -1223,7 +1223,7 @@ public class InternalEditorLexer extends Lexer {
             }
             switch (alt3) {
                 case 1 :
-                    // ../com.euclideanspace.spad.ui/src-gen/com/euclideanspace/spad/ui/contentassist/antlr/internal/InternalEditor.g:29210:73: '!'
+                    // ../com.euclideanspace.spad.ui/src-gen/com/euclideanspace/spad/ui/contentassist/antlr/internal/InternalEditor.g:29933:73: '!'
                     {
                     match('!'); 
 
@@ -1232,7 +1232,7 @@ public class InternalEditorLexer extends Lexer {
 
             }
 
-            // ../com.euclideanspace.spad.ui/src-gen/com/euclideanspace/spad/ui/contentassist/antlr/internal/InternalEditor.g:29210:78: ( '?' )?
+            // ../com.euclideanspace.spad.ui/src-gen/com/euclideanspace/spad/ui/contentassist/antlr/internal/InternalEditor.g:29933:78: ( '?' )?
             int alt4=2;
             int LA4_0 = input.LA(1);
 
@@ -1241,7 +1241,7 @@ public class InternalEditorLexer extends Lexer {
             }
             switch (alt4) {
                 case 1 :
-                    // ../com.euclideanspace.spad.ui/src-gen/com/euclideanspace/spad/ui/contentassist/antlr/internal/InternalEditor.g:29210:78: '?'
+                    // ../com.euclideanspace.spad.ui/src-gen/com/euclideanspace/spad/ui/contentassist/antlr/internal/InternalEditor.g:29933:78: '?'
                     {
                     match('?'); 
 
@@ -1266,10 +1266,10 @@ public class InternalEditorLexer extends Lexer {
         try {
             int _type = RULE_WS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.euclideanspace.spad.ui/src-gen/com/euclideanspace/spad/ui/contentassist/antlr/internal/InternalEditor.g:29212:9: ( ( ' ' | '\\t' )+ )
-            // ../com.euclideanspace.spad.ui/src-gen/com/euclideanspace/spad/ui/contentassist/antlr/internal/InternalEditor.g:29212:11: ( ' ' | '\\t' )+
+            // ../com.euclideanspace.spad.ui/src-gen/com/euclideanspace/spad/ui/contentassist/antlr/internal/InternalEditor.g:29935:9: ( ( ' ' | '\\t' )+ )
+            // ../com.euclideanspace.spad.ui/src-gen/com/euclideanspace/spad/ui/contentassist/antlr/internal/InternalEditor.g:29935:11: ( ' ' | '\\t' )+
             {
-            // ../com.euclideanspace.spad.ui/src-gen/com/euclideanspace/spad/ui/contentassist/antlr/internal/InternalEditor.g:29212:11: ( ' ' | '\\t' )+
+            // ../com.euclideanspace.spad.ui/src-gen/com/euclideanspace/spad/ui/contentassist/antlr/internal/InternalEditor.g:29935:11: ( ' ' | '\\t' )+
             int cnt5=0;
             loop5:
             do {
@@ -1323,8 +1323,8 @@ public class InternalEditorLexer extends Lexer {
         try {
             int _type = RULE_NL;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.euclideanspace.spad.ui/src-gen/com/euclideanspace/spad/ui/contentassist/antlr/internal/InternalEditor.g:29214:9: ( ( '\\r' | '\\n' ) )
-            // ../com.euclideanspace.spad.ui/src-gen/com/euclideanspace/spad/ui/contentassist/antlr/internal/InternalEditor.g:29214:11: ( '\\r' | '\\n' )
+            // ../com.euclideanspace.spad.ui/src-gen/com/euclideanspace/spad/ui/contentassist/antlr/internal/InternalEditor.g:29937:9: ( ( '\\r' | '\\n' ) )
+            // ../com.euclideanspace.spad.ui/src-gen/com/euclideanspace/spad/ui/contentassist/antlr/internal/InternalEditor.g:29937:11: ( '\\r' | '\\n' )
             {
             if ( input.LA(1)=='\n'||input.LA(1)=='\r' ) {
                 input.consume();
@@ -1351,10 +1351,10 @@ public class InternalEditorLexer extends Lexer {
         try {
             int _type = RULE_SL_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.euclideanspace.spad.ui/src-gen/com/euclideanspace/spad/ui/contentassist/antlr/internal/InternalEditor.g:29216:17: ( ( '--' | '++' ) (~ ( ( '\\n' | '\\r' ) ) )* )
-            // ../com.euclideanspace.spad.ui/src-gen/com/euclideanspace/spad/ui/contentassist/antlr/internal/InternalEditor.g:29216:19: ( '--' | '++' ) (~ ( ( '\\n' | '\\r' ) ) )*
+            // ../com.euclideanspace.spad.ui/src-gen/com/euclideanspace/spad/ui/contentassist/antlr/internal/InternalEditor.g:29939:17: ( ( '--' | '++' ) (~ ( ( '\\n' | '\\r' ) ) )* )
+            // ../com.euclideanspace.spad.ui/src-gen/com/euclideanspace/spad/ui/contentassist/antlr/internal/InternalEditor.g:29939:19: ( '--' | '++' ) (~ ( ( '\\n' | '\\r' ) ) )*
             {
-            // ../com.euclideanspace.spad.ui/src-gen/com/euclideanspace/spad/ui/contentassist/antlr/internal/InternalEditor.g:29216:19: ( '--' | '++' )
+            // ../com.euclideanspace.spad.ui/src-gen/com/euclideanspace/spad/ui/contentassist/antlr/internal/InternalEditor.g:29939:19: ( '--' | '++' )
             int alt6=2;
             int LA6_0 = input.LA(1);
 
@@ -1372,7 +1372,7 @@ public class InternalEditorLexer extends Lexer {
             }
             switch (alt6) {
                 case 1 :
-                    // ../com.euclideanspace.spad.ui/src-gen/com/euclideanspace/spad/ui/contentassist/antlr/internal/InternalEditor.g:29216:20: '--'
+                    // ../com.euclideanspace.spad.ui/src-gen/com/euclideanspace/spad/ui/contentassist/antlr/internal/InternalEditor.g:29939:20: '--'
                     {
                     match("--"); 
 
@@ -1380,7 +1380,7 @@ public class InternalEditorLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // ../com.euclideanspace.spad.ui/src-gen/com/euclideanspace/spad/ui/contentassist/antlr/internal/InternalEditor.g:29216:25: '++'
+                    // ../com.euclideanspace.spad.ui/src-gen/com/euclideanspace/spad/ui/contentassist/antlr/internal/InternalEditor.g:29939:25: '++'
                     {
                     match("++"); 
 
@@ -1390,7 +1390,7 @@ public class InternalEditorLexer extends Lexer {
 
             }
 
-            // ../com.euclideanspace.spad.ui/src-gen/com/euclideanspace/spad/ui/contentassist/antlr/internal/InternalEditor.g:29216:31: (~ ( ( '\\n' | '\\r' ) ) )*
+            // ../com.euclideanspace.spad.ui/src-gen/com/euclideanspace/spad/ui/contentassist/antlr/internal/InternalEditor.g:29939:31: (~ ( ( '\\n' | '\\r' ) ) )*
             loop7:
             do {
                 int alt7=2;
@@ -1403,7 +1403,7 @@ public class InternalEditorLexer extends Lexer {
 
                 switch (alt7) {
             	case 1 :
-            	    // ../com.euclideanspace.spad.ui/src-gen/com/euclideanspace/spad/ui/contentassist/antlr/internal/InternalEditor.g:29216:31: ~ ( ( '\\n' | '\\r' ) )
+            	    // ../com.euclideanspace.spad.ui/src-gen/com/euclideanspace/spad/ui/contentassist/antlr/internal/InternalEditor.g:29939:31: ~ ( ( '\\n' | '\\r' ) )
             	    {
             	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='\t')||(input.LA(1)>='\u000B' && input.LA(1)<='\f')||(input.LA(1)>='\u000E' && input.LA(1)<='\uFFFF') ) {
             	        input.consume();
@@ -1439,12 +1439,12 @@ public class InternalEditorLexer extends Lexer {
         try {
             int _type = RULE_MACROVALUE;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.euclideanspace.spad.ui/src-gen/com/euclideanspace/spad/ui/contentassist/antlr/internal/InternalEditor.g:29218:17: ( '===>' (~ ( ( '\\n' | '\\r' ) ) )* )
-            // ../com.euclideanspace.spad.ui/src-gen/com/euclideanspace/spad/ui/contentassist/antlr/internal/InternalEditor.g:29218:19: '===>' (~ ( ( '\\n' | '\\r' ) ) )*
+            // ../com.euclideanspace.spad.ui/src-gen/com/euclideanspace/spad/ui/contentassist/antlr/internal/InternalEditor.g:29941:17: ( '===>' (~ ( ( '\\n' | '\\r' ) ) )* )
+            // ../com.euclideanspace.spad.ui/src-gen/com/euclideanspace/spad/ui/contentassist/antlr/internal/InternalEditor.g:29941:19: '===>' (~ ( ( '\\n' | '\\r' ) ) )*
             {
             match("===>"); 
 
-            // ../com.euclideanspace.spad.ui/src-gen/com/euclideanspace/spad/ui/contentassist/antlr/internal/InternalEditor.g:29218:26: (~ ( ( '\\n' | '\\r' ) ) )*
+            // ../com.euclideanspace.spad.ui/src-gen/com/euclideanspace/spad/ui/contentassist/antlr/internal/InternalEditor.g:29941:26: (~ ( ( '\\n' | '\\r' ) ) )*
             loop8:
             do {
                 int alt8=2;
@@ -1457,7 +1457,7 @@ public class InternalEditorLexer extends Lexer {
 
                 switch (alt8) {
             	case 1 :
-            	    // ../com.euclideanspace.spad.ui/src-gen/com/euclideanspace/spad/ui/contentassist/antlr/internal/InternalEditor.g:29218:26: ~ ( ( '\\n' | '\\r' ) )
+            	    // ../com.euclideanspace.spad.ui/src-gen/com/euclideanspace/spad/ui/contentassist/antlr/internal/InternalEditor.g:29941:26: ~ ( ( '\\n' | '\\r' ) )
             	    {
             	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='\t')||(input.LA(1)>='\u000B' && input.LA(1)<='\f')||(input.LA(1)>='\u000E' && input.LA(1)<='\uFFFF') ) {
             	        input.consume();
@@ -1493,11 +1493,11 @@ public class InternalEditorLexer extends Lexer {
         try {
             int _type = RULE_STRING;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.euclideanspace.spad.ui/src-gen/com/euclideanspace/spad/ui/contentassist/antlr/internal/InternalEditor.g:29220:13: ( '\"' (~ ( '\"' ) )* '\"' )
-            // ../com.euclideanspace.spad.ui/src-gen/com/euclideanspace/spad/ui/contentassist/antlr/internal/InternalEditor.g:29220:15: '\"' (~ ( '\"' ) )* '\"'
+            // ../com.euclideanspace.spad.ui/src-gen/com/euclideanspace/spad/ui/contentassist/antlr/internal/InternalEditor.g:29943:13: ( '\"' (~ ( '\"' ) )* '\"' )
+            // ../com.euclideanspace.spad.ui/src-gen/com/euclideanspace/spad/ui/contentassist/antlr/internal/InternalEditor.g:29943:15: '\"' (~ ( '\"' ) )* '\"'
             {
             match('\"'); 
-            // ../com.euclideanspace.spad.ui/src-gen/com/euclideanspace/spad/ui/contentassist/antlr/internal/InternalEditor.g:29220:19: (~ ( '\"' ) )*
+            // ../com.euclideanspace.spad.ui/src-gen/com/euclideanspace/spad/ui/contentassist/antlr/internal/InternalEditor.g:29943:19: (~ ( '\"' ) )*
             loop9:
             do {
                 int alt9=2;
@@ -1510,7 +1510,7 @@ public class InternalEditorLexer extends Lexer {
 
                 switch (alt9) {
             	case 1 :
-            	    // ../com.euclideanspace.spad.ui/src-gen/com/euclideanspace/spad/ui/contentassist/antlr/internal/InternalEditor.g:29220:19: ~ ( '\"' )
+            	    // ../com.euclideanspace.spad.ui/src-gen/com/euclideanspace/spad/ui/contentassist/antlr/internal/InternalEditor.g:29943:19: ~ ( '\"' )
             	    {
             	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='!')||(input.LA(1)>='#' && input.LA(1)<='\uFFFF') ) {
             	        input.consume();
@@ -1547,10 +1547,10 @@ public class InternalEditorLexer extends Lexer {
         try {
             int _type = RULE_INT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.euclideanspace.spad.ui/src-gen/com/euclideanspace/spad/ui/contentassist/antlr/internal/InternalEditor.g:29222:10: ( ( '0' .. '9' )+ )
-            // ../com.euclideanspace.spad.ui/src-gen/com/euclideanspace/spad/ui/contentassist/antlr/internal/InternalEditor.g:29222:12: ( '0' .. '9' )+
+            // ../com.euclideanspace.spad.ui/src-gen/com/euclideanspace/spad/ui/contentassist/antlr/internal/InternalEditor.g:29945:10: ( ( '0' .. '9' )+ )
+            // ../com.euclideanspace.spad.ui/src-gen/com/euclideanspace/spad/ui/contentassist/antlr/internal/InternalEditor.g:29945:12: ( '0' .. '9' )+
             {
-            // ../com.euclideanspace.spad.ui/src-gen/com/euclideanspace/spad/ui/contentassist/antlr/internal/InternalEditor.g:29222:12: ( '0' .. '9' )+
+            // ../com.euclideanspace.spad.ui/src-gen/com/euclideanspace/spad/ui/contentassist/antlr/internal/InternalEditor.g:29945:12: ( '0' .. '9' )+
             int cnt10=0;
             loop10:
             do {
@@ -1564,7 +1564,7 @@ public class InternalEditorLexer extends Lexer {
 
                 switch (alt10) {
             	case 1 :
-            	    // ../com.euclideanspace.spad.ui/src-gen/com/euclideanspace/spad/ui/contentassist/antlr/internal/InternalEditor.g:29222:13: '0' .. '9'
+            	    // ../com.euclideanspace.spad.ui/src-gen/com/euclideanspace/spad/ui/contentassist/antlr/internal/InternalEditor.g:29945:13: '0' .. '9'
             	    {
             	    matchRange('0','9'); 
 
@@ -1596,8 +1596,8 @@ public class InternalEditorLexer extends Lexer {
         try {
             int _type = RULE_LPAREN;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.euclideanspace.spad.ui/src-gen/com/euclideanspace/spad/ui/contentassist/antlr/internal/InternalEditor.g:29224:13: ( '(' )
-            // ../com.euclideanspace.spad.ui/src-gen/com/euclideanspace/spad/ui/contentassist/antlr/internal/InternalEditor.g:29224:15: '('
+            // ../com.euclideanspace.spad.ui/src-gen/com/euclideanspace/spad/ui/contentassist/antlr/internal/InternalEditor.g:29947:13: ( '(' )
+            // ../com.euclideanspace.spad.ui/src-gen/com/euclideanspace/spad/ui/contentassist/antlr/internal/InternalEditor.g:29947:15: '('
             {
             match('('); 
 
@@ -1616,8 +1616,8 @@ public class InternalEditorLexer extends Lexer {
         try {
             int _type = RULE_RPAREN;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.euclideanspace.spad.ui/src-gen/com/euclideanspace/spad/ui/contentassist/antlr/internal/InternalEditor.g:29226:13: ( ')' )
-            // ../com.euclideanspace.spad.ui/src-gen/com/euclideanspace/spad/ui/contentassist/antlr/internal/InternalEditor.g:29226:15: ')'
+            // ../com.euclideanspace.spad.ui/src-gen/com/euclideanspace/spad/ui/contentassist/antlr/internal/InternalEditor.g:29949:13: ( ')' )
+            // ../com.euclideanspace.spad.ui/src-gen/com/euclideanspace/spad/ui/contentassist/antlr/internal/InternalEditor.g:29949:15: ')'
             {
             match(')'); 
 
@@ -1636,8 +1636,8 @@ public class InternalEditorLexer extends Lexer {
         try {
             int _type = RULE_LBRACE;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.euclideanspace.spad.ui/src-gen/com/euclideanspace/spad/ui/contentassist/antlr/internal/InternalEditor.g:29228:13: ( '{' )
-            // ../com.euclideanspace.spad.ui/src-gen/com/euclideanspace/spad/ui/contentassist/antlr/internal/InternalEditor.g:29228:15: '{'
+            // ../com.euclideanspace.spad.ui/src-gen/com/euclideanspace/spad/ui/contentassist/antlr/internal/InternalEditor.g:29951:13: ( '{' )
+            // ../com.euclideanspace.spad.ui/src-gen/com/euclideanspace/spad/ui/contentassist/antlr/internal/InternalEditor.g:29951:15: '{'
             {
             match('{'); 
 
@@ -1656,8 +1656,8 @@ public class InternalEditorLexer extends Lexer {
         try {
             int _type = RULE_RBRACE;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.euclideanspace.spad.ui/src-gen/com/euclideanspace/spad/ui/contentassist/antlr/internal/InternalEditor.g:29230:13: ( '}' )
-            // ../com.euclideanspace.spad.ui/src-gen/com/euclideanspace/spad/ui/contentassist/antlr/internal/InternalEditor.g:29230:15: '}'
+            // ../com.euclideanspace.spad.ui/src-gen/com/euclideanspace/spad/ui/contentassist/antlr/internal/InternalEditor.g:29953:13: ( '}' )
+            // ../com.euclideanspace.spad.ui/src-gen/com/euclideanspace/spad/ui/contentassist/antlr/internal/InternalEditor.g:29953:15: '}'
             {
             match('}'); 
 
@@ -1676,8 +1676,8 @@ public class InternalEditorLexer extends Lexer {
         try {
             int _type = RULE_LBRACKET;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.euclideanspace.spad.ui/src-gen/com/euclideanspace/spad/ui/contentassist/antlr/internal/InternalEditor.g:29232:15: ( '[' )
-            // ../com.euclideanspace.spad.ui/src-gen/com/euclideanspace/spad/ui/contentassist/antlr/internal/InternalEditor.g:29232:17: '['
+            // ../com.euclideanspace.spad.ui/src-gen/com/euclideanspace/spad/ui/contentassist/antlr/internal/InternalEditor.g:29955:15: ( '[' )
+            // ../com.euclideanspace.spad.ui/src-gen/com/euclideanspace/spad/ui/contentassist/antlr/internal/InternalEditor.g:29955:17: '['
             {
             match('['); 
 
@@ -1696,8 +1696,8 @@ public class InternalEditorLexer extends Lexer {
         try {
             int _type = RULE_RBRACKET;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.euclideanspace.spad.ui/src-gen/com/euclideanspace/spad/ui/contentassist/antlr/internal/InternalEditor.g:29234:15: ( ']' )
-            // ../com.euclideanspace.spad.ui/src-gen/com/euclideanspace/spad/ui/contentassist/antlr/internal/InternalEditor.g:29234:17: ']'
+            // ../com.euclideanspace.spad.ui/src-gen/com/euclideanspace/spad/ui/contentassist/antlr/internal/InternalEditor.g:29957:15: ( ']' )
+            // ../com.euclideanspace.spad.ui/src-gen/com/euclideanspace/spad/ui/contentassist/antlr/internal/InternalEditor.g:29957:17: ']'
             {
             match(']'); 
 
@@ -1716,8 +1716,8 @@ public class InternalEditorLexer extends Lexer {
         try {
             int _type = RULE_OANGLE;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.euclideanspace.spad.ui/src-gen/com/euclideanspace/spad/ui/contentassist/antlr/internal/InternalEditor.g:29236:13: ( '<<' )
-            // ../com.euclideanspace.spad.ui/src-gen/com/euclideanspace/spad/ui/contentassist/antlr/internal/InternalEditor.g:29236:15: '<<'
+            // ../com.euclideanspace.spad.ui/src-gen/com/euclideanspace/spad/ui/contentassist/antlr/internal/InternalEditor.g:29959:13: ( '<<' )
+            // ../com.euclideanspace.spad.ui/src-gen/com/euclideanspace/spad/ui/contentassist/antlr/internal/InternalEditor.g:29959:15: '<<'
             {
             match("<<"); 
 
@@ -1737,8 +1737,8 @@ public class InternalEditorLexer extends Lexer {
         try {
             int _type = RULE_CANGLE;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.euclideanspace.spad.ui/src-gen/com/euclideanspace/spad/ui/contentassist/antlr/internal/InternalEditor.g:29238:13: ( '>>' )
-            // ../com.euclideanspace.spad.ui/src-gen/com/euclideanspace/spad/ui/contentassist/antlr/internal/InternalEditor.g:29238:15: '>>'
+            // ../com.euclideanspace.spad.ui/src-gen/com/euclideanspace/spad/ui/contentassist/antlr/internal/InternalEditor.g:29961:13: ( '>>' )
+            // ../com.euclideanspace.spad.ui/src-gen/com/euclideanspace/spad/ui/contentassist/antlr/internal/InternalEditor.g:29961:15: '>>'
             {
             match(">>"); 
 
@@ -1758,8 +1758,8 @@ public class InternalEditorLexer extends Lexer {
         try {
             int _type = RULE_MDEF;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.euclideanspace.spad.ui/src-gen/com/euclideanspace/spad/ui/contentassist/antlr/internal/InternalEditor.g:29240:11: ( '==>' )
-            // ../com.euclideanspace.spad.ui/src-gen/com/euclideanspace/spad/ui/contentassist/antlr/internal/InternalEditor.g:29240:13: '==>'
+            // ../com.euclideanspace.spad.ui/src-gen/com/euclideanspace/spad/ui/contentassist/antlr/internal/InternalEditor.g:29963:11: ( '==>' )
+            // ../com.euclideanspace.spad.ui/src-gen/com/euclideanspace/spad/ui/contentassist/antlr/internal/InternalEditor.g:29963:13: '==>'
             {
             match("==>"); 
 
@@ -1779,8 +1779,8 @@ public class InternalEditorLexer extends Lexer {
         try {
             int _type = RULE_BAR;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.euclideanspace.spad.ui/src-gen/com/euclideanspace/spad/ui/contentassist/antlr/internal/InternalEditor.g:29242:10: ( '|' )
-            // ../com.euclideanspace.spad.ui/src-gen/com/euclideanspace/spad/ui/contentassist/antlr/internal/InternalEditor.g:29242:12: '|'
+            // ../com.euclideanspace.spad.ui/src-gen/com/euclideanspace/spad/ui/contentassist/antlr/internal/InternalEditor.g:29965:10: ( '|' )
+            // ../com.euclideanspace.spad.ui/src-gen/com/euclideanspace/spad/ui/contentassist/antlr/internal/InternalEditor.g:29965:12: '|'
             {
             match('|'); 
 
@@ -1799,8 +1799,8 @@ public class InternalEditorLexer extends Lexer {
         try {
             int _type = RULE_DOT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.euclideanspace.spad.ui/src-gen/com/euclideanspace/spad/ui/contentassist/antlr/internal/InternalEditor.g:29244:10: ( '.' )
-            // ../com.euclideanspace.spad.ui/src-gen/com/euclideanspace/spad/ui/contentassist/antlr/internal/InternalEditor.g:29244:12: '.'
+            // ../com.euclideanspace.spad.ui/src-gen/com/euclideanspace/spad/ui/contentassist/antlr/internal/InternalEditor.g:29967:10: ( '.' )
+            // ../com.euclideanspace.spad.ui/src-gen/com/euclideanspace/spad/ui/contentassist/antlr/internal/InternalEditor.g:29967:12: '.'
             {
             match('.'); 
 
@@ -1819,8 +1819,8 @@ public class InternalEditorLexer extends Lexer {
         try {
             int _type = RULE_COERCE;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.euclideanspace.spad.ui/src-gen/com/euclideanspace/spad/ui/contentassist/antlr/internal/InternalEditor.g:29246:13: ( '::' )
-            // ../com.euclideanspace.spad.ui/src-gen/com/euclideanspace/spad/ui/contentassist/antlr/internal/InternalEditor.g:29246:15: '::'
+            // ../com.euclideanspace.spad.ui/src-gen/com/euclideanspace/spad/ui/contentassist/antlr/internal/InternalEditor.g:29969:13: ( '::' )
+            // ../com.euclideanspace.spad.ui/src-gen/com/euclideanspace/spad/ui/contentassist/antlr/internal/InternalEditor.g:29969:15: '::'
             {
             match("::"); 
 
@@ -1840,8 +1840,8 @@ public class InternalEditorLexer extends Lexer {
         try {
             int _type = RULE_COLON;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.euclideanspace.spad.ui/src-gen/com/euclideanspace/spad/ui/contentassist/antlr/internal/InternalEditor.g:29248:12: ( ':' )
-            // ../com.euclideanspace.spad.ui/src-gen/com/euclideanspace/spad/ui/contentassist/antlr/internal/InternalEditor.g:29248:14: ':'
+            // ../com.euclideanspace.spad.ui/src-gen/com/euclideanspace/spad/ui/contentassist/antlr/internal/InternalEditor.g:29971:12: ( ':' )
+            // ../com.euclideanspace.spad.ui/src-gen/com/euclideanspace/spad/ui/contentassist/antlr/internal/InternalEditor.g:29971:14: ':'
             {
             match(':'); 
 
@@ -1860,8 +1860,8 @@ public class InternalEditorLexer extends Lexer {
         try {
             int _type = RULE_AT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.euclideanspace.spad.ui/src-gen/com/euclideanspace/spad/ui/contentassist/antlr/internal/InternalEditor.g:29250:9: ( '@' )
-            // ../com.euclideanspace.spad.ui/src-gen/com/euclideanspace/spad/ui/contentassist/antlr/internal/InternalEditor.g:29250:11: '@'
+            // ../com.euclideanspace.spad.ui/src-gen/com/euclideanspace/spad/ui/contentassist/antlr/internal/InternalEditor.g:29973:9: ( '@' )
+            // ../com.euclideanspace.spad.ui/src-gen/com/euclideanspace/spad/ui/contentassist/antlr/internal/InternalEditor.g:29973:11: '@'
             {
             match('@'); 
 
@@ -1880,8 +1880,8 @@ public class InternalEditorLexer extends Lexer {
         try {
             int _type = RULE_COMMA;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.euclideanspace.spad.ui/src-gen/com/euclideanspace/spad/ui/contentassist/antlr/internal/InternalEditor.g:29252:12: ( ',' )
-            // ../com.euclideanspace.spad.ui/src-gen/com/euclideanspace/spad/ui/contentassist/antlr/internal/InternalEditor.g:29252:14: ','
+            // ../com.euclideanspace.spad.ui/src-gen/com/euclideanspace/spad/ui/contentassist/antlr/internal/InternalEditor.g:29975:12: ( ',' )
+            // ../com.euclideanspace.spad.ui/src-gen/com/euclideanspace/spad/ui/contentassist/antlr/internal/InternalEditor.g:29975:14: ','
             {
             match(','); 
 
@@ -1900,8 +1900,8 @@ public class InternalEditorLexer extends Lexer {
         try {
             int _type = RULE_SEMICOLON;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.euclideanspace.spad.ui/src-gen/com/euclideanspace/spad/ui/contentassist/antlr/internal/InternalEditor.g:29254:16: ( ';' )
-            // ../com.euclideanspace.spad.ui/src-gen/com/euclideanspace/spad/ui/contentassist/antlr/internal/InternalEditor.g:29254:18: ';'
+            // ../com.euclideanspace.spad.ui/src-gen/com/euclideanspace/spad/ui/contentassist/antlr/internal/InternalEditor.g:29977:16: ( ';' )
+            // ../com.euclideanspace.spad.ui/src-gen/com/euclideanspace/spad/ui/contentassist/antlr/internal/InternalEditor.g:29977:18: ';'
             {
             match(';'); 
 
@@ -1920,8 +1920,8 @@ public class InternalEditorLexer extends Lexer {
         try {
             int _type = RULE_POWER;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.euclideanspace.spad.ui/src-gen/com/euclideanspace/spad/ui/contentassist/antlr/internal/InternalEditor.g:29256:12: ( '**' )
-            // ../com.euclideanspace.spad.ui/src-gen/com/euclideanspace/spad/ui/contentassist/antlr/internal/InternalEditor.g:29256:14: '**'
+            // ../com.euclideanspace.spad.ui/src-gen/com/euclideanspace/spad/ui/contentassist/antlr/internal/InternalEditor.g:29979:12: ( '**' )
+            // ../com.euclideanspace.spad.ui/src-gen/com/euclideanspace/spad/ui/contentassist/antlr/internal/InternalEditor.g:29979:14: '**'
             {
             match("**"); 
 
@@ -1941,8 +1941,8 @@ public class InternalEditorLexer extends Lexer {
         try {
             int _type = RULE_TIMES;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.euclideanspace.spad.ui/src-gen/com/euclideanspace/spad/ui/contentassist/antlr/internal/InternalEditor.g:29258:12: ( '*' )
-            // ../com.euclideanspace.spad.ui/src-gen/com/euclideanspace/spad/ui/contentassist/antlr/internal/InternalEditor.g:29258:14: '*'
+            // ../com.euclideanspace.spad.ui/src-gen/com/euclideanspace/spad/ui/contentassist/antlr/internal/InternalEditor.g:29981:12: ( '*' )
+            // ../com.euclideanspace.spad.ui/src-gen/com/euclideanspace/spad/ui/contentassist/antlr/internal/InternalEditor.g:29981:14: '*'
             {
             match('*'); 
 
@@ -1961,8 +1961,8 @@ public class InternalEditorLexer extends Lexer {
         try {
             int _type = RULE_PLUS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.euclideanspace.spad.ui/src-gen/com/euclideanspace/spad/ui/contentassist/antlr/internal/InternalEditor.g:29260:11: ( '+' )
-            // ../com.euclideanspace.spad.ui/src-gen/com/euclideanspace/spad/ui/contentassist/antlr/internal/InternalEditor.g:29260:13: '+'
+            // ../com.euclideanspace.spad.ui/src-gen/com/euclideanspace/spad/ui/contentassist/antlr/internal/InternalEditor.g:29983:11: ( '+' )
+            // ../com.euclideanspace.spad.ui/src-gen/com/euclideanspace/spad/ui/contentassist/antlr/internal/InternalEditor.g:29983:13: '+'
             {
             match('+'); 
 
@@ -1981,8 +1981,8 @@ public class InternalEditorLexer extends Lexer {
         try {
             int _type = RULE_MINUS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.euclideanspace.spad.ui/src-gen/com/euclideanspace/spad/ui/contentassist/antlr/internal/InternalEditor.g:29262:12: ( '-' )
-            // ../com.euclideanspace.spad.ui/src-gen/com/euclideanspace/spad/ui/contentassist/antlr/internal/InternalEditor.g:29262:14: '-'
+            // ../com.euclideanspace.spad.ui/src-gen/com/euclideanspace/spad/ui/contentassist/antlr/internal/InternalEditor.g:29985:12: ( '-' )
+            // ../com.euclideanspace.spad.ui/src-gen/com/euclideanspace/spad/ui/contentassist/antlr/internal/InternalEditor.g:29985:14: '-'
             {
             match('-'); 
 
@@ -2001,8 +2001,8 @@ public class InternalEditorLexer extends Lexer {
         try {
             int _type = RULE_LT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.euclideanspace.spad.ui/src-gen/com/euclideanspace/spad/ui/contentassist/antlr/internal/InternalEditor.g:29264:9: ( '<' )
-            // ../com.euclideanspace.spad.ui/src-gen/com/euclideanspace/spad/ui/contentassist/antlr/internal/InternalEditor.g:29264:11: '<'
+            // ../com.euclideanspace.spad.ui/src-gen/com/euclideanspace/spad/ui/contentassist/antlr/internal/InternalEditor.g:29987:9: ( '<' )
+            // ../com.euclideanspace.spad.ui/src-gen/com/euclideanspace/spad/ui/contentassist/antlr/internal/InternalEditor.g:29987:11: '<'
             {
             match('<'); 
 
@@ -2021,8 +2021,8 @@ public class InternalEditorLexer extends Lexer {
         try {
             int _type = RULE_GT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.euclideanspace.spad.ui/src-gen/com/euclideanspace/spad/ui/contentassist/antlr/internal/InternalEditor.g:29266:9: ( '>' )
-            // ../com.euclideanspace.spad.ui/src-gen/com/euclideanspace/spad/ui/contentassist/antlr/internal/InternalEditor.g:29266:11: '>'
+            // ../com.euclideanspace.spad.ui/src-gen/com/euclideanspace/spad/ui/contentassist/antlr/internal/InternalEditor.g:29989:9: ( '>' )
+            // ../com.euclideanspace.spad.ui/src-gen/com/euclideanspace/spad/ui/contentassist/antlr/internal/InternalEditor.g:29989:11: '>'
             {
             match('>'); 
 
@@ -2041,8 +2041,8 @@ public class InternalEditorLexer extends Lexer {
         try {
             int _type = RULE_LE;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.euclideanspace.spad.ui/src-gen/com/euclideanspace/spad/ui/contentassist/antlr/internal/InternalEditor.g:29268:9: ( '<=' )
-            // ../com.euclideanspace.spad.ui/src-gen/com/euclideanspace/spad/ui/contentassist/antlr/internal/InternalEditor.g:29268:11: '<='
+            // ../com.euclideanspace.spad.ui/src-gen/com/euclideanspace/spad/ui/contentassist/antlr/internal/InternalEditor.g:29991:9: ( '<=' )
+            // ../com.euclideanspace.spad.ui/src-gen/com/euclideanspace/spad/ui/contentassist/antlr/internal/InternalEditor.g:29991:11: '<='
             {
             match("<="); 
 
@@ -2062,8 +2062,8 @@ public class InternalEditorLexer extends Lexer {
         try {
             int _type = RULE_GE;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.euclideanspace.spad.ui/src-gen/com/euclideanspace/spad/ui/contentassist/antlr/internal/InternalEditor.g:29270:9: ( '>=' )
-            // ../com.euclideanspace.spad.ui/src-gen/com/euclideanspace/spad/ui/contentassist/antlr/internal/InternalEditor.g:29270:11: '>='
+            // ../com.euclideanspace.spad.ui/src-gen/com/euclideanspace/spad/ui/contentassist/antlr/internal/InternalEditor.g:29993:9: ( '>=' )
+            // ../com.euclideanspace.spad.ui/src-gen/com/euclideanspace/spad/ui/contentassist/antlr/internal/InternalEditor.g:29993:11: '>='
             {
             match(">="); 
 
@@ -2083,8 +2083,8 @@ public class InternalEditorLexer extends Lexer {
         try {
             int _type = RULE_EQUAL;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.euclideanspace.spad.ui/src-gen/com/euclideanspace/spad/ui/contentassist/antlr/internal/InternalEditor.g:29272:12: ( '=' )
-            // ../com.euclideanspace.spad.ui/src-gen/com/euclideanspace/spad/ui/contentassist/antlr/internal/InternalEditor.g:29272:14: '='
+            // ../com.euclideanspace.spad.ui/src-gen/com/euclideanspace/spad/ui/contentassist/antlr/internal/InternalEditor.g:29995:12: ( '=' )
+            // ../com.euclideanspace.spad.ui/src-gen/com/euclideanspace/spad/ui/contentassist/antlr/internal/InternalEditor.g:29995:14: '='
             {
             match('='); 
 
@@ -2103,8 +2103,8 @@ public class InternalEditorLexer extends Lexer {
         try {
             int _type = RULE_NOTEQUAL;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.euclideanspace.spad.ui/src-gen/com/euclideanspace/spad/ui/contentassist/antlr/internal/InternalEditor.g:29274:15: ( '~=' )
-            // ../com.euclideanspace.spad.ui/src-gen/com/euclideanspace/spad/ui/contentassist/antlr/internal/InternalEditor.g:29274:17: '~='
+            // ../com.euclideanspace.spad.ui/src-gen/com/euclideanspace/spad/ui/contentassist/antlr/internal/InternalEditor.g:29997:15: ( '~=' )
+            // ../com.euclideanspace.spad.ui/src-gen/com/euclideanspace/spad/ui/contentassist/antlr/internal/InternalEditor.g:29997:17: '~='
             {
             match("~="); 
 
@@ -2124,8 +2124,8 @@ public class InternalEditorLexer extends Lexer {
         try {
             int _type = RULE_TILDE;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.euclideanspace.spad.ui/src-gen/com/euclideanspace/spad/ui/contentassist/antlr/internal/InternalEditor.g:29276:12: ( '~' )
-            // ../com.euclideanspace.spad.ui/src-gen/com/euclideanspace/spad/ui/contentassist/antlr/internal/InternalEditor.g:29276:14: '~'
+            // ../com.euclideanspace.spad.ui/src-gen/com/euclideanspace/spad/ui/contentassist/antlr/internal/InternalEditor.g:29999:12: ( '~' )
+            // ../com.euclideanspace.spad.ui/src-gen/com/euclideanspace/spad/ui/contentassist/antlr/internal/InternalEditor.g:29999:14: '~'
             {
             match('~'); 
 
@@ -2144,8 +2144,8 @@ public class InternalEditorLexer extends Lexer {
         try {
             int _type = RULE_CARAT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.euclideanspace.spad.ui/src-gen/com/euclideanspace/spad/ui/contentassist/antlr/internal/InternalEditor.g:29278:12: ( '^' )
-            // ../com.euclideanspace.spad.ui/src-gen/com/euclideanspace/spad/ui/contentassist/antlr/internal/InternalEditor.g:29278:14: '^'
+            // ../com.euclideanspace.spad.ui/src-gen/com/euclideanspace/spad/ui/contentassist/antlr/internal/InternalEditor.g:30001:12: ( '^' )
+            // ../com.euclideanspace.spad.ui/src-gen/com/euclideanspace/spad/ui/contentassist/antlr/internal/InternalEditor.g:30001:14: '^'
             {
             match('^'); 
 
@@ -2164,8 +2164,8 @@ public class InternalEditorLexer extends Lexer {
         try {
             int _type = RULE_SEG;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.euclideanspace.spad.ui/src-gen/com/euclideanspace/spad/ui/contentassist/antlr/internal/InternalEditor.g:29280:10: ( '..' )
-            // ../com.euclideanspace.spad.ui/src-gen/com/euclideanspace/spad/ui/contentassist/antlr/internal/InternalEditor.g:29280:12: '..'
+            // ../com.euclideanspace.spad.ui/src-gen/com/euclideanspace/spad/ui/contentassist/antlr/internal/InternalEditor.g:30003:10: ( '..' )
+            // ../com.euclideanspace.spad.ui/src-gen/com/euclideanspace/spad/ui/contentassist/antlr/internal/InternalEditor.g:30003:12: '..'
             {
             match(".."); 
 
@@ -2185,8 +2185,8 @@ public class InternalEditorLexer extends Lexer {
         try {
             int _type = RULE_HASH;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.euclideanspace.spad.ui/src-gen/com/euclideanspace/spad/ui/contentassist/antlr/internal/InternalEditor.g:29282:11: ( '#' )
-            // ../com.euclideanspace.spad.ui/src-gen/com/euclideanspace/spad/ui/contentassist/antlr/internal/InternalEditor.g:29282:13: '#'
+            // ../com.euclideanspace.spad.ui/src-gen/com/euclideanspace/spad/ui/contentassist/antlr/internal/InternalEditor.g:30005:11: ( '#' )
+            // ../com.euclideanspace.spad.ui/src-gen/com/euclideanspace/spad/ui/contentassist/antlr/internal/InternalEditor.g:30005:13: '#'
             {
             match('#'); 
 
@@ -2205,8 +2205,8 @@ public class InternalEditorLexer extends Lexer {
         try {
             int _type = RULE_AMPERSAND;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.euclideanspace.spad.ui/src-gen/com/euclideanspace/spad/ui/contentassist/antlr/internal/InternalEditor.g:29284:16: ( '&' )
-            // ../com.euclideanspace.spad.ui/src-gen/com/euclideanspace/spad/ui/contentassist/antlr/internal/InternalEditor.g:29284:18: '&'
+            // ../com.euclideanspace.spad.ui/src-gen/com/euclideanspace/spad/ui/contentassist/antlr/internal/InternalEditor.g:30007:16: ( '&' )
+            // ../com.euclideanspace.spad.ui/src-gen/com/euclideanspace/spad/ui/contentassist/antlr/internal/InternalEditor.g:30007:18: '&'
             {
             match('&'); 
 
@@ -2225,8 +2225,8 @@ public class InternalEditorLexer extends Lexer {
         try {
             int _type = RULE_DOLAR;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.euclideanspace.spad.ui/src-gen/com/euclideanspace/spad/ui/contentassist/antlr/internal/InternalEditor.g:29286:12: ( '$' )
-            // ../com.euclideanspace.spad.ui/src-gen/com/euclideanspace/spad/ui/contentassist/antlr/internal/InternalEditor.g:29286:14: '$'
+            // ../com.euclideanspace.spad.ui/src-gen/com/euclideanspace/spad/ui/contentassist/antlr/internal/InternalEditor.g:30009:12: ( '$' )
+            // ../com.euclideanspace.spad.ui/src-gen/com/euclideanspace/spad/ui/contentassist/antlr/internal/InternalEditor.g:30009:14: '$'
             {
             match('$'); 
 
@@ -2245,8 +2245,8 @@ public class InternalEditorLexer extends Lexer {
         try {
             int _type = RULE_SLASH;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.euclideanspace.spad.ui/src-gen/com/euclideanspace/spad/ui/contentassist/antlr/internal/InternalEditor.g:29288:12: ( '/' )
-            // ../com.euclideanspace.spad.ui/src-gen/com/euclideanspace/spad/ui/contentassist/antlr/internal/InternalEditor.g:29288:14: '/'
+            // ../com.euclideanspace.spad.ui/src-gen/com/euclideanspace/spad/ui/contentassist/antlr/internal/InternalEditor.g:30011:12: ( '/' )
+            // ../com.euclideanspace.spad.ui/src-gen/com/euclideanspace/spad/ui/contentassist/antlr/internal/InternalEditor.g:30011:14: '/'
             {
             match('/'); 
 
@@ -2265,8 +2265,8 @@ public class InternalEditorLexer extends Lexer {
         try {
             int _type = RULE_BACKSLASH;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.euclideanspace.spad.ui/src-gen/com/euclideanspace/spad/ui/contentassist/antlr/internal/InternalEditor.g:29290:16: ( '\\\\' )
-            // ../com.euclideanspace.spad.ui/src-gen/com/euclideanspace/spad/ui/contentassist/antlr/internal/InternalEditor.g:29290:18: '\\\\'
+            // ../com.euclideanspace.spad.ui/src-gen/com/euclideanspace/spad/ui/contentassist/antlr/internal/InternalEditor.g:30013:16: ( '\\\\' )
+            // ../com.euclideanspace.spad.ui/src-gen/com/euclideanspace/spad/ui/contentassist/antlr/internal/InternalEditor.g:30013:18: '\\\\'
             {
             match('\\'); 
 
@@ -2285,8 +2285,8 @@ public class InternalEditorLexer extends Lexer {
         try {
             int _type = RULE_SLASHSLASH;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.euclideanspace.spad.ui/src-gen/com/euclideanspace/spad/ui/contentassist/antlr/internal/InternalEditor.g:29292:17: ( '//' )
-            // ../com.euclideanspace.spad.ui/src-gen/com/euclideanspace/spad/ui/contentassist/antlr/internal/InternalEditor.g:29292:19: '//'
+            // ../com.euclideanspace.spad.ui/src-gen/com/euclideanspace/spad/ui/contentassist/antlr/internal/InternalEditor.g:30015:17: ( '//' )
+            // ../com.euclideanspace.spad.ui/src-gen/com/euclideanspace/spad/ui/contentassist/antlr/internal/InternalEditor.g:30015:19: '//'
             {
             match("//"); 
 
@@ -2306,8 +2306,8 @@ public class InternalEditorLexer extends Lexer {
         try {
             int _type = RULE_BACKSLASHBACKSLASH;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.euclideanspace.spad.ui/src-gen/com/euclideanspace/spad/ui/contentassist/antlr/internal/InternalEditor.g:29294:25: ( '\\\\\\\\' )
-            // ../com.euclideanspace.spad.ui/src-gen/com/euclideanspace/spad/ui/contentassist/antlr/internal/InternalEditor.g:29294:27: '\\\\\\\\'
+            // ../com.euclideanspace.spad.ui/src-gen/com/euclideanspace/spad/ui/contentassist/antlr/internal/InternalEditor.g:30017:25: ( '\\\\\\\\' )
+            // ../com.euclideanspace.spad.ui/src-gen/com/euclideanspace/spad/ui/contentassist/antlr/internal/InternalEditor.g:30017:27: '\\\\\\\\'
             {
             match("\\\\"); 
 
@@ -2327,8 +2327,8 @@ public class InternalEditorLexer extends Lexer {
         try {
             int _type = RULE_SLASHBACKSLASH;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.euclideanspace.spad.ui/src-gen/com/euclideanspace/spad/ui/contentassist/antlr/internal/InternalEditor.g:29296:21: ( '/\\\\' )
-            // ../com.euclideanspace.spad.ui/src-gen/com/euclideanspace/spad/ui/contentassist/antlr/internal/InternalEditor.g:29296:23: '/\\\\'
+            // ../com.euclideanspace.spad.ui/src-gen/com/euclideanspace/spad/ui/contentassist/antlr/internal/InternalEditor.g:30019:21: ( '/\\\\' )
+            // ../com.euclideanspace.spad.ui/src-gen/com/euclideanspace/spad/ui/contentassist/antlr/internal/InternalEditor.g:30019:23: '/\\\\'
             {
             match("/\\"); 
 
@@ -2348,8 +2348,8 @@ public class InternalEditorLexer extends Lexer {
         try {
             int _type = RULE_BACKSLASHSLASH;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.euclideanspace.spad.ui/src-gen/com/euclideanspace/spad/ui/contentassist/antlr/internal/InternalEditor.g:29298:21: ( '\\\\/' )
-            // ../com.euclideanspace.spad.ui/src-gen/com/euclideanspace/spad/ui/contentassist/antlr/internal/InternalEditor.g:29298:23: '\\\\/'
+            // ../com.euclideanspace.spad.ui/src-gen/com/euclideanspace/spad/ui/contentassist/antlr/internal/InternalEditor.g:30021:21: ( '\\\\/' )
+            // ../com.euclideanspace.spad.ui/src-gen/com/euclideanspace/spad/ui/contentassist/antlr/internal/InternalEditor.g:30021:23: '\\\\/'
             {
             match("\\/"); 
 
@@ -2369,8 +2369,8 @@ public class InternalEditorLexer extends Lexer {
         try {
             int _type = RULE_EXIT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.euclideanspace.spad.ui/src-gen/com/euclideanspace/spad/ui/contentassist/antlr/internal/InternalEditor.g:29300:11: ( '=>' )
-            // ../com.euclideanspace.spad.ui/src-gen/com/euclideanspace/spad/ui/contentassist/antlr/internal/InternalEditor.g:29300:13: '=>'
+            // ../com.euclideanspace.spad.ui/src-gen/com/euclideanspace/spad/ui/contentassist/antlr/internal/InternalEditor.g:30023:11: ( '=>' )
+            // ../com.euclideanspace.spad.ui/src-gen/com/euclideanspace/spad/ui/contentassist/antlr/internal/InternalEditor.g:30023:13: '=>'
             {
             match("=>"); 
 
@@ -2390,8 +2390,8 @@ public class InternalEditorLexer extends Lexer {
         try {
             int _type = RULE_BECOMES;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.euclideanspace.spad.ui/src-gen/com/euclideanspace/spad/ui/contentassist/antlr/internal/InternalEditor.g:29302:14: ( ':=' )
-            // ../com.euclideanspace.spad.ui/src-gen/com/euclideanspace/spad/ui/contentassist/antlr/internal/InternalEditor.g:29302:16: ':='
+            // ../com.euclideanspace.spad.ui/src-gen/com/euclideanspace/spad/ui/contentassist/antlr/internal/InternalEditor.g:30025:14: ( ':=' )
+            // ../com.euclideanspace.spad.ui/src-gen/com/euclideanspace/spad/ui/contentassist/antlr/internal/InternalEditor.g:30025:16: ':='
             {
             match(":="); 
 
@@ -2411,8 +2411,8 @@ public class InternalEditorLexer extends Lexer {
         try {
             int _type = RULE_DEF;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.euclideanspace.spad.ui/src-gen/com/euclideanspace/spad/ui/contentassist/antlr/internal/InternalEditor.g:29304:10: ( '==' )
-            // ../com.euclideanspace.spad.ui/src-gen/com/euclideanspace/spad/ui/contentassist/antlr/internal/InternalEditor.g:29304:12: '=='
+            // ../com.euclideanspace.spad.ui/src-gen/com/euclideanspace/spad/ui/contentassist/antlr/internal/InternalEditor.g:30027:10: ( '==' )
+            // ../com.euclideanspace.spad.ui/src-gen/com/euclideanspace/spad/ui/contentassist/antlr/internal/InternalEditor.g:30027:12: '=='
             {
             match("=="); 
 
@@ -2432,8 +2432,8 @@ public class InternalEditorLexer extends Lexer {
         try {
             int _type = RULE_ARROW;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.euclideanspace.spad.ui/src-gen/com/euclideanspace/spad/ui/contentassist/antlr/internal/InternalEditor.g:29306:12: ( '->' )
-            // ../com.euclideanspace.spad.ui/src-gen/com/euclideanspace/spad/ui/contentassist/antlr/internal/InternalEditor.g:29306:14: '->'
+            // ../com.euclideanspace.spad.ui/src-gen/com/euclideanspace/spad/ui/contentassist/antlr/internal/InternalEditor.g:30029:12: ( '->' )
+            // ../com.euclideanspace.spad.ui/src-gen/com/euclideanspace/spad/ui/contentassist/antlr/internal/InternalEditor.g:30029:14: '->'
             {
             match("->"); 
 
@@ -2453,8 +2453,8 @@ public class InternalEditorLexer extends Lexer {
         try {
             int _type = RULE_LARROW;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.euclideanspace.spad.ui/src-gen/com/euclideanspace/spad/ui/contentassist/antlr/internal/InternalEditor.g:29308:13: ( '<-' )
-            // ../com.euclideanspace.spad.ui/src-gen/com/euclideanspace/spad/ui/contentassist/antlr/internal/InternalEditor.g:29308:15: '<-'
+            // ../com.euclideanspace.spad.ui/src-gen/com/euclideanspace/spad/ui/contentassist/antlr/internal/InternalEditor.g:30031:13: ( '<-' )
+            // ../com.euclideanspace.spad.ui/src-gen/com/euclideanspace/spad/ui/contentassist/antlr/internal/InternalEditor.g:30031:15: '<-'
             {
             match("<-"); 
 
@@ -2474,8 +2474,8 @@ public class InternalEditorLexer extends Lexer {
         try {
             int _type = RULE_GIVES;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.euclideanspace.spad.ui/src-gen/com/euclideanspace/spad/ui/contentassist/antlr/internal/InternalEditor.g:29310:12: ( '+->' )
-            // ../com.euclideanspace.spad.ui/src-gen/com/euclideanspace/spad/ui/contentassist/antlr/internal/InternalEditor.g:29310:14: '+->'
+            // ../com.euclideanspace.spad.ui/src-gen/com/euclideanspace/spad/ui/contentassist/antlr/internal/InternalEditor.g:30033:12: ( '+->' )
+            // ../com.euclideanspace.spad.ui/src-gen/com/euclideanspace/spad/ui/contentassist/antlr/internal/InternalEditor.g:30033:14: '+->'
             {
             match("+->"); 
 
@@ -2495,8 +2495,8 @@ public class InternalEditorLexer extends Lexer {
         try {
             int _type = RULE_PERCENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.euclideanspace.spad.ui/src-gen/com/euclideanspace/spad/ui/contentassist/antlr/internal/InternalEditor.g:29312:14: ( '%' )
-            // ../com.euclideanspace.spad.ui/src-gen/com/euclideanspace/spad/ui/contentassist/antlr/internal/InternalEditor.g:29312:16: '%'
+            // ../com.euclideanspace.spad.ui/src-gen/com/euclideanspace/spad/ui/contentassist/antlr/internal/InternalEditor.g:30035:14: ( '%' )
+            // ../com.euclideanspace.spad.ui/src-gen/com/euclideanspace/spad/ui/contentassist/antlr/internal/InternalEditor.g:30035:16: '%'
             {
             match('%'); 
 
@@ -2515,8 +2515,8 @@ public class InternalEditorLexer extends Lexer {
         try {
             int _type = RULE_ELLIPSIS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.euclideanspace.spad.ui/src-gen/com/euclideanspace/spad/ui/contentassist/antlr/internal/InternalEditor.g:29314:15: ( '...' )
-            // ../com.euclideanspace.spad.ui/src-gen/com/euclideanspace/spad/ui/contentassist/antlr/internal/InternalEditor.g:29314:17: '...'
+            // ../com.euclideanspace.spad.ui/src-gen/com/euclideanspace/spad/ui/contentassist/antlr/internal/InternalEditor.g:30037:15: ( '...' )
+            // ../com.euclideanspace.spad.ui/src-gen/com/euclideanspace/spad/ui/contentassist/antlr/internal/InternalEditor.g:30037:17: '...'
             {
             match("..."); 
 
@@ -2536,8 +2536,8 @@ public class InternalEditorLexer extends Lexer {
         try {
             int _type = RULE_ANY_OTHER;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.euclideanspace.spad.ui/src-gen/com/euclideanspace/spad/ui/contentassist/antlr/internal/InternalEditor.g:29316:16: ( . )
-            // ../com.euclideanspace.spad.ui/src-gen/com/euclideanspace/spad/ui/contentassist/antlr/internal/InternalEditor.g:29316:18: .
+            // ../com.euclideanspace.spad.ui/src-gen/com/euclideanspace/spad/ui/contentassist/antlr/internal/InternalEditor.g:30039:16: ( . )
+            // ../com.euclideanspace.spad.ui/src-gen/com/euclideanspace/spad/ui/contentassist/antlr/internal/InternalEditor.g:30039:18: .
             {
             matchAny(); 
 

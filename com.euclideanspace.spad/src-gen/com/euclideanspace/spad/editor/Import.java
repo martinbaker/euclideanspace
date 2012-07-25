@@ -13,6 +13,7 @@ import org.eclipse.emf.common.util.EList;
  * The following features are supported:
  * <ul>
  *   <li>{@link com.euclideanspace.spad.editor.Import#getImpname <em>Impname</em>}</li>
+ *   <li>{@link com.euclideanspace.spad.editor.Import#getPar22 <em>Par22</em>}</li>
  * </ul>
  * </p>
  *
@@ -37,5 +38,21 @@ public interface Import extends WhereAssignments, AddStatements
    * @generated
    */
   EList<String> getImpname();
+
+  /**
+   * Returns the value of the '<em><b>Par22</b></em>' containment reference list.
+   * The list contents are of type {@link com.euclideanspace.spad.editor.TypeExpression}.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Par22</em>' containment reference list isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Par22</em>' containment reference list.
+   * @see com.euclideanspace.spad.editor.EditorPackage#getImport_Par22()
+   * @model containment="true"
+   * @generated
+   */
+  EList<TypeExpression> getPar22();
 
 } // Import

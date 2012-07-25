@@ -76,6 +76,15 @@ public class EclipseFileWriter extends InputStream {
 	}
 	
 	/**
+	 * test if file already exists
+	 * @return true if file already exists
+	 */
+	public boolean exists(){
+	    IFile file = parent.getFile(name);
+	    return file.exists();
+	}
+	
+	/**
 	 * indicates we have collected all the data so we can write
 	 * the file.
 	 */
@@ -83,11 +92,18 @@ public class EclipseFileWriter extends InputStream {
 	  if (parent == null) return;
 	  try {
 	    IFile file = parent.getFile(name);
+	    if (data.isEmpty()) return;
 	    if (!file.exists()) {
 	    	file.create(this, true,null);
+	    } else {
+	    	//System.out.println("EclipseFileWriter.close() appending" + file);
+            // we need to add code here to remove '@' from end of
+	    	// existing file contents.
+	    	file.appendContents(this, true,true,null);
 	    }
       } catch (CoreException e) {
-	    e.printStackTrace();
+    	System.err.println("EclipseFileWriter.close() " + e);
+	    //e.printStackTrace();
 	  }
 	  return;
     }

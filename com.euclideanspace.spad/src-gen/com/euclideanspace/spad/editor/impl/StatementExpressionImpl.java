@@ -7,23 +7,15 @@ import com.euclideanspace.spad.editor.EditorPackage;
 import com.euclideanspace.spad.editor.Expr;
 import com.euclideanspace.spad.editor.Statement;
 import com.euclideanspace.spad.editor.StatementExpression;
-import com.euclideanspace.spad.editor.TypeExpression;
-
-import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
-import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
-import org.eclipse.emf.ecore.util.EObjectContainmentEList;
-import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -33,9 +25,6 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * The following features are implemented:
  * <ul>
  *   <li>{@link com.euclideanspace.spad.editor.impl.StatementExpressionImpl#getT <em>T</em>}</li>
- *   <li>{@link com.euclideanspace.spad.editor.impl.StatementExpressionImpl#getT2 <em>T2</em>}</li>
- *   <li>{@link com.euclideanspace.spad.editor.impl.StatementExpressionImpl#getT3 <em>T3</em>}</li>
- *   <li>{@link com.euclideanspace.spad.editor.impl.StatementExpressionImpl#getT33 <em>T33</em>}</li>
  *   <li>{@link com.euclideanspace.spad.editor.impl.StatementExpressionImpl#getT5 <em>T5</em>}</li>
  *   <li>{@link com.euclideanspace.spad.editor.impl.StatementExpressionImpl#getT4 <em>T4</em>}</li>
  * </ul>
@@ -54,36 +43,6 @@ public class StatementExpressionImpl extends MinimalEObjectImpl.Container implem
    * @ordered
    */
   protected Expr t;
-
-  /**
-   * The cached value of the '{@link #getT2() <em>T2</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getT2()
-   * @generated
-   * @ordered
-   */
-  protected TypeExpression t2;
-
-  /**
-   * The cached value of the '{@link #getT3() <em>T3</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getT3()
-   * @generated
-   * @ordered
-   */
-  protected Expr t3;
-
-  /**
-   * The cached value of the '{@link #getT33() <em>T33</em>}' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getT33()
-   * @generated
-   * @ordered
-   */
-  protected EList<Expr> t33;
 
   /**
    * The cached value of the '{@link #getT5() <em>T5</em>}' containment reference.
@@ -172,116 +131,6 @@ public class StatementExpressionImpl extends MinimalEObjectImpl.Container implem
     }
     else if (eNotificationRequired())
       eNotify(new ENotificationImpl(this, Notification.SET, EditorPackage.STATEMENT_EXPRESSION__T, newT, newT));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public TypeExpression getT2()
-  {
-    return t2;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public NotificationChain basicSetT2(TypeExpression newT2, NotificationChain msgs)
-  {
-    TypeExpression oldT2 = t2;
-    t2 = newT2;
-    if (eNotificationRequired())
-    {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, EditorPackage.STATEMENT_EXPRESSION__T2, oldT2, newT2);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setT2(TypeExpression newT2)
-  {
-    if (newT2 != t2)
-    {
-      NotificationChain msgs = null;
-      if (t2 != null)
-        msgs = ((InternalEObject)t2).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - EditorPackage.STATEMENT_EXPRESSION__T2, null, msgs);
-      if (newT2 != null)
-        msgs = ((InternalEObject)newT2).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - EditorPackage.STATEMENT_EXPRESSION__T2, null, msgs);
-      msgs = basicSetT2(newT2, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, EditorPackage.STATEMENT_EXPRESSION__T2, newT2, newT2));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public Expr getT3()
-  {
-    return t3;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public NotificationChain basicSetT3(Expr newT3, NotificationChain msgs)
-  {
-    Expr oldT3 = t3;
-    t3 = newT3;
-    if (eNotificationRequired())
-    {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, EditorPackage.STATEMENT_EXPRESSION__T3, oldT3, newT3);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setT3(Expr newT3)
-  {
-    if (newT3 != t3)
-    {
-      NotificationChain msgs = null;
-      if (t3 != null)
-        msgs = ((InternalEObject)t3).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - EditorPackage.STATEMENT_EXPRESSION__T3, null, msgs);
-      if (newT3 != null)
-        msgs = ((InternalEObject)newT3).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - EditorPackage.STATEMENT_EXPRESSION__T3, null, msgs);
-      msgs = basicSetT3(newT3, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, EditorPackage.STATEMENT_EXPRESSION__T3, newT3, newT3));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EList<Expr> getT33()
-  {
-    if (t33 == null)
-    {
-      t33 = new EObjectContainmentEList<Expr>(Expr.class, this, EditorPackage.STATEMENT_EXPRESSION__T33);
-    }
-    return t33;
   }
 
   /**
@@ -392,12 +241,6 @@ public class StatementExpressionImpl extends MinimalEObjectImpl.Container implem
     {
       case EditorPackage.STATEMENT_EXPRESSION__T:
         return basicSetT(null, msgs);
-      case EditorPackage.STATEMENT_EXPRESSION__T2:
-        return basicSetT2(null, msgs);
-      case EditorPackage.STATEMENT_EXPRESSION__T3:
-        return basicSetT3(null, msgs);
-      case EditorPackage.STATEMENT_EXPRESSION__T33:
-        return ((InternalEList<?>)getT33()).basicRemove(otherEnd, msgs);
       case EditorPackage.STATEMENT_EXPRESSION__T5:
         return basicSetT5(null, msgs);
       case EditorPackage.STATEMENT_EXPRESSION__T4:
@@ -418,12 +261,6 @@ public class StatementExpressionImpl extends MinimalEObjectImpl.Container implem
     {
       case EditorPackage.STATEMENT_EXPRESSION__T:
         return getT();
-      case EditorPackage.STATEMENT_EXPRESSION__T2:
-        return getT2();
-      case EditorPackage.STATEMENT_EXPRESSION__T3:
-        return getT3();
-      case EditorPackage.STATEMENT_EXPRESSION__T33:
-        return getT33();
       case EditorPackage.STATEMENT_EXPRESSION__T5:
         return getT5();
       case EditorPackage.STATEMENT_EXPRESSION__T4:
@@ -437,7 +274,6 @@ public class StatementExpressionImpl extends MinimalEObjectImpl.Container implem
    * <!-- end-user-doc -->
    * @generated
    */
-  @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue)
   {
@@ -445,16 +281,6 @@ public class StatementExpressionImpl extends MinimalEObjectImpl.Container implem
     {
       case EditorPackage.STATEMENT_EXPRESSION__T:
         setT((Expr)newValue);
-        return;
-      case EditorPackage.STATEMENT_EXPRESSION__T2:
-        setT2((TypeExpression)newValue);
-        return;
-      case EditorPackage.STATEMENT_EXPRESSION__T3:
-        setT3((Expr)newValue);
-        return;
-      case EditorPackage.STATEMENT_EXPRESSION__T33:
-        getT33().clear();
-        getT33().addAll((Collection<? extends Expr>)newValue);
         return;
       case EditorPackage.STATEMENT_EXPRESSION__T5:
         setT5((Block)newValue);
@@ -479,15 +305,6 @@ public class StatementExpressionImpl extends MinimalEObjectImpl.Container implem
       case EditorPackage.STATEMENT_EXPRESSION__T:
         setT((Expr)null);
         return;
-      case EditorPackage.STATEMENT_EXPRESSION__T2:
-        setT2((TypeExpression)null);
-        return;
-      case EditorPackage.STATEMENT_EXPRESSION__T3:
-        setT3((Expr)null);
-        return;
-      case EditorPackage.STATEMENT_EXPRESSION__T33:
-        getT33().clear();
-        return;
       case EditorPackage.STATEMENT_EXPRESSION__T5:
         setT5((Block)null);
         return;
@@ -510,12 +327,6 @@ public class StatementExpressionImpl extends MinimalEObjectImpl.Container implem
     {
       case EditorPackage.STATEMENT_EXPRESSION__T:
         return t != null;
-      case EditorPackage.STATEMENT_EXPRESSION__T2:
-        return t2 != null;
-      case EditorPackage.STATEMENT_EXPRESSION__T3:
-        return t3 != null;
-      case EditorPackage.STATEMENT_EXPRESSION__T33:
-        return t33 != null && !t33.isEmpty();
       case EditorPackage.STATEMENT_EXPRESSION__T5:
         return t5 != null;
       case EditorPackage.STATEMENT_EXPRESSION__T4:

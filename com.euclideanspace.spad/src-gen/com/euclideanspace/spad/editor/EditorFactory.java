@@ -626,6 +626,15 @@ public interface EditorFactory extends EFactory
   MapDefinition createMapDefinition();
 
   /**
+   * Returns a new object of class '<em>Assign Expression</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Assign Expression</em>'.
+   * @generated
+   */
+  AssignExpression createAssignExpression();
+
+  /**
    * Returns a new object of class '<em>Pretend Expression</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -635,15 +644,6 @@ public interface EditorFactory extends EFactory
   PretendExpression createPretendExpression();
 
   /**
-   * Returns a new object of class '<em>Hint Type Expression</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Hint Type Expression</em>'.
-   * @generated
-   */
-  HintTypeExpression createHintTypeExpression();
-
-  /**
    * Returns a new object of class '<em>Coerce Expression</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -651,6 +651,15 @@ public interface EditorFactory extends EFactory
    * @generated
    */
   CoerceExpression createCoerceExpression();
+
+  /**
+   * Returns a new object of class '<em>Hint Type Expression</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Hint Type Expression</em>'.
+   * @generated
+   */
+  HintTypeExpression createHintTypeExpression();
 
   /**
    * Returns a new object of class '<em>Elt Expression</em>'.

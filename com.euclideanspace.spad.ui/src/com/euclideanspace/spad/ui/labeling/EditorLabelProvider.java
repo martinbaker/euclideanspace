@@ -107,9 +107,9 @@ public class EditorLabelProvider extends DefaultEObjectLabelProvider {
 		  return "FunctionDefinition :";
 	}
 
-	String text(MapDefinition ele) {
+/*	String text(MapDefinition ele) {
 		  return "MapDefinition :";
-	}
+	}*/
 
 	String text(FunctionSignature ele) {
 		  return "FunctionSignature :"+ele.getFnNam();
