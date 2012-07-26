@@ -59,24 +59,6 @@ public class Translate {
 	 * what type the corresponding line is.
      */
 	LinkedBlockingQueue<LineType> lineHoldType = new LinkedBlockingQueue<LineType>();
-    /**
-     * bracketDebth and parenthesisDebth are counters which are incremented when
-     * bracket closes, therefore positive value tells us that not all brackets
-     * are closed and therefore implies that line is continued.
-     * 
-     * the values are class wide to allow values to roll over to following
-     * lines.
-     */
-	//int bracketDebth = 0;
-    /**
-     * bracketDebth and parenthesisDebth are counters which are incremented when
-     * bracket closes, therefore positive value tells us that not all brackets
-     * are closed and therefore implies that line is continued.
-     * 
-     * the values are class wide to allow values to roll over to following
-     * lines.
-     */
-	//int parenthesisDebth = 0;
 	/**
 	 * keep name of last file so we only delete when really changed
 	 */
@@ -535,6 +517,10 @@ public class Translate {
 
     /**
      * a macro can be defined by '==>' or keyword 'Macro'
+     * 
+     * if line starts with 'ID ==>' then store macro otherwise
+     * apply macro
+     * 
      * @param line possibly containing macro definition or which
      *        may be expanded using existing macros.
      * @param input
@@ -545,25 +531,38 @@ public class Translate {
   	    String[] st = line.replaceAll("==>"," ==> ").split("[ ]+"); // any number of spaces are single separator
   	    if (st.length < 4) return line;
   	    if (st[2].equals("==>")){
-  	    	for (int x=3;x<st.length;x++){
-  	    		if (st[x].equals("add") || st[x].equals("with")) return line;
-  	    	}
+  	    	// combine together all parts following '==>' into 'value'
   	    	String value = "";
   	    	String spacer = "";
   	    	for (int x=3;x<st.length;x++){
   	    		value = value + spacer + st[x];
   	    		spacer = " ";
   	    	}
+  	    	// if macro is continued on next line then get it
   	    	while (line.endsWith("_")) {
   	    	  if (value.endsWith("_")) value = value.substring(0,value.length()-1);
   	    	  String line2 = input.readLine();
   	    	  value = value + line2.trim();
     	      line = line + line2.trim();
   	    	}
+  	    	// if macro contains comment then remove it
+  		    int cmtInd = getCommentIndex(value);
+  		    if (cmtInd > -1) {
+  		        //System.out.println("applyMacroes: removed comment in:" + line);
+                value = value.substring(0,cmtInd);
+  		    }
+  	    	// '==>' in 'add' or 'with' constructs is not a macro so, in this
+  	    	// case, do nothing.
+  	  	    String[] st2 = value.replaceAll("==>"," ==> ").split("[ ]+"); // any number of spaces are single separator
+  	    	for (int x=0;x<st2.length;x++){
+  	    		if (st2[x].equals("add") || st2[x].equals("with")) return line;
+  	    	}
+  	    	// macros may themselves contain other macros, so substitute
+  	    	// any existing macros.
   	    	value = SubstituteMacro(value);
   	    	macros.put(st[1],value);
   	    	return "-- "+line;
-  	    } else if (st[1].equals("--") || st[1].equals("--")){
+  	    } else if (st[1].equals("--") || st[1].equals("++")){
   	    	// don't apply macros to comments
   	    	return line;
   	    } else {
@@ -572,7 +571,7 @@ public class Translate {
       } catch (IOException ioException) {
         System.err.println("cannot process: " + line +" due to "+ ioException);
       }
-    	return line;
+      return line;
     }
     
     /**
