@@ -2857,9 +2857,9 @@ ruleVariableDeclarationAssign returns [EObject current=null]
     }
 (
 (
-		lv_t2_2_0=RULE_ID
+		lv_t12_2_0=RULE_ID
 		{
-			newLeafNode(lv_t2_2_0, grammarAccess.getVariableDeclarationAssignAccess().getT2IDTerminalRuleCall_1_0_1_0()); 
+			newLeafNode(lv_t12_2_0, grammarAccess.getVariableDeclarationAssignAccess().getT12IDTerminalRuleCall_1_0_1_0()); 
 		}
 		{
 	        if ($current==null) {
@@ -2867,8 +2867,8 @@ ruleVariableDeclarationAssign returns [EObject current=null]
 	        }
        		addWithLastConsumed(
        			$current, 
-       			"t2",
-        		lv_t2_2_0, 
+       			"t12",
+        		lv_t12_2_0, 
         		"ID");
 	    }
 
@@ -9384,27 +9384,35 @@ rulePrimaryExpression
 	    }
 
 )
-))?(((	RULE_COLON(
+))?((((	RULE_COMMA	RULE_ID)*	RULE_COLON(
 (
 ruleTypeExpression
 )
-)))=>(this_COLON_15=RULE_COLON
+)))=>((this_COMMA_15=RULE_COMMA
     { 
-    newLeafNode(this_COLON_15, grammarAccess.getNameOrFunctionCallAccess().getCOLONTerminalRuleCall_4_0_0()); 
+    newLeafNode(this_COMMA_15, grammarAccess.getNameOrFunctionCallAccess().getCOMMATerminalRuleCall_4_0_0_0()); 
+    }
+this_ID_16=RULE_ID
+    { 
+    newLeafNode(this_ID_16, grammarAccess.getNameOrFunctionCallAccess().getIDTerminalRuleCall_4_0_0_1()); 
+    }
+)*this_COLON_17=RULE_COLON
+    { 
+    newLeafNode(this_COLON_17, grammarAccess.getNameOrFunctionCallAccess().getCOLONTerminalRuleCall_4_0_1()); 
     }
 (
 (
 		{ 
-	        newCompositeNode(grammarAccess.getNameOrFunctionCallAccess().getRightType2TypeExpressionParserRuleCall_4_0_1_0()); 
+	        newCompositeNode(grammarAccess.getNameOrFunctionCallAccess().getRightType2TypeExpressionParserRuleCall_4_0_2_0()); 
 	    }
-		lv_rightType2_16_0=ruleTypeExpression		{
+		lv_rightType2_18_0=ruleTypeExpression		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getNameOrFunctionCallRule());
 	        }
        		set(
        			$current, 
        			"rightType2",
-        		lv_rightType2_16_0, 
+        		lv_rightType2_18_0, 
         		"TypeExpression");
 	        afterParserOrEnumRuleCall();
 	    }

@@ -39,6 +39,7 @@ public class EditorSyntacticSequencer extends AbstractSyntacticSequencer {
 	protected AbstractElementAlias match_IfStatement_NLTerminalRuleCall_2_1_4_a;
 	protected AbstractElementAlias match_IfStatement_NLTerminalRuleCall_2_1_5_2_a;
 	protected AbstractElementAlias match_NameOrFunctionCall_ApostropheKeyword_0_q;
+	protected AbstractElementAlias match_NameOrFunctionCall___COMMATerminalRuleCall_4_0_0_0_IDTerminalRuleCall_4_0_0_1__a;
 	protected AbstractElementAlias match_NameOrFunctionCall___LPARENTerminalRuleCall_3_0_0_RPARENTerminalRuleCall_3_0_3___LPARENTerminalRuleCall_3_0_4_0_RPARENTerminalRuleCall_3_0_4_3__a__q;
 	protected AbstractElementAlias match_NameOrFunctionCall___LPARENTerminalRuleCall_3_0_4_0_RPARENTerminalRuleCall_3_0_4_3__a;
 	protected AbstractElementAlias match_NameOrFunctionCall___RPARENTerminalRuleCall_3_0_4_3_LPARENTerminalRuleCall_3_0_4_0__a;
@@ -89,6 +90,7 @@ public class EditorSyntacticSequencer extends AbstractSyntacticSequencer {
 		match_IfStatement_NLTerminalRuleCall_2_1_4_a = new TokenAlias(true, true, grammarAccess.getIfStatementAccess().getNLTerminalRuleCall_2_1_4());
 		match_IfStatement_NLTerminalRuleCall_2_1_5_2_a = new TokenAlias(true, true, grammarAccess.getIfStatementAccess().getNLTerminalRuleCall_2_1_5_2());
 		match_NameOrFunctionCall_ApostropheKeyword_0_q = new TokenAlias(false, true, grammarAccess.getNameOrFunctionCallAccess().getApostropheKeyword_0());
+		match_NameOrFunctionCall___COMMATerminalRuleCall_4_0_0_0_IDTerminalRuleCall_4_0_0_1__a = new GroupAlias(true, true, new TokenAlias(false, false, grammarAccess.getNameOrFunctionCallAccess().getCOMMATerminalRuleCall_4_0_0_0()), new TokenAlias(false, false, grammarAccess.getNameOrFunctionCallAccess().getIDTerminalRuleCall_4_0_0_1()));
 		match_NameOrFunctionCall___LPARENTerminalRuleCall_3_0_0_RPARENTerminalRuleCall_3_0_3___LPARENTerminalRuleCall_3_0_4_0_RPARENTerminalRuleCall_3_0_4_3__a__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getNameOrFunctionCallAccess().getLPARENTerminalRuleCall_3_0_0()), new TokenAlias(false, false, grammarAccess.getNameOrFunctionCallAccess().getRPARENTerminalRuleCall_3_0_3()), new GroupAlias(true, true, new TokenAlias(false, false, grammarAccess.getNameOrFunctionCallAccess().getLPARENTerminalRuleCall_3_0_4_0()), new TokenAlias(false, false, grammarAccess.getNameOrFunctionCallAccess().getRPARENTerminalRuleCall_3_0_4_3())));
 		match_NameOrFunctionCall___LPARENTerminalRuleCall_3_0_4_0_RPARENTerminalRuleCall_3_0_4_3__a = new GroupAlias(true, true, new TokenAlias(false, false, grammarAccess.getNameOrFunctionCallAccess().getLPARENTerminalRuleCall_3_0_4_0()), new TokenAlias(false, false, grammarAccess.getNameOrFunctionCallAccess().getRPARENTerminalRuleCall_3_0_4_3()));
 		match_NameOrFunctionCall___RPARENTerminalRuleCall_3_0_4_3_LPARENTerminalRuleCall_3_0_4_0__a = new GroupAlias(true, true, new TokenAlias(false, false, grammarAccess.getNameOrFunctionCallAccess().getRPARENTerminalRuleCall_3_0_4_3()), new TokenAlias(false, false, grammarAccess.getNameOrFunctionCallAccess().getLPARENTerminalRuleCall_3_0_4_0()));
@@ -378,6 +380,8 @@ public class EditorSyntacticSequencer extends AbstractSyntacticSequencer {
 				emit_IfStatement_NLTerminalRuleCall_2_1_5_2_a(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if(match_NameOrFunctionCall_ApostropheKeyword_0_q.equals(syntax))
 				emit_NameOrFunctionCall_ApostropheKeyword_0_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if(match_NameOrFunctionCall___COMMATerminalRuleCall_4_0_0_0_IDTerminalRuleCall_4_0_0_1__a.equals(syntax))
+				emit_NameOrFunctionCall___COMMATerminalRuleCall_4_0_0_0_IDTerminalRuleCall_4_0_0_1__a(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if(match_NameOrFunctionCall___LPARENTerminalRuleCall_3_0_0_RPARENTerminalRuleCall_3_0_3___LPARENTerminalRuleCall_3_0_4_0_RPARENTerminalRuleCall_3_0_4_3__a__q.equals(syntax))
 				emit_NameOrFunctionCall___LPARENTerminalRuleCall_3_0_0_RPARENTerminalRuleCall_3_0_3___LPARENTerminalRuleCall_3_0_4_0_RPARENTerminalRuleCall_3_0_4_3__a__q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if(match_NameOrFunctionCall___LPARENTerminalRuleCall_3_0_4_0_RPARENTerminalRuleCall_3_0_4_3__a.equals(syntax))
@@ -591,6 +595,14 @@ public class EditorSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     '''?
 	 */
 	protected void emit_NameOrFunctionCall_ApostropheKeyword_0_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * Syntax:
+	 *     (COMMA ID)*
+	 */
+	protected void emit_NameOrFunctionCall___COMMATerminalRuleCall_4_0_0_0_IDTerminalRuleCall_4_0_0_1__a(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	

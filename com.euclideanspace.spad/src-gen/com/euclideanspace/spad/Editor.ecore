@@ -160,7 +160,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="VariableDeclarationAssign" eSuperTypes="#//AddStatements">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="varName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="t2" unique="false" upperBound="-1"
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="t12" unique="false" upperBound="-1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="typ" eType="#//TypeExpression"
         containment="true"/>

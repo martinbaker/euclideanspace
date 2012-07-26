@@ -1720,7 +1720,7 @@ public class EditorPackageImpl extends EPackageImpl implements EditorPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getVariableDeclarationAssign_T2()
+  public EAttribute getVariableDeclarationAssign_T12()
   {
     return (EAttribute)variableDeclarationAssignEClass.getEStructuralFeatures().get(1);
   }
@@ -4717,7 +4717,7 @@ public class EditorPackageImpl extends EPackageImpl implements EditorPackage
 
     variableDeclarationAssignEClass = createEClass(VARIABLE_DECLARATION_ASSIGN);
     createEAttribute(variableDeclarationAssignEClass, VARIABLE_DECLARATION_ASSIGN__VAR_NAME);
-    createEAttribute(variableDeclarationAssignEClass, VARIABLE_DECLARATION_ASSIGN__T2);
+    createEAttribute(variableDeclarationAssignEClass, VARIABLE_DECLARATION_ASSIGN__T12);
     createEReference(variableDeclarationAssignEClass, VARIABLE_DECLARATION_ASSIGN__TYP);
     createEReference(variableDeclarationAssignEClass, VARIABLE_DECLARATION_ASSIGN__T4);
 
@@ -5254,7 +5254,7 @@ public class EditorPackageImpl extends EPackageImpl implements EditorPackage
 
     initEClass(variableDeclarationAssignEClass, VariableDeclarationAssign.class, "VariableDeclarationAssign", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getVariableDeclarationAssign_VarName(), ecorePackage.getEString(), "varName", null, 0, 1, VariableDeclarationAssign.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getVariableDeclarationAssign_T2(), ecorePackage.getEString(), "t2", null, 0, -1, VariableDeclarationAssign.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getVariableDeclarationAssign_T12(), ecorePackage.getEString(), "t12", null, 0, -1, VariableDeclarationAssign.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getVariableDeclarationAssign_Typ(), this.getTypeExpression(), null, "typ", null, 0, 1, VariableDeclarationAssign.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getVariableDeclarationAssign_T4(), this.getExpr(), null, "t4", null, 0, 1, VariableDeclarationAssign.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 

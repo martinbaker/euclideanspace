@@ -1025,7 +1025,7 @@
       <elements xsi:type="xtext:Group">
         <elements xsi:type="xtext:Group" cardinality="*">
           <elements xsi:type="xtext:RuleCall" rule="//@rules.22"/>
-          <elements xsi:type="xtext:Assignment" feature="t2" operator="+=">
+          <elements xsi:type="xtext:Assignment" feature="t12" operator="+=">
             <terminal xsi:type="xtext:RuleCall" rule="//@rules.1"/>
           </elements>
         </elements>
@@ -2653,6 +2653,10 @@
       </elements>
       <elements xsi:type="xtext:Group" cardinality="?" predicated="true">
         <elements xsi:type="xtext:Group">
+          <elements xsi:type="xtext:Group" cardinality="*">
+            <elements xsi:type="xtext:RuleCall" rule="//@rules.22"/>
+            <elements xsi:type="xtext:RuleCall" rule="//@rules.1"/>
+          </elements>
           <elements xsi:type="xtext:RuleCall" rule="//@rules.20"/>
           <elements xsi:type="xtext:Assignment" feature="rightType2" operator="=">
             <terminal xsi:type="xtext:RuleCall" rule="//@rules.75"/>

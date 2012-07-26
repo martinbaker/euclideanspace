@@ -13,7 +13,7 @@ import org.eclipse.emf.common.util.EList;
  * The following features are supported:
  * <ul>
  *   <li>{@link com.euclideanspace.spad.editor.VariableDeclarationAssign#getVarName <em>Var Name</em>}</li>
- *   <li>{@link com.euclideanspace.spad.editor.VariableDeclarationAssign#getT2 <em>T2</em>}</li>
+ *   <li>{@link com.euclideanspace.spad.editor.VariableDeclarationAssign#getT12 <em>T12</em>}</li>
  *   <li>{@link com.euclideanspace.spad.editor.VariableDeclarationAssign#getTyp <em>Typ</em>}</li>
  *   <li>{@link com.euclideanspace.spad.editor.VariableDeclarationAssign#getT4 <em>T4</em>}</li>
  * </ul>
@@ -52,20 +52,20 @@ public interface VariableDeclarationAssign extends AddStatements
   void setVarName(String value);
 
   /**
-   * Returns the value of the '<em><b>T2</b></em>' attribute list.
+   * Returns the value of the '<em><b>T12</b></em>' attribute list.
    * The list contents are of type {@link java.lang.String}.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>T2</em>' attribute list isn't clear,
+   * If the meaning of the '<em>T12</em>' attribute list isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>T2</em>' attribute list.
-   * @see com.euclideanspace.spad.editor.EditorPackage#getVariableDeclarationAssign_T2()
+   * @return the value of the '<em>T12</em>' attribute list.
+   * @see com.euclideanspace.spad.editor.EditorPackage#getVariableDeclarationAssign_T12()
    * @model unique="false"
    * @generated
    */
-  EList<String> getT2();
+  EList<String> getT12();
 
   /**
    * Returns the value of the '<em><b>Typ</b></em>' containment reference.

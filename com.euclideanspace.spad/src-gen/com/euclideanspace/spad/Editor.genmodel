@@ -128,7 +128,7 @@
     </genClasses>
     <genClasses ecoreClass="Editor.ecore#//VariableDeclarationAssign">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Editor.ecore#//VariableDeclarationAssign/varName"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Editor.ecore#//VariableDeclarationAssign/t2"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Editor.ecore#//VariableDeclarationAssign/t12"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//VariableDeclarationAssign/typ"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//VariableDeclarationAssign/t4"/>
     </genClasses>

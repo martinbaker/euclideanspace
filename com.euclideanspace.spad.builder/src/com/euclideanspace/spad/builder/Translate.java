@@ -42,7 +42,7 @@ public class Translate {
 	/** when we have a continuation we need to use the indent for the first part
 	 * of the line
 	 */
-	int indentForContinuation = -1;
+	//int indentForContinuation = -1;
 	/** store macros */
 	Map<String,String> macros = new HashMap<String,String>();
 	/**
@@ -67,7 +67,7 @@ public class Translate {
      * the values are class wide to allow values to roll over to following
      * lines.
      */
-	int bracketDebth = 0;
+	//int bracketDebth = 0;
     /**
      * bracketDebth and parenthesisDebth are counters which are incremented when
      * bracket closes, therefore positive value tells us that not all brackets
@@ -76,12 +76,16 @@ public class Translate {
      * the values are class wide to allow values to roll over to following
      * lines.
      */
-	int parenthesisDebth = 0;
+	//int parenthesisDebth = 0;
 	/**
 	 * keep name of last file so we only delete when really changed
 	 */
 	String lastFile = null;
-	
+	/**
+	 * set to true if last line may be continued (but only if indent increases)
+	 */
+	boolean lastLineMayContinue = false;
+			
 	/**
 	 * translate a pamphlet file or whole directory
 	 * 
@@ -290,7 +294,8 @@ public class Translate {
   		  mode=Mode.DOCUM;
   		  output.close();
   		  output = null;
-      	  bracketDebth = parenthesisDebth = 0;
+//      	  bracketDebth = parenthesisDebth = 0;
+  		  lastLineMayContinue = false;
   		  return null;
   		}
         String prefix = " ";
@@ -314,21 +319,24 @@ public class Translate {
         // if line contains comment (not just starts with comment) then
         // set following
         //boolean containsComment =  (getCommentIndex(line) >= 0);
-    	/** continuationLine is set to true if line ends with '_' */
+    	/**  continuationLine indicates that the line could be
+		 * continued (rather than start a new block) but only
+		 * if the next line has increased indent.
+		 * So we put in line hold, so we can test next line.
+		 */
     	boolean continuationLine = impliedContinuation(trimedLine);
     	// remove the trailing '_'
     	if (trimedLine.endsWith("_")) {
         	line = line.substring(0,line.length()-1);
         	trimedLine = line.trim();
         }
-        if (continuationLine && indentForContinuation<0){
+        /*if (continuationLine && indentForContinuation<0){
         	indentForContinuation = ind;
-        }
-        if (!continuationLine) bracketDebth = parenthesisDebth = 0;
+        }*/
+//        if (!continuationLine) bracketDebth = parenthesisDebth = 0;
         // if we have just read a comment, or an empty line, or a continuation
         // line (ends with _) then put it into holding stack otherwise process it.
     	LineType lineType = LineType.CODE;
-    	if (continuationLine) lineType = LineType.CONTINUED;
     	if (trimedLine.startsWith("--") ||
     	          trimedLine.startsWith("++")) lineType = LineType.COMMENT;
     	if (trimedLine.equals("") ||
@@ -336,36 +344,53 @@ public class Translate {
         if (lineType != LineType.CODE) {
             lineHold.offer(line);
             lineHoldType.offer(lineType);
+            continuationLine = lastLineMayContinue;
     	} else {
-    		  if (indentForContinuation >= 0){
+    		  /*if (indentForContinuation >= 0){
     			  ind = indentForContinuation;
     			  indentForContinuation = -1;
-    		  }
+    		  }*/
     		  // if line contains comment then split into two separate
     		  // strings
     		  int cmtInd = getCommentIndex(line);
     		  if (cmtInd > -1) {
-    			if (lineHoldType.peek() == LineType.CONTINUED){
+    			// line contains comment so split string at comment
+    			/*if (!lastLineMayContinue){
     			  String cmt = line.substring(cmtInd,line.length());
                   line = line.substring(0,cmtInd);
                   lineHold.offer(line);
-                  lineHoldType.offer(LineType.CODE);
+                  lineHoldType.offer(lineType);
                   line = cmt.toString()+"\n";
-    			} else {
+    			} else {*/
       			  String cmt = line.substring(cmtInd,line.length());
                   line = line.substring(0,cmtInd);
                   lineHold.offer(cmt);
                   lineHoldType.offer(LineType.COMMENT);
-      			}
+      			//}
     		  }
     		  //System.out.println(line2);
     		  if (ind == indent) { // indent unchanged so no brace
-    			  flushLineHold(output,line);
+    			  flushLineHold(output,"\n"+line);
     		  } else if (ind > indent) { // indent increased so insert '{'
-   			    output.write(" {"); // put brace before any pending comments
-    			    flushLineHold(output,line);
-    			    //output.write("push ind=" +ind+" indent="+ indent);
-    			    pile.push(ind);
+      			trimedLine = line.trim();
+    			//boolean continuationLine = impliedContinuation(trimedLine);
+    			if (lastLineMayContinue) {
+    			  // continue statement
+    		      if (trimedLine.endsWith("_")) {
+    		        line = line.substring(0,line.length()-1);
+    		        trimedLine = line.trim();
+    		      }
+    		      output.write(" "+line.trim());
+    			  //flushLineHold(output," "+line.trim());    			  
+    			  //flushLineHold(output,"\n>"+line.trim());    			  
+    			} else {
+    			  // start new block
+   			      output.write(" {"); // put brace before any pending comments
+   			      output.write("\n"+line);
+    			  //flushLineHold(output,"\n"+line);
+    			  //output.write("push ind=" +ind+" indent="+ indent);
+    			  pile.push(ind);
+    			}
     		  } else if (ind < indent) { // indent reduced so insert '}'
     			  while (!pile.empty() && ind < indent) {
                     pile.pop();
@@ -376,9 +401,10 @@ public class Translate {
        			    output.write("}");
        			    //output.write(" ind=" + ind +" pop indent="+ indent);
     			  }
-    			  flushLineHold(output,line);
+    			  flushLineHold(output,"\n"+line);
     		  }
     	}
+        lastLineMayContinue = continuationLine;
       } catch (Exception e) {
         System.err.println("error in transCODE: " + line +" due to "+ e);
       }
@@ -453,7 +479,7 @@ public class Translate {
      * if it does not then we will assume that it is continued on
      * next line
      * @param line to be checked for continuation
-     * @return true if more opening than closing
+     * @return true if we concatenate rather than start new block
      */
     boolean impliedContinuation(String line){
     	// return false if line contains comment
@@ -465,6 +491,7 @@ public class Translate {
     	if (line.endsWith("add")) return false;
     	if (line.endsWith("==")) return false;
     	if (line.endsWith("=>")) return false;
+    	if (line.endsWith(":=")) return false;
     	if (line.endsWith("repeat")) return false;
     	if (line.endsWith("then")) return false;
     	if (line.endsWith("else")) return false;
@@ -480,24 +507,26 @@ public class Translate {
      * @param line if not null this line will be appended to flushed output
      */
     void flushLineHold(EclipseFileWriter output,String line){
-      boolean continuation = false;
+      //boolean continuation = false;
       try {
 	    while (! lineHold.isEmpty()) {
 		  String li = lineHold.poll();
-	      LineType t=lineHoldType.poll();
-		  if (!continuation) {
+	      //LineType t=lineHoldType.poll();
+	      output.write("\n"+li);
+		  /*if (!continuation) {
 			  output.write("\n"+li);
 		  } else {
 			  if (li.length() > 0) output.write(" "+li.trim());
 		  }
-	      continuation = (t==LineType.CONTINUED);
+	      continuation = (t==LineType.CONTINUED);*/
 	    }
 	    if (line != null) {
-	      if (!continuation) {
+	      output.write(line);
+	      /*if (!continuation) {
 	    	  output.write("\n"+line);
 	      } else{
 	    	  if (line.length() > 0) output.write(" "+line.trim());
-	      }
+	      }*/
 	    }
       } catch (Exception e) {
         System.err.println("error in flushLineHold: " + line +" due to "+ e);

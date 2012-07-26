@@ -564,9 +564,13 @@ TypeWithName hidden(WS,SL_COMMENT):
  * x:Record(newPt: Pt,type:  String)
  * or it can be a function like:
  * x:(Float,Integer) -> Float
+ * we can define multiple variables together:
+ * i,j : Integer
  */
 VariableTyped hidden(WS,SL_COMMENT):
-	(varName=ID | varNameSt=STRING) (COLON typ=TypeExpression)? 
+	(varName=ID | varNameSt=STRING)
+//    =>(COMMA t2+=ID)* // multiple declarations in same line
+    (COLON typ=TypeExpression)? 
 ;
 
 /* in add part we can declare and assign in same part
@@ -585,9 +589,11 @@ VariableDeclarationAssign hidden(WS):
   // if I just use name=ID then, when the ui program is running, I get:
   // Duplicate xxx 'coerce' in yyy
   (
-    (COMMA t2+=ID)* // multiple declarations in same line
+    (COMMA t12+=ID)* // multiple declarations in same line
     (COLON typ=TypeExpression)? // option to explicitly define type
-    (BECOMES t4=Expression)?
+    (BECOMES (t4=Expression /* |(LBRACE NL* Expression NL* RBRACE) */))?
+    // we need block since we can't always detect continuation after ':='
+    // but this causes infinite loop
   )// | (BECOMES t2+=ID)+ BECOMES t4=Expression
 ;
 
@@ -792,11 +798,13 @@ Block hidden(WS,SL_COMMENT):
  * examples:
  * x
  * x:Int
+ * x,y:INT -- multiple assignment
  * x:Int := 3
  * 
  * x=y => 3
  */
 StatementExpression hidden(WS,SL_COMMENT):
+  //(ID COMMA)* // allow multiple assignment
   t=ConditionExpression // was Expression but changed so that 'if' statement
                         // does not clash with if-then-else expression
 //    (COLON t2=TypeExpression)?
@@ -1366,7 +1374,8 @@ NameOrFunctionCall hidden(WS,SL_COMMENT):
     // option of no parenthesis for single parameter
     | => t6=PrimaryExpression
   )?
-  => (COLON rightType2 =TypeExpression)?
+  => ((COMMA ID)* COLON rightType2 =TypeExpression)?
+  // allow multiple assignment
   //=>(op=GIVES lambda = Expression 'xxx')?
 ;
 

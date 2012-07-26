@@ -249,7 +249,7 @@ class EditorGenerator implements IGenerator {
     /* VariableDeclarationAssign */
     def compile(VariableDeclarationAssign f) 
         '''«IF f.varName != null»«f.varName»«ENDIF»«
-        FOR x:f.t2»,«x»«ENDFOR»«
+        FOR x:f.t12»,«x»«ENDFOR»«
         IF f.typ != null»:«compile(f.typ)»«ENDIF»«
         IF f.t4 != null»:=«compile(f.t4)»«ENDIF»'''
   

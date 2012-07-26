@@ -29,7 +29,7 @@ import org.eclipse.emf.ecore.util.EDataTypeEList;
  * The following features are implemented:
  * <ul>
  *   <li>{@link com.euclideanspace.spad.editor.impl.VariableDeclarationAssignImpl#getVarName <em>Var Name</em>}</li>
- *   <li>{@link com.euclideanspace.spad.editor.impl.VariableDeclarationAssignImpl#getT2 <em>T2</em>}</li>
+ *   <li>{@link com.euclideanspace.spad.editor.impl.VariableDeclarationAssignImpl#getT12 <em>T12</em>}</li>
  *   <li>{@link com.euclideanspace.spad.editor.impl.VariableDeclarationAssignImpl#getTyp <em>Typ</em>}</li>
  *   <li>{@link com.euclideanspace.spad.editor.impl.VariableDeclarationAssignImpl#getT4 <em>T4</em>}</li>
  * </ul>
@@ -60,14 +60,14 @@ public class VariableDeclarationAssignImpl extends AddStatementsImpl implements 
   protected String varName = VAR_NAME_EDEFAULT;
 
   /**
-   * The cached value of the '{@link #getT2() <em>T2</em>}' attribute list.
+   * The cached value of the '{@link #getT12() <em>T12</em>}' attribute list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getT2()
+   * @see #getT12()
    * @generated
    * @ordered
    */
-  protected EList<String> t2;
+  protected EList<String> t12;
 
   /**
    * The cached value of the '{@link #getTyp() <em>Typ</em>}' containment reference.
@@ -138,13 +138,13 @@ public class VariableDeclarationAssignImpl extends AddStatementsImpl implements 
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<String> getT2()
+  public EList<String> getT12()
   {
-    if (t2 == null)
+    if (t12 == null)
     {
-      t2 = new EDataTypeEList<String>(String.class, this, EditorPackage.VARIABLE_DECLARATION_ASSIGN__T2);
+      t12 = new EDataTypeEList<String>(String.class, this, EditorPackage.VARIABLE_DECLARATION_ASSIGN__T12);
     }
-    return t2;
+    return t12;
   }
 
   /**
@@ -273,8 +273,8 @@ public class VariableDeclarationAssignImpl extends AddStatementsImpl implements 
     {
       case EditorPackage.VARIABLE_DECLARATION_ASSIGN__VAR_NAME:
         return getVarName();
-      case EditorPackage.VARIABLE_DECLARATION_ASSIGN__T2:
-        return getT2();
+      case EditorPackage.VARIABLE_DECLARATION_ASSIGN__T12:
+        return getT12();
       case EditorPackage.VARIABLE_DECLARATION_ASSIGN__TYP:
         return getTyp();
       case EditorPackage.VARIABLE_DECLARATION_ASSIGN__T4:
@@ -297,9 +297,9 @@ public class VariableDeclarationAssignImpl extends AddStatementsImpl implements 
       case EditorPackage.VARIABLE_DECLARATION_ASSIGN__VAR_NAME:
         setVarName((String)newValue);
         return;
-      case EditorPackage.VARIABLE_DECLARATION_ASSIGN__T2:
-        getT2().clear();
-        getT2().addAll((Collection<? extends String>)newValue);
+      case EditorPackage.VARIABLE_DECLARATION_ASSIGN__T12:
+        getT12().clear();
+        getT12().addAll((Collection<? extends String>)newValue);
         return;
       case EditorPackage.VARIABLE_DECLARATION_ASSIGN__TYP:
         setTyp((TypeExpression)newValue);
@@ -324,8 +324,8 @@ public class VariableDeclarationAssignImpl extends AddStatementsImpl implements 
       case EditorPackage.VARIABLE_DECLARATION_ASSIGN__VAR_NAME:
         setVarName(VAR_NAME_EDEFAULT);
         return;
-      case EditorPackage.VARIABLE_DECLARATION_ASSIGN__T2:
-        getT2().clear();
+      case EditorPackage.VARIABLE_DECLARATION_ASSIGN__T12:
+        getT12().clear();
         return;
       case EditorPackage.VARIABLE_DECLARATION_ASSIGN__TYP:
         setTyp((TypeExpression)null);
@@ -349,8 +349,8 @@ public class VariableDeclarationAssignImpl extends AddStatementsImpl implements 
     {
       case EditorPackage.VARIABLE_DECLARATION_ASSIGN__VAR_NAME:
         return VAR_NAME_EDEFAULT == null ? varName != null : !VAR_NAME_EDEFAULT.equals(varName);
-      case EditorPackage.VARIABLE_DECLARATION_ASSIGN__T2:
-        return t2 != null && !t2.isEmpty();
+      case EditorPackage.VARIABLE_DECLARATION_ASSIGN__T12:
+        return t12 != null && !t12.isEmpty();
       case EditorPackage.VARIABLE_DECLARATION_ASSIGN__TYP:
         return typ != null;
       case EditorPackage.VARIABLE_DECLARATION_ASSIGN__T4:
@@ -372,8 +372,8 @@ public class VariableDeclarationAssignImpl extends AddStatementsImpl implements 
     StringBuffer result = new StringBuffer(super.toString());
     result.append(" (varName: ");
     result.append(varName);
-    result.append(", t2: ");
-    result.append(t2);
+    result.append(", t12: ");
+    result.append(t12);
     result.append(')');
     return result.toString();
   }

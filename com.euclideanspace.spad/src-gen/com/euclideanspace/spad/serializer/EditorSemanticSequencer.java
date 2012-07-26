@@ -2438,7 +2438,7 @@ public class EditorSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	
 	/**
 	 * Constraint:
-	 *     (varName=ID t2+=ID* typ=TypeExpression? t4=Expression?)
+	 *     (varName=ID t12+=ID* typ=TypeExpression? t4=Expression?)
 	 */
 	protected void sequence_VariableDeclarationAssign(EObject context, VariableDeclarationAssign semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

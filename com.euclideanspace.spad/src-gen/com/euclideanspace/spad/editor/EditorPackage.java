@@ -1246,13 +1246,13 @@ public interface EditorPackage extends EPackage
   int VARIABLE_DECLARATION_ASSIGN__VAR_NAME = ADD_STATEMENTS_FEATURE_COUNT + 0;
 
   /**
-   * The feature id for the '<em><b>T2</b></em>' attribute list.
+   * The feature id for the '<em><b>T12</b></em>' attribute list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int VARIABLE_DECLARATION_ASSIGN__T2 = ADD_STATEMENTS_FEATURE_COUNT + 1;
+  int VARIABLE_DECLARATION_ASSIGN__T12 = ADD_STATEMENTS_FEATURE_COUNT + 1;
 
   /**
    * The feature id for the '<em><b>Typ</b></em>' containment reference.
@@ -11499,15 +11499,15 @@ public interface EditorPackage extends EPackage
   EAttribute getVariableDeclarationAssign_VarName();
 
   /**
-   * Returns the meta object for the attribute list '{@link com.euclideanspace.spad.editor.VariableDeclarationAssign#getT2 <em>T2</em>}'.
+   * Returns the meta object for the attribute list '{@link com.euclideanspace.spad.editor.VariableDeclarationAssign#getT12 <em>T12</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute list '<em>T2</em>'.
-   * @see com.euclideanspace.spad.editor.VariableDeclarationAssign#getT2()
+   * @return the meta object for the attribute list '<em>T12</em>'.
+   * @see com.euclideanspace.spad.editor.VariableDeclarationAssign#getT12()
    * @see #getVariableDeclarationAssign()
    * @generated
    */
-  EAttribute getVariableDeclarationAssign_T2();
+  EAttribute getVariableDeclarationAssign_T12();
 
   /**
    * Returns the meta object for the containment reference '{@link com.euclideanspace.spad.editor.VariableDeclarationAssign#getTyp <em>Typ</em>}'.
@@ -15472,12 +15472,12 @@ public interface EditorPackage extends EPackage
     EAttribute VARIABLE_DECLARATION_ASSIGN__VAR_NAME = eINSTANCE.getVariableDeclarationAssign_VarName();
 
     /**
-     * The meta object literal for the '<em><b>T2</b></em>' attribute list feature.
+     * The meta object literal for the '<em><b>T12</b></em>' attribute list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute VARIABLE_DECLARATION_ASSIGN__T2 = eINSTANCE.getVariableDeclarationAssign_T2();
+    EAttribute VARIABLE_DECLARATION_ASSIGN__T12 = eINSTANCE.getVariableDeclarationAssign_T12();
 
     /**
      * The meta object literal for the '<em><b>Typ</b></em>' containment reference feature.

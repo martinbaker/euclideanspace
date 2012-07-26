@@ -289,6 +289,7 @@ public class EditorParser extends AbstractContentAssistParser {
 					put(grammarAccess.getNameOrFunctionCallAccess().getGroup_3_0_4_2(), "rule__NameOrFunctionCall__Group_3_0_4_2__0");
 					put(grammarAccess.getNameOrFunctionCallAccess().getGroup_4(), "rule__NameOrFunctionCall__Group_4__0");
 					put(grammarAccess.getNameOrFunctionCallAccess().getGroup_4_0(), "rule__NameOrFunctionCall__Group_4_0__0");
+					put(grammarAccess.getNameOrFunctionCallAccess().getGroup_4_0_0(), "rule__NameOrFunctionCall__Group_4_0_0__0");
 					put(grammarAccess.getLiteralAccess().getGroup_1(), "rule__Literal__Group_1__0");
 					put(grammarAccess.getLiteralAccess().getGroup_1_1(), "rule__Literal__Group_1_1__0");
 					put(grammarAccess.getLiteralAccess().getGroup_1_1_1(), "rule__Literal__Group_1_1_1__0");
@@ -402,7 +403,7 @@ public class EditorParser extends AbstractContentAssistParser {
 					put(grammarAccess.getVariableTypedAccess().getVarNameStAssignment_0_1(), "rule__VariableTyped__VarNameStAssignment_0_1");
 					put(grammarAccess.getVariableTypedAccess().getTypAssignment_1_1(), "rule__VariableTyped__TypAssignment_1_1");
 					put(grammarAccess.getVariableDeclarationAssignAccess().getVarNameAssignment_0(), "rule__VariableDeclarationAssign__VarNameAssignment_0");
-					put(grammarAccess.getVariableDeclarationAssignAccess().getT2Assignment_1_0_1(), "rule__VariableDeclarationAssign__T2Assignment_1_0_1");
+					put(grammarAccess.getVariableDeclarationAssignAccess().getT12Assignment_1_0_1(), "rule__VariableDeclarationAssign__T12Assignment_1_0_1");
 					put(grammarAccess.getVariableDeclarationAssignAccess().getTypAssignment_1_1_1(), "rule__VariableDeclarationAssign__TypAssignment_1_1_1");
 					put(grammarAccess.getVariableDeclarationAssignAccess().getT4Assignment_1_2_1(), "rule__VariableDeclarationAssign__T4Assignment_1_2_1");
 					put(grammarAccess.getFreeVariableAccess().getVarAssignment_1(), "rule__FreeVariable__VarAssignment_1");
@@ -623,7 +624,7 @@ public class EditorParser extends AbstractContentAssistParser {
 					put(grammarAccess.getNameOrFunctionCallAccess().getT14Assignment_3_0_4_1(), "rule__NameOrFunctionCall__T14Assignment_3_0_4_1");
 					put(grammarAccess.getNameOrFunctionCallAccess().getT15Assignment_3_0_4_2_1(), "rule__NameOrFunctionCall__T15Assignment_3_0_4_2_1");
 					put(grammarAccess.getNameOrFunctionCallAccess().getT6Assignment_3_1(), "rule__NameOrFunctionCall__T6Assignment_3_1");
-					put(grammarAccess.getNameOrFunctionCallAccess().getRightType2Assignment_4_0_1(), "rule__NameOrFunctionCall__RightType2Assignment_4_0_1");
+					put(grammarAccess.getNameOrFunctionCallAccess().getRightType2Assignment_4_0_2(), "rule__NameOrFunctionCall__RightType2Assignment_4_0_2");
 					put(grammarAccess.getLiteralAccess().getValueAssignment_0(), "rule__Literal__ValueAssignment_0");
 					put(grammarAccess.getLiteralAccess().getT2Assignment_1_0(), "rule__Literal__T2Assignment_1_0");
 					put(grammarAccess.getLiteralAccess().getE1Assignment_1_1_0(), "rule__Literal__E1Assignment_1_1_0");

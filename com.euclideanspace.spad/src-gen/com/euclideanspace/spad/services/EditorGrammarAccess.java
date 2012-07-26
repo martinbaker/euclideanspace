@@ -1810,11 +1810,15 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		// * x:Record(newPt: Pt,type:  String)
 		// * or it can be a function like:
 		// * x:(Float,Integer) -> Float
+		// * we can define multiple variables together:
+		// * i,j : Integer
 		// * / VariableTyped hidden(WS, SL_COMMENT):
-		//	(varName=ID | varNameSt=STRING) (COLON typ=TypeExpression)?;
+		//	(varName=ID | varNameSt=STRING) //    =>(COMMA t2+=ID)* // multiple declarations in same line
+		//	(COLON typ=TypeExpression)?;
 		public ParserRule getRule() { return rule; }
 
-		//(varName=ID | varNameSt=STRING) (COLON typ=TypeExpression)?
+		//(varName=ID | varNameSt=STRING) //    =>(COMMA t2+=ID)* // multiple declarations in same line
+		//(COLON typ=TypeExpression)?
 		public Group getGroup() { return cGroup; }
 
 		//varName=ID | varNameSt=STRING
@@ -1853,8 +1857,8 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		private final Group cGroup_1 = (Group)cGroup.eContents().get(1);
 		private final Group cGroup_1_0 = (Group)cGroup_1.eContents().get(0);
 		private final RuleCall cCOMMATerminalRuleCall_1_0_0 = (RuleCall)cGroup_1_0.eContents().get(0);
-		private final Assignment cT2Assignment_1_0_1 = (Assignment)cGroup_1_0.eContents().get(1);
-		private final RuleCall cT2IDTerminalRuleCall_1_0_1_0 = (RuleCall)cT2Assignment_1_0_1.eContents().get(0);
+		private final Assignment cT12Assignment_1_0_1 = (Assignment)cGroup_1_0.eContents().get(1);
+		private final RuleCall cT12IDTerminalRuleCall_1_0_1_0 = (RuleCall)cT12Assignment_1_0_1.eContents().get(0);
 		private final Group cGroup_1_1 = (Group)cGroup_1.eContents().get(1);
 		private final RuleCall cCOLONTerminalRuleCall_1_1_0 = (RuleCall)cGroup_1_1.eContents().get(0);
 		private final Assignment cTypAssignment_1_1_1 = (Assignment)cGroup_1_1.eContents().get(1);
@@ -1878,18 +1882,22 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		//	varName= // name of variable
 		//	ID // if I just use name=ID then, when the ui program is running, I get:
 		//	// Duplicate xxx 'coerce' in yyy
-		//	((COMMA t2+=ID)* // multiple declarations in same line
+		//	((COMMA t12+=ID)* // multiple declarations in same line
 		//	(COLON typ=TypeExpression)? // option to explicitly define type
-		//	(BECOMES t4=Expression)?) // | (BECOMES t2+=ID)+ BECOMES t4=Expression
+		//	(BECOMES t4=Expression / * |(LBRACE NL* Expression NL* RBRACE) * /)?) // we need block since we can't always detect continuation after ':='
+		//	// but this causes infinite loop
+		//	// | (BECOMES t2+=ID)+ BECOMES t4=Expression
 		//;
 		public ParserRule getRule() { return rule; }
 
 		//varName= // name of variable
 		//ID // if I just use name=ID then, when the ui program is running, I get:
 		//// Duplicate xxx 'coerce' in yyy
-		//((COMMA t2+=ID)* // multiple declarations in same line
+		//((COMMA t12+=ID)* // multiple declarations in same line
 		//(COLON typ=TypeExpression)? // option to explicitly define type
-		//(BECOMES t4=Expression)?) // | (BECOMES t2+=ID)+ BECOMES t4=Expression
+		//(BECOMES t4=Expression / * |(LBRACE NL* Expression NL* RBRACE) * /)?) // we need block since we can't always detect continuation after ':='
+		//// but this causes infinite loop
+		//// | (BECOMES t2+=ID)+ BECOMES t4=Expression
 		public Group getGroup() { return cGroup; }
 
 		//varName= // name of variable
@@ -1900,22 +1908,22 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		//ID
 		public RuleCall getVarNameIDTerminalRuleCall_0_0() { return cVarNameIDTerminalRuleCall_0_0; }
 
-		//(COMMA t2+=ID)* // multiple declarations in same line
+		//(COMMA t12+=ID)* // multiple declarations in same line
 		//(COLON typ=TypeExpression)? // option to explicitly define type
-		//(BECOMES t4=Expression)?
+		//(BECOMES t4=Expression / * |(LBRACE NL* Expression NL* RBRACE) * /)?
 		public Group getGroup_1() { return cGroup_1; }
 
-		//(COMMA t2+=ID)*
+		//(COMMA t12+=ID)*
 		public Group getGroup_1_0() { return cGroup_1_0; }
 
 		//COMMA
 		public RuleCall getCOMMATerminalRuleCall_1_0_0() { return cCOMMATerminalRuleCall_1_0_0; }
 
-		//t2+=ID
-		public Assignment getT2Assignment_1_0_1() { return cT2Assignment_1_0_1; }
+		//t12+=ID
+		public Assignment getT12Assignment_1_0_1() { return cT12Assignment_1_0_1; }
 
 		//ID
-		public RuleCall getT2IDTerminalRuleCall_1_0_1_0() { return cT2IDTerminalRuleCall_1_0_1_0; }
+		public RuleCall getT12IDTerminalRuleCall_1_0_1_0() { return cT12IDTerminalRuleCall_1_0_1_0; }
 
 		//(COLON typ=TypeExpression)?
 		public Group getGroup_1_1() { return cGroup_1_1; }
@@ -1929,7 +1937,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		//TypeExpression
 		public RuleCall getTypTypeExpressionParserRuleCall_1_1_1_0() { return cTypTypeExpressionParserRuleCall_1_1_1_0; }
 
-		//(BECOMES t4=Expression)?
+		//(BECOMES t4=Expression / * |(LBRACE NL* Expression NL* RBRACE) * /)?
 		public Group getGroup_1_2() { return cGroup_1_2; }
 
 		//BECOMES
@@ -3491,10 +3499,11 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		// * examples:
 		// * x
 		// * x:Int
+		// * x,y:INT -- multiple assignment
 		// * x:Int := 3
 		// * 
 		// * x=y => 3
-		// * / StatementExpression hidden(WS, SL_COMMENT):
+		// * / StatementExpression hidden(WS, SL_COMMENT): //(ID COMMA)* // allow multiple assignment
 		//	t= // was Expression but changed so that 'if' statement
 		//	ConditionExpression // does not clash with if-then-else expression
 		//	//    (COLON t2=TypeExpression)?
@@ -3506,6 +3515,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		//	(EXIT t4=Statement)?;
 		public ParserRule getRule() { return rule; }
 
+		////(ID COMMA)* // allow multiple assignment
 		//t= // was Expression but changed so that 'if' statement
 		//ConditionExpression // does not clash with if-then-else expression
 		////    (COLON t2=TypeExpression)?
@@ -3517,6 +3527,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		//(EXIT t4=Statement)?
 		public Group getGroup() { return cGroup; }
 
+		////(ID COMMA)* // allow multiple assignment
 		//t= // was Expression but changed so that 'if' statement
 		//ConditionExpression
 		public Assignment getTAssignment_0() { return cTAssignment_0; }
@@ -5942,9 +5953,12 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cT6PrimaryExpressionParserRuleCall_3_1_0 = (RuleCall)cT6Assignment_3_1.eContents().get(0);
 		private final Group cGroup_4 = (Group)cGroup.eContents().get(4);
 		private final Group cGroup_4_0 = (Group)cGroup_4.eContents().get(0);
-		private final RuleCall cCOLONTerminalRuleCall_4_0_0 = (RuleCall)cGroup_4_0.eContents().get(0);
-		private final Assignment cRightType2Assignment_4_0_1 = (Assignment)cGroup_4_0.eContents().get(1);
-		private final RuleCall cRightType2TypeExpressionParserRuleCall_4_0_1_0 = (RuleCall)cRightType2Assignment_4_0_1.eContents().get(0);
+		private final Group cGroup_4_0_0 = (Group)cGroup_4_0.eContents().get(0);
+		private final RuleCall cCOMMATerminalRuleCall_4_0_0_0 = (RuleCall)cGroup_4_0_0.eContents().get(0);
+		private final RuleCall cIDTerminalRuleCall_4_0_0_1 = (RuleCall)cGroup_4_0_0.eContents().get(1);
+		private final RuleCall cCOLONTerminalRuleCall_4_0_1 = (RuleCall)cGroup_4_0.eContents().get(1);
+		private final Assignment cRightType2Assignment_4_0_2 = (Assignment)cGroup_4_0.eContents().get(2);
+		private final RuleCall cRightType2TypeExpressionParserRuleCall_4_0_2_0 = (RuleCall)cRightType2Assignment_4_0_2.eContents().get(0);
 		
 		/// * function call such as List(Integer)
 		// * known as a parameterised type or functor (not necessarily a true functor since
@@ -5952,20 +5966,21 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		// * if there is only one parameter then the parenthesis are optional
 		// * 
 		// * function binds most tightly
-		// * / //=>(op=GIVES lambda = Expression 'xxx')?
+		// * / // allow multiple assignment
+		////=>(op=GIVES lambda = Expression 'xxx')?
 		//NameOrFunctionCall hidden(WS, SL_COMMENT):
 		//	"\'"? fnname=ID (=> lsp=DOLAR "Lisp")? / *t2=TypeExpression* / (LPAREN t4=StatementExpression? (COMMA t5+=Expression)* //(COLON rightType2 =TypeExpression)?
 		//	RPAREN // optional curried function:
 		//	(LPAREN t14+=StatementExpression? (COMMA t15+=Expression)* RPAREN)* //  option for parameters in parenthesis
 		//	// option of no parenthesis for single parameter
-		//	| => t6=PrimaryExpression)? => (COLON rightType2=TypeExpression)?;
+		//	| => t6=PrimaryExpression)? => ((COMMA ID)* COLON rightType2=TypeExpression)?;
 		public ParserRule getRule() { return rule; }
 
 		//"\'"? fnname=ID (=> lsp=DOLAR "Lisp")? / *t2=TypeExpression* / (LPAREN t4=StatementExpression? (COMMA t5+=Expression)* //(COLON rightType2 =TypeExpression)?
 		//RPAREN // optional curried function:
 		//(LPAREN t14+=StatementExpression? (COMMA t15+=Expression)* RPAREN)* //  option for parameters in parenthesis
 		//// option of no parenthesis for single parameter
-		//| => t6=PrimaryExpression)? => (COLON rightType2=TypeExpression)?
+		//| => t6=PrimaryExpression)? => ((COMMA ID)* COLON rightType2=TypeExpression)?
 		public Group getGroup() { return cGroup; }
 
 		//"\'"?
@@ -6059,20 +6074,29 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		//PrimaryExpression
 		public RuleCall getT6PrimaryExpressionParserRuleCall_3_1_0() { return cT6PrimaryExpressionParserRuleCall_3_1_0; }
 
-		//=> (COLON rightType2=TypeExpression)?
+		//=> ((COMMA ID)* COLON rightType2=TypeExpression)?
 		public Group getGroup_4() { return cGroup_4; }
 
-		//COLON rightType2=TypeExpression
+		//(COMMA ID)* COLON rightType2=TypeExpression
 		public Group getGroup_4_0() { return cGroup_4_0; }
 
+		//(COMMA ID)*
+		public Group getGroup_4_0_0() { return cGroup_4_0_0; }
+
+		//COMMA
+		public RuleCall getCOMMATerminalRuleCall_4_0_0_0() { return cCOMMATerminalRuleCall_4_0_0_0; }
+
+		//ID
+		public RuleCall getIDTerminalRuleCall_4_0_0_1() { return cIDTerminalRuleCall_4_0_0_1; }
+
 		//COLON
-		public RuleCall getCOLONTerminalRuleCall_4_0_0() { return cCOLONTerminalRuleCall_4_0_0; }
+		public RuleCall getCOLONTerminalRuleCall_4_0_1() { return cCOLONTerminalRuleCall_4_0_1; }
 
 		//rightType2=TypeExpression
-		public Assignment getRightType2Assignment_4_0_1() { return cRightType2Assignment_4_0_1; }
+		public Assignment getRightType2Assignment_4_0_2() { return cRightType2Assignment_4_0_2; }
 
 		//TypeExpression
-		public RuleCall getRightType2TypeExpressionParserRuleCall_4_0_1_0() { return cRightType2TypeExpressionParserRuleCall_4_0_1_0; }
+		public RuleCall getRightType2TypeExpressionParserRuleCall_4_0_2_0() { return cRightType2TypeExpressionParserRuleCall_4_0_2_0; }
 	}
 
 	public class LiteralElements extends AbstractParserRuleElementFinder {
@@ -6108,14 +6132,12 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		// * 6) values following immediately after string literal such as "abc"d should
 		// *    represent an implied concat: concat("abc",d)
 		// * / Literal hidden(WS, SL_COMMENT):
-		//	value=INT //  | t2=STRING (=> e1=NameOrFunctionCall (t31+=STRING (=> e4+=NameOrFunctionCall)?)*)?
-		//	//  | t3=FloatLiteral // conflicts with use of '.' for elt
+		//	value=INT //  | t3=FloatLiteral // conflicts with use of '.' for elt
 		//	| t2=STRING (=> e1=NameOrFunctionCall => (t31+=STRING => e4+=NameOrFunctionCall?)*)? | ListLiteral | CharacterLiteral |
 		//	BooleanLiteral;
 		public ParserRule getRule() { return rule; }
 
-		//value=INT //  | t2=STRING (=> e1=NameOrFunctionCall (t31+=STRING (=> e4+=NameOrFunctionCall)?)*)?
-		////  | t3=FloatLiteral // conflicts with use of '.' for elt
+		//value=INT //  | t3=FloatLiteral // conflicts with use of '.' for elt
 		//| t2=STRING (=> e1=NameOrFunctionCall => (t31+=STRING => e4+=NameOrFunctionCall?)*)? | ListLiteral | CharacterLiteral |
 		//BooleanLiteral
 		public Alternatives getAlternatives() { return cAlternatives; }
@@ -7302,8 +7324,11 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 	// * x:Record(newPt: Pt,type:  String)
 	// * or it can be a function like:
 	// * x:(Float,Integer) -> Float
+	// * we can define multiple variables together:
+	// * i,j : Integer
 	// * / VariableTyped hidden(WS, SL_COMMENT):
-	//	(varName=ID | varNameSt=STRING) (COLON typ=TypeExpression)?;
+	//	(varName=ID | varNameSt=STRING) //    =>(COMMA t2+=ID)* // multiple declarations in same line
+	//	(COLON typ=TypeExpression)?;
 	public VariableTypedElements getVariableTypedAccess() {
 		return (pVariableTyped != null) ? pVariableTyped : (pVariableTyped = new VariableTypedElements());
 	}
@@ -7326,9 +7351,11 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 	//	varName= // name of variable
 	//	ID // if I just use name=ID then, when the ui program is running, I get:
 	//	// Duplicate xxx 'coerce' in yyy
-	//	((COMMA t2+=ID)* // multiple declarations in same line
+	//	((COMMA t12+=ID)* // multiple declarations in same line
 	//	(COLON typ=TypeExpression)? // option to explicitly define type
-	//	(BECOMES t4=Expression)?) // | (BECOMES t2+=ID)+ BECOMES t4=Expression
+	//	(BECOMES t4=Expression / * |(LBRACE NL* Expression NL* RBRACE) * /)?) // we need block since we can't always detect continuation after ':='
+	//	// but this causes infinite loop
+	//	// | (BECOMES t2+=ID)+ BECOMES t4=Expression
 	//;
 	public VariableDeclarationAssignElements getVariableDeclarationAssignAccess() {
 		return (pVariableDeclarationAssign != null) ? pVariableDeclarationAssign : (pVariableDeclarationAssign = new VariableDeclarationAssignElements());
@@ -7551,10 +7578,11 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 	// * examples:
 	// * x
 	// * x:Int
+	// * x,y:INT -- multiple assignment
 	// * x:Int := 3
 	// * 
 	// * x=y => 3
-	// * / StatementExpression hidden(WS, SL_COMMENT):
+	// * / StatementExpression hidden(WS, SL_COMMENT): //(ID COMMA)* // allow multiple assignment
 	//	t= // was Expression but changed so that 'if' statement
 	//	ConditionExpression // does not clash with if-then-else expression
 	//	//    (COLON t2=TypeExpression)?
@@ -8230,13 +8258,14 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 	// * if there is only one parameter then the parenthesis are optional
 	// * 
 	// * function binds most tightly
-	// * / //=>(op=GIVES lambda = Expression 'xxx')?
+	// * / // allow multiple assignment
+	////=>(op=GIVES lambda = Expression 'xxx')?
 	//NameOrFunctionCall hidden(WS, SL_COMMENT):
 	//	"\'"? fnname=ID (=> lsp=DOLAR "Lisp")? / *t2=TypeExpression* / (LPAREN t4=StatementExpression? (COMMA t5+=Expression)* //(COLON rightType2 =TypeExpression)?
 	//	RPAREN // optional curried function:
 	//	(LPAREN t14+=StatementExpression? (COMMA t15+=Expression)* RPAREN)* //  option for parameters in parenthesis
 	//	// option of no parenthesis for single parameter
-	//	| => t6=PrimaryExpression)? => (COLON rightType2=TypeExpression)?;
+	//	| => t6=PrimaryExpression)? => ((COMMA ID)* COLON rightType2=TypeExpression)?;
 	public NameOrFunctionCallElements getNameOrFunctionCallAccess() {
 		return (pNameOrFunctionCall != null) ? pNameOrFunctionCall : (pNameOrFunctionCall = new NameOrFunctionCallElements());
 	}
@@ -8257,8 +8286,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 	// * 6) values following immediately after string literal such as "abc"d should
 	// *    represent an implied concat: concat("abc",d)
 	// * / Literal hidden(WS, SL_COMMENT):
-	//	value=INT //  | t2=STRING (=> e1=NameOrFunctionCall (t31+=STRING (=> e4+=NameOrFunctionCall)?)*)?
-	//	//  | t3=FloatLiteral // conflicts with use of '.' for elt
+	//	value=INT //  | t3=FloatLiteral // conflicts with use of '.' for elt
 	//	| t2=STRING (=> e1=NameOrFunctionCall => (t31+=STRING => e4+=NameOrFunctionCall?)*)? | ListLiteral | CharacterLiteral |
 	//	BooleanLiteral;
 	public LiteralElements getLiteralAccess() {
