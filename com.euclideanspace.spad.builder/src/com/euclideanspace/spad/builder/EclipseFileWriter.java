@@ -26,6 +26,9 @@ import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.IFolder;
 import org.eclipse.core.runtime.CoreException;
 
+/**
+ * @author Martin John Baker
+ */
 public class EclipseFileWriter extends InputStream {
 
 	/**
