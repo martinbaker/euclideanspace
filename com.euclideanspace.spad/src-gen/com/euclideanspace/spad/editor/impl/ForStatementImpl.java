@@ -33,8 +33,10 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <ul>
  *   <li>{@link com.euclideanspace.spad.editor.impl.ForStatementImpl#getStname <em>Stname</em>}</li>
  *   <li>{@link com.euclideanspace.spad.editor.impl.ForStatementImpl#getT1 <em>T1</em>}</li>
+ *   <li>{@link com.euclideanspace.spad.editor.impl.ForStatementImpl#getBy1 <em>By1</em>}</li>
  *   <li>{@link com.euclideanspace.spad.editor.impl.ForStatementImpl#getStname2 <em>Stname2</em>}</li>
  *   <li>{@link com.euclideanspace.spad.editor.impl.ForStatementImpl#getT2 <em>T2</em>}</li>
+ *   <li>{@link com.euclideanspace.spad.editor.impl.ForStatementImpl#getBy2 <em>By2</em>}</li>
  *   <li>{@link com.euclideanspace.spad.editor.impl.ForStatementImpl#getS1 <em>S1</em>}</li>
  * </ul>
  * </p>
@@ -74,6 +76,16 @@ public class ForStatementImpl extends MinimalEObjectImpl.Container implements Fo
   protected Expr t1;
 
   /**
+   * The cached value of the '{@link #getBy1() <em>By1</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getBy1()
+   * @generated
+   * @ordered
+   */
+  protected Expr by1;
+
+  /**
    * The cached value of the '{@link #getStname2() <em>Stname2</em>}' attribute list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -92,6 +104,16 @@ public class ForStatementImpl extends MinimalEObjectImpl.Container implements Fo
    * @ordered
    */
   protected EList<Expr> t2;
+
+  /**
+   * The cached value of the '{@link #getBy2() <em>By2</em>}' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getBy2()
+   * @generated
+   * @ordered
+   */
+  protected EList<Expr> by2;
 
   /**
    * The cached value of the '{@link #getS1() <em>S1</em>}' containment reference.
@@ -200,6 +222,54 @@ public class ForStatementImpl extends MinimalEObjectImpl.Container implements Fo
    * <!-- end-user-doc -->
    * @generated
    */
+  public Expr getBy1()
+  {
+    return by1;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetBy1(Expr newBy1, NotificationChain msgs)
+  {
+    Expr oldBy1 = by1;
+    by1 = newBy1;
+    if (eNotificationRequired())
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, EditorPackage.FOR_STATEMENT__BY1, oldBy1, newBy1);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setBy1(Expr newBy1)
+  {
+    if (newBy1 != by1)
+    {
+      NotificationChain msgs = null;
+      if (by1 != null)
+        msgs = ((InternalEObject)by1).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - EditorPackage.FOR_STATEMENT__BY1, null, msgs);
+      if (newBy1 != null)
+        msgs = ((InternalEObject)newBy1).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - EditorPackage.FOR_STATEMENT__BY1, null, msgs);
+      msgs = basicSetBy1(newBy1, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, EditorPackage.FOR_STATEMENT__BY1, newBy1, newBy1));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EList<String> getStname2()
   {
     if (stname2 == null)
@@ -221,6 +291,20 @@ public class ForStatementImpl extends MinimalEObjectImpl.Container implements Fo
       t2 = new EObjectContainmentEList<Expr>(Expr.class, this, EditorPackage.FOR_STATEMENT__T2);
     }
     return t2;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EList<Expr> getBy2()
+  {
+    if (by2 == null)
+    {
+      by2 = new EObjectContainmentEList<Expr>(Expr.class, this, EditorPackage.FOR_STATEMENT__BY2);
+    }
+    return by2;
   }
 
   /**
@@ -283,8 +367,12 @@ public class ForStatementImpl extends MinimalEObjectImpl.Container implements Fo
     {
       case EditorPackage.FOR_STATEMENT__T1:
         return basicSetT1(null, msgs);
+      case EditorPackage.FOR_STATEMENT__BY1:
+        return basicSetBy1(null, msgs);
       case EditorPackage.FOR_STATEMENT__T2:
         return ((InternalEList<?>)getT2()).basicRemove(otherEnd, msgs);
+      case EditorPackage.FOR_STATEMENT__BY2:
+        return ((InternalEList<?>)getBy2()).basicRemove(otherEnd, msgs);
       case EditorPackage.FOR_STATEMENT__S1:
         return basicSetS1(null, msgs);
     }
@@ -305,10 +393,14 @@ public class ForStatementImpl extends MinimalEObjectImpl.Container implements Fo
         return getStname();
       case EditorPackage.FOR_STATEMENT__T1:
         return getT1();
+      case EditorPackage.FOR_STATEMENT__BY1:
+        return getBy1();
       case EditorPackage.FOR_STATEMENT__STNAME2:
         return getStname2();
       case EditorPackage.FOR_STATEMENT__T2:
         return getT2();
+      case EditorPackage.FOR_STATEMENT__BY2:
+        return getBy2();
       case EditorPackage.FOR_STATEMENT__S1:
         return getS1();
     }
@@ -332,6 +424,9 @@ public class ForStatementImpl extends MinimalEObjectImpl.Container implements Fo
       case EditorPackage.FOR_STATEMENT__T1:
         setT1((Expr)newValue);
         return;
+      case EditorPackage.FOR_STATEMENT__BY1:
+        setBy1((Expr)newValue);
+        return;
       case EditorPackage.FOR_STATEMENT__STNAME2:
         getStname2().clear();
         getStname2().addAll((Collection<? extends String>)newValue);
@@ -339,6 +434,10 @@ public class ForStatementImpl extends MinimalEObjectImpl.Container implements Fo
       case EditorPackage.FOR_STATEMENT__T2:
         getT2().clear();
         getT2().addAll((Collection<? extends Expr>)newValue);
+        return;
+      case EditorPackage.FOR_STATEMENT__BY2:
+        getBy2().clear();
+        getBy2().addAll((Collection<? extends Expr>)newValue);
         return;
       case EditorPackage.FOR_STATEMENT__S1:
         setS1((Statement)newValue);
@@ -363,11 +462,17 @@ public class ForStatementImpl extends MinimalEObjectImpl.Container implements Fo
       case EditorPackage.FOR_STATEMENT__T1:
         setT1((Expr)null);
         return;
+      case EditorPackage.FOR_STATEMENT__BY1:
+        setBy1((Expr)null);
+        return;
       case EditorPackage.FOR_STATEMENT__STNAME2:
         getStname2().clear();
         return;
       case EditorPackage.FOR_STATEMENT__T2:
         getT2().clear();
+        return;
+      case EditorPackage.FOR_STATEMENT__BY2:
+        getBy2().clear();
         return;
       case EditorPackage.FOR_STATEMENT__S1:
         setS1((Statement)null);
@@ -390,10 +495,14 @@ public class ForStatementImpl extends MinimalEObjectImpl.Container implements Fo
         return STNAME_EDEFAULT == null ? stname != null : !STNAME_EDEFAULT.equals(stname);
       case EditorPackage.FOR_STATEMENT__T1:
         return t1 != null;
+      case EditorPackage.FOR_STATEMENT__BY1:
+        return by1 != null;
       case EditorPackage.FOR_STATEMENT__STNAME2:
         return stname2 != null && !stname2.isEmpty();
       case EditorPackage.FOR_STATEMENT__T2:
         return t2 != null && !t2.isEmpty();
+      case EditorPackage.FOR_STATEMENT__BY2:
+        return by2 != null && !by2.isEmpty();
       case EditorPackage.FOR_STATEMENT__S1:
         return s1 != null;
     }

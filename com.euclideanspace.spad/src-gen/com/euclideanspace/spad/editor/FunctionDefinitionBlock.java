@@ -19,6 +19,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link com.euclideanspace.spad.editor.FunctionDefinitionBlock#getVars <em>Vars</em>}</li>
  *   <li>{@link com.euclideanspace.spad.editor.FunctionDefinitionBlock#getT1 <em>T1</em>}</li>
  *   <li>{@link com.euclideanspace.spad.editor.FunctionDefinitionBlock#getT13 <em>T13</em>}</li>
+ *   <li>{@link com.euclideanspace.spad.editor.FunctionDefinitionBlock#getT14 <em>T14</em>}</li>
  * </ul>
  * </p>
  *
@@ -117,5 +118,21 @@ public interface FunctionDefinitionBlock extends EObject
    * @generated
    */
   EList<FunctionDefinitionBlock> getT13();
+
+  /**
+   * Returns the value of the '<em><b>T14</b></em>' containment reference list.
+   * The list contents are of type {@link com.euclideanspace.spad.editor.FunctionDefinitionBlock}.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>T14</em>' containment reference list isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>T14</em>' containment reference list.
+   * @see com.euclideanspace.spad.editor.EditorPackage#getFunctionDefinitionBlock_T14()
+   * @model containment="true"
+   * @generated
+   */
+  EList<FunctionDefinitionBlock> getT14();
 
 } // FunctionDefinitionBlock

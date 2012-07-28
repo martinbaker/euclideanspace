@@ -112,6 +112,7 @@ public class EditorFactoryImpl extends EFactoryImpl implements EditorFactory
       case EditorPackage.CHARACTER_LITERAL: return createCharacterLiteral();
       case EditorPackage.BOOLEAN_LITERAL: return createBooleanLiteral();
       case EditorPackage.LIST_LITERAL: return createListLiteral();
+      case EditorPackage.EXIT_EXPRESSION: return createExitExpression();
       case EditorPackage.CONDITION_EXPRESSION: return createConditionExpression();
       case EditorPackage.AND_EXPRESSION: return createAndExpression();
       case EditorPackage.INNER_PROD_EXPRESSION: return createInnerProdExpression();
@@ -669,6 +670,17 @@ public class EditorFactoryImpl extends EFactoryImpl implements EditorFactory
   {
     ListLiteralImpl listLiteral = new ListLiteralImpl();
     return listLiteral;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public ExitExpression createExitExpression()
+  {
+    ExitExpressionImpl exitExpression = new ExitExpressionImpl();
+    return exitExpression;
   }
 
   /**

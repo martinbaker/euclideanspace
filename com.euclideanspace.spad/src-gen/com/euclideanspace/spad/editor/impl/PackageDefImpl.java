@@ -2,6 +2,7 @@
  */
 package com.euclideanspace.spad.editor.impl;
 
+import com.euclideanspace.spad.editor.AddPart;
 import com.euclideanspace.spad.editor.EditorPackage;
 import com.euclideanspace.spad.editor.PackageDef;
 import com.euclideanspace.spad.editor.TypeParameterList;
@@ -33,6 +34,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  *   <li>{@link com.euclideanspace.spad.editor.impl.PackageDefImpl#getImplName <em>Impl Name</em>}</li>
  *   <li>{@link com.euclideanspace.spad.editor.impl.PackageDefImpl#getW <em>W</em>}</li>
  *   <li>{@link com.euclideanspace.spad.editor.impl.PackageDefImpl#getWh5 <em>Wh5</em>}</li>
+ *   <li>{@link com.euclideanspace.spad.editor.impl.PackageDefImpl#getAdd2 <em>Add2</em>}</li>
  * </ul>
  * </p>
  *
@@ -189,6 +191,16 @@ public class PackageDefImpl extends MinimalEObjectImpl.Container implements Pack
    * @ordered
    */
   protected WherePart wh5;
+
+  /**
+   * The cached value of the '{@link #getAdd2() <em>Add2</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getAdd2()
+   * @generated
+   * @ordered
+   */
+  protected AddPart add2;
 
   /**
    * <!-- begin-user-doc -->
@@ -498,6 +510,54 @@ public class PackageDefImpl extends MinimalEObjectImpl.Container implements Pack
    * <!-- end-user-doc -->
    * @generated
    */
+  public AddPart getAdd2()
+  {
+    return add2;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetAdd2(AddPart newAdd2, NotificationChain msgs)
+  {
+    AddPart oldAdd2 = add2;
+    add2 = newAdd2;
+    if (eNotificationRequired())
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, EditorPackage.PACKAGE_DEF__ADD2, oldAdd2, newAdd2);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setAdd2(AddPart newAdd2)
+  {
+    if (newAdd2 != add2)
+    {
+      NotificationChain msgs = null;
+      if (add2 != null)
+        msgs = ((InternalEObject)add2).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - EditorPackage.PACKAGE_DEF__ADD2, null, msgs);
+      if (newAdd2 != null)
+        msgs = ((InternalEObject)newAdd2).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - EditorPackage.PACKAGE_DEF__ADD2, null, msgs);
+      msgs = basicSetAdd2(newAdd2, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, EditorPackage.PACKAGE_DEF__ADD2, newAdd2, newAdd2));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
@@ -509,6 +569,8 @@ public class PackageDefImpl extends MinimalEObjectImpl.Container implements Pack
         return basicSetW(null, msgs);
       case EditorPackage.PACKAGE_DEF__WH5:
         return basicSetWh5(null, msgs);
+      case EditorPackage.PACKAGE_DEF__ADD2:
+        return basicSetAdd2(null, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -541,6 +603,8 @@ public class PackageDefImpl extends MinimalEObjectImpl.Container implements Pack
         return getW();
       case EditorPackage.PACKAGE_DEF__WH5:
         return getWh5();
+      case EditorPackage.PACKAGE_DEF__ADD2:
+        return getAdd2();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -581,6 +645,9 @@ public class PackageDefImpl extends MinimalEObjectImpl.Container implements Pack
         return;
       case EditorPackage.PACKAGE_DEF__WH5:
         setWh5((WherePart)newValue);
+        return;
+      case EditorPackage.PACKAGE_DEF__ADD2:
+        setAdd2((AddPart)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -623,6 +690,9 @@ public class PackageDefImpl extends MinimalEObjectImpl.Container implements Pack
       case EditorPackage.PACKAGE_DEF__WH5:
         setWh5((WherePart)null);
         return;
+      case EditorPackage.PACKAGE_DEF__ADD2:
+        setAdd2((AddPart)null);
+        return;
     }
     super.eUnset(featureID);
   }
@@ -655,6 +725,8 @@ public class PackageDefImpl extends MinimalEObjectImpl.Container implements Pack
         return w != null;
       case EditorPackage.PACKAGE_DEF__WH5:
         return wh5 != null;
+      case EditorPackage.PACKAGE_DEF__ADD2:
+        return add2 != null;
     }
     return super.eIsSet(featureID);
   }

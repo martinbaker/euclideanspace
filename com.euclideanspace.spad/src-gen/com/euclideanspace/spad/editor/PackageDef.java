@@ -21,6 +21,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link com.euclideanspace.spad.editor.PackageDef#getImplName <em>Impl Name</em>}</li>
  *   <li>{@link com.euclideanspace.spad.editor.PackageDef#getW <em>W</em>}</li>
  *   <li>{@link com.euclideanspace.spad.editor.PackageDef#getWh5 <em>Wh5</em>}</li>
+ *   <li>{@link com.euclideanspace.spad.editor.PackageDef#getAdd2 <em>Add2</em>}</li>
  * </ul>
  * </p>
  *
@@ -263,5 +264,31 @@ public interface PackageDef extends EObject
    * @generated
    */
   void setWh5(WherePart value);
+
+  /**
+   * Returns the value of the '<em><b>Add2</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Add2</em>' containment reference isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Add2</em>' containment reference.
+   * @see #setAdd2(AddPart)
+   * @see com.euclideanspace.spad.editor.EditorPackage#getPackageDef_Add2()
+   * @model containment="true"
+   * @generated
+   */
+  AddPart getAdd2();
+
+  /**
+   * Sets the value of the '{@link com.euclideanspace.spad.editor.PackageDef#getAdd2 <em>Add2</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Add2</em>' containment reference.
+   * @see #getAdd2()
+   * @generated
+   */
+  void setAdd2(AddPart value);
 
 } // PackageDef

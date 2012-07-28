@@ -18,9 +18,11 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link com.euclideanspace.spad.editor.DomainDef#getLongname6 <em>Longname6</em>}</li>
  *   <li>{@link com.euclideanspace.spad.editor.DomainDef#getCp5 <em>Cp5</em>}</li>
  *   <li>{@link com.euclideanspace.spad.editor.DomainDef#getExportName <em>Export Name</em>}</li>
+ *   <li>{@link com.euclideanspace.spad.editor.DomainDef#getCp6 <em>Cp6</em>}</li>
  *   <li>{@link com.euclideanspace.spad.editor.DomainDef#getImplName5 <em>Impl Name5</em>}</li>
  *   <li>{@link com.euclideanspace.spad.editor.DomainDef#getW <em>W</em>}</li>
  *   <li>{@link com.euclideanspace.spad.editor.DomainDef#getWh5 <em>Wh5</em>}</li>
+ *   <li>{@link com.euclideanspace.spad.editor.DomainDef#getA <em>A</em>}</li>
  * </ul>
  * </p>
  *
@@ -187,6 +189,32 @@ public interface DomainDef extends EObject
   void setExportName(String value);
 
   /**
+   * Returns the value of the '<em><b>Cp6</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Cp6</em>' containment reference isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Cp6</em>' containment reference.
+   * @see #setCp6(TypeParameterList)
+   * @see com.euclideanspace.spad.editor.EditorPackage#getDomainDef_Cp6()
+   * @model containment="true"
+   * @generated
+   */
+  TypeParameterList getCp6();
+
+  /**
+   * Sets the value of the '{@link com.euclideanspace.spad.editor.DomainDef#getCp6 <em>Cp6</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Cp6</em>' containment reference.
+   * @see #getCp6()
+   * @generated
+   */
+  void setCp6(TypeParameterList value);
+
+  /**
    * Returns the value of the '<em><b>Impl Name5</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <p>
@@ -263,5 +291,31 @@ public interface DomainDef extends EObject
    * @generated
    */
   void setWh5(WherePart value);
+
+  /**
+   * Returns the value of the '<em><b>A</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>A</em>' containment reference isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>A</em>' containment reference.
+   * @see #setA(AddPart)
+   * @see com.euclideanspace.spad.editor.EditorPackage#getDomainDef_A()
+   * @model containment="true"
+   * @generated
+   */
+  AddPart getA();
+
+  /**
+   * Sets the value of the '{@link com.euclideanspace.spad.editor.DomainDef#getA <em>A</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>A</em>' containment reference.
+   * @see #getA()
+   * @generated
+   */
+  void setA(AddPart value);
 
 } // DomainDef

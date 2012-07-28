@@ -14,6 +14,7 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link com.euclideanspace.spad.editor.AddStatements#getT1 <em>T1</em>}</li>
  *   <li>{@link com.euclideanspace.spad.editor.AddStatements#getT13 <em>T13</em>}</li>
+ *   <li>{@link com.euclideanspace.spad.editor.AddStatements#getT14 <em>T14</em>}</li>
  * </ul>
  * </p>
  *
@@ -74,5 +75,31 @@ public interface AddStatements extends EObject
    * @generated
    */
   void setT13(FunctionDefinitionBlock value);
+
+  /**
+   * Returns the value of the '<em><b>T14</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>T14</em>' containment reference isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>T14</em>' containment reference.
+   * @see #setT14(FunctionDefinitionBlock)
+   * @see com.euclideanspace.spad.editor.EditorPackage#getAddStatements_T14()
+   * @model containment="true"
+   * @generated
+   */
+  FunctionDefinitionBlock getT14();
+
+  /**
+   * Sets the value of the '{@link com.euclideanspace.spad.editor.AddStatements#getT14 <em>T14</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>T14</em>' containment reference.
+   * @see #getT14()
+   * @generated
+   */
+  void setT14(FunctionDefinitionBlock value);
 
 } // AddStatements

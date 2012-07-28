@@ -303,13 +303,22 @@ public interface EditorPackage extends EPackage
   int PACKAGE_DEF__WH5 = 8;
 
   /**
+   * The feature id for the '<em><b>Add2</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PACKAGE_DEF__ADD2 = 9;
+
+  /**
    * The number of structural features of the '<em>Package Def</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int PACKAGE_DEF_FEATURE_COUNT = 9;
+  int PACKAGE_DEF_FEATURE_COUNT = 10;
 
   /**
    * The meta object id for the '{@link com.euclideanspace.spad.editor.impl.DomainDefImpl <em>Domain Def</em>}' class.
@@ -376,13 +385,22 @@ public interface EditorPackage extends EPackage
   int DOMAIN_DEF__EXPORT_NAME = 5;
 
   /**
+   * The feature id for the '<em><b>Cp6</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DOMAIN_DEF__CP6 = 6;
+
+  /**
    * The feature id for the '<em><b>Impl Name5</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int DOMAIN_DEF__IMPL_NAME5 = 6;
+  int DOMAIN_DEF__IMPL_NAME5 = 7;
 
   /**
    * The feature id for the '<em><b>W</b></em>' containment reference.
@@ -391,7 +409,7 @@ public interface EditorPackage extends EPackage
    * @generated
    * @ordered
    */
-  int DOMAIN_DEF__W = 7;
+  int DOMAIN_DEF__W = 8;
 
   /**
    * The feature id for the '<em><b>Wh5</b></em>' containment reference.
@@ -400,7 +418,16 @@ public interface EditorPackage extends EPackage
    * @generated
    * @ordered
    */
-  int DOMAIN_DEF__WH5 = 8;
+  int DOMAIN_DEF__WH5 = 9;
+
+  /**
+   * The feature id for the '<em><b>A</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DOMAIN_DEF__A = 10;
 
   /**
    * The number of structural features of the '<em>Domain Def</em>' class.
@@ -409,7 +436,7 @@ public interface EditorPackage extends EPackage
    * @generated
    * @ordered
    */
-  int DOMAIN_DEF_FEATURE_COUNT = 9;
+  int DOMAIN_DEF_FEATURE_COUNT = 11;
 
   /**
    * The meta object id for the '{@link com.euclideanspace.spad.editor.impl.WherePartImpl <em>Where Part</em>}' class.
@@ -642,13 +669,22 @@ public interface EditorPackage extends EPackage
   int ADD_STATEMENTS__T13 = 1;
 
   /**
+   * The feature id for the '<em><b>T14</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ADD_STATEMENTS__T14 = 2;
+
+  /**
    * The number of structural features of the '<em>Add Statements</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int ADD_STATEMENTS_FEATURE_COUNT = 2;
+  int ADD_STATEMENTS_FEATURE_COUNT = 3;
 
   /**
    * The meta object id for the '{@link com.euclideanspace.spad.editor.impl.FunctionDefinitionImpl <em>Function Definition</em>}' class.
@@ -677,6 +713,15 @@ public interface EditorPackage extends EPackage
    * @ordered
    */
   int FUNCTION_DEFINITION__T13 = ADD_STATEMENTS__T13;
+
+  /**
+   * The feature id for the '<em><b>T14</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FUNCTION_DEFINITION__T14 = ADD_STATEMENTS__T14;
 
   /**
    * The feature id for the '<em><b>Par3</b></em>' containment reference.
@@ -770,13 +815,22 @@ public interface EditorPackage extends EPackage
   int FUNCTION_DEFINITION_BLOCK__T13 = 4;
 
   /**
+   * The feature id for the '<em><b>T14</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FUNCTION_DEFINITION_BLOCK__T14 = 5;
+
+  /**
    * The number of structural features of the '<em>Function Definition Block</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int FUNCTION_DEFINITION_BLOCK_FEATURE_COUNT = 5;
+  int FUNCTION_DEFINITION_BLOCK_FEATURE_COUNT = 6;
 
   /**
    * The meta object id for the '{@link com.euclideanspace.spad.editor.impl.FunctionSignatureImpl <em>Function Signature</em>}' class.
@@ -961,13 +1015,22 @@ public interface EditorPackage extends EPackage
   int MACRO_DEF__T13 = WHERE_ASSIGNMENTS_FEATURE_COUNT + 1;
 
   /**
+   * The feature id for the '<em><b>T14</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MACRO_DEF__T14 = WHERE_ASSIGNMENTS_FEATURE_COUNT + 2;
+
+  /**
    * The feature id for the '<em><b>Macroname</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int MACRO_DEF__MACRONAME = WHERE_ASSIGNMENTS_FEATURE_COUNT + 2;
+  int MACRO_DEF__MACRONAME = WHERE_ASSIGNMENTS_FEATURE_COUNT + 3;
 
   /**
    * The number of structural features of the '<em>Macro Def</em>' class.
@@ -976,7 +1039,7 @@ public interface EditorPackage extends EPackage
    * @generated
    * @ordered
    */
-  int MACRO_DEF_FEATURE_COUNT = WHERE_ASSIGNMENTS_FEATURE_COUNT + 3;
+  int MACRO_DEF_FEATURE_COUNT = WHERE_ASSIGNMENTS_FEATURE_COUNT + 4;
 
   /**
    * The meta object id for the '{@link com.euclideanspace.spad.editor.impl.ImportImpl <em>Import</em>}' class.
@@ -1007,13 +1070,22 @@ public interface EditorPackage extends EPackage
   int IMPORT__T13 = WHERE_ASSIGNMENTS_FEATURE_COUNT + 1;
 
   /**
+   * The feature id for the '<em><b>T14</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int IMPORT__T14 = WHERE_ASSIGNMENTS_FEATURE_COUNT + 2;
+
+  /**
    * The feature id for the '<em><b>Impname</b></em>' attribute list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int IMPORT__IMPNAME = WHERE_ASSIGNMENTS_FEATURE_COUNT + 2;
+  int IMPORT__IMPNAME = WHERE_ASSIGNMENTS_FEATURE_COUNT + 3;
 
   /**
    * The feature id for the '<em><b>Par22</b></em>' containment reference list.
@@ -1022,7 +1094,7 @@ public interface EditorPackage extends EPackage
    * @generated
    * @ordered
    */
-  int IMPORT__PAR22 = WHERE_ASSIGNMENTS_FEATURE_COUNT + 3;
+  int IMPORT__PAR22 = WHERE_ASSIGNMENTS_FEATURE_COUNT + 4;
 
   /**
    * The number of structural features of the '<em>Import</em>' class.
@@ -1031,7 +1103,7 @@ public interface EditorPackage extends EPackage
    * @generated
    * @ordered
    */
-  int IMPORT_FEATURE_COUNT = WHERE_ASSIGNMENTS_FEATURE_COUNT + 4;
+  int IMPORT_FEATURE_COUNT = WHERE_ASSIGNMENTS_FEATURE_COUNT + 5;
 
   /**
    * The meta object id for the '{@link com.euclideanspace.spad.editor.impl.VariableDeclarationBlockImpl <em>Variable Declaration Block</em>}' class.
@@ -1145,13 +1217,22 @@ public interface EditorPackage extends EPackage
   int TYPE_WITH_NAME__VAR_NAME_ST = 1;
 
   /**
+   * The feature id for the '<em><b>Var Name2</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TYPE_WITH_NAME__VAR_NAME2 = 2;
+
+  /**
    * The feature id for the '<em><b>Typ</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int TYPE_WITH_NAME__TYP = 2;
+  int TYPE_WITH_NAME__TYP = 3;
 
   /**
    * The number of structural features of the '<em>Type With Name</em>' class.
@@ -1160,7 +1241,7 @@ public interface EditorPackage extends EPackage
    * @generated
    * @ordered
    */
-  int TYPE_WITH_NAME_FEATURE_COUNT = 3;
+  int TYPE_WITH_NAME_FEATURE_COUNT = 4;
 
   /**
    * The meta object id for the '{@link com.euclideanspace.spad.editor.impl.VariableTypedImpl <em>Variable Typed</em>}' class.
@@ -1235,6 +1316,15 @@ public interface EditorPackage extends EPackage
    * @ordered
    */
   int VARIABLE_DECLARATION_ASSIGN__T13 = ADD_STATEMENTS__T13;
+
+  /**
+   * The feature id for the '<em><b>T14</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int VARIABLE_DECLARATION_ASSIGN__T14 = ADD_STATEMENTS__T14;
 
   /**
    * The feature id for the '<em><b>Var Name</b></em>' attribute.
@@ -2727,13 +2817,22 @@ public interface EditorPackage extends EPackage
   int FOR_STATEMENT__T1 = 1;
 
   /**
+   * The feature id for the '<em><b>By1</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FOR_STATEMENT__BY1 = 2;
+
+  /**
    * The feature id for the '<em><b>Stname2</b></em>' attribute list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int FOR_STATEMENT__STNAME2 = 2;
+  int FOR_STATEMENT__STNAME2 = 3;
 
   /**
    * The feature id for the '<em><b>T2</b></em>' containment reference list.
@@ -2742,7 +2841,16 @@ public interface EditorPackage extends EPackage
    * @generated
    * @ordered
    */
-  int FOR_STATEMENT__T2 = 3;
+  int FOR_STATEMENT__T2 = 4;
+
+  /**
+   * The feature id for the '<em><b>By2</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FOR_STATEMENT__BY2 = 5;
 
   /**
    * The feature id for the '<em><b>S1</b></em>' containment reference.
@@ -2751,7 +2859,7 @@ public interface EditorPackage extends EPackage
    * @generated
    * @ordered
    */
-  int FOR_STATEMENT__S1 = 4;
+  int FOR_STATEMENT__S1 = 6;
 
   /**
    * The number of structural features of the '<em>For Statement</em>' class.
@@ -2760,7 +2868,7 @@ public interface EditorPackage extends EPackage
    * @generated
    * @ordered
    */
-  int FOR_STATEMENT_FEATURE_COUNT = 5;
+  int FOR_STATEMENT_FEATURE_COUNT = 7;
 
   /**
    * The meta object id for the '{@link com.euclideanspace.spad.editor.impl.WhileStatementImpl <em>While Statement</em>}' class.
@@ -4740,6 +4848,232 @@ public interface EditorPackage extends EPackage
   int LIST_LITERAL_FEATURE_COUNT = LITERAL_FEATURE_COUNT + 5;
 
   /**
+   * The meta object id for the '{@link com.euclideanspace.spad.editor.impl.ExitExpressionImpl <em>Exit Expression</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see com.euclideanspace.spad.editor.impl.ExitExpressionImpl
+   * @see com.euclideanspace.spad.editor.impl.EditorPackageImpl#getExitExpression()
+   * @generated
+   */
+  int EXIT_EXPRESSION = 48;
+
+  /**
+   * The feature id for the '<em><b>Ifname</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EXIT_EXPRESSION__IFNAME = EXPR__IFNAME;
+
+  /**
+   * The feature id for the '<em><b>Ifpred</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EXIT_EXPRESSION__IFPRED = EXPR__IFPRED;
+
+  /**
+   * The feature id for the '<em><b>Thenexp</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EXIT_EXPRESSION__THENEXP = EXPR__THENEXP;
+
+  /**
+   * The feature id for the '<em><b>Elseexp</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EXIT_EXPRESSION__ELSEEXP = EXPR__ELSEEXP;
+
+  /**
+   * The feature id for the '<em><b>E2</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EXIT_EXPRESSION__E2 = EXPR__E2;
+
+  /**
+   * The feature id for the '<em><b>E3</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EXIT_EXPRESSION__E3 = EXPR__E3;
+
+  /**
+   * The feature id for the '<em><b>E5</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EXIT_EXPRESSION__E5 = EXPR__E5;
+
+  /**
+   * The feature id for the '<em><b>E6</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EXIT_EXPRESSION__E6 = EXPR__E6;
+
+  /**
+   * The feature id for the '<em><b>E22</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EXIT_EXPRESSION__E22 = EXPR__E22;
+
+  /**
+   * The feature id for the '<em><b>E21</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EXIT_EXPRESSION__E21 = EXPR__E21;
+
+  /**
+   * The feature id for the '<em><b>E23</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EXIT_EXPRESSION__E23 = EXPR__E23;
+
+  /**
+   * The feature id for the '<em><b>E9</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EXIT_EXPRESSION__E9 = EXPR__E9;
+
+  /**
+   * The feature id for the '<em><b>E10</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EXIT_EXPRESSION__E10 = EXPR__E10;
+
+  /**
+   * The feature id for the '<em><b>E25</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EXIT_EXPRESSION__E25 = EXPR__E25;
+
+  /**
+   * The feature id for the '<em><b>E24</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EXIT_EXPRESSION__E24 = EXPR__E24;
+
+  /**
+   * The feature id for the '<em><b>E26</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EXIT_EXPRESSION__E26 = EXPR__E26;
+
+  /**
+   * The feature id for the '<em><b>E11</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EXIT_EXPRESSION__E11 = EXPR__E11;
+
+  /**
+   * The feature id for the '<em><b>E12</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EXIT_EXPRESSION__E12 = EXPR__E12;
+
+  /**
+   * The feature id for the '<em><b>E13</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EXIT_EXPRESSION__E13 = EXPR__E13;
+
+  /**
+   * The feature id for the '<em><b>Left</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EXIT_EXPRESSION__LEFT = EXPR_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Op</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EXIT_EXPRESSION__OP = EXPR_FEATURE_COUNT + 1;
+
+  /**
+   * The feature id for the '<em><b>Right</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EXIT_EXPRESSION__RIGHT = EXPR_FEATURE_COUNT + 2;
+
+  /**
+   * The feature id for the '<em><b>R2</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EXIT_EXPRESSION__R2 = EXPR_FEATURE_COUNT + 3;
+
+  /**
+   * The number of structural features of the '<em>Exit Expression</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EXIT_EXPRESSION_FEATURE_COUNT = EXPR_FEATURE_COUNT + 4;
+
+  /**
    * The meta object id for the '{@link com.euclideanspace.spad.editor.impl.ConditionExpressionImpl <em>Condition Expression</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -4747,7 +5081,7 @@ public interface EditorPackage extends EPackage
    * @see com.euclideanspace.spad.editor.impl.EditorPackageImpl#getConditionExpression()
    * @generated
    */
-  int CONDITION_EXPRESSION = 48;
+  int CONDITION_EXPRESSION = 49;
 
   /**
    * The feature id for the '<em><b>Ifname</b></em>' attribute.
@@ -4964,7 +5298,7 @@ public interface EditorPackage extends EPackage
    * @see com.euclideanspace.spad.editor.impl.EditorPackageImpl#getAndExpression()
    * @generated
    */
-  int AND_EXPRESSION = 49;
+  int AND_EXPRESSION = 50;
 
   /**
    * The feature id for the '<em><b>Ifname</b></em>' attribute.
@@ -5181,7 +5515,7 @@ public interface EditorPackage extends EPackage
    * @see com.euclideanspace.spad.editor.impl.EditorPackageImpl#getInnerProdExpression()
    * @generated
    */
-  int INNER_PROD_EXPRESSION = 50;
+  int INNER_PROD_EXPRESSION = 51;
 
   /**
    * The feature id for the '<em><b>Ifname</b></em>' attribute.
@@ -5398,7 +5732,7 @@ public interface EditorPackage extends EPackage
    * @see com.euclideanspace.spad.editor.impl.EditorPackageImpl#getOuterProdExpression()
    * @generated
    */
-  int OUTER_PROD_EXPRESSION = 51;
+  int OUTER_PROD_EXPRESSION = 52;
 
   /**
    * The feature id for the '<em><b>Ifname</b></em>' attribute.
@@ -5615,7 +5949,7 @@ public interface EditorPackage extends EPackage
    * @see com.euclideanspace.spad.editor.impl.EditorPackageImpl#getHasExpression()
    * @generated
    */
-  int HAS_EXPRESSION = 52;
+  int HAS_EXPRESSION = 53;
 
   /**
    * The feature id for the '<em><b>Ifname</b></em>' attribute.
@@ -5832,7 +6166,7 @@ public interface EditorPackage extends EPackage
    * @see com.euclideanspace.spad.editor.impl.EditorPackageImpl#getCaseExpression()
    * @generated
    */
-  int CASE_EXPRESSION = 53;
+  int CASE_EXPRESSION = 54;
 
   /**
    * The feature id for the '<em><b>Ifname</b></em>' attribute.
@@ -6049,7 +6383,7 @@ public interface EditorPackage extends EPackage
    * @see com.euclideanspace.spad.editor.impl.EditorPackageImpl#getEqualityExpression()
    * @generated
    */
-  int EQUALITY_EXPRESSION = 54;
+  int EQUALITY_EXPRESSION = 55;
 
   /**
    * The feature id for the '<em><b>Ifname</b></em>' attribute.
@@ -6241,13 +6575,22 @@ public interface EditorPackage extends EPackage
   int EQUALITY_EXPRESSION__OP = EXPR_FEATURE_COUNT + 1;
 
   /**
+   * The feature id for the '<em><b>Te</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EQUALITY_EXPRESSION__TE = EXPR_FEATURE_COUNT + 2;
+
+  /**
    * The feature id for the '<em><b>Right</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int EQUALITY_EXPRESSION__RIGHT = EXPR_FEATURE_COUNT + 2;
+  int EQUALITY_EXPRESSION__RIGHT = EXPR_FEATURE_COUNT + 3;
 
   /**
    * The number of structural features of the '<em>Equality Expression</em>' class.
@@ -6256,7 +6599,7 @@ public interface EditorPackage extends EPackage
    * @generated
    * @ordered
    */
-  int EQUALITY_EXPRESSION_FEATURE_COUNT = EXPR_FEATURE_COUNT + 3;
+  int EQUALITY_EXPRESSION_FEATURE_COUNT = EXPR_FEATURE_COUNT + 4;
 
   /**
    * The meta object id for the '{@link com.euclideanspace.spad.editor.impl.RelationalExpressionImpl <em>Relational Expression</em>}' class.
@@ -6266,7 +6609,7 @@ public interface EditorPackage extends EPackage
    * @see com.euclideanspace.spad.editor.impl.EditorPackageImpl#getRelationalExpression()
    * @generated
    */
-  int RELATIONAL_EXPRESSION = 55;
+  int RELATIONAL_EXPRESSION = 56;
 
   /**
    * The feature id for the '<em><b>Ifname</b></em>' attribute.
@@ -6483,7 +6826,7 @@ public interface EditorPackage extends EPackage
    * @see com.euclideanspace.spad.editor.impl.EditorPackageImpl#getIsExpression()
    * @generated
    */
-  int IS_EXPRESSION = 56;
+  int IS_EXPRESSION = 57;
 
   /**
    * The feature id for the '<em><b>Ifname</b></em>' attribute.
@@ -6700,7 +7043,7 @@ public interface EditorPackage extends EPackage
    * @see com.euclideanspace.spad.editor.impl.EditorPackageImpl#getSegmentExpression()
    * @generated
    */
-  int SEGMENT_EXPRESSION = 57;
+  int SEGMENT_EXPRESSION = 58;
 
   /**
    * The feature id for the '<em><b>Ifname</b></em>' attribute.
@@ -6917,7 +7260,7 @@ public interface EditorPackage extends EPackage
    * @see com.euclideanspace.spad.editor.impl.EditorPackageImpl#getAdditiveExpression()
    * @generated
    */
-  int ADDITIVE_EXPRESSION = 58;
+  int ADDITIVE_EXPRESSION = 59;
 
   /**
    * The feature id for the '<em><b>Ifname</b></em>' attribute.
@@ -7134,7 +7477,7 @@ public interface EditorPackage extends EPackage
    * @see com.euclideanspace.spad.editor.impl.EditorPackageImpl#getExquoExpression()
    * @generated
    */
-  int EXQUO_EXPRESSION = 59;
+  int EXQUO_EXPRESSION = 60;
 
   /**
    * The feature id for the '<em><b>Ifname</b></em>' attribute.
@@ -7351,7 +7694,7 @@ public interface EditorPackage extends EPackage
    * @see com.euclideanspace.spad.editor.impl.EditorPackageImpl#getDivisionExpression()
    * @generated
    */
-  int DIVISION_EXPRESSION = 60;
+  int DIVISION_EXPRESSION = 61;
 
   /**
    * The feature id for the '<em><b>Ifname</b></em>' attribute.
@@ -7568,7 +7911,7 @@ public interface EditorPackage extends EPackage
    * @see com.euclideanspace.spad.editor.impl.EditorPackageImpl#getQuoExpression()
    * @generated
    */
-  int QUO_EXPRESSION = 61;
+  int QUO_EXPRESSION = 62;
 
   /**
    * The feature id for the '<em><b>Ifname</b></em>' attribute.
@@ -7785,7 +8128,7 @@ public interface EditorPackage extends EPackage
    * @see com.euclideanspace.spad.editor.impl.EditorPackageImpl#getModExpression()
    * @generated
    */
-  int MOD_EXPRESSION = 62;
+  int MOD_EXPRESSION = 63;
 
   /**
    * The feature id for the '<em><b>Ifname</b></em>' attribute.
@@ -8002,7 +8345,7 @@ public interface EditorPackage extends EPackage
    * @see com.euclideanspace.spad.editor.impl.EditorPackageImpl#getRemExpression()
    * @generated
    */
-  int REM_EXPRESSION = 63;
+  int REM_EXPRESSION = 64;
 
   /**
    * The feature id for the '<em><b>Ifname</b></em>' attribute.
@@ -8219,7 +8562,7 @@ public interface EditorPackage extends EPackage
    * @see com.euclideanspace.spad.editor.impl.EditorPackageImpl#getMultiplicativeExpression()
    * @generated
    */
-  int MULTIPLICATIVE_EXPRESSION = 64;
+  int MULTIPLICATIVE_EXPRESSION = 65;
 
   /**
    * The feature id for the '<em><b>Ifname</b></em>' attribute.
@@ -8436,7 +8779,7 @@ public interface EditorPackage extends EPackage
    * @see com.euclideanspace.spad.editor.impl.EditorPackageImpl#getExponentExpression()
    * @generated
    */
-  int EXPONENT_EXPRESSION = 65;
+  int EXPONENT_EXPRESSION = 66;
 
   /**
    * The feature id for the '<em><b>Ifname</b></em>' attribute.
@@ -8653,7 +8996,7 @@ public interface EditorPackage extends EPackage
    * @see com.euclideanspace.spad.editor.impl.EditorPackageImpl#getMapDefinition()
    * @generated
    */
-  int MAP_DEFINITION = 66;
+  int MAP_DEFINITION = 67;
 
   /**
    * The feature id for the '<em><b>Ifname</b></em>' attribute.
@@ -8870,7 +9213,7 @@ public interface EditorPackage extends EPackage
    * @see com.euclideanspace.spad.editor.impl.EditorPackageImpl#getAssignExpression()
    * @generated
    */
-  int ASSIGN_EXPRESSION = 67;
+  int ASSIGN_EXPRESSION = 68;
 
   /**
    * The feature id for the '<em><b>Ifname</b></em>' attribute.
@@ -9087,7 +9430,7 @@ public interface EditorPackage extends EPackage
    * @see com.euclideanspace.spad.editor.impl.EditorPackageImpl#getPretendExpression()
    * @generated
    */
-  int PRETEND_EXPRESSION = 68;
+  int PRETEND_EXPRESSION = 69;
 
   /**
    * The feature id for the '<em><b>Ifname</b></em>' attribute.
@@ -9304,7 +9647,7 @@ public interface EditorPackage extends EPackage
    * @see com.euclideanspace.spad.editor.impl.EditorPackageImpl#getCoerceExpression()
    * @generated
    */
-  int COERCE_EXPRESSION = 69;
+  int COERCE_EXPRESSION = 70;
 
   /**
    * The feature id for the '<em><b>Ifname</b></em>' attribute.
@@ -9521,7 +9864,7 @@ public interface EditorPackage extends EPackage
    * @see com.euclideanspace.spad.editor.impl.EditorPackageImpl#getHintTypeExpression()
    * @generated
    */
-  int HINT_TYPE_EXPRESSION = 70;
+  int HINT_TYPE_EXPRESSION = 71;
 
   /**
    * The feature id for the '<em><b>Ifname</b></em>' attribute.
@@ -9738,7 +10081,7 @@ public interface EditorPackage extends EPackage
    * @see com.euclideanspace.spad.editor.impl.EditorPackageImpl#getEltExpression()
    * @generated
    */
-  int ELT_EXPRESSION = 71;
+  int ELT_EXPRESSION = 72;
 
   /**
    * The feature id for the '<em><b>Ifname</b></em>' attribute.
@@ -9955,7 +10298,7 @@ public interface EditorPackage extends EPackage
    * @see com.euclideanspace.spad.editor.impl.EditorPackageImpl#getExplicitTypeExpression()
    * @generated
    */
-  int EXPLICIT_TYPE_EXPRESSION = 72;
+  int EXPLICIT_TYPE_EXPRESSION = 73;
 
   /**
    * The feature id for the '<em><b>Ifname</b></em>' attribute.
@@ -10172,7 +10515,7 @@ public interface EditorPackage extends EPackage
    * @see com.euclideanspace.spad.editor.impl.EditorPackageImpl#getUnaryExpression()
    * @generated
    */
-  int UNARY_EXPRESSION = 73;
+  int UNARY_EXPRESSION = 74;
 
   /**
    * The feature id for the '<em><b>Ifname</b></em>' attribute.
@@ -10646,6 +10989,17 @@ public interface EditorPackage extends EPackage
   EReference getPackageDef_Wh5();
 
   /**
+   * Returns the meta object for the containment reference '{@link com.euclideanspace.spad.editor.PackageDef#getAdd2 <em>Add2</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Add2</em>'.
+   * @see com.euclideanspace.spad.editor.PackageDef#getAdd2()
+   * @see #getPackageDef()
+   * @generated
+   */
+  EReference getPackageDef_Add2();
+
+  /**
    * Returns the meta object for class '{@link com.euclideanspace.spad.editor.DomainDef <em>Domain Def</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -10722,6 +11076,17 @@ public interface EditorPackage extends EPackage
   EAttribute getDomainDef_ExportName();
 
   /**
+   * Returns the meta object for the containment reference '{@link com.euclideanspace.spad.editor.DomainDef#getCp6 <em>Cp6</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Cp6</em>'.
+   * @see com.euclideanspace.spad.editor.DomainDef#getCp6()
+   * @see #getDomainDef()
+   * @generated
+   */
+  EReference getDomainDef_Cp6();
+
+  /**
    * Returns the meta object for the attribute '{@link com.euclideanspace.spad.editor.DomainDef#getImplName5 <em>Impl Name5</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -10753,6 +11118,17 @@ public interface EditorPackage extends EPackage
    * @generated
    */
   EReference getDomainDef_Wh5();
+
+  /**
+   * Returns the meta object for the containment reference '{@link com.euclideanspace.spad.editor.DomainDef#getA <em>A</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>A</em>'.
+   * @see com.euclideanspace.spad.editor.DomainDef#getA()
+   * @see #getDomainDef()
+   * @generated
+   */
+  EReference getDomainDef_A();
 
   /**
    * Returns the meta object for class '{@link com.euclideanspace.spad.editor.WherePart <em>Where Part</em>}'.
@@ -10981,6 +11357,17 @@ public interface EditorPackage extends EPackage
   EReference getAddStatements_T13();
 
   /**
+   * Returns the meta object for the containment reference '{@link com.euclideanspace.spad.editor.AddStatements#getT14 <em>T14</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>T14</em>'.
+   * @see com.euclideanspace.spad.editor.AddStatements#getT14()
+   * @see #getAddStatements()
+   * @generated
+   */
+  EReference getAddStatements_T14();
+
+  /**
    * Returns the meta object for class '{@link com.euclideanspace.spad.editor.FunctionDefinition <em>Function Definition</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -11087,6 +11474,17 @@ public interface EditorPackage extends EPackage
    * @generated
    */
   EReference getFunctionDefinitionBlock_T13();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link com.euclideanspace.spad.editor.FunctionDefinitionBlock#getT14 <em>T14</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>T14</em>'.
+   * @see com.euclideanspace.spad.editor.FunctionDefinitionBlock#getT14()
+   * @see #getFunctionDefinitionBlock()
+   * @generated
+   */
+  EReference getFunctionDefinitionBlock_T14();
 
   /**
    * Returns the meta object for class '{@link com.euclideanspace.spad.editor.FunctionSignature <em>Function Signature</em>}'.
@@ -11422,6 +11820,17 @@ public interface EditorPackage extends EPackage
    * @generated
    */
   EAttribute getTypeWithName_VarNameSt();
+
+  /**
+   * Returns the meta object for the attribute '{@link com.euclideanspace.spad.editor.TypeWithName#getVarName2 <em>Var Name2</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Var Name2</em>'.
+   * @see com.euclideanspace.spad.editor.TypeWithName#getVarName2()
+   * @see #getTypeWithName()
+   * @generated
+   */
+  EAttribute getTypeWithName_VarName2();
 
   /**
    * Returns the meta object for the containment reference '{@link com.euclideanspace.spad.editor.TypeWithName#getTyp <em>Typ</em>}'.
@@ -12607,6 +13016,17 @@ public interface EditorPackage extends EPackage
   EReference getForStatement_T1();
 
   /**
+   * Returns the meta object for the containment reference '{@link com.euclideanspace.spad.editor.ForStatement#getBy1 <em>By1</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>By1</em>'.
+   * @see com.euclideanspace.spad.editor.ForStatement#getBy1()
+   * @see #getForStatement()
+   * @generated
+   */
+  EReference getForStatement_By1();
+
+  /**
    * Returns the meta object for the attribute list '{@link com.euclideanspace.spad.editor.ForStatement#getStname2 <em>Stname2</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -12627,6 +13047,17 @@ public interface EditorPackage extends EPackage
    * @generated
    */
   EReference getForStatement_T2();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link com.euclideanspace.spad.editor.ForStatement#getBy2 <em>By2</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>By2</em>'.
+   * @see com.euclideanspace.spad.editor.ForStatement#getBy2()
+   * @see #getForStatement()
+   * @generated
+   */
+  EReference getForStatement_By2();
 
   /**
    * Returns the meta object for the containment reference '{@link com.euclideanspace.spad.editor.ForStatement#getS1 <em>S1</em>}'.
@@ -13472,6 +13903,60 @@ public interface EditorPackage extends EPackage
   EReference getListLiteral_L5();
 
   /**
+   * Returns the meta object for class '{@link com.euclideanspace.spad.editor.ExitExpression <em>Exit Expression</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Exit Expression</em>'.
+   * @see com.euclideanspace.spad.editor.ExitExpression
+   * @generated
+   */
+  EClass getExitExpression();
+
+  /**
+   * Returns the meta object for the containment reference '{@link com.euclideanspace.spad.editor.ExitExpression#getLeft <em>Left</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Left</em>'.
+   * @see com.euclideanspace.spad.editor.ExitExpression#getLeft()
+   * @see #getExitExpression()
+   * @generated
+   */
+  EReference getExitExpression_Left();
+
+  /**
+   * Returns the meta object for the attribute '{@link com.euclideanspace.spad.editor.ExitExpression#getOp <em>Op</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Op</em>'.
+   * @see com.euclideanspace.spad.editor.ExitExpression#getOp()
+   * @see #getExitExpression()
+   * @generated
+   */
+  EAttribute getExitExpression_Op();
+
+  /**
+   * Returns the meta object for the containment reference '{@link com.euclideanspace.spad.editor.ExitExpression#getRight <em>Right</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Right</em>'.
+   * @see com.euclideanspace.spad.editor.ExitExpression#getRight()
+   * @see #getExitExpression()
+   * @generated
+   */
+  EReference getExitExpression_Right();
+
+  /**
+   * Returns the meta object for the containment reference '{@link com.euclideanspace.spad.editor.ExitExpression#getR2 <em>R2</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>R2</em>'.
+   * @see com.euclideanspace.spad.editor.ExitExpression#getR2()
+   * @see #getExitExpression()
+   * @generated
+   */
+  EReference getExitExpression_R2();
+
+  /**
    * Returns the meta object for class '{@link com.euclideanspace.spad.editor.ConditionExpression <em>Condition Expression</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -13760,6 +14245,17 @@ public interface EditorPackage extends EPackage
    * @generated
    */
   EAttribute getEqualityExpression_Op();
+
+  /**
+   * Returns the meta object for the attribute '{@link com.euclideanspace.spad.editor.EqualityExpression#getTe <em>Te</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Te</em>'.
+   * @see com.euclideanspace.spad.editor.EqualityExpression#getTe()
+   * @see #getEqualityExpression()
+   * @generated
+   */
+  EAttribute getEqualityExpression_Te();
 
   /**
    * Returns the meta object for the containment reference '{@link com.euclideanspace.spad.editor.EqualityExpression#getRight <em>Right</em>}'.
@@ -14808,6 +15304,14 @@ public interface EditorPackage extends EPackage
     EReference PACKAGE_DEF__WH5 = eINSTANCE.getPackageDef_Wh5();
 
     /**
+     * The meta object literal for the '<em><b>Add2</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference PACKAGE_DEF__ADD2 = eINSTANCE.getPackageDef_Add2();
+
+    /**
      * The meta object literal for the '{@link com.euclideanspace.spad.editor.impl.DomainDefImpl <em>Domain Def</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -14866,6 +15370,14 @@ public interface EditorPackage extends EPackage
     EAttribute DOMAIN_DEF__EXPORT_NAME = eINSTANCE.getDomainDef_ExportName();
 
     /**
+     * The meta object literal for the '<em><b>Cp6</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference DOMAIN_DEF__CP6 = eINSTANCE.getDomainDef_Cp6();
+
+    /**
      * The meta object literal for the '<em><b>Impl Name5</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -14888,6 +15400,14 @@ public interface EditorPackage extends EPackage
      * @generated
      */
     EReference DOMAIN_DEF__WH5 = eINSTANCE.getDomainDef_Wh5();
+
+    /**
+     * The meta object literal for the '<em><b>A</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference DOMAIN_DEF__A = eINSTANCE.getDomainDef_A();
 
     /**
      * The meta object literal for the '{@link com.euclideanspace.spad.editor.impl.WherePartImpl <em>Where Part</em>}' class.
@@ -15068,6 +15588,14 @@ public interface EditorPackage extends EPackage
     EReference ADD_STATEMENTS__T13 = eINSTANCE.getAddStatements_T13();
 
     /**
+     * The meta object literal for the '<em><b>T14</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference ADD_STATEMENTS__T14 = eINSTANCE.getAddStatements_T14();
+
+    /**
      * The meta object literal for the '{@link com.euclideanspace.spad.editor.impl.FunctionDefinitionImpl <em>Function Definition</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -15150,6 +15678,14 @@ public interface EditorPackage extends EPackage
      * @generated
      */
     EReference FUNCTION_DEFINITION_BLOCK__T13 = eINSTANCE.getFunctionDefinitionBlock_T13();
+
+    /**
+     * The meta object literal for the '<em><b>T14</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference FUNCTION_DEFINITION_BLOCK__T14 = eINSTANCE.getFunctionDefinitionBlock_T14();
 
     /**
      * The meta object literal for the '{@link com.euclideanspace.spad.editor.impl.FunctionSignatureImpl <em>Function Signature</em>}' class.
@@ -15410,6 +15946,14 @@ public interface EditorPackage extends EPackage
      * @generated
      */
     EAttribute TYPE_WITH_NAME__VAR_NAME_ST = eINSTANCE.getTypeWithName_VarNameSt();
+
+    /**
+     * The meta object literal for the '<em><b>Var Name2</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute TYPE_WITH_NAME__VAR_NAME2 = eINSTANCE.getTypeWithName_VarName2();
 
     /**
      * The meta object literal for the '<em><b>Typ</b></em>' containment reference feature.
@@ -16316,6 +16860,14 @@ public interface EditorPackage extends EPackage
     EReference FOR_STATEMENT__T1 = eINSTANCE.getForStatement_T1();
 
     /**
+     * The meta object literal for the '<em><b>By1</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference FOR_STATEMENT__BY1 = eINSTANCE.getForStatement_By1();
+
+    /**
      * The meta object literal for the '<em><b>Stname2</b></em>' attribute list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -16330,6 +16882,14 @@ public interface EditorPackage extends EPackage
      * @generated
      */
     EReference FOR_STATEMENT__T2 = eINSTANCE.getForStatement_T2();
+
+    /**
+     * The meta object literal for the '<em><b>By2</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference FOR_STATEMENT__BY2 = eINSTANCE.getForStatement_By2();
 
     /**
      * The meta object literal for the '<em><b>S1</b></em>' containment reference feature.
@@ -16986,6 +17546,48 @@ public interface EditorPackage extends EPackage
     EReference LIST_LITERAL__L5 = eINSTANCE.getListLiteral_L5();
 
     /**
+     * The meta object literal for the '{@link com.euclideanspace.spad.editor.impl.ExitExpressionImpl <em>Exit Expression</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see com.euclideanspace.spad.editor.impl.ExitExpressionImpl
+     * @see com.euclideanspace.spad.editor.impl.EditorPackageImpl#getExitExpression()
+     * @generated
+     */
+    EClass EXIT_EXPRESSION = eINSTANCE.getExitExpression();
+
+    /**
+     * The meta object literal for the '<em><b>Left</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference EXIT_EXPRESSION__LEFT = eINSTANCE.getExitExpression_Left();
+
+    /**
+     * The meta object literal for the '<em><b>Op</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute EXIT_EXPRESSION__OP = eINSTANCE.getExitExpression_Op();
+
+    /**
+     * The meta object literal for the '<em><b>Right</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference EXIT_EXPRESSION__RIGHT = eINSTANCE.getExitExpression_Right();
+
+    /**
+     * The meta object literal for the '<em><b>R2</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference EXIT_EXPRESSION__R2 = eINSTANCE.getExitExpression_R2();
+
+    /**
      * The meta object literal for the '{@link com.euclideanspace.spad.editor.impl.ConditionExpressionImpl <em>Condition Expression</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -17214,6 +17816,14 @@ public interface EditorPackage extends EPackage
      * @generated
      */
     EAttribute EQUALITY_EXPRESSION__OP = eINSTANCE.getEqualityExpression_Op();
+
+    /**
+     * The meta object literal for the '<em><b>Te</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute EQUALITY_EXPRESSION__TE = eINSTANCE.getEqualityExpression_Te();
 
     /**
      * The meta object literal for the '<em><b>Right</b></em>' containment reference feature.

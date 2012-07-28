@@ -34,6 +34,7 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Editor.ecore#//PackageDef/implName"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//PackageDef/w"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//PackageDef/wh5"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//PackageDef/add2"/>
     </genClasses>
     <genClasses ecoreClass="Editor.ecore#//DomainDef">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Editor.ecore#//DomainDef/name"/>
@@ -42,9 +43,11 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Editor.ecore#//DomainDef/longname6"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//DomainDef/cp5"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Editor.ecore#//DomainDef/exportName"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//DomainDef/cp6"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Editor.ecore#//DomainDef/implName5"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//DomainDef/w"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//DomainDef/wh5"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//DomainDef/a"/>
     </genClasses>
     <genClasses ecoreClass="Editor.ecore#//WherePart">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Editor.ecore#//WherePart/name"/>
@@ -70,6 +73,7 @@
     <genClasses ecoreClass="Editor.ecore#//AddStatements">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//AddStatements/t1"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//AddStatements/t13"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//AddStatements/t14"/>
     </genClasses>
     <genClasses ecoreClass="Editor.ecore#//FunctionDefinition">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//FunctionDefinition/par3"/>
@@ -82,6 +86,7 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//FunctionDefinitionBlock/vars"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//FunctionDefinitionBlock/t1"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//FunctionDefinitionBlock/t13"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//FunctionDefinitionBlock/t14"/>
     </genClasses>
     <genClasses ecoreClass="Editor.ecore#//FunctionSignature">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Editor.ecore#//FunctionSignature/fnNam"/>
@@ -119,6 +124,7 @@
     <genClasses ecoreClass="Editor.ecore#//TypeWithName">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Editor.ecore#//TypeWithName/varName"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Editor.ecore#//TypeWithName/varNameSt"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Editor.ecore#//TypeWithName/varName2"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//TypeWithName/typ"/>
     </genClasses>
     <genClasses ecoreClass="Editor.ecore#//VariableTyped">
@@ -244,8 +250,10 @@
     <genClasses ecoreClass="Editor.ecore#//ForStatement">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Editor.ecore#//ForStatement/stname"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//ForStatement/t1"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//ForStatement/by1"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Editor.ecore#//ForStatement/stname2"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//ForStatement/t2"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//ForStatement/by2"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//ForStatement/s1"/>
     </genClasses>
     <genClasses ecoreClass="Editor.ecore#//WhileStatement">
@@ -340,6 +348,12 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//ListLiteral/t14"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//ListLiteral/l5"/>
     </genClasses>
+    <genClasses ecoreClass="Editor.ecore#//ExitExpression">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//ExitExpression/left"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Editor.ecore#//ExitExpression/op"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//ExitExpression/right"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//ExitExpression/r2"/>
+    </genClasses>
     <genClasses ecoreClass="Editor.ecore#//ConditionExpression">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//ConditionExpression/left"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Editor.ecore#//ConditionExpression/op"/>
@@ -373,6 +387,7 @@
     <genClasses ecoreClass="Editor.ecore#//EqualityExpression">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//EqualityExpression/left"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Editor.ecore#//EqualityExpression/op"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Editor.ecore#//EqualityExpression/te"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//EqualityExpression/right"/>
     </genClasses>
     <genClasses ecoreClass="Editor.ecore#//RelationalExpression">

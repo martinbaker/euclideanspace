@@ -24,6 +24,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * <ul>
  *   <li>{@link com.euclideanspace.spad.editor.impl.TypeWithNameImpl#getVarName <em>Var Name</em>}</li>
  *   <li>{@link com.euclideanspace.spad.editor.impl.TypeWithNameImpl#getVarNameSt <em>Var Name St</em>}</li>
+ *   <li>{@link com.euclideanspace.spad.editor.impl.TypeWithNameImpl#getVarName2 <em>Var Name2</em>}</li>
  *   <li>{@link com.euclideanspace.spad.editor.impl.TypeWithNameImpl#getTyp <em>Typ</em>}</li>
  * </ul>
  * </p>
@@ -71,6 +72,26 @@ public class TypeWithNameImpl extends MinimalEObjectImpl.Container implements Ty
    * @ordered
    */
   protected String varNameSt = VAR_NAME_ST_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #getVarName2() <em>Var Name2</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getVarName2()
+   * @generated
+   * @ordered
+   */
+  protected static final String VAR_NAME2_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getVarName2() <em>Var Name2</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getVarName2()
+   * @generated
+   * @ordered
+   */
+  protected String varName2 = VAR_NAME2_EDEFAULT;
 
   /**
    * The cached value of the '{@link #getTyp() <em>Typ</em>}' containment reference.
@@ -154,6 +175,29 @@ public class TypeWithNameImpl extends MinimalEObjectImpl.Container implements Ty
    * <!-- end-user-doc -->
    * @generated
    */
+  public String getVarName2()
+  {
+    return varName2;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setVarName2(String newVarName2)
+  {
+    String oldVarName2 = varName2;
+    varName2 = newVarName2;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, EditorPackage.TYPE_WITH_NAME__VAR_NAME2, oldVarName2, varName2));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public TypeExpression getTyp()
   {
     return typ;
@@ -227,6 +271,8 @@ public class TypeWithNameImpl extends MinimalEObjectImpl.Container implements Ty
         return getVarName();
       case EditorPackage.TYPE_WITH_NAME__VAR_NAME_ST:
         return getVarNameSt();
+      case EditorPackage.TYPE_WITH_NAME__VAR_NAME2:
+        return getVarName2();
       case EditorPackage.TYPE_WITH_NAME__TYP:
         return getTyp();
     }
@@ -248,6 +294,9 @@ public class TypeWithNameImpl extends MinimalEObjectImpl.Container implements Ty
         return;
       case EditorPackage.TYPE_WITH_NAME__VAR_NAME_ST:
         setVarNameSt((String)newValue);
+        return;
+      case EditorPackage.TYPE_WITH_NAME__VAR_NAME2:
+        setVarName2((String)newValue);
         return;
       case EditorPackage.TYPE_WITH_NAME__TYP:
         setTyp((TypeExpression)newValue);
@@ -272,6 +321,9 @@ public class TypeWithNameImpl extends MinimalEObjectImpl.Container implements Ty
       case EditorPackage.TYPE_WITH_NAME__VAR_NAME_ST:
         setVarNameSt(VAR_NAME_ST_EDEFAULT);
         return;
+      case EditorPackage.TYPE_WITH_NAME__VAR_NAME2:
+        setVarName2(VAR_NAME2_EDEFAULT);
+        return;
       case EditorPackage.TYPE_WITH_NAME__TYP:
         setTyp((TypeExpression)null);
         return;
@@ -293,6 +345,8 @@ public class TypeWithNameImpl extends MinimalEObjectImpl.Container implements Ty
         return VAR_NAME_EDEFAULT == null ? varName != null : !VAR_NAME_EDEFAULT.equals(varName);
       case EditorPackage.TYPE_WITH_NAME__VAR_NAME_ST:
         return VAR_NAME_ST_EDEFAULT == null ? varNameSt != null : !VAR_NAME_ST_EDEFAULT.equals(varNameSt);
+      case EditorPackage.TYPE_WITH_NAME__VAR_NAME2:
+        return VAR_NAME2_EDEFAULT == null ? varName2 != null : !VAR_NAME2_EDEFAULT.equals(varName2);
       case EditorPackage.TYPE_WITH_NAME__TYP:
         return typ != null;
     }
@@ -314,6 +368,8 @@ public class TypeWithNameImpl extends MinimalEObjectImpl.Container implements Ty
     result.append(varName);
     result.append(", varNameSt: ");
     result.append(varNameSt);
+    result.append(", varName2: ");
+    result.append(varName2);
     result.append(')');
     return result.toString();
   }

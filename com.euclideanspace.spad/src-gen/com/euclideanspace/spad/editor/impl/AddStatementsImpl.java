@@ -25,6 +25,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * <ul>
  *   <li>{@link com.euclideanspace.spad.editor.impl.AddStatementsImpl#getT1 <em>T1</em>}</li>
  *   <li>{@link com.euclideanspace.spad.editor.impl.AddStatementsImpl#getT13 <em>T13</em>}</li>
+ *   <li>{@link com.euclideanspace.spad.editor.impl.AddStatementsImpl#getT14 <em>T14</em>}</li>
  * </ul>
  * </p>
  *
@@ -51,6 +52,16 @@ public class AddStatementsImpl extends MinimalEObjectImpl.Container implements A
    * @ordered
    */
   protected FunctionDefinitionBlock t13;
+
+  /**
+   * The cached value of the '{@link #getT14() <em>T14</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getT14()
+   * @generated
+   * @ordered
+   */
+  protected FunctionDefinitionBlock t14;
 
   /**
    * <!-- begin-user-doc -->
@@ -174,6 +185,54 @@ public class AddStatementsImpl extends MinimalEObjectImpl.Container implements A
    * <!-- end-user-doc -->
    * @generated
    */
+  public FunctionDefinitionBlock getT14()
+  {
+    return t14;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetT14(FunctionDefinitionBlock newT14, NotificationChain msgs)
+  {
+    FunctionDefinitionBlock oldT14 = t14;
+    t14 = newT14;
+    if (eNotificationRequired())
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, EditorPackage.ADD_STATEMENTS__T14, oldT14, newT14);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setT14(FunctionDefinitionBlock newT14)
+  {
+    if (newT14 != t14)
+    {
+      NotificationChain msgs = null;
+      if (t14 != null)
+        msgs = ((InternalEObject)t14).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - EditorPackage.ADD_STATEMENTS__T14, null, msgs);
+      if (newT14 != null)
+        msgs = ((InternalEObject)newT14).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - EditorPackage.ADD_STATEMENTS__T14, null, msgs);
+      msgs = basicSetT14(newT14, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, EditorPackage.ADD_STATEMENTS__T14, newT14, newT14));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
@@ -183,6 +242,8 @@ public class AddStatementsImpl extends MinimalEObjectImpl.Container implements A
         return basicSetT1(null, msgs);
       case EditorPackage.ADD_STATEMENTS__T13:
         return basicSetT13(null, msgs);
+      case EditorPackage.ADD_STATEMENTS__T14:
+        return basicSetT14(null, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -201,6 +262,8 @@ public class AddStatementsImpl extends MinimalEObjectImpl.Container implements A
         return getT1();
       case EditorPackage.ADD_STATEMENTS__T13:
         return getT13();
+      case EditorPackage.ADD_STATEMENTS__T14:
+        return getT14();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -220,6 +283,9 @@ public class AddStatementsImpl extends MinimalEObjectImpl.Container implements A
         return;
       case EditorPackage.ADD_STATEMENTS__T13:
         setT13((FunctionDefinitionBlock)newValue);
+        return;
+      case EditorPackage.ADD_STATEMENTS__T14:
+        setT14((FunctionDefinitionBlock)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -241,6 +307,9 @@ public class AddStatementsImpl extends MinimalEObjectImpl.Container implements A
       case EditorPackage.ADD_STATEMENTS__T13:
         setT13((FunctionDefinitionBlock)null);
         return;
+      case EditorPackage.ADD_STATEMENTS__T14:
+        setT14((FunctionDefinitionBlock)null);
+        return;
     }
     super.eUnset(featureID);
   }
@@ -259,6 +328,8 @@ public class AddStatementsImpl extends MinimalEObjectImpl.Container implements A
         return t1 != null;
       case EditorPackage.ADD_STATEMENTS__T13:
         return t13 != null;
+      case EditorPackage.ADD_STATEMENTS__T14:
+        return t14 != null;
     }
     return super.eIsSet(featureID);
   }

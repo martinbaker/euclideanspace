@@ -434,6 +434,14 @@ public class EditorSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case EditorPackage.EXIT_EXPRESSION:
+      {
+        ExitExpression exitExpression = (ExitExpression)theEObject;
+        T result = caseExitExpression(exitExpression);
+        if (result == null) result = caseExpr(exitExpression);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case EditorPackage.CONDITION_EXPRESSION:
       {
         ConditionExpression conditionExpression = (ConditionExpression)theEObject;
@@ -1410,6 +1418,22 @@ public class EditorSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseListLiteral(ListLiteral object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Exit Expression</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Exit Expression</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseExitExpression(ExitExpression object)
   {
     return null;
   }

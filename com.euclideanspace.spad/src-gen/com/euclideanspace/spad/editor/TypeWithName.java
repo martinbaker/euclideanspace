@@ -14,6 +14,7 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link com.euclideanspace.spad.editor.TypeWithName#getVarName <em>Var Name</em>}</li>
  *   <li>{@link com.euclideanspace.spad.editor.TypeWithName#getVarNameSt <em>Var Name St</em>}</li>
+ *   <li>{@link com.euclideanspace.spad.editor.TypeWithName#getVarName2 <em>Var Name2</em>}</li>
  *   <li>{@link com.euclideanspace.spad.editor.TypeWithName#getTyp <em>Typ</em>}</li>
  * </ul>
  * </p>
@@ -75,6 +76,32 @@ public interface TypeWithName extends EObject
    * @generated
    */
   void setVarNameSt(String value);
+
+  /**
+   * Returns the value of the '<em><b>Var Name2</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Var Name2</em>' attribute isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Var Name2</em>' attribute.
+   * @see #setVarName2(String)
+   * @see com.euclideanspace.spad.editor.EditorPackage#getTypeWithName_VarName2()
+   * @model
+   * @generated
+   */
+  String getVarName2();
+
+  /**
+   * Sets the value of the '{@link com.euclideanspace.spad.editor.TypeWithName#getVarName2 <em>Var Name2</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Var Name2</em>' attribute.
+   * @see #getVarName2()
+   * @generated
+   */
+  void setVarName2(String value);
 
   /**
    * Returns the value of the '<em><b>Typ</b></em>' containment reference.

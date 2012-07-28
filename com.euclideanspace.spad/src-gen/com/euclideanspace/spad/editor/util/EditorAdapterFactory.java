@@ -315,6 +315,11 @@ public class EditorAdapterFactory extends AdapterFactoryImpl
         return createListLiteralAdapter();
       }
       @Override
+      public Adapter caseExitExpression(ExitExpression object)
+      {
+        return createExitExpressionAdapter();
+      }
+      @Override
       public Adapter caseConditionExpression(ConditionExpression object)
       {
         return createConditionExpressionAdapter();
@@ -1182,6 +1187,21 @@ public class EditorAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createListLiteralAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link com.euclideanspace.spad.editor.ExitExpression <em>Exit Expression</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see com.euclideanspace.spad.editor.ExitExpression
+   * @generated
+   */
+  public Adapter createExitExpressionAdapter()
   {
     return null;
   }

@@ -455,6 +455,15 @@ public interface EditorFactory extends EFactory
   ListLiteral createListLiteral();
 
   /**
+   * Returns a new object of class '<em>Exit Expression</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Exit Expression</em>'.
+   * @generated
+   */
+  ExitExpression createExitExpression();
+
+  /**
    * Returns a new object of class '<em>Condition Expression</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
