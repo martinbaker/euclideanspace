@@ -50,17 +50,17 @@ import org.eclipse.jface.wizard.ProgressMonitorPart;
      * </pre>
      * </p>
      */
-    public class WizardNewSPADProjectCreationPage extends WizardPage {
+    public class WizardNewSPADProjectPage1 extends WizardPage {
 
         // initial value stores
         private String initialProjectFieldValue;
 
         // widgets
         Text projectNameField;
-
+        // progress information (in case user presses 'finish')
         ProgressMonitorPart progressMonitorPart;
-        
         Label fromLabel;
+
         
         private Listener nameModifyListener = new Listener() {
             public void handleEvent(Event e) {
@@ -73,7 +73,6 @@ import org.eclipse.jface.wizard.ProgressMonitorPart;
 
     	private ProjectContentsLocationArea locationArea;
     	private InitilisationLocationDialog fromArea;
-    	private ComboBoxDialog comboBoxDialog;
 
     	private WorkingSetGroup workingSetGroup;
 
@@ -85,7 +84,7 @@ import org.eclipse.jface.wizard.ProgressMonitorPart;
          *
          * @param pageName the name of this page
          */
-        public WizardNewSPADProjectCreationPage(String pageName) {
+        public WizardNewSPADProjectPage1(String pageName) {
         	super(pageName);
     	    setPageComplete(false);
         }
@@ -119,18 +118,14 @@ import org.eclipse.jface.wizard.ProgressMonitorPart;
     		// Scale the button based on the rest of the dialog
     		setButtonLayoutData(locationArea.getBrowseButton());
     		
-    		String[] options = {"statement terminator:","new line","semicolon"};
-    		comboBoxDialog = new ComboBoxDialog(composite,options);
-    		
     		progressMonitorPart=
-              new ProgressMonitorPart(composite,null);
-    		progressMonitorPart.setLayoutData(new GridData(GridData.FILL_HORIZONTAL));
-    		progressMonitorPart.setFont(parent.getFont());
-    		progressMonitorPart.setVisible(true);
-    		
-            fromLabel = new Label(composite, SWT.NONE);
-            fromLabel.setText("                                                ");
-            fromLabel.setFont(parent.getFont());
+    	      new ProgressMonitorPart(composite,null);
+    	    progressMonitorPart.setLayoutData(new GridData(GridData.FILL_HORIZONTAL));
+    	    progressMonitorPart.setFont(parent.getFont());
+    	    progressMonitorPart.setVisible(true);
+    	    fromLabel = new Label(composite, SWT.NONE);
+    	    fromLabel.setText("                                                ");
+    	    fromLabel.setFont(parent.getFont());
     		
             setPageComplete(validatePage());
             // Show description on opening
@@ -189,19 +184,6 @@ import org.eclipse.jface.wizard.ProgressMonitorPart;
     			}
     		};
     	}
-    	
-    	public void StartProgress(String fileName,int index) {
-    		//System.out.println("WizardNewSPADProjectCreationPage.StartProgress: "+
-    		//		fileName+":"+index);
-    		progressMonitorPart.beginTask(fileName,index);
-    	}
-    	
-    	public void UpdateProgress(String fileName,int index) {
-    		//System.out.println("WizardNewSPADProjectCreationPage.UpdateProgress: "+
-    		//		fileName+":"+index);
-    		progressMonitorPart.worked(1);
-    		fromLabel.setText(fileName);
-    	}
 
         /**
          * Creates the project name specification controls.
@@ -255,14 +237,6 @@ import org.eclipse.jface.wizard.ProgressMonitorPart;
         	return fromArea.getSelectedDirectoryPath();
         }
 
-        /**
-         * return user selection for statement terminator option:
-         * @return 0=new line, 1=semicolon
-         */
-        public int getStatementTerminatorOption(){
-        	if (comboBoxDialog == null) return 0;
-        	return comboBoxDialog.getSelectedIndex();
-        }
         
         /**
          * Returns the current project location URI as entered by 
@@ -394,7 +368,6 @@ import org.eclipse.jface.wizard.ProgressMonitorPart;
     			setErrorMessage(validLocationMessage);
     			return false;
     		}
-
             setErrorMessage(null);
             setMessage(null);
             return true;
@@ -429,5 +402,23 @@ import org.eclipse.jface.wizard.ProgressMonitorPart;
     		return workingSetGroup == null ? new IWorkingSet[0] : workingSetGroup
     				.getSelectedWorkingSets();
     	}
+
+    	
+    	public void StartProgress(String fileName,int index) {
+    		if (!isCurrentPage()) return;
+    		//System.out.println("WizardNewSPADProjectCreationPage.StartProgress: "+
+    		//		fileName+":"+index);
+    		progressMonitorPart.beginTask(fileName,index);
+    	}
+    	
+    	public void UpdateProgress(String fileName,int index) {
+    		if (!isCurrentPage()) return;
+    		//System.out.println("WizardNewSPADProjectCreationPage.UpdateProgress: "+
+    		//		fileName+":"+index);
+    		progressMonitorPart.worked(1);
+    		fromLabel.setText(fileName);
+    	}
+
+
     }
 

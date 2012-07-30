@@ -65,6 +65,9 @@ public class EclipseSPADWriter extends EclipseFileWriter {
      * 0=new line, 1=semicolon
      */
 	int statementTerminatorOption = 0;
+	int macroOption = 0;
+	int bracketedOption = 0;
+	int escapeOption = 0;
 
 	/**
 	 * @param n file name
@@ -73,10 +76,13 @@ public class EclipseSPADWriter extends EclipseFileWriter {
 	public EclipseSPADWriter(String n, IFolder p,BuilderNewWizard callback) {
 		super(n, p);
 	    statementTerminatorOption = callback.getStatementTerminatorOption();
+		macroOption = callback.getMacroOption();
+		bracketedOption = callback.getBracketedOption();
+		escapeOption = callback.getEscapeOption();
 	}
 
 	/**
-	 * This may resume an existion file or start a new one depending on
+	 * This may resume an existing file or start a new one depending on
 	 * whether n is equal to the previous name.
 	 * @param n new file name
 	 */
@@ -138,12 +144,19 @@ public class EclipseSPADWriter extends EclipseFileWriter {
           prefix = prefix+" ";
           ind++;
         }
-		line =applyMacroes(line,input); // apply here so macros don't affect indent
-		line =bracketedStatements(line); // where statements are grouped together by
+
+        if (macroOption==0) {
+		  line =applyMacroes(line,input); // apply here so macros don't affect indent
+        }
+        if (bracketedOption==0) {
+		  line =bracketedStatements(line); // where statements are grouped together by
                                          // brackets then change to use braces instead.
-		line =SubstituteStringEscape(line);  // in java the '/' character is considered
+        }
+		if (escapeOption==0) {
+		  line =SubstituteStringEscape(line);  // in java the '/' character is considered
 	                                     // an escape character so we need to duplicate
 		                                 // it when it occurs in a string.
+		}
 		String trimedLine = line.trim();
     	/**  continuationLine indicates that the line could be
 		 * continued (rather than start a new block) but only

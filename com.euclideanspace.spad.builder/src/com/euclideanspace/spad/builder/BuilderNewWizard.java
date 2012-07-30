@@ -22,9 +22,6 @@ import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.jface.wizard.Wizard;
 import org.eclipse.ui.INewWizard;
 import org.eclipse.ui.IWorkbench;
-//import org.eclipse.jdt.core.IPackageFragmentRoot;
-//import org.eclipse.jst.j2ee.internal.common.operations.INewJavaClassDataModelProperties;
-//import org.eclipse.ui.dialogs.WizardNewProjectCreationPage;
 
 import java.net.URI;
 
@@ -34,18 +31,19 @@ import org.eclipse.core.resources.IProjectDescription;
 import org.eclipse.core.resources.ResourcesPlugin;
 import org.eclipse.core.runtime.Assert;
 import org.eclipse.core.runtime.CoreException;
-//import customplugin.natures.ProjectNature;
-
 
 public class BuilderNewWizard extends Wizard implements INewWizard {
 	
-	private WizardNewSPADProjectCreationPage _pageOne;
+	private WizardNewSPADProjectPage1 _pageOne;
+	private WizardNewSPADProjectPage2 _pageTwo;
 	/**
 	 * a reference to the project that we will create
 	 */
 	private IProject project;
 	
 	public BuilderNewWizard() {
+		super();
+		setNeedsProgressMonitor(true);
 		setWindowTitle("spad project");
 	}
 	
@@ -92,11 +90,14 @@ public class BuilderNewWizard extends Wizard implements INewWizard {
 	@Override
 	public void addPages() {
 	  super.addPages();
-	  _pageOne = new WizardNewSPADProjectCreationPage("Build SPAD Project Wizard");
+	  _pageOne = new WizardNewSPADProjectPage1("Build SPAD Project Wizard");
 	  _pageOne.setTitle("Build SPAD Project");
-	  _pageOne.setDescription("Create an SPAD Project");
-
+	  _pageOne.setDescription("1 - Set Project name and location of FriCAS code");
 	  addPage(_pageOne);
+	  _pageTwo = new WizardNewSPADProjectPage2("Build SPAD Project Wizard");
+	  _pageTwo.setTitle("Build SPAD Project");
+	  _pageTwo.setDescription("2 - Code Translation Options");
+	  addPage(_pageTwo);
 	}
 
 	/**
@@ -160,21 +161,35 @@ public class BuilderNewWizard extends Wizard implements INewWizard {
 	  }
 	  return folder;
     }
-    
+
     /**
-     * return user selection fo statement terminator option:
+     * return user selection for statement terminator option:
      * @return 0=new line, 1=semicolon
      */
 	public int getStatementTerminatorOption() {
-		return _pageOne.getStatementTerminatorOption();
+		return _pageTwo.getStatementTerminatorOption();
 	}
+
+    public int getMacroOption(){
+		return _pageTwo.getMacroOption();
+    }
+
+    public int getBracketedOption(){
+		return _pageTwo.getBracketedOption();
+    }
+
+    public int getEscapeOption(){
+		return _pageTwo.getEscapeOption();
+    }
     
 	public void StartProgress(String fileName,int index) {
 		_pageOne.StartProgress(fileName,index);
+		_pageTwo.StartProgress(fileName,index);
 	}
 	
 	public void UpdateProgress(String fileName,int index) {
 		_pageOne.UpdateProgress(fileName,index);
+		_pageTwo.UpdateProgress(fileName,index);
 	}
 
 }
