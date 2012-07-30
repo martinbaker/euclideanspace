@@ -5,7 +5,7 @@ package com.euclideanspace.spad.editor.impl;
 import com.euclideanspace.spad.editor.EditorPackage;
 import com.euclideanspace.spad.editor.Expr;
 import com.euclideanspace.spad.editor.NameOrFunctionCall;
-import com.euclideanspace.spad.editor.StatementExpression;
+import com.euclideanspace.spad.editor.Statement;
 import com.euclideanspace.spad.editor.TypeExpression;
 
 import java.util.Collection;
@@ -94,7 +94,7 @@ public class NameOrFunctionCallImpl extends MinimalEObjectImpl.Container impleme
    * @generated
    * @ordered
    */
-  protected StatementExpression t4;
+  protected Expr t4;
 
   /**
    * The cached value of the '{@link #getT5() <em>T5</em>}' containment reference list.
@@ -114,7 +114,7 @@ public class NameOrFunctionCallImpl extends MinimalEObjectImpl.Container impleme
    * @generated
    * @ordered
    */
-  protected EList<StatementExpression> t14;
+  protected EList<Statement> t14;
 
   /**
    * The cached value of the '{@link #getT15() <em>T15</em>}' containment reference list.
@@ -218,7 +218,7 @@ public class NameOrFunctionCallImpl extends MinimalEObjectImpl.Container impleme
    * <!-- end-user-doc -->
    * @generated
    */
-  public StatementExpression getT4()
+  public Expr getT4()
   {
     return t4;
   }
@@ -228,9 +228,9 @@ public class NameOrFunctionCallImpl extends MinimalEObjectImpl.Container impleme
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetT4(StatementExpression newT4, NotificationChain msgs)
+  public NotificationChain basicSetT4(Expr newT4, NotificationChain msgs)
   {
-    StatementExpression oldT4 = t4;
+    Expr oldT4 = t4;
     t4 = newT4;
     if (eNotificationRequired())
     {
@@ -245,7 +245,7 @@ public class NameOrFunctionCallImpl extends MinimalEObjectImpl.Container impleme
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setT4(StatementExpression newT4)
+  public void setT4(Expr newT4)
   {
     if (newT4 != t4)
     {
@@ -280,11 +280,11 @@ public class NameOrFunctionCallImpl extends MinimalEObjectImpl.Container impleme
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<StatementExpression> getT14()
+  public EList<Statement> getT14()
   {
     if (t14 == null)
     {
-      t14 = new EObjectContainmentEList<StatementExpression>(StatementExpression.class, this, EditorPackage.NAME_OR_FUNCTION_CALL__T14);
+      t14 = new EObjectContainmentEList<Statement>(Statement.class, this, EditorPackage.NAME_OR_FUNCTION_CALL__T14);
     }
     return t14;
   }
@@ -473,7 +473,7 @@ public class NameOrFunctionCallImpl extends MinimalEObjectImpl.Container impleme
         setLsp((String)newValue);
         return;
       case EditorPackage.NAME_OR_FUNCTION_CALL__T4:
-        setT4((StatementExpression)newValue);
+        setT4((Expr)newValue);
         return;
       case EditorPackage.NAME_OR_FUNCTION_CALL__T5:
         getT5().clear();
@@ -481,7 +481,7 @@ public class NameOrFunctionCallImpl extends MinimalEObjectImpl.Container impleme
         return;
       case EditorPackage.NAME_OR_FUNCTION_CALL__T14:
         getT14().clear();
-        getT14().addAll((Collection<? extends StatementExpression>)newValue);
+        getT14().addAll((Collection<? extends Statement>)newValue);
         return;
       case EditorPackage.NAME_OR_FUNCTION_CALL__T15:
         getT15().clear();
@@ -514,7 +514,7 @@ public class NameOrFunctionCallImpl extends MinimalEObjectImpl.Container impleme
         setLsp(LSP_EDEFAULT);
         return;
       case EditorPackage.NAME_OR_FUNCTION_CALL__T4:
-        setT4((StatementExpression)null);
+        setT4((Expr)null);
         return;
       case EditorPackage.NAME_OR_FUNCTION_CALL__T5:
         getT5().clear();

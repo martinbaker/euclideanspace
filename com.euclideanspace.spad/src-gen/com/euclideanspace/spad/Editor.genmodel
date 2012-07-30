@@ -151,8 +151,9 @@
     <genClasses ecoreClass="Editor.ecore#//TypeParameterList">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Editor.ecore#//TypeParameterList/tyname"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Editor.ecore#//TypeParameterList/par"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//TypeParameterList/par22"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//TypeParameterList/par21"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Editor.ecore#//TypeParameterList/par2"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//TypeParameterList/par22"/>
     </genClasses>
     <genClasses ecoreClass="Editor.ecore#//TypeArguments">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//TypeArguments/t"/>
@@ -358,6 +359,11 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//ConditionExpression/left"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Editor.ecore#//ConditionExpression/op"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//ConditionExpression/right"/>
+    </genClasses>
+    <genClasses ecoreClass="Editor.ecore#//OrExpression">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//OrExpression/left"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Editor.ecore#//OrExpression/op"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//OrExpression/right"/>
     </genClasses>
     <genClasses ecoreClass="Editor.ecore#//AndExpression">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//AndExpression/left"/>

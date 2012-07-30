@@ -114,6 +114,7 @@ public class EditorFactoryImpl extends EFactoryImpl implements EditorFactory
       case EditorPackage.LIST_LITERAL: return createListLiteral();
       case EditorPackage.EXIT_EXPRESSION: return createExitExpression();
       case EditorPackage.CONDITION_EXPRESSION: return createConditionExpression();
+      case EditorPackage.OR_EXPRESSION: return createOrExpression();
       case EditorPackage.AND_EXPRESSION: return createAndExpression();
       case EditorPackage.INNER_PROD_EXPRESSION: return createInnerProdExpression();
       case EditorPackage.OUTER_PROD_EXPRESSION: return createOuterProdExpression();
@@ -692,6 +693,17 @@ public class EditorFactoryImpl extends EFactoryImpl implements EditorFactory
   {
     ConditionExpressionImpl conditionExpression = new ConditionExpressionImpl();
     return conditionExpression;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public OrExpression createOrExpression()
+  {
+    OrExpressionImpl orExpression = new OrExpressionImpl();
+    return orExpression;
   }
 
   /**

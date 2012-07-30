@@ -434,7 +434,7 @@ public class EditorParser extends AbstractContentAssistParser {
 					put(grammarAccess.getTypeExpressionAccess().getT3Assignment_0_0_2(), "rule__TypeExpression__T3Assignment_0_0_2");
 					put(grammarAccess.getTypeParameterListAccess().getTynameAssignment_0(), "rule__TypeParameterList__TynameAssignment_0");
 					put(grammarAccess.getTypeParameterListAccess().getParAssignment_1(), "rule__TypeParameterList__ParAssignment_1");
-					put(grammarAccess.getTypeParameterListAccess().getPar22Assignment_2_1(), "rule__TypeParameterList__Par22Assignment_2_1");
+					put(grammarAccess.getTypeParameterListAccess().getPar21Assignment_2_1(), "rule__TypeParameterList__Par21Assignment_2_1");
 					put(grammarAccess.getTypeParameterListAccess().getPar2Assignment_3_1(), "rule__TypeParameterList__Par2Assignment_3_1");
 					put(grammarAccess.getTypeParameterListAccess().getPar22Assignment_3_2_1(), "rule__TypeParameterList__Par22Assignment_3_2_1");
 					put(grammarAccess.getTypeArgumentsAccess().getTAssignment_0(), "rule__TypeArguments__TAssignment_0");

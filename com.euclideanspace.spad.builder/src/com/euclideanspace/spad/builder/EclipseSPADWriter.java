@@ -60,13 +60,19 @@ public class EclipseSPADWriter extends EclipseFileWriter {
 	boolean suspended = false;
 	/** store macros */
 	Map<String,String> macros = new HashMap<String,String>();
+    /**
+     * User selection for statement terminator option:
+     * 0=new line, 1=semicolon
+     */
+	int statementTerminatorOption = 0;
 
 	/**
 	 * @param n file name
 	 * @param p file directory
 	 */
-	public EclipseSPADWriter(String n, IFolder p) {
+	public EclipseSPADWriter(String n, IFolder p,BuilderNewWizard callback) {
 		super(n, p);
+	    statementTerminatorOption = callback.getStatementTerminatorOption();
 	}
 
 	/**
@@ -177,7 +183,8 @@ public class EclipseSPADWriter extends EclipseFileWriter {
     		  }
     		  //System.out.println(line2);
     		  if (ind == indent) { // indent unchanged so no brace
-    			  flushLineHold("\n"+line);
+    			  if (statementTerminatorOption==1) flushLineHold(";\n"+line);
+    			  else flushLineHold("\n"+line);
     		  } else if (ind > indent) { // indent increased so insert '{'
       			trimedLine = line.trim();
     			//boolean continuationLine = impliedContinuation(trimedLine);

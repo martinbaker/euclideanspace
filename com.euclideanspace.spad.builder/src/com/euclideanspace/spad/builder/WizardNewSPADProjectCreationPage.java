@@ -1,6 +1,7 @@
 package com.euclideanspace.spad.builder;
 
 import java.net.URI;
+import java.util.List;
 
 import org.eclipse.core.resources.IProject;
 import org.eclipse.core.resources.IResource;
@@ -18,6 +19,9 @@ import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Event;
 import org.eclipse.swt.widgets.Label;
+import org.eclipse.swt.widgets.Combo;
+import org.eclipse.swt.events.SelectionAdapter;
+import org.eclipse.swt.events.SelectionEvent;
 import org.eclipse.swt.widgets.Listener;
 import org.eclipse.swt.widgets.Text;
 import org.eclipse.ui.IWorkingSet;
@@ -69,6 +73,7 @@ import org.eclipse.jface.wizard.ProgressMonitorPart;
 
     	private ProjectContentsLocationArea locationArea;
     	private InitilisationLocationDialog fromArea;
+    	private ComboBoxDialog comboBoxDialog;
 
     	private WorkingSetGroup workingSetGroup;
 
@@ -113,6 +118,9 @@ import org.eclipse.jface.wizard.ProgressMonitorPart;
 
     		// Scale the button based on the rest of the dialog
     		setButtonLayoutData(locationArea.getBrowseButton());
+    		
+    		String[] options = {"statement terminator:","new line","semicolon"};
+    		comboBoxDialog = new ComboBoxDialog(composite,options);
     		
     		progressMonitorPart=
               new ProgressMonitorPart(composite,null);
@@ -245,6 +253,15 @@ import org.eclipse.jface.wizard.ProgressMonitorPart;
         
         public String getFriCASFiles(){
         	return fromArea.getSelectedDirectoryPath();
+        }
+
+        /**
+         * return user selection for statement terminator option:
+         * @return 0=new line, 1=semicolon
+         */
+        public int getStatementTerminatorOption(){
+        	if (comboBoxDialog == null) return 0;
+        	return comboBoxDialog.getSelectedIndex();
         }
         
         /**

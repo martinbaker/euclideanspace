@@ -75,10 +75,10 @@ public class BuilderNewWizard extends Wizard implements INewWizard {
         // now populate project with folders and files
         IFolder srcFolder = null;
 	    srcFolder = createFolder("src",null);
-	    IFolder srcgenFolder = createFolder("src-gen",null);
+	    /*IFolder srcgenFolder =*/ createFolder("src-gen",null);
         String fricasFiles = _pageOne.getFriCASFiles();
-		System.out.println("BuilderNewWizard.performFinish: "+
-                " fricasFiles="+fricasFiles);
+		//System.out.println("BuilderNewWizard.performFinish: "+
+        //        " fricasFiles="+fricasFiles);
         if (fricasFiles != null && !"".equals(fricasFiles)) {
           Translate t = new Translate();
     	  t.trans(srcFolder,fricasFiles,this);
@@ -160,6 +160,14 @@ public class BuilderNewWizard extends Wizard implements INewWizard {
 	  }
 	  return folder;
     }
+    
+    /**
+     * return user selection fo statement terminator option:
+     * @return 0=new line, 1=semicolon
+     */
+	public int getStatementTerminatorOption() {
+		return _pageOne.getStatementTerminatorOption();
+	}
     
 	public void StartProgress(String fileName,int index) {
 		_pageOne.StartProgress(fileName,index);

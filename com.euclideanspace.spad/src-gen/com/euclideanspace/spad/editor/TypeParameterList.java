@@ -16,8 +16,9 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link com.euclideanspace.spad.editor.TypeParameterList#getTyname <em>Tyname</em>}</li>
  *   <li>{@link com.euclideanspace.spad.editor.TypeParameterList#getPar <em>Par</em>}</li>
- *   <li>{@link com.euclideanspace.spad.editor.TypeParameterList#getPar22 <em>Par22</em>}</li>
+ *   <li>{@link com.euclideanspace.spad.editor.TypeParameterList#getPar21 <em>Par21</em>}</li>
  *   <li>{@link com.euclideanspace.spad.editor.TypeParameterList#getPar2 <em>Par2</em>}</li>
+ *   <li>{@link com.euclideanspace.spad.editor.TypeParameterList#getPar22 <em>Par22</em>}</li>
  * </ul>
  * </p>
  *
@@ -80,20 +81,30 @@ public interface TypeParameterList extends EObject
   void setPar(String value);
 
   /**
-   * Returns the value of the '<em><b>Par22</b></em>' containment reference list.
-   * The list contents are of type {@link com.euclideanspace.spad.editor.TypeExpression}.
+   * Returns the value of the '<em><b>Par21</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Par22</em>' containment reference list isn't clear,
+   * If the meaning of the '<em>Par21</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Par22</em>' containment reference list.
-   * @see com.euclideanspace.spad.editor.EditorPackage#getTypeParameterList_Par22()
+   * @return the value of the '<em>Par21</em>' containment reference.
+   * @see #setPar21(TypeExpression)
+   * @see com.euclideanspace.spad.editor.EditorPackage#getTypeParameterList_Par21()
    * @model containment="true"
    * @generated
    */
-  EList<TypeExpression> getPar22();
+  TypeExpression getPar21();
+
+  /**
+   * Sets the value of the '{@link com.euclideanspace.spad.editor.TypeParameterList#getPar21 <em>Par21</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Par21</em>' containment reference.
+   * @see #getPar21()
+   * @generated
+   */
+  void setPar21(TypeExpression value);
 
   /**
    * Returns the value of the '<em><b>Par2</b></em>' attribute list.
@@ -110,5 +121,21 @@ public interface TypeParameterList extends EObject
    * @generated
    */
   EList<String> getPar2();
+
+  /**
+   * Returns the value of the '<em><b>Par22</b></em>' containment reference list.
+   * The list contents are of type {@link com.euclideanspace.spad.editor.TypeExpression}.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Par22</em>' containment reference list isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Par22</em>' containment reference list.
+   * @see com.euclideanspace.spad.editor.EditorPackage#getTypeParameterList_Par22()
+   * @model containment="true"
+   * @generated
+   */
+  EList<TypeExpression> getPar22();
 
 } // TypeParameterList

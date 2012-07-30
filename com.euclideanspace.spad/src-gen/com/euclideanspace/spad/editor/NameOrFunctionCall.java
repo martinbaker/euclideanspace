@@ -92,12 +92,12 @@ public interface NameOrFunctionCall extends EObject
    * </p>
    * <!-- end-user-doc -->
    * @return the value of the '<em>T4</em>' containment reference.
-   * @see #setT4(StatementExpression)
+   * @see #setT4(Expr)
    * @see com.euclideanspace.spad.editor.EditorPackage#getNameOrFunctionCall_T4()
    * @model containment="true"
    * @generated
    */
-  StatementExpression getT4();
+  Expr getT4();
 
   /**
    * Sets the value of the '{@link com.euclideanspace.spad.editor.NameOrFunctionCall#getT4 <em>T4</em>}' containment reference.
@@ -107,7 +107,7 @@ public interface NameOrFunctionCall extends EObject
    * @see #getT4()
    * @generated
    */
-  void setT4(StatementExpression value);
+  void setT4(Expr value);
 
   /**
    * Returns the value of the '<em><b>T5</b></em>' containment reference list.
@@ -127,7 +127,7 @@ public interface NameOrFunctionCall extends EObject
 
   /**
    * Returns the value of the '<em><b>T14</b></em>' containment reference list.
-   * The list contents are of type {@link com.euclideanspace.spad.editor.StatementExpression}.
+   * The list contents are of type {@link com.euclideanspace.spad.editor.Statement}.
    * <!-- begin-user-doc -->
    * <p>
    * If the meaning of the '<em>T14</em>' containment reference list isn't clear,
@@ -139,7 +139,7 @@ public interface NameOrFunctionCall extends EObject
    * @model containment="true"
    * @generated
    */
-  EList<StatementExpression> getT14();
+  EList<Statement> getT14();
 
   /**
    * Returns the value of the '<em><b>T15</b></em>' containment reference list.

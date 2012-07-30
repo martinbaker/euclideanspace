@@ -68,7 +68,7 @@ public class InitilisationLocationDialog {
 	public InitilisationLocationDialog(/*IErrorMessageReporter reporter,*/
 			Composite composite) {
 		// If it is a new project always start enabled
-		createContents(composite, true);
+		createContents(composite);
 	}
 
 	/**
@@ -77,7 +77,7 @@ public class InitilisationLocationDialog {
 	 * @param composite
 	 * @param defaultEnabled
 	 */
-	private void createContents(Composite composite, boolean defaultEnabled) {
+	private void createContents(Composite composite) {
 
 		int columns = 4;
 		// project specification group
@@ -89,32 +89,32 @@ public class InitilisationLocationDialog {
 
 		useDefaultsButton = new Button(projectGroup, SWT.CHECK | SWT.RIGHT);
 		useDefaultsButton.setText("Initialise from FriCAS files");
-		useDefaultsButton.setSelection(defaultEnabled);
+		useDefaultsButton.setSelection(true);
 		GridData buttonData = new GridData();
 		buttonData.horizontalSpan = columns;
 		useDefaultsButton.setLayoutData(buttonData);
 
-		createUserEntryArea(projectGroup, defaultEnabled);
+		createUserEntryArea(projectGroup);
 
 		useDefaultsButton.addSelectionListener(new SelectionAdapter() {
 			public void widgetSelected(SelectionEvent e) {
-				System.out.println("InitilisationLocationDialog.widgetSelected");
+				//System.out.println("InitilisationLocationDialog.widgetSelected");
 				boolean useDefaults = useDefaultsButton.getSelection();
-				System.out.println("InitilisationLocationDialog.widgetSelected useDefaults="+useDefaults);
+				//System.out.println("InitilisationLocationDialog.widgetSelected useDefaults="+useDefaults);
 
 				if (useDefaults) {
 					userPath = locationPathField.getText();
-					System.out.println("InitilisationLocationDialog.widgetSelected userPath="+userPath);
+					//System.out.println("InitilisationLocationDialog.widgetSelected userPath="+userPath);
 					locationPathField.setText(TextProcessor
 							.process(getDefaultPathDisplayString()));
 				} else {
 					locationPathField.setText(TextProcessor.process(userPath));
-					System.out.println("InitilisationLocationDialog.widgetSelected locationPathField="+locationPathField);
+					//System.out.println("InitilisationLocationDialog.widgetSelected locationPathField="+locationPathField);
 				}
 				setUserAreaEnabled(useDefaults);
 			}
 		});
-		setUserAreaEnabled(defaultEnabled);
+		setUserAreaEnabled(true);
 	}
 
 	/**
@@ -133,7 +133,7 @@ public class InitilisationLocationDialog {
 	 * @param composite
 	 * @param defaultEnabled
 	 */
-	private void createUserEntryArea(Composite composite, boolean defaultEnabled) {
+	private void createUserEntryArea(Composite composite) {
 		// project location entry field
 		locationPathField = new Text(composite, SWT.BORDER);
 		GridData data = new GridData(GridData.FILL_HORIZONTAL);
@@ -149,26 +149,8 @@ public class InitilisationLocationDialog {
 				handleLocationBrowseButtonPressed();
 			}
 		});
-
-		if (defaultEnabled) {
-			locationPathField.setText(TextProcessor
-					.process(getDefaultPathDisplayString()));
-		} else {
-		  locationPathField.setText("");
-		}
-
-		locationPathField.addModifyListener(new ModifyListener() {
-			/*
-			 * (non-Javadoc)
-			 * 
-			 * @see org.eclipse.swt.events.ModifyListener#modifyText(org.eclipse.swt.events.ModifyEvent)
-			 */
-			public void modifyText(ModifyEvent e) {
-				System.out.println("modifyText: "+
-	                    locationPathField+ " e="+e);
-				//errorReporter.reportError(checkValidLocation(), false);
-			}
-		});
+        locationPathField.setText(TextProcessor
+          .process(getDefaultPathDisplayString()));
 	}
 
 	public String getSelectedDirectoryPath(){
@@ -197,7 +179,6 @@ public class InitilisationLocationDialog {
 			fileSystemSelectionArea.setEnabled(enabled);
 		}
 	}
-
 	
 	/**
 	 * The browse button has been pressed so open an appropriate directory

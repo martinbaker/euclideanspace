@@ -662,7 +662,7 @@ TypeExpression hidden(WS):
  */
 TypeParameterList hidden(WS):
 	tyname=LPAREN par=ID? 
-	(COLON par22+=TypeExpression)?
+	(COLON par21=TypeExpression)?
 	(COMMA par2 += ID (COLON par22+=TypeExpression)?)* RPAREN;
 
 /*
@@ -1014,7 +1014,7 @@ ConditionExpression returns Expr hidden(WS,SL_COMMENT):
  */
 OrExpression returns Expr hidden(WS,SL_COMMENT):
   AndExpression
-  ( {AndExpression.left=current} op='or' right = AndExpression)*
+  ( {OrExpression.left=current} op='or' right = AndExpression)*
 ;
 
 /*
@@ -1025,7 +1025,7 @@ OrExpression returns Expr hidden(WS,SL_COMMENT):
  */
 AndExpression returns Expr hidden(WS,SL_COMMENT):
   InnerProdExpression
-  ( {InnerProdExpression.left=current} op='and' right = InnerProdExpression)*
+  ( {AndExpression.left=current} op='and' right = InnerProdExpression)*
 ;
 
 /*
@@ -1403,9 +1403,10 @@ NameOrFunctionCall hidden(WS,SL_COMMENT):
   fnname=ID (=> lsp=DOLAR 'Lisp'/*t2=TypeExpression*/)?
   //  option for parameters in parenthesis
   (
-    LPAREN t4=StatementExpression? (COMMA t5+=Expression)* RPAREN //(COLON rightType2 =TypeExpression)?
+//    LPAREN t4=StatementExpression? (COMMA t5+=Expression)* RPAREN //(COLON rightType2 =TypeExpression)?
+    LPAREN t4=Expression? (COMMA t5+=Expression)* RPAREN //(COLON rightType2 =TypeExpression)?
     // optional curried function:
-    (LPAREN t14+=StatementExpression? (COMMA t15+=Expression)* RPAREN)*
+    (LPAREN t14+=Statement? (COMMA t15+=Expression)* RPAREN)*
     // option of no parenthesis for single parameter
     | => t6=PrimaryExpression
   )?

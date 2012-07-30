@@ -3247,16 +3247,16 @@ ruleTypeParameterList returns [EObject current=null]
 (
 (
 		{ 
-	        newCompositeNode(grammarAccess.getTypeParameterListAccess().getPar22TypeExpressionParserRuleCall_2_1_0()); 
+	        newCompositeNode(grammarAccess.getTypeParameterListAccess().getPar21TypeExpressionParserRuleCall_2_1_0()); 
 	    }
-		lv_par22_3_0=ruleTypeExpression		{
+		lv_par21_3_0=ruleTypeExpression		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getTypeParameterListRule());
 	        }
-       		add(
+       		set(
        			$current, 
-       			"par22",
-        		lv_par22_3_0, 
+       			"par21",
+        		lv_par21_3_0, 
         		"TypeExpression");
 	        afterParserOrEnumRuleCall();
 	    }
@@ -6597,7 +6597,7 @@ ruleOrExpression returns [EObject current=null]
 ((
     {
         $current = forceCreateModelElementAndSet(
-            grammarAccess.getOrExpressionAccess().getAndExpressionLeftAction_1_0(),
+            grammarAccess.getOrExpressionAccess().getOrExpressionLeftAction_1_0(),
             $current);
     }
 )(
@@ -6676,7 +6676,7 @@ ruleAndExpression returns [EObject current=null]
 ((
     {
         $current = forceCreateModelElementAndSet(
-            grammarAccess.getAndExpressionAccess().getInnerProdExpressionLeftAction_1_0(),
+            grammarAccess.getAndExpressionAccess().getAndExpressionLeftAction_1_0(),
             $current);
     }
 )(
@@ -9648,9 +9648,9 @@ RULE_DOLAR
 (
 (
 		{ 
-	        newCompositeNode(grammarAccess.getNameOrFunctionCallAccess().getT4StatementExpressionParserRuleCall_3_0_1_0()); 
+	        newCompositeNode(grammarAccess.getNameOrFunctionCallAccess().getT4ExpressionParserRuleCall_3_0_1_0()); 
 	    }
-		lv_t4_5_0=ruleStatementExpression		{
+		lv_t4_5_0=ruleExpression		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getNameOrFunctionCallRule());
 	        }
@@ -9658,7 +9658,7 @@ RULE_DOLAR
        			$current, 
        			"t4",
         		lv_t4_5_0, 
-        		"StatementExpression");
+        		"Expression");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -9696,9 +9696,9 @@ RULE_DOLAR
 (
 (
 		{ 
-	        newCompositeNode(grammarAccess.getNameOrFunctionCallAccess().getT14StatementExpressionParserRuleCall_3_0_4_1_0()); 
+	        newCompositeNode(grammarAccess.getNameOrFunctionCallAccess().getT14StatementParserRuleCall_3_0_4_1_0()); 
 	    }
-		lv_t14_10_0=ruleStatementExpression		{
+		lv_t14_10_0=ruleStatement		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getNameOrFunctionCallRule());
 	        }
@@ -9706,7 +9706,7 @@ RULE_DOLAR
        			$current, 
        			"t14",
         		lv_t14_10_0, 
-        		"StatementExpression");
+        		"Statement");
 	        afterParserOrEnumRuleCall();
 	    }
 

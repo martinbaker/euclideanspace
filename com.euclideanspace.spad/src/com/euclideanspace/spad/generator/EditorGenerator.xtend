@@ -25,6 +25,8 @@ import org.eclipse.xtext.generator.IFileSystemAccess
 import com.euclideanspace.spad.editor.AddPart;
 import com.euclideanspace.spad.editor.AddStatements;
 import com.euclideanspace.spad.editor.AdditiveExpression;
+import com.euclideanspace.spad.editor.AndExpression;
+import com.euclideanspace.spad.editor.AssignExpression;
 import com.euclideanspace.spad.editor.Block;
 import com.euclideanspace.spad.editor.BooleanLiteral;
 import com.euclideanspace.spad.editor.BreakStatement;
@@ -40,15 +42,18 @@ import com.euclideanspace.spad.editor.EltExpression;
 import com.euclideanspace.spad.editor.EqualityExpression;
 import com.euclideanspace.spad.editor.ExplicitTypeExpression;
 import com.euclideanspace.spad.editor.ExponentExpression;
+import com.euclideanspace.spad.editor.ExitExpression;
 import com.euclideanspace.spad.editor.Expr;
 import com.euclideanspace.spad.editor.ExquoExpression;
 import com.euclideanspace.spad.editor.ForStatement;
 import com.euclideanspace.spad.editor.FreeVariable;
 import com.euclideanspace.spad.editor.FunctionDefinition;
+import com.euclideanspace.spad.editor.FunctionDefinitionBlock;
 import com.euclideanspace.spad.editor.FunctionSignature;
 import com.euclideanspace.spad.editor.HasExpression;
 import com.euclideanspace.spad.editor.HintTypeExpression;
 import com.euclideanspace.spad.editor.IfStatement;
+import com.euclideanspace.spad.editor.IfElseStatement;
 import com.euclideanspace.spad.editor.Import;
 import com.euclideanspace.spad.editor.InnerProdExpression;
 import com.euclideanspace.spad.editor.IsExpression;
@@ -57,11 +62,12 @@ import com.euclideanspace.spad.editor.ListLiteral;
 import com.euclideanspace.spad.editor.Literal;
 import com.euclideanspace.spad.editor.LocalVariable;
 import com.euclideanspace.spad.editor.MacroDef;
-//import com.euclideanspace.spad.editor.MapDefinition;
+import com.euclideanspace.spad.editor.MapDefinition;
 import com.euclideanspace.spad.editor.ModExpression;
 import com.euclideanspace.spad.editor.Model;
 import com.euclideanspace.spad.editor.MultiplicativeExpression;
 import com.euclideanspace.spad.editor.NameOrFunctionCall;
+import com.euclideanspace.spad.editor.OrExpression;
 import com.euclideanspace.spad.editor.OuterProdExpression;
 import com.euclideanspace.spad.editor.PackageDef;
 //import com.euclideanspace.spad.editor.Predicate;
@@ -75,9 +81,11 @@ import com.euclideanspace.spad.editor.QuoExpression;
 import com.euclideanspace.spad.editor.RelationalExpression;
 import com.euclideanspace.spad.editor.RemExpression;
 import com.euclideanspace.spad.editor.ReturnStatement;
+import com.euclideanspace.spad.editor.RepeatStatement;
 import com.euclideanspace.spad.editor.SegmentExpression;
 import com.euclideanspace.spad.editor.Statement;
 import com.euclideanspace.spad.editor.StatementExpression;
+import com.euclideanspace.spad.editor.TupleDefinition;
 import com.euclideanspace.spad.editor.TypeArguments;
 import com.euclideanspace.spad.editor.TypeExpression;
 import com.euclideanspace.spad.editor.TypeLiteral;
@@ -88,6 +96,7 @@ import com.euclideanspace.spad.editor.TypeResult;
 import com.euclideanspace.spad.editor.TypeWithName;
 import com.euclideanspace.spad.editor.UnaryExpression;
 import com.euclideanspace.spad.editor.VariableDeclaration;
+import com.euclideanspace.spad.editor.VariableDeclarationBlock;
 import com.euclideanspace.spad.editor.VariableTyped;
 import com.euclideanspace.spad.editor.VariableDeclarationAssign;
 import com.euclideanspace.spad.editor.WhereAssignments;
@@ -141,12 +150,12 @@ class EditorGenerator implements IGenerator {
 
     /* DomainDef */
     def compile(DomainDef f) '''
-      public class «f.longname5» «IF f.cp5 != null» «compile(f.cp5)» «ENDIF»{      
-      /* extends «f.name» 
-      «IF f.exportName != null» «f.exportName» «ENDIF»
-      «IF f.implName5 != null» «f.implName5» «ENDIF»*/
-      «IF f.w != null» «compile(f.w)» «ENDIF»
-      «IF f.wh5 != null» «compile(f.wh5)» «ENDIF»
+      public class «f.longname5» «IF f.cp5 != null»/*«compile(f.cp5)»*/«ENDIF      
+       »extends «f.name» {
+      /*«IF f.exportName != null» «f.exportName» «ENDIF
+      »«IF f.implName5 != null» «f.implName5» «ENDIF»*/
+      «IF f.w != null» «compile(f.w)» «ENDIF
+      »«IF f.wh5 != null» «compile(f.wh5)» «ENDIF»
     }'''
 
    /* WherePart */
@@ -172,38 +181,63 @@ class EditorGenerator implements IGenerator {
        /* WithPart */
        «FOR x:f.fundec»«compile(x)»
        «ENDFOR»
-        '''
+       /* end WithPart */'''
 
     /* AddPart */
     def compile(AddPart f) '''
        /* AddPart */
        «FOR x:f.t» «compile(x)» «ENDFOR»
-        '''
-  
-    /* AddStatements */
+       /* end AddPart */'''
+
+    /* AddStatements 
+     * VariableDeclarationAssign
+     * FunctionDefinition
+     * t1= 'if' Expression
+     * t13= 'then' FunctionDefinitionBlock
+     * t14='else' FunctionDefinitionBlock
+     * MacroDef
+     * Import*/
     def compile(AddStatements f) '''
-       «IF f instanceof VariableDeclarationAssign» «
-       compile(f as VariableDeclarationAssign)» «
-       ENDIF»
-       «IF f instanceof FunctionDefinition» «
-       compile(f as FunctionDefinition)» «
-       ENDIF»
-       «IF f instanceof MacroDef» «
-       compile(f as MacroDef)» «ENDIF»
+       «IF f instanceof VariableDeclarationAssign»«
+       compile(f as VariableDeclarationAssign)»«
+       ENDIF»«IF f instanceof FunctionDefinition»«
+       compile(f as FunctionDefinition)»«
+       ENDIF»«IF f instanceof MacroDef» «
+       compile(f as MacroDef)» «ENDIF»«
+        IF f.t1 != null»if(«compile(f.t1)»)«ENDIF»«
+        IF f.t13 != null»then«compile(f.t13)»«ENDIF»«
+        IF f.t14 != null»else«compile(f.t14)»«ENDIF»
         '''
 
-    /* FunctionDefinition */  
+    /* FunctionDefinition 
+     * par3=FunctionSignature
+     * par4=TypeExpression
+     * par5=Statement
+     */  
     def compile(FunctionDefinition f)
-       '''«IF f instanceof FunctionSignature»«
-       compile(f as FunctionSignature)»«ENDIF»
-        '''
+       '''
+       public «IF f.par4 != null»«compile(f.par4)» «ENDIF
+       »«IF f.par3 != null»«compile(f.par3)»«ENDIF
+       »«IF f.par5 != null»«compile(f.par5)»«ENDIF»
 
-    /* MapDefinition */
-/*     def compile(MapDefinition f) 
-       '''«IF f instanceof FunctionSignature»«
-       compile(f as FunctionSignature)»«ENDIF»
-        '''*/
-    
+       '''
+
+    /* FunctionDefinitionBlock
+     * fnDecBk += FunctionDefinition
+     * vars+=VariableDeclarationAssign
+     * 'if' t1+=Expression
+     * 'then' t13+=FunctionDefinitionBlock    	
+     * 'else' t14+=FunctionDefinitionBlock*/
+    def compile(FunctionDefinitionBlock f)
+       '''{
+       	«FOR x:f.fnDecBk»,«compile(x)»«ENDFOR
+       	»«FOR x:f.vars»,«compile(x)»«ENDFOR»«
+       	IF f.t1 != null»if «FOR x:f.t1»,«compile(x)»«ENDFOR»then «
+       	  FOR x:f.t13»,«compile(x)»«ENDFOR»else «
+       	  FOR x:f.t14»,«compile(x)»«ENDFOR»«
+       	ENDIF»} 
+       '''
+
     /* FunctionSignature 
      * par4 and par5 inherit from FunctionDefinition*/
     def compile(FunctionSignature f) 
@@ -234,24 +268,32 @@ class EditorGenerator implements IGenerator {
     def compile(VariableDeclaration f) 
         '''«IF f.v1 != null» «
         compile(f.v1)»«ENDIF»'''
+
+    /* VariableDeclarationBlock */
+    def compile(VariableDeclarationBlock f) 
+        '''«FOR x:f.vardecBlk»,«x»«ENDFOR»'''
         
     /* TypeWithName */
     def compile(TypeWithName f) 
-        '''«IF f.typ != null» «
+        '''«IF f.typ != null»«
         compile(f.typ)»«ENDIF»'''
 
     /* VariableTyped */
     def compile(VariableTyped f) 
-        '''«IF f.varName != null» «
-        f.varName»«ENDIF»«IF f.typ != null»:«
-        compile(f.typ)»«ENDIF»'''
+        '''«IF f.typ != null»«
+        compile(f.typ)»«ENDIF»«IF f.varName != null» «
+        f.varName»«ENDIF»'''
 
-    /* VariableDeclarationAssign */
+    /* VariableDeclarationAssign
+     * varName=ID // name of variable
+     * t12=ID
+     * typ=TypeExpression
+     * t4=BECOMES Expression*/
     def compile(VariableDeclarationAssign f) 
-        '''«IF f.varName != null»«f.varName»«ENDIF»«
+        '''«IF f.typ != null»«compile(f.typ)»«ENDIF
+        »«IF f.varName != null» «f.varName»«ENDIF»«
         FOR x:f.t12»,«x»«ENDFOR»«
-        IF f.typ != null»:«compile(f.typ)»«ENDIF»«
-        IF f.t4 != null»:=«compile(f.t4)»«ENDIF»'''
+        IF f.t4 != null»:=«compile(f.t4)»«ENDIF»;'''
   
     /* FreeVariable */
     def compile(FreeVariable f) 
@@ -261,7 +303,10 @@ class EditorGenerator implements IGenerator {
     def compile(LocalVariable f) 
         ''' local'''
         
-    /* TypeExpression */
+    /* TypeExpression
+     * (t2=TypeArguments -> t3=TypeResult)
+     * TypePrimaryExpression
+     */
     def compile(TypeExpression f) 
       '''«IF f.t2 != null»«compile(f.t2)» -> «
       compile(f.t3)»«ENDIF»«
@@ -270,9 +315,19 @@ class EditorGenerator implements IGenerator {
   
     /* TypeParameterList */
     def compile(TypeParameterList f) 
-        '''<«
+        '''(«
       IF f.par != null»«f.par»«ENDIF»«
-      FOR x:f.par2 »,«x» «ENDFOR»>'''
+      IF f.par21 != null»:«f.par21»«ENDIF»«
+      FOR x:f.par2 »,«x» «ENDFOR»)'''
+
+    /* TupleDefinition 
+     * t4= first TypeExpression
+     * t25 = following TypeExpressions)
+     */
+    def compile(TupleDefinition f) 
+      '''(«
+      IF f.t4 != null»«f.t4»«ENDIF»«
+      FOR x:f.t25 »,«x» «ENDFOR»)'''
 
     /* TypeArguments */  
     def compile(TypeArguments f) 
@@ -320,12 +375,6 @@ class EditorGenerator implements IGenerator {
         compile(f as TypeLiteral)»«ENDIF»«
       IF f instanceof TypeNameOrFunctionCall»«
         compile(f as TypeNameOrFunctionCall)»«ENDIF»'''
-      
-/* «IF f instanceof TypeLiteral»«
-      compile(f as TypeLiteral)»«ENDIF»«
-      IF f instanceof TypeNameOrFunctionCall»«
-      compile(f as TypeNameOrFunctionCall)»«ENDIF»
-      */
               
 	/* TypeNameOrFunctionCall
 	 * 
@@ -354,10 +403,6 @@ class EditorGenerator implements IGenerator {
       IF f.t34 != null»«compile(f.t34)»«ENDIF»«
       IF f.t35 != null»«compile(f.t35)»«ENDIF»'''
 
-/* «
-      IF f.t5 != null»«compile(f.t5)»«ENDIF»«
-      compile(f as TypePrimaryExpression)»*/
-
     /* Statement 
      * s1=Block
      * s3= StatementExpression
@@ -383,229 +428,218 @@ class EditorGenerator implements IGenerator {
     def compile(Block f)
       ''' {
         «FOR x:f.statemBl»«compile(x)»
-        «ENDFOR»} '''
+        «ENDFOR»}'''
   
     /* StatementExpression 
-     * t:t2 := t3 => t4*/
+     * t=ConditionExpression 
+     * t5 =BECOMES block
+     * t4 =EXIT Statement
+     */
     def compile(StatementExpression f) 
         '''«IF f.t != null»«compile(f.t)»«ENDIF»«
-     //   IF f.t2 != null»:«compile(f.t2)»«ENDIF»«
-//        IF f.t3 != null»=«compile(f.t3)»«ENDIF»«
-        IF f.t4 != null»=>«compile(f.t4)»«ENDIF»'''
+        IF f.t5 != null»=«compile(f.t5)»«ENDIF»«
+        IF f.t4 != null»=>«compile(f.t4)»«ENDIF»;'''
 
     /* ForStatement */
     def compile(ForStatement f) 
         '''for «f.stname» in «compile(f.t1)
-        » repeat «compile(f.s1)»'''
+        »repeat «compile(f.s1)»'''
         
     /* WhileStatement */
     def compile(WhileStatement f)
         '''while «compile(f.t2)
-        » repeat «compile(f.s1)»'''
+        »repeat «compile(f.s1)»'''
   
     /* DoStatement */
     def compile(DoStatement f)
         '''do «compile(f.s1)
-        » while «compile(f.t2)»'''
+        »while «compile(f.t2)»'''
 
     /* IterateStatement */
     def compile(IterateStatement f) 
-        '''iterate'''
+        '''iterate;'''
 
     /* BreakStatement */
     def compile(BreakStatement f) 
-        '''break'''
+        '''break;'''
 
     /* ReturnStatement */
     def compile(ReturnStatement f) 
-        '''return «compile(f.t2)»'''
+        '''«IF f.t2 != null»return «compile(f.t2)»;«ENDIF»'''
         
-    /* IfStatement */
+    /* RepeatStatement */
+    def compile(RepeatStatement f) 
+        '''«IF f.s1 != null»repeat «compile(f.s1)»;«ENDIF»'''
+        
+    /* IfStatement 
+     * t2='if' Expression
+     * s1='then' Statement
+     * s2='else' s2=Statement)?
+     * s11 and s12 are form of s1 and s2 in brace*/
     def compile(IfStatement f) 
-      '''return'''
-//      '''if «compile(f.t2)»then «
-//        compile(f.s1)»'''
-//        IF f.s2 != null»else «compile(f.s2)»«
-//        «ENDIF»
+      '''«IF f.t2 != null»if («compile(f.t2)»)«IF f.s1 != null»«
+        compile(f.s1)»«
+        ENDIF»«IF f.s2 != null»else «compile(f.s2)»«
+        ENDIF»«IF f.s11 != null»«compile(f.s11)»«
+        ENDIF»«IF f.s12 != null»else «compile(f.s12)»«
+        ENDIF»«ENDIF»'''
 
-    /* Predicate */
-/*    def compile(Predicate f)
-        '''«IF f instanceof PredicateOr»«
-        compile(f as PredicateOr)»«ENDIF»«
-        IF f instanceof PredicateAnd»«
-        compile(f as PredicateAnd)»«ENDIF»«
-        IF f instanceof PredicateNot»«
-        compile(f as PredicateNot)»«ENDIF»«
-        IF f instanceof PredicatePrimary»«
-        compile(f as PredicatePrimary)»«ENDIF»'''*/
-        
-    /* PredicateOr */
-/*    def compile(PredicateOr f)
-        '''«compile(f.left)»«
-        IF f.right != null»or «
-        compile(f.right)»«ENDIF»'''*/
-
-    /* PredicateAnd */
-/*    def compile(PredicateAnd f)
-        '''«compile(f.left)»«
-        IF f.right != null»and «
-        compile(f.right)»«ENDIF»'''*/
-
-    /* PredicateNot */
-/*    def compile(PredicateNot f)
-       '''«IF f.t2 != null»not «compile(f.t2)»«ENDIF»'''*/
-  
-    /* PredicatePrimary */
-/*    def compile(PredicatePrimary f) 
-       '''«IF f.t != null»(«compile(f.t)»)«ENDIF»«
-       IF f.t2 != null»(«compile(f.t2)»)«ENDIF»'''*/
+    /* IfElseStatement */
+    def compile(IfElseStatement f) 
+      '''«IF f.s2 != null»else «compile(f.s2)»«
+        ENDIF»'''
 
     /* Expr */
     def compile(Expr f)
-        '''«IF f instanceof ConditionExpression»«
-        compile(f as ConditionExpression)»«ENDIF»«
-        IF f instanceof InnerProdExpression»«
-        compile(f as InnerProdExpression)»«ENDIF»«
-        IF f instanceof OuterProdExpression»«
-        compile(f as OuterProdExpression)»«ENDIF»«
-        IF f instanceof HasExpression»«
-        compile(f as HasExpression)»«ENDIF»«
-        IF f instanceof CaseExpression»«
-        compile(f as CaseExpression)»«ENDIF»«
-        IF f instanceof EqualityExpression»«
-        compile(f as EqualityExpression)»«ENDIF»«
-        IF f instanceof RelationalExpression»«
-        compile(f as RelationalExpression)»«ENDIF»«
-        IF f instanceof IsExpression»«
-        compile(f as IsExpression)»«ENDIF»«
-        IF f instanceof SegmentExpression»«
-        compile(f as SegmentExpression)»«ENDIF»«
-        IF f instanceof AdditiveExpression»«
-        compile(f as AdditiveExpression)»«ENDIF»«
-        IF f instanceof ExquoExpression»«
-        compile(f as ExquoExpression)»«ENDIF»«
-        IF f instanceof DivisionExpression»«
-        compile(f as DivisionExpression)»«ENDIF»«
-        IF f instanceof QuoExpression»«
-        compile(f as QuoExpression)»«ENDIF»«
-        IF f instanceof ModExpression»«
-        compile(f as ModExpression)»«ENDIF»«
-        IF f instanceof RemExpression»«
-        compile(f as RemExpression)»«ENDIF»«
-        IF f instanceof MultiplicativeExpression»«
-        compile(f as MultiplicativeExpression)»«ENDIF»«
-        IF f instanceof ExponentExpression»«
-        compile(f as ExponentExpression)»«ENDIF»«
-        IF f instanceof PretendExpression»«
-        compile(f as PretendExpression)»«ENDIF»«
-        IF f instanceof HintTypeExpression»«
-        compile(f as HintTypeExpression)»«ENDIF»«
-        IF f instanceof CoerceExpression»«
-        compile(f as CoerceExpression)»«ENDIF»«
-        IF f instanceof EltExpression»«
-        compile(f as EltExpression)»«ENDIF»«
-        IF f instanceof ExplicitTypeExpression»«
-        compile(f as ExplicitTypeExpression)»«ENDIF»«
-        IF f instanceof UnaryExpression»«
-        compile(f as UnaryExpression)»«ENDIF»«
-        IF f instanceof PrimaryPrefix»«
-        compile(f as PrimaryPrefix)»«ENDIF»«
+        '''«IF f instanceof ConditionExpression»«compile(f as ConditionExpression)»«ENDIF»«
+        IF f instanceof AndExpression»«compile(f as AndExpression)»«ENDIF»« 
+        IF f instanceof OrExpression»«compile(f as OrExpression)»«ENDIF»«
+        IF f instanceof ExitExpression»«compile(f as ExitExpression)»«ENDIF»«
+        IF f instanceof AssignExpression»«compile(f as AssignExpression)»«ENDIF»«
+        IF f instanceof InnerProdExpression»«compile(f as InnerProdExpression)»«ENDIF»«
+        IF f instanceof OuterProdExpression»«compile(f as OuterProdExpression)»«ENDIF»«
+        IF f instanceof HasExpression»«compile(f as HasExpression)»«ENDIF»«
+        IF f instanceof CaseExpression»«compile(f as CaseExpression)»«ENDIF»«
+        IF f instanceof EqualityExpression»«compile(f as EqualityExpression)»«ENDIF»«
+        IF f instanceof RelationalExpression»«compile(f as RelationalExpression)»«ENDIF»«
+        IF f instanceof IsExpression»«compile(f as IsExpression)»«ENDIF»«
+        IF f instanceof SegmentExpression»«compile(f as SegmentExpression)»«ENDIF»«
+        IF f instanceof AdditiveExpression»«compile(f as AdditiveExpression)»«ENDIF»«
+        IF f instanceof ExquoExpression»«compile(f as ExquoExpression)»«ENDIF»«
+        IF f instanceof DivisionExpression»«compile(f as DivisionExpression)»«ENDIF»«
+        IF f instanceof QuoExpression»«compile(f as QuoExpression)»«ENDIF»«
+        IF f instanceof ModExpression»«compile(f as ModExpression)»«ENDIF»«
+        IF f instanceof RemExpression»«compile(f as RemExpression)»«ENDIF»«
+        IF f instanceof MapDefinition»«compile(f as MapDefinition)»«ENDIF»«
+        IF f instanceof MultiplicativeExpression»«compile(f as MultiplicativeExpression)»«ENDIF»«
+        IF f instanceof ExponentExpression»«compile(f as ExponentExpression)»«ENDIF»«
+        IF f instanceof PretendExpression»«compile(f as PretendExpression)»«ENDIF»«
+        IF f instanceof HintTypeExpression»«compile(f as HintTypeExpression)»«ENDIF»«
+        IF f instanceof CoerceExpression»«compile(f as CoerceExpression)»«ENDIF»«
+        IF f instanceof EltExpression»«compile(f as EltExpression)»«ENDIF»«
+        IF f instanceof ExplicitTypeExpression»«compile(f as ExplicitTypeExpression)»«ENDIF»«
+        IF f instanceof UnaryExpression»«compile(f as UnaryExpression)»«ENDIF»«
+        IF f instanceof PrimaryPrefix»«compile(f as PrimaryPrefix)»«ENDIF»«
         IF f.ifpred != null»if «compile(f.ifpred)» «ENDIF»«
         IF f.thenexp != null»then «compile(f.thenexp)» «ENDIF»«
         IF f.elseexp != null»else «compile(f.elseexp)» «ENDIF»'''
   
     def compile(ConditionExpression f)
         '''«compile(f.left)»«
-        IF f.right != null»«f.op» «compile(f.right)» «ENDIF»'''
+        IF f.right != null»«f.op»«compile(f.right)»«ENDIF»'''
   
     def compile(InnerProdExpression f)
         '''«IF f.left != null»«compile(f.left)»«ENDIF»«
-        IF f.right != null»«f.op» «compile(f.right)» «ENDIF»'''
+        IF f.right != null»«f.op»«compile(f.right)»«ENDIF»'''
   
     def compile(OuterProdExpression f)
         '''«IF f.left != null»«compile(f.left)»«ENDIF»«
-        IF f.right != null»«f.op» «compile(f.right)» «ENDIF»'''
+        IF f.right != null»«f.op»«compile(f.right)»«ENDIF»'''
+  
+    def compile(AndExpression f)
+        '''«IF f.left != null»«compile(f.left)»«ENDIF»«
+        IF f.right != null»«f.op»«compile(f.right)»«ENDIF»'''
+  
+    /* AssignExpression
+     * 
+     */
+    def compile(AssignExpression f)
+        '''«IF f.left != null»«compile(f.left)»«ENDIF»«
+        IF f.right != null»=«compile(f.right)»«ENDIF»'''
+  
+    def compile(ExitExpression f)
+        '''«IF f.left != null»«compile(f.left)»«ENDIF»«
+        IF f.right != null»«f.op»«compile(f.right)»«ENDIF»'''
+
+    /* MapDefinition */
+    def compile(MapDefinition f) 
+        '''«IF f.left != null»«compile(f.left)»«ENDIF»«
+        IF f.right != null»«f.op»«compile(f.right)»«ENDIF»'''
+
+    def compile(OrExpression f)
+        '''«IF f.left != null»«compile(f.left)»«ENDIF»«
+        IF f.right != null»«f.op»«compile(f.right)»«ENDIF»'''
   
     def compile(HasExpression f)
         '''«IF f.left != null»«compile(f.left)»«ENDIF»«
-        IF f.rightType != null»«f.op» «compile(f.rightType)» «ENDIF»'''
+        IF f.rightType != null»«f.op»«compile(f.rightType)»«ENDIF»'''
   
     def compile(CaseExpression f)
         '''«IF f.left != null»«compile(f.left)»«ENDIF»«
-        IF f.right != null»«f.op» «compile(f.right)» «ENDIF»'''
+        IF f.right != null»«f.op» «compile(f.right)»«ENDIF»'''
 
     def compile(EqualityExpression f)
         '''«IF f.left != null»«compile(f.left)»«ENDIF»«
-        IF f.right != null»«f.op» «compile(f.right)» «ENDIF»'''
+        IF f.right != null»«f.op» «compile(f.right)»«ENDIF»'''
   
     /* RelationalExpression */
     def compile(RelationalExpression f)
         '''«IF f.left != null»«compile(f.left)»«ENDIF»«
-        IF f.right != null»«f.op» «compile(f.right)» «ENDIF»'''
+        IF f.right != null»«f.op»«compile(f.right)»«ENDIF»'''
 
     def compile(IsExpression f)
         '''«compile(f.left)»«
-        IF f.rightType != null»«f.op» «compile(f.rightType)» «ENDIF»'''
+        IF f.rightType != null»«f.op»«compile(f.rightType)»«ENDIF»'''
   
     def compile(SegmentExpression f)
         '''«IF f.left != null»«compile(f.left)»«ENDIF»«
-        IF f.right != null»«f.op»«compile(f.right)» «ENDIF»'''
+        IF f.right != null»«f.op»«compile(f.right)»«ENDIF»'''
   
     def compile(AdditiveExpression f)
         '''«IF f.left != null»«compile(f.left)»«ENDIF»«
-        IF f.right != null»«f.op» «compile(f.right)» «ENDIF»'''
+        IF f.right != null»«f.op»«compile(f.right)»«ENDIF»'''
   
      def compile(ExquoExpression f)
         '''«IF f.left != null»«compile(f.left)»«ENDIF»«
-        IF f.right != null»«f.op» «compile(f.right)» «ENDIF»'''
+        IF f.right != null»«f.op»«compile(f.right)»«ENDIF»'''
   
     def compile(DivisionExpression f)
         '''«IF f.left != null»«compile(f.left)»«ENDIF»«
-        IF f.right != null»«f.op» «compile(f.right)» «ENDIF»'''
+        IF f.right != null»«f.op»«compile(f.right)»«ENDIF»'''
   
     def compile(QuoExpression f)
         '''«IF f.left != null»«compile(f.left)»«ENDIF»«
-        IF f.right != null»«f.op» «compile(f.right)» «ENDIF»'''
+        IF f.right != null»«f.op» «compile(f.right)»«ENDIF»'''
   
     def compile(ModExpression f)
         '''«IF f.left != null»«compile(f.left)»«ENDIF»«
-        IF f.right != null»«f.op» «compile(f.right)» «ENDIF»'''
+        IF f.right != null»«f.op» «compile(f.right)»«ENDIF»'''
   
     def compile(RemExpression f)
         '''«IF f.left != null»«compile(f.left)»«ENDIF»«
-        IF f.right != null»«f.op» «compile(f.right)» «ENDIF»'''
+        IF f.right != null»«f.op»«compile(f.right)»«ENDIF»'''
   
     def compile(MultiplicativeExpression f)
         '''«IF f.left != null»«compile(f.left)»«ENDIF»«
-        IF f.right != null»«f.op» «compile(f.right)» «ENDIF»'''
+        IF f.right != null»«f.op»«compile(f.right)»«ENDIF»'''
   
     def compile(ExponentExpression f)
         '''«IF f.left != null»«compile(f.left)»«ENDIF»«
-        IF f.right != null»«f.op» «compile(f.right)» «ENDIF»'''
+        IF f.right != null»«f.op»«compile(f.right)»«ENDIF»'''
   
    def compile(PretendExpression f)
         '''«IF f.left != null»«compile(f.left)»«ENDIF»«
-        IF f.rightType != null»«f.op» «compile(f.rightType)» «ENDIF»'''
+        IF f.rightType != null»«f.op»«compile(f.rightType)»«ENDIF»'''
   
    def compile(HintTypeExpression f)
         '''«IF f.left != null»«compile(f.left)»«ENDIF»«
-        IF f.rightType != null»«f.op» «compile(f.rightType)» «ENDIF»'''
+        IF f.rightType != null»«f.op»«compile(f.rightType)»«ENDIF»'''
 
    def compile(CoerceExpression f)
         '''«IF f.left != null»«compile(f.left)»«ENDIF»«
-        IF f.rightType != null»«f.op»«compile(f.rightType)» «ENDIF»'''
+        IF f.rightType != null»«f.op»«compile(f.rightType)»«ENDIF»'''
   
     /* EltExpression */  
     def compile(EltExpression f)
         '''«IF f.left != null»«compile(f.left)»«ENDIF»«
-        IF f.right != null»«f.op» «compile(f.right)» «ENDIF»'''
+        IF f.right != null»«f.op»«compile(f.right)»«ENDIF»'''
     
     def compile(ExplicitTypeExpression f)
         '''«IF f.left != null»«compile(f.left)»«ENDIF»«
-        IF f.rightType != null»«f.op»«compile(f.rightType)» «ENDIF»'''
+        IF f.rightType != null»«f.op»«compile(f.rightType)»«ENDIF»'''
   
      def compile(UnaryExpression f)
-        '''«IF f.expr != null»«f.uop»«compile(f.expr)» «
+        '''«IF f.expr != null»«f.uop»«compile(f.expr)»«
         ENDIF»'''
   
  /*   def compile(UnaryExpressionHash f)
@@ -615,59 +649,64 @@ class EditorGenerator implements IGenerator {
 //    def compile(PrimaryExpression f) '''
 //        '''
 
-//      «IF f. != null» «f.» «ENDIF»
-//      «IF f. != null» «compile(f.)» «ENDIF»
-//      «FOR x:f. » «x» «ENDFOR»
 
-
-    /* PrimaryPrefix */
+    /* PrimaryPrefix 
+     *  Literal
+     *  LPAREN t4=Expression (COMMA t25+=Expression)* RPAREN =>(COLON rightType3 =TypeExpression)?
+     *  t7=NameOrFunctionCall*/
     def compile(PrimaryPrefix f)
-        //IF f.t != null» «compile(f.t)» «ENDIF»«
-        '''«IF f.t4 != null»(«compile(f.t4)»)«ENDIF»«
-        IF f.t7 != null» «compile(f.t7)» «ENDIF»'''
+      '''«IF f instanceof Literal»«compile(f as Literal)»«ENDIF»«
+        IF f.t4 != null»(«compile(f.t4)»)«ENDIF»«
+        IF f.t7 != null»«compile(f.t7)»«ENDIF»'''
 
-    /* NameOrFunctionCall */
+    /* NameOrFunctionCall
+     * 
+     * fnname=ID (=> lsp=DOLAR 'Lisp't2=TypeExpression
+     * LPAREN t4=Expression? (COMMA t5+=Expression)* RPAREN //(COLON rightType2 =TypeExpression)?
+     * (LPAREN t14+=Statement? (COMMA t15+=Expression)* RPAREN)*
+     *  t6=PrimaryExpression
+     * ((COMMA ID)* COLON rightType2 =TypeExpression
+     */
     def compile(NameOrFunctionCall f) 
-        '''«IF f.fnname != null»«f.fnname» «ENDIF»«
+        '''«IF f.fnname != null»«f.fnname»«ENDIF»«
         IF f.lsp != null»$Lisp «ENDIF»«
         IF f.t4 != null»(«compile(f.t4)»«
         FOR x:f.t5 »,«compile(x)»«ENDFOR»)«ENDIF»«
-        IF f.t6 != null»«compile(f.t6)» «ENDIF»'''
+        IF f.t6 != null»«compile(f.t6)»«ENDIF»'''
   
-    /* Literal */
+    /* Literal 
+     * value=INT
+     * t2=STRING (=> e1=NameOrFunctionCall =>(t31+=STRING (=> e4+=NameOrFunctionCall)?)*)?
+     * t3=FloatLiteral // conflicts with use of '.' for elt
+     * ListLiteral
+     * CharacterLiteral
+     * BooleanLiteral*/
     def compile(Literal f) 
         '''«IF !(f instanceof ListLiteral) &&
                !(f instanceof CharacterLiteral) &&
                !(f instanceof BooleanLiteral) &&
                (f.t2 == null)»«
-           IF f.value != null»«f.value» «ENDIF»«
+           IF f.value != null»«f.value»«ENDIF»«
         ENDIF»«
         IF f.t2 != null»"«f.t2»"«ENDIF»«
-        IF f instanceof ListLiteral»«
-        compile(f as ListLiteral)»«ENDIF»«
-        IF f instanceof CharacterLiteral»«
-        compile(f as CharacterLiteral)»«ENDIF»«
-        IF f instanceof BooleanLiteral»«
-        compile(f as BooleanLiteral)»«ENDIF»'''
+        IF f instanceof ListLiteral»«compile(f as ListLiteral)»«ENDIF»«
+        IF f instanceof CharacterLiteral»«compile(f as CharacterLiteral)»«ENDIF»«
+        IF f instanceof BooleanLiteral»«compile(f as BooleanLiteral)»«ENDIF»'''
 
     /* CharacterLiteral */
     def compile(CharacterLiteral f) 
-        '''«IF f.c1 != null» «f.c1»«ENDIF»'''
+        '''«IF f.c1 != null»«f.c1»«ENDIF»'''
 
     /* BooleanLiteral */
     def compile(BooleanLiteral f) 
-        ''' «f.litname»'''
-        
-//      «IF f. != null» «f.» «ENDIF»
-//      «IF f. != null» «compile(f.)» «ENDIF»
-//      «FOR x:f. » «x» «ENDFOR»
+        '''«f.litname»'''
   
     /* ListLiteral */
     def compile(ListLiteral f) 
         '''[«IF f.l2 != null»«
         compile(f.l2)»«ENDIF»«
         FOR x:f.t3 »,«compile(x)»«ENDFOR»«
-        FOR x:f.t14 » for «compile(x)» in «ENDFOR»«
-        FOR x:f.l5 » «compile(x)» «ENDFOR»]'''
+        FOR x:f.t14 »for «compile(x)»in «ENDFOR»«
+        FOR x:f.l5 »«compile(x)» «ENDFOR»]'''
 }
 

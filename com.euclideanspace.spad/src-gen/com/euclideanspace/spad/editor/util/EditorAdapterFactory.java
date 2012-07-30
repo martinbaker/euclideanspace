@@ -325,6 +325,11 @@ public class EditorAdapterFactory extends AdapterFactoryImpl
         return createConditionExpressionAdapter();
       }
       @Override
+      public Adapter caseOrExpression(OrExpression object)
+      {
+        return createOrExpressionAdapter();
+      }
+      @Override
       public Adapter caseAndExpression(AndExpression object)
       {
         return createAndExpressionAdapter();
@@ -1217,6 +1222,21 @@ public class EditorAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createConditionExpressionAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link com.euclideanspace.spad.editor.OrExpression <em>Or Expression</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see com.euclideanspace.spad.editor.OrExpression
+   * @generated
+   */
+  public Adapter createOrExpressionAdapter()
   {
     return null;
   }

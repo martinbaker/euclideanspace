@@ -1151,7 +1151,7 @@
       </elements>
       <elements xsi:type="xtext:Group" cardinality="?">
         <elements xsi:type="xtext:RuleCall" rule="//@rules.20"/>
-        <elements xsi:type="xtext:Assignment" feature="par22" operator="+=">
+        <elements xsi:type="xtext:Assignment" feature="par21" operator="=">
           <terminal xsi:type="xtext:RuleCall" rule="//@rules.76"/>
         </elements>
       </elements>
@@ -1951,7 +1951,7 @@
       <elements xsi:type="xtext:Group" cardinality="*">
         <elements xsi:type="xtext:Action" feature="left" operator="=">
           <type metamodel="//@metamodelDeclarations.1">
-            <classifier xsi:type="ecore:EClass" href="http://www.euclideanspace.com/spad/Editor#//AndExpression"/>
+            <classifier xsi:type="ecore:EClass" href="http://www.euclideanspace.com/spad/Editor#//OrExpression"/>
           </type>
         </elements>
         <elements xsi:type="xtext:Assignment" feature="op" operator="=">
@@ -1972,7 +1972,7 @@
       <elements xsi:type="xtext:Group" cardinality="*">
         <elements xsi:type="xtext:Action" feature="left" operator="=">
           <type metamodel="//@metamodelDeclarations.1">
-            <classifier xsi:type="ecore:EClass" href="http://www.euclideanspace.com/spad/Editor#//InnerProdExpression"/>
+            <classifier xsi:type="ecore:EClass" href="http://www.euclideanspace.com/spad/Editor#//AndExpression"/>
           </type>
         </elements>
         <elements xsi:type="xtext:Assignment" feature="op" operator="=">
@@ -2733,7 +2733,7 @@
         <elements xsi:type="xtext:Group">
           <elements xsi:type="xtext:RuleCall" rule="//@rules.8"/>
           <elements xsi:type="xtext:Assignment" cardinality="?" feature="t4" operator="=">
-            <terminal xsi:type="xtext:RuleCall" rule="//@rules.86"/>
+            <terminal xsi:type="xtext:RuleCall" rule="//@rules.96"/>
           </elements>
           <elements xsi:type="xtext:Group" cardinality="*">
             <elements xsi:type="xtext:RuleCall" rule="//@rules.22"/>
@@ -2745,7 +2745,7 @@
           <elements xsi:type="xtext:Group" cardinality="*">
             <elements xsi:type="xtext:RuleCall" rule="//@rules.8"/>
             <elements xsi:type="xtext:Assignment" cardinality="?" feature="t14" operator="+=">
-              <terminal xsi:type="xtext:RuleCall" rule="//@rules.86"/>
+              <terminal xsi:type="xtext:RuleCall" rule="//@rules.84"/>
             </elements>
             <elements xsi:type="xtext:Group" cardinality="*">
               <elements xsi:type="xtext:RuleCall" rule="//@rules.22"/>

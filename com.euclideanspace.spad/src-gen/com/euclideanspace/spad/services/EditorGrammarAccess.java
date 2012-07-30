@@ -2200,8 +2200,8 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cParIDTerminalRuleCall_1_0 = (RuleCall)cParAssignment_1.eContents().get(0);
 		private final Group cGroup_2 = (Group)cGroup.eContents().get(2);
 		private final RuleCall cCOLONTerminalRuleCall_2_0 = (RuleCall)cGroup_2.eContents().get(0);
-		private final Assignment cPar22Assignment_2_1 = (Assignment)cGroup_2.eContents().get(1);
-		private final RuleCall cPar22TypeExpressionParserRuleCall_2_1_0 = (RuleCall)cPar22Assignment_2_1.eContents().get(0);
+		private final Assignment cPar21Assignment_2_1 = (Assignment)cGroup_2.eContents().get(1);
+		private final RuleCall cPar21TypeExpressionParserRuleCall_2_1_0 = (RuleCall)cPar21Assignment_2_1.eContents().get(0);
 		private final Group cGroup_3 = (Group)cGroup.eContents().get(3);
 		private final RuleCall cCOMMATerminalRuleCall_3_0 = (RuleCall)cGroup_3.eContents().get(0);
 		private final Assignment cPar2Assignment_3_1 = (Assignment)cGroup_3.eContents().get(1);
@@ -2224,10 +2224,10 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		// * (String,Integer)
 		// * (s:String,i:Integer)
 		// * / TypeParameterList hidden(WS):
-		//	tyname=LPAREN par=ID? (COLON par22+=TypeExpression)? (COMMA par2+=ID (COLON par22+=TypeExpression)?)* RPAREN;
+		//	tyname=LPAREN par=ID? (COLON par21=TypeExpression)? (COMMA par2+=ID (COLON par22+=TypeExpression)?)* RPAREN;
 		public ParserRule getRule() { return rule; }
 
-		//tyname=LPAREN par=ID? (COLON par22+=TypeExpression)? (COMMA par2+=ID (COLON par22+=TypeExpression)?)* RPAREN
+		//tyname=LPAREN par=ID? (COLON par21=TypeExpression)? (COMMA par2+=ID (COLON par22+=TypeExpression)?)* RPAREN
 		public Group getGroup() { return cGroup; }
 
 		//tyname=LPAREN
@@ -2242,17 +2242,17 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		//ID
 		public RuleCall getParIDTerminalRuleCall_1_0() { return cParIDTerminalRuleCall_1_0; }
 
-		//(COLON par22+=TypeExpression)?
+		//(COLON par21=TypeExpression)?
 		public Group getGroup_2() { return cGroup_2; }
 
 		//COLON
 		public RuleCall getCOLONTerminalRuleCall_2_0() { return cCOLONTerminalRuleCall_2_0; }
 
-		//par22+=TypeExpression
-		public Assignment getPar22Assignment_2_1() { return cPar22Assignment_2_1; }
+		//par21=TypeExpression
+		public Assignment getPar21Assignment_2_1() { return cPar21Assignment_2_1; }
 
 		//TypeExpression
-		public RuleCall getPar22TypeExpressionParserRuleCall_2_1_0() { return cPar22TypeExpressionParserRuleCall_2_1_0; }
+		public RuleCall getPar21TypeExpressionParserRuleCall_2_1_0() { return cPar21TypeExpressionParserRuleCall_2_1_0; }
 
 		//(COMMA par2+=ID (COLON par22+=TypeExpression)?)*
 		public Group getGroup_3() { return cGroup_3; }
@@ -4395,7 +4395,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final RuleCall cAndExpressionParserRuleCall_0 = (RuleCall)cGroup.eContents().get(0);
 		private final Group cGroup_1 = (Group)cGroup.eContents().get(1);
-		private final Action cAndExpressionLeftAction_1_0 = (Action)cGroup_1.eContents().get(0);
+		private final Action cOrExpressionLeftAction_1_0 = (Action)cGroup_1.eContents().get(0);
 		private final Assignment cOpAssignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
 		private final Keyword cOpOrKeyword_1_1_0 = (Keyword)cOpAssignment_1_1.eContents().get(0);
 		private final Assignment cRightAssignment_1_2 = (Assignment)cGroup_1.eContents().get(2);
@@ -4413,20 +4413,20 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		// * used when we know we have a predicate.
 		// * "or", precedence: 200, 201
 		// * / OrExpression returns Expr hidden(WS, SL_COMMENT):
-		//	AndExpression ({AndExpression.left=current} op="or" right=AndExpression)*;
+		//	AndExpression ({OrExpression.left=current} op="or" right=AndExpression)*;
 		public ParserRule getRule() { return rule; }
 
-		//AndExpression ({AndExpression.left=current} op="or" right=AndExpression)*
+		//AndExpression ({OrExpression.left=current} op="or" right=AndExpression)*
 		public Group getGroup() { return cGroup; }
 
 		//AndExpression
 		public RuleCall getAndExpressionParserRuleCall_0() { return cAndExpressionParserRuleCall_0; }
 
-		//({AndExpression.left=current} op="or" right=AndExpression)*
+		//({OrExpression.left=current} op="or" right=AndExpression)*
 		public Group getGroup_1() { return cGroup_1; }
 
-		//{AndExpression.left=current}
-		public Action getAndExpressionLeftAction_1_0() { return cAndExpressionLeftAction_1_0; }
+		//{OrExpression.left=current}
+		public Action getOrExpressionLeftAction_1_0() { return cOrExpressionLeftAction_1_0; }
 
 		//op="or"
 		public Assignment getOpAssignment_1_1() { return cOpAssignment_1_1; }
@@ -4446,7 +4446,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final RuleCall cInnerProdExpressionParserRuleCall_0 = (RuleCall)cGroup.eContents().get(0);
 		private final Group cGroup_1 = (Group)cGroup.eContents().get(1);
-		private final Action cInnerProdExpressionLeftAction_1_0 = (Action)cGroup_1.eContents().get(0);
+		private final Action cAndExpressionLeftAction_1_0 = (Action)cGroup_1.eContents().get(0);
 		private final Assignment cOpAssignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
 		private final Keyword cOpAndKeyword_1_1_0 = (Keyword)cOpAssignment_1_1.eContents().get(0);
 		private final Assignment cRightAssignment_1_2 = (Assignment)cGroup_1.eContents().get(2);
@@ -4458,20 +4458,20 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		// * used when we know we have a predicate.
 		// * "and", precedence: 250, 251
 		// * / AndExpression returns Expr hidden(WS, SL_COMMENT):
-		//	InnerProdExpression ({InnerProdExpression.left=current} op="and" right=InnerProdExpression)*;
+		//	InnerProdExpression ({AndExpression.left=current} op="and" right=InnerProdExpression)*;
 		public ParserRule getRule() { return rule; }
 
-		//InnerProdExpression ({InnerProdExpression.left=current} op="and" right=InnerProdExpression)*
+		//InnerProdExpression ({AndExpression.left=current} op="and" right=InnerProdExpression)*
 		public Group getGroup() { return cGroup; }
 
 		//InnerProdExpression
 		public RuleCall getInnerProdExpressionParserRuleCall_0() { return cInnerProdExpressionParserRuleCall_0; }
 
-		//({InnerProdExpression.left=current} op="and" right=InnerProdExpression)*
+		//({AndExpression.left=current} op="and" right=InnerProdExpression)*
 		public Group getGroup_1() { return cGroup_1; }
 
-		//{InnerProdExpression.left=current}
-		public Action getInnerProdExpressionLeftAction_1_0() { return cInnerProdExpressionLeftAction_1_0; }
+		//{AndExpression.left=current}
+		public Action getAndExpressionLeftAction_1_0() { return cAndExpressionLeftAction_1_0; }
 
 		//op="and"
 		public Assignment getOpAssignment_1_1() { return cOpAssignment_1_1; }
@@ -6193,7 +6193,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		private final Group cGroup_3_0 = (Group)cAlternatives_3.eContents().get(0);
 		private final RuleCall cLPARENTerminalRuleCall_3_0_0 = (RuleCall)cGroup_3_0.eContents().get(0);
 		private final Assignment cT4Assignment_3_0_1 = (Assignment)cGroup_3_0.eContents().get(1);
-		private final RuleCall cT4StatementExpressionParserRuleCall_3_0_1_0 = (RuleCall)cT4Assignment_3_0_1.eContents().get(0);
+		private final RuleCall cT4ExpressionParserRuleCall_3_0_1_0 = (RuleCall)cT4Assignment_3_0_1.eContents().get(0);
 		private final Group cGroup_3_0_2 = (Group)cGroup_3_0.eContents().get(2);
 		private final RuleCall cCOMMATerminalRuleCall_3_0_2_0 = (RuleCall)cGroup_3_0_2.eContents().get(0);
 		private final Assignment cT5Assignment_3_0_2_1 = (Assignment)cGroup_3_0_2.eContents().get(1);
@@ -6202,7 +6202,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		private final Group cGroup_3_0_4 = (Group)cGroup_3_0.eContents().get(4);
 		private final RuleCall cLPARENTerminalRuleCall_3_0_4_0 = (RuleCall)cGroup_3_0_4.eContents().get(0);
 		private final Assignment cT14Assignment_3_0_4_1 = (Assignment)cGroup_3_0_4.eContents().get(1);
-		private final RuleCall cT14StatementExpressionParserRuleCall_3_0_4_1_0 = (RuleCall)cT14Assignment_3_0_4_1.eContents().get(0);
+		private final RuleCall cT14StatementParserRuleCall_3_0_4_1_0 = (RuleCall)cT14Assignment_3_0_4_1.eContents().get(0);
 		private final Group cGroup_3_0_4_2 = (Group)cGroup_3_0_4.eContents().get(2);
 		private final RuleCall cCOMMATerminalRuleCall_3_0_4_2_0 = (RuleCall)cGroup_3_0_4_2.eContents().get(0);
 		private final Assignment cT15Assignment_3_0_4_2_1 = (Assignment)cGroup_3_0_4_2.eContents().get(1);
@@ -6228,16 +6228,18 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		// * / // allow multiple assignment
 		////=>(op=GIVES lambda = Expression 'xxx')?
 		//NameOrFunctionCall hidden(WS, SL_COMMENT):
-		//	"\'"? fnname=ID (=> lsp=DOLAR "Lisp")? / *t2=TypeExpression* / (LPAREN t4=StatementExpression? (COMMA t5+=Expression)* //(COLON rightType2 =TypeExpression)?
+		//	"\'"? fnname=ID (=> lsp=DOLAR "Lisp")? / *t2=TypeExpression* / //    LPAREN t4=StatementExpression? (COMMA t5+=Expression)* RPAREN //(COLON rightType2 =TypeExpression)?
+		//	(LPAREN t4=Expression? (COMMA t5+=Expression)* //(COLON rightType2 =TypeExpression)?
 		//	RPAREN // optional curried function:
-		//	(LPAREN t14+=StatementExpression? (COMMA t15+=Expression)* RPAREN)* //  option for parameters in parenthesis
+		//	(LPAREN t14+=Statement? (COMMA t15+=Expression)* RPAREN)* //  option for parameters in parenthesis
 		//	// option of no parenthesis for single parameter
 		//	| => t6=PrimaryExpression)? => ((COMMA ID)* COLON rightType2=TypeExpression)?;
 		public ParserRule getRule() { return rule; }
 
-		//"\'"? fnname=ID (=> lsp=DOLAR "Lisp")? / *t2=TypeExpression* / (LPAREN t4=StatementExpression? (COMMA t5+=Expression)* //(COLON rightType2 =TypeExpression)?
+		//"\'"? fnname=ID (=> lsp=DOLAR "Lisp")? / *t2=TypeExpression* / //    LPAREN t4=StatementExpression? (COMMA t5+=Expression)* RPAREN //(COLON rightType2 =TypeExpression)?
+		//(LPAREN t4=Expression? (COMMA t5+=Expression)* //(COLON rightType2 =TypeExpression)?
 		//RPAREN // optional curried function:
-		//(LPAREN t14+=StatementExpression? (COMMA t15+=Expression)* RPAREN)* //  option for parameters in parenthesis
+		//(LPAREN t14+=Statement? (COMMA t15+=Expression)* RPAREN)* //  option for parameters in parenthesis
 		//// option of no parenthesis for single parameter
 		//| => t6=PrimaryExpression)? => ((COMMA ID)* COLON rightType2=TypeExpression)?
 		public Group getGroup() { return cGroup; }
@@ -6263,26 +6265,29 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		//"Lisp"
 		public Keyword getLispKeyword_2_1() { return cLispKeyword_2_1; }
 
-		//(LPAREN t4=StatementExpression? (COMMA t5+=Expression)* //(COLON rightType2 =TypeExpression)?
+		////    LPAREN t4=StatementExpression? (COMMA t5+=Expression)* RPAREN //(COLON rightType2 =TypeExpression)?
+		//(LPAREN t4=Expression? (COMMA t5+=Expression)* //(COLON rightType2 =TypeExpression)?
 		//RPAREN // optional curried function:
-		//(LPAREN t14+=StatementExpression? (COMMA t15+=Expression)* RPAREN)* //  option for parameters in parenthesis
+		//(LPAREN t14+=Statement? (COMMA t15+=Expression)* RPAREN)* //  option for parameters in parenthesis
 		//// option of no parenthesis for single parameter
 		//| => t6=PrimaryExpression)?
 		public Alternatives getAlternatives_3() { return cAlternatives_3; }
 
-		//LPAREN t4=StatementExpression? (COMMA t5+=Expression)* //(COLON rightType2 =TypeExpression)?
+		////    LPAREN t4=StatementExpression? (COMMA t5+=Expression)* RPAREN //(COLON rightType2 =TypeExpression)?
+		//LPAREN t4=Expression? (COMMA t5+=Expression)* //(COLON rightType2 =TypeExpression)?
 		//RPAREN // optional curried function:
-		//(LPAREN t14+=StatementExpression? (COMMA t15+=Expression)* RPAREN)*
+		//(LPAREN t14+=Statement? (COMMA t15+=Expression)* RPAREN)*
 		public Group getGroup_3_0() { return cGroup_3_0; }
 
+		////    LPAREN t4=StatementExpression? (COMMA t5+=Expression)* RPAREN //(COLON rightType2 =TypeExpression)?
 		//LPAREN
 		public RuleCall getLPARENTerminalRuleCall_3_0_0() { return cLPARENTerminalRuleCall_3_0_0; }
 
-		//t4=StatementExpression?
+		//t4=Expression?
 		public Assignment getT4Assignment_3_0_1() { return cT4Assignment_3_0_1; }
 
-		//StatementExpression
-		public RuleCall getT4StatementExpressionParserRuleCall_3_0_1_0() { return cT4StatementExpressionParserRuleCall_3_0_1_0; }
+		//Expression
+		public RuleCall getT4ExpressionParserRuleCall_3_0_1_0() { return cT4ExpressionParserRuleCall_3_0_1_0; }
 
 		//(COMMA t5+=Expression)*
 		public Group getGroup_3_0_2() { return cGroup_3_0_2; }
@@ -6300,17 +6305,17 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		//RPAREN
 		public RuleCall getRPARENTerminalRuleCall_3_0_3() { return cRPARENTerminalRuleCall_3_0_3; }
 
-		//(LPAREN t14+=StatementExpression? (COMMA t15+=Expression)* RPAREN)*
+		//(LPAREN t14+=Statement? (COMMA t15+=Expression)* RPAREN)*
 		public Group getGroup_3_0_4() { return cGroup_3_0_4; }
 
 		//LPAREN
 		public RuleCall getLPARENTerminalRuleCall_3_0_4_0() { return cLPARENTerminalRuleCall_3_0_4_0; }
 
-		//t14+=StatementExpression?
+		//t14+=Statement?
 		public Assignment getT14Assignment_3_0_4_1() { return cT14Assignment_3_0_4_1; }
 
-		//StatementExpression
-		public RuleCall getT14StatementExpressionParserRuleCall_3_0_4_1_0() { return cT14StatementExpressionParserRuleCall_3_0_4_1_0; }
+		//Statement
+		public RuleCall getT14StatementParserRuleCall_3_0_4_1_0() { return cT14StatementParserRuleCall_3_0_4_1_0; }
 
 		//(COMMA t15+=Expression)*
 		public Group getGroup_3_0_4_2() { return cGroup_3_0_4_2; }
@@ -7695,7 +7700,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 	// * (String,Integer)
 	// * (s:String,i:Integer)
 	// * / TypeParameterList hidden(WS):
-	//	tyname=LPAREN par=ID? (COLON par22+=TypeExpression)? (COMMA par2+=ID (COLON par22+=TypeExpression)?)* RPAREN;
+	//	tyname=LPAREN par=ID? (COLON par21=TypeExpression)? (COMMA par2+=ID (COLON par22+=TypeExpression)?)* RPAREN;
 	public TypeParameterListElements getTypeParameterListAccess() {
 		return (pTypeParameterList != null) ? pTypeParameterList : (pTypeParameterList = new TypeParameterListElements());
 	}
@@ -8082,7 +8087,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 	// * used when we know we have a predicate.
 	// * "or", precedence: 200, 201
 	// * / OrExpression returns Expr hidden(WS, SL_COMMENT):
-	//	AndExpression ({AndExpression.left=current} op="or" right=AndExpression)*;
+	//	AndExpression ({OrExpression.left=current} op="or" right=AndExpression)*;
 	public OrExpressionElements getOrExpressionAccess() {
 		return (pOrExpression != null) ? pOrExpression : (pOrExpression = new OrExpressionElements());
 	}
@@ -8097,7 +8102,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 	// * used when we know we have a predicate.
 	// * "and", precedence: 250, 251
 	// * / AndExpression returns Expr hidden(WS, SL_COMMENT):
-	//	InnerProdExpression ({InnerProdExpression.left=current} op="and" right=InnerProdExpression)*;
+	//	InnerProdExpression ({AndExpression.left=current} op="and" right=InnerProdExpression)*;
 	public AndExpressionElements getAndExpressionAccess() {
 		return (pAndExpression != null) ? pAndExpression : (pAndExpression = new AndExpressionElements());
 	}
@@ -8545,9 +8550,10 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 	// * / // allow multiple assignment
 	////=>(op=GIVES lambda = Expression 'xxx')?
 	//NameOrFunctionCall hidden(WS, SL_COMMENT):
-	//	"\'"? fnname=ID (=> lsp=DOLAR "Lisp")? / *t2=TypeExpression* / (LPAREN t4=StatementExpression? (COMMA t5+=Expression)* //(COLON rightType2 =TypeExpression)?
+	//	"\'"? fnname=ID (=> lsp=DOLAR "Lisp")? / *t2=TypeExpression* / //    LPAREN t4=StatementExpression? (COMMA t5+=Expression)* RPAREN //(COLON rightType2 =TypeExpression)?
+	//	(LPAREN t4=Expression? (COMMA t5+=Expression)* //(COLON rightType2 =TypeExpression)?
 	//	RPAREN // optional curried function:
-	//	(LPAREN t14+=StatementExpression? (COMMA t15+=Expression)* RPAREN)* //  option for parameters in parenthesis
+	//	(LPAREN t14+=Statement? (COMMA t15+=Expression)* RPAREN)* //  option for parameters in parenthesis
 	//	// option of no parenthesis for single parameter
 	//	| => t6=PrimaryExpression)? => ((COMMA ID)* COLON rightType2=TypeExpression)?;
 	public NameOrFunctionCallElements getNameOrFunctionCallAccess() {

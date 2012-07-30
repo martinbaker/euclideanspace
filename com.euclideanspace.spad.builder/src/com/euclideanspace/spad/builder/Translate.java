@@ -51,14 +51,18 @@ public class Translate {
 	 * keep name of last file so we only delete when really changed
 	 */
 	String lastFile = null;
-			
+	/**
+	 * callback allows us to get user options
+	 */
+	BuilderNewWizard callback;
 	/**
 	 * translate a pamphlet file or whole directory
 	 * 
 	 * @param srcFolder
 	 * @param fricasFiles
 	 */
-    public void trans(IFolder srcFolder,String fricasFiles,BuilderNewWizard callback) {
+    public void trans(IFolder srcFolder,String fricasFiles,BuilderNewWizard cb) {
+      callback = cb;
       inFile = new File(fricasFiles);
       String nm = inFile.getName();
       String nam = nm;
@@ -120,7 +124,7 @@ public class Translate {
     		return;
     	}
     	texFile = new EclipseFileWriter(nm+".txt",subDirectoryFile);
-    	EclipseSPADWriter output = new EclipseSPADWriter(null,subDirectoryFile);
+    	EclipseSPADWriter output = new EclipseSPADWriter(null,subDirectoryFile,callback);
     	BufferedReader input = null;
     	try {
       	  input = new BufferedReader(new FileReader(inFile));     

@@ -1493,13 +1493,13 @@ public interface EditorPackage extends EPackage
   int TYPE_PARAMETER_LIST__PAR = 1;
 
   /**
-   * The feature id for the '<em><b>Par22</b></em>' containment reference list.
+   * The feature id for the '<em><b>Par21</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int TYPE_PARAMETER_LIST__PAR22 = 2;
+  int TYPE_PARAMETER_LIST__PAR21 = 2;
 
   /**
    * The feature id for the '<em><b>Par2</b></em>' attribute list.
@@ -1511,13 +1511,22 @@ public interface EditorPackage extends EPackage
   int TYPE_PARAMETER_LIST__PAR2 = 3;
 
   /**
+   * The feature id for the '<em><b>Par22</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TYPE_PARAMETER_LIST__PAR22 = 4;
+
+  /**
    * The number of structural features of the '<em>Type Parameter List</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int TYPE_PARAMETER_LIST_FEATURE_COUNT = 4;
+  int TYPE_PARAMETER_LIST_FEATURE_COUNT = 5;
 
   /**
    * The meta object id for the '{@link com.euclideanspace.spad.editor.impl.TypeArgumentsImpl <em>Type Arguments</em>}' class.
@@ -5291,6 +5300,223 @@ public interface EditorPackage extends EPackage
   int CONDITION_EXPRESSION_FEATURE_COUNT = EXPR_FEATURE_COUNT + 3;
 
   /**
+   * The meta object id for the '{@link com.euclideanspace.spad.editor.impl.OrExpressionImpl <em>Or Expression</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see com.euclideanspace.spad.editor.impl.OrExpressionImpl
+   * @see com.euclideanspace.spad.editor.impl.EditorPackageImpl#getOrExpression()
+   * @generated
+   */
+  int OR_EXPRESSION = 50;
+
+  /**
+   * The feature id for the '<em><b>Ifname</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int OR_EXPRESSION__IFNAME = EXPR__IFNAME;
+
+  /**
+   * The feature id for the '<em><b>Ifpred</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int OR_EXPRESSION__IFPRED = EXPR__IFPRED;
+
+  /**
+   * The feature id for the '<em><b>Thenexp</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int OR_EXPRESSION__THENEXP = EXPR__THENEXP;
+
+  /**
+   * The feature id for the '<em><b>Elseexp</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int OR_EXPRESSION__ELSEEXP = EXPR__ELSEEXP;
+
+  /**
+   * The feature id for the '<em><b>E2</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int OR_EXPRESSION__E2 = EXPR__E2;
+
+  /**
+   * The feature id for the '<em><b>E3</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int OR_EXPRESSION__E3 = EXPR__E3;
+
+  /**
+   * The feature id for the '<em><b>E5</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int OR_EXPRESSION__E5 = EXPR__E5;
+
+  /**
+   * The feature id for the '<em><b>E6</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int OR_EXPRESSION__E6 = EXPR__E6;
+
+  /**
+   * The feature id for the '<em><b>E22</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int OR_EXPRESSION__E22 = EXPR__E22;
+
+  /**
+   * The feature id for the '<em><b>E21</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int OR_EXPRESSION__E21 = EXPR__E21;
+
+  /**
+   * The feature id for the '<em><b>E23</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int OR_EXPRESSION__E23 = EXPR__E23;
+
+  /**
+   * The feature id for the '<em><b>E9</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int OR_EXPRESSION__E9 = EXPR__E9;
+
+  /**
+   * The feature id for the '<em><b>E10</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int OR_EXPRESSION__E10 = EXPR__E10;
+
+  /**
+   * The feature id for the '<em><b>E25</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int OR_EXPRESSION__E25 = EXPR__E25;
+
+  /**
+   * The feature id for the '<em><b>E24</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int OR_EXPRESSION__E24 = EXPR__E24;
+
+  /**
+   * The feature id for the '<em><b>E26</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int OR_EXPRESSION__E26 = EXPR__E26;
+
+  /**
+   * The feature id for the '<em><b>E11</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int OR_EXPRESSION__E11 = EXPR__E11;
+
+  /**
+   * The feature id for the '<em><b>E12</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int OR_EXPRESSION__E12 = EXPR__E12;
+
+  /**
+   * The feature id for the '<em><b>E13</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int OR_EXPRESSION__E13 = EXPR__E13;
+
+  /**
+   * The feature id for the '<em><b>Left</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int OR_EXPRESSION__LEFT = EXPR_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Op</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int OR_EXPRESSION__OP = EXPR_FEATURE_COUNT + 1;
+
+  /**
+   * The feature id for the '<em><b>Right</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int OR_EXPRESSION__RIGHT = EXPR_FEATURE_COUNT + 2;
+
+  /**
+   * The number of structural features of the '<em>Or Expression</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int OR_EXPRESSION_FEATURE_COUNT = EXPR_FEATURE_COUNT + 3;
+
+  /**
    * The meta object id for the '{@link com.euclideanspace.spad.editor.impl.AndExpressionImpl <em>And Expression</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -5298,7 +5524,7 @@ public interface EditorPackage extends EPackage
    * @see com.euclideanspace.spad.editor.impl.EditorPackageImpl#getAndExpression()
    * @generated
    */
-  int AND_EXPRESSION = 50;
+  int AND_EXPRESSION = 51;
 
   /**
    * The feature id for the '<em><b>Ifname</b></em>' attribute.
@@ -5515,7 +5741,7 @@ public interface EditorPackage extends EPackage
    * @see com.euclideanspace.spad.editor.impl.EditorPackageImpl#getInnerProdExpression()
    * @generated
    */
-  int INNER_PROD_EXPRESSION = 51;
+  int INNER_PROD_EXPRESSION = 52;
 
   /**
    * The feature id for the '<em><b>Ifname</b></em>' attribute.
@@ -5732,7 +5958,7 @@ public interface EditorPackage extends EPackage
    * @see com.euclideanspace.spad.editor.impl.EditorPackageImpl#getOuterProdExpression()
    * @generated
    */
-  int OUTER_PROD_EXPRESSION = 52;
+  int OUTER_PROD_EXPRESSION = 53;
 
   /**
    * The feature id for the '<em><b>Ifname</b></em>' attribute.
@@ -5949,7 +6175,7 @@ public interface EditorPackage extends EPackage
    * @see com.euclideanspace.spad.editor.impl.EditorPackageImpl#getHasExpression()
    * @generated
    */
-  int HAS_EXPRESSION = 53;
+  int HAS_EXPRESSION = 54;
 
   /**
    * The feature id for the '<em><b>Ifname</b></em>' attribute.
@@ -6166,7 +6392,7 @@ public interface EditorPackage extends EPackage
    * @see com.euclideanspace.spad.editor.impl.EditorPackageImpl#getCaseExpression()
    * @generated
    */
-  int CASE_EXPRESSION = 54;
+  int CASE_EXPRESSION = 55;
 
   /**
    * The feature id for the '<em><b>Ifname</b></em>' attribute.
@@ -6383,7 +6609,7 @@ public interface EditorPackage extends EPackage
    * @see com.euclideanspace.spad.editor.impl.EditorPackageImpl#getEqualityExpression()
    * @generated
    */
-  int EQUALITY_EXPRESSION = 55;
+  int EQUALITY_EXPRESSION = 56;
 
   /**
    * The feature id for the '<em><b>Ifname</b></em>' attribute.
@@ -6609,7 +6835,7 @@ public interface EditorPackage extends EPackage
    * @see com.euclideanspace.spad.editor.impl.EditorPackageImpl#getRelationalExpression()
    * @generated
    */
-  int RELATIONAL_EXPRESSION = 56;
+  int RELATIONAL_EXPRESSION = 57;
 
   /**
    * The feature id for the '<em><b>Ifname</b></em>' attribute.
@@ -6826,7 +7052,7 @@ public interface EditorPackage extends EPackage
    * @see com.euclideanspace.spad.editor.impl.EditorPackageImpl#getIsExpression()
    * @generated
    */
-  int IS_EXPRESSION = 57;
+  int IS_EXPRESSION = 58;
 
   /**
    * The feature id for the '<em><b>Ifname</b></em>' attribute.
@@ -7043,7 +7269,7 @@ public interface EditorPackage extends EPackage
    * @see com.euclideanspace.spad.editor.impl.EditorPackageImpl#getSegmentExpression()
    * @generated
    */
-  int SEGMENT_EXPRESSION = 58;
+  int SEGMENT_EXPRESSION = 59;
 
   /**
    * The feature id for the '<em><b>Ifname</b></em>' attribute.
@@ -7260,7 +7486,7 @@ public interface EditorPackage extends EPackage
    * @see com.euclideanspace.spad.editor.impl.EditorPackageImpl#getAdditiveExpression()
    * @generated
    */
-  int ADDITIVE_EXPRESSION = 59;
+  int ADDITIVE_EXPRESSION = 60;
 
   /**
    * The feature id for the '<em><b>Ifname</b></em>' attribute.
@@ -7477,7 +7703,7 @@ public interface EditorPackage extends EPackage
    * @see com.euclideanspace.spad.editor.impl.EditorPackageImpl#getExquoExpression()
    * @generated
    */
-  int EXQUO_EXPRESSION = 60;
+  int EXQUO_EXPRESSION = 61;
 
   /**
    * The feature id for the '<em><b>Ifname</b></em>' attribute.
@@ -7694,7 +7920,7 @@ public interface EditorPackage extends EPackage
    * @see com.euclideanspace.spad.editor.impl.EditorPackageImpl#getDivisionExpression()
    * @generated
    */
-  int DIVISION_EXPRESSION = 61;
+  int DIVISION_EXPRESSION = 62;
 
   /**
    * The feature id for the '<em><b>Ifname</b></em>' attribute.
@@ -7911,7 +8137,7 @@ public interface EditorPackage extends EPackage
    * @see com.euclideanspace.spad.editor.impl.EditorPackageImpl#getQuoExpression()
    * @generated
    */
-  int QUO_EXPRESSION = 62;
+  int QUO_EXPRESSION = 63;
 
   /**
    * The feature id for the '<em><b>Ifname</b></em>' attribute.
@@ -8128,7 +8354,7 @@ public interface EditorPackage extends EPackage
    * @see com.euclideanspace.spad.editor.impl.EditorPackageImpl#getModExpression()
    * @generated
    */
-  int MOD_EXPRESSION = 63;
+  int MOD_EXPRESSION = 64;
 
   /**
    * The feature id for the '<em><b>Ifname</b></em>' attribute.
@@ -8345,7 +8571,7 @@ public interface EditorPackage extends EPackage
    * @see com.euclideanspace.spad.editor.impl.EditorPackageImpl#getRemExpression()
    * @generated
    */
-  int REM_EXPRESSION = 64;
+  int REM_EXPRESSION = 65;
 
   /**
    * The feature id for the '<em><b>Ifname</b></em>' attribute.
@@ -8562,7 +8788,7 @@ public interface EditorPackage extends EPackage
    * @see com.euclideanspace.spad.editor.impl.EditorPackageImpl#getMultiplicativeExpression()
    * @generated
    */
-  int MULTIPLICATIVE_EXPRESSION = 65;
+  int MULTIPLICATIVE_EXPRESSION = 66;
 
   /**
    * The feature id for the '<em><b>Ifname</b></em>' attribute.
@@ -8779,7 +9005,7 @@ public interface EditorPackage extends EPackage
    * @see com.euclideanspace.spad.editor.impl.EditorPackageImpl#getExponentExpression()
    * @generated
    */
-  int EXPONENT_EXPRESSION = 66;
+  int EXPONENT_EXPRESSION = 67;
 
   /**
    * The feature id for the '<em><b>Ifname</b></em>' attribute.
@@ -8996,7 +9222,7 @@ public interface EditorPackage extends EPackage
    * @see com.euclideanspace.spad.editor.impl.EditorPackageImpl#getMapDefinition()
    * @generated
    */
-  int MAP_DEFINITION = 67;
+  int MAP_DEFINITION = 68;
 
   /**
    * The feature id for the '<em><b>Ifname</b></em>' attribute.
@@ -9213,7 +9439,7 @@ public interface EditorPackage extends EPackage
    * @see com.euclideanspace.spad.editor.impl.EditorPackageImpl#getAssignExpression()
    * @generated
    */
-  int ASSIGN_EXPRESSION = 68;
+  int ASSIGN_EXPRESSION = 69;
 
   /**
    * The feature id for the '<em><b>Ifname</b></em>' attribute.
@@ -9430,7 +9656,7 @@ public interface EditorPackage extends EPackage
    * @see com.euclideanspace.spad.editor.impl.EditorPackageImpl#getPretendExpression()
    * @generated
    */
-  int PRETEND_EXPRESSION = 69;
+  int PRETEND_EXPRESSION = 70;
 
   /**
    * The feature id for the '<em><b>Ifname</b></em>' attribute.
@@ -9647,7 +9873,7 @@ public interface EditorPackage extends EPackage
    * @see com.euclideanspace.spad.editor.impl.EditorPackageImpl#getCoerceExpression()
    * @generated
    */
-  int COERCE_EXPRESSION = 70;
+  int COERCE_EXPRESSION = 71;
 
   /**
    * The feature id for the '<em><b>Ifname</b></em>' attribute.
@@ -9864,7 +10090,7 @@ public interface EditorPackage extends EPackage
    * @see com.euclideanspace.spad.editor.impl.EditorPackageImpl#getHintTypeExpression()
    * @generated
    */
-  int HINT_TYPE_EXPRESSION = 71;
+  int HINT_TYPE_EXPRESSION = 72;
 
   /**
    * The feature id for the '<em><b>Ifname</b></em>' attribute.
@@ -10081,7 +10307,7 @@ public interface EditorPackage extends EPackage
    * @see com.euclideanspace.spad.editor.impl.EditorPackageImpl#getEltExpression()
    * @generated
    */
-  int ELT_EXPRESSION = 72;
+  int ELT_EXPRESSION = 73;
 
   /**
    * The feature id for the '<em><b>Ifname</b></em>' attribute.
@@ -10298,7 +10524,7 @@ public interface EditorPackage extends EPackage
    * @see com.euclideanspace.spad.editor.impl.EditorPackageImpl#getExplicitTypeExpression()
    * @generated
    */
-  int EXPLICIT_TYPE_EXPRESSION = 73;
+  int EXPLICIT_TYPE_EXPRESSION = 74;
 
   /**
    * The feature id for the '<em><b>Ifname</b></em>' attribute.
@@ -10515,7 +10741,7 @@ public interface EditorPackage extends EPackage
    * @see com.euclideanspace.spad.editor.impl.EditorPackageImpl#getUnaryExpression()
    * @generated
    */
-  int UNARY_EXPRESSION = 74;
+  int UNARY_EXPRESSION = 75;
 
   /**
    * The feature id for the '<em><b>Ifname</b></em>' attribute.
@@ -12047,15 +12273,15 @@ public interface EditorPackage extends EPackage
   EAttribute getTypeParameterList_Par();
 
   /**
-   * Returns the meta object for the containment reference list '{@link com.euclideanspace.spad.editor.TypeParameterList#getPar22 <em>Par22</em>}'.
+   * Returns the meta object for the containment reference '{@link com.euclideanspace.spad.editor.TypeParameterList#getPar21 <em>Par21</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Par22</em>'.
-   * @see com.euclideanspace.spad.editor.TypeParameterList#getPar22()
+   * @return the meta object for the containment reference '<em>Par21</em>'.
+   * @see com.euclideanspace.spad.editor.TypeParameterList#getPar21()
    * @see #getTypeParameterList()
    * @generated
    */
-  EReference getTypeParameterList_Par22();
+  EReference getTypeParameterList_Par21();
 
   /**
    * Returns the meta object for the attribute list '{@link com.euclideanspace.spad.editor.TypeParameterList#getPar2 <em>Par2</em>}'.
@@ -12067,6 +12293,17 @@ public interface EditorPackage extends EPackage
    * @generated
    */
   EAttribute getTypeParameterList_Par2();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link com.euclideanspace.spad.editor.TypeParameterList#getPar22 <em>Par22</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Par22</em>'.
+   * @see com.euclideanspace.spad.editor.TypeParameterList#getPar22()
+   * @see #getTypeParameterList()
+   * @generated
+   */
+  EReference getTypeParameterList_Par22();
 
   /**
    * Returns the meta object for class '{@link com.euclideanspace.spad.editor.TypeArguments <em>Type Arguments</em>}'.
@@ -13998,6 +14235,49 @@ public interface EditorPackage extends EPackage
    * @generated
    */
   EReference getConditionExpression_Right();
+
+  /**
+   * Returns the meta object for class '{@link com.euclideanspace.spad.editor.OrExpression <em>Or Expression</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Or Expression</em>'.
+   * @see com.euclideanspace.spad.editor.OrExpression
+   * @generated
+   */
+  EClass getOrExpression();
+
+  /**
+   * Returns the meta object for the containment reference '{@link com.euclideanspace.spad.editor.OrExpression#getLeft <em>Left</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Left</em>'.
+   * @see com.euclideanspace.spad.editor.OrExpression#getLeft()
+   * @see #getOrExpression()
+   * @generated
+   */
+  EReference getOrExpression_Left();
+
+  /**
+   * Returns the meta object for the attribute '{@link com.euclideanspace.spad.editor.OrExpression#getOp <em>Op</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Op</em>'.
+   * @see com.euclideanspace.spad.editor.OrExpression#getOp()
+   * @see #getOrExpression()
+   * @generated
+   */
+  EAttribute getOrExpression_Op();
+
+  /**
+   * Returns the meta object for the containment reference '{@link com.euclideanspace.spad.editor.OrExpression#getRight <em>Right</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Right</em>'.
+   * @see com.euclideanspace.spad.editor.OrExpression#getRight()
+   * @see #getOrExpression()
+   * @generated
+   */
+  EReference getOrExpression_Right();
 
   /**
    * Returns the meta object for class '{@link com.euclideanspace.spad.editor.AndExpression <em>And Expression</em>}'.
@@ -16128,12 +16408,12 @@ public interface EditorPackage extends EPackage
     EAttribute TYPE_PARAMETER_LIST__PAR = eINSTANCE.getTypeParameterList_Par();
 
     /**
-     * The meta object literal for the '<em><b>Par22</b></em>' containment reference list feature.
+     * The meta object literal for the '<em><b>Par21</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference TYPE_PARAMETER_LIST__PAR22 = eINSTANCE.getTypeParameterList_Par22();
+    EReference TYPE_PARAMETER_LIST__PAR21 = eINSTANCE.getTypeParameterList_Par21();
 
     /**
      * The meta object literal for the '<em><b>Par2</b></em>' attribute list feature.
@@ -16142,6 +16422,14 @@ public interface EditorPackage extends EPackage
      * @generated
      */
     EAttribute TYPE_PARAMETER_LIST__PAR2 = eINSTANCE.getTypeParameterList_Par2();
+
+    /**
+     * The meta object literal for the '<em><b>Par22</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference TYPE_PARAMETER_LIST__PAR22 = eINSTANCE.getTypeParameterList_Par22();
 
     /**
      * The meta object literal for the '{@link com.euclideanspace.spad.editor.impl.TypeArgumentsImpl <em>Type Arguments</em>}' class.
@@ -17620,6 +17908,40 @@ public interface EditorPackage extends EPackage
      * @generated
      */
     EReference CONDITION_EXPRESSION__RIGHT = eINSTANCE.getConditionExpression_Right();
+
+    /**
+     * The meta object literal for the '{@link com.euclideanspace.spad.editor.impl.OrExpressionImpl <em>Or Expression</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see com.euclideanspace.spad.editor.impl.OrExpressionImpl
+     * @see com.euclideanspace.spad.editor.impl.EditorPackageImpl#getOrExpression()
+     * @generated
+     */
+    EClass OR_EXPRESSION = eINSTANCE.getOrExpression();
+
+    /**
+     * The meta object literal for the '<em><b>Left</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference OR_EXPRESSION__LEFT = eINSTANCE.getOrExpression_Left();
+
+    /**
+     * The meta object literal for the '<em><b>Op</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute OR_EXPRESSION__OP = eINSTANCE.getOrExpression_Op();
+
+    /**
+     * The meta object literal for the '<em><b>Right</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference OR_EXPRESSION__RIGHT = eINSTANCE.getOrExpression_Right();
 
     /**
      * The meta object literal for the '{@link com.euclideanspace.spad.editor.impl.AndExpressionImpl <em>And Expression</em>}' class.
