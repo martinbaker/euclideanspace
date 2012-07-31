@@ -18,6 +18,7 @@
 
 package com.euclideanspace.spad.builder;
 
+import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.LinkedList;
@@ -25,6 +26,8 @@ import java.util.LinkedList;
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.IFolder;
 import org.eclipse.core.runtime.CoreException;
+
+import com.euclideanspace.spad.builder.Translate.Mode;
 
 /**
  * @author Martin John Baker
@@ -77,6 +80,18 @@ public class EclipseFileWriter extends InputStream {
 	public void write(String line){
 		data.addLast(line);
 	}
+
+    /**
+     * Translate a single line of code. Intended to be overridden for each
+     * file type
+     * 
+     * @param line to be written
+     * @param input in case line is continued we can get more
+     */
+	Mode writeLineFormatted(String line,BufferedReader input){
+		write(line + "\n");
+		return Mode.DOCUM;
+	}
 	
 	/**
 	 * test if file already exists
@@ -86,7 +101,16 @@ public class EclipseFileWriter extends InputStream {
 	    IFile file = parent.getFile(name);
 	    return file.exists();
 	}
-	
+
+	/**
+	 * This may resume an existing file or start a new one depending on
+	 * whether n is equal to the previous name.
+	 * @param n new file name
+	 */
+	public Mode openReopen(String n) {
+		return Mode.DOCUM;
+	}
+
 	/**
 	 * indicates we have collected all the data so we can write
 	 * the file.

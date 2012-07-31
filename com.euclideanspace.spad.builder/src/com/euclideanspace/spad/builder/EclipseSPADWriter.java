@@ -50,8 +50,13 @@ public class EclipseSPADWriter extends EclipseFileWriter {
 	LinkedBlockingQueue<LineType> lineHoldType = new LinkedBlockingQueue<LineType>();
 	/**
 	 * set to true if last line may be continued (but only if indent increases)
+	 * That is, last line ends with '_','where','with','add','==' and so on.
 	 */
 	boolean lastLineMayContinue = false;
+	/**
+	 * set to true if last line is not empty,comment, '{' or '}'
+	 */
+	boolean lastLineIsStatement = false;
 	/*
 	 * set when '@' is received at the start of a line
 	 * this indicates the SPAD structure may be completed or
@@ -86,6 +91,7 @@ public class EclipseSPADWriter extends EclipseFileWriter {
 	 * whether n is equal to the previous name.
 	 * @param n new file name
 	 */
+	@Override
 	public Mode openReopen(String n) {
 	  // if name == null this is first SPAD file in pamphlet
 	  if (name == null) {
@@ -106,11 +112,12 @@ public class EclipseSPADWriter extends EclipseFileWriter {
 		  if (!pile.empty()) writeIndent(pile.peek());
 		  write("}" + "\n");
 		}
-		flushLineHold("\n@");
+		flushLineHold("@","\n",true);
 		//System.out.println("macros: " + macros);
 		macros.clear(); // don't use macros in next file
 		close();
 		lastLineMayContinue = false;
+		lastLineIsStatement = false;
 		name = n;
 		return Mode.HEAD;
 	}
@@ -118,13 +125,17 @@ public class EclipseSPADWriter extends EclipseFileWriter {
     /**
      * Translate a single line of SPAD code
      * 
-     * @param line
-     * @param output
+     * @param line to be written
+     * @param input in case line is continued we can get more
      */
-    Mode transCODE(String line,BufferedReader input){
+	@Override
+    Mode writeLineFormatted(String line,BufferedReader input){
   	  try{
 		//System.out.println("transCODE 0");
   		if (line == null) return null;
+		String nl = "\n";
+		if (statementTerminatorOption==1 &&
+                lastLineIsStatement) nl = ";"+nl;
     	if (line.startsWith("@")) {
     	  suspended = true;
   		  return Mode.DOCUM;
@@ -164,6 +175,10 @@ public class EclipseSPADWriter extends EclipseFileWriter {
 		 * So we put in line hold, so we can test next line.
 		 */
     	boolean continuationLine = impliedContinuation(trimedLine);
+    	/** statementLine is set if this is a statement, that is it does
+    	 * not end with '{','}','_','where','with','add','==' and so on.
+    	 */
+    	boolean statementLine = false;
     	// remove the trailing '_'
     	if (trimedLine.endsWith("_")) {
         	line = line.substring(0,line.length()-1);
@@ -180,6 +195,7 @@ public class EclipseSPADWriter extends EclipseFileWriter {
             lineHold.offer(line);
             lineHoldType.offer(lineType);
             continuationLine = lastLineMayContinue;
+            statementLine = lastLineIsStatement;
     	} else {
     		  /*if (indentForContinuation >= 0){
     			  ind = indentForContinuation;
@@ -196,9 +212,10 @@ public class EclipseSPADWriter extends EclipseFileWriter {
     		  }
     		  //System.out.println(line2);
     		  if (ind == indent) { // indent unchanged so no brace
-    			  if (statementTerminatorOption==1) flushLineHold(";\n"+line);
-    			  else flushLineHold("\n"+line);
+    			  flushLineHold(line,nl,true);
+    			  if (continuationLine) statementLine = true;
     		  } else if (ind > indent) { // indent increased so insert '{'
+    			  if (continuationLine) statementLine = true;
       			trimedLine = line.trim();
     			//boolean continuationLine = impliedContinuation(trimedLine);
     			if (lastLineMayContinue) {
@@ -219,19 +236,23 @@ public class EclipseSPADWriter extends EclipseFileWriter {
     			  pile.push(ind);
     			}
     		  } else if (ind < indent) { // indent reduced so insert '}'
+    			  boolean firstrbrace = true;
     			  while (!pile.empty() && ind < indent) {
                     pile.pop();
                     if (!pile.empty()) indent = pile.peek();
                     else indent = 0;
-       			    write("\n");
+       			    if (firstrbrace) write(nl); else write("\n");
        			    writeIndent(ind);
        			    write("}");
+       			   firstrbrace = false;
        			    //output.write(" ind=" + ind +" pop indent="+ indent);
     			  }
-    			  flushLineHold("\n"+line);
+    			  if (firstrbrace) flushLineHold(line,nl,true);
+    			  else flushLineHold(line,"\n",true);
     		  }
     	}
         lastLineMayContinue = continuationLine;
+        lastLineIsStatement = statementLine;
       } catch (Exception e) {
         System.err.println("error in transCODE: " + line +" due to "+ e);
       }
@@ -246,22 +267,28 @@ public class EclipseSPADWriter extends EclipseFileWriter {
     public void writeIndent(int ind){
    	  for (int x=0;x<ind;x++) write(" ");
     }
-
+    
     /**
      * output any pending lines in lineHold, then output supplied line if
      * it is not null.
-     * @param output where to output
      * @param line if not null this line will be appended to flushed output
+     * @param nl newline character(s) including ';' if needed
+     * @param prefixnl if true write newline before line
      */
-    void flushLineHold(String line){
-      //boolean continuation = false;
+    void flushLineHold(String line,String nl,boolean prefixnl){
+      boolean first = true;
       try {
 	    while (! lineHold.isEmpty()) {
 		  String li = lineHold.poll();
-	      write("\n"+li);
+	      if (first) write(nl+li);else write("\n"+li);
+	      first = false;
 	    }
 	    if (line != null) {
-	      write(line);
+	      if (prefixnl) {
+		    if (first) write(nl+line);else write("\n"+line);
+	      } else {
+	    	write(line);
+	      }
 	    }
       } catch (Exception e) {
         System.err.println("error in flushLineHold: " + line +" due to "+ e);

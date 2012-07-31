@@ -55,6 +55,13 @@ public class Translate {
 	 * callback allows us to get user options
 	 */
 	BuilderNewWizard callback;
+    /**
+     * documentation type
+     * 0 = html
+     * 1 = tex
+     */
+	int documentationTypeOption = 0;
+
 	/**
 	 * translate a pamphlet file or whole directory
 	 * 
@@ -63,6 +70,7 @@ public class Translate {
 	 */
     public void trans(IFolder srcFolder,String fricasFiles,BuilderNewWizard cb) {
       callback = cb;
+      documentationTypeOption = callback.getDocumentationOption();
       inFile = new File(fricasFiles);
       String nm = inFile.getName();
       String nam = nm;
@@ -123,7 +131,11 @@ public class Translate {
     		System.err.println("no input file selected");
     		return;
     	}
-    	texFile = new EclipseFileWriter(nm+".txt",subDirectoryFile);
+    	if (documentationTypeOption==0) {
+    	  texFile = new EclipseHTMLWriter(nm+".html",subDirectoryFile);
+    	} else {
+      	  texFile = new EclipseFileWriter(nm+".tex",subDirectoryFile);    		
+    	}
     	EclipseSPADWriter output = new EclipseSPADWriter(null,subDirectoryFile,callback);
     	BufferedReader input = null;
     	try {
@@ -134,9 +146,10 @@ public class Translate {
       		switch (mode) {
       		  case DOCUM: mode = transDOCUM(line,texFile,output);break;
       		  case HEAD: mode = transHEAD(line,output);break;
-      		  case CODE: mode = output.transCODE(line,input);break;
+      		  case CODE: mode = output.writeLineFormatted(line,input);break;
       		}
       	  }
+      	texFile.openReopen(null);
     	} catch (Exception exception) {
     		System.err.println("cannot translate: " + inFile.getName()+" due to "+ exception);
      	} finally {
@@ -164,7 +177,7 @@ public class Translate {
   	    if (line.startsWith(")abbrev")) {
   	      //mode=Mode.CODE;
   	      output.write(line + "\n");
-  	      output.flushLineHold(null);
+  	      output.flushLineHold(null,"\n",false);
   	      return Mode.CODE;
   	    } else if (line.startsWith("@")) {
     	  return Mode.DOCUM;
@@ -189,7 +202,8 @@ public class Translate {
      */
     public Mode transDOCUM(String line,EclipseFileWriter texOutput,EclipseSPADWriter output/*,IFolder subDirectoryFile*/){
   	    try {
-  	      texOutput.write(line + "\n");
+  	      texOutput.writeLineFormatted(line,null);
+  	      //texOutput.write(line + "\n");
 	    } catch (Exception e) {
 		  System.err.println("transDOCUM cannot write: " +line +" due to "+ e);
 	    }

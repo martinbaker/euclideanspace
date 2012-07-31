@@ -181,7 +181,15 @@ public class BuilderNewWizard extends Wizard implements INewWizard {
     public int getEscapeOption(){
 		return _pageTwo.getEscapeOption();
     }
-    
+
+    public int getUnderscoreOption(){
+    	return _pageTwo.getUnderscoreOption();
+    }
+
+    public int getDocumentationOption(){
+    	return _pageTwo.getDocumentationOption();
+    }
+
 	public void StartProgress(String fileName,int index) {
 		_pageOne.StartProgress(fileName,index);
 		_pageTwo.StartProgress(fileName,index);

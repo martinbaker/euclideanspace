@@ -1,15 +1,6 @@
 package com.euclideanspace.spad.builder;
 
-import java.net.URI;
-import java.util.List;
 
-import org.eclipse.core.resources.IProject;
-import org.eclipse.core.resources.IResource;
-import org.eclipse.core.resources.IWorkspace;
-import org.eclipse.core.resources.ResourcesPlugin;
-import org.eclipse.core.runtime.IPath;
-import org.eclipse.core.runtime.IStatus;
-import org.eclipse.core.runtime.Path;
 import org.eclipse.jface.dialogs.Dialog;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.jface.wizard.WizardPage;
@@ -17,22 +8,11 @@ import org.eclipse.swt.SWT;
 import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Composite;
-import org.eclipse.swt.widgets.Event;
 import org.eclipse.swt.widgets.Label;
-import org.eclipse.swt.widgets.Combo;
-import org.eclipse.swt.events.SelectionAdapter;
-import org.eclipse.swt.events.SelectionEvent;
-import org.eclipse.swt.widgets.Listener;
-import org.eclipse.swt.widgets.Text;
 import org.eclipse.ui.IWorkingSet;
 import org.eclipse.ui.PlatformUI;
 import org.eclipse.ui.dialogs.WorkingSetGroup;
-import org.eclipse.ui.internal.ide.IDEWorkbenchMessages;
-import org.eclipse.ui.internal.ide.IDEWorkbenchPlugin;
 import org.eclipse.ui.internal.ide.IIDEHelpContextIds;
-import org.eclipse.ui.internal.ide.dialogs.ProjectContentsLocationArea;
-import org.eclipse.ui.internal.ide.dialogs.ProjectContentsLocationArea.IErrorMessageReporter;
-import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.jface.wizard.ProgressMonitorPart;
 
 
@@ -68,6 +48,8 @@ import org.eclipse.jface.wizard.ProgressMonitorPart;
     	private ComboBoxDialog comboBoxDialog2;
     	private ComboBoxDialog comboBoxDialog3;
     	private ComboBoxDialog comboBoxDialog4;
+    	private ComboBoxDialog comboBoxDialog5;
+    	private ComboBoxDialog comboBoxDialog6;
 
     	private WorkingSetGroup workingSetGroup;
 
@@ -100,9 +82,9 @@ import org.eclipse.jface.wizard.ProgressMonitorPart;
             composite.setLayoutData(new GridData(GridData.FILL_BOTH));
     		
             Label warningLabel = new Label(composite, SWT.NONE);
-            warningLabel.setText("I suggest only experts change these values");
+            warningLabel.setText("I suggest only experts change these values - otherwise just press 'Finish'");
             Label warningLabel2 = new Label(composite, SWT.NONE);
-            warningLabel2.setText("otherwise just press 'Finish'");
+            warningLabel2.setText("");
     		String[] options1 = {"statement terminator:","new line","semicolon"};
     		comboBoxDialog = new ComboBoxDialog(composite,options1);
     		String[] options2 = {"macros:","substitute and comment out","no change","comment out"};
@@ -111,6 +93,10 @@ import org.eclipse.jface.wizard.ProgressMonitorPart;
     		comboBoxDialog3 = new ComboBoxDialog(composite,options3);
     		String[] options4 = {"escape in string:","double '/'","no change"};
     		comboBoxDialog4 = new ComboBoxDialog(composite,options4);
+    		String[] options5 = {"line ending '_':","concatinate lines and remove '_'","remove '_'","no change"};
+    		comboBoxDialog5 = new ComboBoxDialog(composite,options5);
+    		String[] options6 = {"documentation:","html","tex"};
+    		comboBoxDialog6 = new ComboBoxDialog(composite,options6);
 
     		progressMonitorPart=
               new ProgressMonitorPart(composite,null);
@@ -190,6 +176,16 @@ import org.eclipse.jface.wizard.ProgressMonitorPart;
         public int getEscapeOption(){
         	if (comboBoxDialog4 == null) return 0;
         	return comboBoxDialog4.getSelectedIndex();
+        }
+
+        public int getUnderscoreOption(){
+        	if (comboBoxDialog5 == null) return 0;
+        	return comboBoxDialog5.getSelectedIndex();
+        }
+
+        public int getDocumentationOption(){
+        	if (comboBoxDialog6 == null) return 0;
+        	return comboBoxDialog6.getSelectedIndex();
         }
 
         /**
