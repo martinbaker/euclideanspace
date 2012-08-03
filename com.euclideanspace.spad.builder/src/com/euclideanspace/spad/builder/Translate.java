@@ -19,12 +19,14 @@
 package com.euclideanspace.spad.builder;
 
 import java.io.*;
-import java.util.concurrent.*;
 
 import org.eclipse.core.resources.IFolder;
 
 public class Translate {
 	File inFile = null;
+	/**
+	 * output file for documentation
+	 */
 	EclipseFileWriter texFile = null;
 	/** holds status while reading a file
 	 * DOCUM means << .... >>= has not yet been encountered so we are reading documentation
@@ -42,15 +44,15 @@ public class Translate {
      * any comments before )abbrev
      * comments and empty lines and held pending '}'
      */
-	LinkedBlockingQueue<String> lineHold = new LinkedBlockingQueue<String>();
+	//LinkedBlockingQueue<String> lineHold = new LinkedBlockingQueue<String>();
 	/** lineHoldType has an entry for each entry in lineHold to record
 	 * what type the corresponding line is.
      */
-	LinkedBlockingQueue<LineType> lineHoldType = new LinkedBlockingQueue<LineType>();
+	//LinkedBlockingQueue<LineType> lineHoldType = new LinkedBlockingQueue<LineType>();
 	/**
 	 * keep name of last file so we only delete when really changed
 	 */
-	String lastFile = null;
+	//String lastFile = null;
 	/**
 	 * callback allows us to get user options
 	 */
@@ -67,6 +69,7 @@ public class Translate {
 	 * 
 	 * @param srcFolder
 	 * @param fricasFiles
+	 * @param cb
 	 */
     public void trans(IFolder srcFolder,String fricasFiles,BuilderNewWizard cb) {
       callback = cb;
@@ -94,13 +97,19 @@ public class Translate {
   	  		 }
   	  		 String dirFiles[] = inFile.list();
   	  		 callback.StartProgress("progress",dirFiles.length);
-  	  		 //int progressIndex=0;
+  	  		 //int c=0;
   	  		 for (String s:dirFiles) {
   	  			 callback.UpdateProgress(s,1);
   	    	     int inds = s.indexOf(".");
   	    	     if (inds > -1) {
   	    	       if (s.endsWith("spad.pamphlet")) {
   	    	  	     nam = s.substring(0,inds);
+  	    	  	     if (nam==null) return;
+  	    	  	     //if (nam.equals("complet")) continue;
+  	    	  	     //if (c++ > 2) { // was 58
+  	  	  	    	 //    System.out.println("Translate.trans: break at:" + nam);
+  	    	  	     //  break;
+  	    	  	     //}
   	    	  	     File pamphFile = new File(inFile,s);
   	  	    	     //System.out.println("File: " + nam +
   	  	    	     //		 " directory:"+srcFolder +
@@ -108,20 +117,22 @@ public class Translate {
   	  	    	     //		 " of "+dirFiles.length);
   	  	  	  		 transPamphlet(nam,srcFolder,pamphFile,callback);
   	    	       }
-  	    	     } 	  			 
+  	    	     }
   	  		 }
   	  		 System.out.println("Completed translation of: "+inFile);
   	  	 }
     }
-
+    
     /**
      * transform a single pamphlet file into a directory containing
      * various spad and tex files.
      * @param nm name of pamphlet file 
-     * @param subDirectoryFile
-     * @param inFile
+     * @param directoryFile directory of project
+     * @param inFile location of source files
+     * @param callback location of wizard
      */
-    public void transPamphlet(String nm,IFolder directoryFile,File inFile,BuilderNewWizard callback) {
+    public void transPamphlet(String nm,IFolder directoryFile,File inFile,
+    		                  BuilderNewWizard callback) {
 	  	IFolder subDirectoryFile = callback.createFolder(nm,directoryFile);
     	if (subDirectoryFile == null) {
     		System.err.println("no output directory selected");
@@ -136,7 +147,7 @@ public class Translate {
     	} else {
       	  texFile = new EclipseFileWriter(nm+".tex",subDirectoryFile);    		
     	}
-    	EclipseSPADWriter output = new EclipseSPADWriter(null,subDirectoryFile,callback);
+    	EclipseSPADWriter output = new EclipseSPADWriter(subDirectoryFile,callback);
     	BufferedReader input = null;
     	try {
       	  input = new BufferedReader(new FileReader(inFile));     
@@ -156,10 +167,11 @@ public class Translate {
      	  try {
       	  //System.out.println("finally");
       	    if (input != null) input.close();
-      	    if (texFile != null) texFile.close();
+      	    input = null;
+      	    if (texFile != null) texFile.commit();
+      	    //texFile = null;
       	    if (output != null) output.openReopen(null);
-      	    //output.close();
-      	    lastFile = null;
+      	    //output = null;
     	  } catch (Exception exception) {
     		System.err.println("translate.transPamphlet:cannot close due to "+ exception);
      	  }
@@ -175,15 +187,14 @@ public class Translate {
     Mode transHEAD(String line,EclipseSPADWriter output){
       try {
   	    if (line.startsWith(")abbrev")) {
-  	      //mode=Mode.CODE;
   	      output.write(line + "\n");
   	      output.flushLineHold(null,"\n",false);
   	      return Mode.CODE;
   	    } else if (line.startsWith("@")) {
     	  return Mode.DOCUM;
 		} else {
-  		  lineHold.offer(line);
-  		  lineHoldType.offer(LineType.CODE);
+  		  output.lineHold.offer(line);
+  		  output.lineHoldType.offer(LineType.CODE);
   	   }
 	  } catch (Exception exception) {
 		System.err.println("cannot process: " + output +" due to "+ exception);
@@ -200,10 +211,10 @@ public class Translate {
      * @param line String being read
      * @return Writer if this is the start of a code block otherwise null.
      */
-    public Mode transDOCUM(String line,EclipseFileWriter texOutput,EclipseSPADWriter output/*,IFolder subDirectoryFile*/){
+    public Mode transDOCUM(String line,EclipseFileWriter texOutput,
+    		               EclipseSPADWriter output){
   	    try {
   	      texOutput.writeLineFormatted(line,null);
-  	      //texOutput.write(line + "\n");
 	    } catch (Exception e) {
 		  System.err.println("transDOCUM cannot write: " +line +" due to "+ e);
 	    }
@@ -219,7 +230,6 @@ public class Translate {
     		return output.openReopen(nam+".spad");
    	      } catch (Exception e) {
     		System.err.println("transDOCUM cannot open: " + nam +" due to "+ e);
-    		//mode=Mode.DOCUM;
     	    return Mode.DOCUM;
     	  }
    	    }

@@ -19,25 +19,22 @@
 package com.euclideanspace.spad.builder;
 
 import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStream;
-import java.util.LinkedList;
 
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.IFolder;
-import org.eclipse.core.runtime.CoreException;
+//import org.eclipse.core.runtime.CoreException;
 
 import com.euclideanspace.spad.builder.Translate.Mode;
 
 /**
  * @author Martin John Baker
  */
-public class EclipseFileWriter extends InputStream {
+public class EclipseFileWriter{
 
 	/**
 	 * holds the data 
 	 */
-	LinkedList<String> data = new LinkedList<String>();
+	FileContentBuffer data = new FileContentBuffer();
 	/**
 	 * name of file, with extension but not directory
 	 */
@@ -46,39 +43,14 @@ public class EclipseFileWriter extends InputStream {
 	 * folder where this file will be located
 	 */
 	IFolder parent;
-	/**
-	 * line currently being read
-	 */
-	byte[] currentLine = null;
-	/**
-	 * pointer to position in line currently being read
-	 */
-	int lineIndex = 0;
 	
 	public EclipseFileWriter(String n,IFolder p){
 		name = n;
 		parent = p;
 	}
-	
-	/**
-	 * required for InputStream which is used by file.create in close
-	 */
-	@Override
-	public int read() throws IOException {
-		if (currentLine == null) {
-			if (data.isEmpty()) return -1;
-			currentLine = data.removeFirst().getBytes();
-			lineIndex = 0;
-		}
-		int val = currentLine[lineIndex++];
-		if (lineIndex >= currentLine.length) {
-		  currentLine = null;
-		}
-		return val;
-	}
 
 	public void write(String line){
-		data.addLast(line);
+		data.write(line);
 	}
 
     /**
@@ -115,24 +87,32 @@ public class EclipseFileWriter extends InputStream {
 	 * indicates we have collected all the data so we can write
 	 * the file.
 	 */
-	public void close(){
+	public void commit(){
 	  if (parent == null) return;
 	  try {
 	    IFile file = parent.getFile(name);
-	    if (data.isEmpty()) return;
 	    if (!file.exists()) {
-	    	file.create(this, true,null);
+	    	file.create(data, true,null);
 	    } else {
+	    	System.err.println("EclipseFileWriter.commit() file:" + name+" already exists");
 	    	//System.out.println("EclipseFileWriter.close() appending" + file);
-            // we need to add code here to remove '@' from end of
-	    	// existing file contents.
-	    	file.appendContents(this, true,true,null);
+	    	file.appendContents(data, true,true,null);
 	    }
-      } catch (CoreException e) {
-    	System.err.println("EclipseFileWriter.close() " + e);
+	    // the old data is now in use by create, so any follow-on
+	    // content must not use this, so create new one.
+	    data = new FileContentBuffer();
+      } catch (Exception e) {
+    	System.err.println("EclipseFileWriter.commit() " + e);
 	    //e.printStackTrace();
 	  }
 	  return;
     }
+
+	/**
+	 * close is not needed.
+	 */
+	/*public void close(){
+		System.err.println("EclipseFileWriter.close():" + name);
+	}*/
 
 }

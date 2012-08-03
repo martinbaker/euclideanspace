@@ -43,7 +43,7 @@ public class BuilderNewWizard extends Wizard implements INewWizard {
 	
 	public BuilderNewWizard() {
 		super();
-		setNeedsProgressMonitor(true);
+		//setNeedsProgressMonitor(true);
 		setWindowTitle("spad project");
 	}
 	
@@ -62,9 +62,10 @@ public class BuilderNewWizard extends Wizard implements INewWizard {
 	@Override
 	public boolean performFinish() {
 	    String projectName = _pageOne.getProjectName();
+	    /** location of project */
 	    URI location = null;
 	    if (!_pageOne.useDefaults()) {
-	        location = _pageOne.getLocationURI();
+	        location = _pageOne.getProjectLocationURI();
 	    }
         Assert.isNotNull(projectName);
         Assert.isTrue(projectName.trim().length() > 0);
@@ -73,10 +74,13 @@ public class BuilderNewWizard extends Wizard implements INewWizard {
         // now populate project with folders and files
         IFolder srcFolder = null;
 	    srcFolder = createFolder("src",null);
-	    /*IFolder srcgenFolder =*/ createFolder("src-gen",null);
+	    //IFolder srcgenFolder =
+        createFolder("src-gen",null);
+        /** gets the directory where the FriCAS source files are located */
         String fricasFiles = _pageOne.getFriCASFiles();
-		//System.out.println("BuilderNewWizard.performFinish: "+
-        //        " fricasFiles="+fricasFiles);
+		System.out.println("BuilderNewWizard.performFinish: "+
+                " srcFolder="+srcFolder+
+                " fricasFiles="+fricasFiles);
         if (fricasFiles != null && !"".equals(fricasFiles)) {
           Translate t = new Translate();
     	  t.trans(srcFolder,fricasFiles,this);
@@ -137,11 +141,11 @@ public class BuilderNewWizard extends Wizard implements INewWizard {
 	  IFolder folder = null;
 	  try {
 	    if (parent == null) {
-	        //String folderFullPath = project.getStringProperty(INewJavaClassDataModelProperties.SOURCE_FOLDER);
-	    	//folder = project.getFolder(new Path(folderFullPath));
 	    	folder = project.getFolder(name);
+	    } else {
+	    	folder = parent.getFolder(name);
 	    }
-	    else folder = parent.getFolder(name);
+  		//System.out.println("BuilderNewWizard.createFolder: parent="+parent);
 	    if (!folder.exists()) {
 	      folder.create(false,true, null);
 	    }
@@ -156,8 +160,11 @@ public class BuilderNewWizard extends Wizard implements INewWizard {
 	    System.arraycopy(oldEntries, 0, newEntries, 0, oldEntries.length);
 	    newEntries[oldEntries.length] = JavaCore.newSourceEntry(srcRoot.getPath());
 	    project.setRawClasspath(newEntries, null);*/
-      } catch (CoreException e) {
-	    e.printStackTrace();
+      } catch (Exception e) {
+  		System.err.println("BuilderNewWizard.createFolder: "+
+                "can't create name="+name+
+                " in parent="+parent+
+                " folder="+folder+" err="+e);
 	  }
 	  return folder;
     }

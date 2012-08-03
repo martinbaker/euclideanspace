@@ -1,7 +1,25 @@
+/* Copyright 2012 Martin John Baker
+ * 
+ * This file is part of EuclideanSpace.
+ *
+ *  EuclideanSpace is free software: you can redistribute it and/or modify
+ *  it under the terms of the GNU Affero General Public License as published by
+ *  the Free Software Foundation, either version 3 of the License, or
+ *  (at your option) any later version.
+ *
+ *  EuclideanSpace is distributed in the hope that it will be useful,
+ *  but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *  GNU Affero General Public License for more details.
+ *
+ *  You should have received a copy of the GNU Affero General Public License
+ *  along with EuclideanSpace.  If not, see <http://www.gnu.org/licenses/>.
+ */
+
 package com.euclideanspace.spad.builder;
 
+import java.io.*;
 import java.net.URI;
-import java.util.List;
 
 import org.eclipse.core.resources.IProject;
 import org.eclipse.core.resources.IResource;
@@ -11,7 +29,6 @@ import org.eclipse.core.runtime.IPath;
 import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.Path;
 import org.eclipse.jface.dialogs.Dialog;
-import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.jface.wizard.WizardPage;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.layout.GridData;
@@ -19,22 +36,11 @@ import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Event;
 import org.eclipse.swt.widgets.Label;
-import org.eclipse.swt.widgets.Combo;
-import org.eclipse.swt.events.SelectionAdapter;
-import org.eclipse.swt.events.SelectionEvent;
 import org.eclipse.swt.widgets.Listener;
 import org.eclipse.swt.widgets.Text;
 import org.eclipse.ui.IWorkingSet;
-import org.eclipse.ui.PlatformUI;
 import org.eclipse.ui.dialogs.WorkingSetGroup;
-import org.eclipse.ui.internal.ide.IDEWorkbenchMessages;
-import org.eclipse.ui.internal.ide.IDEWorkbenchPlugin;
-import org.eclipse.ui.internal.ide.IIDEHelpContextIds;
-import org.eclipse.ui.internal.ide.dialogs.ProjectContentsLocationArea;
-import org.eclipse.ui.internal.ide.dialogs.ProjectContentsLocationArea.IErrorMessageReporter;
-import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.jface.wizard.ProgressMonitorPart;
-
 
     /**
      * Standard main page for a wizard that is creates a project resource.
@@ -61,23 +67,22 @@ import org.eclipse.jface.wizard.ProgressMonitorPart;
         ProgressMonitorPart progressMonitorPart;
         Label fromLabel;
 
-        
-        private Listener nameModifyListener = new Listener() {
-            public void handleEvent(Event e) {
-            	setLocationForSelection();
-                boolean valid = validatePage();
-                setPageComplete(valid);
-                    
-            }
-        };
-
-    	private ProjectContentsLocationArea locationArea;
+    	//private ProjectContentsLocationArea locationArea;
+    	private InitilisationLocationDialog locationArea;
     	private InitilisationLocationDialog fromArea;
 
     	private WorkingSetGroup workingSetGroup;
 
         // constants
         private static final int SIZING_TEXT_FIELD_WIDTH = 250;
+        
+        private Listener nameModifyListener = new Listener() {
+            public void handleEvent(Event e) {
+            	//setLocationForSelection();
+                boolean valid = validatePage();
+                setPageComplete(valid);
+            }
+        };
 
         /**
          * Creates a new project creation wizard page.
@@ -94,29 +99,33 @@ import org.eclipse.jface.wizard.ProgressMonitorPart;
          */
         public void createControl(Composite parent) {
             Composite composite = new Composite(parent, SWT.NULL);
-        
-
             initializeDialogUnits(parent);
 
-            PlatformUI.getWorkbench().getHelpSystem().setHelp(composite,
-                    IIDEHelpContextIds.NEW_PROJECT_WIZARD_PAGE);
+            /*PlatformUI.getWorkbench().getHelpSystem().setHelp(composite,
+                    IIDEHelpContextIds.NEW_PROJECT_WIZARD_PAGE);*/
 
             composite.setLayout(new GridLayout());
             composite.setLayoutData(new GridData(GridData.FILL_BOTH));
 
             createProjectNameGroup(composite);
-            locationArea = new ProjectContentsLocationArea(getErrorReporter(), composite);
-            if(initialProjectFieldValue != null) {
+            //locationArea = new ProjectContentsLocationArea(getErrorReporter(), composite);
+            String defaultPath = ResourcesPlugin.getWorkspace().getRoot().getLocationURI().toString();
+            locationArea = new InitilisationLocationDialog(composite,
+            		"Use Alternative Location",
+            		defaultPath,false,this);
+            /*if(initialProjectFieldValue != null) {
     			locationArea.updateProjectName(initialProjectFieldValue);
-    		}
+    		}*/
             
             
-            fromArea = new InitilisationLocationDialog(composite);
+            fromArea = new InitilisationLocationDialog(composite,
+            		"Initialise from FriCAS files",System.getProperty("user.home")
+            		,true,this);
 			//System.out.println("WizardNewSPADProjectCreationPage.createControl: "+
 	        //        " fromArea="+fromArea);
 
     		// Scale the button based on the rest of the dialog
-    		setButtonLayoutData(locationArea.getBrowseButton());
+    		//setButtonLayoutData(locationArea.getBrowseButton());
     		
     		progressMonitorPart=
     	      new ProgressMonitorPart(composite,null);
@@ -150,24 +159,24 @@ import org.eclipse.jface.wizard.ProgressMonitorPart;
     	 *         original group will be returned.
     	 * @since 3.4
     	 */
-    	public WorkingSetGroup createWorkingSetGroup(Composite composite,
+    	/*public WorkingSetGroup createWorkingSetGroup(Composite composite,
     			IStructuredSelection selection, String[] supportedWorkingSetTypes) {
     		if (workingSetGroup != null)
     			return workingSetGroup;
     		workingSetGroup = new WorkingSetGroup(composite, selection,
     				supportedWorkingSetTypes);
     		return workingSetGroup;
-    	}
+    	}*/
         
         /**
     	 * Get an error reporter for the receiver.
     	 * @return IErrorMessageReporter
     	 */
-    	private IErrorMessageReporter getErrorReporter() {
+    	/*private IErrorMessageReporter getErrorReporter() {
     		return new IErrorMessageReporter(){
-    			/* (non-Javadoc)
+    			* (non-Javadoc)
     			 * @see org.eclipse.ui.internal.ide.dialogs.ProjectContentsLocationArea.IErrorMessageReporter#reportError(java.lang.String)
-    			 */
+    			 *
     			public void reportError(String errorMessage, boolean infoOnly) {
     				if (infoOnly) {
     					setMessage(errorMessage, IStatus.INFO);
@@ -183,7 +192,7 @@ import org.eclipse.jface.wizard.ProgressMonitorPart;
     				setPageComplete(valid);
     			}
     		};
-    	}
+    	}*/
 
         /**
          * Creates the project name specification controls.
@@ -200,7 +209,7 @@ import org.eclipse.jface.wizard.ProgressMonitorPart;
 
             // new project label
             Label projectLabel = new Label(projectGroup, SWT.NONE);
-            projectLabel.setText(IDEWorkbenchMessages.WizardNewProjectCreationPage_nameLabel);
+            projectLabel.setText("Select new project name:");
             projectLabel.setFont(parent.getFont());
 
             // new project name entry field
@@ -230,24 +239,33 @@ import org.eclipse.jface.wizard.ProgressMonitorPart;
          * @return the project location path or its anticipated initial value.
          */
         public IPath getLocationPath() {
-            return new Path(locationArea.getProjectLocation());
+            return new Path(locationArea.getSelectedDirectoryPath());
         }
         
         public String getFriCASFiles(){
+        	if (fromArea==null) {
+    			System.err.println("WizardNewSPADProjectCreationPage.getFriCASFiles: fromArea==null");
+        		return null;
+        	}
         	return fromArea.getSelectedDirectoryPath();
         }
 
-        
         /**
          * Returns the current project location URI as entered by 
          * the user, or <code>null</code> if a valid project location
          * has not been entered.
-         *
-         * @return the project location URI, or <code>null</code>
-         * @since 3.2
          */
-        public URI getLocationURI() {
+        public URI getProjectLocationURI() {
         	return locationArea.getProjectLocationURI();
+        }
+
+        /**
+         * Returns the current project location String as entered by 
+         * the user, or <code>null</code> if a valid project location
+         * has not been entered.
+         */
+        public String getProjectLocationString() {
+        	return locationArea.getProjectLocationString();
         }
 
         /**
@@ -316,7 +334,7 @@ import org.eclipse.jface.wizard.ProgressMonitorPart;
     		} else {
                 initialProjectFieldValue = name.trim();
                 if(locationArea != null) {
-    				locationArea.updateProjectName(name.trim());
+//    				locationArea.updateProjectName(name.trim());
     			}
             }
         }
@@ -324,10 +342,14 @@ import org.eclipse.jface.wizard.ProgressMonitorPart;
         /**
          * Set the location to the default location if we are set to useDefaults.
          */
-        void setLocationForSelection() {
-        	locationArea.updateProjectName(getProjectNameFieldValue());
-        }
+        /*void setLocationForSelection() {
+//        	locationArea.updateProjectName(getProjectNameFieldValue());
+        }*/
 
+        public void notifyChange() {
+            boolean valid = validatePage();
+            setPageComplete(valid);
+        }
       
         /**
          * Returns whether this page's controls currently all contain valid 
@@ -337,35 +359,39 @@ import org.eclipse.jface.wizard.ProgressMonitorPart;
          *   <code>false</code> if at least one is invalid
          */
         protected boolean validatePage() {
-            IWorkspace workspace = IDEWorkbenchPlugin.getPluginWorkspace();
+            //IWorkspace workspace = IDEWorkbenchPlugin.getPluginWorkspace();
+            IWorkspace workspace = ResourcesPlugin.getWorkspace();
 
             String projectFieldContents = getProjectNameFieldValue();
-            if (projectFieldContents.equals("")) { //$NON-NLS-1$
+            if (projectFieldContents.equals("")) {
                 setErrorMessage(null);
-                setMessage(IDEWorkbenchMessages.WizardNewProjectCreationPage_projectNameEmpty);
+                setMessage("project name empty");
                 return false;
             }
 
             IStatus nameStatus = workspace.validateName(projectFieldContents,
                     IResource.PROJECT);
             if (!nameStatus.isOK()) {
-                setErrorMessage(nameStatus.getMessage());
+                setErrorMessage("project name does not validate:"+nameStatus.getMessage());
                 return false;
             }
 
             IProject handle = getProjectHandle();
             if (handle.exists()) {
-                setErrorMessage(IDEWorkbenchMessages.WizardNewProjectCreationPage_projectExistsMessage);
+                setErrorMessage("project exists");
                 return false;
             }
                     
-            IProject project = ResourcesPlugin.getWorkspace().getRoot().getProject(
-    				getProjectNameFieldValue());
-    		locationArea.setExistingProject(project);
+            //IProject project = ResourcesPlugin.getWorkspace().getRoot().getProject(
+    		//		getProjectNameFieldValue());
+//    		locationArea.setExistingProject(project);
     		
-    		String validLocationMessage = locationArea.checkValidLocation();
-    		if (validLocationMessage != null) { // there is no destination location given
-    			setErrorMessage(validLocationMessage);
+//    		String validLocationMessage = locationArea.checkValidLocation();
+    		String projectDirectoryPath = locationArea.getSelectedDirectoryPath();
+    		//Path p=new Path(projectDirectoryPath);
+    		File f=new File(projectDirectoryPath);
+    		if (!f.isDirectory()) {
+    			setErrorMessage("project location does not validate:"+projectDirectoryPath);
     			return false;
     		}
             setErrorMessage(null);

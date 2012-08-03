@@ -75,11 +75,16 @@ public class EclipseSPADWriter extends EclipseFileWriter {
 	int escapeOption = 0;
 
 	/**
-	 * @param n file name
+	 * file name is initially constructed as null this is
+	 * updated later by openReopen.
 	 * @param p file directory
+	 * @param callback allows us to get configuration information
 	 */
-	public EclipseSPADWriter(String n, IFolder p,BuilderNewWizard callback) {
-		super(n, p);
+	public EclipseSPADWriter(IFolder p,BuilderNewWizard callback) {
+		super(null, p);
+		if (p == null) {
+		  System.err.println("EclipseSPADWriter.construct("+p+") n == null");
+		}
 	    statementTerminatorOption = callback.getStatementTerminatorOption();
 		macroOption = callback.getMacroOption();
 		bracketedOption = callback.getBracketedOption();
@@ -95,31 +100,39 @@ public class EclipseSPADWriter extends EclipseFileWriter {
 	public Mode openReopen(String n) {
 	  // if name == null this is first SPAD file in pamphlet
 	  if (name == null) {
+  		//System.err.println("EclipseSPADWriter.openReopen("+n+") name == null");
 		name = n;
+		lineHold.clear();
+		lineHoldType.clear();
+		lastLineMayContinue = false;
+		lastLineIsStatement = false;
+		suspended = false;
 		return Mode.HEAD;
 	  }
 	  suspended = false;
 	  // now check to see if we are resuming a previously started file
 	  // after some documentation
 	  if (n != null) if (n.equals(name)) {
+		// name = null; // temp prevent re-use
 		return Mode.CODE;
 	  }
 	  // if we have reached here then we are stating a new file
 	  // so we need to flush the old one and then start the new one.
   	  if (!pile.empty()) write("\n");
-		while (!pile.empty()) {
+	  while (!pile.empty()) {
 		  pile.pop();
 		  if (!pile.empty()) writeIndent(pile.peek());
 		  write("}" + "\n");
-		}
-		flushLineHold("@","\n",true);
-		//System.out.println("macros: " + macros);
-		macros.clear(); // don't use macros in next file
-		close();
-		lastLineMayContinue = false;
-		lastLineIsStatement = false;
-		name = n;
-		return Mode.HEAD;
+      }
+	  flushLineHold("@","\n",true);
+	  //System.out.println("macros: " + macros);
+	  macros.clear(); // don't use macros in next file
+	  commit();
+	  lastLineMayContinue = false;
+	  lastLineIsStatement = false;
+	  name = n;
+	  //name = null; // temp prevent re-use
+	  return Mode.HEAD;
 	}
 
     /**
@@ -132,7 +145,8 @@ public class EclipseSPADWriter extends EclipseFileWriter {
     Mode writeLineFormatted(String line,BufferedReader input){
   	  try{
 		//System.out.println("transCODE 0");
-  		if (line == null) return null;
+  		if (line == null) return Mode.CODE;
+  		if (name == null) return Mode.CODE;
 		String nl = "\n";
 		if (statementTerminatorOption==1 &&
                 lastLineIsStatement) nl = ";"+nl;

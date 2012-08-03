@@ -1,16 +1,34 @@
+/* Copyright 2012 Martin John Baker
+ * 
+ * This file is part of EuclideanSpace.
+ *
+ *  EuclideanSpace is free software: you can redistribute it and/or modify
+ *  it under the terms of the GNU Affero General Public License as published by
+ *  the Free Software Foundation, either version 3 of the License, or
+ *  (at your option) any later version.
+ *
+ *  EuclideanSpace is distributed in the hope that it will be useful,
+ *  but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *  GNU Affero General Public License for more details.
+ *
+ *  You should have received a copy of the GNU Affero General Public License
+ *  along with EuclideanSpace.  If not, see <http://www.gnu.org/licenses/>.
+ */
+
 package com.euclideanspace.spad.builder;
 
 import java.io.BufferedReader;
-
 import org.eclipse.core.resources.IFolder;
-
 import com.euclideanspace.spad.builder.Translate.Mode;
 
 public class EclipseHTMLWriter extends EclipseFileWriter {
 
+	enum CurrentTag {NONE,P,PRE,UL,LI}
+	CurrentTag tag = CurrentTag.NONE;
+
 	public EclipseHTMLWriter(String n, IFolder p) {
 		super(n, p);
-		// TODO Auto-generated constructor stub
 		write("<!DOCTYPE html PUBLIC \"-//W3C//DTD HTML 4.01 Transitional//EN\">"+ "\n");
 		write("<html>\n<head>"+ "\n");
 		write("<title>SPAD documentation</title>"+ "\n");
@@ -18,25 +36,6 @@ public class EclipseHTMLWriter extends EclipseFileWriter {
 		write("<body>"+ "\n");
 	}
 
-/*
- * \\documentclass{article}
-\\usepackage{axiom}
-\\begin{document}
-\\title{\\$SPAD/src/algebra acplot.spad}
-\\author{Clifton J. Williamson}
-\\maketitle
-\\begin{abstract}
-\\end{abstract}
-\\eject
-\\tableofcontents
-\\eject
-\\section{package REALSOLV RealSolvePackage}
-<<package REALSOLV RealSolvePackage>>=
-\\section{domain ACPLOT PlaneAlgebraicCurvePlot}
-<<domain ACPLOT PlaneAlgebraicCurvePlot>>=
-\\section{License}
-<<license>>=
- */
     /**
      * Translate a single line of HTML code
      * 
@@ -49,34 +48,66 @@ public class EclipseHTMLWriter extends EclipseFileWriter {
 		if (tline.startsWith("\\documentclass")) return Mode.DOCUM;
 		if (tline.startsWith("\\usepackage")) return Mode.DOCUM;
 		if (tline.startsWith("\\begin{itemize}")) {
+			closeCurrentTag();
+			tag=CurrentTag.UL;
 			write("<ul>\n");
+			return Mode.DOCUM;
+		}
+		if (tline.startsWith("\\begin{verbatim}")) {
+			closeCurrentTag();
+			tag=CurrentTag.PRE;
+			write("<pre>\n");
 			return Mode.DOCUM;
 		}
 		if (tline.startsWith("\\begin")) return Mode.DOCUM;
 		if (tline.startsWith("\\item")) {
-			write("<li>"+ tline + "</li>\n");
+			switch (tag) {
+			  case NONE: write("<ul><li>\n");break;
+			  case P: write("</p><ul><li>\n");break;
+			  case PRE: write("</pre><ul><li>\n");break;
+			  case UL: write("<li>\n");break;
+			  case LI: write("</li><li>\n");break;
+			}			
+			write(tline.substring(5,tline.length()));
+			tag=CurrentTag.LI;
 			return Mode.DOCUM;
 		}
 		if (tline.startsWith("\\url")) {
+			closeCurrentTag();
 			write("<a href=\""+extractFromBraces(line)+"\">"+ extractFromBraces(line) + "</a>\n");
 			return Mode.DOCUM;
 		}
 		//if (line.startsWith("\\begin")) return Mode.DOCUM;
 		//if (line.startsWith("\\begin")) return Mode.DOCUM;
-		if (tline.startsWith("\\title")) return Mode.DOCUM;
-		if (tline.startsWith("\\author")) return Mode.DOCUM;
+		if (tline.startsWith("\\title")) {
+		  closeCurrentTag();
+		  write("<h1>Title - "+ extractFromBraces(line) + "</h1>\n");
+		  return Mode.DOCUM;
+		}
+		if (tline.startsWith("\\author")) {
+			  closeCurrentTag();
+			  write("<h2>Author - "+ extractFromBraces(line) + "</h2>\n");
+			  return Mode.DOCUM;
+			}
+
 		if (tline.startsWith("\\maketitle")) return Mode.DOCUM;
 		if (tline.startsWith("\\end{itemize}")) {
-			write("</ul>\n");
+			closeCurrentTag();
+			return Mode.DOCUM;
+		}
+		if (tline.startsWith("\\end{verbatim}")) {
+			closeCurrentTag();
 			return Mode.DOCUM;
 		}
 		if (tline.startsWith("\\end")) return Mode.DOCUM;
 		if (tline.startsWith("\\eject")) return Mode.DOCUM;
 		if (tline.startsWith("\\section")) {
+			closeCurrentTag();
 			write("<h2>"+ extractFromBraces(line) + "</h2>\n");
 			return Mode.DOCUM;
 		}
 		if (tline.startsWith("\\subsection")) {
+			closeCurrentTag();
 			write("<h3>"+ extractFromBraces(line) + "</h3>\n");
 			return Mode.DOCUM;
 		}
@@ -84,20 +115,52 @@ public class EclipseHTMLWriter extends EclipseFileWriter {
 		if (tline.startsWith("<<domain")) return Mode.DOCUM;
 		if (tline.startsWith("<<category")) return Mode.DOCUM;
 		if (tline.startsWith("<<license")) return Mode.DOCUM;
+		if (tline.equals("")) {
+			switch (tag) {
+			  case NONE: break;
+			  case P: write("</p>\n");tag=CurrentTag.NONE;break;
+			  case PRE: break;
+			  case UL: write("</ul>\n");tag=CurrentTag.NONE;break;
+			  case LI: write("</li></ul>\n");tag=CurrentTag.NONE;break;
+			}			
+			return Mode.DOCUM;
+		}
 		tline = tline.replaceAll("&","&amp;");// change & to &amp;
 		tline = tline.replaceAll("<","&lt;");// change < to &lt;
 		tline = tline.replaceAll(">","&gt;");// change > to &gt;
-		write("</p>"+ tline + "</p>\n");
+		switch (tag) {
+		  case NONE: write("<p>");tag=CurrentTag.P;break;
+		  case P: break;
+		  case PRE: break;
+		  case UL: break;
+		  case LI: break;
+		}
+		write(tline+"\n");
 		return Mode.DOCUM;
 	}
 
+	public void closeCurrentTag(){
+		switch (tag) {
+		  case NONE: break;
+		  case P: write("</p>\n");break;
+		  case PRE: write("</pre>\n");break;
+		  case UL: write("</ul>\n");break;
+		  case LI: write("</li></ul>\n");break;
+		}			
+		tag=CurrentTag.NONE;		
+	}
+	
     public String extractFromBraces(String line){
 	  if (line==null) return "";
 	  int startIndex = line.indexOf("{")+1;
 	  int endIndex = line.indexOf("}");
 	  if (startIndex<0 || endIndex<0) return line;
 	  if (startIndex > endIndex) return line;
-	  return line.substring(startIndex, endIndex);
+	  String tline = line.substring(startIndex, endIndex);
+	  tline = tline.replaceAll("&","&amp;");// change & to &amp;
+	  tline = tline.replaceAll("<","&lt;");// change < to &lt;
+	  tline = tline.replaceAll(">","&gt;");// change > to &gt;
+	  return tline;
     }
 
 	/**
@@ -107,8 +170,10 @@ public class EclipseHTMLWriter extends EclipseFileWriter {
 	 */
 	@Override
 	public Mode openReopen(String n) {
+		closeCurrentTag();
 		write("</body>"+ "\n");
 		write("</html>"+ "\n");
 		return Mode.DOCUM;
 	}
+	
 }
