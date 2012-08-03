@@ -124,9 +124,9 @@ public class InitilisationLocationDialog {
 	 * 
 	 * @return boolean
 	 */
-	public boolean isDefault() {
+/*	public boolean isDefault() {
 		return useDefaultsButton.getSelection();
-	}
+	}*/
 
 	/**
 	 * Create the area for user entry.

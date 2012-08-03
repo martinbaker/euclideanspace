@@ -160,18 +160,15 @@ public class Translate {
       		  case CODE: mode = output.writeLineFormatted(line,input);break;
       		}
       	  }
-      	texFile.openReopen(null);
     	} catch (Exception exception) {
     		System.err.println("cannot translate: " + inFile.getName()+" due to "+ exception);
      	} finally {
      	  try {
-      	  //System.out.println("finally");
+      	    //System.out.println("finally");
       	    if (input != null) input.close();
       	    input = null;
-      	    if (texFile != null) texFile.commit();
-      	    //texFile = null;
+      	    if (texFile != null) texFile.openReopen(null);
       	    if (output != null) output.openReopen(null);
-      	    //output = null;
     	  } catch (Exception exception) {
     		System.err.println("translate.transPamphlet:cannot close due to "+ exception);
      	  }

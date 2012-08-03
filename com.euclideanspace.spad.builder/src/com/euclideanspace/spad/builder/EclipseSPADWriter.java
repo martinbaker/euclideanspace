@@ -113,7 +113,6 @@ public class EclipseSPADWriter extends EclipseFileWriter {
 	  // now check to see if we are resuming a previously started file
 	  // after some documentation
 	  if (n != null) if (n.equals(name)) {
-		// name = null; // temp prevent re-use
 		return Mode.CODE;
 	  }
 	  // if we have reached here then we are stating a new file
@@ -131,7 +130,6 @@ public class EclipseSPADWriter extends EclipseFileWriter {
 	  lastLineMayContinue = false;
 	  lastLineIsStatement = false;
 	  name = n;
-	  //name = null; // temp prevent re-use
 	  return Mode.HEAD;
 	}
 

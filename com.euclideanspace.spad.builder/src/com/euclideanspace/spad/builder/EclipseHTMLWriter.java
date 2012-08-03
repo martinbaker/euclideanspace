@@ -115,6 +115,10 @@ public class EclipseHTMLWriter extends EclipseFileWriter {
 		if (tline.startsWith("<<domain")) return Mode.DOCUM;
 		if (tline.startsWith("<<category")) return Mode.DOCUM;
 		if (tline.startsWith("<<license")) return Mode.DOCUM;
+		if (tline.startsWith("\\newcommand")) return Mode.DOCUM;
+		if (tline.startsWith("\\bibitem")) return Mode.DOCUM;
+		if (tline.startsWith("\\tableofcontents")) return Mode.DOCUM;
+		if (tline.startsWith("\\verb")) return Mode.DOCUM;
 		if (tline.equals("")) {
 			switch (tag) {
 			  case NONE: break;
@@ -128,6 +132,7 @@ public class EclipseHTMLWriter extends EclipseFileWriter {
 		tline = tline.replaceAll("&","&amp;");// change & to &amp;
 		tline = tline.replaceAll("<","&lt;");// change < to &lt;
 		tline = tline.replaceAll(">","&gt;");// change > to &gt;
+		if (tline.startsWith("--")) tline = "<br />"+tline;
 		switch (tag) {
 		  case NONE: write("<p>");tag=CurrentTag.P;break;
 		  case P: break;
@@ -173,6 +178,7 @@ public class EclipseHTMLWriter extends EclipseFileWriter {
 		closeCurrentTag();
 		write("</body>"+ "\n");
 		write("</html>"+ "\n");
+		commit();
 		return Mode.DOCUM;
 	}
 	

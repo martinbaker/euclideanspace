@@ -28,6 +28,7 @@ import java.net.URI;
 import org.eclipse.core.resources.IFolder;
 import org.eclipse.core.resources.IProject;
 import org.eclipse.core.resources.IProjectDescription;
+import org.eclipse.core.resources.IWorkspace;
 import org.eclipse.core.resources.ResourcesPlugin;
 import org.eclipse.core.runtime.Assert;
 import org.eclipse.core.runtime.CoreException;
@@ -63,14 +64,15 @@ public class BuilderNewWizard extends Wizard implements INewWizard {
 	public boolean performFinish() {
 	    String projectName = _pageOne.getProjectName();
 	    /** location of project */
-	    URI location = null;
-	    if (!_pageOne.useDefaults()) {
-	        location = _pageOne.getProjectLocationURI();
-	    }
+	    URI location = _pageOne.getProjectLocationURI();
+//	    if (!_pageOne.useDefaults()) {
+//	        location = _pageOne.getProjectLocationURI();
+//	    }
         Assert.isNotNull(projectName);
         Assert.isTrue(projectName.trim().length() > 0);
         // first create the project
-        project = createBaseProject(projectName, location);
+        //project = createBaseProject(projectName, location);
+        project = createBaseProject(projectName, null);
         // now populate project with folders and files
         IFolder srcFolder = null;
 	    srcFolder = createFolder("src",null);
@@ -78,9 +80,9 @@ public class BuilderNewWizard extends Wizard implements INewWizard {
         createFolder("src-gen",null);
         /** gets the directory where the FriCAS source files are located */
         String fricasFiles = _pageOne.getFriCASFiles();
-		System.out.println("BuilderNewWizard.performFinish: "+
-                " srcFolder="+srcFolder+
-                " fricasFiles="+fricasFiles);
+		//System.out.println("BuilderNewWizard.performFinish: "+
+        //        " srcFolder="+srcFolder+
+        //        " fricasFiles="+fricasFiles);
         if (fricasFiles != null && !"".equals(fricasFiles)) {
           Translate t = new Translate();
     	  t.trans(srcFolder,fricasFiles,this);
@@ -111,11 +113,12 @@ public class BuilderNewWizard extends Wizard implements INewWizard {
 	 * @param projectName
 	 */
 	private IProject createBaseProject(String projectName, URI location) {
-	  IProject newProject = ResourcesPlugin.getWorkspace().getRoot().getProject(projectName);
+	  IWorkspace workspace = ResourcesPlugin.getWorkspace();
+	  IProject newProject = workspace.getRoot().getProject(projectName);
 	  if (!newProject.exists()) {
 	    URI projectLocation = location;
-	    IProjectDescription desc = newProject.getWorkspace().newProjectDescription(newProject.getName());
-	    if (location != null && ResourcesPlugin.getWorkspace().getRoot().getLocationURI().equals(location)) {
+	    IProjectDescription desc = workspace.newProjectDescription(newProject.getName());
+	    if (location != null && workspace.getRoot().getLocationURI().equals(location)) {
 	      projectLocation = null;
 	    }
 	    desc.setLocationURI(projectLocation);

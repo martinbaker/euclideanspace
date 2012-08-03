@@ -18,7 +18,6 @@
 
 package com.euclideanspace.spad.builder;
 
-import java.io.*;
 import java.net.URI;
 
 import org.eclipse.core.resources.IProject;
@@ -109,7 +108,7 @@ import org.eclipse.jface.wizard.ProgressMonitorPart;
 
             createProjectNameGroup(composite);
             //locationArea = new ProjectContentsLocationArea(getErrorReporter(), composite);
-            String defaultPath = ResourcesPlugin.getWorkspace().getRoot().getLocationURI().toString();
+            String defaultPath = ResourcesPlugin.getWorkspace().getRoot().getLocationURI().getPath();
             locationArea = new InitilisationLocationDialog(composite,
             		"Use Alternative Location",
             		defaultPath,false,this);
@@ -381,17 +380,11 @@ import org.eclipse.jface.wizard.ProgressMonitorPart;
                 setErrorMessage("project exists");
                 return false;
             }
-                    
-            //IProject project = ResourcesPlugin.getWorkspace().getRoot().getProject(
-    		//		getProjectNameFieldValue());
-//    		locationArea.setExistingProject(project);
-    		
-//    		String validLocationMessage = locationArea.checkValidLocation();
-    		String projectDirectoryPath = locationArea.getSelectedDirectoryPath();
-    		//Path p=new Path(projectDirectoryPath);
-    		File f=new File(projectDirectoryPath);
-    		if (!f.isDirectory()) {
-    			setErrorMessage("project location does not validate:"+projectDirectoryPath);
+
+    		IStatus status=workspace.validateProjectLocation(handle,null);
+    		//System.out.println("WizardNewSPADProjectCreationPage1.validatePage: status="+status.getMessage());
+    		if (!status.isOK()) {
+    			setErrorMessage("project location does not validate:"+status.getMessage());
     			return false;
     		}
             setErrorMessage(null);
@@ -413,9 +406,9 @@ import org.eclipse.jface.wizard.ProgressMonitorPart;
          * Returns the useDefaults.
          * @return boolean
          */
-        public boolean useDefaults() {
+/*        public boolean useDefaults() {
             return locationArea.isDefault();
-        }
+        }*/
 
         /**
     	 * Return the selected working sets, if any. If this page is not configured
