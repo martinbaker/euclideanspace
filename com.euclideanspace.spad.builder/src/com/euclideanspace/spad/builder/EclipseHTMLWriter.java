@@ -24,7 +24,7 @@ import com.euclideanspace.spad.builder.Translate.Mode;
 
 public class EclipseHTMLWriter extends EclipseFileWriter {
 
-	enum CurrentTag {NONE,P,PRE,UL,LI}
+	enum CurrentTag {NONE,P,PRE,UL,LI,TABLE}
 	CurrentTag tag = CurrentTag.NONE;
 
 	public EclipseHTMLWriter(String n, IFolder p) {
@@ -59,6 +59,13 @@ public class EclipseHTMLWriter extends EclipseFileWriter {
 			write("<pre>\n");
 			return Mode.DOCUM;
 		}
+		if (tline.startsWith("\\begin{list}")) {
+			closeCurrentTag();
+			tag=CurrentTag.TABLE;
+			write("<table><tr><td>\n");
+			return Mode.DOCUM;
+			// this handles tables - columns are separated by whitespace
+		}
 		if (tline.startsWith("\\begin")) return Mode.DOCUM;
 		if (tline.startsWith("\\item")) {
 			switch (tag) {
@@ -67,6 +74,7 @@ public class EclipseHTMLWriter extends EclipseFileWriter {
 			  case PRE: write("</pre><ul><li>\n");break;
 			  case UL: write("<li>\n");break;
 			  case LI: write("</li><li>\n");break;
+			  case TABLE: write("\n");break;
 			}			
 			write(tline.substring(5,tline.length()));
 			tag=CurrentTag.LI;
@@ -77,8 +85,6 @@ public class EclipseHTMLWriter extends EclipseFileWriter {
 			write("<a href=\""+extractFromBraces(line)+"\">"+ extractFromBraces(line) + "</a>\n");
 			return Mode.DOCUM;
 		}
-		//if (line.startsWith("\\begin")) return Mode.DOCUM;
-		//if (line.startsWith("\\begin")) return Mode.DOCUM;
 		if (tline.startsWith("\\title")) {
 		  closeCurrentTag();
 		  write("<h1>Title - "+ extractFromBraces(line) + "</h1>\n");
@@ -99,8 +105,15 @@ public class EclipseHTMLWriter extends EclipseFileWriter {
 			closeCurrentTag();
 			return Mode.DOCUM;
 		}
+		if (tline.startsWith("\\end{table}")) {
+			closeCurrentTag();
+			return Mode.DOCUM;
+		}
 		if (tline.startsWith("\\end")) return Mode.DOCUM;
-		if (tline.startsWith("\\eject")) return Mode.DOCUM;
+		if (tline.startsWith("\\eject")) {
+		    write("<hr />\n");
+			return Mode.DOCUM;
+		}
 		if (tline.startsWith("\\section")) {
 			closeCurrentTag();
 			write("<h2>"+ extractFromBraces(line) + "</h2>\n");
@@ -126,6 +139,7 @@ public class EclipseHTMLWriter extends EclipseFileWriter {
 			  case PRE: break;
 			  case UL: write("</ul>\n");tag=CurrentTag.NONE;break;
 			  case LI: write("</li></ul>\n");tag=CurrentTag.NONE;break;
+			  case TABLE: write("<td></td>\n");break;
 			}			
 			return Mode.DOCUM;
 		}
@@ -139,6 +153,14 @@ public class EclipseHTMLWriter extends EclipseFileWriter {
 		  case PRE: break;
 		  case UL: break;
 		  case LI: break;
+		  case TABLE:
+			  String[] st = tline.split("[ ]+");
+			  write("<tr>\n");
+			  for (String s:st){
+				  write("<td>"+s+"</td>\n");
+			  }
+			  write("</tr>\n");
+			  return Mode.DOCUM;
 		}
 		write(tline+"\n");
 		return Mode.DOCUM;
@@ -151,6 +173,7 @@ public class EclipseHTMLWriter extends EclipseFileWriter {
 		  case PRE: write("</pre>\n");break;
 		  case UL: write("</ul>\n");break;
 		  case LI: write("</li></ul>\n");break;
+		  case TABLE: write("</table>\n");break;
 		}			
 		tag=CurrentTag.NONE;		
 	}
