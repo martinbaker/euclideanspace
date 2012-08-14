@@ -1,0 +1,13 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Mathbase
+Bundle-SymbolicName: com.euclideanspace.mathbase;singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Bundle-Activator: com.euclideanspace.mathbase.Activator
+Bundle-Vendor: ECLIPSE
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.core.runtime,
+ org.eclipse.xtext.xbase;bundle-version="2.3.0",
+ org.eclipse.xtext.generator;bundle-version="2.3.0"
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Bundle-ActivationPolicy: lazy
