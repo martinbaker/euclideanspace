@@ -18,37 +18,27 @@
 
 package com.euclideanspace.mathbase;
 
-public class Integr implements Domain{
+public class Real implements Field, Domain{
 	
-	val TypeExpression rep=new TypeExpression(TYPE::INT);
+	val TypeExpression rep=new TypeExpression(TYPE::REAL);
 
     override TypeExpression getRep(){
     	rep
     }
     
-    /**
-     * value constructor for int literal
-     */
-	def Expression integr(int i){
-		return new Expression(i,this);
+	def Expression real(double d){
+		return new Expression(d,this);
 	}
 
-    /**
-     * value constructor for symbolic int
-     */
-	def Expression integr(String i){
-		return new Expression(i,this);
+	override Expression add(Expression a,Expression b){
+		return new Expression(a.realValue+b.realValue,this);
 	}
 
-	def Expression add(Expression a,Expression b){
-		return new Expression("+",a,b);
+	override Expression multiply(Expression a,Expression b){
+		return new Expression(a.realValue*b.realValue,this);
 	}
 
-	def Expression multiply(Expression a,Expression b){
-		return new Expression(a.intValue*b.intValue,this);
-	}
-
-	def int coerce(Expression a){
-		return a.intValue;
+	def double coerce(Expression a){
+		return a.realValue;
 	}
 }

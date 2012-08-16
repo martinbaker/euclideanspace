@@ -20,29 +20,51 @@ package com.euclideanspace.mathbase
 
 import java.util.List
 
-public class Vect {
+public class Vect implements Domain {
 	
-	val TypeExpression te;
+	val Field te;
     val int dimen;
+	var List<TypeExpression> rep1
+	var TypeExpression rep
     
-	new(TypeExpression t,int d){
+	new(Field t,int d){
 		te=t
 		dimen =d
+	    rep1=newArrayList(te.getRep())
+	    rep=new TypeExpression(TYPE::RECORD,rep1);
 	}
-	
-	val List<TypeExpression> rep1=newArrayList(new TypeExpression(TYPE::INT));
-	val TypeExpression rep=new TypeExpression(TYPE::RECORD,rep1);
 
-	def Expression Vect(int i){
-		return new Expression(i,rep);
+
+    override TypeExpression getRep(){
+    	rep
+    }
+    
+    /**
+     * constructs a compound expression from a list of expressions
+     * representing the elements.
+     * 
+     * How can we ensure these elements are of type 'te' which is 'Field'
+     */
+	def Expression vect(Expression[] xs){
+		return new Expression(xs,this);
 	}
 
 	def Expression add(Expression a,Expression b){
-		return new Expression(a.intValue+b.intValue,rep);
+	  var List<Expression> elements = null;
+	  try {
+	  	for(int i: 0..(dimen-1)) {
+			var Expression element = te.add(a.elt(i),b.elt(i))
+			if (elements == null) elements = newArrayList(element)
+			else elements.add(element)
+		}
+	  } catch (Exception e) {
+	      println("Vect.add error="+e)
+	  }
+	  return new Expression(elements,this);
 	}
 
 	def Expression multiply(Expression a,Expression b){
-		return new Expression(a.intValue*b.intValue,rep);
+		return new Expression(a.intValue*b.intValue,this);
 	}
 
 	def Expression[] coerce(Expression a){

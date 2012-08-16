@@ -18,4 +18,8 @@
 
 package com.euclideanspace.mathbase;
 
-public enum TYPE {INT,REAL,CHAR,STRING,BOOL,SYMBOL,FUNCT,RECORD,UNION,SELF}
+public interface Field extends Catagory {
+		public Expression add(Expression a,Expression b);
+		public Expression multiply(Expression a,Expression b);
+	    public TypeExpression getRep();
+}

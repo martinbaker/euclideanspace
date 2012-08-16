@@ -40,7 +40,7 @@
                id="com.eclipse.mathbase.menus.mathMenu">
             <command
                   commandId="com.eclipse.mathbase.commands.interpretCommand"
-                  mnemonic="S"
+                  mnemonic="I"
                   id="com.eclipse.mathbase.menus.interpretCommand">
             </command>
          </menu>
@@ -52,7 +52,7 @@
             <command
                   commandId="com.eclipse.mathbase.commands.interpretCommand"
                   icon="icons/sample.gif"
-                  tooltip="Say hello world"
+                  tooltip="run interpreter"
                   id="com.eclipse.mathbase.toolbars.sampleCommand">
             </command>
          </toolbar>

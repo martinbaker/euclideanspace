@@ -64,7 +64,7 @@ public class BuilderNewWizard extends Wizard implements INewWizard {
 	public boolean performFinish() {
 	    String projectName = _pageOne.getProjectName();
 	    /** location of project */
-	    URI location = _pageOne.getProjectLocationURI();
+//	    URI location = _pageOne.getProjectLocationURI();
 //	    if (!_pageOne.useDefaults()) {
 //	        location = _pageOne.getProjectLocationURI();
 //	    }

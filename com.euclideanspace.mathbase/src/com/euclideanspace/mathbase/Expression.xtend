@@ -19,6 +19,12 @@
 package com.euclideanspace.mathbase;
 
 /**
+ * Expression has two 'types'.
+ * A low level 'type' just describes what type of data this holds
+ * A high level 'type' describes what it represents.
+ * For example a symbolic integer is held as a string at low level but
+ * at high level that sting represents an integer.
+ * 
  * @Data causes all getters and setters to be generated
  */
 @Data class Expression {
@@ -29,111 +35,153 @@ package com.euclideanspace.mathbase;
 	String stringValue
 	boolean boolValue
 	Expression[] arrayValue
-	TypeExpression typeExp
-
+	TYPE lowType
+    Domain highType
+    
     /*
      * construct expression containing int value
      */
- 	new(int i,TypeExpression te) {
+ 	new(int i,Domain ht) {
 		_intValue=i
 		_realValue=0.0;
 		_charValue='.'.charAt(0) // xtend does not support char literals directly
 		_stringValue="";
 		_boolValue=false;
 		_arrayValue={};
-		_typeExp=te;	
+		_lowType=TYPE::INT;
+		_highType=ht
 	}
 
     /*
      * construct expression containing real(float) value
      */
- 	new(double x,TypeExpression te) {
+ 	new(double x,Domain ht) {
 		_intValue=0
 		_realValue=x;
 		_charValue='.'.charAt(0) // xtend does not support char literals directly
 		_stringValue="";
 		_boolValue=false;
 		_arrayValue={};
-		_typeExp=te;	
+		_lowType=TYPE::REAL;	
+		_highType=ht
 	}
 
     /*
      * construct expression containing char value
      */
- 	new(char c,TypeExpression te) {
+ 	new(char c,Domain ht) {
 		_intValue=0
 		_realValue=0.0;
 		_charValue=c
 		_stringValue="";
 		_boolValue=false;
 		_arrayValue={};
-		_typeExp=te;	
+		_lowType=TYPE::CHAR;	
+		_highType=ht
 	}
 
     /*
      * construct expression containing string value
      */
- 	new(String s,TypeExpression te) {
+ 	new(String s,Domain ht) {
 		_intValue=0
 		_realValue=0.0;
 		_charValue='.'.charAt(0) // xtend does not support char literals directly
 		_stringValue=s;
 		_boolValue=false;
 		_arrayValue={};
-		_typeExp=te;	
+		_lowType=TYPE::STRING;	
+		_highType=ht
 	}
 
     /*
      * construct expression containing boolean value
      */
- 	new(boolean b,TypeExpression te) {
+ 	new(boolean b,Domain ht) {
 		_intValue=0
 		_realValue=0.0;
 		_charValue='.'.charAt(0) // xtend does not support char literals directly
 		_stringValue="";
 		_boolValue=b;
 		_arrayValue={};
-		_typeExp=te;	
+		_lowType=TYPE::BOOL;	
+		_highType=ht
 	}
 
     /*
      * construct expression containing compound value
      */
- 	new(Expression[] e,TypeExpression te) {
+ 	new(Expression[] e,Domain ht) {
 		_intValue=0
 		_realValue=0.0;
 		_charValue='.'.charAt(0) // xtend does not support char literals directly
 		_stringValue="";
 		_boolValue=false;
 		_arrayValue=e;
-		_typeExp=te;	
+		_lowType=TYPE::FUNCT;	
+		_highType=ht
 	}
 
-    /*
-     * construct expression containing compound value with select strings
-     */
- 	new(Expression[] e,String[] sa,TypeExpression te) {
-		_intValue=0
-		_realValue=0.0;
-		_charValue='.'.charAt(0) // xtend does not support char literals directly
-		_stringValue="";
-		_boolValue=false;
-		_arrayValue=e;
-		_typeExp=te;	
-	}
+ /**
+  * construct a function
+  * or for some functions/operands we may apply the function
+  */
+ new(String s,Expression a,Expression b){
+ 	if (a.isNumeric() && b.isNumeric()) {
+ 	  _intValue=a.intValue + b.intValue
+ 	  _realValue=a.realValue + b.realValue
+ 	  _arrayValue={}
+	  _stringValue="";
+ 	} else {
+ 	  _intValue=0
+	  _realValue=0.0
+	  _arrayValue=newArrayList(a,b)
+	  _stringValue=s;
+ 	}
+ 	_charValue='.'.charAt(0) // xtend does not support char literals directly
+	_boolValue=false;
+	_lowType=TYPE::INT;	
+	_highType=a.highType
+ }
+
+ def boolean isNumeric() {
+ 	if (stringValue == null) return true
+ 	stringValue.equals("")
+ }
+
+ def Expression elt(int i){
+ 	if (arrayValue == null) return null
+ 	arrayValue.get(i)
+ }
+
+  def String stringArray(){
+ 		var strVal = stringValue+"(";
+ 		var follow = false;
+ 		for (Expression a:arrayValue){
+ 			if (follow) strVal = strVal + ","
+ 			strVal = strVal + a
+ 			follow = true
+ 		}
+ 	 	strVal+")";
+  }
 
  override String toString() {
- 	switch typeExp {
- 		case typeExp.type == TYPE::INT: ""+intValue
- 		case typeExp.type == TYPE::REAL: ""+realValue
- 		case typeExp.type == TYPE::CHAR: ""+charValue
- 		case typeExp.type == TYPE::STRING: stringValue
- 		case typeExp.type == TYPE::BOOL: ""+boolValue
- 		case typeExp.type == TYPE::SYMBOL: ""+stringValue
- 		case typeExp.type == TYPE::FUNCT: ""+arrayValue
- 		case typeExp.type == TYPE::RECORD: ""+arrayValue
- 		case typeExp.type == TYPE::UNION: ""+arrayValue
- 		case typeExp.type == TYPE::SELF: "*"
+ 	// first check for function or symbolic value 
+ 	if (stringValue != null) if (! stringValue.equals("")) {
+ 		if (arrayValue == null) return stringValue;
+ 	 	return stringValue+stringArray();
+ 	}
+ 	switch lowType {
+ 		case TYPE::INT: ""+intValue
+ 		case TYPE::REAL: ""+realValue
+ 		case TYPE::CHAR: ""+charValue
+ 		case TYPE::STRING: stringValue
+ 		case TYPE::BOOL: ""+boolValue
+ 		case TYPE::SYMBOL: ""+stringValue
+ 		case TYPE::FUNCT: ""+stringArray()
+ 		case TYPE::RECORD: ""+stringArray()
+ 		case TYPE::UNION: ""+stringArray()
+ 		case TYPE::SELF: "*"
  		default: "error"
  	}
   }
