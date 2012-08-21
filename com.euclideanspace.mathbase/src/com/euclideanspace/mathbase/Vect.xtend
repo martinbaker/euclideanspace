@@ -49,11 +49,11 @@ public class Vect implements Domain {
 		return new Expression(xs,this);
 	}
 
-	def Expression add(Expression a,Expression b){
+	def Expression operator_plus(Expression a,Expression b){
 	  var List<Expression> elements = null;
 	  try {
 	  	for(int i: 0..(dimen-1)) {
-			var Expression element = te.add(a.elt(i),b.elt(i))
+			var Expression element = te.operator_plus(a.elt(i),b.elt(i))
 			if (elements == null) elements = newArrayList(element)
 			else elements.add(element)
 		}
@@ -63,7 +63,7 @@ public class Vect implements Domain {
 	  return new Expression(elements,this);
 	}
 
-	def Expression multiply(Expression a,Expression b){
+	def Expression operator_multiply(Expression a,Expression b){
 		return new Expression(a.intValue*b.intValue,this);
 	}
 

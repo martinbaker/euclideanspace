@@ -19,7 +19,25 @@
 package com.euclideanspace.mathbase;
 
 public interface Field extends Catagory {
-		public Expression add(Expression a,Expression b);
-		public Expression multiply(Expression a,Expression b);
-	    public TypeExpression getRep();
+	/**
+	 * virtual function to add two fields together, I have used the name
+	 * operator_plus to give the possibility of using infix notation in
+	 * the future but this only works like this:
+	 * a.operator_plus(b) not in a static form as at present.
+	 * @param a
+	 * @param b
+	 * @return
+	 */
+	public Expression operator_plus(Expression a,Expression b);
+	/**
+	 * virtual function to multiply two fields together, I have used the name
+	 * operator_multiply to give the possibility of using infix notation in
+	 * the future but this only works like this:
+	 * a.operator_multiply(b) not in a static form as at present.
+	 * @param a
+	 * @param b
+	 * @return
+	 */
+	public Expression operator_multiply(Expression a,Expression b);
+	public TypeExpression getRep();
 }

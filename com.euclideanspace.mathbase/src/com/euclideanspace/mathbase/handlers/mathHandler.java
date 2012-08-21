@@ -49,7 +49,7 @@ public class mathHandler extends AbstractHandler {
 		Expression[] fys={fya,fyb};
 		Expression fy=V.vect(fys);
 		System.out.println("vector fy="+fy);
-		System.out.println("vector x+y="+V.add(fx,fy));
+		System.out.println("vector x+y="+V.operator_plus(fx,fy));
 		return null;
 	}
 }

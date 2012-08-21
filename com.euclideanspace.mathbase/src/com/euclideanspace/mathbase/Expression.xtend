@@ -18,6 +18,8 @@
 
 package com.euclideanspace.mathbase;
 
+//import java.lang.Double
+
 /**
  * Expression has two 'types'.
  * A low level 'type' just describes what type of data this holds
@@ -27,16 +29,16 @@ package com.euclideanspace.mathbase;
  * 
  * @Data causes all getters and setters to be generated
  */
-@Data class Expression {
+class Expression {
 
-	int intValue
-	double realValue
-	char charValue
-	String stringValue
-	boolean boolValue
-	Expression[] arrayValue
-	TYPE lowType
-    Domain highType
+	@Property int intValue
+	@Property double realValue
+	@Property char charValue
+	@Property String stringValue
+	@Property boolean boolValue
+	@Property Expression[] arrayValue
+	@Property TYPE lowType
+    @Property Domain highType
     
     /*
      * construct expression containing int value
@@ -185,4 +187,59 @@ package com.euclideanspace.mathbase;
  		default: "error"
  	}
   }
+  
+
+  override int hashCode() {
+    val int prime = 31;
+    var int result = 1;
+    result = prime * result + _intValue;
+    //result = prime * result + (int) (Double.doubleToLongBits(_realValue) ^ (Double.doubleToLongBits(_realValue) >>> 32));
+    result = prime * result + _charValue;
+    //result = prime * result + ((_stringValue== null) ? 0 : _stringValue.hashCode());
+    //result = prime * result + (_boolValue ? 1231 : 1237);
+    //result = prime * result + ((_arrayValue== null) ? 0 : _arrayValue.hashCode());
+    //result = prime * result + ((_lowType== null) ? 0 : _lowType.hashCode());
+    //result = prime * result + ((_highType== null) ? 0 : _highType.hashCode());
+    return result;
+  }
+  
+  override boolean equals(Object obj) {
+    if (this == obj)
+      return true;
+    if (obj == null)
+      return false;
+    if (getClass() != obj.getClass())
+      return false;
+    var Expression other = obj as Expression;
+    if (other._intValue != _intValue)
+      return false;
+//    if (Double.doubleToLongBits(other._realValue) != Double.doubleToLongBits(_realValue))
+//      return false;
+    if (other._charValue != _charValue)
+      return false;
+    if (_stringValue == null) {
+      if (other._stringValue != null)
+        return false;
+    } else if (!_stringValue.equals(other._stringValue))
+      return false;
+    if (other._boolValue != _boolValue)
+      return false;
+    if (_arrayValue == null) {
+      if (other._arrayValue != null)
+        return false;
+    } else if (!_arrayValue.equals(other._arrayValue))
+      return false;
+    if (_lowType == null) {
+      if (other._lowType != null)
+        return false;
+    } else if (!_lowType.equals(other._lowType))
+      return false;
+    if (_highType == null) {
+      if (other._highType != null)
+        return false;
+    } else if (!_highType.equals(other._highType))
+      return false;
+    return true;
+  }
+  
 }
