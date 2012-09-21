@@ -37,6 +37,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link com.euclideanspace.spad.editor.impl.FunctionDefinitionBlockImpl#getT1 <em>T1</em>}</li>
  *   <li>{@link com.euclideanspace.spad.editor.impl.FunctionDefinitionBlockImpl#getT13 <em>T13</em>}</li>
  *   <li>{@link com.euclideanspace.spad.editor.impl.FunctionDefinitionBlockImpl#getT14 <em>T14</em>}</li>
+ *   <li>{@link com.euclideanspace.spad.editor.impl.FunctionDefinitionBlockImpl#getE <em>E</em>}</li>
  * </ul>
  * </p>
  *
@@ -113,6 +114,16 @@ public class FunctionDefinitionBlockImpl extends MinimalEObjectImpl.Container im
    * @ordered
    */
   protected EList<FunctionDefinitionBlock> t14;
+
+  /**
+   * The cached value of the '{@link #getE() <em>E</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getE()
+   * @generated
+   * @ordered
+   */
+  protected Expr e;
 
   /**
    * <!-- begin-user-doc -->
@@ -233,6 +244,54 @@ public class FunctionDefinitionBlockImpl extends MinimalEObjectImpl.Container im
    * <!-- end-user-doc -->
    * @generated
    */
+  public Expr getE()
+  {
+    return e;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetE(Expr newE, NotificationChain msgs)
+  {
+    Expr oldE = e;
+    e = newE;
+    if (eNotificationRequired())
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, EditorPackage.FUNCTION_DEFINITION_BLOCK__E, oldE, newE);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setE(Expr newE)
+  {
+    if (newE != e)
+    {
+      NotificationChain msgs = null;
+      if (e != null)
+        msgs = ((InternalEObject)e).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - EditorPackage.FUNCTION_DEFINITION_BLOCK__E, null, msgs);
+      if (newE != null)
+        msgs = ((InternalEObject)newE).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - EditorPackage.FUNCTION_DEFINITION_BLOCK__E, null, msgs);
+      msgs = basicSetE(newE, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, EditorPackage.FUNCTION_DEFINITION_BLOCK__E, newE, newE));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
@@ -248,6 +307,8 @@ public class FunctionDefinitionBlockImpl extends MinimalEObjectImpl.Container im
         return ((InternalEList<?>)getT13()).basicRemove(otherEnd, msgs);
       case EditorPackage.FUNCTION_DEFINITION_BLOCK__T14:
         return ((InternalEList<?>)getT14()).basicRemove(otherEnd, msgs);
+      case EditorPackage.FUNCTION_DEFINITION_BLOCK__E:
+        return basicSetE(null, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -274,6 +335,8 @@ public class FunctionDefinitionBlockImpl extends MinimalEObjectImpl.Container im
         return getT13();
       case EditorPackage.FUNCTION_DEFINITION_BLOCK__T14:
         return getT14();
+      case EditorPackage.FUNCTION_DEFINITION_BLOCK__E:
+        return getE();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -312,6 +375,9 @@ public class FunctionDefinitionBlockImpl extends MinimalEObjectImpl.Container im
         getT14().clear();
         getT14().addAll((Collection<? extends FunctionDefinitionBlock>)newValue);
         return;
+      case EditorPackage.FUNCTION_DEFINITION_BLOCK__E:
+        setE((Expr)newValue);
+        return;
     }
     super.eSet(featureID, newValue);
   }
@@ -344,6 +410,9 @@ public class FunctionDefinitionBlockImpl extends MinimalEObjectImpl.Container im
       case EditorPackage.FUNCTION_DEFINITION_BLOCK__T14:
         getT14().clear();
         return;
+      case EditorPackage.FUNCTION_DEFINITION_BLOCK__E:
+        setE((Expr)null);
+        return;
     }
     super.eUnset(featureID);
   }
@@ -370,6 +439,8 @@ public class FunctionDefinitionBlockImpl extends MinimalEObjectImpl.Container im
         return t13 != null && !t13.isEmpty();
       case EditorPackage.FUNCTION_DEFINITION_BLOCK__T14:
         return t14 != null && !t14.isEmpty();
+      case EditorPackage.FUNCTION_DEFINITION_BLOCK__E:
+        return e != null;
     }
     return super.eIsSet(featureID);
   }

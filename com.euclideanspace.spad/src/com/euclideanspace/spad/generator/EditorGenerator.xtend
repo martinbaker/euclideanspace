@@ -206,7 +206,7 @@ class EditorGenerator implements IGenerator {
        compile(f as MacroDef)» «ENDIF»«
         IF f.t1 != null»if(«compile(f.t1)»)«ENDIF»«
         IF f.t13 != null»then«compile(f.t13)»«ENDIF»«
-        IF f.t14 != null»else«compile(f.t14)»«ENDIF»
+        IF f.t15 != null»else«compile(f.t15)»«ENDIF»
         '''
 
     /* FunctionDefinition 

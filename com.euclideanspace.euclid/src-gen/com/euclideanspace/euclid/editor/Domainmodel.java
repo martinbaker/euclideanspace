@@ -15,7 +15,7 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * <ul>
  *   <li>{@link com.euclideanspace.euclid.editor.Domainmodel#getPackages <em>Packages</em>}</li>
- *   <li>{@link com.euclideanspace.euclid.editor.Domainmodel#getImportss <em>Importss</em>}</li>
+ *   <li>{@link com.euclideanspace.euclid.editor.Domainmodel#getImports <em>Imports</em>}</li>
  *   <li>{@link com.euclideanspace.euclid.editor.Domainmodel#getClasses <em>Classes</em>}</li>
  * </ul>
  * </p>
@@ -43,20 +43,20 @@ public interface Domainmodel extends EObject
   EList<PackageDeclaration> getPackages();
 
   /**
-   * Returns the value of the '<em><b>Importss</b></em>' containment reference list.
+   * Returns the value of the '<em><b>Imports</b></em>' containment reference list.
    * The list contents are of type {@link com.euclideanspace.euclid.editor.Import}.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Importss</em>' containment reference list isn't clear,
+   * If the meaning of the '<em>Imports</em>' containment reference list isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Importss</em>' containment reference list.
-   * @see com.euclideanspace.euclid.editor.EditorPackage#getDomainmodel_Importss()
+   * @return the value of the '<em>Imports</em>' containment reference list.
+   * @see com.euclideanspace.euclid.editor.EditorPackage#getDomainmodel_Imports()
    * @model containment="true"
    * @generated
    */
-  EList<Import> getImportss();
+  EList<Import> getImports();
 
   /**
    * Returns the value of the '<em><b>Classes</b></em>' containment reference list.

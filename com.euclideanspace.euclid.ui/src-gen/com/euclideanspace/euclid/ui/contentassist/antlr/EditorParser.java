@@ -225,7 +225,7 @@ public class EditorParser extends AbstractContentAssistParser {
 					put(grammarAccess.getJvmTypeParameterAccess().getGroup(), "rule__JvmTypeParameter__Group__0");
 					put(grammarAccess.getJvmTypeParameterAccess().getGroup_1_0(), "rule__JvmTypeParameter__Group_1_0__0");
 					put(grammarAccess.getDomainmodelAccess().getPackagesAssignment_0(), "rule__Domainmodel__PackagesAssignment_0");
-					put(grammarAccess.getDomainmodelAccess().getImportssAssignment_1(), "rule__Domainmodel__ImportssAssignment_1");
+					put(grammarAccess.getDomainmodelAccess().getImportsAssignment_1(), "rule__Domainmodel__ImportsAssignment_1");
 					put(grammarAccess.getDomainmodelAccess().getClassesAssignment_2(), "rule__Domainmodel__ClassesAssignment_2");
 					put(grammarAccess.getPackageDeclarationAccess().getNameAssignment_1(), "rule__PackageDeclaration__NameAssignment_1");
 					put(grammarAccess.getImportAccess().getImportedNamespaceAssignment_1(), "rule__Import__ImportedNamespaceAssignment_1");

@@ -29,7 +29,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * The following features are implemented:
  * <ul>
  *   <li>{@link com.euclideanspace.euclid.editor.impl.DomainmodelImpl#getPackages <em>Packages</em>}</li>
- *   <li>{@link com.euclideanspace.euclid.editor.impl.DomainmodelImpl#getImportss <em>Importss</em>}</li>
+ *   <li>{@link com.euclideanspace.euclid.editor.impl.DomainmodelImpl#getImports <em>Imports</em>}</li>
  *   <li>{@link com.euclideanspace.euclid.editor.impl.DomainmodelImpl#getClasses <em>Classes</em>}</li>
  * </ul>
  * </p>
@@ -49,14 +49,14 @@ public class DomainmodelImpl extends MinimalEObjectImpl.Container implements Dom
   protected EList<PackageDeclaration> packages;
 
   /**
-   * The cached value of the '{@link #getImportss() <em>Importss</em>}' containment reference list.
+   * The cached value of the '{@link #getImports() <em>Imports</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getImportss()
+   * @see #getImports()
    * @generated
    * @ordered
    */
-  protected EList<Import> importss;
+  protected EList<Import> imports;
 
   /**
    * The cached value of the '{@link #getClasses() <em>Classes</em>}' containment reference list.
@@ -108,13 +108,13 @@ public class DomainmodelImpl extends MinimalEObjectImpl.Container implements Dom
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<Import> getImportss()
+  public EList<Import> getImports()
   {
-    if (importss == null)
+    if (imports == null)
     {
-      importss = new EObjectContainmentEList<Import>(Import.class, this, EditorPackage.DOMAINMODEL__IMPORTSS);
+      imports = new EObjectContainmentEList<Import>(Import.class, this, EditorPackage.DOMAINMODEL__IMPORTS);
     }
-    return importss;
+    return imports;
   }
 
   /**
@@ -143,8 +143,8 @@ public class DomainmodelImpl extends MinimalEObjectImpl.Container implements Dom
     {
       case EditorPackage.DOMAINMODEL__PACKAGES:
         return ((InternalEList<?>)getPackages()).basicRemove(otherEnd, msgs);
-      case EditorPackage.DOMAINMODEL__IMPORTSS:
-        return ((InternalEList<?>)getImportss()).basicRemove(otherEnd, msgs);
+      case EditorPackage.DOMAINMODEL__IMPORTS:
+        return ((InternalEList<?>)getImports()).basicRemove(otherEnd, msgs);
       case EditorPackage.DOMAINMODEL__CLASSES:
         return ((InternalEList<?>)getClasses()).basicRemove(otherEnd, msgs);
     }
@@ -163,8 +163,8 @@ public class DomainmodelImpl extends MinimalEObjectImpl.Container implements Dom
     {
       case EditorPackage.DOMAINMODEL__PACKAGES:
         return getPackages();
-      case EditorPackage.DOMAINMODEL__IMPORTSS:
-        return getImportss();
+      case EditorPackage.DOMAINMODEL__IMPORTS:
+        return getImports();
       case EditorPackage.DOMAINMODEL__CLASSES:
         return getClasses();
     }
@@ -186,9 +186,9 @@ public class DomainmodelImpl extends MinimalEObjectImpl.Container implements Dom
         getPackages().clear();
         getPackages().addAll((Collection<? extends PackageDeclaration>)newValue);
         return;
-      case EditorPackage.DOMAINMODEL__IMPORTSS:
-        getImportss().clear();
-        getImportss().addAll((Collection<? extends Import>)newValue);
+      case EditorPackage.DOMAINMODEL__IMPORTS:
+        getImports().clear();
+        getImports().addAll((Collection<? extends Import>)newValue);
         return;
       case EditorPackage.DOMAINMODEL__CLASSES:
         getClasses().clear();
@@ -211,8 +211,8 @@ public class DomainmodelImpl extends MinimalEObjectImpl.Container implements Dom
       case EditorPackage.DOMAINMODEL__PACKAGES:
         getPackages().clear();
         return;
-      case EditorPackage.DOMAINMODEL__IMPORTSS:
-        getImportss().clear();
+      case EditorPackage.DOMAINMODEL__IMPORTS:
+        getImports().clear();
         return;
       case EditorPackage.DOMAINMODEL__CLASSES:
         getClasses().clear();
@@ -233,8 +233,8 @@ public class DomainmodelImpl extends MinimalEObjectImpl.Container implements Dom
     {
       case EditorPackage.DOMAINMODEL__PACKAGES:
         return packages != null && !packages.isEmpty();
-      case EditorPackage.DOMAINMODEL__IMPORTSS:
-        return importss != null && !importss.isEmpty();
+      case EditorPackage.DOMAINMODEL__IMPORTS:
+        return imports != null && !imports.isEmpty();
       case EditorPackage.DOMAINMODEL__CLASSES:
         return classes != null && !classes.isEmpty();
     }

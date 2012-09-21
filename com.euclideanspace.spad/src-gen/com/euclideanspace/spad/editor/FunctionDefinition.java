@@ -14,6 +14,7 @@ package com.euclideanspace.spad.editor;
  *   <li>{@link com.euclideanspace.spad.editor.FunctionDefinition#getPar3 <em>Par3</em>}</li>
  *   <li>{@link com.euclideanspace.spad.editor.FunctionDefinition#getPar4 <em>Par4</em>}</li>
  *   <li>{@link com.euclideanspace.spad.editor.FunctionDefinition#getPar5 <em>Par5</em>}</li>
+ *   <li>{@link com.euclideanspace.spad.editor.FunctionDefinition#getFnNam <em>Fn Nam</em>}</li>
  * </ul>
  * </p>
  *
@@ -100,5 +101,31 @@ public interface FunctionDefinition extends AddStatements
    * @generated
    */
   void setPar5(Statement value);
+
+  /**
+   * Returns the value of the '<em><b>Fn Nam</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Fn Nam</em>' attribute isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Fn Nam</em>' attribute.
+   * @see #setFnNam(String)
+   * @see com.euclideanspace.spad.editor.EditorPackage#getFunctionDefinition_FnNam()
+   * @model
+   * @generated
+   */
+  String getFnNam();
+
+  /**
+   * Sets the value of the '{@link com.euclideanspace.spad.editor.FunctionDefinition#getFnNam <em>Fn Nam</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Fn Nam</em>' attribute.
+   * @see #getFnNam()
+   * @generated
+   */
+  void setFnNam(String value);
 
 } // FunctionDefinition

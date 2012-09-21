@@ -3081,9 +3081,9 @@ rule__Domainmodel__Group__1__Impl
     }
 :
 (
-{ before(grammarAccess.getDomainmodelAccess().getImportssAssignment_1()); }
-(rule__Domainmodel__ImportssAssignment_1)*
-{ after(grammarAccess.getDomainmodelAccess().getImportssAssignment_1()); }
+{ before(grammarAccess.getDomainmodelAccess().getImportsAssignment_1()); }
+(rule__Domainmodel__ImportsAssignment_1)*
+{ after(grammarAccess.getDomainmodelAccess().getImportsAssignment_1()); }
 )
 
 ;
@@ -15050,14 +15050,14 @@ finally {
 	restoreStackSize(stackSize);
 }
 
-rule__Domainmodel__ImportssAssignment_1
+rule__Domainmodel__ImportsAssignment_1
     @init {
 		int stackSize = keepStackSize();
     }
 :
 (
-{ before(grammarAccess.getDomainmodelAccess().getImportssImportParserRuleCall_1_0()); }
-	ruleImport{ after(grammarAccess.getDomainmodelAccess().getImportssImportParserRuleCall_1_0()); }
+{ before(grammarAccess.getDomainmodelAccess().getImportsImportParserRuleCall_1_0()); }
+	ruleImport{ after(grammarAccess.getDomainmodelAccess().getImportsImportParserRuleCall_1_0()); }
 )
 
 ;

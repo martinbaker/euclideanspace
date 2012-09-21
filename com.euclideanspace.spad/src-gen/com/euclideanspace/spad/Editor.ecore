@@ -93,6 +93,8 @@
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="t14" eType="#//FunctionDefinitionBlock"
         containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="t15" eType="#//AddStatements"
+        containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="FunctionDefinition" eSuperTypes="#//AddStatements">
     <eStructuralFeatures xsi:type="ecore:EReference" name="par3" eType="#//FunctionSignature"
@@ -101,6 +103,7 @@
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="par5" eType="#//Statement"
         containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="fnNam" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="FunctionDefinitionBlock">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="fnDecBr" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -114,6 +117,7 @@
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="t14" upperBound="-1" eType="#//FunctionDefinitionBlock"
         containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="e" eType="#//Expr" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="FunctionSignature">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="fnNam" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -337,6 +341,7 @@
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="s10" eType="#//ReturnStatement"
         containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="e" eType="#//Expr" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Block">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="stname" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>

@@ -35,6 +35,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link com.euclideanspace.spad.editor.impl.ImportImpl#getT1 <em>T1</em>}</li>
  *   <li>{@link com.euclideanspace.spad.editor.impl.ImportImpl#getT13 <em>T13</em>}</li>
  *   <li>{@link com.euclideanspace.spad.editor.impl.ImportImpl#getT14 <em>T14</em>}</li>
+ *   <li>{@link com.euclideanspace.spad.editor.impl.ImportImpl#getT15 <em>T15</em>}</li>
  *   <li>{@link com.euclideanspace.spad.editor.impl.ImportImpl#getImpname <em>Impname</em>}</li>
  *   <li>{@link com.euclideanspace.spad.editor.impl.ImportImpl#getPar22 <em>Par22</em>}</li>
  * </ul>
@@ -73,6 +74,16 @@ public class ImportImpl extends WhereAssignmentsImpl implements Import
    * @ordered
    */
   protected FunctionDefinitionBlock t14;
+
+  /**
+   * The cached value of the '{@link #getT15() <em>T15</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getT15()
+   * @generated
+   * @ordered
+   */
+  protected AddStatements t15;
 
   /**
    * The cached value of the '{@link #getImpname() <em>Impname</em>}' attribute list.
@@ -264,6 +275,54 @@ public class ImportImpl extends WhereAssignmentsImpl implements Import
    * <!-- end-user-doc -->
    * @generated
    */
+  public AddStatements getT15()
+  {
+    return t15;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetT15(AddStatements newT15, NotificationChain msgs)
+  {
+    AddStatements oldT15 = t15;
+    t15 = newT15;
+    if (eNotificationRequired())
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, EditorPackage.IMPORT__T15, oldT15, newT15);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setT15(AddStatements newT15)
+  {
+    if (newT15 != t15)
+    {
+      NotificationChain msgs = null;
+      if (t15 != null)
+        msgs = ((InternalEObject)t15).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - EditorPackage.IMPORT__T15, null, msgs);
+      if (newT15 != null)
+        msgs = ((InternalEObject)newT15).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - EditorPackage.IMPORT__T15, null, msgs);
+      msgs = basicSetT15(newT15, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, EditorPackage.IMPORT__T15, newT15, newT15));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EList<String> getImpname()
   {
     if (impname == null)
@@ -303,6 +362,8 @@ public class ImportImpl extends WhereAssignmentsImpl implements Import
         return basicSetT13(null, msgs);
       case EditorPackage.IMPORT__T14:
         return basicSetT14(null, msgs);
+      case EditorPackage.IMPORT__T15:
+        return basicSetT15(null, msgs);
       case EditorPackage.IMPORT__PAR22:
         return ((InternalEList<?>)getPar22()).basicRemove(otherEnd, msgs);
     }
@@ -325,6 +386,8 @@ public class ImportImpl extends WhereAssignmentsImpl implements Import
         return getT13();
       case EditorPackage.IMPORT__T14:
         return getT14();
+      case EditorPackage.IMPORT__T15:
+        return getT15();
       case EditorPackage.IMPORT__IMPNAME:
         return getImpname();
       case EditorPackage.IMPORT__PAR22:
@@ -352,6 +415,9 @@ public class ImportImpl extends WhereAssignmentsImpl implements Import
         return;
       case EditorPackage.IMPORT__T14:
         setT14((FunctionDefinitionBlock)newValue);
+        return;
+      case EditorPackage.IMPORT__T15:
+        setT15((AddStatements)newValue);
         return;
       case EditorPackage.IMPORT__IMPNAME:
         getImpname().clear();
@@ -384,6 +450,9 @@ public class ImportImpl extends WhereAssignmentsImpl implements Import
       case EditorPackage.IMPORT__T14:
         setT14((FunctionDefinitionBlock)null);
         return;
+      case EditorPackage.IMPORT__T15:
+        setT15((AddStatements)null);
+        return;
       case EditorPackage.IMPORT__IMPNAME:
         getImpname().clear();
         return;
@@ -410,6 +479,8 @@ public class ImportImpl extends WhereAssignmentsImpl implements Import
         return t13 != null;
       case EditorPackage.IMPORT__T14:
         return t14 != null;
+      case EditorPackage.IMPORT__T15:
+        return t15 != null;
       case EditorPackage.IMPORT__IMPNAME:
         return impname != null && !impname.isEmpty();
       case EditorPackage.IMPORT__PAR22:
@@ -433,6 +504,7 @@ public class ImportImpl extends WhereAssignmentsImpl implements Import
         case EditorPackage.IMPORT__T1: return EditorPackage.ADD_STATEMENTS__T1;
         case EditorPackage.IMPORT__T13: return EditorPackage.ADD_STATEMENTS__T13;
         case EditorPackage.IMPORT__T14: return EditorPackage.ADD_STATEMENTS__T14;
+        case EditorPackage.IMPORT__T15: return EditorPackage.ADD_STATEMENTS__T15;
         default: return -1;
       }
     }
@@ -454,6 +526,7 @@ public class ImportImpl extends WhereAssignmentsImpl implements Import
         case EditorPackage.ADD_STATEMENTS__T1: return EditorPackage.IMPORT__T1;
         case EditorPackage.ADD_STATEMENTS__T13: return EditorPackage.IMPORT__T13;
         case EditorPackage.ADD_STATEMENTS__T14: return EditorPackage.IMPORT__T14;
+        case EditorPackage.ADD_STATEMENTS__T15: return EditorPackage.IMPORT__T15;
         default: return -1;
       }
     }

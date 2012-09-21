@@ -76,13 +76,13 @@ public interface EditorPackage extends EPackage
   int DOMAINMODEL__PACKAGES = 0;
 
   /**
-   * The feature id for the '<em><b>Importss</b></em>' containment reference list.
+   * The feature id for the '<em><b>Imports</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int DOMAINMODEL__IMPORTSS = 1;
+  int DOMAINMODEL__IMPORTS = 1;
 
   /**
    * The feature id for the '<em><b>Classes</b></em>' containment reference list.
@@ -438,15 +438,15 @@ public interface EditorPackage extends EPackage
   EReference getDomainmodel_Packages();
 
   /**
-   * Returns the meta object for the containment reference list '{@link com.euclideanspace.euclid.editor.Domainmodel#getImportss <em>Importss</em>}'.
+   * Returns the meta object for the containment reference list '{@link com.euclideanspace.euclid.editor.Domainmodel#getImports <em>Imports</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Importss</em>'.
-   * @see com.euclideanspace.euclid.editor.Domainmodel#getImportss()
+   * @return the meta object for the containment reference list '<em>Imports</em>'.
+   * @see com.euclideanspace.euclid.editor.Domainmodel#getImports()
    * @see #getDomainmodel()
    * @generated
    */
-  EReference getDomainmodel_Importss();
+  EReference getDomainmodel_Imports();
 
   /**
    * Returns the meta object for the containment reference list '{@link com.euclideanspace.euclid.editor.Domainmodel#getClasses <em>Classes</em>}'.
@@ -791,12 +791,12 @@ public interface EditorPackage extends EPackage
     EReference DOMAINMODEL__PACKAGES = eINSTANCE.getDomainmodel_Packages();
 
     /**
-     * The meta object literal for the '<em><b>Importss</b></em>' containment reference list feature.
+     * The meta object literal for the '<em><b>Imports</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference DOMAINMODEL__IMPORTSS = eINSTANCE.getDomainmodel_Importss();
+    EReference DOMAINMODEL__IMPORTS = eINSTANCE.getDomainmodel_Imports();
 
     /**
      * The meta object literal for the '<em><b>Classes</b></em>' containment reference list feature.

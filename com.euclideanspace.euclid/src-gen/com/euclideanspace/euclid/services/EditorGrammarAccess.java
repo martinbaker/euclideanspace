@@ -25,16 +25,16 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Assignment cPackagesAssignment_0 = (Assignment)cGroup.eContents().get(0);
 		private final RuleCall cPackagesPackageDeclarationParserRuleCall_0_0 = (RuleCall)cPackagesAssignment_0.eContents().get(0);
-		private final Assignment cImportssAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cImportssImportParserRuleCall_1_0 = (RuleCall)cImportssAssignment_1.eContents().get(0);
+		private final Assignment cImportsAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cImportsImportParserRuleCall_1_0 = (RuleCall)cImportsAssignment_1.eContents().get(0);
 		private final Assignment cClassesAssignment_2 = (Assignment)cGroup.eContents().get(2);
 		private final RuleCall cClassesClassParserRuleCall_2_0 = (RuleCall)cClassesAssignment_2.eContents().get(0);
 		
 		//Domainmodel:
-		//	packages+=PackageDeclaration* importss+=Import* classes+=Class*;
+		//	packages+=PackageDeclaration* imports+=Import* classes+=Class*;
 		public ParserRule getRule() { return rule; }
 
-		//packages+=PackageDeclaration* importss+=Import* classes+=Class*
+		//packages+=PackageDeclaration* imports+=Import* classes+=Class*
 		public Group getGroup() { return cGroup; }
 
 		//packages+=PackageDeclaration*
@@ -43,11 +43,11 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		//PackageDeclaration
 		public RuleCall getPackagesPackageDeclarationParserRuleCall_0_0() { return cPackagesPackageDeclarationParserRuleCall_0_0; }
 
-		//importss+=Import*
-		public Assignment getImportssAssignment_1() { return cImportssAssignment_1; }
+		//imports+=Import*
+		public Assignment getImportsAssignment_1() { return cImportsAssignment_1; }
 
 		//Import
-		public RuleCall getImportssImportParserRuleCall_1_0() { return cImportssImportParserRuleCall_1_0; }
+		public RuleCall getImportsImportParserRuleCall_1_0() { return cImportsImportParserRuleCall_1_0; }
 
 		//classes+=Class*
 		public Assignment getClassesAssignment_2() { return cClassesAssignment_2; }
@@ -472,7 +472,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 
 	
 	//Domainmodel:
-	//	packages+=PackageDeclaration* importss+=Import* classes+=Class*;
+	//	packages+=PackageDeclaration* imports+=Import* classes+=Class*;
 	public DomainmodelElements getDomainmodelAccess() {
 		return (pDomainmodel != null) ? pDomainmodel : (pDomainmodel = new DomainmodelElements());
 	}

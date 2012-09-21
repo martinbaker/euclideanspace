@@ -55,8 +55,8 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
     public static final int T__58=58;
     public static final int T__16=16;
     public static final int T__51=51;
-    public static final int T__15=15;
     public static final int T__52=52;
+    public static final int T__15=15;
     public static final int T__53=53;
     public static final int T__18=18;
     public static final int T__54=54;
@@ -183,13 +183,13 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleDomainmodel"
-    // ../com.euclideanspace.euclid/src-gen/com/euclideanspace/euclid/parser/antlr/internal/InternalEditor.g:76:1: ruleDomainmodel returns [EObject current=null] : ( ( (lv_packages_0_0= rulePackageDeclaration ) )* ( (lv_importss_1_0= ruleImport ) )* ( (lv_classes_2_0= ruleClass ) )* ) ;
+    // ../com.euclideanspace.euclid/src-gen/com/euclideanspace/euclid/parser/antlr/internal/InternalEditor.g:76:1: ruleDomainmodel returns [EObject current=null] : ( ( (lv_packages_0_0= rulePackageDeclaration ) )* ( (lv_imports_1_0= ruleImport ) )* ( (lv_classes_2_0= ruleClass ) )* ) ;
     public final EObject ruleDomainmodel() throws RecognitionException {
         EObject current = null;
 
         EObject lv_packages_0_0 = null;
 
-        EObject lv_importss_1_0 = null;
+        EObject lv_imports_1_0 = null;
 
         EObject lv_classes_2_0 = null;
 
@@ -197,11 +197,11 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../com.euclideanspace.euclid/src-gen/com/euclideanspace/euclid/parser/antlr/internal/InternalEditor.g:79:28: ( ( ( (lv_packages_0_0= rulePackageDeclaration ) )* ( (lv_importss_1_0= ruleImport ) )* ( (lv_classes_2_0= ruleClass ) )* ) )
-            // ../com.euclideanspace.euclid/src-gen/com/euclideanspace/euclid/parser/antlr/internal/InternalEditor.g:80:1: ( ( (lv_packages_0_0= rulePackageDeclaration ) )* ( (lv_importss_1_0= ruleImport ) )* ( (lv_classes_2_0= ruleClass ) )* )
+            // ../com.euclideanspace.euclid/src-gen/com/euclideanspace/euclid/parser/antlr/internal/InternalEditor.g:79:28: ( ( ( (lv_packages_0_0= rulePackageDeclaration ) )* ( (lv_imports_1_0= ruleImport ) )* ( (lv_classes_2_0= ruleClass ) )* ) )
+            // ../com.euclideanspace.euclid/src-gen/com/euclideanspace/euclid/parser/antlr/internal/InternalEditor.g:80:1: ( ( (lv_packages_0_0= rulePackageDeclaration ) )* ( (lv_imports_1_0= ruleImport ) )* ( (lv_classes_2_0= ruleClass ) )* )
             {
-            // ../com.euclideanspace.euclid/src-gen/com/euclideanspace/euclid/parser/antlr/internal/InternalEditor.g:80:1: ( ( (lv_packages_0_0= rulePackageDeclaration ) )* ( (lv_importss_1_0= ruleImport ) )* ( (lv_classes_2_0= ruleClass ) )* )
-            // ../com.euclideanspace.euclid/src-gen/com/euclideanspace/euclid/parser/antlr/internal/InternalEditor.g:80:2: ( (lv_packages_0_0= rulePackageDeclaration ) )* ( (lv_importss_1_0= ruleImport ) )* ( (lv_classes_2_0= ruleClass ) )*
+            // ../com.euclideanspace.euclid/src-gen/com/euclideanspace/euclid/parser/antlr/internal/InternalEditor.g:80:1: ( ( (lv_packages_0_0= rulePackageDeclaration ) )* ( (lv_imports_1_0= ruleImport ) )* ( (lv_classes_2_0= ruleClass ) )* )
+            // ../com.euclideanspace.euclid/src-gen/com/euclideanspace/euclid/parser/antlr/internal/InternalEditor.g:80:2: ( (lv_packages_0_0= rulePackageDeclaration ) )* ( (lv_imports_1_0= ruleImport ) )* ( (lv_classes_2_0= ruleClass ) )*
             {
             // ../com.euclideanspace.euclid/src-gen/com/euclideanspace/euclid/parser/antlr/internal/InternalEditor.g:80:2: ( (lv_packages_0_0= rulePackageDeclaration ) )*
             loop1:
@@ -256,7 +256,7 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
                 }
             } while (true);
 
-            // ../com.euclideanspace.euclid/src-gen/com/euclideanspace/euclid/parser/antlr/internal/InternalEditor.g:98:3: ( (lv_importss_1_0= ruleImport ) )*
+            // ../com.euclideanspace.euclid/src-gen/com/euclideanspace/euclid/parser/antlr/internal/InternalEditor.g:98:3: ( (lv_imports_1_0= ruleImport ) )*
             loop2:
             do {
                 int alt2=2;
@@ -269,18 +269,18 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
 
                 switch (alt2) {
             	case 1 :
-            	    // ../com.euclideanspace.euclid/src-gen/com/euclideanspace/euclid/parser/antlr/internal/InternalEditor.g:99:1: (lv_importss_1_0= ruleImport )
+            	    // ../com.euclideanspace.euclid/src-gen/com/euclideanspace/euclid/parser/antlr/internal/InternalEditor.g:99:1: (lv_imports_1_0= ruleImport )
             	    {
-            	    // ../com.euclideanspace.euclid/src-gen/com/euclideanspace/euclid/parser/antlr/internal/InternalEditor.g:99:1: (lv_importss_1_0= ruleImport )
-            	    // ../com.euclideanspace.euclid/src-gen/com/euclideanspace/euclid/parser/antlr/internal/InternalEditor.g:100:3: lv_importss_1_0= ruleImport
+            	    // ../com.euclideanspace.euclid/src-gen/com/euclideanspace/euclid/parser/antlr/internal/InternalEditor.g:99:1: (lv_imports_1_0= ruleImport )
+            	    // ../com.euclideanspace.euclid/src-gen/com/euclideanspace/euclid/parser/antlr/internal/InternalEditor.g:100:3: lv_imports_1_0= ruleImport
             	    {
             	    if ( state.backtracking==0 ) {
             	       
-            	      	        newCompositeNode(grammarAccess.getDomainmodelAccess().getImportssImportParserRuleCall_1_0()); 
+            	      	        newCompositeNode(grammarAccess.getDomainmodelAccess().getImportsImportParserRuleCall_1_0()); 
             	      	    
             	    }
             	    pushFollow(FOLLOW_ruleImport_in_ruleDomainmodel153);
-            	    lv_importss_1_0=ruleImport();
+            	    lv_imports_1_0=ruleImport();
 
             	    state._fsp--;
             	    if (state.failed) return current;
@@ -291,8 +291,8 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
             	      	        }
             	             		add(
             	             			current, 
-            	             			"importss",
-            	              		lv_importss_1_0, 
+            	             			"imports",
+            	              		lv_imports_1_0, 
             	              		"Import");
             	      	        afterParserOrEnumRuleCall();
             	      	    
@@ -17464,11 +17464,11 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
         state.failed=false;
         return success;
     }
-    public final boolean synpred1_InternalEditor() {
+    public final boolean synpred26_InternalEditor() {
         state.backtracking++;
         int start = input.mark();
         try {
-            synpred1_InternalEditor_fragment(); // can never throw exception
+            synpred26_InternalEditor_fragment(); // can never throw exception
         } catch (RecognitionException re) {
             System.err.println("impossible: "+re);
         }
@@ -17478,11 +17478,11 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
         state.failed=false;
         return success;
     }
-    public final boolean synpred26_InternalEditor() {
+    public final boolean synpred1_InternalEditor() {
         state.backtracking++;
         int start = input.mark();
         try {
-            synpred26_InternalEditor_fragment(); // can never throw exception
+            synpred1_InternalEditor_fragment(); // can never throw exception
         } catch (RecognitionException re) {
             System.err.println("impossible: "+re);
         }

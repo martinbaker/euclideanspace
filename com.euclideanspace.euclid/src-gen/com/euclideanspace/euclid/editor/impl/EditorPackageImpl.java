@@ -178,7 +178,7 @@ public class EditorPackageImpl extends EPackageImpl implements EditorPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getDomainmodel_Importss()
+  public EReference getDomainmodel_Imports()
   {
     return (EReference)domainmodelEClass.getEStructuralFeatures().get(1);
   }
@@ -495,7 +495,7 @@ public class EditorPackageImpl extends EPackageImpl implements EditorPackage
     // Create classes and their features
     domainmodelEClass = createEClass(DOMAINMODEL);
     createEReference(domainmodelEClass, DOMAINMODEL__PACKAGES);
-    createEReference(domainmodelEClass, DOMAINMODEL__IMPORTSS);
+    createEReference(domainmodelEClass, DOMAINMODEL__IMPORTS);
     createEReference(domainmodelEClass, DOMAINMODEL__CLASSES);
 
     packageDeclarationEClass = createEClass(PACKAGE_DECLARATION);
@@ -570,7 +570,7 @@ public class EditorPackageImpl extends EPackageImpl implements EditorPackage
     // Initialize classes and features; add operations and parameters
     initEClass(domainmodelEClass, Domainmodel.class, "Domainmodel", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getDomainmodel_Packages(), this.getPackageDeclaration(), null, "packages", null, 0, -1, Domainmodel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getDomainmodel_Importss(), this.getImport(), null, "importss", null, 0, -1, Domainmodel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getDomainmodel_Imports(), this.getImport(), null, "imports", null, 0, -1, Domainmodel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getDomainmodel_Classes(), this.getClass_(), null, "classes", null, 0, -1, Domainmodel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(packageDeclarationEClass, PackageDeclaration.class, "PackageDeclaration", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);

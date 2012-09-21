@@ -74,11 +74,13 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//AddStatements/t1"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//AddStatements/t13"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//AddStatements/t14"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//AddStatements/t15"/>
     </genClasses>
     <genClasses ecoreClass="Editor.ecore#//FunctionDefinition">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//FunctionDefinition/par3"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//FunctionDefinition/par4"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//FunctionDefinition/par5"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Editor.ecore#//FunctionDefinition/fnNam"/>
     </genClasses>
     <genClasses ecoreClass="Editor.ecore#//FunctionDefinitionBlock">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Editor.ecore#//FunctionDefinitionBlock/fnDecBr"/>
@@ -87,6 +89,7 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//FunctionDefinitionBlock/t1"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//FunctionDefinitionBlock/t13"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//FunctionDefinitionBlock/t14"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//FunctionDefinitionBlock/e"/>
     </genClasses>
     <genClasses ecoreClass="Editor.ecore#//FunctionSignature">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Editor.ecore#//FunctionSignature/fnNam"/>
@@ -238,6 +241,7 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//Statement/s12"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//Statement/s9"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//Statement/s10"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//Statement/e"/>
     </genClasses>
     <genClasses ecoreClass="Editor.ecore#//Block">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Editor.ecore#//Block/stname"/>

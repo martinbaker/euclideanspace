@@ -1296,6 +1296,16 @@ public class EditorPackageImpl extends EPackageImpl implements EditorPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  public EReference getAddStatements_T15()
+  {
+    return (EReference)addStatementsEClass.getEStructuralFeatures().get(3);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EClass getFunctionDefinition()
   {
     return functionDefinitionEClass;
@@ -1329,6 +1339,16 @@ public class EditorPackageImpl extends EPackageImpl implements EditorPackage
   public EReference getFunctionDefinition_Par5()
   {
     return (EReference)functionDefinitionEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getFunctionDefinition_FnNam()
+  {
+    return (EAttribute)functionDefinitionEClass.getEStructuralFeatures().get(3);
   }
 
   /**
@@ -1399,6 +1419,16 @@ public class EditorPackageImpl extends EPackageImpl implements EditorPackage
   public EReference getFunctionDefinitionBlock_T14()
   {
     return (EReference)functionDefinitionBlockEClass.getEStructuralFeatures().get(5);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getFunctionDefinitionBlock_E()
+  {
+    return (EReference)functionDefinitionBlockEClass.getEStructuralFeatures().get(6);
   }
 
   /**
@@ -2719,6 +2749,16 @@ public class EditorPackageImpl extends EPackageImpl implements EditorPackage
   public EReference getStatement_S10()
   {
     return (EReference)statementEClass.getEStructuralFeatures().get(10);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getStatement_E()
+  {
+    return (EReference)statementEClass.getEStructuralFeatures().get(11);
   }
 
   /**
@@ -4869,11 +4909,13 @@ public class EditorPackageImpl extends EPackageImpl implements EditorPackage
     createEReference(addStatementsEClass, ADD_STATEMENTS__T1);
     createEReference(addStatementsEClass, ADD_STATEMENTS__T13);
     createEReference(addStatementsEClass, ADD_STATEMENTS__T14);
+    createEReference(addStatementsEClass, ADD_STATEMENTS__T15);
 
     functionDefinitionEClass = createEClass(FUNCTION_DEFINITION);
     createEReference(functionDefinitionEClass, FUNCTION_DEFINITION__PAR3);
     createEReference(functionDefinitionEClass, FUNCTION_DEFINITION__PAR4);
     createEReference(functionDefinitionEClass, FUNCTION_DEFINITION__PAR5);
+    createEAttribute(functionDefinitionEClass, FUNCTION_DEFINITION__FN_NAM);
 
     functionDefinitionBlockEClass = createEClass(FUNCTION_DEFINITION_BLOCK);
     createEAttribute(functionDefinitionBlockEClass, FUNCTION_DEFINITION_BLOCK__FN_DEC_BR);
@@ -4882,6 +4924,7 @@ public class EditorPackageImpl extends EPackageImpl implements EditorPackage
     createEReference(functionDefinitionBlockEClass, FUNCTION_DEFINITION_BLOCK__T1);
     createEReference(functionDefinitionBlockEClass, FUNCTION_DEFINITION_BLOCK__T13);
     createEReference(functionDefinitionBlockEClass, FUNCTION_DEFINITION_BLOCK__T14);
+    createEReference(functionDefinitionBlockEClass, FUNCTION_DEFINITION_BLOCK__E);
 
     functionSignatureEClass = createEClass(FUNCTION_SIGNATURE);
     createEAttribute(functionSignatureEClass, FUNCTION_SIGNATURE__FN_NAM);
@@ -5033,6 +5076,7 @@ public class EditorPackageImpl extends EPackageImpl implements EditorPackage
     createEReference(statementEClass, STATEMENT__S12);
     createEReference(statementEClass, STATEMENT__S9);
     createEReference(statementEClass, STATEMENT__S10);
+    createEReference(statementEClass, STATEMENT__E);
 
     blockEClass = createEClass(BLOCK);
     createEAttribute(blockEClass, BLOCK__STNAME);
@@ -5429,11 +5473,13 @@ public class EditorPackageImpl extends EPackageImpl implements EditorPackage
     initEReference(getAddStatements_T1(), this.getExpr(), null, "t1", null, 0, 1, AddStatements.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getAddStatements_T13(), this.getFunctionDefinitionBlock(), null, "t13", null, 0, 1, AddStatements.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getAddStatements_T14(), this.getFunctionDefinitionBlock(), null, "t14", null, 0, 1, AddStatements.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getAddStatements_T15(), this.getAddStatements(), null, "t15", null, 0, 1, AddStatements.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(functionDefinitionEClass, FunctionDefinition.class, "FunctionDefinition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getFunctionDefinition_Par3(), this.getFunctionSignature(), null, "par3", null, 0, 1, FunctionDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getFunctionDefinition_Par4(), this.getTypeExpression(), null, "par4", null, 0, 1, FunctionDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getFunctionDefinition_Par5(), this.getStatement(), null, "par5", null, 0, 1, FunctionDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getFunctionDefinition_FnNam(), ecorePackage.getEString(), "fnNam", null, 0, 1, FunctionDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(functionDefinitionBlockEClass, FunctionDefinitionBlock.class, "FunctionDefinitionBlock", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getFunctionDefinitionBlock_FnDecBr(), ecorePackage.getEString(), "fnDecBr", null, 0, 1, FunctionDefinitionBlock.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -5442,6 +5488,7 @@ public class EditorPackageImpl extends EPackageImpl implements EditorPackage
     initEReference(getFunctionDefinitionBlock_T1(), this.getExpr(), null, "t1", null, 0, -1, FunctionDefinitionBlock.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getFunctionDefinitionBlock_T13(), this.getFunctionDefinitionBlock(), null, "t13", null, 0, -1, FunctionDefinitionBlock.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getFunctionDefinitionBlock_T14(), this.getFunctionDefinitionBlock(), null, "t14", null, 0, -1, FunctionDefinitionBlock.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getFunctionDefinitionBlock_E(), this.getExpr(), null, "e", null, 0, 1, FunctionDefinitionBlock.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(functionSignatureEClass, FunctionSignature.class, "FunctionSignature", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getFunctionSignature_FnNam(), ecorePackage.getEString(), "fnNam", null, 0, 1, FunctionSignature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -5593,6 +5640,7 @@ public class EditorPackageImpl extends EPackageImpl implements EditorPackage
     initEReference(getStatement_S12(), this.getRepeatStatement(), null, "s12", null, 0, 1, Statement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getStatement_S9(), this.getIterateStatement(), null, "s9", null, 0, 1, Statement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getStatement_S10(), this.getReturnStatement(), null, "s10", null, 0, 1, Statement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getStatement_E(), this.getExpr(), null, "e", null, 0, 1, Statement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(blockEClass, Block.class, "Block", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getBlock_Stname(), ecorePackage.getEString(), "stname", null, 0, 1, Block.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

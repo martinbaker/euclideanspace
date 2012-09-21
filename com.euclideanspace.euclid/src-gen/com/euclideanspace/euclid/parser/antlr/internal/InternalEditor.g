@@ -98,16 +98,16 @@ ruleDomainmodel returns [EObject current=null]
 )*(
 (
 		{ 
-	        newCompositeNode(grammarAccess.getDomainmodelAccess().getImportssImportParserRuleCall_1_0()); 
+	        newCompositeNode(grammarAccess.getDomainmodelAccess().getImportsImportParserRuleCall_1_0()); 
 	    }
-		lv_importss_1_0=ruleImport		{
+		lv_imports_1_0=ruleImport		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getDomainmodelRule());
 	        }
        		add(
        			$current, 
-       			"importss",
-        		lv_importss_1_0, 
+       			"imports",
+        		lv_imports_1_0, 
         		"Import");
 	        afterParserOrEnumRuleCall();
 	    }

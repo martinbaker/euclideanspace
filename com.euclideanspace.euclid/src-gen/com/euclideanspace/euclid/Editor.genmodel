@@ -9,7 +9,7 @@
       ecorePackage="Editor.ecore#/">
     <genClasses ecoreClass="Editor.ecore#//Domainmodel">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//Domainmodel/packages"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//Domainmodel/importss"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//Domainmodel/imports"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//Domainmodel/classes"/>
     </genClasses>
     <genClasses ecoreClass="Editor.ecore#//PackageDeclaration">

@@ -23,6 +23,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link com.euclideanspace.spad.editor.Statement#getS12 <em>S12</em>}</li>
  *   <li>{@link com.euclideanspace.spad.editor.Statement#getS9 <em>S9</em>}</li>
  *   <li>{@link com.euclideanspace.spad.editor.Statement#getS10 <em>S10</em>}</li>
+ *   <li>{@link com.euclideanspace.spad.editor.Statement#getE <em>E</em>}</li>
  * </ul>
  * </p>
  *
@@ -317,5 +318,31 @@ public interface Statement extends EObject
    * @generated
    */
   void setS10(ReturnStatement value);
+
+  /**
+   * Returns the value of the '<em><b>E</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>E</em>' containment reference isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>E</em>' containment reference.
+   * @see #setE(Expr)
+   * @see com.euclideanspace.spad.editor.EditorPackage#getStatement_E()
+   * @model containment="true"
+   * @generated
+   */
+  Expr getE();
+
+  /**
+   * Sets the value of the '{@link com.euclideanspace.spad.editor.Statement#getE <em>E</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>E</em>' containment reference.
+   * @see #getE()
+   * @generated
+   */
+  void setE(Expr value);
 
 } // Statement

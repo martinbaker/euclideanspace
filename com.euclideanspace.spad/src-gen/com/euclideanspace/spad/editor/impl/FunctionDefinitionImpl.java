@@ -26,6 +26,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *   <li>{@link com.euclideanspace.spad.editor.impl.FunctionDefinitionImpl#getPar3 <em>Par3</em>}</li>
  *   <li>{@link com.euclideanspace.spad.editor.impl.FunctionDefinitionImpl#getPar4 <em>Par4</em>}</li>
  *   <li>{@link com.euclideanspace.spad.editor.impl.FunctionDefinitionImpl#getPar5 <em>Par5</em>}</li>
+ *   <li>{@link com.euclideanspace.spad.editor.impl.FunctionDefinitionImpl#getFnNam <em>Fn Nam</em>}</li>
  * </ul>
  * </p>
  *
@@ -62,6 +63,26 @@ public class FunctionDefinitionImpl extends AddStatementsImpl implements Functio
    * @ordered
    */
   protected Statement par5;
+
+  /**
+   * The default value of the '{@link #getFnNam() <em>Fn Nam</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getFnNam()
+   * @generated
+   * @ordered
+   */
+  protected static final String FN_NAM_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getFnNam() <em>Fn Nam</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getFnNam()
+   * @generated
+   * @ordered
+   */
+  protected String fnNam = FN_NAM_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
@@ -233,6 +254,29 @@ public class FunctionDefinitionImpl extends AddStatementsImpl implements Functio
    * <!-- end-user-doc -->
    * @generated
    */
+  public String getFnNam()
+  {
+    return fnNam;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setFnNam(String newFnNam)
+  {
+    String oldFnNam = fnNam;
+    fnNam = newFnNam;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, EditorPackage.FUNCTION_DEFINITION__FN_NAM, oldFnNam, fnNam));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
@@ -264,6 +308,8 @@ public class FunctionDefinitionImpl extends AddStatementsImpl implements Functio
         return getPar4();
       case EditorPackage.FUNCTION_DEFINITION__PAR5:
         return getPar5();
+      case EditorPackage.FUNCTION_DEFINITION__FN_NAM:
+        return getFnNam();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -286,6 +332,9 @@ public class FunctionDefinitionImpl extends AddStatementsImpl implements Functio
         return;
       case EditorPackage.FUNCTION_DEFINITION__PAR5:
         setPar5((Statement)newValue);
+        return;
+      case EditorPackage.FUNCTION_DEFINITION__FN_NAM:
+        setFnNam((String)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -310,6 +359,9 @@ public class FunctionDefinitionImpl extends AddStatementsImpl implements Functio
       case EditorPackage.FUNCTION_DEFINITION__PAR5:
         setPar5((Statement)null);
         return;
+      case EditorPackage.FUNCTION_DEFINITION__FN_NAM:
+        setFnNam(FN_NAM_EDEFAULT);
+        return;
     }
     super.eUnset(featureID);
   }
@@ -330,8 +382,27 @@ public class FunctionDefinitionImpl extends AddStatementsImpl implements Functio
         return par4 != null;
       case EditorPackage.FUNCTION_DEFINITION__PAR5:
         return par5 != null;
+      case EditorPackage.FUNCTION_DEFINITION__FN_NAM:
+        return FN_NAM_EDEFAULT == null ? fnNam != null : !FN_NAM_EDEFAULT.equals(fnNam);
     }
     return super.eIsSet(featureID);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String toString()
+  {
+    if (eIsProxy()) return super.toString();
+
+    StringBuffer result = new StringBuffer(super.toString());
+    result.append(" (fnNam: ");
+    result.append(fnNam);
+    result.append(')');
+    return result.toString();
   }
 
 } //FunctionDefinitionImpl

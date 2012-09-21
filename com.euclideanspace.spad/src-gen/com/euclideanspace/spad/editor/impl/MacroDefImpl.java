@@ -26,6 +26,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *   <li>{@link com.euclideanspace.spad.editor.impl.MacroDefImpl#getT1 <em>T1</em>}</li>
  *   <li>{@link com.euclideanspace.spad.editor.impl.MacroDefImpl#getT13 <em>T13</em>}</li>
  *   <li>{@link com.euclideanspace.spad.editor.impl.MacroDefImpl#getT14 <em>T14</em>}</li>
+ *   <li>{@link com.euclideanspace.spad.editor.impl.MacroDefImpl#getT15 <em>T15</em>}</li>
  *   <li>{@link com.euclideanspace.spad.editor.impl.MacroDefImpl#getMacroname <em>Macroname</em>}</li>
  * </ul>
  * </p>
@@ -63,6 +64,16 @@ public class MacroDefImpl extends WhereAssignmentsImpl implements MacroDef
    * @ordered
    */
   protected FunctionDefinitionBlock t14;
+
+  /**
+   * The cached value of the '{@link #getT15() <em>T15</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getT15()
+   * @generated
+   * @ordered
+   */
+  protected AddStatements t15;
 
   /**
    * The default value of the '{@link #getMacroname() <em>Macroname</em>}' attribute.
@@ -254,6 +265,54 @@ public class MacroDefImpl extends WhereAssignmentsImpl implements MacroDef
    * <!-- end-user-doc -->
    * @generated
    */
+  public AddStatements getT15()
+  {
+    return t15;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetT15(AddStatements newT15, NotificationChain msgs)
+  {
+    AddStatements oldT15 = t15;
+    t15 = newT15;
+    if (eNotificationRequired())
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, EditorPackage.MACRO_DEF__T15, oldT15, newT15);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setT15(AddStatements newT15)
+  {
+    if (newT15 != t15)
+    {
+      NotificationChain msgs = null;
+      if (t15 != null)
+        msgs = ((InternalEObject)t15).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - EditorPackage.MACRO_DEF__T15, null, msgs);
+      if (newT15 != null)
+        msgs = ((InternalEObject)newT15).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - EditorPackage.MACRO_DEF__T15, null, msgs);
+      msgs = basicSetT15(newT15, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, EditorPackage.MACRO_DEF__T15, newT15, newT15));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public String getMacroname()
   {
     return macroname;
@@ -288,6 +347,8 @@ public class MacroDefImpl extends WhereAssignmentsImpl implements MacroDef
         return basicSetT13(null, msgs);
       case EditorPackage.MACRO_DEF__T14:
         return basicSetT14(null, msgs);
+      case EditorPackage.MACRO_DEF__T15:
+        return basicSetT15(null, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -308,6 +369,8 @@ public class MacroDefImpl extends WhereAssignmentsImpl implements MacroDef
         return getT13();
       case EditorPackage.MACRO_DEF__T14:
         return getT14();
+      case EditorPackage.MACRO_DEF__T15:
+        return getT15();
       case EditorPackage.MACRO_DEF__MACRONAME:
         return getMacroname();
     }
@@ -332,6 +395,9 @@ public class MacroDefImpl extends WhereAssignmentsImpl implements MacroDef
         return;
       case EditorPackage.MACRO_DEF__T14:
         setT14((FunctionDefinitionBlock)newValue);
+        return;
+      case EditorPackage.MACRO_DEF__T15:
+        setT15((AddStatements)newValue);
         return;
       case EditorPackage.MACRO_DEF__MACRONAME:
         setMacroname((String)newValue);
@@ -359,6 +425,9 @@ public class MacroDefImpl extends WhereAssignmentsImpl implements MacroDef
       case EditorPackage.MACRO_DEF__T14:
         setT14((FunctionDefinitionBlock)null);
         return;
+      case EditorPackage.MACRO_DEF__T15:
+        setT15((AddStatements)null);
+        return;
       case EditorPackage.MACRO_DEF__MACRONAME:
         setMacroname(MACRONAME_EDEFAULT);
         return;
@@ -382,6 +451,8 @@ public class MacroDefImpl extends WhereAssignmentsImpl implements MacroDef
         return t13 != null;
       case EditorPackage.MACRO_DEF__T14:
         return t14 != null;
+      case EditorPackage.MACRO_DEF__T15:
+        return t15 != null;
       case EditorPackage.MACRO_DEF__MACRONAME:
         return MACRONAME_EDEFAULT == null ? macroname != null : !MACRONAME_EDEFAULT.equals(macroname);
     }
@@ -403,6 +474,7 @@ public class MacroDefImpl extends WhereAssignmentsImpl implements MacroDef
         case EditorPackage.MACRO_DEF__T1: return EditorPackage.ADD_STATEMENTS__T1;
         case EditorPackage.MACRO_DEF__T13: return EditorPackage.ADD_STATEMENTS__T13;
         case EditorPackage.MACRO_DEF__T14: return EditorPackage.ADD_STATEMENTS__T14;
+        case EditorPackage.MACRO_DEF__T15: return EditorPackage.ADD_STATEMENTS__T15;
         default: return -1;
       }
     }
@@ -424,6 +496,7 @@ public class MacroDefImpl extends WhereAssignmentsImpl implements MacroDef
         case EditorPackage.ADD_STATEMENTS__T1: return EditorPackage.MACRO_DEF__T1;
         case EditorPackage.ADD_STATEMENTS__T13: return EditorPackage.MACRO_DEF__T13;
         case EditorPackage.ADD_STATEMENTS__T14: return EditorPackage.MACRO_DEF__T14;
+        case EditorPackage.ADD_STATEMENTS__T15: return EditorPackage.MACRO_DEF__T15;
         default: return -1;
       }
     }

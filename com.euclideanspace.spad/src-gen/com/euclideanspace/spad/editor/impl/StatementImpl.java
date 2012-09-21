@@ -6,6 +6,7 @@ import com.euclideanspace.spad.editor.Block;
 import com.euclideanspace.spad.editor.BreakStatement;
 import com.euclideanspace.spad.editor.DoStatement;
 import com.euclideanspace.spad.editor.EditorPackage;
+import com.euclideanspace.spad.editor.Expr;
 import com.euclideanspace.spad.editor.ForStatement;
 import com.euclideanspace.spad.editor.IfElseStatement;
 import com.euclideanspace.spad.editor.IfStatement;
@@ -43,6 +44,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  *   <li>{@link com.euclideanspace.spad.editor.impl.StatementImpl#getS12 <em>S12</em>}</li>
  *   <li>{@link com.euclideanspace.spad.editor.impl.StatementImpl#getS9 <em>S9</em>}</li>
  *   <li>{@link com.euclideanspace.spad.editor.impl.StatementImpl#getS10 <em>S10</em>}</li>
+ *   <li>{@link com.euclideanspace.spad.editor.impl.StatementImpl#getE <em>E</em>}</li>
  * </ul>
  * </p>
  *
@@ -159,6 +161,16 @@ public class StatementImpl extends MinimalEObjectImpl.Container implements State
    * @ordered
    */
   protected ReturnStatement s10;
+
+  /**
+   * The cached value of the '{@link #getE() <em>E</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getE()
+   * @generated
+   * @ordered
+   */
+  protected Expr e;
 
   /**
    * <!-- begin-user-doc -->
@@ -714,6 +726,54 @@ public class StatementImpl extends MinimalEObjectImpl.Container implements State
    * <!-- end-user-doc -->
    * @generated
    */
+  public Expr getE()
+  {
+    return e;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetE(Expr newE, NotificationChain msgs)
+  {
+    Expr oldE = e;
+    e = newE;
+    if (eNotificationRequired())
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, EditorPackage.STATEMENT__E, oldE, newE);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setE(Expr newE)
+  {
+    if (newE != e)
+    {
+      NotificationChain msgs = null;
+      if (e != null)
+        msgs = ((InternalEObject)e).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - EditorPackage.STATEMENT__E, null, msgs);
+      if (newE != null)
+        msgs = ((InternalEObject)newE).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - EditorPackage.STATEMENT__E, null, msgs);
+      msgs = basicSetE(newE, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, EditorPackage.STATEMENT__E, newE, newE));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
@@ -741,6 +801,8 @@ public class StatementImpl extends MinimalEObjectImpl.Container implements State
         return basicSetS9(null, msgs);
       case EditorPackage.STATEMENT__S10:
         return basicSetS10(null, msgs);
+      case EditorPackage.STATEMENT__E:
+        return basicSetE(null, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -777,6 +839,8 @@ public class StatementImpl extends MinimalEObjectImpl.Container implements State
         return getS9();
       case EditorPackage.STATEMENT__S10:
         return getS10();
+      case EditorPackage.STATEMENT__E:
+        return getE();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -823,6 +887,9 @@ public class StatementImpl extends MinimalEObjectImpl.Container implements State
         return;
       case EditorPackage.STATEMENT__S10:
         setS10((ReturnStatement)newValue);
+        return;
+      case EditorPackage.STATEMENT__E:
+        setE((Expr)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -871,6 +938,9 @@ public class StatementImpl extends MinimalEObjectImpl.Container implements State
       case EditorPackage.STATEMENT__S10:
         setS10((ReturnStatement)null);
         return;
+      case EditorPackage.STATEMENT__E:
+        setE((Expr)null);
+        return;
     }
     super.eUnset(featureID);
   }
@@ -907,6 +977,8 @@ public class StatementImpl extends MinimalEObjectImpl.Container implements State
         return s9 != null;
       case EditorPackage.STATEMENT__S10:
         return s10 != null;
+      case EditorPackage.STATEMENT__E:
+        return e != null;
     }
     return super.eIsSet(featureID);
   }

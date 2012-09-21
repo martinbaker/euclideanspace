@@ -56,8 +56,8 @@ public class InternalEditorParser extends AbstractInternalContentAssistParser {
     public static final int T__58=58;
     public static final int T__16=16;
     public static final int T__51=51;
-    public static final int T__15=15;
     public static final int T__52=52;
+    public static final int T__15=15;
     public static final int T__53=53;
     public static final int T__18=18;
     public static final int T__54=54;
@@ -10238,22 +10238,22 @@ public class InternalEditorParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Domainmodel__Group__1__Impl"
-    // ../com.euclideanspace.euclid.ui/src-gen/com/euclideanspace/euclid/ui/contentassist/antlr/internal/InternalEditor.g:3078:1: rule__Domainmodel__Group__1__Impl : ( ( rule__Domainmodel__ImportssAssignment_1 )* ) ;
+    // ../com.euclideanspace.euclid.ui/src-gen/com/euclideanspace/euclid/ui/contentassist/antlr/internal/InternalEditor.g:3078:1: rule__Domainmodel__Group__1__Impl : ( ( rule__Domainmodel__ImportsAssignment_1 )* ) ;
     public final void rule__Domainmodel__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../com.euclideanspace.euclid.ui/src-gen/com/euclideanspace/euclid/ui/contentassist/antlr/internal/InternalEditor.g:3082:1: ( ( ( rule__Domainmodel__ImportssAssignment_1 )* ) )
-            // ../com.euclideanspace.euclid.ui/src-gen/com/euclideanspace/euclid/ui/contentassist/antlr/internal/InternalEditor.g:3083:1: ( ( rule__Domainmodel__ImportssAssignment_1 )* )
+            // ../com.euclideanspace.euclid.ui/src-gen/com/euclideanspace/euclid/ui/contentassist/antlr/internal/InternalEditor.g:3082:1: ( ( ( rule__Domainmodel__ImportsAssignment_1 )* ) )
+            // ../com.euclideanspace.euclid.ui/src-gen/com/euclideanspace/euclid/ui/contentassist/antlr/internal/InternalEditor.g:3083:1: ( ( rule__Domainmodel__ImportsAssignment_1 )* )
             {
-            // ../com.euclideanspace.euclid.ui/src-gen/com/euclideanspace/euclid/ui/contentassist/antlr/internal/InternalEditor.g:3083:1: ( ( rule__Domainmodel__ImportssAssignment_1 )* )
-            // ../com.euclideanspace.euclid.ui/src-gen/com/euclideanspace/euclid/ui/contentassist/antlr/internal/InternalEditor.g:3084:1: ( rule__Domainmodel__ImportssAssignment_1 )*
+            // ../com.euclideanspace.euclid.ui/src-gen/com/euclideanspace/euclid/ui/contentassist/antlr/internal/InternalEditor.g:3083:1: ( ( rule__Domainmodel__ImportsAssignment_1 )* )
+            // ../com.euclideanspace.euclid.ui/src-gen/com/euclideanspace/euclid/ui/contentassist/antlr/internal/InternalEditor.g:3084:1: ( rule__Domainmodel__ImportsAssignment_1 )*
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getDomainmodelAccess().getImportssAssignment_1()); 
+               before(grammarAccess.getDomainmodelAccess().getImportsAssignment_1()); 
             }
-            // ../com.euclideanspace.euclid.ui/src-gen/com/euclideanspace/euclid/ui/contentassist/antlr/internal/InternalEditor.g:3085:1: ( rule__Domainmodel__ImportssAssignment_1 )*
+            // ../com.euclideanspace.euclid.ui/src-gen/com/euclideanspace/euclid/ui/contentassist/antlr/internal/InternalEditor.g:3085:1: ( rule__Domainmodel__ImportsAssignment_1 )*
             loop35:
             do {
                 int alt35=2;
@@ -10266,10 +10266,10 @@ public class InternalEditorParser extends AbstractInternalContentAssistParser {
 
                 switch (alt35) {
             	case 1 :
-            	    // ../com.euclideanspace.euclid.ui/src-gen/com/euclideanspace/euclid/ui/contentassist/antlr/internal/InternalEditor.g:3085:2: rule__Domainmodel__ImportssAssignment_1
+            	    // ../com.euclideanspace.euclid.ui/src-gen/com/euclideanspace/euclid/ui/contentassist/antlr/internal/InternalEditor.g:3085:2: rule__Domainmodel__ImportsAssignment_1
             	    {
-            	    pushFollow(FOLLOW_rule__Domainmodel__ImportssAssignment_1_in_rule__Domainmodel__Group__1__Impl6699);
-            	    rule__Domainmodel__ImportssAssignment_1();
+            	    pushFollow(FOLLOW_rule__Domainmodel__ImportsAssignment_1_in_rule__Domainmodel__Group__1__Impl6699);
+            	    rule__Domainmodel__ImportsAssignment_1();
 
             	    state._fsp--;
             	    if (state.failed) return ;
@@ -10283,7 +10283,7 @@ public class InternalEditorParser extends AbstractInternalContentAssistParser {
             } while (true);
 
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getDomainmodelAccess().getImportssAssignment_1()); 
+               after(grammarAccess.getDomainmodelAccess().getImportsAssignment_1()); 
             }
 
             }
@@ -43048,9 +43048,9 @@ public class InternalEditorParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__Domainmodel__PackagesAssignment_0"
 
 
-    // $ANTLR start "rule__Domainmodel__ImportssAssignment_1"
-    // ../com.euclideanspace.euclid.ui/src-gen/com/euclideanspace/euclid/ui/contentassist/antlr/internal/InternalEditor.g:15053:1: rule__Domainmodel__ImportssAssignment_1 : ( ruleImport ) ;
-    public final void rule__Domainmodel__ImportssAssignment_1() throws RecognitionException {
+    // $ANTLR start "rule__Domainmodel__ImportsAssignment_1"
+    // ../com.euclideanspace.euclid.ui/src-gen/com/euclideanspace/euclid/ui/contentassist/antlr/internal/InternalEditor.g:15053:1: rule__Domainmodel__ImportsAssignment_1 : ( ruleImport ) ;
+    public final void rule__Domainmodel__ImportsAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
@@ -43062,15 +43062,15 @@ public class InternalEditorParser extends AbstractInternalContentAssistParser {
             // ../com.euclideanspace.euclid.ui/src-gen/com/euclideanspace/euclid/ui/contentassist/antlr/internal/InternalEditor.g:15059:1: ruleImport
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getDomainmodelAccess().getImportssImportParserRuleCall_1_0()); 
+               before(grammarAccess.getDomainmodelAccess().getImportsImportParserRuleCall_1_0()); 
             }
-            pushFollow(FOLLOW_ruleImport_in_rule__Domainmodel__ImportssAssignment_130233);
+            pushFollow(FOLLOW_ruleImport_in_rule__Domainmodel__ImportsAssignment_130233);
             ruleImport();
 
             state._fsp--;
             if (state.failed) return ;
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getDomainmodelAccess().getImportssImportParserRuleCall_1_0()); 
+               after(grammarAccess.getDomainmodelAccess().getImportsImportParserRuleCall_1_0()); 
             }
 
             }
@@ -43090,7 +43090,7 @@ public class InternalEditorParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Domainmodel__ImportssAssignment_1"
+    // $ANTLR end "rule__Domainmodel__ImportsAssignment_1"
 
 
     // $ANTLR start "rule__Domainmodel__ClassesAssignment_2"
@@ -50027,11 +50027,11 @@ public class InternalEditorParser extends AbstractInternalContentAssistParser {
         state.failed=false;
         return success;
     }
-    public final boolean synpred79_InternalEditor() {
+    public final boolean synpred74_InternalEditor() {
         state.backtracking++;
         int start = input.mark();
         try {
-            synpred79_InternalEditor_fragment(); // can never throw exception
+            synpred74_InternalEditor_fragment(); // can never throw exception
         } catch (RecognitionException re) {
             System.err.println("impossible: "+re);
         }
@@ -50041,11 +50041,11 @@ public class InternalEditorParser extends AbstractInternalContentAssistParser {
         state.failed=false;
         return success;
     }
-    public final boolean synpred74_InternalEditor() {
+    public final boolean synpred79_InternalEditor() {
         state.backtracking++;
         int start = input.mark();
         try {
-            synpred74_InternalEditor_fragment(); // can never throw exception
+            synpred79_InternalEditor_fragment(); // can never throw exception
         } catch (RecognitionException re) {
             System.err.println("impossible: "+re);
         }
@@ -50069,11 +50069,11 @@ public class InternalEditorParser extends AbstractInternalContentAssistParser {
         state.failed=false;
         return success;
     }
-    public final boolean synpred77_InternalEditor() {
+    public final boolean synpred118_InternalEditor() {
         state.backtracking++;
         int start = input.mark();
         try {
-            synpred77_InternalEditor_fragment(); // can never throw exception
+            synpred118_InternalEditor_fragment(); // can never throw exception
         } catch (RecognitionException re) {
             System.err.println("impossible: "+re);
         }
@@ -50083,11 +50083,11 @@ public class InternalEditorParser extends AbstractInternalContentAssistParser {
         state.failed=false;
         return success;
     }
-    public final boolean synpred118_InternalEditor() {
+    public final boolean synpred77_InternalEditor() {
         state.backtracking++;
         int start = input.mark();
         try {
-            synpred118_InternalEditor_fragment(); // can never throw exception
+            synpred77_InternalEditor_fragment(); // can never throw exception
         } catch (RecognitionException re) {
             System.err.println("impossible: "+re);
         }
@@ -52888,7 +52888,7 @@ public class InternalEditorParser extends AbstractInternalContentAssistParser {
     public static final BitSet FOLLOW_rule__Domainmodel__PackagesAssignment_0_in_rule__Domainmodel__Group__0__Impl6638 = new BitSet(new long[]{0x0000010000000002L});
     public static final BitSet FOLLOW_rule__Domainmodel__Group__1__Impl_in_rule__Domainmodel__Group__16669 = new BitSet(new long[]{0x00000A0000000000L});
     public static final BitSet FOLLOW_rule__Domainmodel__Group__2_in_rule__Domainmodel__Group__16672 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Domainmodel__ImportssAssignment_1_in_rule__Domainmodel__Group__1__Impl6699 = new BitSet(new long[]{0x0000020000000002L});
+    public static final BitSet FOLLOW_rule__Domainmodel__ImportsAssignment_1_in_rule__Domainmodel__Group__1__Impl6699 = new BitSet(new long[]{0x0000020000000002L});
     public static final BitSet FOLLOW_rule__Domainmodel__Group__2__Impl_in_rule__Domainmodel__Group__26730 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__Domainmodel__ClassesAssignment_2_in_rule__Domainmodel__Group__2__Impl6757 = new BitSet(new long[]{0x0000080000000002L});
     public static final BitSet FOLLOW_rule__PackageDeclaration__Group__0__Impl_in_rule__PackageDeclaration__Group__06794 = new BitSet(new long[]{0x0000000000000010L});
@@ -53844,7 +53844,7 @@ public class InternalEditorParser extends AbstractInternalContentAssistParser {
     public static final BitSet FOLLOW_rule__JvmLowerBound__Group__1__Impl_in_rule__JvmLowerBound__Group__130134 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__JvmLowerBound__TypeReferenceAssignment_1_in_rule__JvmLowerBound__Group__1__Impl30161 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rulePackageDeclaration_in_rule__Domainmodel__PackagesAssignment_030202 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleImport_in_rule__Domainmodel__ImportssAssignment_130233 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleImport_in_rule__Domainmodel__ImportsAssignment_130233 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleClass_in_rule__Domainmodel__ClassesAssignment_230264 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleQualifiedName_in_rule__PackageDeclaration__NameAssignment_130295 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleQualifiedNameWithWildcard_in_rule__Import__ImportedNamespaceAssignment_130326 = new BitSet(new long[]{0x0000000000000002L});

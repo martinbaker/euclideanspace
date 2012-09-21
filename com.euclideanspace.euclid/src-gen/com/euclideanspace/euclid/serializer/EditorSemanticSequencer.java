@@ -987,7 +987,7 @@ public class EditorSemanticSequencer extends XbaseSemanticSequencer {
 	
 	/**
 	 * Constraint:
-	 *     (packages+=PackageDeclaration* importss+=Import* classes+=Class*)
+	 *     (packages+=PackageDeclaration* imports+=Import* classes+=Class*)
 	 */
 	protected void sequence_Domainmodel(EObject context, Domainmodel semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

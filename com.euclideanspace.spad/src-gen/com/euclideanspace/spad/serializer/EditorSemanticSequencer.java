@@ -1732,7 +1732,7 @@ public class EditorSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	
 	/**
 	 * Constraint:
-	 *     ((t1=Expression t13=FunctionDefinitionBlock) | t14=FunctionDefinitionBlock)
+	 *     ((t1=Expression t13=FunctionDefinitionBlock) | t14=FunctionDefinitionBlock | t15=AddStatements)
 	 */
 	protected void sequence_AddStatements(EObject context, AddStatements semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -1741,7 +1741,7 @@ public class EditorSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	
 	/**
 	 * Constraint:
-	 *     (left=AdditiveExpression_AdditiveExpression_1_0 (op=PLUS | op=MINUS) right=ExquoExpression)
+	 *     (left=AdditiveExpression_AdditiveExpression_1_0 (op=PLUS | op=MINUS | op=PLUSREP | op=MINUSREP) right=ExquoExpression)
 	 */
 	protected void sequence_AdditiveExpression(EObject context, AdditiveExpression semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -1861,7 +1861,7 @@ public class EditorSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	
 	/**
 	 * Constraint:
-	 *     (left=DivisionExpression_DivisionExpression_1_0 op=SLASH right=QuoExpression)
+	 *     (left=DivisionExpression_DivisionExpression_1_0 (op=SLASH | op=DIVREP) right=QuoExpression)
 	 */
 	protected void sequence_DivisionExpression(EObject context, DivisionExpression semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -1920,7 +1920,7 @@ public class EditorSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	
 	/**
 	 * Constraint:
-	 *     (left=EqualityExpression_EqualityExpression_1_0 (op=EQUAL | op=NOTEQUAL | op='^=') te=ID? right=RelationalExpression)
+	 *     (left=EqualityExpression_EqualityExpression_1_0 (op=EQUAL | op=NOTEQUAL | op='^=' | op=EQUALSREP) te=ID? right=RelationalExpression)
 	 */
 	protected void sequence_EqualityExpression(EObject context, EqualityExpression semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -1998,8 +1998,12 @@ public class EditorSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	/**
 	 * Constraint:
 	 *     (
-	 *         fnDecBr=LBRACE 
-	 *         (fnDecBk+=FunctionDefinition | vars+=VariableDeclarationAssign | (t1+=Expression t13+=FunctionDefinitionBlock) | t14+=FunctionDefinitionBlock)*
+	 *         (
+	 *             fnDecBr=LBRACE 
+	 *             (fnDecBk+=FunctionDefinition | vars+=VariableDeclarationAssign | (t1+=Expression t13+=FunctionDefinitionBlock) | t14+=FunctionDefinitionBlock)*
+	 *         ) | 
+	 *         e=Expression | 
+	 *         e=Expression
 	 *     )
 	 */
 	protected void sequence_FunctionDefinitionBlock(EObject context, FunctionDefinitionBlock semanticObject) {
@@ -2009,7 +2013,7 @@ public class EditorSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	
 	/**
 	 * Constraint:
-	 *     (par3=FunctionSignature par4=TypeExpression? par5=Statement)
+	 *     ((par3=FunctionSignature par4=TypeExpression? par5=Statement) | (fnNam=ID par5=Statement))
 	 */
 	protected void sequence_FunctionDefinition(EObject context, FunctionDefinition semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -2209,7 +2213,7 @@ public class EditorSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	
 	/**
 	 * Constraint:
-	 *     (left=MultiplicativeExpression_MultiplicativeExpression_1_0 op=TIMES right=ExponentExpression)
+	 *     (left=MultiplicativeExpression_MultiplicativeExpression_1_0 (op=TIMES | op=TIMESREP) right=ExponentExpression)
 	 */
 	protected void sequence_MultiplicativeExpression(EObject context, MultiplicativeExpression semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -2373,7 +2377,8 @@ public class EditorSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	 *         s8=BreakStatement | 
 	 *         s12=RepeatStatement | 
 	 *         s9=IterateStatement | 
-	 *         s10=ReturnStatement
+	 *         s10=ReturnStatement | 
+	 *         e=Expression
 	 *     )
 	 */
 	protected void sequence_Statement(EObject context, Statement semanticObject) {
@@ -2517,6 +2522,7 @@ public class EditorSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	 *     (
 	 *         (uop=TILDE expr=UnaryExpression) | 
 	 *         (uop=MINUS expr=UnaryExpression) | 
+	 *         (uop=MINUSREP expr=UnaryExpression) | 
 	 *         (uop=HASH expr=UnaryExpression) | 
 	 *         (uop='not' expr=PrimaryExpression) | 
 	 *         (uop=SUMLIST expr=PrimaryExpression)
