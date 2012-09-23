@@ -24,6 +24,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *   <li>{@link com.euclideanspace.spad.editor.impl.MapDefinitionImpl#getLeft <em>Left</em>}</li>
  *   <li>{@link com.euclideanspace.spad.editor.impl.MapDefinitionImpl#getOp <em>Op</em>}</li>
  *   <li>{@link com.euclideanspace.spad.editor.impl.MapDefinitionImpl#getRight <em>Right</em>}</li>
+ *   <li>{@link com.euclideanspace.spad.editor.impl.MapDefinitionImpl#getPar <em>Par</em>}</li>
  * </ul>
  * </p>
  *
@@ -70,6 +71,26 @@ public class MapDefinitionImpl extends ExprImpl implements MapDefinition
    * @ordered
    */
   protected Expr right;
+
+  /**
+   * The default value of the '{@link #getPar() <em>Par</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getPar()
+   * @generated
+   * @ordered
+   */
+  protected static final String PAR_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getPar() <em>Par</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getPar()
+   * @generated
+   * @ordered
+   */
+  protected String par = PAR_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
@@ -216,6 +237,29 @@ public class MapDefinitionImpl extends ExprImpl implements MapDefinition
    * <!-- end-user-doc -->
    * @generated
    */
+  public String getPar()
+  {
+    return par;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setPar(String newPar)
+  {
+    String oldPar = par;
+    par = newPar;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, EditorPackage.MAP_DEFINITION__PAR, oldPar, par));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
@@ -245,6 +289,8 @@ public class MapDefinitionImpl extends ExprImpl implements MapDefinition
         return getOp();
       case EditorPackage.MAP_DEFINITION__RIGHT:
         return getRight();
+      case EditorPackage.MAP_DEFINITION__PAR:
+        return getPar();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -267,6 +313,9 @@ public class MapDefinitionImpl extends ExprImpl implements MapDefinition
         return;
       case EditorPackage.MAP_DEFINITION__RIGHT:
         setRight((Expr)newValue);
+        return;
+      case EditorPackage.MAP_DEFINITION__PAR:
+        setPar((String)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -291,6 +340,9 @@ public class MapDefinitionImpl extends ExprImpl implements MapDefinition
       case EditorPackage.MAP_DEFINITION__RIGHT:
         setRight((Expr)null);
         return;
+      case EditorPackage.MAP_DEFINITION__PAR:
+        setPar(PAR_EDEFAULT);
+        return;
     }
     super.eUnset(featureID);
   }
@@ -311,6 +363,8 @@ public class MapDefinitionImpl extends ExprImpl implements MapDefinition
         return OP_EDEFAULT == null ? op != null : !OP_EDEFAULT.equals(op);
       case EditorPackage.MAP_DEFINITION__RIGHT:
         return right != null;
+      case EditorPackage.MAP_DEFINITION__PAR:
+        return PAR_EDEFAULT == null ? par != null : !PAR_EDEFAULT.equals(par);
     }
     return super.eIsSet(featureID);
   }
@@ -328,6 +382,8 @@ public class MapDefinitionImpl extends ExprImpl implements MapDefinition
     StringBuffer result = new StringBuffer(super.toString());
     result.append(" (op: ");
     result.append(op);
+    result.append(", par: ");
+    result.append(par);
     result.append(')');
     return result.toString();
   }

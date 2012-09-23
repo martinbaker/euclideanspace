@@ -418,6 +418,7 @@
     <genClasses ecoreClass="Editor.ecore#//AdditiveExpression">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//AdditiveExpression/left"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Editor.ecore#//AdditiveExpression/op"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Editor.ecore#//AdditiveExpression/te"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//AdditiveExpression/right"/>
     </genClasses>
     <genClasses ecoreClass="Editor.ecore#//ExquoExpression">
@@ -428,6 +429,7 @@
     <genClasses ecoreClass="Editor.ecore#//DivisionExpression">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//DivisionExpression/left"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Editor.ecore#//DivisionExpression/op"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Editor.ecore#//DivisionExpression/te"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//DivisionExpression/right"/>
     </genClasses>
     <genClasses ecoreClass="Editor.ecore#//QuoExpression">
@@ -448,6 +450,7 @@
     <genClasses ecoreClass="Editor.ecore#//MultiplicativeExpression">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//MultiplicativeExpression/left"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Editor.ecore#//MultiplicativeExpression/op"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Editor.ecore#//MultiplicativeExpression/te"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//MultiplicativeExpression/right"/>
     </genClasses>
     <genClasses ecoreClass="Editor.ecore#//ExponentExpression">
@@ -459,6 +462,7 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//MapDefinition/left"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Editor.ecore#//MapDefinition/op"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//MapDefinition/right"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Editor.ecore#//MapDefinition/par"/>
     </genClasses>
     <genClasses ecoreClass="Editor.ecore#//AssignExpression">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//AssignExpression/left"/>
@@ -493,6 +497,7 @@
     <genClasses ecoreClass="Editor.ecore#//UnaryExpression">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Editor.ecore#//UnaryExpression/uop"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//UnaryExpression/expr"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Editor.ecore#//UnaryExpression/te"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

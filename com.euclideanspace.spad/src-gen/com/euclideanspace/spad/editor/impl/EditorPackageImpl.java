@@ -4216,9 +4216,19 @@ public class EditorPackageImpl extends EPackageImpl implements EditorPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  public EAttribute getAdditiveExpression_Te()
+  {
+    return (EAttribute)additiveExpressionEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EReference getAdditiveExpression_Right()
   {
-    return (EReference)additiveExpressionEClass.getEStructuralFeatures().get(2);
+    return (EReference)additiveExpressionEClass.getEStructuralFeatures().get(3);
   }
 
   /**
@@ -4296,9 +4306,19 @@ public class EditorPackageImpl extends EPackageImpl implements EditorPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  public EAttribute getDivisionExpression_Te()
+  {
+    return (EAttribute)divisionExpressionEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EReference getDivisionExpression_Right()
   {
-    return (EReference)divisionExpressionEClass.getEStructuralFeatures().get(2);
+    return (EReference)divisionExpressionEClass.getEStructuralFeatures().get(3);
   }
 
   /**
@@ -4456,9 +4476,19 @@ public class EditorPackageImpl extends EPackageImpl implements EditorPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  public EAttribute getMultiplicativeExpression_Te()
+  {
+    return (EAttribute)multiplicativeExpressionEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EReference getMultiplicativeExpression_Right()
   {
-    return (EReference)multiplicativeExpressionEClass.getEStructuralFeatures().get(2);
+    return (EReference)multiplicativeExpressionEClass.getEStructuralFeatures().get(3);
   }
 
   /**
@@ -4539,6 +4569,16 @@ public class EditorPackageImpl extends EPackageImpl implements EditorPackage
   public EReference getMapDefinition_Right()
   {
     return (EReference)mapDefinitionEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getMapDefinition_Par()
+  {
+    return (EAttribute)mapDefinitionEClass.getEStructuralFeatures().get(3);
   }
 
   /**
@@ -4809,6 +4849,16 @@ public class EditorPackageImpl extends EPackageImpl implements EditorPackage
   public EReference getUnaryExpression_Expr()
   {
     return (EReference)unaryExpressionEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getUnaryExpression_Te()
+  {
+    return (EAttribute)unaryExpressionEClass.getEStructuralFeatures().get(2);
   }
 
   /**
@@ -5253,6 +5303,7 @@ public class EditorPackageImpl extends EPackageImpl implements EditorPackage
     additiveExpressionEClass = createEClass(ADDITIVE_EXPRESSION);
     createEReference(additiveExpressionEClass, ADDITIVE_EXPRESSION__LEFT);
     createEAttribute(additiveExpressionEClass, ADDITIVE_EXPRESSION__OP);
+    createEAttribute(additiveExpressionEClass, ADDITIVE_EXPRESSION__TE);
     createEReference(additiveExpressionEClass, ADDITIVE_EXPRESSION__RIGHT);
 
     exquoExpressionEClass = createEClass(EXQUO_EXPRESSION);
@@ -5263,6 +5314,7 @@ public class EditorPackageImpl extends EPackageImpl implements EditorPackage
     divisionExpressionEClass = createEClass(DIVISION_EXPRESSION);
     createEReference(divisionExpressionEClass, DIVISION_EXPRESSION__LEFT);
     createEAttribute(divisionExpressionEClass, DIVISION_EXPRESSION__OP);
+    createEAttribute(divisionExpressionEClass, DIVISION_EXPRESSION__TE);
     createEReference(divisionExpressionEClass, DIVISION_EXPRESSION__RIGHT);
 
     quoExpressionEClass = createEClass(QUO_EXPRESSION);
@@ -5283,6 +5335,7 @@ public class EditorPackageImpl extends EPackageImpl implements EditorPackage
     multiplicativeExpressionEClass = createEClass(MULTIPLICATIVE_EXPRESSION);
     createEReference(multiplicativeExpressionEClass, MULTIPLICATIVE_EXPRESSION__LEFT);
     createEAttribute(multiplicativeExpressionEClass, MULTIPLICATIVE_EXPRESSION__OP);
+    createEAttribute(multiplicativeExpressionEClass, MULTIPLICATIVE_EXPRESSION__TE);
     createEReference(multiplicativeExpressionEClass, MULTIPLICATIVE_EXPRESSION__RIGHT);
 
     exponentExpressionEClass = createEClass(EXPONENT_EXPRESSION);
@@ -5294,6 +5347,7 @@ public class EditorPackageImpl extends EPackageImpl implements EditorPackage
     createEReference(mapDefinitionEClass, MAP_DEFINITION__LEFT);
     createEAttribute(mapDefinitionEClass, MAP_DEFINITION__OP);
     createEReference(mapDefinitionEClass, MAP_DEFINITION__RIGHT);
+    createEAttribute(mapDefinitionEClass, MAP_DEFINITION__PAR);
 
     assignExpressionEClass = createEClass(ASSIGN_EXPRESSION);
     createEReference(assignExpressionEClass, ASSIGN_EXPRESSION__LEFT);
@@ -5328,6 +5382,7 @@ public class EditorPackageImpl extends EPackageImpl implements EditorPackage
     unaryExpressionEClass = createEClass(UNARY_EXPRESSION);
     createEAttribute(unaryExpressionEClass, UNARY_EXPRESSION__UOP);
     createEReference(unaryExpressionEClass, UNARY_EXPRESSION__EXPR);
+    createEAttribute(unaryExpressionEClass, UNARY_EXPRESSION__TE);
   }
 
   /**
@@ -5817,6 +5872,7 @@ public class EditorPackageImpl extends EPackageImpl implements EditorPackage
     initEClass(additiveExpressionEClass, AdditiveExpression.class, "AdditiveExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getAdditiveExpression_Left(), this.getExpr(), null, "left", null, 0, 1, AdditiveExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getAdditiveExpression_Op(), ecorePackage.getEString(), "op", null, 0, 1, AdditiveExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getAdditiveExpression_Te(), ecorePackage.getEString(), "te", null, 0, 1, AdditiveExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getAdditiveExpression_Right(), this.getExpr(), null, "right", null, 0, 1, AdditiveExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(exquoExpressionEClass, ExquoExpression.class, "ExquoExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -5827,6 +5883,7 @@ public class EditorPackageImpl extends EPackageImpl implements EditorPackage
     initEClass(divisionExpressionEClass, DivisionExpression.class, "DivisionExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getDivisionExpression_Left(), this.getExpr(), null, "left", null, 0, 1, DivisionExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getDivisionExpression_Op(), ecorePackage.getEString(), "op", null, 0, 1, DivisionExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getDivisionExpression_Te(), ecorePackage.getEString(), "te", null, 0, 1, DivisionExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getDivisionExpression_Right(), this.getExpr(), null, "right", null, 0, 1, DivisionExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(quoExpressionEClass, QuoExpression.class, "QuoExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -5847,6 +5904,7 @@ public class EditorPackageImpl extends EPackageImpl implements EditorPackage
     initEClass(multiplicativeExpressionEClass, MultiplicativeExpression.class, "MultiplicativeExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getMultiplicativeExpression_Left(), this.getExpr(), null, "left", null, 0, 1, MultiplicativeExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getMultiplicativeExpression_Op(), ecorePackage.getEString(), "op", null, 0, 1, MultiplicativeExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getMultiplicativeExpression_Te(), ecorePackage.getEString(), "te", null, 0, 1, MultiplicativeExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getMultiplicativeExpression_Right(), this.getExpr(), null, "right", null, 0, 1, MultiplicativeExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(exponentExpressionEClass, ExponentExpression.class, "ExponentExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -5858,6 +5916,7 @@ public class EditorPackageImpl extends EPackageImpl implements EditorPackage
     initEReference(getMapDefinition_Left(), this.getExpr(), null, "left", null, 0, 1, MapDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getMapDefinition_Op(), ecorePackage.getEString(), "op", null, 0, 1, MapDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getMapDefinition_Right(), this.getExpr(), null, "right", null, 0, 1, MapDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getMapDefinition_Par(), ecorePackage.getEString(), "par", null, 0, 1, MapDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(assignExpressionEClass, AssignExpression.class, "AssignExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getAssignExpression_Left(), this.getExpr(), null, "left", null, 0, 1, AssignExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -5892,6 +5951,7 @@ public class EditorPackageImpl extends EPackageImpl implements EditorPackage
     initEClass(unaryExpressionEClass, UnaryExpression.class, "UnaryExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getUnaryExpression_Uop(), ecorePackage.getEString(), "uop", null, 0, 1, UnaryExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getUnaryExpression_Expr(), this.getExpr(), null, "expr", null, 0, 1, UnaryExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getUnaryExpression_Te(), ecorePackage.getEString(), "te", null, 0, 1, UnaryExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     // Create resource
     createResource(eNS_URI);

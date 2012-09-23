@@ -3875,11 +3875,11 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cInKeyword_1_5_2 = (Keyword)cGroup_1_5.eContents().get(2);
 		private final Assignment cT2Assignment_1_5_3 = (Assignment)cGroup_1_5.eContents().get(3);
 		private final RuleCall cT2ExpressionParserRuleCall_1_5_3_0 = (RuleCall)cT2Assignment_1_5_3.eContents().get(0);
-		private final Group cGroup_1_5_4 = (Group)cGroup_1_5.eContents().get(4);
-		private final Keyword cByKeyword_1_5_4_0 = (Keyword)cGroup_1_5_4.eContents().get(0);
-		private final Assignment cBy2Assignment_1_5_4_1 = (Assignment)cGroup_1_5_4.eContents().get(1);
-		private final RuleCall cBy2ExpressionParserRuleCall_1_5_4_1_0 = (RuleCall)cBy2Assignment_1_5_4_1.eContents().get(0);
-		private final RuleCall cSEGTerminalRuleCall_1_5_5 = (RuleCall)cGroup_1_5.eContents().get(5);
+		private final RuleCall cSEGTerminalRuleCall_1_5_4 = (RuleCall)cGroup_1_5.eContents().get(4);
+		private final Group cGroup_1_5_5 = (Group)cGroup_1_5.eContents().get(5);
+		private final Keyword cByKeyword_1_5_5_0 = (Keyword)cGroup_1_5_5.eContents().get(0);
+		private final Assignment cBy2Assignment_1_5_5_1 = (Assignment)cGroup_1_5_5.eContents().get(1);
+		private final RuleCall cBy2ExpressionParserRuleCall_1_5_5_1_0 = (RuleCall)cBy2Assignment_1_5_5_1.eContents().get(0);
 		private final Group cGroup_1_6 = (Group)cGroup_1.eContents().get(6);
 		private final Keyword cWhileKeyword_1_6_0 = (Keyword)cGroup_1_6.eContents().get(0);
 		private final Assignment cT2Assignment_1_6_1 = (Assignment)cGroup_1_6.eContents().get(1);
@@ -3907,13 +3907,13 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		// * / ForStatement hidden(WS, SL_COMMENT):
 		//	"for" (stname=ID "in" t1=Expression SEG? //(=> '..' t2=Expression)?
 		//	("by" by1=Expression)? //       (=> BAR t2=PredicateOr)? // condition
-		//	("for" stname2+=ID "in" t2+=Expression ("by" by2+=Expression)? SEG?)* ("while" t2+=Expression)*) "repeat" NL? s1= //('is' s2=Statement)?
+		//	("for" stname2+=ID "in" t2+=Expression SEG? ("by" by2+=Expression)?)* ("while" t2+=Expression)*) "repeat" NL? s1= //('is' s2=Statement)?
 		//	Statement;
 		public ParserRule getRule() { return rule; }
 
 		//"for" (stname=ID "in" t1=Expression SEG? //(=> '..' t2=Expression)?
 		//("by" by1=Expression)? //       (=> BAR t2=PredicateOr)? // condition
-		//("for" stname2+=ID "in" t2+=Expression ("by" by2+=Expression)? SEG?)* ("while" t2+=Expression)*) "repeat" NL? s1= //('is' s2=Statement)?
+		//("for" stname2+=ID "in" t2+=Expression SEG? ("by" by2+=Expression)?)* ("while" t2+=Expression)*) "repeat" NL? s1= //('is' s2=Statement)?
 		//Statement
 		public Group getGroup() { return cGroup; }
 
@@ -3922,7 +3922,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 
 		//stname=ID "in" t1=Expression SEG? //(=> '..' t2=Expression)?
 		//("by" by1=Expression)? //       (=> BAR t2=PredicateOr)? // condition
-		//("for" stname2+=ID "in" t2+=Expression ("by" by2+=Expression)? SEG?)* ("while" t2+=Expression)*
+		//("for" stname2+=ID "in" t2+=Expression SEG? ("by" by2+=Expression)?)* ("while" t2+=Expression)*
 		public Group getGroup_1() { return cGroup_1; }
 
 		//stname=ID
@@ -3955,7 +3955,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		//Expression
 		public RuleCall getBy1ExpressionParserRuleCall_1_4_1_0() { return cBy1ExpressionParserRuleCall_1_4_1_0; }
 
-		//("for" stname2+=ID "in" t2+=Expression ("by" by2+=Expression)? SEG?)*
+		//("for" stname2+=ID "in" t2+=Expression SEG? ("by" by2+=Expression)?)*
 		public Group getGroup_1_5() { return cGroup_1_5; }
 
 		//"for"
@@ -3976,20 +3976,20 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		//Expression
 		public RuleCall getT2ExpressionParserRuleCall_1_5_3_0() { return cT2ExpressionParserRuleCall_1_5_3_0; }
 
+		//SEG?
+		public RuleCall getSEGTerminalRuleCall_1_5_4() { return cSEGTerminalRuleCall_1_5_4; }
+
 		//("by" by2+=Expression)?
-		public Group getGroup_1_5_4() { return cGroup_1_5_4; }
+		public Group getGroup_1_5_5() { return cGroup_1_5_5; }
 
 		//"by"
-		public Keyword getByKeyword_1_5_4_0() { return cByKeyword_1_5_4_0; }
+		public Keyword getByKeyword_1_5_5_0() { return cByKeyword_1_5_5_0; }
 
 		//by2+=Expression
-		public Assignment getBy2Assignment_1_5_4_1() { return cBy2Assignment_1_5_4_1; }
+		public Assignment getBy2Assignment_1_5_5_1() { return cBy2Assignment_1_5_5_1; }
 
 		//Expression
-		public RuleCall getBy2ExpressionParserRuleCall_1_5_4_1_0() { return cBy2ExpressionParserRuleCall_1_5_4_1_0; }
-
-		//SEG?
-		public RuleCall getSEGTerminalRuleCall_1_5_5() { return cSEGTerminalRuleCall_1_5_5; }
+		public RuleCall getBy2ExpressionParserRuleCall_1_5_5_1_0() { return cBy2ExpressionParserRuleCall_1_5_5_1_0; }
 
 		//("while" t2+=Expression)*
 		public Group getGroup_1_6() { return cGroup_1_6; }
@@ -4843,14 +4843,13 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cOpNOTEQUALTerminalRuleCall_1_1_1_0 = (RuleCall)cOpAssignment_1_1_1.eContents().get(0);
 		private final Assignment cOpAssignment_1_1_2 = (Assignment)cAlternatives_1_1.eContents().get(2);
 		private final Keyword cOpCircumflexAccentEqualsSignKeyword_1_1_2_0 = (Keyword)cOpAssignment_1_1_2.eContents().get(0);
-		private final Assignment cOpAssignment_1_1_3 = (Assignment)cAlternatives_1_1.eContents().get(3);
-		private final RuleCall cOpEQUALSREPTerminalRuleCall_1_1_3_0 = (RuleCall)cOpAssignment_1_1_3.eContents().get(0);
-		private final Group cGroup_1_2 = (Group)cGroup_1.eContents().get(2);
-		private final RuleCall cDOLARTerminalRuleCall_1_2_0 = (RuleCall)cGroup_1_2.eContents().get(0);
-		private final Assignment cTeAssignment_1_2_1 = (Assignment)cGroup_1_2.eContents().get(1);
-		private final RuleCall cTeIDTerminalRuleCall_1_2_1_0 = (RuleCall)cTeAssignment_1_2_1.eContents().get(0);
-		private final Assignment cRightAssignment_1_3 = (Assignment)cGroup_1.eContents().get(3);
-		private final RuleCall cRightRelationalExpressionParserRuleCall_1_3_0 = (RuleCall)cRightAssignment_1_3.eContents().get(0);
+		private final Group cGroup_1_1_3 = (Group)cAlternatives_1_1.eContents().get(3);
+		private final Assignment cOpAssignment_1_1_3_0 = (Assignment)cGroup_1_1_3.eContents().get(0);
+		private final RuleCall cOpEQUALSDOLARTerminalRuleCall_1_1_3_0_0 = (RuleCall)cOpAssignment_1_1_3_0.eContents().get(0);
+		private final Assignment cTeAssignment_1_1_3_1 = (Assignment)cGroup_1_1_3.eContents().get(1);
+		private final RuleCall cTeIDTerminalRuleCall_1_1_3_1_0 = (RuleCall)cTeAssignment_1_1_3_1.eContents().get(0);
+		private final Assignment cRightAssignment_1_2 = (Assignment)cGroup_1.eContents().get(2);
+		private final RuleCall cRightRelationalExpressionParserRuleCall_1_2_0 = (RuleCall)cRightAssignment_1_2.eContents().get(0);
 		
 		/// * used in list comprehension
 		// * 
@@ -4864,26 +4863,26 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		// * "=", precedence: 400, 400
 		// * / EqualityExpression returns Expr hidden(WS, SL_COMMENT):
 		//	RelationalExpression // ambiguous because EQ can be in top level expression
-		//	({EqualityExpression.left=current} (op=EQUAL | op=NOTEQUAL | op="^=" | op=EQUALSREP) (DOLAR te=ID)?
+		//	({EqualityExpression.left=current} (op=EQUAL | op=NOTEQUAL | op="^=" | op=EQUALSDOLAR te=ID) //(DOLAR te=ID)?
 		//	right=RelationalExpression)*;
 		public ParserRule getRule() { return rule; }
 
 		//RelationalExpression // ambiguous because EQ can be in top level expression
-		//({EqualityExpression.left=current} (op=EQUAL | op=NOTEQUAL | op="^=" | op=EQUALSREP) (DOLAR te=ID)?
+		//({EqualityExpression.left=current} (op=EQUAL | op=NOTEQUAL | op="^=" | op=EQUALSDOLAR te=ID) //(DOLAR te=ID)?
 		//right=RelationalExpression)*
 		public Group getGroup() { return cGroup; }
 
 		//RelationalExpression
 		public RuleCall getRelationalExpressionParserRuleCall_0() { return cRelationalExpressionParserRuleCall_0; }
 
-		//({EqualityExpression.left=current} (op=EQUAL | op=NOTEQUAL | op="^=" | op=EQUALSREP) (DOLAR te=ID)?
+		//({EqualityExpression.left=current} (op=EQUAL | op=NOTEQUAL | op="^=" | op=EQUALSDOLAR te=ID) //(DOLAR te=ID)?
 		//right=RelationalExpression)*
 		public Group getGroup_1() { return cGroup_1; }
 
 		//{EqualityExpression.left=current}
 		public Action getEqualityExpressionLeftAction_1_0() { return cEqualityExpressionLeftAction_1_0; }
 
-		//op=EQUAL | op=NOTEQUAL | op="^=" | op=EQUALSREP
+		//op=EQUAL | op=NOTEQUAL | op="^=" | op=EQUALSDOLAR te=ID
 		public Alternatives getAlternatives_1_1() { return cAlternatives_1_1; }
 
 		//op=EQUAL
@@ -4904,29 +4903,27 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		//"^="
 		public Keyword getOpCircumflexAccentEqualsSignKeyword_1_1_2_0() { return cOpCircumflexAccentEqualsSignKeyword_1_1_2_0; }
 
-		//op=EQUALSREP
-		public Assignment getOpAssignment_1_1_3() { return cOpAssignment_1_1_3; }
+		//op=EQUALSDOLAR te=ID
+		public Group getGroup_1_1_3() { return cGroup_1_1_3; }
 
-		//EQUALSREP
-		public RuleCall getOpEQUALSREPTerminalRuleCall_1_1_3_0() { return cOpEQUALSREPTerminalRuleCall_1_1_3_0; }
+		//op=EQUALSDOLAR
+		public Assignment getOpAssignment_1_1_3_0() { return cOpAssignment_1_1_3_0; }
 
-		//(DOLAR te=ID)?
-		public Group getGroup_1_2() { return cGroup_1_2; }
-
-		//DOLAR
-		public RuleCall getDOLARTerminalRuleCall_1_2_0() { return cDOLARTerminalRuleCall_1_2_0; }
+		//EQUALSDOLAR
+		public RuleCall getOpEQUALSDOLARTerminalRuleCall_1_1_3_0_0() { return cOpEQUALSDOLARTerminalRuleCall_1_1_3_0_0; }
 
 		//te=ID
-		public Assignment getTeAssignment_1_2_1() { return cTeAssignment_1_2_1; }
+		public Assignment getTeAssignment_1_1_3_1() { return cTeAssignment_1_1_3_1; }
 
 		//ID
-		public RuleCall getTeIDTerminalRuleCall_1_2_1_0() { return cTeIDTerminalRuleCall_1_2_1_0; }
+		public RuleCall getTeIDTerminalRuleCall_1_1_3_1_0() { return cTeIDTerminalRuleCall_1_1_3_1_0; }
 
+		////(DOLAR te=ID)?
 		//right=RelationalExpression
-		public Assignment getRightAssignment_1_3() { return cRightAssignment_1_3; }
+		public Assignment getRightAssignment_1_2() { return cRightAssignment_1_2; }
 
 		//RelationalExpression
-		public RuleCall getRightRelationalExpressionParserRuleCall_1_3_0() { return cRightRelationalExpressionParserRuleCall_1_3_0; }
+		public RuleCall getRightRelationalExpressionParserRuleCall_1_2_0() { return cRightRelationalExpressionParserRuleCall_1_2_0; }
 	}
 
 	public class RelationalExpressionElements extends AbstractParserRuleElementFinder {
@@ -5118,10 +5115,16 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cOpPLUSTerminalRuleCall_1_1_0_0 = (RuleCall)cOpAssignment_1_1_0.eContents().get(0);
 		private final Assignment cOpAssignment_1_1_1 = (Assignment)cAlternatives_1_1.eContents().get(1);
 		private final RuleCall cOpMINUSTerminalRuleCall_1_1_1_0 = (RuleCall)cOpAssignment_1_1_1.eContents().get(0);
-		private final Assignment cOpAssignment_1_1_2 = (Assignment)cAlternatives_1_1.eContents().get(2);
-		private final RuleCall cOpPLUSREPTerminalRuleCall_1_1_2_0 = (RuleCall)cOpAssignment_1_1_2.eContents().get(0);
-		private final Assignment cOpAssignment_1_1_3 = (Assignment)cAlternatives_1_1.eContents().get(3);
-		private final RuleCall cOpMINUSREPTerminalRuleCall_1_1_3_0 = (RuleCall)cOpAssignment_1_1_3.eContents().get(0);
+		private final Group cGroup_1_1_2 = (Group)cAlternatives_1_1.eContents().get(2);
+		private final Assignment cOpAssignment_1_1_2_0 = (Assignment)cGroup_1_1_2.eContents().get(0);
+		private final RuleCall cOpPLUSDOLARTerminalRuleCall_1_1_2_0_0 = (RuleCall)cOpAssignment_1_1_2_0.eContents().get(0);
+		private final Assignment cTeAssignment_1_1_2_1 = (Assignment)cGroup_1_1_2.eContents().get(1);
+		private final RuleCall cTeIDTerminalRuleCall_1_1_2_1_0 = (RuleCall)cTeAssignment_1_1_2_1.eContents().get(0);
+		private final Group cGroup_1_1_3 = (Group)cAlternatives_1_1.eContents().get(3);
+		private final Assignment cOpAssignment_1_1_3_0 = (Assignment)cGroup_1_1_3.eContents().get(0);
+		private final RuleCall cOpMINUSDOLARTerminalRuleCall_1_1_3_0_0 = (RuleCall)cOpAssignment_1_1_3_0.eContents().get(0);
+		private final Assignment cTeAssignment_1_1_3_1 = (Assignment)cGroup_1_1_3.eContents().get(1);
+		private final RuleCall cTeIDTerminalRuleCall_1_1_3_1_0 = (RuleCall)cTeAssignment_1_1_3_1.eContents().get(0);
 		private final Assignment cRightAssignment_1_2 = (Assignment)cGroup_1.eContents().get(2);
 		private final RuleCall cRightExquoExpressionParserRuleCall_1_2_0 = (RuleCall)cRightAssignment_1_2.eContents().get(0);
 		
@@ -5134,24 +5137,25 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		// * "-",  precedence: 700, 701
 		// * "+",  precedence: 700, 701
 		// * / AdditiveExpression returns Expr hidden(WS, SL_COMMENT):
-		//	ExquoExpression ({AdditiveExpression.left=current} (op=PLUS | op=MINUS | op=PLUSREP | op=MINUSREP)
+		//	ExquoExpression ({AdditiveExpression.left=current} (op=PLUS | op=MINUS | op=PLUSDOLAR te=ID | op=MINUSDOLAR te=ID)
 		//	right=ExquoExpression)*;
 		public ParserRule getRule() { return rule; }
 
-		//ExquoExpression ({AdditiveExpression.left=current} (op=PLUS | op=MINUS | op=PLUSREP | op=MINUSREP)
+		//ExquoExpression ({AdditiveExpression.left=current} (op=PLUS | op=MINUS | op=PLUSDOLAR te=ID | op=MINUSDOLAR te=ID)
 		//right=ExquoExpression)*
 		public Group getGroup() { return cGroup; }
 
 		//ExquoExpression
 		public RuleCall getExquoExpressionParserRuleCall_0() { return cExquoExpressionParserRuleCall_0; }
 
-		//({AdditiveExpression.left=current} (op=PLUS | op=MINUS | op=PLUSREP | op=MINUSREP) right=ExquoExpression)*
+		//({AdditiveExpression.left=current} (op=PLUS | op=MINUS | op=PLUSDOLAR te=ID | op=MINUSDOLAR te=ID)
+		//right=ExquoExpression)*
 		public Group getGroup_1() { return cGroup_1; }
 
 		//{AdditiveExpression.left=current}
 		public Action getAdditiveExpressionLeftAction_1_0() { return cAdditiveExpressionLeftAction_1_0; }
 
-		//op=PLUS | op=MINUS | op=PLUSREP | op=MINUSREP
+		//op=PLUS | op=MINUS | op=PLUSDOLAR te=ID | op=MINUSDOLAR te=ID
 		public Alternatives getAlternatives_1_1() { return cAlternatives_1_1; }
 
 		//op=PLUS
@@ -5166,17 +5170,35 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		//MINUS
 		public RuleCall getOpMINUSTerminalRuleCall_1_1_1_0() { return cOpMINUSTerminalRuleCall_1_1_1_0; }
 
-		//op=PLUSREP
-		public Assignment getOpAssignment_1_1_2() { return cOpAssignment_1_1_2; }
+		//op=PLUSDOLAR te=ID
+		public Group getGroup_1_1_2() { return cGroup_1_1_2; }
 
-		//PLUSREP
-		public RuleCall getOpPLUSREPTerminalRuleCall_1_1_2_0() { return cOpPLUSREPTerminalRuleCall_1_1_2_0; }
+		//op=PLUSDOLAR
+		public Assignment getOpAssignment_1_1_2_0() { return cOpAssignment_1_1_2_0; }
 
-		//op=MINUSREP
-		public Assignment getOpAssignment_1_1_3() { return cOpAssignment_1_1_3; }
+		//PLUSDOLAR
+		public RuleCall getOpPLUSDOLARTerminalRuleCall_1_1_2_0_0() { return cOpPLUSDOLARTerminalRuleCall_1_1_2_0_0; }
 
-		//MINUSREP
-		public RuleCall getOpMINUSREPTerminalRuleCall_1_1_3_0() { return cOpMINUSREPTerminalRuleCall_1_1_3_0; }
+		//te=ID
+		public Assignment getTeAssignment_1_1_2_1() { return cTeAssignment_1_1_2_1; }
+
+		//ID
+		public RuleCall getTeIDTerminalRuleCall_1_1_2_1_0() { return cTeIDTerminalRuleCall_1_1_2_1_0; }
+
+		//op=MINUSDOLAR te=ID
+		public Group getGroup_1_1_3() { return cGroup_1_1_3; }
+
+		//op=MINUSDOLAR
+		public Assignment getOpAssignment_1_1_3_0() { return cOpAssignment_1_1_3_0; }
+
+		//MINUSDOLAR
+		public RuleCall getOpMINUSDOLARTerminalRuleCall_1_1_3_0_0() { return cOpMINUSDOLARTerminalRuleCall_1_1_3_0_0; }
+
+		//te=ID
+		public Assignment getTeAssignment_1_1_3_1() { return cTeAssignment_1_1_3_1; }
+
+		//ID
+		public RuleCall getTeIDTerminalRuleCall_1_1_3_1_0() { return cTeIDTerminalRuleCall_1_1_3_1_0; }
 
 		//right=ExquoExpression
 		public Assignment getRightAssignment_1_2() { return cRightAssignment_1_2; }
@@ -5236,8 +5258,11 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		private final Alternatives cAlternatives_1_1 = (Alternatives)cGroup_1.eContents().get(1);
 		private final Assignment cOpAssignment_1_1_0 = (Assignment)cAlternatives_1_1.eContents().get(0);
 		private final RuleCall cOpSLASHTerminalRuleCall_1_1_0_0 = (RuleCall)cOpAssignment_1_1_0.eContents().get(0);
-		private final Assignment cOpAssignment_1_1_1 = (Assignment)cAlternatives_1_1.eContents().get(1);
-		private final RuleCall cOpDIVREPTerminalRuleCall_1_1_1_0 = (RuleCall)cOpAssignment_1_1_1.eContents().get(0);
+		private final Group cGroup_1_1_1 = (Group)cAlternatives_1_1.eContents().get(1);
+		private final Assignment cOpAssignment_1_1_1_0 = (Assignment)cGroup_1_1_1.eContents().get(0);
+		private final RuleCall cOpDIVDOLARTerminalRuleCall_1_1_1_0_0 = (RuleCall)cOpAssignment_1_1_1_0.eContents().get(0);
+		private final Assignment cTeAssignment_1_1_1_1 = (Assignment)cGroup_1_1_1.eContents().get(1);
+		private final RuleCall cTeIDTerminalRuleCall_1_1_1_1_0 = (RuleCall)cTeAssignment_1_1_1_1.eContents().get(0);
 		private final Assignment cRightAssignment_1_2 = (Assignment)cGroup_1.eContents().get(2);
 		private final RuleCall cRightQuoExpressionParserRuleCall_1_2_0 = (RuleCall)cRightAssignment_1_2.eContents().get(0);
 		
@@ -5245,22 +5270,22 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		// * division expression
 		// * "/",  precedence: 800, 801
 		// * / DivisionExpression returns Expr hidden(WS, SL_COMMENT):
-		//	QuoExpression ({DivisionExpression.left=current} (op=SLASH | op=DIVREP) right=QuoExpression)*;
+		//	QuoExpression ({DivisionExpression.left=current} (op=SLASH | op=DIVDOLAR te=ID) right=QuoExpression)*;
 		public ParserRule getRule() { return rule; }
 
-		//QuoExpression ({DivisionExpression.left=current} (op=SLASH | op=DIVREP) right=QuoExpression)*
+		//QuoExpression ({DivisionExpression.left=current} (op=SLASH | op=DIVDOLAR te=ID) right=QuoExpression)*
 		public Group getGroup() { return cGroup; }
 
 		//QuoExpression
 		public RuleCall getQuoExpressionParserRuleCall_0() { return cQuoExpressionParserRuleCall_0; }
 
-		//({DivisionExpression.left=current} (op=SLASH | op=DIVREP) right=QuoExpression)*
+		//({DivisionExpression.left=current} (op=SLASH | op=DIVDOLAR te=ID) right=QuoExpression)*
 		public Group getGroup_1() { return cGroup_1; }
 
 		//{DivisionExpression.left=current}
 		public Action getDivisionExpressionLeftAction_1_0() { return cDivisionExpressionLeftAction_1_0; }
 
-		//op=SLASH | op=DIVREP
+		//op=SLASH | op=DIVDOLAR te=ID
 		public Alternatives getAlternatives_1_1() { return cAlternatives_1_1; }
 
 		//op=SLASH
@@ -5269,11 +5294,20 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		//SLASH
 		public RuleCall getOpSLASHTerminalRuleCall_1_1_0_0() { return cOpSLASHTerminalRuleCall_1_1_0_0; }
 
-		//op=DIVREP
-		public Assignment getOpAssignment_1_1_1() { return cOpAssignment_1_1_1; }
+		//op=DIVDOLAR te=ID
+		public Group getGroup_1_1_1() { return cGroup_1_1_1; }
 
-		//DIVREP
-		public RuleCall getOpDIVREPTerminalRuleCall_1_1_1_0() { return cOpDIVREPTerminalRuleCall_1_1_1_0; }
+		//op=DIVDOLAR
+		public Assignment getOpAssignment_1_1_1_0() { return cOpAssignment_1_1_1_0; }
+
+		//DIVDOLAR
+		public RuleCall getOpDIVDOLARTerminalRuleCall_1_1_1_0_0() { return cOpDIVDOLARTerminalRuleCall_1_1_1_0_0; }
+
+		//te=ID
+		public Assignment getTeAssignment_1_1_1_1() { return cTeAssignment_1_1_1_1; }
+
+		//ID
+		public RuleCall getTeIDTerminalRuleCall_1_1_1_1_0() { return cTeIDTerminalRuleCall_1_1_1_1_0; }
 
 		//right=QuoExpression
 		public Assignment getRightAssignment_1_2() { return cRightAssignment_1_2; }
@@ -5417,8 +5451,11 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		private final Alternatives cAlternatives_1_1 = (Alternatives)cGroup_1.eContents().get(1);
 		private final Assignment cOpAssignment_1_1_0 = (Assignment)cAlternatives_1_1.eContents().get(0);
 		private final RuleCall cOpTIMESTerminalRuleCall_1_1_0_0 = (RuleCall)cOpAssignment_1_1_0.eContents().get(0);
-		private final Assignment cOpAssignment_1_1_1 = (Assignment)cAlternatives_1_1.eContents().get(1);
-		private final RuleCall cOpTIMESREPTerminalRuleCall_1_1_1_0 = (RuleCall)cOpAssignment_1_1_1.eContents().get(0);
+		private final Group cGroup_1_1_1 = (Group)cAlternatives_1_1.eContents().get(1);
+		private final Assignment cOpAssignment_1_1_1_0 = (Assignment)cGroup_1_1_1.eContents().get(0);
+		private final RuleCall cOpTIMESDOLARTerminalRuleCall_1_1_1_0_0 = (RuleCall)cOpAssignment_1_1_1_0.eContents().get(0);
+		private final Assignment cTeAssignment_1_1_1_1 = (Assignment)cGroup_1_1_1.eContents().get(1);
+		private final RuleCall cTeIDTerminalRuleCall_1_1_1_1_0 = (RuleCall)cTeAssignment_1_1_1_1.eContents().get(0);
 		private final Assignment cRightAssignment_1_2 = (Assignment)cGroup_1.eContents().get(2);
 		private final RuleCall cRightExponentExpressionParserRuleCall_1_2_0 = (RuleCall)cRightAssignment_1_2.eContents().get(0);
 		
@@ -5428,22 +5465,23 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		// * 
 		// * "*", precedence: 800, 801
 		// * / MultiplicativeExpression returns Expr hidden(WS, SL_COMMENT):
-		//	ExponentExpression ({MultiplicativeExpression.left=current} (op=TIMES | op=TIMESREP) right=ExponentExpression)*;
+		//	ExponentExpression ({MultiplicativeExpression.left=current} (op=TIMES | op=TIMESDOLAR te=ID)
+		//	right=ExponentExpression)*;
 		public ParserRule getRule() { return rule; }
 
-		//ExponentExpression ({MultiplicativeExpression.left=current} (op=TIMES | op=TIMESREP) right=ExponentExpression)*
+		//ExponentExpression ({MultiplicativeExpression.left=current} (op=TIMES | op=TIMESDOLAR te=ID) right=ExponentExpression)*
 		public Group getGroup() { return cGroup; }
 
 		//ExponentExpression
 		public RuleCall getExponentExpressionParserRuleCall_0() { return cExponentExpressionParserRuleCall_0; }
 
-		//({MultiplicativeExpression.left=current} (op=TIMES | op=TIMESREP) right=ExponentExpression)*
+		//({MultiplicativeExpression.left=current} (op=TIMES | op=TIMESDOLAR te=ID) right=ExponentExpression)*
 		public Group getGroup_1() { return cGroup_1; }
 
 		//{MultiplicativeExpression.left=current}
 		public Action getMultiplicativeExpressionLeftAction_1_0() { return cMultiplicativeExpressionLeftAction_1_0; }
 
-		//op=TIMES | op=TIMESREP
+		//op=TIMES | op=TIMESDOLAR te=ID
 		public Alternatives getAlternatives_1_1() { return cAlternatives_1_1; }
 
 		//op=TIMES
@@ -5452,11 +5490,20 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		//TIMES
 		public RuleCall getOpTIMESTerminalRuleCall_1_1_0_0() { return cOpTIMESTerminalRuleCall_1_1_0_0; }
 
-		//op=TIMESREP
-		public Assignment getOpAssignment_1_1_1() { return cOpAssignment_1_1_1; }
+		//op=TIMESDOLAR te=ID
+		public Group getGroup_1_1_1() { return cGroup_1_1_1; }
 
-		//TIMESREP
-		public RuleCall getOpTIMESREPTerminalRuleCall_1_1_1_0() { return cOpTIMESREPTerminalRuleCall_1_1_1_0; }
+		//op=TIMESDOLAR
+		public Assignment getOpAssignment_1_1_1_0() { return cOpAssignment_1_1_1_0; }
+
+		//TIMESDOLAR
+		public RuleCall getOpTIMESDOLARTerminalRuleCall_1_1_1_0_0() { return cOpTIMESDOLARTerminalRuleCall_1_1_1_0_0; }
+
+		//te=ID
+		public Assignment getTeAssignment_1_1_1_1() { return cTeAssignment_1_1_1_1; }
+
+		//ID
+		public RuleCall getTeIDTerminalRuleCall_1_1_1_1_0() { return cTeIDTerminalRuleCall_1_1_1_1_0; }
 
 		//right=ExponentExpression
 		public Assignment getRightAssignment_1_2() { return cRightAssignment_1_2; }
@@ -5531,6 +5578,8 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cOpGIVESTerminalRuleCall_1_1_0 = (RuleCall)cOpAssignment_1_1.eContents().get(0);
 		private final Assignment cRightAssignment_1_2 = (Assignment)cGroup_1.eContents().get(2);
 		private final RuleCall cRightAssignExpressionParserRuleCall_1_2_0 = (RuleCall)cRightAssignment_1_2.eContents().get(0);
+		private final Assignment cParAssignment_1_3 = (Assignment)cGroup_1.eContents().get(3);
+		private final RuleCall cParIDTerminalRuleCall_1_3_0 = (RuleCall)cParAssignment_1_3.eContents().get(0);
 		
 		/// * Map or Lambda expression
 		// * var +-> function 	
@@ -5547,18 +5596,22 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		// * fricas compatibility:
 		// * "+->", precedence: 995, 112
 		// * / MapDefinition returns Expr hidden(WS, SL_COMMENT): //  (PretendExpression | LPAREN PretendExpression (COMMA t25+=PretendExpression)+ RPAREN) (COLON rightType2 =TypeExpression)?
-		//	AssignExpression ({MapDefinition.left=current} op=GIVES right=AssignExpression)*;
+		//	AssignExpression ({MapDefinition.left=current} op=GIVES right=AssignExpression par=ID? // optional parameter which function
+		//)* // is applied to
+		//;
 		public ParserRule getRule() { return rule; }
 
 		////  (PretendExpression | LPAREN PretendExpression (COMMA t25+=PretendExpression)+ RPAREN) (COLON rightType2 =TypeExpression)?
-		//AssignExpression ({MapDefinition.left=current} op=GIVES right=AssignExpression)*
+		//AssignExpression ({MapDefinition.left=current} op=GIVES right=AssignExpression par=ID? // optional parameter which function
+		//)* // is applied to
 		public Group getGroup() { return cGroup; }
 
 		////  (PretendExpression | LPAREN PretendExpression (COMMA t25+=PretendExpression)+ RPAREN) (COLON rightType2 =TypeExpression)?
 		//AssignExpression
 		public RuleCall getAssignExpressionParserRuleCall_0() { return cAssignExpressionParserRuleCall_0; }
 
-		//({MapDefinition.left=current} op=GIVES right=AssignExpression)*
+		//({MapDefinition.left=current} op=GIVES right=AssignExpression par=ID? // optional parameter which function
+		//)*
 		public Group getGroup_1() { return cGroup_1; }
 
 		//{MapDefinition.left=current}
@@ -5575,6 +5628,12 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 
 		//AssignExpression
 		public RuleCall getRightAssignExpressionParserRuleCall_1_2_0() { return cRightAssignExpressionParserRuleCall_1_2_0; }
+
+		//par=ID?
+		public Assignment getParAssignment_1_3() { return cParAssignment_1_3; }
+
+		//ID
+		public RuleCall getParIDTerminalRuleCall_1_3_0() { return cParIDTerminalRuleCall_1_3_0; }
 	}
 
 	public class AssignExpressionElements extends AbstractParserRuleElementFinder {
@@ -5937,9 +5996,11 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		private final Group cGroup_3 = (Group)cAlternatives.eContents().get(3);
 		private final Action cUnaryExpressionAction_3_0 = (Action)cGroup_3.eContents().get(0);
 		private final Assignment cUopAssignment_3_1 = (Assignment)cGroup_3.eContents().get(1);
-		private final RuleCall cUopMINUSREPTerminalRuleCall_3_1_0 = (RuleCall)cUopAssignment_3_1.eContents().get(0);
-		private final Assignment cExprAssignment_3_2 = (Assignment)cGroup_3.eContents().get(2);
-		private final RuleCall cExprUnaryExpressionParserRuleCall_3_2_0 = (RuleCall)cExprAssignment_3_2.eContents().get(0);
+		private final RuleCall cUopMINUSDOLARTerminalRuleCall_3_1_0 = (RuleCall)cUopAssignment_3_1.eContents().get(0);
+		private final Assignment cTeAssignment_3_2 = (Assignment)cGroup_3.eContents().get(2);
+		private final RuleCall cTeIDTerminalRuleCall_3_2_0 = (RuleCall)cTeAssignment_3_2.eContents().get(0);
+		private final Assignment cExprAssignment_3_3 = (Assignment)cGroup_3.eContents().get(3);
+		private final RuleCall cExprUnaryExpressionParserRuleCall_3_3_0 = (RuleCall)cExprAssignment_3_3.eContents().get(0);
 		private final Group cGroup_4 = (Group)cAlternatives.eContents().get(4);
 		private final Action cUnaryExpressionAction_4_0 = (Action)cGroup_4.eContents().get(0);
 		private final Assignment cUopAssignment_4_1 = (Assignment)cGroup_4.eContents().get(1);
@@ -6013,15 +6074,18 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cRPARENTerminalRuleCall_11_4 = (RuleCall)cGroup_11.eContents().get(4);
 		
 		/// * UnaryExpression
+		// * unary prefixes:
 		// * "~" TILDE : precedence  260, 259, nil
 		// * ":" COLON : precedence  194, 195
 		// * "-" MINUS : precedence  701, 700
 		// * "#" HASH : precedence  999, 998
 		// * "'" : precedence  999, 999, ["parse_Data"]
+		// * unary suffixes
+		// * ".." : range can be unary suffix
 		// * / UnaryExpression returns Expr hidden(WS, SL_COMMENT):
 		//	PrimaryExpression //  ({UnaryExpression} uop=COLON expr=UnaryExpression) |
 		//	| {UnaryExpression} uop=TILDE expr=UnaryExpression | {UnaryExpression} uop=MINUS expr=UnaryExpression |
-		//	{UnaryExpression} uop=MINUSREP expr=UnaryExpression | {UnaryExpression} uop=HASH expr=UnaryExpression |
+		//	{UnaryExpression} uop=MINUSDOLAR te=ID expr=UnaryExpression | {UnaryExpression} uop=HASH expr=UnaryExpression |
 		//	{UnaryExpression} uop="not" expr=PrimaryExpression | {UnaryExpression} uop=SUMLIST expr=PrimaryExpression | e2=PERCENT
 		//	| e3="Type" | e5="Record" LPAREN e6=TypeExpression (COLON e22+=TypeExpression)? (COMMA e21+=TypeExpression (COLON
 		//	e23+=TypeExpression)?)* RPAREN | e9="Union" LPAREN e10=TypeExpression (COLON e25+=TypeExpression)? (COMMA
@@ -6031,7 +6095,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 
 		//PrimaryExpression //  ({UnaryExpression} uop=COLON expr=UnaryExpression) |
 		//| {UnaryExpression} uop=TILDE expr=UnaryExpression | {UnaryExpression} uop=MINUS expr=UnaryExpression |
-		//{UnaryExpression} uop=MINUSREP expr=UnaryExpression | {UnaryExpression} uop=HASH expr=UnaryExpression |
+		//{UnaryExpression} uop=MINUSDOLAR te=ID expr=UnaryExpression | {UnaryExpression} uop=HASH expr=UnaryExpression |
 		//{UnaryExpression} uop="not" expr=PrimaryExpression | {UnaryExpression} uop=SUMLIST expr=PrimaryExpression | e2=PERCENT
 		//| e3="Type" | e5="Record" LPAREN e6=TypeExpression (COLON e22+=TypeExpression)? (COMMA e21+=TypeExpression (COLON
 		//e23+=TypeExpression)?)* RPAREN | e9="Union" LPAREN e10=TypeExpression (COLON e25+=TypeExpression)? (COMMA
@@ -6078,23 +6142,29 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		//UnaryExpression
 		public RuleCall getExprUnaryExpressionParserRuleCall_2_2_0() { return cExprUnaryExpressionParserRuleCall_2_2_0; }
 
-		//{UnaryExpression} uop=MINUSREP expr=UnaryExpression
+		//{UnaryExpression} uop=MINUSDOLAR te=ID expr=UnaryExpression
 		public Group getGroup_3() { return cGroup_3; }
 
 		//{UnaryExpression}
 		public Action getUnaryExpressionAction_3_0() { return cUnaryExpressionAction_3_0; }
 
-		//uop=MINUSREP
+		//uop=MINUSDOLAR
 		public Assignment getUopAssignment_3_1() { return cUopAssignment_3_1; }
 
-		//MINUSREP
-		public RuleCall getUopMINUSREPTerminalRuleCall_3_1_0() { return cUopMINUSREPTerminalRuleCall_3_1_0; }
+		//MINUSDOLAR
+		public RuleCall getUopMINUSDOLARTerminalRuleCall_3_1_0() { return cUopMINUSDOLARTerminalRuleCall_3_1_0; }
+
+		//te=ID
+		public Assignment getTeAssignment_3_2() { return cTeAssignment_3_2; }
+
+		//ID
+		public RuleCall getTeIDTerminalRuleCall_3_2_0() { return cTeIDTerminalRuleCall_3_2_0; }
 
 		//expr=UnaryExpression
-		public Assignment getExprAssignment_3_2() { return cExprAssignment_3_2; }
+		public Assignment getExprAssignment_3_3() { return cExprAssignment_3_3; }
 
 		//UnaryExpression
-		public RuleCall getExprUnaryExpressionParserRuleCall_3_2_0() { return cExprUnaryExpressionParserRuleCall_3_2_0; }
+		public RuleCall getExprUnaryExpressionParserRuleCall_3_3_0() { return cExprUnaryExpressionParserRuleCall_3_3_0; }
 
 		//{UnaryExpression} uop=HASH expr=UnaryExpression
 		public Group getGroup_4() { return cGroup_4; }
@@ -6926,11 +6996,11 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 	private TerminalRule tBACKSLASHBACKSLASH;
 	private TerminalRule tSLASHBACKSLASH;
 	private TerminalRule tBACKSLASHSLASH;
-	private TerminalRule tTIMESREP;
-	private TerminalRule tDIVREP;
-	private TerminalRule tPLUSREP;
-	private TerminalRule tMINUSREP;
-	private TerminalRule tEQUALSREP;
+	private TerminalRule tTIMESDOLAR;
+	private TerminalRule tDIVDOLAR;
+	private TerminalRule tPLUSDOLAR;
+	private TerminalRule tMINUSDOLAR;
+	private TerminalRule tEQUALSDOLAR;
 	private TerminalRule tEXIT;
 	private TerminalRule tBECOMES;
 	private TerminalRule tDEF;
@@ -7510,34 +7580,34 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		return (tBACKSLASHSLASH != null) ? tBACKSLASHSLASH : (tBACKSLASHSLASH = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "BACKSLASHSLASH"));
 	} 
 
-	/// * *$Rep * / terminal TIMESREP:
-	//	"*$Rep";
-	public TerminalRule getTIMESREPRule() {
-		return (tTIMESREP != null) ? tTIMESREP : (tTIMESREP = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "TIMESREP"));
+	/// * *$ multiply with specific type* / terminal TIMESDOLAR:
+	//	"*$";
+	public TerminalRule getTIMESDOLARRule() {
+		return (tTIMESDOLAR != null) ? tTIMESDOLAR : (tTIMESDOLAR = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "TIMESDOLAR"));
 	} 
 
-	/// * /$Rep * / terminal DIVREP:
-	//	"/$Rep";
-	public TerminalRule getDIVREPRule() {
-		return (tDIVREP != null) ? tDIVREP : (tDIVREP = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "DIVREP"));
+	/// * /$ divide with specific type* / terminal DIVDOLAR:
+	//	"/$";
+	public TerminalRule getDIVDOLARRule() {
+		return (tDIVDOLAR != null) ? tDIVDOLAR : (tDIVDOLAR = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "DIVDOLAR"));
 	} 
 
-	/// * +$Rep * / terminal PLUSREP:
-	//	"+$Rep";
-	public TerminalRule getPLUSREPRule() {
-		return (tPLUSREP != null) ? tPLUSREP : (tPLUSREP = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "PLUSREP"));
+	/// * +$ add with specific type* / terminal PLUSDOLAR:
+	//	"+$";
+	public TerminalRule getPLUSDOLARRule() {
+		return (tPLUSDOLAR != null) ? tPLUSDOLAR : (tPLUSDOLAR = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "PLUSDOLAR"));
 	} 
 
-	/// * -$Rep * / terminal MINUSREP:
-	//	"-$Rep";
-	public TerminalRule getMINUSREPRule() {
-		return (tMINUSREP != null) ? tMINUSREP : (tMINUSREP = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "MINUSREP"));
+	/// * -$ subtract or minus with specific type* / terminal MINUSDOLAR:
+	//	"-$";
+	public TerminalRule getMINUSDOLARRule() {
+		return (tMINUSDOLAR != null) ? tMINUSDOLAR : (tMINUSDOLAR = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "MINUSDOLAR"));
 	} 
 
-	/// * =$Rep * / terminal EQUALSREP:
-	//	"=$Rep";
-	public TerminalRule getEQUALSREPRule() {
-		return (tEQUALSREP != null) ? tEQUALSREP : (tEQUALSREP = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "EQUALSREP"));
+	/// * =$ equals with specific type* / terminal EQUALSDOLAR:
+	//	"=$";
+	public TerminalRule getEQUALSDOLARRule() {
+		return (tEQUALSDOLAR != null) ? tEQUALSDOLAR : (tEQUALSDOLAR = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "EQUALSDOLAR"));
 	} 
 
 	/// * '=>' * / terminal EXIT:
@@ -8189,7 +8259,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 	// * / ForStatement hidden(WS, SL_COMMENT):
 	//	"for" (stname=ID "in" t1=Expression SEG? //(=> '..' t2=Expression)?
 	//	("by" by1=Expression)? //       (=> BAR t2=PredicateOr)? // condition
-	//	("for" stname2+=ID "in" t2+=Expression ("by" by2+=Expression)? SEG?)* ("while" t2+=Expression)*) "repeat" NL? s1= //('is' s2=Statement)?
+	//	("for" stname2+=ID "in" t2+=Expression SEG? ("by" by2+=Expression)?)* ("while" t2+=Expression)*) "repeat" NL? s1= //('is' s2=Statement)?
 	//	Statement;
 	public ForStatementElements getForStatementAccess() {
 		return (pForStatement != null) ? pForStatement : (pForStatement = new ForStatementElements());
@@ -8482,7 +8552,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 	// * "=", precedence: 400, 400
 	// * / EqualityExpression returns Expr hidden(WS, SL_COMMENT):
 	//	RelationalExpression // ambiguous because EQ can be in top level expression
-	//	({EqualityExpression.left=current} (op=EQUAL | op=NOTEQUAL | op="^=" | op=EQUALSREP) (DOLAR te=ID)?
+	//	({EqualityExpression.left=current} (op=EQUAL | op=NOTEQUAL | op="^=" | op=EQUALSDOLAR te=ID) //(DOLAR te=ID)?
 	//	right=RelationalExpression)*;
 	public EqualityExpressionElements getEqualityExpressionAccess() {
 		return (pEqualityExpression != null) ? pEqualityExpression : (pEqualityExpression = new EqualityExpressionElements());
@@ -8549,7 +8619,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 	// * "-",  precedence: 700, 701
 	// * "+",  precedence: 700, 701
 	// * / AdditiveExpression returns Expr hidden(WS, SL_COMMENT):
-	//	ExquoExpression ({AdditiveExpression.left=current} (op=PLUS | op=MINUS | op=PLUSREP | op=MINUSREP)
+	//	ExquoExpression ({AdditiveExpression.left=current} (op=PLUS | op=MINUS | op=PLUSDOLAR te=ID | op=MINUSDOLAR te=ID)
 	//	right=ExquoExpression)*;
 	public AdditiveExpressionElements getAdditiveExpressionAccess() {
 		return (pAdditiveExpression != null) ? pAdditiveExpression : (pAdditiveExpression = new AdditiveExpressionElements());
@@ -8575,7 +8645,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 	// * division expression
 	// * "/",  precedence: 800, 801
 	// * / DivisionExpression returns Expr hidden(WS, SL_COMMENT):
-	//	QuoExpression ({DivisionExpression.left=current} (op=SLASH | op=DIVREP) right=QuoExpression)*;
+	//	QuoExpression ({DivisionExpression.left=current} (op=SLASH | op=DIVDOLAR te=ID) right=QuoExpression)*;
 	public DivisionExpressionElements getDivisionExpressionAccess() {
 		return (pDivisionExpression != null) ? pDivisionExpression : (pDivisionExpression = new DivisionExpressionElements());
 	}
@@ -8626,7 +8696,8 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 	// * 
 	// * "*", precedence: 800, 801
 	// * / MultiplicativeExpression returns Expr hidden(WS, SL_COMMENT):
-	//	ExponentExpression ({MultiplicativeExpression.left=current} (op=TIMES | op=TIMESREP) right=ExponentExpression)*;
+	//	ExponentExpression ({MultiplicativeExpression.left=current} (op=TIMES | op=TIMESDOLAR te=ID)
+	//	right=ExponentExpression)*;
 	public MultiplicativeExpressionElements getMultiplicativeExpressionAccess() {
 		return (pMultiplicativeExpression != null) ? pMultiplicativeExpression : (pMultiplicativeExpression = new MultiplicativeExpressionElements());
 	}
@@ -8664,7 +8735,9 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 	// * fricas compatibility:
 	// * "+->", precedence: 995, 112
 	// * / MapDefinition returns Expr hidden(WS, SL_COMMENT): //  (PretendExpression | LPAREN PretendExpression (COMMA t25+=PretendExpression)+ RPAREN) (COLON rightType2 =TypeExpression)?
-	//	AssignExpression ({MapDefinition.left=current} op=GIVES right=AssignExpression)*;
+	//	AssignExpression ({MapDefinition.left=current} op=GIVES right=AssignExpression par=ID? // optional parameter which function
+	//)* // is applied to
+	//;
 	public MapDefinitionElements getMapDefinitionAccess() {
 		return (pMapDefinition != null) ? pMapDefinition : (pMapDefinition = new MapDefinitionElements());
 	}
@@ -8784,15 +8857,18 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	/// * UnaryExpression
+	// * unary prefixes:
 	// * "~" TILDE : precedence  260, 259, nil
 	// * ":" COLON : precedence  194, 195
 	// * "-" MINUS : precedence  701, 700
 	// * "#" HASH : precedence  999, 998
 	// * "'" : precedence  999, 999, ["parse_Data"]
+	// * unary suffixes
+	// * ".." : range can be unary suffix
 	// * / UnaryExpression returns Expr hidden(WS, SL_COMMENT):
 	//	PrimaryExpression //  ({UnaryExpression} uop=COLON expr=UnaryExpression) |
 	//	| {UnaryExpression} uop=TILDE expr=UnaryExpression | {UnaryExpression} uop=MINUS expr=UnaryExpression |
-	//	{UnaryExpression} uop=MINUSREP expr=UnaryExpression | {UnaryExpression} uop=HASH expr=UnaryExpression |
+	//	{UnaryExpression} uop=MINUSDOLAR te=ID expr=UnaryExpression | {UnaryExpression} uop=HASH expr=UnaryExpression |
 	//	{UnaryExpression} uop="not" expr=PrimaryExpression | {UnaryExpression} uop=SUMLIST expr=PrimaryExpression | e2=PERCENT
 	//	| e3="Type" | e5="Record" LPAREN e6=TypeExpression (COLON e22+=TypeExpression)? (COMMA e21+=TypeExpression (COLON
 	//	e23+=TypeExpression)?)* RPAREN | e9="Union" LPAREN e10=TypeExpression (COLON e25+=TypeExpression)? (COMMA

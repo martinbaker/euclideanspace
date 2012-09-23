@@ -23,6 +23,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * <ul>
  *   <li>{@link com.euclideanspace.spad.editor.impl.UnaryExpressionImpl#getUop <em>Uop</em>}</li>
  *   <li>{@link com.euclideanspace.spad.editor.impl.UnaryExpressionImpl#getExpr <em>Expr</em>}</li>
+ *   <li>{@link com.euclideanspace.spad.editor.impl.UnaryExpressionImpl#getTe <em>Te</em>}</li>
  * </ul>
  * </p>
  *
@@ -59,6 +60,26 @@ public class UnaryExpressionImpl extends ExprImpl implements UnaryExpression
    * @ordered
    */
   protected Expr expr;
+
+  /**
+   * The default value of the '{@link #getTe() <em>Te</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getTe()
+   * @generated
+   * @ordered
+   */
+  protected static final String TE_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getTe() <em>Te</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getTe()
+   * @generated
+   * @ordered
+   */
+  protected String te = TE_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
@@ -157,6 +178,29 @@ public class UnaryExpressionImpl extends ExprImpl implements UnaryExpression
    * <!-- end-user-doc -->
    * @generated
    */
+  public String getTe()
+  {
+    return te;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setTe(String newTe)
+  {
+    String oldTe = te;
+    te = newTe;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, EditorPackage.UNARY_EXPRESSION__TE, oldTe, te));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
@@ -182,6 +226,8 @@ public class UnaryExpressionImpl extends ExprImpl implements UnaryExpression
         return getUop();
       case EditorPackage.UNARY_EXPRESSION__EXPR:
         return getExpr();
+      case EditorPackage.UNARY_EXPRESSION__TE:
+        return getTe();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -201,6 +247,9 @@ public class UnaryExpressionImpl extends ExprImpl implements UnaryExpression
         return;
       case EditorPackage.UNARY_EXPRESSION__EXPR:
         setExpr((Expr)newValue);
+        return;
+      case EditorPackage.UNARY_EXPRESSION__TE:
+        setTe((String)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -222,6 +271,9 @@ public class UnaryExpressionImpl extends ExprImpl implements UnaryExpression
       case EditorPackage.UNARY_EXPRESSION__EXPR:
         setExpr((Expr)null);
         return;
+      case EditorPackage.UNARY_EXPRESSION__TE:
+        setTe(TE_EDEFAULT);
+        return;
     }
     super.eUnset(featureID);
   }
@@ -240,6 +292,8 @@ public class UnaryExpressionImpl extends ExprImpl implements UnaryExpression
         return UOP_EDEFAULT == null ? uop != null : !UOP_EDEFAULT.equals(uop);
       case EditorPackage.UNARY_EXPRESSION__EXPR:
         return expr != null;
+      case EditorPackage.UNARY_EXPRESSION__TE:
+        return TE_EDEFAULT == null ? te != null : !TE_EDEFAULT.equals(te);
     }
     return super.eIsSet(featureID);
   }
@@ -257,6 +311,8 @@ public class UnaryExpressionImpl extends ExprImpl implements UnaryExpression
     StringBuffer result = new StringBuffer(super.toString());
     result.append(" (uop: ");
     result.append(uop);
+    result.append(", te: ");
+    result.append(te);
     result.append(')');
     return result.toString();
   }

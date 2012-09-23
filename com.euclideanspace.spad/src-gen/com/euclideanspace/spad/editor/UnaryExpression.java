@@ -13,6 +13,7 @@ package com.euclideanspace.spad.editor;
  * <ul>
  *   <li>{@link com.euclideanspace.spad.editor.UnaryExpression#getUop <em>Uop</em>}</li>
  *   <li>{@link com.euclideanspace.spad.editor.UnaryExpression#getExpr <em>Expr</em>}</li>
+ *   <li>{@link com.euclideanspace.spad.editor.UnaryExpression#getTe <em>Te</em>}</li>
  * </ul>
  * </p>
  *
@@ -73,5 +74,31 @@ public interface UnaryExpression extends Expr
    * @generated
    */
   void setExpr(Expr value);
+
+  /**
+   * Returns the value of the '<em><b>Te</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Te</em>' attribute isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Te</em>' attribute.
+   * @see #setTe(String)
+   * @see com.euclideanspace.spad.editor.EditorPackage#getUnaryExpression_Te()
+   * @model
+   * @generated
+   */
+  String getTe();
+
+  /**
+   * Sets the value of the '{@link com.euclideanspace.spad.editor.UnaryExpression#getTe <em>Te</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Te</em>' attribute.
+   * @see #getTe()
+   * @generated
+   */
+  void setTe(String value);
 
 } // UnaryExpression

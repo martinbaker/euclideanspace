@@ -299,16 +299,16 @@ terminal BACKSLASHBACKSLASH: '\\\\';
 terminal SLASHBACKSLASH: '/\\';
 /* \\/ inner product or logical or */
 terminal BACKSLASHSLASH: '\\/';
-/* *$Rep */
-terminal TIMESREP: '*$Rep';
-/* /$Rep */
-terminal DIVREP: '/$Rep';
-/* +$Rep */
-terminal PLUSREP: '+$Rep';
-/* -$Rep */
-terminal MINUSREP: '-$Rep';
-/* =$Rep */
-terminal EQUALSREP: '=$Rep';
+/* *$ multiply with specific type*/
+terminal TIMESDOLAR: '*$';
+/* /$ divide with specific type*/
+terminal DIVDOLAR: '/$';
+/* +$ add with specific type*/
+terminal PLUSDOLAR: '+$';
+/* -$ subtract or minus with specific type*/
+terminal MINUSDOLAR: '-$';
+/* =$ equals with specific type*/
+terminal EQUALSDOLAR: '=$';
 /* '=>' */
 terminal EXIT: '=>';
 /* := */
@@ -893,9 +893,8 @@ ForStatement hidden(WS,SL_COMMENT):
        ('by' by1=Expression)?
 //       (=> BAR t2=PredicateOr)? // condition
        ('for' stname2+=ID
-        'in' t2+=Expression
+        'in' t2+=Expression SEG?
         ('by' by2+=Expression)?
-        SEG?
         )*
        ('while' t2+=Expression)*
 	) 'repeat' NL? s1=Statement //('is' s2=Statement)?
@@ -1130,8 +1129,8 @@ EqualityExpression returns Expr hidden(WS,SL_COMMENT):
   RelationalExpression
 // ambiguous because EQ can be in top level expression
   ( {EqualityExpression.left=current}
-  	( op=EQUAL | op=NOTEQUAL | op='^=' | op=EQUALSREP) 
-  	(DOLAR te=ID)?
+  	( op=EQUAL | op=NOTEQUAL | op='^=' | (op=EQUALSDOLAR te=ID)) 
+  	//(DOLAR te=ID)?
   	right = RelationalExpression
   )*
 ;
@@ -1187,7 +1186,7 @@ SegmentExpression returns Expr hidden(WS,SL_COMMENT):
 AdditiveExpression returns Expr hidden(WS,SL_COMMENT):
   ExquoExpression
   ( {AdditiveExpression.left=current}
-    ( op=PLUS | op=MINUS | op=PLUSREP | op=MINUSREP)
+    ( op=PLUS | op=MINUS | (op=PLUSDOLAR te=ID) | (op=MINUSDOLAR te=ID))
     right = ExquoExpression
   )*
 ;
@@ -1207,7 +1206,7 @@ ExquoExpression returns Expr hidden(WS,SL_COMMENT):
 DivisionExpression returns Expr hidden(WS,SL_COMMENT):
   QuoExpression
   ( {DivisionExpression.left=current}
-   (op=SLASH | op=DIVREP)
+   (op=SLASH | (op=DIVDOLAR te=ID))
    right = QuoExpression
   )*
 ;
@@ -1245,7 +1244,7 @@ RemExpression returns Expr hidden(WS,SL_COMMENT):
 MultiplicativeExpression returns Expr hidden(WS,SL_COMMENT):
   ExponentExpression
   ( {MultiplicativeExpression.left=current}
-    (op=TIMES | op=TIMESREP)
+    (op=TIMES | (op=TIMESDOLAR te=ID))
     right = ExponentExpression
   )*
 ;
@@ -1278,7 +1277,11 @@ ExponentExpression returns Expr hidden(WS,SL_COMMENT):
 MapDefinition returns Expr hidden(WS,SL_COMMENT):
 //  (PretendExpression | LPAREN PretendExpression (COMMA t25+=PretendExpression)+ RPAREN) (COLON rightType2 =TypeExpression)?
   AssignExpression
-  ({MapDefinition.left=current} op=GIVES right = AssignExpression)*
+  ({MapDefinition.left=current}
+   op=GIVES right = AssignExpression
+   (par = ID)? // optional parameter which function
+                             // is applied to
+  )*
 ;
 
 /*
@@ -1382,18 +1385,21 @@ ExplicitTypeExpression returns Expr hidden(WS,SL_COMMENT):
 ;
 
 /* UnaryExpression
+ * unary prefixes:
  * "~" TILDE : precedence  260, 259, nil
  * ":" COLON : precedence  194, 195
  * "-" MINUS : precedence  701, 700
  * "#" HASH : precedence  999, 998
  * "'" : precedence  999, 999, ["parse_Data"]
+ * unary suffixes
+ * ".." : range can be unary suffix
  */
 UnaryExpression returns Expr hidden(WS,SL_COMMENT):
   PrimaryExpression |
   ({UnaryExpression} uop=TILDE expr=UnaryExpression) |
 //  ({UnaryExpression} uop=COLON expr=UnaryExpression) |
   ({UnaryExpression} uop=MINUS expr=UnaryExpression) |
-  ({UnaryExpression} uop=MINUSREP expr=UnaryExpression) |
+  ({UnaryExpression} uop=MINUSDOLAR te=ID expr=UnaryExpression) |
   ({UnaryExpression} uop=HASH expr=UnaryExpression) |
   ({UnaryExpression} uop='not' expr=PrimaryExpression) |
   ({UnaryExpression} uop=SUMLIST expr=PrimaryExpression) |

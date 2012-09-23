@@ -23,6 +23,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * <ul>
  *   <li>{@link com.euclideanspace.spad.editor.impl.AdditiveExpressionImpl#getLeft <em>Left</em>}</li>
  *   <li>{@link com.euclideanspace.spad.editor.impl.AdditiveExpressionImpl#getOp <em>Op</em>}</li>
+ *   <li>{@link com.euclideanspace.spad.editor.impl.AdditiveExpressionImpl#getTe <em>Te</em>}</li>
  *   <li>{@link com.euclideanspace.spad.editor.impl.AdditiveExpressionImpl#getRight <em>Right</em>}</li>
  * </ul>
  * </p>
@@ -60,6 +61,26 @@ public class AdditiveExpressionImpl extends ExprImpl implements AdditiveExpressi
    * @ordered
    */
   protected String op = OP_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #getTe() <em>Te</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getTe()
+   * @generated
+   * @ordered
+   */
+  protected static final String TE_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getTe() <em>Te</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getTe()
+   * @generated
+   * @ordered
+   */
+  protected String te = TE_EDEFAULT;
 
   /**
    * The cached value of the '{@link #getRight() <em>Right</em>}' containment reference.
@@ -168,6 +189,29 @@ public class AdditiveExpressionImpl extends ExprImpl implements AdditiveExpressi
    * <!-- end-user-doc -->
    * @generated
    */
+  public String getTe()
+  {
+    return te;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setTe(String newTe)
+  {
+    String oldTe = te;
+    te = newTe;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, EditorPackage.ADDITIVE_EXPRESSION__TE, oldTe, te));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public Expr getRight()
   {
     return right;
@@ -243,6 +287,8 @@ public class AdditiveExpressionImpl extends ExprImpl implements AdditiveExpressi
         return getLeft();
       case EditorPackage.ADDITIVE_EXPRESSION__OP:
         return getOp();
+      case EditorPackage.ADDITIVE_EXPRESSION__TE:
+        return getTe();
       case EditorPackage.ADDITIVE_EXPRESSION__RIGHT:
         return getRight();
     }
@@ -264,6 +310,9 @@ public class AdditiveExpressionImpl extends ExprImpl implements AdditiveExpressi
         return;
       case EditorPackage.ADDITIVE_EXPRESSION__OP:
         setOp((String)newValue);
+        return;
+      case EditorPackage.ADDITIVE_EXPRESSION__TE:
+        setTe((String)newValue);
         return;
       case EditorPackage.ADDITIVE_EXPRESSION__RIGHT:
         setRight((Expr)newValue);
@@ -288,6 +337,9 @@ public class AdditiveExpressionImpl extends ExprImpl implements AdditiveExpressi
       case EditorPackage.ADDITIVE_EXPRESSION__OP:
         setOp(OP_EDEFAULT);
         return;
+      case EditorPackage.ADDITIVE_EXPRESSION__TE:
+        setTe(TE_EDEFAULT);
+        return;
       case EditorPackage.ADDITIVE_EXPRESSION__RIGHT:
         setRight((Expr)null);
         return;
@@ -309,6 +361,8 @@ public class AdditiveExpressionImpl extends ExprImpl implements AdditiveExpressi
         return left != null;
       case EditorPackage.ADDITIVE_EXPRESSION__OP:
         return OP_EDEFAULT == null ? op != null : !OP_EDEFAULT.equals(op);
+      case EditorPackage.ADDITIVE_EXPRESSION__TE:
+        return TE_EDEFAULT == null ? te != null : !TE_EDEFAULT.equals(te);
       case EditorPackage.ADDITIVE_EXPRESSION__RIGHT:
         return right != null;
     }
@@ -328,6 +382,8 @@ public class AdditiveExpressionImpl extends ExprImpl implements AdditiveExpressi
     StringBuffer result = new StringBuffer(super.toString());
     result.append(" (op: ");
     result.append(op);
+    result.append(", te: ");
+    result.append(te);
     result.append(')');
     return result.toString();
   }

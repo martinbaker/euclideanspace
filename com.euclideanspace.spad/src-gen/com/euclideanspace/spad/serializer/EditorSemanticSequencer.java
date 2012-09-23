@@ -1741,7 +1741,7 @@ public class EditorSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	
 	/**
 	 * Constraint:
-	 *     (left=AdditiveExpression_AdditiveExpression_1_0 (op=PLUS | op=MINUS | op=PLUSREP | op=MINUSREP) right=ExquoExpression)
+	 *     (left=AdditiveExpression_AdditiveExpression_1_0 (op=PLUS | op=MINUS | (op=PLUSDOLAR te=ID) | (op=MINUSDOLAR te=ID)) right=ExquoExpression)
 	 */
 	protected void sequence_AdditiveExpression(EObject context, AdditiveExpression semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -1861,7 +1861,7 @@ public class EditorSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	
 	/**
 	 * Constraint:
-	 *     (left=DivisionExpression_DivisionExpression_1_0 (op=SLASH | op=DIVREP) right=QuoExpression)
+	 *     (left=DivisionExpression_DivisionExpression_1_0 (op=SLASH | (op=DIVDOLAR te=ID)) right=QuoExpression)
 	 */
 	protected void sequence_DivisionExpression(EObject context, DivisionExpression semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -1920,7 +1920,7 @@ public class EditorSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	
 	/**
 	 * Constraint:
-	 *     (left=EqualityExpression_EqualityExpression_1_0 (op=EQUAL | op=NOTEQUAL | op='^=' | op=EQUALSREP) te=ID? right=RelationalExpression)
+	 *     (left=EqualityExpression_EqualityExpression_1_0 (op=EQUAL | op=NOTEQUAL | op='^=' | (op=EQUALSDOLAR te=ID)) right=RelationalExpression)
 	 */
 	protected void sequence_EqualityExpression(EObject context, EqualityExpression semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -2186,7 +2186,7 @@ public class EditorSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	
 	/**
 	 * Constraint:
-	 *     (left=MapDefinition_MapDefinition_1_0 op=GIVES right=AssignExpression)
+	 *     (left=MapDefinition_MapDefinition_1_0 op=GIVES right=AssignExpression par=ID?)
 	 */
 	protected void sequence_MapDefinition(EObject context, MapDefinition semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -2213,7 +2213,7 @@ public class EditorSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	
 	/**
 	 * Constraint:
-	 *     (left=MultiplicativeExpression_MultiplicativeExpression_1_0 (op=TIMES | op=TIMESREP) right=ExponentExpression)
+	 *     (left=MultiplicativeExpression_MultiplicativeExpression_1_0 (op=TIMES | (op=TIMESDOLAR te=ID)) right=ExponentExpression)
 	 */
 	protected void sequence_MultiplicativeExpression(EObject context, MultiplicativeExpression semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -2522,7 +2522,7 @@ public class EditorSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	 *     (
 	 *         (uop=TILDE expr=UnaryExpression) | 
 	 *         (uop=MINUS expr=UnaryExpression) | 
-	 *         (uop=MINUSREP expr=UnaryExpression) | 
+	 *         (uop=MINUSDOLAR te=ID expr=UnaryExpression) | 
 	 *         (uop=HASH expr=UnaryExpression) | 
 	 *         (uop='not' expr=PrimaryExpression) | 
 	 *         (uop=SUMLIST expr=PrimaryExpression)

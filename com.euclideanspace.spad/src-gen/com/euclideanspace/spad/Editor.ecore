@@ -570,6 +570,7 @@
   <eClassifiers xsi:type="ecore:EClass" name="AdditiveExpression" eSuperTypes="#//Expr">
     <eStructuralFeatures xsi:type="ecore:EReference" name="left" eType="#//Expr" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="op" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="te" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="right" eType="#//Expr"
         containment="true"/>
   </eClassifiers>
@@ -582,6 +583,7 @@
   <eClassifiers xsi:type="ecore:EClass" name="DivisionExpression" eSuperTypes="#//Expr">
     <eStructuralFeatures xsi:type="ecore:EReference" name="left" eType="#//Expr" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="op" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="te" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="right" eType="#//Expr"
         containment="true"/>
   </eClassifiers>
@@ -606,6 +608,7 @@
   <eClassifiers xsi:type="ecore:EClass" name="MultiplicativeExpression" eSuperTypes="#//Expr">
     <eStructuralFeatures xsi:type="ecore:EReference" name="left" eType="#//Expr" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="op" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="te" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="right" eType="#//Expr"
         containment="true"/>
   </eClassifiers>
@@ -620,6 +623,7 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="op" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="right" eType="#//Expr"
         containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="par" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="AssignExpression" eSuperTypes="#//Expr">
     <eStructuralFeatures xsi:type="ecore:EReference" name="left" eType="#//Expr" containment="true"/>
@@ -660,5 +664,6 @@
   <eClassifiers xsi:type="ecore:EClass" name="UnaryExpression" eSuperTypes="#//Expr">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="uop" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="expr" eType="#//Expr" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="te" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
 </ecore:EPackage>

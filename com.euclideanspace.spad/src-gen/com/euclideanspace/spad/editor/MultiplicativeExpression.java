@@ -13,6 +13,7 @@ package com.euclideanspace.spad.editor;
  * <ul>
  *   <li>{@link com.euclideanspace.spad.editor.MultiplicativeExpression#getLeft <em>Left</em>}</li>
  *   <li>{@link com.euclideanspace.spad.editor.MultiplicativeExpression#getOp <em>Op</em>}</li>
+ *   <li>{@link com.euclideanspace.spad.editor.MultiplicativeExpression#getTe <em>Te</em>}</li>
  *   <li>{@link com.euclideanspace.spad.editor.MultiplicativeExpression#getRight <em>Right</em>}</li>
  * </ul>
  * </p>
@@ -74,6 +75,32 @@ public interface MultiplicativeExpression extends Expr
    * @generated
    */
   void setOp(String value);
+
+  /**
+   * Returns the value of the '<em><b>Te</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Te</em>' attribute isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Te</em>' attribute.
+   * @see #setTe(String)
+   * @see com.euclideanspace.spad.editor.EditorPackage#getMultiplicativeExpression_Te()
+   * @model
+   * @generated
+   */
+  String getTe();
+
+  /**
+   * Sets the value of the '{@link com.euclideanspace.spad.editor.MultiplicativeExpression#getTe <em>Te</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Te</em>' attribute.
+   * @see #getTe()
+   * @generated
+   */
+  void setTe(String value);
 
   /**
    * Returns the value of the '<em><b>Right</b></em>' containment reference.

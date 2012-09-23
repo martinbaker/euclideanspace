@@ -7750,13 +7750,22 @@ public interface EditorPackage extends EPackage
   int ADDITIVE_EXPRESSION__OP = EXPR_FEATURE_COUNT + 1;
 
   /**
+   * The feature id for the '<em><b>Te</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ADDITIVE_EXPRESSION__TE = EXPR_FEATURE_COUNT + 2;
+
+  /**
    * The feature id for the '<em><b>Right</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int ADDITIVE_EXPRESSION__RIGHT = EXPR_FEATURE_COUNT + 2;
+  int ADDITIVE_EXPRESSION__RIGHT = EXPR_FEATURE_COUNT + 3;
 
   /**
    * The number of structural features of the '<em>Additive Expression</em>' class.
@@ -7765,7 +7774,7 @@ public interface EditorPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ADDITIVE_EXPRESSION_FEATURE_COUNT = EXPR_FEATURE_COUNT + 3;
+  int ADDITIVE_EXPRESSION_FEATURE_COUNT = EXPR_FEATURE_COUNT + 4;
 
   /**
    * The meta object id for the '{@link com.euclideanspace.spad.editor.impl.ExquoExpressionImpl <em>Exquo Expression</em>}' class.
@@ -8184,13 +8193,22 @@ public interface EditorPackage extends EPackage
   int DIVISION_EXPRESSION__OP = EXPR_FEATURE_COUNT + 1;
 
   /**
+   * The feature id for the '<em><b>Te</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DIVISION_EXPRESSION__TE = EXPR_FEATURE_COUNT + 2;
+
+  /**
    * The feature id for the '<em><b>Right</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int DIVISION_EXPRESSION__RIGHT = EXPR_FEATURE_COUNT + 2;
+  int DIVISION_EXPRESSION__RIGHT = EXPR_FEATURE_COUNT + 3;
 
   /**
    * The number of structural features of the '<em>Division Expression</em>' class.
@@ -8199,7 +8217,7 @@ public interface EditorPackage extends EPackage
    * @generated
    * @ordered
    */
-  int DIVISION_EXPRESSION_FEATURE_COUNT = EXPR_FEATURE_COUNT + 3;
+  int DIVISION_EXPRESSION_FEATURE_COUNT = EXPR_FEATURE_COUNT + 4;
 
   /**
    * The meta object id for the '{@link com.euclideanspace.spad.editor.impl.QuoExpressionImpl <em>Quo Expression</em>}' class.
@@ -9052,13 +9070,22 @@ public interface EditorPackage extends EPackage
   int MULTIPLICATIVE_EXPRESSION__OP = EXPR_FEATURE_COUNT + 1;
 
   /**
+   * The feature id for the '<em><b>Te</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MULTIPLICATIVE_EXPRESSION__TE = EXPR_FEATURE_COUNT + 2;
+
+  /**
    * The feature id for the '<em><b>Right</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int MULTIPLICATIVE_EXPRESSION__RIGHT = EXPR_FEATURE_COUNT + 2;
+  int MULTIPLICATIVE_EXPRESSION__RIGHT = EXPR_FEATURE_COUNT + 3;
 
   /**
    * The number of structural features of the '<em>Multiplicative Expression</em>' class.
@@ -9067,7 +9094,7 @@ public interface EditorPackage extends EPackage
    * @generated
    * @ordered
    */
-  int MULTIPLICATIVE_EXPRESSION_FEATURE_COUNT = EXPR_FEATURE_COUNT + 3;
+  int MULTIPLICATIVE_EXPRESSION_FEATURE_COUNT = EXPR_FEATURE_COUNT + 4;
 
   /**
    * The meta object id for the '{@link com.euclideanspace.spad.editor.impl.ExponentExpressionImpl <em>Exponent Expression</em>}' class.
@@ -9495,13 +9522,22 @@ public interface EditorPackage extends EPackage
   int MAP_DEFINITION__RIGHT = EXPR_FEATURE_COUNT + 2;
 
   /**
+   * The feature id for the '<em><b>Par</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MAP_DEFINITION__PAR = EXPR_FEATURE_COUNT + 3;
+
+  /**
    * The number of structural features of the '<em>Map Definition</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int MAP_DEFINITION_FEATURE_COUNT = EXPR_FEATURE_COUNT + 3;
+  int MAP_DEFINITION_FEATURE_COUNT = EXPR_FEATURE_COUNT + 4;
 
   /**
    * The meta object id for the '{@link com.euclideanspace.spad.editor.impl.AssignExpressionImpl <em>Assign Expression</em>}' class.
@@ -11005,13 +11041,22 @@ public interface EditorPackage extends EPackage
   int UNARY_EXPRESSION__EXPR = EXPR_FEATURE_COUNT + 1;
 
   /**
+   * The feature id for the '<em><b>Te</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int UNARY_EXPRESSION__TE = EXPR_FEATURE_COUNT + 2;
+
+  /**
    * The number of structural features of the '<em>Unary Expression</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int UNARY_EXPRESSION_FEATURE_COUNT = EXPR_FEATURE_COUNT + 2;
+  int UNARY_EXPRESSION_FEATURE_COUNT = EXPR_FEATURE_COUNT + 3;
 
 
   /**
@@ -14826,6 +14871,17 @@ public interface EditorPackage extends EPackage
   EAttribute getAdditiveExpression_Op();
 
   /**
+   * Returns the meta object for the attribute '{@link com.euclideanspace.spad.editor.AdditiveExpression#getTe <em>Te</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Te</em>'.
+   * @see com.euclideanspace.spad.editor.AdditiveExpression#getTe()
+   * @see #getAdditiveExpression()
+   * @generated
+   */
+  EAttribute getAdditiveExpression_Te();
+
+  /**
    * Returns the meta object for the containment reference '{@link com.euclideanspace.spad.editor.AdditiveExpression#getRight <em>Right</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -14910,6 +14966,17 @@ public interface EditorPackage extends EPackage
    * @generated
    */
   EAttribute getDivisionExpression_Op();
+
+  /**
+   * Returns the meta object for the attribute '{@link com.euclideanspace.spad.editor.DivisionExpression#getTe <em>Te</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Te</em>'.
+   * @see com.euclideanspace.spad.editor.DivisionExpression#getTe()
+   * @see #getDivisionExpression()
+   * @generated
+   */
+  EAttribute getDivisionExpression_Te();
 
   /**
    * Returns the meta object for the containment reference '{@link com.euclideanspace.spad.editor.DivisionExpression#getRight <em>Right</em>}'.
@@ -15084,6 +15151,17 @@ public interface EditorPackage extends EPackage
   EAttribute getMultiplicativeExpression_Op();
 
   /**
+   * Returns the meta object for the attribute '{@link com.euclideanspace.spad.editor.MultiplicativeExpression#getTe <em>Te</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Te</em>'.
+   * @see com.euclideanspace.spad.editor.MultiplicativeExpression#getTe()
+   * @see #getMultiplicativeExpression()
+   * @generated
+   */
+  EAttribute getMultiplicativeExpression_Te();
+
+  /**
    * Returns the meta object for the containment reference '{@link com.euclideanspace.spad.editor.MultiplicativeExpression#getRight <em>Right</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -15179,6 +15257,17 @@ public interface EditorPackage extends EPackage
    * @generated
    */
   EReference getMapDefinition_Right();
+
+  /**
+   * Returns the meta object for the attribute '{@link com.euclideanspace.spad.editor.MapDefinition#getPar <em>Par</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Par</em>'.
+   * @see com.euclideanspace.spad.editor.MapDefinition#getPar()
+   * @see #getMapDefinition()
+   * @generated
+   */
+  EAttribute getMapDefinition_Par();
 
   /**
    * Returns the meta object for class '{@link com.euclideanspace.spad.editor.AssignExpression <em>Assign Expression</em>}'.
@@ -15469,6 +15558,17 @@ public interface EditorPackage extends EPackage
    * @generated
    */
   EReference getUnaryExpression_Expr();
+
+  /**
+   * Returns the meta object for the attribute '{@link com.euclideanspace.spad.editor.UnaryExpression#getTe <em>Te</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Te</em>'.
+   * @see com.euclideanspace.spad.editor.UnaryExpression#getTe()
+   * @see #getUnaryExpression()
+   * @generated
+   */
+  EAttribute getUnaryExpression_Te();
 
   /**
    * Returns the factory that creates the instances of the model.
@@ -18432,6 +18532,14 @@ public interface EditorPackage extends EPackage
     EAttribute ADDITIVE_EXPRESSION__OP = eINSTANCE.getAdditiveExpression_Op();
 
     /**
+     * The meta object literal for the '<em><b>Te</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute ADDITIVE_EXPRESSION__TE = eINSTANCE.getAdditiveExpression_Te();
+
+    /**
      * The meta object literal for the '<em><b>Right</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -18498,6 +18606,14 @@ public interface EditorPackage extends EPackage
      * @generated
      */
     EAttribute DIVISION_EXPRESSION__OP = eINSTANCE.getDivisionExpression_Op();
+
+    /**
+     * The meta object literal for the '<em><b>Te</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute DIVISION_EXPRESSION__TE = eINSTANCE.getDivisionExpression_Te();
 
     /**
      * The meta object literal for the '<em><b>Right</b></em>' containment reference feature.
@@ -18636,6 +18752,14 @@ public interface EditorPackage extends EPackage
     EAttribute MULTIPLICATIVE_EXPRESSION__OP = eINSTANCE.getMultiplicativeExpression_Op();
 
     /**
+     * The meta object literal for the '<em><b>Te</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute MULTIPLICATIVE_EXPRESSION__TE = eINSTANCE.getMultiplicativeExpression_Te();
+
+    /**
      * The meta object literal for the '<em><b>Right</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -18710,6 +18834,14 @@ public interface EditorPackage extends EPackage
      * @generated
      */
     EReference MAP_DEFINITION__RIGHT = eINSTANCE.getMapDefinition_Right();
+
+    /**
+     * The meta object literal for the '<em><b>Par</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute MAP_DEFINITION__PAR = eINSTANCE.getMapDefinition_Par();
 
     /**
      * The meta object literal for the '{@link com.euclideanspace.spad.editor.impl.AssignExpressionImpl <em>Assign Expression</em>}' class.
@@ -18940,6 +19072,14 @@ public interface EditorPackage extends EPackage
      * @generated
      */
     EReference UNARY_EXPRESSION__EXPR = eINSTANCE.getUnaryExpression_Expr();
+
+    /**
+     * The meta object literal for the '<em><b>Te</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute UNARY_EXPRESSION__TE = eINSTANCE.getUnaryExpression_Te();
 
   }
 

@@ -14,6 +14,7 @@ package com.euclideanspace.spad.editor;
  *   <li>{@link com.euclideanspace.spad.editor.MapDefinition#getLeft <em>Left</em>}</li>
  *   <li>{@link com.euclideanspace.spad.editor.MapDefinition#getOp <em>Op</em>}</li>
  *   <li>{@link com.euclideanspace.spad.editor.MapDefinition#getRight <em>Right</em>}</li>
+ *   <li>{@link com.euclideanspace.spad.editor.MapDefinition#getPar <em>Par</em>}</li>
  * </ul>
  * </p>
  *
@@ -100,5 +101,31 @@ public interface MapDefinition extends Expr
    * @generated
    */
   void setRight(Expr value);
+
+  /**
+   * Returns the value of the '<em><b>Par</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Par</em>' attribute isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Par</em>' attribute.
+   * @see #setPar(String)
+   * @see com.euclideanspace.spad.editor.EditorPackage#getMapDefinition_Par()
+   * @model
+   * @generated
+   */
+  String getPar();
+
+  /**
+   * Sets the value of the '{@link com.euclideanspace.spad.editor.MapDefinition#getPar <em>Par</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Par</em>' attribute.
+   * @see #getPar()
+   * @generated
+   */
+  void setPar(String value);
 
 } // MapDefinition
