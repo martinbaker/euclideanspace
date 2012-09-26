@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/com.euclideanspace.euclid/src-gen" editDirectory="/com.euclideanspace.euclid.edit/src"
+    editorDirectory="/com.euclideanspace.euclid.editor/src" modelPluginID="com.euclideanspace.euclid"
+    forceOverwrite="true" modelName="Editor" updateClasspath="false" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    complianceLevel="5.0" copyrightFields="false" editPluginID="com.euclideanspace.euclid.edit"
+    editorPluginID="com.euclideanspace.euclid.editor" runtimeVersion="2.8" usedGenPackages="../../../../../org.eclipse.xtext.common.types/model/JavaVMTypes.genmodel#//types ../../../../../org.eclipse.xtext.xbase/model/Xbase.genmodel#//xbase">
+  <genPackages prefix="Editor" basePackage="com.euclideanspace.euclid" disposableProviderFactory="true"
+      ecorePackage="Editor.ecore#/">
+    <genClasses ecoreClass="Editor.ecore#//Domainmodel">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//Domainmodel/packages"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//Domainmodel/imports"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//Domainmodel/classes"/>
+    </genClasses>
+    <genClasses ecoreClass="Editor.ecore#//PackageDeclaration">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Editor.ecore#//PackageDeclaration/name"/>
+    </genClasses>
+    <genClasses ecoreClass="Editor.ecore#//Import">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Editor.ecore#//Import/importedNamespace"/>
+    </genClasses>
+    <genClasses ecoreClass="Editor.ecore#//Class">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Editor.ecore#//Class/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//Class/superType"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//Class/variables"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//Class/values"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//Class/references"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//Class/functions"/>
+    </genClasses>
+    <genClasses ecoreClass="Editor.ecore#//VariableDef">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Editor.ecore#//VariableDef/varname"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//VariableDef/type"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//VariableDef/vars"/>
+    </genClasses>
+    <genClasses ecoreClass="Editor.ecore#//ValueDef">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Editor.ecore#//ValueDef/valname"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//ValueDef/type"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//ValueDef/vals"/>
+    </genClasses>
+    <genClasses ecoreClass="Editor.ecore#//Reference">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Editor.ecore#//Reference/refname"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//Reference/type"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//Reference/refs"/>
+    </genClasses>
+    <genClasses ecoreClass="Editor.ecore#//FunctionDef">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Editor.ecore#//FunctionDef/defname"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//FunctionDef/type"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//FunctionDef/features"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

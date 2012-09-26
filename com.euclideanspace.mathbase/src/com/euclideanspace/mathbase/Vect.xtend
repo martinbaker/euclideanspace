@@ -34,7 +34,6 @@ public class Vect implements Domain {
 	    rep=new TypeExpression(TYPE::RECORD,rep1);
 	}
 
-
     override TypeExpression getRep(){
     	rep
     }

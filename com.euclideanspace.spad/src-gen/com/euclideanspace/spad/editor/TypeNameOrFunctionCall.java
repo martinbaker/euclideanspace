@@ -18,6 +18,7 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link com.euclideanspace.spad.editor.TypeNameOrFunctionCall#getT44 <em>T44</em>}</li>
  *   <li>{@link com.euclideanspace.spad.editor.TypeNameOrFunctionCall#getT45 <em>T45</em>}</li>
  *   <li>{@link com.euclideanspace.spad.editor.TypeNameOrFunctionCall#getT6 <em>T6</em>}</li>
+ *   <li>{@link com.euclideanspace.spad.editor.TypeNameOrFunctionCall#getW <em>W</em>}</li>
  * </ul>
  * </p>
  *
@@ -152,5 +153,31 @@ public interface TypeNameOrFunctionCall extends TypePrimaryExpression
    * @generated
    */
   void setT6(TypePrimaryExpression value);
+
+  /**
+   * Returns the value of the '<em><b>W</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>W</em>' containment reference isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>W</em>' containment reference.
+   * @see #setW(WithInline)
+   * @see com.euclideanspace.spad.editor.EditorPackage#getTypeNameOrFunctionCall_W()
+   * @model containment="true"
+   * @generated
+   */
+  WithInline getW();
+
+  /**
+   * Sets the value of the '{@link com.euclideanspace.spad.editor.TypeNameOrFunctionCall#getW <em>W</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>W</em>' containment reference.
+   * @see #getW()
+   * @generated
+   */
+  void setW(WithInline value);
 
 } // TypeNameOrFunctionCall

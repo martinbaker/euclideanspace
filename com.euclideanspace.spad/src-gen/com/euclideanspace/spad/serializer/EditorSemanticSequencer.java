@@ -62,10 +62,13 @@ import com.euclideanspace.spad.editor.StatementExpression;
 import com.euclideanspace.spad.editor.TupleDefinition;
 import com.euclideanspace.spad.editor.TypeArguments;
 import com.euclideanspace.spad.editor.TypeExpression;
+import com.euclideanspace.spad.editor.TypeExpression2;
 import com.euclideanspace.spad.editor.TypeLiteral;
 import com.euclideanspace.spad.editor.TypeNameOrFunctionCall;
+import com.euclideanspace.spad.editor.TypeNameOrFunctionCall2;
 import com.euclideanspace.spad.editor.TypeParameterList;
 import com.euclideanspace.spad.editor.TypePrimaryExpression;
+import com.euclideanspace.spad.editor.TypePrimaryExpression2;
 import com.euclideanspace.spad.editor.TypeResult;
 import com.euclideanspace.spad.editor.TypeWithName;
 import com.euclideanspace.spad.editor.UnaryExpression;
@@ -75,6 +78,7 @@ import com.euclideanspace.spad.editor.VariableDeclarationBlock;
 import com.euclideanspace.spad.editor.VariableTyped;
 import com.euclideanspace.spad.editor.WherePart;
 import com.euclideanspace.spad.editor.WhileStatement;
+import com.euclideanspace.spad.editor.WithInline;
 import com.euclideanspace.spad.editor.WithPart;
 import com.euclideanspace.spad.services.EditorGrammarAccess;
 import com.google.inject.Inject;
@@ -1554,7 +1558,9 @@ public class EditorSemanticSequencer extends AbstractDelegatingSemanticSequencer
 			case EditorPackage.TUPLE_DEFINITION:
 				if(context == grammarAccess.getTupleDefinitionRule() ||
 				   context == grammarAccess.getTypeExpressionRule() ||
-				   context == grammarAccess.getTypePrimaryExpressionRule()) {
+				   context == grammarAccess.getTypeExpression2Rule() ||
+				   context == grammarAccess.getTypePrimaryExpressionRule() ||
+				   context == grammarAccess.getTypePrimaryExpression2Rule()) {
 					sequence_TupleDefinition(context, (TupleDefinition) semanticObject); 
 					return; 
 				}
@@ -1571,10 +1577,18 @@ public class EditorSemanticSequencer extends AbstractDelegatingSemanticSequencer
 					return; 
 				}
 				else break;
+			case EditorPackage.TYPE_EXPRESSION2:
+				if(context == grammarAccess.getTypeExpression2Rule()) {
+					sequence_TypeExpression2(context, (TypeExpression2) semanticObject); 
+					return; 
+				}
+				else break;
 			case EditorPackage.TYPE_LITERAL:
 				if(context == grammarAccess.getTypeExpressionRule() ||
+				   context == grammarAccess.getTypeExpression2Rule() ||
 				   context == grammarAccess.getTypeLiteralRule() ||
-				   context == grammarAccess.getTypePrimaryExpressionRule()) {
+				   context == grammarAccess.getTypePrimaryExpressionRule() ||
+				   context == grammarAccess.getTypePrimaryExpression2Rule()) {
 					sequence_TypeLiteral(context, (TypeLiteral) semanticObject); 
 					return; 
 				}
@@ -1584,6 +1598,14 @@ public class EditorSemanticSequencer extends AbstractDelegatingSemanticSequencer
 				   context == grammarAccess.getTypeNameOrFunctionCallRule() ||
 				   context == grammarAccess.getTypePrimaryExpressionRule()) {
 					sequence_TypeNameOrFunctionCall(context, (TypeNameOrFunctionCall) semanticObject); 
+					return; 
+				}
+				else break;
+			case EditorPackage.TYPE_NAME_OR_FUNCTION_CALL2:
+				if(context == grammarAccess.getTypeExpression2Rule() ||
+				   context == grammarAccess.getTypeNameOrFunctionCall2Rule() ||
+				   context == grammarAccess.getTypePrimaryExpression2Rule()) {
+					sequence_TypeNameOrFunctionCall2(context, (TypeNameOrFunctionCall2) semanticObject); 
 					return; 
 				}
 				else break;
@@ -1597,6 +1619,13 @@ public class EditorSemanticSequencer extends AbstractDelegatingSemanticSequencer
 				if(context == grammarAccess.getTypeExpressionRule() ||
 				   context == grammarAccess.getTypePrimaryExpressionRule()) {
 					sequence_TypePrimaryExpression(context, (TypePrimaryExpression) semanticObject); 
+					return; 
+				}
+				else break;
+			case EditorPackage.TYPE_PRIMARY_EXPRESSION2:
+				if(context == grammarAccess.getTypeExpression2Rule() ||
+				   context == grammarAccess.getTypePrimaryExpression2Rule()) {
+					sequence_TypePrimaryExpression2(context, (TypePrimaryExpression2) semanticObject); 
 					return; 
 				}
 				else break;
@@ -1708,6 +1737,12 @@ public class EditorSemanticSequencer extends AbstractDelegatingSemanticSequencer
 			case EditorPackage.WHILE_STATEMENT:
 				if(context == grammarAccess.getWhileStatementRule()) {
 					sequence_WhileStatement(context, (WhileStatement) semanticObject); 
+					return; 
+				}
+				else break;
+			case EditorPackage.WITH_INLINE:
+				if(context == grammarAccess.getWithInlineRule()) {
+					sequence_WithInline(context, (WithInline) semanticObject); 
 					return; 
 				}
 				else break;
@@ -2415,6 +2450,25 @@ public class EditorSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	
 	/**
 	 * Constraint:
+	 *     (t92=TypeArguments t93=TypeResult)
+	 */
+	protected void sequence_TypeExpression2(EObject context, TypeExpression2 semanticObject) {
+		if(errorAcceptor != null) {
+			if(transientValues.isValueTransient(semanticObject, EditorPackage.Literals.TYPE_EXPRESSION2__T92) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, EditorPackage.Literals.TYPE_EXPRESSION2__T92));
+			if(transientValues.isValueTransient(semanticObject, EditorPackage.Literals.TYPE_EXPRESSION2__T93) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, EditorPackage.Literals.TYPE_EXPRESSION2__T93));
+		}
+		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
+		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
+		feeder.accept(grammarAccess.getTypeExpression2Access().getT92TypeArgumentsParserRuleCall_0_0_0_0(), semanticObject.getT92());
+		feeder.accept(grammarAccess.getTypeExpression2Access().getT93TypeResultParserRuleCall_0_0_2_0(), semanticObject.getT93());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Constraint:
 	 *     (t2=TypeArguments t3=TypeResult)
 	 */
 	protected void sequence_TypeExpression(EObject context, TypeExpression semanticObject) {
@@ -2445,6 +2499,18 @@ public class EditorSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	 * Constraint:
 	 *     (tfnname=ID ((t4=TypeExpression? t25+=TypeExpression* (t44+=StatementExpression? t45+=Expression*)*) | t6=TypePrimaryExpression)?)
 	 */
+	protected void sequence_TypeNameOrFunctionCall2(EObject context, TypeNameOrFunctionCall2 semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (
+	 *         tfnname=ID 
+	 *         ((t4=TypeExpression? t25+=TypeExpression* (t44+=StatementExpression? t45+=Expression*)*) | t6=TypePrimaryExpression | w=WithInline)?
+	 *     )
+	 */
 	protected void sequence_TypeNameOrFunctionCall(EObject context, TypeNameOrFunctionCall semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
@@ -2455,6 +2521,23 @@ public class EditorSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	 *     (tyname=LPAREN par=ID? par21=TypeExpression? (par2+=ID par22+=TypeExpression?)*)
 	 */
 	protected void sequence_TypeParameterList(EObject context, TypeParameterList semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (
+	 *         xt32=PERCENT | 
+	 *         xtyname='Type' | 
+	 *         xtyname='Lisp' | 
+	 *         xt5=TypeExpression | 
+	 *         (xtyname='Record' xt7=TypeExpression xt8+=TypeExpression? (xt21+=TypeExpression xt23+=TypeExpression?)*) | 
+	 *         (xtyname='Union' xt10=TypeExpression xt11+=TypeExpression? (xt24+=TypeExpression xt26+=TypeExpression?)*) | 
+	 *         (xtyname='Join' xt13=TypeExpression xt14+=TypeExpression*)
+	 *     )
+	 */
+	protected void sequence_TypePrimaryExpression2(EObject context, TypePrimaryExpression2 semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -2574,7 +2657,7 @@ public class EditorSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	 *     (
 	 *         name='where' 
 	 *         whereAssig+=WhereAssignments* 
-	 *         (longname8=ID imp=TypeExpression? w8=WithPart)? 
+	 *         (longname8=ID imp=TypeExpression2? w8=WithPart)? 
 	 *         (longname9=ID? (fs=ID par2=ID? par3+=ID*)? add=AddPart)?
 	 *     )
 	 */
@@ -2602,6 +2685,15 @@ public class EditorSemanticSequencer extends AbstractDelegatingSemanticSequencer
 		feeder.accept(grammarAccess.getWhileStatementAccess().getT2ExpressionParserRuleCall_1_0(), semanticObject.getT2());
 		feeder.accept(grammarAccess.getWhileStatementAccess().getS1StatementParserRuleCall_4_0(), semanticObject.getS1());
 		feeder.finish();
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (name='with' fundec+=VariableDeclaration*)
+	 */
+	protected void sequence_WithInline(EObject context, WithInline semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	

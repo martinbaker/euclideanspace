@@ -70,11 +70,6 @@ import com.euclideanspace.spad.editor.NameOrFunctionCall;
 import com.euclideanspace.spad.editor.OrExpression;
 import com.euclideanspace.spad.editor.OuterProdExpression;
 import com.euclideanspace.spad.editor.PackageDef;
-//import com.euclideanspace.spad.editor.Predicate;
-//import com.euclideanspace.spad.editor.PredicateAnd;
-//import com.euclideanspace.spad.editor.PredicateNot;
-//import com.euclideanspace.spad.editor.PredicateOr;
-//import com.euclideanspace.spad.editor.PredicatePrimary;
 import com.euclideanspace.spad.editor.PretendExpression;
 import com.euclideanspace.spad.editor.PrimaryPrefix;
 import com.euclideanspace.spad.editor.QuoExpression;
@@ -88,10 +83,13 @@ import com.euclideanspace.spad.editor.StatementExpression;
 import com.euclideanspace.spad.editor.TupleDefinition;
 import com.euclideanspace.spad.editor.TypeArguments;
 import com.euclideanspace.spad.editor.TypeExpression;
+import com.euclideanspace.spad.editor.TypeExpression2;
 import com.euclideanspace.spad.editor.TypeLiteral;
 import com.euclideanspace.spad.editor.TypeNameOrFunctionCall;
+import com.euclideanspace.spad.editor.TypeNameOrFunctionCall2;
 import com.euclideanspace.spad.editor.TypeParameterList;
 import com.euclideanspace.spad.editor.TypePrimaryExpression;
+import com.euclideanspace.spad.editor.TypePrimaryExpression2;
 import com.euclideanspace.spad.editor.TypeResult;
 import com.euclideanspace.spad.editor.TypeWithName;
 import com.euclideanspace.spad.editor.UnaryExpression;
@@ -313,6 +311,16 @@ class EditorGenerator implements IGenerator {
       IF f instanceof TypePrimaryExpression»«
       compile(f as TypePrimaryExpression)»«ENDIF»'''
   
+    /* TypeExpression
+     * (t2=TypeArguments -> t3=TypeResult)
+     * TypePrimaryExpression
+     */
+    def compile(TypeExpression2 f) 
+      '''«IF f.t92 != null»«compile(f.t92)» -> «
+      compile(f.t93)»«ENDIF»«
+      IF f instanceof TypePrimaryExpression2»«
+      compile(f as TypePrimaryExpression2)»«ENDIF»'''
+
     /* TypeParameterList */
     def compile(TypeParameterList f) 
         '''(«
@@ -375,6 +383,26 @@ class EditorGenerator implements IGenerator {
         compile(f as TypeLiteral)»«ENDIF»«
       IF f instanceof TypeNameOrFunctionCall»«
         compile(f as TypeNameOrFunctionCall)»«ENDIF»'''
+
+    /* TypePrimaryExpression2 */
+    def compile(TypePrimaryExpression2 f) 
+      '''«IF f.xt32 != null»«f.xt32»«ENDIF»«
+      IF f.xtyname != null»«f.xtyname» «ENDIF»«
+      IF f.xt5 != null»(«compile(f.xt5)»)«ENDIF»«
+      IF f.xt7 != null»(«compile(f.xt7)»)«
+       FOR x:f.xt8»(«compile(x)»)«ENDFOR»«
+       FOR x:f.xt21»(«compile(x)»)«ENDFOR»«
+       FOR x:f.xt23»(«compile(x)»)«ENDFOR»«ENDIF»«
+      IF f.xt10 != null»(«f.xt10»)«
+       FOR x:f.xt11»(«compile(x)»)«ENDFOR»«
+       FOR x:f.xt24»(«compile(x)»)«ENDFOR»«
+       FOR x:f.xt26»(«compile(x)»)«ENDFOR»«ENDIF»«
+      IF f.xt13 != null»(«f.xt13»)«
+       FOR x:f.xt14»(«compile(x)»)«ENDFOR»«ENDIF»«
+      IF f instanceof TypeLiteral»«
+        compile(f as TypeLiteral)»«ENDIF»«
+      IF f instanceof TypeNameOrFunctionCall2»«
+        compile(f as TypeNameOrFunctionCall2)»«ENDIF»'''
               
 	/* TypeNameOrFunctionCall
 	 * 
@@ -383,6 +411,13 @@ class EditorGenerator implements IGenerator {
   |  * t6=TypePrimaryExpression)?
 	 */
      def compile(TypeNameOrFunctionCall f)
+        '''«IF f.tfnname != null»«f.tfnname»«ENDIF»«
+        IF f.t4 != null»(«compile(f.t4)»«
+          FOR x:f.t25»,«compile(x)»«ENDFOR»)«ENDIF»«
+        IF f.t6 != null»(«compile(f.t6)»)«ENDIF»«
+        IF f.w!= null»(«f.w»)«ENDIF»'''
+
+     def compile(TypeNameOrFunctionCall2 f)
         '''«IF f.tfnname != null»«f.tfnname»«ENDIF»«
         IF f.t4 != null»(«compile(f.t4)»«
           FOR x:f.t25»,«compile(x)»«ENDFOR»)«ENDIF»«

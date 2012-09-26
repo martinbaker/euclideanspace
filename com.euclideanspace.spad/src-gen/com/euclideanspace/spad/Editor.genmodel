@@ -4,7 +4,7 @@
     editorDirectory="/com.euclideanspace.spad.editor/src" modelPluginID="com.euclideanspace.spad"
     forceOverwrite="true" modelName="Editor" updateClasspath="false" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
     complianceLevel="5.0" copyrightFields="false" editPluginID="com.euclideanspace.spad.edit"
-    editorPluginID="com.euclideanspace.spad.editor" runtimeVersion="2.8">
+    editorPluginID="com.euclideanspace.spad.editor" runtimeVersion="2.9">
   <genPackages prefix="Editor" basePackage="com.euclideanspace.spad" disposableProviderFactory="true"
       ecorePackage="Editor.ecore#/">
     <genClasses ecoreClass="Editor.ecore#//Model">
@@ -65,6 +65,10 @@
     <genClasses ecoreClass="Editor.ecore#//WithPart">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Editor.ecore#//WithPart/name"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//WithPart/fundec"/>
+    </genClasses>
+    <genClasses ecoreClass="Editor.ecore#//WithInline">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Editor.ecore#//WithInline/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//WithInline/fundec"/>
     </genClasses>
     <genClasses ecoreClass="Editor.ecore#//AddPart">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Editor.ecore#//AddPart/name"/>
@@ -151,6 +155,10 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//TypeExpression/t2"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//TypeExpression/t3"/>
     </genClasses>
+    <genClasses ecoreClass="Editor.ecore#//TypeExpression2">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//TypeExpression2/t92"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//TypeExpression2/t93"/>
+    </genClasses>
     <genClasses ecoreClass="Editor.ecore#//TypeParameterList">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Editor.ecore#//TypeParameterList/tyname"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Editor.ecore#//TypeParameterList/par"/>
@@ -211,6 +219,21 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//TypePrimaryExpression/t13"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//TypePrimaryExpression/t14"/>
     </genClasses>
+    <genClasses ecoreClass="Editor.ecore#//TypePrimaryExpression2">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Editor.ecore#//TypePrimaryExpression2/xt32"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Editor.ecore#//TypePrimaryExpression2/xtyname"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//TypePrimaryExpression2/xt5"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//TypePrimaryExpression2/xt7"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//TypePrimaryExpression2/xt8"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//TypePrimaryExpression2/xt21"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//TypePrimaryExpression2/xt23"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//TypePrimaryExpression2/xt10"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//TypePrimaryExpression2/xt11"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//TypePrimaryExpression2/xt24"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//TypePrimaryExpression2/xt26"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//TypePrimaryExpression2/xt13"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//TypePrimaryExpression2/xt14"/>
+    </genClasses>
     <genClasses ecoreClass="Editor.ecore#//TypeNameOrFunctionCall">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Editor.ecore#//TypeNameOrFunctionCall/tfnname"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//TypeNameOrFunctionCall/t4"/>
@@ -218,6 +241,15 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//TypeNameOrFunctionCall/t44"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//TypeNameOrFunctionCall/t45"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//TypeNameOrFunctionCall/t6"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//TypeNameOrFunctionCall/w"/>
+    </genClasses>
+    <genClasses ecoreClass="Editor.ecore#//TypeNameOrFunctionCall2">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Editor.ecore#//TypeNameOrFunctionCall2/tfnname"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//TypeNameOrFunctionCall2/t4"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//TypeNameOrFunctionCall2/t25"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//TypeNameOrFunctionCall2/t44"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//TypeNameOrFunctionCall2/t45"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//TypeNameOrFunctionCall2/t6"/>
     </genClasses>
     <genClasses ecoreClass="Editor.ecore#//TupleDefinition">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//TupleDefinition/t4"/>

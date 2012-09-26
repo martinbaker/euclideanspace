@@ -65,10 +65,13 @@ import com.euclideanspace.spad.editor.StatementExpression;
 import com.euclideanspace.spad.editor.TupleDefinition;
 import com.euclideanspace.spad.editor.TypeArguments;
 import com.euclideanspace.spad.editor.TypeExpression;
+import com.euclideanspace.spad.editor.TypeExpression2;
 import com.euclideanspace.spad.editor.TypeLiteral;
 import com.euclideanspace.spad.editor.TypeNameOrFunctionCall;
+import com.euclideanspace.spad.editor.TypeNameOrFunctionCall2;
 import com.euclideanspace.spad.editor.TypeParameterList;
 import com.euclideanspace.spad.editor.TypePrimaryExpression;
+import com.euclideanspace.spad.editor.TypePrimaryExpression2;
 import com.euclideanspace.spad.editor.TypeResult;
 import com.euclideanspace.spad.editor.TypeWithName;
 import com.euclideanspace.spad.editor.UnaryExpression;
@@ -79,6 +82,7 @@ import com.euclideanspace.spad.editor.VariableTyped;
 import com.euclideanspace.spad.editor.WhereAssignments;
 import com.euclideanspace.spad.editor.WherePart;
 import com.euclideanspace.spad.editor.WhileStatement;
+import com.euclideanspace.spad.editor.WithInline;
 import com.euclideanspace.spad.editor.WithPart;
 
 import org.eclipse.emf.ecore.EAttribute;
@@ -144,6 +148,13 @@ public class EditorPackageImpl extends EPackageImpl implements EditorPackage
    * @generated
    */
   private EClass withPartEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass withInlineEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -255,6 +266,13 @@ public class EditorPackageImpl extends EPackageImpl implements EditorPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  private EClass typeExpression2EClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   private EClass typeParameterListEClass = null;
 
   /**
@@ -283,7 +301,21 @@ public class EditorPackageImpl extends EPackageImpl implements EditorPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  private EClass typePrimaryExpression2EClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   private EClass typeNameOrFunctionCallEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass typeNameOrFunctionCall2EClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -1226,6 +1258,36 @@ public class EditorPackageImpl extends EPackageImpl implements EditorPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  public EClass getWithInline()
+  {
+    return withInlineEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getWithInline_Name()
+  {
+    return (EAttribute)withInlineEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getWithInline_Fundec()
+  {
+    return (EReference)withInlineEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EClass getAddPart()
   {
     return addPartEClass;
@@ -1926,6 +1988,36 @@ public class EditorPackageImpl extends EPackageImpl implements EditorPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  public EClass getTypeExpression2()
+  {
+    return typeExpression2EClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getTypeExpression2_T92()
+  {
+    return (EReference)typeExpression2EClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getTypeExpression2_T93()
+  {
+    return (EReference)typeExpression2EClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EClass getTypeParameterList()
   {
     return typeParameterListEClass;
@@ -2486,6 +2578,146 @@ public class EditorPackageImpl extends EPackageImpl implements EditorPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  public EClass getTypePrimaryExpression2()
+  {
+    return typePrimaryExpression2EClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getTypePrimaryExpression2_Xt32()
+  {
+    return (EAttribute)typePrimaryExpression2EClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getTypePrimaryExpression2_Xtyname()
+  {
+    return (EAttribute)typePrimaryExpression2EClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getTypePrimaryExpression2_Xt5()
+  {
+    return (EReference)typePrimaryExpression2EClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getTypePrimaryExpression2_Xt7()
+  {
+    return (EReference)typePrimaryExpression2EClass.getEStructuralFeatures().get(3);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getTypePrimaryExpression2_Xt8()
+  {
+    return (EReference)typePrimaryExpression2EClass.getEStructuralFeatures().get(4);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getTypePrimaryExpression2_Xt21()
+  {
+    return (EReference)typePrimaryExpression2EClass.getEStructuralFeatures().get(5);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getTypePrimaryExpression2_Xt23()
+  {
+    return (EReference)typePrimaryExpression2EClass.getEStructuralFeatures().get(6);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getTypePrimaryExpression2_Xt10()
+  {
+    return (EReference)typePrimaryExpression2EClass.getEStructuralFeatures().get(7);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getTypePrimaryExpression2_Xt11()
+  {
+    return (EReference)typePrimaryExpression2EClass.getEStructuralFeatures().get(8);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getTypePrimaryExpression2_Xt24()
+  {
+    return (EReference)typePrimaryExpression2EClass.getEStructuralFeatures().get(9);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getTypePrimaryExpression2_Xt26()
+  {
+    return (EReference)typePrimaryExpression2EClass.getEStructuralFeatures().get(10);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getTypePrimaryExpression2_Xt13()
+  {
+    return (EReference)typePrimaryExpression2EClass.getEStructuralFeatures().get(11);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getTypePrimaryExpression2_Xt14()
+  {
+    return (EReference)typePrimaryExpression2EClass.getEStructuralFeatures().get(12);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EClass getTypeNameOrFunctionCall()
   {
     return typeNameOrFunctionCallEClass;
@@ -2549,6 +2781,86 @@ public class EditorPackageImpl extends EPackageImpl implements EditorPackage
   public EReference getTypeNameOrFunctionCall_T6()
   {
     return (EReference)typeNameOrFunctionCallEClass.getEStructuralFeatures().get(5);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getTypeNameOrFunctionCall_W()
+  {
+    return (EReference)typeNameOrFunctionCallEClass.getEStructuralFeatures().get(6);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getTypeNameOrFunctionCall2()
+  {
+    return typeNameOrFunctionCall2EClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getTypeNameOrFunctionCall2_Tfnname()
+  {
+    return (EAttribute)typeNameOrFunctionCall2EClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getTypeNameOrFunctionCall2_T4()
+  {
+    return (EReference)typeNameOrFunctionCall2EClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getTypeNameOrFunctionCall2_T25()
+  {
+    return (EReference)typeNameOrFunctionCall2EClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getTypeNameOrFunctionCall2_T44()
+  {
+    return (EReference)typeNameOrFunctionCall2EClass.getEStructuralFeatures().get(3);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getTypeNameOrFunctionCall2_T45()
+  {
+    return (EReference)typeNameOrFunctionCall2EClass.getEStructuralFeatures().get(4);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getTypeNameOrFunctionCall2_T6()
+  {
+    return (EReference)typeNameOrFunctionCall2EClass.getEStructuralFeatures().get(5);
   }
 
   /**
@@ -4951,6 +5263,10 @@ public class EditorPackageImpl extends EPackageImpl implements EditorPackage
     createEAttribute(withPartEClass, WITH_PART__NAME);
     createEReference(withPartEClass, WITH_PART__FUNDEC);
 
+    withInlineEClass = createEClass(WITH_INLINE);
+    createEAttribute(withInlineEClass, WITH_INLINE__NAME);
+    createEReference(withInlineEClass, WITH_INLINE__FUNDEC);
+
     addPartEClass = createEClass(ADD_PART);
     createEAttribute(addPartEClass, ADD_PART__NAME);
     createEReference(addPartEClass, ADD_PART__T);
@@ -5036,6 +5352,10 @@ public class EditorPackageImpl extends EPackageImpl implements EditorPackage
     createEReference(typeExpressionEClass, TYPE_EXPRESSION__T2);
     createEReference(typeExpressionEClass, TYPE_EXPRESSION__T3);
 
+    typeExpression2EClass = createEClass(TYPE_EXPRESSION2);
+    createEReference(typeExpression2EClass, TYPE_EXPRESSION2__T92);
+    createEReference(typeExpression2EClass, TYPE_EXPRESSION2__T93);
+
     typeParameterListEClass = createEClass(TYPE_PARAMETER_LIST);
     createEAttribute(typeParameterListEClass, TYPE_PARAMETER_LIST__TYNAME);
     createEAttribute(typeParameterListEClass, TYPE_PARAMETER_LIST__PAR);
@@ -5096,6 +5416,21 @@ public class EditorPackageImpl extends EPackageImpl implements EditorPackage
     createEReference(typePrimaryExpressionEClass, TYPE_PRIMARY_EXPRESSION__T13);
     createEReference(typePrimaryExpressionEClass, TYPE_PRIMARY_EXPRESSION__T14);
 
+    typePrimaryExpression2EClass = createEClass(TYPE_PRIMARY_EXPRESSION2);
+    createEAttribute(typePrimaryExpression2EClass, TYPE_PRIMARY_EXPRESSION2__XT32);
+    createEAttribute(typePrimaryExpression2EClass, TYPE_PRIMARY_EXPRESSION2__XTYNAME);
+    createEReference(typePrimaryExpression2EClass, TYPE_PRIMARY_EXPRESSION2__XT5);
+    createEReference(typePrimaryExpression2EClass, TYPE_PRIMARY_EXPRESSION2__XT7);
+    createEReference(typePrimaryExpression2EClass, TYPE_PRIMARY_EXPRESSION2__XT8);
+    createEReference(typePrimaryExpression2EClass, TYPE_PRIMARY_EXPRESSION2__XT21);
+    createEReference(typePrimaryExpression2EClass, TYPE_PRIMARY_EXPRESSION2__XT23);
+    createEReference(typePrimaryExpression2EClass, TYPE_PRIMARY_EXPRESSION2__XT10);
+    createEReference(typePrimaryExpression2EClass, TYPE_PRIMARY_EXPRESSION2__XT11);
+    createEReference(typePrimaryExpression2EClass, TYPE_PRIMARY_EXPRESSION2__XT24);
+    createEReference(typePrimaryExpression2EClass, TYPE_PRIMARY_EXPRESSION2__XT26);
+    createEReference(typePrimaryExpression2EClass, TYPE_PRIMARY_EXPRESSION2__XT13);
+    createEReference(typePrimaryExpression2EClass, TYPE_PRIMARY_EXPRESSION2__XT14);
+
     typeNameOrFunctionCallEClass = createEClass(TYPE_NAME_OR_FUNCTION_CALL);
     createEAttribute(typeNameOrFunctionCallEClass, TYPE_NAME_OR_FUNCTION_CALL__TFNNAME);
     createEReference(typeNameOrFunctionCallEClass, TYPE_NAME_OR_FUNCTION_CALL__T4);
@@ -5103,6 +5438,15 @@ public class EditorPackageImpl extends EPackageImpl implements EditorPackage
     createEReference(typeNameOrFunctionCallEClass, TYPE_NAME_OR_FUNCTION_CALL__T44);
     createEReference(typeNameOrFunctionCallEClass, TYPE_NAME_OR_FUNCTION_CALL__T45);
     createEReference(typeNameOrFunctionCallEClass, TYPE_NAME_OR_FUNCTION_CALL__T6);
+    createEReference(typeNameOrFunctionCallEClass, TYPE_NAME_OR_FUNCTION_CALL__W);
+
+    typeNameOrFunctionCall2EClass = createEClass(TYPE_NAME_OR_FUNCTION_CALL2);
+    createEAttribute(typeNameOrFunctionCall2EClass, TYPE_NAME_OR_FUNCTION_CALL2__TFNNAME);
+    createEReference(typeNameOrFunctionCall2EClass, TYPE_NAME_OR_FUNCTION_CALL2__T4);
+    createEReference(typeNameOrFunctionCall2EClass, TYPE_NAME_OR_FUNCTION_CALL2__T25);
+    createEReference(typeNameOrFunctionCall2EClass, TYPE_NAME_OR_FUNCTION_CALL2__T44);
+    createEReference(typeNameOrFunctionCall2EClass, TYPE_NAME_OR_FUNCTION_CALL2__T45);
+    createEReference(typeNameOrFunctionCall2EClass, TYPE_NAME_OR_FUNCTION_CALL2__T6);
 
     tupleDefinitionEClass = createEClass(TUPLE_DEFINITION);
     createEReference(tupleDefinitionEClass, TUPLE_DEFINITION__T4);
@@ -5422,9 +5766,13 @@ public class EditorPackageImpl extends EPackageImpl implements EditorPackage
     variableDeclarationEClass.getESuperTypes().add(this.getWhereAssignments());
     variableDeclarationAssignEClass.getESuperTypes().add(this.getAddStatements());
     typePrimaryExpressionEClass.getESuperTypes().add(this.getTypeExpression());
+    typePrimaryExpression2EClass.getESuperTypes().add(this.getTypeExpression2());
     typeNameOrFunctionCallEClass.getESuperTypes().add(this.getTypePrimaryExpression());
+    typeNameOrFunctionCall2EClass.getESuperTypes().add(this.getTypePrimaryExpression2());
     tupleDefinitionEClass.getESuperTypes().add(this.getTypePrimaryExpression());
+    tupleDefinitionEClass.getESuperTypes().add(this.getTypePrimaryExpression2());
     typeLiteralEClass.getESuperTypes().add(this.getTypePrimaryExpression());
+    typeLiteralEClass.getESuperTypes().add(this.getTypePrimaryExpression2());
     primaryPrefixEClass.getESuperTypes().add(this.getExpr());
     literalEClass.getESuperTypes().add(this.getPrimaryPrefix());
     characterLiteralEClass.getESuperTypes().add(this.getLiteral());
@@ -5506,7 +5854,7 @@ public class EditorPackageImpl extends EPackageImpl implements EditorPackage
     initEAttribute(getWherePart_Name(), ecorePackage.getEString(), "name", null, 0, 1, WherePart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getWherePart_WhereAssig(), this.getWhereAssignments(), null, "whereAssig", null, 0, -1, WherePart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getWherePart_Longname8(), ecorePackage.getEString(), "longname8", null, 0, 1, WherePart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getWherePart_Imp(), this.getTypeExpression(), null, "imp", null, 0, 1, WherePart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getWherePart_Imp(), this.getTypeExpression2(), null, "imp", null, 0, 1, WherePart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getWherePart_W8(), this.getWithPart(), null, "w8", null, 0, 1, WherePart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getWherePart_Longname9(), ecorePackage.getEString(), "longname9", null, 0, 1, WherePart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getWherePart_Fs(), ecorePackage.getEString(), "fs", null, 0, 1, WherePart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -5519,6 +5867,10 @@ public class EditorPackageImpl extends EPackageImpl implements EditorPackage
     initEClass(withPartEClass, WithPart.class, "WithPart", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getWithPart_Name(), ecorePackage.getEString(), "name", null, 0, 1, WithPart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getWithPart_Fundec(), this.getVariableDeclaration(), null, "fundec", null, 0, -1, WithPart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(withInlineEClass, WithInline.class, "WithInline", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getWithInline_Name(), ecorePackage.getEString(), "name", null, 0, 1, WithInline.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getWithInline_Fundec(), this.getVariableDeclaration(), null, "fundec", null, 0, -1, WithInline.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(addPartEClass, AddPart.class, "AddPart", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getAddPart_Name(), ecorePackage.getEString(), "name", null, 0, 1, AddPart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -5605,6 +5957,10 @@ public class EditorPackageImpl extends EPackageImpl implements EditorPackage
     initEReference(getTypeExpression_T2(), this.getTypeArguments(), null, "t2", null, 0, 1, TypeExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getTypeExpression_T3(), this.getTypeResult(), null, "t3", null, 0, 1, TypeExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
+    initEClass(typeExpression2EClass, TypeExpression2.class, "TypeExpression2", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getTypeExpression2_T92(), this.getTypeArguments(), null, "t92", null, 0, 1, TypeExpression2.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getTypeExpression2_T93(), this.getTypeResult(), null, "t93", null, 0, 1, TypeExpression2.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
     initEClass(typeParameterListEClass, TypeParameterList.class, "TypeParameterList", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getTypeParameterList_Tyname(), ecorePackage.getEString(), "tyname", null, 0, 1, TypeParameterList.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getTypeParameterList_Par(), ecorePackage.getEString(), "par", null, 0, 1, TypeParameterList.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -5665,6 +6021,21 @@ public class EditorPackageImpl extends EPackageImpl implements EditorPackage
     initEReference(getTypePrimaryExpression_T13(), this.getTypeExpression(), null, "t13", null, 0, 1, TypePrimaryExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getTypePrimaryExpression_T14(), this.getTypeExpression(), null, "t14", null, 0, -1, TypePrimaryExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
+    initEClass(typePrimaryExpression2EClass, TypePrimaryExpression2.class, "TypePrimaryExpression2", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getTypePrimaryExpression2_Xt32(), ecorePackage.getEString(), "xt32", null, 0, 1, TypePrimaryExpression2.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getTypePrimaryExpression2_Xtyname(), ecorePackage.getEString(), "xtyname", null, 0, 1, TypePrimaryExpression2.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getTypePrimaryExpression2_Xt5(), this.getTypeExpression(), null, "xt5", null, 0, 1, TypePrimaryExpression2.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getTypePrimaryExpression2_Xt7(), this.getTypeExpression(), null, "xt7", null, 0, 1, TypePrimaryExpression2.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getTypePrimaryExpression2_Xt8(), this.getTypeExpression(), null, "xt8", null, 0, -1, TypePrimaryExpression2.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getTypePrimaryExpression2_Xt21(), this.getTypeExpression(), null, "xt21", null, 0, -1, TypePrimaryExpression2.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getTypePrimaryExpression2_Xt23(), this.getTypeExpression(), null, "xt23", null, 0, -1, TypePrimaryExpression2.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getTypePrimaryExpression2_Xt10(), this.getTypeExpression(), null, "xt10", null, 0, 1, TypePrimaryExpression2.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getTypePrimaryExpression2_Xt11(), this.getTypeExpression(), null, "xt11", null, 0, -1, TypePrimaryExpression2.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getTypePrimaryExpression2_Xt24(), this.getTypeExpression(), null, "xt24", null, 0, -1, TypePrimaryExpression2.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getTypePrimaryExpression2_Xt26(), this.getTypeExpression(), null, "xt26", null, 0, -1, TypePrimaryExpression2.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getTypePrimaryExpression2_Xt13(), this.getTypeExpression(), null, "xt13", null, 0, 1, TypePrimaryExpression2.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getTypePrimaryExpression2_Xt14(), this.getTypeExpression(), null, "xt14", null, 0, -1, TypePrimaryExpression2.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
     initEClass(typeNameOrFunctionCallEClass, TypeNameOrFunctionCall.class, "TypeNameOrFunctionCall", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getTypeNameOrFunctionCall_Tfnname(), ecorePackage.getEString(), "tfnname", null, 0, 1, TypeNameOrFunctionCall.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getTypeNameOrFunctionCall_T4(), this.getTypeExpression(), null, "t4", null, 0, 1, TypeNameOrFunctionCall.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -5672,6 +6043,15 @@ public class EditorPackageImpl extends EPackageImpl implements EditorPackage
     initEReference(getTypeNameOrFunctionCall_T44(), this.getStatementExpression(), null, "t44", null, 0, -1, TypeNameOrFunctionCall.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getTypeNameOrFunctionCall_T45(), this.getExpr(), null, "t45", null, 0, -1, TypeNameOrFunctionCall.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getTypeNameOrFunctionCall_T6(), this.getTypePrimaryExpression(), null, "t6", null, 0, 1, TypeNameOrFunctionCall.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getTypeNameOrFunctionCall_W(), this.getWithInline(), null, "w", null, 0, 1, TypeNameOrFunctionCall.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(typeNameOrFunctionCall2EClass, TypeNameOrFunctionCall2.class, "TypeNameOrFunctionCall2", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getTypeNameOrFunctionCall2_Tfnname(), ecorePackage.getEString(), "tfnname", null, 0, 1, TypeNameOrFunctionCall2.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getTypeNameOrFunctionCall2_T4(), this.getTypeExpression(), null, "t4", null, 0, 1, TypeNameOrFunctionCall2.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getTypeNameOrFunctionCall2_T25(), this.getTypeExpression(), null, "t25", null, 0, -1, TypeNameOrFunctionCall2.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getTypeNameOrFunctionCall2_T44(), this.getStatementExpression(), null, "t44", null, 0, -1, TypeNameOrFunctionCall2.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getTypeNameOrFunctionCall2_T45(), this.getExpr(), null, "t45", null, 0, -1, TypeNameOrFunctionCall2.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getTypeNameOrFunctionCall2_T6(), this.getTypePrimaryExpression(), null, "t6", null, 0, 1, TypeNameOrFunctionCall2.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(tupleDefinitionEClass, TupleDefinition.class, "TupleDefinition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getTupleDefinition_T4(), this.getTypeExpression(), null, "t4", null, 0, 1, TupleDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

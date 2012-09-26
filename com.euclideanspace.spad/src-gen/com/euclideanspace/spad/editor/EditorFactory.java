@@ -86,6 +86,15 @@ public interface EditorFactory extends EFactory
   WithPart createWithPart();
 
   /**
+   * Returns a new object of class '<em>With Inline</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>With Inline</em>'.
+   * @generated
+   */
+  WithInline createWithInline();
+
+  /**
    * Returns a new object of class '<em>Add Part</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -221,6 +230,15 @@ public interface EditorFactory extends EFactory
   TypeExpression createTypeExpression();
 
   /**
+   * Returns a new object of class '<em>Type Expression2</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Type Expression2</em>'.
+   * @generated
+   */
+  TypeExpression2 createTypeExpression2();
+
+  /**
    * Returns a new object of class '<em>Type Parameter List</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -257,6 +275,15 @@ public interface EditorFactory extends EFactory
   TypePrimaryExpression createTypePrimaryExpression();
 
   /**
+   * Returns a new object of class '<em>Type Primary Expression2</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Type Primary Expression2</em>'.
+   * @generated
+   */
+  TypePrimaryExpression2 createTypePrimaryExpression2();
+
+  /**
    * Returns a new object of class '<em>Type Name Or Function Call</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -264,6 +291,15 @@ public interface EditorFactory extends EFactory
    * @generated
    */
   TypeNameOrFunctionCall createTypeNameOrFunctionCall();
+
+  /**
+   * Returns a new object of class '<em>Type Name Or Function Call2</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Type Name Or Function Call2</em>'.
+   * @generated
+   */
+  TypeNameOrFunctionCall2 createTypeNameOrFunctionCall2();
 
   /**
    * Returns a new object of class '<em>Tuple Definition</em>'.

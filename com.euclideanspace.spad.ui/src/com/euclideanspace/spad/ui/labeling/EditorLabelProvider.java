@@ -103,8 +103,18 @@ public class EditorLabelProvider extends DefaultEObjectLabelProvider {
 		  return "AddPart :"+ele.getName();
 	}
 
+	String text(AddStatements ele) {
+		if (ele.getT1()!=null) return "AddStatements : if";
+		if (ele.getT13()!=null) return "AddStatements : then";
+		if (ele.getT14()!=null) return "AddStatements : else";
+		if (ele.getT15()!=null) return "AddStatements : else";
+		return "AddStatements : unknown";
+	}
+
 	String text(FunctionDefinition ele) {
-		  return "FunctionDefinition :";
+		if (ele.getPar3() != null)
+		  return "Fn Def :"+ele.getPar3().getFnNam();
+		return "Fn Def : no sig";
 	}
 
 /*	String text(MapDefinition ele) {
@@ -155,6 +165,10 @@ public class EditorLabelProvider extends DefaultEObjectLabelProvider {
 		  return "TypeExpression :"+ele;
 	}
 
+	String text(TypeExpression2 ele) {
+		  return "TypeExpression :"+ele;
+	}
+
 	String text(TypeParameterList ele) {
 		  return "TypeParameterList :"+ele.getTyname();
 	}
@@ -172,6 +186,10 @@ public class EditorLabelProvider extends DefaultEObjectLabelProvider {
 	  return "TypePrimaryExpression" + ele;
 	}
 
+	String text(TypePrimaryExpression2 ele) {
+		  return "TypePrimaryExpression" + ele;
+		}
+
 	/* TypeNameOrFunctionCall
 	 * 
 	 * tfnname=ID
@@ -179,6 +197,14 @@ public class EditorLabelProvider extends DefaultEObjectLabelProvider {
   |  * t6=TypePrimaryExpression)?
 	 */
 	String text(TypeNameOrFunctionCall ele) {
+		String n="TypeNameOrFunctionCall:"+ele.getTfnname();
+		if (ele.getT4() != null) n=n+"t4="+ele.getT4();
+		if (ele.getT6() != null) n=n+"t6="+ele.getT4();
+		return n;		  
+		//return commonTPE(ele,"TNFC");		  
+	}
+
+	String text(TypeNameOrFunctionCall2 ele) {
 		String n="TypeNameOrFunctionCall:"+ele.getTfnname();
 		if (ele.getT4() != null) n=n+"t4="+ele.getT4();
 		if (ele.getT6() != null) n=n+"t6="+ele.getT4();

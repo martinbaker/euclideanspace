@@ -21,7 +21,7 @@ import org.eclipse.emf.common.util.EList;
  * @model
  * @generated
  */
-public interface TupleDefinition extends TypePrimaryExpression
+public interface TupleDefinition extends TypePrimaryExpression, TypePrimaryExpression2
 {
   /**
    * Returns the value of the '<em><b>T4</b></em>' containment reference.

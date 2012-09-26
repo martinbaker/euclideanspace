@@ -110,6 +110,11 @@ public class EditorAdapterFactory extends AdapterFactoryImpl
         return createWithPartAdapter();
       }
       @Override
+      public Adapter caseWithInline(WithInline object)
+      {
+        return createWithInlineAdapter();
+      }
+      @Override
       public Adapter caseAddPart(AddPart object)
       {
         return createAddPartAdapter();
@@ -185,6 +190,11 @@ public class EditorAdapterFactory extends AdapterFactoryImpl
         return createTypeExpressionAdapter();
       }
       @Override
+      public Adapter caseTypeExpression2(TypeExpression2 object)
+      {
+        return createTypeExpression2Adapter();
+      }
+      @Override
       public Adapter caseTypeParameterList(TypeParameterList object)
       {
         return createTypeParameterListAdapter();
@@ -205,9 +215,19 @@ public class EditorAdapterFactory extends AdapterFactoryImpl
         return createTypePrimaryExpressionAdapter();
       }
       @Override
+      public Adapter caseTypePrimaryExpression2(TypePrimaryExpression2 object)
+      {
+        return createTypePrimaryExpression2Adapter();
+      }
+      @Override
       public Adapter caseTypeNameOrFunctionCall(TypeNameOrFunctionCall object)
       {
         return createTypeNameOrFunctionCallAdapter();
+      }
+      @Override
+      public Adapter caseTypeNameOrFunctionCall2(TypeNameOrFunctionCall2 object)
+      {
+        return createTypeNameOrFunctionCall2Adapter();
       }
       @Override
       public Adapter caseTupleDefinition(TupleDefinition object)
@@ -582,6 +602,21 @@ public class EditorAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
+   * Creates a new adapter for an object of class '{@link com.euclideanspace.spad.editor.WithInline <em>With Inline</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see com.euclideanspace.spad.editor.WithInline
+   * @generated
+   */
+  public Adapter createWithInlineAdapter()
+  {
+    return null;
+  }
+
+  /**
    * Creates a new adapter for an object of class '{@link com.euclideanspace.spad.editor.AddPart <em>Add Part</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
@@ -807,6 +842,21 @@ public class EditorAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
+   * Creates a new adapter for an object of class '{@link com.euclideanspace.spad.editor.TypeExpression2 <em>Type Expression2</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see com.euclideanspace.spad.editor.TypeExpression2
+   * @generated
+   */
+  public Adapter createTypeExpression2Adapter()
+  {
+    return null;
+  }
+
+  /**
    * Creates a new adapter for an object of class '{@link com.euclideanspace.spad.editor.TypeParameterList <em>Type Parameter List</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
@@ -867,6 +917,21 @@ public class EditorAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
+   * Creates a new adapter for an object of class '{@link com.euclideanspace.spad.editor.TypePrimaryExpression2 <em>Type Primary Expression2</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see com.euclideanspace.spad.editor.TypePrimaryExpression2
+   * @generated
+   */
+  public Adapter createTypePrimaryExpression2Adapter()
+  {
+    return null;
+  }
+
+  /**
    * Creates a new adapter for an object of class '{@link com.euclideanspace.spad.editor.TypeNameOrFunctionCall <em>Type Name Or Function Call</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
@@ -877,6 +942,21 @@ public class EditorAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createTypeNameOrFunctionCallAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link com.euclideanspace.spad.editor.TypeNameOrFunctionCall2 <em>Type Name Or Function Call2</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see com.euclideanspace.spad.editor.TypeNameOrFunctionCall2
+   * @generated
+   */
+  public Adapter createTypeNameOrFunctionCall2Adapter()
   {
     return null;
   }

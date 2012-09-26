@@ -135,8 +135,6 @@ generate editor "http://www.euclideanspace.com/spad/Editor"
  * 
  * */
 
-
-
 /*
  * Parser starts here
  * CategoryDef,PackageDef and DomainDef must end with newline to ensure that
@@ -390,7 +388,7 @@ WherePart hidden(WS,SL_COMMENT):
 	name='where' NL* LBRACE NL*
     (whereAssig +=WhereAssignments (NL|SEMICOLON)+)*
     // with part
-    (longname8=ID ((DEF | MDEF) (imp=TypeExpression)?)? w8=WithPart)?
+    (longname8=ID (DEF | MDEF) (imp=TypeExpression2)? w8=WithPart)?
     // add part
     (
     	(longname9=ID (DEF | MDEF))?
@@ -404,7 +402,8 @@ WherePart hidden(WS,SL_COMMENT):
  * need to add name=
  */
 WhereAssignments hidden(WS):
-	VariableDeclaration | MacroDef |Import
+	VariableDeclaration
+	| MacroDef |Import
 ;
 
 /*
@@ -415,6 +414,15 @@ WithPart hidden(WS,SL_COMMENT):
 	name='with' NL* LBRACE NL*
     (fundec += VariableDeclaration (NL|SEMICOLON)+)*
     RBRACE NL*
+;
+
+/*
+ * similar to 'WithPart' but no trailing NL
+ */
+WithInline hidden(WS,SL_COMMENT):
+	name='with' NL* LBRACE NL*
+    (fundec += VariableDeclaration (NL|SEMICOLON)+)*
+    RBRACE
 ;
 
 /*
@@ -683,6 +691,17 @@ TypeExpression hidden(WS):
 ;
 
 /*
+ * This is the same as TypeExpression except it does not allow
+ * the type to be extended by using a 'with' keyword. It is used
+ * in the 'where' rule because the 'with' in that case has a
+ * slightly different syntax.
+ */
+TypeExpression2 hidden(WS):
+   =>(t92=TypeArguments ARROW t93=TypeResult)
+   | TypePrimaryExpression2
+;
+
+/*
  * we use a type parameter list for parameters of category, package or domains
  * Parameter list may be empty '()'.
  * in this case parameters may be just ID or they may be nameID:typeID
@@ -747,6 +766,9 @@ TypeResult hidden(WS):
   t15=TypeNameOrFunctionCall
 ;
 
+/*
+ * this matches various specific types
+ */
 TypePrimaryExpression hidden(WS):
  TypeLiteral
  | ({TypePrimaryExpression}t32=PERCENT)
@@ -767,6 +789,32 @@ TypePrimaryExpression hidden(WS):
  | => TupleDefinition
 ;
 
+/*
+ * This is the same as TypePrimaryExpression except it does not allow
+ * the type to be extended by using a 'with' keyword. It is used
+ * in the 'where' rule because the 'with' in that case has a
+ * slightly different syntax.
+ */
+TypePrimaryExpression2 hidden(WS):
+ TypeLiteral
+ | ({TypePrimaryExpression2}xt32=PERCENT)
+ | ({TypePrimaryExpression2}xtyname='Type') // 'Type' is top of the category hierarchy
+ | ({TypePrimaryExpression2}xtyname='Lisp') // 'Lisp' is used for native lisp function calls such as Say$Lisp
+ | ({TypePrimaryExpression2}LPAREN xt5=TypeExpression RPAREN)
+ | ({TypePrimaryExpression2}xtyname='Record' LPAREN xt7=TypeExpression
+               (COLON xt8+=TypeExpression)?
+               (COMMA xt21+=TypeExpression (COLON xt23+=TypeExpression)?)*
+                RPAREN)
+ | ({TypePrimaryExpression2}xtyname='Union' LPAREN xt10=TypeExpression
+              (COLON xt11+=TypeExpression)?
+              (COMMA xt24+=TypeExpression (COLON xt26+=TypeExpression)?)*
+              RPAREN)
+ | ({TypePrimaryExpression2}xtyname='Join'
+    LPAREN xt13=TypeExpression (COMMA xt14+=TypeExpression)* RPAREN)
+ | TypeNameOrFunctionCall2
+ | => TupleDefinition
+;
+
 /* This rule will match:
  * Float - an ID representation of a type
  * List(Float) - a type function call
@@ -778,6 +826,18 @@ TypePrimaryExpression hidden(WS):
  * If there is only one parameter then the parenthesis are optional
  */
 TypeNameOrFunctionCall hidden(WS):
+  tfnname=ID
+  (
+    (LPAREN (ID COLON)? t4=TypeExpression? (COMMA (ID COLON)? t25+=TypeExpression)* RPAREN)
+    // optional curried function:
+    (LPAREN t44+=StatementExpression? (COMMA t45+=Expression)* RPAREN)*
+    // option of no parenthesis for single parameter
+    | => t6=TypePrimaryExpression
+    | => w=WithInline
+  )?
+;
+
+TypeNameOrFunctionCall2 hidden(WS):
   tfnname=ID
   (
     (LPAREN (ID COLON)? t4=TypeExpression? (COMMA (ID COLON)? t25+=TypeExpression)* RPAREN)

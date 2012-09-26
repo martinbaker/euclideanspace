@@ -25,7 +25,7 @@ public class Integr implements Domain{
     override TypeExpression getRep(){
     	rep
     }
-    
+   
     /**
      * value constructor for int literal
      */

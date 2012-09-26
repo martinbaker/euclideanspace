@@ -8,6 +8,7 @@ import com.euclideanspace.spad.editor.StatementExpression;
 import com.euclideanspace.spad.editor.TypeExpression;
 import com.euclideanspace.spad.editor.TypeNameOrFunctionCall;
 import com.euclideanspace.spad.editor.TypePrimaryExpression;
+import com.euclideanspace.spad.editor.WithInline;
 
 import java.util.Collection;
 
@@ -37,6 +38,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link com.euclideanspace.spad.editor.impl.TypeNameOrFunctionCallImpl#getT44 <em>T44</em>}</li>
  *   <li>{@link com.euclideanspace.spad.editor.impl.TypeNameOrFunctionCallImpl#getT45 <em>T45</em>}</li>
  *   <li>{@link com.euclideanspace.spad.editor.impl.TypeNameOrFunctionCallImpl#getT6 <em>T6</em>}</li>
+ *   <li>{@link com.euclideanspace.spad.editor.impl.TypeNameOrFunctionCallImpl#getW <em>W</em>}</li>
  * </ul>
  * </p>
  *
@@ -113,6 +115,16 @@ public class TypeNameOrFunctionCallImpl extends TypePrimaryExpressionImpl implem
    * @ordered
    */
   protected TypePrimaryExpression t6;
+
+  /**
+   * The cached value of the '{@link #getW() <em>W</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getW()
+   * @generated
+   * @ordered
+   */
+  protected WithInline w;
 
   /**
    * <!-- begin-user-doc -->
@@ -301,6 +313,54 @@ public class TypeNameOrFunctionCallImpl extends TypePrimaryExpressionImpl implem
    * <!-- end-user-doc -->
    * @generated
    */
+  public WithInline getW()
+  {
+    return w;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetW(WithInline newW, NotificationChain msgs)
+  {
+    WithInline oldW = w;
+    w = newW;
+    if (eNotificationRequired())
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, EditorPackage.TYPE_NAME_OR_FUNCTION_CALL__W, oldW, newW);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setW(WithInline newW)
+  {
+    if (newW != w)
+    {
+      NotificationChain msgs = null;
+      if (w != null)
+        msgs = ((InternalEObject)w).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - EditorPackage.TYPE_NAME_OR_FUNCTION_CALL__W, null, msgs);
+      if (newW != null)
+        msgs = ((InternalEObject)newW).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - EditorPackage.TYPE_NAME_OR_FUNCTION_CALL__W, null, msgs);
+      msgs = basicSetW(newW, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, EditorPackage.TYPE_NAME_OR_FUNCTION_CALL__W, newW, newW));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
@@ -316,6 +376,8 @@ public class TypeNameOrFunctionCallImpl extends TypePrimaryExpressionImpl implem
         return ((InternalEList<?>)getT45()).basicRemove(otherEnd, msgs);
       case EditorPackage.TYPE_NAME_OR_FUNCTION_CALL__T6:
         return basicSetT6(null, msgs);
+      case EditorPackage.TYPE_NAME_OR_FUNCTION_CALL__W:
+        return basicSetW(null, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -342,6 +404,8 @@ public class TypeNameOrFunctionCallImpl extends TypePrimaryExpressionImpl implem
         return getT45();
       case EditorPackage.TYPE_NAME_OR_FUNCTION_CALL__T6:
         return getT6();
+      case EditorPackage.TYPE_NAME_OR_FUNCTION_CALL__W:
+        return getW();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -378,6 +442,9 @@ public class TypeNameOrFunctionCallImpl extends TypePrimaryExpressionImpl implem
       case EditorPackage.TYPE_NAME_OR_FUNCTION_CALL__T6:
         setT6((TypePrimaryExpression)newValue);
         return;
+      case EditorPackage.TYPE_NAME_OR_FUNCTION_CALL__W:
+        setW((WithInline)newValue);
+        return;
     }
     super.eSet(featureID, newValue);
   }
@@ -410,6 +477,9 @@ public class TypeNameOrFunctionCallImpl extends TypePrimaryExpressionImpl implem
       case EditorPackage.TYPE_NAME_OR_FUNCTION_CALL__T6:
         setT6((TypePrimaryExpression)null);
         return;
+      case EditorPackage.TYPE_NAME_OR_FUNCTION_CALL__W:
+        setW((WithInline)null);
+        return;
     }
     super.eUnset(featureID);
   }
@@ -436,6 +506,8 @@ public class TypeNameOrFunctionCallImpl extends TypePrimaryExpressionImpl implem
         return t45 != null && !t45.isEmpty();
       case EditorPackage.TYPE_NAME_OR_FUNCTION_CALL__T6:
         return t6 != null;
+      case EditorPackage.TYPE_NAME_OR_FUNCTION_CALL__W:
+        return w != null;
     }
     return super.eIsSet(featureID);
   }
