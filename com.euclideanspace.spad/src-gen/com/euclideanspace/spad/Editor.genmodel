@@ -59,6 +59,7 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Editor.ecore#//WherePart/fs"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Editor.ecore#//WherePart/par2"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Editor.ecore#//WherePart/par3"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Editor.ecore#//WherePart/f2"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//WherePart/add"/>
     </genClasses>
     <genClasses ecoreClass="Editor.ecore#//WhereAssignments"/>

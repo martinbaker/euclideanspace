@@ -530,13 +530,22 @@ public interface EditorPackage extends EPackage
   int WHERE_PART__PAR3 = 8;
 
   /**
+   * The feature id for the '<em><b>F2</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int WHERE_PART__F2 = 9;
+
+  /**
    * The feature id for the '<em><b>Add</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int WHERE_PART__ADD = 9;
+  int WHERE_PART__ADD = 10;
 
   /**
    * The number of structural features of the '<em>Where Part</em>' class.
@@ -545,7 +554,7 @@ public interface EditorPackage extends EPackage
    * @generated
    * @ordered
    */
-  int WHERE_PART_FEATURE_COUNT = 10;
+  int WHERE_PART_FEATURE_COUNT = 11;
 
   /**
    * The meta object id for the '{@link com.euclideanspace.spad.editor.impl.WhereAssignmentsImpl <em>Where Assignments</em>}' class.
@@ -12298,6 +12307,17 @@ public interface EditorPackage extends EPackage
   EAttribute getWherePart_Par3();
 
   /**
+   * Returns the meta object for the attribute '{@link com.euclideanspace.spad.editor.WherePart#getF2 <em>F2</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>F2</em>'.
+   * @see com.euclideanspace.spad.editor.WherePart#getF2()
+   * @see #getWherePart()
+   * @generated
+   */
+  EAttribute getWherePart_F2();
+
+  /**
    * Returns the meta object for the containment reference '{@link com.euclideanspace.spad.editor.WherePart#getAdd <em>Add</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -17005,6 +17025,14 @@ public interface EditorPackage extends EPackage
      * @generated
      */
     EAttribute WHERE_PART__PAR3 = eINSTANCE.getWherePart_Par3();
+
+    /**
+     * The meta object literal for the '<em><b>F2</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute WHERE_PART__F2 = eINSTANCE.getWherePart_F2();
 
     /**
      * The meta object literal for the '<em><b>Add</b></em>' containment reference feature.

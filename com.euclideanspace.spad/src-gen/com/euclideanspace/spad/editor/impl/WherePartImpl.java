@@ -42,6 +42,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link com.euclideanspace.spad.editor.impl.WherePartImpl#getFs <em>Fs</em>}</li>
  *   <li>{@link com.euclideanspace.spad.editor.impl.WherePartImpl#getPar2 <em>Par2</em>}</li>
  *   <li>{@link com.euclideanspace.spad.editor.impl.WherePartImpl#getPar3 <em>Par3</em>}</li>
+ *   <li>{@link com.euclideanspace.spad.editor.impl.WherePartImpl#getF2 <em>F2</em>}</li>
  *   <li>{@link com.euclideanspace.spad.editor.impl.WherePartImpl#getAdd <em>Add</em>}</li>
  * </ul>
  * </p>
@@ -189,6 +190,26 @@ public class WherePartImpl extends MinimalEObjectImpl.Container implements Where
    * @ordered
    */
   protected EList<String> par3;
+
+  /**
+   * The default value of the '{@link #getF2() <em>F2</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getF2()
+   * @generated
+   * @ordered
+   */
+  protected static final String F2_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getF2() <em>F2</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getF2()
+   * @generated
+   * @ordered
+   */
+  protected String f2 = F2_EDEFAULT;
 
   /**
    * The cached value of the '{@link #getAdd() <em>Add</em>}' containment reference.
@@ -465,6 +486,29 @@ public class WherePartImpl extends MinimalEObjectImpl.Container implements Where
    * <!-- end-user-doc -->
    * @generated
    */
+  public String getF2()
+  {
+    return f2;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setF2(String newF2)
+  {
+    String oldF2 = f2;
+    f2 = newF2;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, EditorPackage.WHERE_PART__F2, oldF2, f2));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public AddPart getAdd()
   {
     return add;
@@ -558,6 +602,8 @@ public class WherePartImpl extends MinimalEObjectImpl.Container implements Where
         return getPar2();
       case EditorPackage.WHERE_PART__PAR3:
         return getPar3();
+      case EditorPackage.WHERE_PART__F2:
+        return getF2();
       case EditorPackage.WHERE_PART__ADD:
         return getAdd();
     }
@@ -604,6 +650,9 @@ public class WherePartImpl extends MinimalEObjectImpl.Container implements Where
         getPar3().clear();
         getPar3().addAll((Collection<? extends String>)newValue);
         return;
+      case EditorPackage.WHERE_PART__F2:
+        setF2((String)newValue);
+        return;
       case EditorPackage.WHERE_PART__ADD:
         setAdd((AddPart)newValue);
         return;
@@ -648,6 +697,9 @@ public class WherePartImpl extends MinimalEObjectImpl.Container implements Where
       case EditorPackage.WHERE_PART__PAR3:
         getPar3().clear();
         return;
+      case EditorPackage.WHERE_PART__F2:
+        setF2(F2_EDEFAULT);
+        return;
       case EditorPackage.WHERE_PART__ADD:
         setAdd((AddPart)null);
         return;
@@ -683,6 +735,8 @@ public class WherePartImpl extends MinimalEObjectImpl.Container implements Where
         return PAR2_EDEFAULT == null ? par2 != null : !PAR2_EDEFAULT.equals(par2);
       case EditorPackage.WHERE_PART__PAR3:
         return par3 != null && !par3.isEmpty();
+      case EditorPackage.WHERE_PART__F2:
+        return F2_EDEFAULT == null ? f2 != null : !F2_EDEFAULT.equals(f2);
       case EditorPackage.WHERE_PART__ADD:
         return add != null;
     }
@@ -712,6 +766,8 @@ public class WherePartImpl extends MinimalEObjectImpl.Container implements Where
     result.append(par2);
     result.append(", par3: ");
     result.append(par3);
+    result.append(", f2: ");
+    result.append(f2);
     result.append(')');
     return result.toString();
   }

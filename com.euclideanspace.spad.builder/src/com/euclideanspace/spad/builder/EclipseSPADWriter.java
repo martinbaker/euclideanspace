@@ -54,6 +54,11 @@ public class EclipseSPADWriter extends EclipseFileWriter {
 	 */
 	boolean lastLineMayContinue = false;
 	/**
+	 * we may continue a line, even if indent is not increased
+	 * but only if the line ends with comma.
+	 */
+	boolean lastLineEndsWithComma = false;
+	/**
 	 * set to true if last line is not empty,comment, '{' or '}'
 	 */
 	boolean lastLineIsStatement = false;
@@ -106,6 +111,7 @@ public class EclipseSPADWriter extends EclipseFileWriter {
 		lineHoldType.clear();
 		lastLineMayContinue = false;
 		lastLineIsStatement = false;
+		lastLineEndsWithComma = false;
 		suspended = false;
 		return Mode.HEAD;
 	  }
@@ -128,6 +134,7 @@ public class EclipseSPADWriter extends EclipseFileWriter {
 	  macros.clear(); // don't use macros in next file
 	  commit();
 	  lastLineMayContinue = false;
+	  lastLineEndsWithComma = false;
 	  lastLineIsStatement = false;
 	  name = n;
 	  return Mode.HEAD;
@@ -187,6 +194,7 @@ public class EclipseSPADWriter extends EclipseFileWriter {
 		 * So we put in line hold, so we can test next line.
 		 */
     	boolean continuationLine = impliedContinuation(trimedLine);
+    	boolean endsWithComma = trimedLine.endsWith(",");
     	/** statementLine is set if this is a statement, that is it does
     	 * not end with '{','}','_','where','with','add','==' and so on.
     	 */
@@ -207,12 +215,9 @@ public class EclipseSPADWriter extends EclipseFileWriter {
             lineHold.offer(line);
             lineHoldType.offer(lineType);
             continuationLine = lastLineMayContinue;
+            endsWithComma = lastLineEndsWithComma;
             statementLine = lastLineIsStatement;
     	} else {
-    		  /*if (indentForContinuation >= 0){
-    			  ind = indentForContinuation;
-    			  indentForContinuation = -1;
-    		  }*/
     		  // if line contains comment then split into two separate
     		  // strings
     		  int cmtInd = getCommentIndex(line);
@@ -224,12 +229,13 @@ public class EclipseSPADWriter extends EclipseFileWriter {
     		  }
     		  //System.out.println(line2);
     		  if (ind == indent) { // indent unchanged so no brace
-    			  flushLineHold(line,nl,true);
+    			  if (lastLineEndsWithComma) {
+    				  flushLineHold(line,"",true);
+    			  } else flushLineHold(line,nl,true); //output any pending lines then output line
     			  if (continuationLine) statementLine = true;
     		  } else if (ind > indent) { // indent increased so insert '{'
-    			  if (continuationLine) statementLine = true;
+    			if (continuationLine) statementLine = true;
       			trimedLine = line.trim();
-    			//boolean continuationLine = impliedContinuation(trimedLine);
     			if (lastLineMayContinue) {
     			  // continue statement
     		      if (trimedLine.endsWith("_")) {
@@ -237,14 +243,10 @@ public class EclipseSPADWriter extends EclipseFileWriter {
     		        trimedLine = line.trim();
     		      }
     		      write(" "+line.trim());
-    			  //flushLineHold(output," "+line.trim());    			  
-    			  //flushLineHold(output,"\n>"+line.trim());    			  
     			} else {
     			  // start new block
    			      write(" {"); // put brace before any pending comments
    			      write("\n"+line);
-    			  //flushLineHold(output,"\n"+line);
-    			  //output.write("push ind=" +ind+" indent="+ indent);
     			  pile.push(ind);
     			}
     		  } else if (ind < indent) { // indent reduced so insert '}'
@@ -264,6 +266,7 @@ public class EclipseSPADWriter extends EclipseFileWriter {
     		  }
     	}
         lastLineMayContinue = continuationLine;
+        lastLineEndsWithComma = endsWithComma;
         lastLineIsStatement = statementLine;
       } catch (Exception e) {
         System.err.println("error in transCODE: " + line +" due to "+ e);
@@ -331,7 +334,7 @@ public class EclipseSPADWriter extends EclipseFileWriter {
   	    		spacer = " ";
   	    	}
   	    	// if macro is continued on next line then get it
-  	    	while (line.endsWith("_")) {
+  	    	while (line.endsWith("_")||line.endsWith(",")) {
   	    	  if (value.endsWith("_")) value = value.substring(0,value.length()-1);
   	    	  String line2 = input.readLine();
   	    	  value = value + line2.trim();
@@ -460,10 +463,9 @@ public class EclipseSPADWriter extends EclipseFileWriter {
     }
 
     /**
-     * Check if line ends with '+','-' or ','
-     * or does not close all brackets or parenthesis
-     * if it does not then we will assume that it is continued on
-     * next line
+     * Check if line ends with 'where','with' or something
+     * that infers that a "{" can follow.
+     * 
      * @param line to be checked for continuation
      * @return true if we concatenate rather than start new block
      */
@@ -472,6 +474,7 @@ public class EclipseSPADWriter extends EclipseFileWriter {
     	if  (getCommentIndex(line) >= 0) return false;
     	// don't count brackets in strings
     	if (line.endsWith("_")) return true;
+    	//if (line.endsWith(",")) return true;
     	if (line.endsWith("where")) return false;
     	if (line.endsWith("with")) return false;
     	if (line.endsWith("add")) return false;
@@ -485,7 +488,7 @@ public class EclipseSPADWriter extends EclipseFileWriter {
     	if (line.endsWith("do")) return false;
     	return true;
     }
-    
+
     /**
      * If line contains a comment, indicated by "++" or "--", then
      * return its index. Otherwise return -1

@@ -2608,7 +2608,8 @@ public class EditorSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	 *         (uop=MINUSDOLAR te=ID expr=UnaryExpression) | 
 	 *         (uop=HASH expr=UnaryExpression) | 
 	 *         (uop='not' expr=PrimaryExpression) | 
-	 *         (uop=SUMLIST expr=PrimaryExpression)
+	 *         (uop=SUMLIST expr=PrimaryExpression) | 
+	 *         (uop=PRIMEPERCENT expr=PrimaryExpression)
 	 *     )
 	 */
 	protected void sequence_UnaryExpression(EObject context, UnaryExpression semanticObject) {
@@ -2658,7 +2659,7 @@ public class EditorSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	 *         name='where' 
 	 *         whereAssig+=WhereAssignments* 
 	 *         (longname8=ID imp=TypeExpression2? w8=WithPart)? 
-	 *         (longname9=ID? (fs=ID par2=ID? par3+=ID*)? add=AddPart)?
+	 *         (longname9=ID? ((fs=ID par2=ID? par3+=ID*) | (fs=ID f2=ID))? add=AddPart)?
 	 *     )
 	 */
 	protected void sequence_WherePart(EObject context, WherePart semanticObject) {

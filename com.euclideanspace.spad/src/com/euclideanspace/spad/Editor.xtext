@@ -318,8 +318,10 @@ terminal ARROW: '->';
 terminal LARROW: '<-';
 /* +-> */
 terminal GIVES: '+->';
-/* % */
+/* % represents an instance of this type */
 terminal PERCENT: '%';
+/* '% */
+terminal PRIMEPERCENT: "'%";
 /* ... */
 terminal ELLIPSIS: '...';
 /* +/ takes the sum of a list */
@@ -392,7 +394,9 @@ WherePart hidden(WS,SL_COMMENT):
     // add part
     (
     	(longname9=ID (DEF | MDEF))?
-        (fs=ID LPAREN par2=ID? (COMMA par3 += ID)* RPAREN)?
+        ((fs=ID LPAREN par2=ID? (COMMA par3 += ID)* RPAREN)
+        	| (fs=ID f2=ID)
+        )?
         add=AddPart
     )?
     RBRACE NL+
@@ -753,7 +757,6 @@ TypeResult hidden(WS):
   t=TypeLiteral |
   t2=PERCENT |
   tyname='Type' |
-// | LPAREN t4=TypePrimaryExpression ( COMMA t16 += TypePrimaryExpression)* RPAREN
   tyname='Record' LPAREN t7=TypeExpression
                (COLON t8+=TypeExpression)?
                (COMMA t21+=TypeExpression (COLON t23+=TypeExpression)?)*
@@ -820,7 +823,7 @@ TypePrimaryExpression2 hidden(WS):
  * List(Float) - a type function call
  * List Float - a non-parenthesis form if only one parameter
  * 
- * The second two forms are known as a parameterised type or
+ * A type function is also known as a parameterised type or
  * functor (not necessarily a true
  * functor since it may not obey the axioms of a functor).
  * If there is only one parameter then the parenthesis are optional
@@ -1463,6 +1466,7 @@ UnaryExpression returns Expr hidden(WS,SL_COMMENT):
   ({UnaryExpression} uop=HASH expr=UnaryExpression) |
   ({UnaryExpression} uop='not' expr=PrimaryExpression) |
   ({UnaryExpression} uop=SUMLIST expr=PrimaryExpression) |
+  ({UnaryExpression} uop=PRIMEPERCENT expr=PrimaryExpression) |
    e2=PERCENT |
   e3='Type' |
   e5='Record' LPAREN e6=TypeExpression

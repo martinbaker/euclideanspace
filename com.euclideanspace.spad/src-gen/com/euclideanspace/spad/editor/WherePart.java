@@ -23,6 +23,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link com.euclideanspace.spad.editor.WherePart#getFs <em>Fs</em>}</li>
  *   <li>{@link com.euclideanspace.spad.editor.WherePart#getPar2 <em>Par2</em>}</li>
  *   <li>{@link com.euclideanspace.spad.editor.WherePart#getPar3 <em>Par3</em>}</li>
+ *   <li>{@link com.euclideanspace.spad.editor.WherePart#getF2 <em>F2</em>}</li>
  *   <li>{@link com.euclideanspace.spad.editor.WherePart#getAdd <em>Add</em>}</li>
  * </ul>
  * </p>
@@ -246,6 +247,32 @@ public interface WherePart extends EObject
    * @generated
    */
   EList<String> getPar3();
+
+  /**
+   * Returns the value of the '<em><b>F2</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>F2</em>' attribute isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>F2</em>' attribute.
+   * @see #setF2(String)
+   * @see com.euclideanspace.spad.editor.EditorPackage#getWherePart_F2()
+   * @model
+   * @generated
+   */
+  String getF2();
+
+  /**
+   * Sets the value of the '{@link com.euclideanspace.spad.editor.WherePart#getF2 <em>F2</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>F2</em>' attribute.
+   * @see #getF2()
+   * @generated
+   */
+  void setF2(String value);
 
   /**
    * Returns the value of the '<em><b>Add</b></em>' containment reference.

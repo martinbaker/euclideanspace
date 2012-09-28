@@ -1208,9 +1208,19 @@ public class EditorPackageImpl extends EPackageImpl implements EditorPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  public EAttribute getWherePart_F2()
+  {
+    return (EAttribute)wherePartEClass.getEStructuralFeatures().get(9);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EReference getWherePart_Add()
   {
-    return (EReference)wherePartEClass.getEStructuralFeatures().get(9);
+    return (EReference)wherePartEClass.getEStructuralFeatures().get(10);
   }
 
   /**
@@ -5255,6 +5265,7 @@ public class EditorPackageImpl extends EPackageImpl implements EditorPackage
     createEAttribute(wherePartEClass, WHERE_PART__FS);
     createEAttribute(wherePartEClass, WHERE_PART__PAR2);
     createEAttribute(wherePartEClass, WHERE_PART__PAR3);
+    createEAttribute(wherePartEClass, WHERE_PART__F2);
     createEReference(wherePartEClass, WHERE_PART__ADD);
 
     whereAssignmentsEClass = createEClass(WHERE_ASSIGNMENTS);
@@ -5860,6 +5871,7 @@ public class EditorPackageImpl extends EPackageImpl implements EditorPackage
     initEAttribute(getWherePart_Fs(), ecorePackage.getEString(), "fs", null, 0, 1, WherePart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getWherePart_Par2(), ecorePackage.getEString(), "par2", null, 0, 1, WherePart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getWherePart_Par3(), ecorePackage.getEString(), "par3", null, 0, -1, WherePart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getWherePart_F2(), ecorePackage.getEString(), "f2", null, 0, 1, WherePart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getWherePart_Add(), this.getAddPart(), null, "add", null, 0, 1, WherePart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(whereAssignmentsEClass, WhereAssignments.class, "WhereAssignments", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);

@@ -118,8 +118,9 @@ public class EditorJavaValidator extends AbstractEditorJavaValidator {
 			return;
 		}
 		for (Character c: shortname.toCharArray()) {
-		  if (!Character.isUpperCase(c)) {
-			warning("Short name usually uppercase", EditorPackage.Literals.DOMAIN_DEF__SHORTNAME5);
+			  if (!(Character.isUpperCase(c) ||
+					  Character.isDigit(c))) {
+			warning("Short name usually uppercase:"+c, EditorPackage.Literals.DOMAIN_DEF__SHORTNAME5);
 			return;
 		  }
 		}
@@ -148,8 +149,9 @@ public class EditorJavaValidator extends AbstractEditorJavaValidator {
 			return;
 		}
 		for (Character c: shortname.toCharArray()) {
-		  if (!Character.isUpperCase(c)) {
-			warning("Short name usually uppercase", EditorPackage.Literals.CATEGORY_DEF__SHORTNAME);
+			  if (!(Character.isUpperCase(c) ||
+					  Character.isDigit(c))) {
+			warning("Short name usually uppercase:"+c, EditorPackage.Literals.CATEGORY_DEF__SHORTNAME);
 			return;
 		  }
 		}
@@ -178,8 +180,9 @@ public class EditorJavaValidator extends AbstractEditorJavaValidator {
 			return;
 		}
 		for (Character c: shortname.toCharArray()) {
-		  if (!Character.isUpperCase(c)) {
-			warning("Short name usually uppercase", EditorPackage.Literals.PACKAGE_DEF__SHORTNAME);
+		  if (!(Character.isUpperCase(c) ||
+				  Character.isDigit(c))) {
+			warning("Short name usually uppercase:"+c, EditorPackage.Literals.PACKAGE_DEF__SHORTNAME);
 			return;
 		  }
 		}
