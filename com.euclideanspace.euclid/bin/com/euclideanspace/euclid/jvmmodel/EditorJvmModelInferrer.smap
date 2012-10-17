@@ -6,5 +6,16 @@ Xtend
 + 0 EditorJvmModelInferrer.xtend
 src/com/euclideanspace/euclid/jvmmodel/EditorJvmModelInferrer.xtend
 *L
-47:54,3
+51:66,3
+52:69,2
+53:71,2
+54:73,6
+55:79,2
+56:81,6
+55:87,3
+54:90,4
+53:94
+52:95,2
+51:97
+49:101,3
 *E

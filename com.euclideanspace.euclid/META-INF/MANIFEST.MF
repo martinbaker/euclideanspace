@@ -1,9 +1,10 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
-Bundle-Name: %Bundle-Name
-Bundle-Vendor: %Bundle-Vendor
+Bundle-Name: com.euclideanspace.euclid
+Bundle-Vendor: My Company
 Bundle-Version: 1.0.0.qualifier
 Bundle-SymbolicName: com.euclideanspace.euclid; singleton:=true
+Bundle-ActivationPolicy: lazy
 Require-Bundle: org.eclipse.xtext;visibility:=reexport,
  org.eclipse.xtext.xbase;resolution:=optional;visibility:=reexport,
  org.eclipse.xtext.generator;resolution:=optional,
@@ -20,13 +21,13 @@ Require-Bundle: org.eclipse.xtext;visibility:=reexport,
 Import-Package: org.apache.log4j
 Bundle-RequiredExecutionEnvironment: J2SE-1.5
 Export-Package: com.euclideanspace.euclid,
+ com.euclideanspace.euclid.services,
  com.euclideanspace.euclid.editor,
  com.euclideanspace.euclid.editor.impl,
  com.euclideanspace.euclid.editor.util,
- com.euclideanspace.euclid.formatting,
- com.euclideanspace.euclid.jvmmodel,
- com.euclideanspace.euclid.parser.antlr,
- com.euclideanspace.euclid.parser.antlr.internal;x-internal:=true,
  com.euclideanspace.euclid.serializer,
- com.euclideanspace.euclid.services,
- com.euclideanspace.euclid.validation
+ com.euclideanspace.euclid.parser.antlr,
+ com.euclideanspace.euclid.parser.antlr.internal,
+ com.euclideanspace.euclid.validation,
+ com.euclideanspace.euclid.formatting,
+ com.euclideanspace.euclid.jvmmodel

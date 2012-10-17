@@ -4,9 +4,6 @@
     <metamodelDeclarations xsi:type="xtext:GeneratedMetamodel" name="editor">
       <ePackage href="http://www.euclideanspace.com/euclid/Editor#/"/>
     </metamodelDeclarations>
-    <metamodelDeclarations xsi:type="xtext:ReferencedMetamodel" alias="jvmTypes">
-      <ePackage href="http://www.eclipse.org/xtext/common/JavaVMTypes#/"/>
-    </metamodelDeclarations>
     <rules xsi:type="xtext:ParserRule" name="Domainmodel">
       <type metamodel="/0/@metamodelDeclarations.0">
         <classifier xsi:type="ecore:EClass" href="http://www.euclideanspace.com/euclid/Editor#//Domainmodel"/>

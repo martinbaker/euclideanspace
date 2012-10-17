@@ -20,8 +20,6 @@ grammar com.euclideanspace.euclid.Editor with org.eclipse.xtext.xbase.Xbase
 
 generate editor "http://www.euclideanspace.com/euclid/Editor"
 
-import "http://www.eclipse.org/xtext/common/JavaVMTypes" as jvmTypes
-
 Domainmodel:
   (packages += PackageDeclaration)*
   (imports += Import)*
