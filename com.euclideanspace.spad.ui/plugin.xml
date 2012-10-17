@@ -11,7 +11,7 @@
             default="true"
             extensions="spad"
             id="com.euclideanspace.spad.Editor"
-            name="%editor.name">
+            name="Editor Editor">
         </editor>
     </extension>
     <extension
@@ -52,21 +52,21 @@
         <page
             class="com.euclideanspace.spad.ui.EditorExecutableExtensionFactory:org.eclipse.xtext.ui.editor.preferences.LanguageRootPreferencePage"
             id="com.euclideanspace.spad.Editor"
-            name="%page.name">
+            name="Editor">
             <keywordReference id="com.euclideanspace.spad.ui.keyword_Editor"/>
         </page>
         <page
             category="com.euclideanspace.spad.Editor"
             class="com.euclideanspace.spad.ui.EditorExecutableExtensionFactory:org.eclipse.xtext.ui.editor.syntaxcoloring.SyntaxColoringPreferencePage"
             id="com.euclideanspace.spad.Editor.coloring"
-            name="%page.name.0">
+            name="Syntax Coloring">
             <keywordReference id="com.euclideanspace.spad.ui.keyword_Editor"/>
         </page>
         <page
             category="com.euclideanspace.spad.Editor"
             class="com.euclideanspace.spad.ui.EditorExecutableExtensionFactory:org.eclipse.xtext.ui.editor.templates.XtextTemplatePreferencePage"
             id="com.euclideanspace.spad.Editor.templates"
-            name="%page.name.1">
+            name="Templates">
             <keywordReference id="com.euclideanspace.spad.ui.keyword_Editor"/>
         </page>
     </extension>
@@ -75,7 +75,7 @@
         <page
             class="com.euclideanspace.spad.ui.EditorExecutableExtensionFactory:org.eclipse.xtext.ui.editor.preferences.LanguageRootPreferencePage"
             id="com.euclideanspace.spad.Editor"
-            name="%page.name.2">
+            name="Editor">
             <keywordReference id="com.euclideanspace.spad.ui.keyword_Editor"/>
             <enabledWhen>
 	            <adapt type="org.eclipse.core.resources.IProject"/>
@@ -87,14 +87,14 @@
         point="org.eclipse.ui.keywords">
         <keyword
             id="com.euclideanspace.spad.ui.keyword_Editor"
-            label="%keyword.label"/>
+            label="Editor"/>
     </extension>
     <extension
          point="org.eclipse.ui.commands">
       <command
-            description="%command.description"
+            description="Trigger expensive validation"
             id="com.euclideanspace.spad.Editor.validate"
-            name="%command.name">
+            name="Validate">
       </command>
     </extension>
     <extension point="org.eclipse.ui.menus">
@@ -103,7 +103,7 @@
              <command
                  commandId="com.euclideanspace.spad.Editor.validate"
                  style="push"
-                 tooltip="%command.tooltip">
+                 tooltip="Trigger expensive validation">
             <visibleWhen checkEnabled="false">
                 <reference
                     definitionId="com.euclideanspace.spad.Editor.Editor.opened">
@@ -154,21 +154,21 @@
     <!-- marker definitions for com.euclideanspace.spad.Editor -->
     <extension
             id="editor.check.fast"
-            name="%extension.name"
+            name="Editor Problem"
             point="org.eclipse.core.resources.markers">
         <super type="org.eclipse.xtext.ui.check.fast"/>
         <persistent value="true"/>
     </extension>
     <extension
             id="editor.check.normal"
-            name="%extension.name.0"
+            name="Editor Problem"
             point="org.eclipse.core.resources.markers">
         <super type="org.eclipse.xtext.ui.check.normal"/>
         <persistent value="true"/>
     </extension>
     <extension
             id="editor.check.expensive"
-            name="%extension.name.1"
+            name="Editor Problem"
             point="org.eclipse.core.resources.markers">
         <super type="org.eclipse.xtext.ui.check.expensive"/>
         <persistent value="true"/>
@@ -186,7 +186,7 @@
             category="com.euclideanspace.spad.Editor"
             class="com.euclideanspace.spad.ui.EditorExecutableExtensionFactory:org.eclipse.xtext.builder.preferences.BuilderPreferencePage"
             id="com.euclideanspace.spad.Editor.compiler.preferencePage"
-            name="%page.name.3">
+            name="Compiler">
             <keywordReference id="com.euclideanspace.spad.ui.keyword_Editor"/>
         </page>
     </extension>
@@ -196,7 +196,7 @@
             category="com.euclideanspace.spad.Editor"
             class="com.euclideanspace.spad.ui.EditorExecutableExtensionFactory:org.eclipse.xtext.builder.preferences.BuilderPreferencePage"
             id="com.euclideanspace.spad.Editor.compiler.propertyPage"
-            name="%page.name.4">
+            name="Compiler">
             <keywordReference id="com.euclideanspace.spad.ui.keyword_Editor"/>
             <enabledWhen>
 	            <adapt type="org.eclipse.core.resources.IProject"/>
@@ -221,9 +221,9 @@
 	<extension
 		point="org.eclipse.ui.commands">
 		<command
-			description="%command.description.0"
+			description="Open the quick outline."
 			id="org.eclipse.xtext.ui.editor.outline.QuickOutline"
-			name="%command.name.0">
+			name="Quick Outline">
 		</command>
 	</extension>
 	<extension point="org.eclipse.ui.menus">
@@ -231,7 +231,7 @@
 			locationURI="popup:#TextEditorContext?after=group.open">
 			<command commandId="org.eclipse.xtext.ui.editor.outline.QuickOutline"
 				style="push"
-				tooltip="%command.tooltip.0">
+				tooltip="Open Quick Outline">
 				<visibleWhen checkEnabled="false">
 					<reference definitionId="com.euclideanspace.spad.Editor.Editor.opened"/>
 				</visibleWhen>
@@ -296,7 +296,7 @@
 	        category="com.euclideanspace.spad.Editor"
 	        class="com.euclideanspace.spad.ui.EditorExecutableExtensionFactory:org.eclipse.xtext.ui.refactoring.ui.RefactoringPreferencePage"
 	        id="com.euclideanspace.spad.Editor.refactoring"
-	        name="%page.name.5">
+	        name="Refactoring">
 	        <keywordReference id="com.euclideanspace.spad.ui.keyword_Editor"/>
 	    </page>
 	</extension>
@@ -310,7 +310,7 @@
   <extension point="org.eclipse.compare.contentMergeViewers">
     <viewer id="com.euclideanspace.spad.Editor.compare.contentMergeViewers"
             class="com.euclideanspace.spad.ui.EditorExecutableExtensionFactory:org.eclipse.xtext.ui.compare.InjectableViewerCreator"
-            extensions="spad" label="%viewer.label">
+            extensions="spad" label="Editor Compare">
      </viewer>
   </extension>
   <extension point="org.eclipse.ui.editors.documentProviders">

@@ -539,7 +539,7 @@ public class EditorSyntacticSequencer extends AbstractSyntacticSequencer {
 	
 	/**
 	 * Syntax:
-	 *     (NL | SEMICOLON)+
+	 *     (SEMICOLON | NL)+
 	 */
 	protected void emit_Block___NLTerminalRuleCall_2_1_0_or_SEMICOLONTerminalRuleCall_2_1_1__p(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
@@ -611,7 +611,7 @@ public class EditorSyntacticSequencer extends AbstractSyntacticSequencer {
 	
 	/**
 	 * Syntax:
-	 *     (SEMICOLON | NL)+
+	 *     (NL | SEMICOLON)+
 	 */
 	protected void emit_FunctionDefinitionBlock___NLTerminalRuleCall_0_2_0_1_0_or_SEMICOLONTerminalRuleCall_0_2_0_1_1__p(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
@@ -619,7 +619,7 @@ public class EditorSyntacticSequencer extends AbstractSyntacticSequencer {
 	
 	/**
 	 * Syntax:
-	 *     (SEMICOLON | NL)+
+	 *     (NL | SEMICOLON)+
 	 */
 	protected void emit_FunctionDefinitionBlock___NLTerminalRuleCall_0_2_1_1_0_or_SEMICOLONTerminalRuleCall_0_2_1_1_1__p(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
@@ -643,7 +643,7 @@ public class EditorSyntacticSequencer extends AbstractSyntacticSequencer {
 	
 	/**
 	 * Syntax:
-	 *     (NL | SEMICOLON)+
+	 *     (SEMICOLON | NL)+
 	 */
 	protected void emit_FunctionDefinitionBlock___NLTerminalRuleCall_2_4_0_or_SEMICOLONTerminalRuleCall_2_4_1__p(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
@@ -651,7 +651,7 @@ public class EditorSyntacticSequencer extends AbstractSyntacticSequencer {
 	
 	/**
 	 * Syntax:
-	 *     (COLON (ID | PERCENT))?
+	 *     (COLON (PERCENT | ID))?
 	 */
 	protected void emit_FunctionSignature___COLONTerminalRuleCall_2_1_0___IDTerminalRuleCall_2_1_1_1_or_PERCENTTerminalRuleCall_2_1_1_0____q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
@@ -963,7 +963,7 @@ public class EditorSyntacticSequencer extends AbstractSyntacticSequencer {
 	
 	/**
 	 * Syntax:
-	 *     (NL | SEMICOLON)+
+	 *     (SEMICOLON | NL)+
 	 */
 	protected void emit_WithPart___NLTerminalRuleCall_4_1_0_or_SEMICOLONTerminalRuleCall_4_1_1__p(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
