@@ -15,7 +15,7 @@ import com.google.inject.Injector;
 public class EditorStandaloneSetupGenerated implements ISetup {
 
 	public Injector createInjectorAndDoEMFRegistration() {
-		org.eclipse.xtext.xbase.XbaseStandaloneSetup.doSetup();
+		org.eclipse.xtext.xbase.annotations.XbaseWithAnnotationsStandaloneSetup.doSetup();
 
 		Injector injector = createInjector();
 		register(injector);
@@ -27,8 +27,8 @@ public class EditorStandaloneSetupGenerated implements ISetup {
 	}
 	
 	public void register(Injector injector) {
-	if (!EPackage.Registry.INSTANCE.containsKey("http://www.euclideanspace.com/euclid/Editor")) {
-		EPackage.Registry.INSTANCE.put("http://www.euclideanspace.com/euclid/Editor", com.euclideanspace.euclid.editor.EditorPackage.eINSTANCE);
+	if (!EPackage.Registry.INSTANCE.containsKey("http://www.euclideanspace.com/euclid")) {
+		EPackage.Registry.INSTANCE.put("http://www.euclideanspace.com/euclid", com.euclideanspace.euclid.euclidmodel.EuclidmodelPackage.eINSTANCE);
 	}
 
 		org.eclipse.xtext.resource.IResourceFactory resourceFactory = injector.getInstance(org.eclipse.xtext.resource.IResourceFactory.class);

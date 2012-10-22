@@ -4,8 +4,34 @@ import com.google.inject.Inject
 import org.eclipse.xtext.xbase.jvmmodel.AbstractModelInferrer
 import org.eclipse.xtext.xbase.jvmmodel.IJvmDeclaredTypeAcceptor
 import org.eclipse.xtext.xbase.jvmmodel.JvmTypesBuilder
-import com.euclideanspace.euclid.editor.Domainmodel
+import com.euclideanspace.euclid.euclidmodel.EuclidFile
+import com.euclideanspace.euclid.euclidmodel.EuclidAnnotationType
+import com.euclideanspace.euclid.euclidmodel.EuclidClass
+import com.euclideanspace.euclid.euclidmodel.EuclidConstructor
+import com.euclideanspace.euclid.euclidmodel.EuclidField
+import com.euclideanspace.euclid.euclidmodel.EuclidFunction
+import com.euclideanspace.euclid.euclidmodel.EuclidMember
+import com.euclideanspace.euclid.euclidmodel.EuclidParameter
+import com.euclideanspace.euclid.euclidmodel.EuclidTypeDeclaration
+import java.util.ArrayList
+import java.util.Collection
+import java.util.HashMap
+import java.util.Iterator
+import java.util.List
+import java.util.Map
+import java.util.Set
+import org.eclipse.emf.common.util.EList
+import org.eclipse.emf.common.util.URI
+import org.eclipse.emf.ecore.EObject
+import org.eclipse.emf.ecore.InternalEObject
+import org.eclipse.emf.ecore.resource.Resource
+import org.eclipse.jdt.annotation.NonNull
+import org.eclipse.jdt.annotation.Nullable
+import com.google.common.base.Predicate
+import com.google.common.collect.Multimap
 import org.eclipse.xtext.naming.IQualifiedNameProvider
+
+import static org.eclipse.xtext.util.Strings.*
 
 /**
  * <p>Infers a JVM model from the source model.</p> 
@@ -13,13 +39,12 @@ import org.eclipse.xtext.naming.IQualifiedNameProvider
  * <p>The JVM model should contain all elements that would appear in the Java code 
  * which is generated from the source model. Other models link against the JVM model rather than the source model.</p>     
  */
-class EditorJvmModelInferrer extends AbstractModelInferrer {
+//class EditorJvmModelInferrer extends AbstractModelInferrer {
 
     /**
      * convenience API to build and initialize JVM types and their members.
      */
-	@Inject extension JvmTypesBuilder
-	@Inject extension IQualifiedNameProvider
+//	@Inject extension JvmTypesBuilder
 
 	/**
 	 * The dispatch method {@code infer} is called for each instance of the
@@ -46,18 +71,29 @@ class EditorJvmModelInferrer extends AbstractModelInferrer {
 	 *            rely on linking using the index if isPreIndexingPhase is
 	 *            <code>true</code>.
 	 */
-   	def dispatch void infer(Domainmodel element, IJvmDeclaredTypeAcceptor acceptor, boolean isPreIndexingPhase) {
-   		// Here you explain how your model is mapped to Java elements, by writing the actual translation code.
-   		acceptor.accept(element.toClass(element.fullyQualifiedName))
-   			.initializeLater([
-   				for (feature : element.getPackages()) {
-   					members += feature.toMethod("hello" + feature.name, feature.newTypeRef(typeof(String))) [
-   						body = [
-   							append('''return "Hello «feature.name»";''')
-   						]
-   					]
-   				}
-   			])
-   	}
+class EditorJvmModelInferrer extends AbstractModelInferrer {
+     
+  @Inject extension JvmTypesBuilder
+//  @Inject extension IQualifiedNameProvider
+  def dispatch void infer(EuclidFile element,
+      IJvmDeclaredTypeAcceptor acceptor,
+      boolean isPrelinkingPhase) {
+      for (classElement : element.euclidTypes) {
+      	if (classElement instanceof EuclidClass) {
+      	  val EuclidClass ec=classElement as EuclidClass
+          acceptor.accept(ec.toClass(ec.name)).initializeLater [
+          documentation = element.documentation
+          for (methodElement : ec.members) {
+      	    if (methodElement instanceof EuclidFunction) {
+      	      val EuclidFunction me=methodElement as EuclidFunction
+               members += me.toMethod(me.name,me.returnType) [
+    		     //parameters += me.toParameter("my parameter", me.expression)
+    		   ]
+        }
+          }
+        ]
+        }
+      }
+  }
 }
 

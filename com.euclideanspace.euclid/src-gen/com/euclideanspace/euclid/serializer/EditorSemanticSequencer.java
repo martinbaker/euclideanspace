@@ -1,13 +1,17 @@
 package com.euclideanspace.euclid.serializer;
 
-import com.euclideanspace.euclid.editor.Domainmodel;
-import com.euclideanspace.euclid.editor.EditorPackage;
-import com.euclideanspace.euclid.editor.FunctionDef;
-import com.euclideanspace.euclid.editor.Import;
-import com.euclideanspace.euclid.editor.PackageDeclaration;
-import com.euclideanspace.euclid.editor.Reference;
-import com.euclideanspace.euclid.editor.ValueDef;
-import com.euclideanspace.euclid.editor.VariableDef;
+import com.euclideanspace.euclid.euclidmodel.CreateExtensionInfo;
+import com.euclideanspace.euclid.euclidmodel.EuclidAnnotationType;
+import com.euclideanspace.euclid.euclidmodel.EuclidClass;
+import com.euclideanspace.euclid.euclidmodel.EuclidConstructor;
+import com.euclideanspace.euclid.euclidmodel.EuclidField;
+import com.euclideanspace.euclid.euclidmodel.EuclidFile;
+import com.euclideanspace.euclid.euclidmodel.EuclidFunction;
+import com.euclideanspace.euclid.euclidmodel.EuclidImport;
+import com.euclideanspace.euclid.euclidmodel.EuclidMember;
+import com.euclideanspace.euclid.euclidmodel.EuclidParameter;
+import com.euclideanspace.euclid.euclidmodel.EuclidTypeDeclaration;
+import com.euclideanspace.euclid.euclidmodel.EuclidmodelPackage;
 import com.euclideanspace.euclid.services.EditorGrammarAccess;
 import com.google.inject.Inject;
 import com.google.inject.Provider;
@@ -56,63 +60,93 @@ import org.eclipse.xtext.xbase.XUnaryOperation;
 import org.eclipse.xtext.xbase.XVariableDeclaration;
 import org.eclipse.xtext.xbase.XWhileExpression;
 import org.eclipse.xtext.xbase.XbasePackage;
-import org.eclipse.xtext.xbase.serializer.XbaseSemanticSequencer;
+import org.eclipse.xtext.xbase.annotations.serializer.XbaseWithAnnotationsSemanticSequencer;
+import org.eclipse.xtext.xbase.annotations.xAnnotations.XAnnotation;
+import org.eclipse.xtext.xbase.annotations.xAnnotations.XAnnotationElementValueBinaryOperation;
+import org.eclipse.xtext.xbase.annotations.xAnnotations.XAnnotationElementValuePair;
+import org.eclipse.xtext.xbase.annotations.xAnnotations.XAnnotationValueArray;
+import org.eclipse.xtext.xbase.annotations.xAnnotations.XAnnotationsPackage;
 import org.eclipse.xtext.xtype.XFunctionTypeRef;
 import org.eclipse.xtext.xtype.XtypePackage;
 
 @SuppressWarnings("all")
-public class EditorSemanticSequencer extends XbaseSemanticSequencer {
+public class EditorSemanticSequencer extends XbaseWithAnnotationsSemanticSequencer {
 
 	@Inject
 	private EditorGrammarAccess grammarAccess;
 	
 	public void createSequence(EObject context, EObject semanticObject) {
-		if(semanticObject.eClass().getEPackage() == EditorPackage.eINSTANCE) switch(semanticObject.eClass().getClassifierID()) {
-			case EditorPackage.CLASS:
-				if(context == grammarAccess.getClassRule()) {
-					sequence_Class(context, (com.euclideanspace.euclid.editor.Class) semanticObject); 
+		if(semanticObject.eClass().getEPackage() == EuclidmodelPackage.eINSTANCE) switch(semanticObject.eClass().getClassifierID()) {
+			case EuclidmodelPackage.CREATE_EXTENSION_INFO:
+				if(context == grammarAccess.getCreateExtensionInfoRule()) {
+					sequence_CreateExtensionInfo(context, (CreateExtensionInfo) semanticObject); 
 					return; 
 				}
 				else break;
-			case EditorPackage.DOMAINMODEL:
-				if(context == grammarAccess.getDomainmodelRule()) {
-					sequence_Domainmodel(context, (Domainmodel) semanticObject); 
+			case EuclidmodelPackage.EUCLID_ANNOTATION_TYPE:
+				if(context == grammarAccess.getTypeRule()) {
+					sequence_Type(context, (EuclidAnnotationType) semanticObject); 
 					return; 
 				}
 				else break;
-			case EditorPackage.FUNCTION_DEF:
-				if(context == grammarAccess.getFunctionDefRule()) {
-					sequence_FunctionDef(context, (FunctionDef) semanticObject); 
+			case EuclidmodelPackage.EUCLID_CLASS:
+				if(context == grammarAccess.getTypeRule()) {
+					sequence_Type(context, (EuclidClass) semanticObject); 
 					return; 
 				}
 				else break;
-			case EditorPackage.IMPORT:
+			case EuclidmodelPackage.EUCLID_CONSTRUCTOR:
+				if(context == grammarAccess.getMemberRule()) {
+					sequence_Member(context, (EuclidConstructor) semanticObject); 
+					return; 
+				}
+				else break;
+			case EuclidmodelPackage.EUCLID_FIELD:
+				if(context == grammarAccess.getAnnotationFieldRule()) {
+					sequence_AnnotationField(context, (EuclidField) semanticObject); 
+					return; 
+				}
+				else if(context == grammarAccess.getMemberRule()) {
+					sequence_Member(context, (EuclidField) semanticObject); 
+					return; 
+				}
+				else break;
+			case EuclidmodelPackage.EUCLID_FILE:
+				if(context == grammarAccess.getFileRule()) {
+					sequence_File(context, (EuclidFile) semanticObject); 
+					return; 
+				}
+				else break;
+			case EuclidmodelPackage.EUCLID_FUNCTION:
+				if(context == grammarAccess.getMemberRule()) {
+					sequence_Member(context, (EuclidFunction) semanticObject); 
+					return; 
+				}
+				else break;
+			case EuclidmodelPackage.EUCLID_IMPORT:
 				if(context == grammarAccess.getImportRule()) {
-					sequence_Import(context, (Import) semanticObject); 
+					sequence_Import(context, (EuclidImport) semanticObject); 
 					return; 
 				}
 				else break;
-			case EditorPackage.PACKAGE_DECLARATION:
-				if(context == grammarAccess.getPackageDeclarationRule()) {
-					sequence_PackageDeclaration(context, (PackageDeclaration) semanticObject); 
+			case EuclidmodelPackage.EUCLID_MEMBER:
+				if(context == grammarAccess.getMemberAccess().getEuclidConstructorAnnotationInfoAction_2_2_0() ||
+				   context == grammarAccess.getMemberAccess().getEuclidFieldAnnotationInfoAction_2_0_0() ||
+				   context == grammarAccess.getMemberAccess().getEuclidFunctionAnnotationInfoAction_2_1_0()) {
+					sequence_Member_EuclidConstructor_2_2_0_EuclidField_2_0_0_EuclidFunction_2_1_0(context, (EuclidMember) semanticObject); 
 					return; 
 				}
 				else break;
-			case EditorPackage.REFERENCE:
-				if(context == grammarAccess.getReferenceRule()) {
-					sequence_Reference(context, (Reference) semanticObject); 
+			case EuclidmodelPackage.EUCLID_PARAMETER:
+				if(context == grammarAccess.getParameterRule()) {
+					sequence_Parameter(context, (EuclidParameter) semanticObject); 
 					return; 
 				}
 				else break;
-			case EditorPackage.VALUE_DEF:
-				if(context == grammarAccess.getValueDefRule()) {
-					sequence_ValueDef(context, (ValueDef) semanticObject); 
-					return; 
-				}
-				else break;
-			case EditorPackage.VARIABLE_DEF:
-				if(context == grammarAccess.getVariableDefRule()) {
-					sequence_VariableDef(context, (VariableDef) semanticObject); 
+			case EuclidmodelPackage.EUCLID_TYPE_DECLARATION:
+				if(context == grammarAccess.getTypeAccess().getEuclidAnnotationTypeAnnotationInfoAction_2_1_0() ||
+				   context == grammarAccess.getTypeAccess().getEuclidClassAnnotationInfoAction_2_0_0()) {
+					sequence_Type_EuclidAnnotationType_2_1_0_EuclidClass_2_0_0(context, (EuclidTypeDeclaration) semanticObject); 
 					return; 
 				}
 				else break;
@@ -171,6 +205,40 @@ public class EditorSemanticSequencer extends XbaseSemanticSequencer {
 				if(context == grammarAccess.getJvmArgumentTypeReferenceRule() ||
 				   context == grammarAccess.getJvmWildcardTypeReferenceRule()) {
 					sequence_JvmWildcardTypeReference(context, (JvmWildcardTypeReference) semanticObject); 
+					return; 
+				}
+				else break;
+			}
+		else if(semanticObject.eClass().getEPackage() == XAnnotationsPackage.eINSTANCE) switch(semanticObject.eClass().getClassifierID()) {
+			case XAnnotationsPackage.XANNOTATION:
+				if(context == grammarAccess.getXAnnotationRule() ||
+				   context == grammarAccess.getXAnnotationElementValueRule() ||
+				   context == grammarAccess.getXAnnotationElementValueStringConcatenationRule() ||
+				   context == grammarAccess.getXAnnotationElementValueStringConcatenationAccess().getXAnnotationElementValueBinaryOperationLeftOperandAction_1_0()) {
+					sequence_XAnnotation(context, (XAnnotation) semanticObject); 
+					return; 
+				}
+				else break;
+			case XAnnotationsPackage.XANNOTATION_ELEMENT_VALUE_BINARY_OPERATION:
+				if(context == grammarAccess.getXAnnotationElementValueRule() ||
+				   context == grammarAccess.getXAnnotationElementValueStringConcatenationRule() ||
+				   context == grammarAccess.getXAnnotationElementValueStringConcatenationAccess().getXAnnotationElementValueBinaryOperationLeftOperandAction_1_0()) {
+					sequence_XAnnotationElementValueStringConcatenation(context, (XAnnotationElementValueBinaryOperation) semanticObject); 
+					return; 
+				}
+				else break;
+			case XAnnotationsPackage.XANNOTATION_ELEMENT_VALUE_PAIR:
+				if(context == grammarAccess.getXAnnotationElementValuePairRule()) {
+					sequence_XAnnotationElementValuePair(context, (XAnnotationElementValuePair) semanticObject); 
+					return; 
+				}
+				else break;
+			case XAnnotationsPackage.XANNOTATION_VALUE_ARRAY:
+				if(context == grammarAccess.getXAnnotationElementValueRule() ||
+				   context == grammarAccess.getXAnnotationElementValueStringConcatenationRule() ||
+				   context == grammarAccess.getXAnnotationElementValueStringConcatenationAccess().getXAnnotationElementValueBinaryOperationLeftOperandAction_1_0() ||
+				   context == grammarAccess.getXAnnotationValueArrayRule()) {
+					sequence_XAnnotationValueArray(context, (XAnnotationValueArray) semanticObject); 
 					return; 
 				}
 				else break;
@@ -282,6 +350,9 @@ public class EditorSemanticSequencer extends XbaseSemanticSequencer {
 				   context == grammarAccess.getXAdditiveExpressionAccess().getXBinaryOperationLeftOperandAction_1_0_0_0() ||
 				   context == grammarAccess.getXAndExpressionRule() ||
 				   context == grammarAccess.getXAndExpressionAccess().getXBinaryOperationLeftOperandAction_1_0_0_0() ||
+				   context == grammarAccess.getXAnnotationElementValueRule() ||
+				   context == grammarAccess.getXAnnotationElementValueStringConcatenationRule() ||
+				   context == grammarAccess.getXAnnotationElementValueStringConcatenationAccess().getXAnnotationElementValueBinaryOperationLeftOperandAction_1_0() ||
 				   context == grammarAccess.getXAssignmentRule() ||
 				   context == grammarAccess.getXAssignmentAccess().getXBinaryOperationLeftOperandAction_1_1_0_0_0() ||
 				   context == grammarAccess.getXBooleanLiteralRule() ||
@@ -460,7 +531,14 @@ public class EditorSemanticSequencer extends XbaseSemanticSequencer {
 				}
 				else break;
 			case XbasePackage.XFEATURE_CALL:
-				if(context == grammarAccess.getXAdditiveExpressionRule() ||
+				if(context == grammarAccess.getXAnnotationElementValueRule() ||
+				   context == grammarAccess.getXAnnotationElementValueStringConcatenationRule() ||
+				   context == grammarAccess.getXAnnotationElementValueStringConcatenationAccess().getXAnnotationElementValueBinaryOperationLeftOperandAction_1_0() ||
+				   context == grammarAccess.getXAnnotationValueFieldReferenceRule()) {
+					sequence_XAnnotationValueFieldReference(context, (XFeatureCall) semanticObject); 
+					return; 
+				}
+				else if(context == grammarAccess.getXAdditiveExpressionRule() ||
 				   context == grammarAccess.getXAdditiveExpressionAccess().getXBinaryOperationLeftOperandAction_1_0_0_0() ||
 				   context == grammarAccess.getXAndExpressionRule() ||
 				   context == grammarAccess.getXAndExpressionAccess().getXBinaryOperationLeftOperandAction_1_0_0_0() ||
@@ -661,6 +739,9 @@ public class EditorSemanticSequencer extends XbaseSemanticSequencer {
 				   context == grammarAccess.getXAdditiveExpressionAccess().getXBinaryOperationLeftOperandAction_1_0_0_0() ||
 				   context == grammarAccess.getXAndExpressionRule() ||
 				   context == grammarAccess.getXAndExpressionAccess().getXBinaryOperationLeftOperandAction_1_0_0_0() ||
+				   context == grammarAccess.getXAnnotationElementValueRule() ||
+				   context == grammarAccess.getXAnnotationElementValueStringConcatenationRule() ||
+				   context == grammarAccess.getXAnnotationElementValueStringConcatenationAccess().getXAnnotationElementValueBinaryOperationLeftOperandAction_1_0() ||
 				   context == grammarAccess.getXAssignmentRule() ||
 				   context == grammarAccess.getXAssignmentAccess().getXBinaryOperationLeftOperandAction_1_1_0_0_0() ||
 				   context == grammarAccess.getXCastedExpressionRule() ||
@@ -724,10 +805,14 @@ public class EditorSemanticSequencer extends XbaseSemanticSequencer {
 				}
 				else break;
 			case XbasePackage.XSTRING_LITERAL:
-				if(context == grammarAccess.getXAdditiveExpressionRule() ||
+				if(context == grammarAccess.getSimpleStringLiteralRule() ||
+				   context == grammarAccess.getXAdditiveExpressionRule() ||
 				   context == grammarAccess.getXAdditiveExpressionAccess().getXBinaryOperationLeftOperandAction_1_0_0_0() ||
 				   context == grammarAccess.getXAndExpressionRule() ||
 				   context == grammarAccess.getXAndExpressionAccess().getXBinaryOperationLeftOperandAction_1_0_0_0() ||
+				   context == grammarAccess.getXAnnotationElementValueRule() ||
+				   context == grammarAccess.getXAnnotationElementValueStringConcatenationRule() ||
+				   context == grammarAccess.getXAnnotationElementValueStringConcatenationAccess().getXAnnotationElementValueBinaryOperationLeftOperandAction_1_0() ||
 				   context == grammarAccess.getXAssignmentRule() ||
 				   context == grammarAccess.getXAssignmentAccess().getXBinaryOperationLeftOperandAction_1_1_0_0_0() ||
 				   context == grammarAccess.getXCastedExpressionRule() ||
@@ -753,7 +838,7 @@ public class EditorSemanticSequencer extends XbaseSemanticSequencer {
 				   context == grammarAccess.getXRelationalExpressionAccess().getXInstanceOfExpressionExpressionAction_1_0_0_0_0() ||
 				   context == grammarAccess.getXStringLiteralRule() ||
 				   context == grammarAccess.getXUnaryOperationRule()) {
-					sequence_XStringLiteral(context, (XStringLiteral) semanticObject); 
+					sequence_SimpleStringLiteral(context, (XStringLiteral) semanticObject); 
 					return; 
 				}
 				else break;
@@ -861,6 +946,9 @@ public class EditorSemanticSequencer extends XbaseSemanticSequencer {
 				   context == grammarAccess.getXAdditiveExpressionAccess().getXBinaryOperationLeftOperandAction_1_0_0_0() ||
 				   context == grammarAccess.getXAndExpressionRule() ||
 				   context == grammarAccess.getXAndExpressionAccess().getXBinaryOperationLeftOperandAction_1_0_0_0() ||
+				   context == grammarAccess.getXAnnotationElementValueRule() ||
+				   context == grammarAccess.getXAnnotationElementValueStringConcatenationRule() ||
+				   context == grammarAccess.getXAnnotationElementValueStringConcatenationAccess().getXAnnotationElementValueBinaryOperationLeftOperandAction_1_0() ||
 				   context == grammarAccess.getXAssignmentRule() ||
 				   context == grammarAccess.getXAssignmentAccess().getXBinaryOperationLeftOperandAction_1_1_0_0_0() ||
 				   context == grammarAccess.getXCastedExpressionRule() ||
@@ -978,86 +1066,190 @@ public class EditorSemanticSequencer extends XbaseSemanticSequencer {
 	
 	/**
 	 * Constraint:
-	 *     (name=ID superType=JvmTypeReference? (variables+=VariableDef | values+=ValueDef | references+=Reference | functions+=FunctionDef)*)
+	 *     (annotations+=XAnnotation* (type=JvmTypeReference | (final?='val'? type=JvmTypeReference?)) name=ValidID initialValue=XExpression?)
 	 */
-	protected void sequence_Class(EObject context, com.euclideanspace.euclid.editor.Class semanticObject) {
+	protected void sequence_AnnotationField(EObject context, EuclidField semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
 	/**
 	 * Constraint:
-	 *     (packages+=PackageDeclaration* imports+=Import* classes+=Class*)
+	 *     (name=ValidID? createExpression=XExpression)
 	 */
-	protected void sequence_Domainmodel(EObject context, Domainmodel semanticObject) {
+	protected void sequence_CreateExtensionInfo(EObject context, CreateExtensionInfo semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
 	/**
 	 * Constraint:
-	 *     (defname=ID type=JvmTypeReference features+=XExpression*)
+	 *     (package=QualifiedName? imports+=Import* euclidTypes+=Type*)
 	 */
-	protected void sequence_FunctionDef(EObject context, FunctionDef semanticObject) {
+	protected void sequence_File(EObject context, EuclidFile semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
 	/**
 	 * Constraint:
-	 *     importedNamespace=QualifiedNameWithWildcard
+	 *     (
+	 *         (static?='static' extension?='extension'? importedType=[JvmType|QualifiedName]) | 
+	 *         importedType=[JvmType|QualifiedName] | 
+	 *         importedNamespace=QualifiedNameWithWildCard
+	 *     )
 	 */
-	protected void sequence_Import(EObject context, Import semanticObject) {
+	protected void sequence_Import(EObject context, EuclidImport semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (
+	 *         (
+	 *             (
+	 *                 (
+	 *                     (
+	 *                         (
+	 *                             (
+	 *                                 (annotationInfo=Member_EuclidConstructor_2_2_0 visibility=Visibility? (typeParameters+=JvmTypeParameter typeParameters+=JvmTypeParameter*)?) | 
+	 *                                 (annotationInfo=Member_EuclidConstructor_2_2_0 (typeParameters+=JvmTypeParameter typeParameters+=JvmTypeParameter*)?)
+	 *                             ) 
+	 *                             (parameters+=Parameter parameters+=Parameter*)?
+	 *                         ) | 
+	 *                         (annotationInfo=Member_EuclidConstructor_2_2_0 (parameters+=Parameter parameters+=Parameter*)?)
+	 *                     ) 
+	 *                     (exceptions+=JvmTypeReference exceptions+=JvmTypeReference*)?
+	 *                 ) | 
+	 *                 (annotationInfo=Member_EuclidConstructor_2_2_0 (exceptions+=JvmTypeReference exceptions+=JvmTypeReference*)?)
+	 *             ) 
+	 *             expression=XBlockExpression
+	 *         ) | 
+	 *         (annotationInfo=Member_EuclidConstructor_2_2_0 expression=XBlockExpression)
+	 *     )
+	 */
+	protected void sequence_Member(EObject context, EuclidConstructor semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     annotations+=XAnnotation+
+	 */
+	protected void sequence_Member_EuclidConstructor_2_2_0_EuclidField_2_0_0_EuclidFunction_2_1_0(EObject context, EuclidMember semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (
+	 *         (
+	 *             (
+	 *                 annotationInfo=Member_EuclidField_2_0_0 
+	 *                 visibility=Visibility? 
+	 *                 (
+	 *                     (extension?='extension' final?='val'? type=JvmTypeReference name=ValidID?) | 
+	 *                     (static?='static'? (type=JvmTypeReference | (final?='val'? type=JvmTypeReference?)) name=ValidID)
+	 *                 )
+	 *             ) | 
+	 *             (
+	 *                 annotationInfo=Member_EuclidField_2_0_0 
+	 *                 (
+	 *                     (extension?='extension' final?='val'? type=JvmTypeReference name=ValidID?) | 
+	 *                     (static?='static'? (type=JvmTypeReference | (final?='val'? type=JvmTypeReference?)) name=ValidID)
+	 *                 )
+	 *             )
+	 *         ) 
+	 *         initialValue=XExpression?
+	 *     )
+	 */
+	protected void sequence_Member(EObject context, EuclidField semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (
+	 *         annotationInfo=Member_EuclidFunction_2_1_0 
+	 *         override?='override'? 
+	 *         visibility=Visibility? 
+	 *         static?='static'? 
+	 *         dispatch?='dispatch'? 
+	 *         (typeParameters+=JvmTypeParameter typeParameters+=JvmTypeParameter*)? 
+	 *         (
+	 *             (returnType=JvmTypeReference createExtensionInfo=CreateExtensionInfo name=ValidID) | 
+	 *             (returnType=JvmTypeReference name=ValidID) | 
+	 *             (createExtensionInfo=CreateExtensionInfo name=ValidID) | 
+	 *             name=ValidID
+	 *         ) 
+	 *         (parameters+=Parameter parameters+=Parameter*)? 
+	 *         (exceptions+=JvmTypeReference exceptions+=JvmTypeReference*)? 
+	 *         expression=XBlockExpression?
+	 *     )
+	 */
+	protected void sequence_Member(EObject context, EuclidFunction semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (annotations+=XAnnotation* parameterType=JvmTypeReference varArg?='...'? name=ValidID)
+	 */
+	protected void sequence_Parameter(EObject context, EuclidParameter semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     value=STRING
+	 */
+	protected void sequence_SimpleStringLiteral(EObject context, XStringLiteral semanticObject) {
 		if(errorAcceptor != null) {
-			if(transientValues.isValueTransient(semanticObject, EditorPackage.Literals.IMPORT__IMPORTED_NAMESPACE) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, EditorPackage.Literals.IMPORT__IMPORTED_NAMESPACE));
+			if(transientValues.isValueTransient(semanticObject, XbasePackage.Literals.XSTRING_LITERAL__VALUE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, XbasePackage.Literals.XSTRING_LITERAL__VALUE));
 		}
 		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
 		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getImportAccess().getImportedNamespaceQualifiedNameWithWildcardParserRuleCall_1_0(), semanticObject.getImportedNamespace());
+		feeder.accept(grammarAccess.getSimpleStringLiteralAccess().getValueSTRINGTerminalRuleCall_1_0(), semanticObject.getValue());
 		feeder.finish();
 	}
 	
 	
 	/**
 	 * Constraint:
-	 *     name=QualifiedName
+	 *     (annotationInfo=Type_EuclidAnnotationType_2_1_0 name=ValidID members+=AnnotationField*)
 	 */
-	protected void sequence_PackageDeclaration(EObject context, PackageDeclaration semanticObject) {
-		if(errorAcceptor != null) {
-			if(transientValues.isValueTransient(semanticObject, EditorPackage.Literals.PACKAGE_DECLARATION__NAME) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, EditorPackage.Literals.PACKAGE_DECLARATION__NAME));
-		}
-		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
-		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getPackageDeclarationAccess().getNameQualifiedNameParserRuleCall_1_0(), semanticObject.getName());
-		feeder.finish();
-	}
-	
-	
-	/**
-	 * Constraint:
-	 *     (refname=ID type=JvmTypeReference refs+=XExpression?)
-	 */
-	protected void sequence_Reference(EObject context, Reference semanticObject) {
+	protected void sequence_Type(EObject context, EuclidAnnotationType semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
 	/**
 	 * Constraint:
-	 *     (valname=ID type=JvmTypeReference vals+=XExpression?)
+	 *     annotations+=XAnnotation+
 	 */
-	protected void sequence_ValueDef(EObject context, ValueDef semanticObject) {
+	protected void sequence_Type_EuclidAnnotationType_2_1_0_EuclidClass_2_0_0(EObject context, EuclidTypeDeclaration semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
 	/**
 	 * Constraint:
-	 *     (varname=ID type=JvmTypeReference vars+=XExpression)
+	 *     (
+	 *         ((annotationInfo=Type_EuclidClass_2_0_0 abstract?='abstract'? name=ValidID) | (annotationInfo=Type_EuclidClass_2_0_0 name=ValidID)) 
+	 *         (typeParameters+=JvmTypeParameter typeParameters+=JvmTypeParameter*)? 
+	 *         extends=JvmParameterizedTypeReference? 
+	 *         (implements+=JvmParameterizedTypeReference implements+=JvmParameterizedTypeReference*)? 
+	 *         members+=Member*
+	 *     )
 	 */
-	protected void sequence_VariableDef(EObject context, VariableDef semanticObject) {
+	protected void sequence_Type(EObject context, EuclidClass semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 }

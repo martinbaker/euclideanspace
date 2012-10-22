@@ -1,84 +1,97 @@
-/* Copyright 2012 Martin John Baker
- * 
- * This file is part of EuclideanSpace.
- *
- *  EuclideanSpace is free software: you can redistribute it and/or modify
- *  it under the terms of the GNU Affero General Public License as published by
- *  the Free Software Foundation, either version 3 of the License, or
- *  (at your option) any later version.
- *
- *  EuclideanSpace is distributed in the hope that it will be useful,
- *  but WITHOUT ANY WARRANTY; without even the implied warranty of
- *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- *  GNU Affero General Public License for more details.
- *
- *  You should have received a copy of the GNU Affero General Public License
- *  along with EuclideanSpace.  If not, see <http://www.gnu.org/licenses/>.
- */
+grammar com.euclideanspace.euclid.Editor with org.eclipse.xtext.xbase.annotations.XbaseWithAnnotations
 
-grammar com.euclideanspace.euclid.Editor with org.eclipse.xtext.xbase.Xbase
+generate euclidmodel "http://www.euclideanspace.com/euclid"
 
-generate editor "http://www.euclideanspace.com/euclid/Editor"
+import "http://www.eclipse.org/xtext/xbase/Xbase" as xbase
+import "http://www.eclipse.org/xtext/xbase/Xtype" as xtype
+import "http://www.eclipse.org/Xtext/Xbase/XAnnotations" as annotations
+import "http://www.eclipse.org/xtext/common/JavaVMTypes" as types
 
-Domainmodel:
-  (packages += PackageDeclaration)*
-  (imports += Import)*
-  (classes += Class)*
+File returns EuclidFile :
+    ('package' package=QualifiedName ';'?)?
+(imports+=Import)*
+(euclidTypes+=Type)*
 ;
 
-PackageDeclaration:
-  'package' name = QualifiedName
+Import returns EuclidImport :
+'import' (
+  (static?='static' extension?='extension'? importedType=[types::JvmType|QualifiedName] '.' '*')
+  | importedType=[types::JvmType|QualifiedName]
+  | importedNamespace=QualifiedNameWithWildCard) ';'?
 ;
 
-Import:
-  'import' importedNamespace = QualifiedNameWithWildcard
-;
-  
-QualifiedNameWithWildcard:
-  QualifiedName '.*'?
-;
-  
-Class:
-  'class' name = ID 
-              ('extends' superType = JvmTypeReference)?
-  '{'
-    (variables += VariableDef |
-     values += ValueDef |
-     references += Reference |
-     functions += FunctionDef 
-    )*
-  '}'
+QualifiedNameWithWildCard :
+  QualifiedName '.' '*';
+
+Type returns EuclidTypeDeclaration :
+  {EuclidTypeDeclaration} annotations+=XAnnotation*
+  ({EuclidClass.annotationInfo = current}
+    'public'? abstract?='abstract'? 'class' name=ValidID ('<' typeParameters+=JvmTypeParameter (',' typeParameters+=JvmTypeParameter)* '>')?
+    ("extends" extends=JvmParameterizedTypeReference)?
+    ('implements' implements+=JvmParameterizedTypeReference (',' implements+=JvmParameterizedTypeReference)*)?'{'
+    (members+=Member)*
+    '}'
+    |{EuclidAnnotationType.annotationInfo = current}
+    'annotation' name=ValidID '{'
+    (members+=AnnotationField)*
+    '}'
+  )
 ;
 
-/**
- * This is a variable (mutable) at the algebra level
- */
-VariableDef:
-  'var' varname = ID ':' type = JvmTypeReference '='
-    vars += XExpression
-; 
- 
-/**
- * This is a value (immutable) at the algebra level
- */
-ValueDef:
-  'val' valname = ID ':' type = JvmTypeReference 
-  	('=' vals += XExpression)?
-; 
+AnnotationField returns EuclidField :
+  annotations+=XAnnotation*
+  (type=JvmTypeReference | (final?='val' | 'var') type=JvmTypeReference?) name=ValidID ('=' initialValue=XExpression)? ';'?
+;
 
-/**
- * This is a variable (mutable) at the type level
- */
-Reference:
-  'ref' refname = ID ':' type = JvmTypeReference
-    ('=' refs += XExpression)?
-; 
- 
-/**
- * this is a function definition
- */
-FunctionDef:
-  'def' defname = ID ':' type = JvmTypeReference '{'
-    (features += XExpression)*
-  '}'
-; 
+
+Member returns EuclidMember:
+  {EuclidMember} annotations+=XAnnotation*
+  (
+    {EuclidField.annotationInfo = current}
+    visibility=Visibility?
+    (extension?='extension' (final?='val' | 'var')? type=JvmTypeReference name=ValidID?
+    | static?='static'? (type=JvmTypeReference | (final?='val' | 'var') type=JvmTypeReference?) name=ValidID)
+    ('=' initialValue=XExpression)? ';'?
+    | {EuclidFunction.annotationInfo = current}
+    ('def' | override?='override') visibility=Visibility? static?='static'? (dispatch?='dispatch'?)
+    ('<' typeParameters+=JvmTypeParameter (',' typeParameters+=JvmTypeParameter)* '>')?
+    ( =>(returnType=JvmTypeReference createExtensionInfo=CreateExtensionInfo name=ValidID '(')
+    | =>(returnType=JvmTypeReference name=ValidID '(')
+    | =>(createExtensionInfo=CreateExtensionInfo name=ValidID '(')
+    | name=ValidID '('
+    )
+    (parameters+=Parameter (',' parameters+=Parameter)*)? ')'
+    ('throws' exceptions+=JvmTypeReference (',' exceptions+=JvmTypeReference)*)?
+    (expression=XBlockExpression)?
+    | {EuclidConstructor.annotationInfo = current}
+    visibility=Visibility? 'new'
+    ('<' typeParameters+=JvmTypeParameter (',' typeParameters+=JvmTypeParameter)* '>')?
+    '(' (parameters+=Parameter (',' parameters+=Parameter)*)? ')'
+    ('throws' exceptions+=JvmTypeReference (',' exceptions+=JvmTypeReference)*)?
+    expression=XBlockExpression
+) ;
+
+CreateExtensionInfo:
+  'create' (name=ValidID ':')? createExpression=XExpression
+;
+
+ValidID:
+  ID | 'create' | 'annotation'
+;
+
+Parameter returns EuclidParameter:
+  annotations+=XAnnotation*
+  parameterType=JvmTypeReference varArg?='...'? name=ValidID;
+
+enum Visibility returns types::JvmVisibility:
+  PUBLIC = 'public' | PROTECTED = 'protected' | PRIVATE = 'private';
+
+XStringLiteral returns xbase::XExpression:
+  SimpleStringLiteral
+;
+
+SimpleStringLiteral returns xbase::XExpression:
+  {xbase::XStringLiteral} value=STRING
+;
+
+

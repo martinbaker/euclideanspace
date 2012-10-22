@@ -22,9 +22,9 @@ Import-Package: org.apache.log4j
 Bundle-RequiredExecutionEnvironment: J2SE-1.5
 Export-Package: com.euclideanspace.euclid,
  com.euclideanspace.euclid.services,
- com.euclideanspace.euclid.editor,
- com.euclideanspace.euclid.editor.impl,
- com.euclideanspace.euclid.editor.util,
+ com.euclideanspace.euclid.euclidmodel,
+ com.euclideanspace.euclid.euclidmodel.impl,
+ com.euclideanspace.euclid.euclidmodel.util,
  com.euclideanspace.euclid.serializer,
  com.euclideanspace.euclid.parser.antlr,
  com.euclideanspace.euclid.parser.antlr.internal,

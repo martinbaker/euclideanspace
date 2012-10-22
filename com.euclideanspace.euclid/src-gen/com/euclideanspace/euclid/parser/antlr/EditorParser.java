@@ -25,7 +25,7 @@ public class EditorParser extends org.eclipse.xtext.parser.antlr.AbstractAntlrPa
 	
 	@Override 
 	protected String getDefaultRuleName() {
-		return "Domainmodel";
+		return "File";
 	}
 	
 	public EditorGrammarAccess getGrammarAccess() {
