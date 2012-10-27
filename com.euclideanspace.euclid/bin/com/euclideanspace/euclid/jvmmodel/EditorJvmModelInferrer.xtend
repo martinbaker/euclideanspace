@@ -4,34 +4,17 @@ import com.google.inject.Inject
 import org.eclipse.xtext.xbase.jvmmodel.AbstractModelInferrer
 import org.eclipse.xtext.xbase.jvmmodel.IJvmDeclaredTypeAcceptor
 import org.eclipse.xtext.xbase.jvmmodel.JvmTypesBuilder
+import org.eclipse.xtext.xbase.jvmmodel.JvmVisibilityExtension
 import com.euclideanspace.euclid.euclidmodel.EuclidFile
 import com.euclideanspace.euclid.euclidmodel.EuclidAnnotationType
 import com.euclideanspace.euclid.euclidmodel.EuclidClass
 import com.euclideanspace.euclid.euclidmodel.EuclidConstructor
 import com.euclideanspace.euclid.euclidmodel.EuclidField
 import com.euclideanspace.euclid.euclidmodel.EuclidFunction
-import com.euclideanspace.euclid.euclidmodel.EuclidMember
-import com.euclideanspace.euclid.euclidmodel.EuclidParameter
-import com.euclideanspace.euclid.euclidmodel.EuclidTypeDeclaration
-import java.util.ArrayList
-import java.util.Collection
-import java.util.HashMap
-import java.util.Iterator
-import java.util.List
-import java.util.Map
-import java.util.Set
-import org.eclipse.emf.common.util.EList
-import org.eclipse.emf.common.util.URI
-import org.eclipse.emf.ecore.EObject
-import org.eclipse.emf.ecore.InternalEObject
-import org.eclipse.emf.ecore.resource.Resource
-import org.eclipse.jdt.annotation.NonNull
-import org.eclipse.jdt.annotation.Nullable
-import com.google.common.base.Predicate
-import com.google.common.collect.Multimap
-import org.eclipse.xtext.naming.IQualifiedNameProvider
 
 import static org.eclipse.xtext.util.Strings.*
+import org.eclipse.xtext.common.types.JvmOperation
+import org.eclipse.xtext.common.types.JvmField
 
 /**
  * <p>Infers a JVM model from the source model.</p> 
@@ -81,19 +64,83 @@ class EditorJvmModelInferrer extends AbstractModelInferrer {
       for (classElement : element.euclidTypes) {
       	if (classElement instanceof EuclidClass) {
       	  val EuclidClass ec=classElement as EuclidClass
-          acceptor.accept(ec.toClass(ec.name)).initializeLater [
-          documentation = element.documentation
-          for (methodElement : ec.members) {
-      	    if (methodElement instanceof EuclidFunction) {
-      	      val EuclidFunction me=methodElement as EuclidFunction
-               members += me.toMethod(me.name,me.returnType) [
-    		     //parameters += me.toParameter("my parameter", me.expression)
-    		   ]
+      	  buildClass(acceptor,ec)
         }
-          }
-        ]
+      	if (classElement instanceof EuclidAnnotationType) {
+      	  val EuclidAnnotationType eat=classElement as EuclidAnnotationType
+      	  buildAnnotation(acceptor,eat)
         }
       }
   }
+
+  def void buildAnnotation(IJvmDeclaredTypeAcceptor acceptor,
+  	                 EuclidAnnotationType eat){
+  	// should be toAnnotationType ?
+    //acceptor.accept('''//annotation type goes here''')
+    //acceptor.accept(eat.toAnnotation(eat.name)).initializeLater [
+      //documentation = element.documentation
+     // documentation = eat.documentation
+     // for (methodElement : eat.members) {
+     //   if (methodElement instanceof EuclidFunction) {
+     //     //val EuclidFunction me=methodElement as EuclidFunction
+     //     //members += buildMethod(me)
+     //   }
+     //  }
+     //]
+    }
+
+  
+  def void buildClass(IJvmDeclaredTypeAcceptor acceptor,
+  	                 EuclidClass ec){
+    acceptor.accept(ec.toClass(ec.name)).initializeLater [
+      //documentation = element.documentation
+      documentation = ec.documentation
+      for (methodElement : ec.members) {
+        if (methodElement instanceof EuclidFunction) {
+          val EuclidFunction me=methodElement as EuclidFunction
+          members += buildMethod(me)
+        }
+        if (methodElement instanceof EuclidField) {
+          val EuclidField fe=methodElement as EuclidField
+          members += buildField(fe)
+        }
+       }
+     ]
+    }
+
+    /**
+     * method definition, starts with 'def' in xtend
+     */
+    def JvmOperation buildMethod(EuclidFunction me){
+  	  return me.toMethod(me.name,me.returnType) [
+        //body = [append('''«me.expression»''')]
+        for (par : me.parameters) {
+          if (par.name != null && par.parameterType != null)
+            parameters += par.toParameter(par.name,par.parameterType)
+          //else
+          //  println("parameter name or type = null"+par.name)
+        }
+        //varArgs=true // set to give a variable number of arguments
+        documentation = me.documentation
+        //final=true
+        visibility = me.visibility //JvmVisibility 'public'/'protected'/'private'
+        body = me.expression	
+      ]
+  	}
+
+    /**
+     * variable/value definition, starts with 'var' or 'val' in xtend
+     */
+    def JvmField buildField(EuclidField fe){
+      if (fe.type == null) {
+      	println("type = null")
+      	return null;
+      }
+  	  return fe.toField(fe.name,fe.type) [
+        //body = [append('''«me.expression»''')] 	
+        //body = fe.expression	
+      ]
+  	}
+
 }
 
