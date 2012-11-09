@@ -14,7 +14,7 @@ import org.eclipse.emf.ecore.EObject;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link com.euclideanspace.euclid.euclidmodel.EuclidFile#getPackage <em>Package</em>}</li>
+ *   <li>{@link com.euclideanspace.euclid.euclidmodel.EuclidFile#getImportedNamespace <em>Imported Namespace</em>}</li>
  *   <li>{@link com.euclideanspace.euclid.euclidmodel.EuclidFile#getImports <em>Imports</em>}</li>
  *   <li>{@link com.euclideanspace.euclid.euclidmodel.EuclidFile#getEuclidTypes <em>Euclid Types</em>}</li>
  * </ul>
@@ -27,30 +27,30 @@ import org.eclipse.emf.ecore.EObject;
 public interface EuclidFile extends EObject
 {
   /**
-   * Returns the value of the '<em><b>Package</b></em>' attribute.
+   * Returns the value of the '<em><b>Imported Namespace</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Package</em>' attribute isn't clear,
+   * If the meaning of the '<em>Imported Namespace</em>' attribute isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Package</em>' attribute.
-   * @see #setPackage(String)
-   * @see com.euclideanspace.euclid.euclidmodel.EuclidmodelPackage#getEuclidFile_Package()
+   * @return the value of the '<em>Imported Namespace</em>' attribute.
+   * @see #setImportedNamespace(String)
+   * @see com.euclideanspace.euclid.euclidmodel.EuclidmodelPackage#getEuclidFile_ImportedNamespace()
    * @model
    * @generated
    */
-  String getPackage();
+  String getImportedNamespace();
 
   /**
-   * Sets the value of the '{@link com.euclideanspace.euclid.euclidmodel.EuclidFile#getPackage <em>Package</em>}' attribute.
+   * Sets the value of the '{@link com.euclideanspace.euclid.euclidmodel.EuclidFile#getImportedNamespace <em>Imported Namespace</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Package</em>' attribute.
-   * @see #getPackage()
+   * @param value the new value of the '<em>Imported Namespace</em>' attribute.
+   * @see #getImportedNamespace()
    * @generated
    */
-  void setPackage(String value);
+  void setImportedNamespace(String value);
 
   /**
    * Returns the value of the '<em><b>Imports</b></em>' containment reference list.

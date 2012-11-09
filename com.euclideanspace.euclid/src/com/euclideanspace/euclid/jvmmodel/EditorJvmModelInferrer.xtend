@@ -15,21 +15,17 @@ import com.euclideanspace.euclid.euclidmodel.EuclidFunction
 import static org.eclipse.xtext.util.Strings.*
 import org.eclipse.xtext.common.types.JvmOperation
 import org.eclipse.xtext.common.types.JvmField
+import org.eclipse.xtext.common.types.JvmTypeReference
+import org.eclipse.xtext.common.types.JvmConstructor
+import org.eclipse.xtext.common.types.JvmParameterizedTypeReference
+import org.eclipse.emf.common.util.EList
+import com.euclideanspace.euclid.euclidmodel.EuclidImport
+import org.eclipse.xtext.naming.QualifiedName
+import org.eclipse.xtext.common.types.JvmType
+import org.eclipse.xtext.naming.IQualifiedNameProvider
+import org.eclipse.xtext.common.types.util.TypeReferences
 
 /**
- * <p>Infers a JVM model from the source model.</p> 
- *
- * <p>The JVM model should contain all elements that would appear in the Java code 
- * which is generated from the source model. Other models link against the JVM model rather than the source model.</p>     
- */
-//class EditorJvmModelInferrer extends AbstractModelInferrer {
-
-    /**
-     * convenience API to build and initialize JVM types and their members.
-     */
-//	@Inject extension JvmTypesBuilder
-
-	/**
 	 * The dispatch method {@code infer} is called for each instance of the
 	 * given element's type that is contained in a resource.
 	 * 
@@ -57,14 +53,25 @@ import org.eclipse.xtext.common.types.JvmField
 class EditorJvmModelInferrer extends AbstractModelInferrer {
      
   @Inject extension JvmTypesBuilder
-//  @Inject extension IQualifiedNameProvider
+  @Inject extension IQualifiedNameProvider
+  //@Inject extension TypeReferences
+  
   def dispatch void infer(EuclidFile element,
       IJvmDeclaredTypeAcceptor acceptor,
-      boolean isPrelinkingPhase) {
+      boolean isPrelinkingPhase) { 
+      for (imp:element.imports){
+        var EuclidImport x =imp
+        //var keyType = element.newTypeRef(typeof(x)).type        
+        //x.isStatic()
+        //x.isExtension()
+        //val JvmType imt = x.importedType
+        //val String ins=x.importedNamespace
+      }
       for (classElement : element.euclidTypes) {
       	if (classElement instanceof EuclidClass) {
       	  val EuclidClass ec=classElement as EuclidClass
-      	  buildClass(acceptor,ec)
+      	  //buildClass(acceptor,ec,element.getPackage())
+      	  buildClass(acceptor,ec,element.importedNamespace)
         }
       	if (classElement instanceof EuclidAnnotationType) {
       	  val EuclidAnnotationType eat=classElement as EuclidAnnotationType
@@ -89,16 +96,31 @@ class EditorJvmModelInferrer extends AbstractModelInferrer {
      //]
     }
 
-  
   def void buildClass(IJvmDeclaredTypeAcceptor acceptor,
-  	                 EuclidClass ec){
-    acceptor.accept(ec.toClass(ec.name)).initializeLater [
-      //documentation = element.documentation
+  	                 EuclidClass ec,String pck){
+  	var String qualifiedName = ec.name //ec.fullyQualifiedName.lastSegment
+  	if (pck != null){
+  	  qualifiedName = pck + "." + ec.name //ec.fullyQualifiedName.lastSegment
+  	}
+    acceptor.accept(ec.toClass(qualifiedName /*ec.fullyQualifiedName*/)).initializeLater [
       documentation = ec.documentation
+      var JvmParameterizedTypeReference ext = ec.getExtends()
+      if (ext!=null && superTypes!=null) {
+        //println("extends="+ext.simpleName)
+        superTypes += ext.cloneWithProxies
+      }
+      var EList<JvmParameterizedTypeReference> imps = ec.getImplements()
+      for (imp:imps){
+      	superTypes += imp.cloneWithProxies
+      }
       for (methodElement : ec.members) {
         if (methodElement instanceof EuclidFunction) {
           val EuclidFunction me=methodElement as EuclidFunction
           members += buildMethod(me)
+        }
+        if (methodElement instanceof EuclidConstructor) {
+          val EuclidConstructor me=methodElement as EuclidConstructor
+          members += buildConstructor(me)
         }
         if (methodElement instanceof EuclidField) {
           val EuclidField fe=methodElement as EuclidField
@@ -112,13 +134,32 @@ class EditorJvmModelInferrer extends AbstractModelInferrer {
      * method definition, starts with 'def' in xtend
      */
     def JvmOperation buildMethod(EuclidFunction me){
-  	  return me.toMethod(me.name,me.returnType) [
+      var String methodName = me.name;
+      var JvmTypeReference methodType = me.returnType
+  	  return me.toMethod(methodName,methodType) [
         //body = [append('''«me.expression»''')]
         for (par : me.parameters) {
           if (par.name != null && par.parameterType != null)
             parameters += par.toParameter(par.name,par.parameterType)
           //else
           //  println("parameter name or type = null"+par.name)
+        }
+        //varArgs=true // set to give a variable number of arguments
+        documentation = me.documentation
+        //final=true
+        visibility = me.visibility //JvmVisibility 'public'/'protected'/'private'
+        body = me.expression	
+      ]
+  	}
+
+    /**
+     * constructor, starts with 'new' in xtend
+     */
+    def JvmConstructor buildConstructor(EuclidConstructor me){
+        return me.toConstructor() [
+        for (par : me.parameters) {
+          if (par.name != null && par.parameterType != null)
+            parameters += par.toParameter(par.name,par.parameterType)
         }
         //varArgs=true // set to give a variable number of arguments
         documentation = me.documentation

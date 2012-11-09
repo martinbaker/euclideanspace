@@ -30,7 +30,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link com.euclideanspace.euclid.euclidmodel.impl.EuclidFileImpl#getPackage <em>Package</em>}</li>
+ *   <li>{@link com.euclideanspace.euclid.euclidmodel.impl.EuclidFileImpl#getImportedNamespace <em>Imported Namespace</em>}</li>
  *   <li>{@link com.euclideanspace.euclid.euclidmodel.impl.EuclidFileImpl#getImports <em>Imports</em>}</li>
  *   <li>{@link com.euclideanspace.euclid.euclidmodel.impl.EuclidFileImpl#getEuclidTypes <em>Euclid Types</em>}</li>
  * </ul>
@@ -41,24 +41,24 @@ import org.eclipse.emf.ecore.util.InternalEList;
 public class EuclidFileImpl extends MinimalEObjectImpl.Container implements EuclidFile
 {
   /**
-   * The default value of the '{@link #getPackage() <em>Package</em>}' attribute.
+   * The default value of the '{@link #getImportedNamespace() <em>Imported Namespace</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getPackage()
+   * @see #getImportedNamespace()
    * @generated
    * @ordered
    */
-  protected static final String PACKAGE_EDEFAULT = null;
+  protected static final String IMPORTED_NAMESPACE_EDEFAULT = null;
 
   /**
-   * The cached value of the '{@link #getPackage() <em>Package</em>}' attribute.
+   * The cached value of the '{@link #getImportedNamespace() <em>Imported Namespace</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getPackage()
+   * @see #getImportedNamespace()
    * @generated
    * @ordered
    */
-  protected String package_ = PACKAGE_EDEFAULT;
+  protected String importedNamespace = IMPORTED_NAMESPACE_EDEFAULT;
 
   /**
    * The cached value of the '{@link #getImports() <em>Imports</em>}' containment reference list.
@@ -106,9 +106,9 @@ public class EuclidFileImpl extends MinimalEObjectImpl.Container implements Eucl
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getPackage()
+  public String getImportedNamespace()
   {
-    return package_;
+    return importedNamespace;
   }
 
   /**
@@ -116,12 +116,12 @@ public class EuclidFileImpl extends MinimalEObjectImpl.Container implements Eucl
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setPackage(String newPackage)
+  public void setImportedNamespace(String newImportedNamespace)
   {
-    String oldPackage = package_;
-    package_ = newPackage;
+    String oldImportedNamespace = importedNamespace;
+    importedNamespace = newImportedNamespace;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, EuclidmodelPackage.EUCLID_FILE__PACKAGE, oldPackage, package_));
+      eNotify(new ENotificationImpl(this, Notification.SET, EuclidmodelPackage.EUCLID_FILE__IMPORTED_NAMESPACE, oldImportedNamespace, importedNamespace));
   }
 
   /**
@@ -180,8 +180,8 @@ public class EuclidFileImpl extends MinimalEObjectImpl.Container implements Eucl
   {
     switch (featureID)
     {
-      case EuclidmodelPackage.EUCLID_FILE__PACKAGE:
-        return getPackage();
+      case EuclidmodelPackage.EUCLID_FILE__IMPORTED_NAMESPACE:
+        return getImportedNamespace();
       case EuclidmodelPackage.EUCLID_FILE__IMPORTS:
         return getImports();
       case EuclidmodelPackage.EUCLID_FILE__EUCLID_TYPES:
@@ -201,8 +201,8 @@ public class EuclidFileImpl extends MinimalEObjectImpl.Container implements Eucl
   {
     switch (featureID)
     {
-      case EuclidmodelPackage.EUCLID_FILE__PACKAGE:
-        setPackage((String)newValue);
+      case EuclidmodelPackage.EUCLID_FILE__IMPORTED_NAMESPACE:
+        setImportedNamespace((String)newValue);
         return;
       case EuclidmodelPackage.EUCLID_FILE__IMPORTS:
         getImports().clear();
@@ -226,8 +226,8 @@ public class EuclidFileImpl extends MinimalEObjectImpl.Container implements Eucl
   {
     switch (featureID)
     {
-      case EuclidmodelPackage.EUCLID_FILE__PACKAGE:
-        setPackage(PACKAGE_EDEFAULT);
+      case EuclidmodelPackage.EUCLID_FILE__IMPORTED_NAMESPACE:
+        setImportedNamespace(IMPORTED_NAMESPACE_EDEFAULT);
         return;
       case EuclidmodelPackage.EUCLID_FILE__IMPORTS:
         getImports().clear();
@@ -249,8 +249,8 @@ public class EuclidFileImpl extends MinimalEObjectImpl.Container implements Eucl
   {
     switch (featureID)
     {
-      case EuclidmodelPackage.EUCLID_FILE__PACKAGE:
-        return PACKAGE_EDEFAULT == null ? package_ != null : !PACKAGE_EDEFAULT.equals(package_);
+      case EuclidmodelPackage.EUCLID_FILE__IMPORTED_NAMESPACE:
+        return IMPORTED_NAMESPACE_EDEFAULT == null ? importedNamespace != null : !IMPORTED_NAMESPACE_EDEFAULT.equals(importedNamespace);
       case EuclidmodelPackage.EUCLID_FILE__IMPORTS:
         return imports != null && !imports.isEmpty();
       case EuclidmodelPackage.EUCLID_FILE__EUCLID_TYPES:
@@ -270,8 +270,8 @@ public class EuclidFileImpl extends MinimalEObjectImpl.Container implements Eucl
     if (eIsProxy()) return super.toString();
 
     StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (package: ");
-    result.append(package_);
+    result.append(" (importedNamespace: ");
+    result.append(importedNamespace);
     result.append(')');
     return result.toString();
   }

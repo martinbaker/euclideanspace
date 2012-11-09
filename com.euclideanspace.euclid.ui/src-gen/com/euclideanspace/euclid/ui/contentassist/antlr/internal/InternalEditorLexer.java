@@ -1591,10 +1591,10 @@ public class InternalEditorLexer extends Lexer {
         try {
             int _type = T__84;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.euclideanspace.euclid.ui/src-gen/com/euclideanspace/euclid/ui/contentassist/antlr/internal/InternalEditor.g:82:7: ( 'static' )
-            // ../com.euclideanspace.euclid.ui/src-gen/com/euclideanspace/euclid/ui/contentassist/antlr/internal/InternalEditor.g:82:9: 'static'
+            // ../com.euclideanspace.euclid.ui/src-gen/com/euclideanspace/euclid/ui/contentassist/antlr/internal/InternalEditor.g:82:7: ( 'abstract' )
+            // ../com.euclideanspace.euclid.ui/src-gen/com/euclideanspace/euclid/ui/contentassist/antlr/internal/InternalEditor.g:82:9: 'abstract'
             {
-            match("static"); 
+            match("abstract"); 
 
 
             }
@@ -1633,10 +1633,10 @@ public class InternalEditorLexer extends Lexer {
         try {
             int _type = T__86;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.euclideanspace.euclid.ui/src-gen/com/euclideanspace/euclid/ui/contentassist/antlr/internal/InternalEditor.g:84:7: ( 'abstract' )
-            // ../com.euclideanspace.euclid.ui/src-gen/com/euclideanspace/euclid/ui/contentassist/antlr/internal/InternalEditor.g:84:9: 'abstract'
+            // ../com.euclideanspace.euclid.ui/src-gen/com/euclideanspace/euclid/ui/contentassist/antlr/internal/InternalEditor.g:84:7: ( 'static' )
+            // ../com.euclideanspace.euclid.ui/src-gen/com/euclideanspace/euclid/ui/contentassist/antlr/internal/InternalEditor.g:84:9: 'static'
             {
-            match("abstract"); 
+            match("static"); 
 
 
             }
@@ -1800,10 +1800,10 @@ public class InternalEditorLexer extends Lexer {
         try {
             int _type = RULE_HEX;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.euclideanspace.euclid.ui/src-gen/com/euclideanspace/euclid/ui/contentassist/antlr/internal/InternalEditor.g:23382:10: ( ( '0x' | '0X' ) ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' | '_' )+ ( '#' ( ( 'b' | 'B' ) ( 'i' | 'I' ) | ( 'l' | 'L' ) ) )? )
-            // ../com.euclideanspace.euclid.ui/src-gen/com/euclideanspace/euclid/ui/contentassist/antlr/internal/InternalEditor.g:23382:12: ( '0x' | '0X' ) ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' | '_' )+ ( '#' ( ( 'b' | 'B' ) ( 'i' | 'I' ) | ( 'l' | 'L' ) ) )?
+            // ../com.euclideanspace.euclid.ui/src-gen/com/euclideanspace/euclid/ui/contentassist/antlr/internal/InternalEditor.g:23149:10: ( ( '0x' | '0X' ) ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' | '_' )+ ( '#' ( ( 'b' | 'B' ) ( 'i' | 'I' ) | ( 'l' | 'L' ) ) )? )
+            // ../com.euclideanspace.euclid.ui/src-gen/com/euclideanspace/euclid/ui/contentassist/antlr/internal/InternalEditor.g:23149:12: ( '0x' | '0X' ) ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' | '_' )+ ( '#' ( ( 'b' | 'B' ) ( 'i' | 'I' ) | ( 'l' | 'L' ) ) )?
             {
-            // ../com.euclideanspace.euclid.ui/src-gen/com/euclideanspace/euclid/ui/contentassist/antlr/internal/InternalEditor.g:23382:12: ( '0x' | '0X' )
+            // ../com.euclideanspace.euclid.ui/src-gen/com/euclideanspace/euclid/ui/contentassist/antlr/internal/InternalEditor.g:23149:12: ( '0x' | '0X' )
             int alt1=2;
             int LA1_0 = input.LA(1);
 
@@ -1831,7 +1831,7 @@ public class InternalEditorLexer extends Lexer {
             }
             switch (alt1) {
                 case 1 :
-                    // ../com.euclideanspace.euclid.ui/src-gen/com/euclideanspace/euclid/ui/contentassist/antlr/internal/InternalEditor.g:23382:13: '0x'
+                    // ../com.euclideanspace.euclid.ui/src-gen/com/euclideanspace/euclid/ui/contentassist/antlr/internal/InternalEditor.g:23149:13: '0x'
                     {
                     match("0x"); 
 
@@ -1839,7 +1839,7 @@ public class InternalEditorLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // ../com.euclideanspace.euclid.ui/src-gen/com/euclideanspace/euclid/ui/contentassist/antlr/internal/InternalEditor.g:23382:18: '0X'
+                    // ../com.euclideanspace.euclid.ui/src-gen/com/euclideanspace/euclid/ui/contentassist/antlr/internal/InternalEditor.g:23149:18: '0X'
                     {
                     match("0X"); 
 
@@ -1849,7 +1849,7 @@ public class InternalEditorLexer extends Lexer {
 
             }
 
-            // ../com.euclideanspace.euclid.ui/src-gen/com/euclideanspace/euclid/ui/contentassist/antlr/internal/InternalEditor.g:23382:24: ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' | '_' )+
+            // ../com.euclideanspace.euclid.ui/src-gen/com/euclideanspace/euclid/ui/contentassist/antlr/internal/InternalEditor.g:23149:24: ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' | '_' )+
             int cnt2=0;
             loop2:
             do {
@@ -1887,7 +1887,7 @@ public class InternalEditorLexer extends Lexer {
                 cnt2++;
             } while (true);
 
-            // ../com.euclideanspace.euclid.ui/src-gen/com/euclideanspace/euclid/ui/contentassist/antlr/internal/InternalEditor.g:23382:58: ( '#' ( ( 'b' | 'B' ) ( 'i' | 'I' ) | ( 'l' | 'L' ) ) )?
+            // ../com.euclideanspace.euclid.ui/src-gen/com/euclideanspace/euclid/ui/contentassist/antlr/internal/InternalEditor.g:23149:58: ( '#' ( ( 'b' | 'B' ) ( 'i' | 'I' ) | ( 'l' | 'L' ) ) )?
             int alt4=2;
             int LA4_0 = input.LA(1);
 
@@ -1896,10 +1896,10 @@ public class InternalEditorLexer extends Lexer {
             }
             switch (alt4) {
                 case 1 :
-                    // ../com.euclideanspace.euclid.ui/src-gen/com/euclideanspace/euclid/ui/contentassist/antlr/internal/InternalEditor.g:23382:59: '#' ( ( 'b' | 'B' ) ( 'i' | 'I' ) | ( 'l' | 'L' ) )
+                    // ../com.euclideanspace.euclid.ui/src-gen/com/euclideanspace/euclid/ui/contentassist/antlr/internal/InternalEditor.g:23149:59: '#' ( ( 'b' | 'B' ) ( 'i' | 'I' ) | ( 'l' | 'L' ) )
                     {
                     match('#'); 
-                    // ../com.euclideanspace.euclid.ui/src-gen/com/euclideanspace/euclid/ui/contentassist/antlr/internal/InternalEditor.g:23382:63: ( ( 'b' | 'B' ) ( 'i' | 'I' ) | ( 'l' | 'L' ) )
+                    // ../com.euclideanspace.euclid.ui/src-gen/com/euclideanspace/euclid/ui/contentassist/antlr/internal/InternalEditor.g:23149:63: ( ( 'b' | 'B' ) ( 'i' | 'I' ) | ( 'l' | 'L' ) )
                     int alt3=2;
                     int LA3_0 = input.LA(1);
 
@@ -1917,7 +1917,7 @@ public class InternalEditorLexer extends Lexer {
                     }
                     switch (alt3) {
                         case 1 :
-                            // ../com.euclideanspace.euclid.ui/src-gen/com/euclideanspace/euclid/ui/contentassist/antlr/internal/InternalEditor.g:23382:64: ( 'b' | 'B' ) ( 'i' | 'I' )
+                            // ../com.euclideanspace.euclid.ui/src-gen/com/euclideanspace/euclid/ui/contentassist/antlr/internal/InternalEditor.g:23149:64: ( 'b' | 'B' ) ( 'i' | 'I' )
                             {
                             if ( input.LA(1)=='B'||input.LA(1)=='b' ) {
                                 input.consume();
@@ -1941,7 +1941,7 @@ public class InternalEditorLexer extends Lexer {
                             }
                             break;
                         case 2 :
-                            // ../com.euclideanspace.euclid.ui/src-gen/com/euclideanspace/euclid/ui/contentassist/antlr/internal/InternalEditor.g:23382:84: ( 'l' | 'L' )
+                            // ../com.euclideanspace.euclid.ui/src-gen/com/euclideanspace/euclid/ui/contentassist/antlr/internal/InternalEditor.g:23149:84: ( 'l' | 'L' )
                             {
                             if ( input.LA(1)=='L'||input.LA(1)=='l' ) {
                                 input.consume();
@@ -1980,11 +1980,11 @@ public class InternalEditorLexer extends Lexer {
         try {
             int _type = RULE_INT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.euclideanspace.euclid.ui/src-gen/com/euclideanspace/euclid/ui/contentassist/antlr/internal/InternalEditor.g:23384:10: ( '0' .. '9' ( '0' .. '9' | '_' )* )
-            // ../com.euclideanspace.euclid.ui/src-gen/com/euclideanspace/euclid/ui/contentassist/antlr/internal/InternalEditor.g:23384:12: '0' .. '9' ( '0' .. '9' | '_' )*
+            // ../com.euclideanspace.euclid.ui/src-gen/com/euclideanspace/euclid/ui/contentassist/antlr/internal/InternalEditor.g:23151:10: ( '0' .. '9' ( '0' .. '9' | '_' )* )
+            // ../com.euclideanspace.euclid.ui/src-gen/com/euclideanspace/euclid/ui/contentassist/antlr/internal/InternalEditor.g:23151:12: '0' .. '9' ( '0' .. '9' | '_' )*
             {
             matchRange('0','9'); 
-            // ../com.euclideanspace.euclid.ui/src-gen/com/euclideanspace/euclid/ui/contentassist/antlr/internal/InternalEditor.g:23384:21: ( '0' .. '9' | '_' )*
+            // ../com.euclideanspace.euclid.ui/src-gen/com/euclideanspace/euclid/ui/contentassist/antlr/internal/InternalEditor.g:23151:21: ( '0' .. '9' | '_' )*
             loop5:
             do {
                 int alt5=2;
@@ -2033,11 +2033,11 @@ public class InternalEditorLexer extends Lexer {
         try {
             int _type = RULE_DECIMAL;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.euclideanspace.euclid.ui/src-gen/com/euclideanspace/euclid/ui/contentassist/antlr/internal/InternalEditor.g:23386:14: ( RULE_INT ( ( 'e' | 'E' ) ( '+' | '-' )? RULE_INT )? ( ( 'b' | 'B' ) ( 'i' | 'I' | 'd' | 'D' ) | ( 'l' | 'L' | 'd' | 'D' | 'f' | 'F' ) )? )
-            // ../com.euclideanspace.euclid.ui/src-gen/com/euclideanspace/euclid/ui/contentassist/antlr/internal/InternalEditor.g:23386:16: RULE_INT ( ( 'e' | 'E' ) ( '+' | '-' )? RULE_INT )? ( ( 'b' | 'B' ) ( 'i' | 'I' | 'd' | 'D' ) | ( 'l' | 'L' | 'd' | 'D' | 'f' | 'F' ) )?
+            // ../com.euclideanspace.euclid.ui/src-gen/com/euclideanspace/euclid/ui/contentassist/antlr/internal/InternalEditor.g:23153:14: ( RULE_INT ( ( 'e' | 'E' ) ( '+' | '-' )? RULE_INT )? ( ( 'b' | 'B' ) ( 'i' | 'I' | 'd' | 'D' ) | ( 'l' | 'L' | 'd' | 'D' | 'f' | 'F' ) )? )
+            // ../com.euclideanspace.euclid.ui/src-gen/com/euclideanspace/euclid/ui/contentassist/antlr/internal/InternalEditor.g:23153:16: RULE_INT ( ( 'e' | 'E' ) ( '+' | '-' )? RULE_INT )? ( ( 'b' | 'B' ) ( 'i' | 'I' | 'd' | 'D' ) | ( 'l' | 'L' | 'd' | 'D' | 'f' | 'F' ) )?
             {
             mRULE_INT(); 
-            // ../com.euclideanspace.euclid.ui/src-gen/com/euclideanspace/euclid/ui/contentassist/antlr/internal/InternalEditor.g:23386:25: ( ( 'e' | 'E' ) ( '+' | '-' )? RULE_INT )?
+            // ../com.euclideanspace.euclid.ui/src-gen/com/euclideanspace/euclid/ui/contentassist/antlr/internal/InternalEditor.g:23153:25: ( ( 'e' | 'E' ) ( '+' | '-' )? RULE_INT )?
             int alt7=2;
             int LA7_0 = input.LA(1);
 
@@ -2046,7 +2046,7 @@ public class InternalEditorLexer extends Lexer {
             }
             switch (alt7) {
                 case 1 :
-                    // ../com.euclideanspace.euclid.ui/src-gen/com/euclideanspace/euclid/ui/contentassist/antlr/internal/InternalEditor.g:23386:26: ( 'e' | 'E' ) ( '+' | '-' )? RULE_INT
+                    // ../com.euclideanspace.euclid.ui/src-gen/com/euclideanspace/euclid/ui/contentassist/antlr/internal/InternalEditor.g:23153:26: ( 'e' | 'E' ) ( '+' | '-' )? RULE_INT
                     {
                     if ( input.LA(1)=='E'||input.LA(1)=='e' ) {
                         input.consume();
@@ -2057,7 +2057,7 @@ public class InternalEditorLexer extends Lexer {
                         recover(mse);
                         throw mse;}
 
-                    // ../com.euclideanspace.euclid.ui/src-gen/com/euclideanspace/euclid/ui/contentassist/antlr/internal/InternalEditor.g:23386:36: ( '+' | '-' )?
+                    // ../com.euclideanspace.euclid.ui/src-gen/com/euclideanspace/euclid/ui/contentassist/antlr/internal/InternalEditor.g:23153:36: ( '+' | '-' )?
                     int alt6=2;
                     int LA6_0 = input.LA(1);
 
@@ -2090,7 +2090,7 @@ public class InternalEditorLexer extends Lexer {
 
             }
 
-            // ../com.euclideanspace.euclid.ui/src-gen/com/euclideanspace/euclid/ui/contentassist/antlr/internal/InternalEditor.g:23386:58: ( ( 'b' | 'B' ) ( 'i' | 'I' | 'd' | 'D' ) | ( 'l' | 'L' | 'd' | 'D' | 'f' | 'F' ) )?
+            // ../com.euclideanspace.euclid.ui/src-gen/com/euclideanspace/euclid/ui/contentassist/antlr/internal/InternalEditor.g:23153:58: ( ( 'b' | 'B' ) ( 'i' | 'I' | 'd' | 'D' ) | ( 'l' | 'L' | 'd' | 'D' | 'f' | 'F' ) )?
             int alt8=3;
             int LA8_0 = input.LA(1);
 
@@ -2102,7 +2102,7 @@ public class InternalEditorLexer extends Lexer {
             }
             switch (alt8) {
                 case 1 :
-                    // ../com.euclideanspace.euclid.ui/src-gen/com/euclideanspace/euclid/ui/contentassist/antlr/internal/InternalEditor.g:23386:59: ( 'b' | 'B' ) ( 'i' | 'I' | 'd' | 'D' )
+                    // ../com.euclideanspace.euclid.ui/src-gen/com/euclideanspace/euclid/ui/contentassist/antlr/internal/InternalEditor.g:23153:59: ( 'b' | 'B' ) ( 'i' | 'I' | 'd' | 'D' )
                     {
                     if ( input.LA(1)=='B'||input.LA(1)=='b' ) {
                         input.consume();
@@ -2126,7 +2126,7 @@ public class InternalEditorLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // ../com.euclideanspace.euclid.ui/src-gen/com/euclideanspace/euclid/ui/contentassist/antlr/internal/InternalEditor.g:23386:87: ( 'l' | 'L' | 'd' | 'D' | 'f' | 'F' )
+                    // ../com.euclideanspace.euclid.ui/src-gen/com/euclideanspace/euclid/ui/contentassist/antlr/internal/InternalEditor.g:23153:87: ( 'l' | 'L' | 'd' | 'D' | 'f' | 'F' )
                     {
                     if ( input.LA(1)=='D'||input.LA(1)=='F'||input.LA(1)=='L'||input.LA(1)=='d'||input.LA(1)=='f'||input.LA(1)=='l' ) {
                         input.consume();
@@ -2159,10 +2159,10 @@ public class InternalEditorLexer extends Lexer {
         try {
             int _type = RULE_ID;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.euclideanspace.euclid.ui/src-gen/com/euclideanspace/euclid/ui/contentassist/antlr/internal/InternalEditor.g:23388:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '$' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '$' | '_' | '0' .. '9' )* )
-            // ../com.euclideanspace.euclid.ui/src-gen/com/euclideanspace/euclid/ui/contentassist/antlr/internal/InternalEditor.g:23388:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '$' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '$' | '_' | '0' .. '9' )*
+            // ../com.euclideanspace.euclid.ui/src-gen/com/euclideanspace/euclid/ui/contentassist/antlr/internal/InternalEditor.g:23155:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '$' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '$' | '_' | '0' .. '9' )* )
+            // ../com.euclideanspace.euclid.ui/src-gen/com/euclideanspace/euclid/ui/contentassist/antlr/internal/InternalEditor.g:23155:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '$' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '$' | '_' | '0' .. '9' )*
             {
-            // ../com.euclideanspace.euclid.ui/src-gen/com/euclideanspace/euclid/ui/contentassist/antlr/internal/InternalEditor.g:23388:11: ( '^' )?
+            // ../com.euclideanspace.euclid.ui/src-gen/com/euclideanspace/euclid/ui/contentassist/antlr/internal/InternalEditor.g:23155:11: ( '^' )?
             int alt9=2;
             int LA9_0 = input.LA(1);
 
@@ -2171,7 +2171,7 @@ public class InternalEditorLexer extends Lexer {
             }
             switch (alt9) {
                 case 1 :
-                    // ../com.euclideanspace.euclid.ui/src-gen/com/euclideanspace/euclid/ui/contentassist/antlr/internal/InternalEditor.g:23388:11: '^'
+                    // ../com.euclideanspace.euclid.ui/src-gen/com/euclideanspace/euclid/ui/contentassist/antlr/internal/InternalEditor.g:23155:11: '^'
                     {
                     match('^'); 
 
@@ -2189,7 +2189,7 @@ public class InternalEditorLexer extends Lexer {
                 recover(mse);
                 throw mse;}
 
-            // ../com.euclideanspace.euclid.ui/src-gen/com/euclideanspace/euclid/ui/contentassist/antlr/internal/InternalEditor.g:23388:44: ( 'a' .. 'z' | 'A' .. 'Z' | '$' | '_' | '0' .. '9' )*
+            // ../com.euclideanspace.euclid.ui/src-gen/com/euclideanspace/euclid/ui/contentassist/antlr/internal/InternalEditor.g:23155:44: ( 'a' .. 'z' | 'A' .. 'Z' | '$' | '_' | '0' .. '9' )*
             loop10:
             do {
                 int alt10=2;
@@ -2238,10 +2238,10 @@ public class InternalEditorLexer extends Lexer {
         try {
             int _type = RULE_STRING;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.euclideanspace.euclid.ui/src-gen/com/euclideanspace/euclid/ui/contentassist/antlr/internal/InternalEditor.g:23390:13: ( ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
-            // ../com.euclideanspace.euclid.ui/src-gen/com/euclideanspace/euclid/ui/contentassist/antlr/internal/InternalEditor.g:23390:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // ../com.euclideanspace.euclid.ui/src-gen/com/euclideanspace/euclid/ui/contentassist/antlr/internal/InternalEditor.g:23157:13: ( ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
+            // ../com.euclideanspace.euclid.ui/src-gen/com/euclideanspace/euclid/ui/contentassist/antlr/internal/InternalEditor.g:23157:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             {
-            // ../com.euclideanspace.euclid.ui/src-gen/com/euclideanspace/euclid/ui/contentassist/antlr/internal/InternalEditor.g:23390:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // ../com.euclideanspace.euclid.ui/src-gen/com/euclideanspace/euclid/ui/contentassist/antlr/internal/InternalEditor.g:23157:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             int alt13=2;
             int LA13_0 = input.LA(1);
 
@@ -2259,10 +2259,10 @@ public class InternalEditorLexer extends Lexer {
             }
             switch (alt13) {
                 case 1 :
-                    // ../com.euclideanspace.euclid.ui/src-gen/com/euclideanspace/euclid/ui/contentassist/antlr/internal/InternalEditor.g:23390:16: '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
+                    // ../com.euclideanspace.euclid.ui/src-gen/com/euclideanspace/euclid/ui/contentassist/antlr/internal/InternalEditor.g:23157:16: '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
                     {
                     match('\"'); 
-                    // ../com.euclideanspace.euclid.ui/src-gen/com/euclideanspace/euclid/ui/contentassist/antlr/internal/InternalEditor.g:23390:20: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )*
+                    // ../com.euclideanspace.euclid.ui/src-gen/com/euclideanspace/euclid/ui/contentassist/antlr/internal/InternalEditor.g:23157:20: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )*
                     loop11:
                     do {
                         int alt11=3;
@@ -2278,7 +2278,7 @@ public class InternalEditorLexer extends Lexer {
 
                         switch (alt11) {
                     	case 1 :
-                    	    // ../com.euclideanspace.euclid.ui/src-gen/com/euclideanspace/euclid/ui/contentassist/antlr/internal/InternalEditor.g:23390:21: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' )
+                    	    // ../com.euclideanspace.euclid.ui/src-gen/com/euclideanspace/euclid/ui/contentassist/antlr/internal/InternalEditor.g:23157:21: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' )
                     	    {
                     	    match('\\'); 
                     	    if ( input.LA(1)=='\"'||input.LA(1)=='\''||input.LA(1)=='\\'||input.LA(1)=='b'||input.LA(1)=='f'||input.LA(1)=='n'||input.LA(1)=='r'||(input.LA(1)>='t' && input.LA(1)<='u') ) {
@@ -2294,7 +2294,7 @@ public class InternalEditorLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // ../com.euclideanspace.euclid.ui/src-gen/com/euclideanspace/euclid/ui/contentassist/antlr/internal/InternalEditor.g:23390:66: ~ ( ( '\\\\' | '\"' ) )
+                    	    // ../com.euclideanspace.euclid.ui/src-gen/com/euclideanspace/euclid/ui/contentassist/antlr/internal/InternalEditor.g:23157:66: ~ ( ( '\\\\' | '\"' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='!')||(input.LA(1)>='#' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -2319,10 +2319,10 @@ public class InternalEditorLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // ../com.euclideanspace.euclid.ui/src-gen/com/euclideanspace/euclid/ui/contentassist/antlr/internal/InternalEditor.g:23390:86: '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
+                    // ../com.euclideanspace.euclid.ui/src-gen/com/euclideanspace/euclid/ui/contentassist/antlr/internal/InternalEditor.g:23157:86: '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
                     {
                     match('\''); 
-                    // ../com.euclideanspace.euclid.ui/src-gen/com/euclideanspace/euclid/ui/contentassist/antlr/internal/InternalEditor.g:23390:91: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )*
+                    // ../com.euclideanspace.euclid.ui/src-gen/com/euclideanspace/euclid/ui/contentassist/antlr/internal/InternalEditor.g:23157:91: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )*
                     loop12:
                     do {
                         int alt12=3;
@@ -2338,7 +2338,7 @@ public class InternalEditorLexer extends Lexer {
 
                         switch (alt12) {
                     	case 1 :
-                    	    // ../com.euclideanspace.euclid.ui/src-gen/com/euclideanspace/euclid/ui/contentassist/antlr/internal/InternalEditor.g:23390:92: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' )
+                    	    // ../com.euclideanspace.euclid.ui/src-gen/com/euclideanspace/euclid/ui/contentassist/antlr/internal/InternalEditor.g:23157:92: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' )
                     	    {
                     	    match('\\'); 
                     	    if ( input.LA(1)=='\"'||input.LA(1)=='\''||input.LA(1)=='\\'||input.LA(1)=='b'||input.LA(1)=='f'||input.LA(1)=='n'||input.LA(1)=='r'||(input.LA(1)>='t' && input.LA(1)<='u') ) {
@@ -2354,7 +2354,7 @@ public class InternalEditorLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // ../com.euclideanspace.euclid.ui/src-gen/com/euclideanspace/euclid/ui/contentassist/antlr/internal/InternalEditor.g:23390:137: ~ ( ( '\\\\' | '\\'' ) )
+                    	    // ../com.euclideanspace.euclid.ui/src-gen/com/euclideanspace/euclid/ui/contentassist/antlr/internal/InternalEditor.g:23157:137: ~ ( ( '\\\\' | '\\'' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='&')||(input.LA(1)>='(' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -2397,12 +2397,12 @@ public class InternalEditorLexer extends Lexer {
         try {
             int _type = RULE_ML_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.euclideanspace.euclid.ui/src-gen/com/euclideanspace/euclid/ui/contentassist/antlr/internal/InternalEditor.g:23392:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
-            // ../com.euclideanspace.euclid.ui/src-gen/com/euclideanspace/euclid/ui/contentassist/antlr/internal/InternalEditor.g:23392:19: '/*' ( options {greedy=false; } : . )* '*/'
+            // ../com.euclideanspace.euclid.ui/src-gen/com/euclideanspace/euclid/ui/contentassist/antlr/internal/InternalEditor.g:23159:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
+            // ../com.euclideanspace.euclid.ui/src-gen/com/euclideanspace/euclid/ui/contentassist/antlr/internal/InternalEditor.g:23159:19: '/*' ( options {greedy=false; } : . )* '*/'
             {
             match("/*"); 
 
-            // ../com.euclideanspace.euclid.ui/src-gen/com/euclideanspace/euclid/ui/contentassist/antlr/internal/InternalEditor.g:23392:24: ( options {greedy=false; } : . )*
+            // ../com.euclideanspace.euclid.ui/src-gen/com/euclideanspace/euclid/ui/contentassist/antlr/internal/InternalEditor.g:23159:24: ( options {greedy=false; } : . )*
             loop14:
             do {
                 int alt14=2;
@@ -2427,7 +2427,7 @@ public class InternalEditorLexer extends Lexer {
 
                 switch (alt14) {
             	case 1 :
-            	    // ../com.euclideanspace.euclid.ui/src-gen/com/euclideanspace/euclid/ui/contentassist/antlr/internal/InternalEditor.g:23392:52: .
+            	    // ../com.euclideanspace.euclid.ui/src-gen/com/euclideanspace/euclid/ui/contentassist/antlr/internal/InternalEditor.g:23159:52: .
             	    {
             	    matchAny(); 
 
@@ -2457,12 +2457,12 @@ public class InternalEditorLexer extends Lexer {
         try {
             int _type = RULE_SL_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.euclideanspace.euclid.ui/src-gen/com/euclideanspace/euclid/ui/contentassist/antlr/internal/InternalEditor.g:23394:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
-            // ../com.euclideanspace.euclid.ui/src-gen/com/euclideanspace/euclid/ui/contentassist/antlr/internal/InternalEditor.g:23394:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
+            // ../com.euclideanspace.euclid.ui/src-gen/com/euclideanspace/euclid/ui/contentassist/antlr/internal/InternalEditor.g:23161:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
+            // ../com.euclideanspace.euclid.ui/src-gen/com/euclideanspace/euclid/ui/contentassist/antlr/internal/InternalEditor.g:23161:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
             {
             match("//"); 
 
-            // ../com.euclideanspace.euclid.ui/src-gen/com/euclideanspace/euclid/ui/contentassist/antlr/internal/InternalEditor.g:23394:24: (~ ( ( '\\n' | '\\r' ) ) )*
+            // ../com.euclideanspace.euclid.ui/src-gen/com/euclideanspace/euclid/ui/contentassist/antlr/internal/InternalEditor.g:23161:24: (~ ( ( '\\n' | '\\r' ) ) )*
             loop15:
             do {
                 int alt15=2;
@@ -2475,7 +2475,7 @@ public class InternalEditorLexer extends Lexer {
 
                 switch (alt15) {
             	case 1 :
-            	    // ../com.euclideanspace.euclid.ui/src-gen/com/euclideanspace/euclid/ui/contentassist/antlr/internal/InternalEditor.g:23394:24: ~ ( ( '\\n' | '\\r' ) )
+            	    // ../com.euclideanspace.euclid.ui/src-gen/com/euclideanspace/euclid/ui/contentassist/antlr/internal/InternalEditor.g:23161:24: ~ ( ( '\\n' | '\\r' ) )
             	    {
             	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='\t')||(input.LA(1)>='\u000B' && input.LA(1)<='\f')||(input.LA(1)>='\u000E' && input.LA(1)<='\uFFFF') ) {
             	        input.consume();
@@ -2495,7 +2495,7 @@ public class InternalEditorLexer extends Lexer {
                 }
             } while (true);
 
-            // ../com.euclideanspace.euclid.ui/src-gen/com/euclideanspace/euclid/ui/contentassist/antlr/internal/InternalEditor.g:23394:40: ( ( '\\r' )? '\\n' )?
+            // ../com.euclideanspace.euclid.ui/src-gen/com/euclideanspace/euclid/ui/contentassist/antlr/internal/InternalEditor.g:23161:40: ( ( '\\r' )? '\\n' )?
             int alt17=2;
             int LA17_0 = input.LA(1);
 
@@ -2504,9 +2504,9 @@ public class InternalEditorLexer extends Lexer {
             }
             switch (alt17) {
                 case 1 :
-                    // ../com.euclideanspace.euclid.ui/src-gen/com/euclideanspace/euclid/ui/contentassist/antlr/internal/InternalEditor.g:23394:41: ( '\\r' )? '\\n'
+                    // ../com.euclideanspace.euclid.ui/src-gen/com/euclideanspace/euclid/ui/contentassist/antlr/internal/InternalEditor.g:23161:41: ( '\\r' )? '\\n'
                     {
-                    // ../com.euclideanspace.euclid.ui/src-gen/com/euclideanspace/euclid/ui/contentassist/antlr/internal/InternalEditor.g:23394:41: ( '\\r' )?
+                    // ../com.euclideanspace.euclid.ui/src-gen/com/euclideanspace/euclid/ui/contentassist/antlr/internal/InternalEditor.g:23161:41: ( '\\r' )?
                     int alt16=2;
                     int LA16_0 = input.LA(1);
 
@@ -2515,7 +2515,7 @@ public class InternalEditorLexer extends Lexer {
                     }
                     switch (alt16) {
                         case 1 :
-                            // ../com.euclideanspace.euclid.ui/src-gen/com/euclideanspace/euclid/ui/contentassist/antlr/internal/InternalEditor.g:23394:41: '\\r'
+                            // ../com.euclideanspace.euclid.ui/src-gen/com/euclideanspace/euclid/ui/contentassist/antlr/internal/InternalEditor.g:23161:41: '\\r'
                             {
                             match('\r'); 
 
@@ -2547,10 +2547,10 @@ public class InternalEditorLexer extends Lexer {
         try {
             int _type = RULE_WS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.euclideanspace.euclid.ui/src-gen/com/euclideanspace/euclid/ui/contentassist/antlr/internal/InternalEditor.g:23396:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
-            // ../com.euclideanspace.euclid.ui/src-gen/com/euclideanspace/euclid/ui/contentassist/antlr/internal/InternalEditor.g:23396:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // ../com.euclideanspace.euclid.ui/src-gen/com/euclideanspace/euclid/ui/contentassist/antlr/internal/InternalEditor.g:23163:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
+            // ../com.euclideanspace.euclid.ui/src-gen/com/euclideanspace/euclid/ui/contentassist/antlr/internal/InternalEditor.g:23163:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             {
-            // ../com.euclideanspace.euclid.ui/src-gen/com/euclideanspace/euclid/ui/contentassist/antlr/internal/InternalEditor.g:23396:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // ../com.euclideanspace.euclid.ui/src-gen/com/euclideanspace/euclid/ui/contentassist/antlr/internal/InternalEditor.g:23163:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             int cnt18=0;
             loop18:
             do {
@@ -2604,8 +2604,8 @@ public class InternalEditorLexer extends Lexer {
         try {
             int _type = RULE_ANY_OTHER;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.euclideanspace.euclid.ui/src-gen/com/euclideanspace/euclid/ui/contentassist/antlr/internal/InternalEditor.g:23398:16: ( . )
-            // ../com.euclideanspace.euclid.ui/src-gen/com/euclideanspace/euclid/ui/contentassist/antlr/internal/InternalEditor.g:23398:18: .
+            // ../com.euclideanspace.euclid.ui/src-gen/com/euclideanspace/euclid/ui/contentassist/antlr/internal/InternalEditor.g:23165:16: ( . )
+            // ../com.euclideanspace.euclid.ui/src-gen/com/euclideanspace/euclid/ui/contentassist/antlr/internal/InternalEditor.g:23165:18: .
             {
             matchAny(); 
 
@@ -3342,9 +3342,9 @@ public class InternalEditorLexer extends Lexer {
         "\uffff\1\5\1\35\1\uffff\1\6\13\uffff\1\73\14\uffff\1\103\1\uffff"+
         "\1\57\10\uffff\1\72\20\uffff\1\67\2\uffff\1\121\1\77\6\uffff\1\46"+
         "\1\105\2\uffff\1\36\2\uffff\1\37\13\uffff\1\101\1\uffff\1\74\4\uffff"+
-        "\1\7\2\uffff\1\70\1\110\1\uffff\1\40\3\uffff\1\45\4\uffff\1\56\1"+
+        "\1\7\2\uffff\1\70\1\112\1\uffff\1\40\3\uffff\1\45\4\uffff\1\56\1"+
         "\100\1\102\1\uffff\1\71\3\uffff\1\104\1\uffff\1\42\1\43\2\uffff"+
-        "\1\52\2\uffff\1\114\1\uffff\1\112\4\uffff\1\113\1\uffff\1\41\2\uffff"+
+        "\1\52\2\uffff\1\114\1\uffff\1\110\4\uffff\1\113\1\uffff\1\41\2\uffff"+
         "\1\111\1\10\1\53\1\62";
     static final String DFA19_specialS =
         "\1\2\51\uffff\1\0\1\1\u0107\uffff}>";

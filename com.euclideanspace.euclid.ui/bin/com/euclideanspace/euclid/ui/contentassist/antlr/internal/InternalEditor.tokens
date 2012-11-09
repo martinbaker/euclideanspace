@@ -111,7 +111,7 @@ RULE_WS=11
 '.'=40
 'import'=49
 '?:'=31
-'static'=84
+'static'=86
 'true'=93
 'catch'=81
 'else'=67
@@ -160,7 +160,7 @@ RULE_WS=11
 'super'=42
 'case'=70
 '}'=52
-'abstract'=86
+'abstract'=84
 'override'=87
 '<='=24
 '!='=22
