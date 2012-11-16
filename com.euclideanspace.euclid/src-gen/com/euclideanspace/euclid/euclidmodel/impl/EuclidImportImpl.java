@@ -8,9 +8,12 @@ import com.euclideanspace.euclid.euclidmodel.EuclidmodelPackage;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+
+import org.eclipse.xtext.common.types.JvmType;
 
 /**
  * <!-- begin-user-doc -->
@@ -19,6 +22,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * <p>
  * The following features are implemented:
  * <ul>
+ *   <li>{@link com.euclideanspace.euclid.euclidmodel.impl.EuclidImportImpl#getImportedType <em>Imported Type</em>}</li>
  *   <li>{@link com.euclideanspace.euclid.euclidmodel.impl.EuclidImportImpl#getImportedNamespace <em>Imported Namespace</em>}</li>
  * </ul>
  * </p>
@@ -27,6 +31,16 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  */
 public class EuclidImportImpl extends MinimalEObjectImpl.Container implements EuclidImport
 {
+  /**
+   * The cached value of the '{@link #getImportedType() <em>Imported Type</em>}' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getImportedType()
+   * @generated
+   * @ordered
+   */
+  protected JvmType importedType;
+
   /**
    * The default value of the '{@link #getImportedNamespace() <em>Imported Namespace</em>}' attribute.
    * <!-- begin-user-doc -->
@@ -73,6 +87,49 @@ public class EuclidImportImpl extends MinimalEObjectImpl.Container implements Eu
    * <!-- end-user-doc -->
    * @generated
    */
+  public JvmType getImportedType()
+  {
+    if (importedType != null && importedType.eIsProxy())
+    {
+      InternalEObject oldImportedType = (InternalEObject)importedType;
+      importedType = (JvmType)eResolveProxy(oldImportedType);
+      if (importedType != oldImportedType)
+      {
+        if (eNotificationRequired())
+          eNotify(new ENotificationImpl(this, Notification.RESOLVE, EuclidmodelPackage.EUCLID_IMPORT__IMPORTED_TYPE, oldImportedType, importedType));
+      }
+    }
+    return importedType;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public JvmType basicGetImportedType()
+  {
+    return importedType;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setImportedType(JvmType newImportedType)
+  {
+    JvmType oldImportedType = importedType;
+    importedType = newImportedType;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, EuclidmodelPackage.EUCLID_IMPORT__IMPORTED_TYPE, oldImportedType, importedType));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public String getImportedNamespace()
   {
     return importedNamespace;
@@ -101,6 +158,9 @@ public class EuclidImportImpl extends MinimalEObjectImpl.Container implements Eu
   {
     switch (featureID)
     {
+      case EuclidmodelPackage.EUCLID_IMPORT__IMPORTED_TYPE:
+        if (resolve) return getImportedType();
+        return basicGetImportedType();
       case EuclidmodelPackage.EUCLID_IMPORT__IMPORTED_NAMESPACE:
         return getImportedNamespace();
     }
@@ -117,6 +177,9 @@ public class EuclidImportImpl extends MinimalEObjectImpl.Container implements Eu
   {
     switch (featureID)
     {
+      case EuclidmodelPackage.EUCLID_IMPORT__IMPORTED_TYPE:
+        setImportedType((JvmType)newValue);
+        return;
       case EuclidmodelPackage.EUCLID_IMPORT__IMPORTED_NAMESPACE:
         setImportedNamespace((String)newValue);
         return;
@@ -134,6 +197,9 @@ public class EuclidImportImpl extends MinimalEObjectImpl.Container implements Eu
   {
     switch (featureID)
     {
+      case EuclidmodelPackage.EUCLID_IMPORT__IMPORTED_TYPE:
+        setImportedType((JvmType)null);
+        return;
       case EuclidmodelPackage.EUCLID_IMPORT__IMPORTED_NAMESPACE:
         setImportedNamespace(IMPORTED_NAMESPACE_EDEFAULT);
         return;
@@ -151,6 +217,8 @@ public class EuclidImportImpl extends MinimalEObjectImpl.Container implements Eu
   {
     switch (featureID)
     {
+      case EuclidmodelPackage.EUCLID_IMPORT__IMPORTED_TYPE:
+        return importedType != null;
       case EuclidmodelPackage.EUCLID_IMPORT__IMPORTED_NAMESPACE:
         return IMPORTED_NAMESPACE_EDEFAULT == null ? importedNamespace != null : !IMPORTED_NAMESPACE_EDEFAULT.equals(importedNamespace);
     }

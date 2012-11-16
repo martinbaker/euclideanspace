@@ -76,8 +76,8 @@ public class EditorJvmModelInferrer extends AbstractModelInferrer {
       {
         if ((classElement instanceof EuclidClass)) {
           final EuclidClass ec = ((EuclidClass) classElement);
-          String _importedNamespace = element.getImportedNamespace();
-          this.buildClass(acceptor, ec, _importedNamespace);
+          String _package = element.getPackage();
+          this.buildClass(acceptor, ec, _package);
         }
         if ((classElement instanceof EuclidAnnotationType)) {
           final EuclidAnnotationType eat = ((EuclidAnnotationType) classElement);

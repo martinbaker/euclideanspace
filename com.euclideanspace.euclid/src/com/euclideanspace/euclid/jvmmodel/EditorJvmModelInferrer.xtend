@@ -70,8 +70,8 @@ class EditorJvmModelInferrer extends AbstractModelInferrer {
       for (classElement : element.euclidTypes) {
       	if (classElement instanceof EuclidClass) {
       	  val EuclidClass ec=classElement as EuclidClass
-      	  //buildClass(acceptor,ec,element.getPackage())
-      	  buildClass(acceptor,ec,element.importedNamespace)
+      	  buildClass(acceptor,ec,element.getPackage())
+      	  //buildClass(acceptor,ec,element.importedNamespace)
         }
       	if (classElement instanceof EuclidAnnotationType) {
       	  val EuclidAnnotationType eat=classElement as EuclidAnnotationType

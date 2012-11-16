@@ -26,8 +26,8 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Group cGroup_0 = (Group)cGroup.eContents().get(0);
 		private final Keyword cPackageKeyword_0_0 = (Keyword)cGroup_0.eContents().get(0);
-		private final Assignment cImportedNamespaceAssignment_0_1 = (Assignment)cGroup_0.eContents().get(1);
-		private final RuleCall cImportedNamespaceQualifiedNameParserRuleCall_0_1_0 = (RuleCall)cImportedNamespaceAssignment_0_1.eContents().get(0);
+		private final Assignment cPackageAssignment_0_1 = (Assignment)cGroup_0.eContents().get(1);
+		private final RuleCall cPackageQualifiedNameParserRuleCall_0_1_0 = (RuleCall)cPackageAssignment_0_1.eContents().get(0);
 		private final Keyword cSemicolonKeyword_0_2 = (Keyword)cGroup_0.eContents().get(2);
 		private final Assignment cImportsAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cImportsImportParserRuleCall_1_0 = (RuleCall)cImportsAssignment_1.eContents().get(0);
@@ -35,23 +35,23 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cEuclidTypesTypeParserRuleCall_2_0 = (RuleCall)cEuclidTypesAssignment_2.eContents().get(0);
 		
 		//File returns EuclidFile:
-		//	("package" importedNamespace=QualifiedName ";"?)? imports+=Import* euclidTypes+=Type*;
+		//	("package" package=QualifiedName ";"?)? imports+=Import* euclidTypes+=Type*;
 		public ParserRule getRule() { return rule; }
 
-		//("package" importedNamespace=QualifiedName ";"?)? imports+=Import* euclidTypes+=Type*
+		//("package" package=QualifiedName ";"?)? imports+=Import* euclidTypes+=Type*
 		public Group getGroup() { return cGroup; }
 
-		//("package" importedNamespace=QualifiedName ";"?)?
+		//("package" package=QualifiedName ";"?)?
 		public Group getGroup_0() { return cGroup_0; }
 
 		//"package"
 		public Keyword getPackageKeyword_0_0() { return cPackageKeyword_0_0; }
 
-		//importedNamespace=QualifiedName
-		public Assignment getImportedNamespaceAssignment_0_1() { return cImportedNamespaceAssignment_0_1; }
+		//package=QualifiedName
+		public Assignment getPackageAssignment_0_1() { return cPackageAssignment_0_1; }
 
 		//QualifiedName
-		public RuleCall getImportedNamespaceQualifiedNameParserRuleCall_0_1_0() { return cImportedNamespaceQualifiedNameParserRuleCall_0_1_0; }
+		public RuleCall getPackageQualifiedNameParserRuleCall_0_1_0() { return cPackageQualifiedNameParserRuleCall_0_1_0; }
 
 		//";"?
 		public Keyword getSemicolonKeyword_0_2() { return cSemicolonKeyword_0_2; }
@@ -74,38 +74,41 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cImportKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Alternatives cAlternatives_1 = (Alternatives)cGroup.eContents().get(1);
-		private final Assignment cImportedNamespaceAssignment_1_0 = (Assignment)cAlternatives_1.eContents().get(0);
-		private final RuleCall cImportedNamespaceQualifiedNameParserRuleCall_1_0_0 = (RuleCall)cImportedNamespaceAssignment_1_0.eContents().get(0);
+		private final Assignment cImportedTypeAssignment_1_0 = (Assignment)cAlternatives_1.eContents().get(0);
+		private final CrossReference cImportedTypeJvmTypeCrossReference_1_0_0 = (CrossReference)cImportedTypeAssignment_1_0.eContents().get(0);
+		private final RuleCall cImportedTypeJvmTypeQualifiedNameParserRuleCall_1_0_0_1 = (RuleCall)cImportedTypeJvmTypeCrossReference_1_0_0.eContents().get(1);
 		private final Assignment cImportedNamespaceAssignment_1_1 = (Assignment)cAlternatives_1.eContents().get(1);
 		private final RuleCall cImportedNamespaceQualifiedNameWithWildCardParserRuleCall_1_1_0 = (RuleCall)cImportedNamespaceAssignment_1_1.eContents().get(0);
 		private final Keyword cSemicolonKeyword_2 = (Keyword)cGroup.eContents().get(2);
 		
 		//Import returns EuclidImport:
 		//	"import" //  (static?='static' extension?='extension'? importedType=[types::JvmType|QualifiedName] '.' '*')
-		//	//  | importedType=[types::JvmType|QualifiedName]
-		//	(importedNamespace=QualifiedName | importedNamespace=QualifiedNameWithWildCard) ";"?;
+		//	(importedType=[types::JvmType|QualifiedName] //   importedNamespace=QualifiedName
+		//	| importedNamespace=QualifiedNameWithWildCard) ";"?;
 		public ParserRule getRule() { return rule; }
 
 		//"import" //  (static?='static' extension?='extension'? importedType=[types::JvmType|QualifiedName] '.' '*')
-		////  | importedType=[types::JvmType|QualifiedName]
-		//(importedNamespace=QualifiedName | importedNamespace=QualifiedNameWithWildCard) ";"?
+		//(importedType=[types::JvmType|QualifiedName] //   importedNamespace=QualifiedName
+		//| importedNamespace=QualifiedNameWithWildCard) ";"?
 		public Group getGroup() { return cGroup; }
 
 		//"import"
 		public Keyword getImportKeyword_0() { return cImportKeyword_0; }
 
 		////  (static?='static' extension?='extension'? importedType=[types::JvmType|QualifiedName] '.' '*')
-		////  | importedType=[types::JvmType|QualifiedName]
-		//importedNamespace=QualifiedName | importedNamespace=QualifiedNameWithWildCard
+		//importedType=[types::JvmType|QualifiedName] //   importedNamespace=QualifiedName
+		//| importedNamespace=QualifiedNameWithWildCard
 		public Alternatives getAlternatives_1() { return cAlternatives_1; }
 
 		////  (static?='static' extension?='extension'? importedType=[types::JvmType|QualifiedName] '.' '*')
-		////  | importedType=[types::JvmType|QualifiedName]
-		//importedNamespace=QualifiedName
-		public Assignment getImportedNamespaceAssignment_1_0() { return cImportedNamespaceAssignment_1_0; }
+		//importedType=[types::JvmType|QualifiedName]
+		public Assignment getImportedTypeAssignment_1_0() { return cImportedTypeAssignment_1_0; }
+
+		//[types::JvmType|QualifiedName]
+		public CrossReference getImportedTypeJvmTypeCrossReference_1_0_0() { return cImportedTypeJvmTypeCrossReference_1_0_0; }
 
 		//QualifiedName
-		public RuleCall getImportedNamespaceQualifiedNameParserRuleCall_1_0_0() { return cImportedNamespaceQualifiedNameParserRuleCall_1_0_0; }
+		public RuleCall getImportedTypeJvmTypeQualifiedNameParserRuleCall_1_0_0_1() { return cImportedTypeJvmTypeQualifiedNameParserRuleCall_1_0_0_1; }
 
 		//importedNamespace=QualifiedNameWithWildCard
 		public Assignment getImportedNamespaceAssignment_1_1() { return cImportedNamespaceAssignment_1_1; }
@@ -1292,7 +1295,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 
 	
 	//File returns EuclidFile:
-	//	("package" importedNamespace=QualifiedName ";"?)? imports+=Import* euclidTypes+=Type*;
+	//	("package" package=QualifiedName ";"?)? imports+=Import* euclidTypes+=Type*;
 	public FileElements getFileAccess() {
 		return (pFile != null) ? pFile : (pFile = new FileElements());
 	}
@@ -1303,8 +1306,8 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 
 	//Import returns EuclidImport:
 	//	"import" //  (static?='static' extension?='extension'? importedType=[types::JvmType|QualifiedName] '.' '*')
-	//	//  | importedType=[types::JvmType|QualifiedName]
-	//	(importedNamespace=QualifiedName | importedNamespace=QualifiedNameWithWildCard) ";"?;
+	//	(importedType=[types::JvmType|QualifiedName] //   importedNamespace=QualifiedName
+	//	| importedNamespace=QualifiedNameWithWildCard) ";"?;
 	public ImportElements getImportAccess() {
 		return (pImport != null) ? pImport : (pImport = new ImportElements());
 	}

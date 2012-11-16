@@ -282,10 +282,10 @@ public class EditorParser extends AbstractContentAssistParser {
 					put(grammarAccess.getJvmLowerBoundAccess().getGroup(), "rule__JvmLowerBound__Group__0");
 					put(grammarAccess.getJvmTypeParameterAccess().getGroup(), "rule__JvmTypeParameter__Group__0");
 					put(grammarAccess.getJvmTypeParameterAccess().getGroup_1_0(), "rule__JvmTypeParameter__Group_1_0__0");
-					put(grammarAccess.getFileAccess().getImportedNamespaceAssignment_0_1(), "rule__File__ImportedNamespaceAssignment_0_1");
+					put(grammarAccess.getFileAccess().getPackageAssignment_0_1(), "rule__File__PackageAssignment_0_1");
 					put(grammarAccess.getFileAccess().getImportsAssignment_1(), "rule__File__ImportsAssignment_1");
 					put(grammarAccess.getFileAccess().getEuclidTypesAssignment_2(), "rule__File__EuclidTypesAssignment_2");
-					put(grammarAccess.getImportAccess().getImportedNamespaceAssignment_1_0(), "rule__Import__ImportedNamespaceAssignment_1_0");
+					put(grammarAccess.getImportAccess().getImportedTypeAssignment_1_0(), "rule__Import__ImportedTypeAssignment_1_0");
 					put(grammarAccess.getImportAccess().getImportedNamespaceAssignment_1_1(), "rule__Import__ImportedNamespaceAssignment_1_1");
 					put(grammarAccess.getTypeAccess().getAnnotationsAssignment_1(), "rule__Type__AnnotationsAssignment_1");
 					put(grammarAccess.getTypeAccess().getAbstractAssignment_2_0_2(), "rule__Type__AbstractAssignment_2_0_2");

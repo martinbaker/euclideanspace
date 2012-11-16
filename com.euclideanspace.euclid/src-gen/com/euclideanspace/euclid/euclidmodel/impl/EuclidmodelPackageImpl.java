@@ -196,7 +196,7 @@ public class EuclidmodelPackageImpl extends EPackageImpl implements EuclidmodelP
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getEuclidFile_ImportedNamespace()
+  public EAttribute getEuclidFile_Package()
   {
     return (EAttribute)euclidFileEClass.getEStructuralFeatures().get(0);
   }
@@ -236,9 +236,19 @@ public class EuclidmodelPackageImpl extends EPackageImpl implements EuclidmodelP
    * <!-- end-user-doc -->
    * @generated
    */
+  public EReference getEuclidImport_ImportedType()
+  {
+    return (EReference)euclidImportEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EAttribute getEuclidImport_ImportedNamespace()
   {
-    return (EAttribute)euclidImportEClass.getEStructuralFeatures().get(0);
+    return (EAttribute)euclidImportEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -742,11 +752,12 @@ public class EuclidmodelPackageImpl extends EPackageImpl implements EuclidmodelP
 
     // Create classes and their features
     euclidFileEClass = createEClass(EUCLID_FILE);
-    createEAttribute(euclidFileEClass, EUCLID_FILE__IMPORTED_NAMESPACE);
+    createEAttribute(euclidFileEClass, EUCLID_FILE__PACKAGE);
     createEReference(euclidFileEClass, EUCLID_FILE__IMPORTS);
     createEReference(euclidFileEClass, EUCLID_FILE__EUCLID_TYPES);
 
     euclidImportEClass = createEClass(EUCLID_IMPORT);
+    createEReference(euclidImportEClass, EUCLID_IMPORT__IMPORTED_TYPE);
     createEAttribute(euclidImportEClass, EUCLID_IMPORT__IMPORTED_NAMESPACE);
 
     euclidTypeDeclarationEClass = createEClass(EUCLID_TYPE_DECLARATION);
@@ -831,8 +842,8 @@ public class EuclidmodelPackageImpl extends EPackageImpl implements EuclidmodelP
     setNsURI(eNS_URI);
 
     // Obtain other dependent packages
-    XAnnotationsPackage theXAnnotationsPackage = (XAnnotationsPackage)EPackage.Registry.INSTANCE.getEPackage(XAnnotationsPackage.eNS_URI);
     TypesPackage theTypesPackage = (TypesPackage)EPackage.Registry.INSTANCE.getEPackage(TypesPackage.eNS_URI);
+    XAnnotationsPackage theXAnnotationsPackage = (XAnnotationsPackage)EPackage.Registry.INSTANCE.getEPackage(XAnnotationsPackage.eNS_URI);
     XbasePackage theXbasePackage = (XbasePackage)EPackage.Registry.INSTANCE.getEPackage(XbasePackage.eNS_URI);
 
     // Create type parameters
@@ -848,11 +859,12 @@ public class EuclidmodelPackageImpl extends EPackageImpl implements EuclidmodelP
 
     // Initialize classes and features; add operations and parameters
     initEClass(euclidFileEClass, EuclidFile.class, "EuclidFile", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getEuclidFile_ImportedNamespace(), ecorePackage.getEString(), "importedNamespace", null, 0, 1, EuclidFile.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getEuclidFile_Package(), ecorePackage.getEString(), "package", null, 0, 1, EuclidFile.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getEuclidFile_Imports(), this.getEuclidImport(), null, "imports", null, 0, -1, EuclidFile.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getEuclidFile_EuclidTypes(), this.getEuclidTypeDeclaration(), null, "euclidTypes", null, 0, -1, EuclidFile.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(euclidImportEClass, EuclidImport.class, "EuclidImport", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getEuclidImport_ImportedType(), theTypesPackage.getJvmType(), null, "importedType", null, 0, 1, EuclidImport.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getEuclidImport_ImportedNamespace(), ecorePackage.getEString(), "importedNamespace", null, 0, 1, EuclidImport.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(euclidTypeDeclarationEClass, EuclidTypeDeclaration.class, "EuclidTypeDeclaration", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);

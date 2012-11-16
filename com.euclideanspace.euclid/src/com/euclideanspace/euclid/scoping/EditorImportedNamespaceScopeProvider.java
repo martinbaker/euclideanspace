@@ -63,6 +63,7 @@ public class EditorImportedNamespaceScopeProvider extends
 	 */
 	@Inject private IQualifiedNameConverter qualifiedNameConverter;
 //	@Inject private IJvmModelAssociations associations;
+
 	
 	// automatically import all types from the package we are in
 	@Override
@@ -75,15 +76,19 @@ public class EditorImportedNamespaceScopeProvider extends
 		  for (EuclidImport imp : file.getImports()) {
 //		    if (!imp.isStatic()) {
 		      String value = imp.getImportedNamespace();
-//		      if (value == null)
-//		        value = imp.getImportedNamespace();
-		      ImportNormalizer resolver = createImportedNamespaceResolver(value, ignoreCase);
+		      if (value == null) {
+				value = imp.getImportedType().getQualifiedName();
+		       System.out.println(file.getPackage()+" importedType="+value);
+		      } else {
+			   System.out.println(file.getPackage()+" ImportedNamespace="+value);		    	  
+		      }
+	          ImportNormalizer resolver = createImportedNamespaceResolver(value, ignoreCase);
 		      if (resolver != null)
 		        importedNamespaceResolvers.add(resolver);
 //		    }
-		  }
+		   }
 		  // then add types from own package
-		  if (!Strings.isEmpty(file.getImportedNamespace())) {
+		  if (!Strings.isEmpty(file.getPackage())) {
 		    importedNamespaceResolvers.add(
 		      // construct ImportNormalizer with wildCard set to true
 		      // ImportNormalizer constructor has this form:
@@ -91,32 +96,14 @@ public class EditorImportedNamespaceScopeProvider extends
               // https://github.com/eclipse/xtext/blob/master/plugins/org.eclipse.xtext/src/org/eclipse/xtext/scoping/impl/ImportNormalizer.java
 		      new ImportNormalizer(
 		        qualifiedNameConverter.toQualifiedName(
-                  file.getImportedNamespace()
+                  file.getPackage()
                 ), true, ignoreCase
               )
 		    );
 		  }
-/*		List<ImportNormalizer> importedNamespaceResolvers = super
-				.internalGetImportedNamespaceResolvers(context, ignoreCase);
-		String ownNamespace = EcoreUtil2.getContainerOfType(context,
-				EuclidFile.class).getImportedNamespace()
-				+ ".*";
-		importedNamespaceResolvers.add(createImportedNamespaceResolver(
-				ownNamespace, ignoreCase));*/
 		return importedNamespaceResolvers;
 	}
 
-	/**
-	 * from http://www.eclipse.org/Xtext/7languagesDoc.html#httpRouting
-	 */
-	/*override internalGetImportedNamespaceResolvers(EObject context,
-	    boolean ignoreCase) {
-	  val model = context.getContainerOfType(typeof(Model))
-	  return model.imports.map [
-	    createImportedNamespaceResolver(
-	      importedType.qualifiedName,ignoreCase)
-	  ].filterNull.toList
-	}*/
 
 /* from: xtend
 	@Override

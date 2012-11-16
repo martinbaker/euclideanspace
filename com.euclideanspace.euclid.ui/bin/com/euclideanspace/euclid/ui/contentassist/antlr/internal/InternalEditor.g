@@ -2318,9 +2318,9 @@ rule__Import__Alternatives_1
     }
 :
 (
-{ before(grammarAccess.getImportAccess().getImportedNamespaceAssignment_1_0()); }
-(rule__Import__ImportedNamespaceAssignment_1_0)
-{ after(grammarAccess.getImportAccess().getImportedNamespaceAssignment_1_0()); }
+{ before(grammarAccess.getImportAccess().getImportedTypeAssignment_1_0()); }
+(rule__Import__ImportedTypeAssignment_1_0)
+{ after(grammarAccess.getImportAccess().getImportedTypeAssignment_1_0()); }
 )
 
     |(
@@ -3786,9 +3786,9 @@ rule__File__Group_0__1__Impl
     }
 :
 (
-{ before(grammarAccess.getFileAccess().getImportedNamespaceAssignment_0_1()); }
-(rule__File__ImportedNamespaceAssignment_0_1)
-{ after(grammarAccess.getFileAccess().getImportedNamespaceAssignment_0_1()); }
+{ before(grammarAccess.getFileAccess().getPackageAssignment_0_1()); }
+(rule__File__PackageAssignment_0_1)
+{ after(grammarAccess.getFileAccess().getPackageAssignment_0_1()); }
 )
 
 ;
@@ -19999,14 +19999,14 @@ finally {
 
 
 
-rule__File__ImportedNamespaceAssignment_0_1
+rule__File__PackageAssignment_0_1
     @init {
 		int stackSize = keepStackSize();
     }
 :
 (
-{ before(grammarAccess.getFileAccess().getImportedNamespaceQualifiedNameParserRuleCall_0_1_0()); }
-	ruleQualifiedName{ after(grammarAccess.getFileAccess().getImportedNamespaceQualifiedNameParserRuleCall_0_1_0()); }
+{ before(grammarAccess.getFileAccess().getPackageQualifiedNameParserRuleCall_0_1_0()); }
+	ruleQualifiedName{ after(grammarAccess.getFileAccess().getPackageQualifiedNameParserRuleCall_0_1_0()); }
 )
 
 ;
@@ -20044,14 +20044,18 @@ finally {
 	restoreStackSize(stackSize);
 }
 
-rule__Import__ImportedNamespaceAssignment_1_0
+rule__Import__ImportedTypeAssignment_1_0
     @init {
 		int stackSize = keepStackSize();
     }
 :
 (
-{ before(grammarAccess.getImportAccess().getImportedNamespaceQualifiedNameParserRuleCall_1_0_0()); }
-	ruleQualifiedName{ after(grammarAccess.getImportAccess().getImportedNamespaceQualifiedNameParserRuleCall_1_0_0()); }
+{ before(grammarAccess.getImportAccess().getImportedTypeJvmTypeCrossReference_1_0_0()); }
+(
+{ before(grammarAccess.getImportAccess().getImportedTypeJvmTypeQualifiedNameParserRuleCall_1_0_0_1()); }
+	ruleQualifiedName{ after(grammarAccess.getImportAccess().getImportedTypeJvmTypeQualifiedNameParserRuleCall_1_0_0_1()); }
+)
+{ after(grammarAccess.getImportAccess().getImportedTypeJvmTypeCrossReference_1_0_0()); }
 )
 
 ;

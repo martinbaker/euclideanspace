@@ -1084,7 +1084,7 @@ public class EditorSemanticSequencer extends XbaseWithAnnotationsSemanticSequenc
 	
 	/**
 	 * Constraint:
-	 *     (importedNamespace=QualifiedName? imports+=Import* euclidTypes+=Type*)
+	 *     (package=QualifiedName? imports+=Import* euclidTypes+=Type*)
 	 */
 	protected void sequence_File(EObject context, EuclidFile semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -1093,7 +1093,7 @@ public class EditorSemanticSequencer extends XbaseWithAnnotationsSemanticSequenc
 	
 	/**
 	 * Constraint:
-	 *     (importedNamespace=QualifiedName | importedNamespace=QualifiedNameWithWildCard)
+	 *     (importedType=[JvmType|QualifiedName] | importedNamespace=QualifiedNameWithWildCard)
 	 */
 	protected void sequence_Import(EObject context, EuclidImport semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

@@ -85,16 +85,16 @@ ruleFile returns [EObject current=null]
 (
 (
 		{ 
-	        newCompositeNode(grammarAccess.getFileAccess().getImportedNamespaceQualifiedNameParserRuleCall_0_1_0()); 
+	        newCompositeNode(grammarAccess.getFileAccess().getPackageQualifiedNameParserRuleCall_0_1_0()); 
 	    }
-		lv_importedNamespace_1_0=ruleQualifiedName		{
+		lv_package_1_0=ruleQualifiedName		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getFileRule());
 	        }
        		set(
        			$current, 
-       			"importedNamespace",
-        		lv_importedNamespace_1_0, 
+       			"package",
+        		lv_package_1_0, 
         		"QualifiedName");
 	        afterParserOrEnumRuleCall();
 	    }
@@ -167,18 +167,15 @@ ruleImport returns [EObject current=null]
     }
 ((
 (
-		{ 
-	        newCompositeNode(grammarAccess.getImportAccess().getImportedNamespaceQualifiedNameParserRuleCall_1_0_0()); 
-	    }
-		lv_importedNamespace_1_0=ruleQualifiedName		{
-	        if ($current==null) {
-	            $current = createModelElementForParent(grammarAccess.getImportRule());
+		{
+			if ($current==null) {
+	            $current = createModelElement(grammarAccess.getImportRule());
 	        }
-       		set(
-       			$current, 
-       			"importedNamespace",
-        		lv_importedNamespace_1_0, 
-        		"QualifiedName");
+        }
+		{ 
+	        newCompositeNode(grammarAccess.getImportAccess().getImportedTypeJvmTypeCrossReference_1_0_0()); 
+	    }
+		ruleQualifiedName		{ 
 	        afterParserOrEnumRuleCall();
 	    }
 

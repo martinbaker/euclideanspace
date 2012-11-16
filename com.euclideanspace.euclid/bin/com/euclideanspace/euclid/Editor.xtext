@@ -8,7 +8,7 @@ import "http://www.eclipse.org/Xtext/Xbase/XAnnotations" as annotations
 import "http://www.eclipse.org/xtext/common/JavaVMTypes" as types
 
 File returns EuclidFile :
-    ('package' importedNamespace=QualifiedName ';'?)?
+    ('package' package=QualifiedName ';'?)?
 (imports+=Import)*
 (euclidTypes+=Type)*
 ;
@@ -16,8 +16,8 @@ File returns EuclidFile :
 Import returns EuclidImport :
 'import' (
 //  (static?='static' extension?='extension'? importedType=[types::JvmType|QualifiedName] '.' '*')
-//  | importedType=[types::JvmType|QualifiedName]
-   importedNamespace=QualifiedName
+   importedType=[types::JvmType|QualifiedName]
+//   importedNamespace=QualifiedName
   | importedNamespace=QualifiedNameWithWildCard) ';'?
 ;
 

@@ -8,11 +8,12 @@
   <genPackages prefix="Euclidmodel" basePackage="com.euclideanspace.euclid" disposableProviderFactory="true"
       ecorePackage="Editor.ecore#/">
     <genClasses ecoreClass="Editor.ecore#//EuclidFile">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Editor.ecore#//EuclidFile/importedNamespace"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Editor.ecore#//EuclidFile/package"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//EuclidFile/imports"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//EuclidFile/euclidTypes"/>
     </genClasses>
     <genClasses ecoreClass="Editor.ecore#//EuclidImport">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Editor.ecore#//EuclidImport/importedType"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Editor.ecore#//EuclidImport/importedNamespace"/>
     </genClasses>
     <genClasses ecoreClass="Editor.ecore#//EuclidTypeDeclaration">

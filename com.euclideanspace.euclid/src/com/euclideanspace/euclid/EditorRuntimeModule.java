@@ -12,6 +12,10 @@ import com.google.inject.name.Names;
 public class EditorRuntimeModule extends com.euclideanspace.euclid.AbstractEditorRuntimeModule {
 	@Override
 	public void configureIScopeProviderDelegate(Binder binder) {
-		binder.bind(org.eclipse.xtext.scoping.IScopeProvider.class).annotatedWith(Names.named(org.eclipse.xtext.scoping.impl.AbstractDeclarativeScopeProvider.NAMED_DELEGATE)).to(EditorImportedNamespaceScopeProvider.class);
+		binder.bind(org.eclipse.xtext.scoping.IScopeProvider.class)
+		  .annotatedWith(Names.named(
+			org.eclipse.xtext.scoping.impl.
+			 AbstractDeclarativeScopeProvider.NAMED_DELEGATE
+		   )).to(EditorImportedNamespaceScopeProvider.class);
 	}
 }

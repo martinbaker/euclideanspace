@@ -67,13 +67,13 @@ public interface EuclidmodelPackage extends EPackage
   int EUCLID_FILE = 0;
 
   /**
-   * The feature id for the '<em><b>Imported Namespace</b></em>' attribute.
+   * The feature id for the '<em><b>Package</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int EUCLID_FILE__IMPORTED_NAMESPACE = 0;
+  int EUCLID_FILE__PACKAGE = 0;
 
   /**
    * The feature id for the '<em><b>Imports</b></em>' containment reference list.
@@ -113,13 +113,22 @@ public interface EuclidmodelPackage extends EPackage
   int EUCLID_IMPORT = 1;
 
   /**
+   * The feature id for the '<em><b>Imported Type</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EUCLID_IMPORT__IMPORTED_TYPE = 0;
+
+  /**
    * The feature id for the '<em><b>Imported Namespace</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int EUCLID_IMPORT__IMPORTED_NAMESPACE = 0;
+  int EUCLID_IMPORT__IMPORTED_NAMESPACE = 1;
 
   /**
    * The number of structural features of the '<em>Euclid Import</em>' class.
@@ -128,7 +137,7 @@ public interface EuclidmodelPackage extends EPackage
    * @generated
    * @ordered
    */
-  int EUCLID_IMPORT_FEATURE_COUNT = 1;
+  int EUCLID_IMPORT_FEATURE_COUNT = 2;
 
   /**
    * The meta object id for the '{@link com.euclideanspace.euclid.euclidmodel.impl.EuclidTypeDeclarationImpl <em>Euclid Type Declaration</em>}' class.
@@ -790,15 +799,15 @@ public interface EuclidmodelPackage extends EPackage
   EClass getEuclidFile();
 
   /**
-   * Returns the meta object for the attribute '{@link com.euclideanspace.euclid.euclidmodel.EuclidFile#getImportedNamespace <em>Imported Namespace</em>}'.
+   * Returns the meta object for the attribute '{@link com.euclideanspace.euclid.euclidmodel.EuclidFile#getPackage <em>Package</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Imported Namespace</em>'.
-   * @see com.euclideanspace.euclid.euclidmodel.EuclidFile#getImportedNamespace()
+   * @return the meta object for the attribute '<em>Package</em>'.
+   * @see com.euclideanspace.euclid.euclidmodel.EuclidFile#getPackage()
    * @see #getEuclidFile()
    * @generated
    */
-  EAttribute getEuclidFile_ImportedNamespace();
+  EAttribute getEuclidFile_Package();
 
   /**
    * Returns the meta object for the containment reference list '{@link com.euclideanspace.euclid.euclidmodel.EuclidFile#getImports <em>Imports</em>}'.
@@ -831,6 +840,17 @@ public interface EuclidmodelPackage extends EPackage
    * @generated
    */
   EClass getEuclidImport();
+
+  /**
+   * Returns the meta object for the reference '{@link com.euclideanspace.euclid.euclidmodel.EuclidImport#getImportedType <em>Imported Type</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference '<em>Imported Type</em>'.
+   * @see com.euclideanspace.euclid.euclidmodel.EuclidImport#getImportedType()
+   * @see #getEuclidImport()
+   * @generated
+   */
+  EReference getEuclidImport_ImportedType();
 
   /**
    * Returns the meta object for the attribute '{@link com.euclideanspace.euclid.euclidmodel.EuclidImport#getImportedNamespace <em>Imported Namespace</em>}'.
@@ -1385,12 +1405,12 @@ public interface EuclidmodelPackage extends EPackage
     EClass EUCLID_FILE = eINSTANCE.getEuclidFile();
 
     /**
-     * The meta object literal for the '<em><b>Imported Namespace</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Package</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute EUCLID_FILE__IMPORTED_NAMESPACE = eINSTANCE.getEuclidFile_ImportedNamespace();
+    EAttribute EUCLID_FILE__PACKAGE = eINSTANCE.getEuclidFile_Package();
 
     /**
      * The meta object literal for the '<em><b>Imports</b></em>' containment reference list feature.
@@ -1417,6 +1437,14 @@ public interface EuclidmodelPackage extends EPackage
      * @generated
      */
     EClass EUCLID_IMPORT = eINSTANCE.getEuclidImport();
+
+    /**
+     * The meta object literal for the '<em><b>Imported Type</b></em>' reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference EUCLID_IMPORT__IMPORTED_TYPE = eINSTANCE.getEuclidImport_ImportedType();
 
     /**
      * The meta object literal for the '<em><b>Imported Namespace</b></em>' attribute feature.
