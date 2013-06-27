@@ -528,7 +528,7 @@ class EditorGenerator implements IGenerator {
      * t1=INT,t22=STRING,t4=CharacterLiteral,
      * t35=BooleanLiteral*/
     def compile(TypeLiteral f)
-      '''«IF f.t1 != null &&
+      '''«IF f != null &&
              (f.t22 == null) &&
              (f.t34 == null) &&
              (f.t35== null)» «f.t1»«ENDIF»«
@@ -818,8 +818,7 @@ class EditorGenerator implements IGenerator {
         '''«IF !(f instanceof ListLiteral) &&
                !(f instanceof CharacterLiteral) &&
                !(f instanceof BooleanLiteral) &&
-               (f.t2 == null)»«
-           IF f.value != null»«f.value»«ENDIF»«
+               (f.t2 == null)»«f.value»«
         ENDIF»«
         IF f.t2 != null»"«f.t2»"«ENDIF»«
         IF f instanceof ListLiteral»«compile(f as ListLiteral)»«ENDIF»«

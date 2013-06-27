@@ -54,17 +54,16 @@ import com.google.inject.Inject;
 public class EditorImportedNamespaceScopeProvider extends
 		ImportedNamespaceAwareLocalScopeProvider {
 
-	public static final QualifiedName JAVA_LANG = QualifiedName.create("java","lang");
-	public static final QualifiedName EUCLID_LIB = QualifiedName.create("com","euclideanspace","euclid","Editor");
-	//public static final QualifiedName EUCLID_LIB = QualifiedName.create("interfaces");
-
 	/**
 	 * Converts QualifiedNames to strings and back
 	 */
 	@Inject private IQualifiedNameConverter qualifiedNameConverter;
 //	@Inject private IJvmModelAssociations associations;
 
-	
+	public static final QualifiedName JAVA_LANG = QualifiedName.create("java","lang");
+	public static final QualifiedName EUCLID_LIB = QualifiedName.create("com","euclideanspace","euclid","Editor");
+	//public static final QualifiedName EUCLID_LIB = QualifiedName.create("interfaces");
+
 	// automatically import all types from the package we are in
 	@Override
 	protected List<ImportNormalizer> internalGetImportedNamespaceResolvers(
@@ -78,9 +77,9 @@ public class EditorImportedNamespaceScopeProvider extends
 		      String value = imp.getImportedNamespace();
 		      if (value == null) {
 				value = imp.getImportedType().getQualifiedName();
-		       System.out.println(file.getPackage()+" importedType="+value);
+		        //System.out.println(file.getPackage()+" importedType="+value);
 		      } else {
-			   System.out.println(file.getPackage()+" ImportedNamespace="+value);		    	  
+			    //System.out.println(file.getPackage()+" ImportedNamespace="+value);		    	  
 		      }
 	          ImportNormalizer resolver = createImportedNamespaceResolver(value, ignoreCase);
 		      if (resolver != null)

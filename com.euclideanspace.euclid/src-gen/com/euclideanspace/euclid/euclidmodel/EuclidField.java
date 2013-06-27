@@ -3,6 +3,7 @@
 package com.euclideanspace.euclid.euclidmodel;
 
 import org.eclipse.xtext.common.types.JvmTypeReference;
+import org.eclipse.xtext.common.types.JvmVisibility;
 
 import org.eclipse.xtext.xbase.XExpression;
 
@@ -18,6 +19,7 @@ import org.eclipse.xtext.xbase.XExpression;
  *   <li>{@link com.euclideanspace.euclid.euclidmodel.EuclidField#isFinal <em>Final</em>}</li>
  *   <li>{@link com.euclideanspace.euclid.euclidmodel.EuclidField#getName <em>Name</em>}</li>
  *   <li>{@link com.euclideanspace.euclid.euclidmodel.EuclidField#getInitialValue <em>Initial Value</em>}</li>
+ *   <li>{@link com.euclideanspace.euclid.euclidmodel.EuclidField#getVisibility <em>Visibility</em>}</li>
  *   <li>{@link com.euclideanspace.euclid.euclidmodel.EuclidField#isExtension <em>Extension</em>}</li>
  *   <li>{@link com.euclideanspace.euclid.euclidmodel.EuclidField#isStatic <em>Static</em>}</li>
  * </ul>
@@ -132,6 +134,35 @@ public interface EuclidField extends EuclidMember
    * @generated
    */
   void setInitialValue(XExpression value);
+
+  /**
+   * Returns the value of the '<em><b>Visibility</b></em>' attribute.
+   * The literals are from the enumeration {@link org.eclipse.xtext.common.types.JvmVisibility}.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Visibility</em>' attribute isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Visibility</em>' attribute.
+   * @see org.eclipse.xtext.common.types.JvmVisibility
+   * @see #setVisibility(JvmVisibility)
+   * @see com.euclideanspace.euclid.euclidmodel.EuclidmodelPackage#getEuclidField_Visibility()
+   * @model
+   * @generated
+   */
+  JvmVisibility getVisibility();
+
+  /**
+   * Sets the value of the '{@link com.euclideanspace.euclid.euclidmodel.EuclidField#getVisibility <em>Visibility</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Visibility</em>' attribute.
+   * @see org.eclipse.xtext.common.types.JvmVisibility
+   * @see #getVisibility()
+   * @generated
+   */
+  void setVisibility(JvmVisibility value);
 
   /**
    * Returns the value of the '<em><b>Extension</b></em>' attribute.

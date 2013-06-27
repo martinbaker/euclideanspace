@@ -6,6 +6,7 @@ import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.xtext.common.types.JvmTypeParameter;
 import org.eclipse.xtext.common.types.JvmTypeReference;
+import org.eclipse.xtext.common.types.JvmVisibility;
 
 import org.eclipse.xtext.xbase.XExpression;
 
@@ -17,6 +18,7 @@ import org.eclipse.xtext.xbase.XExpression;
  * <p>
  * The following features are supported:
  * <ul>
+ *   <li>{@link com.euclideanspace.euclid.euclidmodel.EuclidConstructor#getVisibility <em>Visibility</em>}</li>
  *   <li>{@link com.euclideanspace.euclid.euclidmodel.EuclidConstructor#getTypeParameters <em>Type Parameters</em>}</li>
  *   <li>{@link com.euclideanspace.euclid.euclidmodel.EuclidConstructor#getParameters <em>Parameters</em>}</li>
  *   <li>{@link com.euclideanspace.euclid.euclidmodel.EuclidConstructor#getExceptions <em>Exceptions</em>}</li>
@@ -30,6 +32,35 @@ import org.eclipse.xtext.xbase.XExpression;
  */
 public interface EuclidConstructor extends EuclidMember
 {
+  /**
+   * Returns the value of the '<em><b>Visibility</b></em>' attribute.
+   * The literals are from the enumeration {@link org.eclipse.xtext.common.types.JvmVisibility}.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Visibility</em>' attribute isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Visibility</em>' attribute.
+   * @see org.eclipse.xtext.common.types.JvmVisibility
+   * @see #setVisibility(JvmVisibility)
+   * @see com.euclideanspace.euclid.euclidmodel.EuclidmodelPackage#getEuclidConstructor_Visibility()
+   * @model
+   * @generated
+   */
+  JvmVisibility getVisibility();
+
+  /**
+   * Sets the value of the '{@link com.euclideanspace.euclid.euclidmodel.EuclidConstructor#getVisibility <em>Visibility</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Visibility</em>' attribute.
+   * @see org.eclipse.xtext.common.types.JvmVisibility
+   * @see #getVisibility()
+   * @generated
+   */
+  void setVisibility(JvmVisibility value);
+
   /**
    * Returns the value of the '<em><b>Type Parameters</b></em>' containment reference list.
    * The list contents are of type {@link org.eclipse.xtext.common.types.JvmTypeParameter}.

@@ -24,14 +24,31 @@ Import returns EuclidImport :
 QualifiedNameWithWildCard :
   QualifiedName '.' '*';
 
+/*
+ * This is a top level element such as:
+ * class {EuclidClass}
+ * interface {EuclidInterface}
+ * enum {EuclidEnum}
+ */
 Type returns EuclidTypeDeclaration :
   {EuclidTypeDeclaration} annotations+=XAnnotation*
   ({EuclidClass.annotationInfo = current}
-    'public'? abstract?='abstract'? 'class' name=ValidID ('<' typeParameters+=JvmTypeParameter (',' typeParameters+=JvmTypeParameter)* '>')?
+    'public'? abstract?='abstract'?
+    'class' name=ValidID ('<' typeParameters+=JvmTypeParameter (',' typeParameters+=JvmTypeParameter)* '>')?
     ("extends" extends=JvmParameterizedTypeReference)?
     ('implements' implements+=JvmParameterizedTypeReference (',' implements+=JvmParameterizedTypeReference)*)?'{'
     (members+=Member)*
     '}'
+    |{EuclidInterface.annotationInfo = current}
+    'public'? abstract?='abstract'?
+    'interface' name=ValidID ('<' typeParameters+=JvmTypeParameter (',' typeParameters+=JvmTypeParameter)* '>')?
+    ('implements' implements+=JvmParameterizedTypeReference (',' implements+=JvmParameterizedTypeReference)*)?'{'
+    (declarations+=Declaration)*
+    '}'
+    |{EuclidEnum.annotationInfo = current}
+    'public'? abstract?='abstract'?
+     'enum' name=ValidID ('<' typeParameters+=JvmTypeParameter (',' typeParameters+=JvmTypeParameter)* '>')?
+     '{' enumConstants+=ID (',' enumConstants+=ID)* '}'
     |{EuclidAnnotationType.annotationInfo = current}
     'annotation' name=ValidID '{'
     (members+=AnnotationField)*
@@ -44,7 +61,12 @@ AnnotationField returns EuclidField :
   (type=JvmTypeReference | (final?='val' | 'var') type=JvmTypeReference?) name=ValidID ('=' initialValue=XExpression)? ';'?
 ;
 
-
+/*
+ * This is an inner element inside a class, interface or enum, such as:
+ * 'val' or 'var' returns EuclidField
+ * 'def' method returns EuclidFunction
+ * inner class returns EuclidInnerClass
+ */
 Member returns EuclidMember:
   {EuclidMember} annotations+=XAnnotation*
   (
@@ -53,6 +75,11 @@ Member returns EuclidMember:
     (extension?='extension' (final?='val' | 'var')? type=JvmTypeReference name=ValidID?
     | static?='static'? (type=JvmTypeReference | (final?='val' | 'var') type=JvmTypeReference?) name=ValidID)
     ('=' initialValue=XExpression)? ';'?
+    | {EuclidInnerClass.annotationInfo = current}
+    'class' name=ValidID ('<' typeParameters+=JvmTypeParameter (',' typeParameters+=JvmTypeParameter)* '>')?
+    ("extends" extends=JvmParameterizedTypeReference)?
+    ('implements' implements+=JvmParameterizedTypeReference (',' implements+=JvmParameterizedTypeReference)*)?
+    '{' (members+=Member)* '}'
     | {EuclidFunction.annotationInfo = current}
     ('def' | override?='override') visibility=Visibility? static?='static'? (dispatch?='dispatch'?)
     ('<' typeParameters+=JvmTypeParameter (',' typeParameters+=JvmTypeParameter)* '>')?
@@ -70,6 +97,27 @@ Member returns EuclidMember:
     '(' (parameters+=Parameter (',' parameters+=Parameter)*)? ')'
     ('throws' exceptions+=JvmTypeReference (',' exceptions+=JvmTypeReference)*)?
     expression=XBlockExpression
+) ;
+
+Declaration returns EuclidDeclaration:
+  //{EuclidDeclaration} annotations+=XAnnotation*
+  (
+    //{EuclidField.annotationInfo = current}
+    visibility=Visibility?
+    (extension?='extension' (final?='val' | 'var')? type=JvmTypeReference name=ValidID?
+    | static?='static'?
+      (type=JvmTypeReference | (final?='val' | 'var')
+        type=JvmTypeReference?) name=ValidID) ';'?
+    | //{EuclidFunction.annotationInfo = current}
+    ('def' | override?='override') visibility=Visibility? static?='static'? (dispatch?='dispatch'?)
+    ('<' typeParameters+=JvmTypeParameter (',' typeParameters+=JvmTypeParameter)* '>')?
+    ( =>(returnType=JvmTypeReference createExtensionInfo=CreateExtensionInfo name=ValidID '(')
+    | =>(returnType=JvmTypeReference name=ValidID '(')
+    | =>(createExtensionInfo=CreateExtensionInfo name=ValidID '(')
+    | name=ValidID '('
+    )
+    (parameters+=Parameter (',' parameters+=Parameter)*)? ')'
+    ('throws' exceptions+=JvmTypeReference (',' exceptions+=JvmTypeReference)*)?
 ) ;
 
 CreateExtensionInfo:

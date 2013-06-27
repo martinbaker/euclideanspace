@@ -4,7 +4,7 @@
     editorDirectory="/com.euclideanspace.spad.editor/src" modelPluginID="com.euclideanspace.spad"
     forceOverwrite="true" modelName="Editor" updateClasspath="false" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
     complianceLevel="5.0" copyrightFields="false" editPluginID="com.euclideanspace.spad.edit"
-    editorPluginID="com.euclideanspace.spad.editor" runtimeVersion="2.8">
+    editorPluginID="com.euclideanspace.spad.editor" runtimeVersion="2.9">
   <genPackages prefix="Editor" basePackage="com.euclideanspace.spad" disposableProviderFactory="true"
       ecorePackage="Editor.ecore#/">
     <genClasses ecoreClass="Editor.ecore#//Model">

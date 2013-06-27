@@ -24,6 +24,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
 
 import org.eclipse.xtext.common.types.JvmTypeParameter;
 import org.eclipse.xtext.common.types.JvmTypeReference;
+import org.eclipse.xtext.common.types.JvmVisibility;
 
 import org.eclipse.xtext.xbase.XExpression;
 
@@ -35,6 +36,7 @@ import org.eclipse.xtext.xbase.XExpression;
  * The following features are implemented:
  * <ul>
  *   <li>{@link com.euclideanspace.euclid.euclidmodel.impl.EuclidFunctionImpl#isOverride <em>Override</em>}</li>
+ *   <li>{@link com.euclideanspace.euclid.euclidmodel.impl.EuclidFunctionImpl#getVisibility <em>Visibility</em>}</li>
  *   <li>{@link com.euclideanspace.euclid.euclidmodel.impl.EuclidFunctionImpl#isStatic <em>Static</em>}</li>
  *   <li>{@link com.euclideanspace.euclid.euclidmodel.impl.EuclidFunctionImpl#isDispatch <em>Dispatch</em>}</li>
  *   <li>{@link com.euclideanspace.euclid.euclidmodel.impl.EuclidFunctionImpl#getTypeParameters <em>Type Parameters</em>}</li>
@@ -70,6 +72,26 @@ public class EuclidFunctionImpl extends EuclidMemberImpl implements EuclidFuncti
    * @ordered
    */
   protected boolean override = OVERRIDE_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #getVisibility() <em>Visibility</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getVisibility()
+   * @generated
+   * @ordered
+   */
+  protected static final JvmVisibility VISIBILITY_EDEFAULT = JvmVisibility.DEFAULT;
+
+  /**
+   * The cached value of the '{@link #getVisibility() <em>Visibility</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getVisibility()
+   * @generated
+   * @ordered
+   */
+  protected JvmVisibility visibility = VISIBILITY_EDEFAULT;
 
   /**
    * The default value of the '{@link #isStatic() <em>Static</em>}' attribute.
@@ -233,6 +255,29 @@ public class EuclidFunctionImpl extends EuclidMemberImpl implements EuclidFuncti
     override = newOverride;
     if (eNotificationRequired())
       eNotify(new ENotificationImpl(this, Notification.SET, EuclidmodelPackage.EUCLID_FUNCTION__OVERRIDE, oldOverride, override));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public JvmVisibility getVisibility()
+  {
+    return visibility;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setVisibility(JvmVisibility newVisibility)
+  {
+    JvmVisibility oldVisibility = visibility;
+    visibility = newVisibility == null ? VISIBILITY_EDEFAULT : newVisibility;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, EuclidmodelPackage.EUCLID_FUNCTION__VISIBILITY, oldVisibility, visibility));
   }
 
   /**
@@ -528,6 +573,8 @@ public class EuclidFunctionImpl extends EuclidMemberImpl implements EuclidFuncti
     {
       case EuclidmodelPackage.EUCLID_FUNCTION__OVERRIDE:
         return isOverride();
+      case EuclidmodelPackage.EUCLID_FUNCTION__VISIBILITY:
+        return getVisibility();
       case EuclidmodelPackage.EUCLID_FUNCTION__STATIC:
         return isStatic();
       case EuclidmodelPackage.EUCLID_FUNCTION__DISPATCH:
@@ -563,6 +610,9 @@ public class EuclidFunctionImpl extends EuclidMemberImpl implements EuclidFuncti
     {
       case EuclidmodelPackage.EUCLID_FUNCTION__OVERRIDE:
         setOverride((Boolean)newValue);
+        return;
+      case EuclidmodelPackage.EUCLID_FUNCTION__VISIBILITY:
+        setVisibility((JvmVisibility)newValue);
         return;
       case EuclidmodelPackage.EUCLID_FUNCTION__STATIC:
         setStatic((Boolean)newValue);
@@ -611,6 +661,9 @@ public class EuclidFunctionImpl extends EuclidMemberImpl implements EuclidFuncti
       case EuclidmodelPackage.EUCLID_FUNCTION__OVERRIDE:
         setOverride(OVERRIDE_EDEFAULT);
         return;
+      case EuclidmodelPackage.EUCLID_FUNCTION__VISIBILITY:
+        setVisibility(VISIBILITY_EDEFAULT);
+        return;
       case EuclidmodelPackage.EUCLID_FUNCTION__STATIC:
         setStatic(STATIC_EDEFAULT);
         return;
@@ -654,6 +707,8 @@ public class EuclidFunctionImpl extends EuclidMemberImpl implements EuclidFuncti
     {
       case EuclidmodelPackage.EUCLID_FUNCTION__OVERRIDE:
         return override != OVERRIDE_EDEFAULT;
+      case EuclidmodelPackage.EUCLID_FUNCTION__VISIBILITY:
+        return visibility != VISIBILITY_EDEFAULT;
       case EuclidmodelPackage.EUCLID_FUNCTION__STATIC:
         return static_ != STATIC_EDEFAULT;
       case EuclidmodelPackage.EUCLID_FUNCTION__DISPATCH:
@@ -689,6 +744,8 @@ public class EuclidFunctionImpl extends EuclidMemberImpl implements EuclidFuncti
     StringBuffer result = new StringBuffer(super.toString());
     result.append(" (override: ");
     result.append(override);
+    result.append(", visibility: ");
+    result.append(visibility);
     result.append(", static: ");
     result.append(static_);
     result.append(", dispatch: ");

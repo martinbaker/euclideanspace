@@ -30,7 +30,7 @@ public class EditorFactoryImpl extends EFactoryImpl implements EditorFactory
   {
     try
     {
-      EditorFactory theEditorFactory = (EditorFactory)EPackage.Registry.INSTANCE.getEFactory("http://www.euclideanspace.com/spad/Editor"); 
+      EditorFactory theEditorFactory = (EditorFactory)EPackage.Registry.INSTANCE.getEFactory(EditorPackage.eNS_URI);
       if (theEditorFactory != null)
       {
         return theEditorFactory;

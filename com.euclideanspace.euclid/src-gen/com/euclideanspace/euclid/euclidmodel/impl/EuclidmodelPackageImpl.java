@@ -6,10 +6,14 @@ import com.euclideanspace.euclid.euclidmodel.CreateExtensionInfo;
 import com.euclideanspace.euclid.euclidmodel.EuclidAnnotationType;
 import com.euclideanspace.euclid.euclidmodel.EuclidClass;
 import com.euclideanspace.euclid.euclidmodel.EuclidConstructor;
+import com.euclideanspace.euclid.euclidmodel.EuclidDeclaration;
+import com.euclideanspace.euclid.euclidmodel.EuclidEnum;
 import com.euclideanspace.euclid.euclidmodel.EuclidField;
 import com.euclideanspace.euclid.euclidmodel.EuclidFile;
 import com.euclideanspace.euclid.euclidmodel.EuclidFunction;
 import com.euclideanspace.euclid.euclidmodel.EuclidImport;
+import com.euclideanspace.euclid.euclidmodel.EuclidInnerClass;
+import com.euclideanspace.euclid.euclidmodel.EuclidInterface;
 import com.euclideanspace.euclid.euclidmodel.EuclidMember;
 import com.euclideanspace.euclid.euclidmodel.EuclidParameter;
 import com.euclideanspace.euclid.euclidmodel.EuclidTypeDeclaration;
@@ -77,6 +81,13 @@ public class EuclidmodelPackageImpl extends EPackageImpl implements EuclidmodelP
    * <!-- end-user-doc -->
    * @generated
    */
+  private EClass euclidDeclarationEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   private EClass createExtensionInfoEClass = null;
 
   /**
@@ -98,7 +109,28 @@ public class EuclidmodelPackageImpl extends EPackageImpl implements EuclidmodelP
    * <!-- end-user-doc -->
    * @generated
    */
+  private EClass euclidInterfaceEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass euclidEnumEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   private EClass euclidAnnotationTypeEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass euclidInnerClassEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -346,7 +378,7 @@ public class EuclidmodelPackageImpl extends EPackageImpl implements EuclidmodelP
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getEuclidField_Extension()
+  public EAttribute getEuclidField_Visibility()
   {
     return (EAttribute)euclidFieldEClass.getEStructuralFeatures().get(4);
   }
@@ -356,9 +388,19 @@ public class EuclidmodelPackageImpl extends EPackageImpl implements EuclidmodelP
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getEuclidField_Static()
+  public EAttribute getEuclidField_Extension()
   {
     return (EAttribute)euclidFieldEClass.getEStructuralFeatures().get(5);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getEuclidField_Static()
+  {
+    return (EAttribute)euclidFieldEClass.getEStructuralFeatures().get(6);
   }
 
   /**
@@ -396,9 +438,139 @@ public class EuclidmodelPackageImpl extends EPackageImpl implements EuclidmodelP
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getEuclidMember_Visibility()
+  public EClass getEuclidDeclaration()
   {
-    return (EAttribute)euclidMemberEClass.getEStructuralFeatures().get(2);
+    return euclidDeclarationEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getEuclidDeclaration_Visibility()
+  {
+    return (EAttribute)euclidDeclarationEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getEuclidDeclaration_Extension()
+  {
+    return (EAttribute)euclidDeclarationEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getEuclidDeclaration_Final()
+  {
+    return (EAttribute)euclidDeclarationEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getEuclidDeclaration_Type()
+  {
+    return (EReference)euclidDeclarationEClass.getEStructuralFeatures().get(3);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getEuclidDeclaration_Name()
+  {
+    return (EAttribute)euclidDeclarationEClass.getEStructuralFeatures().get(4);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getEuclidDeclaration_Static()
+  {
+    return (EAttribute)euclidDeclarationEClass.getEStructuralFeatures().get(5);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getEuclidDeclaration_Override()
+  {
+    return (EAttribute)euclidDeclarationEClass.getEStructuralFeatures().get(6);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getEuclidDeclaration_Dispatch()
+  {
+    return (EAttribute)euclidDeclarationEClass.getEStructuralFeatures().get(7);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getEuclidDeclaration_TypeParameters()
+  {
+    return (EReference)euclidDeclarationEClass.getEStructuralFeatures().get(8);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getEuclidDeclaration_ReturnType()
+  {
+    return (EReference)euclidDeclarationEClass.getEStructuralFeatures().get(9);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getEuclidDeclaration_CreateExtensionInfo()
+  {
+    return (EReference)euclidDeclarationEClass.getEStructuralFeatures().get(10);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getEuclidDeclaration_Parameters()
+  {
+    return (EReference)euclidDeclarationEClass.getEStructuralFeatures().get(11);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getEuclidDeclaration_Exceptions()
+  {
+    return (EReference)euclidDeclarationEClass.getEStructuralFeatures().get(12);
   }
 
   /**
@@ -546,6 +718,96 @@ public class EuclidmodelPackageImpl extends EPackageImpl implements EuclidmodelP
    * <!-- end-user-doc -->
    * @generated
    */
+  public EClass getEuclidInterface()
+  {
+    return euclidInterfaceEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getEuclidInterface_Abstract()
+  {
+    return (EAttribute)euclidInterfaceEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getEuclidInterface_TypeParameters()
+  {
+    return (EReference)euclidInterfaceEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getEuclidInterface_Implements()
+  {
+    return (EReference)euclidInterfaceEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getEuclidInterface_Declarations()
+  {
+    return (EReference)euclidInterfaceEClass.getEStructuralFeatures().get(3);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getEuclidEnum()
+  {
+    return euclidEnumEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getEuclidEnum_Abstract()
+  {
+    return (EAttribute)euclidEnumEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getEuclidEnum_TypeParameters()
+  {
+    return (EReference)euclidEnumEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getEuclidEnum_EnumConstants()
+  {
+    return (EAttribute)euclidEnumEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EClass getEuclidAnnotationType()
   {
     return euclidAnnotationTypeEClass;
@@ -559,6 +821,66 @@ public class EuclidmodelPackageImpl extends EPackageImpl implements EuclidmodelP
   public EReference getEuclidAnnotationType_Members()
   {
     return (EReference)euclidAnnotationTypeEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getEuclidInnerClass()
+  {
+    return euclidInnerClassEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getEuclidInnerClass_Name()
+  {
+    return (EAttribute)euclidInnerClassEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getEuclidInnerClass_TypeParameters()
+  {
+    return (EReference)euclidInnerClassEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getEuclidInnerClass_Extends()
+  {
+    return (EReference)euclidInnerClassEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getEuclidInnerClass_Implements()
+  {
+    return (EReference)euclidInnerClassEClass.getEStructuralFeatures().get(3);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getEuclidInnerClass_Members()
+  {
+    return (EReference)euclidInnerClassEClass.getEStructuralFeatures().get(4);
   }
 
   /**
@@ -586,7 +908,7 @@ public class EuclidmodelPackageImpl extends EPackageImpl implements EuclidmodelP
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getEuclidFunction_Static()
+  public EAttribute getEuclidFunction_Visibility()
   {
     return (EAttribute)euclidFunctionEClass.getEStructuralFeatures().get(1);
   }
@@ -596,7 +918,7 @@ public class EuclidmodelPackageImpl extends EPackageImpl implements EuclidmodelP
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getEuclidFunction_Dispatch()
+  public EAttribute getEuclidFunction_Static()
   {
     return (EAttribute)euclidFunctionEClass.getEStructuralFeatures().get(2);
   }
@@ -606,9 +928,9 @@ public class EuclidmodelPackageImpl extends EPackageImpl implements EuclidmodelP
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getEuclidFunction_TypeParameters()
+  public EAttribute getEuclidFunction_Dispatch()
   {
-    return (EReference)euclidFunctionEClass.getEStructuralFeatures().get(3);
+    return (EAttribute)euclidFunctionEClass.getEStructuralFeatures().get(3);
   }
 
   /**
@@ -616,7 +938,7 @@ public class EuclidmodelPackageImpl extends EPackageImpl implements EuclidmodelP
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getEuclidFunction_ReturnType()
+  public EReference getEuclidFunction_TypeParameters()
   {
     return (EReference)euclidFunctionEClass.getEStructuralFeatures().get(4);
   }
@@ -626,7 +948,7 @@ public class EuclidmodelPackageImpl extends EPackageImpl implements EuclidmodelP
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getEuclidFunction_CreateExtensionInfo()
+  public EReference getEuclidFunction_ReturnType()
   {
     return (EReference)euclidFunctionEClass.getEStructuralFeatures().get(5);
   }
@@ -636,9 +958,19 @@ public class EuclidmodelPackageImpl extends EPackageImpl implements EuclidmodelP
    * <!-- end-user-doc -->
    * @generated
    */
+  public EReference getEuclidFunction_CreateExtensionInfo()
+  {
+    return (EReference)euclidFunctionEClass.getEStructuralFeatures().get(6);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EAttribute getEuclidFunction_Name()
   {
-    return (EAttribute)euclidFunctionEClass.getEStructuralFeatures().get(6);
+    return (EAttribute)euclidFunctionEClass.getEStructuralFeatures().get(7);
   }
 
   /**
@@ -648,7 +980,7 @@ public class EuclidmodelPackageImpl extends EPackageImpl implements EuclidmodelP
    */
   public EReference getEuclidFunction_Parameters()
   {
-    return (EReference)euclidFunctionEClass.getEStructuralFeatures().get(7);
+    return (EReference)euclidFunctionEClass.getEStructuralFeatures().get(8);
   }
 
   /**
@@ -658,7 +990,7 @@ public class EuclidmodelPackageImpl extends EPackageImpl implements EuclidmodelP
    */
   public EReference getEuclidFunction_Exceptions()
   {
-    return (EReference)euclidFunctionEClass.getEStructuralFeatures().get(8);
+    return (EReference)euclidFunctionEClass.getEStructuralFeatures().get(9);
   }
 
   /**
@@ -668,7 +1000,7 @@ public class EuclidmodelPackageImpl extends EPackageImpl implements EuclidmodelP
    */
   public EReference getEuclidFunction_Expression()
   {
-    return (EReference)euclidFunctionEClass.getEStructuralFeatures().get(9);
+    return (EReference)euclidFunctionEClass.getEStructuralFeatures().get(10);
   }
 
   /**
@@ -686,9 +1018,9 @@ public class EuclidmodelPackageImpl extends EPackageImpl implements EuclidmodelP
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getEuclidConstructor_TypeParameters()
+  public EAttribute getEuclidConstructor_Visibility()
   {
-    return (EReference)euclidConstructorEClass.getEStructuralFeatures().get(0);
+    return (EAttribute)euclidConstructorEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -696,7 +1028,7 @@ public class EuclidmodelPackageImpl extends EPackageImpl implements EuclidmodelP
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getEuclidConstructor_Parameters()
+  public EReference getEuclidConstructor_TypeParameters()
   {
     return (EReference)euclidConstructorEClass.getEStructuralFeatures().get(1);
   }
@@ -706,7 +1038,7 @@ public class EuclidmodelPackageImpl extends EPackageImpl implements EuclidmodelP
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getEuclidConstructor_Exceptions()
+  public EReference getEuclidConstructor_Parameters()
   {
     return (EReference)euclidConstructorEClass.getEStructuralFeatures().get(2);
   }
@@ -716,9 +1048,19 @@ public class EuclidmodelPackageImpl extends EPackageImpl implements EuclidmodelP
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getEuclidConstructor_Expression()
+  public EReference getEuclidConstructor_Exceptions()
   {
     return (EReference)euclidConstructorEClass.getEStructuralFeatures().get(3);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getEuclidConstructor_Expression()
+  {
+    return (EReference)euclidConstructorEClass.getEStructuralFeatures().get(4);
   }
 
   /**
@@ -770,13 +1112,28 @@ public class EuclidmodelPackageImpl extends EPackageImpl implements EuclidmodelP
     createEAttribute(euclidFieldEClass, EUCLID_FIELD__FINAL);
     createEAttribute(euclidFieldEClass, EUCLID_FIELD__NAME);
     createEReference(euclidFieldEClass, EUCLID_FIELD__INITIAL_VALUE);
+    createEAttribute(euclidFieldEClass, EUCLID_FIELD__VISIBILITY);
     createEAttribute(euclidFieldEClass, EUCLID_FIELD__EXTENSION);
     createEAttribute(euclidFieldEClass, EUCLID_FIELD__STATIC);
 
     euclidMemberEClass = createEClass(EUCLID_MEMBER);
     createEReference(euclidMemberEClass, EUCLID_MEMBER__ANNOTATIONS);
     createEReference(euclidMemberEClass, EUCLID_MEMBER__ANNOTATION_INFO);
-    createEAttribute(euclidMemberEClass, EUCLID_MEMBER__VISIBILITY);
+
+    euclidDeclarationEClass = createEClass(EUCLID_DECLARATION);
+    createEAttribute(euclidDeclarationEClass, EUCLID_DECLARATION__VISIBILITY);
+    createEAttribute(euclidDeclarationEClass, EUCLID_DECLARATION__EXTENSION);
+    createEAttribute(euclidDeclarationEClass, EUCLID_DECLARATION__FINAL);
+    createEReference(euclidDeclarationEClass, EUCLID_DECLARATION__TYPE);
+    createEAttribute(euclidDeclarationEClass, EUCLID_DECLARATION__NAME);
+    createEAttribute(euclidDeclarationEClass, EUCLID_DECLARATION__STATIC);
+    createEAttribute(euclidDeclarationEClass, EUCLID_DECLARATION__OVERRIDE);
+    createEAttribute(euclidDeclarationEClass, EUCLID_DECLARATION__DISPATCH);
+    createEReference(euclidDeclarationEClass, EUCLID_DECLARATION__TYPE_PARAMETERS);
+    createEReference(euclidDeclarationEClass, EUCLID_DECLARATION__RETURN_TYPE);
+    createEReference(euclidDeclarationEClass, EUCLID_DECLARATION__CREATE_EXTENSION_INFO);
+    createEReference(euclidDeclarationEClass, EUCLID_DECLARATION__PARAMETERS);
+    createEReference(euclidDeclarationEClass, EUCLID_DECLARATION__EXCEPTIONS);
 
     createExtensionInfoEClass = createEClass(CREATE_EXTENSION_INFO);
     createEAttribute(createExtensionInfoEClass, CREATE_EXTENSION_INFO__NAME);
@@ -795,11 +1152,30 @@ public class EuclidmodelPackageImpl extends EPackageImpl implements EuclidmodelP
     createEReference(euclidClassEClass, EUCLID_CLASS__IMPLEMENTS);
     createEReference(euclidClassEClass, EUCLID_CLASS__MEMBERS);
 
+    euclidInterfaceEClass = createEClass(EUCLID_INTERFACE);
+    createEAttribute(euclidInterfaceEClass, EUCLID_INTERFACE__ABSTRACT);
+    createEReference(euclidInterfaceEClass, EUCLID_INTERFACE__TYPE_PARAMETERS);
+    createEReference(euclidInterfaceEClass, EUCLID_INTERFACE__IMPLEMENTS);
+    createEReference(euclidInterfaceEClass, EUCLID_INTERFACE__DECLARATIONS);
+
+    euclidEnumEClass = createEClass(EUCLID_ENUM);
+    createEAttribute(euclidEnumEClass, EUCLID_ENUM__ABSTRACT);
+    createEReference(euclidEnumEClass, EUCLID_ENUM__TYPE_PARAMETERS);
+    createEAttribute(euclidEnumEClass, EUCLID_ENUM__ENUM_CONSTANTS);
+
     euclidAnnotationTypeEClass = createEClass(EUCLID_ANNOTATION_TYPE);
     createEReference(euclidAnnotationTypeEClass, EUCLID_ANNOTATION_TYPE__MEMBERS);
 
+    euclidInnerClassEClass = createEClass(EUCLID_INNER_CLASS);
+    createEAttribute(euclidInnerClassEClass, EUCLID_INNER_CLASS__NAME);
+    createEReference(euclidInnerClassEClass, EUCLID_INNER_CLASS__TYPE_PARAMETERS);
+    createEReference(euclidInnerClassEClass, EUCLID_INNER_CLASS__EXTENDS);
+    createEReference(euclidInnerClassEClass, EUCLID_INNER_CLASS__IMPLEMENTS);
+    createEReference(euclidInnerClassEClass, EUCLID_INNER_CLASS__MEMBERS);
+
     euclidFunctionEClass = createEClass(EUCLID_FUNCTION);
     createEAttribute(euclidFunctionEClass, EUCLID_FUNCTION__OVERRIDE);
+    createEAttribute(euclidFunctionEClass, EUCLID_FUNCTION__VISIBILITY);
     createEAttribute(euclidFunctionEClass, EUCLID_FUNCTION__STATIC);
     createEAttribute(euclidFunctionEClass, EUCLID_FUNCTION__DISPATCH);
     createEReference(euclidFunctionEClass, EUCLID_FUNCTION__TYPE_PARAMETERS);
@@ -811,6 +1187,7 @@ public class EuclidmodelPackageImpl extends EPackageImpl implements EuclidmodelP
     createEReference(euclidFunctionEClass, EUCLID_FUNCTION__EXPRESSION);
 
     euclidConstructorEClass = createEClass(EUCLID_CONSTRUCTOR);
+    createEAttribute(euclidConstructorEClass, EUCLID_CONSTRUCTOR__VISIBILITY);
     createEReference(euclidConstructorEClass, EUCLID_CONSTRUCTOR__TYPE_PARAMETERS);
     createEReference(euclidConstructorEClass, EUCLID_CONSTRUCTOR__PARAMETERS);
     createEReference(euclidConstructorEClass, EUCLID_CONSTRUCTOR__EXCEPTIONS);
@@ -853,7 +1230,10 @@ public class EuclidmodelPackageImpl extends EPackageImpl implements EuclidmodelP
     // Add supertypes to classes
     euclidFieldEClass.getESuperTypes().add(this.getEuclidMember());
     euclidClassEClass.getESuperTypes().add(this.getEuclidTypeDeclaration());
+    euclidInterfaceEClass.getESuperTypes().add(this.getEuclidTypeDeclaration());
+    euclidEnumEClass.getESuperTypes().add(this.getEuclidTypeDeclaration());
     euclidAnnotationTypeEClass.getESuperTypes().add(this.getEuclidTypeDeclaration());
+    euclidInnerClassEClass.getESuperTypes().add(this.getEuclidMember());
     euclidFunctionEClass.getESuperTypes().add(this.getEuclidMember());
     euclidConstructorEClass.getESuperTypes().add(this.getEuclidMember());
 
@@ -877,13 +1257,28 @@ public class EuclidmodelPackageImpl extends EPackageImpl implements EuclidmodelP
     initEAttribute(getEuclidField_Final(), ecorePackage.getEBoolean(), "final", null, 0, 1, EuclidField.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getEuclidField_Name(), ecorePackage.getEString(), "name", null, 0, 1, EuclidField.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getEuclidField_InitialValue(), theXbasePackage.getXExpression(), null, "initialValue", null, 0, 1, EuclidField.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getEuclidField_Visibility(), theTypesPackage.getJvmVisibility(), "visibility", null, 0, 1, EuclidField.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getEuclidField_Extension(), ecorePackage.getEBoolean(), "extension", null, 0, 1, EuclidField.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getEuclidField_Static(), ecorePackage.getEBoolean(), "static", null, 0, 1, EuclidField.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(euclidMemberEClass, EuclidMember.class, "EuclidMember", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getEuclidMember_Annotations(), theXAnnotationsPackage.getXAnnotation(), null, "annotations", null, 0, -1, EuclidMember.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getEuclidMember_AnnotationInfo(), this.getEuclidMember(), null, "annotationInfo", null, 0, 1, EuclidMember.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getEuclidMember_Visibility(), theTypesPackage.getJvmVisibility(), "visibility", null, 0, 1, EuclidMember.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(euclidDeclarationEClass, EuclidDeclaration.class, "EuclidDeclaration", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getEuclidDeclaration_Visibility(), theTypesPackage.getJvmVisibility(), "visibility", null, 0, 1, EuclidDeclaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getEuclidDeclaration_Extension(), ecorePackage.getEBoolean(), "extension", null, 0, 1, EuclidDeclaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getEuclidDeclaration_Final(), ecorePackage.getEBoolean(), "final", null, 0, 1, EuclidDeclaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getEuclidDeclaration_Type(), theTypesPackage.getJvmTypeReference(), null, "type", null, 0, 1, EuclidDeclaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getEuclidDeclaration_Name(), ecorePackage.getEString(), "name", null, 0, 1, EuclidDeclaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getEuclidDeclaration_Static(), ecorePackage.getEBoolean(), "static", null, 0, 1, EuclidDeclaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getEuclidDeclaration_Override(), ecorePackage.getEBoolean(), "override", null, 0, 1, EuclidDeclaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getEuclidDeclaration_Dispatch(), ecorePackage.getEBoolean(), "dispatch", null, 0, 1, EuclidDeclaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getEuclidDeclaration_TypeParameters(), theTypesPackage.getJvmTypeParameter(), null, "typeParameters", null, 0, -1, EuclidDeclaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getEuclidDeclaration_ReturnType(), theTypesPackage.getJvmTypeReference(), null, "returnType", null, 0, 1, EuclidDeclaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getEuclidDeclaration_CreateExtensionInfo(), this.getCreateExtensionInfo(), null, "createExtensionInfo", null, 0, 1, EuclidDeclaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getEuclidDeclaration_Parameters(), this.getEuclidParameter(), null, "parameters", null, 0, -1, EuclidDeclaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getEuclidDeclaration_Exceptions(), theTypesPackage.getJvmTypeReference(), null, "exceptions", null, 0, -1, EuclidDeclaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(createExtensionInfoEClass, CreateExtensionInfo.class, "CreateExtensionInfo", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getCreateExtensionInfo_Name(), ecorePackage.getEString(), "name", null, 0, 1, CreateExtensionInfo.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -902,11 +1297,30 @@ public class EuclidmodelPackageImpl extends EPackageImpl implements EuclidmodelP
     initEReference(getEuclidClass_Implements(), theTypesPackage.getJvmParameterizedTypeReference(), null, "implements", null, 0, -1, EuclidClass.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getEuclidClass_Members(), this.getEuclidMember(), null, "members", null, 0, -1, EuclidClass.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
+    initEClass(euclidInterfaceEClass, EuclidInterface.class, "EuclidInterface", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getEuclidInterface_Abstract(), ecorePackage.getEBoolean(), "abstract", null, 0, 1, EuclidInterface.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getEuclidInterface_TypeParameters(), theTypesPackage.getJvmTypeParameter(), null, "typeParameters", null, 0, -1, EuclidInterface.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getEuclidInterface_Implements(), theTypesPackage.getJvmParameterizedTypeReference(), null, "implements", null, 0, -1, EuclidInterface.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getEuclidInterface_Declarations(), this.getEuclidDeclaration(), null, "declarations", null, 0, -1, EuclidInterface.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(euclidEnumEClass, EuclidEnum.class, "EuclidEnum", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getEuclidEnum_Abstract(), ecorePackage.getEBoolean(), "abstract", null, 0, 1, EuclidEnum.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getEuclidEnum_TypeParameters(), theTypesPackage.getJvmTypeParameter(), null, "typeParameters", null, 0, -1, EuclidEnum.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getEuclidEnum_EnumConstants(), ecorePackage.getEString(), "enumConstants", null, 0, -1, EuclidEnum.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
     initEClass(euclidAnnotationTypeEClass, EuclidAnnotationType.class, "EuclidAnnotationType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getEuclidAnnotationType_Members(), this.getEuclidField(), null, "members", null, 0, -1, EuclidAnnotationType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
+    initEClass(euclidInnerClassEClass, EuclidInnerClass.class, "EuclidInnerClass", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getEuclidInnerClass_Name(), ecorePackage.getEString(), "name", null, 0, 1, EuclidInnerClass.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getEuclidInnerClass_TypeParameters(), theTypesPackage.getJvmTypeParameter(), null, "typeParameters", null, 0, -1, EuclidInnerClass.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getEuclidInnerClass_Extends(), theTypesPackage.getJvmParameterizedTypeReference(), null, "extends", null, 0, 1, EuclidInnerClass.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getEuclidInnerClass_Implements(), theTypesPackage.getJvmParameterizedTypeReference(), null, "implements", null, 0, -1, EuclidInnerClass.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getEuclidInnerClass_Members(), this.getEuclidMember(), null, "members", null, 0, -1, EuclidInnerClass.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
     initEClass(euclidFunctionEClass, EuclidFunction.class, "EuclidFunction", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getEuclidFunction_Override(), ecorePackage.getEBoolean(), "override", null, 0, 1, EuclidFunction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getEuclidFunction_Visibility(), theTypesPackage.getJvmVisibility(), "visibility", null, 0, 1, EuclidFunction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getEuclidFunction_Static(), ecorePackage.getEBoolean(), "static", null, 0, 1, EuclidFunction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getEuclidFunction_Dispatch(), ecorePackage.getEBoolean(), "dispatch", null, 0, 1, EuclidFunction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getEuclidFunction_TypeParameters(), theTypesPackage.getJvmTypeParameter(), null, "typeParameters", null, 0, -1, EuclidFunction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -918,6 +1332,7 @@ public class EuclidmodelPackageImpl extends EPackageImpl implements EuclidmodelP
     initEReference(getEuclidFunction_Expression(), theXbasePackage.getXExpression(), null, "expression", null, 0, 1, EuclidFunction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(euclidConstructorEClass, EuclidConstructor.class, "EuclidConstructor", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getEuclidConstructor_Visibility(), theTypesPackage.getJvmVisibility(), "visibility", null, 0, 1, EuclidConstructor.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getEuclidConstructor_TypeParameters(), theTypesPackage.getJvmTypeParameter(), null, "typeParameters", null, 0, -1, EuclidConstructor.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getEuclidConstructor_Parameters(), this.getEuclidParameter(), null, "parameters", null, 0, -1, EuclidConstructor.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getEuclidConstructor_Exceptions(), theTypesPackage.getJvmTypeReference(), null, "exceptions", null, 0, -1, EuclidConstructor.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

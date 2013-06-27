@@ -108,6 +108,13 @@ public class EuclidmodelSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case EuclidmodelPackage.EUCLID_DECLARATION:
+      {
+        EuclidDeclaration euclidDeclaration = (EuclidDeclaration)theEObject;
+        T result = caseEuclidDeclaration(euclidDeclaration);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case EuclidmodelPackage.CREATE_EXTENSION_INFO:
       {
         CreateExtensionInfo createExtensionInfo = (CreateExtensionInfo)theEObject;
@@ -130,11 +137,35 @@ public class EuclidmodelSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case EuclidmodelPackage.EUCLID_INTERFACE:
+      {
+        EuclidInterface euclidInterface = (EuclidInterface)theEObject;
+        T result = caseEuclidInterface(euclidInterface);
+        if (result == null) result = caseEuclidTypeDeclaration(euclidInterface);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case EuclidmodelPackage.EUCLID_ENUM:
+      {
+        EuclidEnum euclidEnum = (EuclidEnum)theEObject;
+        T result = caseEuclidEnum(euclidEnum);
+        if (result == null) result = caseEuclidTypeDeclaration(euclidEnum);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case EuclidmodelPackage.EUCLID_ANNOTATION_TYPE:
       {
         EuclidAnnotationType euclidAnnotationType = (EuclidAnnotationType)theEObject;
         T result = caseEuclidAnnotationType(euclidAnnotationType);
         if (result == null) result = caseEuclidTypeDeclaration(euclidAnnotationType);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case EuclidmodelPackage.EUCLID_INNER_CLASS:
+      {
+        EuclidInnerClass euclidInnerClass = (EuclidInnerClass)theEObject;
+        T result = caseEuclidInnerClass(euclidInnerClass);
+        if (result == null) result = caseEuclidMember(euclidInnerClass);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -239,6 +270,22 @@ public class EuclidmodelSwitch<T> extends Switch<T>
   }
 
   /**
+   * Returns the result of interpreting the object as an instance of '<em>Euclid Declaration</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Euclid Declaration</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseEuclidDeclaration(EuclidDeclaration object)
+  {
+    return null;
+  }
+
+  /**
    * Returns the result of interpreting the object as an instance of '<em>Create Extension Info</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
@@ -287,6 +334,38 @@ public class EuclidmodelSwitch<T> extends Switch<T>
   }
 
   /**
+   * Returns the result of interpreting the object as an instance of '<em>Euclid Interface</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Euclid Interface</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseEuclidInterface(EuclidInterface object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Euclid Enum</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Euclid Enum</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseEuclidEnum(EuclidEnum object)
+  {
+    return null;
+  }
+
+  /**
    * Returns the result of interpreting the object as an instance of '<em>Euclid Annotation Type</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
@@ -298,6 +377,22 @@ public class EuclidmodelSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseEuclidAnnotationType(EuclidAnnotationType object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Euclid Inner Class</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Euclid Inner Class</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseEuclidInnerClass(EuclidInnerClass object)
   {
     return null;
   }

@@ -14,6 +14,7 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import org.eclipse.xtext.common.types.JvmTypeReference;
+import org.eclipse.xtext.common.types.JvmVisibility;
 
 import org.eclipse.xtext.xbase.XExpression;
 
@@ -28,6 +29,7 @@ import org.eclipse.xtext.xbase.XExpression;
  *   <li>{@link com.euclideanspace.euclid.euclidmodel.impl.EuclidFieldImpl#isFinal <em>Final</em>}</li>
  *   <li>{@link com.euclideanspace.euclid.euclidmodel.impl.EuclidFieldImpl#getName <em>Name</em>}</li>
  *   <li>{@link com.euclideanspace.euclid.euclidmodel.impl.EuclidFieldImpl#getInitialValue <em>Initial Value</em>}</li>
+ *   <li>{@link com.euclideanspace.euclid.euclidmodel.impl.EuclidFieldImpl#getVisibility <em>Visibility</em>}</li>
  *   <li>{@link com.euclideanspace.euclid.euclidmodel.impl.EuclidFieldImpl#isExtension <em>Extension</em>}</li>
  *   <li>{@link com.euclideanspace.euclid.euclidmodel.impl.EuclidFieldImpl#isStatic <em>Static</em>}</li>
  * </ul>
@@ -96,6 +98,26 @@ public class EuclidFieldImpl extends EuclidMemberImpl implements EuclidField
    * @ordered
    */
   protected XExpression initialValue;
+
+  /**
+   * The default value of the '{@link #getVisibility() <em>Visibility</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getVisibility()
+   * @generated
+   * @ordered
+   */
+  protected static final JvmVisibility VISIBILITY_EDEFAULT = JvmVisibility.DEFAULT;
+
+  /**
+   * The cached value of the '{@link #getVisibility() <em>Visibility</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getVisibility()
+   * @generated
+   * @ordered
+   */
+  protected JvmVisibility visibility = VISIBILITY_EDEFAULT;
 
   /**
    * The default value of the '{@link #isExtension() <em>Extension</em>}' attribute.
@@ -305,6 +327,29 @@ public class EuclidFieldImpl extends EuclidMemberImpl implements EuclidField
    * <!-- end-user-doc -->
    * @generated
    */
+  public JvmVisibility getVisibility()
+  {
+    return visibility;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setVisibility(JvmVisibility newVisibility)
+  {
+    JvmVisibility oldVisibility = visibility;
+    visibility = newVisibility == null ? VISIBILITY_EDEFAULT : newVisibility;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, EuclidmodelPackage.EUCLID_FIELD__VISIBILITY, oldVisibility, visibility));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public boolean isExtension()
   {
     return extension;
@@ -382,6 +427,8 @@ public class EuclidFieldImpl extends EuclidMemberImpl implements EuclidField
         return getName();
       case EuclidmodelPackage.EUCLID_FIELD__INITIAL_VALUE:
         return getInitialValue();
+      case EuclidmodelPackage.EUCLID_FIELD__VISIBILITY:
+        return getVisibility();
       case EuclidmodelPackage.EUCLID_FIELD__EXTENSION:
         return isExtension();
       case EuclidmodelPackage.EUCLID_FIELD__STATIC:
@@ -411,6 +458,9 @@ public class EuclidFieldImpl extends EuclidMemberImpl implements EuclidField
         return;
       case EuclidmodelPackage.EUCLID_FIELD__INITIAL_VALUE:
         setInitialValue((XExpression)newValue);
+        return;
+      case EuclidmodelPackage.EUCLID_FIELD__VISIBILITY:
+        setVisibility((JvmVisibility)newValue);
         return;
       case EuclidmodelPackage.EUCLID_FIELD__EXTENSION:
         setExtension((Boolean)newValue);
@@ -444,6 +494,9 @@ public class EuclidFieldImpl extends EuclidMemberImpl implements EuclidField
       case EuclidmodelPackage.EUCLID_FIELD__INITIAL_VALUE:
         setInitialValue((XExpression)null);
         return;
+      case EuclidmodelPackage.EUCLID_FIELD__VISIBILITY:
+        setVisibility(VISIBILITY_EDEFAULT);
+        return;
       case EuclidmodelPackage.EUCLID_FIELD__EXTENSION:
         setExtension(EXTENSION_EDEFAULT);
         return;
@@ -472,6 +525,8 @@ public class EuclidFieldImpl extends EuclidMemberImpl implements EuclidField
         return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
       case EuclidmodelPackage.EUCLID_FIELD__INITIAL_VALUE:
         return initialValue != null;
+      case EuclidmodelPackage.EUCLID_FIELD__VISIBILITY:
+        return visibility != VISIBILITY_EDEFAULT;
       case EuclidmodelPackage.EUCLID_FIELD__EXTENSION:
         return extension != EXTENSION_EDEFAULT;
       case EuclidmodelPackage.EUCLID_FIELD__STATIC:
@@ -495,6 +550,8 @@ public class EuclidFieldImpl extends EuclidMemberImpl implements EuclidField
     result.append(final_);
     result.append(", name: ");
     result.append(name);
+    result.append(", visibility: ");
+    result.append(visibility);
     result.append(", extension: ");
     result.append(extension);
     result.append(", static: ");

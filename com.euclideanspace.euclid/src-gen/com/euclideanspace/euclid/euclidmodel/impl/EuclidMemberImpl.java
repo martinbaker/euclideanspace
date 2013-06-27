@@ -21,8 +21,6 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
-import org.eclipse.xtext.common.types.JvmVisibility;
-
 import org.eclipse.xtext.xbase.annotations.xAnnotations.XAnnotation;
 
 /**
@@ -34,7 +32,6 @@ import org.eclipse.xtext.xbase.annotations.xAnnotations.XAnnotation;
  * <ul>
  *   <li>{@link com.euclideanspace.euclid.euclidmodel.impl.EuclidMemberImpl#getAnnotations <em>Annotations</em>}</li>
  *   <li>{@link com.euclideanspace.euclid.euclidmodel.impl.EuclidMemberImpl#getAnnotationInfo <em>Annotation Info</em>}</li>
- *   <li>{@link com.euclideanspace.euclid.euclidmodel.impl.EuclidMemberImpl#getVisibility <em>Visibility</em>}</li>
  * </ul>
  * </p>
  *
@@ -61,26 +58,6 @@ public class EuclidMemberImpl extends MinimalEObjectImpl.Container implements Eu
    * @ordered
    */
   protected EuclidMember annotationInfo;
-
-  /**
-   * The default value of the '{@link #getVisibility() <em>Visibility</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getVisibility()
-   * @generated
-   * @ordered
-   */
-  protected static final JvmVisibility VISIBILITY_EDEFAULT = JvmVisibility.DEFAULT;
-
-  /**
-   * The cached value of the '{@link #getVisibility() <em>Visibility</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getVisibility()
-   * @generated
-   * @ordered
-   */
-  protected JvmVisibility visibility = VISIBILITY_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
@@ -170,29 +147,6 @@ public class EuclidMemberImpl extends MinimalEObjectImpl.Container implements Eu
    * <!-- end-user-doc -->
    * @generated
    */
-  public JvmVisibility getVisibility()
-  {
-    return visibility;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setVisibility(JvmVisibility newVisibility)
-  {
-    JvmVisibility oldVisibility = visibility;
-    visibility = newVisibility == null ? VISIBILITY_EDEFAULT : newVisibility;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, EuclidmodelPackage.EUCLID_MEMBER__VISIBILITY, oldVisibility, visibility));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
@@ -220,8 +174,6 @@ public class EuclidMemberImpl extends MinimalEObjectImpl.Container implements Eu
         return getAnnotations();
       case EuclidmodelPackage.EUCLID_MEMBER__ANNOTATION_INFO:
         return getAnnotationInfo();
-      case EuclidmodelPackage.EUCLID_MEMBER__VISIBILITY:
-        return getVisibility();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -244,9 +196,6 @@ public class EuclidMemberImpl extends MinimalEObjectImpl.Container implements Eu
       case EuclidmodelPackage.EUCLID_MEMBER__ANNOTATION_INFO:
         setAnnotationInfo((EuclidMember)newValue);
         return;
-      case EuclidmodelPackage.EUCLID_MEMBER__VISIBILITY:
-        setVisibility((JvmVisibility)newValue);
-        return;
     }
     super.eSet(featureID, newValue);
   }
@@ -267,9 +216,6 @@ public class EuclidMemberImpl extends MinimalEObjectImpl.Container implements Eu
       case EuclidmodelPackage.EUCLID_MEMBER__ANNOTATION_INFO:
         setAnnotationInfo((EuclidMember)null);
         return;
-      case EuclidmodelPackage.EUCLID_MEMBER__VISIBILITY:
-        setVisibility(VISIBILITY_EDEFAULT);
-        return;
     }
     super.eUnset(featureID);
   }
@@ -288,27 +234,8 @@ public class EuclidMemberImpl extends MinimalEObjectImpl.Container implements Eu
         return annotations != null && !annotations.isEmpty();
       case EuclidmodelPackage.EUCLID_MEMBER__ANNOTATION_INFO:
         return annotationInfo != null;
-      case EuclidmodelPackage.EUCLID_MEMBER__VISIBILITY:
-        return visibility != VISIBILITY_EDEFAULT;
     }
     return super.eIsSet(featureID);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public String toString()
-  {
-    if (eIsProxy()) return super.toString();
-
-    StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (visibility: ");
-    result.append(visibility);
-    result.append(')');
-    return result.toString();
   }
 
 } //EuclidMemberImpl

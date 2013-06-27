@@ -4,10 +4,14 @@ import com.euclideanspace.euclid.euclidmodel.CreateExtensionInfo;
 import com.euclideanspace.euclid.euclidmodel.EuclidAnnotationType;
 import com.euclideanspace.euclid.euclidmodel.EuclidClass;
 import com.euclideanspace.euclid.euclidmodel.EuclidConstructor;
+import com.euclideanspace.euclid.euclidmodel.EuclidDeclaration;
+import com.euclideanspace.euclid.euclidmodel.EuclidEnum;
 import com.euclideanspace.euclid.euclidmodel.EuclidField;
 import com.euclideanspace.euclid.euclidmodel.EuclidFile;
 import com.euclideanspace.euclid.euclidmodel.EuclidFunction;
 import com.euclideanspace.euclid.euclidmodel.EuclidImport;
+import com.euclideanspace.euclid.euclidmodel.EuclidInnerClass;
+import com.euclideanspace.euclid.euclidmodel.EuclidInterface;
 import com.euclideanspace.euclid.euclidmodel.EuclidMember;
 import com.euclideanspace.euclid.euclidmodel.EuclidParameter;
 import com.euclideanspace.euclid.euclidmodel.EuclidTypeDeclaration;
@@ -101,6 +105,18 @@ public class EditorSemanticSequencer extends XbaseWithAnnotationsSemanticSequenc
 					return; 
 				}
 				else break;
+			case EuclidmodelPackage.EUCLID_DECLARATION:
+				if(context == grammarAccess.getDeclarationRule()) {
+					sequence_Declaration(context, (EuclidDeclaration) semanticObject); 
+					return; 
+				}
+				else break;
+			case EuclidmodelPackage.EUCLID_ENUM:
+				if(context == grammarAccess.getTypeRule()) {
+					sequence_Type(context, (EuclidEnum) semanticObject); 
+					return; 
+				}
+				else break;
 			case EuclidmodelPackage.EUCLID_FIELD:
 				if(context == grammarAccess.getAnnotationFieldRule()) {
 					sequence_AnnotationField(context, (EuclidField) semanticObject); 
@@ -129,11 +145,24 @@ public class EditorSemanticSequencer extends XbaseWithAnnotationsSemanticSequenc
 					return; 
 				}
 				else break;
+			case EuclidmodelPackage.EUCLID_INNER_CLASS:
+				if(context == grammarAccess.getMemberRule()) {
+					sequence_Member(context, (EuclidInnerClass) semanticObject); 
+					return; 
+				}
+				else break;
+			case EuclidmodelPackage.EUCLID_INTERFACE:
+				if(context == grammarAccess.getTypeRule()) {
+					sequence_Type(context, (EuclidInterface) semanticObject); 
+					return; 
+				}
+				else break;
 			case EuclidmodelPackage.EUCLID_MEMBER:
-				if(context == grammarAccess.getMemberAccess().getEuclidConstructorAnnotationInfoAction_2_2_0() ||
+				if(context == grammarAccess.getMemberAccess().getEuclidConstructorAnnotationInfoAction_2_3_0() ||
 				   context == grammarAccess.getMemberAccess().getEuclidFieldAnnotationInfoAction_2_0_0() ||
-				   context == grammarAccess.getMemberAccess().getEuclidFunctionAnnotationInfoAction_2_1_0()) {
-					sequence_Member_EuclidConstructor_2_2_0_EuclidField_2_0_0_EuclidFunction_2_1_0(context, (EuclidMember) semanticObject); 
+				   context == grammarAccess.getMemberAccess().getEuclidFunctionAnnotationInfoAction_2_2_0() ||
+				   context == grammarAccess.getMemberAccess().getEuclidInnerClassAnnotationInfoAction_2_1_0()) {
+					sequence_Member_EuclidConstructor_2_3_0_EuclidField_2_0_0_EuclidFunction_2_2_0_EuclidInnerClass_2_1_0(context, (EuclidMember) semanticObject); 
 					return; 
 				}
 				else break;
@@ -144,9 +173,11 @@ public class EditorSemanticSequencer extends XbaseWithAnnotationsSemanticSequenc
 				}
 				else break;
 			case EuclidmodelPackage.EUCLID_TYPE_DECLARATION:
-				if(context == grammarAccess.getTypeAccess().getEuclidAnnotationTypeAnnotationInfoAction_2_1_0() ||
-				   context == grammarAccess.getTypeAccess().getEuclidClassAnnotationInfoAction_2_0_0()) {
-					sequence_Type_EuclidAnnotationType_2_1_0_EuclidClass_2_0_0(context, (EuclidTypeDeclaration) semanticObject); 
+				if(context == grammarAccess.getTypeAccess().getEuclidAnnotationTypeAnnotationInfoAction_2_3_0() ||
+				   context == grammarAccess.getTypeAccess().getEuclidClassAnnotationInfoAction_2_0_0() ||
+				   context == grammarAccess.getTypeAccess().getEuclidEnumAnnotationInfoAction_2_2_0() ||
+				   context == grammarAccess.getTypeAccess().getEuclidInterfaceAnnotationInfoAction_2_1_0()) {
+					sequence_Type_EuclidAnnotationType_2_3_0_EuclidClass_2_0_0_EuclidEnum_2_2_0_EuclidInterface_2_1_0(context, (EuclidTypeDeclaration) semanticObject); 
 					return; 
 				}
 				else break;
@@ -1084,6 +1115,38 @@ public class EditorSemanticSequencer extends XbaseWithAnnotationsSemanticSequenc
 	
 	/**
 	 * Constraint:
+	 *     (
+	 *         (
+	 *             visibility=Visibility? 
+	 *             (
+	 *                 (extension?='extension' final?='val'? type=JvmTypeReference name=ValidID?) | 
+	 *                 (static?='static'? (type=JvmTypeReference | (final?='val'? type=JvmTypeReference?)) name=ValidID)
+	 *             )
+	 *         ) | 
+	 *         (
+	 *             override?='override'? 
+	 *             visibility=Visibility? 
+	 *             static?='static'? 
+	 *             dispatch?='dispatch'? 
+	 *             (typeParameters+=JvmTypeParameter typeParameters+=JvmTypeParameter*)? 
+	 *             (
+	 *                 (returnType=JvmTypeReference createExtensionInfo=CreateExtensionInfo name=ValidID) | 
+	 *                 (returnType=JvmTypeReference name=ValidID) | 
+	 *                 (createExtensionInfo=CreateExtensionInfo name=ValidID) | 
+	 *                 name=ValidID
+	 *             ) 
+	 *             (parameters+=Parameter parameters+=Parameter*)? 
+	 *             (exceptions+=JvmTypeReference exceptions+=JvmTypeReference*)?
+	 *         )
+	 *     )
+	 */
+	protected void sequence_Declaration(EObject context, EuclidDeclaration semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
 	 *     (package=QualifiedName? imports+=Import* euclidTypes+=Type*)
 	 */
 	protected void sequence_File(EObject context, EuclidFile semanticObject) {
@@ -1109,20 +1172,20 @@ public class EditorSemanticSequencer extends XbaseWithAnnotationsSemanticSequenc
 	 *                     (
 	 *                         (
 	 *                             (
-	 *                                 (annotationInfo=Member_EuclidConstructor_2_2_0 visibility=Visibility? (typeParameters+=JvmTypeParameter typeParameters+=JvmTypeParameter*)?) | 
-	 *                                 (annotationInfo=Member_EuclidConstructor_2_2_0 (typeParameters+=JvmTypeParameter typeParameters+=JvmTypeParameter*)?)
+	 *                                 (annotationInfo=Member_EuclidConstructor_2_3_0 visibility=Visibility? (typeParameters+=JvmTypeParameter typeParameters+=JvmTypeParameter*)?) | 
+	 *                                 (annotationInfo=Member_EuclidConstructor_2_3_0 (typeParameters+=JvmTypeParameter typeParameters+=JvmTypeParameter*)?)
 	 *                             ) 
 	 *                             (parameters+=Parameter parameters+=Parameter*)?
 	 *                         ) | 
-	 *                         (annotationInfo=Member_EuclidConstructor_2_2_0 (parameters+=Parameter parameters+=Parameter*)?)
+	 *                         (annotationInfo=Member_EuclidConstructor_2_3_0 (parameters+=Parameter parameters+=Parameter*)?)
 	 *                     ) 
 	 *                     (exceptions+=JvmTypeReference exceptions+=JvmTypeReference*)?
 	 *                 ) | 
-	 *                 (annotationInfo=Member_EuclidConstructor_2_2_0 (exceptions+=JvmTypeReference exceptions+=JvmTypeReference*)?)
+	 *                 (annotationInfo=Member_EuclidConstructor_2_3_0 (exceptions+=JvmTypeReference exceptions+=JvmTypeReference*)?)
 	 *             ) 
 	 *             expression=XBlockExpression
 	 *         ) | 
-	 *         (annotationInfo=Member_EuclidConstructor_2_2_0 expression=XBlockExpression)
+	 *         (annotationInfo=Member_EuclidConstructor_2_3_0 expression=XBlockExpression)
 	 *     )
 	 */
 	protected void sequence_Member(EObject context, EuclidConstructor semanticObject) {
@@ -1134,7 +1197,7 @@ public class EditorSemanticSequencer extends XbaseWithAnnotationsSemanticSequenc
 	 * Constraint:
 	 *     annotations+=XAnnotation+
 	 */
-	protected void sequence_Member_EuclidConstructor_2_2_0_EuclidField_2_0_0_EuclidFunction_2_1_0(EObject context, EuclidMember semanticObject) {
+	protected void sequence_Member_EuclidConstructor_2_3_0_EuclidField_2_0_0_EuclidFunction_2_2_0_EuclidInnerClass_2_1_0(EObject context, EuclidMember semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -1170,7 +1233,7 @@ public class EditorSemanticSequencer extends XbaseWithAnnotationsSemanticSequenc
 	/**
 	 * Constraint:
 	 *     (
-	 *         annotationInfo=Member_EuclidFunction_2_1_0 
+	 *         annotationInfo=Member_EuclidFunction_2_2_0 
 	 *         override?='override'? 
 	 *         visibility=Visibility? 
 	 *         static?='static'? 
@@ -1188,6 +1251,22 @@ public class EditorSemanticSequencer extends XbaseWithAnnotationsSemanticSequenc
 	 *     )
 	 */
 	protected void sequence_Member(EObject context, EuclidFunction semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (
+	 *         annotationInfo=Member_EuclidInnerClass_2_1_0 
+	 *         name=ValidID 
+	 *         (typeParameters+=JvmTypeParameter typeParameters+=JvmTypeParameter*)? 
+	 *         extends=JvmParameterizedTypeReference? 
+	 *         (implements+=JvmParameterizedTypeReference implements+=JvmParameterizedTypeReference*)? 
+	 *         members+=Member*
+	 *     )
+	 */
+	protected void sequence_Member(EObject context, EuclidInnerClass semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -1219,7 +1298,7 @@ public class EditorSemanticSequencer extends XbaseWithAnnotationsSemanticSequenc
 	
 	/**
 	 * Constraint:
-	 *     (annotationInfo=Type_EuclidAnnotationType_2_1_0 name=ValidID members+=AnnotationField*)
+	 *     (annotationInfo=Type_EuclidAnnotationType_2_3_0 name=ValidID members+=AnnotationField*)
 	 */
 	protected void sequence_Type(EObject context, EuclidAnnotationType semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -1230,7 +1309,7 @@ public class EditorSemanticSequencer extends XbaseWithAnnotationsSemanticSequenc
 	 * Constraint:
 	 *     annotations+=XAnnotation+
 	 */
-	protected void sequence_Type_EuclidAnnotationType_2_1_0_EuclidClass_2_0_0(EObject context, EuclidTypeDeclaration semanticObject) {
+	protected void sequence_Type_EuclidAnnotationType_2_3_0_EuclidClass_2_0_0_EuclidEnum_2_2_0_EuclidInterface_2_1_0(EObject context, EuclidTypeDeclaration semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -1246,6 +1325,34 @@ public class EditorSemanticSequencer extends XbaseWithAnnotationsSemanticSequenc
 	 *     )
 	 */
 	protected void sequence_Type(EObject context, EuclidClass semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (
+	 *         ((annotationInfo=Type_EuclidEnum_2_2_0 abstract?='abstract'? name=ValidID) | (annotationInfo=Type_EuclidEnum_2_2_0 name=ValidID)) 
+	 *         (typeParameters+=JvmTypeParameter typeParameters+=JvmTypeParameter*)? 
+	 *         enumConstants+=ID 
+	 *         enumConstants+=ID*
+	 *     )
+	 */
+	protected void sequence_Type(EObject context, EuclidEnum semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (
+	 *         ((annotationInfo=Type_EuclidInterface_2_1_0 abstract?='abstract'? name=ValidID) | (annotationInfo=Type_EuclidInterface_2_1_0 name=ValidID)) 
+	 *         (typeParameters+=JvmTypeParameter typeParameters+=JvmTypeParameter*)? 
+	 *         (implements+=JvmParameterizedTypeReference implements+=JvmParameterizedTypeReference*)? 
+	 *         declarations+=Declaration*
+	 *     )
+	 */
+	protected void sequence_Type(EObject context, EuclidInterface semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 }

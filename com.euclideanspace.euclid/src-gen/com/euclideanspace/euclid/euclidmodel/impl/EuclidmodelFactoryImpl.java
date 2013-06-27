@@ -69,10 +69,14 @@ public class EuclidmodelFactoryImpl extends EFactoryImpl implements EuclidmodelF
       case EuclidmodelPackage.EUCLID_TYPE_DECLARATION: return createEuclidTypeDeclaration();
       case EuclidmodelPackage.EUCLID_FIELD: return createEuclidField();
       case EuclidmodelPackage.EUCLID_MEMBER: return createEuclidMember();
+      case EuclidmodelPackage.EUCLID_DECLARATION: return createEuclidDeclaration();
       case EuclidmodelPackage.CREATE_EXTENSION_INFO: return createCreateExtensionInfo();
       case EuclidmodelPackage.EUCLID_PARAMETER: return createEuclidParameter();
       case EuclidmodelPackage.EUCLID_CLASS: return createEuclidClass();
+      case EuclidmodelPackage.EUCLID_INTERFACE: return createEuclidInterface();
+      case EuclidmodelPackage.EUCLID_ENUM: return createEuclidEnum();
       case EuclidmodelPackage.EUCLID_ANNOTATION_TYPE: return createEuclidAnnotationType();
+      case EuclidmodelPackage.EUCLID_INNER_CLASS: return createEuclidInnerClass();
       case EuclidmodelPackage.EUCLID_FUNCTION: return createEuclidFunction();
       case EuclidmodelPackage.EUCLID_CONSTRUCTOR: return createEuclidConstructor();
       default:
@@ -140,6 +144,17 @@ public class EuclidmodelFactoryImpl extends EFactoryImpl implements EuclidmodelF
    * <!-- end-user-doc -->
    * @generated
    */
+  public EuclidDeclaration createEuclidDeclaration()
+  {
+    EuclidDeclarationImpl euclidDeclaration = new EuclidDeclarationImpl();
+    return euclidDeclaration;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public CreateExtensionInfo createCreateExtensionInfo()
   {
     CreateExtensionInfoImpl createExtensionInfo = new CreateExtensionInfoImpl();
@@ -173,10 +188,43 @@ public class EuclidmodelFactoryImpl extends EFactoryImpl implements EuclidmodelF
    * <!-- end-user-doc -->
    * @generated
    */
+  public EuclidInterface createEuclidInterface()
+  {
+    EuclidInterfaceImpl euclidInterface = new EuclidInterfaceImpl();
+    return euclidInterface;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EuclidEnum createEuclidEnum()
+  {
+    EuclidEnumImpl euclidEnum = new EuclidEnumImpl();
+    return euclidEnum;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EuclidAnnotationType createEuclidAnnotationType()
   {
     EuclidAnnotationTypeImpl euclidAnnotationType = new EuclidAnnotationTypeImpl();
     return euclidAnnotationType;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EuclidInnerClass createEuclidInnerClass()
+  {
+    EuclidInnerClassImpl euclidInnerClass = new EuclidInnerClassImpl();
+    return euclidInnerClass;
   }
 
   /**

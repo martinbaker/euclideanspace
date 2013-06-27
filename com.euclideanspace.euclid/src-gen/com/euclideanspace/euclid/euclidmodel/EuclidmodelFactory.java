@@ -68,6 +68,15 @@ public interface EuclidmodelFactory extends EFactory
   EuclidMember createEuclidMember();
 
   /**
+   * Returns a new object of class '<em>Euclid Declaration</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Euclid Declaration</em>'.
+   * @generated
+   */
+  EuclidDeclaration createEuclidDeclaration();
+
+  /**
    * Returns a new object of class '<em>Create Extension Info</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -95,6 +104,24 @@ public interface EuclidmodelFactory extends EFactory
   EuclidClass createEuclidClass();
 
   /**
+   * Returns a new object of class '<em>Euclid Interface</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Euclid Interface</em>'.
+   * @generated
+   */
+  EuclidInterface createEuclidInterface();
+
+  /**
+   * Returns a new object of class '<em>Euclid Enum</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Euclid Enum</em>'.
+   * @generated
+   */
+  EuclidEnum createEuclidEnum();
+
+  /**
    * Returns a new object of class '<em>Euclid Annotation Type</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -102,6 +129,15 @@ public interface EuclidmodelFactory extends EFactory
    * @generated
    */
   EuclidAnnotationType createEuclidAnnotationType();
+
+  /**
+   * Returns a new object of class '<em>Euclid Inner Class</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Euclid Inner Class</em>'.
+   * @generated
+   */
+  EuclidInnerClass createEuclidInnerClass();
 
   /**
    * Returns a new object of class '<em>Euclid Function</em>'.

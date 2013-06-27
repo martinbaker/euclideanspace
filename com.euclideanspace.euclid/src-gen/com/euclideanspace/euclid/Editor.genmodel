@@ -26,13 +26,28 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Editor.ecore#//EuclidField/final"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Editor.ecore#//EuclidField/name"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//EuclidField/initialValue"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Editor.ecore#//EuclidField/visibility"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Editor.ecore#//EuclidField/extension"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Editor.ecore#//EuclidField/static"/>
     </genClasses>
     <genClasses ecoreClass="Editor.ecore#//EuclidMember">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//EuclidMember/annotations"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//EuclidMember/annotationInfo"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Editor.ecore#//EuclidMember/visibility"/>
+    </genClasses>
+    <genClasses ecoreClass="Editor.ecore#//EuclidDeclaration">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Editor.ecore#//EuclidDeclaration/visibility"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Editor.ecore#//EuclidDeclaration/extension"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Editor.ecore#//EuclidDeclaration/final"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//EuclidDeclaration/type"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Editor.ecore#//EuclidDeclaration/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Editor.ecore#//EuclidDeclaration/static"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Editor.ecore#//EuclidDeclaration/override"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Editor.ecore#//EuclidDeclaration/dispatch"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//EuclidDeclaration/typeParameters"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//EuclidDeclaration/returnType"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//EuclidDeclaration/createExtensionInfo"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//EuclidDeclaration/parameters"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//EuclidDeclaration/exceptions"/>
     </genClasses>
     <genClasses ecoreClass="Editor.ecore#//CreateExtensionInfo">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Editor.ecore#//CreateExtensionInfo/name"/>
@@ -51,11 +66,30 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//EuclidClass/implements"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//EuclidClass/members"/>
     </genClasses>
+    <genClasses ecoreClass="Editor.ecore#//EuclidInterface">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Editor.ecore#//EuclidInterface/abstract"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//EuclidInterface/typeParameters"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//EuclidInterface/implements"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//EuclidInterface/declarations"/>
+    </genClasses>
+    <genClasses ecoreClass="Editor.ecore#//EuclidEnum">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Editor.ecore#//EuclidEnum/abstract"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//EuclidEnum/typeParameters"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Editor.ecore#//EuclidEnum/enumConstants"/>
+    </genClasses>
     <genClasses ecoreClass="Editor.ecore#//EuclidAnnotationType">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//EuclidAnnotationType/members"/>
     </genClasses>
+    <genClasses ecoreClass="Editor.ecore#//EuclidInnerClass">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Editor.ecore#//EuclidInnerClass/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//EuclidInnerClass/typeParameters"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//EuclidInnerClass/extends"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//EuclidInnerClass/implements"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//EuclidInnerClass/members"/>
+    </genClasses>
     <genClasses ecoreClass="Editor.ecore#//EuclidFunction">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Editor.ecore#//EuclidFunction/override"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Editor.ecore#//EuclidFunction/visibility"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Editor.ecore#//EuclidFunction/static"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Editor.ecore#//EuclidFunction/dispatch"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//EuclidFunction/typeParameters"/>
@@ -67,6 +101,7 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//EuclidFunction/expression"/>
     </genClasses>
     <genClasses ecoreClass="Editor.ecore#//EuclidConstructor">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Editor.ecore#//EuclidConstructor/visibility"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//EuclidConstructor/typeParameters"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//EuclidConstructor/parameters"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//EuclidConstructor/exceptions"/>

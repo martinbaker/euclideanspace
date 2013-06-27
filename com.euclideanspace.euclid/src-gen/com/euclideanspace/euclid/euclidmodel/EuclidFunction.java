@@ -6,6 +6,7 @@ import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.xtext.common.types.JvmTypeParameter;
 import org.eclipse.xtext.common.types.JvmTypeReference;
+import org.eclipse.xtext.common.types.JvmVisibility;
 
 import org.eclipse.xtext.xbase.XExpression;
 
@@ -18,6 +19,7 @@ import org.eclipse.xtext.xbase.XExpression;
  * The following features are supported:
  * <ul>
  *   <li>{@link com.euclideanspace.euclid.euclidmodel.EuclidFunction#isOverride <em>Override</em>}</li>
+ *   <li>{@link com.euclideanspace.euclid.euclidmodel.EuclidFunction#getVisibility <em>Visibility</em>}</li>
  *   <li>{@link com.euclideanspace.euclid.euclidmodel.EuclidFunction#isStatic <em>Static</em>}</li>
  *   <li>{@link com.euclideanspace.euclid.euclidmodel.EuclidFunction#isDispatch <em>Dispatch</em>}</li>
  *   <li>{@link com.euclideanspace.euclid.euclidmodel.EuclidFunction#getTypeParameters <em>Type Parameters</em>}</li>
@@ -61,6 +63,35 @@ public interface EuclidFunction extends EuclidMember
    * @generated
    */
   void setOverride(boolean value);
+
+  /**
+   * Returns the value of the '<em><b>Visibility</b></em>' attribute.
+   * The literals are from the enumeration {@link org.eclipse.xtext.common.types.JvmVisibility}.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Visibility</em>' attribute isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Visibility</em>' attribute.
+   * @see org.eclipse.xtext.common.types.JvmVisibility
+   * @see #setVisibility(JvmVisibility)
+   * @see com.euclideanspace.euclid.euclidmodel.EuclidmodelPackage#getEuclidFunction_Visibility()
+   * @model
+   * @generated
+   */
+  JvmVisibility getVisibility();
+
+  /**
+   * Sets the value of the '{@link com.euclideanspace.euclid.euclidmodel.EuclidFunction#getVisibility <em>Visibility</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Visibility</em>' attribute.
+   * @see org.eclipse.xtext.common.types.JvmVisibility
+   * @see #getVisibility()
+   * @generated
+   */
+  void setVisibility(JvmVisibility value);
 
   /**
    * Returns the value of the '<em><b>Static</b></em>' attribute.

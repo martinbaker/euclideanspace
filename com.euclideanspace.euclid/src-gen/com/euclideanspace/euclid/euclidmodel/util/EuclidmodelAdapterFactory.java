@@ -100,6 +100,11 @@ public class EuclidmodelAdapterFactory extends AdapterFactoryImpl
         return createEuclidMemberAdapter();
       }
       @Override
+      public Adapter caseEuclidDeclaration(EuclidDeclaration object)
+      {
+        return createEuclidDeclarationAdapter();
+      }
+      @Override
       public Adapter caseCreateExtensionInfo(CreateExtensionInfo object)
       {
         return createCreateExtensionInfoAdapter();
@@ -115,9 +120,24 @@ public class EuclidmodelAdapterFactory extends AdapterFactoryImpl
         return createEuclidClassAdapter();
       }
       @Override
+      public Adapter caseEuclidInterface(EuclidInterface object)
+      {
+        return createEuclidInterfaceAdapter();
+      }
+      @Override
+      public Adapter caseEuclidEnum(EuclidEnum object)
+      {
+        return createEuclidEnumAdapter();
+      }
+      @Override
       public Adapter caseEuclidAnnotationType(EuclidAnnotationType object)
       {
         return createEuclidAnnotationTypeAdapter();
+      }
+      @Override
+      public Adapter caseEuclidInnerClass(EuclidInnerClass object)
+      {
+        return createEuclidInnerClassAdapter();
       }
       @Override
       public Adapter caseEuclidFunction(EuclidFunction object)
@@ -227,6 +247,21 @@ public class EuclidmodelAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
+   * Creates a new adapter for an object of class '{@link com.euclideanspace.euclid.euclidmodel.EuclidDeclaration <em>Euclid Declaration</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see com.euclideanspace.euclid.euclidmodel.EuclidDeclaration
+   * @generated
+   */
+  public Adapter createEuclidDeclarationAdapter()
+  {
+    return null;
+  }
+
+  /**
    * Creates a new adapter for an object of class '{@link com.euclideanspace.euclid.euclidmodel.CreateExtensionInfo <em>Create Extension Info</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
@@ -272,6 +307,36 @@ public class EuclidmodelAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
+   * Creates a new adapter for an object of class '{@link com.euclideanspace.euclid.euclidmodel.EuclidInterface <em>Euclid Interface</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see com.euclideanspace.euclid.euclidmodel.EuclidInterface
+   * @generated
+   */
+  public Adapter createEuclidInterfaceAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link com.euclideanspace.euclid.euclidmodel.EuclidEnum <em>Euclid Enum</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see com.euclideanspace.euclid.euclidmodel.EuclidEnum
+   * @generated
+   */
+  public Adapter createEuclidEnumAdapter()
+  {
+    return null;
+  }
+
+  /**
    * Creates a new adapter for an object of class '{@link com.euclideanspace.euclid.euclidmodel.EuclidAnnotationType <em>Euclid Annotation Type</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
@@ -282,6 +347,21 @@ public class EuclidmodelAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createEuclidAnnotationTypeAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link com.euclideanspace.euclid.euclidmodel.EuclidInnerClass <em>Euclid Inner Class</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see com.euclideanspace.euclid.euclidmodel.EuclidInnerClass
+   * @generated
+   */
+  public Adapter createEuclidInnerClassAdapter()
   {
     return null;
   }

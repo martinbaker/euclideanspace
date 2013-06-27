@@ -214,22 +214,13 @@ public interface EuclidmodelPackage extends EPackage
   int EUCLID_MEMBER__ANNOTATION_INFO = 1;
 
   /**
-   * The feature id for the '<em><b>Visibility</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int EUCLID_MEMBER__VISIBILITY = 2;
-
-  /**
    * The number of structural features of the '<em>Euclid Member</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int EUCLID_MEMBER_FEATURE_COUNT = 3;
+  int EUCLID_MEMBER_FEATURE_COUNT = 2;
 
   /**
    * The meta object id for the '{@link com.euclideanspace.euclid.euclidmodel.impl.EuclidFieldImpl <em>Euclid Field</em>}' class.
@@ -258,15 +249,6 @@ public interface EuclidmodelPackage extends EPackage
    * @ordered
    */
   int EUCLID_FIELD__ANNOTATION_INFO = EUCLID_MEMBER__ANNOTATION_INFO;
-
-  /**
-   * The feature id for the '<em><b>Visibility</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int EUCLID_FIELD__VISIBILITY = EUCLID_MEMBER__VISIBILITY;
 
   /**
    * The feature id for the '<em><b>Type</b></em>' containment reference.
@@ -305,13 +287,22 @@ public interface EuclidmodelPackage extends EPackage
   int EUCLID_FIELD__INITIAL_VALUE = EUCLID_MEMBER_FEATURE_COUNT + 3;
 
   /**
+   * The feature id for the '<em><b>Visibility</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EUCLID_FIELD__VISIBILITY = EUCLID_MEMBER_FEATURE_COUNT + 4;
+
+  /**
    * The feature id for the '<em><b>Extension</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int EUCLID_FIELD__EXTENSION = EUCLID_MEMBER_FEATURE_COUNT + 4;
+  int EUCLID_FIELD__EXTENSION = EUCLID_MEMBER_FEATURE_COUNT + 5;
 
   /**
    * The feature id for the '<em><b>Static</b></em>' attribute.
@@ -320,7 +311,7 @@ public interface EuclidmodelPackage extends EPackage
    * @generated
    * @ordered
    */
-  int EUCLID_FIELD__STATIC = EUCLID_MEMBER_FEATURE_COUNT + 5;
+  int EUCLID_FIELD__STATIC = EUCLID_MEMBER_FEATURE_COUNT + 6;
 
   /**
    * The number of structural features of the '<em>Euclid Field</em>' class.
@@ -329,7 +320,143 @@ public interface EuclidmodelPackage extends EPackage
    * @generated
    * @ordered
    */
-  int EUCLID_FIELD_FEATURE_COUNT = EUCLID_MEMBER_FEATURE_COUNT + 6;
+  int EUCLID_FIELD_FEATURE_COUNT = EUCLID_MEMBER_FEATURE_COUNT + 7;
+
+  /**
+   * The meta object id for the '{@link com.euclideanspace.euclid.euclidmodel.impl.EuclidDeclarationImpl <em>Euclid Declaration</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see com.euclideanspace.euclid.euclidmodel.impl.EuclidDeclarationImpl
+   * @see com.euclideanspace.euclid.euclidmodel.impl.EuclidmodelPackageImpl#getEuclidDeclaration()
+   * @generated
+   */
+  int EUCLID_DECLARATION = 5;
+
+  /**
+   * The feature id for the '<em><b>Visibility</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EUCLID_DECLARATION__VISIBILITY = 0;
+
+  /**
+   * The feature id for the '<em><b>Extension</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EUCLID_DECLARATION__EXTENSION = 1;
+
+  /**
+   * The feature id for the '<em><b>Final</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EUCLID_DECLARATION__FINAL = 2;
+
+  /**
+   * The feature id for the '<em><b>Type</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EUCLID_DECLARATION__TYPE = 3;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EUCLID_DECLARATION__NAME = 4;
+
+  /**
+   * The feature id for the '<em><b>Static</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EUCLID_DECLARATION__STATIC = 5;
+
+  /**
+   * The feature id for the '<em><b>Override</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EUCLID_DECLARATION__OVERRIDE = 6;
+
+  /**
+   * The feature id for the '<em><b>Dispatch</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EUCLID_DECLARATION__DISPATCH = 7;
+
+  /**
+   * The feature id for the '<em><b>Type Parameters</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EUCLID_DECLARATION__TYPE_PARAMETERS = 8;
+
+  /**
+   * The feature id for the '<em><b>Return Type</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EUCLID_DECLARATION__RETURN_TYPE = 9;
+
+  /**
+   * The feature id for the '<em><b>Create Extension Info</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EUCLID_DECLARATION__CREATE_EXTENSION_INFO = 10;
+
+  /**
+   * The feature id for the '<em><b>Parameters</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EUCLID_DECLARATION__PARAMETERS = 11;
+
+  /**
+   * The feature id for the '<em><b>Exceptions</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EUCLID_DECLARATION__EXCEPTIONS = 12;
+
+  /**
+   * The number of structural features of the '<em>Euclid Declaration</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EUCLID_DECLARATION_FEATURE_COUNT = 13;
 
   /**
    * The meta object id for the '{@link com.euclideanspace.euclid.euclidmodel.impl.CreateExtensionInfoImpl <em>Create Extension Info</em>}' class.
@@ -339,7 +466,7 @@ public interface EuclidmodelPackage extends EPackage
    * @see com.euclideanspace.euclid.euclidmodel.impl.EuclidmodelPackageImpl#getCreateExtensionInfo()
    * @generated
    */
-  int CREATE_EXTENSION_INFO = 5;
+  int CREATE_EXTENSION_INFO = 6;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -376,7 +503,7 @@ public interface EuclidmodelPackage extends EPackage
    * @see com.euclideanspace.euclid.euclidmodel.impl.EuclidmodelPackageImpl#getEuclidParameter()
    * @generated
    */
-  int EUCLID_PARAMETER = 6;
+  int EUCLID_PARAMETER = 7;
 
   /**
    * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
@@ -431,7 +558,7 @@ public interface EuclidmodelPackage extends EPackage
    * @see com.euclideanspace.euclid.euclidmodel.impl.EuclidmodelPackageImpl#getEuclidClass()
    * @generated
    */
-  int EUCLID_CLASS = 7;
+  int EUCLID_CLASS = 8;
 
   /**
    * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
@@ -515,6 +642,161 @@ public interface EuclidmodelPackage extends EPackage
   int EUCLID_CLASS_FEATURE_COUNT = EUCLID_TYPE_DECLARATION_FEATURE_COUNT + 5;
 
   /**
+   * The meta object id for the '{@link com.euclideanspace.euclid.euclidmodel.impl.EuclidInterfaceImpl <em>Euclid Interface</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see com.euclideanspace.euclid.euclidmodel.impl.EuclidInterfaceImpl
+   * @see com.euclideanspace.euclid.euclidmodel.impl.EuclidmodelPackageImpl#getEuclidInterface()
+   * @generated
+   */
+  int EUCLID_INTERFACE = 9;
+
+  /**
+   * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EUCLID_INTERFACE__ANNOTATIONS = EUCLID_TYPE_DECLARATION__ANNOTATIONS;
+
+  /**
+   * The feature id for the '<em><b>Annotation Info</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EUCLID_INTERFACE__ANNOTATION_INFO = EUCLID_TYPE_DECLARATION__ANNOTATION_INFO;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EUCLID_INTERFACE__NAME = EUCLID_TYPE_DECLARATION__NAME;
+
+  /**
+   * The feature id for the '<em><b>Abstract</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EUCLID_INTERFACE__ABSTRACT = EUCLID_TYPE_DECLARATION_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Type Parameters</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EUCLID_INTERFACE__TYPE_PARAMETERS = EUCLID_TYPE_DECLARATION_FEATURE_COUNT + 1;
+
+  /**
+   * The feature id for the '<em><b>Implements</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EUCLID_INTERFACE__IMPLEMENTS = EUCLID_TYPE_DECLARATION_FEATURE_COUNT + 2;
+
+  /**
+   * The feature id for the '<em><b>Declarations</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EUCLID_INTERFACE__DECLARATIONS = EUCLID_TYPE_DECLARATION_FEATURE_COUNT + 3;
+
+  /**
+   * The number of structural features of the '<em>Euclid Interface</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EUCLID_INTERFACE_FEATURE_COUNT = EUCLID_TYPE_DECLARATION_FEATURE_COUNT + 4;
+
+  /**
+   * The meta object id for the '{@link com.euclideanspace.euclid.euclidmodel.impl.EuclidEnumImpl <em>Euclid Enum</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see com.euclideanspace.euclid.euclidmodel.impl.EuclidEnumImpl
+   * @see com.euclideanspace.euclid.euclidmodel.impl.EuclidmodelPackageImpl#getEuclidEnum()
+   * @generated
+   */
+  int EUCLID_ENUM = 10;
+
+  /**
+   * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EUCLID_ENUM__ANNOTATIONS = EUCLID_TYPE_DECLARATION__ANNOTATIONS;
+
+  /**
+   * The feature id for the '<em><b>Annotation Info</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EUCLID_ENUM__ANNOTATION_INFO = EUCLID_TYPE_DECLARATION__ANNOTATION_INFO;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EUCLID_ENUM__NAME = EUCLID_TYPE_DECLARATION__NAME;
+
+  /**
+   * The feature id for the '<em><b>Abstract</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EUCLID_ENUM__ABSTRACT = EUCLID_TYPE_DECLARATION_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Type Parameters</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EUCLID_ENUM__TYPE_PARAMETERS = EUCLID_TYPE_DECLARATION_FEATURE_COUNT + 1;
+
+  /**
+   * The feature id for the '<em><b>Enum Constants</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EUCLID_ENUM__ENUM_CONSTANTS = EUCLID_TYPE_DECLARATION_FEATURE_COUNT + 2;
+
+  /**
+   * The number of structural features of the '<em>Euclid Enum</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EUCLID_ENUM_FEATURE_COUNT = EUCLID_TYPE_DECLARATION_FEATURE_COUNT + 3;
+
+  /**
    * The meta object id for the '{@link com.euclideanspace.euclid.euclidmodel.impl.EuclidAnnotationTypeImpl <em>Euclid Annotation Type</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -522,7 +804,7 @@ public interface EuclidmodelPackage extends EPackage
    * @see com.euclideanspace.euclid.euclidmodel.impl.EuclidmodelPackageImpl#getEuclidAnnotationType()
    * @generated
    */
-  int EUCLID_ANNOTATION_TYPE = 8;
+  int EUCLID_ANNOTATION_TYPE = 11;
 
   /**
    * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
@@ -570,6 +852,88 @@ public interface EuclidmodelPackage extends EPackage
   int EUCLID_ANNOTATION_TYPE_FEATURE_COUNT = EUCLID_TYPE_DECLARATION_FEATURE_COUNT + 1;
 
   /**
+   * The meta object id for the '{@link com.euclideanspace.euclid.euclidmodel.impl.EuclidInnerClassImpl <em>Euclid Inner Class</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see com.euclideanspace.euclid.euclidmodel.impl.EuclidInnerClassImpl
+   * @see com.euclideanspace.euclid.euclidmodel.impl.EuclidmodelPackageImpl#getEuclidInnerClass()
+   * @generated
+   */
+  int EUCLID_INNER_CLASS = 12;
+
+  /**
+   * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EUCLID_INNER_CLASS__ANNOTATIONS = EUCLID_MEMBER__ANNOTATIONS;
+
+  /**
+   * The feature id for the '<em><b>Annotation Info</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EUCLID_INNER_CLASS__ANNOTATION_INFO = EUCLID_MEMBER__ANNOTATION_INFO;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EUCLID_INNER_CLASS__NAME = EUCLID_MEMBER_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Type Parameters</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EUCLID_INNER_CLASS__TYPE_PARAMETERS = EUCLID_MEMBER_FEATURE_COUNT + 1;
+
+  /**
+   * The feature id for the '<em><b>Extends</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EUCLID_INNER_CLASS__EXTENDS = EUCLID_MEMBER_FEATURE_COUNT + 2;
+
+  /**
+   * The feature id for the '<em><b>Implements</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EUCLID_INNER_CLASS__IMPLEMENTS = EUCLID_MEMBER_FEATURE_COUNT + 3;
+
+  /**
+   * The feature id for the '<em><b>Members</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EUCLID_INNER_CLASS__MEMBERS = EUCLID_MEMBER_FEATURE_COUNT + 4;
+
+  /**
+   * The number of structural features of the '<em>Euclid Inner Class</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EUCLID_INNER_CLASS_FEATURE_COUNT = EUCLID_MEMBER_FEATURE_COUNT + 5;
+
+  /**
    * The meta object id for the '{@link com.euclideanspace.euclid.euclidmodel.impl.EuclidFunctionImpl <em>Euclid Function</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -577,7 +941,7 @@ public interface EuclidmodelPackage extends EPackage
    * @see com.euclideanspace.euclid.euclidmodel.impl.EuclidmodelPackageImpl#getEuclidFunction()
    * @generated
    */
-  int EUCLID_FUNCTION = 9;
+  int EUCLID_FUNCTION = 13;
 
   /**
    * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
@@ -598,15 +962,6 @@ public interface EuclidmodelPackage extends EPackage
   int EUCLID_FUNCTION__ANNOTATION_INFO = EUCLID_MEMBER__ANNOTATION_INFO;
 
   /**
-   * The feature id for the '<em><b>Visibility</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int EUCLID_FUNCTION__VISIBILITY = EUCLID_MEMBER__VISIBILITY;
-
-  /**
    * The feature id for the '<em><b>Override</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -616,13 +971,22 @@ public interface EuclidmodelPackage extends EPackage
   int EUCLID_FUNCTION__OVERRIDE = EUCLID_MEMBER_FEATURE_COUNT + 0;
 
   /**
+   * The feature id for the '<em><b>Visibility</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EUCLID_FUNCTION__VISIBILITY = EUCLID_MEMBER_FEATURE_COUNT + 1;
+
+  /**
    * The feature id for the '<em><b>Static</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int EUCLID_FUNCTION__STATIC = EUCLID_MEMBER_FEATURE_COUNT + 1;
+  int EUCLID_FUNCTION__STATIC = EUCLID_MEMBER_FEATURE_COUNT + 2;
 
   /**
    * The feature id for the '<em><b>Dispatch</b></em>' attribute.
@@ -631,7 +995,7 @@ public interface EuclidmodelPackage extends EPackage
    * @generated
    * @ordered
    */
-  int EUCLID_FUNCTION__DISPATCH = EUCLID_MEMBER_FEATURE_COUNT + 2;
+  int EUCLID_FUNCTION__DISPATCH = EUCLID_MEMBER_FEATURE_COUNT + 3;
 
   /**
    * The feature id for the '<em><b>Type Parameters</b></em>' containment reference list.
@@ -640,7 +1004,7 @@ public interface EuclidmodelPackage extends EPackage
    * @generated
    * @ordered
    */
-  int EUCLID_FUNCTION__TYPE_PARAMETERS = EUCLID_MEMBER_FEATURE_COUNT + 3;
+  int EUCLID_FUNCTION__TYPE_PARAMETERS = EUCLID_MEMBER_FEATURE_COUNT + 4;
 
   /**
    * The feature id for the '<em><b>Return Type</b></em>' containment reference.
@@ -649,7 +1013,7 @@ public interface EuclidmodelPackage extends EPackage
    * @generated
    * @ordered
    */
-  int EUCLID_FUNCTION__RETURN_TYPE = EUCLID_MEMBER_FEATURE_COUNT + 4;
+  int EUCLID_FUNCTION__RETURN_TYPE = EUCLID_MEMBER_FEATURE_COUNT + 5;
 
   /**
    * The feature id for the '<em><b>Create Extension Info</b></em>' containment reference.
@@ -658,7 +1022,7 @@ public interface EuclidmodelPackage extends EPackage
    * @generated
    * @ordered
    */
-  int EUCLID_FUNCTION__CREATE_EXTENSION_INFO = EUCLID_MEMBER_FEATURE_COUNT + 5;
+  int EUCLID_FUNCTION__CREATE_EXTENSION_INFO = EUCLID_MEMBER_FEATURE_COUNT + 6;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -667,7 +1031,7 @@ public interface EuclidmodelPackage extends EPackage
    * @generated
    * @ordered
    */
-  int EUCLID_FUNCTION__NAME = EUCLID_MEMBER_FEATURE_COUNT + 6;
+  int EUCLID_FUNCTION__NAME = EUCLID_MEMBER_FEATURE_COUNT + 7;
 
   /**
    * The feature id for the '<em><b>Parameters</b></em>' containment reference list.
@@ -676,7 +1040,7 @@ public interface EuclidmodelPackage extends EPackage
    * @generated
    * @ordered
    */
-  int EUCLID_FUNCTION__PARAMETERS = EUCLID_MEMBER_FEATURE_COUNT + 7;
+  int EUCLID_FUNCTION__PARAMETERS = EUCLID_MEMBER_FEATURE_COUNT + 8;
 
   /**
    * The feature id for the '<em><b>Exceptions</b></em>' containment reference list.
@@ -685,7 +1049,7 @@ public interface EuclidmodelPackage extends EPackage
    * @generated
    * @ordered
    */
-  int EUCLID_FUNCTION__EXCEPTIONS = EUCLID_MEMBER_FEATURE_COUNT + 8;
+  int EUCLID_FUNCTION__EXCEPTIONS = EUCLID_MEMBER_FEATURE_COUNT + 9;
 
   /**
    * The feature id for the '<em><b>Expression</b></em>' containment reference.
@@ -694,7 +1058,7 @@ public interface EuclidmodelPackage extends EPackage
    * @generated
    * @ordered
    */
-  int EUCLID_FUNCTION__EXPRESSION = EUCLID_MEMBER_FEATURE_COUNT + 9;
+  int EUCLID_FUNCTION__EXPRESSION = EUCLID_MEMBER_FEATURE_COUNT + 10;
 
   /**
    * The number of structural features of the '<em>Euclid Function</em>' class.
@@ -703,7 +1067,7 @@ public interface EuclidmodelPackage extends EPackage
    * @generated
    * @ordered
    */
-  int EUCLID_FUNCTION_FEATURE_COUNT = EUCLID_MEMBER_FEATURE_COUNT + 10;
+  int EUCLID_FUNCTION_FEATURE_COUNT = EUCLID_MEMBER_FEATURE_COUNT + 11;
 
   /**
    * The meta object id for the '{@link com.euclideanspace.euclid.euclidmodel.impl.EuclidConstructorImpl <em>Euclid Constructor</em>}' class.
@@ -713,7 +1077,7 @@ public interface EuclidmodelPackage extends EPackage
    * @see com.euclideanspace.euclid.euclidmodel.impl.EuclidmodelPackageImpl#getEuclidConstructor()
    * @generated
    */
-  int EUCLID_CONSTRUCTOR = 10;
+  int EUCLID_CONSTRUCTOR = 14;
 
   /**
    * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
@@ -740,7 +1104,7 @@ public interface EuclidmodelPackage extends EPackage
    * @generated
    * @ordered
    */
-  int EUCLID_CONSTRUCTOR__VISIBILITY = EUCLID_MEMBER__VISIBILITY;
+  int EUCLID_CONSTRUCTOR__VISIBILITY = EUCLID_MEMBER_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>Type Parameters</b></em>' containment reference list.
@@ -749,7 +1113,7 @@ public interface EuclidmodelPackage extends EPackage
    * @generated
    * @ordered
    */
-  int EUCLID_CONSTRUCTOR__TYPE_PARAMETERS = EUCLID_MEMBER_FEATURE_COUNT + 0;
+  int EUCLID_CONSTRUCTOR__TYPE_PARAMETERS = EUCLID_MEMBER_FEATURE_COUNT + 1;
 
   /**
    * The feature id for the '<em><b>Parameters</b></em>' containment reference list.
@@ -758,7 +1122,7 @@ public interface EuclidmodelPackage extends EPackage
    * @generated
    * @ordered
    */
-  int EUCLID_CONSTRUCTOR__PARAMETERS = EUCLID_MEMBER_FEATURE_COUNT + 1;
+  int EUCLID_CONSTRUCTOR__PARAMETERS = EUCLID_MEMBER_FEATURE_COUNT + 2;
 
   /**
    * The feature id for the '<em><b>Exceptions</b></em>' containment reference list.
@@ -767,7 +1131,7 @@ public interface EuclidmodelPackage extends EPackage
    * @generated
    * @ordered
    */
-  int EUCLID_CONSTRUCTOR__EXCEPTIONS = EUCLID_MEMBER_FEATURE_COUNT + 2;
+  int EUCLID_CONSTRUCTOR__EXCEPTIONS = EUCLID_MEMBER_FEATURE_COUNT + 3;
 
   /**
    * The feature id for the '<em><b>Expression</b></em>' containment reference.
@@ -776,7 +1140,7 @@ public interface EuclidmodelPackage extends EPackage
    * @generated
    * @ordered
    */
-  int EUCLID_CONSTRUCTOR__EXPRESSION = EUCLID_MEMBER_FEATURE_COUNT + 3;
+  int EUCLID_CONSTRUCTOR__EXPRESSION = EUCLID_MEMBER_FEATURE_COUNT + 4;
 
   /**
    * The number of structural features of the '<em>Euclid Constructor</em>' class.
@@ -785,7 +1149,7 @@ public interface EuclidmodelPackage extends EPackage
    * @generated
    * @ordered
    */
-  int EUCLID_CONSTRUCTOR_FEATURE_COUNT = EUCLID_MEMBER_FEATURE_COUNT + 4;
+  int EUCLID_CONSTRUCTOR_FEATURE_COUNT = EUCLID_MEMBER_FEATURE_COUNT + 5;
 
 
   /**
@@ -961,6 +1325,17 @@ public interface EuclidmodelPackage extends EPackage
   EReference getEuclidField_InitialValue();
 
   /**
+   * Returns the meta object for the attribute '{@link com.euclideanspace.euclid.euclidmodel.EuclidField#getVisibility <em>Visibility</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Visibility</em>'.
+   * @see com.euclideanspace.euclid.euclidmodel.EuclidField#getVisibility()
+   * @see #getEuclidField()
+   * @generated
+   */
+  EAttribute getEuclidField_Visibility();
+
+  /**
    * Returns the meta object for the attribute '{@link com.euclideanspace.euclid.euclidmodel.EuclidField#isExtension <em>Extension</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1015,15 +1390,157 @@ public interface EuclidmodelPackage extends EPackage
   EReference getEuclidMember_AnnotationInfo();
 
   /**
-   * Returns the meta object for the attribute '{@link com.euclideanspace.euclid.euclidmodel.EuclidMember#getVisibility <em>Visibility</em>}'.
+   * Returns the meta object for class '{@link com.euclideanspace.euclid.euclidmodel.EuclidDeclaration <em>Euclid Declaration</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Euclid Declaration</em>'.
+   * @see com.euclideanspace.euclid.euclidmodel.EuclidDeclaration
+   * @generated
+   */
+  EClass getEuclidDeclaration();
+
+  /**
+   * Returns the meta object for the attribute '{@link com.euclideanspace.euclid.euclidmodel.EuclidDeclaration#getVisibility <em>Visibility</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the attribute '<em>Visibility</em>'.
-   * @see com.euclideanspace.euclid.euclidmodel.EuclidMember#getVisibility()
-   * @see #getEuclidMember()
+   * @see com.euclideanspace.euclid.euclidmodel.EuclidDeclaration#getVisibility()
+   * @see #getEuclidDeclaration()
    * @generated
    */
-  EAttribute getEuclidMember_Visibility();
+  EAttribute getEuclidDeclaration_Visibility();
+
+  /**
+   * Returns the meta object for the attribute '{@link com.euclideanspace.euclid.euclidmodel.EuclidDeclaration#isExtension <em>Extension</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Extension</em>'.
+   * @see com.euclideanspace.euclid.euclidmodel.EuclidDeclaration#isExtension()
+   * @see #getEuclidDeclaration()
+   * @generated
+   */
+  EAttribute getEuclidDeclaration_Extension();
+
+  /**
+   * Returns the meta object for the attribute '{@link com.euclideanspace.euclid.euclidmodel.EuclidDeclaration#isFinal <em>Final</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Final</em>'.
+   * @see com.euclideanspace.euclid.euclidmodel.EuclidDeclaration#isFinal()
+   * @see #getEuclidDeclaration()
+   * @generated
+   */
+  EAttribute getEuclidDeclaration_Final();
+
+  /**
+   * Returns the meta object for the containment reference '{@link com.euclideanspace.euclid.euclidmodel.EuclidDeclaration#getType <em>Type</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Type</em>'.
+   * @see com.euclideanspace.euclid.euclidmodel.EuclidDeclaration#getType()
+   * @see #getEuclidDeclaration()
+   * @generated
+   */
+  EReference getEuclidDeclaration_Type();
+
+  /**
+   * Returns the meta object for the attribute '{@link com.euclideanspace.euclid.euclidmodel.EuclidDeclaration#getName <em>Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see com.euclideanspace.euclid.euclidmodel.EuclidDeclaration#getName()
+   * @see #getEuclidDeclaration()
+   * @generated
+   */
+  EAttribute getEuclidDeclaration_Name();
+
+  /**
+   * Returns the meta object for the attribute '{@link com.euclideanspace.euclid.euclidmodel.EuclidDeclaration#isStatic <em>Static</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Static</em>'.
+   * @see com.euclideanspace.euclid.euclidmodel.EuclidDeclaration#isStatic()
+   * @see #getEuclidDeclaration()
+   * @generated
+   */
+  EAttribute getEuclidDeclaration_Static();
+
+  /**
+   * Returns the meta object for the attribute '{@link com.euclideanspace.euclid.euclidmodel.EuclidDeclaration#isOverride <em>Override</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Override</em>'.
+   * @see com.euclideanspace.euclid.euclidmodel.EuclidDeclaration#isOverride()
+   * @see #getEuclidDeclaration()
+   * @generated
+   */
+  EAttribute getEuclidDeclaration_Override();
+
+  /**
+   * Returns the meta object for the attribute '{@link com.euclideanspace.euclid.euclidmodel.EuclidDeclaration#isDispatch <em>Dispatch</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Dispatch</em>'.
+   * @see com.euclideanspace.euclid.euclidmodel.EuclidDeclaration#isDispatch()
+   * @see #getEuclidDeclaration()
+   * @generated
+   */
+  EAttribute getEuclidDeclaration_Dispatch();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link com.euclideanspace.euclid.euclidmodel.EuclidDeclaration#getTypeParameters <em>Type Parameters</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Type Parameters</em>'.
+   * @see com.euclideanspace.euclid.euclidmodel.EuclidDeclaration#getTypeParameters()
+   * @see #getEuclidDeclaration()
+   * @generated
+   */
+  EReference getEuclidDeclaration_TypeParameters();
+
+  /**
+   * Returns the meta object for the containment reference '{@link com.euclideanspace.euclid.euclidmodel.EuclidDeclaration#getReturnType <em>Return Type</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Return Type</em>'.
+   * @see com.euclideanspace.euclid.euclidmodel.EuclidDeclaration#getReturnType()
+   * @see #getEuclidDeclaration()
+   * @generated
+   */
+  EReference getEuclidDeclaration_ReturnType();
+
+  /**
+   * Returns the meta object for the containment reference '{@link com.euclideanspace.euclid.euclidmodel.EuclidDeclaration#getCreateExtensionInfo <em>Create Extension Info</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Create Extension Info</em>'.
+   * @see com.euclideanspace.euclid.euclidmodel.EuclidDeclaration#getCreateExtensionInfo()
+   * @see #getEuclidDeclaration()
+   * @generated
+   */
+  EReference getEuclidDeclaration_CreateExtensionInfo();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link com.euclideanspace.euclid.euclidmodel.EuclidDeclaration#getParameters <em>Parameters</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Parameters</em>'.
+   * @see com.euclideanspace.euclid.euclidmodel.EuclidDeclaration#getParameters()
+   * @see #getEuclidDeclaration()
+   * @generated
+   */
+  EReference getEuclidDeclaration_Parameters();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link com.euclideanspace.euclid.euclidmodel.EuclidDeclaration#getExceptions <em>Exceptions</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Exceptions</em>'.
+   * @see com.euclideanspace.euclid.euclidmodel.EuclidDeclaration#getExceptions()
+   * @see #getEuclidDeclaration()
+   * @generated
+   */
+  EReference getEuclidDeclaration_Exceptions();
 
   /**
    * Returns the meta object for class '{@link com.euclideanspace.euclid.euclidmodel.CreateExtensionInfo <em>Create Extension Info</em>}'.
@@ -1177,6 +1694,103 @@ public interface EuclidmodelPackage extends EPackage
   EReference getEuclidClass_Members();
 
   /**
+   * Returns the meta object for class '{@link com.euclideanspace.euclid.euclidmodel.EuclidInterface <em>Euclid Interface</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Euclid Interface</em>'.
+   * @see com.euclideanspace.euclid.euclidmodel.EuclidInterface
+   * @generated
+   */
+  EClass getEuclidInterface();
+
+  /**
+   * Returns the meta object for the attribute '{@link com.euclideanspace.euclid.euclidmodel.EuclidInterface#isAbstract <em>Abstract</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Abstract</em>'.
+   * @see com.euclideanspace.euclid.euclidmodel.EuclidInterface#isAbstract()
+   * @see #getEuclidInterface()
+   * @generated
+   */
+  EAttribute getEuclidInterface_Abstract();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link com.euclideanspace.euclid.euclidmodel.EuclidInterface#getTypeParameters <em>Type Parameters</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Type Parameters</em>'.
+   * @see com.euclideanspace.euclid.euclidmodel.EuclidInterface#getTypeParameters()
+   * @see #getEuclidInterface()
+   * @generated
+   */
+  EReference getEuclidInterface_TypeParameters();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link com.euclideanspace.euclid.euclidmodel.EuclidInterface#getImplements <em>Implements</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Implements</em>'.
+   * @see com.euclideanspace.euclid.euclidmodel.EuclidInterface#getImplements()
+   * @see #getEuclidInterface()
+   * @generated
+   */
+  EReference getEuclidInterface_Implements();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link com.euclideanspace.euclid.euclidmodel.EuclidInterface#getDeclarations <em>Declarations</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Declarations</em>'.
+   * @see com.euclideanspace.euclid.euclidmodel.EuclidInterface#getDeclarations()
+   * @see #getEuclidInterface()
+   * @generated
+   */
+  EReference getEuclidInterface_Declarations();
+
+  /**
+   * Returns the meta object for class '{@link com.euclideanspace.euclid.euclidmodel.EuclidEnum <em>Euclid Enum</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Euclid Enum</em>'.
+   * @see com.euclideanspace.euclid.euclidmodel.EuclidEnum
+   * @generated
+   */
+  EClass getEuclidEnum();
+
+  /**
+   * Returns the meta object for the attribute '{@link com.euclideanspace.euclid.euclidmodel.EuclidEnum#isAbstract <em>Abstract</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Abstract</em>'.
+   * @see com.euclideanspace.euclid.euclidmodel.EuclidEnum#isAbstract()
+   * @see #getEuclidEnum()
+   * @generated
+   */
+  EAttribute getEuclidEnum_Abstract();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link com.euclideanspace.euclid.euclidmodel.EuclidEnum#getTypeParameters <em>Type Parameters</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Type Parameters</em>'.
+   * @see com.euclideanspace.euclid.euclidmodel.EuclidEnum#getTypeParameters()
+   * @see #getEuclidEnum()
+   * @generated
+   */
+  EReference getEuclidEnum_TypeParameters();
+
+  /**
+   * Returns the meta object for the attribute list '{@link com.euclideanspace.euclid.euclidmodel.EuclidEnum#getEnumConstants <em>Enum Constants</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute list '<em>Enum Constants</em>'.
+   * @see com.euclideanspace.euclid.euclidmodel.EuclidEnum#getEnumConstants()
+   * @see #getEuclidEnum()
+   * @generated
+   */
+  EAttribute getEuclidEnum_EnumConstants();
+
+  /**
    * Returns the meta object for class '{@link com.euclideanspace.euclid.euclidmodel.EuclidAnnotationType <em>Euclid Annotation Type</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1198,6 +1812,71 @@ public interface EuclidmodelPackage extends EPackage
   EReference getEuclidAnnotationType_Members();
 
   /**
+   * Returns the meta object for class '{@link com.euclideanspace.euclid.euclidmodel.EuclidInnerClass <em>Euclid Inner Class</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Euclid Inner Class</em>'.
+   * @see com.euclideanspace.euclid.euclidmodel.EuclidInnerClass
+   * @generated
+   */
+  EClass getEuclidInnerClass();
+
+  /**
+   * Returns the meta object for the attribute '{@link com.euclideanspace.euclid.euclidmodel.EuclidInnerClass#getName <em>Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see com.euclideanspace.euclid.euclidmodel.EuclidInnerClass#getName()
+   * @see #getEuclidInnerClass()
+   * @generated
+   */
+  EAttribute getEuclidInnerClass_Name();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link com.euclideanspace.euclid.euclidmodel.EuclidInnerClass#getTypeParameters <em>Type Parameters</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Type Parameters</em>'.
+   * @see com.euclideanspace.euclid.euclidmodel.EuclidInnerClass#getTypeParameters()
+   * @see #getEuclidInnerClass()
+   * @generated
+   */
+  EReference getEuclidInnerClass_TypeParameters();
+
+  /**
+   * Returns the meta object for the containment reference '{@link com.euclideanspace.euclid.euclidmodel.EuclidInnerClass#getExtends <em>Extends</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Extends</em>'.
+   * @see com.euclideanspace.euclid.euclidmodel.EuclidInnerClass#getExtends()
+   * @see #getEuclidInnerClass()
+   * @generated
+   */
+  EReference getEuclidInnerClass_Extends();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link com.euclideanspace.euclid.euclidmodel.EuclidInnerClass#getImplements <em>Implements</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Implements</em>'.
+   * @see com.euclideanspace.euclid.euclidmodel.EuclidInnerClass#getImplements()
+   * @see #getEuclidInnerClass()
+   * @generated
+   */
+  EReference getEuclidInnerClass_Implements();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link com.euclideanspace.euclid.euclidmodel.EuclidInnerClass#getMembers <em>Members</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Members</em>'.
+   * @see com.euclideanspace.euclid.euclidmodel.EuclidInnerClass#getMembers()
+   * @see #getEuclidInnerClass()
+   * @generated
+   */
+  EReference getEuclidInnerClass_Members();
+
+  /**
    * Returns the meta object for class '{@link com.euclideanspace.euclid.euclidmodel.EuclidFunction <em>Euclid Function</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1217,6 +1896,17 @@ public interface EuclidmodelPackage extends EPackage
    * @generated
    */
   EAttribute getEuclidFunction_Override();
+
+  /**
+   * Returns the meta object for the attribute '{@link com.euclideanspace.euclid.euclidmodel.EuclidFunction#getVisibility <em>Visibility</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Visibility</em>'.
+   * @see com.euclideanspace.euclid.euclidmodel.EuclidFunction#getVisibility()
+   * @see #getEuclidFunction()
+   * @generated
+   */
+  EAttribute getEuclidFunction_Visibility();
 
   /**
    * Returns the meta object for the attribute '{@link com.euclideanspace.euclid.euclidmodel.EuclidFunction#isStatic <em>Static</em>}'.
@@ -1326,6 +2016,17 @@ public interface EuclidmodelPackage extends EPackage
    * @generated
    */
   EClass getEuclidConstructor();
+
+  /**
+   * Returns the meta object for the attribute '{@link com.euclideanspace.euclid.euclidmodel.EuclidConstructor#getVisibility <em>Visibility</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Visibility</em>'.
+   * @see com.euclideanspace.euclid.euclidmodel.EuclidConstructor#getVisibility()
+   * @see #getEuclidConstructor()
+   * @generated
+   */
+  EAttribute getEuclidConstructor_Visibility();
 
   /**
    * Returns the meta object for the containment reference list '{@link com.euclideanspace.euclid.euclidmodel.EuclidConstructor#getTypeParameters <em>Type Parameters</em>}'.
@@ -1531,6 +2232,14 @@ public interface EuclidmodelPackage extends EPackage
     EReference EUCLID_FIELD__INITIAL_VALUE = eINSTANCE.getEuclidField_InitialValue();
 
     /**
+     * The meta object literal for the '<em><b>Visibility</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute EUCLID_FIELD__VISIBILITY = eINSTANCE.getEuclidField_Visibility();
+
+    /**
      * The meta object literal for the '<em><b>Extension</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -1573,12 +2282,118 @@ public interface EuclidmodelPackage extends EPackage
     EReference EUCLID_MEMBER__ANNOTATION_INFO = eINSTANCE.getEuclidMember_AnnotationInfo();
 
     /**
+     * The meta object literal for the '{@link com.euclideanspace.euclid.euclidmodel.impl.EuclidDeclarationImpl <em>Euclid Declaration</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see com.euclideanspace.euclid.euclidmodel.impl.EuclidDeclarationImpl
+     * @see com.euclideanspace.euclid.euclidmodel.impl.EuclidmodelPackageImpl#getEuclidDeclaration()
+     * @generated
+     */
+    EClass EUCLID_DECLARATION = eINSTANCE.getEuclidDeclaration();
+
+    /**
      * The meta object literal for the '<em><b>Visibility</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute EUCLID_MEMBER__VISIBILITY = eINSTANCE.getEuclidMember_Visibility();
+    EAttribute EUCLID_DECLARATION__VISIBILITY = eINSTANCE.getEuclidDeclaration_Visibility();
+
+    /**
+     * The meta object literal for the '<em><b>Extension</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute EUCLID_DECLARATION__EXTENSION = eINSTANCE.getEuclidDeclaration_Extension();
+
+    /**
+     * The meta object literal for the '<em><b>Final</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute EUCLID_DECLARATION__FINAL = eINSTANCE.getEuclidDeclaration_Final();
+
+    /**
+     * The meta object literal for the '<em><b>Type</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference EUCLID_DECLARATION__TYPE = eINSTANCE.getEuclidDeclaration_Type();
+
+    /**
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute EUCLID_DECLARATION__NAME = eINSTANCE.getEuclidDeclaration_Name();
+
+    /**
+     * The meta object literal for the '<em><b>Static</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute EUCLID_DECLARATION__STATIC = eINSTANCE.getEuclidDeclaration_Static();
+
+    /**
+     * The meta object literal for the '<em><b>Override</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute EUCLID_DECLARATION__OVERRIDE = eINSTANCE.getEuclidDeclaration_Override();
+
+    /**
+     * The meta object literal for the '<em><b>Dispatch</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute EUCLID_DECLARATION__DISPATCH = eINSTANCE.getEuclidDeclaration_Dispatch();
+
+    /**
+     * The meta object literal for the '<em><b>Type Parameters</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference EUCLID_DECLARATION__TYPE_PARAMETERS = eINSTANCE.getEuclidDeclaration_TypeParameters();
+
+    /**
+     * The meta object literal for the '<em><b>Return Type</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference EUCLID_DECLARATION__RETURN_TYPE = eINSTANCE.getEuclidDeclaration_ReturnType();
+
+    /**
+     * The meta object literal for the '<em><b>Create Extension Info</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference EUCLID_DECLARATION__CREATE_EXTENSION_INFO = eINSTANCE.getEuclidDeclaration_CreateExtensionInfo();
+
+    /**
+     * The meta object literal for the '<em><b>Parameters</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference EUCLID_DECLARATION__PARAMETERS = eINSTANCE.getEuclidDeclaration_Parameters();
+
+    /**
+     * The meta object literal for the '<em><b>Exceptions</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference EUCLID_DECLARATION__EXCEPTIONS = eINSTANCE.getEuclidDeclaration_Exceptions();
 
     /**
      * The meta object literal for the '{@link com.euclideanspace.euclid.euclidmodel.impl.CreateExtensionInfoImpl <em>Create Extension Info</em>}' class.
@@ -1699,6 +2514,82 @@ public interface EuclidmodelPackage extends EPackage
     EReference EUCLID_CLASS__MEMBERS = eINSTANCE.getEuclidClass_Members();
 
     /**
+     * The meta object literal for the '{@link com.euclideanspace.euclid.euclidmodel.impl.EuclidInterfaceImpl <em>Euclid Interface</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see com.euclideanspace.euclid.euclidmodel.impl.EuclidInterfaceImpl
+     * @see com.euclideanspace.euclid.euclidmodel.impl.EuclidmodelPackageImpl#getEuclidInterface()
+     * @generated
+     */
+    EClass EUCLID_INTERFACE = eINSTANCE.getEuclidInterface();
+
+    /**
+     * The meta object literal for the '<em><b>Abstract</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute EUCLID_INTERFACE__ABSTRACT = eINSTANCE.getEuclidInterface_Abstract();
+
+    /**
+     * The meta object literal for the '<em><b>Type Parameters</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference EUCLID_INTERFACE__TYPE_PARAMETERS = eINSTANCE.getEuclidInterface_TypeParameters();
+
+    /**
+     * The meta object literal for the '<em><b>Implements</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference EUCLID_INTERFACE__IMPLEMENTS = eINSTANCE.getEuclidInterface_Implements();
+
+    /**
+     * The meta object literal for the '<em><b>Declarations</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference EUCLID_INTERFACE__DECLARATIONS = eINSTANCE.getEuclidInterface_Declarations();
+
+    /**
+     * The meta object literal for the '{@link com.euclideanspace.euclid.euclidmodel.impl.EuclidEnumImpl <em>Euclid Enum</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see com.euclideanspace.euclid.euclidmodel.impl.EuclidEnumImpl
+     * @see com.euclideanspace.euclid.euclidmodel.impl.EuclidmodelPackageImpl#getEuclidEnum()
+     * @generated
+     */
+    EClass EUCLID_ENUM = eINSTANCE.getEuclidEnum();
+
+    /**
+     * The meta object literal for the '<em><b>Abstract</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute EUCLID_ENUM__ABSTRACT = eINSTANCE.getEuclidEnum_Abstract();
+
+    /**
+     * The meta object literal for the '<em><b>Type Parameters</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference EUCLID_ENUM__TYPE_PARAMETERS = eINSTANCE.getEuclidEnum_TypeParameters();
+
+    /**
+     * The meta object literal for the '<em><b>Enum Constants</b></em>' attribute list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute EUCLID_ENUM__ENUM_CONSTANTS = eINSTANCE.getEuclidEnum_EnumConstants();
+
+    /**
      * The meta object literal for the '{@link com.euclideanspace.euclid.euclidmodel.impl.EuclidAnnotationTypeImpl <em>Euclid Annotation Type</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -1717,6 +2608,56 @@ public interface EuclidmodelPackage extends EPackage
     EReference EUCLID_ANNOTATION_TYPE__MEMBERS = eINSTANCE.getEuclidAnnotationType_Members();
 
     /**
+     * The meta object literal for the '{@link com.euclideanspace.euclid.euclidmodel.impl.EuclidInnerClassImpl <em>Euclid Inner Class</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see com.euclideanspace.euclid.euclidmodel.impl.EuclidInnerClassImpl
+     * @see com.euclideanspace.euclid.euclidmodel.impl.EuclidmodelPackageImpl#getEuclidInnerClass()
+     * @generated
+     */
+    EClass EUCLID_INNER_CLASS = eINSTANCE.getEuclidInnerClass();
+
+    /**
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute EUCLID_INNER_CLASS__NAME = eINSTANCE.getEuclidInnerClass_Name();
+
+    /**
+     * The meta object literal for the '<em><b>Type Parameters</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference EUCLID_INNER_CLASS__TYPE_PARAMETERS = eINSTANCE.getEuclidInnerClass_TypeParameters();
+
+    /**
+     * The meta object literal for the '<em><b>Extends</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference EUCLID_INNER_CLASS__EXTENDS = eINSTANCE.getEuclidInnerClass_Extends();
+
+    /**
+     * The meta object literal for the '<em><b>Implements</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference EUCLID_INNER_CLASS__IMPLEMENTS = eINSTANCE.getEuclidInnerClass_Implements();
+
+    /**
+     * The meta object literal for the '<em><b>Members</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference EUCLID_INNER_CLASS__MEMBERS = eINSTANCE.getEuclidInnerClass_Members();
+
+    /**
      * The meta object literal for the '{@link com.euclideanspace.euclid.euclidmodel.impl.EuclidFunctionImpl <em>Euclid Function</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -1733,6 +2674,14 @@ public interface EuclidmodelPackage extends EPackage
      * @generated
      */
     EAttribute EUCLID_FUNCTION__OVERRIDE = eINSTANCE.getEuclidFunction_Override();
+
+    /**
+     * The meta object literal for the '<em><b>Visibility</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute EUCLID_FUNCTION__VISIBILITY = eINSTANCE.getEuclidFunction_Visibility();
 
     /**
      * The meta object literal for the '<em><b>Static</b></em>' attribute feature.
@@ -1815,6 +2764,14 @@ public interface EuclidmodelPackage extends EPackage
      * @generated
      */
     EClass EUCLID_CONSTRUCTOR = eINSTANCE.getEuclidConstructor();
+
+    /**
+     * The meta object literal for the '<em><b>Visibility</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute EUCLID_CONSTRUCTOR__VISIBILITY = eINSTANCE.getEuclidConstructor_Visibility();
 
     /**
      * The meta object literal for the '<em><b>Type Parameters</b></em>' containment reference list feature.

@@ -23,6 +23,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
 
 import org.eclipse.xtext.common.types.JvmTypeParameter;
 import org.eclipse.xtext.common.types.JvmTypeReference;
+import org.eclipse.xtext.common.types.JvmVisibility;
 
 import org.eclipse.xtext.xbase.XExpression;
 
@@ -33,6 +34,7 @@ import org.eclipse.xtext.xbase.XExpression;
  * <p>
  * The following features are implemented:
  * <ul>
+ *   <li>{@link com.euclideanspace.euclid.euclidmodel.impl.EuclidConstructorImpl#getVisibility <em>Visibility</em>}</li>
  *   <li>{@link com.euclideanspace.euclid.euclidmodel.impl.EuclidConstructorImpl#getTypeParameters <em>Type Parameters</em>}</li>
  *   <li>{@link com.euclideanspace.euclid.euclidmodel.impl.EuclidConstructorImpl#getParameters <em>Parameters</em>}</li>
  *   <li>{@link com.euclideanspace.euclid.euclidmodel.impl.EuclidConstructorImpl#getExceptions <em>Exceptions</em>}</li>
@@ -44,6 +46,26 @@ import org.eclipse.xtext.xbase.XExpression;
  */
 public class EuclidConstructorImpl extends EuclidMemberImpl implements EuclidConstructor
 {
+  /**
+   * The default value of the '{@link #getVisibility() <em>Visibility</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getVisibility()
+   * @generated
+   * @ordered
+   */
+  protected static final JvmVisibility VISIBILITY_EDEFAULT = JvmVisibility.DEFAULT;
+
+  /**
+   * The cached value of the '{@link #getVisibility() <em>Visibility</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getVisibility()
+   * @generated
+   * @ordered
+   */
+  protected JvmVisibility visibility = VISIBILITY_EDEFAULT;
+
   /**
    * The cached value of the '{@link #getTypeParameters() <em>Type Parameters</em>}' containment reference list.
    * <!-- begin-user-doc -->
@@ -103,6 +125,29 @@ public class EuclidConstructorImpl extends EuclidMemberImpl implements EuclidCon
   protected EClass eStaticClass()
   {
     return EuclidmodelPackage.Literals.EUCLID_CONSTRUCTOR;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public JvmVisibility getVisibility()
+  {
+    return visibility;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setVisibility(JvmVisibility newVisibility)
+  {
+    JvmVisibility oldVisibility = visibility;
+    visibility = newVisibility == null ? VISIBILITY_EDEFAULT : newVisibility;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, EuclidmodelPackage.EUCLID_CONSTRUCTOR__VISIBILITY, oldVisibility, visibility));
   }
 
   /**
@@ -227,6 +272,8 @@ public class EuclidConstructorImpl extends EuclidMemberImpl implements EuclidCon
   {
     switch (featureID)
     {
+      case EuclidmodelPackage.EUCLID_CONSTRUCTOR__VISIBILITY:
+        return getVisibility();
       case EuclidmodelPackage.EUCLID_CONSTRUCTOR__TYPE_PARAMETERS:
         return getTypeParameters();
       case EuclidmodelPackage.EUCLID_CONSTRUCTOR__PARAMETERS:
@@ -250,6 +297,9 @@ public class EuclidConstructorImpl extends EuclidMemberImpl implements EuclidCon
   {
     switch (featureID)
     {
+      case EuclidmodelPackage.EUCLID_CONSTRUCTOR__VISIBILITY:
+        setVisibility((JvmVisibility)newValue);
+        return;
       case EuclidmodelPackage.EUCLID_CONSTRUCTOR__TYPE_PARAMETERS:
         getTypeParameters().clear();
         getTypeParameters().addAll((Collection<? extends JvmTypeParameter>)newValue);
@@ -279,6 +329,9 @@ public class EuclidConstructorImpl extends EuclidMemberImpl implements EuclidCon
   {
     switch (featureID)
     {
+      case EuclidmodelPackage.EUCLID_CONSTRUCTOR__VISIBILITY:
+        setVisibility(VISIBILITY_EDEFAULT);
+        return;
       case EuclidmodelPackage.EUCLID_CONSTRUCTOR__TYPE_PARAMETERS:
         getTypeParameters().clear();
         return;
@@ -305,6 +358,8 @@ public class EuclidConstructorImpl extends EuclidMemberImpl implements EuclidCon
   {
     switch (featureID)
     {
+      case EuclidmodelPackage.EUCLID_CONSTRUCTOR__VISIBILITY:
+        return visibility != VISIBILITY_EDEFAULT;
       case EuclidmodelPackage.EUCLID_CONSTRUCTOR__TYPE_PARAMETERS:
         return typeParameters != null && !typeParameters.isEmpty();
       case EuclidmodelPackage.EUCLID_CONSTRUCTOR__PARAMETERS:
@@ -315,6 +370,23 @@ public class EuclidConstructorImpl extends EuclidMemberImpl implements EuclidCon
         return expression != null;
     }
     return super.eIsSet(featureID);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String toString()
+  {
+    if (eIsProxy()) return super.toString();
+
+    StringBuffer result = new StringBuffer(super.toString());
+    result.append(" (visibility: ");
+    result.append(visibility);
+    result.append(')');
+    return result.toString();
   }
 
 } //EuclidConstructorImpl

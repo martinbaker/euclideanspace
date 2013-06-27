@@ -6,8 +6,6 @@ import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EObject;
 
-import org.eclipse.xtext.common.types.JvmVisibility;
-
 import org.eclipse.xtext.xbase.annotations.xAnnotations.XAnnotation;
 
 /**
@@ -20,7 +18,6 @@ import org.eclipse.xtext.xbase.annotations.xAnnotations.XAnnotation;
  * <ul>
  *   <li>{@link com.euclideanspace.euclid.euclidmodel.EuclidMember#getAnnotations <em>Annotations</em>}</li>
  *   <li>{@link com.euclideanspace.euclid.euclidmodel.EuclidMember#getAnnotationInfo <em>Annotation Info</em>}</li>
- *   <li>{@link com.euclideanspace.euclid.euclidmodel.EuclidMember#getVisibility <em>Visibility</em>}</li>
  * </ul>
  * </p>
  *
@@ -71,34 +68,5 @@ public interface EuclidMember extends EObject
    * @generated
    */
   void setAnnotationInfo(EuclidMember value);
-
-  /**
-   * Returns the value of the '<em><b>Visibility</b></em>' attribute.
-   * The literals are from the enumeration {@link org.eclipse.xtext.common.types.JvmVisibility}.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Visibility</em>' attribute isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Visibility</em>' attribute.
-   * @see org.eclipse.xtext.common.types.JvmVisibility
-   * @see #setVisibility(JvmVisibility)
-   * @see com.euclideanspace.euclid.euclidmodel.EuclidmodelPackage#getEuclidMember_Visibility()
-   * @model
-   * @generated
-   */
-  JvmVisibility getVisibility();
-
-  /**
-   * Sets the value of the '{@link com.euclideanspace.euclid.euclidmodel.EuclidMember#getVisibility <em>Visibility</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Visibility</em>' attribute.
-   * @see org.eclipse.xtext.common.types.JvmVisibility
-   * @see #getVisibility()
-   * @generated
-   */
-  void setVisibility(JvmVisibility value);
 
 } // EuclidMember
