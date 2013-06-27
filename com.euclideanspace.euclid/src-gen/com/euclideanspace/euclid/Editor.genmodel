@@ -4,7 +4,7 @@
     editorDirectory="/com.euclideanspace.euclid.editor/src" modelPluginID="com.euclideanspace.euclid"
     forceOverwrite="true" modelName="Editor" updateClasspath="false" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
     complianceLevel="5.0" copyrightFields="false" editPluginID="com.euclideanspace.euclid.edit"
-    editorPluginID="com.euclideanspace.euclid.editor" runtimeVersion="2.8" usedGenPackages="../../../../../org.eclipse.xtext.common.types/model/JavaVMTypes.genmodel#//types ../../../../../org.eclipse.xtext.xbase/model/Xbase.genmodel#//xAnnotations ../../../../../org.eclipse.xtext.xbase/model/Xbase.genmodel#//xbase">
+    editorPluginID="com.euclideanspace.euclid.editor" runtimeVersion="2.9" usedGenPackages="../../../../../org.eclipse.xtext.common.types/model/JavaVMTypes.genmodel#//types ../../../../../org.eclipse.xtext.xbase/model/Xbase.genmodel#//xAnnotations ../../../../../org.eclipse.xtext.xbase/model/Xbase.genmodel#//xbase">
   <genPackages prefix="Euclidmodel" basePackage="com.euclideanspace.euclid" disposableProviderFactory="true"
       ecorePackage="Editor.ecore#/">
     <genClasses ecoreClass="Editor.ecore#//EuclidFile">

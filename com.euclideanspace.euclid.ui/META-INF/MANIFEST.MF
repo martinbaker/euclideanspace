@@ -21,5 +21,6 @@ Import-Package: org.apache.log4j
 Bundle-RequiredExecutionEnvironment: J2SE-1.5
 Export-Package: com.euclideanspace.euclid.ui.contentassist,
  com.euclideanspace.euclid.ui.contentassist.antlr,
- com.euclideanspace.euclid.ui.internal
+ com.euclideanspace.euclid.ui.internal,
+ com.euclideanspace.euclid.ui.quickfix
 Bundle-Activator: com.euclideanspace.euclid.ui.internal.EditorActivator

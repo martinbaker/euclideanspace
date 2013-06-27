@@ -30,7 +30,7 @@ public class EuclidmodelFactoryImpl extends EFactoryImpl implements EuclidmodelF
   {
     try
     {
-      EuclidmodelFactory theEuclidmodelFactory = (EuclidmodelFactory)EPackage.Registry.INSTANCE.getEFactory("http://www.euclideanspace.com/euclid"); 
+      EuclidmodelFactory theEuclidmodelFactory = (EuclidmodelFactory)EPackage.Registry.INSTANCE.getEFactory(EuclidmodelPackage.eNS_URI);
       if (theEuclidmodelFactory != null)
       {
         return theEuclidmodelFactory;
