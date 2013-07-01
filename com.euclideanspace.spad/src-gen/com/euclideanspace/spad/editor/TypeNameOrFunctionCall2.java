@@ -25,7 +25,7 @@ import org.eclipse.emf.common.util.EList;
  * @model
  * @generated
  */
-public interface TypeNameOrFunctionCall2 extends TypePrimaryExpression2
+public interface TypeNameOrFunctionCall2 extends TypePrimaryExpression
 {
   /**
    * Returns the value of the '<em><b>Tfnname</b></em>' attribute.

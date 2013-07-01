@@ -4,7 +4,7 @@ package com.euclideanspace.spad.editor.impl;
 
 import com.euclideanspace.spad.editor.AddPart;
 import com.euclideanspace.spad.editor.EditorPackage;
-import com.euclideanspace.spad.editor.TypeExpression2;
+import com.euclideanspace.spad.editor.TypeExpression;
 import com.euclideanspace.spad.editor.WhereAssignments;
 import com.euclideanspace.spad.editor.WherePart;
 import com.euclideanspace.spad.editor.WithPart;
@@ -109,7 +109,7 @@ public class WherePartImpl extends MinimalEObjectImpl.Container implements Where
    * @generated
    * @ordered
    */
-  protected TypeExpression2 imp;
+  protected TypeExpression imp;
 
   /**
    * The cached value of the '{@link #getW8() <em>W8</em>}' containment reference.
@@ -307,7 +307,7 @@ public class WherePartImpl extends MinimalEObjectImpl.Container implements Where
    * <!-- end-user-doc -->
    * @generated
    */
-  public TypeExpression2 getImp()
+  public TypeExpression getImp()
   {
     return imp;
   }
@@ -317,9 +317,9 @@ public class WherePartImpl extends MinimalEObjectImpl.Container implements Where
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetImp(TypeExpression2 newImp, NotificationChain msgs)
+  public NotificationChain basicSetImp(TypeExpression newImp, NotificationChain msgs)
   {
-    TypeExpression2 oldImp = imp;
+    TypeExpression oldImp = imp;
     imp = newImp;
     if (eNotificationRequired())
     {
@@ -334,7 +334,7 @@ public class WherePartImpl extends MinimalEObjectImpl.Container implements Where
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setImp(TypeExpression2 newImp)
+  public void setImp(TypeExpression newImp)
   {
     if (newImp != imp)
     {
@@ -632,7 +632,7 @@ public class WherePartImpl extends MinimalEObjectImpl.Container implements Where
         setLongname8((String)newValue);
         return;
       case EditorPackage.WHERE_PART__IMP:
-        setImp((TypeExpression2)newValue);
+        setImp((TypeExpression)newValue);
         return;
       case EditorPackage.WHERE_PART__W8:
         setW8((WithPart)newValue);
@@ -680,7 +680,7 @@ public class WherePartImpl extends MinimalEObjectImpl.Container implements Where
         setLongname8(LONGNAME8_EDEFAULT);
         return;
       case EditorPackage.WHERE_PART__IMP:
-        setImp((TypeExpression2)null);
+        setImp((TypeExpression)null);
         return;
       case EditorPackage.WHERE_PART__W8:
         setW8((WithPart)null);

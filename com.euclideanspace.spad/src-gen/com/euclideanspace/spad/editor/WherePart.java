@@ -111,12 +111,12 @@ public interface WherePart extends EObject
    * </p>
    * <!-- end-user-doc -->
    * @return the value of the '<em>Imp</em>' containment reference.
-   * @see #setImp(TypeExpression2)
+   * @see #setImp(TypeExpression)
    * @see com.euclideanspace.spad.editor.EditorPackage#getWherePart_Imp()
    * @model containment="true"
    * @generated
    */
-  TypeExpression2 getImp();
+  TypeExpression getImp();
 
   /**
    * Sets the value of the '{@link com.euclideanspace.spad.editor.WherePart#getImp <em>Imp</em>}' containment reference.
@@ -126,7 +126,7 @@ public interface WherePart extends EObject
    * @see #getImp()
    * @generated
    */
-  void setImp(TypeExpression2 value);
+  void setImp(TypeExpression value);
 
   /**
    * Returns the value of the '<em><b>W8</b></em>' containment reference.

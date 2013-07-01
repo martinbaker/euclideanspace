@@ -79,13 +79,11 @@ import com.euclideanspace.spad.editor.StatementExpression;
 import com.euclideanspace.spad.editor.TupleDefinition;
 import com.euclideanspace.spad.editor.TypeArguments;
 import com.euclideanspace.spad.editor.TypeExpression;
-import com.euclideanspace.spad.editor.TypeExpression2;
 import com.euclideanspace.spad.editor.TypeLiteral;
 import com.euclideanspace.spad.editor.TypeNameOrFunctionCall;
 import com.euclideanspace.spad.editor.TypeNameOrFunctionCall2;
 import com.euclideanspace.spad.editor.TypeParameterList;
 import com.euclideanspace.spad.editor.TypePrimaryExpression;
-import com.euclideanspace.spad.editor.TypePrimaryExpression2;
 import com.euclideanspace.spad.editor.TypeResult;
 import com.euclideanspace.spad.editor.TypeWithName;
 import com.euclideanspace.spad.editor.UnaryExpression;
@@ -445,11 +443,11 @@ public class EditorGenerator implements IGenerator {
     }
     _builder.newLineIfNotEmpty();
     {
-      TypeExpression2 _imp = f.getImp();
+      TypeExpression _imp = f.getImp();
       boolean _notEquals_1 = (!Objects.equal(_imp, null));
       if (_notEquals_1) {
         _builder.append(" ");
-        TypeExpression2 _imp_1 = f.getImp();
+        TypeExpression _imp_1 = f.getImp();
         CharSequence _compile_1 = this.compile(_imp_1);
         _builder.append(_compile_1, "");
         _builder.append(" ");
@@ -616,7 +614,7 @@ public class EditorGenerator implements IGenerator {
       if (_notEquals_2) {
         _builder.append("else");
         AddStatements _t15_1 = f.getT15();
-        Object _compile_5 = this.compile(_t15_1);
+        CharSequence _compile_5 = this.compile(_t15_1);
         _builder.append(_compile_5, "");
       }
     }
@@ -713,7 +711,7 @@ public class EditorGenerator implements IGenerator {
           EList<FunctionDefinitionBlock> _t13 = f.getT13();
           for(final FunctionDefinitionBlock x_3 : _t13) {
             _builder.append(",");
-            Object _compile_3 = this.compile(x_3);
+            CharSequence _compile_3 = this.compile(x_3);
             _builder.append(_compile_3, "       	");
           }
         }
@@ -722,7 +720,7 @@ public class EditorGenerator implements IGenerator {
           EList<FunctionDefinitionBlock> _t14 = f.getT14();
           for(final FunctionDefinitionBlock x_4 : _t14) {
             _builder.append(",");
-            Object _compile_4 = this.compile(x_4);
+            CharSequence _compile_4 = this.compile(x_4);
             _builder.append(_compile_4, "       	");
           }
         }
@@ -1130,35 +1128,26 @@ public class EditorGenerator implements IGenerator {
         _builder.append(_compile_2, "");
       }
     }
-    return _builder;
-  }
-  
-  /**
-   * TypeExpression
-   * (t2=TypeArguments -> t3=TypeResult)
-   * | TypePrimaryExpression
-   */
-  public CharSequence compile(final TypeExpression2 f) {
-    StringConcatenation _builder = new StringConcatenation();
     {
       TypeArguments _t92 = f.getT92();
-      boolean _notEquals = (!Objects.equal(_t92, null));
-      if (_notEquals) {
+      boolean _notEquals_1 = (!Objects.equal(_t92, null));
+      if (_notEquals_1) {
         TypeArguments _t92_1 = f.getT92();
-        CharSequence _compile = this.compile(_t92_1);
-        _builder.append(_compile, "");
+        CharSequence _compile_3 = this.compile(_t92_1);
+        _builder.append(_compile_3, "");
         _builder.append(" -> ");
         TypeResult _t93 = f.getT93();
-        CharSequence _compile_1 = this.compile(_t93);
-        _builder.append(_compile_1, "");
+        CharSequence _compile_4 = this.compile(_t93);
+        _builder.append(_compile_4, "");
       }
     }
-    {
-      if ((f instanceof TypePrimaryExpression2)) {
-        CharSequence _compile_2 = this.compile(((TypePrimaryExpression2) f));
-        _builder.append(_compile_2, "");
-      }
-    }
+    _builder.newLineIfNotEmpty();
+    _builder.append("      ");
+    _builder.append("//IF f instanceof TypePrimaryExpression2\u00BB");
+    _builder.newLine();
+    _builder.append("      ");
+    _builder.append("//compile(f as TypePrimaryExpression2)\u00BB");
+    _builder.newLine();
     return _builder;
   }
   
@@ -1307,13 +1296,13 @@ public class EditorGenerator implements IGenerator {
       if (_notEquals_3) {
         _builder.append("(");
         TypeExpression _t4_1 = f.getT4();
-        Object _compile_1 = this.compile(_t4_1);
+        CharSequence _compile_1 = this.compile(_t4_1);
         _builder.append(_compile_1, "");
         {
           EList<TypeExpression> _t16 = f.getT16();
           for(final TypeExpression x : _t16) {
             _builder.append(",");
-            Object _compile_2 = this.compile(x);
+            CharSequence _compile_2 = this.compile(x);
             _builder.append(_compile_2, "");
             _builder.append(" ");
           }
@@ -1327,13 +1316,13 @@ public class EditorGenerator implements IGenerator {
       if (_notEquals_4) {
         _builder.append("Record(");
         TypeExpression _t6_1 = f.getT6();
-        Object _compile_3 = this.compile(_t6_1);
+        CharSequence _compile_3 = this.compile(_t6_1);
         _builder.append(_compile_3, "");
         {
           EList<TypeExpression> _t22 = f.getT22();
           for(final TypeExpression x_1 : _t22) {
             _builder.append(",");
-            Object _compile_4 = this.compile(x_1);
+            CharSequence _compile_4 = this.compile(x_1);
             _builder.append(_compile_4, "");
             _builder.append(" ");
           }
@@ -1347,13 +1336,13 @@ public class EditorGenerator implements IGenerator {
       if (_notEquals_5) {
         _builder.append("Union(");
         TypeExpression _t10_1 = f.getT10();
-        Object _compile_5 = this.compile(_t10_1);
+        CharSequence _compile_5 = this.compile(_t10_1);
         _builder.append(_compile_5, "");
         {
           EList<TypeExpression> _t25 = f.getT25();
           for(final TypeExpression x_2 : _t25) {
             _builder.append(",");
-            Object _compile_6 = this.compile(x_2);
+            CharSequence _compile_6 = this.compile(x_2);
             _builder.append(_compile_6, "");
             _builder.append(" ");
           }
@@ -1367,13 +1356,13 @@ public class EditorGenerator implements IGenerator {
       if (_notEquals_6) {
         _builder.append("Join(");
         TypeExpression _t12_1 = f.getT12();
-        Object _compile_7 = this.compile(_t12_1);
+        CharSequence _compile_7 = this.compile(_t12_1);
         _builder.append(_compile_7, "");
         {
           EList<TypeExpression> _t13 = f.getT13();
           for(final TypeExpression x_3 : _t13) {
             _builder.append(",");
-            Object _compile_8 = this.compile(x_3);
+            CharSequence _compile_8 = this.compile(x_3);
             _builder.append(_compile_8, "");
             _builder.append(" ");
           }
@@ -1443,7 +1432,7 @@ public class EditorGenerator implements IGenerator {
       if (_notEquals_3) {
         _builder.append("Record(");
         TypeExpression _t7_1 = f.getT7();
-        Object _compile_1 = this.compile(_t7_1);
+        CharSequence _compile_1 = this.compile(_t7_1);
         _builder.append(_compile_1, "");
         _builder.append(")");
       }
@@ -1454,7 +1443,7 @@ public class EditorGenerator implements IGenerator {
       if (_notEquals_4) {
         _builder.append("Union(");
         TypeExpression _t10_1 = f.getT10();
-        Object _compile_2 = this.compile(_t10_1);
+        CharSequence _compile_2 = this.compile(_t10_1);
         _builder.append(_compile_2, "");
         _builder.append(")");
       }
@@ -1465,7 +1454,7 @@ public class EditorGenerator implements IGenerator {
       if (_notEquals_5) {
         _builder.append("Join(");
         TypeExpression _t12_1 = f.getT12();
-        Object _compile_3 = this.compile(_t12_1);
+        CharSequence _compile_3 = this.compile(_t12_1);
         _builder.append(_compile_3, "");
         _builder.append(")");
       }
@@ -1526,7 +1515,7 @@ public class EditorGenerator implements IGenerator {
       if (_notEquals_2) {
         _builder.append("(");
         TypeExpression _t5_1 = f.getT5();
-        Object _compile = this.compile(_t5_1);
+        CharSequence _compile = this.compile(_t5_1);
         _builder.append(_compile, "");
         _builder.append(")");
       }
@@ -1537,14 +1526,14 @@ public class EditorGenerator implements IGenerator {
       if (_notEquals_3) {
         _builder.append("(");
         TypeExpression _t7_1 = f.getT7();
-        Object _compile_1 = this.compile(_t7_1);
+        CharSequence _compile_1 = this.compile(_t7_1);
         _builder.append(_compile_1, "");
         _builder.append(")");
         {
           EList<TypeExpression> _t8 = f.getT8();
           for(final TypeExpression x : _t8) {
             _builder.append("(");
-            Object _compile_2 = this.compile(x);
+            CharSequence _compile_2 = this.compile(x);
             _builder.append(_compile_2, "");
             _builder.append(")");
           }
@@ -1553,7 +1542,7 @@ public class EditorGenerator implements IGenerator {
           EList<TypeExpression> _t21 = f.getT21();
           for(final TypeExpression x_1 : _t21) {
             _builder.append("(");
-            Object _compile_3 = this.compile(x_1);
+            CharSequence _compile_3 = this.compile(x_1);
             _builder.append(_compile_3, "");
             _builder.append(")");
           }
@@ -1562,7 +1551,7 @@ public class EditorGenerator implements IGenerator {
           EList<TypeExpression> _t23 = f.getT23();
           for(final TypeExpression x_2 : _t23) {
             _builder.append("(");
-            Object _compile_4 = this.compile(x_2);
+            CharSequence _compile_4 = this.compile(x_2);
             _builder.append(_compile_4, "");
             _builder.append(")");
           }
@@ -1581,7 +1570,7 @@ public class EditorGenerator implements IGenerator {
           EList<TypeExpression> _t11 = f.getT11();
           for(final TypeExpression x_3 : _t11) {
             _builder.append("(");
-            Object _compile_5 = this.compile(x_3);
+            CharSequence _compile_5 = this.compile(x_3);
             _builder.append(_compile_5, "");
             _builder.append(")");
           }
@@ -1590,7 +1579,7 @@ public class EditorGenerator implements IGenerator {
           EList<TypeExpression> _t24 = f.getT24();
           for(final TypeExpression x_4 : _t24) {
             _builder.append("(");
-            Object _compile_6 = this.compile(x_4);
+            CharSequence _compile_6 = this.compile(x_4);
             _builder.append(_compile_6, "");
             _builder.append(")");
           }
@@ -1599,7 +1588,7 @@ public class EditorGenerator implements IGenerator {
           EList<TypeExpression> _t26 = f.getT26();
           for(final TypeExpression x_5 : _t26) {
             _builder.append("(");
-            Object _compile_7 = this.compile(x_5);
+            CharSequence _compile_7 = this.compile(x_5);
             _builder.append(_compile_7, "");
             _builder.append(")");
           }
@@ -1618,153 +1607,6 @@ public class EditorGenerator implements IGenerator {
           EList<TypeExpression> _t14 = f.getT14();
           for(final TypeExpression x_6 : _t14) {
             _builder.append("(");
-            Object _compile_8 = this.compile(x_6);
-            _builder.append(_compile_8, "");
-            _builder.append(")");
-          }
-        }
-      }
-    }
-    {
-      if ((f instanceof TypeLiteral)) {
-        CharSequence _compile_9 = this.compile(((TypeLiteral) f));
-        _builder.append(_compile_9, "");
-      }
-    }
-    {
-      if ((f instanceof TypeNameOrFunctionCall)) {
-        Object _compile_10 = this.compile(((TypeNameOrFunctionCall) f));
-        _builder.append(_compile_10, "");
-      }
-    }
-    {
-      if ((f instanceof TupleDefinition)) {
-        CharSequence _compile_11 = this.compile(((TupleDefinition) f));
-        _builder.append(_compile_11, "");
-      }
-    }
-    return _builder;
-  }
-  
-  /**
-   * TypePrimaryExpression2
-   */
-  public CharSequence compile(final TypePrimaryExpression2 f) {
-    StringConcatenation _builder = new StringConcatenation();
-    {
-      String _xt32 = f.getXt32();
-      boolean _notEquals = (!Objects.equal(_xt32, null));
-      if (_notEquals) {
-        _builder.append("Rep ");
-      }
-    }
-    {
-      String _xtyname = f.getXtyname();
-      boolean _notEquals_1 = (!Objects.equal(_xtyname, null));
-      if (_notEquals_1) {
-        String _xtyname_1 = f.getXtyname();
-        _builder.append(_xtyname_1, "");
-        _builder.append(" ");
-      }
-    }
-    {
-      TypeExpression _xt5 = f.getXt5();
-      boolean _notEquals_2 = (!Objects.equal(_xt5, null));
-      if (_notEquals_2) {
-        _builder.append("(");
-        TypeExpression _xt5_1 = f.getXt5();
-        CharSequence _compile = this.compile(_xt5_1);
-        _builder.append(_compile, "");
-        _builder.append(")");
-      }
-    }
-    {
-      TypeExpression _xt7 = f.getXt7();
-      boolean _notEquals_3 = (!Objects.equal(_xt7, null));
-      if (_notEquals_3) {
-        _builder.append("(");
-        TypeExpression _xt7_1 = f.getXt7();
-        CharSequence _compile_1 = this.compile(_xt7_1);
-        _builder.append(_compile_1, "");
-        _builder.append(")");
-        {
-          EList<TypeExpression> _xt8 = f.getXt8();
-          for(final TypeExpression x : _xt8) {
-            _builder.append("(");
-            CharSequence _compile_2 = this.compile(x);
-            _builder.append(_compile_2, "");
-            _builder.append(")");
-          }
-        }
-        {
-          EList<TypeExpression> _xt21 = f.getXt21();
-          for(final TypeExpression x_1 : _xt21) {
-            _builder.append("(");
-            CharSequence _compile_3 = this.compile(x_1);
-            _builder.append(_compile_3, "");
-            _builder.append(")");
-          }
-        }
-        {
-          EList<TypeExpression> _xt23 = f.getXt23();
-          for(final TypeExpression x_2 : _xt23) {
-            _builder.append("(");
-            CharSequence _compile_4 = this.compile(x_2);
-            _builder.append(_compile_4, "");
-            _builder.append(")");
-          }
-        }
-      }
-    }
-    {
-      TypeExpression _xt10 = f.getXt10();
-      boolean _notEquals_4 = (!Objects.equal(_xt10, null));
-      if (_notEquals_4) {
-        _builder.append("(");
-        TypeExpression _xt10_1 = f.getXt10();
-        _builder.append(_xt10_1, "");
-        _builder.append(")");
-        {
-          EList<TypeExpression> _xt11 = f.getXt11();
-          for(final TypeExpression x_3 : _xt11) {
-            _builder.append("(");
-            CharSequence _compile_5 = this.compile(x_3);
-            _builder.append(_compile_5, "");
-            _builder.append(")");
-          }
-        }
-        {
-          EList<TypeExpression> _xt24 = f.getXt24();
-          for(final TypeExpression x_4 : _xt24) {
-            _builder.append("(");
-            CharSequence _compile_6 = this.compile(x_4);
-            _builder.append(_compile_6, "");
-            _builder.append(")");
-          }
-        }
-        {
-          EList<TypeExpression> _xt26 = f.getXt26();
-          for(final TypeExpression x_5 : _xt26) {
-            _builder.append("(");
-            CharSequence _compile_7 = this.compile(x_5);
-            _builder.append(_compile_7, "");
-            _builder.append(")");
-          }
-        }
-      }
-    }
-    {
-      TypeExpression _xt13 = f.getXt13();
-      boolean _notEquals_5 = (!Objects.equal(_xt13, null));
-      if (_notEquals_5) {
-        _builder.append("(");
-        TypeExpression _xt13_1 = f.getXt13();
-        _builder.append(_xt13_1, "");
-        _builder.append(")");
-        {
-          EList<TypeExpression> _xt14 = f.getXt14();
-          for(final TypeExpression x_6 : _xt14) {
-            _builder.append("(");
             CharSequence _compile_8 = this.compile(x_6);
             _builder.append(_compile_8, "");
             _builder.append(")");
@@ -1779,8 +1621,8 @@ public class EditorGenerator implements IGenerator {
       }
     }
     {
-      if ((f instanceof TypeNameOrFunctionCall2)) {
-        CharSequence _compile_10 = this.compile(((TypeNameOrFunctionCall2) f));
+      if ((f instanceof TypeNameOrFunctionCall)) {
+        CharSequence _compile_10 = this.compile(((TypeNameOrFunctionCall) f));
         _builder.append(_compile_10, "");
       }
     }
@@ -1816,13 +1658,13 @@ public class EditorGenerator implements IGenerator {
       if (_notEquals_1) {
         _builder.append("(");
         TypeExpression _t4_1 = f.getT4();
-        Object _compile = this.compile(_t4_1);
+        CharSequence _compile = this.compile(_t4_1);
         _builder.append(_compile, "");
         {
           EList<TypeExpression> _t25 = f.getT25();
           for(final TypeExpression x : _t25) {
             _builder.append(",");
-            Object _compile_1 = this.compile(x);
+            CharSequence _compile_1 = this.compile(x);
             _builder.append(_compile_1, "");
           }
         }

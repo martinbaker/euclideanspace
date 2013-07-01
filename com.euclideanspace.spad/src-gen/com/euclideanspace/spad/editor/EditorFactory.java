@@ -230,15 +230,6 @@ public interface EditorFactory extends EFactory
   TypeExpression createTypeExpression();
 
   /**
-   * Returns a new object of class '<em>Type Expression2</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Type Expression2</em>'.
-   * @generated
-   */
-  TypeExpression2 createTypeExpression2();
-
-  /**
    * Returns a new object of class '<em>Type Parameter List</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -273,15 +264,6 @@ public interface EditorFactory extends EFactory
    * @generated
    */
   TypePrimaryExpression createTypePrimaryExpression();
-
-  /**
-   * Returns a new object of class '<em>Type Primary Expression2</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Type Primary Expression2</em>'.
-   * @generated
-   */
-  TypePrimaryExpression2 createTypePrimaryExpression2();
 
   /**
    * Returns a new object of class '<em>Type Name Or Function Call</em>'.

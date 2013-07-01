@@ -117,6 +117,10 @@ public class EditorLabelProvider extends DefaultEObjectLabelProvider {
 		return "Fn Def : no sig";
 	}
 
+	String text(FunctionDefinitionBlock ele) {
+		return "Fn Def Bk";
+	}
+	
 /*	String text(MapDefinition ele) {
 		  return "MapDefinition :";
 	}*/
@@ -130,7 +134,7 @@ public class EditorLabelProvider extends DefaultEObjectLabelProvider {
 	}
 
 	String text(Import ele) {
-		  return "Import :";
+		  return "Import :"+ele.getImpname();
 	}
 
 	String text(VariableDeclaration ele) {
@@ -161,12 +165,17 @@ public class EditorLabelProvider extends DefaultEObjectLabelProvider {
 		  return "LocalVariable :"+ele.getVar();
 	}
 
+	/** t2=TypeArguments
+     * t3=TypeResult
+	 * t92=TypeArguments
+     * t93=TypeResult
+     *
+     * TypePrimaryExpression
+     */
 	String text(TypeExpression ele) {
-		  return "TypeExpression :"+ele;
-	}
-
-	String text(TypeExpression2 ele) {
-		  return "TypeExpression :"+ele;
+		if (ele.getT2()!=null) return "TypeExpression("+ele.getT2()+")";
+		if (ele.getT92()!=null) return "TypeExpression("+ele.getT92()+")";
+		return "TypeExpression :"+ele;
 	}
 
 	String text(TypeParameterList ele) {
@@ -186,15 +195,15 @@ public class EditorLabelProvider extends DefaultEObjectLabelProvider {
 	  return "TypePrimaryExpression" + ele;
 	}
 
-	String text(TypePrimaryExpression2 ele) {
-		  return "TypePrimaryExpression" + ele;
-		}
+	//String text(TypePrimaryExpression2 ele) {
+	//	  return "TypePrimaryExpression" + ele;
+	//	}
 
-	/* TypeNameOrFunctionCall
+	/** TypeNameOrFunctionCall
 	 * 
 	 * tfnname=ID
 	 * ( t4=TypeExpression? (, t25+=TypeExpression)*)
-  |  * t6=TypePrimaryExpression)?
+     * t6=TypePrimaryExpression)?
 	 */
 	String text(TypeNameOrFunctionCall ele) {
 		String n="TypeNameOrFunctionCall:"+ele.getTfnname();

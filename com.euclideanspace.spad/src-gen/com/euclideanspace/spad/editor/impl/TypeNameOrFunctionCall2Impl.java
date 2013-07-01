@@ -42,7 +42,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *
  * @generated
  */
-public class TypeNameOrFunctionCall2Impl extends TypePrimaryExpression2Impl implements TypeNameOrFunctionCall2
+public class TypeNameOrFunctionCall2Impl extends TypePrimaryExpressionImpl implements TypeNameOrFunctionCall2
 {
   /**
    * The default value of the '{@link #getTfnname() <em>Tfnname</em>}' attribute.

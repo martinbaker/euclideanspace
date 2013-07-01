@@ -482,7 +482,7 @@ AddStatements hidden(WS,SL_COMMENT):
 FunctionDefinition hidden(WS,SL_COMMENT):
   ((
 	par3=FunctionSignature
-    (COLON par4=TypeExpression)?
+    (COLON par4=TypeExpression1)?
     DEF par5=Statement
    )|(
    	// this is case where FunctionSignature is just an identifier
@@ -503,7 +503,8 @@ FunctionDefinitionBlock hidden(WS,SL_COMMENT):
       	vars+=VariableDeclarationAssign (NL|SEMICOLON)+
      | ('if' t1+=Expression // expression has form 'x has y'
         'then' t13+=FunctionDefinitionBlock (NL|SEMICOLON)+)      	
-     | ('else' t14+=FunctionDefinitionBlock (NL|SEMICOLON)+)      	
+     | ('else' t14+=FunctionDefinitionBlock (NL|SEMICOLON)+)
+     | i1+=Import  (NL|SEMICOLON)+    	  	
       )*
       RBRACE
       | 'error'	e=Expression
@@ -571,8 +572,8 @@ MacroDef: macroname=ID MACROVALUE ; //MACRO val=ID NL;
  * import domain
  */
 Import hidden(WS):
-	'import' (impname += ID)+ (LPAREN par22+=TypeExpression
-	(COMMA par22+=TypeExpression)* RPAREN)?
+	'import' (impname += ID)+ (LPAREN par22+=TypeExpression1
+	(COMMA par22+=TypeExpression1)* RPAREN)?
 ;
 
 /* Variable declaration in where and with sections:
@@ -587,6 +588,7 @@ Import hidden(WS):
  */
 VariableDeclarationBlock hidden(WS,SL_COMMENT):
     vardecbr=LBRACE NL*
+      //=>(i1=Import NL*)?
       (vardecBlk += VariableDeclaration (NL|SEMICOLON)+)*
       RBRACE	
 ;
@@ -602,8 +604,11 @@ VariableDeclarationBlock hidden(WS,SL_COMMENT):
  * if 
  */
 VariableDeclaration hidden(WS,SL_COMMENT):
+	//Import?
     ('if' t1=Expression 'then')? // expression has form 'x has y'
-	(v1=TypeWithName | v2=VariableDeclarationBlock)
+	( v1=TypeWithName
+      | v2=VariableDeclarationBlock 
+	)
 ;
 
 /*
@@ -616,7 +621,7 @@ TypeWithName hidden(WS,SL_COMMENT):
 	(
 	  (varName=ID | varNameSt=STRING) (COMMA varName2=ID)?
 	  COLON
-	)? typ=TypeExpression 
+	)? typ=TypeExpression1 
 ;
 
 
@@ -634,7 +639,7 @@ TypeWithName hidden(WS,SL_COMMENT):
 VariableTyped hidden(WS,SL_COMMENT):
 	(varName=ID | varNameSt=STRING)
 //    =>(COMMA t2+=ID)* // multiple declarations in same line
-    (COLON typ=TypeExpression)? 
+    (COLON typ=TypeExpression1)? 
 ;
 
 /* in add part we can declare and assign in same part
@@ -654,7 +659,7 @@ VariableDeclarationAssign hidden(WS):
   // Duplicate xxx 'coerce' in yyy
   (
     (COMMA t12+=ID)* // multiple declarations in same line
-    (COLON typ=TypeExpression)? // option to explicitly define type
+    (COLON typ=TypeExpression1)? // option to explicitly define type
     (BECOMES (t4=Expression /* |(LBRACE NL* Expression NL* RBRACE) */))?
     // we need block since we can't always detect continuation after ':='
     // but this causes infinite loop
@@ -689,9 +694,9 @@ LocalVariable hidden(WS):
  * 
  * first we check for a function like: Integer -> Integer
  */
-TypeExpression hidden(WS):
+TypeExpression1 returns TypeExpression hidden(WS):
    =>(t2=TypeArguments ARROW t3=TypeResult)
-   | TypePrimaryExpression
+   | TypePrimaryExpression1
 ;
 
 /*
@@ -700,7 +705,7 @@ TypeExpression hidden(WS):
  * in the 'where' rule because the 'with' in that case has a
  * slightly different syntax.
  */
-TypeExpression2 hidden(WS):
+TypeExpression2 returns TypeExpression hidden(WS):
    =>(t92=TypeArguments ARROW t93=TypeResult)
    | TypePrimaryExpression2
 ;
@@ -719,8 +724,8 @@ TypeExpression2 hidden(WS):
  */
 TypeParameterList hidden(WS):
 	tyname=LPAREN par=ID? 
-	(COLON par21=TypeExpression)?
-	(COMMA par2 += ID (COLON par22+=TypeExpression)?)* RPAREN;
+	(COLON par21=TypeExpression1)?
+	(COMMA par2 += ID (COLON par22+=TypeExpression1)?)* RPAREN;
 
 /*
  * we use type arguments for first part of function type, that is
@@ -736,16 +741,16 @@ TypeArguments hidden(WS):
   t3='Type' |
   // usually, but not always type arguments are in parenthesis, and empty
   // parenthesis are allowed
-  b1 ?= LPAREN ((ID COLON)? t4=TypeExpression)? ( COMMA (ID COLON)? t16 +=TypeExpression)* RPAREN |
-  t5='Record' LPAREN t6=TypeExpression
-               (COLON t22+=TypeExpression)?
-               (COMMA t21+=TypeExpression (COLON t23+=TypeExpression)?)*
+  b1 ?= LPAREN ((ID COLON)? t4=TypeExpression1)? ( COMMA (ID COLON)? t16 +=TypeExpression1)* RPAREN |
+  t5='Record' LPAREN t6=TypeExpression1
+               (COLON t22+=TypeExpression1)?
+               (COMMA t21+=TypeExpression1 (COLON t23+=TypeExpression1)?)*
                 RPAREN |
-  t9='Union' LPAREN t10=TypeExpression
-              (COLON t25+=TypeExpression)?
-              (COMMA t24+=TypeExpression (COLON t26+=TypeExpression)?)*
+  t9='Union' LPAREN t10=TypeExpression1
+              (COLON t25+=TypeExpression1)?
+              (COMMA t24+=TypeExpression1 (COLON t26+=TypeExpression1)?)*
               RPAREN |
-  t11='Join' LPAREN t12=TypeExpression (COMMA t13+=TypeExpression)* RPAREN |
+  t11='Join' LPAREN t12=TypeExpression1 (COMMA t13+=TypeExpression1)* RPAREN |
   t15=TypeNameOrFunctionCall
 ;
 
@@ -757,37 +762,37 @@ TypeResult hidden(WS):
   t=TypeLiteral |
   t2=PERCENT |
   tyname='Type' |
-  tyname='Record' LPAREN t7=TypeExpression
-               (COLON t8+=TypeExpression)?
-               (COMMA t21+=TypeExpression (COLON t23+=TypeExpression)?)*
+  tyname='Record' LPAREN t7=TypeExpression1
+               (COLON t8+=TypeExpression1)?
+               (COMMA t21+=TypeExpression1 (COLON t23+=TypeExpression1)?)*
                 RPAREN |
-  tyname='Union' LPAREN t10=TypeExpression
-              (COLON t11+=TypeExpression)?
-              (COMMA t24+=TypeExpression (COLON t26+=TypeExpression)?)*
+  tyname='Union' LPAREN t10=TypeExpression1
+              (COLON t11+=TypeExpression1)?
+              (COMMA t24+=TypeExpression1 (COLON t26+=TypeExpression1)?)*
               RPAREN |
-  tyname='Join' LPAREN t12=TypeExpression (COMMA t13+=TypeExpression)* RPAREN |
+  tyname='Join' LPAREN t12=TypeExpression1 (COMMA t13+=TypeExpression1)* RPAREN |
   t15=TypeNameOrFunctionCall
 ;
 
 /*
  * this matches various specific types
  */
-TypePrimaryExpression hidden(WS):
+TypePrimaryExpression1 returns TypePrimaryExpression hidden(WS):
  TypeLiteral
  | ({TypePrimaryExpression}t32=PERCENT)
  | ({TypePrimaryExpression}tyname='Type') // 'Type' is top of the category hierarchy
  | ({TypePrimaryExpression}tyname='Lisp') // 'Lisp' is used for native lisp function calls such as Say$Lisp
- | ({TypePrimaryExpression}LPAREN t5=TypeExpression RPAREN)
- | ({TypePrimaryExpression}tyname='Record' LPAREN t7=TypeExpression
-               (COLON t8+=TypeExpression)?
-               (COMMA t21+=TypeExpression (COLON t23+=TypeExpression)?)*
+ | ({TypePrimaryExpression}LPAREN t5=TypeExpression1 RPAREN)
+ | ({TypePrimaryExpression}tyname='Record' LPAREN t7=TypeExpression1
+               (COLON t8+=TypeExpression1)?
+               (COMMA t21+=TypeExpression1 (COLON t23+=TypeExpression1)?)*
                 RPAREN)
- | ({TypePrimaryExpression}tyname='Union' LPAREN t10=TypeExpression
-              (COLON t11+=TypeExpression)?
-              (COMMA t24+=TypeExpression (COLON t26+=TypeExpression)?)*
+ | ({TypePrimaryExpression}tyname='Union' LPAREN t10=TypeExpression1
+              (COLON t11+=TypeExpression1)?
+              (COMMA t24+=TypeExpression1 (COLON t26+=TypeExpression1)?)*
               RPAREN)
  | ({TypePrimaryExpression}tyname='Join'
-    LPAREN t13=TypeExpression (COMMA t14+=TypeExpression)* RPAREN)
+    LPAREN t13=TypeExpression1 (COMMA t14+=TypeExpression1)* RPAREN)
  | TypeNameOrFunctionCall
  | => TupleDefinition
 ;
@@ -798,22 +803,22 @@ TypePrimaryExpression hidden(WS):
  * in the 'where' rule because the 'with' in that case has a
  * slightly different syntax.
  */
-TypePrimaryExpression2 hidden(WS):
+TypePrimaryExpression2 returns TypePrimaryExpression hidden(WS):
  TypeLiteral
- | ({TypePrimaryExpression2}xt32=PERCENT)
- | ({TypePrimaryExpression2}xtyname='Type') // 'Type' is top of the category hierarchy
- | ({TypePrimaryExpression2}xtyname='Lisp') // 'Lisp' is used for native lisp function calls such as Say$Lisp
- | ({TypePrimaryExpression2}LPAREN xt5=TypeExpression RPAREN)
- | ({TypePrimaryExpression2}xtyname='Record' LPAREN xt7=TypeExpression
-               (COLON xt8+=TypeExpression)?
-               (COMMA xt21+=TypeExpression (COLON xt23+=TypeExpression)?)*
+ | ({TypePrimaryExpression}t32=PERCENT)
+ | ({TypePrimaryExpression}tyname='Type') // 'Type' is top of the category hierarchy
+ | ({TypePrimaryExpression}tyname='Lisp') // 'Lisp' is used for native lisp function calls such as Say$Lisp
+ | ({TypePrimaryExpression}LPAREN t5=TypeExpression1 RPAREN)
+ | ({TypePrimaryExpression}tyname='Record' LPAREN t7=TypeExpression1
+               (COLON t8+=TypeExpression1)?
+               (COMMA t21+=TypeExpression1 (COLON t23+=TypeExpression1)?)*
                 RPAREN)
- | ({TypePrimaryExpression2}xtyname='Union' LPAREN xt10=TypeExpression
-              (COLON xt11+=TypeExpression)?
-              (COMMA xt24+=TypeExpression (COLON xt26+=TypeExpression)?)*
+ | ({TypePrimaryExpression}tyname='Union' LPAREN t10=TypeExpression1
+              (COLON t11+=TypeExpression1)?
+              (COMMA t24+=TypeExpression1 (COLON t26+=TypeExpression1)?)*
               RPAREN)
- | ({TypePrimaryExpression2}xtyname='Join'
-    LPAREN xt13=TypeExpression (COMMA xt14+=TypeExpression)* RPAREN)
+ | ({TypePrimaryExpression}tyname='Join'
+    LPAREN t13=TypeExpression1 (COMMA t14+=TypeExpression1)* RPAREN)
  | TypeNameOrFunctionCall2
  | => TupleDefinition
 ;
@@ -831,11 +836,11 @@ TypePrimaryExpression2 hidden(WS):
 TypeNameOrFunctionCall hidden(WS):
   tfnname=ID
   (
-    (LPAREN (ID COLON)? t4=TypeExpression? (COMMA (ID COLON)? t25+=TypeExpression)* RPAREN)
+    (LPAREN (ID COLON)? t4=TypeExpression1? (COMMA (ID COLON)? t25+=TypeExpression1)* RPAREN)
     // optional curried function:
     (LPAREN t44+=StatementExpression? (COMMA t45+=Expression)* RPAREN)*
     // option of no parenthesis for single parameter
-    | => t6=TypePrimaryExpression
+    | => t6=TypePrimaryExpression1
     | => w=WithInline
   )?
 ;
@@ -843,11 +848,11 @@ TypeNameOrFunctionCall hidden(WS):
 TypeNameOrFunctionCall2 hidden(WS):
   tfnname=ID
   (
-    (LPAREN (ID COLON)? t4=TypeExpression? (COMMA (ID COLON)? t25+=TypeExpression)* RPAREN)
+    (LPAREN (ID COLON)? t4=TypeExpression1? (COMMA (ID COLON)? t25+=TypeExpression1)* RPAREN)
     // optional curried function:
     (LPAREN t44+=StatementExpression? (COMMA t45+=Expression)* RPAREN)*
     // option of no parenthesis for single parameter
-    | => t6=TypePrimaryExpression
+    | => t6=TypePrimaryExpression1
   )?
 ;
 
@@ -855,7 +860,7 @@ TypeNameOrFunctionCall2 hidden(WS):
  * like an array where each entry can be of a different type
  */
 TupleDefinition hidden(WS):
-  (LPAREN t4=TypeExpression (COMMA t25+=TypeExpression)* RPAREN)
+  (LPAREN t4=TypeExpression1 (COMMA t25+=TypeExpression1)* RPAREN)
 ;
 
 /* Since SPAD supports dependent types then numbers and strings can occur here.
@@ -898,6 +903,7 @@ Statement hidden(WS,SL_COMMENT):
     s9= IterateStatement |
 //    s11= ContinueStatement|
     s10= ReturnStatement |
+//    s11= Import |
     'error'	e=Expression
 ;
 
@@ -1011,6 +1017,13 @@ BreakStatement hidden(WS,SL_COMMENT):
 ReturnStatement hidden(WS):
 	stname='return' t2=Expression
 ;
+
+/*
+ * import - use 'Import' instead
+ */
+//ImportStatement hidden(WS):
+//	stname='import' t2=Expression
+//;
 
 /* 'if' statement allows program flow to be switched
  * forms:
@@ -1160,7 +1173,7 @@ OuterProdExpression returns Expr  hidden(WS,SL_COMMENT):
  */
 HasExpression returns Expr hidden(WS,SL_COMMENT):
   CaseExpression
-  ({HasExpression.left=current} op='has' rightType = TypeExpression)*
+  ({HasExpression.left=current} op='has' rightType = TypeExpression1)*
 ;
 
 /* Select from Union values 
@@ -1221,7 +1234,7 @@ RelationalExpression returns Expr hidden(WS,SL_COMMENT):
  */
 IsExpression returns Expr hidden(WS,SL_COMMENT):
   SegmentExpression
-  ({IsExpression.left=current} (op='is' | op='isnt') rightType = TypeExpression)*
+  ({IsExpression.left=current} (op='is' | op='isnt') rightType = TypeExpression1)*
 ;
 
 /* 
@@ -1378,7 +1391,7 @@ AssignExpression returns Expr hidden(WS,SL_COMMENT):
  */
  PretendExpression returns Expr hidden(WS,SL_COMMENT):
   CoerceExpression
-  ({PretendExpression.left=current} op='pretend' rightType = TypeExpression)*
+  ({PretendExpression.left=current} op='pretend' rightType = TypeExpression1)*
 ;
 
 /* 
@@ -1390,7 +1403,7 @@ AssignExpression returns Expr hidden(WS,SL_COMMENT):
  */
 CoerceExpression returns Expr hidden(WS,SL_COMMENT):
   HintTypeExpression
-  ({CoerceExpression.left=current} op=COERCE rightType = TypeExpression)*
+  ({CoerceExpression.left=current} op=COERCE rightType = TypeExpression1)*
 ;
 
 /* 
@@ -1398,7 +1411,7 @@ CoerceExpression returns Expr hidden(WS,SL_COMMENT):
  */
 HintTypeExpression returns Expr hidden(WS,SL_COMMENT):
   EltExpression
-  ( {HintTypeExpression.left=current} op=AT rightType = TypeExpression)?
+  ( {HintTypeExpression.left=current} op=AT rightType = TypeExpression1)?
 ;
 
 /* We treat these as part of the language
@@ -1444,7 +1457,7 @@ EltExpression returns Expr hidden(WS,SL_COMMENT):
  */
 ExplicitTypeExpression returns Expr hidden(WS,SL_COMMENT):
   UnaryExpression
-  ({ExplicitTypeExpression.left=current} op=DOLAR rightType = TypeExpression)?
+  ({ExplicitTypeExpression.left=current} op=DOLAR rightType = TypeExpression1)?
 ;
 
 /* UnaryExpression
@@ -1469,15 +1482,15 @@ UnaryExpression returns Expr hidden(WS,SL_COMMENT):
   ({UnaryExpression} uop=PRIMEPERCENT expr=PrimaryExpression) |
    e2=PERCENT |
   e3='Type' |
-  e5='Record' LPAREN e6=TypeExpression
-               (COLON e22+=TypeExpression)?
-               (COMMA e21+=TypeExpression (COLON e23+=TypeExpression)?)*
+  e5='Record' LPAREN e6=TypeExpression1
+               (COLON e22+=TypeExpression1)?
+               (COMMA e21+=TypeExpression1 (COLON e23+=TypeExpression1)?)*
                 RPAREN |
-  e9='Union' LPAREN e10=TypeExpression
-              (COLON e25+=TypeExpression)?
-              (COMMA e24+=TypeExpression (COLON e26+=TypeExpression)?)*
+  e9='Union' LPAREN e10=TypeExpression1
+              (COLON e25+=TypeExpression1)?
+              (COMMA e24+=TypeExpression1 (COLON e26+=TypeExpression1)?)*
               RPAREN |
-  e11='Join' LPAREN e12=TypeExpression (COMMA e13+=TypeExpression)* RPAREN
+  e11='Join' LPAREN e12=TypeExpression1 (COMMA e13+=TypeExpression1)* RPAREN
 ;
 
 /* 
@@ -1504,7 +1517,7 @@ PrimaryExpression returns Expr hidden(WS,SL_COMMENT):
  */
 PrimaryPrefix hidden(WS,SL_COMMENT):
  Literal
- | LPAREN t4=Expression (COMMA t25+=Expression)* RPAREN =>(COLON rightType3 =TypeExpression)?
+ | LPAREN t4=Expression (COMMA t25+=Expression)* RPAREN =>(COLON rightType3 =TypeExpression1)?
  | t7=NameOrFunctionCall
 ;
 
@@ -1527,7 +1540,7 @@ NameOrFunctionCall hidden(WS,SL_COMMENT):
     // option of no parenthesis for single parameter
     | => t6=PrimaryExpression
   )?
-  => ((COMMA ID)* COLON rightType2 =TypeExpression)?
+  => ((COMMA ID)* COLON rightType2 =TypeExpression1)?
   // allow multiple assignment
   //=>(op=GIVES lambda = Expression 'xxx')?
 ;

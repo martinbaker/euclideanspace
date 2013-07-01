@@ -240,13 +240,6 @@ public class EditorSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case EditorPackage.TYPE_EXPRESSION2:
-      {
-        TypeExpression2 typeExpression2 = (TypeExpression2)theEObject;
-        T result = caseTypeExpression2(typeExpression2);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
       case EditorPackage.TYPE_PARAMETER_LIST:
       {
         TypeParameterList typeParameterList = (TypeParameterList)theEObject;
@@ -276,14 +269,6 @@ public class EditorSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case EditorPackage.TYPE_PRIMARY_EXPRESSION2:
-      {
-        TypePrimaryExpression2 typePrimaryExpression2 = (TypePrimaryExpression2)theEObject;
-        T result = caseTypePrimaryExpression2(typePrimaryExpression2);
-        if (result == null) result = caseTypeExpression2(typePrimaryExpression2);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
       case EditorPackage.TYPE_NAME_OR_FUNCTION_CALL:
       {
         TypeNameOrFunctionCall typeNameOrFunctionCall = (TypeNameOrFunctionCall)theEObject;
@@ -297,8 +282,8 @@ public class EditorSwitch<T> extends Switch<T>
       {
         TypeNameOrFunctionCall2 typeNameOrFunctionCall2 = (TypeNameOrFunctionCall2)theEObject;
         T result = caseTypeNameOrFunctionCall2(typeNameOrFunctionCall2);
-        if (result == null) result = caseTypePrimaryExpression2(typeNameOrFunctionCall2);
-        if (result == null) result = caseTypeExpression2(typeNameOrFunctionCall2);
+        if (result == null) result = caseTypePrimaryExpression(typeNameOrFunctionCall2);
+        if (result == null) result = caseTypeExpression(typeNameOrFunctionCall2);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -307,9 +292,7 @@ public class EditorSwitch<T> extends Switch<T>
         TupleDefinition tupleDefinition = (TupleDefinition)theEObject;
         T result = caseTupleDefinition(tupleDefinition);
         if (result == null) result = caseTypePrimaryExpression(tupleDefinition);
-        if (result == null) result = caseTypePrimaryExpression2(tupleDefinition);
         if (result == null) result = caseTypeExpression(tupleDefinition);
-        if (result == null) result = caseTypeExpression2(tupleDefinition);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -318,9 +301,7 @@ public class EditorSwitch<T> extends Switch<T>
         TypeLiteral typeLiteral = (TypeLiteral)theEObject;
         T result = caseTypeLiteral(typeLiteral);
         if (result == null) result = caseTypePrimaryExpression(typeLiteral);
-        if (result == null) result = caseTypePrimaryExpression2(typeLiteral);
         if (result == null) result = caseTypeExpression(typeLiteral);
-        if (result == null) result = caseTypeExpression2(typeLiteral);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -1066,22 +1047,6 @@ public class EditorSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Type Expression2</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Type Expression2</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseTypeExpression2(TypeExpression2 object)
-  {
-    return null;
-  }
-
-  /**
    * Returns the result of interpreting the object as an instance of '<em>Type Parameter List</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
@@ -1141,22 +1106,6 @@ public class EditorSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseTypePrimaryExpression(TypePrimaryExpression object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Type Primary Expression2</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Type Primary Expression2</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseTypePrimaryExpression2(TypePrimaryExpression2 object)
   {
     return null;
   }

@@ -6,6 +6,7 @@ import com.euclideanspace.spad.editor.EditorPackage;
 import com.euclideanspace.spad.editor.Expr;
 import com.euclideanspace.spad.editor.FunctionDefinition;
 import com.euclideanspace.spad.editor.FunctionDefinitionBlock;
+import com.euclideanspace.spad.editor.Import;
 import com.euclideanspace.spad.editor.VariableDeclarationAssign;
 
 import java.util.Collection;
@@ -37,6 +38,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link com.euclideanspace.spad.editor.impl.FunctionDefinitionBlockImpl#getT1 <em>T1</em>}</li>
  *   <li>{@link com.euclideanspace.spad.editor.impl.FunctionDefinitionBlockImpl#getT13 <em>T13</em>}</li>
  *   <li>{@link com.euclideanspace.spad.editor.impl.FunctionDefinitionBlockImpl#getT14 <em>T14</em>}</li>
+ *   <li>{@link com.euclideanspace.spad.editor.impl.FunctionDefinitionBlockImpl#getI1 <em>I1</em>}</li>
  *   <li>{@link com.euclideanspace.spad.editor.impl.FunctionDefinitionBlockImpl#getE <em>E</em>}</li>
  * </ul>
  * </p>
@@ -114,6 +116,16 @@ public class FunctionDefinitionBlockImpl extends MinimalEObjectImpl.Container im
    * @ordered
    */
   protected EList<FunctionDefinitionBlock> t14;
+
+  /**
+   * The cached value of the '{@link #getI1() <em>I1</em>}' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getI1()
+   * @generated
+   * @ordered
+   */
+  protected EList<Import> i1;
 
   /**
    * The cached value of the '{@link #getE() <em>E</em>}' containment reference.
@@ -244,6 +256,20 @@ public class FunctionDefinitionBlockImpl extends MinimalEObjectImpl.Container im
    * <!-- end-user-doc -->
    * @generated
    */
+  public EList<Import> getI1()
+  {
+    if (i1 == null)
+    {
+      i1 = new EObjectContainmentEList<Import>(Import.class, this, EditorPackage.FUNCTION_DEFINITION_BLOCK__I1);
+    }
+    return i1;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public Expr getE()
   {
     return e;
@@ -307,6 +333,8 @@ public class FunctionDefinitionBlockImpl extends MinimalEObjectImpl.Container im
         return ((InternalEList<?>)getT13()).basicRemove(otherEnd, msgs);
       case EditorPackage.FUNCTION_DEFINITION_BLOCK__T14:
         return ((InternalEList<?>)getT14()).basicRemove(otherEnd, msgs);
+      case EditorPackage.FUNCTION_DEFINITION_BLOCK__I1:
+        return ((InternalEList<?>)getI1()).basicRemove(otherEnd, msgs);
       case EditorPackage.FUNCTION_DEFINITION_BLOCK__E:
         return basicSetE(null, msgs);
     }
@@ -335,6 +363,8 @@ public class FunctionDefinitionBlockImpl extends MinimalEObjectImpl.Container im
         return getT13();
       case EditorPackage.FUNCTION_DEFINITION_BLOCK__T14:
         return getT14();
+      case EditorPackage.FUNCTION_DEFINITION_BLOCK__I1:
+        return getI1();
       case EditorPackage.FUNCTION_DEFINITION_BLOCK__E:
         return getE();
     }
@@ -375,6 +405,10 @@ public class FunctionDefinitionBlockImpl extends MinimalEObjectImpl.Container im
         getT14().clear();
         getT14().addAll((Collection<? extends FunctionDefinitionBlock>)newValue);
         return;
+      case EditorPackage.FUNCTION_DEFINITION_BLOCK__I1:
+        getI1().clear();
+        getI1().addAll((Collection<? extends Import>)newValue);
+        return;
       case EditorPackage.FUNCTION_DEFINITION_BLOCK__E:
         setE((Expr)newValue);
         return;
@@ -410,6 +444,9 @@ public class FunctionDefinitionBlockImpl extends MinimalEObjectImpl.Container im
       case EditorPackage.FUNCTION_DEFINITION_BLOCK__T14:
         getT14().clear();
         return;
+      case EditorPackage.FUNCTION_DEFINITION_BLOCK__I1:
+        getI1().clear();
+        return;
       case EditorPackage.FUNCTION_DEFINITION_BLOCK__E:
         setE((Expr)null);
         return;
@@ -439,6 +476,8 @@ public class FunctionDefinitionBlockImpl extends MinimalEObjectImpl.Container im
         return t13 != null && !t13.isEmpty();
       case EditorPackage.FUNCTION_DEFINITION_BLOCK__T14:
         return t14 != null && !t14.isEmpty();
+      case EditorPackage.FUNCTION_DEFINITION_BLOCK__I1:
+        return i1 != null && !i1.isEmpty();
       case EditorPackage.FUNCTION_DEFINITION_BLOCK__E:
         return e != null;
     }

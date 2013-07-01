@@ -22,7 +22,7 @@ package com.euclideanspace.spad.editor;
  * @model
  * @generated
  */
-public interface TypeLiteral extends TypePrimaryExpression, TypePrimaryExpression2
+public interface TypeLiteral extends TypePrimaryExpression
 {
   /**
    * Returns the value of the '<em><b>T1</b></em>' attribute.

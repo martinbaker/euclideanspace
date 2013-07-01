@@ -83,13 +83,11 @@ import com.euclideanspace.spad.editor.StatementExpression;
 import com.euclideanspace.spad.editor.TupleDefinition;
 import com.euclideanspace.spad.editor.TypeArguments;
 import com.euclideanspace.spad.editor.TypeExpression;
-import com.euclideanspace.spad.editor.TypeExpression2;
 import com.euclideanspace.spad.editor.TypeLiteral;
 import com.euclideanspace.spad.editor.TypeNameOrFunctionCall;
 import com.euclideanspace.spad.editor.TypeNameOrFunctionCall2;
 import com.euclideanspace.spad.editor.TypeParameterList;
 import com.euclideanspace.spad.editor.TypePrimaryExpression;
-import com.euclideanspace.spad.editor.TypePrimaryExpression2;
 import com.euclideanspace.spad.editor.TypeResult;
 import com.euclideanspace.spad.editor.TypeWithName;
 import com.euclideanspace.spad.editor.UnaryExpression;
@@ -113,7 +111,7 @@ class EditorGenerator implements IGenerator {
 		return name.substring(0, name.indexOf('.'))
 	}
 
-	def compile(Model model) ''' 
+	def CharSequence compile(Model model) ''' 
         «IF model.eContainer != null»
             package «model.eResource.className»;
         «ENDIF»
@@ -126,7 +124,7 @@ class EditorGenerator implements IGenerator {
     '''
 
     /* CategoryDef */
-    def compile(CategoryDef f) '''
+    def CharSequence compile(CategoryDef f) '''
       public interface «f.longname» «IF f.cp != null» «
       compile(f.cp)»«ENDIF»{
       /* extends «f.name» 
@@ -195,7 +193,7 @@ class EditorGenerator implements IGenerator {
      * t14='else' FunctionDefinitionBlock
      * MacroDef
      * Import*/
-    def compile(AddStatements f) '''
+    def CharSequence compile(AddStatements f) '''
        «IF f instanceof VariableDeclarationAssign»«
        compile(f as VariableDeclarationAssign)»«
        ENDIF»«IF f instanceof FunctionDefinition»«
@@ -226,7 +224,7 @@ class EditorGenerator implements IGenerator {
      * 'if' t1+=Expression
      * 'then' t13+=FunctionDefinitionBlock    	
      * 'else' t14+=FunctionDefinitionBlock*/
-    def compile(FunctionDefinitionBlock f)
+    def CharSequence compile(FunctionDefinitionBlock f)
        '''{
        	«FOR x:f.fnDecBk»,«compile(x)»«ENDFOR
        	»«FOR x:f.vars»,«compile(x)»«ENDFOR»«
@@ -332,22 +330,17 @@ class EditorGenerator implements IGenerator {
      * (t2=TypeArguments -> t3=TypeResult)
      * | TypePrimaryExpression
      */
-    def compile(TypeExpression f) 
+    def CharSequence compile(TypeExpression f) 
       '''«
       IF f.t2 != null» «compile(f.t2)»->«
       compile(f.t3)»«ENDIF»«
       IF f instanceof TypePrimaryExpression»«
-      compile(f as TypePrimaryExpression)»«ENDIF»'''
-  
-    /* TypeExpression
-     * (t2=TypeArguments -> t3=TypeResult)
-     * | TypePrimaryExpression
-     */
-    def compile(TypeExpression2 f) 
-      '''«IF f.t92 != null»«compile(f.t92)» -> «
-      compile(f.t93)»«ENDIF»«
-      IF f instanceof TypePrimaryExpression2»«
-      compile(f as TypePrimaryExpression2)»«ENDIF»'''
+      compile(f as TypePrimaryExpression)»«ENDIF»«
+      IF f.t92 != null»«compile(f.t92)» -> «
+      compile(f.t93)»«ENDIF»
+      //IF f instanceof TypePrimaryExpression2»
+      //compile(f as TypePrimaryExpression2)»
+      '''
 
 /* TypeParameterList
  * we use a type parameter list for parameters of category, package or domains
@@ -459,7 +452,7 @@ class EditorGenerator implements IGenerator {
  | TypeNameOrFunctionCall
  | => TupleDefinition
  */
-    def compile(TypePrimaryExpression f) 
+    def CharSequence compile(TypePrimaryExpression f) 
       '''«IF f.t32 != null»Rep «ENDIF»«
       IF f.tyname != null»«f.tyname» «ENDIF»«
       IF f.t5 != null»(«compile(f.t5)»)«ENDIF»«
@@ -480,9 +473,9 @@ class EditorGenerator implements IGenerator {
       IF f instanceof TupleDefinition»«
         compile(f as TupleDefinition)»«ENDIF»'''
 
-    /* TypePrimaryExpression2 */
-    def compile(TypePrimaryExpression2 f) 
-      '''«IF f.xt32 != null»Rep «ENDIF»«
+    /* TypePrimaryExpression2
+    def CharSequence compile(TypePrimaryExpression2 f) 
+      «IF f.xt32 != null»Rep «ENDIF»«
       IF f.xtyname != null»«f.xtyname» «ENDIF»«
       IF f.xt5 != null»(«compile(f.xt5)»)«ENDIF»«
       IF f.xt7 != null»(«compile(f.xt7)»)«
@@ -500,7 +493,7 @@ class EditorGenerator implements IGenerator {
       IF f instanceof TypeNameOrFunctionCall2»«
         compile(f as TypeNameOrFunctionCall2)»«ENDIF»«
       IF f instanceof TupleDefinition»«
-        compile(f as TupleDefinition)»«ENDIF»'''
+        compile(f as TupleDefinition)»«ENDIF»*/
               
 	/* TypeNameOrFunctionCall
 	 * 

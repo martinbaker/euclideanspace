@@ -87,12 +87,10 @@ public class EditorFactoryImpl extends EFactoryImpl implements EditorFactory
       case EditorPackage.FREE_VARIABLE: return createFreeVariable();
       case EditorPackage.LOCAL_VARIABLE: return createLocalVariable();
       case EditorPackage.TYPE_EXPRESSION: return createTypeExpression();
-      case EditorPackage.TYPE_EXPRESSION2: return createTypeExpression2();
       case EditorPackage.TYPE_PARAMETER_LIST: return createTypeParameterList();
       case EditorPackage.TYPE_ARGUMENTS: return createTypeArguments();
       case EditorPackage.TYPE_RESULT: return createTypeResult();
       case EditorPackage.TYPE_PRIMARY_EXPRESSION: return createTypePrimaryExpression();
-      case EditorPackage.TYPE_PRIMARY_EXPRESSION2: return createTypePrimaryExpression2();
       case EditorPackage.TYPE_NAME_OR_FUNCTION_CALL: return createTypeNameOrFunctionCall();
       case EditorPackage.TYPE_NAME_OR_FUNCTION_CALL2: return createTypeNameOrFunctionCall2();
       case EditorPackage.TUPLE_DEFINITION: return createTupleDefinition();
@@ -407,17 +405,6 @@ public class EditorFactoryImpl extends EFactoryImpl implements EditorFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public TypeExpression2 createTypeExpression2()
-  {
-    TypeExpression2Impl typeExpression2 = new TypeExpression2Impl();
-    return typeExpression2;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public TypeParameterList createTypeParameterList()
   {
     TypeParameterListImpl typeParameterList = new TypeParameterListImpl();
@@ -455,17 +442,6 @@ public class EditorFactoryImpl extends EFactoryImpl implements EditorFactory
   {
     TypePrimaryExpressionImpl typePrimaryExpression = new TypePrimaryExpressionImpl();
     return typePrimaryExpression;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public TypePrimaryExpression2 createTypePrimaryExpression2()
-  {
-    TypePrimaryExpression2Impl typePrimaryExpression2 = new TypePrimaryExpression2Impl();
-    return typePrimaryExpression2;
   }
 
   /**

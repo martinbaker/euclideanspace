@@ -20,6 +20,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link com.euclideanspace.spad.editor.FunctionDefinitionBlock#getT1 <em>T1</em>}</li>
  *   <li>{@link com.euclideanspace.spad.editor.FunctionDefinitionBlock#getT13 <em>T13</em>}</li>
  *   <li>{@link com.euclideanspace.spad.editor.FunctionDefinitionBlock#getT14 <em>T14</em>}</li>
+ *   <li>{@link com.euclideanspace.spad.editor.FunctionDefinitionBlock#getI1 <em>I1</em>}</li>
  *   <li>{@link com.euclideanspace.spad.editor.FunctionDefinitionBlock#getE <em>E</em>}</li>
  * </ul>
  * </p>
@@ -135,6 +136,22 @@ public interface FunctionDefinitionBlock extends EObject
    * @generated
    */
   EList<FunctionDefinitionBlock> getT14();
+
+  /**
+   * Returns the value of the '<em><b>I1</b></em>' containment reference list.
+   * The list contents are of type {@link com.euclideanspace.spad.editor.Import}.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>I1</em>' containment reference list isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>I1</em>' containment reference list.
+   * @see com.euclideanspace.spad.editor.EditorPackage#getFunctionDefinitionBlock_I1()
+   * @model containment="true"
+   * @generated
+   */
+  EList<Import> getI1();
 
   /**
    * Returns the value of the '<em><b>E</b></em>' containment reference.
