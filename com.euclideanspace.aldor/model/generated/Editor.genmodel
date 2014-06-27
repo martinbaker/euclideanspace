@@ -5,7 +5,7 @@
     forceOverwrite="true" modelName="Editor" updateClasspath="false" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
     complianceLevel="5.0" copyrightFields="false" editPluginID="com.euclideanspace.aldor.edit"
     editorPluginID="com.euclideanspace.aldor.editor" runtimeVersion="2.10">
-  <genPackages prefix="Editor" basePackage="com.euclideanspace.spad" disposableProviderFactory="true"
+  <genPackages prefix="Editor" basePackage="com.euclideanspace.aldor" disposableProviderFactory="true"
       fileExtensions="as" ecorePackage="Editor.ecore#/">
     <genClasses ecoreClass="Editor.ecore#//Model">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//Model/c"/>

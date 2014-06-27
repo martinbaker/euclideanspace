@@ -5,8 +5,8 @@
 
   <extension point="org.eclipse.emf.ecore.generated_package">
     <package 
-       uri = "http://www.euclideanspace.com/spad/Editor" 
-       class = "com.euclideanspace.spad.editor.EditorPackage"
+       uri = "http://www.euclideanspace.com/aldor/Editor" 
+       class = "com.euclideanspace.aldor.editor.EditorPackage"
        genModel = "model/generated/Editor.genmodel" /> 
 	
   </extension>
