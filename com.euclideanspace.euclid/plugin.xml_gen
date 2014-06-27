@@ -7,10 +7,9 @@
     <package 
        uri = "http://www.euclideanspace.com/euclid" 
        class = "com.euclideanspace.euclid.euclidmodel.EuclidmodelPackage"
-       genModel = "com/euclideanspace/euclid/Editor.genmodel" /> 
+       genModel = "model/generated/Editor.genmodel" /> 
 	
   </extension>
-
 
 
 
