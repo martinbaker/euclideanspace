@@ -682,7 +682,7 @@ public class EditorGenerator implements IGenerator {
       for(final FunctionDefinition x : _fnDecBk) {
         _builder.append(",");
         CharSequence _compile = this.compile(x);
-        _builder.append(_compile, "       	");
+        _builder.append(_compile, "       \t");
       }
     }
     {
@@ -690,7 +690,7 @@ public class EditorGenerator implements IGenerator {
       for(final VariableDeclarationAssign x_1 : _vars) {
         _builder.append(",");
         CharSequence _compile_1 = this.compile(x_1);
-        _builder.append(_compile_1, "       	");
+        _builder.append(_compile_1, "       \t");
       }
     }
     {
@@ -703,7 +703,7 @@ public class EditorGenerator implements IGenerator {
           for(final Expr x_2 : _t1_1) {
             _builder.append(",");
             CharSequence _compile_2 = this.compile(x_2);
-            _builder.append(_compile_2, "       	");
+            _builder.append(_compile_2, "       \t");
           }
         }
         _builder.append("then ");
@@ -712,7 +712,7 @@ public class EditorGenerator implements IGenerator {
           for(final FunctionDefinitionBlock x_3 : _t13) {
             _builder.append(",");
             CharSequence _compile_3 = this.compile(x_3);
-            _builder.append(_compile_3, "       	");
+            _builder.append(_compile_3, "       \t");
           }
         }
         _builder.append("else ");
@@ -721,7 +721,7 @@ public class EditorGenerator implements IGenerator {
           for(final FunctionDefinitionBlock x_4 : _t14) {
             _builder.append(",");
             CharSequence _compile_4 = this.compile(x_4);
-            _builder.append(_compile_4, "       	");
+            _builder.append(_compile_4, "       \t");
           }
         }
       }
@@ -1143,10 +1143,10 @@ public class EditorGenerator implements IGenerator {
     }
     _builder.newLineIfNotEmpty();
     _builder.append("      ");
-    _builder.append("//IF f instanceof TypePrimaryExpression2\u00BB");
+    _builder.append("//IF f instanceof TypePrimaryExpression2»");
     _builder.newLine();
     _builder.append("      ");
-    _builder.append("//compile(f as TypePrimaryExpression2)\u00BB");
+    _builder.append("//compile(f as TypePrimaryExpression2)»");
     _builder.newLine();
     return _builder;
   }
@@ -1755,21 +1755,21 @@ public class EditorGenerator implements IGenerator {
       } else {
         String _t22 = f.getT22();
         boolean _equals = Objects.equal(_t22, null);
-        _and_2 = (_notEquals && _equals);
+        _and_2 = _equals;
       }
       if (!_and_2) {
         _and_1 = false;
       } else {
         CharacterLiteral _t34 = f.getT34();
         boolean _equals_1 = Objects.equal(_t34, null);
-        _and_1 = (_and_2 && _equals_1);
+        _and_1 = _equals_1;
       }
       if (!_and_1) {
         _and = false;
       } else {
         BooleanLiteral _t35 = f.getT35();
         boolean _equals_2 = Objects.equal(_t35, null);
-        _and = (_and_1 && _equals_2);
+        _and = _equals_2;
       }
       if (_and) {
         _builder.append(" ");
@@ -3168,27 +3168,14 @@ public class EditorGenerator implements IGenerator {
     StringConcatenation _builder = new StringConcatenation();
     {
       boolean _and = false;
-      boolean _and_1 = false;
-      boolean _and_2 = false;
-      boolean _not = (!(f instanceof ListLiteral));
-      if (!_not) {
-        _and_2 = false;
-      } else {
-        boolean _not_1 = (!(f instanceof CharacterLiteral));
-        _and_2 = (_not && _not_1);
-      }
-      if (!_and_2) {
-        _and_1 = false;
-      } else {
-        boolean _not_2 = (!(f instanceof BooleanLiteral));
-        _and_1 = (_and_2 && _not_2);
-      }
-      if (!_and_1) {
+      if (!(((!(f instanceof ListLiteral)) && 
+        (!(f instanceof CharacterLiteral))) && 
+        (!(f instanceof BooleanLiteral)))) {
         _and = false;
       } else {
         String _t2 = f.getT2();
         boolean _equals = Objects.equal(_t2, null);
-        _and = (_and_1 && _equals);
+        _and = _equals;
       }
       if (_and) {
         int _value = f.getValue();

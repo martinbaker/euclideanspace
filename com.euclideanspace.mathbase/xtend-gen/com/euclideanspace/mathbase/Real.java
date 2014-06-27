@@ -1,3 +1,21 @@
+/**
+ * Copyright 2012 Martin John Baker
+ * 
+ * This file is part of EuclideanSpace.
+ * 
+ *  EuclideanSpace is free software: you can redistribute it and/or modify
+ *  it under the terms of the GNU Affero General Public License as published by
+ *  the Free Software Foundation, either version 3 of the License, or
+ *  (at your option) any later version.
+ * 
+ *  EuclideanSpace is distributed in the hope that it will be useful,
+ *  but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *  GNU Affero General Public License for more details.
+ * 
+ *  You should have received a copy of the GNU Affero General Public License
+ *  along with EuclideanSpace.  If not, see <http://www.gnu.org/licenses/>.
+ */
 package com.euclideanspace.mathbase;
 
 import com.euclideanspace.mathbase.Domain;
@@ -6,25 +24,18 @@ import com.euclideanspace.mathbase.Field;
 import com.euclideanspace.mathbase.RealEx;
 import com.euclideanspace.mathbase.TYPE;
 import com.euclideanspace.mathbase.TypeExpression;
-import org.eclipse.xtext.xbase.lib.Functions.Function0;
 import org.eclipse.xtext.xbase.lib.InputOutput;
 
 @SuppressWarnings("all")
 public class Real implements Field, Domain {
-  private final TypeExpression rep = new Function0<TypeExpression>() {
-    public TypeExpression apply() {
-      TypeExpression _typeExpression = new TypeExpression(TYPE.REAL);
-      return _typeExpression;
-    }
-  }.apply();
+  private final TypeExpression rep = new TypeExpression(TYPE.REAL);
   
   public TypeExpression getRep() {
     return this.rep;
   }
   
   public Expression real(final double d) {
-    RealEx _realEx = new RealEx(d, this);
-    return _realEx;
+    return new RealEx(d, this);
   }
   
   /**
@@ -49,7 +60,7 @@ public class Real implements Field, Domain {
     if (!(a instanceof RealEx)) {
       _and = false;
     } else {
-      _and = ((a instanceof RealEx) && (b instanceof RealEx));
+      _and = (b instanceof RealEx);
     }
     if (_and) {
       return this.operator_plus(((RealEx) a), ((RealEx) b));
@@ -62,8 +73,7 @@ public class Real implements Field, Domain {
     double _realValue = a.getRealValue();
     double _realValue_1 = b.getRealValue();
     double _plus = (_realValue + _realValue_1);
-    RealEx _realEx = new RealEx(_plus, this);
-    return _realEx;
+    return new RealEx(_plus, this);
   }
   
   /**
@@ -88,7 +98,7 @@ public class Real implements Field, Domain {
     if (!(a instanceof RealEx)) {
       _and = false;
     } else {
-      _and = ((a instanceof RealEx) && (b instanceof RealEx));
+      _and = (b instanceof RealEx);
     }
     if (_and) {
       return this.operator_multiply(((RealEx) a), ((RealEx) b));
@@ -101,8 +111,7 @@ public class Real implements Field, Domain {
     double _realValue = a.getRealValue();
     double _realValue_1 = b.getRealValue();
     double _multiply = (_realValue * _realValue_1);
-    RealEx _realEx = new RealEx(_multiply, this);
-    return _realEx;
+    return new RealEx(_multiply, this);
   }
   
   public double coerce(final RealEx a) {

@@ -18,11 +18,11 @@ Import returns EuclidImport :
 //  (static?='static' extension?='extension'? importedType=[types::JvmType|QualifiedName] '.' '*')
    importedType=[types::JvmType|QualifiedName]
 //   importedNamespace=QualifiedName
-  | importedNamespace=QualifiedNameWithWildCard) ';'?
+  | importedNamespace=QualifiedNameWithWildcard) ';'?
 ;
 
-QualifiedNameWithWildCard :
-  QualifiedName '.' '*';
+//QualifiedNameWithWildCard :
+//  QualifiedName '.' '*';
 
 Type returns EuclidTypeDeclaration :
   {EuclidTypeDeclaration} annotations+=XAnnotation*

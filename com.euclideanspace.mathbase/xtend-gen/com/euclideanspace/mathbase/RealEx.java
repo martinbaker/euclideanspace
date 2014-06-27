@@ -1,3 +1,21 @@
+/**
+ * Copyright 2012 Martin John Baker
+ * 
+ * This file is part of EuclideanSpace.
+ * 
+ *  EuclideanSpace is free software: you can redistribute it and/or modify
+ *  it under the terms of the GNU Affero General Public License as published by
+ *  the Free Software Foundation, either version 3 of the License, or
+ *  (at your option) any later version.
+ * 
+ *  EuclideanSpace is distributed in the hope that it will be useful,
+ *  but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *  GNU Affero General Public License for more details.
+ * 
+ *  You should have received a copy of the GNU Affero General Public License
+ *  along with EuclideanSpace.  If not, see <http://www.gnu.org/licenses/>.
+ */
 package com.euclideanspace.mathbase;
 
 import com.euclideanspace.mathbase.Domain;
@@ -64,27 +82,23 @@ public class RealEx extends FieldEx {
       }
       String _switchResult = null;
       TYPE _lowType = this.getLowType();
-      final TYPE getLowType = _lowType;
-      boolean _matched = false;
-      if (!_matched) {
-        if (Objects.equal(getLowType,TYPE.REAL)) {
-          _matched=true;
-          double _realValue = this.getRealValue();
-          String _plus = ("" + Double.valueOf(_realValue));
-          _switchResult = _plus;
+      if (_lowType != null) {
+        switch (_lowType) {
+          case REAL:
+            double _realValue = this.getRealValue();
+            _switchResult = ("" + Double.valueOf(_realValue));
+            break;
+          case STRING:
+            _switchResult = this.getStringValue();
+            break;
+          default:
+            _switchResult = "error";
+            break;
         }
-      }
-      if (!_matched) {
-        if (Objects.equal(getLowType,TYPE.STRING)) {
-          _matched=true;
-          String _stringValue_3 = this.getStringValue();
-          _switchResult = _stringValue_3;
-        }
-      }
-      if (!_matched) {
+      } else {
         _switchResult = "error";
       }
-      _xblockexpression = (_switchResult);
+      _xblockexpression = _switchResult;
     }
     return _xblockexpression;
   }
@@ -104,8 +118,8 @@ public class RealEx extends FieldEx {
     if (_equals_1) {
       return false;
     }
-    Class<? extends Object> _class = this.getClass();
-    Class<? extends Object> _class_1 = obj.getClass();
+    Class<? extends RealEx> _class = this.getClass();
+    Class<?> _class_1 = obj.getClass();
     boolean _notEquals = (!Objects.equal(_class, _class_1));
     if (_notEquals) {
       return false;

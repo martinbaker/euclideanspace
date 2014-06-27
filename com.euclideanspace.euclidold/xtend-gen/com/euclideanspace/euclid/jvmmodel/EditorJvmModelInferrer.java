@@ -28,8 +28,8 @@ import org.eclipse.xtext.naming.IQualifiedNameProvider;
 import org.eclipse.xtext.xbase.XExpression;
 import org.eclipse.xtext.xbase.jvmmodel.AbstractModelInferrer;
 import org.eclipse.xtext.xbase.jvmmodel.IJvmDeclaredTypeAcceptor;
-import org.eclipse.xtext.xbase.jvmmodel.IJvmDeclaredTypeAcceptor.IPostIndexingInitializing;
 import org.eclipse.xtext.xbase.jvmmodel.JvmTypesBuilder;
+import org.eclipse.xtext.xbase.lib.Extension;
 import org.eclipse.xtext.xbase.lib.InputOutput;
 import org.eclipse.xtext.xbase.lib.Procedures.Procedure1;
 
@@ -61,9 +61,11 @@ import org.eclipse.xtext.xbase.lib.Procedures.Procedure1;
 @SuppressWarnings("all")
 public class EditorJvmModelInferrer extends AbstractModelInferrer {
   @Inject
+  @Extension
   private JvmTypesBuilder _jvmTypesBuilder;
   
   @Inject
+  @Extension
   private IQualifiedNameProvider _iQualifiedNameProvider;
   
   protected void _infer(final EuclidFile element, final IJvmDeclaredTypeAcceptor acceptor, final boolean isPrelinkingPhase) {
@@ -94,63 +96,62 @@ public class EditorJvmModelInferrer extends AbstractModelInferrer {
     String qualifiedName = ec.getName();
     boolean _notEquals = (!Objects.equal(pck, null));
     if (_notEquals) {
-      String _plus = (pck + ".");
       String _name = ec.getName();
-      String _plus_1 = (_plus + _name);
-      qualifiedName = _plus_1;
+      String _plus = ((pck + ".") + _name);
+      qualifiedName = _plus;
     }
     JvmGenericType _class = this._jvmTypesBuilder.toClass(ec, qualifiedName);
-    IPostIndexingInitializing<JvmGenericType> _accept = acceptor.<JvmGenericType>accept(_class);
+    IJvmDeclaredTypeAcceptor.IPostIndexingInitializing<JvmGenericType> _accept = acceptor.<JvmGenericType>accept(_class);
     final Procedure1<JvmGenericType> _function = new Procedure1<JvmGenericType>() {
-        public void apply(final JvmGenericType it) {
-          String _documentation = EditorJvmModelInferrer.this._jvmTypesBuilder.getDocumentation(ec);
-          EditorJvmModelInferrer.this._jvmTypesBuilder.setDocumentation(it, _documentation);
-          JvmParameterizedTypeReference ext = ec.getExtends();
-          boolean _and = false;
-          boolean _notEquals = (!Objects.equal(ext, null));
-          if (!_notEquals) {
-            _and = false;
-          } else {
-            EList<JvmTypeReference> _superTypes = it.getSuperTypes();
-            boolean _notEquals_1 = (!Objects.equal(_superTypes, null));
-            _and = (_notEquals && _notEquals_1);
-          }
-          if (_and) {
-            EList<JvmTypeReference> _superTypes_1 = it.getSuperTypes();
-            JvmTypeReference _cloneWithProxies = EditorJvmModelInferrer.this._jvmTypesBuilder.cloneWithProxies(ext);
-            EditorJvmModelInferrer.this._jvmTypesBuilder.<JvmTypeReference>operator_add(_superTypes_1, _cloneWithProxies);
-          }
-          EList<JvmParameterizedTypeReference> imps = ec.getImplements();
-          for (final JvmParameterizedTypeReference imp : imps) {
-            EList<JvmTypeReference> _superTypes_2 = it.getSuperTypes();
-            JvmTypeReference _cloneWithProxies_1 = EditorJvmModelInferrer.this._jvmTypesBuilder.cloneWithProxies(imp);
-            EditorJvmModelInferrer.this._jvmTypesBuilder.<JvmTypeReference>operator_add(_superTypes_2, _cloneWithProxies_1);
-          }
-          EList<EuclidMember> _members = ec.getMembers();
-          for (final EuclidMember methodElement : _members) {
-            {
-              if ((methodElement instanceof EuclidFunction)) {
-                final EuclidFunction me = ((EuclidFunction) methodElement);
-                EList<JvmMember> _members_1 = it.getMembers();
-                JvmOperation _buildMethod = EditorJvmModelInferrer.this.buildMethod(me);
-                EditorJvmModelInferrer.this._jvmTypesBuilder.<JvmOperation>operator_add(_members_1, _buildMethod);
-              }
-              if ((methodElement instanceof EuclidConstructor)) {
-                final EuclidConstructor me_1 = ((EuclidConstructor) methodElement);
-                EList<JvmMember> _members_2 = it.getMembers();
-                JvmConstructor _buildConstructor = EditorJvmModelInferrer.this.buildConstructor(me_1);
-                EditorJvmModelInferrer.this._jvmTypesBuilder.<JvmConstructor>operator_add(_members_2, _buildConstructor);
-              }
-              if ((methodElement instanceof EuclidField)) {
-                final EuclidField fe = ((EuclidField) methodElement);
-                EList<JvmMember> _members_3 = it.getMembers();
-                JvmField _buildField = EditorJvmModelInferrer.this.buildField(fe);
-                EditorJvmModelInferrer.this._jvmTypesBuilder.<JvmField>operator_add(_members_3, _buildField);
-              }
+      public void apply(final JvmGenericType it) {
+        String _documentation = EditorJvmModelInferrer.this._jvmTypesBuilder.getDocumentation(ec);
+        EditorJvmModelInferrer.this._jvmTypesBuilder.setDocumentation(it, _documentation);
+        JvmParameterizedTypeReference ext = ec.getExtends();
+        boolean _and = false;
+        boolean _notEquals = (!Objects.equal(ext, null));
+        if (!_notEquals) {
+          _and = false;
+        } else {
+          EList<JvmTypeReference> _superTypes = it.getSuperTypes();
+          boolean _notEquals_1 = (!Objects.equal(_superTypes, null));
+          _and = _notEquals_1;
+        }
+        if (_and) {
+          EList<JvmTypeReference> _superTypes_1 = it.getSuperTypes();
+          JvmTypeReference _cloneWithProxies = EditorJvmModelInferrer.this._jvmTypesBuilder.cloneWithProxies(ext);
+          EditorJvmModelInferrer.this._jvmTypesBuilder.<JvmTypeReference>operator_add(_superTypes_1, _cloneWithProxies);
+        }
+        EList<JvmParameterizedTypeReference> imps = ec.getImplements();
+        for (final JvmParameterizedTypeReference imp : imps) {
+          EList<JvmTypeReference> _superTypes_2 = it.getSuperTypes();
+          JvmTypeReference _cloneWithProxies_1 = EditorJvmModelInferrer.this._jvmTypesBuilder.cloneWithProxies(imp);
+          EditorJvmModelInferrer.this._jvmTypesBuilder.<JvmTypeReference>operator_add(_superTypes_2, _cloneWithProxies_1);
+        }
+        EList<EuclidMember> _members = ec.getMembers();
+        for (final EuclidMember methodElement : _members) {
+          {
+            if ((methodElement instanceof EuclidFunction)) {
+              final EuclidFunction me = ((EuclidFunction) methodElement);
+              EList<JvmMember> _members_1 = it.getMembers();
+              JvmOperation _buildMethod = EditorJvmModelInferrer.this.buildMethod(me);
+              EditorJvmModelInferrer.this._jvmTypesBuilder.<JvmOperation>operator_add(_members_1, _buildMethod);
+            }
+            if ((methodElement instanceof EuclidConstructor)) {
+              final EuclidConstructor me_1 = ((EuclidConstructor) methodElement);
+              EList<JvmMember> _members_2 = it.getMembers();
+              JvmConstructor _buildConstructor = EditorJvmModelInferrer.this.buildConstructor(me_1);
+              EditorJvmModelInferrer.this._jvmTypesBuilder.<JvmConstructor>operator_add(_members_2, _buildConstructor);
+            }
+            if ((methodElement instanceof EuclidField)) {
+              final EuclidField fe = ((EuclidField) methodElement);
+              EList<JvmMember> _members_3 = it.getMembers();
+              JvmField _buildField = EditorJvmModelInferrer.this.buildField(fe);
+              EditorJvmModelInferrer.this._jvmTypesBuilder.<JvmField>operator_add(_members_3, _buildField);
             }
           }
         }
-      };
+      }
+    };
     _accept.initializeLater(_function);
   }
   
@@ -161,35 +162,35 @@ public class EditorJvmModelInferrer extends AbstractModelInferrer {
     String methodName = me.getName();
     JvmTypeReference methodType = me.getReturnType();
     final Procedure1<JvmOperation> _function = new Procedure1<JvmOperation>() {
-        public void apply(final JvmOperation it) {
-          EList<EuclidParameter> _parameters = me.getParameters();
-          for (final EuclidParameter par : _parameters) {
-            boolean _and = false;
-            String _name = par.getName();
-            boolean _notEquals = (!Objects.equal(_name, null));
-            if (!_notEquals) {
-              _and = false;
-            } else {
-              JvmTypeReference _parameterType = par.getParameterType();
-              boolean _notEquals_1 = (!Objects.equal(_parameterType, null));
-              _and = (_notEquals && _notEquals_1);
-            }
-            if (_and) {
-              EList<JvmFormalParameter> _parameters_1 = it.getParameters();
-              String _name_1 = par.getName();
-              JvmTypeReference _parameterType_1 = par.getParameterType();
-              JvmFormalParameter _parameter = EditorJvmModelInferrer.this._jvmTypesBuilder.toParameter(par, _name_1, _parameterType_1);
-              EditorJvmModelInferrer.this._jvmTypesBuilder.<JvmFormalParameter>operator_add(_parameters_1, _parameter);
-            }
+      public void apply(final JvmOperation it) {
+        EList<EuclidParameter> _parameters = me.getParameters();
+        for (final EuclidParameter par : _parameters) {
+          boolean _and = false;
+          String _name = par.getName();
+          boolean _notEquals = (!Objects.equal(_name, null));
+          if (!_notEquals) {
+            _and = false;
+          } else {
+            JvmTypeReference _parameterType = par.getParameterType();
+            boolean _notEquals_1 = (!Objects.equal(_parameterType, null));
+            _and = _notEquals_1;
           }
-          String _documentation = EditorJvmModelInferrer.this._jvmTypesBuilder.getDocumentation(me);
-          EditorJvmModelInferrer.this._jvmTypesBuilder.setDocumentation(it, _documentation);
-          JvmVisibility _visibility = me.getVisibility();
-          it.setVisibility(_visibility);
-          XExpression _expression = me.getExpression();
-          EditorJvmModelInferrer.this._jvmTypesBuilder.setBody(it, _expression);
+          if (_and) {
+            EList<JvmFormalParameter> _parameters_1 = it.getParameters();
+            String _name_1 = par.getName();
+            JvmTypeReference _parameterType_1 = par.getParameterType();
+            JvmFormalParameter _parameter = EditorJvmModelInferrer.this._jvmTypesBuilder.toParameter(par, _name_1, _parameterType_1);
+            EditorJvmModelInferrer.this._jvmTypesBuilder.<JvmFormalParameter>operator_add(_parameters_1, _parameter);
+          }
         }
-      };
+        String _documentation = EditorJvmModelInferrer.this._jvmTypesBuilder.getDocumentation(me);
+        EditorJvmModelInferrer.this._jvmTypesBuilder.setDocumentation(it, _documentation);
+        JvmVisibility _visibility = me.getVisibility();
+        it.setVisibility(_visibility);
+        XExpression _expression = me.getExpression();
+        EditorJvmModelInferrer.this._jvmTypesBuilder.setBody(it, _expression);
+      }
+    };
     return this._jvmTypesBuilder.toMethod(me, methodName, methodType, _function);
   }
   
@@ -198,35 +199,35 @@ public class EditorJvmModelInferrer extends AbstractModelInferrer {
    */
   public JvmConstructor buildConstructor(final EuclidConstructor me) {
     final Procedure1<JvmConstructor> _function = new Procedure1<JvmConstructor>() {
-        public void apply(final JvmConstructor it) {
-          EList<EuclidParameter> _parameters = me.getParameters();
-          for (final EuclidParameter par : _parameters) {
-            boolean _and = false;
-            String _name = par.getName();
-            boolean _notEquals = (!Objects.equal(_name, null));
-            if (!_notEquals) {
-              _and = false;
-            } else {
-              JvmTypeReference _parameterType = par.getParameterType();
-              boolean _notEquals_1 = (!Objects.equal(_parameterType, null));
-              _and = (_notEquals && _notEquals_1);
-            }
-            if (_and) {
-              EList<JvmFormalParameter> _parameters_1 = it.getParameters();
-              String _name_1 = par.getName();
-              JvmTypeReference _parameterType_1 = par.getParameterType();
-              JvmFormalParameter _parameter = EditorJvmModelInferrer.this._jvmTypesBuilder.toParameter(par, _name_1, _parameterType_1);
-              EditorJvmModelInferrer.this._jvmTypesBuilder.<JvmFormalParameter>operator_add(_parameters_1, _parameter);
-            }
+      public void apply(final JvmConstructor it) {
+        EList<EuclidParameter> _parameters = me.getParameters();
+        for (final EuclidParameter par : _parameters) {
+          boolean _and = false;
+          String _name = par.getName();
+          boolean _notEquals = (!Objects.equal(_name, null));
+          if (!_notEquals) {
+            _and = false;
+          } else {
+            JvmTypeReference _parameterType = par.getParameterType();
+            boolean _notEquals_1 = (!Objects.equal(_parameterType, null));
+            _and = _notEquals_1;
           }
-          String _documentation = EditorJvmModelInferrer.this._jvmTypesBuilder.getDocumentation(me);
-          EditorJvmModelInferrer.this._jvmTypesBuilder.setDocumentation(it, _documentation);
-          JvmVisibility _visibility = me.getVisibility();
-          it.setVisibility(_visibility);
-          XExpression _expression = me.getExpression();
-          EditorJvmModelInferrer.this._jvmTypesBuilder.setBody(it, _expression);
+          if (_and) {
+            EList<JvmFormalParameter> _parameters_1 = it.getParameters();
+            String _name_1 = par.getName();
+            JvmTypeReference _parameterType_1 = par.getParameterType();
+            JvmFormalParameter _parameter = EditorJvmModelInferrer.this._jvmTypesBuilder.toParameter(par, _name_1, _parameterType_1);
+            EditorJvmModelInferrer.this._jvmTypesBuilder.<JvmFormalParameter>operator_add(_parameters_1, _parameter);
+          }
         }
-      };
+        String _documentation = EditorJvmModelInferrer.this._jvmTypesBuilder.getDocumentation(me);
+        EditorJvmModelInferrer.this._jvmTypesBuilder.setDocumentation(it, _documentation);
+        JvmVisibility _visibility = me.getVisibility();
+        it.setVisibility(_visibility);
+        XExpression _expression = me.getExpression();
+        EditorJvmModelInferrer.this._jvmTypesBuilder.setBody(it, _expression);
+      }
+    };
     return this._jvmTypesBuilder.toConstructor(me, _function);
   }
   
@@ -243,9 +244,9 @@ public class EditorJvmModelInferrer extends AbstractModelInferrer {
     String _name = fe.getName();
     JvmTypeReference _type_1 = fe.getType();
     final Procedure1<JvmField> _function = new Procedure1<JvmField>() {
-        public void apply(final JvmField it) {
-        }
-      };
+      public void apply(final JvmField it) {
+      }
+    };
     return this._jvmTypesBuilder.toField(fe, _name, _type_1, _function);
   }
   

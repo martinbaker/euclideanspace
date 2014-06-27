@@ -1,10 +1,27 @@
+/**
+ * Copyright 2012 Martin John Baker
+ * 
+ * This file is part of EuclideanSpace.
+ * 
+ *  EuclideanSpace is free software: you can redistribute it and/or modify
+ *  it under the terms of the GNU Affero General Public License as published by
+ *  the Free Software Foundation, either version 3 of the License, or
+ *  (at your option) any later version.
+ * 
+ *  EuclideanSpace is distributed in the hope that it will be useful,
+ *  but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *  GNU Affero General Public License for more details.
+ * 
+ *  You should have received a copy of the GNU Affero General Public License
+ *  along with EuclideanSpace.  If not, see <http://www.gnu.org/licenses/>.
+ */
 package com.euclideanspace.mathbase;
 
 import com.euclideanspace.mathbase.Domain;
 import com.euclideanspace.mathbase.TYPE;
 import com.google.common.base.Objects;
 import java.util.ArrayList;
-import java.util.List;
 import org.eclipse.xtext.xbase.lib.CollectionLiterals;
 import org.eclipse.xtext.xbase.lib.Conversions;
 
@@ -199,7 +216,7 @@ public class Expression {
       _and = false;
     } else {
       boolean _isNumeric_1 = b.isNumeric();
-      _and = (_isNumeric && _isNumeric_1);
+      _and = _isNumeric_1;
     }
     if (_and) {
       int _intValue = a.getIntValue();
@@ -236,8 +253,7 @@ public class Expression {
         return true;
       }
       String _stringValue_1 = this.getStringValue();
-      boolean _equals_1 = _stringValue_1.equals("");
-      _xblockexpression = (_equals_1);
+      _xblockexpression = _stringValue_1.equals("");
     }
     return _xblockexpression;
   }
@@ -251,8 +267,7 @@ public class Expression {
         return null;
       }
       Expression[] _arrayValue_1 = this.getArrayValue();
-      Expression _get = ((List<Expression>)Conversions.doWrapArray(_arrayValue_1)).get(i);
-      _xblockexpression = (_get);
+      _xblockexpression = _arrayValue_1[i];
     }
     return _xblockexpression;
   }
@@ -267,16 +282,13 @@ public class Expression {
       for (final Expression a : _arrayValue) {
         {
           if (follow) {
-            String _plus = (strVal + ",");
-            strVal = _plus;
+            strVal = (strVal + ",");
           }
-          String _plus_1 = (strVal + a);
-          strVal = _plus_1;
+          strVal = (strVal + a);
           follow = true;
         }
       }
-      String _plus = (strVal + ")");
-      _xblockexpression = (_plus);
+      _xblockexpression = (strVal + ")");
     }
     return _xblockexpression;
   }
@@ -303,89 +315,54 @@ public class Expression {
       }
       String _switchResult = null;
       TYPE _lowType = this.getLowType();
-      final TYPE getLowType = _lowType;
-      boolean _matched = false;
-      if (!_matched) {
-        if (Objects.equal(getLowType,TYPE.INT)) {
-          _matched=true;
-          int _intValue = this.getIntValue();
-          String _plus = ("" + Integer.valueOf(_intValue));
-          _switchResult = _plus;
+      if (_lowType != null) {
+        switch (_lowType) {
+          case INT:
+            int _intValue = this.getIntValue();
+            _switchResult = ("" + Integer.valueOf(_intValue));
+            break;
+          case REAL:
+            double _realValue = this.getRealValue();
+            _switchResult = ("" + Double.valueOf(_realValue));
+            break;
+          case CHAR:
+            char _charValue = this.getCharValue();
+            _switchResult = ("" + Character.valueOf(_charValue));
+            break;
+          case STRING:
+            _switchResult = this.getStringValue();
+            break;
+          case BOOL:
+            boolean _isBoolValue = this.isBoolValue();
+            _switchResult = ("" + Boolean.valueOf(_isBoolValue));
+            break;
+          case SYMBOL:
+            String _stringValue_3 = this.getStringValue();
+            _switchResult = ("" + _stringValue_3);
+            break;
+          case FUNCT:
+            String _stringArray_1 = this.stringArray();
+            _switchResult = ("" + _stringArray_1);
+            break;
+          case RECORD:
+            String _stringArray_2 = this.stringArray();
+            _switchResult = ("" + _stringArray_2);
+            break;
+          case UNION:
+            String _stringArray_3 = this.stringArray();
+            _switchResult = ("" + _stringArray_3);
+            break;
+          case SELF:
+            _switchResult = "*";
+            break;
+          default:
+            _switchResult = "error";
+            break;
         }
-      }
-      if (!_matched) {
-        if (Objects.equal(getLowType,TYPE.REAL)) {
-          _matched=true;
-          double _realValue = this.getRealValue();
-          String _plus_1 = ("" + Double.valueOf(_realValue));
-          _switchResult = _plus_1;
-        }
-      }
-      if (!_matched) {
-        if (Objects.equal(getLowType,TYPE.CHAR)) {
-          _matched=true;
-          char _charValue = this.getCharValue();
-          String _plus_2 = ("" + Character.valueOf(_charValue));
-          _switchResult = _plus_2;
-        }
-      }
-      if (!_matched) {
-        if (Objects.equal(getLowType,TYPE.STRING)) {
-          _matched=true;
-          String _stringValue_3 = this.getStringValue();
-          _switchResult = _stringValue_3;
-        }
-      }
-      if (!_matched) {
-        if (Objects.equal(getLowType,TYPE.BOOL)) {
-          _matched=true;
-          boolean _isBoolValue = this.isBoolValue();
-          String _plus_3 = ("" + Boolean.valueOf(_isBoolValue));
-          _switchResult = _plus_3;
-        }
-      }
-      if (!_matched) {
-        if (Objects.equal(getLowType,TYPE.SYMBOL)) {
-          _matched=true;
-          String _stringValue_4 = this.getStringValue();
-          String _plus_4 = ("" + _stringValue_4);
-          _switchResult = _plus_4;
-        }
-      }
-      if (!_matched) {
-        if (Objects.equal(getLowType,TYPE.FUNCT)) {
-          _matched=true;
-          String _stringArray_1 = this.stringArray();
-          String _plus_5 = ("" + _stringArray_1);
-          _switchResult = _plus_5;
-        }
-      }
-      if (!_matched) {
-        if (Objects.equal(getLowType,TYPE.RECORD)) {
-          _matched=true;
-          String _stringArray_2 = this.stringArray();
-          String _plus_6 = ("" + _stringArray_2);
-          _switchResult = _plus_6;
-        }
-      }
-      if (!_matched) {
-        if (Objects.equal(getLowType,TYPE.UNION)) {
-          _matched=true;
-          String _stringArray_3 = this.stringArray();
-          String _plus_7 = ("" + _stringArray_3);
-          _switchResult = _plus_7;
-        }
-      }
-      if (!_matched) {
-        if (Objects.equal(getLowType,TYPE.SELF)) {
-          _matched=true;
-          _switchResult = "*";
-        }
-      }
-      if (!_matched) {
+      } else {
         _switchResult = "error";
       }
-      _xblockexpression = (_switchResult);
+      _xblockexpression = _switchResult;
     }
     return _xblockexpression;
   }
@@ -393,12 +370,8 @@ public class Expression {
   public int hashCode() {
     final int prime = 31;
     int result = 1;
-    int _multiply = (prime * result);
-    int _plus = (_multiply + this._intValue);
-    result = _plus;
-    int _multiply_1 = (prime * result);
-    int _plus_1 = (_multiply_1 + this._charValue);
-    result = _plus_1;
+    result = ((prime * result) + this._intValue);
+    result = ((prime * result) + this._charValue);
     return result;
   }
   
@@ -411,25 +384,23 @@ public class Expression {
     if (_equals_1) {
       return false;
     }
-    Class<? extends Object> _class = this.getClass();
-    Class<? extends Object> _class_1 = obj.getClass();
+    Class<? extends Expression> _class = this.getClass();
+    Class<?> _class_1 = obj.getClass();
     boolean _notEquals = (!Objects.equal(_class, _class_1));
     if (_notEquals) {
       return false;
     }
     Expression other = ((Expression) obj);
-    boolean _notEquals_1 = (other._intValue != this._intValue);
-    if (_notEquals_1) {
+    if ((other._intValue != this._intValue)) {
       return false;
     }
-    boolean _notEquals_2 = (other._charValue != this._charValue);
-    if (_notEquals_2) {
+    if ((other._charValue != this._charValue)) {
       return false;
     }
     boolean _equals_2 = Objects.equal(this._stringValue, null);
     if (_equals_2) {
-      boolean _notEquals_3 = (!Objects.equal(other._stringValue, null));
-      if (_notEquals_3) {
+      boolean _notEquals_1 = (!Objects.equal(other._stringValue, null));
+      if (_notEquals_1) {
         return false;
       }
     } else {
@@ -439,18 +410,17 @@ public class Expression {
         return false;
       }
     }
-    boolean _notEquals_4 = (other._boolValue != this._boolValue);
-    if (_notEquals_4) {
+    if ((other._boolValue != this._boolValue)) {
       return false;
     }
     boolean _equals_4 = Objects.equal(this._arrayValue, null);
     if (_equals_4) {
-      boolean _notEquals_5 = (!Objects.equal(other._arrayValue, null));
-      if (_notEquals_5) {
+      boolean _notEquals_2 = (!Objects.equal(other._arrayValue, null));
+      if (_notEquals_2) {
         return false;
       }
     } else {
-      boolean _equals_5 = ((List<Expression>)Conversions.doWrapArray(this._arrayValue)).equals(other._arrayValue);
+      boolean _equals_5 = this._arrayValue.equals(other._arrayValue);
       boolean _not_1 = (!_equals_5);
       if (_not_1) {
         return false;
@@ -458,8 +428,8 @@ public class Expression {
     }
     boolean _equals_6 = Objects.equal(this._lowType, null);
     if (_equals_6) {
-      boolean _notEquals_6 = (!Objects.equal(other._lowType, null));
-      if (_notEquals_6) {
+      boolean _notEquals_3 = (!Objects.equal(other._lowType, null));
+      if (_notEquals_3) {
         return false;
       }
     } else {
@@ -471,8 +441,8 @@ public class Expression {
     }
     boolean _equals_8 = Objects.equal(this._highType, null);
     if (_equals_8) {
-      boolean _notEquals_7 = (!Objects.equal(other._highType, null));
-      if (_notEquals_7) {
+      boolean _notEquals_4 = (!Objects.equal(other._highType, null));
+      if (_notEquals_4) {
         return false;
       }
     } else {

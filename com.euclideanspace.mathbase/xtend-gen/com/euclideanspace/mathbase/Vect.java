@@ -1,3 +1,21 @@
+/**
+ * Copyright 2012 Martin John Baker
+ * 
+ * This file is part of EuclideanSpace.
+ * 
+ *  EuclideanSpace is free software: you can redistribute it and/or modify
+ *  it under the terms of the GNU Affero General Public License as published by
+ *  the Free Software Foundation, either version 3 of the License, or
+ *  (at your option) any later version.
+ * 
+ *  EuclideanSpace is distributed in the hope that it will be useful,
+ *  but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *  GNU Affero General Public License for more details.
+ * 
+ *  You should have received a copy of the GNU Affero General Public License
+ *  along with EuclideanSpace.  If not, see <http://www.gnu.org/licenses/>.
+ */
 package com.euclideanspace.mathbase;
 
 import com.euclideanspace.mathbase.Domain;
@@ -45,15 +63,13 @@ public class Vect implements Domain {
    * How can we ensure these elements are of type 'te' which is 'Field'
    */
   public Expression vect(final Expression[] xs) {
-    Expression _expression = new Expression(xs, this);
-    return _expression;
+    return new Expression(xs, this);
   }
   
   public Expression operator_plus(final Expression a, final Expression b) {
     List<Expression> elements = null;
     try {
-      int _minus = (this.dimen - 1);
-      IntegerRange _upTo = new IntegerRange(0, _minus);
+      IntegerRange _upTo = new IntegerRange(0, (this.dimen - 1));
       for (final int i : _upTo) {
         {
           Expression _elt = a.elt(i);
@@ -71,22 +87,20 @@ public class Vect implements Domain {
     } catch (final Throwable _t) {
       if (_t instanceof Exception) {
         final Exception e = (Exception)_t;
-        String _plus = ("Vect.add error=" + e);
-        InputOutput.<String>println(_plus);
+        InputOutput.<String>println(("Vect.add error=" + e));
       } else {
         throw Exceptions.sneakyThrow(_t);
       }
     }
-    Expression _expression = new Expression(((Expression[])Conversions.unwrapArray(elements, Expression.class)), this);
-    return _expression;
+    final List<Expression> _converted_elements = (List<Expression>)elements;
+    return new Expression(((Expression[])Conversions.unwrapArray(_converted_elements, Expression.class)), this);
   }
   
   public Expression operator_multiply(final Expression a, final Expression b) {
     int _intValue = a.getIntValue();
     int _intValue_1 = b.getIntValue();
     int _multiply = (_intValue * _intValue_1);
-    Expression _expression = new Expression(_multiply, this);
-    return _expression;
+    return new Expression(_multiply, this);
   }
   
   public Expression[] coerce(final Expression a) {

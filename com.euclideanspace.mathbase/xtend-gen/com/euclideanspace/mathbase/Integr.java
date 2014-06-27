@@ -1,19 +1,31 @@
+/**
+ * Copyright 2012 Martin John Baker
+ * 
+ * This file is part of EuclideanSpace.
+ * 
+ *  EuclideanSpace is free software: you can redistribute it and/or modify
+ *  it under the terms of the GNU Affero General Public License as published by
+ *  the Free Software Foundation, either version 3 of the License, or
+ *  (at your option) any later version.
+ * 
+ *  EuclideanSpace is distributed in the hope that it will be useful,
+ *  but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *  GNU Affero General Public License for more details.
+ * 
+ *  You should have received a copy of the GNU Affero General Public License
+ *  along with EuclideanSpace.  If not, see <http://www.gnu.org/licenses/>.
+ */
 package com.euclideanspace.mathbase;
 
 import com.euclideanspace.mathbase.Domain;
 import com.euclideanspace.mathbase.Expression;
 import com.euclideanspace.mathbase.TYPE;
 import com.euclideanspace.mathbase.TypeExpression;
-import org.eclipse.xtext.xbase.lib.Functions.Function0;
 
 @SuppressWarnings("all")
 public class Integr implements Domain {
-  private final TypeExpression rep = new Function0<TypeExpression>() {
-    public TypeExpression apply() {
-      TypeExpression _typeExpression = new TypeExpression(TYPE.INT);
-      return _typeExpression;
-    }
-  }.apply();
+  private final TypeExpression rep = new TypeExpression(TYPE.INT);
   
   public TypeExpression getRep() {
     return this.rep;
@@ -23,29 +35,25 @@ public class Integr implements Domain {
    * value constructor for int literal
    */
   public Expression integr(final int i) {
-    Expression _expression = new Expression(i, this);
-    return _expression;
+    return new Expression(i, this);
   }
   
   /**
    * value constructor for symbolic int
    */
   public Expression integr(final String i) {
-    Expression _expression = new Expression(i, this);
-    return _expression;
+    return new Expression(i, this);
   }
   
   public Expression add(final Expression a, final Expression b) {
-    Expression _expression = new Expression("+", a, b);
-    return _expression;
+    return new Expression("+", a, b);
   }
   
   public Expression multiply(final Expression a, final Expression b) {
     int _intValue = a.getIntValue();
     int _intValue_1 = b.getIntValue();
     int _multiply = (_intValue * _intValue_1);
-    Expression _expression = new Expression(_multiply, this);
-    return _expression;
+    return new Expression(_multiply, this);
   }
   
   public int coerce(final Expression a) {
