@@ -1,0 +1,1597 @@
+grammar com.euclideanspace.spad.Editor hidden ()
+
+import "http://www.eclipse.org/emf/2002/Ecore" as ecore
+
+generate editor "http://www.euclideanspace.com/spad/Editor"
+
+/* Copyright 2012 Martin John Baker
+ *
+ * This file is part of EuclideanSpace.
+ *
+ * EuclideanSpace is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU Affero General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * EuclideanSpace is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+ * GNU Affero General Public License for more details.
+ *
+ * You should have received a copy of the GNU Affero General Public License
+ * along with EuclideanSpace. If not, see <http://www.gnu.org/licenses/>.
+ */
+
+/* FriCAS parses SPAD using a type of parser known as a 'Pratt' parser.
+ * In this type of parser each operator has different binding powers for
+ * its left and right. The SPAD parser also has 'special handlers' for
+ * certain operators. In this type of parser there is less distinction made
+ * between expressions and statements, effectively everything is treated as
+ * an expression so in this context, not only are "+" and "*" operators
+ * but also other keywords such as "for" and "return".
+ *
+ * Here we are using a LL(*) recursive-descent parser generator and this
+ * may not be able to exactly replicate the SPAD parser as described above
+ *
+ * I have taken this information from s-parser.boot in src/interp
+ * so I suspect that it in valid only for the SPAD interpreter and not
+ * the compiler however I am hoping that this will be a close enough
+ * approximation for this purpose.
+ *
+ * So I will use the LED Table to approximate infix operator precedence
+ * and the NUD Table to approximate prefix operator precedence. So I
+ * have ordered both these tables in
+ *
+ * I have ordered the tables low (binds least tightly) to high (binds most tightly) as follows:
+ *
+ * LED Table - infix operators
+ * ---------------------------
+ * ";", 81, 82, ["parse_SemiColon"]
+ * "|", 108, 111
+ * ",", 110, 111
+ * "when", 112, 190
+ * "otherwise", 119, 190, ["parse_Suffix"]
+ * "where", 121, 104
+ * "==>", "MDEF", 122, 121
+ * "==", "DEF", 122, 121
+ * "=>", 123, 103
+ * ":=", "LET", 125, 124]
+ * "\/", BACKSLASHSLASH 200, 201
+ * "/\", SLASHBACKSLASH 250, 251
+ * "or", 200, 201
+ * "and", 250, 251
+ * "has", 400, 400
+ * "add", 400, 120
+ * "case", 400, 400
+ * "in", 400, 400
+ * "~=", 400, 400
+ * "^=", 400, 400
+ * "=", 400, 400
+ * ">=", 400, 400
+ * "<=", 400, 400
+ * ">>", 400, 400
+ * "<<", 400, 400
+ * ">", 400, 400
+ * "<", 400, 400
+ * "isnt", 400, 400
+ * "is", 400, 400
+ * "..", "SEGMENT", 401, 699, ["parse_Seg"]
+ * "-", 700, 701
+ * "+", 700, 701
+ * "exquo", 800, 801
+ * "/", 800, 801
+ * "quo", 800, 801
+ * "mod", 800, 801
+ * "rem", 800, 801
+ * "*", 800, 801
+ * "^", 901, 900
+ * "**", 901, 900
+ * "+->", 995, 112
+ * "pretend", 995, 996
+ * "@", 996, 997
+ * "::", 996, 997
+ * ":", 996, 997
+ * "!", 1002, 1001
+ * "with", 2000, 400, ["parse_InfixWith"]
+ * "."
+ *
+ * NUD Table - prefix operators
+ * ----------------------------
+ *
+ * "catch", 0, 114
+ * "finally", 0, 114
+ * "then", 0, 114
+ * "else", 0, 114
+ * "|", 0, 190
+ * "import", 120, 0, ["parse_Import"]
+ * "<<", 122, 120, ["parse_LabelExpr"]
+ * ">>"
+ * "if", 130, 0, ["parse_Conditional"]
+ * "try", 130, 0, ["parse_Try"]
+ * "for", 130, 350, ["parse_Loop"
+ * "while", 130, 190, ["parse_Loop"]
+ * "until", 130, 190, ["parse_Loop"]
+ * "repeat", 130, 190, ["parse_Loop"]
+ * "return", 202, 201, ["parse_Return"]
+ * "leave", 202, 201, ["parse_Leave"]
+ * "exit", 202, 201, ["parse_Exit"]
+ * "~", 260, 259, nil
+ * ":", 194, 195
+ * "not", 260, 259, NIL
+ * "has", 400, 400
+ * "=", 400, 700
+ * "-", 701, 700
+ * "add", 900, 120
+ * "#", 999, 998
+ * "'", 999, 999, ["parse_Data"]
+ * "with", 1000, 300, ["parse_With"]
+ * "->", 1001, 1002
+ * "!", 1002, 1001
+ * "unless"
+ * "suchthat"
+ * "from"
+ * "iterate"
+ * "yield"
+ *
+ * */
+
+/*
+ * Parser starts here
+ * CategoryDef,PackageDef and DomainDef must end with newline to ensure that
+ * only an '@' at the start of a line will be taken as the end.
+ *
+ * On this line whitespace (WS) is not hidden so is explicitly included.
+ */
+Model :
+')abbrev' WS (c=CategoryDef | p=PackageDef | d=DomainDef) AT
+;
+
+////////// start of lexer rules ///////////////
+
+/* ID consists of alpha (upper or lower case) followed by alphanumeric
+ * any other character can stand in for alpha if prefixed by '_'
+ * for instance a multiply function is often named '_*'
+ * IDs can also end with ? or ! where:
+ * '?' indicates a function which returns a boolean value
+ * '!' indicates a function which changes an existing domain value
+ * (in a mutable domain) */
+terminal ID : ('a'..'z'|'A'..'Z'|('_'.)) ('a'..'z'|'A'..'Z'|('_'.)|'0'..'9')*'!'?'?'?;
+
+/* whitespace on single line overrides default whitespace
+ * does not include newline unless it follows underscore.
+ * I would have liked to do this as follows:
+ * terminal WS : (' '|'\t'|'_'(('\r'|'\n')+))+;
+ * problem: unfortunately use of underscore in this way masks the use of underscore
+ * in ID. We therefore need to remove this type of underscore in a
+ * preprocessor
+ */
+terminal WS : (' '|'\t')+;
+
+/* at least one newline or carriage return character.
+ * This is not included with WS because whitespace is significant in SPAD.
+ * We usually absorb newlines like this: NL+ which absorbs any number of
+ * blank lines and it also supports both the Linux and the Windows forms of
+ * newlines.
+ */
+terminal NL: ('\r'|'\n') ;
+
+/* overwriting SL_COMMENTS we do not want Java syntax (//) but spad syntax (--)
+ * This absorbs everything from '--' or '++' to the end of the line (but not
+ * including the newline or carriage return characters)
+ */
+terminal SL_COMMENT :
+  ('--'|'++') !('\n'|'\r')* ;//('\r'|'\n')?;
+
+/* Macro value can be anything until the end of line
+ * Macro is really '==>' but the pre-processor inserts an extra '=' so
+ * that we can distinguish from where ==> is used in 'with' or 'add' parts
+ * It is difficult for a LL(*) parser to handle macros so we want to
+ * substitute the macro in a pre-processor */
+terminal MACROVALUE :
+  '===>' !('\n'|'\r')*;
+
+/* '==>' is used in 'with' or 'add' parts so is not really a macro?
+ */
+//terminal MACRO:
+// '==>'
+//;
+
+/* string literals are enclosed in double quotes
+*/
+terminal STRING :
+'"' ( !('"') )* '"'
+;
+
+terminal INT returns ecore::EInt: ('0'..'9')+;
+
+// grouping
+/* ( */
+terminal LPAREN: '(';
+/* ) */
+terminal RPAREN: ')';
+/* { */
+terminal LBRACE: '{';
+/* } */
+terminal RBRACE: '}';
+/* [ */
+terminal LBRACKET: '[';
+/* ] */
+terminal RBRACKET: ']';
+/*
+terminal LBANANA '(|';
+terminal RBANANA '|)';
+terminal EBRACKET '[__]';
+terminal EBRACKET2 '[]';
+terminal EBRACE '{__}';
+terminal EBRACE2 '{}';
+terminal LBANANABRACKET '[|';
+terminal RBANANABRACKET '|]';
+terminal EBANANABRACKET '[|__|]';
+terminal EBANANABRACKET2 '[||]';
+terminal LBANANABRACE '{|';
+terminal RBANANABRACE '|}';
+terminal EBANANABRACE '{|__|}';
+terminal EBANANABRACE2 '{||}'; */
+/* << */
+terminal OANGLE: '<<';
+/* >> */
+terminal CANGLE: '>>';
+/*terminal QUOTE "'";
+terminal BACKQUOTE "`";*/
+
+// operators
+/* ==> */
+terminal MDEF: '==>';
+/* | */
+terminal BAR: '|';
+/* . */
+terminal DOT: '.';
+/* :: */
+terminal COERCE: '::';
+/* : */
+terminal COLON: ':';
+/* @ */
+terminal AT: '@';
+/* , */
+terminal COMMA: ',';
+/* ; */
+terminal SEMICOLON: ';';
+/* ** */
+terminal POWER: '**';
+/* * */
+terminal TIMES: '*';
+/* + */
+terminal PLUS: '+';
+/* - */
+terminal MINUS: '-';
+/* < */
+terminal LT: '<';
+/* > */
+terminal GT: '>';
+/* <= */
+terminal LE: '<=';
+/* >= */
+terminal GE: '>=';
+/* = */
+terminal EQUAL: '=';
+/* ~= */
+terminal NOTEQUAL: '~=';
+/* ~ */
+terminal TILDE: '~';
+/* ^ */
+terminal CARAT: '^';
+/* .. */
+terminal SEG: '..';
+/* # */
+terminal HASH: '#';
+/* & */
+terminal AMPERSAND: '&';
+/* $ */
+terminal DOLAR: '$';
+/* / */
+terminal SLASH: '/';
+terminal BACKSLASH: '\\';
+terminal SLASHSLASH: '//';
+terminal BACKSLASHBACKSLASH: '\\\\';
+/* '/\\' outer product or logical and */
+terminal SLASHBACKSLASH: '/\\';
+/* \\/ inner product or logical or */
+terminal BACKSLASHSLASH: '\\/';
+/* *$ multiply with specific type*/
+terminal TIMESDOLAR: '*$';
+/* /$ divide with specific type*/
+terminal DIVDOLAR: '/$';
+/* +$ add with specific type*/
+terminal PLUSDOLAR: '+$';
+/* -$ subtract or minus with specific type*/
+terminal MINUSDOLAR: '-$';
+/* =$ equals with specific type*/
+terminal EQUALSDOLAR: '=$';
+/* '=>' */
+terminal EXIT: '=>';
+/* := */
+terminal BECOMES: ':=';
+/* == */
+terminal DEF: '==';
+/* -> */
+terminal ARROW: '->';
+terminal LARROW: '<-';
+/* +-> */
+terminal GIVES: '+->';
+/* % represents an instance of this type */
+terminal PERCENT: '%';
+/* '% */
+terminal PRIMEPERCENT: "'%";
+/* ... */
+terminal ELLIPSIS: '...';
+/* +/ takes the sum of a list */
+terminal SUMLIST: '+/';
+terminal ANY_OTHER: .;
+
+////////// end of lexer rules ///////////////
+
+/*
+ * longname and longname2 should both be ID and have the same value. Since the
+ * runtime values can't be checked by the parser this must be checked later.
+ */
+CategoryDef hidden(WS,NL,SL_COMMENT):
+name='category' shortname=ID longname=ID
+longname2=ID /*[CategoryDef]*/
+    (cp=TypeParameterList)?
+    COLON 'Category' DEF
+    (
+    implName=TypeArguments? ((w=WithPart? a=AddPart?)| wh5=WherePart)
+    | LBRACE NL*
+      implName=TypeArguments ((w=WithPart? a=AddPart?)| wh5=WherePart)
+      RBRACE NL* a2=AddPart?
+    )
+;
+
+/*
+ * longname and longname2 should both be ID and have the same value. Since the
+ * runtime values can't be checked by the parser this must be checked later.
+ */
+PackageDef hidden(WS,NL,SL_COMMENT):
+name='package' shortname=ID longname=ID
+longname2=ID /*[PackageDef]*/
+    (cp=TypeParameterList)? COLON
+    (
+     exportName=ID DEF implName=ID
+        (w=WithPart | wh5=WherePart)
+     |
+     w=WithPart
+     (DEF add2=AddPart)?
+    )
+;
+
+/*
+ * longname and longname2 should both be ID and have the same value. Since the
+ * runtime values can't be checked by the parser this must be checked later.
+ */
+DomainDef hidden(WS,NL,SL_COMMENT):
+name='domain' shortname5=ID longname5=ID
+longname6=ID /*[DomainDef]*/
+    (cp5=TypeParameterList)?
+    COLON exportName=ID (cp6=TypeParameterList)?
+    DEF implName5=ID?
+    (w=WithPart | wh5=WherePart | a=AddPart)
+;
+
+/*
+ * both category and domain can have 'where' part which holds overall information
+ * such as category/domain parameter information and general macros. This is
+ * followed by export('with') and import ('add') information.
+ * Forms allowed include:
+ * Exports == PlottablePlaneCurveCategory with {
+ * Exports ==> PlottablePlaneCurveCategory with {
+ * Exports ==> with {
+ */
+WherePart hidden(WS,SL_COMMENT):
+name='where' NL* LBRACE NL*
+    (whereAssig +=WhereAssignments (NL|SEMICOLON)+)*
+    // with part
+    (longname8=ID (DEF | MDEF) (imp=TypeExpression2)? w8=WithPart)?
+    // add part
+    (
+     (longname9=ID (DEF | MDEF))?
+        ((fs=ID LPAREN par2=ID? (COMMA par3 += ID)* RPAREN)
+         | (fs=ID f2=ID)
+        )?
+        add=AddPart
+    )?
+    RBRACE NL+
+;
+
+/* each one must be on a separate line or separated by ';'
+ * need to add name=
+ */
+WhereAssignments hidden(WS):
+VariableDeclaration
+| MacroDef |Import
+;
+
+/*
+ * the 'where' part contains a 'with' part which holds export information
+ * such as function signatures (function declarations) but not function definitions.
+ */
+WithPart hidden(WS,SL_COMMENT):
+name='with' NL* LBRACE NL*
+    (fundec += VariableDeclaration (NL|SEMICOLON)+)*
+    RBRACE NL*
+;
+
+/*
+ * similar to 'WithPart' but no trailing NL
+ */
+WithInline hidden(WS,SL_COMMENT):
+name='with' NL* LBRACE NL*
+    (fundec += VariableDeclaration (NL|SEMICOLON)+)*
+    RBRACE
+;
+
+/*
+ * the 'where' part contains a 'add' part which holds function and other
+ * declarations.
+ */
+AddPart hidden(WS,SL_COMMENT):
+name='add' NL* LBRACE NL*
+    (t+=AddStatements (NL|SEMICOLON)+)* RBRACE NL*
+;
+
+/*
+ * The add section of domain or package may contain multiple lines
+ *
+ * Examples:
+ * if (r := recip leadingCoefficient M) case "failed" then {
+ * error "Modulus cannot be made monic"
+ * }
+ */
+AddStatements hidden(WS,SL_COMMENT):
+   VariableDeclarationAssign
+   | FunctionDefinition
+   | ('if' t1=Expression // expression has form 'x has y'
+      'then' t13=FunctionDefinitionBlock)
+   | 'else' t14=FunctionDefinitionBlock
+   | 'else' t15=AddStatements
+   | MacroDef
+   | Import
+;
+
+/* function definition in add part (called by AddStatements)
+ * has a form like:
+ * name(params) == statement
+ * or, option for single parameter without brackets:
+ * name param == statement
+ * or, option for zero parameters without brackets:
+ * This does not always work at the moment, for instance, this does not work:
+ * size == size$R ^ d
+ * but this does
+ * size() == size$R ^ d
+ *
+ * or, for infix operators,
+ * a = b == statement
+ * or, for multiple statements,
+ * name(params) == {
+ * statement
+ * statement
+ * }
+ * some function definitions may be conditional like this:
+ * if % has finiteAggregate then {
+ * ... }
+ */
+FunctionDefinition hidden(WS,SL_COMMENT):
+  ((
+par3=FunctionSignature
+    (COLON par4=TypeExpression1)?
+    DEF par5=Statement
+   )|(
+    // this is case where FunctionSignature is just an identifier
+    fnNam=ID DEF par5=Statement
+   ))
+;
+
+/*
+ * called by 'AddStatements' rule.
+ * allows more add statements inside:
+ * if a has y then 'more add statements'
+ */
+FunctionDefinitionBlock hidden(WS,SL_COMMENT):
+    fnDecBr=LBRACE NL*
+      (
+       fnDecBk += FunctionDefinition (NL|SEMICOLON)+
+       |
+       vars+=VariableDeclarationAssign (NL|SEMICOLON)+
+     | ('if' t1+=Expression // expression has form 'x has y'
+        'then' t13+=FunctionDefinitionBlock (NL|SEMICOLON)+)
+     | ('else' t14+=FunctionDefinitionBlock (NL|SEMICOLON)+)
+     | i1+=Import (NL|SEMICOLON)+
+      )*
+      RBRACE
+      | 'error' e=Expression
+      | LBRACE NL* 'error' e=Expression (NL|SEMICOLON)+ RBRACE
+;
+
+/* This is the first part of the function definition without the return type or
+ * the function implementation. Usually the function signature has a form like:
+ * name(params)
+ * We allow a single parameter to be given without brackets:
+ * name param
+ *
+ * We also allow some alternative forms to represent infix operators like:
+ * a = b to represent _=(a,b)
+ * or the following (this works but only for % we need it to work for every type)
+ * s:% = t:%
+ * or
+ * a > b to represent _>(a,b)
+ * 0 or 1 can be used as a function signature as a short form of
+ * _0() or _1()
+ */
+FunctionSignature hidden(WS,SL_COMMENT):
+  (
+fnNam=ID
+    LPAREN
+    par2=VariableTyped?
+    (COMMA par3 += VariableTyped)*
+    RPAREN
+  ) | (
+   // fnNam=ID par2=VariableDeclaration causes recursive definition so use:
+   fnNam=ID par=ID
+// ) | (
+// t4=ID // no parameters without brackets
+// commented out as it causes recursive rule invocation
+// with ruleAddStatements and ruleFunctionDefinitionBlock
+  ) | (
+   t4=ID (COLON (PERCENT | ID))? //(COLON te1=TypeExpression)?
+   ( b1=EQUAL | b1=LT | b1=GT | b1=LE | b1=GE |
+            b1=PLUS | b1=MINUS | b1=TIMES | b1=SLASH | b1=AMPERSAND |
+            b1=BAR | b1=CARAT) t5=ID
+  ) | (
+   b3=INT // allows special form of function signature using '0' or '1'
+   // can't specify '0' or '1' explicitly as this would affect lex
+   // order
+  ) | (
+   b2=MINUS t6=ID
+  ) | (
+   b4=TILDE t7=ID
+  ) | (
+   b5='not' t8=ID
+  ) | (
+   b6=HASH t8=ID
+  )
+;
+
+/* macros provide a general textual substitution
+ * there are two forms:
+ * name ==> body
+ * and
+ * name macro == body
+ */
+MacroDef: macroname=ID MACROVALUE ; //MACRO val=ID NL;
+
+/*
+ * import domain
+ */
+Import hidden(WS):
+'import' (impname += ID)+ (LPAREN par22+=TypeExpression1
+(COMMA par22+=TypeExpression1)* RPAREN)?
+;
+
+/* Variable declaration in where and with sections:
+ * A 'variable' can be simple like:
+ * x:Float
+ * or something more complicated like:
+ * x:Record(newPt: Pt,type: String)
+ * or it can be a function like:
+ * x:(Float,Integer) -> Float
+ * or it can be conditional like:
+ * if
+ */
+VariableDeclarationBlock hidden(WS,SL_COMMENT):
+    vardecbr=LBRACE NL*
+      //=>(i1=Import NL*)?
+      (vardecBlk += VariableDeclaration (NL|SEMICOLON)+)*
+      RBRACE
+;
+
+/* Variable declaration in where and with sections:
+ * A 'variable' can be simple like:
+ * x:Float
+ * or something more complicated like:
+ * x:Record(newPt: Pt,type: String)
+ * or it can be a function like:
+ * x:(Float,Integer) -> Float
+ * or it can be conditional like:
+ * if
+ */
+VariableDeclaration hidden(WS,SL_COMMENT):
+//Import?
+    ('if' t1=Expression 'then')? // expression has form 'x has y'
+( v1=TypeWithName
+      | v2=VariableDeclarationBlock
+)
+;
+
+/*
+ * This rule is used where a type is expected like:
+ * Float
+ * but it may also have an optional name like:
+ * x:Float
+ */
+TypeWithName hidden(WS,SL_COMMENT):
+(
+(varName=ID | varNameSt=STRING) (COMMA varName2=ID)?
+COLON
+)? typ=TypeExpression1
+;
+
+
+/* Variable name with optional type. This is used in function signature
+ * and also by VariableDeclaration:
+ * A 'variable' can be simple like:
+ * x:Float
+ * or something more complicated like:
+ * x:Record(newPt: Pt,type: String)
+ * or it can be a function like:
+ * x:(Float,Integer) -> Float
+ * we can define multiple variables together:
+ * i,j : Integer
+ */
+VariableTyped hidden(WS,SL_COMMENT):
+(varName=ID | varNameSt=STRING)
+// =>(COMMA t2+=ID)* // multiple declarations in same line
+    (COLON typ=TypeExpression1)?
+;
+
+/* in add part we can declare and assign in same part
+ * such as:
+ * a := 3
+ * a:Integer := 3
+ * a := sin(x)
+ *
+ * There are two forms of multiple assignment:
+ * a,b,c := 0@Integer
+ * or:
+ * a := b := c := 0@Integer
+ */
+VariableDeclarationAssign hidden(WS):
+  varName=ID // name of variable
+  // if I just use name=ID then, when the ui program is running, I get:
+  // Duplicate xxx 'coerce' in yyy
+  (
+    (COMMA t12+=ID)* // multiple declarations in same line
+    (COLON typ=TypeExpression1)? // option to explicitly define type
+    (BECOMES (t4=Expression /* |(LBRACE NL* Expression NL* RBRACE) */))?
+    // we need block since we can't always detect continuation after ':='
+    // but this causes infinite loop
+  )// | (BECOMES t2+=ID)+ BECOMES t4=Expression
+;
+
+/*
+ * free variable allows us to declare a variable that is global
+ */
+FreeVariable hidden(WS):
+'free' var=ID
+;
+
+/*
+ * allows us to declare a variable that is not global
+ */
+LocalVariable hidden(WS):
+'local' var=ID
+;
+
+/*
+ * This is similar to Expression but known to be of type.
+ * (Expression can also be of type) but if we know that
+ * this is a type we can exclude some possibilities.
+ *
+ * A 'typeExpression' can be simple like:
+ * Float
+ * or something more complicated like:
+ * Record(newPt: Pt,type: String)
+ * or it can be a function like:
+ * (Float,Integer) -> Float
+ *
+ * first we check for a function like: Integer -> Integer
+ */
+TypeExpression1 returns TypeExpression hidden(WS):
+   =>(t2=TypeArguments ARROW t3=TypeResult)
+   | TypePrimaryExpression1
+;
+
+/*
+ * This is the same as TypeExpression except it does not allow
+ * the type to be extended by using a 'with' keyword. It is used
+ * in the 'where' rule because the 'with' in that case has a
+ * slightly different syntax.
+ */
+TypeExpression2 returns TypeExpression hidden(WS):
+   =>(t92=TypeArguments ARROW t93=TypeResult)
+   | TypePrimaryExpression2
+;
+
+/*
+ * we use a type parameter list for parameters of category, package or domains
+ * Parameter list may be empty '()'.
+ * in this case parameters may be just ID or they may be nameID:typeID
+ *
+ * examples are:
+ * ()
+ * (String)
+ * (s:String)
+ * (String,Integer)
+ * (s:String,i:Integer)
+ */
+TypeParameterList hidden(WS):
+tyname=LPAREN par=ID?
+(COLON par21=TypeExpression1)?
+(COMMA par2 += ID (COLON par22+=TypeExpression1)?)* RPAREN;
+
+/*
+ * we use type arguments for first part of function type, that is
+ * x in x-> y
+ * usually this is enclosed in parenthesis
+ * (x) in (x)-> y
+ * but if x is a single argument (Including Record, Union, etc.) then it does
+ * not need to be in parenthesis.
+ */
+TypeArguments hidden(WS):
+  t=TypeLiteral |
+  t2=PERCENT |
+  t3='Type' |
+  // usually, but not always type arguments are in parenthesis, and empty
+  // parenthesis are allowed
+  b1 ?= LPAREN ((ID COLON)? t4=TypeExpression1)? ( COMMA (ID COLON)? t16 +=TypeExpression1)* RPAREN |
+  t5='Record' LPAREN t6=TypeExpression1
+               (COLON t22+=TypeExpression1)?
+               (COMMA t21+=TypeExpression1 (COLON t23+=TypeExpression1)?)*
+                RPAREN |
+  t9='Union' LPAREN t10=TypeExpression1
+              (COLON t25+=TypeExpression1)?
+              (COMMA t24+=TypeExpression1 (COLON t26+=TypeExpression1)?)*
+              RPAREN |
+  t11='Join' LPAREN t12=TypeExpression1 (COMMA t13+=TypeExpression1)* RPAREN |
+  t15=TypeNameOrFunctionCall
+;
+
+/*
+ * we use type arguments for final part of function type, that is
+ * y in x-> y
+ */
+TypeResult hidden(WS):
+  t=TypeLiteral |
+  t2=PERCENT |
+  tyname='Type' |
+  tyname='Record' LPAREN t7=TypeExpression1
+               (COLON t8+=TypeExpression1)?
+               (COMMA t21+=TypeExpression1 (COLON t23+=TypeExpression1)?)*
+                RPAREN |
+  tyname='Union' LPAREN t10=TypeExpression1
+              (COLON t11+=TypeExpression1)?
+              (COMMA t24+=TypeExpression1 (COLON t26+=TypeExpression1)?)*
+              RPAREN |
+  tyname='Join' LPAREN t12=TypeExpression1 (COMMA t13+=TypeExpression1)* RPAREN |
+  t15=TypeNameOrFunctionCall
+;
+
+/*
+ * this matches various specific types
+ */
+TypePrimaryExpression1 returns TypePrimaryExpression hidden(WS):
+ TypeLiteral
+ | ({TypePrimaryExpression}t32=PERCENT)
+ | ({TypePrimaryExpression}tyname='Type') // 'Type' is top of the category hierarchy
+ | ({TypePrimaryExpression}tyname='Lisp') // 'Lisp' is used for native lisp function calls such as Say$Lisp
+ | ({TypePrimaryExpression}LPAREN t5=TypeExpression1 RPAREN)
+ | ({TypePrimaryExpression}tyname='Record' LPAREN t7=TypeExpression1
+               (COLON t8+=TypeExpression1)?
+               (COMMA t21+=TypeExpression1 (COLON t23+=TypeExpression1)?)*
+                RPAREN)
+ | ({TypePrimaryExpression}tyname='Union' LPAREN t10=TypeExpression1
+              (COLON t11+=TypeExpression1)?
+              (COMMA t24+=TypeExpression1 (COLON t26+=TypeExpression1)?)*
+              RPAREN)
+ | ({TypePrimaryExpression}tyname='Join'
+    LPAREN t13=TypeExpression1 (COMMA t14+=TypeExpression1)* RPAREN)
+ | TypeNameOrFunctionCall
+ | => TupleDefinition
+;
+
+/*
+ * This is the same as TypePrimaryExpression except it does not allow
+ * the type to be extended by using a 'with' keyword. It is used
+ * in the 'where' rule because the 'with' in that case has a
+ * slightly different syntax.
+ */
+TypePrimaryExpression2 returns TypePrimaryExpression hidden(WS):
+ TypeLiteral
+ | ({TypePrimaryExpression}t32=PERCENT)
+ | ({TypePrimaryExpression}tyname='Type') // 'Type' is top of the category hierarchy
+ | ({TypePrimaryExpression}tyname='Lisp') // 'Lisp' is used for native lisp function calls such as Say$Lisp
+ | ({TypePrimaryExpression}LPAREN t5=TypeExpression1 RPAREN)
+ | ({TypePrimaryExpression}tyname='Record' LPAREN t7=TypeExpression1
+               (COLON t8+=TypeExpression1)?
+               (COMMA t21+=TypeExpression1 (COLON t23+=TypeExpression1)?)*
+                RPAREN)
+ | ({TypePrimaryExpression}tyname='Union' LPAREN t10=TypeExpression1
+              (COLON t11+=TypeExpression1)?
+              (COMMA t24+=TypeExpression1 (COLON t26+=TypeExpression1)?)*
+              RPAREN)
+ | ({TypePrimaryExpression}tyname='Join'
+    LPAREN t13=TypeExpression1 (COMMA t14+=TypeExpression1)* RPAREN)
+ | TypeNameOrFunctionCall2
+ | => TupleDefinition
+;
+
+/* This rule will match:
+ * Float - an ID representation of a type
+ * List(Float) - a type function call
+ * List Float - a non-parenthesis form if only one parameter
+ *
+ * A type function is also known as a parameterised type or
+ * functor (not necessarily a true
+ * functor since it may not obey the axioms of a functor).
+ * If there is only one parameter then the parenthesis are optional
+ */
+TypeNameOrFunctionCall hidden(WS):
+  tfnname=ID
+  (
+    (LPAREN (ID COLON)? t4=TypeExpression1? (COMMA (ID COLON)? t25+=TypeExpression1)* RPAREN)
+    // optional curried function:
+    (LPAREN t44+=StatementExpression? (COMMA t45+=Expression)* RPAREN)*
+    // option of no parenthesis for single parameter
+    | => t6=TypePrimaryExpression1
+    | => w=WithInline
+  )?
+;
+
+TypeNameOrFunctionCall2 hidden(WS):
+  tfnname=ID
+  (
+    (LPAREN (ID COLON)? t4=TypeExpression1? (COMMA (ID COLON)? t25+=TypeExpression1)* RPAREN)
+    // optional curried function:
+    (LPAREN t44+=StatementExpression? (COMMA t45+=Expression)* RPAREN)*
+    // option of no parenthesis for single parameter
+    | => t6=TypePrimaryExpression1
+  )?
+;
+
+/* This has a form like: (Integer,Float,String)
+ * like an array where each entry can be of a different type
+ */
+TupleDefinition hidden(WS):
+  (LPAREN t4=TypeExpression1 (COMMA t25+=TypeExpression1)* RPAREN)
+;
+
+/* Since SPAD supports dependent types then numbers and strings can occur here.
+ * Outstanding issues:
+ * 1) Float literals are parsed as elt(Int,Int) so we need to recognise this
+ * and convert to float literal
+ * 2) We need to be able to recognise exponent notation for floats
+ * 3) Integers without '-' prefix can be converted to PI or NNI
+ * 4) need to add hex or octal notation for integers (0xhhhh)
+ * 5) String and Character literals need to have backslash "\" doubled to
+ * "\\" otherwise xtext will interpret backslash as an escape character.
+ * 6) values following immediately after string literal such as "abc"d should
+ * represent an implied concat: concat("abc",d)
+ */
+TypeLiteral hidden(WS):
+  t1=INT |
+  t22=STRING |
+// t3=FloatLiteral |
+  t34=CharacterLiteral |
+  t35=BooleanLiteral
+;
+
+/* In FunctionDefinition the algorithm is defined by a sequence of the
+ * following statements:
+ */
+Statement hidden(WS,SL_COMMENT):
+    s1=Block |
+    s3= StatementExpression |
+    // 'if' can occur in an expression or in
+    // a statement so we use '=>' to choose
+    // expression if there is any ambiguity
+    s4=IfStatement |
+    s4b=IfElseStatement |
+// s4c=IfThenStatement |
+    s5=WhileStatement |
+    s6=DoStatement |
+    s7=ForStatement |
+    s8=BreakStatement |
+    s12=RepeatStatement |
+    s9= IterateStatement |
+// s11= ContinueStatement|
+    s10= ReturnStatement |
+// s11= Import |
+    'error' e=Expression
+;
+
+/* allows multiple statements which are grouped by wrapping in
+ * braces (curly brackets) */
+Block hidden(WS,SL_COMMENT):
+stname=LBRACE NL*
+    (statemBl += Statement (NL|SEMICOLON)+)*
+    RBRACE
+;
+
+/*
+ * Gives a value or assigns a value to a variable or does conditional exit
+ *
+ * examples:
+ * x
+ * x:Int
+ * x,y:INT -- multiple assignment
+ * x:Int := 3
+ *
+ * x=y => 3
+ */
+StatementExpression hidden(WS,SL_COMMENT):
+  //(ID COMMA)* // allow multiple assignment
+  t=ConditionExpression // was Expression but changed so that 'if' statement
+                        // does not clash with if-then-else expression
+// (COLON t2=TypeExpression)?
+// (BECOMES t3=Expression (BECOMES t33+=Expression)*)?
+    (BECOMES t5=Block)?
+    // breaks out of a block if predicate before '=>' is true then program
+    // control leaves the block.
+    // Put it here so that it can only occur at the top level of an expression.
+    // if inside some complicated expression then it must be terminated with ';'.
+    (EXIT t4=Statement)?
+;
+
+/*
+ * for i in n..m repeat ... is 1
+ * for i in n..m by s repeat ...
+ * for i in list repeat ...
+ * for i in list for i in 1..length() repeat ...
+ * for i in list for i in 1.. repeat ...
+ * for j in n..m repeat loopBody
+ * for j in n..m | odd? j repeat
+ *
+ * To Do
+ * -----
+ * As a temporary measure we check for '..' as a suffix operator
+ * here, but we should really put this into expression?
+ *
+ * We need to allow conditions using BAR '|'
+ */
+ForStatement hidden(WS,SL_COMMENT):
+'for' (
+       stname=ID 'in' t1=Expression SEG? //(=> '..' t2=Expression)?
+       ('by' by1=Expression)?
+// (=> BAR t2=PredicateOr)? // condition
+       ('for' stname2+=ID
+        'in' t2+=Expression SEG?
+        ('by' by2+=Expression)?
+        )*
+       ('while' t2+=Expression)*
+) 'repeat' NL? s1=Statement //('is' s2=Statement)?
+;
+
+/*
+ * while BoolExpr repeat loopBody
+ */
+WhileStatement hidden(WS,SL_COMMENT):
+stname='while' (
+       t2=Expression /*PredicateOr*/
+) 'repeat' NL? s1=Statement
+;
+
+/*
+ * do loopBody while BoolExpr
+ */
+DoStatement hidden(WS,SL_COMMENT):
+stname='do' (
+       s1=Statement
+) 'while' NL? t2=Expression /*PredicateOr*/
+;
+
+/*
+ * will repeat until we jump out. For instance by calling return.
+ */
+RepeatStatement hidden(WS,SL_COMMENT):
+stname='repeat' (
+       s1=Statement
+)
+;
+
+/*
+ * iterate ...
+ * skips over the remainder of a loop
+ */
+IterateStatement hidden(WS,SL_COMMENT):
+stname='iterate'
+;
+
+/*
+ * break leave current loop
+ */
+BreakStatement hidden(WS,SL_COMMENT):
+stname='break'
+;
+
+/*
+ * return leave current function
+ */
+ReturnStatement hidden(WS):
+stname='return' t2=Expression
+;
+
+/*
+ * import - use 'Import' instead
+ */
+//ImportStatement hidden(WS):
+// stname='import' t2=Expression
+//;
+
+/* 'if' statement allows program flow to be switched
+ * forms:
+ * if boolean then
+ * if equation then
+ * if ... not ... and ...or ... then
+ * if ... then ... else ...
+ * note1:
+ * if ... then ... else ... always returns a value so we can use this
+ * on the right hand side of an assignment
+ * note2:
+ * since there is an explicit 'then' keyword there is no need to put
+ * the condition in brackets
+ *
+ * examples:
+ * a:= if x >0 then x else -x
+ * if R has Field then ...
+ * if myUnion case mtType then ...
+ *
+ * we also need to allow a form like this:
+ * if x >0 {
+ * then x
+ * else -x
+ * }
+ *
+ * also this form (this requires IfElseStatement rule):
+ * if x >0 then {
+ * x
+ * }
+ * else {
+ * -x
+ * }
+ */
+IfStatement hidden(WS,SL_COMMENT):
+  'if' t2=Expression
+// 'if' t2=ConditionExpression
+  (
+    'then' s1=Statement
+    (=> 'else' s2=Statement)?
+   |
+    b?=LBRACE
+    NL+ 'then' s11=Statement NL*
+    (=>'else' s12=Statement NL*)?
+    RBRACE
+  )
+;
+
+IfElseStatement hidden(WS,SL_COMMENT):
+'else' s2=Statement
+;
+
+///////////// Expression syntax follows //////////////
+
+/* This is the top level for expressions
+ *
+ * This level handles special cases such as:
+ * if x then y else z
+ * (x,y) +-> z
+ *
+ * We can consider expressions as elements of statements
+ * expressions contain no newlines unless preceded by underscore
+ * (which is handled by WS)
+ */
+Expression returns Expr hidden(WS,SL_COMMENT):
+  (ifname='if' ifpred=Expression 'then' thenexp=Expression 'else' elseexp=Expression)
+// | LPAREN t24=ConditionExpression (COMMA t25+=ConditionExpression)+ RPAREN (COLON rightType2 =TypeExpression)? GIVES ConditionExpression
+  | ExitExpression
+;
+
+/*
+ * condition '=>' expr1 ';' expr2
+ */
+ExitExpression returns Expr hidden(WS,SL_COMMENT):
+  ConditionExpression
+  ({ExitExpression.left=current} op=EXIT right = ConditionExpression SEMICOLON r2=ConditionExpression)*
+;
+
+/*
+ * BAR "|" precedence: 108, 111
+ */
+ConditionExpression returns Expr hidden(WS,SL_COMMENT):
+  OrExpression
+  ({ConditionExpression.left=current} op=BAR right = OrExpression )*
+;
+
+/*
+ * COMMA"," precedence: 110, 111
+ */
+//CommaExpression returns Expr hidden(WS,SL_COMMENT):
+// ConditionalAndExpression
+// ({ConditionExpression.left=current} op=BAR right = ConditionalAndExpression )*
+//;
+
+/*
+ * There is also another rule that looks for 'or' which is PredicateOr,
+ * this version is used in a general expression and the other version is
+ * used when we know we have a predicate.
+ * "or", precedence: 200, 201
+ */
+OrExpression returns Expr hidden(WS,SL_COMMENT):
+  AndExpression
+  ( {OrExpression.left=current} op='or' right = AndExpression)*
+;
+
+/*
+ * There is also another rule that looks for 'and' which is PredicateAnd,
+ * this version is used in a general expression and the other version is
+ * used when we know we have a predicate.
+ * "and", precedence: 250, 251
+ */
+AndExpression returns Expr hidden(WS,SL_COMMENT):
+  InnerProdExpression
+  ( {AndExpression.left=current} op='and' right = InnerProdExpression)*
+;
+
+/*
+ * This has multiple uses such as inner product and logical or.
+ *
+ * "\/", BACKSLASHSLASH precedence: 200, 201
+ *
+ * the backslash is duplicated here because it is the escape character for
+ * strings, it will not be duplicated when used.
+ */
+InnerProdExpression returns Expr hidden(WS,SL_COMMENT):
+  OuterProdExpression
+  ( {InnerProdExpression.left=current} op=BACKSLASHSLASH right = OuterProdExpression)*
+;
+
+/*
+ * This has multiple uses such as outer product and logical and.
+ *
+ * "/\", SLASHBACKSLASH precedence: 250, 251
+ *
+ * the backslash is duplicated here because it is the escape character for
+ * strings, it will not be duplicated when used.
+ */
+OuterProdExpression returns Expr hidden(WS,SL_COMMENT):
+  HasExpression
+  ( {OuterProdExpression.left=current} op=SLASHBACKSLASH right = HasExpression)*
+;
+
+/* Predicate which returns true if preceding value is of a given type
+ * example:
+ * if R has Field then ..
+ *
+ * "has", precedence: 400, 400
+ */
+HasExpression returns Expr hidden(WS,SL_COMMENT):
+  CaseExpression
+  ({HasExpression.left=current} op='has' rightType = TypeExpression1)*
+;
+
+/* Select from Union values
+ * example:
+ * if myUnion case mtType then ...
+ *
+ * "case", precedence: 400, 400
+ */
+CaseExpression returns Expr hidden(WS,SL_COMMENT):
+  EqualityExpression
+  ( {CaseExpression.left=current} op='case' right = EqualityExpression)?
+;
+
+/* used in list comprehension
+ *
+ * "in", precedence: 400, 400
+ */
+/*InExpression returns Expr hidden(WS,SL_COMMENT):
+  RelationalExpression
+  ( {CaseExpression.left=current} op='in' right = RelationalExpression)?
+;*/
+
+/*
+ * "~=", precedence: 400, 400
+ * "^=", precedence: 400, 400
+ * "=", precedence: 400, 400
+ */
+EqualityExpression returns Expr hidden(WS,SL_COMMENT):
+  RelationalExpression
+// ambiguous because EQ can be in top level expression
+  ( {EqualityExpression.left=current}
+   ( op=EQUAL | op=NOTEQUAL | op='^=' | (op=EQUALSDOLAR te=ID))
+   //(DOLAR te=ID)?
+   right = RelationalExpression
+  )*
+;
+
+/*
+ * ">=", precedence: 400, 400
+ * "<=", precedence: 400, 400
+ * ">>", precedence: 400, 400
+ * "<<", precedence: 400, 400
+ * ">", precedence: 400, 400
+ * "<", precedence: 400, 400
+ */
+RelationalExpression returns Expr hidden(WS,SL_COMMENT):
+  IsExpression
+  ( {RelationalExpression.left=current}
+   ( op=LT | op=GT | op=LE | op=GE )
+      right = IsExpression
+  )?
+;
+
+/*
+ *
+ * "isnt", precedence: 400, 400
+ * "is", precedence: 400, 400
+ */
+IsExpression returns Expr hidden(WS,SL_COMMENT):
+  SegmentExpression
+  ({IsExpression.left=current} (op='is' | op='isnt') rightType = TypeExpression1)*
+;
+
+/*
+ * this is used to indicate a range:
+ * 1..4 means the range from 1 to 4
+ * 1.. means the range from 1 to infinity. This is used in cases where
+ * no top bounds is necessary, when the end point is determined by other
+ * means.
+ * "..", "SEGMENT", precedence: 401, 699, ["parse_Seg"]
+ */
+SegmentExpression returns Expr hidden(WS,SL_COMMENT):
+  AdditiveExpression
+  ( {SegmentExpression.left=current} op=SEG right = AdditiveExpression)*
+;
+
+/*
+ * add expression
+ * we include both '+' and '-' in the same case as this allows a
+ * multiple sequence like:
+ * a + b + c - d + e -f
+ *
+ * "-", precedence: 700, 701
+ * "+", precedence: 700, 701
+ */
+AdditiveExpression returns Expr hidden(WS,SL_COMMENT):
+  ExquoExpression
+  ( {AdditiveExpression.left=current}
+    ( op=PLUS | op=MINUS | (op=PLUSDOLAR te=ID) | (op=MINUSDOLAR te=ID))
+    right = ExquoExpression
+  )*
+;
+
+/*
+ * "exquo", precedence: 800, 801
+ */
+ExquoExpression returns Expr hidden(WS,SL_COMMENT):
+  DivisionExpression
+  ({ExquoExpression.left=current} op='exquo' right = DivisionExpression)*
+;
+
+/*
+ * division expression
+ * "/", precedence: 800, 801
+ */
+DivisionExpression returns Expr hidden(WS,SL_COMMENT):
+  QuoExpression
+  ( {DivisionExpression.left=current}
+   (op=SLASH | (op=DIVDOLAR te=ID))
+   right = QuoExpression
+  )*
+;
+
+/*
+ *"quo", precedence: 800, 801
+ */
+QuoExpression returns Expr hidden(WS,SL_COMMENT):
+  ModExpression
+  ({QuoExpression.left=current} op='quo' right = ModExpression)*
+;
+
+/*
+ *"mod", precedence: 800, 801
+ */
+ModExpression returns Expr hidden(WS,SL_COMMENT):
+  RemExpression
+  ({ModExpression.left=current} op='mod' right = RemExpression)*
+;
+
+/*
+ *"rem", precedence: 800, 801
+ */
+RemExpression returns Expr hidden(WS,SL_COMMENT):
+  MultiplicativeExpression
+  ({RemExpression.left=current} op='rem' right = MultiplicativeExpression)*
+;
+
+/*
+ * multiplication expression
+ * a * b * c
+ *
+ * "*", precedence: 800, 801
+ */
+MultiplicativeExpression returns Expr hidden(WS,SL_COMMENT):
+  ExponentExpression
+  ( {MultiplicativeExpression.left=current}
+    (op=TIMES | (op=TIMESDOLAR te=ID))
+    right = ExponentExpression
+  )*
+;
+
+/*
+ *
+ * "^", precedence: 901, 900
+ * "**", precedence: 901, 900
+ */
+ExponentExpression returns Expr hidden(WS,SL_COMMENT):
+  MapDefinition
+  ({ExponentExpression.left=current} (op=CARAT | op=POWER) right = MapDefinition)*
+;
+
+/* Map or Lambda expression
+ * var +-> function
+ *
+ * +-> is an infix operator meaning 'maps-to'
+ * It can be used to create a function literal (an anonymous function), so
+ * instead of:
+ * myFunct(x:Type):Type == if x >0 then x else -x
+ * we can have forms such as:
+ * x +-> if x >0 then x else -x
+ * or:
+ * (x,y) +-> if x >0 then y else -x
+ *
+ * fricas compatibility:
+ * "+->", precedence: 995, 112
+ */
+MapDefinition returns Expr hidden(WS,SL_COMMENT):
+// (PretendExpression | LPAREN PretendExpression (COMMA t25+=PretendExpression)+ RPAREN) (COLON rightType2 =TypeExpression)?
+  AssignExpression
+  ({MapDefinition.left=current}
+   op=GIVES right = AssignExpression
+   (par = ID)? // optional parameter which function
+                             // is applied to
+  )*
+;
+
+/*
+ * an assign expression like this:
+ * x := y
+ * can also be an inner assign like this:
+ * x := (y := z)
+ * or just:
+ * x := y := z
+ *
+ * right is expression to allow forms like
+ * x := if y<0 then -y else y
+ */
+AssignExpression returns Expr hidden(WS,SL_COMMENT):
+  PretendExpression
+  ({AssignExpression.left=current} op=BECOMES (
+   right = PretendExpression
+   | ifname='if' ifpred=ConditionExpression 'then' thenexp=ConditionExpression 'else' elseexp=PretendExpression
+   )
+  )*
+;
+
+/*
+ * pretend Type: treat one type as another,
+ * only works if they have the same internal structure.
+ *
+ * Not very safe and should be avoided, if possible, unfortunately
+ * its not always possible to avoid.
+ *
+ * "pretend", precedence: 995, 996
+ */
+ PretendExpression returns Expr hidden(WS,SL_COMMENT):
+  CoerceExpression
+  ({PretendExpression.left=current} op='pretend' rightType = TypeExpression1)*
+;
+
+/*
+ * "::", precedence: 996, 997
+ *
+ * although '::' and '@' apparently have the same precidence we want
+ * '@' to bind more tightly than '::'. As we can see in the following example:
+ * "dictionary"@String :: OutputForm.
+ */
+CoerceExpression returns Expr hidden(WS,SL_COMMENT):
+  HintTypeExpression
+  ({CoerceExpression.left=current} op=COERCE rightType = TypeExpression1)*
+;
+
+/*
+ * "@", precedence: 996, 997
+ */
+HintTypeExpression returns Expr hidden(WS,SL_COMMENT):
+  EltExpression
+  ( {HintTypeExpression.left=current} op=AT rightType = TypeExpression1)?
+;
+
+/* We treat these as part of the language
+ * : indicates type
+ * ! is part of name to indicate mutable
+ *
+ * ":", precedence: 996, 997
+ * "!", precedence: 1002, 1001
+ *
+ */
+/*BangExpression returns Expr hidden(WS,SL_COMMENT):
+  EqualityExpression
+  ({AndExpression.left=current} op=AMPERSAND right = EqualityExpression)*
+;*/
+
+/*
+ * "with", precedence: 2000, 400, ["parse_InfixWith"]
+ *
+ */
+/*WithExpression returns Expr hidden(WS,SL_COMMENT):
+  EqualityExpression
+  ({AndExpression.left=current} op='with' right = EqualityExpression)*
+;*/
+
+
+/* Elt is Lisp terminology for the use of '.' to select parameters
+ * the left expression is something that has selectable elements such as
+ * a list, array, string, Record or union, the right element should be a
+ * non-negative integer.
+ */
+EltExpression returns Expr hidden(WS,SL_COMMENT):
+  ExplicitTypeExpression
+  ( {EltExpression.left=current}
+   op=DOT right = ExplicitTypeExpression
+  )*
+;
+
+////////////// unary expressions ////////////////////
+
+
+/*
+ * '$'
+ */
+ExplicitTypeExpression returns Expr hidden(WS,SL_COMMENT):
+  UnaryExpression
+  ({ExplicitTypeExpression.left=current} op=DOLAR rightType = TypeExpression1)?
+;
+
+/* UnaryExpression
+ * unary prefixes:
+ * "~" TILDE : precedence 260, 259, nil
+ * ":" COLON : precedence 194, 195
+ * "-" MINUS : precedence 701, 700
+ * "#" HASH : precedence 999, 998
+ * "'" : precedence 999, 999, ["parse_Data"]
+ * unary suffixes
+ * ".." : range can be unary suffix
+ */
+UnaryExpression returns Expr hidden(WS,SL_COMMENT):
+  PrimaryExpression |
+  ({UnaryExpression} uop=TILDE expr=UnaryExpression) |
+// ({UnaryExpression} uop=COLON expr=UnaryExpression) |
+  ({UnaryExpression} uop=MINUS expr=UnaryExpression) |
+  ({UnaryExpression} uop=MINUSDOLAR te=ID expr=UnaryExpression) |
+  ({UnaryExpression} uop=HASH expr=UnaryExpression) |
+  ({UnaryExpression} uop='not' expr=PrimaryExpression) |
+  ({UnaryExpression} uop=SUMLIST expr=PrimaryExpression) |
+  ({UnaryExpression} uop=PRIMEPERCENT expr=PrimaryExpression) |
+   e2=PERCENT |
+  e3='Type' |
+  e5='Record' LPAREN e6=TypeExpression1
+               (COLON e22+=TypeExpression1)?
+               (COMMA e21+=TypeExpression1 (COLON e23+=TypeExpression1)?)*
+                RPAREN |
+  e9='Union' LPAREN e10=TypeExpression1
+              (COLON e25+=TypeExpression1)?
+              (COMMA e24+=TypeExpression1 (COLON e26+=TypeExpression1)?)*
+              RPAREN |
+  e11='Join' LPAREN e12=TypeExpression1 (COMMA e13+=TypeExpression1)* RPAREN
+;
+
+/*
+ *
+ */
+/*UnaryExpressionHash returns Expr hidden(WS,SL_COMMENT):
+// HASH? PrimaryExpression
+  PrimaryExpression | ({UnaryExpressionHash} uop=HASH expr=UnaryExpressionHash)
+;*/
+
+/*
+ *
+ */
+PrimaryExpression returns Expr hidden(WS,SL_COMMENT):
+  PrimaryPrefix /* ( t2+=PrimarySuffix )* */
+;
+
+/*
+ * Can contain an expression in parenthesis, this expression is
+ * 'StatementExpression' which means that it can contain an
+ * inner assignment.
+ *
+ * The comma option allows us to define a tuple
+ */
+PrimaryPrefix hidden(WS,SL_COMMENT):
+ Literal
+ | LPAREN t4=Expression (COMMA t25+=Expression)* RPAREN =>(COLON rightType3 =TypeExpression1)?
+ | t7=NameOrFunctionCall
+;
+
+/* function call such as List(Integer)
+ * known as a parameterised type or functor (not necessarily a true functor since
+ * it may not obey the axioms of a functor)
+ * if there is only one parameter then the parenthesis are optional
+ *
+ * function binds most tightly
+ */
+NameOrFunctionCall hidden(WS,SL_COMMENT):
+  ("'")?
+  fnname=ID (=> lsp=DOLAR 'Lisp'/*t2=TypeExpression*/)?
+  // option for parameters in parenthesis
+  (
+// LPAREN t4=StatementExpression? (COMMA t5+=Expression)* RPAREN //(COLON rightType2 =TypeExpression)?
+    LPAREN t4=Expression? (COMMA t5+=Expression)* RPAREN //(COLON rightType2 =TypeExpression)?
+    // optional curried function:
+    (LPAREN t14+=Statement? (COMMA t15+=Expression)* RPAREN)*
+    // option of no parenthesis for single parameter
+    | => t6=PrimaryExpression
+  )?
+  => ((COMMA ID)* COLON rightType2 =TypeExpression1)?
+  // allow multiple assignment
+  //=>(op=GIVES lambda = Expression 'xxx')?
+;
+
+/* Literals are actual values of a given type
+ * Outstanding issues:
+ * 1) Float literals are parsed as elt(Int,Int) so we need to recognise this
+ * and convert to float literal
+ * 2) We need to be able to recognise exponent notation for floats
+ * 3) Integers without '-' prefix can be converted to PI or NNI
+ * 4) need to add hex or octal notation for integers (0xhhhh)
+ * 5) String and Character literals need to have backslash "\" doubled to
+ * "\\" otherwise xtext will interpret backslash as an escape character.
+ * 6) values following immediately after string literal such as "abc"d should
+ * represent an implied concat: concat("abc",d)
+ */
+Literal hidden(WS,SL_COMMENT):
+  value=INT
+  | t2=STRING (=> e1=NameOrFunctionCall =>(t31+=STRING (=> e4+=NameOrFunctionCall)?)*)?
+// | t3=FloatLiteral // conflicts with use of '.' for elt
+  | ListLiteral
+  | CharacterLiteral
+  | BooleanLiteral
+;
+
+/* Contains a single character whereas a string contains multiple
+ * characters.
+ */
+CharacterLiteral hidden(WS,SL_COMMENT):
+ "'" c1=ANY_OTHER "'"
+;
+
+/* This may not need to be specified here at the syntax level. Perhaps we
+* should treat boolean as any other library defined type.
+*/
+BooleanLiteral hidden(WS,SL_COMMENT):
+ litname = 'true' | litname = 'false'
+ | litname = 'true' LPAREN RPAREN
+ | litname = 'false' LPAREN RPAREN
+;
+
+/*
+ * a list literal may consist of:
+ * [] an empty list
+ * [a] a single element
+ * [a,b] multiple elements
+ * [a for b in c] a list comprehension
+ */
+ListLiteral hidden(WS,SL_COMMENT):
+ litname = LBRACKET l2=Expression?
+     (COMMA t3+=Expression)*
+     ('for' t14+=Expression 'in' l5+=Expression)?
+     RBRACKET
+;
