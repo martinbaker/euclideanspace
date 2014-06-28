@@ -58,14 +58,9 @@ generate editor "http://www.euclideanspace.com/aldor/Editor"
 *
 * [A] [B][C] [D][E] [F] [G] [H] [I] [J] [K] [L] [M]
 *
-        {TK_Id, 0,"TK_Id", 0, 0, 0, 0, 0, 0, 1, 0, 170, 0},
         {TK_Blank, 0,"TK_Blank", 0, 0, 0, 0, 0, 0, 1, 0, 170, 0},
         {TK_Int, 0,"TK_Int", 1, 0, 0, 0, 0, 0, 1, 0, 170, 0},
         {TK_Float, 0,"TK_Float", 1, 0, 0, 0, 0, 0, 1, 0, 170, 0},
-        {TK_String, 0,"TK_String", 1, 0, 0, 0, 0, 0, 1, 0, 170, 0},
-        {TK_PreDoc, 0,"TK_PreDoc", 1, 1, 0, 0, 0, 0, 1, 0, 170, 0},
-        {TK_PostDoc, 0,"TK_PostDoc", 1, 1, 0, 0, 0, 0, 1, 0, 170, 0},
-        {TK_Comment, 0,"TK_Comment", 1, 1, 0, 0, 0, 0, 1, 0, 170, 0},
         {TK_SysCmd, 0,"TK_SysCmd", 1, 1, 0, 0, 0, 0, 1, 0, 170, 0},
         {TK_Error, 0,"TK_Error", 1, 0, 0, 0, 0, 0, 1, 0, 0, 0},
 
@@ -231,8 +226,10 @@ Model :
  * IDs can also end with ? or ! where:
  * '?' indicates a function which returns a boolean value
  * '!' indicates a function which changes an existing domain value
- * (in a mutable domain) */
-terminal ID : ('a'..'z'|'A'..'Z'|('_'.)) ('a'..'z'|'A'..'Z'|('_'.)|'0'..'9')*'!'?'?'?;
+ * (in a mutable domain)
+        {TK_ID, 0,"TK_ID", 0, 0, 0, 0, 0, 0, 1, 0, 170, 0},
+ */
+terminal TK_ID : ('a'..'z'|'A'..'Z'|('_'.)) ('a'..'z'|'A'..'Z'|('_'.)|'0'..'9')*'!'?'?'?;
 
 /* whitespace on single line overrides default whitespace
  * does not include newline unless it follows underscore.
@@ -252,11 +249,15 @@ terminal WS : (' '|'\t')+;
  */
 terminal NL: ('\r'|'\n') ;
 
-/* overwriting SL_COMMENTS we do not want Java syntax (//) but spad syntax (--)
+/* overwriting TK_COMMENTS we do not want Java syntax (//) but spad syntax (--)
  * This absorbs everything from '--' or '++' to the end of the line (but not
  * including the newline or carriage return characters)
+ * 
+ *  {TK_PreDoc, 0,"TK_PreDoc", 1, 1, 0, 0, 0, 0, 1, 0, 170, 0},
+    {TK_PostDoc, 0,"TK_PostDoc", 1, 1, 0, 0, 0, 0, 1, 0, 170, 0},
+    {TK_COMMENT, 0,"TK_COMMENT", 1, 1, 0, 0, 0, 0, 1, 0, 170, 0},
  */
-terminal SL_COMMENT :
+terminal TK_COMMENT :
   ('--'|'++') !('\n'|'\r')* ;//('\r'|'\n')?;
 
 /* Macro value can be anything until the end of line
@@ -274,8 +275,10 @@ terminal MACROVALUE :
 //;
 
 /* string literals are enclosed in double quotes
+ *         {TK_String, 0,"TK_String", 1, 0, 0, 0, 0, 0, 1, 0, 170, 0},
+ 
 */
-terminal STRING :
+terminal TK_STRING :
 '"' ( !('"') )* '"'
 ;
 
@@ -518,11 +521,21 @@ terminal ANY_OTHER: .;
 
 /*
  * Bindings
+ * 
+ * Substituted Rules in Xtext:
+ * Binding_BalStatement
+ * Binding_AnyStatement
+ * Binding_BalStatement
+ * Binding_InfixedExprsDecl
+ * Binding_Collection
  */
 //Binding(E)
 //: BindingL(Infixed,E)
 //;
 
+/* Substituted Rules in Xtext:
+ * BindingL(Infixed,E) where E is in Binding
+ */
 //BindingL(R,L)
 //: L
 //| R KW_Assign BindingL(R,L)
@@ -537,6 +550,9 @@ terminal ANY_OTHER: .;
 //{ $$ = abNewPLambda(APOS($1),$1,abZip,$3); }
 //;
 
+/* Substituted Rules in Xtext:
+ * BindingR(InfixedExprsDecl,AnyStatement)
+ */
 //BindingR(R,L)
 //: R
 //| R KW_Assign Binding(L)
@@ -566,6 +582,8 @@ terminal ANY_OTHER: .;
 //: Flow(BalStatement)
 //;
 
+/* Substituted Rules in Xtext:
+Flow(XX) -> Flow_AnyStatement or Flow_BalStatement */
 //Flow(XX)
 //: Collection
 //| KW_If CommaItem KW_Then Binding(BalStatement) KW_Else Binding(XX)
@@ -627,6 +645,9 @@ terminal ANY_OTHER: .;
 //: Binding(Collection)
 //;
 
+/* Substituted Rules in Xtext:
+AlwaysPart(XX) -> AlwaysPart_AnyStatement
+               or AlwaysPart_BalStatement */
 //AlwaysPart(XX)
 //: KW_Always Binding(XX)
 //{ (void)parseDeprecated(KW_Always, abNewNothing(TPOS($1))); $$ = $2; }
@@ -749,6 +770,10 @@ terminal ANY_OTHER: .;
 //{ $$ = abNewInfix(APOS($2),$2,$1,$3); }
 //;
 
+/* Substituted Rules in Xtext:
+ * E11_E12
+ * E11_Op
+ */
 //E11(X)
 //: X
 //| E11(X) KW_2Colon E12
@@ -871,6 +896,10 @@ terminal ANY_OTHER: .;
 //: Jleft(Molecule)
 //;
 
+/* Substituted Rules in Xtext:
+ * Jright(Molecule)
+ * Jright(Atom)
+ */
 //Jright(H)
 //: Jleft(H)
 //| Jleft(H) Jright(Atom)
@@ -879,6 +908,10 @@ terminal ANY_OTHER: .;
 //{ $$ = abNewNot(TPOS($1),TEST($2)); }
 //;
 
+/* Substituted Rules in Xtext:
+ * Jleft(Molecule)
+ * Jleft(Atom)
+ */
 //Jleft(H)
 //: H
 //| KW_Not BlockEnclosure
@@ -985,7 +1018,7 @@ terminal ANY_OTHER: .;
 //;
 
 //Id
-//: TK_Id
+//: TK_ID
 //{ $$ = abNewOfToken(AB_Id, $1); }
 //| KW_Sharp
 //{ $$ = abNewOfToken(AB_Id, $1); }
@@ -1011,11 +1044,31 @@ terminal ANY_OTHER: .;
 //{ $$ = abZip; }
 //;
 
+/* Substituted Rules in Xtext:
+ * UnqualOp(ArrowTok)
+ * UnqualOp(LatticeTok)
+ * UnqualOp(RelationTok)
+ * UnqualOp(SegTok)
+ * UnqualOp(PlusTok)
+ * UnqualOp(QuotientTok)
+ * UnqualOp(TimesTok)
+ * UnqualOp(PowerTok)
+ */
 //UnqualOp(op)
 //: op
 //{ $$ = abNewOfToken(AB_Id, $1); }
 //;
 
+/* Substituted Rules in Xtext:
+ * QualOp(ArrowTok)
+ * QualOp(LatticeTok)
+ * QualOp(RelationTok)
+ * QualOp(SegTok)
+ * QualOp(PlusTok)
+ * QualOp(QuotientTok)
+ * QualOp(TimesTok)
+ * QualOp(PowerTok)
+ */
 //QualOp(op)
 //: op
 //{ $$ = abNewOfToken(AB_Id, $1); }
@@ -1023,6 +1076,16 @@ terminal ANY_OTHER: .;
 //{ $$ = abNewQualify(TPOS($1), abNewOfToken(AB_Id, $1), $3); }
 //;
 
+/* Substituted Rules in Xtext:
+ * opt(Labeled)
+ * opt(Sig)
+ * opt(FromPart)
+ * opt(Name)
+ * opt(Collection)
+ * opt(SuchthatPart))
+ * opt(E14)
+ * opt(Application)
+*/
 //opt(E)
 //: Nothing
 //| E
@@ -1030,6 +1093,9 @@ terminal ANY_OTHER: .;
 
 /* ++ Doc. */
 
+/* Substituted Rules in Xtext:
+ * E is E from PileContents(E)
+ */ 
 //Doc(E)
 //: PreDocument E PostDocument
 //{
@@ -1063,14 +1129,23 @@ terminal ANY_OTHER: .;
 //{ $$ = listCons(Token)($1, $2); }
 //;
 
-/* E {sep E sep E} */
+/* Substituted Rules in Xtext:
+* enlist1(Infixed, KW_Comma, `AB_Comma)
+* enlist1(CommaItem, KW_Comma, `AB_Comma)
+* enlist1(InfixedExpr, KW_Comma, `AB_Comma)
+* enlist1(Name, KW_Comma, `AB_Comma)
+* 
+*  E {sep E sep E}
+*/
 //enlist1(E,Sep,Tag)
 //: enlister1(E, Sep)
 //
 //{ $$ = abOneOrNewOfList(Tag, $1); listFree(AbSyn)($1); }
 //;
 
-/* E sep E {sep E} */
+/* not used
+ * E sep E {sep E}
+ */
 //enlist2(E,Sep,Tag)
 //: enlister1(E, Sep) Sep E
 //{
@@ -1080,6 +1155,10 @@ terminal ANY_OTHER: .;
 //}
 //;
 
+/* Substituted Rules in Xtext:
+* enlister1(E, Sep)
+* where E is E from enlist1 or enlist1a 
+*/
 //enlister1(E, Sep)<ablist>
 //: E
 //{ $$ = listCons(AbSyn)($1, listNil(AbSyn) ); }
@@ -1087,13 +1166,19 @@ terminal ANY_OTHER: .;
 //{ $$ = listCons(AbSyn)($3, $1); }
 //;
 
-
-/* E {sep+ E sep+ E sep*} */
+/* Substituted Rules in Xtext:
+* enlist1a(Labeled, KW_Semicolon, `AB_Sequence)
+* 
+* E {sep+ E sep+ E sep*} */
 //enlist1a(E,Sep,Tag)
 //: enlister1a(E, Sep)
 //{ $$ = abOneOrNewOfList(Tag, $1); listFree(AbSyn)($1); }
 //;
 
+/* Substituted Rules in Xtext:
+* enlister1a(E, Sep) where E is from enlist1a
+* 
+*/
 //enlister1a(E, Sep)<ablist>
 //: E
 //{ $$ = listCons(AbSyn)($1, listNil(AbSyn) ); }
@@ -1103,17 +1188,29 @@ terminal ANY_OTHER: .;
 //{ $$ = $1; }
 //;
 
+/* Substituted Rules in Xtext:
+* Piled(Expression)
+* 
+*/
 /* Piled */
 //Piled(E)
 //: KW_SetTab PileContents(E) KW_BackTab
 //{ $$ = abOneOrNewOfList(AB_Sequence,$2); listFree(AbSyn)($2); }
 //;
 
+/* Substituted Rules in Xtext:
+* Curly(Labeled)
+* 
+*/
 //Curly(E)
 //: KW_OCurly CurlyContents(E) KW_CCurly
 //{ $$ = $2; abSetPos($$, TPOS($1)); abSetEnd($$, TEND($3)); }
 //;
 
+/* Substituted Rules in Xtext:
+* PileContents(E) E is from piled
+* 
+*/
 //PileContents(E)<ablist>
 //: Doc(E)
 //{ $$ = listCons(AbSyn)($1, listNil(AbSyn)); }
@@ -1123,17 +1220,30 @@ terminal ANY_OTHER: .;
 //{ yyerrok; $$ = listCons(AbSyn)($3, listNil(AbSyn)); }
 //;
 
+/* Substituted Rules in Xtext:
+* CurlyContents(Labeled)
+* CurlyContents(E) E is from Curly
+* 
+*/
 //CurlyContents(E)
 //: CurlyContentsList(E)
 //{ $$ = abOneOrNewOfList(AB_Sequence,$1); listFree(AbSyn)($1); }
 //;
 
+/* Substituted Rules in Xtext:
+* CurlyContentsList(E) E is from CurlyContents(E)
+* 
+*/
 //CurlyContentsList(E)<ablist>
 //: CurlyContent1(E)
 //| CurlyContent1(E) CurlyContentB(E)
 //{ $$ = listCons(AbSyn)($2, $1); }
 //;
 
+/* Substituted Rules in Xtext:
+* CurlyContent1(E) E is form CurlyContentsList(E)
+* 
+*/
 //CurlyContent1(E)<ablist>
 //: Nothing
 //{ $$ = listNil(AbSyn); }
@@ -1141,6 +1251,10 @@ terminal ANY_OTHER: .;
 //{ $$ = listCons(AbSyn)($2, $1); }
 //;
 
+/* Substituted Rules in Xtext:
+* CurlyContentA(E) E is from CurlyContent1(E)
+* 
+*/
 //CurlyContentA(E)
 //: CurlyContentB(E) KW_Semicolon PostDocument
 //{ $$ = $1; if($3) $$ = abNewDocumented(APOS($3),$$,$3); }
@@ -1148,6 +1262,11 @@ terminal ANY_OTHER: .;
 //{ yyerrok; $$ = abNewNothing(TPOS($2)); }
 //;
 
+/* Substituted Rules in Xtext:
+* CurlyContentB(E) E is from CurlyContentA(E)
+* or CurlyContentsList(E)
+* 
+*/
 //CurlyContentB(E)
 //: PreDocument E PostDocument
 //{
@@ -1163,9 +1282,9 @@ terminal ANY_OTHER: .;
  * longname and longname2 should both be ID and have the same value. Since the
  * runtime values can't be checked by the parser this must be checked later.
  */
-CategoryDef hidden(WS,NL,SL_COMMENT):
-name='category' shortname=ID longname=ID
-longname2=ID /*[CategoryDef]*/
+CategoryDef hidden(WS,NL,TK_COMMENT):
+name='category' shortname=TK_ID longname=TK_ID
+longname2=TK_ID /*[CategoryDef]*/
     (cp=TypeParameterList)?
     COLON 'Category' DEF
     (
@@ -1180,12 +1299,12 @@ longname2=ID /*[CategoryDef]*/
  * longname and longname2 should both be ID and have the same value. Since the
  * runtime values can't be checked by the parser this must be checked later.
  */
-PackageDef hidden(WS,NL,SL_COMMENT):
-name='package' shortname=ID longname=ID
-longname2=ID /*[PackageDef]*/
+PackageDef hidden(WS,NL,TK_COMMENT):
+name='package' shortname=TK_ID longname=TK_ID
+longname2=TK_ID /*[PackageDef]*/
     (cp=TypeParameterList)? COLON
     (
-     exportName=ID DEF implName=ID
+     exportName=TK_ID DEF implName=TK_ID
         (w=WithPart | wh5=WherePart)
      |
      w=WithPart
@@ -1197,12 +1316,12 @@ longname2=ID /*[PackageDef]*/
  * longname and longname2 should both be ID and have the same value. Since the
  * runtime values can't be checked by the parser this must be checked later.
  */
-DomainDef hidden(WS,NL,SL_COMMENT):
-name='domain' shortname5=ID longname5=ID
-longname6=ID /*[DomainDef]*/
+DomainDef hidden(WS,NL,TK_COMMENT):
+name='domain' shortname5=TK_ID longname5=TK_ID
+longname6=TK_ID /*[DomainDef]*/
     (cp5=TypeParameterList)?
-    COLON exportName=ID (cp6=TypeParameterList)?
-    DEF implName5=ID?
+    COLON exportName=TK_ID (cp6=TypeParameterList)?
+    DEF implName5=TK_ID?
     (w=WithPart | wh5=WherePart | a=AddPart)
 ;
 
@@ -1215,16 +1334,16 @@ longname6=ID /*[DomainDef]*/
  * Exports ==> PlottablePlaneCurveCategory with {
  * Exports ==> with {
  */
-WherePart hidden(WS,SL_COMMENT):
+WherePart hidden(WS,TK_COMMENT):
 name='where' NL* LBRACE NL*
     (whereAssig +=WhereAssignments (NL|SEMICOLON)+)*
     // with part
-    (longname8=ID (DEF | MDEF) (imp=TypeExpression2)? w8=WithPart)?
+    (longname8=TK_ID (DEF | MDEF) (imp=TypeExpression2)? w8=WithPart)?
     // add part
     (
-     (longname9=ID (DEF | MDEF))?
-        ((fs=ID LPAREN par2=ID? (COMMA par3 += ID)* RPAREN)
-         | (fs=ID f2=ID)
+     (longname9=TK_ID (DEF | MDEF))?
+        ((fs=TK_ID LPAREN par2=TK_ID? (COMMA par3 += TK_ID)* RPAREN)
+         | (fs=TK_ID f2=TK_ID)
         )?
         add=AddPart
     )?
@@ -1243,7 +1362,7 @@ VariableDeclaration
  * the 'where' part contains a 'with' part which holds export information
  * such as function signatures (function declarations) but not function definitions.
  */
-WithPart hidden(WS,SL_COMMENT):
+WithPart hidden(WS,TK_COMMENT):
 name='with' NL* LBRACE NL*
     (fundec += VariableDeclaration (NL|SEMICOLON)+)*
     RBRACE NL*
@@ -1252,7 +1371,7 @@ name='with' NL* LBRACE NL*
 /*
  * similar to 'WithPart' but no trailing NL
  */
-WithInline hidden(WS,SL_COMMENT):
+WithInline hidden(WS,TK_COMMENT):
 name='with' NL* LBRACE NL*
     (fundec += VariableDeclaration (NL|SEMICOLON)+)*
     RBRACE
@@ -1262,7 +1381,7 @@ name='with' NL* LBRACE NL*
  * the 'where' part contains a 'add' part which holds function and other
  * declarations.
  */
-AddPart hidden(WS,SL_COMMENT):
+AddPart hidden(WS,TK_COMMENT):
 name='add' NL* LBRACE NL*
     (t+=AddStatements (NL|SEMICOLON)+)* RBRACE NL*
 ;
@@ -1275,7 +1394,7 @@ name='add' NL* LBRACE NL*
  * error "Modulus cannot be made monic"
  * }
  */
-AddStatements hidden(WS,SL_COMMENT):
+AddStatements hidden(WS,TK_COMMENT):
    VariableDeclarationAssign
    | FunctionDefinition
    | ('if' t1=Expression // expression has form 'x has y'
@@ -1308,14 +1427,14 @@ AddStatements hidden(WS,SL_COMMENT):
  * if % has finiteAggregate then {
  * ... }
  */
-FunctionDefinition hidden(WS,SL_COMMENT):
+FunctionDefinition hidden(WS,TK_COMMENT):
   ((
 par3=FunctionSignature
     (COLON par4=TypeExpression1)?
     DEF par5=Statement
    )|(
     // this is case where FunctionSignature is just an identifier
-    fnNam=ID DEF par5=Statement
+    fnNam=TK_ID DEF par5=Statement
    ))
 ;
 
@@ -1324,7 +1443,7 @@ par3=FunctionSignature
  * allows more add statements inside:
  * if a has y then 'more add statements'
  */
-FunctionDefinitionBlock hidden(WS,SL_COMMENT):
+FunctionDefinitionBlock hidden(WS,TK_COMMENT):
     fnDecBr=LBRACE NL*
       (
        fnDecBk += FunctionDefinition (NL|SEMICOLON)+
@@ -1355,37 +1474,37 @@ FunctionDefinitionBlock hidden(WS,SL_COMMENT):
  * 0 or 1 can be used as a function signature as a short form of
  * _0() or _1()
  */
-FunctionSignature hidden(WS,SL_COMMENT):
+FunctionSignature hidden(WS,TK_COMMENT):
   (
-fnNam=ID
+fnNam=TK_ID
     LPAREN
     par2=VariableTyped?
     (COMMA par3 += VariableTyped)*
     RPAREN
   ) | (
    // fnNam=ID par2=VariableDeclaration causes recursive definition so use:
-   fnNam=ID par=ID
+   fnNam=TK_ID par=TK_ID
 // ) | (
 // t4=ID // no parameters without brackets
 // commented out as it causes recursive rule invocation
 // with ruleAddStatements and ruleFunctionDefinitionBlock
   ) | (
-   t4=ID (COLON (PERCENT | ID))? //(COLON te1=TypeExpression)?
+   t4=TK_ID (COLON (PERCENT | TK_ID))? //(COLON te1=TypeExpression)?
    ( b1=EQUAL | b1=LT | b1=GT | b1=LE | b1=GE |
             b1=PLUS | b1=MINUS | b1=TIMES | b1=SLASH | b1=AMPERSAND |
-            b1=BAR | b1=CARAT) t5=ID
+            b1=BAR | b1=CARAT) t5=TK_ID
   ) | (
    b3=INT // allows special form of function signature using '0' or '1'
    // can't specify '0' or '1' explicitly as this would affect lex
    // order
   ) | (
-   b2=MINUS t6=ID
+   b2=MINUS t6=TK_ID
   ) | (
-   b4=TILDE t7=ID
+   b4=TILDE t7=TK_ID
   ) | (
-   b5='not' t8=ID
+   b5='not' t8=TK_ID
   ) | (
-   b6=HASH t8=ID
+   b6=HASH t8=TK_ID
   )
 ;
 
@@ -1395,13 +1514,13 @@ fnNam=ID
  * and
  * name macro == body
  */
-MacroDef: macroname=ID MACROVALUE ; //MACRO val=ID NL;
+MacroDef: macroname=TK_ID MACROVALUE ; //MACRO val=ID NL;
 
 /*
  * import domain
  */
 Import hidden(WS):
-'import' (impname += ID)+ (LPAREN par22+=TypeExpression1
+'import' (impname += TK_ID)+ (LPAREN par22+=TypeExpression1
 (COMMA par22+=TypeExpression1)* RPAREN)?
 ;
 
@@ -1415,7 +1534,7 @@ Import hidden(WS):
  * or it can be conditional like:
  * if
  */
-VariableDeclarationBlock hidden(WS,SL_COMMENT):
+VariableDeclarationBlock hidden(WS,TK_COMMENT):
     vardecbr=LBRACE NL*
       //=>(i1=Import NL*)?
       (vardecBlk += VariableDeclaration (NL|SEMICOLON)+)*
@@ -1432,7 +1551,7 @@ VariableDeclarationBlock hidden(WS,SL_COMMENT):
  * or it can be conditional like:
  * if
  */
-VariableDeclaration hidden(WS,SL_COMMENT):
+VariableDeclaration hidden(WS,TK_COMMENT):
 //Import?
     ('if' t1=Expression 'then')? // expression has form 'x has y'
 ( v1=TypeWithName
@@ -1446,9 +1565,9 @@ VariableDeclaration hidden(WS,SL_COMMENT):
  * but it may also have an optional name like:
  * x:Float
  */
-TypeWithName hidden(WS,SL_COMMENT):
+TypeWithName hidden(WS,TK_COMMENT):
 (
-(varName=ID | varNameSt=STRING) (COMMA varName2=ID)?
+(varName=TK_ID | varNameSt=TK_STRING) (COMMA varName2=TK_ID)?
 COLON
 )? typ=TypeExpression1
 ;
@@ -1465,8 +1584,8 @@ COLON
  * we can define multiple variables together:
  * i,j : Integer
  */
-VariableTyped hidden(WS,SL_COMMENT):
-(varName=ID | varNameSt=STRING)
+VariableTyped hidden(WS,TK_COMMENT):
+(varName=TK_ID | varNameSt=TK_STRING)
 // =>(COMMA t2+=ID)* // multiple declarations in same line
     (COLON typ=TypeExpression1)?
 ;
@@ -1483,11 +1602,11 @@ VariableTyped hidden(WS,SL_COMMENT):
  * a := b := c := 0@Integer
  */
 VariableDeclarationAssign hidden(WS):
-  varName=ID // name of variable
+  varName=TK_ID // name of variable
   // if I just use name=ID then, when the ui program is running, I get:
   // Duplicate xxx 'coerce' in yyy
   (
-    (COMMA t12+=ID)* // multiple declarations in same line
+    (COMMA t12+=TK_ID)* // multiple declarations in same line
     (COLON typ=TypeExpression1)? // option to explicitly define type
     (BECOMES (t4=Expression /* |(LBRACE NL* Expression NL* RBRACE) */))?
     // we need block since we can't always detect continuation after ':='
@@ -1499,14 +1618,14 @@ VariableDeclarationAssign hidden(WS):
  * free variable allows us to declare a variable that is global
  */
 FreeVariable hidden(WS):
-'free' var=ID
+'free' var=TK_ID
 ;
 
 /*
  * allows us to declare a variable that is not global
  */
 LocalVariable hidden(WS):
-'local' var=ID
+'local' var=TK_ID
 ;
 
 /*
@@ -1552,9 +1671,9 @@ TypeExpression2 returns TypeExpression hidden(WS):
  * (s:String,i:Integer)
  */
 TypeParameterList hidden(WS):
-tyname=LPAREN par=ID?
+tyname=LPAREN par=TK_ID?
 (COLON par21=TypeExpression1)?
-(COMMA par2 += ID (COLON par22+=TypeExpression1)?)* RPAREN;
+(COMMA par2 += TK_ID (COLON par22+=TypeExpression1)?)* RPAREN;
 
 /*
  * we use type arguments for first part of function type, that is
@@ -1570,7 +1689,7 @@ TypeArguments hidden(WS):
   t3='Type' |
   // usually, but not always type arguments are in parenthesis, and empty
   // parenthesis are allowed
-  b1 ?= LPAREN ((ID COLON)? t4=TypeExpression1)? ( COMMA (ID COLON)? t16 +=TypeExpression1)* RPAREN |
+  b1 ?= LPAREN ((TK_ID COLON)? t4=TypeExpression1)? ( COMMA (TK_ID COLON)? t16 +=TypeExpression1)* RPAREN |
   t5='Record' LPAREN t6=TypeExpression1
                (COLON t22+=TypeExpression1)?
                (COMMA t21+=TypeExpression1 (COLON t23+=TypeExpression1)?)*
@@ -1663,9 +1782,9 @@ TypePrimaryExpression2 returns TypePrimaryExpression hidden(WS):
  * If there is only one parameter then the parenthesis are optional
  */
 TypeNameOrFunctionCall hidden(WS):
-  tfnname=ID
+  tfnname=TK_ID
   (
-    (LPAREN (ID COLON)? t4=TypeExpression1? (COMMA (ID COLON)? t25+=TypeExpression1)* RPAREN)
+    (LPAREN (TK_ID COLON)? t4=TypeExpression1? (COMMA (TK_ID COLON)? t25+=TypeExpression1)* RPAREN)
     // optional curried function:
     (LPAREN t44+=StatementExpression? (COMMA t45+=Expression)* RPAREN)*
     // option of no parenthesis for single parameter
@@ -1675,9 +1794,9 @@ TypeNameOrFunctionCall hidden(WS):
 ;
 
 TypeNameOrFunctionCall2 hidden(WS):
-  tfnname=ID
+  tfnname=TK_ID
   (
-    (LPAREN (ID COLON)? t4=TypeExpression1? (COMMA (ID COLON)? t25+=TypeExpression1)* RPAREN)
+    (LPAREN (TK_ID COLON)? t4=TypeExpression1? (COMMA (TK_ID COLON)? t25+=TypeExpression1)* RPAREN)
     // optional curried function:
     (LPAREN t44+=StatementExpression? (COMMA t45+=Expression)* RPAREN)*
     // option of no parenthesis for single parameter
@@ -1706,7 +1825,7 @@ TupleDefinition hidden(WS):
  */
 TypeLiteral hidden(WS):
   t1=INT |
-  t22=STRING |
+  t22=TK_STRING |
 // t3=FloatLiteral |
   t34=CharacterLiteral |
   t35=BooleanLiteral
@@ -1715,7 +1834,7 @@ TypeLiteral hidden(WS):
 /* In FunctionDefinition the algorithm is defined by a sequence of the
  * following statements:
  */
-Statement hidden(WS,SL_COMMENT):
+Statement hidden(WS,TK_COMMENT):
     s1=Block |
     s3= StatementExpression |
     // 'if' can occur in an expression or in
@@ -1738,7 +1857,7 @@ Statement hidden(WS,SL_COMMENT):
 
 /* allows multiple statements which are grouped by wrapping in
  * braces (curly brackets) */
-Block hidden(WS,SL_COMMENT):
+Block hidden(WS,TK_COMMENT):
 stname=LBRACE NL*
     (statemBl += Statement (NL|SEMICOLON)+)*
     RBRACE
@@ -1755,7 +1874,7 @@ stname=LBRACE NL*
  *
  * x=y => 3
  */
-StatementExpression hidden(WS,SL_COMMENT):
+StatementExpression hidden(WS,TK_COMMENT):
   //(ID COMMA)* // allow multiple assignment
   t=ConditionExpression // was Expression but changed so that 'if' statement
                         // does not clash with if-then-else expression
@@ -1785,12 +1904,12 @@ StatementExpression hidden(WS,SL_COMMENT):
  *
  * We need to allow conditions using BAR '|'
  */
-ForStatement hidden(WS,SL_COMMENT):
+ForStatement hidden(WS,TK_COMMENT):
 'for' (
-       stname=ID 'in' t1=Expression SEG? //(=> '..' t2=Expression)?
+       stname=TK_ID 'in' t1=Expression SEG? //(=> '..' t2=Expression)?
        ('by' by1=Expression)?
 // (=> BAR t2=PredicateOr)? // condition
-       ('for' stname2+=ID
+       ('for' stname2+=TK_ID
         'in' t2+=Expression SEG?
         ('by' by2+=Expression)?
         )*
@@ -1801,7 +1920,7 @@ ForStatement hidden(WS,SL_COMMENT):
 /*
  * while BoolExpr repeat loopBody
  */
-WhileStatement hidden(WS,SL_COMMENT):
+WhileStatement hidden(WS,TK_COMMENT):
 stname='while' (
        t2=Expression /*PredicateOr*/
 ) 'repeat' NL? s1=Statement
@@ -1810,7 +1929,7 @@ stname='while' (
 /*
  * do loopBody while BoolExpr
  */
-DoStatement hidden(WS,SL_COMMENT):
+DoStatement hidden(WS,TK_COMMENT):
 stname='do' (
        s1=Statement
 ) 'while' NL? t2=Expression /*PredicateOr*/
@@ -1819,7 +1938,7 @@ stname='do' (
 /*
  * will repeat until we jump out. For instance by calling return.
  */
-RepeatStatement hidden(WS,SL_COMMENT):
+RepeatStatement hidden(WS,TK_COMMENT):
 stname='repeat' (
        s1=Statement
 )
@@ -1829,14 +1948,14 @@ stname='repeat' (
  * iterate ...
  * skips over the remainder of a loop
  */
-IterateStatement hidden(WS,SL_COMMENT):
+IterateStatement hidden(WS,TK_COMMENT):
 stname='iterate'
 ;
 
 /*
  * break leave current loop
  */
-BreakStatement hidden(WS,SL_COMMENT):
+BreakStatement hidden(WS,TK_COMMENT):
 stname='break'
 ;
 
@@ -1886,7 +2005,7 @@ stname='return' t2=Expression
  * -x
  * }
  */
-IfStatement hidden(WS,SL_COMMENT):
+IfStatement hidden(WS,TK_COMMENT):
   'if' t2=Expression
 // 'if' t2=ConditionExpression
   (
@@ -1900,7 +2019,7 @@ IfStatement hidden(WS,SL_COMMENT):
   )
 ;
 
-IfElseStatement hidden(WS,SL_COMMENT):
+IfElseStatement hidden(WS,TK_COMMENT):
 'else' s2=Statement
 ;
 
@@ -1916,7 +2035,7 @@ IfElseStatement hidden(WS,SL_COMMENT):
  * expressions contain no newlines unless preceded by underscore
  * (which is handled by WS)
  */
-Expression returns Expr hidden(WS,SL_COMMENT):
+Expression returns Expr hidden(WS,TK_COMMENT):
   (ifname='if' ifpred=Expression 'then' thenexp=Expression 'else' elseexp=Expression)
 // | LPAREN t24=ConditionExpression (COMMA t25+=ConditionExpression)+ RPAREN (COLON rightType2 =TypeExpression)? GIVES ConditionExpression
   | ExitExpression
@@ -1925,7 +2044,7 @@ Expression returns Expr hidden(WS,SL_COMMENT):
 /*
  * condition '=>' expr1 ';' expr2
  */
-ExitExpression returns Expr hidden(WS,SL_COMMENT):
+ExitExpression returns Expr hidden(WS,TK_COMMENT):
   ConditionExpression
   ({ExitExpression.left=current} op=EXIT right = ConditionExpression SEMICOLON r2=ConditionExpression)*
 ;
@@ -1933,7 +2052,7 @@ ExitExpression returns Expr hidden(WS,SL_COMMENT):
 /*
  * BAR "|" precedence: 108, 111
  */
-ConditionExpression returns Expr hidden(WS,SL_COMMENT):
+ConditionExpression returns Expr hidden(WS,TK_COMMENT):
   OrExpression
   ({ConditionExpression.left=current} op=BAR right = OrExpression )*
 ;
@@ -1941,7 +2060,7 @@ ConditionExpression returns Expr hidden(WS,SL_COMMENT):
 /*
  * COMMA"," precedence: 110, 111
  */
-//CommaExpression returns Expr hidden(WS,SL_COMMENT):
+//CommaExpression returns Expr hidden(WS,TK_COMMENT):
 // ConditionalAndExpression
 // ({ConditionExpression.left=current} op=BAR right = ConditionalAndExpression )*
 //;
@@ -1952,7 +2071,7 @@ ConditionExpression returns Expr hidden(WS,SL_COMMENT):
  * used when we know we have a predicate.
  * "or", precedence: 200, 201
  */
-OrExpression returns Expr hidden(WS,SL_COMMENT):
+OrExpression returns Expr hidden(WS,TK_COMMENT):
   AndExpression
   ( {OrExpression.left=current} op='or' right = AndExpression)*
 ;
@@ -1963,7 +2082,7 @@ OrExpression returns Expr hidden(WS,SL_COMMENT):
  * used when we know we have a predicate.
  * "and", precedence: 250, 251
  */
-AndExpression returns Expr hidden(WS,SL_COMMENT):
+AndExpression returns Expr hidden(WS,TK_COMMENT):
   InnerProdExpression
   ( {AndExpression.left=current} op='and' right = InnerProdExpression)*
 ;
@@ -1976,7 +2095,7 @@ AndExpression returns Expr hidden(WS,SL_COMMENT):
  * the backslash is duplicated here because it is the escape character for
  * strings, it will not be duplicated when used.
  */
-InnerProdExpression returns Expr hidden(WS,SL_COMMENT):
+InnerProdExpression returns Expr hidden(WS,TK_COMMENT):
   OuterProdExpression
   ( {InnerProdExpression.left=current} op=BACKSLASHSLASH right = OuterProdExpression)*
 ;
@@ -1989,7 +2108,7 @@ InnerProdExpression returns Expr hidden(WS,SL_COMMENT):
  * the backslash is duplicated here because it is the escape character for
  * strings, it will not be duplicated when used.
  */
-OuterProdExpression returns Expr hidden(WS,SL_COMMENT):
+OuterProdExpression returns Expr hidden(WS,TK_COMMENT):
   HasExpression
   ( {OuterProdExpression.left=current} op=SLASHBACKSLASH right = HasExpression)*
 ;
@@ -2000,7 +2119,7 @@ OuterProdExpression returns Expr hidden(WS,SL_COMMENT):
  *
  * "has", precedence: 400, 400
  */
-HasExpression returns Expr hidden(WS,SL_COMMENT):
+HasExpression returns Expr hidden(WS,TK_COMMENT):
   CaseExpression
   ({HasExpression.left=current} op='has' rightType = TypeExpression1)*
 ;
@@ -2011,7 +2130,7 @@ HasExpression returns Expr hidden(WS,SL_COMMENT):
  *
  * "case", precedence: 400, 400
  */
-CaseExpression returns Expr hidden(WS,SL_COMMENT):
+CaseExpression returns Expr hidden(WS,TK_COMMENT):
   EqualityExpression
   ( {CaseExpression.left=current} op='case' right = EqualityExpression)?
 ;
@@ -2020,7 +2139,7 @@ CaseExpression returns Expr hidden(WS,SL_COMMENT):
  *
  * "in", precedence: 400, 400
  */
-/*InExpression returns Expr hidden(WS,SL_COMMENT):
+/*InExpression returns Expr hidden(WS,TK_COMMENT):
   RelationalExpression
   ( {CaseExpression.left=current} op='in' right = RelationalExpression)?
 ;*/
@@ -2030,11 +2149,11 @@ CaseExpression returns Expr hidden(WS,SL_COMMENT):
  * "^=", precedence: 400, 400
  * "=", precedence: 400, 400
  */
-EqualityExpression returns Expr hidden(WS,SL_COMMENT):
+EqualityExpression returns Expr hidden(WS,TK_COMMENT):
   RelationalExpression
 // ambiguous because EQ can be in top level expression
   ( {EqualityExpression.left=current}
-   ( op=EQUAL | op=NOTEQUAL | op='^=' | (op=EQUALSDOLAR te=ID))
+   ( op=EQUAL | op=NOTEQUAL | op='^=' | (op=EQUALSDOLAR te=TK_ID))
    //(DOLAR te=ID)?
    right = RelationalExpression
   )*
@@ -2048,7 +2167,7 @@ EqualityExpression returns Expr hidden(WS,SL_COMMENT):
  * ">", precedence: 400, 400
  * "<", precedence: 400, 400
  */
-RelationalExpression returns Expr hidden(WS,SL_COMMENT):
+RelationalExpression returns Expr hidden(WS,TK_COMMENT):
   IsExpression
   ( {RelationalExpression.left=current}
    ( op=LT | op=GT | op=LE | op=GE )
@@ -2061,7 +2180,7 @@ RelationalExpression returns Expr hidden(WS,SL_COMMENT):
  * "isnt", precedence: 400, 400
  * "is", precedence: 400, 400
  */
-IsExpression returns Expr hidden(WS,SL_COMMENT):
+IsExpression returns Expr hidden(WS,TK_COMMENT):
   SegmentExpression
   ({IsExpression.left=current} (op='is' | op='isnt') rightType = TypeExpression1)*
 ;
@@ -2074,7 +2193,7 @@ IsExpression returns Expr hidden(WS,SL_COMMENT):
  * means.
  * "..", "SEGMENT", precedence: 401, 699, ["parse_Seg"]
  */
-SegmentExpression returns Expr hidden(WS,SL_COMMENT):
+SegmentExpression returns Expr hidden(WS,TK_COMMENT):
   AdditiveExpression
   ( {SegmentExpression.left=current} op=SEG right = AdditiveExpression)*
 ;
@@ -2088,10 +2207,10 @@ SegmentExpression returns Expr hidden(WS,SL_COMMENT):
  * "-", precedence: 700, 701
  * "+", precedence: 700, 701
  */
-AdditiveExpression returns Expr hidden(WS,SL_COMMENT):
+AdditiveExpression returns Expr hidden(WS,TK_COMMENT):
   ExquoExpression
   ( {AdditiveExpression.left=current}
-    ( op=PLUS | op=MINUS | (op=PLUSDOLAR te=ID) | (op=MINUSDOLAR te=ID))
+    ( op=PLUS | op=MINUS | (op=PLUSDOLAR te=TK_ID) | (op=MINUSDOLAR te=TK_ID))
     right = ExquoExpression
   )*
 ;
@@ -2099,7 +2218,7 @@ AdditiveExpression returns Expr hidden(WS,SL_COMMENT):
 /*
  * "exquo", precedence: 800, 801
  */
-ExquoExpression returns Expr hidden(WS,SL_COMMENT):
+ExquoExpression returns Expr hidden(WS,TK_COMMENT):
   DivisionExpression
   ({ExquoExpression.left=current} op='exquo' right = DivisionExpression)*
 ;
@@ -2108,10 +2227,10 @@ ExquoExpression returns Expr hidden(WS,SL_COMMENT):
  * division expression
  * "/", precedence: 800, 801
  */
-DivisionExpression returns Expr hidden(WS,SL_COMMENT):
+DivisionExpression returns Expr hidden(WS,TK_COMMENT):
   QuoExpression
   ( {DivisionExpression.left=current}
-   (op=SLASH | (op=DIVDOLAR te=ID))
+   (op=SLASH | (op=DIVDOLAR te=TK_ID))
    right = QuoExpression
   )*
 ;
@@ -2119,7 +2238,7 @@ DivisionExpression returns Expr hidden(WS,SL_COMMENT):
 /*
  *"quo", precedence: 800, 801
  */
-QuoExpression returns Expr hidden(WS,SL_COMMENT):
+QuoExpression returns Expr hidden(WS,TK_COMMENT):
   ModExpression
   ({QuoExpression.left=current} op='quo' right = ModExpression)*
 ;
@@ -2127,7 +2246,7 @@ QuoExpression returns Expr hidden(WS,SL_COMMENT):
 /*
  *"mod", precedence: 800, 801
  */
-ModExpression returns Expr hidden(WS,SL_COMMENT):
+ModExpression returns Expr hidden(WS,TK_COMMENT):
   RemExpression
   ({ModExpression.left=current} op='mod' right = RemExpression)*
 ;
@@ -2135,7 +2254,7 @@ ModExpression returns Expr hidden(WS,SL_COMMENT):
 /*
  *"rem", precedence: 800, 801
  */
-RemExpression returns Expr hidden(WS,SL_COMMENT):
+RemExpression returns Expr hidden(WS,TK_COMMENT):
   MultiplicativeExpression
   ({RemExpression.left=current} op='rem' right = MultiplicativeExpression)*
 ;
@@ -2146,10 +2265,10 @@ RemExpression returns Expr hidden(WS,SL_COMMENT):
  *
  * "*", precedence: 800, 801
  */
-MultiplicativeExpression returns Expr hidden(WS,SL_COMMENT):
+MultiplicativeExpression returns Expr hidden(WS,TK_COMMENT):
   ExponentExpression
   ( {MultiplicativeExpression.left=current}
-    (op=TIMES | (op=TIMESDOLAR te=ID))
+    (op=TIMES | (op=TIMESDOLAR te=TK_ID))
     right = ExponentExpression
   )*
 ;
@@ -2159,7 +2278,7 @@ MultiplicativeExpression returns Expr hidden(WS,SL_COMMENT):
  * "^", precedence: 901, 900
  * "**", precedence: 901, 900
  */
-ExponentExpression returns Expr hidden(WS,SL_COMMENT):
+ExponentExpression returns Expr hidden(WS,TK_COMMENT):
   MapDefinition
   ({ExponentExpression.left=current} (op=CARAT | op=POWER) right = MapDefinition)*
 ;
@@ -2179,12 +2298,12 @@ ExponentExpression returns Expr hidden(WS,SL_COMMENT):
  * fricas compatibility:
  * "+->", precedence: 995, 112
  */
-MapDefinition returns Expr hidden(WS,SL_COMMENT):
+MapDefinition returns Expr hidden(WS,TK_COMMENT):
 // (PretendExpression | LPAREN PretendExpression (COMMA t25+=PretendExpression)+ RPAREN) (COLON rightType2 =TypeExpression)?
   AssignExpression
   ({MapDefinition.left=current}
    op=GIVES right = AssignExpression
-   (par = ID)? // optional parameter which function
+   (par = TK_ID)? // optional parameter which function
                              // is applied to
   )*
 ;
@@ -2200,7 +2319,7 @@ MapDefinition returns Expr hidden(WS,SL_COMMENT):
  * right is expression to allow forms like
  * x := if y<0 then -y else y
  */
-AssignExpression returns Expr hidden(WS,SL_COMMENT):
+AssignExpression returns Expr hidden(WS,TK_COMMENT):
   PretendExpression
   ({AssignExpression.left=current} op=BECOMES (
    right = PretendExpression
@@ -2218,7 +2337,7 @@ AssignExpression returns Expr hidden(WS,SL_COMMENT):
  *
  * "pretend", precedence: 995, 996
  */
- PretendExpression returns Expr hidden(WS,SL_COMMENT):
+ PretendExpression returns Expr hidden(WS,TK_COMMENT):
   CoerceExpression
   ({PretendExpression.left=current} op='pretend' rightType = TypeExpression1)*
 ;
@@ -2230,7 +2349,7 @@ AssignExpression returns Expr hidden(WS,SL_COMMENT):
  * '@' to bind more tightly than '::'. As we can see in the following example:
  * "dictionary"@String :: OutputForm.
  */
-CoerceExpression returns Expr hidden(WS,SL_COMMENT):
+CoerceExpression returns Expr hidden(WS,TK_COMMENT):
   HintTypeExpression
   ({CoerceExpression.left=current} op=COERCE rightType = TypeExpression1)*
 ;
@@ -2238,7 +2357,7 @@ CoerceExpression returns Expr hidden(WS,SL_COMMENT):
 /*
  * "@", precedence: 996, 997
  */
-HintTypeExpression returns Expr hidden(WS,SL_COMMENT):
+HintTypeExpression returns Expr hidden(WS,TK_COMMENT):
   EltExpression
   ( {HintTypeExpression.left=current} op=AT rightType = TypeExpression1)?
 ;
@@ -2251,7 +2370,7 @@ HintTypeExpression returns Expr hidden(WS,SL_COMMENT):
  * "!", precedence: 1002, 1001
  *
  */
-/*BangExpression returns Expr hidden(WS,SL_COMMENT):
+/*BangExpression returns Expr hidden(WS,TK_COMMENT):
   EqualityExpression
   ({AndExpression.left=current} op=AMPERSAND right = EqualityExpression)*
 ;*/
@@ -2260,7 +2379,7 @@ HintTypeExpression returns Expr hidden(WS,SL_COMMENT):
  * "with", precedence: 2000, 400, ["parse_InfixWith"]
  *
  */
-/*WithExpression returns Expr hidden(WS,SL_COMMENT):
+/*WithExpression returns Expr hidden(WS,TK_COMMENT):
   EqualityExpression
   ({AndExpression.left=current} op='with' right = EqualityExpression)*
 ;*/
@@ -2271,7 +2390,7 @@ HintTypeExpression returns Expr hidden(WS,SL_COMMENT):
  * a list, array, string, Record or union, the right element should be a
  * non-negative integer.
  */
-EltExpression returns Expr hidden(WS,SL_COMMENT):
+EltExpression returns Expr hidden(WS,TK_COMMENT):
   ExplicitTypeExpression
   ( {EltExpression.left=current}
    op=DOT right = ExplicitTypeExpression
@@ -2284,7 +2403,7 @@ EltExpression returns Expr hidden(WS,SL_COMMENT):
 /*
  * '$'
  */
-ExplicitTypeExpression returns Expr hidden(WS,SL_COMMENT):
+ExplicitTypeExpression returns Expr hidden(WS,TK_COMMENT):
   UnaryExpression
   ({ExplicitTypeExpression.left=current} op=DOLAR rightType = TypeExpression1)?
 ;
@@ -2299,12 +2418,12 @@ ExplicitTypeExpression returns Expr hidden(WS,SL_COMMENT):
  * unary suffixes
  * ".." : range can be unary suffix
  */
-UnaryExpression returns Expr hidden(WS,SL_COMMENT):
+UnaryExpression returns Expr hidden(WS,TK_COMMENT):
   PrimaryExpression |
   ({UnaryExpression} uop=TILDE expr=UnaryExpression) |
 // ({UnaryExpression} uop=COLON expr=UnaryExpression) |
   ({UnaryExpression} uop=MINUS expr=UnaryExpression) |
-  ({UnaryExpression} uop=MINUSDOLAR te=ID expr=UnaryExpression) |
+  ({UnaryExpression} uop=MINUSDOLAR te=TK_ID expr=UnaryExpression) |
   ({UnaryExpression} uop=HASH expr=UnaryExpression) |
   ({UnaryExpression} uop='not' expr=PrimaryExpression) |
   ({UnaryExpression} uop=SUMLIST expr=PrimaryExpression) |
@@ -2325,7 +2444,7 @@ UnaryExpression returns Expr hidden(WS,SL_COMMENT):
 /*
  *
  */
-/*UnaryExpressionHash returns Expr hidden(WS,SL_COMMENT):
+/*UnaryExpressionHash returns Expr hidden(WS,TK_COMMENT):
 // HASH? PrimaryExpression
   PrimaryExpression | ({UnaryExpressionHash} uop=HASH expr=UnaryExpressionHash)
 ;*/
@@ -2333,7 +2452,7 @@ UnaryExpression returns Expr hidden(WS,SL_COMMENT):
 /*
  *
  */
-PrimaryExpression returns Expr hidden(WS,SL_COMMENT):
+PrimaryExpression returns Expr hidden(WS,TK_COMMENT):
   PrimaryPrefix /* ( t2+=PrimarySuffix )* */
 ;
 
@@ -2344,7 +2463,7 @@ PrimaryExpression returns Expr hidden(WS,SL_COMMENT):
  *
  * The comma option allows us to define a tuple
  */
-PrimaryPrefix hidden(WS,SL_COMMENT):
+PrimaryPrefix hidden(WS,TK_COMMENT):
  Literal
  | LPAREN t4=Expression (COMMA t25+=Expression)* RPAREN =>(COLON rightType3 =TypeExpression1)?
  | t7=NameOrFunctionCall
@@ -2357,9 +2476,9 @@ PrimaryPrefix hidden(WS,SL_COMMENT):
  *
  * function binds most tightly
  */
-NameOrFunctionCall hidden(WS,SL_COMMENT):
+NameOrFunctionCall hidden(WS,TK_COMMENT):
   ("'")?
-  fnname=ID (=> lsp=DOLAR 'Lisp'/*t2=TypeExpression*/)?
+  fnname=TK_ID (=> lsp=DOLAR 'Lisp'/*t2=TypeExpression*/)?
   // option for parameters in parenthesis
   (
 // LPAREN t4=StatementExpression? (COMMA t5+=Expression)* RPAREN //(COLON rightType2 =TypeExpression)?
@@ -2369,7 +2488,7 @@ NameOrFunctionCall hidden(WS,SL_COMMENT):
     // option of no parenthesis for single parameter
     | => t6=PrimaryExpression
   )?
-  => ((COMMA ID)* COLON rightType2 =TypeExpression1)?
+  => ((COMMA TK_ID)* COLON rightType2 =TypeExpression1)?
   // allow multiple assignment
   //=>(op=GIVES lambda = Expression 'xxx')?
 ;
@@ -2386,9 +2505,9 @@ NameOrFunctionCall hidden(WS,SL_COMMENT):
  * 6) values following immediately after string literal such as "abc"d should
  * represent an implied concat: concat("abc",d)
  */
-Literal hidden(WS,SL_COMMENT):
+Literal hidden(WS,TK_COMMENT):
   value=INT
-  | t2=STRING (=> e1=NameOrFunctionCall =>(t31+=STRING (=> e4+=NameOrFunctionCall)?)*)?
+  | t2=TK_STRING (=> e1=NameOrFunctionCall =>(t31+=TK_STRING (=> e4+=NameOrFunctionCall)?)*)?
 // | t3=FloatLiteral // conflicts with use of '.' for elt
   | ListLiteral
   | CharacterLiteral
@@ -2398,14 +2517,14 @@ Literal hidden(WS,SL_COMMENT):
 /* Contains a single character whereas a string contains multiple
  * characters.
  */
-CharacterLiteral hidden(WS,SL_COMMENT):
+CharacterLiteral hidden(WS,TK_COMMENT):
  "'" c1=ANY_OTHER "'"
 ;
 
 /* This may not need to be specified here at the syntax level. Perhaps we
 * should treat boolean as any other library defined type.
 */
-BooleanLiteral hidden(WS,SL_COMMENT):
+BooleanLiteral hidden(WS,TK_COMMENT):
  litname = 'true' | litname = 'false'
  | litname = 'true' LPAREN RPAREN
  | litname = 'false' LPAREN RPAREN
@@ -2418,7 +2537,7 @@ BooleanLiteral hidden(WS,SL_COMMENT):
  * [a,b] multiple elements
  * [a for b in c] a list comprehension
  */
-ListLiteral hidden(WS,SL_COMMENT):
+ListLiteral hidden(WS,TK_COMMENT):
  litname = LBRACKET l2=Expression?
      (COMMA t3+=Expression)*
      ('for' t14+=Expression 'in' l5+=Expression)?
