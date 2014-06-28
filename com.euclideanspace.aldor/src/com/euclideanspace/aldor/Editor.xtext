@@ -22,118 +22,195 @@ generate editor "http://www.euclideanspace.com/aldor/Editor"
  * along with EuclideanSpace. If not, see <http://www.gnu.org/licenses/>.
  */
 
-/* FriCAS parses SPAD using a type of parser known as a 'Pratt' parser.
- * In this type of parser each operator has different binding powers for
- * its left and right. The SPAD parser also has 'special handlers' for
- * certain operators. In this type of parser there is less distinction made
- * between expressions and statements, effectively everything is treated as
- * an expression so in this context, not only are "+" and "*" operators
- * but also other keywords such as "for" and "return".
+/*
  *
  * Here we are using a LL(*) recursive-descent parser generator and this
- * may not be able to exactly replicate the SPAD parser as described above
- *
- * I have taken this information from s-parser.boot in src/interp
- * so I suspect that it in valid only for the SPAD interpreter and not
- * the compiler however I am hoping that this will be a close enough
- * approximation for this purpose.
- *
- * So I will use the LED Table to approximate infix operator precedence
- * and the NUD Table to approximate prefix operator precedence. So I
- * have ordered both these tables in
- *
- * I have ordered the tables low (binds least tightly) to high (binds most tightly) as follows:
- *
- * LED Table - infix operators
- * ---------------------------
- * ";", 81, 82, ["parse_SemiColon"]
- * "|", 108, 111
- * ",", 110, 111
- * "when", 112, 190
- * "otherwise", 119, 190, ["parse_Suffix"]
- * "where", 121, 104
- * "==>", "MDEF", 122, 121
- * "==", "DEF", 122, 121
- * "=>", 123, 103
- * ":=", "LET", 125, 124]
- * "\/", BACKSLASHSLASH 200, 201
- * "/\", SLASHBACKSLASH 250, 251
- * "or", 200, 201
- * "and", 250, 251
- * "has", 400, 400
- * "add", 400, 120
- * "case", 400, 400
- * "in", 400, 400
- * "~=", 400, 400
- * "^=", 400, 400
- * "=", 400, 400
- * ">=", 400, 400
- * "<=", 400, 400
- * ">>", 400, 400
- * "<<", 400, 400
- * ">", 400, 400
- * "<", 400, 400
- * "isnt", 400, 400
- * "is", 400, 400
- * "..", "SEGMENT", 401, 699, ["parse_Seg"]
- * "-", 700, 701
- * "+", 700, 701
- * "exquo", 800, 801
- * "/", 800, 801
- * "quo", 800, 801
- * "mod", 800, 801
- * "rem", 800, 801
- * "*", 800, 801
- * "^", 901, 900
- * "**", 901, 900
- * "+->", 995, 112
- * "pretend", 995, 996
- * "@", 996, 997
- * "::", 996, 997
- * ":", 996, 997
- * "!", 1002, 1001
- * "with", 2000, 400, ["parse_InfixWith"]
- * "."
- *
- * NUD Table - prefix operators
- * ----------------------------
- *
- * "catch", 0, 114
- * "finally", 0, 114
- * "then", 0, 114
- * "else", 0, 114
- * "|", 0, 190
- * "import", 120, 0, ["parse_Import"]
- * "<<", 122, 120, ["parse_LabelExpr"]
- * ">>"
- * "if", 130, 0, ["parse_Conditional"]
- * "try", 130, 0, ["parse_Try"]
- * "for", 130, 350, ["parse_Loop"
- * "while", 130, 190, ["parse_Loop"]
- * "until", 130, 190, ["parse_Loop"]
- * "repeat", 130, 190, ["parse_Loop"]
- * "return", 202, 201, ["parse_Return"]
- * "leave", 202, 201, ["parse_Leave"]
- * "exit", 202, 201, ["parse_Exit"]
- * "~", 260, 259, nil
- * ":", 194, 195
- * "not", 260, 259, NIL
- * "has", 400, 400
- * "=", 400, 700
- * "-", 701, 700
- * "add", 900, 120
- * "#", 999, 998
- * "'", 999, 999, ["parse_Data"]
- * "with", 1000, 300, ["parse_With"]
- * "->", 1001, 1002
- * "!", 1002, 1001
- * "unless"
- * "suchthat"
- * "from"
- * "iterate"
- * "yield"
- *
- * */
+ * may not be able to exactly replicate axl.z which is a
+ * LALR(1) conflict-free grammar for Aldor.
+ */
+
+/* from tokInfoTable[] in token.c: Lexical elements.
+* The TokenTag enumeration must use this order.
+*
+* This table MUST be laid out so that all "symbol" tokens starting with
+* the same character are contiguous.
+*
+* Be extra careful with fields F, G, H and K: if you get them wrong then
+* the lineariser will delete end-of-statement tokens when it ought not
+* to. This can lead to odd compiler behaviour that is hard to track down
+* unless you know about this table.
+*
+* struct tok_info tokInfoTable[] = {
+*
+* [A] TokenTag tag
+* [B] Symbol sym
+* [C] String str
+* [D] Byte hasString i.e. use val.str (vs val.sym)
+* [E] Byte isComment i.e. ++ --
+* [F] Byte isOpener i.e. ( [ { etc
+* [G] Byte isCloser i.e. ) ] } etc
+* [H] Byte isFollower i.e. then else always in etc
+* [I] Byte isLangword i.e. if then etc
+* [J] Byte isLeftAssoc i.e., associates left to right
+* [K] Byte isMaybeInfix i.e., add, with, +
+* [L] Byte precedence i.e., 0 is lowest, or don't know
+* [M] Byte isDisabled i.e., non-zero means disabled
+*
+* [A] [B][C] [D][E] [F] [G] [H] [I] [J] [K] [L] [M]
+*
+        {TK_Id, 0,"TK_Id", 0, 0, 0, 0, 0, 0, 1, 0, 170, 0},
+        {TK_Blank, 0,"TK_Blank", 0, 0, 0, 0, 0, 0, 1, 0, 170, 0},
+        {TK_Int, 0,"TK_Int", 1, 0, 0, 0, 0, 0, 1, 0, 170, 0},
+        {TK_Float, 0,"TK_Float", 1, 0, 0, 0, 0, 0, 1, 0, 170, 0},
+        {TK_String, 0,"TK_String", 1, 0, 0, 0, 0, 0, 1, 0, 170, 0},
+        {TK_PreDoc, 0,"TK_PreDoc", 1, 1, 0, 0, 0, 0, 1, 0, 170, 0},
+        {TK_PostDoc, 0,"TK_PostDoc", 1, 1, 0, 0, 0, 0, 1, 0, 170, 0},
+        {TK_Comment, 0,"TK_Comment", 1, 1, 0, 0, 0, 0, 1, 0, 170, 0},
+        {TK_SysCmd, 0,"TK_SysCmd", 1, 1, 0, 0, 0, 0, 1, 0, 170, 0},
+        {TK_Error, 0,"TK_Error", 1, 0, 0, 0, 0, 0, 1, 0, 0, 0},
+
+        {KW_Add, 0,"add", 0, 0, 0, 0, 0, 1, 1, 0, 0, 0},
+        {KW_And, 0,"and", 0, 0, 0, 0, 1, 1, 1, 1, 40, 0},
+        {KW_Always, 0,"always", 0, 0, 0, 0, 1, 1, 1, 1, 0, 0},
+        {KW_Assert, 0,"assert", 0, 0, 0, 0, 0, 1, 1, 0, 0, 0},
+        {KW_Break, 0,"break", 0, 0, 0, 0, 0, 1, 1, 0, 0, 0},
+        {KW_But, 0,"but", 0, 0, 0, 0, 1, 1, 1, 1, 0, 0},
+        {KW_By, 0,"by", 0, 0, 0, 0, 0, 0, 1, 1, 110, 0},
+        {KW_Case, 0,"case", 0, 0, 0, 0, 0, 0, 1, 1, 0, 0},
+        {KW_Catch, 0,"catch", 0, 0, 0, 0, 1, 1, 1, 1, 0, 0},
+        {KW_Default, 0,"default", 0, 0, 0, 0, 0, 1, 1, 0, 0, 0},
+        {KW_Define, 0,"define", 0, 0, 0, 0, 0, 1, 1, 0, 0, 0},
+        {KW_Delay, 0,"delay", 0, 0, 0, 0, 0, 1, 1, 0, 0, 0},
+        {KW_Do, 0,"do", 0, 0, 0, 0, 0, 1, 1, 0, 0, 0},
+        {KW_Else, 0,"else", 0, 0, 0, 0, 1, 1, 1, 0, 0, 0},
+        {KW_Except, 0,"except", 0, 0, 0, 0, 0, 1, 1, 1, 0, 0},
+        {KW_Export, 0,"export", 0, 0, 0, 0, 0, 1, 1, 0, 0, 0},
+        {KW_Exquo, 0,"exquo", 0, 0, 0, 0, 0, 0, 1, 1, 125, 0},
+        {KW_Extend, 0,"extend", 0, 0, 0, 0, 0, 1, 1, 0, 0, 0},
+        {KW_Finally, 0,"finally", 0, 0, 0, 0, 1, 1, 1, 1, 0, 0},
+        {KW_Fix, 0,"fix", 0, 0, 0, 0, 0, 1, 1, 0, 0, 0},
+        {KW_For, 0,"for", 0, 0, 0, 0, 0, 1, 1, 0, 0, 0},
+        {KW_Fluid, 0,"fluid", 0, 0, 0, 0, 0, 1, 1, 0, 0, 0},
+        {KW_Free, 0,"free", 0, 0, 0, 0, 0, 1, 1, 0, 0, 0},
+        {KW_From, 0,"from", 0, 0, 0, 0, 1, 1, 1, 0, 0, 0},
+        {KW_Generate, 0,"generate", 0, 0, 0, 0, 0, 1, 1, 0, 0, 0},
+        {KW_Goto, 0,"goto", 0, 0, 0, 0, 0, 1, 1, 0, 0, 0},
+        {KW_Has, 0,"has", 0, 0, 0, 0, 0, 0, 1, 1, 40, 0},
+        {KW_If, 0,"if", 0, 0, 0, 0, 0, 1, 1, 0, 0, 0},
+        {KW_Import, 0,"import", 0, 0, 0, 0, 0, 1, 1, 0, 0, 0},
+        {KW_In, 0,"in", 0, 0, 0, 0, 1, 1, 1, 1, 0, 0},
+        {KW_Inline, 0,"inline", 0, 0, 0, 0, 0, 1, 1, 0, 0, 0},
+        {KW_Is, 0,"is", 0, 0, 0, 0, 0, 1, 1, 0, 0, 0},
+        {KW_Isnt, 0,"isnt", 0, 0, 0, 0, 0, 1, 1, 0, 0, 0},
+        {KW_Iterate, 0,"iterate", 0, 0, 0, 0, 0, 1, 1, 0, 0, 0},
+        {KW_Let, 0,"let", 0, 0, 0, 0, 0, 1, 1, 0, 0, 0},
+        {KW_Local, 0,"local", 0, 0, 0, 0, 0, 1, 1, 0, 0, 0},
+        {KW_Macro, 0,"macro", 0, 0, 0, 0, 0, 1, 1, 0, 0, 0},
+        {KW_Mod, 0,"mod", 0, 0, 0, 0, 0, 0, 1, 1, 125, 0},
+        {KW_Never, 0,"never", 0, 0, 0, 0, 0, 1, 1, 0, 0, 0},
+        {KW_Not, 0,"not", 0, 0, 0, 0, 0, 1, 1, 1, 150, 0},
+        {KW_Of, 0,"of", 0, 0, 0, 0, 1, 1, 1, 1, 40, 0},
+        {KW_Or, 0,"or", 0, 0, 0, 0, 1, 1, 1, 1, 40, 0},
+        {KW_Pretend, 0,"pretend", 0, 0, 0, 0, 1, 1, 1, 1, 150, 0},
+        {KW_Quo, 0,"quo", 0, 0, 0, 0, 0, 0, 1, 1, 125, 0},
+        {KW_Reference, 0,"ref", 0, 0, 0, 0, 0, 1, 1, 0, 0, 0},
+        {KW_Rem, 0,"rem", 0, 0, 0, 0, 0, 0, 1, 1, 125, 0},
+        {KW_Repeat, 0,"repeat", 0, 0, 0, 0, 0, 1, 1, 0, 0, 0},
+        {KW_Return, 0,"return", 0, 0, 0, 0, 0, 1, 1, 0, 0, 0},
+        {KW_Rule, 0,"rule", 0, 0, 0, 0, 0, 1, 1, 0, 0, 0},
+        {KW_Select, 0,"select", 0, 0, 0, 0, 0, 1, 1, 0, 0, 0},
+        {KW_Then, 0,"then", 0, 0, 0, 0, 1, 1, 1, 0, 0, 0},
+        {KW_Throw, 0,"throw", 0, 0, 0, 0, 0, 1, 1, 1, 0, 0},
+        {KW_To, 0,"to", 0, 0, 0, 0, 1, 1, 1, 0, 0, 0},
+        {KW_Try, 0,"try", 0, 0, 0, 0, 0, 1, 1, 0, 0, 0},
+        {KW_Where, 0,"where", 0, 0, 0, 0, 1, 1, 1, 0, 0, 0},
+        {KW_While, 0,"while", 0, 0, 0, 0, 0, 1, 1, 0, 0, 0},
+        {KW_With, 0,"with", 0, 0, 0, 0, 0, 1, 1, 0, 0, 0},
+        {KW_Yield, 0,"yield", 0, 0, 0, 0, 0, 1, 1, 0, 0, 0},
+
+        {KW_Quote, 0,"'", 0, 0, 0, 0, 0, 0, 1, 0, 0, 0},
+        {KW_Grave, 0,"`", 0, 0, 0, 0, 0, 0, 1, 0, 0, 0},
+        {KW_Ampersand, 0,"&", 0, 0, 0, 0, 0, 0, 1, 0, 160, 0},
+        {KW_Comma, 0,",", 0, 0, 0, 0, 1, 0, 1, 1, 11, 0},
+        {KW_Semicolon, 0,";", 0, 0, 0, 0, 0, 0, 1, 0, 10, 0},
+        {KW_Dollar, 0,"$", 0, 0, 0, 0, 1, 0, 0, 1, 70, 0},
+        {KW_Sharp, 0,"#", 0, 0, 0, 0, 0, 0, 1, 0, 0, 0},
+        {KW_At, 0,"@", 0, 0, 0, 0, 0, 0, 1, 1, 150, 0},
+
+        {KW_Assign, 0,":=", 0, 0, 0, 0, 1, 0, 0, 1, 20, 0},
+        {KW_Colon, 0,":", 0, 0, 0, 0, 1, 0, 1, 1, 36, 0},
+        {KW_ColonStar, 0,":*", 0, 0, 0, 0, 1, 0, 1, 1, 36, 0},
+        {KW_2Colon, 0,"::", 0, 0, 0, 0, 1, 0, 1, 1, 150, 0},
+
+        {KW_Star, 0,"*", 0, 0, 0, 0, 0, 0, 1, 1, 130, 0},
+        {KW_2Star, 0,"**", 0, 0, 0, 0, 0, 0, 1, 1, 140, 0},
+
+        {KW_Dot, 0,".", 0, 0, 0, 0, 1, 0, 1, 1, 170, 0},
+        {KW_2Dot, 0,"..", 0, 0, 0, 0, 0, 0, 1, 1, 110, 0},
+
+        {KW_EQ, 0,"=", 0, 0, 0, 0, 0, 0, 1, 1, 100, 0},
+        {KW_2EQ, 0,"==", 0, 0, 0, 0, 1, 0, 0, 1, 25, 0},
+        {KW_MArrow, 0,"==>", 0, 0, 0, 0, 1, 0, 0, 1, 25, 0},
+        {KW_Implies, 0,"=>", 0, 0, 0, 0, 0, 0, 1, 1, 35, 0},
+
+        {KW_GT, 0,">", 0, 0, 0, 0, 0, 0, 1, 1, 100, 0},
+        {KW_2GT, 0,">>", 0, 0, 0, 0, 0, 0, 1, 1, 100, 0},
+        {KW_GE, 0,">=", 0, 0, 0, 0, 0, 0, 1, 1, 100, 0},
+
+        {KW_LT, 0,"<", 0, 0, 0, 0, 0, 0, 1, 1, 100, 0},
+        {KW_2LT, 0,"<<", 0, 0, 0, 0, 0, 0, 1, 1, 100, 0},
+        {KW_LE, 0,"<=", 0, 0, 0, 0, 0, 0, 1, 1, 100, 0},
+        {KW_LArrow, 0,"<-", 0, 0, 0, 0, 0, 0, 1, 1, 0, 0},
+
+        {KW_Hat, 0,"^", 0, 0, 0, 0, 0, 0, 1, 1, 140, 0},
+        {KW_HatE, 0,"^=", 0, 0, 0, 0, 0, 0, 1, 1, 90, 0},
+
+        {KW_Tilde, 0,"~", 0, 0, 0, 0, 0, 0, 0, 1, 150, 0},
+        {KW_TildeE, 0,"~=", 0, 0, 0, 0, 0, 0, 1, 1, 90, 0},
+
+        {KW_Plus, 0,"+", 0, 0, 0, 0, 0, 0, 1, 1, 120, 0},
+        {KW_PlusMinus, 0,"+-", 0, 0, 0, 0, 0, 0, 1, 1, 120, 0},
+        {KW_MapsTo, 0,"+->", 0, 0, 0, 0, 1, 0, 1, 1, 30, 0},
+        {KW_MapsToStar, 0,"+->*", 0, 0, 0, 0, 1, 0, 1, 1, 30, 0},
+
+        {KW_Minus, 0,"-", 0, 0, 0, 0, 0, 0, 1, 1, 120, 0},
+        {KW_RArrow, 0,"->", 0, 0, 0, 0, 0, 0, 0, 1, 80, 0},
+        {KW_MapStar, 0,"->*", 0, 0, 0, 0, 0, 0, 0, 1, 80, 0},
+
+        {KW_Slash, 0,"/", 0, 0, 0, 0, 0, 0, 1, 1, 130, 0},
+        {KW_Wedge, 0,"/\\", 0, 0, 0, 0, 0, 0, 1, 1, 40, 0},
+
+        {KW_Backslash, 0,"\\", 0, 0, 0, 0, 0, 0, 1, 1, 130, 0},
+        {KW_Vee, 0,"\\/", 0, 0, 0, 0, 0, 0, 1, 1, 40, 0},
+
+        {KW_OBrack, 0,"[", 0, 0, 1, 0, 0, 0, 1, 0, 0, 0},
+        {KW_OBBrack, 0,"[|", 0, 0, 1, 0, 0, 0, 1, 0, 0, 0},
+        {KW_OCurly, 0,"{", 0, 0, 1, 0, 0, 0, 1, 0, 0, 0},
+        {KW_OBCurly, 0,"{|", 0, 0, 1, 0, 0, 0, 1, 0, 0, 0},
+        {KW_OParen, 0,"(", 0, 0, 1, 0, 0, 0, 1, 0, 0, 0},
+        {KW_OBParen, 0,"(|", 0, 0, 1, 0, 0, 0, 1, 0, 0, 0},
+
+        {KW_CBrack, 0,"]", 0, 0, 0, 1, 0, 0, 1, 0, 0, 0},
+        {KW_CCurly, 0,"}", 0, 0, 0, 1, 0, 0, 1, 0, 0, 0},
+        {KW_CParen, 0,")", 0, 0, 0, 1, 0, 0, 1, 0, 0, 0},
+
+        {KW_Bar, 0,"|", 0, 0, 0, 0, 0, 0, 1, 0, 0, 0},
+        {KW_CBBrack, 0,"|]", 0, 0, 0, 1, 0, 0, 1, 0, 0, 0},
+        {KW_CBCurly, 0,"|}", 0, 0, 0, 1, 0, 0, 1, 0, 0, 0},
+        {KW_CBParen, 0,"|)", 0, 0, 0, 1, 0, 0, 1, 0, 0, 0},
+        {KW_2Bar, 0,"||", 0, 0, 0, 0, 0, 1, 1, 0, 0, 0},
+
+        {KW_NewLine, 0,"\n", 0, 0, 0, 0, 0, 0, 1, 0, 0, 0},
+        {KW_StartPile, 0,"#pile", 0, 0, 0, 0, 0, 0, 1, 0, 0, 0},
+        {KW_EndPile, 0,"#endpile", 0, 0, 0, 0, 0, 0, 1, 0, 0, 0},
+        {KW_SetTab, 0,"KW_SetTab", 0, 0, 0, 0, 0, 0, 1, 0, 0, 0},
+        {KW_BackSet, 0,"KW_BackSet", 0, 0, 0, 0, 0, 0, 1, 0, 0, 0},
+        {KW_BackTab, 0,"KW_BackTab", 0, 0, 0, 0, 0, 0, 1, 0, 0, 0},
+        {KW_Juxtapose, 0,"KW_Juxtapose",0, 0, 0, 0, 0, 0, 0, 0, 170, 0},
+
+        {TK_LIMIT, 0,"TK_LIMIT", 0, 0, 0, 0, 0, 0, 1, 0, 0, 0}
+};
+*/
 
 /*
  * Parser starts here
