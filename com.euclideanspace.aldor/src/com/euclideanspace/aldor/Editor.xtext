@@ -59,7 +59,6 @@ generate editor "http://www.euclideanspace.com/aldor/Editor"
 * [A] [B][C] [D][E] [F] [G] [H] [I] [J] [K] [L] [M]
 *
         {TK_Blank, 0,"TK_Blank", 0, 0, 0, 0, 0, 0, 1, 0, 170, 0},
-        {TK_Int, 0,"TK_Int", 1, 0, 0, 0, 0, 0, 1, 0, 170, 0},
         {TK_Float, 0,"TK_Float", 1, 0, 0, 0, 0, 0, 1, 0, 170, 0},
         {TK_SysCmd, 0,"TK_SysCmd", 1, 1, 0, 0, 0, 0, 1, 0, 170, 0},
         {TK_Error, 0,"TK_Error", 1, 0, 0, 0, 0, 0, 1, 0, 0, 0},
@@ -125,77 +124,16 @@ generate editor "http://www.euclideanspace.com/aldor/Editor"
 
         {KW_Quote, 0,"'", 0, 0, 0, 0, 0, 0, 1, 0, 0, 0},
         {KW_Grave, 0,"`", 0, 0, 0, 0, 0, 0, 1, 0, 0, 0},
-        {KW_Ampersand, 0,"&", 0, 0, 0, 0, 0, 0, 1, 0, 160, 0},
-        {KW_Comma, 0,",", 0, 0, 0, 0, 1, 0, 1, 1, 11, 0},
-        {KW_Semicolon, 0,";", 0, 0, 0, 0, 0, 0, 1, 0, 10, 0},
-        {KW_Dollar, 0,"$", 0, 0, 0, 0, 1, 0, 0, 1, 70, 0},
-        {KW_Sharp, 0,"#", 0, 0, 0, 0, 0, 0, 1, 0, 0, 0},
-        {KW_At, 0,"@", 0, 0, 0, 0, 0, 0, 1, 1, 150, 0},
-
-        {KW_Assign, 0,":=", 0, 0, 0, 0, 1, 0, 0, 1, 20, 0},
-        {KW_Colon, 0,":", 0, 0, 0, 0, 1, 0, 1, 1, 36, 0},
+        
         {KW_ColonStar, 0,":*", 0, 0, 0, 0, 1, 0, 1, 1, 36, 0},
-        {KW_2Colon, 0,"::", 0, 0, 0, 0, 1, 0, 1, 1, 150, 0},
 
-        {KW_Star, 0,"*", 0, 0, 0, 0, 0, 0, 1, 1, 130, 0},
-        {KW_2Star, 0,"**", 0, 0, 0, 0, 0, 0, 1, 1, 140, 0},
-
-        {KW_Dot, 0,".", 0, 0, 0, 0, 1, 0, 1, 1, 170, 0},
-        {KW_2Dot, 0,"..", 0, 0, 0, 0, 0, 0, 1, 1, 110, 0},
-
-        {KW_EQ, 0,"=", 0, 0, 0, 0, 0, 0, 1, 1, 100, 0},
-        {KW_2EQ, 0,"==", 0, 0, 0, 0, 1, 0, 0, 1, 25, 0},
-        {KW_MArrow, 0,"==>", 0, 0, 0, 0, 1, 0, 0, 1, 25, 0},
-        {KW_Implies, 0,"=>", 0, 0, 0, 0, 0, 0, 1, 1, 35, 0},
-
-        {KW_GT, 0,">", 0, 0, 0, 0, 0, 0, 1, 1, 100, 0},
-        {KW_2GT, 0,">>", 0, 0, 0, 0, 0, 0, 1, 1, 100, 0},
-        {KW_GE, 0,">=", 0, 0, 0, 0, 0, 0, 1, 1, 100, 0},
-
-        {KW_LT, 0,"<", 0, 0, 0, 0, 0, 0, 1, 1, 100, 0},
-        {KW_2LT, 0,"<<", 0, 0, 0, 0, 0, 0, 1, 1, 100, 0},
-        {KW_LE, 0,"<=", 0, 0, 0, 0, 0, 0, 1, 1, 100, 0},
         {KW_LArrow, 0,"<-", 0, 0, 0, 0, 0, 0, 1, 1, 0, 0},
 
-        {KW_Hat, 0,"^", 0, 0, 0, 0, 0, 0, 1, 1, 140, 0},
-        {KW_HatE, 0,"^=", 0, 0, 0, 0, 0, 0, 1, 1, 90, 0},
-
-        {KW_Tilde, 0,"~", 0, 0, 0, 0, 0, 0, 0, 1, 150, 0},
-        {KW_TildeE, 0,"~=", 0, 0, 0, 0, 0, 0, 1, 1, 90, 0},
-
-        {KW_Plus, 0,"+", 0, 0, 0, 0, 0, 0, 1, 1, 120, 0},
         {KW_PlusMinus, 0,"+-", 0, 0, 0, 0, 0, 0, 1, 1, 120, 0},
-        {KW_MapsTo, 0,"+->", 0, 0, 0, 0, 1, 0, 1, 1, 30, 0},
         {KW_MapsToStar, 0,"+->*", 0, 0, 0, 0, 1, 0, 1, 1, 30, 0},
 
-        {KW_Minus, 0,"-", 0, 0, 0, 0, 0, 0, 1, 1, 120, 0},
-        {KW_RArrow, 0,"->", 0, 0, 0, 0, 0, 0, 0, 1, 80, 0},
         {KW_MapStar, 0,"->*", 0, 0, 0, 0, 0, 0, 0, 1, 80, 0},
 
-        {KW_Slash, 0,"/", 0, 0, 0, 0, 0, 0, 1, 1, 130, 0},
-        {KW_Wedge, 0,"/\\", 0, 0, 0, 0, 0, 0, 1, 1, 40, 0},
-
-        {KW_Backslash, 0,"\\", 0, 0, 0, 0, 0, 0, 1, 1, 130, 0},
-        {KW_Vee, 0,"\\/", 0, 0, 0, 0, 0, 0, 1, 1, 40, 0},
-
-        {KW_OBrack, 0,"[", 0, 0, 1, 0, 0, 0, 1, 0, 0, 0},
-        {KW_OBBrack, 0,"[|", 0, 0, 1, 0, 0, 0, 1, 0, 0, 0},
-        {KW_OCurly, 0,"{", 0, 0, 1, 0, 0, 0, 1, 0, 0, 0},
-        {KW_OBCurly, 0,"{|", 0, 0, 1, 0, 0, 0, 1, 0, 0, 0},
-        {KW_OParen, 0,"(", 0, 0, 1, 0, 0, 0, 1, 0, 0, 0},
-        {KW_OBParen, 0,"(|", 0, 0, 1, 0, 0, 0, 1, 0, 0, 0},
-
-        {KW_CBrack, 0,"]", 0, 0, 0, 1, 0, 0, 1, 0, 0, 0},
-        {KW_CCurly, 0,"}", 0, 0, 0, 1, 0, 0, 1, 0, 0, 0},
-        {KW_CParen, 0,")", 0, 0, 0, 1, 0, 0, 1, 0, 0, 0},
-
-        {KW_Bar, 0,"|", 0, 0, 0, 0, 0, 0, 1, 0, 0, 0},
-        {KW_CBBrack, 0,"|]", 0, 0, 0, 1, 0, 0, 1, 0, 0, 0},
-        {KW_CBCurly, 0,"|}", 0, 0, 0, 1, 0, 0, 1, 0, 0, 0},
-        {KW_CBParen, 0,"|)", 0, 0, 0, 1, 0, 0, 1, 0, 0, 0},
-        {KW_2Bar, 0,"||", 0, 0, 0, 0, 0, 1, 1, 0, 0, 0},
-
-        {KW_NewLine, 0,"\n", 0, 0, 0, 0, 0, 0, 1, 0, 0, 0},
         {KW_StartPile, 0,"#pile", 0, 0, 0, 0, 0, 0, 1, 0, 0, 0},
         {KW_EndPile, 0,"#endpile", 0, 0, 0, 0, 0, 0, 1, 0, 0, 0},
         {KW_SetTab, 0,"KW_SetTab", 0, 0, 0, 0, 0, 0, 1, 0, 0, 0},
@@ -215,7 +153,7 @@ generate editor "http://www.euclideanspace.com/aldor/Editor"
  * On this line whitespace (WS) is not hidden so is explicitly included.
  */
 Model :
-')abbrev' WS (c=CategoryDef | p=PackageDef | d=DomainDef) AT
+')abbrev' WS (c=CategoryDef | p=PackageDef | d=DomainDef) KW_AT
 ;
 
 ////////// start of lexer rules ///////////////
@@ -246,8 +184,9 @@ terminal WS : (' '|'\t')+;
  * We usually absorb newlines like this: NL+ which absorbs any number of
  * blank lines and it also supports both the Linux and the Windows forms of
  * newlines.
+ * {KW_NewLine, 0,"\n", 0, 0, 0, 0, 0, 0, 1, 0, 0, 0},
  */
-terminal NL: ('\r'|'\n') ;
+terminal KW_NEWLINE: ('\r'|'\n') ;
 
 /* overwriting TK_COMMENTS we do not want Java syntax (//) but spad syntax (--)
  * This absorbs everything from '--' or '++' to the end of the line (but not
@@ -281,22 +220,49 @@ terminal MACROVALUE :
 terminal TK_STRING :
 '"' ( !('"') )* '"'
 ;
+/*
+ * Integer
+ *
+ * {TK_Int, 0,"TK_Int", 1, 0, 0, 0, 0, 0, 1, 0, 170, 0},
+ */
+terminal TK_INT returns ecore::EInt: ('0'..'9')+;
 
-terminal INT returns ecore::EInt: ('0'..'9')+;
+/* grouping
+* {KW_OBBrack, 0,"[|", 0, 0, 1, 0, 0, 0, 1, 0, 0, 0},
+* {KW_OBCurly, 0,"{|", 0, 0, 1, 0, 0, 0, 1, 0, 0, 0},
+* {KW_OBParen, 0,"(|", 0, 0, 1, 0, 0, 0, 1, 0, 0, 0},
+* 
+* {KW_CBBrack, 0,"|]", 0, 0, 0, 1, 0, 0, 1, 0, 0, 0},
+* {KW_CBCurly, 0,"|}", 0, 0, 0, 1, 0, 0, 1, 0, 0, 0},
+* {KW_CBParen, 0,"|)", 0, 0, 0, 1, 0, 0, 1, 0, 0, 0},
+* {KW_2Bar, 0,"||", 0, 0, 0, 0, 0, 1, 1, 0, 0, 0},
+* 
+*/
 
-// grouping
-/* ( */
-terminal LPAREN: '(';
-/* ) */
-terminal RPAREN: ')';
-/* { */
-terminal LBRACE: '{';
-/* } */
-terminal RBRACE: '}';
-/* [ */
-terminal LBRACKET: '[';
-/* ] */
-terminal RBRACKET: ']';
+/* (
+* {KW_OParen, 0,"(", 0, 0, 1, 0, 0, 0, 1, 0, 0, 0},
+*/
+terminal KW_OPAREN: '(';
+/* )
+* {KW_CParen, 0,")", 0, 0, 0, 1, 0, 0, 1, 0, 0, 0},
+*/
+terminal KW_CPAREN: ')';
+/* {
+* {KW_OCurly, 0,"{", 0, 0, 1, 0, 0, 0, 1, 0, 0, 0},
+*/
+terminal KW_OCURLY: '{';
+/* }
+* {KW_CCurly, 0,"}", 0, 0, 0, 1, 0, 0, 1, 0, 0, 0},
+*/
+terminal KW_CCURLY: '}';
+/* [
+* {KW_OBrack, 0,"[", 0, 0, 1, 0, 0, 0, 1, 0, 0, 0},
+*/
+terminal KW_OBRACK: '[';
+/* ]
+* {KW_CBrack, 0,"]", 0, 0, 0, 1, 0, 0, 1, 0, 0, 0},
+*/
+terminal KW_CBRACK: ']';
 /*
 terminal LBANANA '(|';
 terminal RBANANA '|)';
@@ -312,71 +278,136 @@ terminal LBANANABRACE '{|';
 terminal RBANANABRACE '|}';
 terminal EBANANABRACE '{|__|}';
 terminal EBANANABRACE2 '{||}'; */
-/* << */
-terminal OANGLE: '<<';
-/* >> */
-terminal CANGLE: '>>';
+/* <<
+* {KW_2LT, 0,"<<", 0, 0, 0, 0, 0, 0, 1, 1, 100, 0},
+*/
+terminal KW_2LT: '<<';
+/* >>
+* {KW_2GT, 0,">>", 0, 0, 0, 0, 0, 0, 1, 1, 100, 0},
+*/
+terminal KW_2GT: '>>';
 /*terminal QUOTE "'";
 terminal BACKQUOTE "`";*/
 
 // operators
-/* ==> */
-terminal MDEF: '==>';
-/* | */
-terminal BAR: '|';
-/* . */
-terminal DOT: '.';
-/* :: */
-terminal COERCE: '::';
-/* : */
-terminal COLON: ':';
-/* @ */
-terminal AT: '@';
-/* , */
-terminal COMMA: ',';
-/* ; */
-terminal SEMICOLON: ';';
-/* ** */
-terminal POWER: '**';
-/* * */
-terminal TIMES: '*';
-/* + */
-terminal PLUS: '+';
-/* - */
-terminal MINUS: '-';
-/* < */
-terminal LT: '<';
+/* ==> MDEF or MARROW
+* {KW_MArrow, 0,"==>", 0, 0, 0, 0, 1, 0, 0, 1, 25, 0},
+*/
+terminal KW_MARROW: '==>';
+/* |
+* {KW_Bar, 0,"|", 0, 0, 0, 0, 0, 0, 1, 0, 0, 0},
+*/
+terminal KW_BAR: '|';
+/* .
+* {KW_Dot, 0,".", 0, 0, 0, 0, 1, 0, 1, 1, 170, 0},
+*/
+terminal KW_DOT: '.';
+/* :: 2Colon or coerce
+* {KW_2Colon, 0,"::", 0, 0, 0, 0, 1, 0, 1, 1, 150, 0},
+*/
+terminal KW_2COLON: '::';
+/* :
+* {KW_Colon, 0,":", 0, 0, 0, 0, 1, 0, 1, 1, 36, 0},
+*/
+terminal KW_COLON: ':';
+/* @
+* {KW_At, 0,"@", 0, 0, 0, 0, 0, 0, 1, 1, 150, 0},
+*/
+terminal KW_AT: '@';
+/* , 
+ * {KW_Comma, 0,",", 0, 0, 0, 0, 1, 0, 1, 1, 11, 0},
+ */
+terminal KW_COMMA: ',';
+/* ;
+* {KW_Semicolon, 0,";", 0, 0, 0, 0, 0, 0, 1, 0, 10, 0},
+*/
+terminal KW_SEMICOLON: ';';
+/* ** 2star or power
+* {KW_2Star, 0,"**", 0, 0, 0, 0, 0, 0, 1, 1, 140, 0},
+*/
+terminal KW_2STAR: '**';
+/* * times or star
+* {KW_Star, 0,"*", 0, 0, 0, 0, 0, 0, 1, 1, 130, 0},
+*/
+terminal KW_STAR: '*';
+/* + plus
+* {KW_Plus, 0,"+", 0, 0, 0, 0, 0, 0, 1, 1, 120, 0},
+*/
+terminal KW_PLUS: '+';
+/* -
+* {KW_Minus, 0,"-", 0, 0, 0, 0, 0, 0, 1, 1, 120, 0},
+*/
+terminal KW_MINUS: '-';
+/* <
+* {KW_GT, 0,">", 0, 0, 0, 0, 0, 0, 1, 1, 100, 0},
+* {KW_GE, 0,">=", 0, 0, 0, 0, 0, 0, 1, 1, 100, 0},
+* {KW_LT, 0,"<", 0, 0, 0, 0, 0, 0, 1, 1, 100, 0},
+* {KW_LE, 0,"<=", 0, 0, 0, 0, 0, 0, 1, 1, 100, 0},
+*/
+terminal KW_LT: '<';
 /* > */
-terminal GT: '>';
+terminal KW_GT: '>';
 /* <= */
-terminal LE: '<=';
+terminal KW_LE: '<=';
 /* >= */
-terminal GE: '>=';
-/* = */
-terminal EQUAL: '=';
-/* ~= */
-terminal NOTEQUAL: '~=';
-/* ~ */
-terminal TILDE: '~';
-/* ^ */
-terminal CARAT: '^';
-/* .. */
-terminal SEG: '..';
-/* # */
-terminal HASH: '#';
-/* & */
-terminal AMPERSAND: '&';
-/* $ */
-terminal DOLAR: '$';
-/* / */
-terminal SLASH: '/';
-terminal BACKSLASH: '\\';
+terminal KW_GE: '>=';
+/* = equal
+* {KW_EQ, 0,"=", 0, 0, 0, 0, 0, 0, 1, 1, 100, 0},
+*/
+terminal KW_EQ: '=';
+/* ~= not-equal or tilde-equal
+ * {KW_TildeE, 0,"~=", 0, 0, 0, 0, 0, 0, 1, 1, 90, 0},
+ */
+terminal KW_TILDEE: '~=';
+/* ^= hat-equal
+* {KW_HatE, 0,"^=", 0, 0, 0, 0, 0, 0, 1, 1, 90, 0},
+*/
+terminal KW_HATE: '^=';
+/* ~
+* {KW_Tilde, 0,"~", 0, 0, 0, 0, 0, 0, 0, 1, 150, 0},
+*/
+terminal KW_TILDE: '~';
+/* ^ hat or carat
+* {KW_Hat, 0,"^", 0, 0, 0, 0, 0, 0, 1, 1, 140, 0},
+*/
+terminal KW_HAT: '^';
+/* .. 2Dot or seg
+*{KW_2Dot, 0,"..", 0, 0, 0, 0, 0, 0, 1, 1, 110, 0},
+* 
+*/
+terminal KW_2DOT: '..';
+/* # Hash or Sharp
+* {KW_Sharp, 0,"#", 0, 0, 0, 0, 0, 0, 1, 0, 0, 0},
+*/
+terminal KW_SHARP: '#';
+/* &
+* {KW_Ampersand, 0,"&", 0, 0, 0, 0, 0, 0, 1, 0, 160, 0},
+*/
+terminal KW_AMPERSAND: '&';
+/* $
+* {KW_Dollar, 0,"$", 0, 0, 0, 0, 1, 0, 0, 1, 70, 0},
+*/
+terminal KW_DOLAR: '$';
+/* /
+* {KW_Slash, 0,"/", 0, 0, 0, 0, 0, 0, 1, 1, 130, 0},
+*/
+terminal KW_SLASH: '/';
+/*
+ * {KW_Backslash, 0,"\\", 0, 0, 0, 0, 0, 0, 1, 1, 130, 0},
+ */
+terminal KW_BACKSLASH: '\\';
 terminal SLASHSLASH: '//';
 terminal BACKSLASHBACKSLASH: '\\\\';
-/* '/\\' outer product or logical and */
-terminal SLASHBACKSLASH: '/\\';
-/* \\/ inner product or logical or */
-terminal BACKSLASHSLASH: '\\/';
+/* '/\\' SLASH-BACKSLASH or wedge
+ * outer product or logical 'and'
+* {KW_Wedge, 0,"/\\", 0, 0, 0, 0, 0, 0, 1, 1, 40, 0},
+*/
+terminal KW_WEDGE: '/\\';
+/* \\/ BACKSLASH-SLASH or vee
+* inner product or logical 'or'
+* {KW_Vee, 0,"\\/", 0, 0, 0, 0, 0, 0, 1, 1, 40, 0},
+*/
+terminal KW_VEE: '\\/';
 /* *$ multiply with specific type*/
 terminal TIMESDOLAR: '*$';
 /* /$ divide with specific type*/
@@ -387,17 +418,27 @@ terminal PLUSDOLAR: '+$';
 terminal MINUSDOLAR: '-$';
 /* =$ equals with specific type*/
 terminal EQUALSDOLAR: '=$';
-/* '=>' */
-terminal EXIT: '=>';
-/* := */
-terminal BECOMES: ':=';
-/* == */
-terminal DEF: '==';
-/* -> */
-terminal ARROW: '->';
+/* '=>' implies or exit
+* {KW_Implies, 0,"=>", 0, 0, 0, 0, 0, 0, 1, 1, 35, 0},
+*/
+terminal KW_IMPLIES: '=>';
+/* := Assign or Becomes
+* {KW_Assign, 0,":=", 0, 0, 0, 0, 1, 0, 0, 1, 20, 0},
+*/
+terminal KW_ASSIGN: ':=';
+/* == 2eq or def
+* {KW_2EQ, 0,"==", 0, 0, 0, 0, 1, 0, 0, 1, 25, 0},
+*/
+terminal KW_2EQ: '==';
+/* -> right-arrow
+* {KW_RArrow, 0,"->", 0, 0, 0, 0, 0, 0, 0, 1, 80, 0},
+*/
+terminal KW_RARROW: '->';
 terminal LARROW: '<-';
-/* +-> */
-terminal GIVES: '+->';
+/* +-> gives or maps-to
+* {KW_MapsTo, 0,"+->", 0, 0, 0, 0, 1, 0, 1, 1, 30, 0},
+*/
+terminal KW_MAPSTO: '+->';
 /* % represents an instance of this type */
 terminal PERCENT: '%';
 /* '% */
@@ -1282,16 +1323,16 @@ AlwaysPart(XX) -> AlwaysPart_AnyStatement
  * longname and longname2 should both be ID and have the same value. Since the
  * runtime values can't be checked by the parser this must be checked later.
  */
-CategoryDef hidden(WS,NL,TK_COMMENT):
+CategoryDef hidden(WS,KW_NEWLINE,TK_COMMENT):
 name='category' shortname=TK_ID longname=TK_ID
 longname2=TK_ID /*[CategoryDef]*/
     (cp=TypeParameterList)?
-    COLON 'Category' DEF
+    KW_COLON 'Category' KW_2EQ
     (
     implName=TypeArguments? ((w=WithPart? a=AddPart?)| wh5=WherePart)
-    | LBRACE NL*
+    | KW_OCURLY KW_NEWLINE*
       implName=TypeArguments ((w=WithPart? a=AddPart?)| wh5=WherePart)
-      RBRACE NL* a2=AddPart?
+      KW_CCURLY KW_NEWLINE* a2=AddPart?
     )
 ;
 
@@ -1299,16 +1340,16 @@ longname2=TK_ID /*[CategoryDef]*/
  * longname and longname2 should both be ID and have the same value. Since the
  * runtime values can't be checked by the parser this must be checked later.
  */
-PackageDef hidden(WS,NL,TK_COMMENT):
+PackageDef hidden(WS,KW_NEWLINE,TK_COMMENT):
 name='package' shortname=TK_ID longname=TK_ID
 longname2=TK_ID /*[PackageDef]*/
-    (cp=TypeParameterList)? COLON
+    (cp=TypeParameterList)? KW_COLON
     (
-     exportName=TK_ID DEF implName=TK_ID
+     exportName=TK_ID KW_2EQ implName=TK_ID
         (w=WithPart | wh5=WherePart)
      |
      w=WithPart
-     (DEF add2=AddPart)?
+     (KW_2EQ add2=AddPart)?
     )
 ;
 
@@ -1316,12 +1357,12 @@ longname2=TK_ID /*[PackageDef]*/
  * longname and longname2 should both be ID and have the same value. Since the
  * runtime values can't be checked by the parser this must be checked later.
  */
-DomainDef hidden(WS,NL,TK_COMMENT):
+DomainDef hidden(WS,KW_NEWLINE,TK_COMMENT):
 name='domain' shortname5=TK_ID longname5=TK_ID
 longname6=TK_ID /*[DomainDef]*/
     (cp5=TypeParameterList)?
-    COLON exportName=TK_ID (cp6=TypeParameterList)?
-    DEF implName5=TK_ID?
+    KW_COLON exportName=TK_ID (cp6=TypeParameterList)?
+    KW_2EQ implName5=TK_ID?
     (w=WithPart | wh5=WherePart | a=AddPart)
 ;
 
@@ -1335,19 +1376,19 @@ longname6=TK_ID /*[DomainDef]*/
  * Exports ==> with {
  */
 WherePart hidden(WS,TK_COMMENT):
-name='where' NL* LBRACE NL*
-    (whereAssig +=WhereAssignments (NL|SEMICOLON)+)*
+name='where' KW_NEWLINE* KW_OCURLY KW_NEWLINE*
+    (whereAssig +=WhereAssignments (KW_NEWLINE|KW_SEMICOLON)+)*
     // with part
-    (longname8=TK_ID (DEF | MDEF) (imp=TypeExpression2)? w8=WithPart)?
+    (longname8=TK_ID (KW_2EQ | KW_MARROW) (imp=TypeExpression2)? w8=WithPart)?
     // add part
     (
-     (longname9=TK_ID (DEF | MDEF))?
-        ((fs=TK_ID LPAREN par2=TK_ID? (COMMA par3 += TK_ID)* RPAREN)
+     (longname9=TK_ID (KW_2EQ | KW_MARROW))?
+        ((fs=TK_ID KW_OPAREN par2=TK_ID? (KW_COMMA par3 += TK_ID)* KW_CPAREN)
          | (fs=TK_ID f2=TK_ID)
         )?
         add=AddPart
     )?
-    RBRACE NL+
+    KW_CCURLY KW_NEWLINE+
 ;
 
 /* each one must be on a separate line or separated by ';'
@@ -1363,18 +1404,18 @@ VariableDeclaration
  * such as function signatures (function declarations) but not function definitions.
  */
 WithPart hidden(WS,TK_COMMENT):
-name='with' NL* LBRACE NL*
-    (fundec += VariableDeclaration (NL|SEMICOLON)+)*
-    RBRACE NL*
+name='with' KW_NEWLINE* KW_OCURLY KW_NEWLINE*
+    (fundec += VariableDeclaration (KW_NEWLINE|KW_SEMICOLON)+)*
+    KW_CCURLY KW_NEWLINE*
 ;
 
 /*
  * similar to 'WithPart' but no trailing NL
  */
 WithInline hidden(WS,TK_COMMENT):
-name='with' NL* LBRACE NL*
-    (fundec += VariableDeclaration (NL|SEMICOLON)+)*
-    RBRACE
+name='with' KW_NEWLINE* KW_OCURLY KW_NEWLINE*
+    (fundec += VariableDeclaration (KW_NEWLINE|KW_SEMICOLON)+)*
+    KW_CCURLY
 ;
 
 /*
@@ -1382,8 +1423,8 @@ name='with' NL* LBRACE NL*
  * declarations.
  */
 AddPart hidden(WS,TK_COMMENT):
-name='add' NL* LBRACE NL*
-    (t+=AddStatements (NL|SEMICOLON)+)* RBRACE NL*
+name='add' KW_NEWLINE* KW_OCURLY KW_NEWLINE*
+    (t+=AddStatements (KW_NEWLINE|KW_SEMICOLON)+)* KW_CCURLY KW_NEWLINE*
 ;
 
 /*
@@ -1430,11 +1471,11 @@ AddStatements hidden(WS,TK_COMMENT):
 FunctionDefinition hidden(WS,TK_COMMENT):
   ((
 par3=FunctionSignature
-    (COLON par4=TypeExpression1)?
-    DEF par5=Statement
+    (KW_COLON par4=TypeExpression1)?
+    KW_2EQ par5=Statement
    )|(
     // this is case where FunctionSignature is just an identifier
-    fnNam=TK_ID DEF par5=Statement
+    fnNam=TK_ID KW_2EQ par5=Statement
    ))
 ;
 
@@ -1444,19 +1485,19 @@ par3=FunctionSignature
  * if a has y then 'more add statements'
  */
 FunctionDefinitionBlock hidden(WS,TK_COMMENT):
-    fnDecBr=LBRACE NL*
+    fnDecBr=KW_OCURLY KW_NEWLINE*
       (
-       fnDecBk += FunctionDefinition (NL|SEMICOLON)+
+       fnDecBk += FunctionDefinition (KW_NEWLINE|KW_SEMICOLON)+
        |
-       vars+=VariableDeclarationAssign (NL|SEMICOLON)+
+       vars+=VariableDeclarationAssign (KW_NEWLINE|KW_SEMICOLON)+
      | ('if' t1+=Expression // expression has form 'x has y'
-        'then' t13+=FunctionDefinitionBlock (NL|SEMICOLON)+)
-     | ('else' t14+=FunctionDefinitionBlock (NL|SEMICOLON)+)
-     | i1+=Import (NL|SEMICOLON)+
+        'then' t13+=FunctionDefinitionBlock (KW_NEWLINE|KW_SEMICOLON)+)
+     | ('else' t14+=FunctionDefinitionBlock (KW_NEWLINE|KW_SEMICOLON)+)
+     | i1+=Import (KW_NEWLINE|KW_SEMICOLON)+
       )*
-      RBRACE
+      KW_CCURLY
       | 'error' e=Expression
-      | LBRACE NL* 'error' e=Expression (NL|SEMICOLON)+ RBRACE
+      | KW_OCURLY KW_NEWLINE* 'error' e=Expression (KW_NEWLINE|KW_SEMICOLON)+ KW_CCURLY
 ;
 
 /* This is the first part of the function definition without the return type or
@@ -1477,10 +1518,10 @@ FunctionDefinitionBlock hidden(WS,TK_COMMENT):
 FunctionSignature hidden(WS,TK_COMMENT):
   (
 fnNam=TK_ID
-    LPAREN
+    KW_OPAREN
     par2=VariableTyped?
-    (COMMA par3 += VariableTyped)*
-    RPAREN
+    (KW_COMMA par3 += VariableTyped)*
+    KW_CPAREN
   ) | (
    // fnNam=ID par2=VariableDeclaration causes recursive definition so use:
    fnNam=TK_ID par=TK_ID
@@ -1489,22 +1530,22 @@ fnNam=TK_ID
 // commented out as it causes recursive rule invocation
 // with ruleAddStatements and ruleFunctionDefinitionBlock
   ) | (
-   t4=TK_ID (COLON (PERCENT | TK_ID))? //(COLON te1=TypeExpression)?
-   ( b1=EQUAL | b1=LT | b1=GT | b1=LE | b1=GE |
-            b1=PLUS | b1=MINUS | b1=TIMES | b1=SLASH | b1=AMPERSAND |
-            b1=BAR | b1=CARAT) t5=TK_ID
+   t4=TK_ID (KW_COLON (PERCENT | TK_ID))? //(COLON te1=TypeExpression)?
+   ( b1=KW_EQ | b1=KW_LT | b1=KW_GT | b1=KW_LE | b1=KW_GE |
+            b1=KW_PLUS | b1=KW_MINUS | b1=KW_STAR | b1=KW_SLASH | b1=KW_AMPERSAND |
+            b1=KW_BAR | b1=KW_HAT) t5=TK_ID
   ) | (
-   b3=INT // allows special form of function signature using '0' or '1'
+   b3=TK_INT // allows special form of function signature using '0' or '1'
    // can't specify '0' or '1' explicitly as this would affect lex
    // order
   ) | (
-   b2=MINUS t6=TK_ID
+   b2=KW_MINUS t6=TK_ID
   ) | (
-   b4=TILDE t7=TK_ID
+   b4=KW_TILDE t7=TK_ID
   ) | (
    b5='not' t8=TK_ID
   ) | (
-   b6=HASH t8=TK_ID
+   b6=KW_SHARP t8=TK_ID
   )
 ;
 
@@ -1520,8 +1561,8 @@ MacroDef: macroname=TK_ID MACROVALUE ; //MACRO val=ID NL;
  * import domain
  */
 Import hidden(WS):
-'import' (impname += TK_ID)+ (LPAREN par22+=TypeExpression1
-(COMMA par22+=TypeExpression1)* RPAREN)?
+'import' (impname += TK_ID)+ (KW_OPAREN par22+=TypeExpression1
+(KW_COMMA par22+=TypeExpression1)* KW_CPAREN)?
 ;
 
 /* Variable declaration in where and with sections:
@@ -1535,10 +1576,10 @@ Import hidden(WS):
  * if
  */
 VariableDeclarationBlock hidden(WS,TK_COMMENT):
-    vardecbr=LBRACE NL*
+    vardecbr=KW_OCURLY KW_NEWLINE*
       //=>(i1=Import NL*)?
-      (vardecBlk += VariableDeclaration (NL|SEMICOLON)+)*
-      RBRACE
+      (vardecBlk += VariableDeclaration (KW_NEWLINE|KW_SEMICOLON)+)*
+      KW_CCURLY
 ;
 
 /* Variable declaration in where and with sections:
@@ -1567,8 +1608,8 @@ VariableDeclaration hidden(WS,TK_COMMENT):
  */
 TypeWithName hidden(WS,TK_COMMENT):
 (
-(varName=TK_ID | varNameSt=TK_STRING) (COMMA varName2=TK_ID)?
-COLON
+(varName=TK_ID | varNameSt=TK_STRING) (KW_COMMA varName2=TK_ID)?
+KW_COLON
 )? typ=TypeExpression1
 ;
 
@@ -1587,7 +1628,7 @@ COLON
 VariableTyped hidden(WS,TK_COMMENT):
 (varName=TK_ID | varNameSt=TK_STRING)
 // =>(COMMA t2+=ID)* // multiple declarations in same line
-    (COLON typ=TypeExpression1)?
+    (KW_COLON typ=TypeExpression1)?
 ;
 
 /* in add part we can declare and assign in same part
@@ -1606,9 +1647,9 @@ VariableDeclarationAssign hidden(WS):
   // if I just use name=ID then, when the ui program is running, I get:
   // Duplicate xxx 'coerce' in yyy
   (
-    (COMMA t12+=TK_ID)* // multiple declarations in same line
-    (COLON typ=TypeExpression1)? // option to explicitly define type
-    (BECOMES (t4=Expression /* |(LBRACE NL* Expression NL* RBRACE) */))?
+    (KW_COMMA t12+=TK_ID)* // multiple declarations in same line
+    (KW_COLON typ=TypeExpression1)? // option to explicitly define type
+    (KW_ASSIGN (t4=Expression /* |(LBRACE NL* Expression NL* RBRACE) */))?
     // we need block since we can't always detect continuation after ':='
     // but this causes infinite loop
   )// | (BECOMES t2+=ID)+ BECOMES t4=Expression
@@ -1643,7 +1684,7 @@ LocalVariable hidden(WS):
  * first we check for a function like: Integer -> Integer
  */
 TypeExpression1 returns TypeExpression hidden(WS):
-   =>(t2=TypeArguments ARROW t3=TypeResult)
+   =>(t2=TypeArguments KW_RARROW t3=TypeResult)
    | TypePrimaryExpression1
 ;
 
@@ -1654,7 +1695,7 @@ TypeExpression1 returns TypeExpression hidden(WS):
  * slightly different syntax.
  */
 TypeExpression2 returns TypeExpression hidden(WS):
-   =>(t92=TypeArguments ARROW t93=TypeResult)
+   =>(t92=TypeArguments KW_RARROW t93=TypeResult)
    | TypePrimaryExpression2
 ;
 
@@ -1671,9 +1712,9 @@ TypeExpression2 returns TypeExpression hidden(WS):
  * (s:String,i:Integer)
  */
 TypeParameterList hidden(WS):
-tyname=LPAREN par=TK_ID?
-(COLON par21=TypeExpression1)?
-(COMMA par2 += TK_ID (COLON par22+=TypeExpression1)?)* RPAREN;
+tyname=KW_OPAREN par=TK_ID?
+(KW_COLON par21=TypeExpression1)?
+(KW_COMMA par2 += TK_ID (KW_COLON par22+=TypeExpression1)?)* KW_CPAREN;
 
 /*
  * we use type arguments for first part of function type, that is
@@ -1689,16 +1730,17 @@ TypeArguments hidden(WS):
   t3='Type' |
   // usually, but not always type arguments are in parenthesis, and empty
   // parenthesis are allowed
-  b1 ?= LPAREN ((TK_ID COLON)? t4=TypeExpression1)? ( COMMA (TK_ID COLON)? t16 +=TypeExpression1)* RPAREN |
-  t5='Record' LPAREN t6=TypeExpression1
-               (COLON t22+=TypeExpression1)?
-               (COMMA t21+=TypeExpression1 (COLON t23+=TypeExpression1)?)*
-                RPAREN |
-  t9='Union' LPAREN t10=TypeExpression1
-              (COLON t25+=TypeExpression1)?
-              (COMMA t24+=TypeExpression1 (COLON t26+=TypeExpression1)?)*
-              RPAREN |
-  t11='Join' LPAREN t12=TypeExpression1 (COMMA t13+=TypeExpression1)* RPAREN |
+  b1 ?= KW_OPAREN ((TK_ID KW_COLON)? t4=TypeExpression1)?
+               ( KW_COMMA (TK_ID KW_COLON)? t16 +=TypeExpression1)* KW_CPAREN |
+  t5='Record' KW_OPAREN t6=TypeExpression1
+               (KW_COLON t22+=TypeExpression1)?
+               (KW_COMMA t21+=TypeExpression1 (KW_COLON t23+=TypeExpression1)?)*
+                KW_CPAREN |
+  t9='Union' KW_OPAREN t10=TypeExpression1
+              (KW_COLON t25+=TypeExpression1)?
+              (KW_COMMA t24+=TypeExpression1 (KW_COLON t26+=TypeExpression1)?)*
+              KW_CPAREN |
+  t11='Join' KW_OPAREN t12=TypeExpression1 (KW_COMMA t13+=TypeExpression1)* KW_CPAREN |
   t15=TypeNameOrFunctionCall
 ;
 
@@ -1710,15 +1752,15 @@ TypeResult hidden(WS):
   t=TypeLiteral |
   t2=PERCENT |
   tyname='Type' |
-  tyname='Record' LPAREN t7=TypeExpression1
-               (COLON t8+=TypeExpression1)?
-               (COMMA t21+=TypeExpression1 (COLON t23+=TypeExpression1)?)*
-                RPAREN |
-  tyname='Union' LPAREN t10=TypeExpression1
-              (COLON t11+=TypeExpression1)?
-              (COMMA t24+=TypeExpression1 (COLON t26+=TypeExpression1)?)*
-              RPAREN |
-  tyname='Join' LPAREN t12=TypeExpression1 (COMMA t13+=TypeExpression1)* RPAREN |
+  tyname='Record' KW_OPAREN t7=TypeExpression1
+               (KW_COLON t8+=TypeExpression1)?
+               (KW_COMMA t21+=TypeExpression1 (KW_COLON t23+=TypeExpression1)?)*
+                KW_CPAREN |
+  tyname='Union' KW_OPAREN t10=TypeExpression1
+              (KW_COLON t11+=TypeExpression1)?
+              (KW_COMMA t24+=TypeExpression1 (KW_COLON t26+=TypeExpression1)?)*
+              KW_CPAREN |
+  tyname='Join' KW_OPAREN t12=TypeExpression1 (KW_COMMA t13+=TypeExpression1)* KW_CPAREN |
   t15=TypeNameOrFunctionCall
 ;
 
@@ -1730,17 +1772,17 @@ TypePrimaryExpression1 returns TypePrimaryExpression hidden(WS):
  | ({TypePrimaryExpression}t32=PERCENT)
  | ({TypePrimaryExpression}tyname='Type') // 'Type' is top of the category hierarchy
  | ({TypePrimaryExpression}tyname='Lisp') // 'Lisp' is used for native lisp function calls such as Say$Lisp
- | ({TypePrimaryExpression}LPAREN t5=TypeExpression1 RPAREN)
- | ({TypePrimaryExpression}tyname='Record' LPAREN t7=TypeExpression1
-               (COLON t8+=TypeExpression1)?
-               (COMMA t21+=TypeExpression1 (COLON t23+=TypeExpression1)?)*
-                RPAREN)
- | ({TypePrimaryExpression}tyname='Union' LPAREN t10=TypeExpression1
-              (COLON t11+=TypeExpression1)?
-              (COMMA t24+=TypeExpression1 (COLON t26+=TypeExpression1)?)*
-              RPAREN)
+ | ({TypePrimaryExpression}KW_OPAREN t5=TypeExpression1 KW_CPAREN)
+ | ({TypePrimaryExpression}tyname='Record' KW_OPAREN t7=TypeExpression1
+               (KW_COLON t8+=TypeExpression1)?
+               (KW_COMMA t21+=TypeExpression1 (KW_COLON t23+=TypeExpression1)?)*
+                KW_CPAREN)
+ | ({TypePrimaryExpression}tyname='Union' KW_OPAREN t10=TypeExpression1
+              (KW_COLON t11+=TypeExpression1)?
+              (KW_COMMA t24+=TypeExpression1 (KW_COLON t26+=TypeExpression1)?)*
+              KW_CPAREN)
  | ({TypePrimaryExpression}tyname='Join'
-    LPAREN t13=TypeExpression1 (COMMA t14+=TypeExpression1)* RPAREN)
+    KW_OPAREN t13=TypeExpression1 (KW_COMMA t14+=TypeExpression1)* KW_CPAREN)
  | TypeNameOrFunctionCall
  | => TupleDefinition
 ;
@@ -1756,17 +1798,17 @@ TypePrimaryExpression2 returns TypePrimaryExpression hidden(WS):
  | ({TypePrimaryExpression}t32=PERCENT)
  | ({TypePrimaryExpression}tyname='Type') // 'Type' is top of the category hierarchy
  | ({TypePrimaryExpression}tyname='Lisp') // 'Lisp' is used for native lisp function calls such as Say$Lisp
- | ({TypePrimaryExpression}LPAREN t5=TypeExpression1 RPAREN)
- | ({TypePrimaryExpression}tyname='Record' LPAREN t7=TypeExpression1
-               (COLON t8+=TypeExpression1)?
-               (COMMA t21+=TypeExpression1 (COLON t23+=TypeExpression1)?)*
-                RPAREN)
- | ({TypePrimaryExpression}tyname='Union' LPAREN t10=TypeExpression1
-              (COLON t11+=TypeExpression1)?
-              (COMMA t24+=TypeExpression1 (COLON t26+=TypeExpression1)?)*
-              RPAREN)
+ | ({TypePrimaryExpression}KW_OPAREN t5=TypeExpression1 KW_CPAREN)
+ | ({TypePrimaryExpression}tyname='Record' KW_OPAREN t7=TypeExpression1
+               (KW_COLON t8+=TypeExpression1)?
+               (KW_COMMA t21+=TypeExpression1 (KW_COLON t23+=TypeExpression1)?)*
+                KW_CPAREN)
+ | ({TypePrimaryExpression}tyname='Union' KW_OPAREN t10=TypeExpression1
+              (KW_COLON t11+=TypeExpression1)?
+              (KW_COMMA t24+=TypeExpression1 (KW_COLON t26+=TypeExpression1)?)*
+              KW_CPAREN)
  | ({TypePrimaryExpression}tyname='Join'
-    LPAREN t13=TypeExpression1 (COMMA t14+=TypeExpression1)* RPAREN)
+    KW_OPAREN t13=TypeExpression1 (KW_COMMA t14+=TypeExpression1)* KW_CPAREN)
  | TypeNameOrFunctionCall2
  | => TupleDefinition
 ;
@@ -1784,9 +1826,9 @@ TypePrimaryExpression2 returns TypePrimaryExpression hidden(WS):
 TypeNameOrFunctionCall hidden(WS):
   tfnname=TK_ID
   (
-    (LPAREN (TK_ID COLON)? t4=TypeExpression1? (COMMA (TK_ID COLON)? t25+=TypeExpression1)* RPAREN)
+    (KW_OPAREN (TK_ID KW_COLON)? t4=TypeExpression1? (KW_COMMA (TK_ID KW_COLON)? t25+=TypeExpression1)* KW_CPAREN)
     // optional curried function:
-    (LPAREN t44+=StatementExpression? (COMMA t45+=Expression)* RPAREN)*
+    (KW_OPAREN t44+=StatementExpression? (KW_COMMA t45+=Expression)* KW_CPAREN)*
     // option of no parenthesis for single parameter
     | => t6=TypePrimaryExpression1
     | => w=WithInline
@@ -1796,9 +1838,9 @@ TypeNameOrFunctionCall hidden(WS):
 TypeNameOrFunctionCall2 hidden(WS):
   tfnname=TK_ID
   (
-    (LPAREN (TK_ID COLON)? t4=TypeExpression1? (COMMA (TK_ID COLON)? t25+=TypeExpression1)* RPAREN)
+    (KW_OPAREN (TK_ID KW_COLON)? t4=TypeExpression1? (KW_COMMA (TK_ID KW_COLON)? t25+=TypeExpression1)* KW_CPAREN)
     // optional curried function:
-    (LPAREN t44+=StatementExpression? (COMMA t45+=Expression)* RPAREN)*
+    (KW_OPAREN t44+=StatementExpression? (KW_COMMA t45+=Expression)* KW_CPAREN)*
     // option of no parenthesis for single parameter
     | => t6=TypePrimaryExpression1
   )?
@@ -1808,7 +1850,7 @@ TypeNameOrFunctionCall2 hidden(WS):
  * like an array where each entry can be of a different type
  */
 TupleDefinition hidden(WS):
-  (LPAREN t4=TypeExpression1 (COMMA t25+=TypeExpression1)* RPAREN)
+  (KW_OPAREN t4=TypeExpression1 (KW_COMMA t25+=TypeExpression1)* KW_CPAREN)
 ;
 
 /* Since SPAD supports dependent types then numbers and strings can occur here.
@@ -1824,7 +1866,7 @@ TupleDefinition hidden(WS):
  * represent an implied concat: concat("abc",d)
  */
 TypeLiteral hidden(WS):
-  t1=INT |
+  t1=TK_INT |
   t22=TK_STRING |
 // t3=FloatLiteral |
   t34=CharacterLiteral |
@@ -1858,9 +1900,9 @@ Statement hidden(WS,TK_COMMENT):
 /* allows multiple statements which are grouped by wrapping in
  * braces (curly brackets) */
 Block hidden(WS,TK_COMMENT):
-stname=LBRACE NL*
-    (statemBl += Statement (NL|SEMICOLON)+)*
-    RBRACE
+stname=KW_OCURLY KW_NEWLINE*
+    (statemBl += Statement (KW_NEWLINE|KW_SEMICOLON)+)*
+    KW_CCURLY
 ;
 
 /*
@@ -1880,12 +1922,12 @@ StatementExpression hidden(WS,TK_COMMENT):
                         // does not clash with if-then-else expression
 // (COLON t2=TypeExpression)?
 // (BECOMES t3=Expression (BECOMES t33+=Expression)*)?
-    (BECOMES t5=Block)?
+    (KW_ASSIGN t5=Block)?
     // breaks out of a block if predicate before '=>' is true then program
     // control leaves the block.
     // Put it here so that it can only occur at the top level of an expression.
     // if inside some complicated expression then it must be terminated with ';'.
-    (EXIT t4=Statement)?
+    (KW_IMPLIES t4=Statement)?
 ;
 
 /*
@@ -1906,15 +1948,15 @@ StatementExpression hidden(WS,TK_COMMENT):
  */
 ForStatement hidden(WS,TK_COMMENT):
 'for' (
-       stname=TK_ID 'in' t1=Expression SEG? //(=> '..' t2=Expression)?
+       stname=TK_ID 'in' t1=Expression KW_2DOT? //(=> '..' t2=Expression)?
        ('by' by1=Expression)?
 // (=> BAR t2=PredicateOr)? // condition
        ('for' stname2+=TK_ID
-        'in' t2+=Expression SEG?
+        'in' t2+=Expression KW_2DOT?
         ('by' by2+=Expression)?
         )*
        ('while' t2+=Expression)*
-) 'repeat' NL? s1=Statement //('is' s2=Statement)?
+) 'repeat' KW_NEWLINE? s1=Statement //('is' s2=Statement)?
 ;
 
 /*
@@ -1923,7 +1965,7 @@ ForStatement hidden(WS,TK_COMMENT):
 WhileStatement hidden(WS,TK_COMMENT):
 stname='while' (
        t2=Expression /*PredicateOr*/
-) 'repeat' NL? s1=Statement
+) 'repeat' KW_NEWLINE? s1=Statement
 ;
 
 /*
@@ -1932,7 +1974,7 @@ stname='while' (
 DoStatement hidden(WS,TK_COMMENT):
 stname='do' (
        s1=Statement
-) 'while' NL? t2=Expression /*PredicateOr*/
+) 'while' KW_NEWLINE? t2=Expression /*PredicateOr*/
 ;
 
 /*
@@ -2012,10 +2054,10 @@ IfStatement hidden(WS,TK_COMMENT):
     'then' s1=Statement
     (=> 'else' s2=Statement)?
    |
-    b?=LBRACE
-    NL+ 'then' s11=Statement NL*
-    (=>'else' s12=Statement NL*)?
-    RBRACE
+    b?=KW_OCURLY
+    KW_NEWLINE+ 'then' s11=Statement KW_NEWLINE*
+    (=>'else' s12=Statement KW_NEWLINE*)?
+    KW_CCURLY
   )
 ;
 
@@ -2046,7 +2088,7 @@ Expression returns Expr hidden(WS,TK_COMMENT):
  */
 ExitExpression returns Expr hidden(WS,TK_COMMENT):
   ConditionExpression
-  ({ExitExpression.left=current} op=EXIT right = ConditionExpression SEMICOLON r2=ConditionExpression)*
+  ({ExitExpression.left=current} op=KW_IMPLIES right = ConditionExpression KW_SEMICOLON r2=ConditionExpression)*
 ;
 
 /*
@@ -2054,7 +2096,7 @@ ExitExpression returns Expr hidden(WS,TK_COMMENT):
  */
 ConditionExpression returns Expr hidden(WS,TK_COMMENT):
   OrExpression
-  ({ConditionExpression.left=current} op=BAR right = OrExpression )*
+  ({ConditionExpression.left=current} op=KW_BAR right = OrExpression )*
 ;
 
 /*
@@ -2097,7 +2139,7 @@ AndExpression returns Expr hidden(WS,TK_COMMENT):
  */
 InnerProdExpression returns Expr hidden(WS,TK_COMMENT):
   OuterProdExpression
-  ( {InnerProdExpression.left=current} op=BACKSLASHSLASH right = OuterProdExpression)*
+  ( {InnerProdExpression.left=current} op=KW_VEE right = OuterProdExpression)*
 ;
 
 /*
@@ -2110,7 +2152,7 @@ InnerProdExpression returns Expr hidden(WS,TK_COMMENT):
  */
 OuterProdExpression returns Expr hidden(WS,TK_COMMENT):
   HasExpression
-  ( {OuterProdExpression.left=current} op=SLASHBACKSLASH right = HasExpression)*
+  ( {OuterProdExpression.left=current} op=KW_WEDGE right = HasExpression)*
 ;
 
 /* Predicate which returns true if preceding value is of a given type
@@ -2153,7 +2195,7 @@ EqualityExpression returns Expr hidden(WS,TK_COMMENT):
   RelationalExpression
 // ambiguous because EQ can be in top level expression
   ( {EqualityExpression.left=current}
-   ( op=EQUAL | op=NOTEQUAL | op='^=' | (op=EQUALSDOLAR te=TK_ID))
+   ( op=KW_EQ | op=KW_TILDEE | op=KW_HATE | (op=EQUALSDOLAR te=TK_ID))
    //(DOLAR te=ID)?
    right = RelationalExpression
   )*
@@ -2170,7 +2212,7 @@ EqualityExpression returns Expr hidden(WS,TK_COMMENT):
 RelationalExpression returns Expr hidden(WS,TK_COMMENT):
   IsExpression
   ( {RelationalExpression.left=current}
-   ( op=LT | op=GT | op=LE | op=GE )
+   ( op=KW_LT | op=KW_GT | op=KW_LE | op=KW_GE )
       right = IsExpression
   )?
 ;
@@ -2195,7 +2237,7 @@ IsExpression returns Expr hidden(WS,TK_COMMENT):
  */
 SegmentExpression returns Expr hidden(WS,TK_COMMENT):
   AdditiveExpression
-  ( {SegmentExpression.left=current} op=SEG right = AdditiveExpression)*
+  ( {SegmentExpression.left=current} op=KW_2DOT right = AdditiveExpression)*
 ;
 
 /*
@@ -2210,7 +2252,7 @@ SegmentExpression returns Expr hidden(WS,TK_COMMENT):
 AdditiveExpression returns Expr hidden(WS,TK_COMMENT):
   ExquoExpression
   ( {AdditiveExpression.left=current}
-    ( op=PLUS | op=MINUS | (op=PLUSDOLAR te=TK_ID) | (op=MINUSDOLAR te=TK_ID))
+    ( op=KW_PLUS | op=KW_MINUS | (op=PLUSDOLAR te=TK_ID) | (op=MINUSDOLAR te=TK_ID))
     right = ExquoExpression
   )*
 ;
@@ -2230,7 +2272,7 @@ ExquoExpression returns Expr hidden(WS,TK_COMMENT):
 DivisionExpression returns Expr hidden(WS,TK_COMMENT):
   QuoExpression
   ( {DivisionExpression.left=current}
-   (op=SLASH | (op=DIVDOLAR te=TK_ID))
+   (op=KW_SLASH | (op=DIVDOLAR te=TK_ID))
    right = QuoExpression
   )*
 ;
@@ -2268,7 +2310,7 @@ RemExpression returns Expr hidden(WS,TK_COMMENT):
 MultiplicativeExpression returns Expr hidden(WS,TK_COMMENT):
   ExponentExpression
   ( {MultiplicativeExpression.left=current}
-    (op=TIMES | (op=TIMESDOLAR te=TK_ID))
+    (op=KW_STAR | (op=TIMESDOLAR te=TK_ID))
     right = ExponentExpression
   )*
 ;
@@ -2280,7 +2322,7 @@ MultiplicativeExpression returns Expr hidden(WS,TK_COMMENT):
  */
 ExponentExpression returns Expr hidden(WS,TK_COMMENT):
   MapDefinition
-  ({ExponentExpression.left=current} (op=CARAT | op=POWER) right = MapDefinition)*
+  ({ExponentExpression.left=current} (op=KW_HAT | op=KW_2STAR) right = MapDefinition)*
 ;
 
 /* Map or Lambda expression
@@ -2302,7 +2344,7 @@ MapDefinition returns Expr hidden(WS,TK_COMMENT):
 // (PretendExpression | LPAREN PretendExpression (COMMA t25+=PretendExpression)+ RPAREN) (COLON rightType2 =TypeExpression)?
   AssignExpression
   ({MapDefinition.left=current}
-   op=GIVES right = AssignExpression
+   op=KW_MAPSTO right = AssignExpression
    (par = TK_ID)? // optional parameter which function
                              // is applied to
   )*
@@ -2321,7 +2363,7 @@ MapDefinition returns Expr hidden(WS,TK_COMMENT):
  */
 AssignExpression returns Expr hidden(WS,TK_COMMENT):
   PretendExpression
-  ({AssignExpression.left=current} op=BECOMES (
+  ({AssignExpression.left=current} op=KW_ASSIGN (
    right = PretendExpression
    | ifname='if' ifpred=ConditionExpression 'then' thenexp=ConditionExpression 'else' elseexp=PretendExpression
    )
@@ -2351,7 +2393,7 @@ AssignExpression returns Expr hidden(WS,TK_COMMENT):
  */
 CoerceExpression returns Expr hidden(WS,TK_COMMENT):
   HintTypeExpression
-  ({CoerceExpression.left=current} op=COERCE rightType = TypeExpression1)*
+  ({CoerceExpression.left=current} op=KW_2COLON rightType = TypeExpression1)*
 ;
 
 /*
@@ -2359,7 +2401,7 @@ CoerceExpression returns Expr hidden(WS,TK_COMMENT):
  */
 HintTypeExpression returns Expr hidden(WS,TK_COMMENT):
   EltExpression
-  ( {HintTypeExpression.left=current} op=AT rightType = TypeExpression1)?
+  ( {HintTypeExpression.left=current} op=KW_AT rightType = TypeExpression1)?
 ;
 
 /* We treat these as part of the language
@@ -2393,7 +2435,7 @@ HintTypeExpression returns Expr hidden(WS,TK_COMMENT):
 EltExpression returns Expr hidden(WS,TK_COMMENT):
   ExplicitTypeExpression
   ( {EltExpression.left=current}
-   op=DOT right = ExplicitTypeExpression
+   op=KW_DOT right = ExplicitTypeExpression
   )*
 ;
 
@@ -2405,7 +2447,7 @@ EltExpression returns Expr hidden(WS,TK_COMMENT):
  */
 ExplicitTypeExpression returns Expr hidden(WS,TK_COMMENT):
   UnaryExpression
-  ({ExplicitTypeExpression.left=current} op=DOLAR rightType = TypeExpression1)?
+  ({ExplicitTypeExpression.left=current} op=KW_DOLAR rightType = TypeExpression1)?
 ;
 
 /* UnaryExpression
@@ -2420,25 +2462,25 @@ ExplicitTypeExpression returns Expr hidden(WS,TK_COMMENT):
  */
 UnaryExpression returns Expr hidden(WS,TK_COMMENT):
   PrimaryExpression |
-  ({UnaryExpression} uop=TILDE expr=UnaryExpression) |
+  ({UnaryExpression} uop=KW_TILDE expr=UnaryExpression) |
 // ({UnaryExpression} uop=COLON expr=UnaryExpression) |
-  ({UnaryExpression} uop=MINUS expr=UnaryExpression) |
+  ({UnaryExpression} uop=KW_MINUS expr=UnaryExpression) |
   ({UnaryExpression} uop=MINUSDOLAR te=TK_ID expr=UnaryExpression) |
-  ({UnaryExpression} uop=HASH expr=UnaryExpression) |
+  ({UnaryExpression} uop=KW_SHARP expr=UnaryExpression) |
   ({UnaryExpression} uop='not' expr=PrimaryExpression) |
   ({UnaryExpression} uop=SUMLIST expr=PrimaryExpression) |
   ({UnaryExpression} uop=PRIMEPERCENT expr=PrimaryExpression) |
    e2=PERCENT |
   e3='Type' |
-  e5='Record' LPAREN e6=TypeExpression1
-               (COLON e22+=TypeExpression1)?
-               (COMMA e21+=TypeExpression1 (COLON e23+=TypeExpression1)?)*
-                RPAREN |
-  e9='Union' LPAREN e10=TypeExpression1
-              (COLON e25+=TypeExpression1)?
-              (COMMA e24+=TypeExpression1 (COLON e26+=TypeExpression1)?)*
-              RPAREN |
-  e11='Join' LPAREN e12=TypeExpression1 (COMMA e13+=TypeExpression1)* RPAREN
+  e5='Record' KW_OPAREN e6=TypeExpression1
+               (KW_COLON e22+=TypeExpression1)?
+               (KW_COMMA e21+=TypeExpression1 (KW_COLON e23+=TypeExpression1)?)*
+                KW_CPAREN |
+  e9='Union' KW_OPAREN e10=TypeExpression1
+              (KW_COLON e25+=TypeExpression1)?
+              (KW_COMMA e24+=TypeExpression1 (KW_COLON e26+=TypeExpression1)?)*
+              KW_CPAREN |
+  e11='Join' KW_OPAREN e12=TypeExpression1 (KW_COMMA e13+=TypeExpression1)* KW_CPAREN
 ;
 
 /*
@@ -2465,7 +2507,7 @@ PrimaryExpression returns Expr hidden(WS,TK_COMMENT):
  */
 PrimaryPrefix hidden(WS,TK_COMMENT):
  Literal
- | LPAREN t4=Expression (COMMA t25+=Expression)* RPAREN =>(COLON rightType3 =TypeExpression1)?
+ | KW_OPAREN t4=Expression (KW_COMMA t25+=Expression)* KW_CPAREN =>(KW_COLON rightType3 =TypeExpression1)?
  | t7=NameOrFunctionCall
 ;
 
@@ -2478,17 +2520,17 @@ PrimaryPrefix hidden(WS,TK_COMMENT):
  */
 NameOrFunctionCall hidden(WS,TK_COMMENT):
   ("'")?
-  fnname=TK_ID (=> lsp=DOLAR 'Lisp'/*t2=TypeExpression*/)?
+  fnname=TK_ID (=> lsp=KW_DOLAR 'Lisp'/*t2=TypeExpression*/)?
   // option for parameters in parenthesis
   (
 // LPAREN t4=StatementExpression? (COMMA t5+=Expression)* RPAREN //(COLON rightType2 =TypeExpression)?
-    LPAREN t4=Expression? (COMMA t5+=Expression)* RPAREN //(COLON rightType2 =TypeExpression)?
+    KW_OPAREN t4=Expression? (KW_COMMA t5+=Expression)* KW_CPAREN //(COLON rightType2 =TypeExpression)?
     // optional curried function:
-    (LPAREN t14+=Statement? (COMMA t15+=Expression)* RPAREN)*
+    (KW_OPAREN t14+=Statement? (KW_COMMA t15+=Expression)* KW_CPAREN)*
     // option of no parenthesis for single parameter
     | => t6=PrimaryExpression
   )?
-  => ((COMMA TK_ID)* COLON rightType2 =TypeExpression1)?
+  => ((KW_COMMA TK_ID)* KW_COLON rightType2 =TypeExpression1)?
   // allow multiple assignment
   //=>(op=GIVES lambda = Expression 'xxx')?
 ;
@@ -2506,7 +2548,7 @@ NameOrFunctionCall hidden(WS,TK_COMMENT):
  * represent an implied concat: concat("abc",d)
  */
 Literal hidden(WS,TK_COMMENT):
-  value=INT
+  value=TK_INT
   | t2=TK_STRING (=> e1=NameOrFunctionCall =>(t31+=TK_STRING (=> e4+=NameOrFunctionCall)?)*)?
 // | t3=FloatLiteral // conflicts with use of '.' for elt
   | ListLiteral
@@ -2526,8 +2568,8 @@ CharacterLiteral hidden(WS,TK_COMMENT):
 */
 BooleanLiteral hidden(WS,TK_COMMENT):
  litname = 'true' | litname = 'false'
- | litname = 'true' LPAREN RPAREN
- | litname = 'false' LPAREN RPAREN
+ | litname = 'true' KW_OPAREN KW_CPAREN
+ | litname = 'false' KW_OPAREN KW_CPAREN
 ;
 
 /*
@@ -2538,8 +2580,8 @@ BooleanLiteral hidden(WS,TK_COMMENT):
  * [a for b in c] a list comprehension
  */
 ListLiteral hidden(WS,TK_COMMENT):
- litname = LBRACKET l2=Expression?
-     (COMMA t3+=Expression)*
+ litname = KW_OBRACK l2=Expression?
+     (KW_COMMA t3+=Expression)*
      ('for' t14+=Expression 'in' l5+=Expression)?
-     RBRACKET
+     KW_CBRACK
 ;
