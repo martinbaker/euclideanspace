@@ -1,0 +1,194 @@
+/**
+ */
+package com.euclideanspace.aldor.editor.impl;
+
+import com.euclideanspace.aldor.editor.Binding_BalStatement;
+import com.euclideanspace.aldor.editor.EditorPackage;
+import com.euclideanspace.aldor.editor.Flow_BalStatement;
+
+import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
+
+import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
+
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+
+/**
+ * <!-- begin-user-doc -->
+ * An implementation of the model object '<em><b>Flow Bal Statement</b></em>'.
+ * <!-- end-user-doc -->
+ * <p>
+ * The following features are implemented:
+ * <ul>
+ *   <li>{@link com.euclideanspace.aldor.editor.impl.Flow_BalStatementImpl#getBbs4 <em>Bbs4</em>}</li>
+ * </ul>
+ * </p>
+ *
+ * @generated
+ */
+public class Flow_BalStatementImpl extends MinimalEObjectImpl.Container implements Flow_BalStatement
+{
+  /**
+   * The cached value of the '{@link #getBbs4() <em>Bbs4</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getBbs4()
+   * @generated
+   * @ordered
+   */
+  protected Binding_BalStatement bbs4;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  protected Flow_BalStatementImpl()
+  {
+    super();
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  protected EClass eStaticClass()
+  {
+    return EditorPackage.Literals.FLOW_BAL_STATEMENT;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Binding_BalStatement getBbs4()
+  {
+    return bbs4;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetBbs4(Binding_BalStatement newBbs4, NotificationChain msgs)
+  {
+    Binding_BalStatement oldBbs4 = bbs4;
+    bbs4 = newBbs4;
+    if (eNotificationRequired())
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, EditorPackage.FLOW_BAL_STATEMENT__BBS4, oldBbs4, newBbs4);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setBbs4(Binding_BalStatement newBbs4)
+  {
+    if (newBbs4 != bbs4)
+    {
+      NotificationChain msgs = null;
+      if (bbs4 != null)
+        msgs = ((InternalEObject)bbs4).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - EditorPackage.FLOW_BAL_STATEMENT__BBS4, null, msgs);
+      if (newBbs4 != null)
+        msgs = ((InternalEObject)newBbs4).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - EditorPackage.FLOW_BAL_STATEMENT__BBS4, null, msgs);
+      msgs = basicSetBbs4(newBbs4, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, EditorPackage.FLOW_BAL_STATEMENT__BBS4, newBbs4, newBbs4));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
+  {
+    switch (featureID)
+    {
+      case EditorPackage.FLOW_BAL_STATEMENT__BBS4:
+        return basicSetBbs4(null, msgs);
+    }
+    return super.eInverseRemove(otherEnd, featureID, msgs);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public Object eGet(int featureID, boolean resolve, boolean coreType)
+  {
+    switch (featureID)
+    {
+      case EditorPackage.FLOW_BAL_STATEMENT__BBS4:
+        return getBbs4();
+    }
+    return super.eGet(featureID, resolve, coreType);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void eSet(int featureID, Object newValue)
+  {
+    switch (featureID)
+    {
+      case EditorPackage.FLOW_BAL_STATEMENT__BBS4:
+        setBbs4((Binding_BalStatement)newValue);
+        return;
+    }
+    super.eSet(featureID, newValue);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void eUnset(int featureID)
+  {
+    switch (featureID)
+    {
+      case EditorPackage.FLOW_BAL_STATEMENT__BBS4:
+        setBbs4((Binding_BalStatement)null);
+        return;
+    }
+    super.eUnset(featureID);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public boolean eIsSet(int featureID)
+  {
+    switch (featureID)
+    {
+      case EditorPackage.FLOW_BAL_STATEMENT__BBS4:
+        return bbs4 != null;
+    }
+    return super.eIsSet(featureID);
+  }
+
+} //Flow_BalStatementImpl
