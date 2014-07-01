@@ -2,25 +2,50 @@
  */
 package com.euclideanspace.aldor.editor.impl;
 
+import com.euclideanspace.aldor.editor.AlwaysPart_AnyStatement;
+import com.euclideanspace.aldor.editor.AlwaysPart_BalStatement;
 import com.euclideanspace.aldor.editor.ArrowOp;
 import com.euclideanspace.aldor.editor.ArrowTok;
 import com.euclideanspace.aldor.editor.Atom;
+import com.euclideanspace.aldor.editor.BindingL_Infixed_AnyStatement;
+import com.euclideanspace.aldor.editor.BindingL_Infixed_BalStatement;
+import com.euclideanspace.aldor.editor.BindingL_Infixed_Collection;
+import com.euclideanspace.aldor.editor.BindingR_InfixedExprsDecl_AnyStatement;
+import com.euclideanspace.aldor.editor.Binding_AnyStatement;
+import com.euclideanspace.aldor.editor.Binding_BalStatement;
+import com.euclideanspace.aldor.editor.Binding_Collection;
+import com.euclideanspace.aldor.editor.Block;
 import com.euclideanspace.aldor.editor.BlockEnclosure;
 import com.euclideanspace.aldor.editor.BlockMolecule;
 import com.euclideanspace.aldor.editor.Bracketed;
+import com.euclideanspace.aldor.editor.ButExpr;
+import com.euclideanspace.aldor.editor.Cases;
+import com.euclideanspace.aldor.editor.Collection;
+import com.euclideanspace.aldor.editor.Comma;
+import com.euclideanspace.aldor.editor.CommaItem;
 import com.euclideanspace.aldor.editor.CurlyContentsList_Labeled;
 import com.euclideanspace.aldor.editor.CurlyContents_Labeled;
 import com.euclideanspace.aldor.editor.Curly_Labeled;
+import com.euclideanspace.aldor.editor.DeclBinding;
+import com.euclideanspace.aldor.editor.DeclMolecule;
+import com.euclideanspace.aldor.editor.Declaration;
 import com.euclideanspace.aldor.editor.EditorFactory;
 import com.euclideanspace.aldor.editor.EditorPackage;
 import com.euclideanspace.aldor.editor.Enclosure;
+import com.euclideanspace.aldor.editor.ExportDecl;
 import com.euclideanspace.aldor.editor.Expression;
+import com.euclideanspace.aldor.editor.Flow_AnyStatement;
+import com.euclideanspace.aldor.editor.Flow_BalStatement;
+import com.euclideanspace.aldor.editor.FromPart;
+import com.euclideanspace.aldor.editor.GenBound;
 import com.euclideanspace.aldor.editor.Id;
+import com.euclideanspace.aldor.editor.Iterator;
 import com.euclideanspace.aldor.editor.Jleft_Atom;
 import com.euclideanspace.aldor.editor.Jleft_Molecule;
 import com.euclideanspace.aldor.editor.Labeled;
 import com.euclideanspace.aldor.editor.LatticeOp;
 import com.euclideanspace.aldor.editor.LatticeTok;
+import com.euclideanspace.aldor.editor.MacroBody;
 import com.euclideanspace.aldor.editor.Model;
 import com.euclideanspace.aldor.editor.Molecule;
 import com.euclideanspace.aldor.editor.NakedOp;
@@ -48,6 +73,7 @@ import com.euclideanspace.aldor.editor.RelationOp;
 import com.euclideanspace.aldor.editor.RelationTok;
 import com.euclideanspace.aldor.editor.SegOp;
 import com.euclideanspace.aldor.editor.SegTok;
+import com.euclideanspace.aldor.editor.Sig;
 import com.euclideanspace.aldor.editor.TimesOp;
 import com.euclideanspace.aldor.editor.TimesTok;
 import com.euclideanspace.aldor.editor.UnqualOp_ArrowTok;
@@ -58,7 +84,11 @@ import com.euclideanspace.aldor.editor.UnqualOp_QuotientTok;
 import com.euclideanspace.aldor.editor.UnqualOp_RelationTok;
 import com.euclideanspace.aldor.editor.UnqualOp_SegTok;
 import com.euclideanspace.aldor.editor.UnqualOp_TimesTok;
+import com.euclideanspace.aldor.editor.enlist1_CommaItem_Comma_AB;
+import com.euclideanspace.aldor.editor.enlist1_Infixed_Comma_AB;
 import com.euclideanspace.aldor.editor.enlist1a_Labeled_Semicolon_AB;
+import com.euclideanspace.aldor.editor.enlister1_CommaItem_Comma;
+import com.euclideanspace.aldor.editor.enlister1_Infixed_Comma;
 import com.euclideanspace.aldor.editor.enlister1a_Labeled_Semicolon;
 
 import org.eclipse.emf.ecore.EAttribute;
@@ -96,6 +126,174 @@ public class EditorPackageImpl extends EPackageImpl implements EditorPackage
    * @generated
    */
   private EClass labeledEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass declarationEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass exportDeclEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass fromPartEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass macroBodyEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass sigEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass commaEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass commaItemEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass declBindingEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass binding_AnyStatementEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass binding_BalStatementEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass binding_CollectionEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass bindingL_Infixed_AnyStatementEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass bindingL_Infixed_BalStatementEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass bindingL_Infixed_CollectionEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass bindingR_InfixedExprsDecl_AnyStatementEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass flow_AnyStatementEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass flow_BalStatementEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass genBoundEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass butExprEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass casesEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass alwaysPart_AnyStatementEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass alwaysPart_BalStatementEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass collectionEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass iteratorEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -207,6 +405,13 @@ public class EditorPackageImpl extends EPackageImpl implements EditorPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  private EClass declMoleculeEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   private EClass blockMoleculeEClass = null;
 
   /**
@@ -215,6 +420,13 @@ public class EditorPackageImpl extends EPackageImpl implements EditorPackage
    * @generated
    */
   private EClass blockEnclosureEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass blockEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -376,6 +588,34 @@ public class EditorPackageImpl extends EPackageImpl implements EditorPackage
    * @generated
    */
   private EClass qualOp_PowerTokEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass enlist1_CommaItem_Comma_ABEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass enlist1_Infixed_Comma_ABEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass enlister1_CommaItem_CommaEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass enlister1_Infixed_CommaEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -566,6 +806,486 @@ public class EditorPackageImpl extends EPackageImpl implements EditorPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  public EClass getDeclaration()
+  {
+    return declarationEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getDeclaration_Fp()
+  {
+    return (EReference)declarationEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getExportDecl()
+  {
+    return exportDeclEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getExportDecl_Tp()
+  {
+    return (EAttribute)exportDeclEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getFromPart()
+  {
+    return fromPartEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getMacroBody()
+  {
+    return macroBodyEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getSig()
+  {
+    return sigEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getComma()
+  {
+    return commaEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getCommaItem()
+  {
+    return commaItemEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getCommaItem_Bbs()
+  {
+    return (EReference)commaItemEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getCommaItem_Bas()
+  {
+    return (EReference)commaItemEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getCommaItem_Bbs2()
+  {
+    return (EReference)commaItemEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getCommaItem_Ci()
+  {
+    return (EReference)commaItemEClass.getEStructuralFeatures().get(3);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getDeclBinding()
+  {
+    return declBindingEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getBinding_AnyStatement()
+  {
+    return binding_AnyStatementEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getBinding_AnyStatement_Be()
+  {
+    return (EReference)binding_AnyStatementEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getBinding_AnyStatement_Apa()
+  {
+    return (EReference)binding_AnyStatementEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getBinding_AnyStatement_C()
+  {
+    return (EReference)binding_AnyStatementEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getBinding_AnyStatement_Apb()
+  {
+    return (EReference)binding_AnyStatementEClass.getEStructuralFeatures().get(3);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getBinding_BalStatement()
+  {
+    return binding_BalStatementEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getBinding_Collection()
+  {
+    return binding_CollectionEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getBindingL_Infixed_AnyStatement()
+  {
+    return bindingL_Infixed_AnyStatementEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getBindingL_Infixed_AnyStatement_Bia()
+  {
+    return (EReference)bindingL_Infixed_AnyStatementEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getBindingL_Infixed_BalStatement()
+  {
+    return bindingL_Infixed_BalStatementEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getBindingL_Infixed_BalStatement_Bib()
+  {
+    return (EReference)bindingL_Infixed_BalStatementEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getBindingL_Infixed_Collection()
+  {
+    return bindingL_Infixed_CollectionEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getBindingL_Infixed_Collection_Bic()
+  {
+    return (EReference)bindingL_Infixed_CollectionEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getBindingR_InfixedExprsDecl_AnyStatement()
+  {
+    return bindingR_InfixedExprsDecl_AnyStatementEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getFlow_AnyStatement()
+  {
+    return flow_AnyStatementEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getFlow_AnyStatement_Bas3()
+  {
+    return (EReference)flow_AnyStatementEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getFlow_BalStatement()
+  {
+    return flow_BalStatementEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getFlow_BalStatement_Bbs4()
+  {
+    return (EReference)flow_BalStatementEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getGenBound()
+  {
+    return genBoundEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getGenBound_Bas4()
+  {
+    return (EReference)genBoundEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getGenBound_Bbs5()
+  {
+    return (EReference)genBoundEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getButExpr()
+  {
+    return butExprEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getButExpr_Db()
+  {
+    return (EReference)butExprEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getButExpr_Ca()
+  {
+    return (EReference)butExprEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getCases()
+  {
+    return casesEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getAlwaysPart_AnyStatement()
+  {
+    return alwaysPart_AnyStatementEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getAlwaysPart_BalStatement()
+  {
+    return alwaysPart_BalStatementEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getCollection()
+  {
+    return collectionEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getCollection_Bas2()
+  {
+    return (EReference)collectionEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getCollection_Bbs3()
+  {
+    return (EReference)collectionEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getCollection_I()
+  {
+    return (EAttribute)collectionEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getIterator()
+  {
+    return iteratorEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getIterator_I()
+  {
+    return (EAttribute)iteratorEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getIterator_Sp()
+  {
+    return (EAttribute)iteratorEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EClass getOpQualTail()
   {
     return opQualTailEClass;
@@ -736,6 +1456,16 @@ public class EditorPackageImpl extends EPackageImpl implements EditorPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  public EClass getDeclMolecule()
+  {
+    return declMoleculeEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EClass getBlockMolecule()
   {
     return blockMoleculeEClass;
@@ -749,6 +1479,16 @@ public class EditorPackageImpl extends EPackageImpl implements EditorPackage
   public EClass getBlockEnclosure()
   {
     return blockEnclosureEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getBlock()
+  {
+    return blockEClass;
   }
 
   /**
@@ -1066,6 +1806,56 @@ public class EditorPackageImpl extends EPackageImpl implements EditorPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  public EClass getenlist1_CommaItem_Comma_AB()
+  {
+    return enlist1_CommaItem_Comma_ABEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getenlist1_Infixed_Comma_AB()
+  {
+    return enlist1_Infixed_Comma_ABEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getenlister1_CommaItem_Comma()
+  {
+    return enlister1_CommaItem_CommaEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getenlister1_Infixed_Comma()
+  {
+    return enlister1_Infixed_CommaEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getenlister1_Infixed_Comma_I()
+  {
+    return (EAttribute)enlister1_Infixed_CommaEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EClass getenlist1a_Labeled_Semicolon_AB()
   {
     return enlist1a_Labeled_Semicolon_ABEClass;
@@ -1247,6 +2037,78 @@ public class EditorPackageImpl extends EPackageImpl implements EditorPackage
 
     labeledEClass = createEClass(LABELED);
 
+    declarationEClass = createEClass(DECLARATION);
+    createEReference(declarationEClass, DECLARATION__FP);
+
+    exportDeclEClass = createEClass(EXPORT_DECL);
+    createEAttribute(exportDeclEClass, EXPORT_DECL__TP);
+
+    fromPartEClass = createEClass(FROM_PART);
+
+    macroBodyEClass = createEClass(MACRO_BODY);
+
+    sigEClass = createEClass(SIG);
+
+    commaEClass = createEClass(COMMA);
+
+    commaItemEClass = createEClass(COMMA_ITEM);
+    createEReference(commaItemEClass, COMMA_ITEM__BBS);
+    createEReference(commaItemEClass, COMMA_ITEM__BAS);
+    createEReference(commaItemEClass, COMMA_ITEM__BBS2);
+    createEReference(commaItemEClass, COMMA_ITEM__CI);
+
+    declBindingEClass = createEClass(DECL_BINDING);
+
+    binding_AnyStatementEClass = createEClass(BINDING_ANY_STATEMENT);
+    createEReference(binding_AnyStatementEClass, BINDING_ANY_STATEMENT__BE);
+    createEReference(binding_AnyStatementEClass, BINDING_ANY_STATEMENT__APA);
+    createEReference(binding_AnyStatementEClass, BINDING_ANY_STATEMENT__C);
+    createEReference(binding_AnyStatementEClass, BINDING_ANY_STATEMENT__APB);
+
+    binding_BalStatementEClass = createEClass(BINDING_BAL_STATEMENT);
+
+    binding_CollectionEClass = createEClass(BINDING_COLLECTION);
+
+    bindingL_Infixed_AnyStatementEClass = createEClass(BINDING_LINFIXED_ANY_STATEMENT);
+    createEReference(bindingL_Infixed_AnyStatementEClass, BINDING_LINFIXED_ANY_STATEMENT__BIA);
+
+    bindingL_Infixed_BalStatementEClass = createEClass(BINDING_LINFIXED_BAL_STATEMENT);
+    createEReference(bindingL_Infixed_BalStatementEClass, BINDING_LINFIXED_BAL_STATEMENT__BIB);
+
+    bindingL_Infixed_CollectionEClass = createEClass(BINDING_LINFIXED_COLLECTION);
+    createEReference(bindingL_Infixed_CollectionEClass, BINDING_LINFIXED_COLLECTION__BIC);
+
+    bindingR_InfixedExprsDecl_AnyStatementEClass = createEClass(BINDING_RINFIXED_EXPRS_DECL_ANY_STATEMENT);
+
+    flow_AnyStatementEClass = createEClass(FLOW_ANY_STATEMENT);
+    createEReference(flow_AnyStatementEClass, FLOW_ANY_STATEMENT__BAS3);
+
+    flow_BalStatementEClass = createEClass(FLOW_BAL_STATEMENT);
+    createEReference(flow_BalStatementEClass, FLOW_BAL_STATEMENT__BBS4);
+
+    genBoundEClass = createEClass(GEN_BOUND);
+    createEReference(genBoundEClass, GEN_BOUND__BAS4);
+    createEReference(genBoundEClass, GEN_BOUND__BBS5);
+
+    butExprEClass = createEClass(BUT_EXPR);
+    createEReference(butExprEClass, BUT_EXPR__DB);
+    createEReference(butExprEClass, BUT_EXPR__CA);
+
+    casesEClass = createEClass(CASES);
+
+    alwaysPart_AnyStatementEClass = createEClass(ALWAYS_PART_ANY_STATEMENT);
+
+    alwaysPart_BalStatementEClass = createEClass(ALWAYS_PART_BAL_STATEMENT);
+
+    collectionEClass = createEClass(COLLECTION);
+    createEReference(collectionEClass, COLLECTION__BAS2);
+    createEReference(collectionEClass, COLLECTION__BBS3);
+    createEAttribute(collectionEClass, COLLECTION__I);
+
+    iteratorEClass = createEClass(ITERATOR);
+    createEAttribute(iteratorEClass, ITERATOR__I);
+    createEAttribute(iteratorEClass, ITERATOR__SP);
+
     opQualTailEClass = createEClass(OP_QUAL_TAIL);
     createEReference(opQualTailEClass, OP_QUAL_TAIL__NAME);
 
@@ -1279,9 +2141,13 @@ public class EditorPackageImpl extends EPackageImpl implements EditorPackage
 
     enclosureEClass = createEClass(ENCLOSURE);
 
+    declMoleculeEClass = createEClass(DECL_MOLECULE);
+
     blockMoleculeEClass = createEClass(BLOCK_MOLECULE);
 
     blockEnclosureEClass = createEClass(BLOCK_ENCLOSURE);
+
+    blockEClass = createEClass(BLOCK);
 
     parenedEClass = createEClass(PARENED);
 
@@ -1336,6 +2202,15 @@ public class EditorPackageImpl extends EPackageImpl implements EditorPackage
     qualOp_TimesTokEClass = createEClass(QUAL_OP_TIMES_TOK);
 
     qualOp_PowerTokEClass = createEClass(QUAL_OP_POWER_TOK);
+
+    enlist1_CommaItem_Comma_ABEClass = createEClass(ENLIST1_COMMA_ITEM_COMMA_AB);
+
+    enlist1_Infixed_Comma_ABEClass = createEClass(ENLIST1_INFIXED_COMMA_AB);
+
+    enlister1_CommaItem_CommaEClass = createEClass(ENLISTER1_COMMA_ITEM_COMMA);
+
+    enlister1_Infixed_CommaEClass = createEClass(ENLISTER1_INFIXED_COMMA);
+    createEAttribute(enlister1_Infixed_CommaEClass, ENLISTER1_INFIXED_COMMA__I);
 
     enlist1a_Labeled_Semicolon_ABEClass = createEClass(ENLIST1A_LABELED_SEMICOLON_AB);
 
@@ -1397,6 +2272,34 @@ public class EditorPackageImpl extends EPackageImpl implements EditorPackage
     // Add supertypes to classes
     expressionEClass.getESuperTypes().add(this.getParened());
     expressionEClass.getESuperTypes().add(this.getBracketed());
+    declarationEClass.getESuperTypes().add(this.getLabeled());
+    exportDeclEClass.getESuperTypes().add(this.getDeclaration());
+    exportDeclEClass.getESuperTypes().add(this.getMacroBody());
+    macroBodyEClass.getESuperTypes().add(this.getDeclaration());
+    sigEClass.getESuperTypes().add(this.getDeclaration());
+    sigEClass.getESuperTypes().add(this.getExportDecl());
+    sigEClass.getESuperTypes().add(this.getMacroBody());
+    commaEClass.getESuperTypes().add(this.getLabeled());
+    commaItemEClass.getESuperTypes().add(this.getFlow_AnyStatement());
+    commaItemEClass.getESuperTypes().add(this.getFlow_BalStatement());
+    commaItemEClass.getESuperTypes().add(this.getGenBound());
+    commaItemEClass.getESuperTypes().add(this.getenlister1_CommaItem_Comma());
+    declBindingEClass.getESuperTypes().add(this.getSig());
+    binding_AnyStatementEClass.getESuperTypes().add(this.getCommaItem());
+    binding_AnyStatementEClass.getESuperTypes().add(this.getBindingR_InfixedExprsDecl_AnyStatement());
+    binding_AnyStatementEClass.getESuperTypes().add(this.getAlwaysPart_AnyStatement());
+    binding_BalStatementEClass.getESuperTypes().add(this.getFlow_BalStatement());
+    binding_BalStatementEClass.getESuperTypes().add(this.getAlwaysPart_BalStatement());
+    binding_CollectionEClass.getESuperTypes().add(this.getCases());
+    bindingL_Infixed_AnyStatementEClass.getESuperTypes().add(this.getBinding_AnyStatement());
+    bindingL_Infixed_BalStatementEClass.getESuperTypes().add(this.getBinding_BalStatement());
+    bindingL_Infixed_CollectionEClass.getESuperTypes().add(this.getBinding_Collection());
+    bindingR_InfixedExprsDecl_AnyStatementEClass.getESuperTypes().add(this.getDeclBinding());
+    genBoundEClass.getESuperTypes().add(this.getFlow_AnyStatement());
+    genBoundEClass.getESuperTypes().add(this.getFlow_BalStatement());
+    collectionEClass.getESuperTypes().add(this.getBindingL_Infixed_Collection());
+    collectionEClass.getESuperTypes().add(this.getFlow_AnyStatement());
+    collectionEClass.getESuperTypes().add(this.getFlow_BalStatement());
     opQualTailEClass.getESuperTypes().add(this.getQualOp_ArrowTok());
     opQualTailEClass.getESuperTypes().add(this.getQualOp_LatticeTok());
     opQualTailEClass.getESuperTypes().add(this.getQualOp_RelationTok());
@@ -1420,6 +2323,10 @@ public class EditorPackageImpl extends EPackageImpl implements EditorPackage
     enclosureEClass.getESuperTypes().add(this.getBlockEnclosure());
     blockEnclosureEClass.getESuperTypes().add(this.getJleft_Molecule());
     blockEnclosureEClass.getESuperTypes().add(this.getJleft_Atom());
+    blockEClass.getESuperTypes().add(this.getSig());
+    blockEClass.getESuperTypes().add(this.getDeclMolecule());
+    blockEClass.getESuperTypes().add(this.getBlockMolecule());
+    blockEClass.getESuperTypes().add(this.getBlockEnclosure());
     parenedEClass.getESuperTypes().add(this.getEnclosure());
     bracketedEClass.getESuperTypes().add(this.getEnclosure());
     quotedIdsEClass.getESuperTypes().add(this.getEnclosure());
@@ -1428,6 +2335,10 @@ public class EditorPackageImpl extends EPackageImpl implements EditorPackage
     atomEClass.getESuperTypes().add(this.getJleft_Atom());
     atomEClass.getESuperTypes().add(this.getMolecule());
     atomEClass.getESuperTypes().add(this.getBlockMolecule());
+    nameEClass.getESuperTypes().add(this.getFlow_AnyStatement());
+    nameEClass.getESuperTypes().add(this.getFlow_BalStatement());
+    idEClass.getESuperTypes().add(this.getFlow_AnyStatement());
+    idEClass.getESuperTypes().add(this.getFlow_BalStatement());
     idEClass.getESuperTypes().add(this.getName_());
     unqualOp_ArrowTokEClass.getESuperTypes().add(this.getNakedOp());
     unqualOp_LatticeTokEClass.getESuperTypes().add(this.getNakedOp());
@@ -1445,8 +2356,13 @@ public class EditorPackageImpl extends EPackageImpl implements EditorPackage
     qualOp_QuotientTokEClass.getESuperTypes().add(this.getQuotientOp());
     qualOp_TimesTokEClass.getESuperTypes().add(this.getTimesOp());
     qualOp_PowerTokEClass.getESuperTypes().add(this.getPowerOp());
+    enlist1_CommaItem_Comma_ABEClass.getESuperTypes().add(this.getComma());
+    enlist1_Infixed_Comma_ABEClass.getESuperTypes().add(this.getFromPart());
+    enlister1_CommaItem_CommaEClass.getESuperTypes().add(this.getenlist1_CommaItem_Comma_AB());
+    enlister1_Infixed_CommaEClass.getESuperTypes().add(this.getenlist1_Infixed_Comma_AB());
     enlist1a_Labeled_Semicolon_ABEClass.getESuperTypes().add(this.getExpression());
     enlister1a_Labeled_SemicolonEClass.getESuperTypes().add(this.getenlist1a_Labeled_Semicolon_AB());
+    curly_LabeledEClass.getESuperTypes().add(this.getBlock());
     curlyContents_LabeledEClass.getESuperTypes().add(this.getModel());
     curlyContents_LabeledEClass.getESuperTypes().add(this.getCurly_Labeled());
     curlyContentsList_LabeledEClass.getESuperTypes().add(this.getCurlyContents_Labeled());
@@ -1465,6 +2381,78 @@ public class EditorPackageImpl extends EPackageImpl implements EditorPackage
     initEClass(expressionEClass, Expression.class, "Expression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
     initEClass(labeledEClass, Labeled.class, "Labeled", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+    initEClass(declarationEClass, Declaration.class, "Declaration", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getDeclaration_Fp(), this.getFromPart(), null, "fp", null, 0, 1, Declaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(exportDeclEClass, ExportDecl.class, "ExportDecl", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getExportDecl_Tp(), ecorePackage.getEString(), "tp", null, 0, 1, ExportDecl.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(fromPartEClass, FromPart.class, "FromPart", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+    initEClass(macroBodyEClass, MacroBody.class, "MacroBody", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+    initEClass(sigEClass, Sig.class, "Sig", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+    initEClass(commaEClass, Comma.class, "Comma", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+    initEClass(commaItemEClass, CommaItem.class, "CommaItem", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getCommaItem_Bbs(), this.getBinding_BalStatement(), null, "bbs", null, 0, 1, CommaItem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getCommaItem_Bas(), this.getBinding_AnyStatement(), null, "bas", null, 0, 1, CommaItem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getCommaItem_Bbs2(), this.getBinding_BalStatement(), null, "bbs2", null, 0, 1, CommaItem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getCommaItem_Ci(), this.getCommaItem(), null, "ci", null, 0, 1, CommaItem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(declBindingEClass, DeclBinding.class, "DeclBinding", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+    initEClass(binding_AnyStatementEClass, Binding_AnyStatement.class, "Binding_AnyStatement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getBinding_AnyStatement_Be(), this.getButExpr(), null, "be", null, 0, 1, Binding_AnyStatement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getBinding_AnyStatement_Apa(), this.getAlwaysPart_AnyStatement(), null, "apa", null, 0, 1, Binding_AnyStatement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getBinding_AnyStatement_C(), this.getCases(), null, "c", null, 0, 1, Binding_AnyStatement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getBinding_AnyStatement_Apb(), this.getAlwaysPart_BalStatement(), null, "apb", null, 0, 1, Binding_AnyStatement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(binding_BalStatementEClass, Binding_BalStatement.class, "Binding_BalStatement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+    initEClass(binding_CollectionEClass, Binding_Collection.class, "Binding_Collection", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+    initEClass(bindingL_Infixed_AnyStatementEClass, BindingL_Infixed_AnyStatement.class, "BindingL_Infixed_AnyStatement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getBindingL_Infixed_AnyStatement_Bia(), this.getBindingL_Infixed_AnyStatement(), null, "bia", null, 0, 1, BindingL_Infixed_AnyStatement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(bindingL_Infixed_BalStatementEClass, BindingL_Infixed_BalStatement.class, "BindingL_Infixed_BalStatement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getBindingL_Infixed_BalStatement_Bib(), this.getBindingL_Infixed_BalStatement(), null, "bib", null, 0, 1, BindingL_Infixed_BalStatement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(bindingL_Infixed_CollectionEClass, BindingL_Infixed_Collection.class, "BindingL_Infixed_Collection", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getBindingL_Infixed_Collection_Bic(), this.getBindingL_Infixed_Collection(), null, "bic", null, 0, 1, BindingL_Infixed_Collection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(bindingR_InfixedExprsDecl_AnyStatementEClass, BindingR_InfixedExprsDecl_AnyStatement.class, "BindingR_InfixedExprsDecl_AnyStatement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+    initEClass(flow_AnyStatementEClass, Flow_AnyStatement.class, "Flow_AnyStatement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getFlow_AnyStatement_Bas3(), this.getBinding_AnyStatement(), null, "bas3", null, 0, 1, Flow_AnyStatement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(flow_BalStatementEClass, Flow_BalStatement.class, "Flow_BalStatement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getFlow_BalStatement_Bbs4(), this.getBinding_BalStatement(), null, "bbs4", null, 0, 1, Flow_BalStatement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(genBoundEClass, GenBound.class, "GenBound", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getGenBound_Bas4(), this.getBinding_AnyStatement(), null, "bas4", null, 0, 1, GenBound.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getGenBound_Bbs5(), this.getBinding_BalStatement(), null, "bbs5", null, 0, 1, GenBound.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(butExprEClass, ButExpr.class, "ButExpr", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getButExpr_Db(), this.getDeclBinding(), null, "db", null, 0, 1, ButExpr.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getButExpr_Ca(), this.getCases(), null, "ca", null, 0, 1, ButExpr.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(casesEClass, Cases.class, "Cases", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+    initEClass(alwaysPart_AnyStatementEClass, AlwaysPart_AnyStatement.class, "AlwaysPart_AnyStatement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+    initEClass(alwaysPart_BalStatementEClass, AlwaysPart_BalStatement.class, "AlwaysPart_BalStatement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+    initEClass(collectionEClass, Collection.class, "Collection", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getCollection_Bas2(), this.getBinding_AnyStatement(), null, "bas2", null, 0, 1, Collection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getCollection_Bbs3(), this.getBinding_BalStatement(), null, "bbs3", null, 0, 1, Collection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getCollection_I(), ecorePackage.getEString(), "i", null, 0, 1, Collection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(iteratorEClass, Iterator.class, "Iterator", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getIterator_I(), ecorePackage.getEString(), "i", null, 0, 1, Iterator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getIterator_Sp(), ecorePackage.getEString(), "sp", null, 0, 1, Iterator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(opQualTailEClass, OpQualTail.class, "OpQualTail", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getOpQualTail_Name(), this.getMolecule(), null, "name", null, 0, 1, OpQualTail.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1498,9 +2486,13 @@ public class EditorPackageImpl extends EPackageImpl implements EditorPackage
 
     initEClass(enclosureEClass, Enclosure.class, "Enclosure", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
+    initEClass(declMoleculeEClass, DeclMolecule.class, "DeclMolecule", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
     initEClass(blockMoleculeEClass, BlockMolecule.class, "BlockMolecule", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
     initEClass(blockEnclosureEClass, BlockEnclosure.class, "BlockEnclosure", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+    initEClass(blockEClass, Block.class, "Block", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
     initEClass(parenedEClass, Parened.class, "Parened", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -1555,6 +2547,15 @@ public class EditorPackageImpl extends EPackageImpl implements EditorPackage
     initEClass(qualOp_TimesTokEClass, QualOp_TimesTok.class, "QualOp_TimesTok", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
     initEClass(qualOp_PowerTokEClass, QualOp_PowerTok.class, "QualOp_PowerTok", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+    initEClass(enlist1_CommaItem_Comma_ABEClass, enlist1_CommaItem_Comma_AB.class, "enlist1_CommaItem_Comma_AB", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+    initEClass(enlist1_Infixed_Comma_ABEClass, enlist1_Infixed_Comma_AB.class, "enlist1_Infixed_Comma_AB", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+    initEClass(enlister1_CommaItem_CommaEClass, enlister1_CommaItem_Comma.class, "enlister1_CommaItem_Comma", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+    initEClass(enlister1_Infixed_CommaEClass, enlister1_Infixed_Comma.class, "enlister1_Infixed_Comma", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getenlister1_Infixed_Comma_I(), ecorePackage.getEString(), "i", null, 0, 1, enlister1_Infixed_Comma.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(enlist1a_Labeled_Semicolon_ABEClass, enlist1a_Labeled_Semicolon_AB.class, "enlist1a_Labeled_Semicolon_AB", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 

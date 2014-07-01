@@ -506,15 +506,15 @@ Declaration hidden(WS,KW_NEWLINE):
 | 'default' Sig
 | 'define' Sig
 | 'fix' Sig
-| 'inline' Sig? FromPart?
-| 'import' Sig? FromPart?
+| 'inline' Sig? fp=FromPart?
+| 'import' Sig? fp=FromPart?
 | ExportDecl
 ;
 
 ExportDecl hidden(WS,KW_NEWLINE):
 'export' Sig?
-| =>('export' Sig? ToPart)
-| =>('export' Sig? FromPart)
+| =>('export' Sig? tp=ToPart)
+| =>('export' Sig? fp=FromPart)
 ;
 
 ToPart hidden(WS,KW_NEWLINE):
@@ -528,7 +528,7 @@ FromPart hidden(WS,KW_NEWLINE):
 MacroBody hidden(WS,KW_NEWLINE):
 Sig
 | ExportDecl
-| 'import' Sig FromPart?
+| 'import' Sig fp=FromPart?
 ;
 
 Sig hidden(WS,KW_NEWLINE):
@@ -549,7 +549,7 @@ Comma hidden(WS,KW_NEWLINE):
 ;
 
 CommaItem hidden(WS,KW_NEWLINE):
- Binding_AnyStatement =>('where' CommaItem)*
+ Binding_AnyStatement =>('where' ci=CommaItem)*
 ;
 
 /*
@@ -588,6 +588,10 @@ Binding_BalStatement hidden(WS,KW_NEWLINE):
   BindingL_Infixed_BalStatement
 ;
 
+Binding_Collection hidden(WS,KW_NEWLINE):
+  BindingL_Infixed_Collection
+;
+
 /* Substituted Rules in Xtext:
  * BindingL(Infixed,E) where E is in Binding
  * BindingL(R,L)
@@ -606,20 +610,29 @@ Binding_BalStatement hidden(WS,KW_NEWLINE):
  */
 BindingL_Infixed_AnyStatement hidden(WS,KW_NEWLINE):
  AnyStatement
-| Infixed 'assign' BindingL_Infixed_AnyStatement
-| Infixed KW_2EQ BindingL_Infixed_AnyStatement
-| Infixed KW_MARROW BindingL_Infixed_AnyStatement
-| Infixed KW_MAPSTO BindingL_Infixed_AnyStatement
-| Infixed KW_MAPSTOSTAR BindingL_Infixed_AnyStatement
+| Infixed 'assign' bia=BindingL_Infixed_AnyStatement
+| Infixed KW_2EQ bia=BindingL_Infixed_AnyStatement
+| Infixed KW_MARROW bia=BindingL_Infixed_AnyStatement
+| Infixed KW_MAPSTO bia=BindingL_Infixed_AnyStatement
+| Infixed KW_MAPSTOSTAR bia=BindingL_Infixed_AnyStatement
 ;
 
 BindingL_Infixed_BalStatement hidden(WS,KW_NEWLINE):
- AnyStatement
-| Infixed 'assign' BindingL_Infixed_BalStatement
-| Infixed KW_2EQ BindingL_Infixed_BalStatement
-| Infixed KW_MARROW BindingL_Infixed_BalStatement
-| Infixed KW_MAPSTO BindingL_Infixed_BalStatement
-| Infixed KW_MAPSTOSTAR BindingL_Infixed_BalStatement
+ BalStatement
+| Infixed 'assign' bib=BindingL_Infixed_BalStatement
+| Infixed KW_2EQ bib=BindingL_Infixed_BalStatement
+| Infixed KW_MARROW bib=BindingL_Infixed_BalStatement
+| Infixed KW_MAPSTO bib=BindingL_Infixed_BalStatement
+| Infixed KW_MAPSTOSTAR bib=BindingL_Infixed_BalStatement
+;
+
+BindingL_Infixed_Collection hidden(WS,KW_NEWLINE):
+ Collection
+| Infixed 'assign' bic=BindingL_Infixed_Collection
+| Infixed KW_2EQ bic=BindingL_Infixed_Collection
+| Infixed KW_MARROW bic=BindingL_Infixed_Collection
+| Infixed KW_MAPSTO bic=BindingL_Infixed_Collection
+| Infixed KW_MAPSTOSTAR bic=BindingL_Infixed_Collection
 ;
 
 /* Substituted Rules in Xtext:
@@ -654,14 +667,16 @@ BindingR_InfixedExprsDecl_AnyStatement hidden(WS,KW_NEWLINE):
  */
 AnyStatement hidden(WS,KW_NEWLINE):
 	'temp19'
-// KW_If CommaItem KW_Then Binding_AnyStatement)
-//{ $$ = abNewIf(TPOS($1), TEST($2),$4,abZip); }
-//| Flow(AnyStatement)
+// if we enable the following we get:
+// 'A class may not be a super type of itself' error
+// 'if' CommaItem 'then' bas=Binding_AnyStatement
+//| Flow_AnyStatement
 ;
 
-//BalStatement
-//: Flow(BalStatement)
-//;
+BalStatement hidden(WS,KW_NEWLINE):
+	'temp20'
+// Flow_BalStatement
+;
 
 /* Substituted Rules in Xtext:
 Flow(XX) -> Flow_AnyStatement or Flow_BalStatement
@@ -709,19 +724,19 @@ Flow(XX) -> Flow_AnyStatement or Flow_BalStatement
 //{ $$ = abNewNever(TPOS($1)); }
 //;
 */
-Flow_AnyStatement:
-	Collection
-| 'if' CommaItem 'then' Binding_BalStatement 'else' Binding_AnyStatement
-| Collection 'implies' Binding_AnyStatement
-| Iterators 'repeat' Binding_AnyStatement
+Flow_AnyStatement hidden(WS,KW_NEWLINE):
+ Collection
+| 'if' CommaItem 'then' bbs=Binding_BalStatement 'else' bas=Binding_AnyStatement
+| Collection 'implies' bas2=Binding_AnyStatement
+| Iterators 'repeat' bas3=Binding_AnyStatement
 | 'repeat' Binding_AnyStatement
-| 'try' Binding_AnyStatement 'but' ButExpr AlwaysPart(AnyStatement)
-| 'try' Binding_AnyStatement 'catch' ButExpr AlwaysPart(AnyStatement)
-| 'select' Binding_AnyStatement 'in' Cases
+| 'try' Binding_AnyStatement 'but' be=ButExpr apa=AlwaysPart_AnyStatement
+| 'try' Binding_AnyStatement 'catch' be=ButExpr apa=AlwaysPart_AnyStatement
+| 'select' Binding_AnyStatement 'in' c=Cases
 | 'do' Binding_AnyStatement
 | 'delay' Binding_AnyStatement
 | 'reference' Binding_AnyStatement
-| 'generate' GenBound Binding_AnyStatement
+| 'generate' GenBound bas4=Binding_AnyStatement
 | 'assert' Binding_AnyStatement
 | 'iterate' Name?
 | 'break' Name?
@@ -733,19 +748,19 @@ Flow_AnyStatement:
 | 'never'
 ;
 
-Flow_BalStatement:
+Flow_BalStatement hidden(WS,KW_NEWLINE):
 	Collection
-| 'if' CommaItem 'then' Binding_BalStatement 'else' Binding_BalStatement
-| Collection 'implies' Binding_BalStatement
-| Iterators 'repeat' Binding_BalStatement
+| 'if' CommaItem 'then' bbs=Binding_BalStatement 'else' bbs2=Binding_BalStatement
+| Collection 'implies' bbs3=Binding_BalStatement
+| Iterators 'repeat' bbs4=Binding_BalStatement
 | 'repeat' Binding_BalStatement
-| 'try' Binding_AnyStatement 'but' ButExpr AlwaysPart(BalStatement)
-| 'try' Binding_AnyStatement 'catch' ButExpr AlwaysPart(BalStatement)
-| 'select' Binding_AnyStatement 'in' Cases
+| 'try' Binding_AnyStatement 'but' be=ButExpr apb=AlwaysPart_BalStatement
+| 'try' Binding_AnyStatement 'catch' be=ButExpr apb=AlwaysPart_BalStatement
+| 'select' Binding_AnyStatement 'in' c=Cases
 | 'do' Binding_BalStatement
 | 'delay' Binding_BalStatement
 | 'reference' Binding_BalStatement
-| 'generate' GenBound Binding_BalStatement
+| 'generate' GenBound bbs5=Binding_BalStatement
 | 'assert' Binding_BalStatement
 | 'iterate' Name?
 | 'break' Name?
@@ -757,77 +772,72 @@ Flow_BalStatement:
 | 'never'
 ;
 
-//GenBound
-//: Nothing
-//| KW_To CommaItem KW_Of
-//{ $$ = $2; }
-//;
+GenBound hidden(WS,KW_NEWLINE):
+  ('to' CommaItem 'of')?
+;
 
-//ButExpr
-//: Nothing
-//{ $$ = abNew(AB_Sequence, APOS($1), 2, abZip, abZip); }
-//| DeclBinding KW_In Cases
-//{ $$ = abNew(AB_Sequence, APOS($1), 2, $1, $3); }
-//;
+ButExpr hidden(WS,KW_NEWLINE):
+  (db=DeclBinding 'in' ca=Cases)?
+;
 
-//Cases
-//: Binding(Collection)
-//;
+Cases hidden(WS,KW_NEWLINE):
+ Binding_Collection
+;
 
 /* Substituted Rules in Xtext:
-AlwaysPart(XX) -> AlwaysPart_AnyStatement
-               or AlwaysPart_BalStatement */
-//AlwaysPart(XX)
-//: KW_Always Binding(XX)
-//{ (void)parseDeprecated(KW_Always, abNewNothing(TPOS($1))); $$ = $2; }
-//| KW_Finally Binding(XX)
-//{ $$ = $2; }
-//| Nothing
+* AlwaysPart(XX) -> AlwaysPart_AnyStatement
+*                or AlwaysPart_BalStatement
+* AlwaysPart(XX)
+* : KW_Always Binding(XX)
+* { (void)parseDeprecated(KW_Always, abNewNothing(TPOS($1))); $$ = $2; }
+* | KW_Finally Binding(XX)
+* { $$ = $2; }
+* | Nothing
 //;
+*/
+AlwaysPart_AnyStatement hidden(WS,KW_NEWLINE):
+ ('always' Binding_AnyStatement
+| 'finally' Binding_AnyStatement)?
+;
+
+AlwaysPart_BalStatement hidden(WS,KW_NEWLINE):
+( 'always' Binding_BalStatement
+| 'finally' Binding_BalStatement)?
+;
 
 /*
  * Iterators
  */
 Collection hidden(WS,KW_NEWLINE):
-	'temp25'
-// Infixed
-//| Infixed Iterators
-//{ $$ = abNewCollectOL(APOS($1),$1,$2); listFree(AbSyn)($2); }
+ Infixed i=Iterators?
 ;
 
-//Iterators<ablist>
-//: Iterators1
-//{ $$ = listNReverse(AbSyn)($1); }
-//;
+Iterators hidden(WS,KW_NEWLINE):
+ Iterators1
+;
 
-//Iterators1<ablist>
-//: Iterator
-//{ $$ = listCons(AbSyn)($1, NULL); }
-//| Iterators1 Iterator
-//{ $$ = listCons(AbSyn)($2, $1); }
-//;
+Iterators1 hidden(WS,KW_NEWLINE):
+	'temp27'
+// left recursive when following uncommented
+// Iterator
+//| Iterators1 itr=Iterator
+;
 
-//Iterator
-//: KW_For ForLhs KW_In Infixed opt(SuchthatPart)
-//{ $$ = abNewFor(TPOS($1),$2,$4,$5); }
-//| KW_While Infixed
-//{ $$ = abNewWhile(TPOS($1),TEST($2)); }
-//;
+Iterator
+: 'for' ForLhs 'in' i=Infixed sp=SuchthatPart?
+| 'while' Infixed
+;
 
-//ForLhs
-//: Infixed
-//| KW_Free Infixed
-//{ $$ = abNewFree(TPOS($1), $2); }
-//| KW_Local Infixed
-//{ $$ = abNewLocal(TPOS($1), $2); }
-//| KW_Fluid Infixed
-//{ $$ = abNewFluid(TPOS($1), $2); }
-//;
+ForLhs
+: Infixed
+| 'free' Infixed
+| 'local' Infixed
+| 'fluid' Infixed
+;
 
 SuchthatPart hidden(WS,KW_NEWLINE):
 	'temp30'
-//: KW_Bar Infixed
-//{ $$ = TEST($2); }
+ KW_BAR Infixed
 ;
 
 /*
@@ -835,8 +845,10 @@ SuchthatPart hidden(WS,KW_NEWLINE):
  */
 
 Infixed hidden(WS,KW_NEWLINE):
- InfixedExpr DeclPart*
- | Block
+	'temp31'
+// causes constraint error when following is uncommented
+// InfixedExpr DeclPart*
+// | Block
 ;
 
 InfixedExpr hidden(WS,KW_NEWLINE):
@@ -956,8 +968,7 @@ E14 hidden(WS,KW_NEWLINE):
 ;
 
 E15 hidden(WS,KW_NEWLINE):
-	'temp47'
-//Application
+  Application
 ;
 
 
@@ -1131,9 +1142,8 @@ Enclosure
 ;
 
 Block hidden(WS,KW_NEWLINE):
-	'temp65'
 // Piled(Expression)|
-//Curly_Labeled
+  Curly_Labeled
 ;
 
 Parened hidden(WS,KW_NEWLINE):
@@ -1364,11 +1374,11 @@ enlist1_InfixedExpr_Comma_AB hidden(WS,KW_NEWLINE):
 * ;
 */
 enlister1_CommaItem_Comma hidden(WS,KW_NEWLINE):
-  CommaItem (KW_COMMA CommaItem)*
+  CommaItem (KW_COMMA ci=CommaItem)*
 ;
 
 enlister1_Infixed_Comma hidden(WS,KW_NEWLINE):
-  Infixed (KW_COMMA Infixed)*
+  Infixed (KW_COMMA i=Infixed)*
 ;
 
 enlister1_InfixedExpr_Comma hidden(WS,KW_NEWLINE):

@@ -67,6 +67,30 @@ public class EditorFactoryImpl extends EFactoryImpl implements EditorFactory
       case EditorPackage.MODEL: return createModel();
       case EditorPackage.EXPRESSION: return createExpression();
       case EditorPackage.LABELED: return createLabeled();
+      case EditorPackage.DECLARATION: return createDeclaration();
+      case EditorPackage.EXPORT_DECL: return createExportDecl();
+      case EditorPackage.FROM_PART: return createFromPart();
+      case EditorPackage.MACRO_BODY: return createMacroBody();
+      case EditorPackage.SIG: return createSig();
+      case EditorPackage.COMMA: return createComma();
+      case EditorPackage.COMMA_ITEM: return createCommaItem();
+      case EditorPackage.DECL_BINDING: return createDeclBinding();
+      case EditorPackage.BINDING_ANY_STATEMENT: return createBinding_AnyStatement();
+      case EditorPackage.BINDING_BAL_STATEMENT: return createBinding_BalStatement();
+      case EditorPackage.BINDING_COLLECTION: return createBinding_Collection();
+      case EditorPackage.BINDING_LINFIXED_ANY_STATEMENT: return createBindingL_Infixed_AnyStatement();
+      case EditorPackage.BINDING_LINFIXED_BAL_STATEMENT: return createBindingL_Infixed_BalStatement();
+      case EditorPackage.BINDING_LINFIXED_COLLECTION: return createBindingL_Infixed_Collection();
+      case EditorPackage.BINDING_RINFIXED_EXPRS_DECL_ANY_STATEMENT: return createBindingR_InfixedExprsDecl_AnyStatement();
+      case EditorPackage.FLOW_ANY_STATEMENT: return createFlow_AnyStatement();
+      case EditorPackage.FLOW_BAL_STATEMENT: return createFlow_BalStatement();
+      case EditorPackage.GEN_BOUND: return createGenBound();
+      case EditorPackage.BUT_EXPR: return createButExpr();
+      case EditorPackage.CASES: return createCases();
+      case EditorPackage.ALWAYS_PART_ANY_STATEMENT: return createAlwaysPart_AnyStatement();
+      case EditorPackage.ALWAYS_PART_BAL_STATEMENT: return createAlwaysPart_BalStatement();
+      case EditorPackage.COLLECTION: return createCollection();
+      case EditorPackage.ITERATOR: return createIterator();
       case EditorPackage.OP_QUAL_TAIL: return createOpQualTail();
       case EditorPackage.OP: return createOp();
       case EditorPackage.NAKED_OP: return createNakedOp();
@@ -82,8 +106,10 @@ public class EditorFactoryImpl extends EFactoryImpl implements EditorFactory
       case EditorPackage.JLEFT_ATOM: return createJleft_Atom();
       case EditorPackage.MOLECULE: return createMolecule();
       case EditorPackage.ENCLOSURE: return createEnclosure();
+      case EditorPackage.DECL_MOLECULE: return createDeclMolecule();
       case EditorPackage.BLOCK_MOLECULE: return createBlockMolecule();
       case EditorPackage.BLOCK_ENCLOSURE: return createBlockEnclosure();
+      case EditorPackage.BLOCK: return createBlock();
       case EditorPackage.PARENED: return createParened();
       case EditorPackage.BRACKETED: return createBracketed();
       case EditorPackage.QUOTED_IDS: return createQuotedIds();
@@ -107,6 +133,10 @@ public class EditorFactoryImpl extends EFactoryImpl implements EditorFactory
       case EditorPackage.QUAL_OP_QUOTIENT_TOK: return createQualOp_QuotientTok();
       case EditorPackage.QUAL_OP_TIMES_TOK: return createQualOp_TimesTok();
       case EditorPackage.QUAL_OP_POWER_TOK: return createQualOp_PowerTok();
+      case EditorPackage.ENLIST1_COMMA_ITEM_COMMA_AB: return createenlist1_CommaItem_Comma_AB();
+      case EditorPackage.ENLIST1_INFIXED_COMMA_AB: return createenlist1_Infixed_Comma_AB();
+      case EditorPackage.ENLISTER1_COMMA_ITEM_COMMA: return createenlister1_CommaItem_Comma();
+      case EditorPackage.ENLISTER1_INFIXED_COMMA: return createenlister1_Infixed_Comma();
       case EditorPackage.ENLIST1A_LABELED_SEMICOLON_AB: return createenlist1a_Labeled_Semicolon_AB();
       case EditorPackage.ENLISTER1A_LABELED_SEMICOLON: return createenlister1a_Labeled_Semicolon();
       case EditorPackage.CURLY_LABELED: return createCurly_Labeled();
@@ -156,6 +186,270 @@ public class EditorFactoryImpl extends EFactoryImpl implements EditorFactory
   {
     LabeledImpl labeled = new LabeledImpl();
     return labeled;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Declaration createDeclaration()
+  {
+    DeclarationImpl declaration = new DeclarationImpl();
+    return declaration;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public ExportDecl createExportDecl()
+  {
+    ExportDeclImpl exportDecl = new ExportDeclImpl();
+    return exportDecl;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public FromPart createFromPart()
+  {
+    FromPartImpl fromPart = new FromPartImpl();
+    return fromPart;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public MacroBody createMacroBody()
+  {
+    MacroBodyImpl macroBody = new MacroBodyImpl();
+    return macroBody;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Sig createSig()
+  {
+    SigImpl sig = new SigImpl();
+    return sig;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Comma createComma()
+  {
+    CommaImpl comma = new CommaImpl();
+    return comma;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public CommaItem createCommaItem()
+  {
+    CommaItemImpl commaItem = new CommaItemImpl();
+    return commaItem;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public DeclBinding createDeclBinding()
+  {
+    DeclBindingImpl declBinding = new DeclBindingImpl();
+    return declBinding;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Binding_AnyStatement createBinding_AnyStatement()
+  {
+    Binding_AnyStatementImpl binding_AnyStatement = new Binding_AnyStatementImpl();
+    return binding_AnyStatement;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Binding_BalStatement createBinding_BalStatement()
+  {
+    Binding_BalStatementImpl binding_BalStatement = new Binding_BalStatementImpl();
+    return binding_BalStatement;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Binding_Collection createBinding_Collection()
+  {
+    Binding_CollectionImpl binding_Collection = new Binding_CollectionImpl();
+    return binding_Collection;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public BindingL_Infixed_AnyStatement createBindingL_Infixed_AnyStatement()
+  {
+    BindingL_Infixed_AnyStatementImpl bindingL_Infixed_AnyStatement = new BindingL_Infixed_AnyStatementImpl();
+    return bindingL_Infixed_AnyStatement;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public BindingL_Infixed_BalStatement createBindingL_Infixed_BalStatement()
+  {
+    BindingL_Infixed_BalStatementImpl bindingL_Infixed_BalStatement = new BindingL_Infixed_BalStatementImpl();
+    return bindingL_Infixed_BalStatement;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public BindingL_Infixed_Collection createBindingL_Infixed_Collection()
+  {
+    BindingL_Infixed_CollectionImpl bindingL_Infixed_Collection = new BindingL_Infixed_CollectionImpl();
+    return bindingL_Infixed_Collection;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public BindingR_InfixedExprsDecl_AnyStatement createBindingR_InfixedExprsDecl_AnyStatement()
+  {
+    BindingR_InfixedExprsDecl_AnyStatementImpl bindingR_InfixedExprsDecl_AnyStatement = new BindingR_InfixedExprsDecl_AnyStatementImpl();
+    return bindingR_InfixedExprsDecl_AnyStatement;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Flow_AnyStatement createFlow_AnyStatement()
+  {
+    Flow_AnyStatementImpl flow_AnyStatement = new Flow_AnyStatementImpl();
+    return flow_AnyStatement;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Flow_BalStatement createFlow_BalStatement()
+  {
+    Flow_BalStatementImpl flow_BalStatement = new Flow_BalStatementImpl();
+    return flow_BalStatement;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public GenBound createGenBound()
+  {
+    GenBoundImpl genBound = new GenBoundImpl();
+    return genBound;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public ButExpr createButExpr()
+  {
+    ButExprImpl butExpr = new ButExprImpl();
+    return butExpr;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Cases createCases()
+  {
+    CasesImpl cases = new CasesImpl();
+    return cases;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public AlwaysPart_AnyStatement createAlwaysPart_AnyStatement()
+  {
+    AlwaysPart_AnyStatementImpl alwaysPart_AnyStatement = new AlwaysPart_AnyStatementImpl();
+    return alwaysPart_AnyStatement;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public AlwaysPart_BalStatement createAlwaysPart_BalStatement()
+  {
+    AlwaysPart_BalStatementImpl alwaysPart_BalStatement = new AlwaysPart_BalStatementImpl();
+    return alwaysPart_BalStatement;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Collection createCollection()
+  {
+    CollectionImpl collection = new CollectionImpl();
+    return collection;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Iterator createIterator()
+  {
+    IteratorImpl iterator = new IteratorImpl();
+    return iterator;
   }
 
   /**
@@ -328,6 +622,17 @@ public class EditorFactoryImpl extends EFactoryImpl implements EditorFactory
    * <!-- end-user-doc -->
    * @generated
    */
+  public DeclMolecule createDeclMolecule()
+  {
+    DeclMoleculeImpl declMolecule = new DeclMoleculeImpl();
+    return declMolecule;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public BlockMolecule createBlockMolecule()
   {
     BlockMoleculeImpl blockMolecule = new BlockMoleculeImpl();
@@ -343,6 +648,17 @@ public class EditorFactoryImpl extends EFactoryImpl implements EditorFactory
   {
     BlockEnclosureImpl blockEnclosure = new BlockEnclosureImpl();
     return blockEnclosure;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Block createBlock()
+  {
+    BlockImpl block = new BlockImpl();
+    return block;
   }
 
   /**
@@ -596,6 +912,50 @@ public class EditorFactoryImpl extends EFactoryImpl implements EditorFactory
   {
     QualOp_PowerTokImpl qualOp_PowerTok = new QualOp_PowerTokImpl();
     return qualOp_PowerTok;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public enlist1_CommaItem_Comma_AB createenlist1_CommaItem_Comma_AB()
+  {
+    enlist1_CommaItem_Comma_ABImpl enlist1_CommaItem_Comma_AB = new enlist1_CommaItem_Comma_ABImpl();
+    return enlist1_CommaItem_Comma_AB;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public enlist1_Infixed_Comma_AB createenlist1_Infixed_Comma_AB()
+  {
+    enlist1_Infixed_Comma_ABImpl enlist1_Infixed_Comma_AB = new enlist1_Infixed_Comma_ABImpl();
+    return enlist1_Infixed_Comma_AB;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public enlister1_CommaItem_Comma createenlister1_CommaItem_Comma()
+  {
+    enlister1_CommaItem_CommaImpl enlister1_CommaItem_Comma = new enlister1_CommaItem_CommaImpl();
+    return enlister1_CommaItem_Comma;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public enlister1_Infixed_Comma createenlister1_Infixed_Comma()
+  {
+    enlister1_Infixed_CommaImpl enlister1_Infixed_Comma = new enlister1_Infixed_CommaImpl();
+    return enlister1_Infixed_Comma;
   }
 
   /**

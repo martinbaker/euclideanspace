@@ -50,6 +50,222 @@ public interface EditorFactory extends EFactory
   Labeled createLabeled();
 
   /**
+   * Returns a new object of class '<em>Declaration</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Declaration</em>'.
+   * @generated
+   */
+  Declaration createDeclaration();
+
+  /**
+   * Returns a new object of class '<em>Export Decl</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Export Decl</em>'.
+   * @generated
+   */
+  ExportDecl createExportDecl();
+
+  /**
+   * Returns a new object of class '<em>From Part</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>From Part</em>'.
+   * @generated
+   */
+  FromPart createFromPart();
+
+  /**
+   * Returns a new object of class '<em>Macro Body</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Macro Body</em>'.
+   * @generated
+   */
+  MacroBody createMacroBody();
+
+  /**
+   * Returns a new object of class '<em>Sig</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Sig</em>'.
+   * @generated
+   */
+  Sig createSig();
+
+  /**
+   * Returns a new object of class '<em>Comma</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Comma</em>'.
+   * @generated
+   */
+  Comma createComma();
+
+  /**
+   * Returns a new object of class '<em>Comma Item</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Comma Item</em>'.
+   * @generated
+   */
+  CommaItem createCommaItem();
+
+  /**
+   * Returns a new object of class '<em>Decl Binding</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Decl Binding</em>'.
+   * @generated
+   */
+  DeclBinding createDeclBinding();
+
+  /**
+   * Returns a new object of class '<em>Binding Any Statement</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Binding Any Statement</em>'.
+   * @generated
+   */
+  Binding_AnyStatement createBinding_AnyStatement();
+
+  /**
+   * Returns a new object of class '<em>Binding Bal Statement</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Binding Bal Statement</em>'.
+   * @generated
+   */
+  Binding_BalStatement createBinding_BalStatement();
+
+  /**
+   * Returns a new object of class '<em>Binding Collection</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Binding Collection</em>'.
+   * @generated
+   */
+  Binding_Collection createBinding_Collection();
+
+  /**
+   * Returns a new object of class '<em>Binding LInfixed Any Statement</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Binding LInfixed Any Statement</em>'.
+   * @generated
+   */
+  BindingL_Infixed_AnyStatement createBindingL_Infixed_AnyStatement();
+
+  /**
+   * Returns a new object of class '<em>Binding LInfixed Bal Statement</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Binding LInfixed Bal Statement</em>'.
+   * @generated
+   */
+  BindingL_Infixed_BalStatement createBindingL_Infixed_BalStatement();
+
+  /**
+   * Returns a new object of class '<em>Binding LInfixed Collection</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Binding LInfixed Collection</em>'.
+   * @generated
+   */
+  BindingL_Infixed_Collection createBindingL_Infixed_Collection();
+
+  /**
+   * Returns a new object of class '<em>Binding RInfixed Exprs Decl Any Statement</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Binding RInfixed Exprs Decl Any Statement</em>'.
+   * @generated
+   */
+  BindingR_InfixedExprsDecl_AnyStatement createBindingR_InfixedExprsDecl_AnyStatement();
+
+  /**
+   * Returns a new object of class '<em>Flow Any Statement</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Flow Any Statement</em>'.
+   * @generated
+   */
+  Flow_AnyStatement createFlow_AnyStatement();
+
+  /**
+   * Returns a new object of class '<em>Flow Bal Statement</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Flow Bal Statement</em>'.
+   * @generated
+   */
+  Flow_BalStatement createFlow_BalStatement();
+
+  /**
+   * Returns a new object of class '<em>Gen Bound</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Gen Bound</em>'.
+   * @generated
+   */
+  GenBound createGenBound();
+
+  /**
+   * Returns a new object of class '<em>But Expr</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>But Expr</em>'.
+   * @generated
+   */
+  ButExpr createButExpr();
+
+  /**
+   * Returns a new object of class '<em>Cases</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Cases</em>'.
+   * @generated
+   */
+  Cases createCases();
+
+  /**
+   * Returns a new object of class '<em>Always Part Any Statement</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Always Part Any Statement</em>'.
+   * @generated
+   */
+  AlwaysPart_AnyStatement createAlwaysPart_AnyStatement();
+
+  /**
+   * Returns a new object of class '<em>Always Part Bal Statement</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Always Part Bal Statement</em>'.
+   * @generated
+   */
+  AlwaysPart_BalStatement createAlwaysPart_BalStatement();
+
+  /**
+   * Returns a new object of class '<em>Collection</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Collection</em>'.
+   * @generated
+   */
+  Collection createCollection();
+
+  /**
+   * Returns a new object of class '<em>Iterator</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Iterator</em>'.
+   * @generated
+   */
+  Iterator createIterator();
+
+  /**
    * Returns a new object of class '<em>Op Qual Tail</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -185,6 +401,15 @@ public interface EditorFactory extends EFactory
   Enclosure createEnclosure();
 
   /**
+   * Returns a new object of class '<em>Decl Molecule</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Decl Molecule</em>'.
+   * @generated
+   */
+  DeclMolecule createDeclMolecule();
+
+  /**
    * Returns a new object of class '<em>Block Molecule</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -201,6 +426,15 @@ public interface EditorFactory extends EFactory
    * @generated
    */
   BlockEnclosure createBlockEnclosure();
+
+  /**
+   * Returns a new object of class '<em>Block</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Block</em>'.
+   * @generated
+   */
+  Block createBlock();
 
   /**
    * Returns a new object of class '<em>Parened</em>'.
@@ -408,6 +642,42 @@ public interface EditorFactory extends EFactory
    * @generated
    */
   QualOp_PowerTok createQualOp_PowerTok();
+
+  /**
+   * Returns a new object of class '<em>enlist1 Comma Item Comma AB</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>enlist1 Comma Item Comma AB</em>'.
+   * @generated
+   */
+  enlist1_CommaItem_Comma_AB createenlist1_CommaItem_Comma_AB();
+
+  /**
+   * Returns a new object of class '<em>enlist1 Infixed Comma AB</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>enlist1 Infixed Comma AB</em>'.
+   * @generated
+   */
+  enlist1_Infixed_Comma_AB createenlist1_Infixed_Comma_AB();
+
+  /**
+   * Returns a new object of class '<em>enlister1 Comma Item Comma</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>enlister1 Comma Item Comma</em>'.
+   * @generated
+   */
+  enlister1_CommaItem_Comma createenlister1_CommaItem_Comma();
+
+  /**
+   * Returns a new object of class '<em>enlister1 Infixed Comma</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>enlister1 Infixed Comma</em>'.
+   * @generated
+   */
+  enlister1_Infixed_Comma createenlister1_Infixed_Comma();
 
   /**
    * Returns a new object of class '<em>enlist1a Labeled Semicolon AB</em>'.

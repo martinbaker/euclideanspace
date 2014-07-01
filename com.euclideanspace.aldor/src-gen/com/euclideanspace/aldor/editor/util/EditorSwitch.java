@@ -101,6 +101,249 @@ public class EditorSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case EditorPackage.DECLARATION:
+      {
+        Declaration declaration = (Declaration)theEObject;
+        T result = caseDeclaration(declaration);
+        if (result == null) result = caseLabeled(declaration);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case EditorPackage.EXPORT_DECL:
+      {
+        ExportDecl exportDecl = (ExportDecl)theEObject;
+        T result = caseExportDecl(exportDecl);
+        if (result == null) result = caseMacroBody(exportDecl);
+        if (result == null) result = caseDeclaration(exportDecl);
+        if (result == null) result = caseLabeled(exportDecl);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case EditorPackage.FROM_PART:
+      {
+        FromPart fromPart = (FromPart)theEObject;
+        T result = caseFromPart(fromPart);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case EditorPackage.MACRO_BODY:
+      {
+        MacroBody macroBody = (MacroBody)theEObject;
+        T result = caseMacroBody(macroBody);
+        if (result == null) result = caseDeclaration(macroBody);
+        if (result == null) result = caseLabeled(macroBody);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case EditorPackage.SIG:
+      {
+        Sig sig = (Sig)theEObject;
+        T result = caseSig(sig);
+        if (result == null) result = caseExportDecl(sig);
+        if (result == null) result = caseLabeled(sig);
+        if (result == null) result = caseMacroBody(sig);
+        if (result == null) result = caseDeclaration(sig);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case EditorPackage.COMMA:
+      {
+        Comma comma = (Comma)theEObject;
+        T result = caseComma(comma);
+        if (result == null) result = caseLabeled(comma);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case EditorPackage.COMMA_ITEM:
+      {
+        CommaItem commaItem = (CommaItem)theEObject;
+        T result = caseCommaItem(commaItem);
+        if (result == null) result = caseGenBound(commaItem);
+        if (result == null) result = caseenlister1_CommaItem_Comma(commaItem);
+        if (result == null) result = caseFlow_AnyStatement(commaItem);
+        if (result == null) result = caseFlow_BalStatement(commaItem);
+        if (result == null) result = caseenlist1_CommaItem_Comma_AB(commaItem);
+        if (result == null) result = caseComma(commaItem);
+        if (result == null) result = caseLabeled(commaItem);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case EditorPackage.DECL_BINDING:
+      {
+        DeclBinding declBinding = (DeclBinding)theEObject;
+        T result = caseDeclBinding(declBinding);
+        if (result == null) result = caseSig(declBinding);
+        if (result == null) result = caseExportDecl(declBinding);
+        if (result == null) result = caseLabeled(declBinding);
+        if (result == null) result = caseMacroBody(declBinding);
+        if (result == null) result = caseDeclaration(declBinding);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case EditorPackage.BINDING_ANY_STATEMENT:
+      {
+        Binding_AnyStatement binding_AnyStatement = (Binding_AnyStatement)theEObject;
+        T result = caseBinding_AnyStatement(binding_AnyStatement);
+        if (result == null) result = caseCommaItem(binding_AnyStatement);
+        if (result == null) result = caseBindingR_InfixedExprsDecl_AnyStatement(binding_AnyStatement);
+        if (result == null) result = caseAlwaysPart_AnyStatement(binding_AnyStatement);
+        if (result == null) result = caseGenBound(binding_AnyStatement);
+        if (result == null) result = caseenlister1_CommaItem_Comma(binding_AnyStatement);
+        if (result == null) result = caseDeclBinding(binding_AnyStatement);
+        if (result == null) result = caseFlow_AnyStatement(binding_AnyStatement);
+        if (result == null) result = caseFlow_BalStatement(binding_AnyStatement);
+        if (result == null) result = caseenlist1_CommaItem_Comma_AB(binding_AnyStatement);
+        if (result == null) result = caseSig(binding_AnyStatement);
+        if (result == null) result = caseComma(binding_AnyStatement);
+        if (result == null) result = caseExportDecl(binding_AnyStatement);
+        if (result == null) result = caseLabeled(binding_AnyStatement);
+        if (result == null) result = caseMacroBody(binding_AnyStatement);
+        if (result == null) result = caseDeclaration(binding_AnyStatement);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case EditorPackage.BINDING_BAL_STATEMENT:
+      {
+        Binding_BalStatement binding_BalStatement = (Binding_BalStatement)theEObject;
+        T result = caseBinding_BalStatement(binding_BalStatement);
+        if (result == null) result = caseFlow_BalStatement(binding_BalStatement);
+        if (result == null) result = caseAlwaysPart_BalStatement(binding_BalStatement);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case EditorPackage.BINDING_COLLECTION:
+      {
+        Binding_Collection binding_Collection = (Binding_Collection)theEObject;
+        T result = caseBinding_Collection(binding_Collection);
+        if (result == null) result = caseCases(binding_Collection);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case EditorPackage.BINDING_LINFIXED_ANY_STATEMENT:
+      {
+        BindingL_Infixed_AnyStatement bindingL_Infixed_AnyStatement = (BindingL_Infixed_AnyStatement)theEObject;
+        T result = caseBindingL_Infixed_AnyStatement(bindingL_Infixed_AnyStatement);
+        if (result == null) result = caseBinding_AnyStatement(bindingL_Infixed_AnyStatement);
+        if (result == null) result = caseCommaItem(bindingL_Infixed_AnyStatement);
+        if (result == null) result = caseBindingR_InfixedExprsDecl_AnyStatement(bindingL_Infixed_AnyStatement);
+        if (result == null) result = caseAlwaysPart_AnyStatement(bindingL_Infixed_AnyStatement);
+        if (result == null) result = caseGenBound(bindingL_Infixed_AnyStatement);
+        if (result == null) result = caseenlister1_CommaItem_Comma(bindingL_Infixed_AnyStatement);
+        if (result == null) result = caseDeclBinding(bindingL_Infixed_AnyStatement);
+        if (result == null) result = caseFlow_AnyStatement(bindingL_Infixed_AnyStatement);
+        if (result == null) result = caseFlow_BalStatement(bindingL_Infixed_AnyStatement);
+        if (result == null) result = caseenlist1_CommaItem_Comma_AB(bindingL_Infixed_AnyStatement);
+        if (result == null) result = caseSig(bindingL_Infixed_AnyStatement);
+        if (result == null) result = caseComma(bindingL_Infixed_AnyStatement);
+        if (result == null) result = caseExportDecl(bindingL_Infixed_AnyStatement);
+        if (result == null) result = caseLabeled(bindingL_Infixed_AnyStatement);
+        if (result == null) result = caseMacroBody(bindingL_Infixed_AnyStatement);
+        if (result == null) result = caseDeclaration(bindingL_Infixed_AnyStatement);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case EditorPackage.BINDING_LINFIXED_BAL_STATEMENT:
+      {
+        BindingL_Infixed_BalStatement bindingL_Infixed_BalStatement = (BindingL_Infixed_BalStatement)theEObject;
+        T result = caseBindingL_Infixed_BalStatement(bindingL_Infixed_BalStatement);
+        if (result == null) result = caseBinding_BalStatement(bindingL_Infixed_BalStatement);
+        if (result == null) result = caseFlow_BalStatement(bindingL_Infixed_BalStatement);
+        if (result == null) result = caseAlwaysPart_BalStatement(bindingL_Infixed_BalStatement);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case EditorPackage.BINDING_LINFIXED_COLLECTION:
+      {
+        BindingL_Infixed_Collection bindingL_Infixed_Collection = (BindingL_Infixed_Collection)theEObject;
+        T result = caseBindingL_Infixed_Collection(bindingL_Infixed_Collection);
+        if (result == null) result = caseBinding_Collection(bindingL_Infixed_Collection);
+        if (result == null) result = caseCases(bindingL_Infixed_Collection);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case EditorPackage.BINDING_RINFIXED_EXPRS_DECL_ANY_STATEMENT:
+      {
+        BindingR_InfixedExprsDecl_AnyStatement bindingR_InfixedExprsDecl_AnyStatement = (BindingR_InfixedExprsDecl_AnyStatement)theEObject;
+        T result = caseBindingR_InfixedExprsDecl_AnyStatement(bindingR_InfixedExprsDecl_AnyStatement);
+        if (result == null) result = caseDeclBinding(bindingR_InfixedExprsDecl_AnyStatement);
+        if (result == null) result = caseSig(bindingR_InfixedExprsDecl_AnyStatement);
+        if (result == null) result = caseExportDecl(bindingR_InfixedExprsDecl_AnyStatement);
+        if (result == null) result = caseLabeled(bindingR_InfixedExprsDecl_AnyStatement);
+        if (result == null) result = caseMacroBody(bindingR_InfixedExprsDecl_AnyStatement);
+        if (result == null) result = caseDeclaration(bindingR_InfixedExprsDecl_AnyStatement);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case EditorPackage.FLOW_ANY_STATEMENT:
+      {
+        Flow_AnyStatement flow_AnyStatement = (Flow_AnyStatement)theEObject;
+        T result = caseFlow_AnyStatement(flow_AnyStatement);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case EditorPackage.FLOW_BAL_STATEMENT:
+      {
+        Flow_BalStatement flow_BalStatement = (Flow_BalStatement)theEObject;
+        T result = caseFlow_BalStatement(flow_BalStatement);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case EditorPackage.GEN_BOUND:
+      {
+        GenBound genBound = (GenBound)theEObject;
+        T result = caseGenBound(genBound);
+        if (result == null) result = caseFlow_AnyStatement(genBound);
+        if (result == null) result = caseFlow_BalStatement(genBound);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case EditorPackage.BUT_EXPR:
+      {
+        ButExpr butExpr = (ButExpr)theEObject;
+        T result = caseButExpr(butExpr);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case EditorPackage.CASES:
+      {
+        Cases cases = (Cases)theEObject;
+        T result = caseCases(cases);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case EditorPackage.ALWAYS_PART_ANY_STATEMENT:
+      {
+        AlwaysPart_AnyStatement alwaysPart_AnyStatement = (AlwaysPart_AnyStatement)theEObject;
+        T result = caseAlwaysPart_AnyStatement(alwaysPart_AnyStatement);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case EditorPackage.ALWAYS_PART_BAL_STATEMENT:
+      {
+        AlwaysPart_BalStatement alwaysPart_BalStatement = (AlwaysPart_BalStatement)theEObject;
+        T result = caseAlwaysPart_BalStatement(alwaysPart_BalStatement);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case EditorPackage.COLLECTION:
+      {
+        Collection collection = (Collection)theEObject;
+        T result = caseCollection(collection);
+        if (result == null) result = caseBindingL_Infixed_Collection(collection);
+        if (result == null) result = caseFlow_AnyStatement(collection);
+        if (result == null) result = caseFlow_BalStatement(collection);
+        if (result == null) result = caseBinding_Collection(collection);
+        if (result == null) result = caseCases(collection);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case EditorPackage.ITERATOR:
+      {
+        Iterator iterator = (Iterator)theEObject;
+        T result = caseIterator(iterator);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case EditorPackage.OP_QUAL_TAIL:
       {
         OpQualTail opQualTail = (OpQualTail)theEObject;
@@ -137,6 +380,8 @@ public class EditorSwitch<T> extends Switch<T>
         NakedOp nakedOp = (NakedOp)theEObject;
         T result = caseNakedOp(nakedOp);
         if (result == null) result = caseName(nakedOp);
+        if (result == null) result = caseFlow_AnyStatement(nakedOp);
+        if (result == null) result = caseFlow_BalStatement(nakedOp);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -238,6 +483,13 @@ public class EditorSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case EditorPackage.DECL_MOLECULE:
+      {
+        DeclMolecule declMolecule = (DeclMolecule)theEObject;
+        T result = caseDeclMolecule(declMolecule);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case EditorPackage.BLOCK_MOLECULE:
       {
         BlockMolecule blockMolecule = (BlockMolecule)theEObject;
@@ -251,6 +503,23 @@ public class EditorSwitch<T> extends Switch<T>
         T result = caseBlockEnclosure(blockEnclosure);
         if (result == null) result = caseJleft_Molecule(blockEnclosure);
         if (result == null) result = caseJleft_Atom(blockEnclosure);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case EditorPackage.BLOCK:
+      {
+        Block block = (Block)theEObject;
+        T result = caseBlock(block);
+        if (result == null) result = caseSig(block);
+        if (result == null) result = caseDeclMolecule(block);
+        if (result == null) result = caseBlockMolecule(block);
+        if (result == null) result = caseBlockEnclosure(block);
+        if (result == null) result = caseExportDecl(block);
+        if (result == null) result = caseJleft_Molecule(block);
+        if (result == null) result = caseJleft_Atom(block);
+        if (result == null) result = caseLabeled(block);
+        if (result == null) result = caseMacroBody(block);
+        if (result == null) result = caseDeclaration(block);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -323,6 +592,8 @@ public class EditorSwitch<T> extends Switch<T>
       {
         Name name = (Name)theEObject;
         T result = caseName(name);
+        if (result == null) result = caseFlow_AnyStatement(name);
+        if (result == null) result = caseFlow_BalStatement(name);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -331,6 +602,8 @@ public class EditorSwitch<T> extends Switch<T>
         Id id = (Id)theEObject;
         T result = caseId(id);
         if (result == null) result = caseName(id);
+        if (result == null) result = caseFlow_AnyStatement(id);
+        if (result == null) result = caseFlow_BalStatement(id);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -340,6 +613,8 @@ public class EditorSwitch<T> extends Switch<T>
         T result = caseUnqualOp_ArrowTok(unqualOp_ArrowTok);
         if (result == null) result = caseNakedOp(unqualOp_ArrowTok);
         if (result == null) result = caseName(unqualOp_ArrowTok);
+        if (result == null) result = caseFlow_AnyStatement(unqualOp_ArrowTok);
+        if (result == null) result = caseFlow_BalStatement(unqualOp_ArrowTok);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -349,6 +624,8 @@ public class EditorSwitch<T> extends Switch<T>
         T result = caseUnqualOp_LatticeTok(unqualOp_LatticeTok);
         if (result == null) result = caseNakedOp(unqualOp_LatticeTok);
         if (result == null) result = caseName(unqualOp_LatticeTok);
+        if (result == null) result = caseFlow_AnyStatement(unqualOp_LatticeTok);
+        if (result == null) result = caseFlow_BalStatement(unqualOp_LatticeTok);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -358,6 +635,8 @@ public class EditorSwitch<T> extends Switch<T>
         T result = caseUnqualOp_RelationTok(unqualOp_RelationTok);
         if (result == null) result = caseNakedOp(unqualOp_RelationTok);
         if (result == null) result = caseName(unqualOp_RelationTok);
+        if (result == null) result = caseFlow_AnyStatement(unqualOp_RelationTok);
+        if (result == null) result = caseFlow_BalStatement(unqualOp_RelationTok);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -367,6 +646,8 @@ public class EditorSwitch<T> extends Switch<T>
         T result = caseUnqualOp_SegTok(unqualOp_SegTok);
         if (result == null) result = caseNakedOp(unqualOp_SegTok);
         if (result == null) result = caseName(unqualOp_SegTok);
+        if (result == null) result = caseFlow_AnyStatement(unqualOp_SegTok);
+        if (result == null) result = caseFlow_BalStatement(unqualOp_SegTok);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -376,6 +657,8 @@ public class EditorSwitch<T> extends Switch<T>
         T result = caseUnqualOp_PlusTok(unqualOp_PlusTok);
         if (result == null) result = caseNakedOp(unqualOp_PlusTok);
         if (result == null) result = caseName(unqualOp_PlusTok);
+        if (result == null) result = caseFlow_AnyStatement(unqualOp_PlusTok);
+        if (result == null) result = caseFlow_BalStatement(unqualOp_PlusTok);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -385,6 +668,8 @@ public class EditorSwitch<T> extends Switch<T>
         T result = caseUnqualOp_QuotientTok(unqualOp_QuotientTok);
         if (result == null) result = caseNakedOp(unqualOp_QuotientTok);
         if (result == null) result = caseName(unqualOp_QuotientTok);
+        if (result == null) result = caseFlow_AnyStatement(unqualOp_QuotientTok);
+        if (result == null) result = caseFlow_BalStatement(unqualOp_QuotientTok);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -394,6 +679,8 @@ public class EditorSwitch<T> extends Switch<T>
         T result = caseUnqualOp_TimesTok(unqualOp_TimesTok);
         if (result == null) result = caseNakedOp(unqualOp_TimesTok);
         if (result == null) result = caseName(unqualOp_TimesTok);
+        if (result == null) result = caseFlow_AnyStatement(unqualOp_TimesTok);
+        if (result == null) result = caseFlow_BalStatement(unqualOp_TimesTok);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -403,6 +690,8 @@ public class EditorSwitch<T> extends Switch<T>
         T result = caseUnqualOp_PowerTok(unqualOp_PowerTok);
         if (result == null) result = caseNakedOp(unqualOp_PowerTok);
         if (result == null) result = caseName(unqualOp_PowerTok);
+        if (result == null) result = caseFlow_AnyStatement(unqualOp_PowerTok);
+        if (result == null) result = caseFlow_BalStatement(unqualOp_PowerTok);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -478,6 +767,42 @@ public class EditorSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case EditorPackage.ENLIST1_COMMA_ITEM_COMMA_AB:
+      {
+        enlist1_CommaItem_Comma_AB enlist1_CommaItem_Comma_AB = (enlist1_CommaItem_Comma_AB)theEObject;
+        T result = caseenlist1_CommaItem_Comma_AB(enlist1_CommaItem_Comma_AB);
+        if (result == null) result = caseComma(enlist1_CommaItem_Comma_AB);
+        if (result == null) result = caseLabeled(enlist1_CommaItem_Comma_AB);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case EditorPackage.ENLIST1_INFIXED_COMMA_AB:
+      {
+        enlist1_Infixed_Comma_AB enlist1_Infixed_Comma_AB = (enlist1_Infixed_Comma_AB)theEObject;
+        T result = caseenlist1_Infixed_Comma_AB(enlist1_Infixed_Comma_AB);
+        if (result == null) result = caseFromPart(enlist1_Infixed_Comma_AB);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case EditorPackage.ENLISTER1_COMMA_ITEM_COMMA:
+      {
+        enlister1_CommaItem_Comma enlister1_CommaItem_Comma = (enlister1_CommaItem_Comma)theEObject;
+        T result = caseenlister1_CommaItem_Comma(enlister1_CommaItem_Comma);
+        if (result == null) result = caseenlist1_CommaItem_Comma_AB(enlister1_CommaItem_Comma);
+        if (result == null) result = caseComma(enlister1_CommaItem_Comma);
+        if (result == null) result = caseLabeled(enlister1_CommaItem_Comma);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case EditorPackage.ENLISTER1_INFIXED_COMMA:
+      {
+        enlister1_Infixed_Comma enlister1_Infixed_Comma = (enlister1_Infixed_Comma)theEObject;
+        T result = caseenlister1_Infixed_Comma(enlister1_Infixed_Comma);
+        if (result == null) result = caseenlist1_Infixed_Comma_AB(enlister1_Infixed_Comma);
+        if (result == null) result = caseFromPart(enlister1_Infixed_Comma);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case EditorPackage.ENLIST1A_LABELED_SEMICOLON_AB:
       {
         enlist1a_Labeled_Semicolon_AB enlist1a_Labeled_Semicolon_AB = (enlist1a_Labeled_Semicolon_AB)theEObject;
@@ -515,6 +840,17 @@ public class EditorSwitch<T> extends Switch<T>
       {
         Curly_Labeled curly_Labeled = (Curly_Labeled)theEObject;
         T result = caseCurly_Labeled(curly_Labeled);
+        if (result == null) result = caseBlock(curly_Labeled);
+        if (result == null) result = caseSig(curly_Labeled);
+        if (result == null) result = caseDeclMolecule(curly_Labeled);
+        if (result == null) result = caseBlockMolecule(curly_Labeled);
+        if (result == null) result = caseBlockEnclosure(curly_Labeled);
+        if (result == null) result = caseExportDecl(curly_Labeled);
+        if (result == null) result = caseJleft_Molecule(curly_Labeled);
+        if (result == null) result = caseJleft_Atom(curly_Labeled);
+        if (result == null) result = caseLabeled(curly_Labeled);
+        if (result == null) result = caseMacroBody(curly_Labeled);
+        if (result == null) result = caseDeclaration(curly_Labeled);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -524,6 +860,17 @@ public class EditorSwitch<T> extends Switch<T>
         T result = caseCurlyContents_Labeled(curlyContents_Labeled);
         if (result == null) result = caseModel(curlyContents_Labeled);
         if (result == null) result = caseCurly_Labeled(curlyContents_Labeled);
+        if (result == null) result = caseBlock(curlyContents_Labeled);
+        if (result == null) result = caseSig(curlyContents_Labeled);
+        if (result == null) result = caseDeclMolecule(curlyContents_Labeled);
+        if (result == null) result = caseBlockMolecule(curlyContents_Labeled);
+        if (result == null) result = caseBlockEnclosure(curlyContents_Labeled);
+        if (result == null) result = caseExportDecl(curlyContents_Labeled);
+        if (result == null) result = caseJleft_Molecule(curlyContents_Labeled);
+        if (result == null) result = caseJleft_Atom(curlyContents_Labeled);
+        if (result == null) result = caseLabeled(curlyContents_Labeled);
+        if (result == null) result = caseMacroBody(curlyContents_Labeled);
+        if (result == null) result = caseDeclaration(curlyContents_Labeled);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -534,6 +881,17 @@ public class EditorSwitch<T> extends Switch<T>
         if (result == null) result = caseCurlyContents_Labeled(curlyContentsList_Labeled);
         if (result == null) result = caseModel(curlyContentsList_Labeled);
         if (result == null) result = caseCurly_Labeled(curlyContentsList_Labeled);
+        if (result == null) result = caseBlock(curlyContentsList_Labeled);
+        if (result == null) result = caseSig(curlyContentsList_Labeled);
+        if (result == null) result = caseDeclMolecule(curlyContentsList_Labeled);
+        if (result == null) result = caseBlockMolecule(curlyContentsList_Labeled);
+        if (result == null) result = caseBlockEnclosure(curlyContentsList_Labeled);
+        if (result == null) result = caseExportDecl(curlyContentsList_Labeled);
+        if (result == null) result = caseJleft_Molecule(curlyContentsList_Labeled);
+        if (result == null) result = caseJleft_Atom(curlyContentsList_Labeled);
+        if (result == null) result = caseLabeled(curlyContentsList_Labeled);
+        if (result == null) result = caseMacroBody(curlyContentsList_Labeled);
+        if (result == null) result = caseDeclaration(curlyContentsList_Labeled);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -544,6 +902,8 @@ public class EditorSwitch<T> extends Switch<T>
         if (result == null) result = caseUnqualOp_ArrowTok(arrowTok);
         if (result == null) result = caseNakedOp(arrowTok);
         if (result == null) result = caseName(arrowTok);
+        if (result == null) result = caseFlow_AnyStatement(arrowTok);
+        if (result == null) result = caseFlow_BalStatement(arrowTok);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -554,6 +914,8 @@ public class EditorSwitch<T> extends Switch<T>
         if (result == null) result = caseUnqualOp_LatticeTok(latticeTok);
         if (result == null) result = caseNakedOp(latticeTok);
         if (result == null) result = caseName(latticeTok);
+        if (result == null) result = caseFlow_AnyStatement(latticeTok);
+        if (result == null) result = caseFlow_BalStatement(latticeTok);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -564,6 +926,8 @@ public class EditorSwitch<T> extends Switch<T>
         if (result == null) result = caseUnqualOp_RelationTok(relationTok);
         if (result == null) result = caseNakedOp(relationTok);
         if (result == null) result = caseName(relationTok);
+        if (result == null) result = caseFlow_AnyStatement(relationTok);
+        if (result == null) result = caseFlow_BalStatement(relationTok);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -574,6 +938,8 @@ public class EditorSwitch<T> extends Switch<T>
         if (result == null) result = caseUnqualOp_SegTok(segTok);
         if (result == null) result = caseNakedOp(segTok);
         if (result == null) result = caseName(segTok);
+        if (result == null) result = caseFlow_AnyStatement(segTok);
+        if (result == null) result = caseFlow_BalStatement(segTok);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -584,6 +950,8 @@ public class EditorSwitch<T> extends Switch<T>
         if (result == null) result = caseUnqualOp_PlusTok(plusTok);
         if (result == null) result = caseNakedOp(plusTok);
         if (result == null) result = caseName(plusTok);
+        if (result == null) result = caseFlow_AnyStatement(plusTok);
+        if (result == null) result = caseFlow_BalStatement(plusTok);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -594,6 +962,8 @@ public class EditorSwitch<T> extends Switch<T>
         if (result == null) result = caseUnqualOp_QuotientTok(quotientTok);
         if (result == null) result = caseNakedOp(quotientTok);
         if (result == null) result = caseName(quotientTok);
+        if (result == null) result = caseFlow_AnyStatement(quotientTok);
+        if (result == null) result = caseFlow_BalStatement(quotientTok);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -604,6 +974,8 @@ public class EditorSwitch<T> extends Switch<T>
         if (result == null) result = caseUnqualOp_TimesTok(timesTok);
         if (result == null) result = caseNakedOp(timesTok);
         if (result == null) result = caseName(timesTok);
+        if (result == null) result = caseFlow_AnyStatement(timesTok);
+        if (result == null) result = caseFlow_BalStatement(timesTok);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -614,6 +986,8 @@ public class EditorSwitch<T> extends Switch<T>
         if (result == null) result = caseUnqualOp_PowerTok(powerTok);
         if (result == null) result = caseNakedOp(powerTok);
         if (result == null) result = caseName(powerTok);
+        if (result == null) result = caseFlow_AnyStatement(powerTok);
+        if (result == null) result = caseFlow_BalStatement(powerTok);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -665,6 +1039,390 @@ public class EditorSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseLabeled(Labeled object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Declaration</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Declaration</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseDeclaration(Declaration object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Export Decl</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Export Decl</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseExportDecl(ExportDecl object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>From Part</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>From Part</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseFromPart(FromPart object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Macro Body</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Macro Body</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseMacroBody(MacroBody object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Sig</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Sig</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseSig(Sig object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Comma</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Comma</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseComma(Comma object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Comma Item</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Comma Item</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseCommaItem(CommaItem object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Decl Binding</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Decl Binding</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseDeclBinding(DeclBinding object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Binding Any Statement</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Binding Any Statement</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseBinding_AnyStatement(Binding_AnyStatement object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Binding Bal Statement</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Binding Bal Statement</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseBinding_BalStatement(Binding_BalStatement object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Binding Collection</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Binding Collection</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseBinding_Collection(Binding_Collection object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Binding LInfixed Any Statement</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Binding LInfixed Any Statement</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseBindingL_Infixed_AnyStatement(BindingL_Infixed_AnyStatement object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Binding LInfixed Bal Statement</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Binding LInfixed Bal Statement</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseBindingL_Infixed_BalStatement(BindingL_Infixed_BalStatement object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Binding LInfixed Collection</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Binding LInfixed Collection</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseBindingL_Infixed_Collection(BindingL_Infixed_Collection object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Binding RInfixed Exprs Decl Any Statement</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Binding RInfixed Exprs Decl Any Statement</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseBindingR_InfixedExprsDecl_AnyStatement(BindingR_InfixedExprsDecl_AnyStatement object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Flow Any Statement</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Flow Any Statement</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseFlow_AnyStatement(Flow_AnyStatement object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Flow Bal Statement</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Flow Bal Statement</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseFlow_BalStatement(Flow_BalStatement object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Gen Bound</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Gen Bound</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseGenBound(GenBound object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>But Expr</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>But Expr</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseButExpr(ButExpr object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Cases</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Cases</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseCases(Cases object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Always Part Any Statement</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Always Part Any Statement</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseAlwaysPart_AnyStatement(AlwaysPart_AnyStatement object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Always Part Bal Statement</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Always Part Bal Statement</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseAlwaysPart_BalStatement(AlwaysPart_BalStatement object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Collection</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Collection</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseCollection(Collection object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Iterator</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Iterator</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseIterator(Iterator object)
   {
     return null;
   }
@@ -910,6 +1668,22 @@ public class EditorSwitch<T> extends Switch<T>
   }
 
   /**
+   * Returns the result of interpreting the object as an instance of '<em>Decl Molecule</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Decl Molecule</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseDeclMolecule(DeclMolecule object)
+  {
+    return null;
+  }
+
+  /**
    * Returns the result of interpreting the object as an instance of '<em>Block Molecule</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
@@ -937,6 +1711,22 @@ public class EditorSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseBlockEnclosure(BlockEnclosure object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Block</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Block</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseBlock(Block object)
   {
     return null;
   }
@@ -1305,6 +2095,70 @@ public class EditorSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseQualOp_PowerTok(QualOp_PowerTok object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>enlist1 Comma Item Comma AB</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>enlist1 Comma Item Comma AB</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseenlist1_CommaItem_Comma_AB(enlist1_CommaItem_Comma_AB object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>enlist1 Infixed Comma AB</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>enlist1 Infixed Comma AB</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseenlist1_Infixed_Comma_AB(enlist1_Infixed_Comma_AB object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>enlister1 Comma Item Comma</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>enlister1 Comma Item Comma</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseenlister1_CommaItem_Comma(enlister1_CommaItem_Comma object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>enlister1 Infixed Comma</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>enlister1 Infixed Comma</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseenlister1_Infixed_Comma(enlister1_Infixed_Comma object)
   {
     return null;
   }
