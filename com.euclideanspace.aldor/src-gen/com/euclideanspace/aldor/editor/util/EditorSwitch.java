@@ -79,598 +79,541 @@ public class EditorSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case EditorPackage.CATEGORY_DEF:
+      case EditorPackage.EXPRESSION:
       {
-        CategoryDef categoryDef = (CategoryDef)theEObject;
-        T result = caseCategoryDef(categoryDef);
+        Expression expression = (Expression)theEObject;
+        T result = caseExpression(expression);
+        if (result == null) result = caseParened(expression);
+        if (result == null) result = caseBracketed(expression);
+        if (result == null) result = caseEnclosure(expression);
+        if (result == null) result = caseMolecule(expression);
+        if (result == null) result = caseBlockMolecule(expression);
+        if (result == null) result = caseBlockEnclosure(expression);
+        if (result == null) result = caseJleft_Molecule(expression);
+        if (result == null) result = caseJleft_Atom(expression);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case EditorPackage.PACKAGE_DEF:
+      case EditorPackage.LABELED:
       {
-        PackageDef packageDef = (PackageDef)theEObject;
-        T result = casePackageDef(packageDef);
+        Labeled labeled = (Labeled)theEObject;
+        T result = caseLabeled(labeled);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case EditorPackage.DOMAIN_DEF:
+      case EditorPackage.OP_QUAL_TAIL:
       {
-        DomainDef domainDef = (DomainDef)theEObject;
-        T result = caseDomainDef(domainDef);
+        OpQualTail opQualTail = (OpQualTail)theEObject;
+        T result = caseOpQualTail(opQualTail);
+        if (result == null) result = caseQualOp_ArrowTok(opQualTail);
+        if (result == null) result = caseQualOp_LatticeTok(opQualTail);
+        if (result == null) result = caseQualOp_RelationTok(opQualTail);
+        if (result == null) result = caseQualOp_SegTok(opQualTail);
+        if (result == null) result = caseQualOp_PlusTok(opQualTail);
+        if (result == null) result = caseQualOp_QuotientTok(opQualTail);
+        if (result == null) result = caseQualOp_TimesTok(opQualTail);
+        if (result == null) result = caseQualOp_PowerTok(opQualTail);
+        if (result == null) result = caseArrowOp(opQualTail);
+        if (result == null) result = caseLatticeOp(opQualTail);
+        if (result == null) result = caseRelationOp(opQualTail);
+        if (result == null) result = caseSegOp(opQualTail);
+        if (result == null) result = casePlusOp(opQualTail);
+        if (result == null) result = caseQuotientOp(opQualTail);
+        if (result == null) result = caseTimesOp(opQualTail);
+        if (result == null) result = casePowerOp(opQualTail);
+        if (result == null) result = caseOp(opQualTail);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case EditorPackage.WHERE_PART:
+      case EditorPackage.OP:
       {
-        WherePart wherePart = (WherePart)theEObject;
-        T result = caseWherePart(wherePart);
+        Op op = (Op)theEObject;
+        T result = caseOp(op);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case EditorPackage.WHERE_ASSIGNMENTS:
+      case EditorPackage.NAKED_OP:
       {
-        WhereAssignments whereAssignments = (WhereAssignments)theEObject;
-        T result = caseWhereAssignments(whereAssignments);
+        NakedOp nakedOp = (NakedOp)theEObject;
+        T result = caseNakedOp(nakedOp);
+        if (result == null) result = caseName(nakedOp);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case EditorPackage.WITH_PART:
+      case EditorPackage.ARROW_OP:
       {
-        WithPart withPart = (WithPart)theEObject;
-        T result = caseWithPart(withPart);
+        ArrowOp arrowOp = (ArrowOp)theEObject;
+        T result = caseArrowOp(arrowOp);
+        if (result == null) result = caseOp(arrowOp);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case EditorPackage.WITH_INLINE:
+      case EditorPackage.LATTICE_OP:
       {
-        WithInline withInline = (WithInline)theEObject;
-        T result = caseWithInline(withInline);
+        LatticeOp latticeOp = (LatticeOp)theEObject;
+        T result = caseLatticeOp(latticeOp);
+        if (result == null) result = caseOp(latticeOp);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case EditorPackage.ADD_PART:
+      case EditorPackage.RELATION_OP:
       {
-        AddPart addPart = (AddPart)theEObject;
-        T result = caseAddPart(addPart);
+        RelationOp relationOp = (RelationOp)theEObject;
+        T result = caseRelationOp(relationOp);
+        if (result == null) result = caseOp(relationOp);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case EditorPackage.ADD_STATEMENTS:
+      case EditorPackage.SEG_OP:
       {
-        AddStatements addStatements = (AddStatements)theEObject;
-        T result = caseAddStatements(addStatements);
+        SegOp segOp = (SegOp)theEObject;
+        T result = caseSegOp(segOp);
+        if (result == null) result = caseOp(segOp);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case EditorPackage.FUNCTION_DEFINITION:
+      case EditorPackage.PLUS_OP:
       {
-        FunctionDefinition functionDefinition = (FunctionDefinition)theEObject;
-        T result = caseFunctionDefinition(functionDefinition);
-        if (result == null) result = caseAddStatements(functionDefinition);
+        PlusOp plusOp = (PlusOp)theEObject;
+        T result = casePlusOp(plusOp);
+        if (result == null) result = caseOp(plusOp);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case EditorPackage.FUNCTION_DEFINITION_BLOCK:
+      case EditorPackage.QUOTIENT_OP:
       {
-        FunctionDefinitionBlock functionDefinitionBlock = (FunctionDefinitionBlock)theEObject;
-        T result = caseFunctionDefinitionBlock(functionDefinitionBlock);
+        QuotientOp quotientOp = (QuotientOp)theEObject;
+        T result = caseQuotientOp(quotientOp);
+        if (result == null) result = caseOp(quotientOp);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case EditorPackage.FUNCTION_SIGNATURE:
+      case EditorPackage.TIMES_OP:
       {
-        FunctionSignature functionSignature = (FunctionSignature)theEObject;
-        T result = caseFunctionSignature(functionSignature);
+        TimesOp timesOp = (TimesOp)theEObject;
+        T result = caseTimesOp(timesOp);
+        if (result == null) result = caseOp(timesOp);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case EditorPackage.MACRO_DEF:
+      case EditorPackage.POWER_OP:
       {
-        MacroDef macroDef = (MacroDef)theEObject;
-        T result = caseMacroDef(macroDef);
-        if (result == null) result = caseWhereAssignments(macroDef);
-        if (result == null) result = caseAddStatements(macroDef);
+        PowerOp powerOp = (PowerOp)theEObject;
+        T result = casePowerOp(powerOp);
+        if (result == null) result = caseOp(powerOp);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case EditorPackage.IMPORT:
+      case EditorPackage.JLEFT_MOLECULE:
       {
-        Import import_ = (Import)theEObject;
-        T result = caseImport(import_);
-        if (result == null) result = caseWhereAssignments(import_);
-        if (result == null) result = caseAddStatements(import_);
+        Jleft_Molecule jleft_Molecule = (Jleft_Molecule)theEObject;
+        T result = caseJleft_Molecule(jleft_Molecule);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case EditorPackage.VARIABLE_DECLARATION_BLOCK:
+      case EditorPackage.JLEFT_ATOM:
       {
-        VariableDeclarationBlock variableDeclarationBlock = (VariableDeclarationBlock)theEObject;
-        T result = caseVariableDeclarationBlock(variableDeclarationBlock);
+        Jleft_Atom jleft_Atom = (Jleft_Atom)theEObject;
+        T result = caseJleft_Atom(jleft_Atom);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case EditorPackage.VARIABLE_DECLARATION:
+      case EditorPackage.MOLECULE:
       {
-        VariableDeclaration variableDeclaration = (VariableDeclaration)theEObject;
-        T result = caseVariableDeclaration(variableDeclaration);
-        if (result == null) result = caseWhereAssignments(variableDeclaration);
+        Molecule molecule = (Molecule)theEObject;
+        T result = caseMolecule(molecule);
+        if (result == null) result = caseJleft_Molecule(molecule);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case EditorPackage.TYPE_WITH_NAME:
+      case EditorPackage.ENCLOSURE:
       {
-        TypeWithName typeWithName = (TypeWithName)theEObject;
-        T result = caseTypeWithName(typeWithName);
+        Enclosure enclosure = (Enclosure)theEObject;
+        T result = caseEnclosure(enclosure);
+        if (result == null) result = caseMolecule(enclosure);
+        if (result == null) result = caseBlockMolecule(enclosure);
+        if (result == null) result = caseBlockEnclosure(enclosure);
+        if (result == null) result = caseJleft_Molecule(enclosure);
+        if (result == null) result = caseJleft_Atom(enclosure);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case EditorPackage.VARIABLE_TYPED:
+      case EditorPackage.BLOCK_MOLECULE:
       {
-        VariableTyped variableTyped = (VariableTyped)theEObject;
-        T result = caseVariableTyped(variableTyped);
+        BlockMolecule blockMolecule = (BlockMolecule)theEObject;
+        T result = caseBlockMolecule(blockMolecule);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case EditorPackage.VARIABLE_DECLARATION_ASSIGN:
+      case EditorPackage.BLOCK_ENCLOSURE:
       {
-        VariableDeclarationAssign variableDeclarationAssign = (VariableDeclarationAssign)theEObject;
-        T result = caseVariableDeclarationAssign(variableDeclarationAssign);
-        if (result == null) result = caseAddStatements(variableDeclarationAssign);
+        BlockEnclosure blockEnclosure = (BlockEnclosure)theEObject;
+        T result = caseBlockEnclosure(blockEnclosure);
+        if (result == null) result = caseJleft_Molecule(blockEnclosure);
+        if (result == null) result = caseJleft_Atom(blockEnclosure);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case EditorPackage.FREE_VARIABLE:
+      case EditorPackage.PARENED:
       {
-        FreeVariable freeVariable = (FreeVariable)theEObject;
-        T result = caseFreeVariable(freeVariable);
+        Parened parened = (Parened)theEObject;
+        T result = caseParened(parened);
+        if (result == null) result = caseEnclosure(parened);
+        if (result == null) result = caseMolecule(parened);
+        if (result == null) result = caseBlockMolecule(parened);
+        if (result == null) result = caseBlockEnclosure(parened);
+        if (result == null) result = caseJleft_Molecule(parened);
+        if (result == null) result = caseJleft_Atom(parened);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case EditorPackage.LOCAL_VARIABLE:
+      case EditorPackage.BRACKETED:
       {
-        LocalVariable localVariable = (LocalVariable)theEObject;
-        T result = caseLocalVariable(localVariable);
+        Bracketed bracketed = (Bracketed)theEObject;
+        T result = caseBracketed(bracketed);
+        if (result == null) result = caseEnclosure(bracketed);
+        if (result == null) result = caseMolecule(bracketed);
+        if (result == null) result = caseBlockMolecule(bracketed);
+        if (result == null) result = caseBlockEnclosure(bracketed);
+        if (result == null) result = caseJleft_Molecule(bracketed);
+        if (result == null) result = caseJleft_Atom(bracketed);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case EditorPackage.TYPE_EXPRESSION:
+      case EditorPackage.QUOTED_IDS:
       {
-        TypeExpression typeExpression = (TypeExpression)theEObject;
-        T result = caseTypeExpression(typeExpression);
+        QuotedIds quotedIds = (QuotedIds)theEObject;
+        T result = caseQuotedIds(quotedIds);
+        if (result == null) result = caseEnclosure(quotedIds);
+        if (result == null) result = caseMolecule(quotedIds);
+        if (result == null) result = caseBlockMolecule(quotedIds);
+        if (result == null) result = caseBlockEnclosure(quotedIds);
+        if (result == null) result = caseJleft_Molecule(quotedIds);
+        if (result == null) result = caseJleft_Atom(quotedIds);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case EditorPackage.TYPE_PARAMETER_LIST:
+      case EditorPackage.NAMES:
       {
-        TypeParameterList typeParameterList = (TypeParameterList)theEObject;
-        T result = caseTypeParameterList(typeParameterList);
+        Names names = (Names)theEObject;
+        T result = caseNames(names);
+        if (result == null) result = caseQuotedIds(names);
+        if (result == null) result = caseEnclosure(names);
+        if (result == null) result = caseMolecule(names);
+        if (result == null) result = caseBlockMolecule(names);
+        if (result == null) result = caseBlockEnclosure(names);
+        if (result == null) result = caseJleft_Molecule(names);
+        if (result == null) result = caseJleft_Atom(names);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case EditorPackage.TYPE_ARGUMENTS:
+      case EditorPackage.ATOM:
       {
-        TypeArguments typeArguments = (TypeArguments)theEObject;
-        T result = caseTypeArguments(typeArguments);
+        Atom atom = (Atom)theEObject;
+        T result = caseAtom(atom);
+        if (result == null) result = caseLabeled(atom);
+        if (result == null) result = caseJleft_Atom(atom);
+        if (result == null) result = caseMolecule(atom);
+        if (result == null) result = caseBlockMolecule(atom);
+        if (result == null) result = caseJleft_Molecule(atom);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case EditorPackage.TYPE_RESULT:
+      case EditorPackage.NAME:
       {
-        TypeResult typeResult = (TypeResult)theEObject;
-        T result = caseTypeResult(typeResult);
+        Name name = (Name)theEObject;
+        T result = caseName(name);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case EditorPackage.TYPE_PRIMARY_EXPRESSION:
+      case EditorPackage.ID:
       {
-        TypePrimaryExpression typePrimaryExpression = (TypePrimaryExpression)theEObject;
-        T result = caseTypePrimaryExpression(typePrimaryExpression);
-        if (result == null) result = caseTypeExpression(typePrimaryExpression);
+        Id id = (Id)theEObject;
+        T result = caseId(id);
+        if (result == null) result = caseName(id);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case EditorPackage.TYPE_NAME_OR_FUNCTION_CALL:
+      case EditorPackage.UNQUAL_OP_ARROW_TOK:
       {
-        TypeNameOrFunctionCall typeNameOrFunctionCall = (TypeNameOrFunctionCall)theEObject;
-        T result = caseTypeNameOrFunctionCall(typeNameOrFunctionCall);
-        if (result == null) result = caseTypePrimaryExpression(typeNameOrFunctionCall);
-        if (result == null) result = caseTypeExpression(typeNameOrFunctionCall);
+        UnqualOp_ArrowTok unqualOp_ArrowTok = (UnqualOp_ArrowTok)theEObject;
+        T result = caseUnqualOp_ArrowTok(unqualOp_ArrowTok);
+        if (result == null) result = caseNakedOp(unqualOp_ArrowTok);
+        if (result == null) result = caseName(unqualOp_ArrowTok);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case EditorPackage.TYPE_NAME_OR_FUNCTION_CALL2:
+      case EditorPackage.UNQUAL_OP_LATTICE_TOK:
       {
-        TypeNameOrFunctionCall2 typeNameOrFunctionCall2 = (TypeNameOrFunctionCall2)theEObject;
-        T result = caseTypeNameOrFunctionCall2(typeNameOrFunctionCall2);
-        if (result == null) result = caseTypePrimaryExpression(typeNameOrFunctionCall2);
-        if (result == null) result = caseTypeExpression(typeNameOrFunctionCall2);
+        UnqualOp_LatticeTok unqualOp_LatticeTok = (UnqualOp_LatticeTok)theEObject;
+        T result = caseUnqualOp_LatticeTok(unqualOp_LatticeTok);
+        if (result == null) result = caseNakedOp(unqualOp_LatticeTok);
+        if (result == null) result = caseName(unqualOp_LatticeTok);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case EditorPackage.TUPLE_DEFINITION:
+      case EditorPackage.UNQUAL_OP_RELATION_TOK:
       {
-        TupleDefinition tupleDefinition = (TupleDefinition)theEObject;
-        T result = caseTupleDefinition(tupleDefinition);
-        if (result == null) result = caseTypePrimaryExpression(tupleDefinition);
-        if (result == null) result = caseTypeExpression(tupleDefinition);
+        UnqualOp_RelationTok unqualOp_RelationTok = (UnqualOp_RelationTok)theEObject;
+        T result = caseUnqualOp_RelationTok(unqualOp_RelationTok);
+        if (result == null) result = caseNakedOp(unqualOp_RelationTok);
+        if (result == null) result = caseName(unqualOp_RelationTok);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case EditorPackage.TYPE_LITERAL:
+      case EditorPackage.UNQUAL_OP_SEG_TOK:
       {
-        TypeLiteral typeLiteral = (TypeLiteral)theEObject;
-        T result = caseTypeLiteral(typeLiteral);
-        if (result == null) result = caseTypePrimaryExpression(typeLiteral);
-        if (result == null) result = caseTypeExpression(typeLiteral);
+        UnqualOp_SegTok unqualOp_SegTok = (UnqualOp_SegTok)theEObject;
+        T result = caseUnqualOp_SegTok(unqualOp_SegTok);
+        if (result == null) result = caseNakedOp(unqualOp_SegTok);
+        if (result == null) result = caseName(unqualOp_SegTok);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case EditorPackage.STATEMENT:
+      case EditorPackage.UNQUAL_OP_PLUS_TOK:
       {
-        Statement statement = (Statement)theEObject;
-        T result = caseStatement(statement);
+        UnqualOp_PlusTok unqualOp_PlusTok = (UnqualOp_PlusTok)theEObject;
+        T result = caseUnqualOp_PlusTok(unqualOp_PlusTok);
+        if (result == null) result = caseNakedOp(unqualOp_PlusTok);
+        if (result == null) result = caseName(unqualOp_PlusTok);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case EditorPackage.BLOCK:
+      case EditorPackage.UNQUAL_OP_QUOTIENT_TOK:
       {
-        Block block = (Block)theEObject;
-        T result = caseBlock(block);
+        UnqualOp_QuotientTok unqualOp_QuotientTok = (UnqualOp_QuotientTok)theEObject;
+        T result = caseUnqualOp_QuotientTok(unqualOp_QuotientTok);
+        if (result == null) result = caseNakedOp(unqualOp_QuotientTok);
+        if (result == null) result = caseName(unqualOp_QuotientTok);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case EditorPackage.STATEMENT_EXPRESSION:
+      case EditorPackage.UNQUAL_OP_TIMES_TOK:
       {
-        StatementExpression statementExpression = (StatementExpression)theEObject;
-        T result = caseStatementExpression(statementExpression);
+        UnqualOp_TimesTok unqualOp_TimesTok = (UnqualOp_TimesTok)theEObject;
+        T result = caseUnqualOp_TimesTok(unqualOp_TimesTok);
+        if (result == null) result = caseNakedOp(unqualOp_TimesTok);
+        if (result == null) result = caseName(unqualOp_TimesTok);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case EditorPackage.FOR_STATEMENT:
+      case EditorPackage.UNQUAL_OP_POWER_TOK:
       {
-        ForStatement forStatement = (ForStatement)theEObject;
-        T result = caseForStatement(forStatement);
+        UnqualOp_PowerTok unqualOp_PowerTok = (UnqualOp_PowerTok)theEObject;
+        T result = caseUnqualOp_PowerTok(unqualOp_PowerTok);
+        if (result == null) result = caseNakedOp(unqualOp_PowerTok);
+        if (result == null) result = caseName(unqualOp_PowerTok);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case EditorPackage.WHILE_STATEMENT:
+      case EditorPackage.QUAL_OP_ARROW_TOK:
       {
-        WhileStatement whileStatement = (WhileStatement)theEObject;
-        T result = caseWhileStatement(whileStatement);
+        QualOp_ArrowTok qualOp_ArrowTok = (QualOp_ArrowTok)theEObject;
+        T result = caseQualOp_ArrowTok(qualOp_ArrowTok);
+        if (result == null) result = caseArrowOp(qualOp_ArrowTok);
+        if (result == null) result = caseOp(qualOp_ArrowTok);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case EditorPackage.DO_STATEMENT:
+      case EditorPackage.QUAL_OP_LATTICE_TOK:
       {
-        DoStatement doStatement = (DoStatement)theEObject;
-        T result = caseDoStatement(doStatement);
+        QualOp_LatticeTok qualOp_LatticeTok = (QualOp_LatticeTok)theEObject;
+        T result = caseQualOp_LatticeTok(qualOp_LatticeTok);
+        if (result == null) result = caseLatticeOp(qualOp_LatticeTok);
+        if (result == null) result = caseOp(qualOp_LatticeTok);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case EditorPackage.REPEAT_STATEMENT:
+      case EditorPackage.QUAL_OP_RELATION_TOK:
       {
-        RepeatStatement repeatStatement = (RepeatStatement)theEObject;
-        T result = caseRepeatStatement(repeatStatement);
+        QualOp_RelationTok qualOp_RelationTok = (QualOp_RelationTok)theEObject;
+        T result = caseQualOp_RelationTok(qualOp_RelationTok);
+        if (result == null) result = caseRelationOp(qualOp_RelationTok);
+        if (result == null) result = caseOp(qualOp_RelationTok);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case EditorPackage.ITERATE_STATEMENT:
+      case EditorPackage.QUAL_OP_SEG_TOK:
       {
-        IterateStatement iterateStatement = (IterateStatement)theEObject;
-        T result = caseIterateStatement(iterateStatement);
+        QualOp_SegTok qualOp_SegTok = (QualOp_SegTok)theEObject;
+        T result = caseQualOp_SegTok(qualOp_SegTok);
+        if (result == null) result = caseSegOp(qualOp_SegTok);
+        if (result == null) result = caseOp(qualOp_SegTok);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case EditorPackage.BREAK_STATEMENT:
+      case EditorPackage.QUAL_OP_PLUS_TOK:
       {
-        BreakStatement breakStatement = (BreakStatement)theEObject;
-        T result = caseBreakStatement(breakStatement);
+        QualOp_PlusTok qualOp_PlusTok = (QualOp_PlusTok)theEObject;
+        T result = caseQualOp_PlusTok(qualOp_PlusTok);
+        if (result == null) result = casePlusOp(qualOp_PlusTok);
+        if (result == null) result = caseOp(qualOp_PlusTok);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case EditorPackage.RETURN_STATEMENT:
+      case EditorPackage.QUAL_OP_QUOTIENT_TOK:
       {
-        ReturnStatement returnStatement = (ReturnStatement)theEObject;
-        T result = caseReturnStatement(returnStatement);
+        QualOp_QuotientTok qualOp_QuotientTok = (QualOp_QuotientTok)theEObject;
+        T result = caseQualOp_QuotientTok(qualOp_QuotientTok);
+        if (result == null) result = caseQuotientOp(qualOp_QuotientTok);
+        if (result == null) result = caseOp(qualOp_QuotientTok);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case EditorPackage.IF_STATEMENT:
+      case EditorPackage.QUAL_OP_TIMES_TOK:
       {
-        IfStatement ifStatement = (IfStatement)theEObject;
-        T result = caseIfStatement(ifStatement);
+        QualOp_TimesTok qualOp_TimesTok = (QualOp_TimesTok)theEObject;
+        T result = caseQualOp_TimesTok(qualOp_TimesTok);
+        if (result == null) result = caseTimesOp(qualOp_TimesTok);
+        if (result == null) result = caseOp(qualOp_TimesTok);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case EditorPackage.IF_ELSE_STATEMENT:
+      case EditorPackage.QUAL_OP_POWER_TOK:
       {
-        IfElseStatement ifElseStatement = (IfElseStatement)theEObject;
-        T result = caseIfElseStatement(ifElseStatement);
+        QualOp_PowerTok qualOp_PowerTok = (QualOp_PowerTok)theEObject;
+        T result = caseQualOp_PowerTok(qualOp_PowerTok);
+        if (result == null) result = casePowerOp(qualOp_PowerTok);
+        if (result == null) result = caseOp(qualOp_PowerTok);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case EditorPackage.EXPR:
+      case EditorPackage.ENLIST1A_LABELED_SEMICOLON_AB:
       {
-        Expr expr = (Expr)theEObject;
-        T result = caseExpr(expr);
+        enlist1a_Labeled_Semicolon_AB enlist1a_Labeled_Semicolon_AB = (enlist1a_Labeled_Semicolon_AB)theEObject;
+        T result = caseenlist1a_Labeled_Semicolon_AB(enlist1a_Labeled_Semicolon_AB);
+        if (result == null) result = caseExpression(enlist1a_Labeled_Semicolon_AB);
+        if (result == null) result = caseParened(enlist1a_Labeled_Semicolon_AB);
+        if (result == null) result = caseBracketed(enlist1a_Labeled_Semicolon_AB);
+        if (result == null) result = caseEnclosure(enlist1a_Labeled_Semicolon_AB);
+        if (result == null) result = caseMolecule(enlist1a_Labeled_Semicolon_AB);
+        if (result == null) result = caseBlockMolecule(enlist1a_Labeled_Semicolon_AB);
+        if (result == null) result = caseBlockEnclosure(enlist1a_Labeled_Semicolon_AB);
+        if (result == null) result = caseJleft_Molecule(enlist1a_Labeled_Semicolon_AB);
+        if (result == null) result = caseJleft_Atom(enlist1a_Labeled_Semicolon_AB);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case EditorPackage.PRIMARY_PREFIX:
+      case EditorPackage.ENLISTER1A_LABELED_SEMICOLON:
       {
-        PrimaryPrefix primaryPrefix = (PrimaryPrefix)theEObject;
-        T result = casePrimaryPrefix(primaryPrefix);
-        if (result == null) result = caseExpr(primaryPrefix);
+        enlister1a_Labeled_Semicolon enlister1a_Labeled_Semicolon = (enlister1a_Labeled_Semicolon)theEObject;
+        T result = caseenlister1a_Labeled_Semicolon(enlister1a_Labeled_Semicolon);
+        if (result == null) result = caseenlist1a_Labeled_Semicolon_AB(enlister1a_Labeled_Semicolon);
+        if (result == null) result = caseExpression(enlister1a_Labeled_Semicolon);
+        if (result == null) result = caseParened(enlister1a_Labeled_Semicolon);
+        if (result == null) result = caseBracketed(enlister1a_Labeled_Semicolon);
+        if (result == null) result = caseEnclosure(enlister1a_Labeled_Semicolon);
+        if (result == null) result = caseMolecule(enlister1a_Labeled_Semicolon);
+        if (result == null) result = caseBlockMolecule(enlister1a_Labeled_Semicolon);
+        if (result == null) result = caseBlockEnclosure(enlister1a_Labeled_Semicolon);
+        if (result == null) result = caseJleft_Molecule(enlister1a_Labeled_Semicolon);
+        if (result == null) result = caseJleft_Atom(enlister1a_Labeled_Semicolon);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case EditorPackage.NAME_OR_FUNCTION_CALL:
+      case EditorPackage.CURLY_LABELED:
       {
-        NameOrFunctionCall nameOrFunctionCall = (NameOrFunctionCall)theEObject;
-        T result = caseNameOrFunctionCall(nameOrFunctionCall);
+        Curly_Labeled curly_Labeled = (Curly_Labeled)theEObject;
+        T result = caseCurly_Labeled(curly_Labeled);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case EditorPackage.LITERAL:
+      case EditorPackage.CURLY_CONTENTS_LABELED:
       {
-        Literal literal = (Literal)theEObject;
-        T result = caseLiteral(literal);
-        if (result == null) result = casePrimaryPrefix(literal);
-        if (result == null) result = caseExpr(literal);
+        CurlyContents_Labeled curlyContents_Labeled = (CurlyContents_Labeled)theEObject;
+        T result = caseCurlyContents_Labeled(curlyContents_Labeled);
+        if (result == null) result = caseModel(curlyContents_Labeled);
+        if (result == null) result = caseCurly_Labeled(curlyContents_Labeled);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case EditorPackage.CHARACTER_LITERAL:
+      case EditorPackage.CURLY_CONTENTS_LIST_LABELED:
       {
-        CharacterLiteral characterLiteral = (CharacterLiteral)theEObject;
-        T result = caseCharacterLiteral(characterLiteral);
-        if (result == null) result = caseLiteral(characterLiteral);
-        if (result == null) result = casePrimaryPrefix(characterLiteral);
-        if (result == null) result = caseExpr(characterLiteral);
+        CurlyContentsList_Labeled curlyContentsList_Labeled = (CurlyContentsList_Labeled)theEObject;
+        T result = caseCurlyContentsList_Labeled(curlyContentsList_Labeled);
+        if (result == null) result = caseCurlyContents_Labeled(curlyContentsList_Labeled);
+        if (result == null) result = caseModel(curlyContentsList_Labeled);
+        if (result == null) result = caseCurly_Labeled(curlyContentsList_Labeled);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case EditorPackage.BOOLEAN_LITERAL:
+      case EditorPackage.ARROW_TOK:
       {
-        BooleanLiteral booleanLiteral = (BooleanLiteral)theEObject;
-        T result = caseBooleanLiteral(booleanLiteral);
-        if (result == null) result = caseLiteral(booleanLiteral);
-        if (result == null) result = casePrimaryPrefix(booleanLiteral);
-        if (result == null) result = caseExpr(booleanLiteral);
+        ArrowTok arrowTok = (ArrowTok)theEObject;
+        T result = caseArrowTok(arrowTok);
+        if (result == null) result = caseUnqualOp_ArrowTok(arrowTok);
+        if (result == null) result = caseNakedOp(arrowTok);
+        if (result == null) result = caseName(arrowTok);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case EditorPackage.LIST_LITERAL:
+      case EditorPackage.LATTICE_TOK:
       {
-        ListLiteral listLiteral = (ListLiteral)theEObject;
-        T result = caseListLiteral(listLiteral);
-        if (result == null) result = caseLiteral(listLiteral);
-        if (result == null) result = casePrimaryPrefix(listLiteral);
-        if (result == null) result = caseExpr(listLiteral);
+        LatticeTok latticeTok = (LatticeTok)theEObject;
+        T result = caseLatticeTok(latticeTok);
+        if (result == null) result = caseUnqualOp_LatticeTok(latticeTok);
+        if (result == null) result = caseNakedOp(latticeTok);
+        if (result == null) result = caseName(latticeTok);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case EditorPackage.EXIT_EXPRESSION:
+      case EditorPackage.RELATION_TOK:
       {
-        ExitExpression exitExpression = (ExitExpression)theEObject;
-        T result = caseExitExpression(exitExpression);
-        if (result == null) result = caseExpr(exitExpression);
+        RelationTok relationTok = (RelationTok)theEObject;
+        T result = caseRelationTok(relationTok);
+        if (result == null) result = caseUnqualOp_RelationTok(relationTok);
+        if (result == null) result = caseNakedOp(relationTok);
+        if (result == null) result = caseName(relationTok);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case EditorPackage.CONDITION_EXPRESSION:
+      case EditorPackage.SEG_TOK:
       {
-        ConditionExpression conditionExpression = (ConditionExpression)theEObject;
-        T result = caseConditionExpression(conditionExpression);
-        if (result == null) result = caseExpr(conditionExpression);
+        SegTok segTok = (SegTok)theEObject;
+        T result = caseSegTok(segTok);
+        if (result == null) result = caseUnqualOp_SegTok(segTok);
+        if (result == null) result = caseNakedOp(segTok);
+        if (result == null) result = caseName(segTok);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case EditorPackage.OR_EXPRESSION:
+      case EditorPackage.PLUS_TOK:
       {
-        OrExpression orExpression = (OrExpression)theEObject;
-        T result = caseOrExpression(orExpression);
-        if (result == null) result = caseExpr(orExpression);
+        PlusTok plusTok = (PlusTok)theEObject;
+        T result = casePlusTok(plusTok);
+        if (result == null) result = caseUnqualOp_PlusTok(plusTok);
+        if (result == null) result = caseNakedOp(plusTok);
+        if (result == null) result = caseName(plusTok);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case EditorPackage.AND_EXPRESSION:
+      case EditorPackage.QUOTIENT_TOK:
       {
-        AndExpression andExpression = (AndExpression)theEObject;
-        T result = caseAndExpression(andExpression);
-        if (result == null) result = caseExpr(andExpression);
+        QuotientTok quotientTok = (QuotientTok)theEObject;
+        T result = caseQuotientTok(quotientTok);
+        if (result == null) result = caseUnqualOp_QuotientTok(quotientTok);
+        if (result == null) result = caseNakedOp(quotientTok);
+        if (result == null) result = caseName(quotientTok);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case EditorPackage.INNER_PROD_EXPRESSION:
+      case EditorPackage.TIMES_TOK:
       {
-        InnerProdExpression innerProdExpression = (InnerProdExpression)theEObject;
-        T result = caseInnerProdExpression(innerProdExpression);
-        if (result == null) result = caseExpr(innerProdExpression);
+        TimesTok timesTok = (TimesTok)theEObject;
+        T result = caseTimesTok(timesTok);
+        if (result == null) result = caseUnqualOp_TimesTok(timesTok);
+        if (result == null) result = caseNakedOp(timesTok);
+        if (result == null) result = caseName(timesTok);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case EditorPackage.OUTER_PROD_EXPRESSION:
+      case EditorPackage.POWER_TOK:
       {
-        OuterProdExpression outerProdExpression = (OuterProdExpression)theEObject;
-        T result = caseOuterProdExpression(outerProdExpression);
-        if (result == null) result = caseExpr(outerProdExpression);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case EditorPackage.HAS_EXPRESSION:
-      {
-        HasExpression hasExpression = (HasExpression)theEObject;
-        T result = caseHasExpression(hasExpression);
-        if (result == null) result = caseExpr(hasExpression);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case EditorPackage.CASE_EXPRESSION:
-      {
-        CaseExpression caseExpression = (CaseExpression)theEObject;
-        T result = caseCaseExpression(caseExpression);
-        if (result == null) result = caseExpr(caseExpression);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case EditorPackage.EQUALITY_EXPRESSION:
-      {
-        EqualityExpression equalityExpression = (EqualityExpression)theEObject;
-        T result = caseEqualityExpression(equalityExpression);
-        if (result == null) result = caseExpr(equalityExpression);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case EditorPackage.RELATIONAL_EXPRESSION:
-      {
-        RelationalExpression relationalExpression = (RelationalExpression)theEObject;
-        T result = caseRelationalExpression(relationalExpression);
-        if (result == null) result = caseExpr(relationalExpression);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case EditorPackage.IS_EXPRESSION:
-      {
-        IsExpression isExpression = (IsExpression)theEObject;
-        T result = caseIsExpression(isExpression);
-        if (result == null) result = caseExpr(isExpression);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case EditorPackage.SEGMENT_EXPRESSION:
-      {
-        SegmentExpression segmentExpression = (SegmentExpression)theEObject;
-        T result = caseSegmentExpression(segmentExpression);
-        if (result == null) result = caseExpr(segmentExpression);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case EditorPackage.ADDITIVE_EXPRESSION:
-      {
-        AdditiveExpression additiveExpression = (AdditiveExpression)theEObject;
-        T result = caseAdditiveExpression(additiveExpression);
-        if (result == null) result = caseExpr(additiveExpression);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case EditorPackage.EXQUO_EXPRESSION:
-      {
-        ExquoExpression exquoExpression = (ExquoExpression)theEObject;
-        T result = caseExquoExpression(exquoExpression);
-        if (result == null) result = caseExpr(exquoExpression);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case EditorPackage.DIVISION_EXPRESSION:
-      {
-        DivisionExpression divisionExpression = (DivisionExpression)theEObject;
-        T result = caseDivisionExpression(divisionExpression);
-        if (result == null) result = caseExpr(divisionExpression);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case EditorPackage.QUO_EXPRESSION:
-      {
-        QuoExpression quoExpression = (QuoExpression)theEObject;
-        T result = caseQuoExpression(quoExpression);
-        if (result == null) result = caseExpr(quoExpression);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case EditorPackage.MOD_EXPRESSION:
-      {
-        ModExpression modExpression = (ModExpression)theEObject;
-        T result = caseModExpression(modExpression);
-        if (result == null) result = caseExpr(modExpression);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case EditorPackage.REM_EXPRESSION:
-      {
-        RemExpression remExpression = (RemExpression)theEObject;
-        T result = caseRemExpression(remExpression);
-        if (result == null) result = caseExpr(remExpression);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case EditorPackage.MULTIPLICATIVE_EXPRESSION:
-      {
-        MultiplicativeExpression multiplicativeExpression = (MultiplicativeExpression)theEObject;
-        T result = caseMultiplicativeExpression(multiplicativeExpression);
-        if (result == null) result = caseExpr(multiplicativeExpression);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case EditorPackage.EXPONENT_EXPRESSION:
-      {
-        ExponentExpression exponentExpression = (ExponentExpression)theEObject;
-        T result = caseExponentExpression(exponentExpression);
-        if (result == null) result = caseExpr(exponentExpression);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case EditorPackage.MAP_DEFINITION:
-      {
-        MapDefinition mapDefinition = (MapDefinition)theEObject;
-        T result = caseMapDefinition(mapDefinition);
-        if (result == null) result = caseExpr(mapDefinition);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case EditorPackage.ASSIGN_EXPRESSION:
-      {
-        AssignExpression assignExpression = (AssignExpression)theEObject;
-        T result = caseAssignExpression(assignExpression);
-        if (result == null) result = caseExpr(assignExpression);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case EditorPackage.PRETEND_EXPRESSION:
-      {
-        PretendExpression pretendExpression = (PretendExpression)theEObject;
-        T result = casePretendExpression(pretendExpression);
-        if (result == null) result = caseExpr(pretendExpression);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case EditorPackage.COERCE_EXPRESSION:
-      {
-        CoerceExpression coerceExpression = (CoerceExpression)theEObject;
-        T result = caseCoerceExpression(coerceExpression);
-        if (result == null) result = caseExpr(coerceExpression);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case EditorPackage.HINT_TYPE_EXPRESSION:
-      {
-        HintTypeExpression hintTypeExpression = (HintTypeExpression)theEObject;
-        T result = caseHintTypeExpression(hintTypeExpression);
-        if (result == null) result = caseExpr(hintTypeExpression);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case EditorPackage.ELT_EXPRESSION:
-      {
-        EltExpression eltExpression = (EltExpression)theEObject;
-        T result = caseEltExpression(eltExpression);
-        if (result == null) result = caseExpr(eltExpression);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case EditorPackage.EXPLICIT_TYPE_EXPRESSION:
-      {
-        ExplicitTypeExpression explicitTypeExpression = (ExplicitTypeExpression)theEObject;
-        T result = caseExplicitTypeExpression(explicitTypeExpression);
-        if (result == null) result = caseExpr(explicitTypeExpression);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case EditorPackage.UNARY_EXPRESSION:
-      {
-        UnaryExpression unaryExpression = (UnaryExpression)theEObject;
-        T result = caseUnaryExpression(unaryExpression);
-        if (result == null) result = caseExpr(unaryExpression);
+        PowerTok powerTok = (PowerTok)theEObject;
+        T result = casePowerTok(powerTok);
+        if (result == null) result = caseUnqualOp_PowerTok(powerTok);
+        if (result == null) result = caseNakedOp(powerTok);
+        if (result == null) result = caseName(powerTok);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -695,1233 +638,881 @@ public class EditorSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Category Def</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Expression</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Category Def</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Expression</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseCategoryDef(CategoryDef object)
+  public T caseExpression(Expression object)
   {
     return null;
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Package Def</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Labeled</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Package Def</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Labeled</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T casePackageDef(PackageDef object)
+  public T caseLabeled(Labeled object)
   {
     return null;
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Domain Def</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Op Qual Tail</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Domain Def</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Op Qual Tail</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseDomainDef(DomainDef object)
+  public T caseOpQualTail(OpQualTail object)
   {
     return null;
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Where Part</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Op</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Where Part</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Op</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseWherePart(WherePart object)
+  public T caseOp(Op object)
   {
     return null;
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Where Assignments</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Naked Op</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Where Assignments</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Naked Op</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseWhereAssignments(WhereAssignments object)
+  public T caseNakedOp(NakedOp object)
   {
     return null;
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>With Part</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Arrow Op</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>With Part</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Arrow Op</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseWithPart(WithPart object)
+  public T caseArrowOp(ArrowOp object)
   {
     return null;
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>With Inline</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Lattice Op</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>With Inline</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Lattice Op</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseWithInline(WithInline object)
+  public T caseLatticeOp(LatticeOp object)
   {
     return null;
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Add Part</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Relation Op</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Add Part</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Relation Op</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseAddPart(AddPart object)
+  public T caseRelationOp(RelationOp object)
   {
     return null;
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Add Statements</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Seg Op</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Add Statements</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Seg Op</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseAddStatements(AddStatements object)
+  public T caseSegOp(SegOp object)
   {
     return null;
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Function Definition</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Plus Op</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Function Definition</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Plus Op</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseFunctionDefinition(FunctionDefinition object)
+  public T casePlusOp(PlusOp object)
   {
     return null;
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Function Definition Block</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Quotient Op</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Function Definition Block</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Quotient Op</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseFunctionDefinitionBlock(FunctionDefinitionBlock object)
+  public T caseQuotientOp(QuotientOp object)
   {
     return null;
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Function Signature</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Times Op</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Function Signature</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Times Op</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseFunctionSignature(FunctionSignature object)
+  public T caseTimesOp(TimesOp object)
   {
     return null;
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Macro Def</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Power Op</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Macro Def</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Power Op</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseMacroDef(MacroDef object)
+  public T casePowerOp(PowerOp object)
   {
     return null;
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Import</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Jleft Molecule</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Import</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Jleft Molecule</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseImport(Import object)
+  public T caseJleft_Molecule(Jleft_Molecule object)
   {
     return null;
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Variable Declaration Block</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Jleft Atom</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Variable Declaration Block</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Jleft Atom</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseVariableDeclarationBlock(VariableDeclarationBlock object)
+  public T caseJleft_Atom(Jleft_Atom object)
   {
     return null;
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Variable Declaration</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Molecule</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Variable Declaration</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Molecule</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseVariableDeclaration(VariableDeclaration object)
+  public T caseMolecule(Molecule object)
   {
     return null;
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Type With Name</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Enclosure</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Type With Name</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Enclosure</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseTypeWithName(TypeWithName object)
+  public T caseEnclosure(Enclosure object)
   {
     return null;
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Variable Typed</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Block Molecule</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Variable Typed</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Block Molecule</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseVariableTyped(VariableTyped object)
+  public T caseBlockMolecule(BlockMolecule object)
   {
     return null;
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Variable Declaration Assign</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Block Enclosure</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Variable Declaration Assign</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Block Enclosure</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseVariableDeclarationAssign(VariableDeclarationAssign object)
+  public T caseBlockEnclosure(BlockEnclosure object)
   {
     return null;
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Free Variable</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Parened</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Free Variable</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Parened</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseFreeVariable(FreeVariable object)
+  public T caseParened(Parened object)
   {
     return null;
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Local Variable</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Bracketed</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Local Variable</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Bracketed</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseLocalVariable(LocalVariable object)
+  public T caseBracketed(Bracketed object)
   {
     return null;
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Type Expression</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Quoted Ids</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Type Expression</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Quoted Ids</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseTypeExpression(TypeExpression object)
+  public T caseQuotedIds(QuotedIds object)
   {
     return null;
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Type Parameter List</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Names</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Type Parameter List</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Names</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseTypeParameterList(TypeParameterList object)
+  public T caseNames(Names object)
   {
     return null;
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Type Arguments</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Atom</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Type Arguments</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Atom</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseTypeArguments(TypeArguments object)
+  public T caseAtom(Atom object)
   {
     return null;
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Type Result</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Name</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Type Result</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Name</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseTypeResult(TypeResult object)
+  public T caseName(Name object)
   {
     return null;
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Type Primary Expression</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Id</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Type Primary Expression</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Id</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseTypePrimaryExpression(TypePrimaryExpression object)
+  public T caseId(Id object)
   {
     return null;
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Type Name Or Function Call</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Unqual Op Arrow Tok</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Type Name Or Function Call</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Unqual Op Arrow Tok</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseTypeNameOrFunctionCall(TypeNameOrFunctionCall object)
+  public T caseUnqualOp_ArrowTok(UnqualOp_ArrowTok object)
   {
     return null;
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Type Name Or Function Call2</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Unqual Op Lattice Tok</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Type Name Or Function Call2</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Unqual Op Lattice Tok</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseTypeNameOrFunctionCall2(TypeNameOrFunctionCall2 object)
+  public T caseUnqualOp_LatticeTok(UnqualOp_LatticeTok object)
   {
     return null;
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Tuple Definition</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Unqual Op Relation Tok</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Tuple Definition</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Unqual Op Relation Tok</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseTupleDefinition(TupleDefinition object)
+  public T caseUnqualOp_RelationTok(UnqualOp_RelationTok object)
   {
     return null;
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Type Literal</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Unqual Op Seg Tok</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Type Literal</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Unqual Op Seg Tok</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseTypeLiteral(TypeLiteral object)
+  public T caseUnqualOp_SegTok(UnqualOp_SegTok object)
   {
     return null;
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Statement</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Unqual Op Plus Tok</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Statement</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Unqual Op Plus Tok</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseStatement(Statement object)
+  public T caseUnqualOp_PlusTok(UnqualOp_PlusTok object)
   {
     return null;
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Block</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Unqual Op Quotient Tok</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Block</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Unqual Op Quotient Tok</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseBlock(Block object)
+  public T caseUnqualOp_QuotientTok(UnqualOp_QuotientTok object)
   {
     return null;
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Statement Expression</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Unqual Op Times Tok</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Statement Expression</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Unqual Op Times Tok</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseStatementExpression(StatementExpression object)
+  public T caseUnqualOp_TimesTok(UnqualOp_TimesTok object)
   {
     return null;
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>For Statement</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Unqual Op Power Tok</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>For Statement</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Unqual Op Power Tok</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseForStatement(ForStatement object)
+  public T caseUnqualOp_PowerTok(UnqualOp_PowerTok object)
   {
     return null;
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>While Statement</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Qual Op Arrow Tok</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>While Statement</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Qual Op Arrow Tok</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseWhileStatement(WhileStatement object)
+  public T caseQualOp_ArrowTok(QualOp_ArrowTok object)
   {
     return null;
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Do Statement</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Qual Op Lattice Tok</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Do Statement</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Qual Op Lattice Tok</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseDoStatement(DoStatement object)
+  public T caseQualOp_LatticeTok(QualOp_LatticeTok object)
   {
     return null;
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Repeat Statement</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Qual Op Relation Tok</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Repeat Statement</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Qual Op Relation Tok</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseRepeatStatement(RepeatStatement object)
+  public T caseQualOp_RelationTok(QualOp_RelationTok object)
   {
     return null;
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Iterate Statement</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Qual Op Seg Tok</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Iterate Statement</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Qual Op Seg Tok</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseIterateStatement(IterateStatement object)
+  public T caseQualOp_SegTok(QualOp_SegTok object)
   {
     return null;
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Break Statement</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Qual Op Plus Tok</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Break Statement</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Qual Op Plus Tok</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseBreakStatement(BreakStatement object)
+  public T caseQualOp_PlusTok(QualOp_PlusTok object)
   {
     return null;
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Return Statement</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Qual Op Quotient Tok</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Return Statement</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Qual Op Quotient Tok</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseReturnStatement(ReturnStatement object)
+  public T caseQualOp_QuotientTok(QualOp_QuotientTok object)
   {
     return null;
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>If Statement</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Qual Op Times Tok</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>If Statement</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Qual Op Times Tok</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseIfStatement(IfStatement object)
+  public T caseQualOp_TimesTok(QualOp_TimesTok object)
   {
     return null;
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>If Else Statement</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Qual Op Power Tok</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>If Else Statement</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Qual Op Power Tok</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseIfElseStatement(IfElseStatement object)
+  public T caseQualOp_PowerTok(QualOp_PowerTok object)
   {
     return null;
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Expr</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>enlist1a Labeled Semicolon AB</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Expr</em>'.
+   * @return the result of interpreting the object as an instance of '<em>enlist1a Labeled Semicolon AB</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseExpr(Expr object)
+  public T caseenlist1a_Labeled_Semicolon_AB(enlist1a_Labeled_Semicolon_AB object)
   {
     return null;
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Primary Prefix</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>enlister1a Labeled Semicolon</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Primary Prefix</em>'.
+   * @return the result of interpreting the object as an instance of '<em>enlister1a Labeled Semicolon</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T casePrimaryPrefix(PrimaryPrefix object)
+  public T caseenlister1a_Labeled_Semicolon(enlister1a_Labeled_Semicolon object)
   {
     return null;
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Name Or Function Call</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Curly Labeled</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Name Or Function Call</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Curly Labeled</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseNameOrFunctionCall(NameOrFunctionCall object)
+  public T caseCurly_Labeled(Curly_Labeled object)
   {
     return null;
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Literal</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Curly Contents Labeled</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Literal</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Curly Contents Labeled</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseLiteral(Literal object)
+  public T caseCurlyContents_Labeled(CurlyContents_Labeled object)
   {
     return null;
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Character Literal</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Curly Contents List Labeled</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Character Literal</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Curly Contents List Labeled</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseCharacterLiteral(CharacterLiteral object)
+  public T caseCurlyContentsList_Labeled(CurlyContentsList_Labeled object)
   {
     return null;
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Boolean Literal</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Arrow Tok</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Boolean Literal</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Arrow Tok</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseBooleanLiteral(BooleanLiteral object)
+  public T caseArrowTok(ArrowTok object)
   {
     return null;
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>List Literal</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Lattice Tok</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>List Literal</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Lattice Tok</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseListLiteral(ListLiteral object)
+  public T caseLatticeTok(LatticeTok object)
   {
     return null;
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Exit Expression</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Relation Tok</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Exit Expression</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Relation Tok</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseExitExpression(ExitExpression object)
+  public T caseRelationTok(RelationTok object)
   {
     return null;
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Condition Expression</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Seg Tok</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Condition Expression</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Seg Tok</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseConditionExpression(ConditionExpression object)
+  public T caseSegTok(SegTok object)
   {
     return null;
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Or Expression</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Plus Tok</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Or Expression</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Plus Tok</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseOrExpression(OrExpression object)
+  public T casePlusTok(PlusTok object)
   {
     return null;
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>And Expression</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Quotient Tok</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>And Expression</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Quotient Tok</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseAndExpression(AndExpression object)
+  public T caseQuotientTok(QuotientTok object)
   {
     return null;
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Inner Prod Expression</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Times Tok</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Inner Prod Expression</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Times Tok</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseInnerProdExpression(InnerProdExpression object)
+  public T caseTimesTok(TimesTok object)
   {
     return null;
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Outer Prod Expression</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Power Tok</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Outer Prod Expression</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Power Tok</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseOuterProdExpression(OuterProdExpression object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Has Expression</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Has Expression</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseHasExpression(HasExpression object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Case Expression</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Case Expression</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseCaseExpression(CaseExpression object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Equality Expression</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Equality Expression</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseEqualityExpression(EqualityExpression object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Relational Expression</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Relational Expression</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseRelationalExpression(RelationalExpression object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Is Expression</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Is Expression</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseIsExpression(IsExpression object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Segment Expression</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Segment Expression</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseSegmentExpression(SegmentExpression object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Additive Expression</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Additive Expression</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseAdditiveExpression(AdditiveExpression object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Exquo Expression</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Exquo Expression</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseExquoExpression(ExquoExpression object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Division Expression</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Division Expression</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseDivisionExpression(DivisionExpression object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Quo Expression</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Quo Expression</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseQuoExpression(QuoExpression object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Mod Expression</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Mod Expression</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseModExpression(ModExpression object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Rem Expression</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Rem Expression</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseRemExpression(RemExpression object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Multiplicative Expression</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Multiplicative Expression</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseMultiplicativeExpression(MultiplicativeExpression object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Exponent Expression</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Exponent Expression</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseExponentExpression(ExponentExpression object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Map Definition</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Map Definition</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseMapDefinition(MapDefinition object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Assign Expression</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Assign Expression</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseAssignExpression(AssignExpression object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Pretend Expression</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Pretend Expression</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T casePretendExpression(PretendExpression object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Coerce Expression</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Coerce Expression</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseCoerceExpression(CoerceExpression object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Hint Type Expression</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Hint Type Expression</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseHintTypeExpression(HintTypeExpression object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Elt Expression</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Elt Expression</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseEltExpression(EltExpression object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Explicit Type Expression</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Explicit Type Expression</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseExplicitTypeExpression(ExplicitTypeExpression object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Unary Expression</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Unary Expression</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseUnaryExpression(UnaryExpression object)
+  public T casePowerTok(PowerTok object)
   {
     return null;
   }

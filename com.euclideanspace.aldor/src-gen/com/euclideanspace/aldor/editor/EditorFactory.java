@@ -32,697 +32,499 @@ public interface EditorFactory extends EFactory
   Model createModel();
 
   /**
-   * Returns a new object of class '<em>Category Def</em>'.
+   * Returns a new object of class '<em>Expression</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Category Def</em>'.
+   * @return a new object of class '<em>Expression</em>'.
    * @generated
    */
-  CategoryDef createCategoryDef();
+  Expression createExpression();
 
   /**
-   * Returns a new object of class '<em>Package Def</em>'.
+   * Returns a new object of class '<em>Labeled</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Package Def</em>'.
+   * @return a new object of class '<em>Labeled</em>'.
    * @generated
    */
-  PackageDef createPackageDef();
+  Labeled createLabeled();
 
   /**
-   * Returns a new object of class '<em>Domain Def</em>'.
+   * Returns a new object of class '<em>Op Qual Tail</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Domain Def</em>'.
+   * @return a new object of class '<em>Op Qual Tail</em>'.
    * @generated
    */
-  DomainDef createDomainDef();
+  OpQualTail createOpQualTail();
 
   /**
-   * Returns a new object of class '<em>Where Part</em>'.
+   * Returns a new object of class '<em>Op</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Where Part</em>'.
+   * @return a new object of class '<em>Op</em>'.
    * @generated
    */
-  WherePart createWherePart();
+  Op createOp();
 
   /**
-   * Returns a new object of class '<em>Where Assignments</em>'.
+   * Returns a new object of class '<em>Naked Op</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Where Assignments</em>'.
+   * @return a new object of class '<em>Naked Op</em>'.
    * @generated
    */
-  WhereAssignments createWhereAssignments();
+  NakedOp createNakedOp();
 
   /**
-   * Returns a new object of class '<em>With Part</em>'.
+   * Returns a new object of class '<em>Arrow Op</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>With Part</em>'.
+   * @return a new object of class '<em>Arrow Op</em>'.
    * @generated
    */
-  WithPart createWithPart();
+  ArrowOp createArrowOp();
 
   /**
-   * Returns a new object of class '<em>With Inline</em>'.
+   * Returns a new object of class '<em>Lattice Op</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>With Inline</em>'.
+   * @return a new object of class '<em>Lattice Op</em>'.
    * @generated
    */
-  WithInline createWithInline();
+  LatticeOp createLatticeOp();
 
   /**
-   * Returns a new object of class '<em>Add Part</em>'.
+   * Returns a new object of class '<em>Relation Op</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Add Part</em>'.
+   * @return a new object of class '<em>Relation Op</em>'.
    * @generated
    */
-  AddPart createAddPart();
+  RelationOp createRelationOp();
 
   /**
-   * Returns a new object of class '<em>Add Statements</em>'.
+   * Returns a new object of class '<em>Seg Op</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Add Statements</em>'.
+   * @return a new object of class '<em>Seg Op</em>'.
    * @generated
    */
-  AddStatements createAddStatements();
+  SegOp createSegOp();
 
   /**
-   * Returns a new object of class '<em>Function Definition</em>'.
+   * Returns a new object of class '<em>Plus Op</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Function Definition</em>'.
+   * @return a new object of class '<em>Plus Op</em>'.
    * @generated
    */
-  FunctionDefinition createFunctionDefinition();
+  PlusOp createPlusOp();
 
   /**
-   * Returns a new object of class '<em>Function Definition Block</em>'.
+   * Returns a new object of class '<em>Quotient Op</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Function Definition Block</em>'.
+   * @return a new object of class '<em>Quotient Op</em>'.
    * @generated
    */
-  FunctionDefinitionBlock createFunctionDefinitionBlock();
+  QuotientOp createQuotientOp();
 
   /**
-   * Returns a new object of class '<em>Function Signature</em>'.
+   * Returns a new object of class '<em>Times Op</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Function Signature</em>'.
+   * @return a new object of class '<em>Times Op</em>'.
    * @generated
    */
-  FunctionSignature createFunctionSignature();
+  TimesOp createTimesOp();
 
   /**
-   * Returns a new object of class '<em>Macro Def</em>'.
+   * Returns a new object of class '<em>Power Op</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Macro Def</em>'.
+   * @return a new object of class '<em>Power Op</em>'.
    * @generated
    */
-  MacroDef createMacroDef();
+  PowerOp createPowerOp();
 
   /**
-   * Returns a new object of class '<em>Import</em>'.
+   * Returns a new object of class '<em>Jleft Molecule</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Import</em>'.
+   * @return a new object of class '<em>Jleft Molecule</em>'.
    * @generated
    */
-  Import createImport();
+  Jleft_Molecule createJleft_Molecule();
 
   /**
-   * Returns a new object of class '<em>Variable Declaration Block</em>'.
+   * Returns a new object of class '<em>Jleft Atom</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Variable Declaration Block</em>'.
+   * @return a new object of class '<em>Jleft Atom</em>'.
    * @generated
    */
-  VariableDeclarationBlock createVariableDeclarationBlock();
+  Jleft_Atom createJleft_Atom();
 
   /**
-   * Returns a new object of class '<em>Variable Declaration</em>'.
+   * Returns a new object of class '<em>Molecule</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Variable Declaration</em>'.
+   * @return a new object of class '<em>Molecule</em>'.
    * @generated
    */
-  VariableDeclaration createVariableDeclaration();
+  Molecule createMolecule();
 
   /**
-   * Returns a new object of class '<em>Type With Name</em>'.
+   * Returns a new object of class '<em>Enclosure</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Type With Name</em>'.
+   * @return a new object of class '<em>Enclosure</em>'.
    * @generated
    */
-  TypeWithName createTypeWithName();
+  Enclosure createEnclosure();
 
   /**
-   * Returns a new object of class '<em>Variable Typed</em>'.
+   * Returns a new object of class '<em>Block Molecule</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Variable Typed</em>'.
+   * @return a new object of class '<em>Block Molecule</em>'.
    * @generated
    */
-  VariableTyped createVariableTyped();
+  BlockMolecule createBlockMolecule();
 
   /**
-   * Returns a new object of class '<em>Variable Declaration Assign</em>'.
+   * Returns a new object of class '<em>Block Enclosure</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Variable Declaration Assign</em>'.
+   * @return a new object of class '<em>Block Enclosure</em>'.
    * @generated
    */
-  VariableDeclarationAssign createVariableDeclarationAssign();
+  BlockEnclosure createBlockEnclosure();
 
   /**
-   * Returns a new object of class '<em>Free Variable</em>'.
+   * Returns a new object of class '<em>Parened</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Free Variable</em>'.
+   * @return a new object of class '<em>Parened</em>'.
    * @generated
    */
-  FreeVariable createFreeVariable();
+  Parened createParened();
 
   /**
-   * Returns a new object of class '<em>Local Variable</em>'.
+   * Returns a new object of class '<em>Bracketed</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Local Variable</em>'.
+   * @return a new object of class '<em>Bracketed</em>'.
    * @generated
    */
-  LocalVariable createLocalVariable();
+  Bracketed createBracketed();
 
   /**
-   * Returns a new object of class '<em>Type Expression</em>'.
+   * Returns a new object of class '<em>Quoted Ids</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Type Expression</em>'.
+   * @return a new object of class '<em>Quoted Ids</em>'.
    * @generated
    */
-  TypeExpression createTypeExpression();
+  QuotedIds createQuotedIds();
 
   /**
-   * Returns a new object of class '<em>Type Parameter List</em>'.
+   * Returns a new object of class '<em>Names</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Type Parameter List</em>'.
+   * @return a new object of class '<em>Names</em>'.
    * @generated
    */
-  TypeParameterList createTypeParameterList();
+  Names createNames();
 
   /**
-   * Returns a new object of class '<em>Type Arguments</em>'.
+   * Returns a new object of class '<em>Atom</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Type Arguments</em>'.
+   * @return a new object of class '<em>Atom</em>'.
    * @generated
    */
-  TypeArguments createTypeArguments();
+  Atom createAtom();
 
   /**
-   * Returns a new object of class '<em>Type Result</em>'.
+   * Returns a new object of class '<em>Name</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Type Result</em>'.
+   * @return a new object of class '<em>Name</em>'.
    * @generated
    */
-  TypeResult createTypeResult();
+  Name createName();
 
   /**
-   * Returns a new object of class '<em>Type Primary Expression</em>'.
+   * Returns a new object of class '<em>Id</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Type Primary Expression</em>'.
+   * @return a new object of class '<em>Id</em>'.
    * @generated
    */
-  TypePrimaryExpression createTypePrimaryExpression();
+  Id createId();
 
   /**
-   * Returns a new object of class '<em>Type Name Or Function Call</em>'.
+   * Returns a new object of class '<em>Unqual Op Arrow Tok</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Type Name Or Function Call</em>'.
+   * @return a new object of class '<em>Unqual Op Arrow Tok</em>'.
    * @generated
    */
-  TypeNameOrFunctionCall createTypeNameOrFunctionCall();
+  UnqualOp_ArrowTok createUnqualOp_ArrowTok();
 
   /**
-   * Returns a new object of class '<em>Type Name Or Function Call2</em>'.
+   * Returns a new object of class '<em>Unqual Op Lattice Tok</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Type Name Or Function Call2</em>'.
+   * @return a new object of class '<em>Unqual Op Lattice Tok</em>'.
    * @generated
    */
-  TypeNameOrFunctionCall2 createTypeNameOrFunctionCall2();
+  UnqualOp_LatticeTok createUnqualOp_LatticeTok();
 
   /**
-   * Returns a new object of class '<em>Tuple Definition</em>'.
+   * Returns a new object of class '<em>Unqual Op Relation Tok</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Tuple Definition</em>'.
+   * @return a new object of class '<em>Unqual Op Relation Tok</em>'.
    * @generated
    */
-  TupleDefinition createTupleDefinition();
+  UnqualOp_RelationTok createUnqualOp_RelationTok();
 
   /**
-   * Returns a new object of class '<em>Type Literal</em>'.
+   * Returns a new object of class '<em>Unqual Op Seg Tok</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Type Literal</em>'.
+   * @return a new object of class '<em>Unqual Op Seg Tok</em>'.
    * @generated
    */
-  TypeLiteral createTypeLiteral();
+  UnqualOp_SegTok createUnqualOp_SegTok();
 
   /**
-   * Returns a new object of class '<em>Statement</em>'.
+   * Returns a new object of class '<em>Unqual Op Plus Tok</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Statement</em>'.
+   * @return a new object of class '<em>Unqual Op Plus Tok</em>'.
    * @generated
    */
-  Statement createStatement();
+  UnqualOp_PlusTok createUnqualOp_PlusTok();
 
   /**
-   * Returns a new object of class '<em>Block</em>'.
+   * Returns a new object of class '<em>Unqual Op Quotient Tok</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Block</em>'.
+   * @return a new object of class '<em>Unqual Op Quotient Tok</em>'.
    * @generated
    */
-  Block createBlock();
+  UnqualOp_QuotientTok createUnqualOp_QuotientTok();
 
   /**
-   * Returns a new object of class '<em>Statement Expression</em>'.
+   * Returns a new object of class '<em>Unqual Op Times Tok</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Statement Expression</em>'.
+   * @return a new object of class '<em>Unqual Op Times Tok</em>'.
    * @generated
    */
-  StatementExpression createStatementExpression();
+  UnqualOp_TimesTok createUnqualOp_TimesTok();
 
   /**
-   * Returns a new object of class '<em>For Statement</em>'.
+   * Returns a new object of class '<em>Unqual Op Power Tok</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>For Statement</em>'.
+   * @return a new object of class '<em>Unqual Op Power Tok</em>'.
    * @generated
    */
-  ForStatement createForStatement();
+  UnqualOp_PowerTok createUnqualOp_PowerTok();
 
   /**
-   * Returns a new object of class '<em>While Statement</em>'.
+   * Returns a new object of class '<em>Qual Op Arrow Tok</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>While Statement</em>'.
+   * @return a new object of class '<em>Qual Op Arrow Tok</em>'.
    * @generated
    */
-  WhileStatement createWhileStatement();
+  QualOp_ArrowTok createQualOp_ArrowTok();
 
   /**
-   * Returns a new object of class '<em>Do Statement</em>'.
+   * Returns a new object of class '<em>Qual Op Lattice Tok</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Do Statement</em>'.
+   * @return a new object of class '<em>Qual Op Lattice Tok</em>'.
    * @generated
    */
-  DoStatement createDoStatement();
+  QualOp_LatticeTok createQualOp_LatticeTok();
 
   /**
-   * Returns a new object of class '<em>Repeat Statement</em>'.
+   * Returns a new object of class '<em>Qual Op Relation Tok</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Repeat Statement</em>'.
+   * @return a new object of class '<em>Qual Op Relation Tok</em>'.
    * @generated
    */
-  RepeatStatement createRepeatStatement();
+  QualOp_RelationTok createQualOp_RelationTok();
 
   /**
-   * Returns a new object of class '<em>Iterate Statement</em>'.
+   * Returns a new object of class '<em>Qual Op Seg Tok</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Iterate Statement</em>'.
+   * @return a new object of class '<em>Qual Op Seg Tok</em>'.
    * @generated
    */
-  IterateStatement createIterateStatement();
+  QualOp_SegTok createQualOp_SegTok();
 
   /**
-   * Returns a new object of class '<em>Break Statement</em>'.
+   * Returns a new object of class '<em>Qual Op Plus Tok</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Break Statement</em>'.
+   * @return a new object of class '<em>Qual Op Plus Tok</em>'.
    * @generated
    */
-  BreakStatement createBreakStatement();
+  QualOp_PlusTok createQualOp_PlusTok();
 
   /**
-   * Returns a new object of class '<em>Return Statement</em>'.
+   * Returns a new object of class '<em>Qual Op Quotient Tok</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Return Statement</em>'.
+   * @return a new object of class '<em>Qual Op Quotient Tok</em>'.
    * @generated
    */
-  ReturnStatement createReturnStatement();
+  QualOp_QuotientTok createQualOp_QuotientTok();
 
   /**
-   * Returns a new object of class '<em>If Statement</em>'.
+   * Returns a new object of class '<em>Qual Op Times Tok</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>If Statement</em>'.
+   * @return a new object of class '<em>Qual Op Times Tok</em>'.
    * @generated
    */
-  IfStatement createIfStatement();
+  QualOp_TimesTok createQualOp_TimesTok();
 
   /**
-   * Returns a new object of class '<em>If Else Statement</em>'.
+   * Returns a new object of class '<em>Qual Op Power Tok</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>If Else Statement</em>'.
+   * @return a new object of class '<em>Qual Op Power Tok</em>'.
    * @generated
    */
-  IfElseStatement createIfElseStatement();
+  QualOp_PowerTok createQualOp_PowerTok();
 
   /**
-   * Returns a new object of class '<em>Expr</em>'.
+   * Returns a new object of class '<em>enlist1a Labeled Semicolon AB</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Expr</em>'.
+   * @return a new object of class '<em>enlist1a Labeled Semicolon AB</em>'.
    * @generated
    */
-  Expr createExpr();
+  enlist1a_Labeled_Semicolon_AB createenlist1a_Labeled_Semicolon_AB();
 
   /**
-   * Returns a new object of class '<em>Primary Prefix</em>'.
+   * Returns a new object of class '<em>enlister1a Labeled Semicolon</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Primary Prefix</em>'.
+   * @return a new object of class '<em>enlister1a Labeled Semicolon</em>'.
    * @generated
    */
-  PrimaryPrefix createPrimaryPrefix();
+  enlister1a_Labeled_Semicolon createenlister1a_Labeled_Semicolon();
 
   /**
-   * Returns a new object of class '<em>Name Or Function Call</em>'.
+   * Returns a new object of class '<em>Curly Labeled</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Name Or Function Call</em>'.
+   * @return a new object of class '<em>Curly Labeled</em>'.
    * @generated
    */
-  NameOrFunctionCall createNameOrFunctionCall();
+  Curly_Labeled createCurly_Labeled();
 
   /**
-   * Returns a new object of class '<em>Literal</em>'.
+   * Returns a new object of class '<em>Curly Contents Labeled</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Literal</em>'.
+   * @return a new object of class '<em>Curly Contents Labeled</em>'.
    * @generated
    */
-  Literal createLiteral();
+  CurlyContents_Labeled createCurlyContents_Labeled();
 
   /**
-   * Returns a new object of class '<em>Character Literal</em>'.
+   * Returns a new object of class '<em>Curly Contents List Labeled</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Character Literal</em>'.
+   * @return a new object of class '<em>Curly Contents List Labeled</em>'.
    * @generated
    */
-  CharacterLiteral createCharacterLiteral();
+  CurlyContentsList_Labeled createCurlyContentsList_Labeled();
 
   /**
-   * Returns a new object of class '<em>Boolean Literal</em>'.
+   * Returns a new object of class '<em>Arrow Tok</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Boolean Literal</em>'.
+   * @return a new object of class '<em>Arrow Tok</em>'.
    * @generated
    */
-  BooleanLiteral createBooleanLiteral();
+  ArrowTok createArrowTok();
 
   /**
-   * Returns a new object of class '<em>List Literal</em>'.
+   * Returns a new object of class '<em>Lattice Tok</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>List Literal</em>'.
+   * @return a new object of class '<em>Lattice Tok</em>'.
    * @generated
    */
-  ListLiteral createListLiteral();
+  LatticeTok createLatticeTok();
 
   /**
-   * Returns a new object of class '<em>Exit Expression</em>'.
+   * Returns a new object of class '<em>Relation Tok</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Exit Expression</em>'.
+   * @return a new object of class '<em>Relation Tok</em>'.
    * @generated
    */
-  ExitExpression createExitExpression();
+  RelationTok createRelationTok();
 
   /**
-   * Returns a new object of class '<em>Condition Expression</em>'.
+   * Returns a new object of class '<em>Seg Tok</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Condition Expression</em>'.
+   * @return a new object of class '<em>Seg Tok</em>'.
    * @generated
    */
-  ConditionExpression createConditionExpression();
+  SegTok createSegTok();
 
   /**
-   * Returns a new object of class '<em>Or Expression</em>'.
+   * Returns a new object of class '<em>Plus Tok</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Or Expression</em>'.
+   * @return a new object of class '<em>Plus Tok</em>'.
    * @generated
    */
-  OrExpression createOrExpression();
+  PlusTok createPlusTok();
 
   /**
-   * Returns a new object of class '<em>And Expression</em>'.
+   * Returns a new object of class '<em>Quotient Tok</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>And Expression</em>'.
+   * @return a new object of class '<em>Quotient Tok</em>'.
    * @generated
    */
-  AndExpression createAndExpression();
+  QuotientTok createQuotientTok();
 
   /**
-   * Returns a new object of class '<em>Inner Prod Expression</em>'.
+   * Returns a new object of class '<em>Times Tok</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Inner Prod Expression</em>'.
+   * @return a new object of class '<em>Times Tok</em>'.
    * @generated
    */
-  InnerProdExpression createInnerProdExpression();
+  TimesTok createTimesTok();
 
   /**
-   * Returns a new object of class '<em>Outer Prod Expression</em>'.
+   * Returns a new object of class '<em>Power Tok</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Outer Prod Expression</em>'.
+   * @return a new object of class '<em>Power Tok</em>'.
    * @generated
    */
-  OuterProdExpression createOuterProdExpression();
-
-  /**
-   * Returns a new object of class '<em>Has Expression</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Has Expression</em>'.
-   * @generated
-   */
-  HasExpression createHasExpression();
-
-  /**
-   * Returns a new object of class '<em>Case Expression</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Case Expression</em>'.
-   * @generated
-   */
-  CaseExpression createCaseExpression();
-
-  /**
-   * Returns a new object of class '<em>Equality Expression</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Equality Expression</em>'.
-   * @generated
-   */
-  EqualityExpression createEqualityExpression();
-
-  /**
-   * Returns a new object of class '<em>Relational Expression</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Relational Expression</em>'.
-   * @generated
-   */
-  RelationalExpression createRelationalExpression();
-
-  /**
-   * Returns a new object of class '<em>Is Expression</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Is Expression</em>'.
-   * @generated
-   */
-  IsExpression createIsExpression();
-
-  /**
-   * Returns a new object of class '<em>Segment Expression</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Segment Expression</em>'.
-   * @generated
-   */
-  SegmentExpression createSegmentExpression();
-
-  /**
-   * Returns a new object of class '<em>Additive Expression</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Additive Expression</em>'.
-   * @generated
-   */
-  AdditiveExpression createAdditiveExpression();
-
-  /**
-   * Returns a new object of class '<em>Exquo Expression</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Exquo Expression</em>'.
-   * @generated
-   */
-  ExquoExpression createExquoExpression();
-
-  /**
-   * Returns a new object of class '<em>Division Expression</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Division Expression</em>'.
-   * @generated
-   */
-  DivisionExpression createDivisionExpression();
-
-  /**
-   * Returns a new object of class '<em>Quo Expression</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Quo Expression</em>'.
-   * @generated
-   */
-  QuoExpression createQuoExpression();
-
-  /**
-   * Returns a new object of class '<em>Mod Expression</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Mod Expression</em>'.
-   * @generated
-   */
-  ModExpression createModExpression();
-
-  /**
-   * Returns a new object of class '<em>Rem Expression</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Rem Expression</em>'.
-   * @generated
-   */
-  RemExpression createRemExpression();
-
-  /**
-   * Returns a new object of class '<em>Multiplicative Expression</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Multiplicative Expression</em>'.
-   * @generated
-   */
-  MultiplicativeExpression createMultiplicativeExpression();
-
-  /**
-   * Returns a new object of class '<em>Exponent Expression</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Exponent Expression</em>'.
-   * @generated
-   */
-  ExponentExpression createExponentExpression();
-
-  /**
-   * Returns a new object of class '<em>Map Definition</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Map Definition</em>'.
-   * @generated
-   */
-  MapDefinition createMapDefinition();
-
-  /**
-   * Returns a new object of class '<em>Assign Expression</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Assign Expression</em>'.
-   * @generated
-   */
-  AssignExpression createAssignExpression();
-
-  /**
-   * Returns a new object of class '<em>Pretend Expression</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Pretend Expression</em>'.
-   * @generated
-   */
-  PretendExpression createPretendExpression();
-
-  /**
-   * Returns a new object of class '<em>Coerce Expression</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Coerce Expression</em>'.
-   * @generated
-   */
-  CoerceExpression createCoerceExpression();
-
-  /**
-   * Returns a new object of class '<em>Hint Type Expression</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Hint Type Expression</em>'.
-   * @generated
-   */
-  HintTypeExpression createHintTypeExpression();
-
-  /**
-   * Returns a new object of class '<em>Elt Expression</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Elt Expression</em>'.
-   * @generated
-   */
-  EltExpression createEltExpression();
-
-  /**
-   * Returns a new object of class '<em>Explicit Type Expression</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Explicit Type Expression</em>'.
-   * @generated
-   */
-  ExplicitTypeExpression createExplicitTypeExpression();
-
-  /**
-   * Returns a new object of class '<em>Unary Expression</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Unary Expression</em>'.
-   * @generated
-   */
-  UnaryExpression createUnaryExpression();
+  PowerTok createPowerTok();
 
   /**
    * Returns the package supported by this factory.

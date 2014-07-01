@@ -65,83 +65,61 @@ public class EditorFactoryImpl extends EFactoryImpl implements EditorFactory
     switch (eClass.getClassifierID())
     {
       case EditorPackage.MODEL: return createModel();
-      case EditorPackage.CATEGORY_DEF: return createCategoryDef();
-      case EditorPackage.PACKAGE_DEF: return createPackageDef();
-      case EditorPackage.DOMAIN_DEF: return createDomainDef();
-      case EditorPackage.WHERE_PART: return createWherePart();
-      case EditorPackage.WHERE_ASSIGNMENTS: return createWhereAssignments();
-      case EditorPackage.WITH_PART: return createWithPart();
-      case EditorPackage.WITH_INLINE: return createWithInline();
-      case EditorPackage.ADD_PART: return createAddPart();
-      case EditorPackage.ADD_STATEMENTS: return createAddStatements();
-      case EditorPackage.FUNCTION_DEFINITION: return createFunctionDefinition();
-      case EditorPackage.FUNCTION_DEFINITION_BLOCK: return createFunctionDefinitionBlock();
-      case EditorPackage.FUNCTION_SIGNATURE: return createFunctionSignature();
-      case EditorPackage.MACRO_DEF: return createMacroDef();
-      case EditorPackage.IMPORT: return createImport();
-      case EditorPackage.VARIABLE_DECLARATION_BLOCK: return createVariableDeclarationBlock();
-      case EditorPackage.VARIABLE_DECLARATION: return createVariableDeclaration();
-      case EditorPackage.TYPE_WITH_NAME: return createTypeWithName();
-      case EditorPackage.VARIABLE_TYPED: return createVariableTyped();
-      case EditorPackage.VARIABLE_DECLARATION_ASSIGN: return createVariableDeclarationAssign();
-      case EditorPackage.FREE_VARIABLE: return createFreeVariable();
-      case EditorPackage.LOCAL_VARIABLE: return createLocalVariable();
-      case EditorPackage.TYPE_EXPRESSION: return createTypeExpression();
-      case EditorPackage.TYPE_PARAMETER_LIST: return createTypeParameterList();
-      case EditorPackage.TYPE_ARGUMENTS: return createTypeArguments();
-      case EditorPackage.TYPE_RESULT: return createTypeResult();
-      case EditorPackage.TYPE_PRIMARY_EXPRESSION: return createTypePrimaryExpression();
-      case EditorPackage.TYPE_NAME_OR_FUNCTION_CALL: return createTypeNameOrFunctionCall();
-      case EditorPackage.TYPE_NAME_OR_FUNCTION_CALL2: return createTypeNameOrFunctionCall2();
-      case EditorPackage.TUPLE_DEFINITION: return createTupleDefinition();
-      case EditorPackage.TYPE_LITERAL: return createTypeLiteral();
-      case EditorPackage.STATEMENT: return createStatement();
-      case EditorPackage.BLOCK: return createBlock();
-      case EditorPackage.STATEMENT_EXPRESSION: return createStatementExpression();
-      case EditorPackage.FOR_STATEMENT: return createForStatement();
-      case EditorPackage.WHILE_STATEMENT: return createWhileStatement();
-      case EditorPackage.DO_STATEMENT: return createDoStatement();
-      case EditorPackage.REPEAT_STATEMENT: return createRepeatStatement();
-      case EditorPackage.ITERATE_STATEMENT: return createIterateStatement();
-      case EditorPackage.BREAK_STATEMENT: return createBreakStatement();
-      case EditorPackage.RETURN_STATEMENT: return createReturnStatement();
-      case EditorPackage.IF_STATEMENT: return createIfStatement();
-      case EditorPackage.IF_ELSE_STATEMENT: return createIfElseStatement();
-      case EditorPackage.EXPR: return createExpr();
-      case EditorPackage.PRIMARY_PREFIX: return createPrimaryPrefix();
-      case EditorPackage.NAME_OR_FUNCTION_CALL: return createNameOrFunctionCall();
-      case EditorPackage.LITERAL: return createLiteral();
-      case EditorPackage.CHARACTER_LITERAL: return createCharacterLiteral();
-      case EditorPackage.BOOLEAN_LITERAL: return createBooleanLiteral();
-      case EditorPackage.LIST_LITERAL: return createListLiteral();
-      case EditorPackage.EXIT_EXPRESSION: return createExitExpression();
-      case EditorPackage.CONDITION_EXPRESSION: return createConditionExpression();
-      case EditorPackage.OR_EXPRESSION: return createOrExpression();
-      case EditorPackage.AND_EXPRESSION: return createAndExpression();
-      case EditorPackage.INNER_PROD_EXPRESSION: return createInnerProdExpression();
-      case EditorPackage.OUTER_PROD_EXPRESSION: return createOuterProdExpression();
-      case EditorPackage.HAS_EXPRESSION: return createHasExpression();
-      case EditorPackage.CASE_EXPRESSION: return createCaseExpression();
-      case EditorPackage.EQUALITY_EXPRESSION: return createEqualityExpression();
-      case EditorPackage.RELATIONAL_EXPRESSION: return createRelationalExpression();
-      case EditorPackage.IS_EXPRESSION: return createIsExpression();
-      case EditorPackage.SEGMENT_EXPRESSION: return createSegmentExpression();
-      case EditorPackage.ADDITIVE_EXPRESSION: return createAdditiveExpression();
-      case EditorPackage.EXQUO_EXPRESSION: return createExquoExpression();
-      case EditorPackage.DIVISION_EXPRESSION: return createDivisionExpression();
-      case EditorPackage.QUO_EXPRESSION: return createQuoExpression();
-      case EditorPackage.MOD_EXPRESSION: return createModExpression();
-      case EditorPackage.REM_EXPRESSION: return createRemExpression();
-      case EditorPackage.MULTIPLICATIVE_EXPRESSION: return createMultiplicativeExpression();
-      case EditorPackage.EXPONENT_EXPRESSION: return createExponentExpression();
-      case EditorPackage.MAP_DEFINITION: return createMapDefinition();
-      case EditorPackage.ASSIGN_EXPRESSION: return createAssignExpression();
-      case EditorPackage.PRETEND_EXPRESSION: return createPretendExpression();
-      case EditorPackage.COERCE_EXPRESSION: return createCoerceExpression();
-      case EditorPackage.HINT_TYPE_EXPRESSION: return createHintTypeExpression();
-      case EditorPackage.ELT_EXPRESSION: return createEltExpression();
-      case EditorPackage.EXPLICIT_TYPE_EXPRESSION: return createExplicitTypeExpression();
-      case EditorPackage.UNARY_EXPRESSION: return createUnaryExpression();
+      case EditorPackage.EXPRESSION: return createExpression();
+      case EditorPackage.LABELED: return createLabeled();
+      case EditorPackage.OP_QUAL_TAIL: return createOpQualTail();
+      case EditorPackage.OP: return createOp();
+      case EditorPackage.NAKED_OP: return createNakedOp();
+      case EditorPackage.ARROW_OP: return createArrowOp();
+      case EditorPackage.LATTICE_OP: return createLatticeOp();
+      case EditorPackage.RELATION_OP: return createRelationOp();
+      case EditorPackage.SEG_OP: return createSegOp();
+      case EditorPackage.PLUS_OP: return createPlusOp();
+      case EditorPackage.QUOTIENT_OP: return createQuotientOp();
+      case EditorPackage.TIMES_OP: return createTimesOp();
+      case EditorPackage.POWER_OP: return createPowerOp();
+      case EditorPackage.JLEFT_MOLECULE: return createJleft_Molecule();
+      case EditorPackage.JLEFT_ATOM: return createJleft_Atom();
+      case EditorPackage.MOLECULE: return createMolecule();
+      case EditorPackage.ENCLOSURE: return createEnclosure();
+      case EditorPackage.BLOCK_MOLECULE: return createBlockMolecule();
+      case EditorPackage.BLOCK_ENCLOSURE: return createBlockEnclosure();
+      case EditorPackage.PARENED: return createParened();
+      case EditorPackage.BRACKETED: return createBracketed();
+      case EditorPackage.QUOTED_IDS: return createQuotedIds();
+      case EditorPackage.NAMES: return createNames();
+      case EditorPackage.ATOM: return createAtom();
+      case EditorPackage.NAME: return createName();
+      case EditorPackage.ID: return createId();
+      case EditorPackage.UNQUAL_OP_ARROW_TOK: return createUnqualOp_ArrowTok();
+      case EditorPackage.UNQUAL_OP_LATTICE_TOK: return createUnqualOp_LatticeTok();
+      case EditorPackage.UNQUAL_OP_RELATION_TOK: return createUnqualOp_RelationTok();
+      case EditorPackage.UNQUAL_OP_SEG_TOK: return createUnqualOp_SegTok();
+      case EditorPackage.UNQUAL_OP_PLUS_TOK: return createUnqualOp_PlusTok();
+      case EditorPackage.UNQUAL_OP_QUOTIENT_TOK: return createUnqualOp_QuotientTok();
+      case EditorPackage.UNQUAL_OP_TIMES_TOK: return createUnqualOp_TimesTok();
+      case EditorPackage.UNQUAL_OP_POWER_TOK: return createUnqualOp_PowerTok();
+      case EditorPackage.QUAL_OP_ARROW_TOK: return createQualOp_ArrowTok();
+      case EditorPackage.QUAL_OP_LATTICE_TOK: return createQualOp_LatticeTok();
+      case EditorPackage.QUAL_OP_RELATION_TOK: return createQualOp_RelationTok();
+      case EditorPackage.QUAL_OP_SEG_TOK: return createQualOp_SegTok();
+      case EditorPackage.QUAL_OP_PLUS_TOK: return createQualOp_PlusTok();
+      case EditorPackage.QUAL_OP_QUOTIENT_TOK: return createQualOp_QuotientTok();
+      case EditorPackage.QUAL_OP_TIMES_TOK: return createQualOp_TimesTok();
+      case EditorPackage.QUAL_OP_POWER_TOK: return createQualOp_PowerTok();
+      case EditorPackage.ENLIST1A_LABELED_SEMICOLON_AB: return createenlist1a_Labeled_Semicolon_AB();
+      case EditorPackage.ENLISTER1A_LABELED_SEMICOLON: return createenlister1a_Labeled_Semicolon();
+      case EditorPackage.CURLY_LABELED: return createCurly_Labeled();
+      case EditorPackage.CURLY_CONTENTS_LABELED: return createCurlyContents_Labeled();
+      case EditorPackage.CURLY_CONTENTS_LIST_LABELED: return createCurlyContentsList_Labeled();
+      case EditorPackage.ARROW_TOK: return createArrowTok();
+      case EditorPackage.LATTICE_TOK: return createLatticeTok();
+      case EditorPackage.RELATION_TOK: return createRelationTok();
+      case EditorPackage.SEG_TOK: return createSegTok();
+      case EditorPackage.PLUS_TOK: return createPlusTok();
+      case EditorPackage.QUOTIENT_TOK: return createQuotientTok();
+      case EditorPackage.TIMES_TOK: return createTimesTok();
+      case EditorPackage.POWER_TOK: return createPowerTok();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
     }
@@ -163,10 +141,10 @@ public class EditorFactoryImpl extends EFactoryImpl implements EditorFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public CategoryDef createCategoryDef()
+  public Expression createExpression()
   {
-    CategoryDefImpl categoryDef = new CategoryDefImpl();
-    return categoryDef;
+    ExpressionImpl expression = new ExpressionImpl();
+    return expression;
   }
 
   /**
@@ -174,10 +152,10 @@ public class EditorFactoryImpl extends EFactoryImpl implements EditorFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public PackageDef createPackageDef()
+  public Labeled createLabeled()
   {
-    PackageDefImpl packageDef = new PackageDefImpl();
-    return packageDef;
+    LabeledImpl labeled = new LabeledImpl();
+    return labeled;
   }
 
   /**
@@ -185,10 +163,10 @@ public class EditorFactoryImpl extends EFactoryImpl implements EditorFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public DomainDef createDomainDef()
+  public OpQualTail createOpQualTail()
   {
-    DomainDefImpl domainDef = new DomainDefImpl();
-    return domainDef;
+    OpQualTailImpl opQualTail = new OpQualTailImpl();
+    return opQualTail;
   }
 
   /**
@@ -196,10 +174,10 @@ public class EditorFactoryImpl extends EFactoryImpl implements EditorFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public WherePart createWherePart()
+  public Op createOp()
   {
-    WherePartImpl wherePart = new WherePartImpl();
-    return wherePart;
+    OpImpl op = new OpImpl();
+    return op;
   }
 
   /**
@@ -207,10 +185,10 @@ public class EditorFactoryImpl extends EFactoryImpl implements EditorFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public WhereAssignments createWhereAssignments()
+  public NakedOp createNakedOp()
   {
-    WhereAssignmentsImpl whereAssignments = new WhereAssignmentsImpl();
-    return whereAssignments;
+    NakedOpImpl nakedOp = new NakedOpImpl();
+    return nakedOp;
   }
 
   /**
@@ -218,10 +196,10 @@ public class EditorFactoryImpl extends EFactoryImpl implements EditorFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public WithPart createWithPart()
+  public ArrowOp createArrowOp()
   {
-    WithPartImpl withPart = new WithPartImpl();
-    return withPart;
+    ArrowOpImpl arrowOp = new ArrowOpImpl();
+    return arrowOp;
   }
 
   /**
@@ -229,10 +207,10 @@ public class EditorFactoryImpl extends EFactoryImpl implements EditorFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public WithInline createWithInline()
+  public LatticeOp createLatticeOp()
   {
-    WithInlineImpl withInline = new WithInlineImpl();
-    return withInline;
+    LatticeOpImpl latticeOp = new LatticeOpImpl();
+    return latticeOp;
   }
 
   /**
@@ -240,10 +218,10 @@ public class EditorFactoryImpl extends EFactoryImpl implements EditorFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public AddPart createAddPart()
+  public RelationOp createRelationOp()
   {
-    AddPartImpl addPart = new AddPartImpl();
-    return addPart;
+    RelationOpImpl relationOp = new RelationOpImpl();
+    return relationOp;
   }
 
   /**
@@ -251,10 +229,10 @@ public class EditorFactoryImpl extends EFactoryImpl implements EditorFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public AddStatements createAddStatements()
+  public SegOp createSegOp()
   {
-    AddStatementsImpl addStatements = new AddStatementsImpl();
-    return addStatements;
+    SegOpImpl segOp = new SegOpImpl();
+    return segOp;
   }
 
   /**
@@ -262,10 +240,10 @@ public class EditorFactoryImpl extends EFactoryImpl implements EditorFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public FunctionDefinition createFunctionDefinition()
+  public PlusOp createPlusOp()
   {
-    FunctionDefinitionImpl functionDefinition = new FunctionDefinitionImpl();
-    return functionDefinition;
+    PlusOpImpl plusOp = new PlusOpImpl();
+    return plusOp;
   }
 
   /**
@@ -273,10 +251,10 @@ public class EditorFactoryImpl extends EFactoryImpl implements EditorFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public FunctionDefinitionBlock createFunctionDefinitionBlock()
+  public QuotientOp createQuotientOp()
   {
-    FunctionDefinitionBlockImpl functionDefinitionBlock = new FunctionDefinitionBlockImpl();
-    return functionDefinitionBlock;
+    QuotientOpImpl quotientOp = new QuotientOpImpl();
+    return quotientOp;
   }
 
   /**
@@ -284,10 +262,10 @@ public class EditorFactoryImpl extends EFactoryImpl implements EditorFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public FunctionSignature createFunctionSignature()
+  public TimesOp createTimesOp()
   {
-    FunctionSignatureImpl functionSignature = new FunctionSignatureImpl();
-    return functionSignature;
+    TimesOpImpl timesOp = new TimesOpImpl();
+    return timesOp;
   }
 
   /**
@@ -295,10 +273,10 @@ public class EditorFactoryImpl extends EFactoryImpl implements EditorFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public MacroDef createMacroDef()
+  public PowerOp createPowerOp()
   {
-    MacroDefImpl macroDef = new MacroDefImpl();
-    return macroDef;
+    PowerOpImpl powerOp = new PowerOpImpl();
+    return powerOp;
   }
 
   /**
@@ -306,10 +284,10 @@ public class EditorFactoryImpl extends EFactoryImpl implements EditorFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public Import createImport()
+  public Jleft_Molecule createJleft_Molecule()
   {
-    ImportImpl import_ = new ImportImpl();
-    return import_;
+    Jleft_MoleculeImpl jleft_Molecule = new Jleft_MoleculeImpl();
+    return jleft_Molecule;
   }
 
   /**
@@ -317,10 +295,10 @@ public class EditorFactoryImpl extends EFactoryImpl implements EditorFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public VariableDeclarationBlock createVariableDeclarationBlock()
+  public Jleft_Atom createJleft_Atom()
   {
-    VariableDeclarationBlockImpl variableDeclarationBlock = new VariableDeclarationBlockImpl();
-    return variableDeclarationBlock;
+    Jleft_AtomImpl jleft_Atom = new Jleft_AtomImpl();
+    return jleft_Atom;
   }
 
   /**
@@ -328,10 +306,10 @@ public class EditorFactoryImpl extends EFactoryImpl implements EditorFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public VariableDeclaration createVariableDeclaration()
+  public Molecule createMolecule()
   {
-    VariableDeclarationImpl variableDeclaration = new VariableDeclarationImpl();
-    return variableDeclaration;
+    MoleculeImpl molecule = new MoleculeImpl();
+    return molecule;
   }
 
   /**
@@ -339,10 +317,10 @@ public class EditorFactoryImpl extends EFactoryImpl implements EditorFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public TypeWithName createTypeWithName()
+  public Enclosure createEnclosure()
   {
-    TypeWithNameImpl typeWithName = new TypeWithNameImpl();
-    return typeWithName;
+    EnclosureImpl enclosure = new EnclosureImpl();
+    return enclosure;
   }
 
   /**
@@ -350,10 +328,10 @@ public class EditorFactoryImpl extends EFactoryImpl implements EditorFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public VariableTyped createVariableTyped()
+  public BlockMolecule createBlockMolecule()
   {
-    VariableTypedImpl variableTyped = new VariableTypedImpl();
-    return variableTyped;
+    BlockMoleculeImpl blockMolecule = new BlockMoleculeImpl();
+    return blockMolecule;
   }
 
   /**
@@ -361,10 +339,10 @@ public class EditorFactoryImpl extends EFactoryImpl implements EditorFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public VariableDeclarationAssign createVariableDeclarationAssign()
+  public BlockEnclosure createBlockEnclosure()
   {
-    VariableDeclarationAssignImpl variableDeclarationAssign = new VariableDeclarationAssignImpl();
-    return variableDeclarationAssign;
+    BlockEnclosureImpl blockEnclosure = new BlockEnclosureImpl();
+    return blockEnclosure;
   }
 
   /**
@@ -372,10 +350,10 @@ public class EditorFactoryImpl extends EFactoryImpl implements EditorFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public FreeVariable createFreeVariable()
+  public Parened createParened()
   {
-    FreeVariableImpl freeVariable = new FreeVariableImpl();
-    return freeVariable;
+    ParenedImpl parened = new ParenedImpl();
+    return parened;
   }
 
   /**
@@ -383,10 +361,10 @@ public class EditorFactoryImpl extends EFactoryImpl implements EditorFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public LocalVariable createLocalVariable()
+  public Bracketed createBracketed()
   {
-    LocalVariableImpl localVariable = new LocalVariableImpl();
-    return localVariable;
+    BracketedImpl bracketed = new BracketedImpl();
+    return bracketed;
   }
 
   /**
@@ -394,10 +372,10 @@ public class EditorFactoryImpl extends EFactoryImpl implements EditorFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public TypeExpression createTypeExpression()
+  public QuotedIds createQuotedIds()
   {
-    TypeExpressionImpl typeExpression = new TypeExpressionImpl();
-    return typeExpression;
+    QuotedIdsImpl quotedIds = new QuotedIdsImpl();
+    return quotedIds;
   }
 
   /**
@@ -405,10 +383,10 @@ public class EditorFactoryImpl extends EFactoryImpl implements EditorFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public TypeParameterList createTypeParameterList()
+  public Names createNames()
   {
-    TypeParameterListImpl typeParameterList = new TypeParameterListImpl();
-    return typeParameterList;
+    NamesImpl names = new NamesImpl();
+    return names;
   }
 
   /**
@@ -416,10 +394,10 @@ public class EditorFactoryImpl extends EFactoryImpl implements EditorFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public TypeArguments createTypeArguments()
+  public Atom createAtom()
   {
-    TypeArgumentsImpl typeArguments = new TypeArgumentsImpl();
-    return typeArguments;
+    AtomImpl atom = new AtomImpl();
+    return atom;
   }
 
   /**
@@ -427,10 +405,10 @@ public class EditorFactoryImpl extends EFactoryImpl implements EditorFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public TypeResult createTypeResult()
+  public Name createName()
   {
-    TypeResultImpl typeResult = new TypeResultImpl();
-    return typeResult;
+    NameImpl name = new NameImpl();
+    return name;
   }
 
   /**
@@ -438,10 +416,10 @@ public class EditorFactoryImpl extends EFactoryImpl implements EditorFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public TypePrimaryExpression createTypePrimaryExpression()
+  public Id createId()
   {
-    TypePrimaryExpressionImpl typePrimaryExpression = new TypePrimaryExpressionImpl();
-    return typePrimaryExpression;
+    IdImpl id = new IdImpl();
+    return id;
   }
 
   /**
@@ -449,10 +427,10 @@ public class EditorFactoryImpl extends EFactoryImpl implements EditorFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public TypeNameOrFunctionCall createTypeNameOrFunctionCall()
+  public UnqualOp_ArrowTok createUnqualOp_ArrowTok()
   {
-    TypeNameOrFunctionCallImpl typeNameOrFunctionCall = new TypeNameOrFunctionCallImpl();
-    return typeNameOrFunctionCall;
+    UnqualOp_ArrowTokImpl unqualOp_ArrowTok = new UnqualOp_ArrowTokImpl();
+    return unqualOp_ArrowTok;
   }
 
   /**
@@ -460,10 +438,10 @@ public class EditorFactoryImpl extends EFactoryImpl implements EditorFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public TypeNameOrFunctionCall2 createTypeNameOrFunctionCall2()
+  public UnqualOp_LatticeTok createUnqualOp_LatticeTok()
   {
-    TypeNameOrFunctionCall2Impl typeNameOrFunctionCall2 = new TypeNameOrFunctionCall2Impl();
-    return typeNameOrFunctionCall2;
+    UnqualOp_LatticeTokImpl unqualOp_LatticeTok = new UnqualOp_LatticeTokImpl();
+    return unqualOp_LatticeTok;
   }
 
   /**
@@ -471,10 +449,10 @@ public class EditorFactoryImpl extends EFactoryImpl implements EditorFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public TupleDefinition createTupleDefinition()
+  public UnqualOp_RelationTok createUnqualOp_RelationTok()
   {
-    TupleDefinitionImpl tupleDefinition = new TupleDefinitionImpl();
-    return tupleDefinition;
+    UnqualOp_RelationTokImpl unqualOp_RelationTok = new UnqualOp_RelationTokImpl();
+    return unqualOp_RelationTok;
   }
 
   /**
@@ -482,10 +460,10 @@ public class EditorFactoryImpl extends EFactoryImpl implements EditorFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public TypeLiteral createTypeLiteral()
+  public UnqualOp_SegTok createUnqualOp_SegTok()
   {
-    TypeLiteralImpl typeLiteral = new TypeLiteralImpl();
-    return typeLiteral;
+    UnqualOp_SegTokImpl unqualOp_SegTok = new UnqualOp_SegTokImpl();
+    return unqualOp_SegTok;
   }
 
   /**
@@ -493,10 +471,10 @@ public class EditorFactoryImpl extends EFactoryImpl implements EditorFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public Statement createStatement()
+  public UnqualOp_PlusTok createUnqualOp_PlusTok()
   {
-    StatementImpl statement = new StatementImpl();
-    return statement;
+    UnqualOp_PlusTokImpl unqualOp_PlusTok = new UnqualOp_PlusTokImpl();
+    return unqualOp_PlusTok;
   }
 
   /**
@@ -504,10 +482,10 @@ public class EditorFactoryImpl extends EFactoryImpl implements EditorFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public Block createBlock()
+  public UnqualOp_QuotientTok createUnqualOp_QuotientTok()
   {
-    BlockImpl block = new BlockImpl();
-    return block;
+    UnqualOp_QuotientTokImpl unqualOp_QuotientTok = new UnqualOp_QuotientTokImpl();
+    return unqualOp_QuotientTok;
   }
 
   /**
@@ -515,10 +493,10 @@ public class EditorFactoryImpl extends EFactoryImpl implements EditorFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public StatementExpression createStatementExpression()
+  public UnqualOp_TimesTok createUnqualOp_TimesTok()
   {
-    StatementExpressionImpl statementExpression = new StatementExpressionImpl();
-    return statementExpression;
+    UnqualOp_TimesTokImpl unqualOp_TimesTok = new UnqualOp_TimesTokImpl();
+    return unqualOp_TimesTok;
   }
 
   /**
@@ -526,10 +504,10 @@ public class EditorFactoryImpl extends EFactoryImpl implements EditorFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public ForStatement createForStatement()
+  public UnqualOp_PowerTok createUnqualOp_PowerTok()
   {
-    ForStatementImpl forStatement = new ForStatementImpl();
-    return forStatement;
+    UnqualOp_PowerTokImpl unqualOp_PowerTok = new UnqualOp_PowerTokImpl();
+    return unqualOp_PowerTok;
   }
 
   /**
@@ -537,10 +515,10 @@ public class EditorFactoryImpl extends EFactoryImpl implements EditorFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public WhileStatement createWhileStatement()
+  public QualOp_ArrowTok createQualOp_ArrowTok()
   {
-    WhileStatementImpl whileStatement = new WhileStatementImpl();
-    return whileStatement;
+    QualOp_ArrowTokImpl qualOp_ArrowTok = new QualOp_ArrowTokImpl();
+    return qualOp_ArrowTok;
   }
 
   /**
@@ -548,10 +526,10 @@ public class EditorFactoryImpl extends EFactoryImpl implements EditorFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public DoStatement createDoStatement()
+  public QualOp_LatticeTok createQualOp_LatticeTok()
   {
-    DoStatementImpl doStatement = new DoStatementImpl();
-    return doStatement;
+    QualOp_LatticeTokImpl qualOp_LatticeTok = new QualOp_LatticeTokImpl();
+    return qualOp_LatticeTok;
   }
 
   /**
@@ -559,10 +537,10 @@ public class EditorFactoryImpl extends EFactoryImpl implements EditorFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public RepeatStatement createRepeatStatement()
+  public QualOp_RelationTok createQualOp_RelationTok()
   {
-    RepeatStatementImpl repeatStatement = new RepeatStatementImpl();
-    return repeatStatement;
+    QualOp_RelationTokImpl qualOp_RelationTok = new QualOp_RelationTokImpl();
+    return qualOp_RelationTok;
   }
 
   /**
@@ -570,10 +548,10 @@ public class EditorFactoryImpl extends EFactoryImpl implements EditorFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public IterateStatement createIterateStatement()
+  public QualOp_SegTok createQualOp_SegTok()
   {
-    IterateStatementImpl iterateStatement = new IterateStatementImpl();
-    return iterateStatement;
+    QualOp_SegTokImpl qualOp_SegTok = new QualOp_SegTokImpl();
+    return qualOp_SegTok;
   }
 
   /**
@@ -581,10 +559,10 @@ public class EditorFactoryImpl extends EFactoryImpl implements EditorFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public BreakStatement createBreakStatement()
+  public QualOp_PlusTok createQualOp_PlusTok()
   {
-    BreakStatementImpl breakStatement = new BreakStatementImpl();
-    return breakStatement;
+    QualOp_PlusTokImpl qualOp_PlusTok = new QualOp_PlusTokImpl();
+    return qualOp_PlusTok;
   }
 
   /**
@@ -592,10 +570,10 @@ public class EditorFactoryImpl extends EFactoryImpl implements EditorFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public ReturnStatement createReturnStatement()
+  public QualOp_QuotientTok createQualOp_QuotientTok()
   {
-    ReturnStatementImpl returnStatement = new ReturnStatementImpl();
-    return returnStatement;
+    QualOp_QuotientTokImpl qualOp_QuotientTok = new QualOp_QuotientTokImpl();
+    return qualOp_QuotientTok;
   }
 
   /**
@@ -603,10 +581,10 @@ public class EditorFactoryImpl extends EFactoryImpl implements EditorFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public IfStatement createIfStatement()
+  public QualOp_TimesTok createQualOp_TimesTok()
   {
-    IfStatementImpl ifStatement = new IfStatementImpl();
-    return ifStatement;
+    QualOp_TimesTokImpl qualOp_TimesTok = new QualOp_TimesTokImpl();
+    return qualOp_TimesTok;
   }
 
   /**
@@ -614,10 +592,10 @@ public class EditorFactoryImpl extends EFactoryImpl implements EditorFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public IfElseStatement createIfElseStatement()
+  public QualOp_PowerTok createQualOp_PowerTok()
   {
-    IfElseStatementImpl ifElseStatement = new IfElseStatementImpl();
-    return ifElseStatement;
+    QualOp_PowerTokImpl qualOp_PowerTok = new QualOp_PowerTokImpl();
+    return qualOp_PowerTok;
   }
 
   /**
@@ -625,10 +603,10 @@ public class EditorFactoryImpl extends EFactoryImpl implements EditorFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public Expr createExpr()
+  public enlist1a_Labeled_Semicolon_AB createenlist1a_Labeled_Semicolon_AB()
   {
-    ExprImpl expr = new ExprImpl();
-    return expr;
+    enlist1a_Labeled_Semicolon_ABImpl enlist1a_Labeled_Semicolon_AB = new enlist1a_Labeled_Semicolon_ABImpl();
+    return enlist1a_Labeled_Semicolon_AB;
   }
 
   /**
@@ -636,10 +614,10 @@ public class EditorFactoryImpl extends EFactoryImpl implements EditorFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public PrimaryPrefix createPrimaryPrefix()
+  public enlister1a_Labeled_Semicolon createenlister1a_Labeled_Semicolon()
   {
-    PrimaryPrefixImpl primaryPrefix = new PrimaryPrefixImpl();
-    return primaryPrefix;
+    enlister1a_Labeled_SemicolonImpl enlister1a_Labeled_Semicolon = new enlister1a_Labeled_SemicolonImpl();
+    return enlister1a_Labeled_Semicolon;
   }
 
   /**
@@ -647,10 +625,10 @@ public class EditorFactoryImpl extends EFactoryImpl implements EditorFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public NameOrFunctionCall createNameOrFunctionCall()
+  public Curly_Labeled createCurly_Labeled()
   {
-    NameOrFunctionCallImpl nameOrFunctionCall = new NameOrFunctionCallImpl();
-    return nameOrFunctionCall;
+    Curly_LabeledImpl curly_Labeled = new Curly_LabeledImpl();
+    return curly_Labeled;
   }
 
   /**
@@ -658,10 +636,10 @@ public class EditorFactoryImpl extends EFactoryImpl implements EditorFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public Literal createLiteral()
+  public CurlyContents_Labeled createCurlyContents_Labeled()
   {
-    LiteralImpl literal = new LiteralImpl();
-    return literal;
+    CurlyContents_LabeledImpl curlyContents_Labeled = new CurlyContents_LabeledImpl();
+    return curlyContents_Labeled;
   }
 
   /**
@@ -669,10 +647,10 @@ public class EditorFactoryImpl extends EFactoryImpl implements EditorFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public CharacterLiteral createCharacterLiteral()
+  public CurlyContentsList_Labeled createCurlyContentsList_Labeled()
   {
-    CharacterLiteralImpl characterLiteral = new CharacterLiteralImpl();
-    return characterLiteral;
+    CurlyContentsList_LabeledImpl curlyContentsList_Labeled = new CurlyContentsList_LabeledImpl();
+    return curlyContentsList_Labeled;
   }
 
   /**
@@ -680,10 +658,10 @@ public class EditorFactoryImpl extends EFactoryImpl implements EditorFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public BooleanLiteral createBooleanLiteral()
+  public ArrowTok createArrowTok()
   {
-    BooleanLiteralImpl booleanLiteral = new BooleanLiteralImpl();
-    return booleanLiteral;
+    ArrowTokImpl arrowTok = new ArrowTokImpl();
+    return arrowTok;
   }
 
   /**
@@ -691,10 +669,10 @@ public class EditorFactoryImpl extends EFactoryImpl implements EditorFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public ListLiteral createListLiteral()
+  public LatticeTok createLatticeTok()
   {
-    ListLiteralImpl listLiteral = new ListLiteralImpl();
-    return listLiteral;
+    LatticeTokImpl latticeTok = new LatticeTokImpl();
+    return latticeTok;
   }
 
   /**
@@ -702,10 +680,10 @@ public class EditorFactoryImpl extends EFactoryImpl implements EditorFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public ExitExpression createExitExpression()
+  public RelationTok createRelationTok()
   {
-    ExitExpressionImpl exitExpression = new ExitExpressionImpl();
-    return exitExpression;
+    RelationTokImpl relationTok = new RelationTokImpl();
+    return relationTok;
   }
 
   /**
@@ -713,10 +691,10 @@ public class EditorFactoryImpl extends EFactoryImpl implements EditorFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public ConditionExpression createConditionExpression()
+  public SegTok createSegTok()
   {
-    ConditionExpressionImpl conditionExpression = new ConditionExpressionImpl();
-    return conditionExpression;
+    SegTokImpl segTok = new SegTokImpl();
+    return segTok;
   }
 
   /**
@@ -724,10 +702,10 @@ public class EditorFactoryImpl extends EFactoryImpl implements EditorFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public OrExpression createOrExpression()
+  public PlusTok createPlusTok()
   {
-    OrExpressionImpl orExpression = new OrExpressionImpl();
-    return orExpression;
+    PlusTokImpl plusTok = new PlusTokImpl();
+    return plusTok;
   }
 
   /**
@@ -735,10 +713,10 @@ public class EditorFactoryImpl extends EFactoryImpl implements EditorFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public AndExpression createAndExpression()
+  public QuotientTok createQuotientTok()
   {
-    AndExpressionImpl andExpression = new AndExpressionImpl();
-    return andExpression;
+    QuotientTokImpl quotientTok = new QuotientTokImpl();
+    return quotientTok;
   }
 
   /**
@@ -746,10 +724,10 @@ public class EditorFactoryImpl extends EFactoryImpl implements EditorFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public InnerProdExpression createInnerProdExpression()
+  public TimesTok createTimesTok()
   {
-    InnerProdExpressionImpl innerProdExpression = new InnerProdExpressionImpl();
-    return innerProdExpression;
+    TimesTokImpl timesTok = new TimesTokImpl();
+    return timesTok;
   }
 
   /**
@@ -757,252 +735,10 @@ public class EditorFactoryImpl extends EFactoryImpl implements EditorFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public OuterProdExpression createOuterProdExpression()
+  public PowerTok createPowerTok()
   {
-    OuterProdExpressionImpl outerProdExpression = new OuterProdExpressionImpl();
-    return outerProdExpression;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public HasExpression createHasExpression()
-  {
-    HasExpressionImpl hasExpression = new HasExpressionImpl();
-    return hasExpression;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public CaseExpression createCaseExpression()
-  {
-    CaseExpressionImpl caseExpression = new CaseExpressionImpl();
-    return caseExpression;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EqualityExpression createEqualityExpression()
-  {
-    EqualityExpressionImpl equalityExpression = new EqualityExpressionImpl();
-    return equalityExpression;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public RelationalExpression createRelationalExpression()
-  {
-    RelationalExpressionImpl relationalExpression = new RelationalExpressionImpl();
-    return relationalExpression;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public IsExpression createIsExpression()
-  {
-    IsExpressionImpl isExpression = new IsExpressionImpl();
-    return isExpression;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public SegmentExpression createSegmentExpression()
-  {
-    SegmentExpressionImpl segmentExpression = new SegmentExpressionImpl();
-    return segmentExpression;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public AdditiveExpression createAdditiveExpression()
-  {
-    AdditiveExpressionImpl additiveExpression = new AdditiveExpressionImpl();
-    return additiveExpression;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public ExquoExpression createExquoExpression()
-  {
-    ExquoExpressionImpl exquoExpression = new ExquoExpressionImpl();
-    return exquoExpression;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public DivisionExpression createDivisionExpression()
-  {
-    DivisionExpressionImpl divisionExpression = new DivisionExpressionImpl();
-    return divisionExpression;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public QuoExpression createQuoExpression()
-  {
-    QuoExpressionImpl quoExpression = new QuoExpressionImpl();
-    return quoExpression;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public ModExpression createModExpression()
-  {
-    ModExpressionImpl modExpression = new ModExpressionImpl();
-    return modExpression;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public RemExpression createRemExpression()
-  {
-    RemExpressionImpl remExpression = new RemExpressionImpl();
-    return remExpression;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public MultiplicativeExpression createMultiplicativeExpression()
-  {
-    MultiplicativeExpressionImpl multiplicativeExpression = new MultiplicativeExpressionImpl();
-    return multiplicativeExpression;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public ExponentExpression createExponentExpression()
-  {
-    ExponentExpressionImpl exponentExpression = new ExponentExpressionImpl();
-    return exponentExpression;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public MapDefinition createMapDefinition()
-  {
-    MapDefinitionImpl mapDefinition = new MapDefinitionImpl();
-    return mapDefinition;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public AssignExpression createAssignExpression()
-  {
-    AssignExpressionImpl assignExpression = new AssignExpressionImpl();
-    return assignExpression;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public PretendExpression createPretendExpression()
-  {
-    PretendExpressionImpl pretendExpression = new PretendExpressionImpl();
-    return pretendExpression;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public CoerceExpression createCoerceExpression()
-  {
-    CoerceExpressionImpl coerceExpression = new CoerceExpressionImpl();
-    return coerceExpression;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public HintTypeExpression createHintTypeExpression()
-  {
-    HintTypeExpressionImpl hintTypeExpression = new HintTypeExpressionImpl();
-    return hintTypeExpression;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EltExpression createEltExpression()
-  {
-    EltExpressionImpl eltExpression = new EltExpressionImpl();
-    return eltExpression;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public ExplicitTypeExpression createExplicitTypeExpression()
-  {
-    ExplicitTypeExpressionImpl explicitTypeExpression = new ExplicitTypeExpressionImpl();
-    return explicitTypeExpression;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public UnaryExpression createUnaryExpression()
-  {
-    UnaryExpressionImpl unaryExpression = new UnaryExpressionImpl();
-    return unaryExpression;
+    PowerTokImpl powerTok = new PowerTokImpl();
+    return powerTok;
   }
 
   /**

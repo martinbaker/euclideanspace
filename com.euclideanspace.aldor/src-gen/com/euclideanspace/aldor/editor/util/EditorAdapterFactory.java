@@ -80,389 +80,279 @@ public class EditorAdapterFactory extends AdapterFactoryImpl
         return createModelAdapter();
       }
       @Override
-      public Adapter caseCategoryDef(CategoryDef object)
+      public Adapter caseExpression(Expression object)
       {
-        return createCategoryDefAdapter();
+        return createExpressionAdapter();
       }
       @Override
-      public Adapter casePackageDef(PackageDef object)
+      public Adapter caseLabeled(Labeled object)
       {
-        return createPackageDefAdapter();
+        return createLabeledAdapter();
       }
       @Override
-      public Adapter caseDomainDef(DomainDef object)
+      public Adapter caseOpQualTail(OpQualTail object)
       {
-        return createDomainDefAdapter();
+        return createOpQualTailAdapter();
       }
       @Override
-      public Adapter caseWherePart(WherePart object)
+      public Adapter caseOp(Op object)
       {
-        return createWherePartAdapter();
+        return createOpAdapter();
       }
       @Override
-      public Adapter caseWhereAssignments(WhereAssignments object)
+      public Adapter caseNakedOp(NakedOp object)
       {
-        return createWhereAssignmentsAdapter();
+        return createNakedOpAdapter();
       }
       @Override
-      public Adapter caseWithPart(WithPart object)
+      public Adapter caseArrowOp(ArrowOp object)
       {
-        return createWithPartAdapter();
+        return createArrowOpAdapter();
       }
       @Override
-      public Adapter caseWithInline(WithInline object)
+      public Adapter caseLatticeOp(LatticeOp object)
       {
-        return createWithInlineAdapter();
+        return createLatticeOpAdapter();
       }
       @Override
-      public Adapter caseAddPart(AddPart object)
+      public Adapter caseRelationOp(RelationOp object)
       {
-        return createAddPartAdapter();
+        return createRelationOpAdapter();
       }
       @Override
-      public Adapter caseAddStatements(AddStatements object)
+      public Adapter caseSegOp(SegOp object)
       {
-        return createAddStatementsAdapter();
+        return createSegOpAdapter();
       }
       @Override
-      public Adapter caseFunctionDefinition(FunctionDefinition object)
+      public Adapter casePlusOp(PlusOp object)
       {
-        return createFunctionDefinitionAdapter();
+        return createPlusOpAdapter();
       }
       @Override
-      public Adapter caseFunctionDefinitionBlock(FunctionDefinitionBlock object)
+      public Adapter caseQuotientOp(QuotientOp object)
       {
-        return createFunctionDefinitionBlockAdapter();
+        return createQuotientOpAdapter();
       }
       @Override
-      public Adapter caseFunctionSignature(FunctionSignature object)
+      public Adapter caseTimesOp(TimesOp object)
       {
-        return createFunctionSignatureAdapter();
+        return createTimesOpAdapter();
       }
       @Override
-      public Adapter caseMacroDef(MacroDef object)
+      public Adapter casePowerOp(PowerOp object)
       {
-        return createMacroDefAdapter();
+        return createPowerOpAdapter();
       }
       @Override
-      public Adapter caseImport(Import object)
+      public Adapter caseJleft_Molecule(Jleft_Molecule object)
       {
-        return createImportAdapter();
+        return createJleft_MoleculeAdapter();
       }
       @Override
-      public Adapter caseVariableDeclarationBlock(VariableDeclarationBlock object)
+      public Adapter caseJleft_Atom(Jleft_Atom object)
       {
-        return createVariableDeclarationBlockAdapter();
+        return createJleft_AtomAdapter();
       }
       @Override
-      public Adapter caseVariableDeclaration(VariableDeclaration object)
+      public Adapter caseMolecule(Molecule object)
       {
-        return createVariableDeclarationAdapter();
+        return createMoleculeAdapter();
       }
       @Override
-      public Adapter caseTypeWithName(TypeWithName object)
+      public Adapter caseEnclosure(Enclosure object)
       {
-        return createTypeWithNameAdapter();
+        return createEnclosureAdapter();
       }
       @Override
-      public Adapter caseVariableTyped(VariableTyped object)
+      public Adapter caseBlockMolecule(BlockMolecule object)
       {
-        return createVariableTypedAdapter();
+        return createBlockMoleculeAdapter();
       }
       @Override
-      public Adapter caseVariableDeclarationAssign(VariableDeclarationAssign object)
+      public Adapter caseBlockEnclosure(BlockEnclosure object)
       {
-        return createVariableDeclarationAssignAdapter();
+        return createBlockEnclosureAdapter();
       }
       @Override
-      public Adapter caseFreeVariable(FreeVariable object)
+      public Adapter caseParened(Parened object)
       {
-        return createFreeVariableAdapter();
+        return createParenedAdapter();
       }
       @Override
-      public Adapter caseLocalVariable(LocalVariable object)
+      public Adapter caseBracketed(Bracketed object)
       {
-        return createLocalVariableAdapter();
+        return createBracketedAdapter();
       }
       @Override
-      public Adapter caseTypeExpression(TypeExpression object)
+      public Adapter caseQuotedIds(QuotedIds object)
       {
-        return createTypeExpressionAdapter();
+        return createQuotedIdsAdapter();
       }
       @Override
-      public Adapter caseTypeParameterList(TypeParameterList object)
+      public Adapter caseNames(Names object)
       {
-        return createTypeParameterListAdapter();
+        return createNamesAdapter();
       }
       @Override
-      public Adapter caseTypeArguments(TypeArguments object)
+      public Adapter caseAtom(Atom object)
       {
-        return createTypeArgumentsAdapter();
+        return createAtomAdapter();
       }
       @Override
-      public Adapter caseTypeResult(TypeResult object)
+      public Adapter caseName(Name object)
       {
-        return createTypeResultAdapter();
+        return createNameAdapter();
       }
       @Override
-      public Adapter caseTypePrimaryExpression(TypePrimaryExpression object)
+      public Adapter caseId(Id object)
       {
-        return createTypePrimaryExpressionAdapter();
+        return createIdAdapter();
       }
       @Override
-      public Adapter caseTypeNameOrFunctionCall(TypeNameOrFunctionCall object)
+      public Adapter caseUnqualOp_ArrowTok(UnqualOp_ArrowTok object)
       {
-        return createTypeNameOrFunctionCallAdapter();
+        return createUnqualOp_ArrowTokAdapter();
       }
       @Override
-      public Adapter caseTypeNameOrFunctionCall2(TypeNameOrFunctionCall2 object)
+      public Adapter caseUnqualOp_LatticeTok(UnqualOp_LatticeTok object)
       {
-        return createTypeNameOrFunctionCall2Adapter();
+        return createUnqualOp_LatticeTokAdapter();
       }
       @Override
-      public Adapter caseTupleDefinition(TupleDefinition object)
+      public Adapter caseUnqualOp_RelationTok(UnqualOp_RelationTok object)
       {
-        return createTupleDefinitionAdapter();
+        return createUnqualOp_RelationTokAdapter();
       }
       @Override
-      public Adapter caseTypeLiteral(TypeLiteral object)
+      public Adapter caseUnqualOp_SegTok(UnqualOp_SegTok object)
       {
-        return createTypeLiteralAdapter();
+        return createUnqualOp_SegTokAdapter();
       }
       @Override
-      public Adapter caseStatement(Statement object)
+      public Adapter caseUnqualOp_PlusTok(UnqualOp_PlusTok object)
       {
-        return createStatementAdapter();
+        return createUnqualOp_PlusTokAdapter();
       }
       @Override
-      public Adapter caseBlock(Block object)
+      public Adapter caseUnqualOp_QuotientTok(UnqualOp_QuotientTok object)
       {
-        return createBlockAdapter();
+        return createUnqualOp_QuotientTokAdapter();
       }
       @Override
-      public Adapter caseStatementExpression(StatementExpression object)
+      public Adapter caseUnqualOp_TimesTok(UnqualOp_TimesTok object)
       {
-        return createStatementExpressionAdapter();
+        return createUnqualOp_TimesTokAdapter();
       }
       @Override
-      public Adapter caseForStatement(ForStatement object)
+      public Adapter caseUnqualOp_PowerTok(UnqualOp_PowerTok object)
       {
-        return createForStatementAdapter();
+        return createUnqualOp_PowerTokAdapter();
       }
       @Override
-      public Adapter caseWhileStatement(WhileStatement object)
+      public Adapter caseQualOp_ArrowTok(QualOp_ArrowTok object)
       {
-        return createWhileStatementAdapter();
+        return createQualOp_ArrowTokAdapter();
       }
       @Override
-      public Adapter caseDoStatement(DoStatement object)
+      public Adapter caseQualOp_LatticeTok(QualOp_LatticeTok object)
       {
-        return createDoStatementAdapter();
+        return createQualOp_LatticeTokAdapter();
       }
       @Override
-      public Adapter caseRepeatStatement(RepeatStatement object)
+      public Adapter caseQualOp_RelationTok(QualOp_RelationTok object)
       {
-        return createRepeatStatementAdapter();
+        return createQualOp_RelationTokAdapter();
       }
       @Override
-      public Adapter caseIterateStatement(IterateStatement object)
+      public Adapter caseQualOp_SegTok(QualOp_SegTok object)
       {
-        return createIterateStatementAdapter();
+        return createQualOp_SegTokAdapter();
       }
       @Override
-      public Adapter caseBreakStatement(BreakStatement object)
+      public Adapter caseQualOp_PlusTok(QualOp_PlusTok object)
       {
-        return createBreakStatementAdapter();
+        return createQualOp_PlusTokAdapter();
       }
       @Override
-      public Adapter caseReturnStatement(ReturnStatement object)
+      public Adapter caseQualOp_QuotientTok(QualOp_QuotientTok object)
       {
-        return createReturnStatementAdapter();
+        return createQualOp_QuotientTokAdapter();
       }
       @Override
-      public Adapter caseIfStatement(IfStatement object)
+      public Adapter caseQualOp_TimesTok(QualOp_TimesTok object)
       {
-        return createIfStatementAdapter();
+        return createQualOp_TimesTokAdapter();
       }
       @Override
-      public Adapter caseIfElseStatement(IfElseStatement object)
+      public Adapter caseQualOp_PowerTok(QualOp_PowerTok object)
       {
-        return createIfElseStatementAdapter();
+        return createQualOp_PowerTokAdapter();
       }
       @Override
-      public Adapter caseExpr(Expr object)
+      public Adapter caseenlist1a_Labeled_Semicolon_AB(enlist1a_Labeled_Semicolon_AB object)
       {
-        return createExprAdapter();
+        return createenlist1a_Labeled_Semicolon_ABAdapter();
       }
       @Override
-      public Adapter casePrimaryPrefix(PrimaryPrefix object)
+      public Adapter caseenlister1a_Labeled_Semicolon(enlister1a_Labeled_Semicolon object)
       {
-        return createPrimaryPrefixAdapter();
+        return createenlister1a_Labeled_SemicolonAdapter();
       }
       @Override
-      public Adapter caseNameOrFunctionCall(NameOrFunctionCall object)
+      public Adapter caseCurly_Labeled(Curly_Labeled object)
       {
-        return createNameOrFunctionCallAdapter();
+        return createCurly_LabeledAdapter();
       }
       @Override
-      public Adapter caseLiteral(Literal object)
+      public Adapter caseCurlyContents_Labeled(CurlyContents_Labeled object)
       {
-        return createLiteralAdapter();
+        return createCurlyContents_LabeledAdapter();
       }
       @Override
-      public Adapter caseCharacterLiteral(CharacterLiteral object)
+      public Adapter caseCurlyContentsList_Labeled(CurlyContentsList_Labeled object)
       {
-        return createCharacterLiteralAdapter();
+        return createCurlyContentsList_LabeledAdapter();
       }
       @Override
-      public Adapter caseBooleanLiteral(BooleanLiteral object)
+      public Adapter caseArrowTok(ArrowTok object)
       {
-        return createBooleanLiteralAdapter();
+        return createArrowTokAdapter();
       }
       @Override
-      public Adapter caseListLiteral(ListLiteral object)
+      public Adapter caseLatticeTok(LatticeTok object)
       {
-        return createListLiteralAdapter();
+        return createLatticeTokAdapter();
       }
       @Override
-      public Adapter caseExitExpression(ExitExpression object)
+      public Adapter caseRelationTok(RelationTok object)
       {
-        return createExitExpressionAdapter();
+        return createRelationTokAdapter();
       }
       @Override
-      public Adapter caseConditionExpression(ConditionExpression object)
+      public Adapter caseSegTok(SegTok object)
       {
-        return createConditionExpressionAdapter();
+        return createSegTokAdapter();
       }
       @Override
-      public Adapter caseOrExpression(OrExpression object)
+      public Adapter casePlusTok(PlusTok object)
       {
-        return createOrExpressionAdapter();
+        return createPlusTokAdapter();
       }
       @Override
-      public Adapter caseAndExpression(AndExpression object)
+      public Adapter caseQuotientTok(QuotientTok object)
       {
-        return createAndExpressionAdapter();
+        return createQuotientTokAdapter();
       }
       @Override
-      public Adapter caseInnerProdExpression(InnerProdExpression object)
+      public Adapter caseTimesTok(TimesTok object)
       {
-        return createInnerProdExpressionAdapter();
+        return createTimesTokAdapter();
       }
       @Override
-      public Adapter caseOuterProdExpression(OuterProdExpression object)
+      public Adapter casePowerTok(PowerTok object)
       {
-        return createOuterProdExpressionAdapter();
-      }
-      @Override
-      public Adapter caseHasExpression(HasExpression object)
-      {
-        return createHasExpressionAdapter();
-      }
-      @Override
-      public Adapter caseCaseExpression(CaseExpression object)
-      {
-        return createCaseExpressionAdapter();
-      }
-      @Override
-      public Adapter caseEqualityExpression(EqualityExpression object)
-      {
-        return createEqualityExpressionAdapter();
-      }
-      @Override
-      public Adapter caseRelationalExpression(RelationalExpression object)
-      {
-        return createRelationalExpressionAdapter();
-      }
-      @Override
-      public Adapter caseIsExpression(IsExpression object)
-      {
-        return createIsExpressionAdapter();
-      }
-      @Override
-      public Adapter caseSegmentExpression(SegmentExpression object)
-      {
-        return createSegmentExpressionAdapter();
-      }
-      @Override
-      public Adapter caseAdditiveExpression(AdditiveExpression object)
-      {
-        return createAdditiveExpressionAdapter();
-      }
-      @Override
-      public Adapter caseExquoExpression(ExquoExpression object)
-      {
-        return createExquoExpressionAdapter();
-      }
-      @Override
-      public Adapter caseDivisionExpression(DivisionExpression object)
-      {
-        return createDivisionExpressionAdapter();
-      }
-      @Override
-      public Adapter caseQuoExpression(QuoExpression object)
-      {
-        return createQuoExpressionAdapter();
-      }
-      @Override
-      public Adapter caseModExpression(ModExpression object)
-      {
-        return createModExpressionAdapter();
-      }
-      @Override
-      public Adapter caseRemExpression(RemExpression object)
-      {
-        return createRemExpressionAdapter();
-      }
-      @Override
-      public Adapter caseMultiplicativeExpression(MultiplicativeExpression object)
-      {
-        return createMultiplicativeExpressionAdapter();
-      }
-      @Override
-      public Adapter caseExponentExpression(ExponentExpression object)
-      {
-        return createExponentExpressionAdapter();
-      }
-      @Override
-      public Adapter caseMapDefinition(MapDefinition object)
-      {
-        return createMapDefinitionAdapter();
-      }
-      @Override
-      public Adapter caseAssignExpression(AssignExpression object)
-      {
-        return createAssignExpressionAdapter();
-      }
-      @Override
-      public Adapter casePretendExpression(PretendExpression object)
-      {
-        return createPretendExpressionAdapter();
-      }
-      @Override
-      public Adapter caseCoerceExpression(CoerceExpression object)
-      {
-        return createCoerceExpressionAdapter();
-      }
-      @Override
-      public Adapter caseHintTypeExpression(HintTypeExpression object)
-      {
-        return createHintTypeExpressionAdapter();
-      }
-      @Override
-      public Adapter caseEltExpression(EltExpression object)
-      {
-        return createEltExpressionAdapter();
-      }
-      @Override
-      public Adapter caseExplicitTypeExpression(ExplicitTypeExpression object)
-      {
-        return createExplicitTypeExpressionAdapter();
-      }
-      @Override
-      public Adapter caseUnaryExpression(UnaryExpression object)
-      {
-        return createUnaryExpressionAdapter();
+        return createPowerTokAdapter();
       }
       @Override
       public Adapter defaultCase(EObject object)
@@ -502,1156 +392,826 @@ public class EditorAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link com.euclideanspace.aldor.editor.CategoryDef <em>Category Def</em>}'.
+   * Creates a new adapter for an object of class '{@link com.euclideanspace.aldor.editor.Expression <em>Expression</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see com.euclideanspace.aldor.editor.CategoryDef
+   * @see com.euclideanspace.aldor.editor.Expression
    * @generated
    */
-  public Adapter createCategoryDefAdapter()
+  public Adapter createExpressionAdapter()
   {
     return null;
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link com.euclideanspace.aldor.editor.PackageDef <em>Package Def</em>}'.
+   * Creates a new adapter for an object of class '{@link com.euclideanspace.aldor.editor.Labeled <em>Labeled</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see com.euclideanspace.aldor.editor.PackageDef
+   * @see com.euclideanspace.aldor.editor.Labeled
    * @generated
    */
-  public Adapter createPackageDefAdapter()
+  public Adapter createLabeledAdapter()
   {
     return null;
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link com.euclideanspace.aldor.editor.DomainDef <em>Domain Def</em>}'.
+   * Creates a new adapter for an object of class '{@link com.euclideanspace.aldor.editor.OpQualTail <em>Op Qual Tail</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see com.euclideanspace.aldor.editor.DomainDef
+   * @see com.euclideanspace.aldor.editor.OpQualTail
    * @generated
    */
-  public Adapter createDomainDefAdapter()
+  public Adapter createOpQualTailAdapter()
   {
     return null;
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link com.euclideanspace.aldor.editor.WherePart <em>Where Part</em>}'.
+   * Creates a new adapter for an object of class '{@link com.euclideanspace.aldor.editor.Op <em>Op</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see com.euclideanspace.aldor.editor.WherePart
+   * @see com.euclideanspace.aldor.editor.Op
    * @generated
    */
-  public Adapter createWherePartAdapter()
+  public Adapter createOpAdapter()
   {
     return null;
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link com.euclideanspace.aldor.editor.WhereAssignments <em>Where Assignments</em>}'.
+   * Creates a new adapter for an object of class '{@link com.euclideanspace.aldor.editor.NakedOp <em>Naked Op</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see com.euclideanspace.aldor.editor.WhereAssignments
+   * @see com.euclideanspace.aldor.editor.NakedOp
    * @generated
    */
-  public Adapter createWhereAssignmentsAdapter()
+  public Adapter createNakedOpAdapter()
   {
     return null;
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link com.euclideanspace.aldor.editor.WithPart <em>With Part</em>}'.
+   * Creates a new adapter for an object of class '{@link com.euclideanspace.aldor.editor.ArrowOp <em>Arrow Op</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see com.euclideanspace.aldor.editor.WithPart
+   * @see com.euclideanspace.aldor.editor.ArrowOp
    * @generated
    */
-  public Adapter createWithPartAdapter()
+  public Adapter createArrowOpAdapter()
   {
     return null;
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link com.euclideanspace.aldor.editor.WithInline <em>With Inline</em>}'.
+   * Creates a new adapter for an object of class '{@link com.euclideanspace.aldor.editor.LatticeOp <em>Lattice Op</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see com.euclideanspace.aldor.editor.WithInline
+   * @see com.euclideanspace.aldor.editor.LatticeOp
    * @generated
    */
-  public Adapter createWithInlineAdapter()
+  public Adapter createLatticeOpAdapter()
   {
     return null;
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link com.euclideanspace.aldor.editor.AddPart <em>Add Part</em>}'.
+   * Creates a new adapter for an object of class '{@link com.euclideanspace.aldor.editor.RelationOp <em>Relation Op</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see com.euclideanspace.aldor.editor.AddPart
+   * @see com.euclideanspace.aldor.editor.RelationOp
    * @generated
    */
-  public Adapter createAddPartAdapter()
+  public Adapter createRelationOpAdapter()
   {
     return null;
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link com.euclideanspace.aldor.editor.AddStatements <em>Add Statements</em>}'.
+   * Creates a new adapter for an object of class '{@link com.euclideanspace.aldor.editor.SegOp <em>Seg Op</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see com.euclideanspace.aldor.editor.AddStatements
+   * @see com.euclideanspace.aldor.editor.SegOp
    * @generated
    */
-  public Adapter createAddStatementsAdapter()
+  public Adapter createSegOpAdapter()
   {
     return null;
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link com.euclideanspace.aldor.editor.FunctionDefinition <em>Function Definition</em>}'.
+   * Creates a new adapter for an object of class '{@link com.euclideanspace.aldor.editor.PlusOp <em>Plus Op</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see com.euclideanspace.aldor.editor.FunctionDefinition
+   * @see com.euclideanspace.aldor.editor.PlusOp
    * @generated
    */
-  public Adapter createFunctionDefinitionAdapter()
+  public Adapter createPlusOpAdapter()
   {
     return null;
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link com.euclideanspace.aldor.editor.FunctionDefinitionBlock <em>Function Definition Block</em>}'.
+   * Creates a new adapter for an object of class '{@link com.euclideanspace.aldor.editor.QuotientOp <em>Quotient Op</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see com.euclideanspace.aldor.editor.FunctionDefinitionBlock
+   * @see com.euclideanspace.aldor.editor.QuotientOp
    * @generated
    */
-  public Adapter createFunctionDefinitionBlockAdapter()
+  public Adapter createQuotientOpAdapter()
   {
     return null;
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link com.euclideanspace.aldor.editor.FunctionSignature <em>Function Signature</em>}'.
+   * Creates a new adapter for an object of class '{@link com.euclideanspace.aldor.editor.TimesOp <em>Times Op</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see com.euclideanspace.aldor.editor.FunctionSignature
+   * @see com.euclideanspace.aldor.editor.TimesOp
    * @generated
    */
-  public Adapter createFunctionSignatureAdapter()
+  public Adapter createTimesOpAdapter()
   {
     return null;
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link com.euclideanspace.aldor.editor.MacroDef <em>Macro Def</em>}'.
+   * Creates a new adapter for an object of class '{@link com.euclideanspace.aldor.editor.PowerOp <em>Power Op</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see com.euclideanspace.aldor.editor.MacroDef
+   * @see com.euclideanspace.aldor.editor.PowerOp
    * @generated
    */
-  public Adapter createMacroDefAdapter()
+  public Adapter createPowerOpAdapter()
   {
     return null;
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link com.euclideanspace.aldor.editor.Import <em>Import</em>}'.
+   * Creates a new adapter for an object of class '{@link com.euclideanspace.aldor.editor.Jleft_Molecule <em>Jleft Molecule</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see com.euclideanspace.aldor.editor.Import
+   * @see com.euclideanspace.aldor.editor.Jleft_Molecule
    * @generated
    */
-  public Adapter createImportAdapter()
+  public Adapter createJleft_MoleculeAdapter()
   {
     return null;
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link com.euclideanspace.aldor.editor.VariableDeclarationBlock <em>Variable Declaration Block</em>}'.
+   * Creates a new adapter for an object of class '{@link com.euclideanspace.aldor.editor.Jleft_Atom <em>Jleft Atom</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see com.euclideanspace.aldor.editor.VariableDeclarationBlock
+   * @see com.euclideanspace.aldor.editor.Jleft_Atom
    * @generated
    */
-  public Adapter createVariableDeclarationBlockAdapter()
+  public Adapter createJleft_AtomAdapter()
   {
     return null;
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link com.euclideanspace.aldor.editor.VariableDeclaration <em>Variable Declaration</em>}'.
+   * Creates a new adapter for an object of class '{@link com.euclideanspace.aldor.editor.Molecule <em>Molecule</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see com.euclideanspace.aldor.editor.VariableDeclaration
+   * @see com.euclideanspace.aldor.editor.Molecule
    * @generated
    */
-  public Adapter createVariableDeclarationAdapter()
+  public Adapter createMoleculeAdapter()
   {
     return null;
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link com.euclideanspace.aldor.editor.TypeWithName <em>Type With Name</em>}'.
+   * Creates a new adapter for an object of class '{@link com.euclideanspace.aldor.editor.Enclosure <em>Enclosure</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see com.euclideanspace.aldor.editor.TypeWithName
+   * @see com.euclideanspace.aldor.editor.Enclosure
    * @generated
    */
-  public Adapter createTypeWithNameAdapter()
+  public Adapter createEnclosureAdapter()
   {
     return null;
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link com.euclideanspace.aldor.editor.VariableTyped <em>Variable Typed</em>}'.
+   * Creates a new adapter for an object of class '{@link com.euclideanspace.aldor.editor.BlockMolecule <em>Block Molecule</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see com.euclideanspace.aldor.editor.VariableTyped
+   * @see com.euclideanspace.aldor.editor.BlockMolecule
    * @generated
    */
-  public Adapter createVariableTypedAdapter()
+  public Adapter createBlockMoleculeAdapter()
   {
     return null;
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link com.euclideanspace.aldor.editor.VariableDeclarationAssign <em>Variable Declaration Assign</em>}'.
+   * Creates a new adapter for an object of class '{@link com.euclideanspace.aldor.editor.BlockEnclosure <em>Block Enclosure</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see com.euclideanspace.aldor.editor.VariableDeclarationAssign
+   * @see com.euclideanspace.aldor.editor.BlockEnclosure
    * @generated
    */
-  public Adapter createVariableDeclarationAssignAdapter()
+  public Adapter createBlockEnclosureAdapter()
   {
     return null;
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link com.euclideanspace.aldor.editor.FreeVariable <em>Free Variable</em>}'.
+   * Creates a new adapter for an object of class '{@link com.euclideanspace.aldor.editor.Parened <em>Parened</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see com.euclideanspace.aldor.editor.FreeVariable
+   * @see com.euclideanspace.aldor.editor.Parened
    * @generated
    */
-  public Adapter createFreeVariableAdapter()
+  public Adapter createParenedAdapter()
   {
     return null;
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link com.euclideanspace.aldor.editor.LocalVariable <em>Local Variable</em>}'.
+   * Creates a new adapter for an object of class '{@link com.euclideanspace.aldor.editor.Bracketed <em>Bracketed</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see com.euclideanspace.aldor.editor.LocalVariable
+   * @see com.euclideanspace.aldor.editor.Bracketed
    * @generated
    */
-  public Adapter createLocalVariableAdapter()
+  public Adapter createBracketedAdapter()
   {
     return null;
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link com.euclideanspace.aldor.editor.TypeExpression <em>Type Expression</em>}'.
+   * Creates a new adapter for an object of class '{@link com.euclideanspace.aldor.editor.QuotedIds <em>Quoted Ids</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see com.euclideanspace.aldor.editor.TypeExpression
+   * @see com.euclideanspace.aldor.editor.QuotedIds
    * @generated
    */
-  public Adapter createTypeExpressionAdapter()
+  public Adapter createQuotedIdsAdapter()
   {
     return null;
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link com.euclideanspace.aldor.editor.TypeParameterList <em>Type Parameter List</em>}'.
+   * Creates a new adapter for an object of class '{@link com.euclideanspace.aldor.editor.Names <em>Names</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see com.euclideanspace.aldor.editor.TypeParameterList
+   * @see com.euclideanspace.aldor.editor.Names
    * @generated
    */
-  public Adapter createTypeParameterListAdapter()
+  public Adapter createNamesAdapter()
   {
     return null;
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link com.euclideanspace.aldor.editor.TypeArguments <em>Type Arguments</em>}'.
+   * Creates a new adapter for an object of class '{@link com.euclideanspace.aldor.editor.Atom <em>Atom</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see com.euclideanspace.aldor.editor.TypeArguments
+   * @see com.euclideanspace.aldor.editor.Atom
    * @generated
    */
-  public Adapter createTypeArgumentsAdapter()
+  public Adapter createAtomAdapter()
   {
     return null;
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link com.euclideanspace.aldor.editor.TypeResult <em>Type Result</em>}'.
+   * Creates a new adapter for an object of class '{@link com.euclideanspace.aldor.editor.Name <em>Name</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see com.euclideanspace.aldor.editor.TypeResult
+   * @see com.euclideanspace.aldor.editor.Name
    * @generated
    */
-  public Adapter createTypeResultAdapter()
+  public Adapter createNameAdapter()
   {
     return null;
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link com.euclideanspace.aldor.editor.TypePrimaryExpression <em>Type Primary Expression</em>}'.
+   * Creates a new adapter for an object of class '{@link com.euclideanspace.aldor.editor.Id <em>Id</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see com.euclideanspace.aldor.editor.TypePrimaryExpression
+   * @see com.euclideanspace.aldor.editor.Id
    * @generated
    */
-  public Adapter createTypePrimaryExpressionAdapter()
+  public Adapter createIdAdapter()
   {
     return null;
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link com.euclideanspace.aldor.editor.TypeNameOrFunctionCall <em>Type Name Or Function Call</em>}'.
+   * Creates a new adapter for an object of class '{@link com.euclideanspace.aldor.editor.UnqualOp_ArrowTok <em>Unqual Op Arrow Tok</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see com.euclideanspace.aldor.editor.TypeNameOrFunctionCall
+   * @see com.euclideanspace.aldor.editor.UnqualOp_ArrowTok
    * @generated
    */
-  public Adapter createTypeNameOrFunctionCallAdapter()
+  public Adapter createUnqualOp_ArrowTokAdapter()
   {
     return null;
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link com.euclideanspace.aldor.editor.TypeNameOrFunctionCall2 <em>Type Name Or Function Call2</em>}'.
+   * Creates a new adapter for an object of class '{@link com.euclideanspace.aldor.editor.UnqualOp_LatticeTok <em>Unqual Op Lattice Tok</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see com.euclideanspace.aldor.editor.TypeNameOrFunctionCall2
+   * @see com.euclideanspace.aldor.editor.UnqualOp_LatticeTok
    * @generated
    */
-  public Adapter createTypeNameOrFunctionCall2Adapter()
+  public Adapter createUnqualOp_LatticeTokAdapter()
   {
     return null;
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link com.euclideanspace.aldor.editor.TupleDefinition <em>Tuple Definition</em>}'.
+   * Creates a new adapter for an object of class '{@link com.euclideanspace.aldor.editor.UnqualOp_RelationTok <em>Unqual Op Relation Tok</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see com.euclideanspace.aldor.editor.TupleDefinition
+   * @see com.euclideanspace.aldor.editor.UnqualOp_RelationTok
    * @generated
    */
-  public Adapter createTupleDefinitionAdapter()
+  public Adapter createUnqualOp_RelationTokAdapter()
   {
     return null;
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link com.euclideanspace.aldor.editor.TypeLiteral <em>Type Literal</em>}'.
+   * Creates a new adapter for an object of class '{@link com.euclideanspace.aldor.editor.UnqualOp_SegTok <em>Unqual Op Seg Tok</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see com.euclideanspace.aldor.editor.TypeLiteral
+   * @see com.euclideanspace.aldor.editor.UnqualOp_SegTok
    * @generated
    */
-  public Adapter createTypeLiteralAdapter()
+  public Adapter createUnqualOp_SegTokAdapter()
   {
     return null;
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link com.euclideanspace.aldor.editor.Statement <em>Statement</em>}'.
+   * Creates a new adapter for an object of class '{@link com.euclideanspace.aldor.editor.UnqualOp_PlusTok <em>Unqual Op Plus Tok</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see com.euclideanspace.aldor.editor.Statement
+   * @see com.euclideanspace.aldor.editor.UnqualOp_PlusTok
    * @generated
    */
-  public Adapter createStatementAdapter()
+  public Adapter createUnqualOp_PlusTokAdapter()
   {
     return null;
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link com.euclideanspace.aldor.editor.Block <em>Block</em>}'.
+   * Creates a new adapter for an object of class '{@link com.euclideanspace.aldor.editor.UnqualOp_QuotientTok <em>Unqual Op Quotient Tok</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see com.euclideanspace.aldor.editor.Block
+   * @see com.euclideanspace.aldor.editor.UnqualOp_QuotientTok
    * @generated
    */
-  public Adapter createBlockAdapter()
+  public Adapter createUnqualOp_QuotientTokAdapter()
   {
     return null;
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link com.euclideanspace.aldor.editor.StatementExpression <em>Statement Expression</em>}'.
+   * Creates a new adapter for an object of class '{@link com.euclideanspace.aldor.editor.UnqualOp_TimesTok <em>Unqual Op Times Tok</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see com.euclideanspace.aldor.editor.StatementExpression
+   * @see com.euclideanspace.aldor.editor.UnqualOp_TimesTok
    * @generated
    */
-  public Adapter createStatementExpressionAdapter()
+  public Adapter createUnqualOp_TimesTokAdapter()
   {
     return null;
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link com.euclideanspace.aldor.editor.ForStatement <em>For Statement</em>}'.
+   * Creates a new adapter for an object of class '{@link com.euclideanspace.aldor.editor.UnqualOp_PowerTok <em>Unqual Op Power Tok</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see com.euclideanspace.aldor.editor.ForStatement
+   * @see com.euclideanspace.aldor.editor.UnqualOp_PowerTok
    * @generated
    */
-  public Adapter createForStatementAdapter()
+  public Adapter createUnqualOp_PowerTokAdapter()
   {
     return null;
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link com.euclideanspace.aldor.editor.WhileStatement <em>While Statement</em>}'.
+   * Creates a new adapter for an object of class '{@link com.euclideanspace.aldor.editor.QualOp_ArrowTok <em>Qual Op Arrow Tok</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see com.euclideanspace.aldor.editor.WhileStatement
+   * @see com.euclideanspace.aldor.editor.QualOp_ArrowTok
    * @generated
    */
-  public Adapter createWhileStatementAdapter()
+  public Adapter createQualOp_ArrowTokAdapter()
   {
     return null;
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link com.euclideanspace.aldor.editor.DoStatement <em>Do Statement</em>}'.
+   * Creates a new adapter for an object of class '{@link com.euclideanspace.aldor.editor.QualOp_LatticeTok <em>Qual Op Lattice Tok</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see com.euclideanspace.aldor.editor.DoStatement
+   * @see com.euclideanspace.aldor.editor.QualOp_LatticeTok
    * @generated
    */
-  public Adapter createDoStatementAdapter()
+  public Adapter createQualOp_LatticeTokAdapter()
   {
     return null;
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link com.euclideanspace.aldor.editor.RepeatStatement <em>Repeat Statement</em>}'.
+   * Creates a new adapter for an object of class '{@link com.euclideanspace.aldor.editor.QualOp_RelationTok <em>Qual Op Relation Tok</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see com.euclideanspace.aldor.editor.RepeatStatement
+   * @see com.euclideanspace.aldor.editor.QualOp_RelationTok
    * @generated
    */
-  public Adapter createRepeatStatementAdapter()
+  public Adapter createQualOp_RelationTokAdapter()
   {
     return null;
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link com.euclideanspace.aldor.editor.IterateStatement <em>Iterate Statement</em>}'.
+   * Creates a new adapter for an object of class '{@link com.euclideanspace.aldor.editor.QualOp_SegTok <em>Qual Op Seg Tok</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see com.euclideanspace.aldor.editor.IterateStatement
+   * @see com.euclideanspace.aldor.editor.QualOp_SegTok
    * @generated
    */
-  public Adapter createIterateStatementAdapter()
+  public Adapter createQualOp_SegTokAdapter()
   {
     return null;
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link com.euclideanspace.aldor.editor.BreakStatement <em>Break Statement</em>}'.
+   * Creates a new adapter for an object of class '{@link com.euclideanspace.aldor.editor.QualOp_PlusTok <em>Qual Op Plus Tok</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see com.euclideanspace.aldor.editor.BreakStatement
+   * @see com.euclideanspace.aldor.editor.QualOp_PlusTok
    * @generated
    */
-  public Adapter createBreakStatementAdapter()
+  public Adapter createQualOp_PlusTokAdapter()
   {
     return null;
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link com.euclideanspace.aldor.editor.ReturnStatement <em>Return Statement</em>}'.
+   * Creates a new adapter for an object of class '{@link com.euclideanspace.aldor.editor.QualOp_QuotientTok <em>Qual Op Quotient Tok</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see com.euclideanspace.aldor.editor.ReturnStatement
+   * @see com.euclideanspace.aldor.editor.QualOp_QuotientTok
    * @generated
    */
-  public Adapter createReturnStatementAdapter()
+  public Adapter createQualOp_QuotientTokAdapter()
   {
     return null;
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link com.euclideanspace.aldor.editor.IfStatement <em>If Statement</em>}'.
+   * Creates a new adapter for an object of class '{@link com.euclideanspace.aldor.editor.QualOp_TimesTok <em>Qual Op Times Tok</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see com.euclideanspace.aldor.editor.IfStatement
+   * @see com.euclideanspace.aldor.editor.QualOp_TimesTok
    * @generated
    */
-  public Adapter createIfStatementAdapter()
+  public Adapter createQualOp_TimesTokAdapter()
   {
     return null;
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link com.euclideanspace.aldor.editor.IfElseStatement <em>If Else Statement</em>}'.
+   * Creates a new adapter for an object of class '{@link com.euclideanspace.aldor.editor.QualOp_PowerTok <em>Qual Op Power Tok</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see com.euclideanspace.aldor.editor.IfElseStatement
+   * @see com.euclideanspace.aldor.editor.QualOp_PowerTok
    * @generated
    */
-  public Adapter createIfElseStatementAdapter()
+  public Adapter createQualOp_PowerTokAdapter()
   {
     return null;
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link com.euclideanspace.aldor.editor.Expr <em>Expr</em>}'.
+   * Creates a new adapter for an object of class '{@link com.euclideanspace.aldor.editor.enlist1a_Labeled_Semicolon_AB <em>enlist1a Labeled Semicolon AB</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see com.euclideanspace.aldor.editor.Expr
+   * @see com.euclideanspace.aldor.editor.enlist1a_Labeled_Semicolon_AB
    * @generated
    */
-  public Adapter createExprAdapter()
+  public Adapter createenlist1a_Labeled_Semicolon_ABAdapter()
   {
     return null;
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link com.euclideanspace.aldor.editor.PrimaryPrefix <em>Primary Prefix</em>}'.
+   * Creates a new adapter for an object of class '{@link com.euclideanspace.aldor.editor.enlister1a_Labeled_Semicolon <em>enlister1a Labeled Semicolon</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see com.euclideanspace.aldor.editor.PrimaryPrefix
+   * @see com.euclideanspace.aldor.editor.enlister1a_Labeled_Semicolon
    * @generated
    */
-  public Adapter createPrimaryPrefixAdapter()
+  public Adapter createenlister1a_Labeled_SemicolonAdapter()
   {
     return null;
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link com.euclideanspace.aldor.editor.NameOrFunctionCall <em>Name Or Function Call</em>}'.
+   * Creates a new adapter for an object of class '{@link com.euclideanspace.aldor.editor.Curly_Labeled <em>Curly Labeled</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see com.euclideanspace.aldor.editor.NameOrFunctionCall
+   * @see com.euclideanspace.aldor.editor.Curly_Labeled
    * @generated
    */
-  public Adapter createNameOrFunctionCallAdapter()
+  public Adapter createCurly_LabeledAdapter()
   {
     return null;
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link com.euclideanspace.aldor.editor.Literal <em>Literal</em>}'.
+   * Creates a new adapter for an object of class '{@link com.euclideanspace.aldor.editor.CurlyContents_Labeled <em>Curly Contents Labeled</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see com.euclideanspace.aldor.editor.Literal
+   * @see com.euclideanspace.aldor.editor.CurlyContents_Labeled
    * @generated
    */
-  public Adapter createLiteralAdapter()
+  public Adapter createCurlyContents_LabeledAdapter()
   {
     return null;
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link com.euclideanspace.aldor.editor.CharacterLiteral <em>Character Literal</em>}'.
+   * Creates a new adapter for an object of class '{@link com.euclideanspace.aldor.editor.CurlyContentsList_Labeled <em>Curly Contents List Labeled</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see com.euclideanspace.aldor.editor.CharacterLiteral
+   * @see com.euclideanspace.aldor.editor.CurlyContentsList_Labeled
    * @generated
    */
-  public Adapter createCharacterLiteralAdapter()
+  public Adapter createCurlyContentsList_LabeledAdapter()
   {
     return null;
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link com.euclideanspace.aldor.editor.BooleanLiteral <em>Boolean Literal</em>}'.
+   * Creates a new adapter for an object of class '{@link com.euclideanspace.aldor.editor.ArrowTok <em>Arrow Tok</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see com.euclideanspace.aldor.editor.BooleanLiteral
+   * @see com.euclideanspace.aldor.editor.ArrowTok
    * @generated
    */
-  public Adapter createBooleanLiteralAdapter()
+  public Adapter createArrowTokAdapter()
   {
     return null;
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link com.euclideanspace.aldor.editor.ListLiteral <em>List Literal</em>}'.
+   * Creates a new adapter for an object of class '{@link com.euclideanspace.aldor.editor.LatticeTok <em>Lattice Tok</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see com.euclideanspace.aldor.editor.ListLiteral
+   * @see com.euclideanspace.aldor.editor.LatticeTok
    * @generated
    */
-  public Adapter createListLiteralAdapter()
+  public Adapter createLatticeTokAdapter()
   {
     return null;
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link com.euclideanspace.aldor.editor.ExitExpression <em>Exit Expression</em>}'.
+   * Creates a new adapter for an object of class '{@link com.euclideanspace.aldor.editor.RelationTok <em>Relation Tok</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see com.euclideanspace.aldor.editor.ExitExpression
+   * @see com.euclideanspace.aldor.editor.RelationTok
    * @generated
    */
-  public Adapter createExitExpressionAdapter()
+  public Adapter createRelationTokAdapter()
   {
     return null;
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link com.euclideanspace.aldor.editor.ConditionExpression <em>Condition Expression</em>}'.
+   * Creates a new adapter for an object of class '{@link com.euclideanspace.aldor.editor.SegTok <em>Seg Tok</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see com.euclideanspace.aldor.editor.ConditionExpression
+   * @see com.euclideanspace.aldor.editor.SegTok
    * @generated
    */
-  public Adapter createConditionExpressionAdapter()
+  public Adapter createSegTokAdapter()
   {
     return null;
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link com.euclideanspace.aldor.editor.OrExpression <em>Or Expression</em>}'.
+   * Creates a new adapter for an object of class '{@link com.euclideanspace.aldor.editor.PlusTok <em>Plus Tok</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see com.euclideanspace.aldor.editor.OrExpression
+   * @see com.euclideanspace.aldor.editor.PlusTok
    * @generated
    */
-  public Adapter createOrExpressionAdapter()
+  public Adapter createPlusTokAdapter()
   {
     return null;
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link com.euclideanspace.aldor.editor.AndExpression <em>And Expression</em>}'.
+   * Creates a new adapter for an object of class '{@link com.euclideanspace.aldor.editor.QuotientTok <em>Quotient Tok</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see com.euclideanspace.aldor.editor.AndExpression
+   * @see com.euclideanspace.aldor.editor.QuotientTok
    * @generated
    */
-  public Adapter createAndExpressionAdapter()
+  public Adapter createQuotientTokAdapter()
   {
     return null;
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link com.euclideanspace.aldor.editor.InnerProdExpression <em>Inner Prod Expression</em>}'.
+   * Creates a new adapter for an object of class '{@link com.euclideanspace.aldor.editor.TimesTok <em>Times Tok</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see com.euclideanspace.aldor.editor.InnerProdExpression
+   * @see com.euclideanspace.aldor.editor.TimesTok
    * @generated
    */
-  public Adapter createInnerProdExpressionAdapter()
+  public Adapter createTimesTokAdapter()
   {
     return null;
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link com.euclideanspace.aldor.editor.OuterProdExpression <em>Outer Prod Expression</em>}'.
+   * Creates a new adapter for an object of class '{@link com.euclideanspace.aldor.editor.PowerTok <em>Power Tok</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see com.euclideanspace.aldor.editor.OuterProdExpression
+   * @see com.euclideanspace.aldor.editor.PowerTok
    * @generated
    */
-  public Adapter createOuterProdExpressionAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link com.euclideanspace.aldor.editor.HasExpression <em>Has Expression</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see com.euclideanspace.aldor.editor.HasExpression
-   * @generated
-   */
-  public Adapter createHasExpressionAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link com.euclideanspace.aldor.editor.CaseExpression <em>Case Expression</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see com.euclideanspace.aldor.editor.CaseExpression
-   * @generated
-   */
-  public Adapter createCaseExpressionAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link com.euclideanspace.aldor.editor.EqualityExpression <em>Equality Expression</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see com.euclideanspace.aldor.editor.EqualityExpression
-   * @generated
-   */
-  public Adapter createEqualityExpressionAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link com.euclideanspace.aldor.editor.RelationalExpression <em>Relational Expression</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see com.euclideanspace.aldor.editor.RelationalExpression
-   * @generated
-   */
-  public Adapter createRelationalExpressionAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link com.euclideanspace.aldor.editor.IsExpression <em>Is Expression</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see com.euclideanspace.aldor.editor.IsExpression
-   * @generated
-   */
-  public Adapter createIsExpressionAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link com.euclideanspace.aldor.editor.SegmentExpression <em>Segment Expression</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see com.euclideanspace.aldor.editor.SegmentExpression
-   * @generated
-   */
-  public Adapter createSegmentExpressionAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link com.euclideanspace.aldor.editor.AdditiveExpression <em>Additive Expression</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see com.euclideanspace.aldor.editor.AdditiveExpression
-   * @generated
-   */
-  public Adapter createAdditiveExpressionAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link com.euclideanspace.aldor.editor.ExquoExpression <em>Exquo Expression</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see com.euclideanspace.aldor.editor.ExquoExpression
-   * @generated
-   */
-  public Adapter createExquoExpressionAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link com.euclideanspace.aldor.editor.DivisionExpression <em>Division Expression</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see com.euclideanspace.aldor.editor.DivisionExpression
-   * @generated
-   */
-  public Adapter createDivisionExpressionAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link com.euclideanspace.aldor.editor.QuoExpression <em>Quo Expression</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see com.euclideanspace.aldor.editor.QuoExpression
-   * @generated
-   */
-  public Adapter createQuoExpressionAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link com.euclideanspace.aldor.editor.ModExpression <em>Mod Expression</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see com.euclideanspace.aldor.editor.ModExpression
-   * @generated
-   */
-  public Adapter createModExpressionAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link com.euclideanspace.aldor.editor.RemExpression <em>Rem Expression</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see com.euclideanspace.aldor.editor.RemExpression
-   * @generated
-   */
-  public Adapter createRemExpressionAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link com.euclideanspace.aldor.editor.MultiplicativeExpression <em>Multiplicative Expression</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see com.euclideanspace.aldor.editor.MultiplicativeExpression
-   * @generated
-   */
-  public Adapter createMultiplicativeExpressionAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link com.euclideanspace.aldor.editor.ExponentExpression <em>Exponent Expression</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see com.euclideanspace.aldor.editor.ExponentExpression
-   * @generated
-   */
-  public Adapter createExponentExpressionAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link com.euclideanspace.aldor.editor.MapDefinition <em>Map Definition</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see com.euclideanspace.aldor.editor.MapDefinition
-   * @generated
-   */
-  public Adapter createMapDefinitionAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link com.euclideanspace.aldor.editor.AssignExpression <em>Assign Expression</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see com.euclideanspace.aldor.editor.AssignExpression
-   * @generated
-   */
-  public Adapter createAssignExpressionAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link com.euclideanspace.aldor.editor.PretendExpression <em>Pretend Expression</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see com.euclideanspace.aldor.editor.PretendExpression
-   * @generated
-   */
-  public Adapter createPretendExpressionAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link com.euclideanspace.aldor.editor.CoerceExpression <em>Coerce Expression</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see com.euclideanspace.aldor.editor.CoerceExpression
-   * @generated
-   */
-  public Adapter createCoerceExpressionAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link com.euclideanspace.aldor.editor.HintTypeExpression <em>Hint Type Expression</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see com.euclideanspace.aldor.editor.HintTypeExpression
-   * @generated
-   */
-  public Adapter createHintTypeExpressionAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link com.euclideanspace.aldor.editor.EltExpression <em>Elt Expression</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see com.euclideanspace.aldor.editor.EltExpression
-   * @generated
-   */
-  public Adapter createEltExpressionAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link com.euclideanspace.aldor.editor.ExplicitTypeExpression <em>Explicit Type Expression</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see com.euclideanspace.aldor.editor.ExplicitTypeExpression
-   * @generated
-   */
-  public Adapter createExplicitTypeExpressionAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link com.euclideanspace.aldor.editor.UnaryExpression <em>Unary Expression</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see com.euclideanspace.aldor.editor.UnaryExpression
-   * @generated
-   */
-  public Adapter createUnaryExpressionAdapter()
+  public Adapter createPowerTokAdapter()
   {
     return null;
   }

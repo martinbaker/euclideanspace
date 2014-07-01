@@ -67,5436 +67,661 @@ public interface EditorPackage extends EPackage
   int MODEL = 0;
 
   /**
-   * The feature id for the '<em><b>C</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int MODEL__C = 0;
-
-  /**
-   * The feature id for the '<em><b>P</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int MODEL__P = 1;
-
-  /**
-   * The feature id for the '<em><b>D</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int MODEL__D = 2;
-
-  /**
    * The number of structural features of the '<em>Model</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int MODEL_FEATURE_COUNT = 3;
+  int MODEL_FEATURE_COUNT = 0;
 
   /**
-   * The meta object id for the '{@link com.euclideanspace.aldor.editor.impl.CategoryDefImpl <em>Category Def</em>}' class.
+   * The meta object id for the '{@link com.euclideanspace.aldor.editor.impl.Jleft_MoleculeImpl <em>Jleft Molecule</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see com.euclideanspace.aldor.editor.impl.CategoryDefImpl
-   * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getCategoryDef()
+   * @see com.euclideanspace.aldor.editor.impl.Jleft_MoleculeImpl
+   * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getJleft_Molecule()
    * @generated
    */
-  int CATEGORY_DEF = 1;
+  int JLEFT_MOLECULE = 14;
 
   /**
-   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * The number of structural features of the '<em>Jleft Molecule</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int CATEGORY_DEF__NAME = 0;
+  int JLEFT_MOLECULE_FEATURE_COUNT = 0;
 
   /**
-   * The feature id for the '<em><b>Shortname</b></em>' attribute.
+   * The meta object id for the '{@link com.euclideanspace.aldor.editor.impl.MoleculeImpl <em>Molecule</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
+   * @see com.euclideanspace.aldor.editor.impl.MoleculeImpl
+   * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getMolecule()
    * @generated
-   * @ordered
-   */
-  int CATEGORY_DEF__SHORTNAME = 1;
-
-  /**
-   * The feature id for the '<em><b>Longname</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int CATEGORY_DEF__LONGNAME = 2;
-
-  /**
-   * The feature id for the '<em><b>Longname2</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int CATEGORY_DEF__LONGNAME2 = 3;
-
-  /**
-   * The feature id for the '<em><b>Cp</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int CATEGORY_DEF__CP = 4;
-
-  /**
-   * The feature id for the '<em><b>Impl Name</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int CATEGORY_DEF__IMPL_NAME = 5;
-
-  /**
-   * The feature id for the '<em><b>W</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int CATEGORY_DEF__W = 6;
-
-  /**
-   * The feature id for the '<em><b>A</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int CATEGORY_DEF__A = 7;
-
-  /**
-   * The feature id for the '<em><b>Wh5</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int CATEGORY_DEF__WH5 = 8;
-
-  /**
-   * The feature id for the '<em><b>A2</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int CATEGORY_DEF__A2 = 9;
-
-  /**
-   * The number of structural features of the '<em>Category Def</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int CATEGORY_DEF_FEATURE_COUNT = 10;
-
-  /**
-   * The meta object id for the '{@link com.euclideanspace.aldor.editor.impl.PackageDefImpl <em>Package Def</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see com.euclideanspace.aldor.editor.impl.PackageDefImpl
-   * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getPackageDef()
-   * @generated
-   */
-  int PACKAGE_DEF = 2;
-
-  /**
-   * The feature id for the '<em><b>Name</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int PACKAGE_DEF__NAME = 0;
-
-  /**
-   * The feature id for the '<em><b>Shortname</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int PACKAGE_DEF__SHORTNAME = 1;
-
-  /**
-   * The feature id for the '<em><b>Longname</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int PACKAGE_DEF__LONGNAME = 2;
-
-  /**
-   * The feature id for the '<em><b>Longname2</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int PACKAGE_DEF__LONGNAME2 = 3;
-
-  /**
-   * The feature id for the '<em><b>Cp</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int PACKAGE_DEF__CP = 4;
-
-  /**
-   * The feature id for the '<em><b>Export Name</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int PACKAGE_DEF__EXPORT_NAME = 5;
-
-  /**
-   * The feature id for the '<em><b>Impl Name</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int PACKAGE_DEF__IMPL_NAME = 6;
-
-  /**
-   * The feature id for the '<em><b>W</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int PACKAGE_DEF__W = 7;
-
-  /**
-   * The feature id for the '<em><b>Wh5</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int PACKAGE_DEF__WH5 = 8;
-
-  /**
-   * The feature id for the '<em><b>Add2</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int PACKAGE_DEF__ADD2 = 9;
-
-  /**
-   * The number of structural features of the '<em>Package Def</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int PACKAGE_DEF_FEATURE_COUNT = 10;
-
-  /**
-   * The meta object id for the '{@link com.euclideanspace.aldor.editor.impl.DomainDefImpl <em>Domain Def</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see com.euclideanspace.aldor.editor.impl.DomainDefImpl
-   * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getDomainDef()
-   * @generated
-   */
-  int DOMAIN_DEF = 3;
-
-  /**
-   * The feature id for the '<em><b>Name</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int DOMAIN_DEF__NAME = 0;
-
-  /**
-   * The feature id for the '<em><b>Shortname5</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int DOMAIN_DEF__SHORTNAME5 = 1;
-
-  /**
-   * The feature id for the '<em><b>Longname5</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int DOMAIN_DEF__LONGNAME5 = 2;
-
-  /**
-   * The feature id for the '<em><b>Longname6</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int DOMAIN_DEF__LONGNAME6 = 3;
-
-  /**
-   * The feature id for the '<em><b>Cp5</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int DOMAIN_DEF__CP5 = 4;
-
-  /**
-   * The feature id for the '<em><b>Export Name</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int DOMAIN_DEF__EXPORT_NAME = 5;
-
-  /**
-   * The feature id for the '<em><b>Cp6</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int DOMAIN_DEF__CP6 = 6;
-
-  /**
-   * The feature id for the '<em><b>Impl Name5</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int DOMAIN_DEF__IMPL_NAME5 = 7;
-
-  /**
-   * The feature id for the '<em><b>W</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int DOMAIN_DEF__W = 8;
-
-  /**
-   * The feature id for the '<em><b>Wh5</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int DOMAIN_DEF__WH5 = 9;
-
-  /**
-   * The feature id for the '<em><b>A</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int DOMAIN_DEF__A = 10;
-
-  /**
-   * The number of structural features of the '<em>Domain Def</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int DOMAIN_DEF_FEATURE_COUNT = 11;
-
-  /**
-   * The meta object id for the '{@link com.euclideanspace.aldor.editor.impl.WherePartImpl <em>Where Part</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see com.euclideanspace.aldor.editor.impl.WherePartImpl
-   * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getWherePart()
-   * @generated
-   */
-  int WHERE_PART = 4;
-
-  /**
-   * The feature id for the '<em><b>Name</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int WHERE_PART__NAME = 0;
-
-  /**
-   * The feature id for the '<em><b>Where Assig</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int WHERE_PART__WHERE_ASSIG = 1;
-
-  /**
-   * The feature id for the '<em><b>Longname8</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int WHERE_PART__LONGNAME8 = 2;
-
-  /**
-   * The feature id for the '<em><b>Imp</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int WHERE_PART__IMP = 3;
-
-  /**
-   * The feature id for the '<em><b>W8</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int WHERE_PART__W8 = 4;
-
-  /**
-   * The feature id for the '<em><b>Longname9</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int WHERE_PART__LONGNAME9 = 5;
-
-  /**
-   * The feature id for the '<em><b>Fs</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int WHERE_PART__FS = 6;
-
-  /**
-   * The feature id for the '<em><b>Par2</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int WHERE_PART__PAR2 = 7;
-
-  /**
-   * The feature id for the '<em><b>Par3</b></em>' attribute list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int WHERE_PART__PAR3 = 8;
-
-  /**
-   * The feature id for the '<em><b>F2</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int WHERE_PART__F2 = 9;
-
-  /**
-   * The feature id for the '<em><b>Add</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int WHERE_PART__ADD = 10;
-
-  /**
-   * The number of structural features of the '<em>Where Part</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int WHERE_PART_FEATURE_COUNT = 11;
-
-  /**
-   * The meta object id for the '{@link com.euclideanspace.aldor.editor.impl.WhereAssignmentsImpl <em>Where Assignments</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see com.euclideanspace.aldor.editor.impl.WhereAssignmentsImpl
-   * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getWhereAssignments()
-   * @generated
-   */
-  int WHERE_ASSIGNMENTS = 5;
-
-  /**
-   * The number of structural features of the '<em>Where Assignments</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int WHERE_ASSIGNMENTS_FEATURE_COUNT = 0;
-
-  /**
-   * The meta object id for the '{@link com.euclideanspace.aldor.editor.impl.WithPartImpl <em>With Part</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see com.euclideanspace.aldor.editor.impl.WithPartImpl
-   * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getWithPart()
-   * @generated
-   */
-  int WITH_PART = 6;
-
-  /**
-   * The feature id for the '<em><b>Name</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int WITH_PART__NAME = 0;
-
-  /**
-   * The feature id for the '<em><b>Fundec</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int WITH_PART__FUNDEC = 1;
-
-  /**
-   * The number of structural features of the '<em>With Part</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int WITH_PART_FEATURE_COUNT = 2;
-
-  /**
-   * The meta object id for the '{@link com.euclideanspace.aldor.editor.impl.WithInlineImpl <em>With Inline</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see com.euclideanspace.aldor.editor.impl.WithInlineImpl
-   * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getWithInline()
-   * @generated
-   */
-  int WITH_INLINE = 7;
-
-  /**
-   * The feature id for the '<em><b>Name</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int WITH_INLINE__NAME = 0;
-
-  /**
-   * The feature id for the '<em><b>Fundec</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int WITH_INLINE__FUNDEC = 1;
-
-  /**
-   * The number of structural features of the '<em>With Inline</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int WITH_INLINE_FEATURE_COUNT = 2;
-
-  /**
-   * The meta object id for the '{@link com.euclideanspace.aldor.editor.impl.AddPartImpl <em>Add Part</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see com.euclideanspace.aldor.editor.impl.AddPartImpl
-   * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getAddPart()
-   * @generated
-   */
-  int ADD_PART = 8;
-
-  /**
-   * The feature id for the '<em><b>Name</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ADD_PART__NAME = 0;
-
-  /**
-   * The feature id for the '<em><b>T</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ADD_PART__T = 1;
-
-  /**
-   * The number of structural features of the '<em>Add Part</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ADD_PART_FEATURE_COUNT = 2;
-
-  /**
-   * The meta object id for the '{@link com.euclideanspace.aldor.editor.impl.AddStatementsImpl <em>Add Statements</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see com.euclideanspace.aldor.editor.impl.AddStatementsImpl
-   * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getAddStatements()
-   * @generated
-   */
-  int ADD_STATEMENTS = 9;
-
-  /**
-   * The feature id for the '<em><b>T1</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ADD_STATEMENTS__T1 = 0;
-
-  /**
-   * The feature id for the '<em><b>T13</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ADD_STATEMENTS__T13 = 1;
-
-  /**
-   * The feature id for the '<em><b>T14</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ADD_STATEMENTS__T14 = 2;
-
-  /**
-   * The feature id for the '<em><b>T15</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ADD_STATEMENTS__T15 = 3;
-
-  /**
-   * The number of structural features of the '<em>Add Statements</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ADD_STATEMENTS_FEATURE_COUNT = 4;
-
-  /**
-   * The meta object id for the '{@link com.euclideanspace.aldor.editor.impl.FunctionDefinitionImpl <em>Function Definition</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see com.euclideanspace.aldor.editor.impl.FunctionDefinitionImpl
-   * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getFunctionDefinition()
-   * @generated
-   */
-  int FUNCTION_DEFINITION = 10;
-
-  /**
-   * The feature id for the '<em><b>T1</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int FUNCTION_DEFINITION__T1 = ADD_STATEMENTS__T1;
-
-  /**
-   * The feature id for the '<em><b>T13</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int FUNCTION_DEFINITION__T13 = ADD_STATEMENTS__T13;
-
-  /**
-   * The feature id for the '<em><b>T14</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int FUNCTION_DEFINITION__T14 = ADD_STATEMENTS__T14;
-
-  /**
-   * The feature id for the '<em><b>T15</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int FUNCTION_DEFINITION__T15 = ADD_STATEMENTS__T15;
-
-  /**
-   * The feature id for the '<em><b>Par3</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int FUNCTION_DEFINITION__PAR3 = ADD_STATEMENTS_FEATURE_COUNT + 0;
-
-  /**
-   * The feature id for the '<em><b>Par4</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int FUNCTION_DEFINITION__PAR4 = ADD_STATEMENTS_FEATURE_COUNT + 1;
-
-  /**
-   * The feature id for the '<em><b>Par5</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int FUNCTION_DEFINITION__PAR5 = ADD_STATEMENTS_FEATURE_COUNT + 2;
-
-  /**
-   * The feature id for the '<em><b>Fn Nam</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int FUNCTION_DEFINITION__FN_NAM = ADD_STATEMENTS_FEATURE_COUNT + 3;
-
-  /**
-   * The number of structural features of the '<em>Function Definition</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int FUNCTION_DEFINITION_FEATURE_COUNT = ADD_STATEMENTS_FEATURE_COUNT + 4;
-
-  /**
-   * The meta object id for the '{@link com.euclideanspace.aldor.editor.impl.FunctionDefinitionBlockImpl <em>Function Definition Block</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see com.euclideanspace.aldor.editor.impl.FunctionDefinitionBlockImpl
-   * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getFunctionDefinitionBlock()
-   * @generated
-   */
-  int FUNCTION_DEFINITION_BLOCK = 11;
-
-  /**
-   * The feature id for the '<em><b>Fn Dec Br</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int FUNCTION_DEFINITION_BLOCK__FN_DEC_BR = 0;
-
-  /**
-   * The feature id for the '<em><b>Fn Dec Bk</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int FUNCTION_DEFINITION_BLOCK__FN_DEC_BK = 1;
-
-  /**
-   * The feature id for the '<em><b>Vars</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int FUNCTION_DEFINITION_BLOCK__VARS = 2;
-
-  /**
-   * The feature id for the '<em><b>T1</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int FUNCTION_DEFINITION_BLOCK__T1 = 3;
-
-  /**
-   * The feature id for the '<em><b>T13</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int FUNCTION_DEFINITION_BLOCK__T13 = 4;
-
-  /**
-   * The feature id for the '<em><b>T14</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int FUNCTION_DEFINITION_BLOCK__T14 = 5;
-
-  /**
-   * The feature id for the '<em><b>I1</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int FUNCTION_DEFINITION_BLOCK__I1 = 6;
-
-  /**
-   * The feature id for the '<em><b>E</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int FUNCTION_DEFINITION_BLOCK__E = 7;
-
-  /**
-   * The number of structural features of the '<em>Function Definition Block</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int FUNCTION_DEFINITION_BLOCK_FEATURE_COUNT = 8;
-
-  /**
-   * The meta object id for the '{@link com.euclideanspace.aldor.editor.impl.FunctionSignatureImpl <em>Function Signature</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see com.euclideanspace.aldor.editor.impl.FunctionSignatureImpl
-   * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getFunctionSignature()
-   * @generated
-   */
-  int FUNCTION_SIGNATURE = 12;
-
-  /**
-   * The feature id for the '<em><b>Fn Nam</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int FUNCTION_SIGNATURE__FN_NAM = 0;
-
-  /**
-   * The feature id for the '<em><b>Par2</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int FUNCTION_SIGNATURE__PAR2 = 1;
-
-  /**
-   * The feature id for the '<em><b>Par3</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int FUNCTION_SIGNATURE__PAR3 = 2;
-
-  /**
-   * The feature id for the '<em><b>Par</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int FUNCTION_SIGNATURE__PAR = 3;
-
-  /**
-   * The feature id for the '<em><b>T4</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int FUNCTION_SIGNATURE__T4 = 4;
-
-  /**
-   * The feature id for the '<em><b>B1</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int FUNCTION_SIGNATURE__B1 = 5;
-
-  /**
-   * The feature id for the '<em><b>T5</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int FUNCTION_SIGNATURE__T5 = 6;
-
-  /**
-   * The feature id for the '<em><b>B3</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int FUNCTION_SIGNATURE__B3 = 7;
-
-  /**
-   * The feature id for the '<em><b>B2</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int FUNCTION_SIGNATURE__B2 = 8;
-
-  /**
-   * The feature id for the '<em><b>T6</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int FUNCTION_SIGNATURE__T6 = 9;
-
-  /**
-   * The feature id for the '<em><b>B4</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int FUNCTION_SIGNATURE__B4 = 10;
-
-  /**
-   * The feature id for the '<em><b>T7</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int FUNCTION_SIGNATURE__T7 = 11;
-
-  /**
-   * The feature id for the '<em><b>B5</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int FUNCTION_SIGNATURE__B5 = 12;
-
-  /**
-   * The feature id for the '<em><b>T8</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int FUNCTION_SIGNATURE__T8 = 13;
-
-  /**
-   * The feature id for the '<em><b>B6</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int FUNCTION_SIGNATURE__B6 = 14;
-
-  /**
-   * The number of structural features of the '<em>Function Signature</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int FUNCTION_SIGNATURE_FEATURE_COUNT = 15;
-
-  /**
-   * The meta object id for the '{@link com.euclideanspace.aldor.editor.impl.MacroDefImpl <em>Macro Def</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see com.euclideanspace.aldor.editor.impl.MacroDefImpl
-   * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getMacroDef()
-   * @generated
-   */
-  int MACRO_DEF = 13;
-
-  /**
-   * The feature id for the '<em><b>T1</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int MACRO_DEF__T1 = WHERE_ASSIGNMENTS_FEATURE_COUNT + 0;
-
-  /**
-   * The feature id for the '<em><b>T13</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int MACRO_DEF__T13 = WHERE_ASSIGNMENTS_FEATURE_COUNT + 1;
-
-  /**
-   * The feature id for the '<em><b>T14</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int MACRO_DEF__T14 = WHERE_ASSIGNMENTS_FEATURE_COUNT + 2;
-
-  /**
-   * The feature id for the '<em><b>T15</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int MACRO_DEF__T15 = WHERE_ASSIGNMENTS_FEATURE_COUNT + 3;
-
-  /**
-   * The feature id for the '<em><b>Macroname</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int MACRO_DEF__MACRONAME = WHERE_ASSIGNMENTS_FEATURE_COUNT + 4;
-
-  /**
-   * The number of structural features of the '<em>Macro Def</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int MACRO_DEF_FEATURE_COUNT = WHERE_ASSIGNMENTS_FEATURE_COUNT + 5;
-
-  /**
-   * The meta object id for the '{@link com.euclideanspace.aldor.editor.impl.ImportImpl <em>Import</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see com.euclideanspace.aldor.editor.impl.ImportImpl
-   * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getImport()
-   * @generated
-   */
-  int IMPORT = 14;
-
-  /**
-   * The feature id for the '<em><b>T1</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int IMPORT__T1 = WHERE_ASSIGNMENTS_FEATURE_COUNT + 0;
-
-  /**
-   * The feature id for the '<em><b>T13</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int IMPORT__T13 = WHERE_ASSIGNMENTS_FEATURE_COUNT + 1;
-
-  /**
-   * The feature id for the '<em><b>T14</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int IMPORT__T14 = WHERE_ASSIGNMENTS_FEATURE_COUNT + 2;
-
-  /**
-   * The feature id for the '<em><b>T15</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int IMPORT__T15 = WHERE_ASSIGNMENTS_FEATURE_COUNT + 3;
-
-  /**
-   * The feature id for the '<em><b>Impname</b></em>' attribute list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int IMPORT__IMPNAME = WHERE_ASSIGNMENTS_FEATURE_COUNT + 4;
-
-  /**
-   * The feature id for the '<em><b>Par22</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int IMPORT__PAR22 = WHERE_ASSIGNMENTS_FEATURE_COUNT + 5;
-
-  /**
-   * The number of structural features of the '<em>Import</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int IMPORT_FEATURE_COUNT = WHERE_ASSIGNMENTS_FEATURE_COUNT + 6;
-
-  /**
-   * The meta object id for the '{@link com.euclideanspace.aldor.editor.impl.VariableDeclarationBlockImpl <em>Variable Declaration Block</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see com.euclideanspace.aldor.editor.impl.VariableDeclarationBlockImpl
-   * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getVariableDeclarationBlock()
-   * @generated
-   */
-  int VARIABLE_DECLARATION_BLOCK = 15;
-
-  /**
-   * The feature id for the '<em><b>Vardecbr</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int VARIABLE_DECLARATION_BLOCK__VARDECBR = 0;
-
-  /**
-   * The feature id for the '<em><b>Vardec Blk</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int VARIABLE_DECLARATION_BLOCK__VARDEC_BLK = 1;
-
-  /**
-   * The number of structural features of the '<em>Variable Declaration Block</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int VARIABLE_DECLARATION_BLOCK_FEATURE_COUNT = 2;
-
-  /**
-   * The meta object id for the '{@link com.euclideanspace.aldor.editor.impl.VariableDeclarationImpl <em>Variable Declaration</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see com.euclideanspace.aldor.editor.impl.VariableDeclarationImpl
-   * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getVariableDeclaration()
-   * @generated
-   */
-  int VARIABLE_DECLARATION = 16;
-
-  /**
-   * The feature id for the '<em><b>T1</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int VARIABLE_DECLARATION__T1 = WHERE_ASSIGNMENTS_FEATURE_COUNT + 0;
-
-  /**
-   * The feature id for the '<em><b>V1</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int VARIABLE_DECLARATION__V1 = WHERE_ASSIGNMENTS_FEATURE_COUNT + 1;
-
-  /**
-   * The feature id for the '<em><b>V2</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int VARIABLE_DECLARATION__V2 = WHERE_ASSIGNMENTS_FEATURE_COUNT + 2;
-
-  /**
-   * The number of structural features of the '<em>Variable Declaration</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int VARIABLE_DECLARATION_FEATURE_COUNT = WHERE_ASSIGNMENTS_FEATURE_COUNT + 3;
-
-  /**
-   * The meta object id for the '{@link com.euclideanspace.aldor.editor.impl.TypeWithNameImpl <em>Type With Name</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see com.euclideanspace.aldor.editor.impl.TypeWithNameImpl
-   * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getTypeWithName()
-   * @generated
-   */
-  int TYPE_WITH_NAME = 17;
-
-  /**
-   * The feature id for the '<em><b>Var Name</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int TYPE_WITH_NAME__VAR_NAME = 0;
-
-  /**
-   * The feature id for the '<em><b>Var Name St</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int TYPE_WITH_NAME__VAR_NAME_ST = 1;
-
-  /**
-   * The feature id for the '<em><b>Var Name2</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int TYPE_WITH_NAME__VAR_NAME2 = 2;
-
-  /**
-   * The feature id for the '<em><b>Typ</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int TYPE_WITH_NAME__TYP = 3;
-
-  /**
-   * The number of structural features of the '<em>Type With Name</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int TYPE_WITH_NAME_FEATURE_COUNT = 4;
-
-  /**
-   * The meta object id for the '{@link com.euclideanspace.aldor.editor.impl.VariableTypedImpl <em>Variable Typed</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see com.euclideanspace.aldor.editor.impl.VariableTypedImpl
-   * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getVariableTyped()
-   * @generated
-   */
-  int VARIABLE_TYPED = 18;
-
-  /**
-   * The feature id for the '<em><b>Var Name</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int VARIABLE_TYPED__VAR_NAME = 0;
-
-  /**
-   * The feature id for the '<em><b>Var Name St</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int VARIABLE_TYPED__VAR_NAME_ST = 1;
-
-  /**
-   * The feature id for the '<em><b>Typ</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int VARIABLE_TYPED__TYP = 2;
-
-  /**
-   * The number of structural features of the '<em>Variable Typed</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int VARIABLE_TYPED_FEATURE_COUNT = 3;
-
-  /**
-   * The meta object id for the '{@link com.euclideanspace.aldor.editor.impl.VariableDeclarationAssignImpl <em>Variable Declaration Assign</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see com.euclideanspace.aldor.editor.impl.VariableDeclarationAssignImpl
-   * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getVariableDeclarationAssign()
-   * @generated
-   */
-  int VARIABLE_DECLARATION_ASSIGN = 19;
-
-  /**
-   * The feature id for the '<em><b>T1</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int VARIABLE_DECLARATION_ASSIGN__T1 = ADD_STATEMENTS__T1;
-
-  /**
-   * The feature id for the '<em><b>T13</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int VARIABLE_DECLARATION_ASSIGN__T13 = ADD_STATEMENTS__T13;
-
-  /**
-   * The feature id for the '<em><b>T14</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int VARIABLE_DECLARATION_ASSIGN__T14 = ADD_STATEMENTS__T14;
-
-  /**
-   * The feature id for the '<em><b>T15</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int VARIABLE_DECLARATION_ASSIGN__T15 = ADD_STATEMENTS__T15;
-
-  /**
-   * The feature id for the '<em><b>Var Name</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int VARIABLE_DECLARATION_ASSIGN__VAR_NAME = ADD_STATEMENTS_FEATURE_COUNT + 0;
-
-  /**
-   * The feature id for the '<em><b>T12</b></em>' attribute list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int VARIABLE_DECLARATION_ASSIGN__T12 = ADD_STATEMENTS_FEATURE_COUNT + 1;
-
-  /**
-   * The feature id for the '<em><b>Typ</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int VARIABLE_DECLARATION_ASSIGN__TYP = ADD_STATEMENTS_FEATURE_COUNT + 2;
-
-  /**
-   * The feature id for the '<em><b>T4</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int VARIABLE_DECLARATION_ASSIGN__T4 = ADD_STATEMENTS_FEATURE_COUNT + 3;
-
-  /**
-   * The number of structural features of the '<em>Variable Declaration Assign</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int VARIABLE_DECLARATION_ASSIGN_FEATURE_COUNT = ADD_STATEMENTS_FEATURE_COUNT + 4;
-
-  /**
-   * The meta object id for the '{@link com.euclideanspace.aldor.editor.impl.FreeVariableImpl <em>Free Variable</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see com.euclideanspace.aldor.editor.impl.FreeVariableImpl
-   * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getFreeVariable()
-   * @generated
-   */
-  int FREE_VARIABLE = 20;
-
-  /**
-   * The feature id for the '<em><b>Var</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int FREE_VARIABLE__VAR = 0;
-
-  /**
-   * The number of structural features of the '<em>Free Variable</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int FREE_VARIABLE_FEATURE_COUNT = 1;
-
-  /**
-   * The meta object id for the '{@link com.euclideanspace.aldor.editor.impl.LocalVariableImpl <em>Local Variable</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see com.euclideanspace.aldor.editor.impl.LocalVariableImpl
-   * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getLocalVariable()
-   * @generated
-   */
-  int LOCAL_VARIABLE = 21;
-
-  /**
-   * The feature id for the '<em><b>Var</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int LOCAL_VARIABLE__VAR = 0;
-
-  /**
-   * The number of structural features of the '<em>Local Variable</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int LOCAL_VARIABLE_FEATURE_COUNT = 1;
-
-  /**
-   * The meta object id for the '{@link com.euclideanspace.aldor.editor.impl.TypeExpressionImpl <em>Type Expression</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see com.euclideanspace.aldor.editor.impl.TypeExpressionImpl
-   * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getTypeExpression()
-   * @generated
-   */
-  int TYPE_EXPRESSION = 22;
-
-  /**
-   * The feature id for the '<em><b>T2</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int TYPE_EXPRESSION__T2 = 0;
-
-  /**
-   * The feature id for the '<em><b>T3</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int TYPE_EXPRESSION__T3 = 1;
-
-  /**
-   * The feature id for the '<em><b>T92</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int TYPE_EXPRESSION__T92 = 2;
-
-  /**
-   * The feature id for the '<em><b>T93</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int TYPE_EXPRESSION__T93 = 3;
-
-  /**
-   * The number of structural features of the '<em>Type Expression</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int TYPE_EXPRESSION_FEATURE_COUNT = 4;
-
-  /**
-   * The meta object id for the '{@link com.euclideanspace.aldor.editor.impl.TypeParameterListImpl <em>Type Parameter List</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see com.euclideanspace.aldor.editor.impl.TypeParameterListImpl
-   * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getTypeParameterList()
-   * @generated
-   */
-  int TYPE_PARAMETER_LIST = 23;
-
-  /**
-   * The feature id for the '<em><b>Tyname</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int TYPE_PARAMETER_LIST__TYNAME = 0;
-
-  /**
-   * The feature id for the '<em><b>Par</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int TYPE_PARAMETER_LIST__PAR = 1;
-
-  /**
-   * The feature id for the '<em><b>Par21</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int TYPE_PARAMETER_LIST__PAR21 = 2;
-
-  /**
-   * The feature id for the '<em><b>Par2</b></em>' attribute list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int TYPE_PARAMETER_LIST__PAR2 = 3;
-
-  /**
-   * The feature id for the '<em><b>Par22</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int TYPE_PARAMETER_LIST__PAR22 = 4;
-
-  /**
-   * The number of structural features of the '<em>Type Parameter List</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int TYPE_PARAMETER_LIST_FEATURE_COUNT = 5;
-
-  /**
-   * The meta object id for the '{@link com.euclideanspace.aldor.editor.impl.TypeArgumentsImpl <em>Type Arguments</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see com.euclideanspace.aldor.editor.impl.TypeArgumentsImpl
-   * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getTypeArguments()
-   * @generated
-   */
-  int TYPE_ARGUMENTS = 24;
-
-  /**
-   * The feature id for the '<em><b>T</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int TYPE_ARGUMENTS__T = 0;
-
-  /**
-   * The feature id for the '<em><b>T2</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int TYPE_ARGUMENTS__T2 = 1;
-
-  /**
-   * The feature id for the '<em><b>T3</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int TYPE_ARGUMENTS__T3 = 2;
-
-  /**
-   * The feature id for the '<em><b>B1</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int TYPE_ARGUMENTS__B1 = 3;
-
-  /**
-   * The feature id for the '<em><b>T4</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int TYPE_ARGUMENTS__T4 = 4;
-
-  /**
-   * The feature id for the '<em><b>T16</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int TYPE_ARGUMENTS__T16 = 5;
-
-  /**
-   * The feature id for the '<em><b>T5</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int TYPE_ARGUMENTS__T5 = 6;
-
-  /**
-   * The feature id for the '<em><b>T6</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int TYPE_ARGUMENTS__T6 = 7;
-
-  /**
-   * The feature id for the '<em><b>T22</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int TYPE_ARGUMENTS__T22 = 8;
-
-  /**
-   * The feature id for the '<em><b>T21</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int TYPE_ARGUMENTS__T21 = 9;
-
-  /**
-   * The feature id for the '<em><b>T23</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int TYPE_ARGUMENTS__T23 = 10;
-
-  /**
-   * The feature id for the '<em><b>T9</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int TYPE_ARGUMENTS__T9 = 11;
-
-  /**
-   * The feature id for the '<em><b>T10</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int TYPE_ARGUMENTS__T10 = 12;
-
-  /**
-   * The feature id for the '<em><b>T25</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int TYPE_ARGUMENTS__T25 = 13;
-
-  /**
-   * The feature id for the '<em><b>T24</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int TYPE_ARGUMENTS__T24 = 14;
-
-  /**
-   * The feature id for the '<em><b>T26</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int TYPE_ARGUMENTS__T26 = 15;
-
-  /**
-   * The feature id for the '<em><b>T11</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int TYPE_ARGUMENTS__T11 = 16;
-
-  /**
-   * The feature id for the '<em><b>T12</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int TYPE_ARGUMENTS__T12 = 17;
-
-  /**
-   * The feature id for the '<em><b>T13</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int TYPE_ARGUMENTS__T13 = 18;
-
-  /**
-   * The feature id for the '<em><b>T15</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int TYPE_ARGUMENTS__T15 = 19;
-
-  /**
-   * The number of structural features of the '<em>Type Arguments</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int TYPE_ARGUMENTS_FEATURE_COUNT = 20;
-
-  /**
-   * The meta object id for the '{@link com.euclideanspace.aldor.editor.impl.TypeResultImpl <em>Type Result</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see com.euclideanspace.aldor.editor.impl.TypeResultImpl
-   * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getTypeResult()
-   * @generated
-   */
-  int TYPE_RESULT = 25;
-
-  /**
-   * The feature id for the '<em><b>T</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int TYPE_RESULT__T = 0;
-
-  /**
-   * The feature id for the '<em><b>T2</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int TYPE_RESULT__T2 = 1;
-
-  /**
-   * The feature id for the '<em><b>Tyname</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int TYPE_RESULT__TYNAME = 2;
-
-  /**
-   * The feature id for the '<em><b>T7</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int TYPE_RESULT__T7 = 3;
-
-  /**
-   * The feature id for the '<em><b>T8</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int TYPE_RESULT__T8 = 4;
-
-  /**
-   * The feature id for the '<em><b>T21</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int TYPE_RESULT__T21 = 5;
-
-  /**
-   * The feature id for the '<em><b>T23</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int TYPE_RESULT__T23 = 6;
-
-  /**
-   * The feature id for the '<em><b>T10</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int TYPE_RESULT__T10 = 7;
-
-  /**
-   * The feature id for the '<em><b>T11</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int TYPE_RESULT__T11 = 8;
-
-  /**
-   * The feature id for the '<em><b>T24</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int TYPE_RESULT__T24 = 9;
-
-  /**
-   * The feature id for the '<em><b>T26</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int TYPE_RESULT__T26 = 10;
-
-  /**
-   * The feature id for the '<em><b>T12</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int TYPE_RESULT__T12 = 11;
-
-  /**
-   * The feature id for the '<em><b>T13</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int TYPE_RESULT__T13 = 12;
-
-  /**
-   * The feature id for the '<em><b>T15</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int TYPE_RESULT__T15 = 13;
-
-  /**
-   * The number of structural features of the '<em>Type Result</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int TYPE_RESULT_FEATURE_COUNT = 14;
-
-  /**
-   * The meta object id for the '{@link com.euclideanspace.aldor.editor.impl.TypePrimaryExpressionImpl <em>Type Primary Expression</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see com.euclideanspace.aldor.editor.impl.TypePrimaryExpressionImpl
-   * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getTypePrimaryExpression()
-   * @generated
-   */
-  int TYPE_PRIMARY_EXPRESSION = 26;
-
-  /**
-   * The feature id for the '<em><b>T2</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int TYPE_PRIMARY_EXPRESSION__T2 = TYPE_EXPRESSION__T2;
-
-  /**
-   * The feature id for the '<em><b>T3</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int TYPE_PRIMARY_EXPRESSION__T3 = TYPE_EXPRESSION__T3;
-
-  /**
-   * The feature id for the '<em><b>T92</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int TYPE_PRIMARY_EXPRESSION__T92 = TYPE_EXPRESSION__T92;
-
-  /**
-   * The feature id for the '<em><b>T93</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int TYPE_PRIMARY_EXPRESSION__T93 = TYPE_EXPRESSION__T93;
-
-  /**
-   * The feature id for the '<em><b>T32</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int TYPE_PRIMARY_EXPRESSION__T32 = TYPE_EXPRESSION_FEATURE_COUNT + 0;
-
-  /**
-   * The feature id for the '<em><b>Tyname</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int TYPE_PRIMARY_EXPRESSION__TYNAME = TYPE_EXPRESSION_FEATURE_COUNT + 1;
-
-  /**
-   * The feature id for the '<em><b>T5</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int TYPE_PRIMARY_EXPRESSION__T5 = TYPE_EXPRESSION_FEATURE_COUNT + 2;
-
-  /**
-   * The feature id for the '<em><b>T7</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int TYPE_PRIMARY_EXPRESSION__T7 = TYPE_EXPRESSION_FEATURE_COUNT + 3;
-
-  /**
-   * The feature id for the '<em><b>T8</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int TYPE_PRIMARY_EXPRESSION__T8 = TYPE_EXPRESSION_FEATURE_COUNT + 4;
-
-  /**
-   * The feature id for the '<em><b>T21</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int TYPE_PRIMARY_EXPRESSION__T21 = TYPE_EXPRESSION_FEATURE_COUNT + 5;
-
-  /**
-   * The feature id for the '<em><b>T23</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int TYPE_PRIMARY_EXPRESSION__T23 = TYPE_EXPRESSION_FEATURE_COUNT + 6;
-
-  /**
-   * The feature id for the '<em><b>T10</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int TYPE_PRIMARY_EXPRESSION__T10 = TYPE_EXPRESSION_FEATURE_COUNT + 7;
-
-  /**
-   * The feature id for the '<em><b>T11</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int TYPE_PRIMARY_EXPRESSION__T11 = TYPE_EXPRESSION_FEATURE_COUNT + 8;
-
-  /**
-   * The feature id for the '<em><b>T24</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int TYPE_PRIMARY_EXPRESSION__T24 = TYPE_EXPRESSION_FEATURE_COUNT + 9;
-
-  /**
-   * The feature id for the '<em><b>T26</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int TYPE_PRIMARY_EXPRESSION__T26 = TYPE_EXPRESSION_FEATURE_COUNT + 10;
-
-  /**
-   * The feature id for the '<em><b>T13</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int TYPE_PRIMARY_EXPRESSION__T13 = TYPE_EXPRESSION_FEATURE_COUNT + 11;
-
-  /**
-   * The feature id for the '<em><b>T14</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int TYPE_PRIMARY_EXPRESSION__T14 = TYPE_EXPRESSION_FEATURE_COUNT + 12;
-
-  /**
-   * The number of structural features of the '<em>Type Primary Expression</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int TYPE_PRIMARY_EXPRESSION_FEATURE_COUNT = TYPE_EXPRESSION_FEATURE_COUNT + 13;
-
-  /**
-   * The meta object id for the '{@link com.euclideanspace.aldor.editor.impl.TypeNameOrFunctionCallImpl <em>Type Name Or Function Call</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see com.euclideanspace.aldor.editor.impl.TypeNameOrFunctionCallImpl
-   * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getTypeNameOrFunctionCall()
-   * @generated
-   */
-  int TYPE_NAME_OR_FUNCTION_CALL = 27;
-
-  /**
-   * The feature id for the '<em><b>T2</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int TYPE_NAME_OR_FUNCTION_CALL__T2 = TYPE_PRIMARY_EXPRESSION__T2;
-
-  /**
-   * The feature id for the '<em><b>T3</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int TYPE_NAME_OR_FUNCTION_CALL__T3 = TYPE_PRIMARY_EXPRESSION__T3;
-
-  /**
-   * The feature id for the '<em><b>T92</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int TYPE_NAME_OR_FUNCTION_CALL__T92 = TYPE_PRIMARY_EXPRESSION__T92;
-
-  /**
-   * The feature id for the '<em><b>T93</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int TYPE_NAME_OR_FUNCTION_CALL__T93 = TYPE_PRIMARY_EXPRESSION__T93;
-
-  /**
-   * The feature id for the '<em><b>T32</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int TYPE_NAME_OR_FUNCTION_CALL__T32 = TYPE_PRIMARY_EXPRESSION__T32;
-
-  /**
-   * The feature id for the '<em><b>Tyname</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int TYPE_NAME_OR_FUNCTION_CALL__TYNAME = TYPE_PRIMARY_EXPRESSION__TYNAME;
-
-  /**
-   * The feature id for the '<em><b>T5</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int TYPE_NAME_OR_FUNCTION_CALL__T5 = TYPE_PRIMARY_EXPRESSION__T5;
-
-  /**
-   * The feature id for the '<em><b>T7</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int TYPE_NAME_OR_FUNCTION_CALL__T7 = TYPE_PRIMARY_EXPRESSION__T7;
-
-  /**
-   * The feature id for the '<em><b>T8</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int TYPE_NAME_OR_FUNCTION_CALL__T8 = TYPE_PRIMARY_EXPRESSION__T8;
-
-  /**
-   * The feature id for the '<em><b>T21</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int TYPE_NAME_OR_FUNCTION_CALL__T21 = TYPE_PRIMARY_EXPRESSION__T21;
-
-  /**
-   * The feature id for the '<em><b>T23</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int TYPE_NAME_OR_FUNCTION_CALL__T23 = TYPE_PRIMARY_EXPRESSION__T23;
-
-  /**
-   * The feature id for the '<em><b>T10</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int TYPE_NAME_OR_FUNCTION_CALL__T10 = TYPE_PRIMARY_EXPRESSION__T10;
-
-  /**
-   * The feature id for the '<em><b>T11</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int TYPE_NAME_OR_FUNCTION_CALL__T11 = TYPE_PRIMARY_EXPRESSION__T11;
-
-  /**
-   * The feature id for the '<em><b>T24</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int TYPE_NAME_OR_FUNCTION_CALL__T24 = TYPE_PRIMARY_EXPRESSION__T24;
-
-  /**
-   * The feature id for the '<em><b>T26</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int TYPE_NAME_OR_FUNCTION_CALL__T26 = TYPE_PRIMARY_EXPRESSION__T26;
-
-  /**
-   * The feature id for the '<em><b>T13</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int TYPE_NAME_OR_FUNCTION_CALL__T13 = TYPE_PRIMARY_EXPRESSION__T13;
-
-  /**
-   * The feature id for the '<em><b>T14</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int TYPE_NAME_OR_FUNCTION_CALL__T14 = TYPE_PRIMARY_EXPRESSION__T14;
-
-  /**
-   * The feature id for the '<em><b>Tfnname</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int TYPE_NAME_OR_FUNCTION_CALL__TFNNAME = TYPE_PRIMARY_EXPRESSION_FEATURE_COUNT + 0;
-
-  /**
-   * The feature id for the '<em><b>T4</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int TYPE_NAME_OR_FUNCTION_CALL__T4 = TYPE_PRIMARY_EXPRESSION_FEATURE_COUNT + 1;
-
-  /**
-   * The feature id for the '<em><b>T25</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int TYPE_NAME_OR_FUNCTION_CALL__T25 = TYPE_PRIMARY_EXPRESSION_FEATURE_COUNT + 2;
-
-  /**
-   * The feature id for the '<em><b>T44</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int TYPE_NAME_OR_FUNCTION_CALL__T44 = TYPE_PRIMARY_EXPRESSION_FEATURE_COUNT + 3;
-
-  /**
-   * The feature id for the '<em><b>T45</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int TYPE_NAME_OR_FUNCTION_CALL__T45 = TYPE_PRIMARY_EXPRESSION_FEATURE_COUNT + 4;
-
-  /**
-   * The feature id for the '<em><b>T6</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int TYPE_NAME_OR_FUNCTION_CALL__T6 = TYPE_PRIMARY_EXPRESSION_FEATURE_COUNT + 5;
-
-  /**
-   * The feature id for the '<em><b>W</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int TYPE_NAME_OR_FUNCTION_CALL__W = TYPE_PRIMARY_EXPRESSION_FEATURE_COUNT + 6;
-
-  /**
-   * The number of structural features of the '<em>Type Name Or Function Call</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int TYPE_NAME_OR_FUNCTION_CALL_FEATURE_COUNT = TYPE_PRIMARY_EXPRESSION_FEATURE_COUNT + 7;
-
-  /**
-   * The meta object id for the '{@link com.euclideanspace.aldor.editor.impl.TypeNameOrFunctionCall2Impl <em>Type Name Or Function Call2</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see com.euclideanspace.aldor.editor.impl.TypeNameOrFunctionCall2Impl
-   * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getTypeNameOrFunctionCall2()
-   * @generated
-   */
-  int TYPE_NAME_OR_FUNCTION_CALL2 = 28;
-
-  /**
-   * The feature id for the '<em><b>T2</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int TYPE_NAME_OR_FUNCTION_CALL2__T2 = TYPE_PRIMARY_EXPRESSION__T2;
-
-  /**
-   * The feature id for the '<em><b>T3</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int TYPE_NAME_OR_FUNCTION_CALL2__T3 = TYPE_PRIMARY_EXPRESSION__T3;
-
-  /**
-   * The feature id for the '<em><b>T92</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int TYPE_NAME_OR_FUNCTION_CALL2__T92 = TYPE_PRIMARY_EXPRESSION__T92;
-
-  /**
-   * The feature id for the '<em><b>T93</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int TYPE_NAME_OR_FUNCTION_CALL2__T93 = TYPE_PRIMARY_EXPRESSION__T93;
-
-  /**
-   * The feature id for the '<em><b>T32</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int TYPE_NAME_OR_FUNCTION_CALL2__T32 = TYPE_PRIMARY_EXPRESSION__T32;
-
-  /**
-   * The feature id for the '<em><b>Tyname</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int TYPE_NAME_OR_FUNCTION_CALL2__TYNAME = TYPE_PRIMARY_EXPRESSION__TYNAME;
-
-  /**
-   * The feature id for the '<em><b>T5</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int TYPE_NAME_OR_FUNCTION_CALL2__T5 = TYPE_PRIMARY_EXPRESSION__T5;
-
-  /**
-   * The feature id for the '<em><b>T7</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int TYPE_NAME_OR_FUNCTION_CALL2__T7 = TYPE_PRIMARY_EXPRESSION__T7;
-
-  /**
-   * The feature id for the '<em><b>T8</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int TYPE_NAME_OR_FUNCTION_CALL2__T8 = TYPE_PRIMARY_EXPRESSION__T8;
-
-  /**
-   * The feature id for the '<em><b>T21</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int TYPE_NAME_OR_FUNCTION_CALL2__T21 = TYPE_PRIMARY_EXPRESSION__T21;
-
-  /**
-   * The feature id for the '<em><b>T23</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int TYPE_NAME_OR_FUNCTION_CALL2__T23 = TYPE_PRIMARY_EXPRESSION__T23;
-
-  /**
-   * The feature id for the '<em><b>T10</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int TYPE_NAME_OR_FUNCTION_CALL2__T10 = TYPE_PRIMARY_EXPRESSION__T10;
-
-  /**
-   * The feature id for the '<em><b>T11</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int TYPE_NAME_OR_FUNCTION_CALL2__T11 = TYPE_PRIMARY_EXPRESSION__T11;
-
-  /**
-   * The feature id for the '<em><b>T24</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int TYPE_NAME_OR_FUNCTION_CALL2__T24 = TYPE_PRIMARY_EXPRESSION__T24;
-
-  /**
-   * The feature id for the '<em><b>T26</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int TYPE_NAME_OR_FUNCTION_CALL2__T26 = TYPE_PRIMARY_EXPRESSION__T26;
-
-  /**
-   * The feature id for the '<em><b>T13</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int TYPE_NAME_OR_FUNCTION_CALL2__T13 = TYPE_PRIMARY_EXPRESSION__T13;
-
-  /**
-   * The feature id for the '<em><b>T14</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int TYPE_NAME_OR_FUNCTION_CALL2__T14 = TYPE_PRIMARY_EXPRESSION__T14;
-
-  /**
-   * The feature id for the '<em><b>Tfnname</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int TYPE_NAME_OR_FUNCTION_CALL2__TFNNAME = TYPE_PRIMARY_EXPRESSION_FEATURE_COUNT + 0;
-
-  /**
-   * The feature id for the '<em><b>T4</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int TYPE_NAME_OR_FUNCTION_CALL2__T4 = TYPE_PRIMARY_EXPRESSION_FEATURE_COUNT + 1;
-
-  /**
-   * The feature id for the '<em><b>T25</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int TYPE_NAME_OR_FUNCTION_CALL2__T25 = TYPE_PRIMARY_EXPRESSION_FEATURE_COUNT + 2;
-
-  /**
-   * The feature id for the '<em><b>T44</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int TYPE_NAME_OR_FUNCTION_CALL2__T44 = TYPE_PRIMARY_EXPRESSION_FEATURE_COUNT + 3;
-
-  /**
-   * The feature id for the '<em><b>T45</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int TYPE_NAME_OR_FUNCTION_CALL2__T45 = TYPE_PRIMARY_EXPRESSION_FEATURE_COUNT + 4;
-
-  /**
-   * The feature id for the '<em><b>T6</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int TYPE_NAME_OR_FUNCTION_CALL2__T6 = TYPE_PRIMARY_EXPRESSION_FEATURE_COUNT + 5;
-
-  /**
-   * The number of structural features of the '<em>Type Name Or Function Call2</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int TYPE_NAME_OR_FUNCTION_CALL2_FEATURE_COUNT = TYPE_PRIMARY_EXPRESSION_FEATURE_COUNT + 6;
-
-  /**
-   * The meta object id for the '{@link com.euclideanspace.aldor.editor.impl.TupleDefinitionImpl <em>Tuple Definition</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see com.euclideanspace.aldor.editor.impl.TupleDefinitionImpl
-   * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getTupleDefinition()
-   * @generated
-   */
-  int TUPLE_DEFINITION = 29;
-
-  /**
-   * The feature id for the '<em><b>T2</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int TUPLE_DEFINITION__T2 = TYPE_PRIMARY_EXPRESSION__T2;
-
-  /**
-   * The feature id for the '<em><b>T3</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int TUPLE_DEFINITION__T3 = TYPE_PRIMARY_EXPRESSION__T3;
-
-  /**
-   * The feature id for the '<em><b>T92</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int TUPLE_DEFINITION__T92 = TYPE_PRIMARY_EXPRESSION__T92;
-
-  /**
-   * The feature id for the '<em><b>T93</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int TUPLE_DEFINITION__T93 = TYPE_PRIMARY_EXPRESSION__T93;
-
-  /**
-   * The feature id for the '<em><b>T32</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int TUPLE_DEFINITION__T32 = TYPE_PRIMARY_EXPRESSION__T32;
-
-  /**
-   * The feature id for the '<em><b>Tyname</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int TUPLE_DEFINITION__TYNAME = TYPE_PRIMARY_EXPRESSION__TYNAME;
-
-  /**
-   * The feature id for the '<em><b>T5</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int TUPLE_DEFINITION__T5 = TYPE_PRIMARY_EXPRESSION__T5;
-
-  /**
-   * The feature id for the '<em><b>T7</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int TUPLE_DEFINITION__T7 = TYPE_PRIMARY_EXPRESSION__T7;
-
-  /**
-   * The feature id for the '<em><b>T8</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int TUPLE_DEFINITION__T8 = TYPE_PRIMARY_EXPRESSION__T8;
-
-  /**
-   * The feature id for the '<em><b>T21</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int TUPLE_DEFINITION__T21 = TYPE_PRIMARY_EXPRESSION__T21;
-
-  /**
-   * The feature id for the '<em><b>T23</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int TUPLE_DEFINITION__T23 = TYPE_PRIMARY_EXPRESSION__T23;
-
-  /**
-   * The feature id for the '<em><b>T10</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int TUPLE_DEFINITION__T10 = TYPE_PRIMARY_EXPRESSION__T10;
-
-  /**
-   * The feature id for the '<em><b>T11</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int TUPLE_DEFINITION__T11 = TYPE_PRIMARY_EXPRESSION__T11;
-
-  /**
-   * The feature id for the '<em><b>T24</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int TUPLE_DEFINITION__T24 = TYPE_PRIMARY_EXPRESSION__T24;
-
-  /**
-   * The feature id for the '<em><b>T26</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int TUPLE_DEFINITION__T26 = TYPE_PRIMARY_EXPRESSION__T26;
-
-  /**
-   * The feature id for the '<em><b>T13</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int TUPLE_DEFINITION__T13 = TYPE_PRIMARY_EXPRESSION__T13;
-
-  /**
-   * The feature id for the '<em><b>T14</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int TUPLE_DEFINITION__T14 = TYPE_PRIMARY_EXPRESSION__T14;
-
-  /**
-   * The feature id for the '<em><b>T4</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int TUPLE_DEFINITION__T4 = TYPE_PRIMARY_EXPRESSION_FEATURE_COUNT + 0;
-
-  /**
-   * The feature id for the '<em><b>T25</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int TUPLE_DEFINITION__T25 = TYPE_PRIMARY_EXPRESSION_FEATURE_COUNT + 1;
-
-  /**
-   * The number of structural features of the '<em>Tuple Definition</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int TUPLE_DEFINITION_FEATURE_COUNT = TYPE_PRIMARY_EXPRESSION_FEATURE_COUNT + 2;
-
-  /**
-   * The meta object id for the '{@link com.euclideanspace.aldor.editor.impl.TypeLiteralImpl <em>Type Literal</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see com.euclideanspace.aldor.editor.impl.TypeLiteralImpl
-   * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getTypeLiteral()
-   * @generated
-   */
-  int TYPE_LITERAL = 30;
-
-  /**
-   * The feature id for the '<em><b>T2</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int TYPE_LITERAL__T2 = TYPE_PRIMARY_EXPRESSION__T2;
-
-  /**
-   * The feature id for the '<em><b>T3</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int TYPE_LITERAL__T3 = TYPE_PRIMARY_EXPRESSION__T3;
-
-  /**
-   * The feature id for the '<em><b>T92</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int TYPE_LITERAL__T92 = TYPE_PRIMARY_EXPRESSION__T92;
-
-  /**
-   * The feature id for the '<em><b>T93</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int TYPE_LITERAL__T93 = TYPE_PRIMARY_EXPRESSION__T93;
-
-  /**
-   * The feature id for the '<em><b>T32</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int TYPE_LITERAL__T32 = TYPE_PRIMARY_EXPRESSION__T32;
-
-  /**
-   * The feature id for the '<em><b>Tyname</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int TYPE_LITERAL__TYNAME = TYPE_PRIMARY_EXPRESSION__TYNAME;
-
-  /**
-   * The feature id for the '<em><b>T5</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int TYPE_LITERAL__T5 = TYPE_PRIMARY_EXPRESSION__T5;
-
-  /**
-   * The feature id for the '<em><b>T7</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int TYPE_LITERAL__T7 = TYPE_PRIMARY_EXPRESSION__T7;
-
-  /**
-   * The feature id for the '<em><b>T8</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int TYPE_LITERAL__T8 = TYPE_PRIMARY_EXPRESSION__T8;
-
-  /**
-   * The feature id for the '<em><b>T21</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int TYPE_LITERAL__T21 = TYPE_PRIMARY_EXPRESSION__T21;
-
-  /**
-   * The feature id for the '<em><b>T23</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int TYPE_LITERAL__T23 = TYPE_PRIMARY_EXPRESSION__T23;
-
-  /**
-   * The feature id for the '<em><b>T10</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int TYPE_LITERAL__T10 = TYPE_PRIMARY_EXPRESSION__T10;
-
-  /**
-   * The feature id for the '<em><b>T11</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int TYPE_LITERAL__T11 = TYPE_PRIMARY_EXPRESSION__T11;
-
-  /**
-   * The feature id for the '<em><b>T24</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int TYPE_LITERAL__T24 = TYPE_PRIMARY_EXPRESSION__T24;
-
-  /**
-   * The feature id for the '<em><b>T26</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int TYPE_LITERAL__T26 = TYPE_PRIMARY_EXPRESSION__T26;
-
-  /**
-   * The feature id for the '<em><b>T13</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int TYPE_LITERAL__T13 = TYPE_PRIMARY_EXPRESSION__T13;
-
-  /**
-   * The feature id for the '<em><b>T14</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int TYPE_LITERAL__T14 = TYPE_PRIMARY_EXPRESSION__T14;
-
-  /**
-   * The feature id for the '<em><b>T1</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int TYPE_LITERAL__T1 = TYPE_PRIMARY_EXPRESSION_FEATURE_COUNT + 0;
-
-  /**
-   * The feature id for the '<em><b>T22</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int TYPE_LITERAL__T22 = TYPE_PRIMARY_EXPRESSION_FEATURE_COUNT + 1;
-
-  /**
-   * The feature id for the '<em><b>T34</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int TYPE_LITERAL__T34 = TYPE_PRIMARY_EXPRESSION_FEATURE_COUNT + 2;
-
-  /**
-   * The feature id for the '<em><b>T35</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int TYPE_LITERAL__T35 = TYPE_PRIMARY_EXPRESSION_FEATURE_COUNT + 3;
-
-  /**
-   * The number of structural features of the '<em>Type Literal</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int TYPE_LITERAL_FEATURE_COUNT = TYPE_PRIMARY_EXPRESSION_FEATURE_COUNT + 4;
-
-  /**
-   * The meta object id for the '{@link com.euclideanspace.aldor.editor.impl.StatementImpl <em>Statement</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see com.euclideanspace.aldor.editor.impl.StatementImpl
-   * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getStatement()
-   * @generated
-   */
-  int STATEMENT = 31;
-
-  /**
-   * The feature id for the '<em><b>S1</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int STATEMENT__S1 = 0;
-
-  /**
-   * The feature id for the '<em><b>S3</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int STATEMENT__S3 = 1;
-
-  /**
-   * The feature id for the '<em><b>S4</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int STATEMENT__S4 = 2;
-
-  /**
-   * The feature id for the '<em><b>S4b</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int STATEMENT__S4B = 3;
-
-  /**
-   * The feature id for the '<em><b>S5</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int STATEMENT__S5 = 4;
-
-  /**
-   * The feature id for the '<em><b>S6</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int STATEMENT__S6 = 5;
-
-  /**
-   * The feature id for the '<em><b>S7</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int STATEMENT__S7 = 6;
-
-  /**
-   * The feature id for the '<em><b>S8</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int STATEMENT__S8 = 7;
-
-  /**
-   * The feature id for the '<em><b>S12</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int STATEMENT__S12 = 8;
-
-  /**
-   * The feature id for the '<em><b>S9</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int STATEMENT__S9 = 9;
-
-  /**
-   * The feature id for the '<em><b>S10</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int STATEMENT__S10 = 10;
-
-  /**
-   * The feature id for the '<em><b>E</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int STATEMENT__E = 11;
-
-  /**
-   * The number of structural features of the '<em>Statement</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int STATEMENT_FEATURE_COUNT = 12;
-
-  /**
-   * The meta object id for the '{@link com.euclideanspace.aldor.editor.impl.BlockImpl <em>Block</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see com.euclideanspace.aldor.editor.impl.BlockImpl
-   * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getBlock()
-   * @generated
-   */
-  int BLOCK = 32;
-
-  /**
-   * The feature id for the '<em><b>Stname</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int BLOCK__STNAME = 0;
-
-  /**
-   * The feature id for the '<em><b>Statem Bl</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int BLOCK__STATEM_BL = 1;
-
-  /**
-   * The number of structural features of the '<em>Block</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int BLOCK_FEATURE_COUNT = 2;
-
-  /**
-   * The meta object id for the '{@link com.euclideanspace.aldor.editor.impl.StatementExpressionImpl <em>Statement Expression</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see com.euclideanspace.aldor.editor.impl.StatementExpressionImpl
-   * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getStatementExpression()
-   * @generated
-   */
-  int STATEMENT_EXPRESSION = 33;
-
-  /**
-   * The feature id for the '<em><b>T</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int STATEMENT_EXPRESSION__T = 0;
-
-  /**
-   * The feature id for the '<em><b>T5</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int STATEMENT_EXPRESSION__T5 = 1;
-
-  /**
-   * The feature id for the '<em><b>T4</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int STATEMENT_EXPRESSION__T4 = 2;
-
-  /**
-   * The number of structural features of the '<em>Statement Expression</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int STATEMENT_EXPRESSION_FEATURE_COUNT = 3;
-
-  /**
-   * The meta object id for the '{@link com.euclideanspace.aldor.editor.impl.ForStatementImpl <em>For Statement</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see com.euclideanspace.aldor.editor.impl.ForStatementImpl
-   * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getForStatement()
-   * @generated
-   */
-  int FOR_STATEMENT = 34;
-
-  /**
-   * The feature id for the '<em><b>Stname</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int FOR_STATEMENT__STNAME = 0;
-
-  /**
-   * The feature id for the '<em><b>T1</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int FOR_STATEMENT__T1 = 1;
-
-  /**
-   * The feature id for the '<em><b>By1</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int FOR_STATEMENT__BY1 = 2;
-
-  /**
-   * The feature id for the '<em><b>Stname2</b></em>' attribute list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int FOR_STATEMENT__STNAME2 = 3;
-
-  /**
-   * The feature id for the '<em><b>T2</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int FOR_STATEMENT__T2 = 4;
-
-  /**
-   * The feature id for the '<em><b>By2</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int FOR_STATEMENT__BY2 = 5;
-
-  /**
-   * The feature id for the '<em><b>S1</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int FOR_STATEMENT__S1 = 6;
-
-  /**
-   * The number of structural features of the '<em>For Statement</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int FOR_STATEMENT_FEATURE_COUNT = 7;
-
-  /**
-   * The meta object id for the '{@link com.euclideanspace.aldor.editor.impl.WhileStatementImpl <em>While Statement</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see com.euclideanspace.aldor.editor.impl.WhileStatementImpl
-   * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getWhileStatement()
-   * @generated
-   */
-  int WHILE_STATEMENT = 35;
-
-  /**
-   * The feature id for the '<em><b>Stname</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int WHILE_STATEMENT__STNAME = 0;
-
-  /**
-   * The feature id for the '<em><b>T2</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int WHILE_STATEMENT__T2 = 1;
-
-  /**
-   * The feature id for the '<em><b>S1</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int WHILE_STATEMENT__S1 = 2;
-
-  /**
-   * The number of structural features of the '<em>While Statement</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int WHILE_STATEMENT_FEATURE_COUNT = 3;
-
-  /**
-   * The meta object id for the '{@link com.euclideanspace.aldor.editor.impl.DoStatementImpl <em>Do Statement</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see com.euclideanspace.aldor.editor.impl.DoStatementImpl
-   * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getDoStatement()
-   * @generated
-   */
-  int DO_STATEMENT = 36;
-
-  /**
-   * The feature id for the '<em><b>Stname</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int DO_STATEMENT__STNAME = 0;
-
-  /**
-   * The feature id for the '<em><b>S1</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int DO_STATEMENT__S1 = 1;
-
-  /**
-   * The feature id for the '<em><b>T2</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int DO_STATEMENT__T2 = 2;
-
-  /**
-   * The number of structural features of the '<em>Do Statement</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int DO_STATEMENT_FEATURE_COUNT = 3;
-
-  /**
-   * The meta object id for the '{@link com.euclideanspace.aldor.editor.impl.RepeatStatementImpl <em>Repeat Statement</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see com.euclideanspace.aldor.editor.impl.RepeatStatementImpl
-   * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getRepeatStatement()
-   * @generated
-   */
-  int REPEAT_STATEMENT = 37;
-
-  /**
-   * The feature id for the '<em><b>Stname</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int REPEAT_STATEMENT__STNAME = 0;
-
-  /**
-   * The feature id for the '<em><b>S1</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int REPEAT_STATEMENT__S1 = 1;
-
-  /**
-   * The number of structural features of the '<em>Repeat Statement</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int REPEAT_STATEMENT_FEATURE_COUNT = 2;
-
-  /**
-   * The meta object id for the '{@link com.euclideanspace.aldor.editor.impl.IterateStatementImpl <em>Iterate Statement</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see com.euclideanspace.aldor.editor.impl.IterateStatementImpl
-   * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getIterateStatement()
-   * @generated
-   */
-  int ITERATE_STATEMENT = 38;
-
-  /**
-   * The feature id for the '<em><b>Stname</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ITERATE_STATEMENT__STNAME = 0;
-
-  /**
-   * The number of structural features of the '<em>Iterate Statement</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ITERATE_STATEMENT_FEATURE_COUNT = 1;
-
-  /**
-   * The meta object id for the '{@link com.euclideanspace.aldor.editor.impl.BreakStatementImpl <em>Break Statement</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see com.euclideanspace.aldor.editor.impl.BreakStatementImpl
-   * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getBreakStatement()
-   * @generated
-   */
-  int BREAK_STATEMENT = 39;
-
-  /**
-   * The feature id for the '<em><b>Stname</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int BREAK_STATEMENT__STNAME = 0;
-
-  /**
-   * The number of structural features of the '<em>Break Statement</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int BREAK_STATEMENT_FEATURE_COUNT = 1;
-
-  /**
-   * The meta object id for the '{@link com.euclideanspace.aldor.editor.impl.ReturnStatementImpl <em>Return Statement</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see com.euclideanspace.aldor.editor.impl.ReturnStatementImpl
-   * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getReturnStatement()
-   * @generated
-   */
-  int RETURN_STATEMENT = 40;
-
-  /**
-   * The feature id for the '<em><b>Stname</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int RETURN_STATEMENT__STNAME = 0;
-
-  /**
-   * The feature id for the '<em><b>T2</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int RETURN_STATEMENT__T2 = 1;
-
-  /**
-   * The number of structural features of the '<em>Return Statement</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int RETURN_STATEMENT_FEATURE_COUNT = 2;
-
-  /**
-   * The meta object id for the '{@link com.euclideanspace.aldor.editor.impl.IfStatementImpl <em>If Statement</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see com.euclideanspace.aldor.editor.impl.IfStatementImpl
-   * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getIfStatement()
-   * @generated
-   */
-  int IF_STATEMENT = 41;
-
-  /**
-   * The feature id for the '<em><b>T2</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int IF_STATEMENT__T2 = 0;
-
-  /**
-   * The feature id for the '<em><b>S1</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int IF_STATEMENT__S1 = 1;
-
-  /**
-   * The feature id for the '<em><b>S2</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int IF_STATEMENT__S2 = 2;
-
-  /**
-   * The feature id for the '<em><b>B</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int IF_STATEMENT__B = 3;
-
-  /**
-   * The feature id for the '<em><b>S11</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int IF_STATEMENT__S11 = 4;
-
-  /**
-   * The feature id for the '<em><b>S12</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int IF_STATEMENT__S12 = 5;
-
-  /**
-   * The number of structural features of the '<em>If Statement</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int IF_STATEMENT_FEATURE_COUNT = 6;
-
-  /**
-   * The meta object id for the '{@link com.euclideanspace.aldor.editor.impl.IfElseStatementImpl <em>If Else Statement</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see com.euclideanspace.aldor.editor.impl.IfElseStatementImpl
-   * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getIfElseStatement()
-   * @generated
-   */
-  int IF_ELSE_STATEMENT = 42;
-
-  /**
-   * The feature id for the '<em><b>S2</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int IF_ELSE_STATEMENT__S2 = 0;
-
-  /**
-   * The number of structural features of the '<em>If Else Statement</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int IF_ELSE_STATEMENT_FEATURE_COUNT = 1;
-
-  /**
-   * The meta object id for the '{@link com.euclideanspace.aldor.editor.impl.ExprImpl <em>Expr</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see com.euclideanspace.aldor.editor.impl.ExprImpl
-   * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getExpr()
-   * @generated
-   */
-  int EXPR = 43;
-
-  /**
-   * The feature id for the '<em><b>Ifname</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int EXPR__IFNAME = 0;
-
-  /**
-   * The feature id for the '<em><b>Ifpred</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int EXPR__IFPRED = 1;
-
-  /**
-   * The feature id for the '<em><b>Thenexp</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int EXPR__THENEXP = 2;
-
-  /**
-   * The feature id for the '<em><b>Elseexp</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int EXPR__ELSEEXP = 3;
-
-  /**
-   * The feature id for the '<em><b>E2</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int EXPR__E2 = 4;
-
-  /**
-   * The feature id for the '<em><b>E3</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int EXPR__E3 = 5;
-
-  /**
-   * The feature id for the '<em><b>E5</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int EXPR__E5 = 6;
-
-  /**
-   * The feature id for the '<em><b>E6</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int EXPR__E6 = 7;
-
-  /**
-   * The feature id for the '<em><b>E22</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int EXPR__E22 = 8;
-
-  /**
-   * The feature id for the '<em><b>E21</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int EXPR__E21 = 9;
-
-  /**
-   * The feature id for the '<em><b>E23</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int EXPR__E23 = 10;
-
-  /**
-   * The feature id for the '<em><b>E9</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int EXPR__E9 = 11;
-
-  /**
-   * The feature id for the '<em><b>E10</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int EXPR__E10 = 12;
-
-  /**
-   * The feature id for the '<em><b>E25</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int EXPR__E25 = 13;
-
-  /**
-   * The feature id for the '<em><b>E24</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int EXPR__E24 = 14;
-
-  /**
-   * The feature id for the '<em><b>E26</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int EXPR__E26 = 15;
-
-  /**
-   * The feature id for the '<em><b>E11</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int EXPR__E11 = 16;
-
-  /**
-   * The feature id for the '<em><b>E12</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int EXPR__E12 = 17;
-
-  /**
-   * The feature id for the '<em><b>E13</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int EXPR__E13 = 18;
-
-  /**
-   * The number of structural features of the '<em>Expr</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int EXPR_FEATURE_COUNT = 19;
-
-  /**
-   * The meta object id for the '{@link com.euclideanspace.aldor.editor.impl.PrimaryPrefixImpl <em>Primary Prefix</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see com.euclideanspace.aldor.editor.impl.PrimaryPrefixImpl
-   * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getPrimaryPrefix()
-   * @generated
-   */
-  int PRIMARY_PREFIX = 44;
-
-  /**
-   * The feature id for the '<em><b>Ifname</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int PRIMARY_PREFIX__IFNAME = EXPR__IFNAME;
-
-  /**
-   * The feature id for the '<em><b>Ifpred</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int PRIMARY_PREFIX__IFPRED = EXPR__IFPRED;
-
-  /**
-   * The feature id for the '<em><b>Thenexp</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int PRIMARY_PREFIX__THENEXP = EXPR__THENEXP;
-
-  /**
-   * The feature id for the '<em><b>Elseexp</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int PRIMARY_PREFIX__ELSEEXP = EXPR__ELSEEXP;
-
-  /**
-   * The feature id for the '<em><b>E2</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int PRIMARY_PREFIX__E2 = EXPR__E2;
-
-  /**
-   * The feature id for the '<em><b>E3</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int PRIMARY_PREFIX__E3 = EXPR__E3;
-
-  /**
-   * The feature id for the '<em><b>E5</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int PRIMARY_PREFIX__E5 = EXPR__E5;
-
-  /**
-   * The feature id for the '<em><b>E6</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int PRIMARY_PREFIX__E6 = EXPR__E6;
-
-  /**
-   * The feature id for the '<em><b>E22</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int PRIMARY_PREFIX__E22 = EXPR__E22;
-
-  /**
-   * The feature id for the '<em><b>E21</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int PRIMARY_PREFIX__E21 = EXPR__E21;
-
-  /**
-   * The feature id for the '<em><b>E23</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int PRIMARY_PREFIX__E23 = EXPR__E23;
-
-  /**
-   * The feature id for the '<em><b>E9</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int PRIMARY_PREFIX__E9 = EXPR__E9;
-
-  /**
-   * The feature id for the '<em><b>E10</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int PRIMARY_PREFIX__E10 = EXPR__E10;
-
-  /**
-   * The feature id for the '<em><b>E25</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int PRIMARY_PREFIX__E25 = EXPR__E25;
-
-  /**
-   * The feature id for the '<em><b>E24</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int PRIMARY_PREFIX__E24 = EXPR__E24;
-
-  /**
-   * The feature id for the '<em><b>E26</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int PRIMARY_PREFIX__E26 = EXPR__E26;
-
-  /**
-   * The feature id for the '<em><b>E11</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int PRIMARY_PREFIX__E11 = EXPR__E11;
-
-  /**
-   * The feature id for the '<em><b>E12</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int PRIMARY_PREFIX__E12 = EXPR__E12;
-
-  /**
-   * The feature id for the '<em><b>E13</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int PRIMARY_PREFIX__E13 = EXPR__E13;
-
-  /**
-   * The feature id for the '<em><b>T4</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int PRIMARY_PREFIX__T4 = EXPR_FEATURE_COUNT + 0;
-
-  /**
-   * The feature id for the '<em><b>T25</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int PRIMARY_PREFIX__T25 = EXPR_FEATURE_COUNT + 1;
-
-  /**
-   * The feature id for the '<em><b>Right Type3</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int PRIMARY_PREFIX__RIGHT_TYPE3 = EXPR_FEATURE_COUNT + 2;
-
-  /**
-   * The feature id for the '<em><b>T7</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int PRIMARY_PREFIX__T7 = EXPR_FEATURE_COUNT + 3;
-
-  /**
-   * The number of structural features of the '<em>Primary Prefix</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int PRIMARY_PREFIX_FEATURE_COUNT = EXPR_FEATURE_COUNT + 4;
-
-  /**
-   * The meta object id for the '{@link com.euclideanspace.aldor.editor.impl.NameOrFunctionCallImpl <em>Name Or Function Call</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see com.euclideanspace.aldor.editor.impl.NameOrFunctionCallImpl
-   * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getNameOrFunctionCall()
-   * @generated
-   */
-  int NAME_OR_FUNCTION_CALL = 45;
-
-  /**
-   * The feature id for the '<em><b>Fnname</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int NAME_OR_FUNCTION_CALL__FNNAME = 0;
-
-  /**
-   * The feature id for the '<em><b>Lsp</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int NAME_OR_FUNCTION_CALL__LSP = 1;
-
-  /**
-   * The feature id for the '<em><b>T4</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int NAME_OR_FUNCTION_CALL__T4 = 2;
-
-  /**
-   * The feature id for the '<em><b>T5</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int NAME_OR_FUNCTION_CALL__T5 = 3;
-
-  /**
-   * The feature id for the '<em><b>T14</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int NAME_OR_FUNCTION_CALL__T14 = 4;
-
-  /**
-   * The feature id for the '<em><b>T15</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int NAME_OR_FUNCTION_CALL__T15 = 5;
-
-  /**
-   * The feature id for the '<em><b>T6</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int NAME_OR_FUNCTION_CALL__T6 = 6;
-
-  /**
-   * The feature id for the '<em><b>Right Type2</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int NAME_OR_FUNCTION_CALL__RIGHT_TYPE2 = 7;
-
-  /**
-   * The number of structural features of the '<em>Name Or Function Call</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int NAME_OR_FUNCTION_CALL_FEATURE_COUNT = 8;
-
-  /**
-   * The meta object id for the '{@link com.euclideanspace.aldor.editor.impl.LiteralImpl <em>Literal</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see com.euclideanspace.aldor.editor.impl.LiteralImpl
-   * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getLiteral()
-   * @generated
-   */
-  int LITERAL = 46;
-
-  /**
-   * The feature id for the '<em><b>Ifname</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int LITERAL__IFNAME = PRIMARY_PREFIX__IFNAME;
-
-  /**
-   * The feature id for the '<em><b>Ifpred</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int LITERAL__IFPRED = PRIMARY_PREFIX__IFPRED;
-
-  /**
-   * The feature id for the '<em><b>Thenexp</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int LITERAL__THENEXP = PRIMARY_PREFIX__THENEXP;
-
-  /**
-   * The feature id for the '<em><b>Elseexp</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int LITERAL__ELSEEXP = PRIMARY_PREFIX__ELSEEXP;
-
-  /**
-   * The feature id for the '<em><b>E2</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int LITERAL__E2 = PRIMARY_PREFIX__E2;
-
-  /**
-   * The feature id for the '<em><b>E3</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int LITERAL__E3 = PRIMARY_PREFIX__E3;
-
-  /**
-   * The feature id for the '<em><b>E5</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int LITERAL__E5 = PRIMARY_PREFIX__E5;
-
-  /**
-   * The feature id for the '<em><b>E6</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int LITERAL__E6 = PRIMARY_PREFIX__E6;
-
-  /**
-   * The feature id for the '<em><b>E22</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int LITERAL__E22 = PRIMARY_PREFIX__E22;
-
-  /**
-   * The feature id for the '<em><b>E21</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int LITERAL__E21 = PRIMARY_PREFIX__E21;
-
-  /**
-   * The feature id for the '<em><b>E23</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int LITERAL__E23 = PRIMARY_PREFIX__E23;
-
-  /**
-   * The feature id for the '<em><b>E9</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int LITERAL__E9 = PRIMARY_PREFIX__E9;
-
-  /**
-   * The feature id for the '<em><b>E10</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int LITERAL__E10 = PRIMARY_PREFIX__E10;
-
-  /**
-   * The feature id for the '<em><b>E25</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int LITERAL__E25 = PRIMARY_PREFIX__E25;
-
-  /**
-   * The feature id for the '<em><b>E24</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int LITERAL__E24 = PRIMARY_PREFIX__E24;
-
-  /**
-   * The feature id for the '<em><b>E26</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int LITERAL__E26 = PRIMARY_PREFIX__E26;
-
-  /**
-   * The feature id for the '<em><b>E11</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int LITERAL__E11 = PRIMARY_PREFIX__E11;
-
-  /**
-   * The feature id for the '<em><b>E12</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int LITERAL__E12 = PRIMARY_PREFIX__E12;
-
-  /**
-   * The feature id for the '<em><b>E13</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int LITERAL__E13 = PRIMARY_PREFIX__E13;
-
-  /**
-   * The feature id for the '<em><b>T4</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int LITERAL__T4 = PRIMARY_PREFIX__T4;
-
-  /**
-   * The feature id for the '<em><b>T25</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int LITERAL__T25 = PRIMARY_PREFIX__T25;
-
-  /**
-   * The feature id for the '<em><b>Right Type3</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int LITERAL__RIGHT_TYPE3 = PRIMARY_PREFIX__RIGHT_TYPE3;
-
-  /**
-   * The feature id for the '<em><b>T7</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int LITERAL__T7 = PRIMARY_PREFIX__T7;
-
-  /**
-   * The feature id for the '<em><b>Value</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int LITERAL__VALUE = PRIMARY_PREFIX_FEATURE_COUNT + 0;
-
-  /**
-   * The feature id for the '<em><b>T2</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int LITERAL__T2 = PRIMARY_PREFIX_FEATURE_COUNT + 1;
-
-  /**
-   * The feature id for the '<em><b>E1</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int LITERAL__E1 = PRIMARY_PREFIX_FEATURE_COUNT + 2;
-
-  /**
-   * The feature id for the '<em><b>T31</b></em>' attribute list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int LITERAL__T31 = PRIMARY_PREFIX_FEATURE_COUNT + 3;
-
-  /**
-   * The feature id for the '<em><b>E4</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int LITERAL__E4 = PRIMARY_PREFIX_FEATURE_COUNT + 4;
-
-  /**
-   * The number of structural features of the '<em>Literal</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int LITERAL_FEATURE_COUNT = PRIMARY_PREFIX_FEATURE_COUNT + 5;
-
-  /**
-   * The meta object id for the '{@link com.euclideanspace.aldor.editor.impl.CharacterLiteralImpl <em>Character Literal</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see com.euclideanspace.aldor.editor.impl.CharacterLiteralImpl
-   * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getCharacterLiteral()
-   * @generated
-   */
-  int CHARACTER_LITERAL = 47;
-
-  /**
-   * The feature id for the '<em><b>Ifname</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int CHARACTER_LITERAL__IFNAME = LITERAL__IFNAME;
-
-  /**
-   * The feature id for the '<em><b>Ifpred</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int CHARACTER_LITERAL__IFPRED = LITERAL__IFPRED;
-
-  /**
-   * The feature id for the '<em><b>Thenexp</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int CHARACTER_LITERAL__THENEXP = LITERAL__THENEXP;
-
-  /**
-   * The feature id for the '<em><b>Elseexp</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int CHARACTER_LITERAL__ELSEEXP = LITERAL__ELSEEXP;
-
-  /**
-   * The feature id for the '<em><b>E2</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int CHARACTER_LITERAL__E2 = LITERAL__E2;
-
-  /**
-   * The feature id for the '<em><b>E3</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int CHARACTER_LITERAL__E3 = LITERAL__E3;
-
-  /**
-   * The feature id for the '<em><b>E5</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int CHARACTER_LITERAL__E5 = LITERAL__E5;
-
-  /**
-   * The feature id for the '<em><b>E6</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int CHARACTER_LITERAL__E6 = LITERAL__E6;
-
-  /**
-   * The feature id for the '<em><b>E22</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int CHARACTER_LITERAL__E22 = LITERAL__E22;
-
-  /**
-   * The feature id for the '<em><b>E21</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int CHARACTER_LITERAL__E21 = LITERAL__E21;
-
-  /**
-   * The feature id for the '<em><b>E23</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int CHARACTER_LITERAL__E23 = LITERAL__E23;
-
-  /**
-   * The feature id for the '<em><b>E9</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int CHARACTER_LITERAL__E9 = LITERAL__E9;
-
-  /**
-   * The feature id for the '<em><b>E10</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int CHARACTER_LITERAL__E10 = LITERAL__E10;
-
-  /**
-   * The feature id for the '<em><b>E25</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int CHARACTER_LITERAL__E25 = LITERAL__E25;
-
-  /**
-   * The feature id for the '<em><b>E24</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int CHARACTER_LITERAL__E24 = LITERAL__E24;
-
-  /**
-   * The feature id for the '<em><b>E26</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int CHARACTER_LITERAL__E26 = LITERAL__E26;
-
-  /**
-   * The feature id for the '<em><b>E11</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int CHARACTER_LITERAL__E11 = LITERAL__E11;
-
-  /**
-   * The feature id for the '<em><b>E12</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int CHARACTER_LITERAL__E12 = LITERAL__E12;
-
-  /**
-   * The feature id for the '<em><b>E13</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int CHARACTER_LITERAL__E13 = LITERAL__E13;
-
-  /**
-   * The feature id for the '<em><b>T4</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int CHARACTER_LITERAL__T4 = LITERAL__T4;
-
-  /**
-   * The feature id for the '<em><b>T25</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int CHARACTER_LITERAL__T25 = LITERAL__T25;
-
-  /**
-   * The feature id for the '<em><b>Right Type3</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int CHARACTER_LITERAL__RIGHT_TYPE3 = LITERAL__RIGHT_TYPE3;
-
-  /**
-   * The feature id for the '<em><b>T7</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int CHARACTER_LITERAL__T7 = LITERAL__T7;
-
-  /**
-   * The feature id for the '<em><b>Value</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int CHARACTER_LITERAL__VALUE = LITERAL__VALUE;
-
-  /**
-   * The feature id for the '<em><b>T2</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int CHARACTER_LITERAL__T2 = LITERAL__T2;
-
-  /**
-   * The feature id for the '<em><b>E1</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int CHARACTER_LITERAL__E1 = LITERAL__E1;
-
-  /**
-   * The feature id for the '<em><b>T31</b></em>' attribute list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int CHARACTER_LITERAL__T31 = LITERAL__T31;
-
-  /**
-   * The feature id for the '<em><b>E4</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int CHARACTER_LITERAL__E4 = LITERAL__E4;
-
-  /**
-   * The feature id for the '<em><b>C1</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int CHARACTER_LITERAL__C1 = LITERAL_FEATURE_COUNT + 0;
-
-  /**
-   * The number of structural features of the '<em>Character Literal</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int CHARACTER_LITERAL_FEATURE_COUNT = LITERAL_FEATURE_COUNT + 1;
-
-  /**
-   * The meta object id for the '{@link com.euclideanspace.aldor.editor.impl.BooleanLiteralImpl <em>Boolean Literal</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see com.euclideanspace.aldor.editor.impl.BooleanLiteralImpl
-   * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getBooleanLiteral()
-   * @generated
-   */
-  int BOOLEAN_LITERAL = 48;
-
-  /**
-   * The feature id for the '<em><b>Ifname</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int BOOLEAN_LITERAL__IFNAME = LITERAL__IFNAME;
-
-  /**
-   * The feature id for the '<em><b>Ifpred</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int BOOLEAN_LITERAL__IFPRED = LITERAL__IFPRED;
-
-  /**
-   * The feature id for the '<em><b>Thenexp</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int BOOLEAN_LITERAL__THENEXP = LITERAL__THENEXP;
-
-  /**
-   * The feature id for the '<em><b>Elseexp</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int BOOLEAN_LITERAL__ELSEEXP = LITERAL__ELSEEXP;
-
-  /**
-   * The feature id for the '<em><b>E2</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int BOOLEAN_LITERAL__E2 = LITERAL__E2;
-
-  /**
-   * The feature id for the '<em><b>E3</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int BOOLEAN_LITERAL__E3 = LITERAL__E3;
-
-  /**
-   * The feature id for the '<em><b>E5</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int BOOLEAN_LITERAL__E5 = LITERAL__E5;
-
-  /**
-   * The feature id for the '<em><b>E6</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int BOOLEAN_LITERAL__E6 = LITERAL__E6;
-
-  /**
-   * The feature id for the '<em><b>E22</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int BOOLEAN_LITERAL__E22 = LITERAL__E22;
-
-  /**
-   * The feature id for the '<em><b>E21</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int BOOLEAN_LITERAL__E21 = LITERAL__E21;
-
-  /**
-   * The feature id for the '<em><b>E23</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int BOOLEAN_LITERAL__E23 = LITERAL__E23;
-
-  /**
-   * The feature id for the '<em><b>E9</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int BOOLEAN_LITERAL__E9 = LITERAL__E9;
-
-  /**
-   * The feature id for the '<em><b>E10</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int BOOLEAN_LITERAL__E10 = LITERAL__E10;
-
-  /**
-   * The feature id for the '<em><b>E25</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
    */
-  int BOOLEAN_LITERAL__E25 = LITERAL__E25;
+  int MOLECULE = 16;
 
   /**
-   * The feature id for the '<em><b>E24</b></em>' containment reference list.
+   * The feature id for the '<em><b>Bm</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int BOOLEAN_LITERAL__E24 = LITERAL__E24;
+  int MOLECULE__BM = JLEFT_MOLECULE_FEATURE_COUNT + 0;
 
   /**
-   * The feature id for the '<em><b>E26</b></em>' containment reference list.
+   * The number of structural features of the '<em>Molecule</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int BOOLEAN_LITERAL__E26 = LITERAL__E26;
+  int MOLECULE_FEATURE_COUNT = JLEFT_MOLECULE_FEATURE_COUNT + 1;
 
   /**
-   * The feature id for the '<em><b>E11</b></em>' attribute.
+   * The meta object id for the '{@link com.euclideanspace.aldor.editor.impl.EnclosureImpl <em>Enclosure</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
+   * @see com.euclideanspace.aldor.editor.impl.EnclosureImpl
+   * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getEnclosure()
    * @generated
-   * @ordered
-   */
-  int BOOLEAN_LITERAL__E11 = LITERAL__E11;
-
-  /**
-   * The feature id for the '<em><b>E12</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int BOOLEAN_LITERAL__E12 = LITERAL__E12;
-
-  /**
-   * The feature id for the '<em><b>E13</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int BOOLEAN_LITERAL__E13 = LITERAL__E13;
-
-  /**
-   * The feature id for the '<em><b>T4</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int BOOLEAN_LITERAL__T4 = LITERAL__T4;
-
-  /**
-   * The feature id for the '<em><b>T25</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int BOOLEAN_LITERAL__T25 = LITERAL__T25;
-
-  /**
-   * The feature id for the '<em><b>Right Type3</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
    */
-  int BOOLEAN_LITERAL__RIGHT_TYPE3 = LITERAL__RIGHT_TYPE3;
+  int ENCLOSURE = 17;
 
   /**
-   * The feature id for the '<em><b>T7</b></em>' containment reference.
+   * The feature id for the '<em><b>Bm</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int BOOLEAN_LITERAL__T7 = LITERAL__T7;
+  int ENCLOSURE__BM = MOLECULE__BM;
 
   /**
-   * The feature id for the '<em><b>Value</b></em>' attribute.
+   * The number of structural features of the '<em>Enclosure</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int BOOLEAN_LITERAL__VALUE = LITERAL__VALUE;
+  int ENCLOSURE_FEATURE_COUNT = MOLECULE_FEATURE_COUNT + 0;
 
   /**
-   * The feature id for the '<em><b>T2</b></em>' attribute.
+   * The meta object id for the '{@link com.euclideanspace.aldor.editor.impl.ParenedImpl <em>Parened</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
+   * @see com.euclideanspace.aldor.editor.impl.ParenedImpl
+   * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getParened()
    * @generated
-   * @ordered
    */
-  int BOOLEAN_LITERAL__T2 = LITERAL__T2;
+  int PARENED = 20;
 
   /**
-   * The feature id for the '<em><b>E1</b></em>' containment reference.
+   * The feature id for the '<em><b>Bm</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int BOOLEAN_LITERAL__E1 = LITERAL__E1;
+  int PARENED__BM = ENCLOSURE__BM;
 
   /**
-   * The feature id for the '<em><b>T31</b></em>' attribute list.
+   * The number of structural features of the '<em>Parened</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int BOOLEAN_LITERAL__T31 = LITERAL__T31;
+  int PARENED_FEATURE_COUNT = ENCLOSURE_FEATURE_COUNT + 0;
 
   /**
-   * The feature id for the '<em><b>E4</b></em>' containment reference list.
+   * The meta object id for the '{@link com.euclideanspace.aldor.editor.impl.ExpressionImpl <em>Expression</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
+   * @see com.euclideanspace.aldor.editor.impl.ExpressionImpl
+   * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getExpression()
    * @generated
-   * @ordered
    */
-  int BOOLEAN_LITERAL__E4 = LITERAL__E4;
+  int EXPRESSION = 1;
 
   /**
-   * The feature id for the '<em><b>Litname</b></em>' attribute.
+   * The feature id for the '<em><b>Bm</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int BOOLEAN_LITERAL__LITNAME = LITERAL_FEATURE_COUNT + 0;
+  int EXPRESSION__BM = PARENED__BM;
 
   /**
-   * The number of structural features of the '<em>Boolean Literal</em>' class.
+   * The number of structural features of the '<em>Expression</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int BOOLEAN_LITERAL_FEATURE_COUNT = LITERAL_FEATURE_COUNT + 1;
+  int EXPRESSION_FEATURE_COUNT = PARENED_FEATURE_COUNT + 0;
 
   /**
-   * The meta object id for the '{@link com.euclideanspace.aldor.editor.impl.ListLiteralImpl <em>List Literal</em>}' class.
+   * The meta object id for the '{@link com.euclideanspace.aldor.editor.impl.LabeledImpl <em>Labeled</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see com.euclideanspace.aldor.editor.impl.ListLiteralImpl
-   * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getListLiteral()
+   * @see com.euclideanspace.aldor.editor.impl.LabeledImpl
+   * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getLabeled()
    * @generated
    */
-  int LIST_LITERAL = 49;
+  int LABELED = 2;
 
   /**
-   * The feature id for the '<em><b>Ifname</b></em>' attribute.
+   * The number of structural features of the '<em>Labeled</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int LIST_LITERAL__IFNAME = LITERAL__IFNAME;
+  int LABELED_FEATURE_COUNT = 0;
 
   /**
-   * The feature id for the '<em><b>Ifpred</b></em>' containment reference.
+   * The meta object id for the '{@link com.euclideanspace.aldor.editor.impl.OpImpl <em>Op</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
+   * @see com.euclideanspace.aldor.editor.impl.OpImpl
+   * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getOp()
    * @generated
-   * @ordered
    */
-  int LIST_LITERAL__IFPRED = LITERAL__IFPRED;
+  int OP = 4;
 
   /**
-   * The feature id for the '<em><b>Thenexp</b></em>' containment reference.
+   * The number of structural features of the '<em>Op</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int LIST_LITERAL__THENEXP = LITERAL__THENEXP;
+  int OP_FEATURE_COUNT = 0;
 
   /**
-   * The feature id for the '<em><b>Elseexp</b></em>' containment reference.
+   * The meta object id for the '{@link com.euclideanspace.aldor.editor.impl.ArrowOpImpl <em>Arrow Op</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
+   * @see com.euclideanspace.aldor.editor.impl.ArrowOpImpl
+   * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getArrowOp()
    * @generated
-   * @ordered
    */
-  int LIST_LITERAL__ELSEEXP = LITERAL__ELSEEXP;
+  int ARROW_OP = 6;
 
   /**
-   * The feature id for the '<em><b>E2</b></em>' attribute.
+   * The number of structural features of the '<em>Arrow Op</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int LIST_LITERAL__E2 = LITERAL__E2;
+  int ARROW_OP_FEATURE_COUNT = OP_FEATURE_COUNT + 0;
 
   /**
-   * The feature id for the '<em><b>E3</b></em>' attribute.
+   * The meta object id for the '{@link com.euclideanspace.aldor.editor.impl.QualOp_ArrowTokImpl <em>Qual Op Arrow Tok</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
+   * @see com.euclideanspace.aldor.editor.impl.QualOp_ArrowTokImpl
+   * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getQualOp_ArrowTok()
    * @generated
-   * @ordered
    */
-  int LIST_LITERAL__E3 = LITERAL__E3;
+  int QUAL_OP_ARROW_TOK = 35;
 
   /**
-   * The feature id for the '<em><b>E5</b></em>' attribute.
+   * The number of structural features of the '<em>Qual Op Arrow Tok</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int LIST_LITERAL__E5 = LITERAL__E5;
+  int QUAL_OP_ARROW_TOK_FEATURE_COUNT = ARROW_OP_FEATURE_COUNT + 0;
 
   /**
-   * The feature id for the '<em><b>E6</b></em>' containment reference.
+   * The meta object id for the '{@link com.euclideanspace.aldor.editor.impl.OpQualTailImpl <em>Op Qual Tail</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
+   * @see com.euclideanspace.aldor.editor.impl.OpQualTailImpl
+   * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getOpQualTail()
    * @generated
-   * @ordered
    */
-  int LIST_LITERAL__E6 = LITERAL__E6;
+  int OP_QUAL_TAIL = 3;
 
   /**
-   * The feature id for the '<em><b>E22</b></em>' containment reference list.
+   * The feature id for the '<em><b>Name</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int LIST_LITERAL__E22 = LITERAL__E22;
+  int OP_QUAL_TAIL__NAME = QUAL_OP_ARROW_TOK_FEATURE_COUNT + 0;
 
   /**
-   * The feature id for the '<em><b>E21</b></em>' containment reference list.
+   * The number of structural features of the '<em>Op Qual Tail</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int LIST_LITERAL__E21 = LITERAL__E21;
+  int OP_QUAL_TAIL_FEATURE_COUNT = QUAL_OP_ARROW_TOK_FEATURE_COUNT + 1;
 
   /**
-   * The feature id for the '<em><b>E23</b></em>' containment reference list.
+   * The meta object id for the '{@link com.euclideanspace.aldor.editor.impl.NameImpl <em>Name</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
+   * @see com.euclideanspace.aldor.editor.impl.NameImpl
+   * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getName_()
    * @generated
-   * @ordered
    */
-  int LIST_LITERAL__E23 = LITERAL__E23;
+  int NAME = 25;
 
   /**
-   * The feature id for the '<em><b>E9</b></em>' attribute.
+   * The number of structural features of the '<em>Name</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int LIST_LITERAL__E9 = LITERAL__E9;
+  int NAME_FEATURE_COUNT = 0;
 
   /**
-   * The feature id for the '<em><b>E10</b></em>' containment reference.
+   * The meta object id for the '{@link com.euclideanspace.aldor.editor.impl.NakedOpImpl <em>Naked Op</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
+   * @see com.euclideanspace.aldor.editor.impl.NakedOpImpl
+   * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getNakedOp()
    * @generated
-   * @ordered
    */
-  int LIST_LITERAL__E10 = LITERAL__E10;
+  int NAKED_OP = 5;
 
   /**
-   * The feature id for the '<em><b>E25</b></em>' containment reference list.
+   * The number of structural features of the '<em>Naked Op</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int LIST_LITERAL__E25 = LITERAL__E25;
+  int NAKED_OP_FEATURE_COUNT = NAME_FEATURE_COUNT + 0;
 
   /**
-   * The feature id for the '<em><b>E24</b></em>' containment reference list.
+   * The meta object id for the '{@link com.euclideanspace.aldor.editor.impl.LatticeOpImpl <em>Lattice Op</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
+   * @see com.euclideanspace.aldor.editor.impl.LatticeOpImpl
+   * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getLatticeOp()
    * @generated
-   * @ordered
    */
-  int LIST_LITERAL__E24 = LITERAL__E24;
+  int LATTICE_OP = 7;
 
   /**
-   * The feature id for the '<em><b>E26</b></em>' containment reference list.
+   * The number of structural features of the '<em>Lattice Op</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int LIST_LITERAL__E26 = LITERAL__E26;
+  int LATTICE_OP_FEATURE_COUNT = OP_FEATURE_COUNT + 0;
 
   /**
-   * The feature id for the '<em><b>E11</b></em>' attribute.
+   * The meta object id for the '{@link com.euclideanspace.aldor.editor.impl.RelationOpImpl <em>Relation Op</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
+   * @see com.euclideanspace.aldor.editor.impl.RelationOpImpl
+   * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getRelationOp()
    * @generated
-   * @ordered
    */
-  int LIST_LITERAL__E11 = LITERAL__E11;
+  int RELATION_OP = 8;
 
   /**
-   * The feature id for the '<em><b>E12</b></em>' containment reference.
+   * The number of structural features of the '<em>Relation Op</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int LIST_LITERAL__E12 = LITERAL__E12;
+  int RELATION_OP_FEATURE_COUNT = OP_FEATURE_COUNT + 0;
 
   /**
-   * The feature id for the '<em><b>E13</b></em>' containment reference list.
+   * The meta object id for the '{@link com.euclideanspace.aldor.editor.impl.SegOpImpl <em>Seg Op</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
+   * @see com.euclideanspace.aldor.editor.impl.SegOpImpl
+   * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getSegOp()
    * @generated
-   * @ordered
    */
-  int LIST_LITERAL__E13 = LITERAL__E13;
+  int SEG_OP = 9;
 
   /**
-   * The feature id for the '<em><b>T4</b></em>' containment reference.
+   * The number of structural features of the '<em>Seg Op</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int LIST_LITERAL__T4 = LITERAL__T4;
+  int SEG_OP_FEATURE_COUNT = OP_FEATURE_COUNT + 0;
 
   /**
-   * The feature id for the '<em><b>T25</b></em>' containment reference list.
+   * The meta object id for the '{@link com.euclideanspace.aldor.editor.impl.PlusOpImpl <em>Plus Op</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
+   * @see com.euclideanspace.aldor.editor.impl.PlusOpImpl
+   * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getPlusOp()
    * @generated
-   * @ordered
    */
-  int LIST_LITERAL__T25 = LITERAL__T25;
+  int PLUS_OP = 10;
 
   /**
-   * The feature id for the '<em><b>Right Type3</b></em>' containment reference.
+   * The number of structural features of the '<em>Plus Op</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int LIST_LITERAL__RIGHT_TYPE3 = LITERAL__RIGHT_TYPE3;
+  int PLUS_OP_FEATURE_COUNT = OP_FEATURE_COUNT + 0;
 
   /**
-   * The feature id for the '<em><b>T7</b></em>' containment reference.
+   * The meta object id for the '{@link com.euclideanspace.aldor.editor.impl.QuotientOpImpl <em>Quotient Op</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
+   * @see com.euclideanspace.aldor.editor.impl.QuotientOpImpl
+   * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getQuotientOp()
    * @generated
-   * @ordered
    */
-  int LIST_LITERAL__T7 = LITERAL__T7;
+  int QUOTIENT_OP = 11;
 
   /**
-   * The feature id for the '<em><b>Value</b></em>' attribute.
+   * The number of structural features of the '<em>Quotient Op</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int LIST_LITERAL__VALUE = LITERAL__VALUE;
+  int QUOTIENT_OP_FEATURE_COUNT = OP_FEATURE_COUNT + 0;
 
   /**
-   * The feature id for the '<em><b>T2</b></em>' attribute.
+   * The meta object id for the '{@link com.euclideanspace.aldor.editor.impl.TimesOpImpl <em>Times Op</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
+   * @see com.euclideanspace.aldor.editor.impl.TimesOpImpl
+   * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getTimesOp()
    * @generated
-   * @ordered
    */
-  int LIST_LITERAL__T2 = LITERAL__T2;
+  int TIMES_OP = 12;
 
   /**
-   * The feature id for the '<em><b>E1</b></em>' containment reference.
+   * The number of structural features of the '<em>Times Op</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int LIST_LITERAL__E1 = LITERAL__E1;
+  int TIMES_OP_FEATURE_COUNT = OP_FEATURE_COUNT + 0;
 
   /**
-   * The feature id for the '<em><b>T31</b></em>' attribute list.
+   * The meta object id for the '{@link com.euclideanspace.aldor.editor.impl.PowerOpImpl <em>Power Op</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
+   * @see com.euclideanspace.aldor.editor.impl.PowerOpImpl
+   * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getPowerOp()
    * @generated
-   * @ordered
    */
-  int LIST_LITERAL__T31 = LITERAL__T31;
+  int POWER_OP = 13;
 
   /**
-   * The feature id for the '<em><b>E4</b></em>' containment reference list.
+   * The number of structural features of the '<em>Power Op</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int LIST_LITERAL__E4 = LITERAL__E4;
+  int POWER_OP_FEATURE_COUNT = OP_FEATURE_COUNT + 0;
 
   /**
-   * The feature id for the '<em><b>Litname</b></em>' attribute.
+   * The meta object id for the '{@link com.euclideanspace.aldor.editor.impl.Jleft_AtomImpl <em>Jleft Atom</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
+   * @see com.euclideanspace.aldor.editor.impl.Jleft_AtomImpl
+   * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getJleft_Atom()
    * @generated
-   * @ordered
    */
-  int LIST_LITERAL__LITNAME = LITERAL_FEATURE_COUNT + 0;
+  int JLEFT_ATOM = 15;
 
   /**
-   * The feature id for the '<em><b>L2</b></em>' containment reference.
+   * The number of structural features of the '<em>Jleft Atom</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int LIST_LITERAL__L2 = LITERAL_FEATURE_COUNT + 1;
+  int JLEFT_ATOM_FEATURE_COUNT = 0;
 
   /**
-   * The feature id for the '<em><b>T3</b></em>' containment reference list.
+   * The meta object id for the '{@link com.euclideanspace.aldor.editor.impl.BlockMoleculeImpl <em>Block Molecule</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
+   * @see com.euclideanspace.aldor.editor.impl.BlockMoleculeImpl
+   * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getBlockMolecule()
    * @generated
-   * @ordered
    */
-  int LIST_LITERAL__T3 = LITERAL_FEATURE_COUNT + 2;
+  int BLOCK_MOLECULE = 18;
 
   /**
-   * The feature id for the '<em><b>T14</b></em>' containment reference list.
+   * The number of structural features of the '<em>Block Molecule</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int LIST_LITERAL__T14 = LITERAL_FEATURE_COUNT + 3;
+  int BLOCK_MOLECULE_FEATURE_COUNT = 0;
 
   /**
-   * The feature id for the '<em><b>L5</b></em>' containment reference list.
+   * The meta object id for the '{@link com.euclideanspace.aldor.editor.impl.BlockEnclosureImpl <em>Block Enclosure</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
+   * @see com.euclideanspace.aldor.editor.impl.BlockEnclosureImpl
+   * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getBlockEnclosure()
    * @generated
-   * @ordered
    */
-  int LIST_LITERAL__L5 = LITERAL_FEATURE_COUNT + 4;
+  int BLOCK_ENCLOSURE = 19;
 
   /**
-   * The number of structural features of the '<em>List Literal</em>' class.
+   * The number of structural features of the '<em>Block Enclosure</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
-   */
-  int LIST_LITERAL_FEATURE_COUNT = LITERAL_FEATURE_COUNT + 5;
-
-  /**
-   * The meta object id for the '{@link com.euclideanspace.aldor.editor.impl.ExitExpressionImpl <em>Exit Expression</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see com.euclideanspace.aldor.editor.impl.ExitExpressionImpl
-   * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getExitExpression()
-   * @generated
    */
-  int EXIT_EXPRESSION = 50;
+  int BLOCK_ENCLOSURE_FEATURE_COUNT = JLEFT_MOLECULE_FEATURE_COUNT + 0;
 
   /**
-   * The feature id for the '<em><b>Ifname</b></em>' attribute.
+   * The meta object id for the '{@link com.euclideanspace.aldor.editor.impl.BracketedImpl <em>Bracketed</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
+   * @see com.euclideanspace.aldor.editor.impl.BracketedImpl
+   * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getBracketed()
    * @generated
-   * @ordered
    */
-  int EXIT_EXPRESSION__IFNAME = EXPR__IFNAME;
+  int BRACKETED = 21;
 
   /**
-   * The feature id for the '<em><b>Ifpred</b></em>' containment reference.
+   * The feature id for the '<em><b>Bm</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int EXIT_EXPRESSION__IFPRED = EXPR__IFPRED;
+  int BRACKETED__BM = ENCLOSURE__BM;
 
   /**
-   * The feature id for the '<em><b>Thenexp</b></em>' containment reference.
+   * The number of structural features of the '<em>Bracketed</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int EXIT_EXPRESSION__THENEXP = EXPR__THENEXP;
+  int BRACKETED_FEATURE_COUNT = ENCLOSURE_FEATURE_COUNT + 0;
 
   /**
-   * The feature id for the '<em><b>Elseexp</b></em>' containment reference.
+   * The meta object id for the '{@link com.euclideanspace.aldor.editor.impl.QuotedIdsImpl <em>Quoted Ids</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
+   * @see com.euclideanspace.aldor.editor.impl.QuotedIdsImpl
+   * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getQuotedIds()
    * @generated
-   * @ordered
    */
-  int EXIT_EXPRESSION__ELSEEXP = EXPR__ELSEEXP;
+  int QUOTED_IDS = 22;
 
   /**
-   * The feature id for the '<em><b>E2</b></em>' attribute.
+   * The feature id for the '<em><b>Bm</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int EXIT_EXPRESSION__E2 = EXPR__E2;
+  int QUOTED_IDS__BM = ENCLOSURE__BM;
 
   /**
-   * The feature id for the '<em><b>E3</b></em>' attribute.
+   * The number of structural features of the '<em>Quoted Ids</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int EXIT_EXPRESSION__E3 = EXPR__E3;
+  int QUOTED_IDS_FEATURE_COUNT = ENCLOSURE_FEATURE_COUNT + 0;
 
   /**
-   * The feature id for the '<em><b>E5</b></em>' attribute.
+   * The meta object id for the '{@link com.euclideanspace.aldor.editor.impl.NamesImpl <em>Names</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
+   * @see com.euclideanspace.aldor.editor.impl.NamesImpl
+   * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getNames()
    * @generated
-   * @ordered
    */
-  int EXIT_EXPRESSION__E5 = EXPR__E5;
+  int NAMES = 23;
 
   /**
-   * The feature id for the '<em><b>E6</b></em>' containment reference.
+   * The feature id for the '<em><b>Bm</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int EXIT_EXPRESSION__E6 = EXPR__E6;
+  int NAMES__BM = QUOTED_IDS__BM;
 
   /**
-   * The feature id for the '<em><b>E22</b></em>' containment reference list.
+   * The feature id for the '<em><b>First Name</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int EXIT_EXPRESSION__E22 = EXPR__E22;
+  int NAMES__FIRST_NAME = QUOTED_IDS_FEATURE_COUNT + 0;
 
   /**
-   * The feature id for the '<em><b>E21</b></em>' containment reference list.
+   * The feature id for the '<em><b>Subsequent Names</b></em>' attribute list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int EXIT_EXPRESSION__E21 = EXPR__E21;
+  int NAMES__SUBSEQUENT_NAMES = QUOTED_IDS_FEATURE_COUNT + 1;
 
   /**
-   * The feature id for the '<em><b>E23</b></em>' containment reference list.
+   * The number of structural features of the '<em>Names</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int EXIT_EXPRESSION__E23 = EXPR__E23;
+  int NAMES_FEATURE_COUNT = QUOTED_IDS_FEATURE_COUNT + 2;
 
   /**
-   * The feature id for the '<em><b>E9</b></em>' attribute.
+   * The meta object id for the '{@link com.euclideanspace.aldor.editor.impl.AtomImpl <em>Atom</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
+   * @see com.euclideanspace.aldor.editor.impl.AtomImpl
+   * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getAtom()
    * @generated
-   * @ordered
    */
-  int EXIT_EXPRESSION__E9 = EXPR__E9;
+  int ATOM = 24;
 
   /**
-   * The feature id for the '<em><b>E10</b></em>' containment reference.
+   * The feature id for the '<em><b>Bm</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int EXIT_EXPRESSION__E10 = EXPR__E10;
+  int ATOM__BM = LABELED_FEATURE_COUNT + 0;
 
   /**
-   * The feature id for the '<em><b>E25</b></em>' containment reference list.
+   * The feature id for the '<em><b>Lab</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int EXIT_EXPRESSION__E25 = EXPR__E25;
+  int ATOM__LAB = LABELED_FEATURE_COUNT + 1;
 
   /**
-   * The feature id for the '<em><b>E24</b></em>' containment reference list.
+   * The feature id for the '<em><b>Bm4</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int EXIT_EXPRESSION__E24 = EXPR__E24;
+  int ATOM__BM4 = LABELED_FEATURE_COUNT + 2;
 
   /**
-   * The feature id for the '<em><b>E26</b></em>' containment reference list.
+   * The feature id for the '<em><b>Id</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int EXIT_EXPRESSION__E26 = EXPR__E26;
+  int ATOM__ID = LABELED_FEATURE_COUNT + 3;
 
   /**
-   * The feature id for the '<em><b>E11</b></em>' attribute.
+   * The feature id for the '<em><b>Lit</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int EXIT_EXPRESSION__E11 = EXPR__E11;
+  int ATOM__LIT = LABELED_FEATURE_COUNT + 4;
 
   /**
-   * The feature id for the '<em><b>E12</b></em>' containment reference.
+   * The number of structural features of the '<em>Atom</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int EXIT_EXPRESSION__E12 = EXPR__E12;
+  int ATOM_FEATURE_COUNT = LABELED_FEATURE_COUNT + 5;
 
   /**
-   * The feature id for the '<em><b>E13</b></em>' containment reference list.
+   * The meta object id for the '{@link com.euclideanspace.aldor.editor.impl.IdImpl <em>Id</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
+   * @see com.euclideanspace.aldor.editor.impl.IdImpl
+   * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getId()
    * @generated
-   * @ordered
    */
-  int EXIT_EXPRESSION__E13 = EXPR__E13;
+  int ID = 26;
 
   /**
-   * The feature id for the '<em><b>Left</b></em>' containment reference.
+   * The feature id for the '<em><b>AB Id</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int EXIT_EXPRESSION__LEFT = EXPR_FEATURE_COUNT + 0;
+  int ID__AB_ID = NAME_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>Op</b></em>' attribute.
@@ -5505,5938 +730,584 @@ public interface EditorPackage extends EPackage
    * @generated
    * @ordered
    */
-  int EXIT_EXPRESSION__OP = EXPR_FEATURE_COUNT + 1;
+  int ID__OP = NAME_FEATURE_COUNT + 1;
 
   /**
-   * The feature id for the '<em><b>Right</b></em>' containment reference.
+   * The number of structural features of the '<em>Id</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int EXIT_EXPRESSION__RIGHT = EXPR_FEATURE_COUNT + 2;
+  int ID_FEATURE_COUNT = NAME_FEATURE_COUNT + 2;
 
   /**
-   * The feature id for the '<em><b>R2</b></em>' containment reference.
+   * The meta object id for the '{@link com.euclideanspace.aldor.editor.impl.UnqualOp_ArrowTokImpl <em>Unqual Op Arrow Tok</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
+   * @see com.euclideanspace.aldor.editor.impl.UnqualOp_ArrowTokImpl
+   * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getUnqualOp_ArrowTok()
    * @generated
-   * @ordered
-   */
-  int EXIT_EXPRESSION__R2 = EXPR_FEATURE_COUNT + 3;
-
-  /**
-   * The number of structural features of the '<em>Exit Expression</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int EXIT_EXPRESSION_FEATURE_COUNT = EXPR_FEATURE_COUNT + 4;
-
-  /**
-   * The meta object id for the '{@link com.euclideanspace.aldor.editor.impl.ConditionExpressionImpl <em>Condition Expression</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see com.euclideanspace.aldor.editor.impl.ConditionExpressionImpl
-   * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getConditionExpression()
-   * @generated
-   */
-  int CONDITION_EXPRESSION = 51;
-
-  /**
-   * The feature id for the '<em><b>Ifname</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int CONDITION_EXPRESSION__IFNAME = EXPR__IFNAME;
-
-  /**
-   * The feature id for the '<em><b>Ifpred</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int CONDITION_EXPRESSION__IFPRED = EXPR__IFPRED;
-
-  /**
-   * The feature id for the '<em><b>Thenexp</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int CONDITION_EXPRESSION__THENEXP = EXPR__THENEXP;
-
-  /**
-   * The feature id for the '<em><b>Elseexp</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int CONDITION_EXPRESSION__ELSEEXP = EXPR__ELSEEXP;
-
-  /**
-   * The feature id for the '<em><b>E2</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int CONDITION_EXPRESSION__E2 = EXPR__E2;
-
-  /**
-   * The feature id for the '<em><b>E3</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int CONDITION_EXPRESSION__E3 = EXPR__E3;
-
-  /**
-   * The feature id for the '<em><b>E5</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int CONDITION_EXPRESSION__E5 = EXPR__E5;
-
-  /**
-   * The feature id for the '<em><b>E6</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int CONDITION_EXPRESSION__E6 = EXPR__E6;
-
-  /**
-   * The feature id for the '<em><b>E22</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int CONDITION_EXPRESSION__E22 = EXPR__E22;
-
-  /**
-   * The feature id for the '<em><b>E21</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int CONDITION_EXPRESSION__E21 = EXPR__E21;
-
-  /**
-   * The feature id for the '<em><b>E23</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int CONDITION_EXPRESSION__E23 = EXPR__E23;
-
-  /**
-   * The feature id for the '<em><b>E9</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int CONDITION_EXPRESSION__E9 = EXPR__E9;
-
-  /**
-   * The feature id for the '<em><b>E10</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int CONDITION_EXPRESSION__E10 = EXPR__E10;
-
-  /**
-   * The feature id for the '<em><b>E25</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int CONDITION_EXPRESSION__E25 = EXPR__E25;
-
-  /**
-   * The feature id for the '<em><b>E24</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int CONDITION_EXPRESSION__E24 = EXPR__E24;
-
-  /**
-   * The feature id for the '<em><b>E26</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int CONDITION_EXPRESSION__E26 = EXPR__E26;
-
-  /**
-   * The feature id for the '<em><b>E11</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int CONDITION_EXPRESSION__E11 = EXPR__E11;
-
-  /**
-   * The feature id for the '<em><b>E12</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int CONDITION_EXPRESSION__E12 = EXPR__E12;
-
-  /**
-   * The feature id for the '<em><b>E13</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int CONDITION_EXPRESSION__E13 = EXPR__E13;
-
-  /**
-   * The feature id for the '<em><b>Left</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int CONDITION_EXPRESSION__LEFT = EXPR_FEATURE_COUNT + 0;
-
-  /**
-   * The feature id for the '<em><b>Op</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int CONDITION_EXPRESSION__OP = EXPR_FEATURE_COUNT + 1;
-
-  /**
-   * The feature id for the '<em><b>Right</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int CONDITION_EXPRESSION__RIGHT = EXPR_FEATURE_COUNT + 2;
-
-  /**
-   * The number of structural features of the '<em>Condition Expression</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int CONDITION_EXPRESSION_FEATURE_COUNT = EXPR_FEATURE_COUNT + 3;
-
-  /**
-   * The meta object id for the '{@link com.euclideanspace.aldor.editor.impl.OrExpressionImpl <em>Or Expression</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see com.euclideanspace.aldor.editor.impl.OrExpressionImpl
-   * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getOrExpression()
-   * @generated
-   */
-  int OR_EXPRESSION = 52;
-
-  /**
-   * The feature id for the '<em><b>Ifname</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int OR_EXPRESSION__IFNAME = EXPR__IFNAME;
-
-  /**
-   * The feature id for the '<em><b>Ifpred</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int OR_EXPRESSION__IFPRED = EXPR__IFPRED;
-
-  /**
-   * The feature id for the '<em><b>Thenexp</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int OR_EXPRESSION__THENEXP = EXPR__THENEXP;
-
-  /**
-   * The feature id for the '<em><b>Elseexp</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int OR_EXPRESSION__ELSEEXP = EXPR__ELSEEXP;
-
-  /**
-   * The feature id for the '<em><b>E2</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int OR_EXPRESSION__E2 = EXPR__E2;
-
-  /**
-   * The feature id for the '<em><b>E3</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int OR_EXPRESSION__E3 = EXPR__E3;
-
-  /**
-   * The feature id for the '<em><b>E5</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int OR_EXPRESSION__E5 = EXPR__E5;
-
-  /**
-   * The feature id for the '<em><b>E6</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int OR_EXPRESSION__E6 = EXPR__E6;
-
-  /**
-   * The feature id for the '<em><b>E22</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int OR_EXPRESSION__E22 = EXPR__E22;
-
-  /**
-   * The feature id for the '<em><b>E21</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int OR_EXPRESSION__E21 = EXPR__E21;
-
-  /**
-   * The feature id for the '<em><b>E23</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int OR_EXPRESSION__E23 = EXPR__E23;
-
-  /**
-   * The feature id for the '<em><b>E9</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int OR_EXPRESSION__E9 = EXPR__E9;
-
-  /**
-   * The feature id for the '<em><b>E10</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int OR_EXPRESSION__E10 = EXPR__E10;
-
-  /**
-   * The feature id for the '<em><b>E25</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int OR_EXPRESSION__E25 = EXPR__E25;
-
-  /**
-   * The feature id for the '<em><b>E24</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int OR_EXPRESSION__E24 = EXPR__E24;
-
-  /**
-   * The feature id for the '<em><b>E26</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int OR_EXPRESSION__E26 = EXPR__E26;
-
-  /**
-   * The feature id for the '<em><b>E11</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int OR_EXPRESSION__E11 = EXPR__E11;
-
-  /**
-   * The feature id for the '<em><b>E12</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int OR_EXPRESSION__E12 = EXPR__E12;
-
-  /**
-   * The feature id for the '<em><b>E13</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int OR_EXPRESSION__E13 = EXPR__E13;
-
-  /**
-   * The feature id for the '<em><b>Left</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int OR_EXPRESSION__LEFT = EXPR_FEATURE_COUNT + 0;
-
-  /**
-   * The feature id for the '<em><b>Op</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int OR_EXPRESSION__OP = EXPR_FEATURE_COUNT + 1;
-
-  /**
-   * The feature id for the '<em><b>Right</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int OR_EXPRESSION__RIGHT = EXPR_FEATURE_COUNT + 2;
-
-  /**
-   * The number of structural features of the '<em>Or Expression</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int OR_EXPRESSION_FEATURE_COUNT = EXPR_FEATURE_COUNT + 3;
-
-  /**
-   * The meta object id for the '{@link com.euclideanspace.aldor.editor.impl.AndExpressionImpl <em>And Expression</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see com.euclideanspace.aldor.editor.impl.AndExpressionImpl
-   * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getAndExpression()
-   * @generated
-   */
-  int AND_EXPRESSION = 53;
-
-  /**
-   * The feature id for the '<em><b>Ifname</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int AND_EXPRESSION__IFNAME = EXPR__IFNAME;
-
-  /**
-   * The feature id for the '<em><b>Ifpred</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int AND_EXPRESSION__IFPRED = EXPR__IFPRED;
-
-  /**
-   * The feature id for the '<em><b>Thenexp</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int AND_EXPRESSION__THENEXP = EXPR__THENEXP;
-
-  /**
-   * The feature id for the '<em><b>Elseexp</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int AND_EXPRESSION__ELSEEXP = EXPR__ELSEEXP;
-
-  /**
-   * The feature id for the '<em><b>E2</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int AND_EXPRESSION__E2 = EXPR__E2;
-
-  /**
-   * The feature id for the '<em><b>E3</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int AND_EXPRESSION__E3 = EXPR__E3;
-
-  /**
-   * The feature id for the '<em><b>E5</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int AND_EXPRESSION__E5 = EXPR__E5;
-
-  /**
-   * The feature id for the '<em><b>E6</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int AND_EXPRESSION__E6 = EXPR__E6;
-
-  /**
-   * The feature id for the '<em><b>E22</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int AND_EXPRESSION__E22 = EXPR__E22;
-
-  /**
-   * The feature id for the '<em><b>E21</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int AND_EXPRESSION__E21 = EXPR__E21;
-
-  /**
-   * The feature id for the '<em><b>E23</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int AND_EXPRESSION__E23 = EXPR__E23;
-
-  /**
-   * The feature id for the '<em><b>E9</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int AND_EXPRESSION__E9 = EXPR__E9;
-
-  /**
-   * The feature id for the '<em><b>E10</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int AND_EXPRESSION__E10 = EXPR__E10;
-
-  /**
-   * The feature id for the '<em><b>E25</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int AND_EXPRESSION__E25 = EXPR__E25;
-
-  /**
-   * The feature id for the '<em><b>E24</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int AND_EXPRESSION__E24 = EXPR__E24;
-
-  /**
-   * The feature id for the '<em><b>E26</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int AND_EXPRESSION__E26 = EXPR__E26;
-
-  /**
-   * The feature id for the '<em><b>E11</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int AND_EXPRESSION__E11 = EXPR__E11;
-
-  /**
-   * The feature id for the '<em><b>E12</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int AND_EXPRESSION__E12 = EXPR__E12;
-
-  /**
-   * The feature id for the '<em><b>E13</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int AND_EXPRESSION__E13 = EXPR__E13;
-
-  /**
-   * The feature id for the '<em><b>Left</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int AND_EXPRESSION__LEFT = EXPR_FEATURE_COUNT + 0;
-
-  /**
-   * The feature id for the '<em><b>Op</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int AND_EXPRESSION__OP = EXPR_FEATURE_COUNT + 1;
-
-  /**
-   * The feature id for the '<em><b>Right</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int AND_EXPRESSION__RIGHT = EXPR_FEATURE_COUNT + 2;
-
-  /**
-   * The number of structural features of the '<em>And Expression</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int AND_EXPRESSION_FEATURE_COUNT = EXPR_FEATURE_COUNT + 3;
-
-  /**
-   * The meta object id for the '{@link com.euclideanspace.aldor.editor.impl.InnerProdExpressionImpl <em>Inner Prod Expression</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see com.euclideanspace.aldor.editor.impl.InnerProdExpressionImpl
-   * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getInnerProdExpression()
-   * @generated
-   */
-  int INNER_PROD_EXPRESSION = 54;
-
-  /**
-   * The feature id for the '<em><b>Ifname</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int INNER_PROD_EXPRESSION__IFNAME = EXPR__IFNAME;
-
-  /**
-   * The feature id for the '<em><b>Ifpred</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int INNER_PROD_EXPRESSION__IFPRED = EXPR__IFPRED;
-
-  /**
-   * The feature id for the '<em><b>Thenexp</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int INNER_PROD_EXPRESSION__THENEXP = EXPR__THENEXP;
-
-  /**
-   * The feature id for the '<em><b>Elseexp</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int INNER_PROD_EXPRESSION__ELSEEXP = EXPR__ELSEEXP;
-
-  /**
-   * The feature id for the '<em><b>E2</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int INNER_PROD_EXPRESSION__E2 = EXPR__E2;
-
-  /**
-   * The feature id for the '<em><b>E3</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int INNER_PROD_EXPRESSION__E3 = EXPR__E3;
-
-  /**
-   * The feature id for the '<em><b>E5</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int INNER_PROD_EXPRESSION__E5 = EXPR__E5;
-
-  /**
-   * The feature id for the '<em><b>E6</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int INNER_PROD_EXPRESSION__E6 = EXPR__E6;
-
-  /**
-   * The feature id for the '<em><b>E22</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int INNER_PROD_EXPRESSION__E22 = EXPR__E22;
-
-  /**
-   * The feature id for the '<em><b>E21</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int INNER_PROD_EXPRESSION__E21 = EXPR__E21;
-
-  /**
-   * The feature id for the '<em><b>E23</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int INNER_PROD_EXPRESSION__E23 = EXPR__E23;
-
-  /**
-   * The feature id for the '<em><b>E9</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int INNER_PROD_EXPRESSION__E9 = EXPR__E9;
-
-  /**
-   * The feature id for the '<em><b>E10</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int INNER_PROD_EXPRESSION__E10 = EXPR__E10;
-
-  /**
-   * The feature id for the '<em><b>E25</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int INNER_PROD_EXPRESSION__E25 = EXPR__E25;
-
-  /**
-   * The feature id for the '<em><b>E24</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int INNER_PROD_EXPRESSION__E24 = EXPR__E24;
-
-  /**
-   * The feature id for the '<em><b>E26</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int INNER_PROD_EXPRESSION__E26 = EXPR__E26;
-
-  /**
-   * The feature id for the '<em><b>E11</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int INNER_PROD_EXPRESSION__E11 = EXPR__E11;
-
-  /**
-   * The feature id for the '<em><b>E12</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int INNER_PROD_EXPRESSION__E12 = EXPR__E12;
-
-  /**
-   * The feature id for the '<em><b>E13</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int INNER_PROD_EXPRESSION__E13 = EXPR__E13;
-
-  /**
-   * The feature id for the '<em><b>Left</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int INNER_PROD_EXPRESSION__LEFT = EXPR_FEATURE_COUNT + 0;
-
-  /**
-   * The feature id for the '<em><b>Op</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int INNER_PROD_EXPRESSION__OP = EXPR_FEATURE_COUNT + 1;
-
-  /**
-   * The feature id for the '<em><b>Right</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int INNER_PROD_EXPRESSION__RIGHT = EXPR_FEATURE_COUNT + 2;
-
-  /**
-   * The number of structural features of the '<em>Inner Prod Expression</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int INNER_PROD_EXPRESSION_FEATURE_COUNT = EXPR_FEATURE_COUNT + 3;
-
-  /**
-   * The meta object id for the '{@link com.euclideanspace.aldor.editor.impl.OuterProdExpressionImpl <em>Outer Prod Expression</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see com.euclideanspace.aldor.editor.impl.OuterProdExpressionImpl
-   * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getOuterProdExpression()
-   * @generated
-   */
-  int OUTER_PROD_EXPRESSION = 55;
-
-  /**
-   * The feature id for the '<em><b>Ifname</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int OUTER_PROD_EXPRESSION__IFNAME = EXPR__IFNAME;
-
-  /**
-   * The feature id for the '<em><b>Ifpred</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int OUTER_PROD_EXPRESSION__IFPRED = EXPR__IFPRED;
-
-  /**
-   * The feature id for the '<em><b>Thenexp</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int OUTER_PROD_EXPRESSION__THENEXP = EXPR__THENEXP;
-
-  /**
-   * The feature id for the '<em><b>Elseexp</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int OUTER_PROD_EXPRESSION__ELSEEXP = EXPR__ELSEEXP;
-
-  /**
-   * The feature id for the '<em><b>E2</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int OUTER_PROD_EXPRESSION__E2 = EXPR__E2;
-
-  /**
-   * The feature id for the '<em><b>E3</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int OUTER_PROD_EXPRESSION__E3 = EXPR__E3;
-
-  /**
-   * The feature id for the '<em><b>E5</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int OUTER_PROD_EXPRESSION__E5 = EXPR__E5;
-
-  /**
-   * The feature id for the '<em><b>E6</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int OUTER_PROD_EXPRESSION__E6 = EXPR__E6;
-
-  /**
-   * The feature id for the '<em><b>E22</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int OUTER_PROD_EXPRESSION__E22 = EXPR__E22;
-
-  /**
-   * The feature id for the '<em><b>E21</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int OUTER_PROD_EXPRESSION__E21 = EXPR__E21;
-
-  /**
-   * The feature id for the '<em><b>E23</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int OUTER_PROD_EXPRESSION__E23 = EXPR__E23;
-
-  /**
-   * The feature id for the '<em><b>E9</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int OUTER_PROD_EXPRESSION__E9 = EXPR__E9;
-
-  /**
-   * The feature id for the '<em><b>E10</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int OUTER_PROD_EXPRESSION__E10 = EXPR__E10;
-
-  /**
-   * The feature id for the '<em><b>E25</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int OUTER_PROD_EXPRESSION__E25 = EXPR__E25;
-
-  /**
-   * The feature id for the '<em><b>E24</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int OUTER_PROD_EXPRESSION__E24 = EXPR__E24;
-
-  /**
-   * The feature id for the '<em><b>E26</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int OUTER_PROD_EXPRESSION__E26 = EXPR__E26;
-
-  /**
-   * The feature id for the '<em><b>E11</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int OUTER_PROD_EXPRESSION__E11 = EXPR__E11;
-
-  /**
-   * The feature id for the '<em><b>E12</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int OUTER_PROD_EXPRESSION__E12 = EXPR__E12;
-
-  /**
-   * The feature id for the '<em><b>E13</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int OUTER_PROD_EXPRESSION__E13 = EXPR__E13;
-
-  /**
-   * The feature id for the '<em><b>Left</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int OUTER_PROD_EXPRESSION__LEFT = EXPR_FEATURE_COUNT + 0;
-
-  /**
-   * The feature id for the '<em><b>Op</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int OUTER_PROD_EXPRESSION__OP = EXPR_FEATURE_COUNT + 1;
-
-  /**
-   * The feature id for the '<em><b>Right</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int OUTER_PROD_EXPRESSION__RIGHT = EXPR_FEATURE_COUNT + 2;
-
-  /**
-   * The number of structural features of the '<em>Outer Prod Expression</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int OUTER_PROD_EXPRESSION_FEATURE_COUNT = EXPR_FEATURE_COUNT + 3;
-
-  /**
-   * The meta object id for the '{@link com.euclideanspace.aldor.editor.impl.HasExpressionImpl <em>Has Expression</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see com.euclideanspace.aldor.editor.impl.HasExpressionImpl
-   * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getHasExpression()
-   * @generated
-   */
-  int HAS_EXPRESSION = 56;
-
-  /**
-   * The feature id for the '<em><b>Ifname</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int HAS_EXPRESSION__IFNAME = EXPR__IFNAME;
-
-  /**
-   * The feature id for the '<em><b>Ifpred</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int HAS_EXPRESSION__IFPRED = EXPR__IFPRED;
-
-  /**
-   * The feature id for the '<em><b>Thenexp</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int HAS_EXPRESSION__THENEXP = EXPR__THENEXP;
-
-  /**
-   * The feature id for the '<em><b>Elseexp</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int HAS_EXPRESSION__ELSEEXP = EXPR__ELSEEXP;
-
-  /**
-   * The feature id for the '<em><b>E2</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int HAS_EXPRESSION__E2 = EXPR__E2;
-
-  /**
-   * The feature id for the '<em><b>E3</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int HAS_EXPRESSION__E3 = EXPR__E3;
-
-  /**
-   * The feature id for the '<em><b>E5</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int HAS_EXPRESSION__E5 = EXPR__E5;
-
-  /**
-   * The feature id for the '<em><b>E6</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int HAS_EXPRESSION__E6 = EXPR__E6;
-
-  /**
-   * The feature id for the '<em><b>E22</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int HAS_EXPRESSION__E22 = EXPR__E22;
-
-  /**
-   * The feature id for the '<em><b>E21</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int HAS_EXPRESSION__E21 = EXPR__E21;
-
-  /**
-   * The feature id for the '<em><b>E23</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int HAS_EXPRESSION__E23 = EXPR__E23;
-
-  /**
-   * The feature id for the '<em><b>E9</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int HAS_EXPRESSION__E9 = EXPR__E9;
-
-  /**
-   * The feature id for the '<em><b>E10</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int HAS_EXPRESSION__E10 = EXPR__E10;
-
-  /**
-   * The feature id for the '<em><b>E25</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int HAS_EXPRESSION__E25 = EXPR__E25;
-
-  /**
-   * The feature id for the '<em><b>E24</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int HAS_EXPRESSION__E24 = EXPR__E24;
-
-  /**
-   * The feature id for the '<em><b>E26</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int HAS_EXPRESSION__E26 = EXPR__E26;
-
-  /**
-   * The feature id for the '<em><b>E11</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int HAS_EXPRESSION__E11 = EXPR__E11;
-
-  /**
-   * The feature id for the '<em><b>E12</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int HAS_EXPRESSION__E12 = EXPR__E12;
-
-  /**
-   * The feature id for the '<em><b>E13</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int HAS_EXPRESSION__E13 = EXPR__E13;
-
-  /**
-   * The feature id for the '<em><b>Left</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int HAS_EXPRESSION__LEFT = EXPR_FEATURE_COUNT + 0;
-
-  /**
-   * The feature id for the '<em><b>Op</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int HAS_EXPRESSION__OP = EXPR_FEATURE_COUNT + 1;
-
-  /**
-   * The feature id for the '<em><b>Right Type</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int HAS_EXPRESSION__RIGHT_TYPE = EXPR_FEATURE_COUNT + 2;
-
-  /**
-   * The number of structural features of the '<em>Has Expression</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int HAS_EXPRESSION_FEATURE_COUNT = EXPR_FEATURE_COUNT + 3;
-
-  /**
-   * The meta object id for the '{@link com.euclideanspace.aldor.editor.impl.CaseExpressionImpl <em>Case Expression</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see com.euclideanspace.aldor.editor.impl.CaseExpressionImpl
-   * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getCaseExpression()
-   * @generated
-   */
-  int CASE_EXPRESSION = 57;
-
-  /**
-   * The feature id for the '<em><b>Ifname</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int CASE_EXPRESSION__IFNAME = EXPR__IFNAME;
-
-  /**
-   * The feature id for the '<em><b>Ifpred</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int CASE_EXPRESSION__IFPRED = EXPR__IFPRED;
-
-  /**
-   * The feature id for the '<em><b>Thenexp</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int CASE_EXPRESSION__THENEXP = EXPR__THENEXP;
-
-  /**
-   * The feature id for the '<em><b>Elseexp</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int CASE_EXPRESSION__ELSEEXP = EXPR__ELSEEXP;
-
-  /**
-   * The feature id for the '<em><b>E2</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int CASE_EXPRESSION__E2 = EXPR__E2;
-
-  /**
-   * The feature id for the '<em><b>E3</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int CASE_EXPRESSION__E3 = EXPR__E3;
-
-  /**
-   * The feature id for the '<em><b>E5</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int CASE_EXPRESSION__E5 = EXPR__E5;
-
-  /**
-   * The feature id for the '<em><b>E6</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int CASE_EXPRESSION__E6 = EXPR__E6;
-
-  /**
-   * The feature id for the '<em><b>E22</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int CASE_EXPRESSION__E22 = EXPR__E22;
-
-  /**
-   * The feature id for the '<em><b>E21</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int CASE_EXPRESSION__E21 = EXPR__E21;
-
-  /**
-   * The feature id for the '<em><b>E23</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int CASE_EXPRESSION__E23 = EXPR__E23;
-
-  /**
-   * The feature id for the '<em><b>E9</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int CASE_EXPRESSION__E9 = EXPR__E9;
-
-  /**
-   * The feature id for the '<em><b>E10</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int CASE_EXPRESSION__E10 = EXPR__E10;
-
-  /**
-   * The feature id for the '<em><b>E25</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int CASE_EXPRESSION__E25 = EXPR__E25;
-
-  /**
-   * The feature id for the '<em><b>E24</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int CASE_EXPRESSION__E24 = EXPR__E24;
-
-  /**
-   * The feature id for the '<em><b>E26</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int CASE_EXPRESSION__E26 = EXPR__E26;
-
-  /**
-   * The feature id for the '<em><b>E11</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int CASE_EXPRESSION__E11 = EXPR__E11;
-
-  /**
-   * The feature id for the '<em><b>E12</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int CASE_EXPRESSION__E12 = EXPR__E12;
-
-  /**
-   * The feature id for the '<em><b>E13</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int CASE_EXPRESSION__E13 = EXPR__E13;
-
-  /**
-   * The feature id for the '<em><b>Left</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int CASE_EXPRESSION__LEFT = EXPR_FEATURE_COUNT + 0;
-
-  /**
-   * The feature id for the '<em><b>Op</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int CASE_EXPRESSION__OP = EXPR_FEATURE_COUNT + 1;
-
-  /**
-   * The feature id for the '<em><b>Right</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int CASE_EXPRESSION__RIGHT = EXPR_FEATURE_COUNT + 2;
-
-  /**
-   * The number of structural features of the '<em>Case Expression</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int CASE_EXPRESSION_FEATURE_COUNT = EXPR_FEATURE_COUNT + 3;
-
-  /**
-   * The meta object id for the '{@link com.euclideanspace.aldor.editor.impl.EqualityExpressionImpl <em>Equality Expression</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see com.euclideanspace.aldor.editor.impl.EqualityExpressionImpl
-   * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getEqualityExpression()
-   * @generated
-   */
-  int EQUALITY_EXPRESSION = 58;
-
-  /**
-   * The feature id for the '<em><b>Ifname</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int EQUALITY_EXPRESSION__IFNAME = EXPR__IFNAME;
-
-  /**
-   * The feature id for the '<em><b>Ifpred</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int EQUALITY_EXPRESSION__IFPRED = EXPR__IFPRED;
-
-  /**
-   * The feature id for the '<em><b>Thenexp</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int EQUALITY_EXPRESSION__THENEXP = EXPR__THENEXP;
-
-  /**
-   * The feature id for the '<em><b>Elseexp</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int EQUALITY_EXPRESSION__ELSEEXP = EXPR__ELSEEXP;
-
-  /**
-   * The feature id for the '<em><b>E2</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int EQUALITY_EXPRESSION__E2 = EXPR__E2;
-
-  /**
-   * The feature id for the '<em><b>E3</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int EQUALITY_EXPRESSION__E3 = EXPR__E3;
-
-  /**
-   * The feature id for the '<em><b>E5</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int EQUALITY_EXPRESSION__E5 = EXPR__E5;
-
-  /**
-   * The feature id for the '<em><b>E6</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int EQUALITY_EXPRESSION__E6 = EXPR__E6;
-
-  /**
-   * The feature id for the '<em><b>E22</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int EQUALITY_EXPRESSION__E22 = EXPR__E22;
-
-  /**
-   * The feature id for the '<em><b>E21</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int EQUALITY_EXPRESSION__E21 = EXPR__E21;
-
-  /**
-   * The feature id for the '<em><b>E23</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int EQUALITY_EXPRESSION__E23 = EXPR__E23;
-
-  /**
-   * The feature id for the '<em><b>E9</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int EQUALITY_EXPRESSION__E9 = EXPR__E9;
-
-  /**
-   * The feature id for the '<em><b>E10</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int EQUALITY_EXPRESSION__E10 = EXPR__E10;
-
-  /**
-   * The feature id for the '<em><b>E25</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int EQUALITY_EXPRESSION__E25 = EXPR__E25;
-
-  /**
-   * The feature id for the '<em><b>E24</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int EQUALITY_EXPRESSION__E24 = EXPR__E24;
-
-  /**
-   * The feature id for the '<em><b>E26</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int EQUALITY_EXPRESSION__E26 = EXPR__E26;
-
-  /**
-   * The feature id for the '<em><b>E11</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int EQUALITY_EXPRESSION__E11 = EXPR__E11;
-
-  /**
-   * The feature id for the '<em><b>E12</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int EQUALITY_EXPRESSION__E12 = EXPR__E12;
-
-  /**
-   * The feature id for the '<em><b>E13</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int EQUALITY_EXPRESSION__E13 = EXPR__E13;
-
-  /**
-   * The feature id for the '<em><b>Left</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int EQUALITY_EXPRESSION__LEFT = EXPR_FEATURE_COUNT + 0;
-
-  /**
-   * The feature id for the '<em><b>Op</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int EQUALITY_EXPRESSION__OP = EXPR_FEATURE_COUNT + 1;
-
-  /**
-   * The feature id for the '<em><b>Te</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int EQUALITY_EXPRESSION__TE = EXPR_FEATURE_COUNT + 2;
-
-  /**
-   * The feature id for the '<em><b>Right</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int EQUALITY_EXPRESSION__RIGHT = EXPR_FEATURE_COUNT + 3;
-
-  /**
-   * The number of structural features of the '<em>Equality Expression</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int EQUALITY_EXPRESSION_FEATURE_COUNT = EXPR_FEATURE_COUNT + 4;
-
-  /**
-   * The meta object id for the '{@link com.euclideanspace.aldor.editor.impl.RelationalExpressionImpl <em>Relational Expression</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see com.euclideanspace.aldor.editor.impl.RelationalExpressionImpl
-   * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getRelationalExpression()
-   * @generated
-   */
-  int RELATIONAL_EXPRESSION = 59;
-
-  /**
-   * The feature id for the '<em><b>Ifname</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int RELATIONAL_EXPRESSION__IFNAME = EXPR__IFNAME;
-
-  /**
-   * The feature id for the '<em><b>Ifpred</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int RELATIONAL_EXPRESSION__IFPRED = EXPR__IFPRED;
-
-  /**
-   * The feature id for the '<em><b>Thenexp</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int RELATIONAL_EXPRESSION__THENEXP = EXPR__THENEXP;
-
-  /**
-   * The feature id for the '<em><b>Elseexp</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int RELATIONAL_EXPRESSION__ELSEEXP = EXPR__ELSEEXP;
-
-  /**
-   * The feature id for the '<em><b>E2</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int RELATIONAL_EXPRESSION__E2 = EXPR__E2;
-
-  /**
-   * The feature id for the '<em><b>E3</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int RELATIONAL_EXPRESSION__E3 = EXPR__E3;
-
-  /**
-   * The feature id for the '<em><b>E5</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int RELATIONAL_EXPRESSION__E5 = EXPR__E5;
-
-  /**
-   * The feature id for the '<em><b>E6</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int RELATIONAL_EXPRESSION__E6 = EXPR__E6;
-
-  /**
-   * The feature id for the '<em><b>E22</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int RELATIONAL_EXPRESSION__E22 = EXPR__E22;
-
-  /**
-   * The feature id for the '<em><b>E21</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int RELATIONAL_EXPRESSION__E21 = EXPR__E21;
-
-  /**
-   * The feature id for the '<em><b>E23</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int RELATIONAL_EXPRESSION__E23 = EXPR__E23;
-
-  /**
-   * The feature id for the '<em><b>E9</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int RELATIONAL_EXPRESSION__E9 = EXPR__E9;
-
-  /**
-   * The feature id for the '<em><b>E10</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int RELATIONAL_EXPRESSION__E10 = EXPR__E10;
-
-  /**
-   * The feature id for the '<em><b>E25</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int RELATIONAL_EXPRESSION__E25 = EXPR__E25;
-
-  /**
-   * The feature id for the '<em><b>E24</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int RELATIONAL_EXPRESSION__E24 = EXPR__E24;
-
-  /**
-   * The feature id for the '<em><b>E26</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int RELATIONAL_EXPRESSION__E26 = EXPR__E26;
-
-  /**
-   * The feature id for the '<em><b>E11</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int RELATIONAL_EXPRESSION__E11 = EXPR__E11;
-
-  /**
-   * The feature id for the '<em><b>E12</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int RELATIONAL_EXPRESSION__E12 = EXPR__E12;
-
-  /**
-   * The feature id for the '<em><b>E13</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int RELATIONAL_EXPRESSION__E13 = EXPR__E13;
-
-  /**
-   * The feature id for the '<em><b>Left</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int RELATIONAL_EXPRESSION__LEFT = EXPR_FEATURE_COUNT + 0;
-
-  /**
-   * The feature id for the '<em><b>Op</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int RELATIONAL_EXPRESSION__OP = EXPR_FEATURE_COUNT + 1;
-
-  /**
-   * The feature id for the '<em><b>Right</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int RELATIONAL_EXPRESSION__RIGHT = EXPR_FEATURE_COUNT + 2;
-
-  /**
-   * The number of structural features of the '<em>Relational Expression</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int RELATIONAL_EXPRESSION_FEATURE_COUNT = EXPR_FEATURE_COUNT + 3;
-
-  /**
-   * The meta object id for the '{@link com.euclideanspace.aldor.editor.impl.IsExpressionImpl <em>Is Expression</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see com.euclideanspace.aldor.editor.impl.IsExpressionImpl
-   * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getIsExpression()
-   * @generated
-   */
-  int IS_EXPRESSION = 60;
-
-  /**
-   * The feature id for the '<em><b>Ifname</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int IS_EXPRESSION__IFNAME = EXPR__IFNAME;
-
-  /**
-   * The feature id for the '<em><b>Ifpred</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int IS_EXPRESSION__IFPRED = EXPR__IFPRED;
-
-  /**
-   * The feature id for the '<em><b>Thenexp</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int IS_EXPRESSION__THENEXP = EXPR__THENEXP;
-
-  /**
-   * The feature id for the '<em><b>Elseexp</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int IS_EXPRESSION__ELSEEXP = EXPR__ELSEEXP;
-
-  /**
-   * The feature id for the '<em><b>E2</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int IS_EXPRESSION__E2 = EXPR__E2;
-
-  /**
-   * The feature id for the '<em><b>E3</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int IS_EXPRESSION__E3 = EXPR__E3;
-
-  /**
-   * The feature id for the '<em><b>E5</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int IS_EXPRESSION__E5 = EXPR__E5;
-
-  /**
-   * The feature id for the '<em><b>E6</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int IS_EXPRESSION__E6 = EXPR__E6;
-
-  /**
-   * The feature id for the '<em><b>E22</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int IS_EXPRESSION__E22 = EXPR__E22;
-
-  /**
-   * The feature id for the '<em><b>E21</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int IS_EXPRESSION__E21 = EXPR__E21;
-
-  /**
-   * The feature id for the '<em><b>E23</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int IS_EXPRESSION__E23 = EXPR__E23;
-
-  /**
-   * The feature id for the '<em><b>E9</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int IS_EXPRESSION__E9 = EXPR__E9;
-
-  /**
-   * The feature id for the '<em><b>E10</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int IS_EXPRESSION__E10 = EXPR__E10;
-
-  /**
-   * The feature id for the '<em><b>E25</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int IS_EXPRESSION__E25 = EXPR__E25;
-
-  /**
-   * The feature id for the '<em><b>E24</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int IS_EXPRESSION__E24 = EXPR__E24;
-
-  /**
-   * The feature id for the '<em><b>E26</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int IS_EXPRESSION__E26 = EXPR__E26;
-
-  /**
-   * The feature id for the '<em><b>E11</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int IS_EXPRESSION__E11 = EXPR__E11;
-
-  /**
-   * The feature id for the '<em><b>E12</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int IS_EXPRESSION__E12 = EXPR__E12;
-
-  /**
-   * The feature id for the '<em><b>E13</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int IS_EXPRESSION__E13 = EXPR__E13;
-
-  /**
-   * The feature id for the '<em><b>Left</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int IS_EXPRESSION__LEFT = EXPR_FEATURE_COUNT + 0;
-
-  /**
-   * The feature id for the '<em><b>Op</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int IS_EXPRESSION__OP = EXPR_FEATURE_COUNT + 1;
-
-  /**
-   * The feature id for the '<em><b>Right Type</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int IS_EXPRESSION__RIGHT_TYPE = EXPR_FEATURE_COUNT + 2;
-
-  /**
-   * The number of structural features of the '<em>Is Expression</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int IS_EXPRESSION_FEATURE_COUNT = EXPR_FEATURE_COUNT + 3;
-
-  /**
-   * The meta object id for the '{@link com.euclideanspace.aldor.editor.impl.SegmentExpressionImpl <em>Segment Expression</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see com.euclideanspace.aldor.editor.impl.SegmentExpressionImpl
-   * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getSegmentExpression()
-   * @generated
-   */
-  int SEGMENT_EXPRESSION = 61;
-
-  /**
-   * The feature id for the '<em><b>Ifname</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int SEGMENT_EXPRESSION__IFNAME = EXPR__IFNAME;
-
-  /**
-   * The feature id for the '<em><b>Ifpred</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int SEGMENT_EXPRESSION__IFPRED = EXPR__IFPRED;
-
-  /**
-   * The feature id for the '<em><b>Thenexp</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int SEGMENT_EXPRESSION__THENEXP = EXPR__THENEXP;
-
-  /**
-   * The feature id for the '<em><b>Elseexp</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int SEGMENT_EXPRESSION__ELSEEXP = EXPR__ELSEEXP;
-
-  /**
-   * The feature id for the '<em><b>E2</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int SEGMENT_EXPRESSION__E2 = EXPR__E2;
-
-  /**
-   * The feature id for the '<em><b>E3</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int SEGMENT_EXPRESSION__E3 = EXPR__E3;
-
-  /**
-   * The feature id for the '<em><b>E5</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int SEGMENT_EXPRESSION__E5 = EXPR__E5;
-
-  /**
-   * The feature id for the '<em><b>E6</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int SEGMENT_EXPRESSION__E6 = EXPR__E6;
-
-  /**
-   * The feature id for the '<em><b>E22</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int SEGMENT_EXPRESSION__E22 = EXPR__E22;
-
-  /**
-   * The feature id for the '<em><b>E21</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int SEGMENT_EXPRESSION__E21 = EXPR__E21;
-
-  /**
-   * The feature id for the '<em><b>E23</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int SEGMENT_EXPRESSION__E23 = EXPR__E23;
-
-  /**
-   * The feature id for the '<em><b>E9</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int SEGMENT_EXPRESSION__E9 = EXPR__E9;
-
-  /**
-   * The feature id for the '<em><b>E10</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int SEGMENT_EXPRESSION__E10 = EXPR__E10;
-
-  /**
-   * The feature id for the '<em><b>E25</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int SEGMENT_EXPRESSION__E25 = EXPR__E25;
-
-  /**
-   * The feature id for the '<em><b>E24</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int SEGMENT_EXPRESSION__E24 = EXPR__E24;
-
-  /**
-   * The feature id for the '<em><b>E26</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int SEGMENT_EXPRESSION__E26 = EXPR__E26;
-
-  /**
-   * The feature id for the '<em><b>E11</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int SEGMENT_EXPRESSION__E11 = EXPR__E11;
-
-  /**
-   * The feature id for the '<em><b>E12</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int SEGMENT_EXPRESSION__E12 = EXPR__E12;
-
-  /**
-   * The feature id for the '<em><b>E13</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int SEGMENT_EXPRESSION__E13 = EXPR__E13;
-
-  /**
-   * The feature id for the '<em><b>Left</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int SEGMENT_EXPRESSION__LEFT = EXPR_FEATURE_COUNT + 0;
-
-  /**
-   * The feature id for the '<em><b>Op</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int SEGMENT_EXPRESSION__OP = EXPR_FEATURE_COUNT + 1;
-
-  /**
-   * The feature id for the '<em><b>Right</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int SEGMENT_EXPRESSION__RIGHT = EXPR_FEATURE_COUNT + 2;
-
-  /**
-   * The number of structural features of the '<em>Segment Expression</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int SEGMENT_EXPRESSION_FEATURE_COUNT = EXPR_FEATURE_COUNT + 3;
-
-  /**
-   * The meta object id for the '{@link com.euclideanspace.aldor.editor.impl.AdditiveExpressionImpl <em>Additive Expression</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see com.euclideanspace.aldor.editor.impl.AdditiveExpressionImpl
-   * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getAdditiveExpression()
-   * @generated
-   */
-  int ADDITIVE_EXPRESSION = 62;
-
-  /**
-   * The feature id for the '<em><b>Ifname</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ADDITIVE_EXPRESSION__IFNAME = EXPR__IFNAME;
-
-  /**
-   * The feature id for the '<em><b>Ifpred</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ADDITIVE_EXPRESSION__IFPRED = EXPR__IFPRED;
-
-  /**
-   * The feature id for the '<em><b>Thenexp</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ADDITIVE_EXPRESSION__THENEXP = EXPR__THENEXP;
-
-  /**
-   * The feature id for the '<em><b>Elseexp</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ADDITIVE_EXPRESSION__ELSEEXP = EXPR__ELSEEXP;
-
-  /**
-   * The feature id for the '<em><b>E2</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ADDITIVE_EXPRESSION__E2 = EXPR__E2;
-
-  /**
-   * The feature id for the '<em><b>E3</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ADDITIVE_EXPRESSION__E3 = EXPR__E3;
-
-  /**
-   * The feature id for the '<em><b>E5</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ADDITIVE_EXPRESSION__E5 = EXPR__E5;
-
-  /**
-   * The feature id for the '<em><b>E6</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ADDITIVE_EXPRESSION__E6 = EXPR__E6;
-
-  /**
-   * The feature id for the '<em><b>E22</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ADDITIVE_EXPRESSION__E22 = EXPR__E22;
-
-  /**
-   * The feature id for the '<em><b>E21</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ADDITIVE_EXPRESSION__E21 = EXPR__E21;
-
-  /**
-   * The feature id for the '<em><b>E23</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ADDITIVE_EXPRESSION__E23 = EXPR__E23;
-
-  /**
-   * The feature id for the '<em><b>E9</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ADDITIVE_EXPRESSION__E9 = EXPR__E9;
-
-  /**
-   * The feature id for the '<em><b>E10</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ADDITIVE_EXPRESSION__E10 = EXPR__E10;
-
-  /**
-   * The feature id for the '<em><b>E25</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ADDITIVE_EXPRESSION__E25 = EXPR__E25;
-
-  /**
-   * The feature id for the '<em><b>E24</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ADDITIVE_EXPRESSION__E24 = EXPR__E24;
-
-  /**
-   * The feature id for the '<em><b>E26</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ADDITIVE_EXPRESSION__E26 = EXPR__E26;
-
-  /**
-   * The feature id for the '<em><b>E11</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ADDITIVE_EXPRESSION__E11 = EXPR__E11;
-
-  /**
-   * The feature id for the '<em><b>E12</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ADDITIVE_EXPRESSION__E12 = EXPR__E12;
-
-  /**
-   * The feature id for the '<em><b>E13</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ADDITIVE_EXPRESSION__E13 = EXPR__E13;
-
-  /**
-   * The feature id for the '<em><b>Left</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ADDITIVE_EXPRESSION__LEFT = EXPR_FEATURE_COUNT + 0;
-
-  /**
-   * The feature id for the '<em><b>Op</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ADDITIVE_EXPRESSION__OP = EXPR_FEATURE_COUNT + 1;
-
-  /**
-   * The feature id for the '<em><b>Te</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ADDITIVE_EXPRESSION__TE = EXPR_FEATURE_COUNT + 2;
-
-  /**
-   * The feature id for the '<em><b>Right</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ADDITIVE_EXPRESSION__RIGHT = EXPR_FEATURE_COUNT + 3;
-
-  /**
-   * The number of structural features of the '<em>Additive Expression</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ADDITIVE_EXPRESSION_FEATURE_COUNT = EXPR_FEATURE_COUNT + 4;
-
-  /**
-   * The meta object id for the '{@link com.euclideanspace.aldor.editor.impl.ExquoExpressionImpl <em>Exquo Expression</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see com.euclideanspace.aldor.editor.impl.ExquoExpressionImpl
-   * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getExquoExpression()
-   * @generated
-   */
-  int EXQUO_EXPRESSION = 63;
-
-  /**
-   * The feature id for the '<em><b>Ifname</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int EXQUO_EXPRESSION__IFNAME = EXPR__IFNAME;
-
-  /**
-   * The feature id for the '<em><b>Ifpred</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int EXQUO_EXPRESSION__IFPRED = EXPR__IFPRED;
-
-  /**
-   * The feature id for the '<em><b>Thenexp</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int EXQUO_EXPRESSION__THENEXP = EXPR__THENEXP;
-
-  /**
-   * The feature id for the '<em><b>Elseexp</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int EXQUO_EXPRESSION__ELSEEXP = EXPR__ELSEEXP;
-
-  /**
-   * The feature id for the '<em><b>E2</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int EXQUO_EXPRESSION__E2 = EXPR__E2;
-
-  /**
-   * The feature id for the '<em><b>E3</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int EXQUO_EXPRESSION__E3 = EXPR__E3;
-
-  /**
-   * The feature id for the '<em><b>E5</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int EXQUO_EXPRESSION__E5 = EXPR__E5;
-
-  /**
-   * The feature id for the '<em><b>E6</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int EXQUO_EXPRESSION__E6 = EXPR__E6;
-
-  /**
-   * The feature id for the '<em><b>E22</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int EXQUO_EXPRESSION__E22 = EXPR__E22;
-
-  /**
-   * The feature id for the '<em><b>E21</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int EXQUO_EXPRESSION__E21 = EXPR__E21;
-
-  /**
-   * The feature id for the '<em><b>E23</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int EXQUO_EXPRESSION__E23 = EXPR__E23;
-
-  /**
-   * The feature id for the '<em><b>E9</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int EXQUO_EXPRESSION__E9 = EXPR__E9;
-
-  /**
-   * The feature id for the '<em><b>E10</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int EXQUO_EXPRESSION__E10 = EXPR__E10;
-
-  /**
-   * The feature id for the '<em><b>E25</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int EXQUO_EXPRESSION__E25 = EXPR__E25;
-
-  /**
-   * The feature id for the '<em><b>E24</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int EXQUO_EXPRESSION__E24 = EXPR__E24;
-
-  /**
-   * The feature id for the '<em><b>E26</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int EXQUO_EXPRESSION__E26 = EXPR__E26;
-
-  /**
-   * The feature id for the '<em><b>E11</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int EXQUO_EXPRESSION__E11 = EXPR__E11;
-
-  /**
-   * The feature id for the '<em><b>E12</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int EXQUO_EXPRESSION__E12 = EXPR__E12;
-
-  /**
-   * The feature id for the '<em><b>E13</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int EXQUO_EXPRESSION__E13 = EXPR__E13;
-
-  /**
-   * The feature id for the '<em><b>Left</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int EXQUO_EXPRESSION__LEFT = EXPR_FEATURE_COUNT + 0;
-
-  /**
-   * The feature id for the '<em><b>Op</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int EXQUO_EXPRESSION__OP = EXPR_FEATURE_COUNT + 1;
-
-  /**
-   * The feature id for the '<em><b>Right</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int EXQUO_EXPRESSION__RIGHT = EXPR_FEATURE_COUNT + 2;
-
-  /**
-   * The number of structural features of the '<em>Exquo Expression</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int EXQUO_EXPRESSION_FEATURE_COUNT = EXPR_FEATURE_COUNT + 3;
-
-  /**
-   * The meta object id for the '{@link com.euclideanspace.aldor.editor.impl.DivisionExpressionImpl <em>Division Expression</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see com.euclideanspace.aldor.editor.impl.DivisionExpressionImpl
-   * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getDivisionExpression()
-   * @generated
-   */
-  int DIVISION_EXPRESSION = 64;
-
-  /**
-   * The feature id for the '<em><b>Ifname</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int DIVISION_EXPRESSION__IFNAME = EXPR__IFNAME;
-
-  /**
-   * The feature id for the '<em><b>Ifpred</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int DIVISION_EXPRESSION__IFPRED = EXPR__IFPRED;
-
-  /**
-   * The feature id for the '<em><b>Thenexp</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int DIVISION_EXPRESSION__THENEXP = EXPR__THENEXP;
-
-  /**
-   * The feature id for the '<em><b>Elseexp</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int DIVISION_EXPRESSION__ELSEEXP = EXPR__ELSEEXP;
-
-  /**
-   * The feature id for the '<em><b>E2</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int DIVISION_EXPRESSION__E2 = EXPR__E2;
-
-  /**
-   * The feature id for the '<em><b>E3</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int DIVISION_EXPRESSION__E3 = EXPR__E3;
-
-  /**
-   * The feature id for the '<em><b>E5</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int DIVISION_EXPRESSION__E5 = EXPR__E5;
-
-  /**
-   * The feature id for the '<em><b>E6</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int DIVISION_EXPRESSION__E6 = EXPR__E6;
-
-  /**
-   * The feature id for the '<em><b>E22</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int DIVISION_EXPRESSION__E22 = EXPR__E22;
-
-  /**
-   * The feature id for the '<em><b>E21</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int DIVISION_EXPRESSION__E21 = EXPR__E21;
-
-  /**
-   * The feature id for the '<em><b>E23</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int DIVISION_EXPRESSION__E23 = EXPR__E23;
-
-  /**
-   * The feature id for the '<em><b>E9</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int DIVISION_EXPRESSION__E9 = EXPR__E9;
-
-  /**
-   * The feature id for the '<em><b>E10</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int DIVISION_EXPRESSION__E10 = EXPR__E10;
-
-  /**
-   * The feature id for the '<em><b>E25</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int DIVISION_EXPRESSION__E25 = EXPR__E25;
-
-  /**
-   * The feature id for the '<em><b>E24</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int DIVISION_EXPRESSION__E24 = EXPR__E24;
-
-  /**
-   * The feature id for the '<em><b>E26</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int DIVISION_EXPRESSION__E26 = EXPR__E26;
-
-  /**
-   * The feature id for the '<em><b>E11</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int DIVISION_EXPRESSION__E11 = EXPR__E11;
-
-  /**
-   * The feature id for the '<em><b>E12</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int DIVISION_EXPRESSION__E12 = EXPR__E12;
-
-  /**
-   * The feature id for the '<em><b>E13</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int DIVISION_EXPRESSION__E13 = EXPR__E13;
-
-  /**
-   * The feature id for the '<em><b>Left</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int DIVISION_EXPRESSION__LEFT = EXPR_FEATURE_COUNT + 0;
-
-  /**
-   * The feature id for the '<em><b>Op</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int DIVISION_EXPRESSION__OP = EXPR_FEATURE_COUNT + 1;
-
-  /**
-   * The feature id for the '<em><b>Te</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int DIVISION_EXPRESSION__TE = EXPR_FEATURE_COUNT + 2;
-
-  /**
-   * The feature id for the '<em><b>Right</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int DIVISION_EXPRESSION__RIGHT = EXPR_FEATURE_COUNT + 3;
-
-  /**
-   * The number of structural features of the '<em>Division Expression</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int DIVISION_EXPRESSION_FEATURE_COUNT = EXPR_FEATURE_COUNT + 4;
-
-  /**
-   * The meta object id for the '{@link com.euclideanspace.aldor.editor.impl.QuoExpressionImpl <em>Quo Expression</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see com.euclideanspace.aldor.editor.impl.QuoExpressionImpl
-   * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getQuoExpression()
-   * @generated
-   */
-  int QUO_EXPRESSION = 65;
-
-  /**
-   * The feature id for the '<em><b>Ifname</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int QUO_EXPRESSION__IFNAME = EXPR__IFNAME;
-
-  /**
-   * The feature id for the '<em><b>Ifpred</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int QUO_EXPRESSION__IFPRED = EXPR__IFPRED;
-
-  /**
-   * The feature id for the '<em><b>Thenexp</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int QUO_EXPRESSION__THENEXP = EXPR__THENEXP;
-
-  /**
-   * The feature id for the '<em><b>Elseexp</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int QUO_EXPRESSION__ELSEEXP = EXPR__ELSEEXP;
-
-  /**
-   * The feature id for the '<em><b>E2</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int QUO_EXPRESSION__E2 = EXPR__E2;
-
-  /**
-   * The feature id for the '<em><b>E3</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int QUO_EXPRESSION__E3 = EXPR__E3;
-
-  /**
-   * The feature id for the '<em><b>E5</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int QUO_EXPRESSION__E5 = EXPR__E5;
-
-  /**
-   * The feature id for the '<em><b>E6</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int QUO_EXPRESSION__E6 = EXPR__E6;
-
-  /**
-   * The feature id for the '<em><b>E22</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int QUO_EXPRESSION__E22 = EXPR__E22;
-
-  /**
-   * The feature id for the '<em><b>E21</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int QUO_EXPRESSION__E21 = EXPR__E21;
-
-  /**
-   * The feature id for the '<em><b>E23</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int QUO_EXPRESSION__E23 = EXPR__E23;
-
-  /**
-   * The feature id for the '<em><b>E9</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int QUO_EXPRESSION__E9 = EXPR__E9;
-
-  /**
-   * The feature id for the '<em><b>E10</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int QUO_EXPRESSION__E10 = EXPR__E10;
-
-  /**
-   * The feature id for the '<em><b>E25</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int QUO_EXPRESSION__E25 = EXPR__E25;
-
-  /**
-   * The feature id for the '<em><b>E24</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int QUO_EXPRESSION__E24 = EXPR__E24;
-
-  /**
-   * The feature id for the '<em><b>E26</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int QUO_EXPRESSION__E26 = EXPR__E26;
-
-  /**
-   * The feature id for the '<em><b>E11</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int QUO_EXPRESSION__E11 = EXPR__E11;
-
-  /**
-   * The feature id for the '<em><b>E12</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int QUO_EXPRESSION__E12 = EXPR__E12;
-
-  /**
-   * The feature id for the '<em><b>E13</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int QUO_EXPRESSION__E13 = EXPR__E13;
-
-  /**
-   * The feature id for the '<em><b>Left</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int QUO_EXPRESSION__LEFT = EXPR_FEATURE_COUNT + 0;
-
-  /**
-   * The feature id for the '<em><b>Op</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int QUO_EXPRESSION__OP = EXPR_FEATURE_COUNT + 1;
-
-  /**
-   * The feature id for the '<em><b>Right</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int QUO_EXPRESSION__RIGHT = EXPR_FEATURE_COUNT + 2;
-
-  /**
-   * The number of structural features of the '<em>Quo Expression</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int QUO_EXPRESSION_FEATURE_COUNT = EXPR_FEATURE_COUNT + 3;
-
-  /**
-   * The meta object id for the '{@link com.euclideanspace.aldor.editor.impl.ModExpressionImpl <em>Mod Expression</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see com.euclideanspace.aldor.editor.impl.ModExpressionImpl
-   * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getModExpression()
-   * @generated
-   */
-  int MOD_EXPRESSION = 66;
-
-  /**
-   * The feature id for the '<em><b>Ifname</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int MOD_EXPRESSION__IFNAME = EXPR__IFNAME;
-
-  /**
-   * The feature id for the '<em><b>Ifpred</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int MOD_EXPRESSION__IFPRED = EXPR__IFPRED;
-
-  /**
-   * The feature id for the '<em><b>Thenexp</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int MOD_EXPRESSION__THENEXP = EXPR__THENEXP;
-
-  /**
-   * The feature id for the '<em><b>Elseexp</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int MOD_EXPRESSION__ELSEEXP = EXPR__ELSEEXP;
-
-  /**
-   * The feature id for the '<em><b>E2</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int MOD_EXPRESSION__E2 = EXPR__E2;
-
-  /**
-   * The feature id for the '<em><b>E3</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int MOD_EXPRESSION__E3 = EXPR__E3;
-
-  /**
-   * The feature id for the '<em><b>E5</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int MOD_EXPRESSION__E5 = EXPR__E5;
-
-  /**
-   * The feature id for the '<em><b>E6</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int MOD_EXPRESSION__E6 = EXPR__E6;
-
-  /**
-   * The feature id for the '<em><b>E22</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int MOD_EXPRESSION__E22 = EXPR__E22;
-
-  /**
-   * The feature id for the '<em><b>E21</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int MOD_EXPRESSION__E21 = EXPR__E21;
-
-  /**
-   * The feature id for the '<em><b>E23</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int MOD_EXPRESSION__E23 = EXPR__E23;
-
-  /**
-   * The feature id for the '<em><b>E9</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int MOD_EXPRESSION__E9 = EXPR__E9;
-
-  /**
-   * The feature id for the '<em><b>E10</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int MOD_EXPRESSION__E10 = EXPR__E10;
-
-  /**
-   * The feature id for the '<em><b>E25</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int MOD_EXPRESSION__E25 = EXPR__E25;
-
-  /**
-   * The feature id for the '<em><b>E24</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int MOD_EXPRESSION__E24 = EXPR__E24;
-
-  /**
-   * The feature id for the '<em><b>E26</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int MOD_EXPRESSION__E26 = EXPR__E26;
-
-  /**
-   * The feature id for the '<em><b>E11</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int MOD_EXPRESSION__E11 = EXPR__E11;
-
-  /**
-   * The feature id for the '<em><b>E12</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int MOD_EXPRESSION__E12 = EXPR__E12;
-
-  /**
-   * The feature id for the '<em><b>E13</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int MOD_EXPRESSION__E13 = EXPR__E13;
-
-  /**
-   * The feature id for the '<em><b>Left</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int MOD_EXPRESSION__LEFT = EXPR_FEATURE_COUNT + 0;
-
-  /**
-   * The feature id for the '<em><b>Op</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int MOD_EXPRESSION__OP = EXPR_FEATURE_COUNT + 1;
-
-  /**
-   * The feature id for the '<em><b>Right</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int MOD_EXPRESSION__RIGHT = EXPR_FEATURE_COUNT + 2;
-
-  /**
-   * The number of structural features of the '<em>Mod Expression</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int MOD_EXPRESSION_FEATURE_COUNT = EXPR_FEATURE_COUNT + 3;
-
-  /**
-   * The meta object id for the '{@link com.euclideanspace.aldor.editor.impl.RemExpressionImpl <em>Rem Expression</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see com.euclideanspace.aldor.editor.impl.RemExpressionImpl
-   * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getRemExpression()
-   * @generated
-   */
-  int REM_EXPRESSION = 67;
-
-  /**
-   * The feature id for the '<em><b>Ifname</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int REM_EXPRESSION__IFNAME = EXPR__IFNAME;
-
-  /**
-   * The feature id for the '<em><b>Ifpred</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int REM_EXPRESSION__IFPRED = EXPR__IFPRED;
-
-  /**
-   * The feature id for the '<em><b>Thenexp</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int REM_EXPRESSION__THENEXP = EXPR__THENEXP;
-
-  /**
-   * The feature id for the '<em><b>Elseexp</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int REM_EXPRESSION__ELSEEXP = EXPR__ELSEEXP;
-
-  /**
-   * The feature id for the '<em><b>E2</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int REM_EXPRESSION__E2 = EXPR__E2;
-
-  /**
-   * The feature id for the '<em><b>E3</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int REM_EXPRESSION__E3 = EXPR__E3;
-
-  /**
-   * The feature id for the '<em><b>E5</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int REM_EXPRESSION__E5 = EXPR__E5;
-
-  /**
-   * The feature id for the '<em><b>E6</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int REM_EXPRESSION__E6 = EXPR__E6;
-
-  /**
-   * The feature id for the '<em><b>E22</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int REM_EXPRESSION__E22 = EXPR__E22;
-
-  /**
-   * The feature id for the '<em><b>E21</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int REM_EXPRESSION__E21 = EXPR__E21;
-
-  /**
-   * The feature id for the '<em><b>E23</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int REM_EXPRESSION__E23 = EXPR__E23;
-
-  /**
-   * The feature id for the '<em><b>E9</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int REM_EXPRESSION__E9 = EXPR__E9;
-
-  /**
-   * The feature id for the '<em><b>E10</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int REM_EXPRESSION__E10 = EXPR__E10;
-
-  /**
-   * The feature id for the '<em><b>E25</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int REM_EXPRESSION__E25 = EXPR__E25;
-
-  /**
-   * The feature id for the '<em><b>E24</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int REM_EXPRESSION__E24 = EXPR__E24;
-
-  /**
-   * The feature id for the '<em><b>E26</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int REM_EXPRESSION__E26 = EXPR__E26;
-
-  /**
-   * The feature id for the '<em><b>E11</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int REM_EXPRESSION__E11 = EXPR__E11;
-
-  /**
-   * The feature id for the '<em><b>E12</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int REM_EXPRESSION__E12 = EXPR__E12;
-
-  /**
-   * The feature id for the '<em><b>E13</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int REM_EXPRESSION__E13 = EXPR__E13;
-
-  /**
-   * The feature id for the '<em><b>Left</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int REM_EXPRESSION__LEFT = EXPR_FEATURE_COUNT + 0;
-
-  /**
-   * The feature id for the '<em><b>Op</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int REM_EXPRESSION__OP = EXPR_FEATURE_COUNT + 1;
-
-  /**
-   * The feature id for the '<em><b>Right</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int REM_EXPRESSION__RIGHT = EXPR_FEATURE_COUNT + 2;
-
-  /**
-   * The number of structural features of the '<em>Rem Expression</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int REM_EXPRESSION_FEATURE_COUNT = EXPR_FEATURE_COUNT + 3;
-
-  /**
-   * The meta object id for the '{@link com.euclideanspace.aldor.editor.impl.MultiplicativeExpressionImpl <em>Multiplicative Expression</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see com.euclideanspace.aldor.editor.impl.MultiplicativeExpressionImpl
-   * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getMultiplicativeExpression()
-   * @generated
-   */
-  int MULTIPLICATIVE_EXPRESSION = 68;
-
-  /**
-   * The feature id for the '<em><b>Ifname</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int MULTIPLICATIVE_EXPRESSION__IFNAME = EXPR__IFNAME;
-
-  /**
-   * The feature id for the '<em><b>Ifpred</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int MULTIPLICATIVE_EXPRESSION__IFPRED = EXPR__IFPRED;
-
-  /**
-   * The feature id for the '<em><b>Thenexp</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int MULTIPLICATIVE_EXPRESSION__THENEXP = EXPR__THENEXP;
-
-  /**
-   * The feature id for the '<em><b>Elseexp</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int MULTIPLICATIVE_EXPRESSION__ELSEEXP = EXPR__ELSEEXP;
-
-  /**
-   * The feature id for the '<em><b>E2</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int MULTIPLICATIVE_EXPRESSION__E2 = EXPR__E2;
-
-  /**
-   * The feature id for the '<em><b>E3</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int MULTIPLICATIVE_EXPRESSION__E3 = EXPR__E3;
-
-  /**
-   * The feature id for the '<em><b>E5</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int MULTIPLICATIVE_EXPRESSION__E5 = EXPR__E5;
-
-  /**
-   * The feature id for the '<em><b>E6</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int MULTIPLICATIVE_EXPRESSION__E6 = EXPR__E6;
-
-  /**
-   * The feature id for the '<em><b>E22</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int MULTIPLICATIVE_EXPRESSION__E22 = EXPR__E22;
-
-  /**
-   * The feature id for the '<em><b>E21</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int MULTIPLICATIVE_EXPRESSION__E21 = EXPR__E21;
-
-  /**
-   * The feature id for the '<em><b>E23</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int MULTIPLICATIVE_EXPRESSION__E23 = EXPR__E23;
-
-  /**
-   * The feature id for the '<em><b>E9</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int MULTIPLICATIVE_EXPRESSION__E9 = EXPR__E9;
-
-  /**
-   * The feature id for the '<em><b>E10</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int MULTIPLICATIVE_EXPRESSION__E10 = EXPR__E10;
-
-  /**
-   * The feature id for the '<em><b>E25</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int MULTIPLICATIVE_EXPRESSION__E25 = EXPR__E25;
-
-  /**
-   * The feature id for the '<em><b>E24</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int MULTIPLICATIVE_EXPRESSION__E24 = EXPR__E24;
-
-  /**
-   * The feature id for the '<em><b>E26</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int MULTIPLICATIVE_EXPRESSION__E26 = EXPR__E26;
-
-  /**
-   * The feature id for the '<em><b>E11</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int MULTIPLICATIVE_EXPRESSION__E11 = EXPR__E11;
-
-  /**
-   * The feature id for the '<em><b>E12</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int MULTIPLICATIVE_EXPRESSION__E12 = EXPR__E12;
-
-  /**
-   * The feature id for the '<em><b>E13</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int MULTIPLICATIVE_EXPRESSION__E13 = EXPR__E13;
-
-  /**
-   * The feature id for the '<em><b>Left</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int MULTIPLICATIVE_EXPRESSION__LEFT = EXPR_FEATURE_COUNT + 0;
-
-  /**
-   * The feature id for the '<em><b>Op</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int MULTIPLICATIVE_EXPRESSION__OP = EXPR_FEATURE_COUNT + 1;
-
-  /**
-   * The feature id for the '<em><b>Te</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int MULTIPLICATIVE_EXPRESSION__TE = EXPR_FEATURE_COUNT + 2;
-
-  /**
-   * The feature id for the '<em><b>Right</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int MULTIPLICATIVE_EXPRESSION__RIGHT = EXPR_FEATURE_COUNT + 3;
-
-  /**
-   * The number of structural features of the '<em>Multiplicative Expression</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int MULTIPLICATIVE_EXPRESSION_FEATURE_COUNT = EXPR_FEATURE_COUNT + 4;
-
-  /**
-   * The meta object id for the '{@link com.euclideanspace.aldor.editor.impl.ExponentExpressionImpl <em>Exponent Expression</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see com.euclideanspace.aldor.editor.impl.ExponentExpressionImpl
-   * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getExponentExpression()
-   * @generated
-   */
-  int EXPONENT_EXPRESSION = 69;
-
-  /**
-   * The feature id for the '<em><b>Ifname</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int EXPONENT_EXPRESSION__IFNAME = EXPR__IFNAME;
-
-  /**
-   * The feature id for the '<em><b>Ifpred</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int EXPONENT_EXPRESSION__IFPRED = EXPR__IFPRED;
-
-  /**
-   * The feature id for the '<em><b>Thenexp</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int EXPONENT_EXPRESSION__THENEXP = EXPR__THENEXP;
-
-  /**
-   * The feature id for the '<em><b>Elseexp</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int EXPONENT_EXPRESSION__ELSEEXP = EXPR__ELSEEXP;
-
-  /**
-   * The feature id for the '<em><b>E2</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int EXPONENT_EXPRESSION__E2 = EXPR__E2;
-
-  /**
-   * The feature id for the '<em><b>E3</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int EXPONENT_EXPRESSION__E3 = EXPR__E3;
-
-  /**
-   * The feature id for the '<em><b>E5</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int EXPONENT_EXPRESSION__E5 = EXPR__E5;
-
-  /**
-   * The feature id for the '<em><b>E6</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int EXPONENT_EXPRESSION__E6 = EXPR__E6;
-
-  /**
-   * The feature id for the '<em><b>E22</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int EXPONENT_EXPRESSION__E22 = EXPR__E22;
-
-  /**
-   * The feature id for the '<em><b>E21</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int EXPONENT_EXPRESSION__E21 = EXPR__E21;
-
-  /**
-   * The feature id for the '<em><b>E23</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int EXPONENT_EXPRESSION__E23 = EXPR__E23;
-
-  /**
-   * The feature id for the '<em><b>E9</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int EXPONENT_EXPRESSION__E9 = EXPR__E9;
-
-  /**
-   * The feature id for the '<em><b>E10</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int EXPONENT_EXPRESSION__E10 = EXPR__E10;
-
-  /**
-   * The feature id for the '<em><b>E25</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int EXPONENT_EXPRESSION__E25 = EXPR__E25;
-
-  /**
-   * The feature id for the '<em><b>E24</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int EXPONENT_EXPRESSION__E24 = EXPR__E24;
-
-  /**
-   * The feature id for the '<em><b>E26</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int EXPONENT_EXPRESSION__E26 = EXPR__E26;
-
-  /**
-   * The feature id for the '<em><b>E11</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int EXPONENT_EXPRESSION__E11 = EXPR__E11;
-
-  /**
-   * The feature id for the '<em><b>E12</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int EXPONENT_EXPRESSION__E12 = EXPR__E12;
-
-  /**
-   * The feature id for the '<em><b>E13</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int EXPONENT_EXPRESSION__E13 = EXPR__E13;
-
-  /**
-   * The feature id for the '<em><b>Left</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int EXPONENT_EXPRESSION__LEFT = EXPR_FEATURE_COUNT + 0;
-
-  /**
-   * The feature id for the '<em><b>Op</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int EXPONENT_EXPRESSION__OP = EXPR_FEATURE_COUNT + 1;
-
-  /**
-   * The feature id for the '<em><b>Right</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int EXPONENT_EXPRESSION__RIGHT = EXPR_FEATURE_COUNT + 2;
-
-  /**
-   * The number of structural features of the '<em>Exponent Expression</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int EXPONENT_EXPRESSION_FEATURE_COUNT = EXPR_FEATURE_COUNT + 3;
-
-  /**
-   * The meta object id for the '{@link com.euclideanspace.aldor.editor.impl.MapDefinitionImpl <em>Map Definition</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see com.euclideanspace.aldor.editor.impl.MapDefinitionImpl
-   * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getMapDefinition()
-   * @generated
-   */
-  int MAP_DEFINITION = 70;
-
-  /**
-   * The feature id for the '<em><b>Ifname</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int MAP_DEFINITION__IFNAME = EXPR__IFNAME;
-
-  /**
-   * The feature id for the '<em><b>Ifpred</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int MAP_DEFINITION__IFPRED = EXPR__IFPRED;
-
-  /**
-   * The feature id for the '<em><b>Thenexp</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int MAP_DEFINITION__THENEXP = EXPR__THENEXP;
-
-  /**
-   * The feature id for the '<em><b>Elseexp</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int MAP_DEFINITION__ELSEEXP = EXPR__ELSEEXP;
-
-  /**
-   * The feature id for the '<em><b>E2</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int MAP_DEFINITION__E2 = EXPR__E2;
-
-  /**
-   * The feature id for the '<em><b>E3</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int MAP_DEFINITION__E3 = EXPR__E3;
-
-  /**
-   * The feature id for the '<em><b>E5</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int MAP_DEFINITION__E5 = EXPR__E5;
-
-  /**
-   * The feature id for the '<em><b>E6</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int MAP_DEFINITION__E6 = EXPR__E6;
-
-  /**
-   * The feature id for the '<em><b>E22</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int MAP_DEFINITION__E22 = EXPR__E22;
-
-  /**
-   * The feature id for the '<em><b>E21</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int MAP_DEFINITION__E21 = EXPR__E21;
-
-  /**
-   * The feature id for the '<em><b>E23</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int MAP_DEFINITION__E23 = EXPR__E23;
-
-  /**
-   * The feature id for the '<em><b>E9</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int MAP_DEFINITION__E9 = EXPR__E9;
-
-  /**
-   * The feature id for the '<em><b>E10</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int MAP_DEFINITION__E10 = EXPR__E10;
-
-  /**
-   * The feature id for the '<em><b>E25</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int MAP_DEFINITION__E25 = EXPR__E25;
-
-  /**
-   * The feature id for the '<em><b>E24</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int MAP_DEFINITION__E24 = EXPR__E24;
-
-  /**
-   * The feature id for the '<em><b>E26</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int MAP_DEFINITION__E26 = EXPR__E26;
-
-  /**
-   * The feature id for the '<em><b>E11</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int MAP_DEFINITION__E11 = EXPR__E11;
-
-  /**
-   * The feature id for the '<em><b>E12</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int MAP_DEFINITION__E12 = EXPR__E12;
-
-  /**
-   * The feature id for the '<em><b>E13</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int MAP_DEFINITION__E13 = EXPR__E13;
-
-  /**
-   * The feature id for the '<em><b>Left</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int MAP_DEFINITION__LEFT = EXPR_FEATURE_COUNT + 0;
-
-  /**
-   * The feature id for the '<em><b>Op</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int MAP_DEFINITION__OP = EXPR_FEATURE_COUNT + 1;
-
-  /**
-   * The feature id for the '<em><b>Right</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int MAP_DEFINITION__RIGHT = EXPR_FEATURE_COUNT + 2;
-
-  /**
-   * The feature id for the '<em><b>Par</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int MAP_DEFINITION__PAR = EXPR_FEATURE_COUNT + 3;
-
-  /**
-   * The number of structural features of the '<em>Map Definition</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int MAP_DEFINITION_FEATURE_COUNT = EXPR_FEATURE_COUNT + 4;
-
-  /**
-   * The meta object id for the '{@link com.euclideanspace.aldor.editor.impl.AssignExpressionImpl <em>Assign Expression</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see com.euclideanspace.aldor.editor.impl.AssignExpressionImpl
-   * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getAssignExpression()
-   * @generated
-   */
-  int ASSIGN_EXPRESSION = 71;
-
-  /**
-   * The feature id for the '<em><b>Ifname</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ASSIGN_EXPRESSION__IFNAME = EXPR__IFNAME;
-
-  /**
-   * The feature id for the '<em><b>Ifpred</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ASSIGN_EXPRESSION__IFPRED = EXPR__IFPRED;
-
-  /**
-   * The feature id for the '<em><b>Thenexp</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ASSIGN_EXPRESSION__THENEXP = EXPR__THENEXP;
-
-  /**
-   * The feature id for the '<em><b>Elseexp</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ASSIGN_EXPRESSION__ELSEEXP = EXPR__ELSEEXP;
-
-  /**
-   * The feature id for the '<em><b>E2</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ASSIGN_EXPRESSION__E2 = EXPR__E2;
-
-  /**
-   * The feature id for the '<em><b>E3</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ASSIGN_EXPRESSION__E3 = EXPR__E3;
-
-  /**
-   * The feature id for the '<em><b>E5</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ASSIGN_EXPRESSION__E5 = EXPR__E5;
-
-  /**
-   * The feature id for the '<em><b>E6</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ASSIGN_EXPRESSION__E6 = EXPR__E6;
-
-  /**
-   * The feature id for the '<em><b>E22</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ASSIGN_EXPRESSION__E22 = EXPR__E22;
-
-  /**
-   * The feature id for the '<em><b>E21</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ASSIGN_EXPRESSION__E21 = EXPR__E21;
-
-  /**
-   * The feature id for the '<em><b>E23</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ASSIGN_EXPRESSION__E23 = EXPR__E23;
-
-  /**
-   * The feature id for the '<em><b>E9</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ASSIGN_EXPRESSION__E9 = EXPR__E9;
-
-  /**
-   * The feature id for the '<em><b>E10</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ASSIGN_EXPRESSION__E10 = EXPR__E10;
-
-  /**
-   * The feature id for the '<em><b>E25</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ASSIGN_EXPRESSION__E25 = EXPR__E25;
-
-  /**
-   * The feature id for the '<em><b>E24</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ASSIGN_EXPRESSION__E24 = EXPR__E24;
-
-  /**
-   * The feature id for the '<em><b>E26</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ASSIGN_EXPRESSION__E26 = EXPR__E26;
-
-  /**
-   * The feature id for the '<em><b>E11</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ASSIGN_EXPRESSION__E11 = EXPR__E11;
-
-  /**
-   * The feature id for the '<em><b>E12</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ASSIGN_EXPRESSION__E12 = EXPR__E12;
-
-  /**
-   * The feature id for the '<em><b>E13</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ASSIGN_EXPRESSION__E13 = EXPR__E13;
-
-  /**
-   * The feature id for the '<em><b>Left</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ASSIGN_EXPRESSION__LEFT = EXPR_FEATURE_COUNT + 0;
-
-  /**
-   * The feature id for the '<em><b>Op</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ASSIGN_EXPRESSION__OP = EXPR_FEATURE_COUNT + 1;
-
-  /**
-   * The feature id for the '<em><b>Right</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ASSIGN_EXPRESSION__RIGHT = EXPR_FEATURE_COUNT + 2;
-
-  /**
-   * The number of structural features of the '<em>Assign Expression</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ASSIGN_EXPRESSION_FEATURE_COUNT = EXPR_FEATURE_COUNT + 3;
-
-  /**
-   * The meta object id for the '{@link com.euclideanspace.aldor.editor.impl.PretendExpressionImpl <em>Pretend Expression</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see com.euclideanspace.aldor.editor.impl.PretendExpressionImpl
-   * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getPretendExpression()
-   * @generated
-   */
-  int PRETEND_EXPRESSION = 72;
-
-  /**
-   * The feature id for the '<em><b>Ifname</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int PRETEND_EXPRESSION__IFNAME = EXPR__IFNAME;
-
-  /**
-   * The feature id for the '<em><b>Ifpred</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int PRETEND_EXPRESSION__IFPRED = EXPR__IFPRED;
-
-  /**
-   * The feature id for the '<em><b>Thenexp</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int PRETEND_EXPRESSION__THENEXP = EXPR__THENEXP;
-
-  /**
-   * The feature id for the '<em><b>Elseexp</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int PRETEND_EXPRESSION__ELSEEXP = EXPR__ELSEEXP;
-
-  /**
-   * The feature id for the '<em><b>E2</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int PRETEND_EXPRESSION__E2 = EXPR__E2;
-
-  /**
-   * The feature id for the '<em><b>E3</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int PRETEND_EXPRESSION__E3 = EXPR__E3;
-
-  /**
-   * The feature id for the '<em><b>E5</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int PRETEND_EXPRESSION__E5 = EXPR__E5;
-
-  /**
-   * The feature id for the '<em><b>E6</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int PRETEND_EXPRESSION__E6 = EXPR__E6;
-
-  /**
-   * The feature id for the '<em><b>E22</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int PRETEND_EXPRESSION__E22 = EXPR__E22;
-
-  /**
-   * The feature id for the '<em><b>E21</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int PRETEND_EXPRESSION__E21 = EXPR__E21;
-
-  /**
-   * The feature id for the '<em><b>E23</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int PRETEND_EXPRESSION__E23 = EXPR__E23;
-
-  /**
-   * The feature id for the '<em><b>E9</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int PRETEND_EXPRESSION__E9 = EXPR__E9;
-
-  /**
-   * The feature id for the '<em><b>E10</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int PRETEND_EXPRESSION__E10 = EXPR__E10;
-
-  /**
-   * The feature id for the '<em><b>E25</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int PRETEND_EXPRESSION__E25 = EXPR__E25;
-
-  /**
-   * The feature id for the '<em><b>E24</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int PRETEND_EXPRESSION__E24 = EXPR__E24;
-
-  /**
-   * The feature id for the '<em><b>E26</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int PRETEND_EXPRESSION__E26 = EXPR__E26;
-
-  /**
-   * The feature id for the '<em><b>E11</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int PRETEND_EXPRESSION__E11 = EXPR__E11;
-
-  /**
-   * The feature id for the '<em><b>E12</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int PRETEND_EXPRESSION__E12 = EXPR__E12;
-
-  /**
-   * The feature id for the '<em><b>E13</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int PRETEND_EXPRESSION__E13 = EXPR__E13;
-
-  /**
-   * The feature id for the '<em><b>Left</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int PRETEND_EXPRESSION__LEFT = EXPR_FEATURE_COUNT + 0;
-
-  /**
-   * The feature id for the '<em><b>Op</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int PRETEND_EXPRESSION__OP = EXPR_FEATURE_COUNT + 1;
-
-  /**
-   * The feature id for the '<em><b>Right Type</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int PRETEND_EXPRESSION__RIGHT_TYPE = EXPR_FEATURE_COUNT + 2;
-
-  /**
-   * The number of structural features of the '<em>Pretend Expression</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int PRETEND_EXPRESSION_FEATURE_COUNT = EXPR_FEATURE_COUNT + 3;
-
-  /**
-   * The meta object id for the '{@link com.euclideanspace.aldor.editor.impl.CoerceExpressionImpl <em>Coerce Expression</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see com.euclideanspace.aldor.editor.impl.CoerceExpressionImpl
-   * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getCoerceExpression()
-   * @generated
-   */
-  int COERCE_EXPRESSION = 73;
-
-  /**
-   * The feature id for the '<em><b>Ifname</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int COERCE_EXPRESSION__IFNAME = EXPR__IFNAME;
-
-  /**
-   * The feature id for the '<em><b>Ifpred</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int COERCE_EXPRESSION__IFPRED = EXPR__IFPRED;
-
-  /**
-   * The feature id for the '<em><b>Thenexp</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int COERCE_EXPRESSION__THENEXP = EXPR__THENEXP;
-
-  /**
-   * The feature id for the '<em><b>Elseexp</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int COERCE_EXPRESSION__ELSEEXP = EXPR__ELSEEXP;
-
-  /**
-   * The feature id for the '<em><b>E2</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int COERCE_EXPRESSION__E2 = EXPR__E2;
-
-  /**
-   * The feature id for the '<em><b>E3</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int COERCE_EXPRESSION__E3 = EXPR__E3;
-
-  /**
-   * The feature id for the '<em><b>E5</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int COERCE_EXPRESSION__E5 = EXPR__E5;
-
-  /**
-   * The feature id for the '<em><b>E6</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int COERCE_EXPRESSION__E6 = EXPR__E6;
-
-  /**
-   * The feature id for the '<em><b>E22</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int COERCE_EXPRESSION__E22 = EXPR__E22;
-
-  /**
-   * The feature id for the '<em><b>E21</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int COERCE_EXPRESSION__E21 = EXPR__E21;
-
-  /**
-   * The feature id for the '<em><b>E23</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int COERCE_EXPRESSION__E23 = EXPR__E23;
-
-  /**
-   * The feature id for the '<em><b>E9</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int COERCE_EXPRESSION__E9 = EXPR__E9;
-
-  /**
-   * The feature id for the '<em><b>E10</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int COERCE_EXPRESSION__E10 = EXPR__E10;
-
-  /**
-   * The feature id for the '<em><b>E25</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int COERCE_EXPRESSION__E25 = EXPR__E25;
-
-  /**
-   * The feature id for the '<em><b>E24</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int COERCE_EXPRESSION__E24 = EXPR__E24;
-
-  /**
-   * The feature id for the '<em><b>E26</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int COERCE_EXPRESSION__E26 = EXPR__E26;
-
-  /**
-   * The feature id for the '<em><b>E11</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int COERCE_EXPRESSION__E11 = EXPR__E11;
-
-  /**
-   * The feature id for the '<em><b>E12</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int COERCE_EXPRESSION__E12 = EXPR__E12;
-
-  /**
-   * The feature id for the '<em><b>E13</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int COERCE_EXPRESSION__E13 = EXPR__E13;
-
-  /**
-   * The feature id for the '<em><b>Left</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int COERCE_EXPRESSION__LEFT = EXPR_FEATURE_COUNT + 0;
-
-  /**
-   * The feature id for the '<em><b>Op</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int COERCE_EXPRESSION__OP = EXPR_FEATURE_COUNT + 1;
-
-  /**
-   * The feature id for the '<em><b>Right Type</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int COERCE_EXPRESSION__RIGHT_TYPE = EXPR_FEATURE_COUNT + 2;
-
-  /**
-   * The number of structural features of the '<em>Coerce Expression</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int COERCE_EXPRESSION_FEATURE_COUNT = EXPR_FEATURE_COUNT + 3;
-
-  /**
-   * The meta object id for the '{@link com.euclideanspace.aldor.editor.impl.HintTypeExpressionImpl <em>Hint Type Expression</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see com.euclideanspace.aldor.editor.impl.HintTypeExpressionImpl
-   * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getHintTypeExpression()
-   * @generated
-   */
-  int HINT_TYPE_EXPRESSION = 74;
-
-  /**
-   * The feature id for the '<em><b>Ifname</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int HINT_TYPE_EXPRESSION__IFNAME = EXPR__IFNAME;
-
-  /**
-   * The feature id for the '<em><b>Ifpred</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int HINT_TYPE_EXPRESSION__IFPRED = EXPR__IFPRED;
-
-  /**
-   * The feature id for the '<em><b>Thenexp</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int HINT_TYPE_EXPRESSION__THENEXP = EXPR__THENEXP;
-
-  /**
-   * The feature id for the '<em><b>Elseexp</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int HINT_TYPE_EXPRESSION__ELSEEXP = EXPR__ELSEEXP;
-
-  /**
-   * The feature id for the '<em><b>E2</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int HINT_TYPE_EXPRESSION__E2 = EXPR__E2;
-
-  /**
-   * The feature id for the '<em><b>E3</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int HINT_TYPE_EXPRESSION__E3 = EXPR__E3;
-
-  /**
-   * The feature id for the '<em><b>E5</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int HINT_TYPE_EXPRESSION__E5 = EXPR__E5;
-
-  /**
-   * The feature id for the '<em><b>E6</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int HINT_TYPE_EXPRESSION__E6 = EXPR__E6;
-
-  /**
-   * The feature id for the '<em><b>E22</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int HINT_TYPE_EXPRESSION__E22 = EXPR__E22;
-
-  /**
-   * The feature id for the '<em><b>E21</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int HINT_TYPE_EXPRESSION__E21 = EXPR__E21;
-
-  /**
-   * The feature id for the '<em><b>E23</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int HINT_TYPE_EXPRESSION__E23 = EXPR__E23;
-
-  /**
-   * The feature id for the '<em><b>E9</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int HINT_TYPE_EXPRESSION__E9 = EXPR__E9;
-
-  /**
-   * The feature id for the '<em><b>E10</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int HINT_TYPE_EXPRESSION__E10 = EXPR__E10;
-
-  /**
-   * The feature id for the '<em><b>E25</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int HINT_TYPE_EXPRESSION__E25 = EXPR__E25;
-
-  /**
-   * The feature id for the '<em><b>E24</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int HINT_TYPE_EXPRESSION__E24 = EXPR__E24;
-
-  /**
-   * The feature id for the '<em><b>E26</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int HINT_TYPE_EXPRESSION__E26 = EXPR__E26;
-
-  /**
-   * The feature id for the '<em><b>E11</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int HINT_TYPE_EXPRESSION__E11 = EXPR__E11;
-
-  /**
-   * The feature id for the '<em><b>E12</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int HINT_TYPE_EXPRESSION__E12 = EXPR__E12;
-
-  /**
-   * The feature id for the '<em><b>E13</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int HINT_TYPE_EXPRESSION__E13 = EXPR__E13;
-
-  /**
-   * The feature id for the '<em><b>Left</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int HINT_TYPE_EXPRESSION__LEFT = EXPR_FEATURE_COUNT + 0;
-
-  /**
-   * The feature id for the '<em><b>Op</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
    */
-  int HINT_TYPE_EXPRESSION__OP = EXPR_FEATURE_COUNT + 1;
+  int UNQUAL_OP_ARROW_TOK = 27;
 
   /**
-   * The feature id for the '<em><b>Right Type</b></em>' containment reference.
+   * The number of structural features of the '<em>Unqual Op Arrow Tok</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int HINT_TYPE_EXPRESSION__RIGHT_TYPE = EXPR_FEATURE_COUNT + 2;
+  int UNQUAL_OP_ARROW_TOK_FEATURE_COUNT = NAKED_OP_FEATURE_COUNT + 0;
 
   /**
-   * The number of structural features of the '<em>Hint Type Expression</em>' class.
+   * The meta object id for the '{@link com.euclideanspace.aldor.editor.impl.UnqualOp_LatticeTokImpl <em>Unqual Op Lattice Tok</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
+   * @see com.euclideanspace.aldor.editor.impl.UnqualOp_LatticeTokImpl
+   * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getUnqualOp_LatticeTok()
    * @generated
-   * @ordered
-   */
-  int HINT_TYPE_EXPRESSION_FEATURE_COUNT = EXPR_FEATURE_COUNT + 3;
-
-  /**
-   * The meta object id for the '{@link com.euclideanspace.aldor.editor.impl.EltExpressionImpl <em>Elt Expression</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see com.euclideanspace.aldor.editor.impl.EltExpressionImpl
-   * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getEltExpression()
-   * @generated
-   */
-  int ELT_EXPRESSION = 75;
-
-  /**
-   * The feature id for the '<em><b>Ifname</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ELT_EXPRESSION__IFNAME = EXPR__IFNAME;
-
-  /**
-   * The feature id for the '<em><b>Ifpred</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ELT_EXPRESSION__IFPRED = EXPR__IFPRED;
-
-  /**
-   * The feature id for the '<em><b>Thenexp</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ELT_EXPRESSION__THENEXP = EXPR__THENEXP;
-
-  /**
-   * The feature id for the '<em><b>Elseexp</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ELT_EXPRESSION__ELSEEXP = EXPR__ELSEEXP;
-
-  /**
-   * The feature id for the '<em><b>E2</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ELT_EXPRESSION__E2 = EXPR__E2;
-
-  /**
-   * The feature id for the '<em><b>E3</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ELT_EXPRESSION__E3 = EXPR__E3;
-
-  /**
-   * The feature id for the '<em><b>E5</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ELT_EXPRESSION__E5 = EXPR__E5;
-
-  /**
-   * The feature id for the '<em><b>E6</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ELT_EXPRESSION__E6 = EXPR__E6;
-
-  /**
-   * The feature id for the '<em><b>E22</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ELT_EXPRESSION__E22 = EXPR__E22;
-
-  /**
-   * The feature id for the '<em><b>E21</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ELT_EXPRESSION__E21 = EXPR__E21;
-
-  /**
-   * The feature id for the '<em><b>E23</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ELT_EXPRESSION__E23 = EXPR__E23;
-
-  /**
-   * The feature id for the '<em><b>E9</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
    */
-  int ELT_EXPRESSION__E9 = EXPR__E9;
+  int UNQUAL_OP_LATTICE_TOK = 28;
 
   /**
-   * The feature id for the '<em><b>E10</b></em>' containment reference.
+   * The number of structural features of the '<em>Unqual Op Lattice Tok</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int ELT_EXPRESSION__E10 = EXPR__E10;
+  int UNQUAL_OP_LATTICE_TOK_FEATURE_COUNT = NAKED_OP_FEATURE_COUNT + 0;
 
   /**
-   * The feature id for the '<em><b>E25</b></em>' containment reference list.
+   * The meta object id for the '{@link com.euclideanspace.aldor.editor.impl.UnqualOp_RelationTokImpl <em>Unqual Op Relation Tok</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
+   * @see com.euclideanspace.aldor.editor.impl.UnqualOp_RelationTokImpl
+   * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getUnqualOp_RelationTok()
    * @generated
-   * @ordered
    */
-  int ELT_EXPRESSION__E25 = EXPR__E25;
+  int UNQUAL_OP_RELATION_TOK = 29;
 
   /**
-   * The feature id for the '<em><b>E24</b></em>' containment reference list.
+   * The number of structural features of the '<em>Unqual Op Relation Tok</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int ELT_EXPRESSION__E24 = EXPR__E24;
+  int UNQUAL_OP_RELATION_TOK_FEATURE_COUNT = NAKED_OP_FEATURE_COUNT + 0;
 
   /**
-   * The feature id for the '<em><b>E26</b></em>' containment reference list.
+   * The meta object id for the '{@link com.euclideanspace.aldor.editor.impl.UnqualOp_SegTokImpl <em>Unqual Op Seg Tok</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
+   * @see com.euclideanspace.aldor.editor.impl.UnqualOp_SegTokImpl
+   * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getUnqualOp_SegTok()
    * @generated
-   * @ordered
    */
-  int ELT_EXPRESSION__E26 = EXPR__E26;
+  int UNQUAL_OP_SEG_TOK = 30;
 
   /**
-   * The feature id for the '<em><b>E11</b></em>' attribute.
+   * The number of structural features of the '<em>Unqual Op Seg Tok</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int ELT_EXPRESSION__E11 = EXPR__E11;
+  int UNQUAL_OP_SEG_TOK_FEATURE_COUNT = NAKED_OP_FEATURE_COUNT + 0;
 
   /**
-   * The feature id for the '<em><b>E12</b></em>' containment reference.
+   * The meta object id for the '{@link com.euclideanspace.aldor.editor.impl.UnqualOp_PlusTokImpl <em>Unqual Op Plus Tok</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
+   * @see com.euclideanspace.aldor.editor.impl.UnqualOp_PlusTokImpl
+   * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getUnqualOp_PlusTok()
    * @generated
-   * @ordered
    */
-  int ELT_EXPRESSION__E12 = EXPR__E12;
+  int UNQUAL_OP_PLUS_TOK = 31;
 
   /**
-   * The feature id for the '<em><b>E13</b></em>' containment reference list.
+   * The number of structural features of the '<em>Unqual Op Plus Tok</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int ELT_EXPRESSION__E13 = EXPR__E13;
+  int UNQUAL_OP_PLUS_TOK_FEATURE_COUNT = NAKED_OP_FEATURE_COUNT + 0;
 
   /**
-   * The feature id for the '<em><b>Left</b></em>' containment reference.
+   * The meta object id for the '{@link com.euclideanspace.aldor.editor.impl.UnqualOp_QuotientTokImpl <em>Unqual Op Quotient Tok</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
+   * @see com.euclideanspace.aldor.editor.impl.UnqualOp_QuotientTokImpl
+   * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getUnqualOp_QuotientTok()
    * @generated
-   * @ordered
    */
-  int ELT_EXPRESSION__LEFT = EXPR_FEATURE_COUNT + 0;
+  int UNQUAL_OP_QUOTIENT_TOK = 32;
 
   /**
-   * The feature id for the '<em><b>Op</b></em>' attribute.
+   * The number of structural features of the '<em>Unqual Op Quotient Tok</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int ELT_EXPRESSION__OP = EXPR_FEATURE_COUNT + 1;
+  int UNQUAL_OP_QUOTIENT_TOK_FEATURE_COUNT = NAKED_OP_FEATURE_COUNT + 0;
 
   /**
-   * The feature id for the '<em><b>Right</b></em>' containment reference.
+   * The meta object id for the '{@link com.euclideanspace.aldor.editor.impl.UnqualOp_TimesTokImpl <em>Unqual Op Times Tok</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
+   * @see com.euclideanspace.aldor.editor.impl.UnqualOp_TimesTokImpl
+   * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getUnqualOp_TimesTok()
    * @generated
-   * @ordered
    */
-  int ELT_EXPRESSION__RIGHT = EXPR_FEATURE_COUNT + 2;
+  int UNQUAL_OP_TIMES_TOK = 33;
 
   /**
-   * The number of structural features of the '<em>Elt Expression</em>' class.
+   * The number of structural features of the '<em>Unqual Op Times Tok</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int ELT_EXPRESSION_FEATURE_COUNT = EXPR_FEATURE_COUNT + 3;
+  int UNQUAL_OP_TIMES_TOK_FEATURE_COUNT = NAKED_OP_FEATURE_COUNT + 0;
 
   /**
-   * The meta object id for the '{@link com.euclideanspace.aldor.editor.impl.ExplicitTypeExpressionImpl <em>Explicit Type Expression</em>}' class.
+   * The meta object id for the '{@link com.euclideanspace.aldor.editor.impl.UnqualOp_PowerTokImpl <em>Unqual Op Power Tok</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see com.euclideanspace.aldor.editor.impl.ExplicitTypeExpressionImpl
-   * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getExplicitTypeExpression()
+   * @see com.euclideanspace.aldor.editor.impl.UnqualOp_PowerTokImpl
+   * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getUnqualOp_PowerTok()
    * @generated
    */
-  int EXPLICIT_TYPE_EXPRESSION = 76;
+  int UNQUAL_OP_POWER_TOK = 34;
 
   /**
-   * The feature id for the '<em><b>Ifname</b></em>' attribute.
+   * The number of structural features of the '<em>Unqual Op Power Tok</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int EXPLICIT_TYPE_EXPRESSION__IFNAME = EXPR__IFNAME;
+  int UNQUAL_OP_POWER_TOK_FEATURE_COUNT = NAKED_OP_FEATURE_COUNT + 0;
 
   /**
-   * The feature id for the '<em><b>Ifpred</b></em>' containment reference.
+   * The meta object id for the '{@link com.euclideanspace.aldor.editor.impl.QualOp_LatticeTokImpl <em>Qual Op Lattice Tok</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
+   * @see com.euclideanspace.aldor.editor.impl.QualOp_LatticeTokImpl
+   * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getQualOp_LatticeTok()
    * @generated
-   * @ordered
-   */
-  int EXPLICIT_TYPE_EXPRESSION__IFPRED = EXPR__IFPRED;
-
-  /**
-   * The feature id for the '<em><b>Thenexp</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
    */
-  int EXPLICIT_TYPE_EXPRESSION__THENEXP = EXPR__THENEXP;
+  int QUAL_OP_LATTICE_TOK = 36;
 
   /**
-   * The feature id for the '<em><b>Elseexp</b></em>' containment reference.
+   * The number of structural features of the '<em>Qual Op Lattice Tok</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int EXPLICIT_TYPE_EXPRESSION__ELSEEXP = EXPR__ELSEEXP;
+  int QUAL_OP_LATTICE_TOK_FEATURE_COUNT = LATTICE_OP_FEATURE_COUNT + 0;
 
   /**
-   * The feature id for the '<em><b>E2</b></em>' attribute.
+   * The meta object id for the '{@link com.euclideanspace.aldor.editor.impl.QualOp_RelationTokImpl <em>Qual Op Relation Tok</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
+   * @see com.euclideanspace.aldor.editor.impl.QualOp_RelationTokImpl
+   * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getQualOp_RelationTok()
    * @generated
-   * @ordered
    */
-  int EXPLICIT_TYPE_EXPRESSION__E2 = EXPR__E2;
+  int QUAL_OP_RELATION_TOK = 37;
 
   /**
-   * The feature id for the '<em><b>E3</b></em>' attribute.
+   * The number of structural features of the '<em>Qual Op Relation Tok</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int EXPLICIT_TYPE_EXPRESSION__E3 = EXPR__E3;
+  int QUAL_OP_RELATION_TOK_FEATURE_COUNT = RELATION_OP_FEATURE_COUNT + 0;
 
   /**
-   * The feature id for the '<em><b>E5</b></em>' attribute.
+   * The meta object id for the '{@link com.euclideanspace.aldor.editor.impl.QualOp_SegTokImpl <em>Qual Op Seg Tok</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
+   * @see com.euclideanspace.aldor.editor.impl.QualOp_SegTokImpl
+   * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getQualOp_SegTok()
    * @generated
-   * @ordered
    */
-  int EXPLICIT_TYPE_EXPRESSION__E5 = EXPR__E5;
+  int QUAL_OP_SEG_TOK = 38;
 
   /**
-   * The feature id for the '<em><b>E6</b></em>' containment reference.
+   * The number of structural features of the '<em>Qual Op Seg Tok</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int EXPLICIT_TYPE_EXPRESSION__E6 = EXPR__E6;
+  int QUAL_OP_SEG_TOK_FEATURE_COUNT = SEG_OP_FEATURE_COUNT + 0;
 
   /**
-   * The feature id for the '<em><b>E22</b></em>' containment reference list.
+   * The meta object id for the '{@link com.euclideanspace.aldor.editor.impl.QualOp_PlusTokImpl <em>Qual Op Plus Tok</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
+   * @see com.euclideanspace.aldor.editor.impl.QualOp_PlusTokImpl
+   * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getQualOp_PlusTok()
    * @generated
-   * @ordered
    */
-  int EXPLICIT_TYPE_EXPRESSION__E22 = EXPR__E22;
+  int QUAL_OP_PLUS_TOK = 39;
 
   /**
-   * The feature id for the '<em><b>E21</b></em>' containment reference list.
+   * The number of structural features of the '<em>Qual Op Plus Tok</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int EXPLICIT_TYPE_EXPRESSION__E21 = EXPR__E21;
+  int QUAL_OP_PLUS_TOK_FEATURE_COUNT = PLUS_OP_FEATURE_COUNT + 0;
 
   /**
-   * The feature id for the '<em><b>E23</b></em>' containment reference list.
+   * The meta object id for the '{@link com.euclideanspace.aldor.editor.impl.QualOp_QuotientTokImpl <em>Qual Op Quotient Tok</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
+   * @see com.euclideanspace.aldor.editor.impl.QualOp_QuotientTokImpl
+   * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getQualOp_QuotientTok()
    * @generated
-   * @ordered
    */
-  int EXPLICIT_TYPE_EXPRESSION__E23 = EXPR__E23;
+  int QUAL_OP_QUOTIENT_TOK = 40;
 
   /**
-   * The feature id for the '<em><b>E9</b></em>' attribute.
+   * The number of structural features of the '<em>Qual Op Quotient Tok</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int EXPLICIT_TYPE_EXPRESSION__E9 = EXPR__E9;
+  int QUAL_OP_QUOTIENT_TOK_FEATURE_COUNT = QUOTIENT_OP_FEATURE_COUNT + 0;
 
   /**
-   * The feature id for the '<em><b>E10</b></em>' containment reference.
+   * The meta object id for the '{@link com.euclideanspace.aldor.editor.impl.QualOp_TimesTokImpl <em>Qual Op Times Tok</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
+   * @see com.euclideanspace.aldor.editor.impl.QualOp_TimesTokImpl
+   * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getQualOp_TimesTok()
    * @generated
-   * @ordered
    */
-  int EXPLICIT_TYPE_EXPRESSION__E10 = EXPR__E10;
+  int QUAL_OP_TIMES_TOK = 41;
 
   /**
-   * The feature id for the '<em><b>E25</b></em>' containment reference list.
+   * The number of structural features of the '<em>Qual Op Times Tok</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int EXPLICIT_TYPE_EXPRESSION__E25 = EXPR__E25;
+  int QUAL_OP_TIMES_TOK_FEATURE_COUNT = TIMES_OP_FEATURE_COUNT + 0;
 
   /**
-   * The feature id for the '<em><b>E24</b></em>' containment reference list.
+   * The meta object id for the '{@link com.euclideanspace.aldor.editor.impl.QualOp_PowerTokImpl <em>Qual Op Power Tok</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
+   * @see com.euclideanspace.aldor.editor.impl.QualOp_PowerTokImpl
+   * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getQualOp_PowerTok()
    * @generated
-   * @ordered
    */
-  int EXPLICIT_TYPE_EXPRESSION__E24 = EXPR__E24;
+  int QUAL_OP_POWER_TOK = 42;
 
   /**
-   * The feature id for the '<em><b>E26</b></em>' containment reference list.
+   * The number of structural features of the '<em>Qual Op Power Tok</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int EXPLICIT_TYPE_EXPRESSION__E26 = EXPR__E26;
+  int QUAL_OP_POWER_TOK_FEATURE_COUNT = POWER_OP_FEATURE_COUNT + 0;
 
   /**
-   * The feature id for the '<em><b>E11</b></em>' attribute.
+   * The meta object id for the '{@link com.euclideanspace.aldor.editor.impl.enlist1a_Labeled_Semicolon_ABImpl <em>enlist1a Labeled Semicolon AB</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
+   * @see com.euclideanspace.aldor.editor.impl.enlist1a_Labeled_Semicolon_ABImpl
+   * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getenlist1a_Labeled_Semicolon_AB()
    * @generated
-   * @ordered
    */
-  int EXPLICIT_TYPE_EXPRESSION__E11 = EXPR__E11;
+  int ENLIST1A_LABELED_SEMICOLON_AB = 43;
 
   /**
-   * The feature id for the '<em><b>E12</b></em>' containment reference.
+   * The feature id for the '<em><b>Bm</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int EXPLICIT_TYPE_EXPRESSION__E12 = EXPR__E12;
+  int ENLIST1A_LABELED_SEMICOLON_AB__BM = EXPRESSION__BM;
 
   /**
-   * The feature id for the '<em><b>E13</b></em>' containment reference list.
+   * The number of structural features of the '<em>enlist1a Labeled Semicolon AB</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int EXPLICIT_TYPE_EXPRESSION__E13 = EXPR__E13;
+  int ENLIST1A_LABELED_SEMICOLON_AB_FEATURE_COUNT = EXPRESSION_FEATURE_COUNT + 0;
 
   /**
-   * The feature id for the '<em><b>Left</b></em>' containment reference.
+   * The meta object id for the '{@link com.euclideanspace.aldor.editor.impl.enlister1a_Labeled_SemicolonImpl <em>enlister1a Labeled Semicolon</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
+   * @see com.euclideanspace.aldor.editor.impl.enlister1a_Labeled_SemicolonImpl
+   * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getenlister1a_Labeled_Semicolon()
    * @generated
-   * @ordered
    */
-  int EXPLICIT_TYPE_EXPRESSION__LEFT = EXPR_FEATURE_COUNT + 0;
+  int ENLISTER1A_LABELED_SEMICOLON = 44;
 
   /**
-   * The feature id for the '<em><b>Op</b></em>' attribute.
+   * The feature id for the '<em><b>Bm</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int EXPLICIT_TYPE_EXPRESSION__OP = EXPR_FEATURE_COUNT + 1;
+  int ENLISTER1A_LABELED_SEMICOLON__BM = ENLIST1A_LABELED_SEMICOLON_AB__BM;
 
   /**
-   * The feature id for the '<em><b>Right Type</b></em>' containment reference.
+   * The feature id for the '<em><b>Statemnts</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int EXPLICIT_TYPE_EXPRESSION__RIGHT_TYPE = EXPR_FEATURE_COUNT + 2;
+  int ENLISTER1A_LABELED_SEMICOLON__STATEMNTS = ENLIST1A_LABELED_SEMICOLON_AB_FEATURE_COUNT + 0;
 
   /**
-   * The number of structural features of the '<em>Explicit Type Expression</em>' class.
+   * The number of structural features of the '<em>enlister1a Labeled Semicolon</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int EXPLICIT_TYPE_EXPRESSION_FEATURE_COUNT = EXPR_FEATURE_COUNT + 3;
+  int ENLISTER1A_LABELED_SEMICOLON_FEATURE_COUNT = ENLIST1A_LABELED_SEMICOLON_AB_FEATURE_COUNT + 1;
 
   /**
-   * The meta object id for the '{@link com.euclideanspace.aldor.editor.impl.UnaryExpressionImpl <em>Unary Expression</em>}' class.
+   * The meta object id for the '{@link com.euclideanspace.aldor.editor.impl.Curly_LabeledImpl <em>Curly Labeled</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see com.euclideanspace.aldor.editor.impl.UnaryExpressionImpl
-   * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getUnaryExpression()
+   * @see com.euclideanspace.aldor.editor.impl.Curly_LabeledImpl
+   * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getCurly_Labeled()
    * @generated
    */
-  int UNARY_EXPRESSION = 77;
+  int CURLY_LABELED = 45;
 
   /**
-   * The feature id for the '<em><b>Ifname</b></em>' attribute.
+   * The number of structural features of the '<em>Curly Labeled</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int UNARY_EXPRESSION__IFNAME = EXPR__IFNAME;
+  int CURLY_LABELED_FEATURE_COUNT = 0;
 
   /**
-   * The feature id for the '<em><b>Ifpred</b></em>' containment reference.
+   * The meta object id for the '{@link com.euclideanspace.aldor.editor.impl.CurlyContents_LabeledImpl <em>Curly Contents Labeled</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
+   * @see com.euclideanspace.aldor.editor.impl.CurlyContents_LabeledImpl
+   * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getCurlyContents_Labeled()
    * @generated
-   * @ordered
-   */
-  int UNARY_EXPRESSION__IFPRED = EXPR__IFPRED;
-
-  /**
-   * The feature id for the '<em><b>Thenexp</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
    */
-  int UNARY_EXPRESSION__THENEXP = EXPR__THENEXP;
+  int CURLY_CONTENTS_LABELED = 46;
 
   /**
-   * The feature id for the '<em><b>Elseexp</b></em>' containment reference.
+   * The number of structural features of the '<em>Curly Contents Labeled</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int UNARY_EXPRESSION__ELSEEXP = EXPR__ELSEEXP;
+  int CURLY_CONTENTS_LABELED_FEATURE_COUNT = MODEL_FEATURE_COUNT + 0;
 
   /**
-   * The feature id for the '<em><b>E2</b></em>' attribute.
+   * The meta object id for the '{@link com.euclideanspace.aldor.editor.impl.CurlyContentsList_LabeledImpl <em>Curly Contents List Labeled</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
+   * @see com.euclideanspace.aldor.editor.impl.CurlyContentsList_LabeledImpl
+   * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getCurlyContentsList_Labeled()
    * @generated
-   * @ordered
    */
-  int UNARY_EXPRESSION__E2 = EXPR__E2;
+  int CURLY_CONTENTS_LIST_LABELED = 47;
 
   /**
-   * The feature id for the '<em><b>E3</b></em>' attribute.
+   * The feature id for the '<em><b>Statemts</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int UNARY_EXPRESSION__E3 = EXPR__E3;
+  int CURLY_CONTENTS_LIST_LABELED__STATEMTS = CURLY_CONTENTS_LABELED_FEATURE_COUNT + 0;
 
   /**
-   * The feature id for the '<em><b>E5</b></em>' attribute.
+   * The number of structural features of the '<em>Curly Contents List Labeled</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int UNARY_EXPRESSION__E5 = EXPR__E5;
+  int CURLY_CONTENTS_LIST_LABELED_FEATURE_COUNT = CURLY_CONTENTS_LABELED_FEATURE_COUNT + 1;
 
   /**
-   * The feature id for the '<em><b>E6</b></em>' containment reference.
+   * The meta object id for the '{@link com.euclideanspace.aldor.editor.impl.ArrowTokImpl <em>Arrow Tok</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
+   * @see com.euclideanspace.aldor.editor.impl.ArrowTokImpl
+   * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getArrowTok()
    * @generated
-   * @ordered
    */
-  int UNARY_EXPRESSION__E6 = EXPR__E6;
+  int ARROW_TOK = 48;
 
   /**
-   * The feature id for the '<em><b>E22</b></em>' containment reference list.
+   * The number of structural features of the '<em>Arrow Tok</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int UNARY_EXPRESSION__E22 = EXPR__E22;
+  int ARROW_TOK_FEATURE_COUNT = UNQUAL_OP_ARROW_TOK_FEATURE_COUNT + 0;
 
   /**
-   * The feature id for the '<em><b>E21</b></em>' containment reference list.
+   * The meta object id for the '{@link com.euclideanspace.aldor.editor.impl.LatticeTokImpl <em>Lattice Tok</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
+   * @see com.euclideanspace.aldor.editor.impl.LatticeTokImpl
+   * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getLatticeTok()
    * @generated
-   * @ordered
    */
-  int UNARY_EXPRESSION__E21 = EXPR__E21;
+  int LATTICE_TOK = 49;
 
   /**
-   * The feature id for the '<em><b>E23</b></em>' containment reference list.
+   * The number of structural features of the '<em>Lattice Tok</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int UNARY_EXPRESSION__E23 = EXPR__E23;
+  int LATTICE_TOK_FEATURE_COUNT = UNQUAL_OP_LATTICE_TOK_FEATURE_COUNT + 0;
 
   /**
-   * The feature id for the '<em><b>E9</b></em>' attribute.
+   * The meta object id for the '{@link com.euclideanspace.aldor.editor.impl.RelationTokImpl <em>Relation Tok</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
+   * @see com.euclideanspace.aldor.editor.impl.RelationTokImpl
+   * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getRelationTok()
    * @generated
-   * @ordered
    */
-  int UNARY_EXPRESSION__E9 = EXPR__E9;
+  int RELATION_TOK = 50;
 
   /**
-   * The feature id for the '<em><b>E10</b></em>' containment reference.
+   * The number of structural features of the '<em>Relation Tok</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int UNARY_EXPRESSION__E10 = EXPR__E10;
+  int RELATION_TOK_FEATURE_COUNT = UNQUAL_OP_RELATION_TOK_FEATURE_COUNT + 0;
 
   /**
-   * The feature id for the '<em><b>E25</b></em>' containment reference list.
+   * The meta object id for the '{@link com.euclideanspace.aldor.editor.impl.SegTokImpl <em>Seg Tok</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
+   * @see com.euclideanspace.aldor.editor.impl.SegTokImpl
+   * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getSegTok()
    * @generated
-   * @ordered
    */
-  int UNARY_EXPRESSION__E25 = EXPR__E25;
+  int SEG_TOK = 51;
 
   /**
-   * The feature id for the '<em><b>E24</b></em>' containment reference list.
+   * The number of structural features of the '<em>Seg Tok</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int UNARY_EXPRESSION__E24 = EXPR__E24;
+  int SEG_TOK_FEATURE_COUNT = UNQUAL_OP_SEG_TOK_FEATURE_COUNT + 0;
 
   /**
-   * The feature id for the '<em><b>E26</b></em>' containment reference list.
+   * The meta object id for the '{@link com.euclideanspace.aldor.editor.impl.PlusTokImpl <em>Plus Tok</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
+   * @see com.euclideanspace.aldor.editor.impl.PlusTokImpl
+   * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getPlusTok()
    * @generated
-   * @ordered
    */
-  int UNARY_EXPRESSION__E26 = EXPR__E26;
+  int PLUS_TOK = 52;
 
   /**
-   * The feature id for the '<em><b>E11</b></em>' attribute.
+   * The number of structural features of the '<em>Plus Tok</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int UNARY_EXPRESSION__E11 = EXPR__E11;
+  int PLUS_TOK_FEATURE_COUNT = UNQUAL_OP_PLUS_TOK_FEATURE_COUNT + 0;
 
   /**
-   * The feature id for the '<em><b>E12</b></em>' containment reference.
+   * The meta object id for the '{@link com.euclideanspace.aldor.editor.impl.QuotientTokImpl <em>Quotient Tok</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
+   * @see com.euclideanspace.aldor.editor.impl.QuotientTokImpl
+   * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getQuotientTok()
    * @generated
-   * @ordered
    */
-  int UNARY_EXPRESSION__E12 = EXPR__E12;
+  int QUOTIENT_TOK = 53;
 
   /**
-   * The feature id for the '<em><b>E13</b></em>' containment reference list.
+   * The number of structural features of the '<em>Quotient Tok</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int UNARY_EXPRESSION__E13 = EXPR__E13;
+  int QUOTIENT_TOK_FEATURE_COUNT = UNQUAL_OP_QUOTIENT_TOK_FEATURE_COUNT + 0;
 
   /**
-   * The feature id for the '<em><b>Uop</b></em>' attribute.
+   * The meta object id for the '{@link com.euclideanspace.aldor.editor.impl.TimesTokImpl <em>Times Tok</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
+   * @see com.euclideanspace.aldor.editor.impl.TimesTokImpl
+   * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getTimesTok()
    * @generated
-   * @ordered
    */
-  int UNARY_EXPRESSION__UOP = EXPR_FEATURE_COUNT + 0;
+  int TIMES_TOK = 54;
 
   /**
-   * The feature id for the '<em><b>Expr</b></em>' containment reference.
+   * The number of structural features of the '<em>Times Tok</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int UNARY_EXPRESSION__EXPR = EXPR_FEATURE_COUNT + 1;
+  int TIMES_TOK_FEATURE_COUNT = UNQUAL_OP_TIMES_TOK_FEATURE_COUNT + 0;
 
   /**
-   * The feature id for the '<em><b>Te</b></em>' attribute.
+   * The meta object id for the '{@link com.euclideanspace.aldor.editor.impl.PowerTokImpl <em>Power Tok</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
+   * @see com.euclideanspace.aldor.editor.impl.PowerTokImpl
+   * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getPowerTok()
    * @generated
-   * @ordered
    */
-  int UNARY_EXPRESSION__TE = EXPR_FEATURE_COUNT + 2;
+  int POWER_TOK = 55;
 
   /**
-   * The number of structural features of the '<em>Unary Expression</em>' class.
+   * The number of structural features of the '<em>Power Tok</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int UNARY_EXPRESSION_FEATURE_COUNT = EXPR_FEATURE_COUNT + 3;
+  int POWER_TOK_FEATURE_COUNT = UNQUAL_OP_POWER_TOK_FEATURE_COUNT + 0;
 
 
   /**
@@ -11450,4668 +1321,686 @@ public interface EditorPackage extends EPackage
   EClass getModel();
 
   /**
-   * Returns the meta object for the containment reference '{@link com.euclideanspace.aldor.editor.Model#getC <em>C</em>}'.
+   * Returns the meta object for class '{@link com.euclideanspace.aldor.editor.Expression <em>Expression</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>C</em>'.
-   * @see com.euclideanspace.aldor.editor.Model#getC()
-   * @see #getModel()
+   * @return the meta object for class '<em>Expression</em>'.
+   * @see com.euclideanspace.aldor.editor.Expression
    * @generated
    */
-  EReference getModel_C();
+  EClass getExpression();
 
   /**
-   * Returns the meta object for the containment reference '{@link com.euclideanspace.aldor.editor.Model#getP <em>P</em>}'.
+   * Returns the meta object for class '{@link com.euclideanspace.aldor.editor.Labeled <em>Labeled</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>P</em>'.
-   * @see com.euclideanspace.aldor.editor.Model#getP()
-   * @see #getModel()
+   * @return the meta object for class '<em>Labeled</em>'.
+   * @see com.euclideanspace.aldor.editor.Labeled
    * @generated
    */
-  EReference getModel_P();
+  EClass getLabeled();
 
   /**
-   * Returns the meta object for the containment reference '{@link com.euclideanspace.aldor.editor.Model#getD <em>D</em>}'.
+   * Returns the meta object for class '{@link com.euclideanspace.aldor.editor.OpQualTail <em>Op Qual Tail</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>D</em>'.
-   * @see com.euclideanspace.aldor.editor.Model#getD()
-   * @see #getModel()
+   * @return the meta object for class '<em>Op Qual Tail</em>'.
+   * @see com.euclideanspace.aldor.editor.OpQualTail
    * @generated
    */
-  EReference getModel_D();
+  EClass getOpQualTail();
 
   /**
-   * Returns the meta object for class '{@link com.euclideanspace.aldor.editor.CategoryDef <em>Category Def</em>}'.
+   * Returns the meta object for the containment reference '{@link com.euclideanspace.aldor.editor.OpQualTail#getName <em>Name</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Category Def</em>'.
-   * @see com.euclideanspace.aldor.editor.CategoryDef
+   * @return the meta object for the containment reference '<em>Name</em>'.
+   * @see com.euclideanspace.aldor.editor.OpQualTail#getName()
+   * @see #getOpQualTail()
    * @generated
    */
-  EClass getCategoryDef();
+  EReference getOpQualTail_Name();
 
   /**
-   * Returns the meta object for the attribute '{@link com.euclideanspace.aldor.editor.CategoryDef#getName <em>Name</em>}'.
+   * Returns the meta object for class '{@link com.euclideanspace.aldor.editor.Op <em>Op</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Name</em>'.
-   * @see com.euclideanspace.aldor.editor.CategoryDef#getName()
-   * @see #getCategoryDef()
+   * @return the meta object for class '<em>Op</em>'.
+   * @see com.euclideanspace.aldor.editor.Op
    * @generated
    */
-  EAttribute getCategoryDef_Name();
+  EClass getOp();
 
   /**
-   * Returns the meta object for the attribute '{@link com.euclideanspace.aldor.editor.CategoryDef#getShortname <em>Shortname</em>}'.
+   * Returns the meta object for class '{@link com.euclideanspace.aldor.editor.NakedOp <em>Naked Op</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Shortname</em>'.
-   * @see com.euclideanspace.aldor.editor.CategoryDef#getShortname()
-   * @see #getCategoryDef()
+   * @return the meta object for class '<em>Naked Op</em>'.
+   * @see com.euclideanspace.aldor.editor.NakedOp
    * @generated
    */
-  EAttribute getCategoryDef_Shortname();
+  EClass getNakedOp();
 
   /**
-   * Returns the meta object for the attribute '{@link com.euclideanspace.aldor.editor.CategoryDef#getLongname <em>Longname</em>}'.
+   * Returns the meta object for class '{@link com.euclideanspace.aldor.editor.ArrowOp <em>Arrow Op</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Longname</em>'.
-   * @see com.euclideanspace.aldor.editor.CategoryDef#getLongname()
-   * @see #getCategoryDef()
+   * @return the meta object for class '<em>Arrow Op</em>'.
+   * @see com.euclideanspace.aldor.editor.ArrowOp
    * @generated
    */
-  EAttribute getCategoryDef_Longname();
+  EClass getArrowOp();
 
   /**
-   * Returns the meta object for the attribute '{@link com.euclideanspace.aldor.editor.CategoryDef#getLongname2 <em>Longname2</em>}'.
+   * Returns the meta object for class '{@link com.euclideanspace.aldor.editor.LatticeOp <em>Lattice Op</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Longname2</em>'.
-   * @see com.euclideanspace.aldor.editor.CategoryDef#getLongname2()
-   * @see #getCategoryDef()
+   * @return the meta object for class '<em>Lattice Op</em>'.
+   * @see com.euclideanspace.aldor.editor.LatticeOp
    * @generated
    */
-  EAttribute getCategoryDef_Longname2();
+  EClass getLatticeOp();
 
   /**
-   * Returns the meta object for the containment reference '{@link com.euclideanspace.aldor.editor.CategoryDef#getCp <em>Cp</em>}'.
+   * Returns the meta object for class '{@link com.euclideanspace.aldor.editor.RelationOp <em>Relation Op</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Cp</em>'.
-   * @see com.euclideanspace.aldor.editor.CategoryDef#getCp()
-   * @see #getCategoryDef()
+   * @return the meta object for class '<em>Relation Op</em>'.
+   * @see com.euclideanspace.aldor.editor.RelationOp
    * @generated
    */
-  EReference getCategoryDef_Cp();
+  EClass getRelationOp();
 
   /**
-   * Returns the meta object for the containment reference '{@link com.euclideanspace.aldor.editor.CategoryDef#getImplName <em>Impl Name</em>}'.
+   * Returns the meta object for class '{@link com.euclideanspace.aldor.editor.SegOp <em>Seg Op</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Impl Name</em>'.
-   * @see com.euclideanspace.aldor.editor.CategoryDef#getImplName()
-   * @see #getCategoryDef()
+   * @return the meta object for class '<em>Seg Op</em>'.
+   * @see com.euclideanspace.aldor.editor.SegOp
    * @generated
    */
-  EReference getCategoryDef_ImplName();
+  EClass getSegOp();
 
   /**
-   * Returns the meta object for the containment reference '{@link com.euclideanspace.aldor.editor.CategoryDef#getW <em>W</em>}'.
+   * Returns the meta object for class '{@link com.euclideanspace.aldor.editor.PlusOp <em>Plus Op</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>W</em>'.
-   * @see com.euclideanspace.aldor.editor.CategoryDef#getW()
-   * @see #getCategoryDef()
+   * @return the meta object for class '<em>Plus Op</em>'.
+   * @see com.euclideanspace.aldor.editor.PlusOp
    * @generated
    */
-  EReference getCategoryDef_W();
+  EClass getPlusOp();
 
   /**
-   * Returns the meta object for the containment reference '{@link com.euclideanspace.aldor.editor.CategoryDef#getA <em>A</em>}'.
+   * Returns the meta object for class '{@link com.euclideanspace.aldor.editor.QuotientOp <em>Quotient Op</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>A</em>'.
-   * @see com.euclideanspace.aldor.editor.CategoryDef#getA()
-   * @see #getCategoryDef()
+   * @return the meta object for class '<em>Quotient Op</em>'.
+   * @see com.euclideanspace.aldor.editor.QuotientOp
    * @generated
    */
-  EReference getCategoryDef_A();
+  EClass getQuotientOp();
 
   /**
-   * Returns the meta object for the containment reference '{@link com.euclideanspace.aldor.editor.CategoryDef#getWh5 <em>Wh5</em>}'.
+   * Returns the meta object for class '{@link com.euclideanspace.aldor.editor.TimesOp <em>Times Op</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Wh5</em>'.
-   * @see com.euclideanspace.aldor.editor.CategoryDef#getWh5()
-   * @see #getCategoryDef()
+   * @return the meta object for class '<em>Times Op</em>'.
+   * @see com.euclideanspace.aldor.editor.TimesOp
    * @generated
    */
-  EReference getCategoryDef_Wh5();
+  EClass getTimesOp();
 
   /**
-   * Returns the meta object for the containment reference '{@link com.euclideanspace.aldor.editor.CategoryDef#getA2 <em>A2</em>}'.
+   * Returns the meta object for class '{@link com.euclideanspace.aldor.editor.PowerOp <em>Power Op</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>A2</em>'.
-   * @see com.euclideanspace.aldor.editor.CategoryDef#getA2()
-   * @see #getCategoryDef()
+   * @return the meta object for class '<em>Power Op</em>'.
+   * @see com.euclideanspace.aldor.editor.PowerOp
    * @generated
    */
-  EReference getCategoryDef_A2();
+  EClass getPowerOp();
 
   /**
-   * Returns the meta object for class '{@link com.euclideanspace.aldor.editor.PackageDef <em>Package Def</em>}'.
+   * Returns the meta object for class '{@link com.euclideanspace.aldor.editor.Jleft_Molecule <em>Jleft Molecule</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Package Def</em>'.
-   * @see com.euclideanspace.aldor.editor.PackageDef
+   * @return the meta object for class '<em>Jleft Molecule</em>'.
+   * @see com.euclideanspace.aldor.editor.Jleft_Molecule
    * @generated
    */
-  EClass getPackageDef();
+  EClass getJleft_Molecule();
 
   /**
-   * Returns the meta object for the attribute '{@link com.euclideanspace.aldor.editor.PackageDef#getName <em>Name</em>}'.
+   * Returns the meta object for class '{@link com.euclideanspace.aldor.editor.Jleft_Atom <em>Jleft Atom</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Name</em>'.
-   * @see com.euclideanspace.aldor.editor.PackageDef#getName()
-   * @see #getPackageDef()
+   * @return the meta object for class '<em>Jleft Atom</em>'.
+   * @see com.euclideanspace.aldor.editor.Jleft_Atom
    * @generated
    */
-  EAttribute getPackageDef_Name();
+  EClass getJleft_Atom();
 
   /**
-   * Returns the meta object for the attribute '{@link com.euclideanspace.aldor.editor.PackageDef#getShortname <em>Shortname</em>}'.
+   * Returns the meta object for class '{@link com.euclideanspace.aldor.editor.Molecule <em>Molecule</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Shortname</em>'.
-   * @see com.euclideanspace.aldor.editor.PackageDef#getShortname()
-   * @see #getPackageDef()
+   * @return the meta object for class '<em>Molecule</em>'.
+   * @see com.euclideanspace.aldor.editor.Molecule
    * @generated
    */
-  EAttribute getPackageDef_Shortname();
+  EClass getMolecule();
 
   /**
-   * Returns the meta object for the attribute '{@link com.euclideanspace.aldor.editor.PackageDef#getLongname <em>Longname</em>}'.
+   * Returns the meta object for the containment reference list '{@link com.euclideanspace.aldor.editor.Molecule#getBm <em>Bm</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Longname</em>'.
-   * @see com.euclideanspace.aldor.editor.PackageDef#getLongname()
-   * @see #getPackageDef()
+   * @return the meta object for the containment reference list '<em>Bm</em>'.
+   * @see com.euclideanspace.aldor.editor.Molecule#getBm()
+   * @see #getMolecule()
    * @generated
    */
-  EAttribute getPackageDef_Longname();
+  EReference getMolecule_Bm();
 
   /**
-   * Returns the meta object for the attribute '{@link com.euclideanspace.aldor.editor.PackageDef#getLongname2 <em>Longname2</em>}'.
+   * Returns the meta object for class '{@link com.euclideanspace.aldor.editor.Enclosure <em>Enclosure</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Longname2</em>'.
-   * @see com.euclideanspace.aldor.editor.PackageDef#getLongname2()
-   * @see #getPackageDef()
+   * @return the meta object for class '<em>Enclosure</em>'.
+   * @see com.euclideanspace.aldor.editor.Enclosure
    * @generated
    */
-  EAttribute getPackageDef_Longname2();
+  EClass getEnclosure();
 
   /**
-   * Returns the meta object for the containment reference '{@link com.euclideanspace.aldor.editor.PackageDef#getCp <em>Cp</em>}'.
+   * Returns the meta object for class '{@link com.euclideanspace.aldor.editor.BlockMolecule <em>Block Molecule</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Cp</em>'.
-   * @see com.euclideanspace.aldor.editor.PackageDef#getCp()
-   * @see #getPackageDef()
+   * @return the meta object for class '<em>Block Molecule</em>'.
+   * @see com.euclideanspace.aldor.editor.BlockMolecule
    * @generated
    */
-  EReference getPackageDef_Cp();
+  EClass getBlockMolecule();
 
   /**
-   * Returns the meta object for the attribute '{@link com.euclideanspace.aldor.editor.PackageDef#getExportName <em>Export Name</em>}'.
+   * Returns the meta object for class '{@link com.euclideanspace.aldor.editor.BlockEnclosure <em>Block Enclosure</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Export Name</em>'.
-   * @see com.euclideanspace.aldor.editor.PackageDef#getExportName()
-   * @see #getPackageDef()
+   * @return the meta object for class '<em>Block Enclosure</em>'.
+   * @see com.euclideanspace.aldor.editor.BlockEnclosure
    * @generated
    */
-  EAttribute getPackageDef_ExportName();
+  EClass getBlockEnclosure();
 
   /**
-   * Returns the meta object for the attribute '{@link com.euclideanspace.aldor.editor.PackageDef#getImplName <em>Impl Name</em>}'.
+   * Returns the meta object for class '{@link com.euclideanspace.aldor.editor.Parened <em>Parened</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Impl Name</em>'.
-   * @see com.euclideanspace.aldor.editor.PackageDef#getImplName()
-   * @see #getPackageDef()
+   * @return the meta object for class '<em>Parened</em>'.
+   * @see com.euclideanspace.aldor.editor.Parened
    * @generated
    */
-  EAttribute getPackageDef_ImplName();
+  EClass getParened();
 
   /**
-   * Returns the meta object for the containment reference '{@link com.euclideanspace.aldor.editor.PackageDef#getW <em>W</em>}'.
+   * Returns the meta object for class '{@link com.euclideanspace.aldor.editor.Bracketed <em>Bracketed</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>W</em>'.
-   * @see com.euclideanspace.aldor.editor.PackageDef#getW()
-   * @see #getPackageDef()
+   * @return the meta object for class '<em>Bracketed</em>'.
+   * @see com.euclideanspace.aldor.editor.Bracketed
    * @generated
    */
-  EReference getPackageDef_W();
+  EClass getBracketed();
 
   /**
-   * Returns the meta object for the containment reference '{@link com.euclideanspace.aldor.editor.PackageDef#getWh5 <em>Wh5</em>}'.
+   * Returns the meta object for class '{@link com.euclideanspace.aldor.editor.QuotedIds <em>Quoted Ids</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Wh5</em>'.
-   * @see com.euclideanspace.aldor.editor.PackageDef#getWh5()
-   * @see #getPackageDef()
+   * @return the meta object for class '<em>Quoted Ids</em>'.
+   * @see com.euclideanspace.aldor.editor.QuotedIds
    * @generated
    */
-  EReference getPackageDef_Wh5();
+  EClass getQuotedIds();
 
   /**
-   * Returns the meta object for the containment reference '{@link com.euclideanspace.aldor.editor.PackageDef#getAdd2 <em>Add2</em>}'.
+   * Returns the meta object for class '{@link com.euclideanspace.aldor.editor.Names <em>Names</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Add2</em>'.
-   * @see com.euclideanspace.aldor.editor.PackageDef#getAdd2()
-   * @see #getPackageDef()
+   * @return the meta object for class '<em>Names</em>'.
+   * @see com.euclideanspace.aldor.editor.Names
    * @generated
    */
-  EReference getPackageDef_Add2();
+  EClass getNames();
 
   /**
-   * Returns the meta object for class '{@link com.euclideanspace.aldor.editor.DomainDef <em>Domain Def</em>}'.
+   * Returns the meta object for the attribute '{@link com.euclideanspace.aldor.editor.Names#getFirstName <em>First Name</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Domain Def</em>'.
-   * @see com.euclideanspace.aldor.editor.DomainDef
+   * @return the meta object for the attribute '<em>First Name</em>'.
+   * @see com.euclideanspace.aldor.editor.Names#getFirstName()
+   * @see #getNames()
    * @generated
    */
-  EClass getDomainDef();
+  EAttribute getNames_FirstName();
 
   /**
-   * Returns the meta object for the attribute '{@link com.euclideanspace.aldor.editor.DomainDef#getName <em>Name</em>}'.
+   * Returns the meta object for the attribute list '{@link com.euclideanspace.aldor.editor.Names#getSubsequentNames <em>Subsequent Names</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Name</em>'.
-   * @see com.euclideanspace.aldor.editor.DomainDef#getName()
-   * @see #getDomainDef()
+   * @return the meta object for the attribute list '<em>Subsequent Names</em>'.
+   * @see com.euclideanspace.aldor.editor.Names#getSubsequentNames()
+   * @see #getNames()
    * @generated
    */
-  EAttribute getDomainDef_Name();
+  EAttribute getNames_SubsequentNames();
 
   /**
-   * Returns the meta object for the attribute '{@link com.euclideanspace.aldor.editor.DomainDef#getShortname5 <em>Shortname5</em>}'.
+   * Returns the meta object for class '{@link com.euclideanspace.aldor.editor.Atom <em>Atom</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Shortname5</em>'.
-   * @see com.euclideanspace.aldor.editor.DomainDef#getShortname5()
-   * @see #getDomainDef()
+   * @return the meta object for class '<em>Atom</em>'.
+   * @see com.euclideanspace.aldor.editor.Atom
    * @generated
    */
-  EAttribute getDomainDef_Shortname5();
+  EClass getAtom();
 
   /**
-   * Returns the meta object for the attribute '{@link com.euclideanspace.aldor.editor.DomainDef#getLongname5 <em>Longname5</em>}'.
+   * Returns the meta object for the containment reference '{@link com.euclideanspace.aldor.editor.Atom#getLab <em>Lab</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Longname5</em>'.
-   * @see com.euclideanspace.aldor.editor.DomainDef#getLongname5()
-   * @see #getDomainDef()
+   * @return the meta object for the containment reference '<em>Lab</em>'.
+   * @see com.euclideanspace.aldor.editor.Atom#getLab()
+   * @see #getAtom()
    * @generated
    */
-  EAttribute getDomainDef_Longname5();
+  EReference getAtom_Lab();
 
   /**
-   * Returns the meta object for the attribute '{@link com.euclideanspace.aldor.editor.DomainDef#getLongname6 <em>Longname6</em>}'.
+   * Returns the meta object for the containment reference list '{@link com.euclideanspace.aldor.editor.Atom#getBm4 <em>Bm4</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Longname6</em>'.
-   * @see com.euclideanspace.aldor.editor.DomainDef#getLongname6()
-   * @see #getDomainDef()
+   * @return the meta object for the containment reference list '<em>Bm4</em>'.
+   * @see com.euclideanspace.aldor.editor.Atom#getBm4()
+   * @see #getAtom()
    * @generated
    */
-  EAttribute getDomainDef_Longname6();
+  EReference getAtom_Bm4();
 
   /**
-   * Returns the meta object for the containment reference '{@link com.euclideanspace.aldor.editor.DomainDef#getCp5 <em>Cp5</em>}'.
+   * Returns the meta object for the containment reference '{@link com.euclideanspace.aldor.editor.Atom#getId <em>Id</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Cp5</em>'.
-   * @see com.euclideanspace.aldor.editor.DomainDef#getCp5()
-   * @see #getDomainDef()
+   * @return the meta object for the containment reference '<em>Id</em>'.
+   * @see com.euclideanspace.aldor.editor.Atom#getId()
+   * @see #getAtom()
    * @generated
    */
-  EReference getDomainDef_Cp5();
+  EReference getAtom_Id();
 
   /**
-   * Returns the meta object for the attribute '{@link com.euclideanspace.aldor.editor.DomainDef#getExportName <em>Export Name</em>}'.
+   * Returns the meta object for the attribute '{@link com.euclideanspace.aldor.editor.Atom#getLit <em>Lit</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Export Name</em>'.
-   * @see com.euclideanspace.aldor.editor.DomainDef#getExportName()
-   * @see #getDomainDef()
+   * @return the meta object for the attribute '<em>Lit</em>'.
+   * @see com.euclideanspace.aldor.editor.Atom#getLit()
+   * @see #getAtom()
    * @generated
    */
-  EAttribute getDomainDef_ExportName();
+  EAttribute getAtom_Lit();
 
   /**
-   * Returns the meta object for the containment reference '{@link com.euclideanspace.aldor.editor.DomainDef#getCp6 <em>Cp6</em>}'.
+   * Returns the meta object for class '{@link com.euclideanspace.aldor.editor.Name <em>Name</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Cp6</em>'.
-   * @see com.euclideanspace.aldor.editor.DomainDef#getCp6()
-   * @see #getDomainDef()
+   * @return the meta object for class '<em>Name</em>'.
+   * @see com.euclideanspace.aldor.editor.Name
    * @generated
    */
-  EReference getDomainDef_Cp6();
+  EClass getName_();
 
   /**
-   * Returns the meta object for the attribute '{@link com.euclideanspace.aldor.editor.DomainDef#getImplName5 <em>Impl Name5</em>}'.
+   * Returns the meta object for class '{@link com.euclideanspace.aldor.editor.Id <em>Id</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Impl Name5</em>'.
-   * @see com.euclideanspace.aldor.editor.DomainDef#getImplName5()
-   * @see #getDomainDef()
+   * @return the meta object for class '<em>Id</em>'.
+   * @see com.euclideanspace.aldor.editor.Id
    * @generated
    */
-  EAttribute getDomainDef_ImplName5();
+  EClass getId();
 
   /**
-   * Returns the meta object for the containment reference '{@link com.euclideanspace.aldor.editor.DomainDef#getW <em>W</em>}'.
+   * Returns the meta object for the attribute '{@link com.euclideanspace.aldor.editor.Id#getAB_Id <em>AB Id</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>W</em>'.
-   * @see com.euclideanspace.aldor.editor.DomainDef#getW()
-   * @see #getDomainDef()
+   * @return the meta object for the attribute '<em>AB Id</em>'.
+   * @see com.euclideanspace.aldor.editor.Id#getAB_Id()
+   * @see #getId()
    * @generated
    */
-  EReference getDomainDef_W();
+  EAttribute getId_AB_Id();
 
   /**
-   * Returns the meta object for the containment reference '{@link com.euclideanspace.aldor.editor.DomainDef#getWh5 <em>Wh5</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Wh5</em>'.
-   * @see com.euclideanspace.aldor.editor.DomainDef#getWh5()
-   * @see #getDomainDef()
-   * @generated
-   */
-  EReference getDomainDef_Wh5();
-
-  /**
-   * Returns the meta object for the containment reference '{@link com.euclideanspace.aldor.editor.DomainDef#getA <em>A</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>A</em>'.
-   * @see com.euclideanspace.aldor.editor.DomainDef#getA()
-   * @see #getDomainDef()
-   * @generated
-   */
-  EReference getDomainDef_A();
-
-  /**
-   * Returns the meta object for class '{@link com.euclideanspace.aldor.editor.WherePart <em>Where Part</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Where Part</em>'.
-   * @see com.euclideanspace.aldor.editor.WherePart
-   * @generated
-   */
-  EClass getWherePart();
-
-  /**
-   * Returns the meta object for the attribute '{@link com.euclideanspace.aldor.editor.WherePart#getName <em>Name</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Name</em>'.
-   * @see com.euclideanspace.aldor.editor.WherePart#getName()
-   * @see #getWherePart()
-   * @generated
-   */
-  EAttribute getWherePart_Name();
-
-  /**
-   * Returns the meta object for the containment reference list '{@link com.euclideanspace.aldor.editor.WherePart#getWhereAssig <em>Where Assig</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Where Assig</em>'.
-   * @see com.euclideanspace.aldor.editor.WherePart#getWhereAssig()
-   * @see #getWherePart()
-   * @generated
-   */
-  EReference getWherePart_WhereAssig();
-
-  /**
-   * Returns the meta object for the attribute '{@link com.euclideanspace.aldor.editor.WherePart#getLongname8 <em>Longname8</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Longname8</em>'.
-   * @see com.euclideanspace.aldor.editor.WherePart#getLongname8()
-   * @see #getWherePart()
-   * @generated
-   */
-  EAttribute getWherePart_Longname8();
-
-  /**
-   * Returns the meta object for the containment reference '{@link com.euclideanspace.aldor.editor.WherePart#getImp <em>Imp</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Imp</em>'.
-   * @see com.euclideanspace.aldor.editor.WherePart#getImp()
-   * @see #getWherePart()
-   * @generated
-   */
-  EReference getWherePart_Imp();
-
-  /**
-   * Returns the meta object for the containment reference '{@link com.euclideanspace.aldor.editor.WherePart#getW8 <em>W8</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>W8</em>'.
-   * @see com.euclideanspace.aldor.editor.WherePart#getW8()
-   * @see #getWherePart()
-   * @generated
-   */
-  EReference getWherePart_W8();
-
-  /**
-   * Returns the meta object for the attribute '{@link com.euclideanspace.aldor.editor.WherePart#getLongname9 <em>Longname9</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Longname9</em>'.
-   * @see com.euclideanspace.aldor.editor.WherePart#getLongname9()
-   * @see #getWherePart()
-   * @generated
-   */
-  EAttribute getWherePart_Longname9();
-
-  /**
-   * Returns the meta object for the attribute '{@link com.euclideanspace.aldor.editor.WherePart#getFs <em>Fs</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Fs</em>'.
-   * @see com.euclideanspace.aldor.editor.WherePart#getFs()
-   * @see #getWherePart()
-   * @generated
-   */
-  EAttribute getWherePart_Fs();
-
-  /**
-   * Returns the meta object for the attribute '{@link com.euclideanspace.aldor.editor.WherePart#getPar2 <em>Par2</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Par2</em>'.
-   * @see com.euclideanspace.aldor.editor.WherePart#getPar2()
-   * @see #getWherePart()
-   * @generated
-   */
-  EAttribute getWherePart_Par2();
-
-  /**
-   * Returns the meta object for the attribute list '{@link com.euclideanspace.aldor.editor.WherePart#getPar3 <em>Par3</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute list '<em>Par3</em>'.
-   * @see com.euclideanspace.aldor.editor.WherePart#getPar3()
-   * @see #getWherePart()
-   * @generated
-   */
-  EAttribute getWherePart_Par3();
-
-  /**
-   * Returns the meta object for the attribute '{@link com.euclideanspace.aldor.editor.WherePart#getF2 <em>F2</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>F2</em>'.
-   * @see com.euclideanspace.aldor.editor.WherePart#getF2()
-   * @see #getWherePart()
-   * @generated
-   */
-  EAttribute getWherePart_F2();
-
-  /**
-   * Returns the meta object for the containment reference '{@link com.euclideanspace.aldor.editor.WherePart#getAdd <em>Add</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Add</em>'.
-   * @see com.euclideanspace.aldor.editor.WherePart#getAdd()
-   * @see #getWherePart()
-   * @generated
-   */
-  EReference getWherePart_Add();
-
-  /**
-   * Returns the meta object for class '{@link com.euclideanspace.aldor.editor.WhereAssignments <em>Where Assignments</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Where Assignments</em>'.
-   * @see com.euclideanspace.aldor.editor.WhereAssignments
-   * @generated
-   */
-  EClass getWhereAssignments();
-
-  /**
-   * Returns the meta object for class '{@link com.euclideanspace.aldor.editor.WithPart <em>With Part</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>With Part</em>'.
-   * @see com.euclideanspace.aldor.editor.WithPart
-   * @generated
-   */
-  EClass getWithPart();
-
-  /**
-   * Returns the meta object for the attribute '{@link com.euclideanspace.aldor.editor.WithPart#getName <em>Name</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Name</em>'.
-   * @see com.euclideanspace.aldor.editor.WithPart#getName()
-   * @see #getWithPart()
-   * @generated
-   */
-  EAttribute getWithPart_Name();
-
-  /**
-   * Returns the meta object for the containment reference list '{@link com.euclideanspace.aldor.editor.WithPart#getFundec <em>Fundec</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Fundec</em>'.
-   * @see com.euclideanspace.aldor.editor.WithPart#getFundec()
-   * @see #getWithPart()
-   * @generated
-   */
-  EReference getWithPart_Fundec();
-
-  /**
-   * Returns the meta object for class '{@link com.euclideanspace.aldor.editor.WithInline <em>With Inline</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>With Inline</em>'.
-   * @see com.euclideanspace.aldor.editor.WithInline
-   * @generated
-   */
-  EClass getWithInline();
-
-  /**
-   * Returns the meta object for the attribute '{@link com.euclideanspace.aldor.editor.WithInline#getName <em>Name</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Name</em>'.
-   * @see com.euclideanspace.aldor.editor.WithInline#getName()
-   * @see #getWithInline()
-   * @generated
-   */
-  EAttribute getWithInline_Name();
-
-  /**
-   * Returns the meta object for the containment reference list '{@link com.euclideanspace.aldor.editor.WithInline#getFundec <em>Fundec</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Fundec</em>'.
-   * @see com.euclideanspace.aldor.editor.WithInline#getFundec()
-   * @see #getWithInline()
-   * @generated
-   */
-  EReference getWithInline_Fundec();
-
-  /**
-   * Returns the meta object for class '{@link com.euclideanspace.aldor.editor.AddPart <em>Add Part</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Add Part</em>'.
-   * @see com.euclideanspace.aldor.editor.AddPart
-   * @generated
-   */
-  EClass getAddPart();
-
-  /**
-   * Returns the meta object for the attribute '{@link com.euclideanspace.aldor.editor.AddPart#getName <em>Name</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Name</em>'.
-   * @see com.euclideanspace.aldor.editor.AddPart#getName()
-   * @see #getAddPart()
-   * @generated
-   */
-  EAttribute getAddPart_Name();
-
-  /**
-   * Returns the meta object for the containment reference list '{@link com.euclideanspace.aldor.editor.AddPart#getT <em>T</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>T</em>'.
-   * @see com.euclideanspace.aldor.editor.AddPart#getT()
-   * @see #getAddPart()
-   * @generated
-   */
-  EReference getAddPart_T();
-
-  /**
-   * Returns the meta object for class '{@link com.euclideanspace.aldor.editor.AddStatements <em>Add Statements</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Add Statements</em>'.
-   * @see com.euclideanspace.aldor.editor.AddStatements
-   * @generated
-   */
-  EClass getAddStatements();
-
-  /**
-   * Returns the meta object for the containment reference '{@link com.euclideanspace.aldor.editor.AddStatements#getT1 <em>T1</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>T1</em>'.
-   * @see com.euclideanspace.aldor.editor.AddStatements#getT1()
-   * @see #getAddStatements()
-   * @generated
-   */
-  EReference getAddStatements_T1();
-
-  /**
-   * Returns the meta object for the containment reference '{@link com.euclideanspace.aldor.editor.AddStatements#getT13 <em>T13</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>T13</em>'.
-   * @see com.euclideanspace.aldor.editor.AddStatements#getT13()
-   * @see #getAddStatements()
-   * @generated
-   */
-  EReference getAddStatements_T13();
-
-  /**
-   * Returns the meta object for the containment reference '{@link com.euclideanspace.aldor.editor.AddStatements#getT14 <em>T14</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>T14</em>'.
-   * @see com.euclideanspace.aldor.editor.AddStatements#getT14()
-   * @see #getAddStatements()
-   * @generated
-   */
-  EReference getAddStatements_T14();
-
-  /**
-   * Returns the meta object for the containment reference '{@link com.euclideanspace.aldor.editor.AddStatements#getT15 <em>T15</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>T15</em>'.
-   * @see com.euclideanspace.aldor.editor.AddStatements#getT15()
-   * @see #getAddStatements()
-   * @generated
-   */
-  EReference getAddStatements_T15();
-
-  /**
-   * Returns the meta object for class '{@link com.euclideanspace.aldor.editor.FunctionDefinition <em>Function Definition</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Function Definition</em>'.
-   * @see com.euclideanspace.aldor.editor.FunctionDefinition
-   * @generated
-   */
-  EClass getFunctionDefinition();
-
-  /**
-   * Returns the meta object for the containment reference '{@link com.euclideanspace.aldor.editor.FunctionDefinition#getPar3 <em>Par3</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Par3</em>'.
-   * @see com.euclideanspace.aldor.editor.FunctionDefinition#getPar3()
-   * @see #getFunctionDefinition()
-   * @generated
-   */
-  EReference getFunctionDefinition_Par3();
-
-  /**
-   * Returns the meta object for the containment reference '{@link com.euclideanspace.aldor.editor.FunctionDefinition#getPar4 <em>Par4</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Par4</em>'.
-   * @see com.euclideanspace.aldor.editor.FunctionDefinition#getPar4()
-   * @see #getFunctionDefinition()
-   * @generated
-   */
-  EReference getFunctionDefinition_Par4();
-
-  /**
-   * Returns the meta object for the containment reference '{@link com.euclideanspace.aldor.editor.FunctionDefinition#getPar5 <em>Par5</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Par5</em>'.
-   * @see com.euclideanspace.aldor.editor.FunctionDefinition#getPar5()
-   * @see #getFunctionDefinition()
-   * @generated
-   */
-  EReference getFunctionDefinition_Par5();
-
-  /**
-   * Returns the meta object for the attribute '{@link com.euclideanspace.aldor.editor.FunctionDefinition#getFnNam <em>Fn Nam</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Fn Nam</em>'.
-   * @see com.euclideanspace.aldor.editor.FunctionDefinition#getFnNam()
-   * @see #getFunctionDefinition()
-   * @generated
-   */
-  EAttribute getFunctionDefinition_FnNam();
-
-  /**
-   * Returns the meta object for class '{@link com.euclideanspace.aldor.editor.FunctionDefinitionBlock <em>Function Definition Block</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Function Definition Block</em>'.
-   * @see com.euclideanspace.aldor.editor.FunctionDefinitionBlock
-   * @generated
-   */
-  EClass getFunctionDefinitionBlock();
-
-  /**
-   * Returns the meta object for the attribute '{@link com.euclideanspace.aldor.editor.FunctionDefinitionBlock#getFnDecBr <em>Fn Dec Br</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Fn Dec Br</em>'.
-   * @see com.euclideanspace.aldor.editor.FunctionDefinitionBlock#getFnDecBr()
-   * @see #getFunctionDefinitionBlock()
-   * @generated
-   */
-  EAttribute getFunctionDefinitionBlock_FnDecBr();
-
-  /**
-   * Returns the meta object for the containment reference list '{@link com.euclideanspace.aldor.editor.FunctionDefinitionBlock#getFnDecBk <em>Fn Dec Bk</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Fn Dec Bk</em>'.
-   * @see com.euclideanspace.aldor.editor.FunctionDefinitionBlock#getFnDecBk()
-   * @see #getFunctionDefinitionBlock()
-   * @generated
-   */
-  EReference getFunctionDefinitionBlock_FnDecBk();
-
-  /**
-   * Returns the meta object for the containment reference list '{@link com.euclideanspace.aldor.editor.FunctionDefinitionBlock#getVars <em>Vars</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Vars</em>'.
-   * @see com.euclideanspace.aldor.editor.FunctionDefinitionBlock#getVars()
-   * @see #getFunctionDefinitionBlock()
-   * @generated
-   */
-  EReference getFunctionDefinitionBlock_Vars();
-
-  /**
-   * Returns the meta object for the containment reference list '{@link com.euclideanspace.aldor.editor.FunctionDefinitionBlock#getT1 <em>T1</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>T1</em>'.
-   * @see com.euclideanspace.aldor.editor.FunctionDefinitionBlock#getT1()
-   * @see #getFunctionDefinitionBlock()
-   * @generated
-   */
-  EReference getFunctionDefinitionBlock_T1();
-
-  /**
-   * Returns the meta object for the containment reference list '{@link com.euclideanspace.aldor.editor.FunctionDefinitionBlock#getT13 <em>T13</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>T13</em>'.
-   * @see com.euclideanspace.aldor.editor.FunctionDefinitionBlock#getT13()
-   * @see #getFunctionDefinitionBlock()
-   * @generated
-   */
-  EReference getFunctionDefinitionBlock_T13();
-
-  /**
-   * Returns the meta object for the containment reference list '{@link com.euclideanspace.aldor.editor.FunctionDefinitionBlock#getT14 <em>T14</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>T14</em>'.
-   * @see com.euclideanspace.aldor.editor.FunctionDefinitionBlock#getT14()
-   * @see #getFunctionDefinitionBlock()
-   * @generated
-   */
-  EReference getFunctionDefinitionBlock_T14();
-
-  /**
-   * Returns the meta object for the containment reference list '{@link com.euclideanspace.aldor.editor.FunctionDefinitionBlock#getI1 <em>I1</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>I1</em>'.
-   * @see com.euclideanspace.aldor.editor.FunctionDefinitionBlock#getI1()
-   * @see #getFunctionDefinitionBlock()
-   * @generated
-   */
-  EReference getFunctionDefinitionBlock_I1();
-
-  /**
-   * Returns the meta object for the containment reference '{@link com.euclideanspace.aldor.editor.FunctionDefinitionBlock#getE <em>E</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>E</em>'.
-   * @see com.euclideanspace.aldor.editor.FunctionDefinitionBlock#getE()
-   * @see #getFunctionDefinitionBlock()
-   * @generated
-   */
-  EReference getFunctionDefinitionBlock_E();
-
-  /**
-   * Returns the meta object for class '{@link com.euclideanspace.aldor.editor.FunctionSignature <em>Function Signature</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Function Signature</em>'.
-   * @see com.euclideanspace.aldor.editor.FunctionSignature
-   * @generated
-   */
-  EClass getFunctionSignature();
-
-  /**
-   * Returns the meta object for the attribute '{@link com.euclideanspace.aldor.editor.FunctionSignature#getFnNam <em>Fn Nam</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Fn Nam</em>'.
-   * @see com.euclideanspace.aldor.editor.FunctionSignature#getFnNam()
-   * @see #getFunctionSignature()
-   * @generated
-   */
-  EAttribute getFunctionSignature_FnNam();
-
-  /**
-   * Returns the meta object for the containment reference '{@link com.euclideanspace.aldor.editor.FunctionSignature#getPar2 <em>Par2</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Par2</em>'.
-   * @see com.euclideanspace.aldor.editor.FunctionSignature#getPar2()
-   * @see #getFunctionSignature()
-   * @generated
-   */
-  EReference getFunctionSignature_Par2();
-
-  /**
-   * Returns the meta object for the containment reference list '{@link com.euclideanspace.aldor.editor.FunctionSignature#getPar3 <em>Par3</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Par3</em>'.
-   * @see com.euclideanspace.aldor.editor.FunctionSignature#getPar3()
-   * @see #getFunctionSignature()
-   * @generated
-   */
-  EReference getFunctionSignature_Par3();
-
-  /**
-   * Returns the meta object for the attribute '{@link com.euclideanspace.aldor.editor.FunctionSignature#getPar <em>Par</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Par</em>'.
-   * @see com.euclideanspace.aldor.editor.FunctionSignature#getPar()
-   * @see #getFunctionSignature()
-   * @generated
-   */
-  EAttribute getFunctionSignature_Par();
-
-  /**
-   * Returns the meta object for the attribute '{@link com.euclideanspace.aldor.editor.FunctionSignature#getT4 <em>T4</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>T4</em>'.
-   * @see com.euclideanspace.aldor.editor.FunctionSignature#getT4()
-   * @see #getFunctionSignature()
-   * @generated
-   */
-  EAttribute getFunctionSignature_T4();
-
-  /**
-   * Returns the meta object for the attribute '{@link com.euclideanspace.aldor.editor.FunctionSignature#getB1 <em>B1</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>B1</em>'.
-   * @see com.euclideanspace.aldor.editor.FunctionSignature#getB1()
-   * @see #getFunctionSignature()
-   * @generated
-   */
-  EAttribute getFunctionSignature_B1();
-
-  /**
-   * Returns the meta object for the attribute '{@link com.euclideanspace.aldor.editor.FunctionSignature#getT5 <em>T5</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>T5</em>'.
-   * @see com.euclideanspace.aldor.editor.FunctionSignature#getT5()
-   * @see #getFunctionSignature()
-   * @generated
-   */
-  EAttribute getFunctionSignature_T5();
-
-  /**
-   * Returns the meta object for the attribute '{@link com.euclideanspace.aldor.editor.FunctionSignature#getB3 <em>B3</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>B3</em>'.
-   * @see com.euclideanspace.aldor.editor.FunctionSignature#getB3()
-   * @see #getFunctionSignature()
-   * @generated
-   */
-  EAttribute getFunctionSignature_B3();
-
-  /**
-   * Returns the meta object for the attribute '{@link com.euclideanspace.aldor.editor.FunctionSignature#getB2 <em>B2</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>B2</em>'.
-   * @see com.euclideanspace.aldor.editor.FunctionSignature#getB2()
-   * @see #getFunctionSignature()
-   * @generated
-   */
-  EAttribute getFunctionSignature_B2();
-
-  /**
-   * Returns the meta object for the attribute '{@link com.euclideanspace.aldor.editor.FunctionSignature#getT6 <em>T6</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>T6</em>'.
-   * @see com.euclideanspace.aldor.editor.FunctionSignature#getT6()
-   * @see #getFunctionSignature()
-   * @generated
-   */
-  EAttribute getFunctionSignature_T6();
-
-  /**
-   * Returns the meta object for the attribute '{@link com.euclideanspace.aldor.editor.FunctionSignature#getB4 <em>B4</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>B4</em>'.
-   * @see com.euclideanspace.aldor.editor.FunctionSignature#getB4()
-   * @see #getFunctionSignature()
-   * @generated
-   */
-  EAttribute getFunctionSignature_B4();
-
-  /**
-   * Returns the meta object for the attribute '{@link com.euclideanspace.aldor.editor.FunctionSignature#getT7 <em>T7</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>T7</em>'.
-   * @see com.euclideanspace.aldor.editor.FunctionSignature#getT7()
-   * @see #getFunctionSignature()
-   * @generated
-   */
-  EAttribute getFunctionSignature_T7();
-
-  /**
-   * Returns the meta object for the attribute '{@link com.euclideanspace.aldor.editor.FunctionSignature#getB5 <em>B5</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>B5</em>'.
-   * @see com.euclideanspace.aldor.editor.FunctionSignature#getB5()
-   * @see #getFunctionSignature()
-   * @generated
-   */
-  EAttribute getFunctionSignature_B5();
-
-  /**
-   * Returns the meta object for the attribute '{@link com.euclideanspace.aldor.editor.FunctionSignature#getT8 <em>T8</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>T8</em>'.
-   * @see com.euclideanspace.aldor.editor.FunctionSignature#getT8()
-   * @see #getFunctionSignature()
-   * @generated
-   */
-  EAttribute getFunctionSignature_T8();
-
-  /**
-   * Returns the meta object for the attribute '{@link com.euclideanspace.aldor.editor.FunctionSignature#getB6 <em>B6</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>B6</em>'.
-   * @see com.euclideanspace.aldor.editor.FunctionSignature#getB6()
-   * @see #getFunctionSignature()
-   * @generated
-   */
-  EAttribute getFunctionSignature_B6();
-
-  /**
-   * Returns the meta object for class '{@link com.euclideanspace.aldor.editor.MacroDef <em>Macro Def</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Macro Def</em>'.
-   * @see com.euclideanspace.aldor.editor.MacroDef
-   * @generated
-   */
-  EClass getMacroDef();
-
-  /**
-   * Returns the meta object for the attribute '{@link com.euclideanspace.aldor.editor.MacroDef#getMacroname <em>Macroname</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Macroname</em>'.
-   * @see com.euclideanspace.aldor.editor.MacroDef#getMacroname()
-   * @see #getMacroDef()
-   * @generated
-   */
-  EAttribute getMacroDef_Macroname();
-
-  /**
-   * Returns the meta object for class '{@link com.euclideanspace.aldor.editor.Import <em>Import</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Import</em>'.
-   * @see com.euclideanspace.aldor.editor.Import
-   * @generated
-   */
-  EClass getImport();
-
-  /**
-   * Returns the meta object for the attribute list '{@link com.euclideanspace.aldor.editor.Import#getImpname <em>Impname</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute list '<em>Impname</em>'.
-   * @see com.euclideanspace.aldor.editor.Import#getImpname()
-   * @see #getImport()
-   * @generated
-   */
-  EAttribute getImport_Impname();
-
-  /**
-   * Returns the meta object for the containment reference list '{@link com.euclideanspace.aldor.editor.Import#getPar22 <em>Par22</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Par22</em>'.
-   * @see com.euclideanspace.aldor.editor.Import#getPar22()
-   * @see #getImport()
-   * @generated
-   */
-  EReference getImport_Par22();
-
-  /**
-   * Returns the meta object for class '{@link com.euclideanspace.aldor.editor.VariableDeclarationBlock <em>Variable Declaration Block</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Variable Declaration Block</em>'.
-   * @see com.euclideanspace.aldor.editor.VariableDeclarationBlock
-   * @generated
-   */
-  EClass getVariableDeclarationBlock();
-
-  /**
-   * Returns the meta object for the attribute '{@link com.euclideanspace.aldor.editor.VariableDeclarationBlock#getVardecbr <em>Vardecbr</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Vardecbr</em>'.
-   * @see com.euclideanspace.aldor.editor.VariableDeclarationBlock#getVardecbr()
-   * @see #getVariableDeclarationBlock()
-   * @generated
-   */
-  EAttribute getVariableDeclarationBlock_Vardecbr();
-
-  /**
-   * Returns the meta object for the containment reference list '{@link com.euclideanspace.aldor.editor.VariableDeclarationBlock#getVardecBlk <em>Vardec Blk</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Vardec Blk</em>'.
-   * @see com.euclideanspace.aldor.editor.VariableDeclarationBlock#getVardecBlk()
-   * @see #getVariableDeclarationBlock()
-   * @generated
-   */
-  EReference getVariableDeclarationBlock_VardecBlk();
-
-  /**
-   * Returns the meta object for class '{@link com.euclideanspace.aldor.editor.VariableDeclaration <em>Variable Declaration</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Variable Declaration</em>'.
-   * @see com.euclideanspace.aldor.editor.VariableDeclaration
-   * @generated
-   */
-  EClass getVariableDeclaration();
-
-  /**
-   * Returns the meta object for the containment reference '{@link com.euclideanspace.aldor.editor.VariableDeclaration#getT1 <em>T1</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>T1</em>'.
-   * @see com.euclideanspace.aldor.editor.VariableDeclaration#getT1()
-   * @see #getVariableDeclaration()
-   * @generated
-   */
-  EReference getVariableDeclaration_T1();
-
-  /**
-   * Returns the meta object for the containment reference '{@link com.euclideanspace.aldor.editor.VariableDeclaration#getV1 <em>V1</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>V1</em>'.
-   * @see com.euclideanspace.aldor.editor.VariableDeclaration#getV1()
-   * @see #getVariableDeclaration()
-   * @generated
-   */
-  EReference getVariableDeclaration_V1();
-
-  /**
-   * Returns the meta object for the containment reference '{@link com.euclideanspace.aldor.editor.VariableDeclaration#getV2 <em>V2</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>V2</em>'.
-   * @see com.euclideanspace.aldor.editor.VariableDeclaration#getV2()
-   * @see #getVariableDeclaration()
-   * @generated
-   */
-  EReference getVariableDeclaration_V2();
-
-  /**
-   * Returns the meta object for class '{@link com.euclideanspace.aldor.editor.TypeWithName <em>Type With Name</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Type With Name</em>'.
-   * @see com.euclideanspace.aldor.editor.TypeWithName
-   * @generated
-   */
-  EClass getTypeWithName();
-
-  /**
-   * Returns the meta object for the attribute '{@link com.euclideanspace.aldor.editor.TypeWithName#getVarName <em>Var Name</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Var Name</em>'.
-   * @see com.euclideanspace.aldor.editor.TypeWithName#getVarName()
-   * @see #getTypeWithName()
-   * @generated
-   */
-  EAttribute getTypeWithName_VarName();
-
-  /**
-   * Returns the meta object for the attribute '{@link com.euclideanspace.aldor.editor.TypeWithName#getVarNameSt <em>Var Name St</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Var Name St</em>'.
-   * @see com.euclideanspace.aldor.editor.TypeWithName#getVarNameSt()
-   * @see #getTypeWithName()
-   * @generated
-   */
-  EAttribute getTypeWithName_VarNameSt();
-
-  /**
-   * Returns the meta object for the attribute '{@link com.euclideanspace.aldor.editor.TypeWithName#getVarName2 <em>Var Name2</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Var Name2</em>'.
-   * @see com.euclideanspace.aldor.editor.TypeWithName#getVarName2()
-   * @see #getTypeWithName()
-   * @generated
-   */
-  EAttribute getTypeWithName_VarName2();
-
-  /**
-   * Returns the meta object for the containment reference '{@link com.euclideanspace.aldor.editor.TypeWithName#getTyp <em>Typ</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Typ</em>'.
-   * @see com.euclideanspace.aldor.editor.TypeWithName#getTyp()
-   * @see #getTypeWithName()
-   * @generated
-   */
-  EReference getTypeWithName_Typ();
-
-  /**
-   * Returns the meta object for class '{@link com.euclideanspace.aldor.editor.VariableTyped <em>Variable Typed</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Variable Typed</em>'.
-   * @see com.euclideanspace.aldor.editor.VariableTyped
-   * @generated
-   */
-  EClass getVariableTyped();
-
-  /**
-   * Returns the meta object for the attribute '{@link com.euclideanspace.aldor.editor.VariableTyped#getVarName <em>Var Name</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Var Name</em>'.
-   * @see com.euclideanspace.aldor.editor.VariableTyped#getVarName()
-   * @see #getVariableTyped()
-   * @generated
-   */
-  EAttribute getVariableTyped_VarName();
-
-  /**
-   * Returns the meta object for the attribute '{@link com.euclideanspace.aldor.editor.VariableTyped#getVarNameSt <em>Var Name St</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Var Name St</em>'.
-   * @see com.euclideanspace.aldor.editor.VariableTyped#getVarNameSt()
-   * @see #getVariableTyped()
-   * @generated
-   */
-  EAttribute getVariableTyped_VarNameSt();
-
-  /**
-   * Returns the meta object for the containment reference '{@link com.euclideanspace.aldor.editor.VariableTyped#getTyp <em>Typ</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Typ</em>'.
-   * @see com.euclideanspace.aldor.editor.VariableTyped#getTyp()
-   * @see #getVariableTyped()
-   * @generated
-   */
-  EReference getVariableTyped_Typ();
-
-  /**
-   * Returns the meta object for class '{@link com.euclideanspace.aldor.editor.VariableDeclarationAssign <em>Variable Declaration Assign</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Variable Declaration Assign</em>'.
-   * @see com.euclideanspace.aldor.editor.VariableDeclarationAssign
-   * @generated
-   */
-  EClass getVariableDeclarationAssign();
-
-  /**
-   * Returns the meta object for the attribute '{@link com.euclideanspace.aldor.editor.VariableDeclarationAssign#getVarName <em>Var Name</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Var Name</em>'.
-   * @see com.euclideanspace.aldor.editor.VariableDeclarationAssign#getVarName()
-   * @see #getVariableDeclarationAssign()
-   * @generated
-   */
-  EAttribute getVariableDeclarationAssign_VarName();
-
-  /**
-   * Returns the meta object for the attribute list '{@link com.euclideanspace.aldor.editor.VariableDeclarationAssign#getT12 <em>T12</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute list '<em>T12</em>'.
-   * @see com.euclideanspace.aldor.editor.VariableDeclarationAssign#getT12()
-   * @see #getVariableDeclarationAssign()
-   * @generated
-   */
-  EAttribute getVariableDeclarationAssign_T12();
-
-  /**
-   * Returns the meta object for the containment reference '{@link com.euclideanspace.aldor.editor.VariableDeclarationAssign#getTyp <em>Typ</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Typ</em>'.
-   * @see com.euclideanspace.aldor.editor.VariableDeclarationAssign#getTyp()
-   * @see #getVariableDeclarationAssign()
-   * @generated
-   */
-  EReference getVariableDeclarationAssign_Typ();
-
-  /**
-   * Returns the meta object for the containment reference '{@link com.euclideanspace.aldor.editor.VariableDeclarationAssign#getT4 <em>T4</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>T4</em>'.
-   * @see com.euclideanspace.aldor.editor.VariableDeclarationAssign#getT4()
-   * @see #getVariableDeclarationAssign()
-   * @generated
-   */
-  EReference getVariableDeclarationAssign_T4();
-
-  /**
-   * Returns the meta object for class '{@link com.euclideanspace.aldor.editor.FreeVariable <em>Free Variable</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Free Variable</em>'.
-   * @see com.euclideanspace.aldor.editor.FreeVariable
-   * @generated
-   */
-  EClass getFreeVariable();
-
-  /**
-   * Returns the meta object for the attribute '{@link com.euclideanspace.aldor.editor.FreeVariable#getVar <em>Var</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Var</em>'.
-   * @see com.euclideanspace.aldor.editor.FreeVariable#getVar()
-   * @see #getFreeVariable()
-   * @generated
-   */
-  EAttribute getFreeVariable_Var();
-
-  /**
-   * Returns the meta object for class '{@link com.euclideanspace.aldor.editor.LocalVariable <em>Local Variable</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Local Variable</em>'.
-   * @see com.euclideanspace.aldor.editor.LocalVariable
-   * @generated
-   */
-  EClass getLocalVariable();
-
-  /**
-   * Returns the meta object for the attribute '{@link com.euclideanspace.aldor.editor.LocalVariable#getVar <em>Var</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Var</em>'.
-   * @see com.euclideanspace.aldor.editor.LocalVariable#getVar()
-   * @see #getLocalVariable()
-   * @generated
-   */
-  EAttribute getLocalVariable_Var();
-
-  /**
-   * Returns the meta object for class '{@link com.euclideanspace.aldor.editor.TypeExpression <em>Type Expression</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Type Expression</em>'.
-   * @see com.euclideanspace.aldor.editor.TypeExpression
-   * @generated
-   */
-  EClass getTypeExpression();
-
-  /**
-   * Returns the meta object for the containment reference '{@link com.euclideanspace.aldor.editor.TypeExpression#getT2 <em>T2</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>T2</em>'.
-   * @see com.euclideanspace.aldor.editor.TypeExpression#getT2()
-   * @see #getTypeExpression()
-   * @generated
-   */
-  EReference getTypeExpression_T2();
-
-  /**
-   * Returns the meta object for the containment reference '{@link com.euclideanspace.aldor.editor.TypeExpression#getT3 <em>T3</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>T3</em>'.
-   * @see com.euclideanspace.aldor.editor.TypeExpression#getT3()
-   * @see #getTypeExpression()
-   * @generated
-   */
-  EReference getTypeExpression_T3();
-
-  /**
-   * Returns the meta object for the containment reference '{@link com.euclideanspace.aldor.editor.TypeExpression#getT92 <em>T92</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>T92</em>'.
-   * @see com.euclideanspace.aldor.editor.TypeExpression#getT92()
-   * @see #getTypeExpression()
-   * @generated
-   */
-  EReference getTypeExpression_T92();
-
-  /**
-   * Returns the meta object for the containment reference '{@link com.euclideanspace.aldor.editor.TypeExpression#getT93 <em>T93</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>T93</em>'.
-   * @see com.euclideanspace.aldor.editor.TypeExpression#getT93()
-   * @see #getTypeExpression()
-   * @generated
-   */
-  EReference getTypeExpression_T93();
-
-  /**
-   * Returns the meta object for class '{@link com.euclideanspace.aldor.editor.TypeParameterList <em>Type Parameter List</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Type Parameter List</em>'.
-   * @see com.euclideanspace.aldor.editor.TypeParameterList
-   * @generated
-   */
-  EClass getTypeParameterList();
-
-  /**
-   * Returns the meta object for the attribute '{@link com.euclideanspace.aldor.editor.TypeParameterList#getTyname <em>Tyname</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Tyname</em>'.
-   * @see com.euclideanspace.aldor.editor.TypeParameterList#getTyname()
-   * @see #getTypeParameterList()
-   * @generated
-   */
-  EAttribute getTypeParameterList_Tyname();
-
-  /**
-   * Returns the meta object for the attribute '{@link com.euclideanspace.aldor.editor.TypeParameterList#getPar <em>Par</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Par</em>'.
-   * @see com.euclideanspace.aldor.editor.TypeParameterList#getPar()
-   * @see #getTypeParameterList()
-   * @generated
-   */
-  EAttribute getTypeParameterList_Par();
-
-  /**
-   * Returns the meta object for the containment reference '{@link com.euclideanspace.aldor.editor.TypeParameterList#getPar21 <em>Par21</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Par21</em>'.
-   * @see com.euclideanspace.aldor.editor.TypeParameterList#getPar21()
-   * @see #getTypeParameterList()
-   * @generated
-   */
-  EReference getTypeParameterList_Par21();
-
-  /**
-   * Returns the meta object for the attribute list '{@link com.euclideanspace.aldor.editor.TypeParameterList#getPar2 <em>Par2</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute list '<em>Par2</em>'.
-   * @see com.euclideanspace.aldor.editor.TypeParameterList#getPar2()
-   * @see #getTypeParameterList()
-   * @generated
-   */
-  EAttribute getTypeParameterList_Par2();
-
-  /**
-   * Returns the meta object for the containment reference list '{@link com.euclideanspace.aldor.editor.TypeParameterList#getPar22 <em>Par22</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Par22</em>'.
-   * @see com.euclideanspace.aldor.editor.TypeParameterList#getPar22()
-   * @see #getTypeParameterList()
-   * @generated
-   */
-  EReference getTypeParameterList_Par22();
-
-  /**
-   * Returns the meta object for class '{@link com.euclideanspace.aldor.editor.TypeArguments <em>Type Arguments</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Type Arguments</em>'.
-   * @see com.euclideanspace.aldor.editor.TypeArguments
-   * @generated
-   */
-  EClass getTypeArguments();
-
-  /**
-   * Returns the meta object for the containment reference '{@link com.euclideanspace.aldor.editor.TypeArguments#getT <em>T</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>T</em>'.
-   * @see com.euclideanspace.aldor.editor.TypeArguments#getT()
-   * @see #getTypeArguments()
-   * @generated
-   */
-  EReference getTypeArguments_T();
-
-  /**
-   * Returns the meta object for the attribute '{@link com.euclideanspace.aldor.editor.TypeArguments#getT2 <em>T2</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>T2</em>'.
-   * @see com.euclideanspace.aldor.editor.TypeArguments#getT2()
-   * @see #getTypeArguments()
-   * @generated
-   */
-  EAttribute getTypeArguments_T2();
-
-  /**
-   * Returns the meta object for the attribute '{@link com.euclideanspace.aldor.editor.TypeArguments#getT3 <em>T3</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>T3</em>'.
-   * @see com.euclideanspace.aldor.editor.TypeArguments#getT3()
-   * @see #getTypeArguments()
-   * @generated
-   */
-  EAttribute getTypeArguments_T3();
-
-  /**
-   * Returns the meta object for the attribute '{@link com.euclideanspace.aldor.editor.TypeArguments#isB1 <em>B1</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>B1</em>'.
-   * @see com.euclideanspace.aldor.editor.TypeArguments#isB1()
-   * @see #getTypeArguments()
-   * @generated
-   */
-  EAttribute getTypeArguments_B1();
-
-  /**
-   * Returns the meta object for the containment reference '{@link com.euclideanspace.aldor.editor.TypeArguments#getT4 <em>T4</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>T4</em>'.
-   * @see com.euclideanspace.aldor.editor.TypeArguments#getT4()
-   * @see #getTypeArguments()
-   * @generated
-   */
-  EReference getTypeArguments_T4();
-
-  /**
-   * Returns the meta object for the containment reference list '{@link com.euclideanspace.aldor.editor.TypeArguments#getT16 <em>T16</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>T16</em>'.
-   * @see com.euclideanspace.aldor.editor.TypeArguments#getT16()
-   * @see #getTypeArguments()
-   * @generated
-   */
-  EReference getTypeArguments_T16();
-
-  /**
-   * Returns the meta object for the attribute '{@link com.euclideanspace.aldor.editor.TypeArguments#getT5 <em>T5</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>T5</em>'.
-   * @see com.euclideanspace.aldor.editor.TypeArguments#getT5()
-   * @see #getTypeArguments()
-   * @generated
-   */
-  EAttribute getTypeArguments_T5();
-
-  /**
-   * Returns the meta object for the containment reference '{@link com.euclideanspace.aldor.editor.TypeArguments#getT6 <em>T6</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>T6</em>'.
-   * @see com.euclideanspace.aldor.editor.TypeArguments#getT6()
-   * @see #getTypeArguments()
-   * @generated
-   */
-  EReference getTypeArguments_T6();
-
-  /**
-   * Returns the meta object for the containment reference list '{@link com.euclideanspace.aldor.editor.TypeArguments#getT22 <em>T22</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>T22</em>'.
-   * @see com.euclideanspace.aldor.editor.TypeArguments#getT22()
-   * @see #getTypeArguments()
-   * @generated
-   */
-  EReference getTypeArguments_T22();
-
-  /**
-   * Returns the meta object for the containment reference list '{@link com.euclideanspace.aldor.editor.TypeArguments#getT21 <em>T21</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>T21</em>'.
-   * @see com.euclideanspace.aldor.editor.TypeArguments#getT21()
-   * @see #getTypeArguments()
-   * @generated
-   */
-  EReference getTypeArguments_T21();
-
-  /**
-   * Returns the meta object for the containment reference list '{@link com.euclideanspace.aldor.editor.TypeArguments#getT23 <em>T23</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>T23</em>'.
-   * @see com.euclideanspace.aldor.editor.TypeArguments#getT23()
-   * @see #getTypeArguments()
-   * @generated
-   */
-  EReference getTypeArguments_T23();
-
-  /**
-   * Returns the meta object for the attribute '{@link com.euclideanspace.aldor.editor.TypeArguments#getT9 <em>T9</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>T9</em>'.
-   * @see com.euclideanspace.aldor.editor.TypeArguments#getT9()
-   * @see #getTypeArguments()
-   * @generated
-   */
-  EAttribute getTypeArguments_T9();
-
-  /**
-   * Returns the meta object for the containment reference '{@link com.euclideanspace.aldor.editor.TypeArguments#getT10 <em>T10</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>T10</em>'.
-   * @see com.euclideanspace.aldor.editor.TypeArguments#getT10()
-   * @see #getTypeArguments()
-   * @generated
-   */
-  EReference getTypeArguments_T10();
-
-  /**
-   * Returns the meta object for the containment reference list '{@link com.euclideanspace.aldor.editor.TypeArguments#getT25 <em>T25</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>T25</em>'.
-   * @see com.euclideanspace.aldor.editor.TypeArguments#getT25()
-   * @see #getTypeArguments()
-   * @generated
-   */
-  EReference getTypeArguments_T25();
-
-  /**
-   * Returns the meta object for the containment reference list '{@link com.euclideanspace.aldor.editor.TypeArguments#getT24 <em>T24</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>T24</em>'.
-   * @see com.euclideanspace.aldor.editor.TypeArguments#getT24()
-   * @see #getTypeArguments()
-   * @generated
-   */
-  EReference getTypeArguments_T24();
-
-  /**
-   * Returns the meta object for the containment reference list '{@link com.euclideanspace.aldor.editor.TypeArguments#getT26 <em>T26</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>T26</em>'.
-   * @see com.euclideanspace.aldor.editor.TypeArguments#getT26()
-   * @see #getTypeArguments()
-   * @generated
-   */
-  EReference getTypeArguments_T26();
-
-  /**
-   * Returns the meta object for the attribute '{@link com.euclideanspace.aldor.editor.TypeArguments#getT11 <em>T11</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>T11</em>'.
-   * @see com.euclideanspace.aldor.editor.TypeArguments#getT11()
-   * @see #getTypeArguments()
-   * @generated
-   */
-  EAttribute getTypeArguments_T11();
-
-  /**
-   * Returns the meta object for the containment reference '{@link com.euclideanspace.aldor.editor.TypeArguments#getT12 <em>T12</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>T12</em>'.
-   * @see com.euclideanspace.aldor.editor.TypeArguments#getT12()
-   * @see #getTypeArguments()
-   * @generated
-   */
-  EReference getTypeArguments_T12();
-
-  /**
-   * Returns the meta object for the containment reference list '{@link com.euclideanspace.aldor.editor.TypeArguments#getT13 <em>T13</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>T13</em>'.
-   * @see com.euclideanspace.aldor.editor.TypeArguments#getT13()
-   * @see #getTypeArguments()
-   * @generated
-   */
-  EReference getTypeArguments_T13();
-
-  /**
-   * Returns the meta object for the containment reference '{@link com.euclideanspace.aldor.editor.TypeArguments#getT15 <em>T15</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>T15</em>'.
-   * @see com.euclideanspace.aldor.editor.TypeArguments#getT15()
-   * @see #getTypeArguments()
-   * @generated
-   */
-  EReference getTypeArguments_T15();
-
-  /**
-   * Returns the meta object for class '{@link com.euclideanspace.aldor.editor.TypeResult <em>Type Result</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Type Result</em>'.
-   * @see com.euclideanspace.aldor.editor.TypeResult
-   * @generated
-   */
-  EClass getTypeResult();
-
-  /**
-   * Returns the meta object for the containment reference '{@link com.euclideanspace.aldor.editor.TypeResult#getT <em>T</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>T</em>'.
-   * @see com.euclideanspace.aldor.editor.TypeResult#getT()
-   * @see #getTypeResult()
-   * @generated
-   */
-  EReference getTypeResult_T();
-
-  /**
-   * Returns the meta object for the attribute '{@link com.euclideanspace.aldor.editor.TypeResult#getT2 <em>T2</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>T2</em>'.
-   * @see com.euclideanspace.aldor.editor.TypeResult#getT2()
-   * @see #getTypeResult()
-   * @generated
-   */
-  EAttribute getTypeResult_T2();
-
-  /**
-   * Returns the meta object for the attribute '{@link com.euclideanspace.aldor.editor.TypeResult#getTyname <em>Tyname</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Tyname</em>'.
-   * @see com.euclideanspace.aldor.editor.TypeResult#getTyname()
-   * @see #getTypeResult()
-   * @generated
-   */
-  EAttribute getTypeResult_Tyname();
-
-  /**
-   * Returns the meta object for the containment reference '{@link com.euclideanspace.aldor.editor.TypeResult#getT7 <em>T7</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>T7</em>'.
-   * @see com.euclideanspace.aldor.editor.TypeResult#getT7()
-   * @see #getTypeResult()
-   * @generated
-   */
-  EReference getTypeResult_T7();
-
-  /**
-   * Returns the meta object for the containment reference list '{@link com.euclideanspace.aldor.editor.TypeResult#getT8 <em>T8</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>T8</em>'.
-   * @see com.euclideanspace.aldor.editor.TypeResult#getT8()
-   * @see #getTypeResult()
-   * @generated
-   */
-  EReference getTypeResult_T8();
-
-  /**
-   * Returns the meta object for the containment reference list '{@link com.euclideanspace.aldor.editor.TypeResult#getT21 <em>T21</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>T21</em>'.
-   * @see com.euclideanspace.aldor.editor.TypeResult#getT21()
-   * @see #getTypeResult()
-   * @generated
-   */
-  EReference getTypeResult_T21();
-
-  /**
-   * Returns the meta object for the containment reference list '{@link com.euclideanspace.aldor.editor.TypeResult#getT23 <em>T23</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>T23</em>'.
-   * @see com.euclideanspace.aldor.editor.TypeResult#getT23()
-   * @see #getTypeResult()
-   * @generated
-   */
-  EReference getTypeResult_T23();
-
-  /**
-   * Returns the meta object for the containment reference '{@link com.euclideanspace.aldor.editor.TypeResult#getT10 <em>T10</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>T10</em>'.
-   * @see com.euclideanspace.aldor.editor.TypeResult#getT10()
-   * @see #getTypeResult()
-   * @generated
-   */
-  EReference getTypeResult_T10();
-
-  /**
-   * Returns the meta object for the containment reference list '{@link com.euclideanspace.aldor.editor.TypeResult#getT11 <em>T11</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>T11</em>'.
-   * @see com.euclideanspace.aldor.editor.TypeResult#getT11()
-   * @see #getTypeResult()
-   * @generated
-   */
-  EReference getTypeResult_T11();
-
-  /**
-   * Returns the meta object for the containment reference list '{@link com.euclideanspace.aldor.editor.TypeResult#getT24 <em>T24</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>T24</em>'.
-   * @see com.euclideanspace.aldor.editor.TypeResult#getT24()
-   * @see #getTypeResult()
-   * @generated
-   */
-  EReference getTypeResult_T24();
-
-  /**
-   * Returns the meta object for the containment reference list '{@link com.euclideanspace.aldor.editor.TypeResult#getT26 <em>T26</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>T26</em>'.
-   * @see com.euclideanspace.aldor.editor.TypeResult#getT26()
-   * @see #getTypeResult()
-   * @generated
-   */
-  EReference getTypeResult_T26();
-
-  /**
-   * Returns the meta object for the containment reference '{@link com.euclideanspace.aldor.editor.TypeResult#getT12 <em>T12</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>T12</em>'.
-   * @see com.euclideanspace.aldor.editor.TypeResult#getT12()
-   * @see #getTypeResult()
-   * @generated
-   */
-  EReference getTypeResult_T12();
-
-  /**
-   * Returns the meta object for the containment reference list '{@link com.euclideanspace.aldor.editor.TypeResult#getT13 <em>T13</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>T13</em>'.
-   * @see com.euclideanspace.aldor.editor.TypeResult#getT13()
-   * @see #getTypeResult()
-   * @generated
-   */
-  EReference getTypeResult_T13();
-
-  /**
-   * Returns the meta object for the containment reference '{@link com.euclideanspace.aldor.editor.TypeResult#getT15 <em>T15</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>T15</em>'.
-   * @see com.euclideanspace.aldor.editor.TypeResult#getT15()
-   * @see #getTypeResult()
-   * @generated
-   */
-  EReference getTypeResult_T15();
-
-  /**
-   * Returns the meta object for class '{@link com.euclideanspace.aldor.editor.TypePrimaryExpression <em>Type Primary Expression</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Type Primary Expression</em>'.
-   * @see com.euclideanspace.aldor.editor.TypePrimaryExpression
-   * @generated
-   */
-  EClass getTypePrimaryExpression();
-
-  /**
-   * Returns the meta object for the attribute '{@link com.euclideanspace.aldor.editor.TypePrimaryExpression#getT32 <em>T32</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>T32</em>'.
-   * @see com.euclideanspace.aldor.editor.TypePrimaryExpression#getT32()
-   * @see #getTypePrimaryExpression()
-   * @generated
-   */
-  EAttribute getTypePrimaryExpression_T32();
-
-  /**
-   * Returns the meta object for the attribute '{@link com.euclideanspace.aldor.editor.TypePrimaryExpression#getTyname <em>Tyname</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Tyname</em>'.
-   * @see com.euclideanspace.aldor.editor.TypePrimaryExpression#getTyname()
-   * @see #getTypePrimaryExpression()
-   * @generated
-   */
-  EAttribute getTypePrimaryExpression_Tyname();
-
-  /**
-   * Returns the meta object for the containment reference '{@link com.euclideanspace.aldor.editor.TypePrimaryExpression#getT5 <em>T5</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>T5</em>'.
-   * @see com.euclideanspace.aldor.editor.TypePrimaryExpression#getT5()
-   * @see #getTypePrimaryExpression()
-   * @generated
-   */
-  EReference getTypePrimaryExpression_T5();
-
-  /**
-   * Returns the meta object for the containment reference '{@link com.euclideanspace.aldor.editor.TypePrimaryExpression#getT7 <em>T7</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>T7</em>'.
-   * @see com.euclideanspace.aldor.editor.TypePrimaryExpression#getT7()
-   * @see #getTypePrimaryExpression()
-   * @generated
-   */
-  EReference getTypePrimaryExpression_T7();
-
-  /**
-   * Returns the meta object for the containment reference list '{@link com.euclideanspace.aldor.editor.TypePrimaryExpression#getT8 <em>T8</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>T8</em>'.
-   * @see com.euclideanspace.aldor.editor.TypePrimaryExpression#getT8()
-   * @see #getTypePrimaryExpression()
-   * @generated
-   */
-  EReference getTypePrimaryExpression_T8();
-
-  /**
-   * Returns the meta object for the containment reference list '{@link com.euclideanspace.aldor.editor.TypePrimaryExpression#getT21 <em>T21</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>T21</em>'.
-   * @see com.euclideanspace.aldor.editor.TypePrimaryExpression#getT21()
-   * @see #getTypePrimaryExpression()
-   * @generated
-   */
-  EReference getTypePrimaryExpression_T21();
-
-  /**
-   * Returns the meta object for the containment reference list '{@link com.euclideanspace.aldor.editor.TypePrimaryExpression#getT23 <em>T23</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>T23</em>'.
-   * @see com.euclideanspace.aldor.editor.TypePrimaryExpression#getT23()
-   * @see #getTypePrimaryExpression()
-   * @generated
-   */
-  EReference getTypePrimaryExpression_T23();
-
-  /**
-   * Returns the meta object for the containment reference '{@link com.euclideanspace.aldor.editor.TypePrimaryExpression#getT10 <em>T10</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>T10</em>'.
-   * @see com.euclideanspace.aldor.editor.TypePrimaryExpression#getT10()
-   * @see #getTypePrimaryExpression()
-   * @generated
-   */
-  EReference getTypePrimaryExpression_T10();
-
-  /**
-   * Returns the meta object for the containment reference list '{@link com.euclideanspace.aldor.editor.TypePrimaryExpression#getT11 <em>T11</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>T11</em>'.
-   * @see com.euclideanspace.aldor.editor.TypePrimaryExpression#getT11()
-   * @see #getTypePrimaryExpression()
-   * @generated
-   */
-  EReference getTypePrimaryExpression_T11();
-
-  /**
-   * Returns the meta object for the containment reference list '{@link com.euclideanspace.aldor.editor.TypePrimaryExpression#getT24 <em>T24</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>T24</em>'.
-   * @see com.euclideanspace.aldor.editor.TypePrimaryExpression#getT24()
-   * @see #getTypePrimaryExpression()
-   * @generated
-   */
-  EReference getTypePrimaryExpression_T24();
-
-  /**
-   * Returns the meta object for the containment reference list '{@link com.euclideanspace.aldor.editor.TypePrimaryExpression#getT26 <em>T26</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>T26</em>'.
-   * @see com.euclideanspace.aldor.editor.TypePrimaryExpression#getT26()
-   * @see #getTypePrimaryExpression()
-   * @generated
-   */
-  EReference getTypePrimaryExpression_T26();
-
-  /**
-   * Returns the meta object for the containment reference '{@link com.euclideanspace.aldor.editor.TypePrimaryExpression#getT13 <em>T13</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>T13</em>'.
-   * @see com.euclideanspace.aldor.editor.TypePrimaryExpression#getT13()
-   * @see #getTypePrimaryExpression()
-   * @generated
-   */
-  EReference getTypePrimaryExpression_T13();
-
-  /**
-   * Returns the meta object for the containment reference list '{@link com.euclideanspace.aldor.editor.TypePrimaryExpression#getT14 <em>T14</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>T14</em>'.
-   * @see com.euclideanspace.aldor.editor.TypePrimaryExpression#getT14()
-   * @see #getTypePrimaryExpression()
-   * @generated
-   */
-  EReference getTypePrimaryExpression_T14();
-
-  /**
-   * Returns the meta object for class '{@link com.euclideanspace.aldor.editor.TypeNameOrFunctionCall <em>Type Name Or Function Call</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Type Name Or Function Call</em>'.
-   * @see com.euclideanspace.aldor.editor.TypeNameOrFunctionCall
-   * @generated
-   */
-  EClass getTypeNameOrFunctionCall();
-
-  /**
-   * Returns the meta object for the attribute '{@link com.euclideanspace.aldor.editor.TypeNameOrFunctionCall#getTfnname <em>Tfnname</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Tfnname</em>'.
-   * @see com.euclideanspace.aldor.editor.TypeNameOrFunctionCall#getTfnname()
-   * @see #getTypeNameOrFunctionCall()
-   * @generated
-   */
-  EAttribute getTypeNameOrFunctionCall_Tfnname();
-
-  /**
-   * Returns the meta object for the containment reference '{@link com.euclideanspace.aldor.editor.TypeNameOrFunctionCall#getT4 <em>T4</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>T4</em>'.
-   * @see com.euclideanspace.aldor.editor.TypeNameOrFunctionCall#getT4()
-   * @see #getTypeNameOrFunctionCall()
-   * @generated
-   */
-  EReference getTypeNameOrFunctionCall_T4();
-
-  /**
-   * Returns the meta object for the containment reference list '{@link com.euclideanspace.aldor.editor.TypeNameOrFunctionCall#getT25 <em>T25</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>T25</em>'.
-   * @see com.euclideanspace.aldor.editor.TypeNameOrFunctionCall#getT25()
-   * @see #getTypeNameOrFunctionCall()
-   * @generated
-   */
-  EReference getTypeNameOrFunctionCall_T25();
-
-  /**
-   * Returns the meta object for the containment reference list '{@link com.euclideanspace.aldor.editor.TypeNameOrFunctionCall#getT44 <em>T44</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>T44</em>'.
-   * @see com.euclideanspace.aldor.editor.TypeNameOrFunctionCall#getT44()
-   * @see #getTypeNameOrFunctionCall()
-   * @generated
-   */
-  EReference getTypeNameOrFunctionCall_T44();
-
-  /**
-   * Returns the meta object for the containment reference list '{@link com.euclideanspace.aldor.editor.TypeNameOrFunctionCall#getT45 <em>T45</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>T45</em>'.
-   * @see com.euclideanspace.aldor.editor.TypeNameOrFunctionCall#getT45()
-   * @see #getTypeNameOrFunctionCall()
-   * @generated
-   */
-  EReference getTypeNameOrFunctionCall_T45();
-
-  /**
-   * Returns the meta object for the containment reference '{@link com.euclideanspace.aldor.editor.TypeNameOrFunctionCall#getT6 <em>T6</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>T6</em>'.
-   * @see com.euclideanspace.aldor.editor.TypeNameOrFunctionCall#getT6()
-   * @see #getTypeNameOrFunctionCall()
-   * @generated
-   */
-  EReference getTypeNameOrFunctionCall_T6();
-
-  /**
-   * Returns the meta object for the containment reference '{@link com.euclideanspace.aldor.editor.TypeNameOrFunctionCall#getW <em>W</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>W</em>'.
-   * @see com.euclideanspace.aldor.editor.TypeNameOrFunctionCall#getW()
-   * @see #getTypeNameOrFunctionCall()
-   * @generated
-   */
-  EReference getTypeNameOrFunctionCall_W();
-
-  /**
-   * Returns the meta object for class '{@link com.euclideanspace.aldor.editor.TypeNameOrFunctionCall2 <em>Type Name Or Function Call2</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Type Name Or Function Call2</em>'.
-   * @see com.euclideanspace.aldor.editor.TypeNameOrFunctionCall2
-   * @generated
-   */
-  EClass getTypeNameOrFunctionCall2();
-
-  /**
-   * Returns the meta object for the attribute '{@link com.euclideanspace.aldor.editor.TypeNameOrFunctionCall2#getTfnname <em>Tfnname</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Tfnname</em>'.
-   * @see com.euclideanspace.aldor.editor.TypeNameOrFunctionCall2#getTfnname()
-   * @see #getTypeNameOrFunctionCall2()
-   * @generated
-   */
-  EAttribute getTypeNameOrFunctionCall2_Tfnname();
-
-  /**
-   * Returns the meta object for the containment reference '{@link com.euclideanspace.aldor.editor.TypeNameOrFunctionCall2#getT4 <em>T4</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>T4</em>'.
-   * @see com.euclideanspace.aldor.editor.TypeNameOrFunctionCall2#getT4()
-   * @see #getTypeNameOrFunctionCall2()
-   * @generated
-   */
-  EReference getTypeNameOrFunctionCall2_T4();
-
-  /**
-   * Returns the meta object for the containment reference list '{@link com.euclideanspace.aldor.editor.TypeNameOrFunctionCall2#getT25 <em>T25</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>T25</em>'.
-   * @see com.euclideanspace.aldor.editor.TypeNameOrFunctionCall2#getT25()
-   * @see #getTypeNameOrFunctionCall2()
-   * @generated
-   */
-  EReference getTypeNameOrFunctionCall2_T25();
-
-  /**
-   * Returns the meta object for the containment reference list '{@link com.euclideanspace.aldor.editor.TypeNameOrFunctionCall2#getT44 <em>T44</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>T44</em>'.
-   * @see com.euclideanspace.aldor.editor.TypeNameOrFunctionCall2#getT44()
-   * @see #getTypeNameOrFunctionCall2()
-   * @generated
-   */
-  EReference getTypeNameOrFunctionCall2_T44();
-
-  /**
-   * Returns the meta object for the containment reference list '{@link com.euclideanspace.aldor.editor.TypeNameOrFunctionCall2#getT45 <em>T45</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>T45</em>'.
-   * @see com.euclideanspace.aldor.editor.TypeNameOrFunctionCall2#getT45()
-   * @see #getTypeNameOrFunctionCall2()
-   * @generated
-   */
-  EReference getTypeNameOrFunctionCall2_T45();
-
-  /**
-   * Returns the meta object for the containment reference '{@link com.euclideanspace.aldor.editor.TypeNameOrFunctionCall2#getT6 <em>T6</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>T6</em>'.
-   * @see com.euclideanspace.aldor.editor.TypeNameOrFunctionCall2#getT6()
-   * @see #getTypeNameOrFunctionCall2()
-   * @generated
-   */
-  EReference getTypeNameOrFunctionCall2_T6();
-
-  /**
-   * Returns the meta object for class '{@link com.euclideanspace.aldor.editor.TupleDefinition <em>Tuple Definition</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Tuple Definition</em>'.
-   * @see com.euclideanspace.aldor.editor.TupleDefinition
-   * @generated
-   */
-  EClass getTupleDefinition();
-
-  /**
-   * Returns the meta object for the containment reference '{@link com.euclideanspace.aldor.editor.TupleDefinition#getT4 <em>T4</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>T4</em>'.
-   * @see com.euclideanspace.aldor.editor.TupleDefinition#getT4()
-   * @see #getTupleDefinition()
-   * @generated
-   */
-  EReference getTupleDefinition_T4();
-
-  /**
-   * Returns the meta object for the containment reference list '{@link com.euclideanspace.aldor.editor.TupleDefinition#getT25 <em>T25</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>T25</em>'.
-   * @see com.euclideanspace.aldor.editor.TupleDefinition#getT25()
-   * @see #getTupleDefinition()
-   * @generated
-   */
-  EReference getTupleDefinition_T25();
-
-  /**
-   * Returns the meta object for class '{@link com.euclideanspace.aldor.editor.TypeLiteral <em>Type Literal</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Type Literal</em>'.
-   * @see com.euclideanspace.aldor.editor.TypeLiteral
-   * @generated
-   */
-  EClass getTypeLiteral();
-
-  /**
-   * Returns the meta object for the attribute '{@link com.euclideanspace.aldor.editor.TypeLiteral#getT1 <em>T1</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>T1</em>'.
-   * @see com.euclideanspace.aldor.editor.TypeLiteral#getT1()
-   * @see #getTypeLiteral()
-   * @generated
-   */
-  EAttribute getTypeLiteral_T1();
-
-  /**
-   * Returns the meta object for the attribute '{@link com.euclideanspace.aldor.editor.TypeLiteral#getT22 <em>T22</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>T22</em>'.
-   * @see com.euclideanspace.aldor.editor.TypeLiteral#getT22()
-   * @see #getTypeLiteral()
-   * @generated
-   */
-  EAttribute getTypeLiteral_T22();
-
-  /**
-   * Returns the meta object for the containment reference '{@link com.euclideanspace.aldor.editor.TypeLiteral#getT34 <em>T34</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>T34</em>'.
-   * @see com.euclideanspace.aldor.editor.TypeLiteral#getT34()
-   * @see #getTypeLiteral()
-   * @generated
-   */
-  EReference getTypeLiteral_T34();
-
-  /**
-   * Returns the meta object for the containment reference '{@link com.euclideanspace.aldor.editor.TypeLiteral#getT35 <em>T35</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>T35</em>'.
-   * @see com.euclideanspace.aldor.editor.TypeLiteral#getT35()
-   * @see #getTypeLiteral()
-   * @generated
-   */
-  EReference getTypeLiteral_T35();
-
-  /**
-   * Returns the meta object for class '{@link com.euclideanspace.aldor.editor.Statement <em>Statement</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Statement</em>'.
-   * @see com.euclideanspace.aldor.editor.Statement
-   * @generated
-   */
-  EClass getStatement();
-
-  /**
-   * Returns the meta object for the containment reference '{@link com.euclideanspace.aldor.editor.Statement#getS1 <em>S1</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>S1</em>'.
-   * @see com.euclideanspace.aldor.editor.Statement#getS1()
-   * @see #getStatement()
-   * @generated
-   */
-  EReference getStatement_S1();
-
-  /**
-   * Returns the meta object for the containment reference '{@link com.euclideanspace.aldor.editor.Statement#getS3 <em>S3</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>S3</em>'.
-   * @see com.euclideanspace.aldor.editor.Statement#getS3()
-   * @see #getStatement()
-   * @generated
-   */
-  EReference getStatement_S3();
-
-  /**
-   * Returns the meta object for the containment reference '{@link com.euclideanspace.aldor.editor.Statement#getS4 <em>S4</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>S4</em>'.
-   * @see com.euclideanspace.aldor.editor.Statement#getS4()
-   * @see #getStatement()
-   * @generated
-   */
-  EReference getStatement_S4();
-
-  /**
-   * Returns the meta object for the containment reference '{@link com.euclideanspace.aldor.editor.Statement#getS4b <em>S4b</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>S4b</em>'.
-   * @see com.euclideanspace.aldor.editor.Statement#getS4b()
-   * @see #getStatement()
-   * @generated
-   */
-  EReference getStatement_S4b();
-
-  /**
-   * Returns the meta object for the containment reference '{@link com.euclideanspace.aldor.editor.Statement#getS5 <em>S5</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>S5</em>'.
-   * @see com.euclideanspace.aldor.editor.Statement#getS5()
-   * @see #getStatement()
-   * @generated
-   */
-  EReference getStatement_S5();
-
-  /**
-   * Returns the meta object for the containment reference '{@link com.euclideanspace.aldor.editor.Statement#getS6 <em>S6</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>S6</em>'.
-   * @see com.euclideanspace.aldor.editor.Statement#getS6()
-   * @see #getStatement()
-   * @generated
-   */
-  EReference getStatement_S6();
-
-  /**
-   * Returns the meta object for the containment reference '{@link com.euclideanspace.aldor.editor.Statement#getS7 <em>S7</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>S7</em>'.
-   * @see com.euclideanspace.aldor.editor.Statement#getS7()
-   * @see #getStatement()
-   * @generated
-   */
-  EReference getStatement_S7();
-
-  /**
-   * Returns the meta object for the containment reference '{@link com.euclideanspace.aldor.editor.Statement#getS8 <em>S8</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>S8</em>'.
-   * @see com.euclideanspace.aldor.editor.Statement#getS8()
-   * @see #getStatement()
-   * @generated
-   */
-  EReference getStatement_S8();
-
-  /**
-   * Returns the meta object for the containment reference '{@link com.euclideanspace.aldor.editor.Statement#getS12 <em>S12</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>S12</em>'.
-   * @see com.euclideanspace.aldor.editor.Statement#getS12()
-   * @see #getStatement()
-   * @generated
-   */
-  EReference getStatement_S12();
-
-  /**
-   * Returns the meta object for the containment reference '{@link com.euclideanspace.aldor.editor.Statement#getS9 <em>S9</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>S9</em>'.
-   * @see com.euclideanspace.aldor.editor.Statement#getS9()
-   * @see #getStatement()
-   * @generated
-   */
-  EReference getStatement_S9();
-
-  /**
-   * Returns the meta object for the containment reference '{@link com.euclideanspace.aldor.editor.Statement#getS10 <em>S10</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>S10</em>'.
-   * @see com.euclideanspace.aldor.editor.Statement#getS10()
-   * @see #getStatement()
-   * @generated
-   */
-  EReference getStatement_S10();
-
-  /**
-   * Returns the meta object for the containment reference '{@link com.euclideanspace.aldor.editor.Statement#getE <em>E</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>E</em>'.
-   * @see com.euclideanspace.aldor.editor.Statement#getE()
-   * @see #getStatement()
-   * @generated
-   */
-  EReference getStatement_E();
-
-  /**
-   * Returns the meta object for class '{@link com.euclideanspace.aldor.editor.Block <em>Block</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Block</em>'.
-   * @see com.euclideanspace.aldor.editor.Block
-   * @generated
-   */
-  EClass getBlock();
-
-  /**
-   * Returns the meta object for the attribute '{@link com.euclideanspace.aldor.editor.Block#getStname <em>Stname</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Stname</em>'.
-   * @see com.euclideanspace.aldor.editor.Block#getStname()
-   * @see #getBlock()
-   * @generated
-   */
-  EAttribute getBlock_Stname();
-
-  /**
-   * Returns the meta object for the containment reference list '{@link com.euclideanspace.aldor.editor.Block#getStatemBl <em>Statem Bl</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Statem Bl</em>'.
-   * @see com.euclideanspace.aldor.editor.Block#getStatemBl()
-   * @see #getBlock()
-   * @generated
-   */
-  EReference getBlock_StatemBl();
-
-  /**
-   * Returns the meta object for class '{@link com.euclideanspace.aldor.editor.StatementExpression <em>Statement Expression</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Statement Expression</em>'.
-   * @see com.euclideanspace.aldor.editor.StatementExpression
-   * @generated
-   */
-  EClass getStatementExpression();
-
-  /**
-   * Returns the meta object for the containment reference '{@link com.euclideanspace.aldor.editor.StatementExpression#getT <em>T</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>T</em>'.
-   * @see com.euclideanspace.aldor.editor.StatementExpression#getT()
-   * @see #getStatementExpression()
-   * @generated
-   */
-  EReference getStatementExpression_T();
-
-  /**
-   * Returns the meta object for the containment reference '{@link com.euclideanspace.aldor.editor.StatementExpression#getT5 <em>T5</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>T5</em>'.
-   * @see com.euclideanspace.aldor.editor.StatementExpression#getT5()
-   * @see #getStatementExpression()
-   * @generated
-   */
-  EReference getStatementExpression_T5();
-
-  /**
-   * Returns the meta object for the containment reference '{@link com.euclideanspace.aldor.editor.StatementExpression#getT4 <em>T4</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>T4</em>'.
-   * @see com.euclideanspace.aldor.editor.StatementExpression#getT4()
-   * @see #getStatementExpression()
-   * @generated
-   */
-  EReference getStatementExpression_T4();
-
-  /**
-   * Returns the meta object for class '{@link com.euclideanspace.aldor.editor.ForStatement <em>For Statement</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>For Statement</em>'.
-   * @see com.euclideanspace.aldor.editor.ForStatement
-   * @generated
-   */
-  EClass getForStatement();
-
-  /**
-   * Returns the meta object for the attribute '{@link com.euclideanspace.aldor.editor.ForStatement#getStname <em>Stname</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Stname</em>'.
-   * @see com.euclideanspace.aldor.editor.ForStatement#getStname()
-   * @see #getForStatement()
-   * @generated
-   */
-  EAttribute getForStatement_Stname();
-
-  /**
-   * Returns the meta object for the containment reference '{@link com.euclideanspace.aldor.editor.ForStatement#getT1 <em>T1</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>T1</em>'.
-   * @see com.euclideanspace.aldor.editor.ForStatement#getT1()
-   * @see #getForStatement()
-   * @generated
-   */
-  EReference getForStatement_T1();
-
-  /**
-   * Returns the meta object for the containment reference '{@link com.euclideanspace.aldor.editor.ForStatement#getBy1 <em>By1</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>By1</em>'.
-   * @see com.euclideanspace.aldor.editor.ForStatement#getBy1()
-   * @see #getForStatement()
-   * @generated
-   */
-  EReference getForStatement_By1();
-
-  /**
-   * Returns the meta object for the attribute list '{@link com.euclideanspace.aldor.editor.ForStatement#getStname2 <em>Stname2</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute list '<em>Stname2</em>'.
-   * @see com.euclideanspace.aldor.editor.ForStatement#getStname2()
-   * @see #getForStatement()
-   * @generated
-   */
-  EAttribute getForStatement_Stname2();
-
-  /**
-   * Returns the meta object for the containment reference list '{@link com.euclideanspace.aldor.editor.ForStatement#getT2 <em>T2</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>T2</em>'.
-   * @see com.euclideanspace.aldor.editor.ForStatement#getT2()
-   * @see #getForStatement()
-   * @generated
-   */
-  EReference getForStatement_T2();
-
-  /**
-   * Returns the meta object for the containment reference list '{@link com.euclideanspace.aldor.editor.ForStatement#getBy2 <em>By2</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>By2</em>'.
-   * @see com.euclideanspace.aldor.editor.ForStatement#getBy2()
-   * @see #getForStatement()
-   * @generated
-   */
-  EReference getForStatement_By2();
-
-  /**
-   * Returns the meta object for the containment reference '{@link com.euclideanspace.aldor.editor.ForStatement#getS1 <em>S1</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>S1</em>'.
-   * @see com.euclideanspace.aldor.editor.ForStatement#getS1()
-   * @see #getForStatement()
-   * @generated
-   */
-  EReference getForStatement_S1();
-
-  /**
-   * Returns the meta object for class '{@link com.euclideanspace.aldor.editor.WhileStatement <em>While Statement</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>While Statement</em>'.
-   * @see com.euclideanspace.aldor.editor.WhileStatement
-   * @generated
-   */
-  EClass getWhileStatement();
-
-  /**
-   * Returns the meta object for the attribute '{@link com.euclideanspace.aldor.editor.WhileStatement#getStname <em>Stname</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Stname</em>'.
-   * @see com.euclideanspace.aldor.editor.WhileStatement#getStname()
-   * @see #getWhileStatement()
-   * @generated
-   */
-  EAttribute getWhileStatement_Stname();
-
-  /**
-   * Returns the meta object for the containment reference '{@link com.euclideanspace.aldor.editor.WhileStatement#getT2 <em>T2</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>T2</em>'.
-   * @see com.euclideanspace.aldor.editor.WhileStatement#getT2()
-   * @see #getWhileStatement()
-   * @generated
-   */
-  EReference getWhileStatement_T2();
-
-  /**
-   * Returns the meta object for the containment reference '{@link com.euclideanspace.aldor.editor.WhileStatement#getS1 <em>S1</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>S1</em>'.
-   * @see com.euclideanspace.aldor.editor.WhileStatement#getS1()
-   * @see #getWhileStatement()
-   * @generated
-   */
-  EReference getWhileStatement_S1();
-
-  /**
-   * Returns the meta object for class '{@link com.euclideanspace.aldor.editor.DoStatement <em>Do Statement</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Do Statement</em>'.
-   * @see com.euclideanspace.aldor.editor.DoStatement
-   * @generated
-   */
-  EClass getDoStatement();
-
-  /**
-   * Returns the meta object for the attribute '{@link com.euclideanspace.aldor.editor.DoStatement#getStname <em>Stname</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Stname</em>'.
-   * @see com.euclideanspace.aldor.editor.DoStatement#getStname()
-   * @see #getDoStatement()
-   * @generated
-   */
-  EAttribute getDoStatement_Stname();
-
-  /**
-   * Returns the meta object for the containment reference '{@link com.euclideanspace.aldor.editor.DoStatement#getS1 <em>S1</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>S1</em>'.
-   * @see com.euclideanspace.aldor.editor.DoStatement#getS1()
-   * @see #getDoStatement()
-   * @generated
-   */
-  EReference getDoStatement_S1();
-
-  /**
-   * Returns the meta object for the containment reference '{@link com.euclideanspace.aldor.editor.DoStatement#getT2 <em>T2</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>T2</em>'.
-   * @see com.euclideanspace.aldor.editor.DoStatement#getT2()
-   * @see #getDoStatement()
-   * @generated
-   */
-  EReference getDoStatement_T2();
-
-  /**
-   * Returns the meta object for class '{@link com.euclideanspace.aldor.editor.RepeatStatement <em>Repeat Statement</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Repeat Statement</em>'.
-   * @see com.euclideanspace.aldor.editor.RepeatStatement
-   * @generated
-   */
-  EClass getRepeatStatement();
-
-  /**
-   * Returns the meta object for the attribute '{@link com.euclideanspace.aldor.editor.RepeatStatement#getStname <em>Stname</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Stname</em>'.
-   * @see com.euclideanspace.aldor.editor.RepeatStatement#getStname()
-   * @see #getRepeatStatement()
-   * @generated
-   */
-  EAttribute getRepeatStatement_Stname();
-
-  /**
-   * Returns the meta object for the containment reference '{@link com.euclideanspace.aldor.editor.RepeatStatement#getS1 <em>S1</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>S1</em>'.
-   * @see com.euclideanspace.aldor.editor.RepeatStatement#getS1()
-   * @see #getRepeatStatement()
-   * @generated
-   */
-  EReference getRepeatStatement_S1();
-
-  /**
-   * Returns the meta object for class '{@link com.euclideanspace.aldor.editor.IterateStatement <em>Iterate Statement</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Iterate Statement</em>'.
-   * @see com.euclideanspace.aldor.editor.IterateStatement
-   * @generated
-   */
-  EClass getIterateStatement();
-
-  /**
-   * Returns the meta object for the attribute '{@link com.euclideanspace.aldor.editor.IterateStatement#getStname <em>Stname</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Stname</em>'.
-   * @see com.euclideanspace.aldor.editor.IterateStatement#getStname()
-   * @see #getIterateStatement()
-   * @generated
-   */
-  EAttribute getIterateStatement_Stname();
-
-  /**
-   * Returns the meta object for class '{@link com.euclideanspace.aldor.editor.BreakStatement <em>Break Statement</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Break Statement</em>'.
-   * @see com.euclideanspace.aldor.editor.BreakStatement
-   * @generated
-   */
-  EClass getBreakStatement();
-
-  /**
-   * Returns the meta object for the attribute '{@link com.euclideanspace.aldor.editor.BreakStatement#getStname <em>Stname</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Stname</em>'.
-   * @see com.euclideanspace.aldor.editor.BreakStatement#getStname()
-   * @see #getBreakStatement()
-   * @generated
-   */
-  EAttribute getBreakStatement_Stname();
-
-  /**
-   * Returns the meta object for class '{@link com.euclideanspace.aldor.editor.ReturnStatement <em>Return Statement</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Return Statement</em>'.
-   * @see com.euclideanspace.aldor.editor.ReturnStatement
-   * @generated
-   */
-  EClass getReturnStatement();
-
-  /**
-   * Returns the meta object for the attribute '{@link com.euclideanspace.aldor.editor.ReturnStatement#getStname <em>Stname</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Stname</em>'.
-   * @see com.euclideanspace.aldor.editor.ReturnStatement#getStname()
-   * @see #getReturnStatement()
-   * @generated
-   */
-  EAttribute getReturnStatement_Stname();
-
-  /**
-   * Returns the meta object for the containment reference '{@link com.euclideanspace.aldor.editor.ReturnStatement#getT2 <em>T2</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>T2</em>'.
-   * @see com.euclideanspace.aldor.editor.ReturnStatement#getT2()
-   * @see #getReturnStatement()
-   * @generated
-   */
-  EReference getReturnStatement_T2();
-
-  /**
-   * Returns the meta object for class '{@link com.euclideanspace.aldor.editor.IfStatement <em>If Statement</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>If Statement</em>'.
-   * @see com.euclideanspace.aldor.editor.IfStatement
-   * @generated
-   */
-  EClass getIfStatement();
-
-  /**
-   * Returns the meta object for the containment reference '{@link com.euclideanspace.aldor.editor.IfStatement#getT2 <em>T2</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>T2</em>'.
-   * @see com.euclideanspace.aldor.editor.IfStatement#getT2()
-   * @see #getIfStatement()
-   * @generated
-   */
-  EReference getIfStatement_T2();
-
-  /**
-   * Returns the meta object for the containment reference '{@link com.euclideanspace.aldor.editor.IfStatement#getS1 <em>S1</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>S1</em>'.
-   * @see com.euclideanspace.aldor.editor.IfStatement#getS1()
-   * @see #getIfStatement()
-   * @generated
-   */
-  EReference getIfStatement_S1();
-
-  /**
-   * Returns the meta object for the containment reference '{@link com.euclideanspace.aldor.editor.IfStatement#getS2 <em>S2</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>S2</em>'.
-   * @see com.euclideanspace.aldor.editor.IfStatement#getS2()
-   * @see #getIfStatement()
-   * @generated
-   */
-  EReference getIfStatement_S2();
-
-  /**
-   * Returns the meta object for the attribute '{@link com.euclideanspace.aldor.editor.IfStatement#isB <em>B</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>B</em>'.
-   * @see com.euclideanspace.aldor.editor.IfStatement#isB()
-   * @see #getIfStatement()
-   * @generated
-   */
-  EAttribute getIfStatement_B();
-
-  /**
-   * Returns the meta object for the containment reference '{@link com.euclideanspace.aldor.editor.IfStatement#getS11 <em>S11</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>S11</em>'.
-   * @see com.euclideanspace.aldor.editor.IfStatement#getS11()
-   * @see #getIfStatement()
-   * @generated
-   */
-  EReference getIfStatement_S11();
-
-  /**
-   * Returns the meta object for the containment reference '{@link com.euclideanspace.aldor.editor.IfStatement#getS12 <em>S12</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>S12</em>'.
-   * @see com.euclideanspace.aldor.editor.IfStatement#getS12()
-   * @see #getIfStatement()
-   * @generated
-   */
-  EReference getIfStatement_S12();
-
-  /**
-   * Returns the meta object for class '{@link com.euclideanspace.aldor.editor.IfElseStatement <em>If Else Statement</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>If Else Statement</em>'.
-   * @see com.euclideanspace.aldor.editor.IfElseStatement
-   * @generated
-   */
-  EClass getIfElseStatement();
-
-  /**
-   * Returns the meta object for the containment reference '{@link com.euclideanspace.aldor.editor.IfElseStatement#getS2 <em>S2</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>S2</em>'.
-   * @see com.euclideanspace.aldor.editor.IfElseStatement#getS2()
-   * @see #getIfElseStatement()
-   * @generated
-   */
-  EReference getIfElseStatement_S2();
-
-  /**
-   * Returns the meta object for class '{@link com.euclideanspace.aldor.editor.Expr <em>Expr</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Expr</em>'.
-   * @see com.euclideanspace.aldor.editor.Expr
-   * @generated
-   */
-  EClass getExpr();
-
-  /**
-   * Returns the meta object for the attribute '{@link com.euclideanspace.aldor.editor.Expr#getIfname <em>Ifname</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Ifname</em>'.
-   * @see com.euclideanspace.aldor.editor.Expr#getIfname()
-   * @see #getExpr()
-   * @generated
-   */
-  EAttribute getExpr_Ifname();
-
-  /**
-   * Returns the meta object for the containment reference '{@link com.euclideanspace.aldor.editor.Expr#getIfpred <em>Ifpred</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Ifpred</em>'.
-   * @see com.euclideanspace.aldor.editor.Expr#getIfpred()
-   * @see #getExpr()
-   * @generated
-   */
-  EReference getExpr_Ifpred();
-
-  /**
-   * Returns the meta object for the containment reference '{@link com.euclideanspace.aldor.editor.Expr#getThenexp <em>Thenexp</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Thenexp</em>'.
-   * @see com.euclideanspace.aldor.editor.Expr#getThenexp()
-   * @see #getExpr()
-   * @generated
-   */
-  EReference getExpr_Thenexp();
-
-  /**
-   * Returns the meta object for the containment reference '{@link com.euclideanspace.aldor.editor.Expr#getElseexp <em>Elseexp</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Elseexp</em>'.
-   * @see com.euclideanspace.aldor.editor.Expr#getElseexp()
-   * @see #getExpr()
-   * @generated
-   */
-  EReference getExpr_Elseexp();
-
-  /**
-   * Returns the meta object for the attribute '{@link com.euclideanspace.aldor.editor.Expr#getE2 <em>E2</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>E2</em>'.
-   * @see com.euclideanspace.aldor.editor.Expr#getE2()
-   * @see #getExpr()
-   * @generated
-   */
-  EAttribute getExpr_E2();
-
-  /**
-   * Returns the meta object for the attribute '{@link com.euclideanspace.aldor.editor.Expr#getE3 <em>E3</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>E3</em>'.
-   * @see com.euclideanspace.aldor.editor.Expr#getE3()
-   * @see #getExpr()
-   * @generated
-   */
-  EAttribute getExpr_E3();
-
-  /**
-   * Returns the meta object for the attribute '{@link com.euclideanspace.aldor.editor.Expr#getE5 <em>E5</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>E5</em>'.
-   * @see com.euclideanspace.aldor.editor.Expr#getE5()
-   * @see #getExpr()
-   * @generated
-   */
-  EAttribute getExpr_E5();
-
-  /**
-   * Returns the meta object for the containment reference '{@link com.euclideanspace.aldor.editor.Expr#getE6 <em>E6</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>E6</em>'.
-   * @see com.euclideanspace.aldor.editor.Expr#getE6()
-   * @see #getExpr()
-   * @generated
-   */
-  EReference getExpr_E6();
-
-  /**
-   * Returns the meta object for the containment reference list '{@link com.euclideanspace.aldor.editor.Expr#getE22 <em>E22</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>E22</em>'.
-   * @see com.euclideanspace.aldor.editor.Expr#getE22()
-   * @see #getExpr()
-   * @generated
-   */
-  EReference getExpr_E22();
-
-  /**
-   * Returns the meta object for the containment reference list '{@link com.euclideanspace.aldor.editor.Expr#getE21 <em>E21</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>E21</em>'.
-   * @see com.euclideanspace.aldor.editor.Expr#getE21()
-   * @see #getExpr()
-   * @generated
-   */
-  EReference getExpr_E21();
-
-  /**
-   * Returns the meta object for the containment reference list '{@link com.euclideanspace.aldor.editor.Expr#getE23 <em>E23</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>E23</em>'.
-   * @see com.euclideanspace.aldor.editor.Expr#getE23()
-   * @see #getExpr()
-   * @generated
-   */
-  EReference getExpr_E23();
-
-  /**
-   * Returns the meta object for the attribute '{@link com.euclideanspace.aldor.editor.Expr#getE9 <em>E9</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>E9</em>'.
-   * @see com.euclideanspace.aldor.editor.Expr#getE9()
-   * @see #getExpr()
-   * @generated
-   */
-  EAttribute getExpr_E9();
-
-  /**
-   * Returns the meta object for the containment reference '{@link com.euclideanspace.aldor.editor.Expr#getE10 <em>E10</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>E10</em>'.
-   * @see com.euclideanspace.aldor.editor.Expr#getE10()
-   * @see #getExpr()
-   * @generated
-   */
-  EReference getExpr_E10();
-
-  /**
-   * Returns the meta object for the containment reference list '{@link com.euclideanspace.aldor.editor.Expr#getE25 <em>E25</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>E25</em>'.
-   * @see com.euclideanspace.aldor.editor.Expr#getE25()
-   * @see #getExpr()
-   * @generated
-   */
-  EReference getExpr_E25();
-
-  /**
-   * Returns the meta object for the containment reference list '{@link com.euclideanspace.aldor.editor.Expr#getE24 <em>E24</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>E24</em>'.
-   * @see com.euclideanspace.aldor.editor.Expr#getE24()
-   * @see #getExpr()
-   * @generated
-   */
-  EReference getExpr_E24();
-
-  /**
-   * Returns the meta object for the containment reference list '{@link com.euclideanspace.aldor.editor.Expr#getE26 <em>E26</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>E26</em>'.
-   * @see com.euclideanspace.aldor.editor.Expr#getE26()
-   * @see #getExpr()
-   * @generated
-   */
-  EReference getExpr_E26();
-
-  /**
-   * Returns the meta object for the attribute '{@link com.euclideanspace.aldor.editor.Expr#getE11 <em>E11</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>E11</em>'.
-   * @see com.euclideanspace.aldor.editor.Expr#getE11()
-   * @see #getExpr()
-   * @generated
-   */
-  EAttribute getExpr_E11();
-
-  /**
-   * Returns the meta object for the containment reference '{@link com.euclideanspace.aldor.editor.Expr#getE12 <em>E12</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>E12</em>'.
-   * @see com.euclideanspace.aldor.editor.Expr#getE12()
-   * @see #getExpr()
-   * @generated
-   */
-  EReference getExpr_E12();
-
-  /**
-   * Returns the meta object for the containment reference list '{@link com.euclideanspace.aldor.editor.Expr#getE13 <em>E13</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>E13</em>'.
-   * @see com.euclideanspace.aldor.editor.Expr#getE13()
-   * @see #getExpr()
-   * @generated
-   */
-  EReference getExpr_E13();
-
-  /**
-   * Returns the meta object for class '{@link com.euclideanspace.aldor.editor.PrimaryPrefix <em>Primary Prefix</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Primary Prefix</em>'.
-   * @see com.euclideanspace.aldor.editor.PrimaryPrefix
-   * @generated
-   */
-  EClass getPrimaryPrefix();
-
-  /**
-   * Returns the meta object for the containment reference '{@link com.euclideanspace.aldor.editor.PrimaryPrefix#getT4 <em>T4</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>T4</em>'.
-   * @see com.euclideanspace.aldor.editor.PrimaryPrefix#getT4()
-   * @see #getPrimaryPrefix()
-   * @generated
-   */
-  EReference getPrimaryPrefix_T4();
-
-  /**
-   * Returns the meta object for the containment reference list '{@link com.euclideanspace.aldor.editor.PrimaryPrefix#getT25 <em>T25</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>T25</em>'.
-   * @see com.euclideanspace.aldor.editor.PrimaryPrefix#getT25()
-   * @see #getPrimaryPrefix()
-   * @generated
-   */
-  EReference getPrimaryPrefix_T25();
-
-  /**
-   * Returns the meta object for the containment reference '{@link com.euclideanspace.aldor.editor.PrimaryPrefix#getRightType3 <em>Right Type3</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Right Type3</em>'.
-   * @see com.euclideanspace.aldor.editor.PrimaryPrefix#getRightType3()
-   * @see #getPrimaryPrefix()
-   * @generated
-   */
-  EReference getPrimaryPrefix_RightType3();
-
-  /**
-   * Returns the meta object for the containment reference '{@link com.euclideanspace.aldor.editor.PrimaryPrefix#getT7 <em>T7</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>T7</em>'.
-   * @see com.euclideanspace.aldor.editor.PrimaryPrefix#getT7()
-   * @see #getPrimaryPrefix()
-   * @generated
-   */
-  EReference getPrimaryPrefix_T7();
-
-  /**
-   * Returns the meta object for class '{@link com.euclideanspace.aldor.editor.NameOrFunctionCall <em>Name Or Function Call</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Name Or Function Call</em>'.
-   * @see com.euclideanspace.aldor.editor.NameOrFunctionCall
-   * @generated
-   */
-  EClass getNameOrFunctionCall();
-
-  /**
-   * Returns the meta object for the attribute '{@link com.euclideanspace.aldor.editor.NameOrFunctionCall#getFnname <em>Fnname</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Fnname</em>'.
-   * @see com.euclideanspace.aldor.editor.NameOrFunctionCall#getFnname()
-   * @see #getNameOrFunctionCall()
-   * @generated
-   */
-  EAttribute getNameOrFunctionCall_Fnname();
-
-  /**
-   * Returns the meta object for the attribute '{@link com.euclideanspace.aldor.editor.NameOrFunctionCall#getLsp <em>Lsp</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Lsp</em>'.
-   * @see com.euclideanspace.aldor.editor.NameOrFunctionCall#getLsp()
-   * @see #getNameOrFunctionCall()
-   * @generated
-   */
-  EAttribute getNameOrFunctionCall_Lsp();
-
-  /**
-   * Returns the meta object for the containment reference '{@link com.euclideanspace.aldor.editor.NameOrFunctionCall#getT4 <em>T4</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>T4</em>'.
-   * @see com.euclideanspace.aldor.editor.NameOrFunctionCall#getT4()
-   * @see #getNameOrFunctionCall()
-   * @generated
-   */
-  EReference getNameOrFunctionCall_T4();
-
-  /**
-   * Returns the meta object for the containment reference list '{@link com.euclideanspace.aldor.editor.NameOrFunctionCall#getT5 <em>T5</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>T5</em>'.
-   * @see com.euclideanspace.aldor.editor.NameOrFunctionCall#getT5()
-   * @see #getNameOrFunctionCall()
-   * @generated
-   */
-  EReference getNameOrFunctionCall_T5();
-
-  /**
-   * Returns the meta object for the containment reference list '{@link com.euclideanspace.aldor.editor.NameOrFunctionCall#getT14 <em>T14</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>T14</em>'.
-   * @see com.euclideanspace.aldor.editor.NameOrFunctionCall#getT14()
-   * @see #getNameOrFunctionCall()
-   * @generated
-   */
-  EReference getNameOrFunctionCall_T14();
-
-  /**
-   * Returns the meta object for the containment reference list '{@link com.euclideanspace.aldor.editor.NameOrFunctionCall#getT15 <em>T15</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>T15</em>'.
-   * @see com.euclideanspace.aldor.editor.NameOrFunctionCall#getT15()
-   * @see #getNameOrFunctionCall()
-   * @generated
-   */
-  EReference getNameOrFunctionCall_T15();
-
-  /**
-   * Returns the meta object for the containment reference '{@link com.euclideanspace.aldor.editor.NameOrFunctionCall#getT6 <em>T6</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>T6</em>'.
-   * @see com.euclideanspace.aldor.editor.NameOrFunctionCall#getT6()
-   * @see #getNameOrFunctionCall()
-   * @generated
-   */
-  EReference getNameOrFunctionCall_T6();
-
-  /**
-   * Returns the meta object for the containment reference '{@link com.euclideanspace.aldor.editor.NameOrFunctionCall#getRightType2 <em>Right Type2</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Right Type2</em>'.
-   * @see com.euclideanspace.aldor.editor.NameOrFunctionCall#getRightType2()
-   * @see #getNameOrFunctionCall()
-   * @generated
-   */
-  EReference getNameOrFunctionCall_RightType2();
-
-  /**
-   * Returns the meta object for class '{@link com.euclideanspace.aldor.editor.Literal <em>Literal</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Literal</em>'.
-   * @see com.euclideanspace.aldor.editor.Literal
-   * @generated
-   */
-  EClass getLiteral();
-
-  /**
-   * Returns the meta object for the attribute '{@link com.euclideanspace.aldor.editor.Literal#getValue <em>Value</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Value</em>'.
-   * @see com.euclideanspace.aldor.editor.Literal#getValue()
-   * @see #getLiteral()
-   * @generated
-   */
-  EAttribute getLiteral_Value();
-
-  /**
-   * Returns the meta object for the attribute '{@link com.euclideanspace.aldor.editor.Literal#getT2 <em>T2</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>T2</em>'.
-   * @see com.euclideanspace.aldor.editor.Literal#getT2()
-   * @see #getLiteral()
-   * @generated
-   */
-  EAttribute getLiteral_T2();
-
-  /**
-   * Returns the meta object for the containment reference '{@link com.euclideanspace.aldor.editor.Literal#getE1 <em>E1</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>E1</em>'.
-   * @see com.euclideanspace.aldor.editor.Literal#getE1()
-   * @see #getLiteral()
-   * @generated
-   */
-  EReference getLiteral_E1();
-
-  /**
-   * Returns the meta object for the attribute list '{@link com.euclideanspace.aldor.editor.Literal#getT31 <em>T31</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute list '<em>T31</em>'.
-   * @see com.euclideanspace.aldor.editor.Literal#getT31()
-   * @see #getLiteral()
-   * @generated
-   */
-  EAttribute getLiteral_T31();
-
-  /**
-   * Returns the meta object for the containment reference list '{@link com.euclideanspace.aldor.editor.Literal#getE4 <em>E4</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>E4</em>'.
-   * @see com.euclideanspace.aldor.editor.Literal#getE4()
-   * @see #getLiteral()
-   * @generated
-   */
-  EReference getLiteral_E4();
-
-  /**
-   * Returns the meta object for class '{@link com.euclideanspace.aldor.editor.CharacterLiteral <em>Character Literal</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Character Literal</em>'.
-   * @see com.euclideanspace.aldor.editor.CharacterLiteral
-   * @generated
-   */
-  EClass getCharacterLiteral();
-
-  /**
-   * Returns the meta object for the attribute '{@link com.euclideanspace.aldor.editor.CharacterLiteral#getC1 <em>C1</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>C1</em>'.
-   * @see com.euclideanspace.aldor.editor.CharacterLiteral#getC1()
-   * @see #getCharacterLiteral()
-   * @generated
-   */
-  EAttribute getCharacterLiteral_C1();
-
-  /**
-   * Returns the meta object for class '{@link com.euclideanspace.aldor.editor.BooleanLiteral <em>Boolean Literal</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Boolean Literal</em>'.
-   * @see com.euclideanspace.aldor.editor.BooleanLiteral
-   * @generated
-   */
-  EClass getBooleanLiteral();
-
-  /**
-   * Returns the meta object for the attribute '{@link com.euclideanspace.aldor.editor.BooleanLiteral#getLitname <em>Litname</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Litname</em>'.
-   * @see com.euclideanspace.aldor.editor.BooleanLiteral#getLitname()
-   * @see #getBooleanLiteral()
-   * @generated
-   */
-  EAttribute getBooleanLiteral_Litname();
-
-  /**
-   * Returns the meta object for class '{@link com.euclideanspace.aldor.editor.ListLiteral <em>List Literal</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>List Literal</em>'.
-   * @see com.euclideanspace.aldor.editor.ListLiteral
-   * @generated
-   */
-  EClass getListLiteral();
-
-  /**
-   * Returns the meta object for the attribute '{@link com.euclideanspace.aldor.editor.ListLiteral#getLitname <em>Litname</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Litname</em>'.
-   * @see com.euclideanspace.aldor.editor.ListLiteral#getLitname()
-   * @see #getListLiteral()
-   * @generated
-   */
-  EAttribute getListLiteral_Litname();
-
-  /**
-   * Returns the meta object for the containment reference '{@link com.euclideanspace.aldor.editor.ListLiteral#getL2 <em>L2</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>L2</em>'.
-   * @see com.euclideanspace.aldor.editor.ListLiteral#getL2()
-   * @see #getListLiteral()
-   * @generated
-   */
-  EReference getListLiteral_L2();
-
-  /**
-   * Returns the meta object for the containment reference list '{@link com.euclideanspace.aldor.editor.ListLiteral#getT3 <em>T3</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>T3</em>'.
-   * @see com.euclideanspace.aldor.editor.ListLiteral#getT3()
-   * @see #getListLiteral()
-   * @generated
-   */
-  EReference getListLiteral_T3();
-
-  /**
-   * Returns the meta object for the containment reference list '{@link com.euclideanspace.aldor.editor.ListLiteral#getT14 <em>T14</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>T14</em>'.
-   * @see com.euclideanspace.aldor.editor.ListLiteral#getT14()
-   * @see #getListLiteral()
-   * @generated
-   */
-  EReference getListLiteral_T14();
-
-  /**
-   * Returns the meta object for the containment reference list '{@link com.euclideanspace.aldor.editor.ListLiteral#getL5 <em>L5</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>L5</em>'.
-   * @see com.euclideanspace.aldor.editor.ListLiteral#getL5()
-   * @see #getListLiteral()
-   * @generated
-   */
-  EReference getListLiteral_L5();
-
-  /**
-   * Returns the meta object for class '{@link com.euclideanspace.aldor.editor.ExitExpression <em>Exit Expression</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Exit Expression</em>'.
-   * @see com.euclideanspace.aldor.editor.ExitExpression
-   * @generated
-   */
-  EClass getExitExpression();
-
-  /**
-   * Returns the meta object for the containment reference '{@link com.euclideanspace.aldor.editor.ExitExpression#getLeft <em>Left</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Left</em>'.
-   * @see com.euclideanspace.aldor.editor.ExitExpression#getLeft()
-   * @see #getExitExpression()
-   * @generated
-   */
-  EReference getExitExpression_Left();
-
-  /**
-   * Returns the meta object for the attribute '{@link com.euclideanspace.aldor.editor.ExitExpression#getOp <em>Op</em>}'.
+   * Returns the meta object for the attribute '{@link com.euclideanspace.aldor.editor.Id#getOp <em>Op</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the attribute '<em>Op</em>'.
-   * @see com.euclideanspace.aldor.editor.ExitExpression#getOp()
-   * @see #getExitExpression()
+   * @see com.euclideanspace.aldor.editor.Id#getOp()
+   * @see #getId()
    * @generated
    */
-  EAttribute getExitExpression_Op();
+  EAttribute getId_Op();
 
   /**
-   * Returns the meta object for the containment reference '{@link com.euclideanspace.aldor.editor.ExitExpression#getRight <em>Right</em>}'.
+   * Returns the meta object for class '{@link com.euclideanspace.aldor.editor.UnqualOp_ArrowTok <em>Unqual Op Arrow Tok</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Right</em>'.
-   * @see com.euclideanspace.aldor.editor.ExitExpression#getRight()
-   * @see #getExitExpression()
+   * @return the meta object for class '<em>Unqual Op Arrow Tok</em>'.
+   * @see com.euclideanspace.aldor.editor.UnqualOp_ArrowTok
    * @generated
    */
-  EReference getExitExpression_Right();
+  EClass getUnqualOp_ArrowTok();
 
   /**
-   * Returns the meta object for the containment reference '{@link com.euclideanspace.aldor.editor.ExitExpression#getR2 <em>R2</em>}'.
+   * Returns the meta object for class '{@link com.euclideanspace.aldor.editor.UnqualOp_LatticeTok <em>Unqual Op Lattice Tok</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>R2</em>'.
-   * @see com.euclideanspace.aldor.editor.ExitExpression#getR2()
-   * @see #getExitExpression()
+   * @return the meta object for class '<em>Unqual Op Lattice Tok</em>'.
+   * @see com.euclideanspace.aldor.editor.UnqualOp_LatticeTok
    * @generated
    */
-  EReference getExitExpression_R2();
+  EClass getUnqualOp_LatticeTok();
 
   /**
-   * Returns the meta object for class '{@link com.euclideanspace.aldor.editor.ConditionExpression <em>Condition Expression</em>}'.
+   * Returns the meta object for class '{@link com.euclideanspace.aldor.editor.UnqualOp_RelationTok <em>Unqual Op Relation Tok</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Condition Expression</em>'.
-   * @see com.euclideanspace.aldor.editor.ConditionExpression
+   * @return the meta object for class '<em>Unqual Op Relation Tok</em>'.
+   * @see com.euclideanspace.aldor.editor.UnqualOp_RelationTok
    * @generated
    */
-  EClass getConditionExpression();
+  EClass getUnqualOp_RelationTok();
 
   /**
-   * Returns the meta object for the containment reference '{@link com.euclideanspace.aldor.editor.ConditionExpression#getLeft <em>Left</em>}'.
+   * Returns the meta object for class '{@link com.euclideanspace.aldor.editor.UnqualOp_SegTok <em>Unqual Op Seg Tok</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Left</em>'.
-   * @see com.euclideanspace.aldor.editor.ConditionExpression#getLeft()
-   * @see #getConditionExpression()
+   * @return the meta object for class '<em>Unqual Op Seg Tok</em>'.
+   * @see com.euclideanspace.aldor.editor.UnqualOp_SegTok
    * @generated
    */
-  EReference getConditionExpression_Left();
+  EClass getUnqualOp_SegTok();
 
   /**
-   * Returns the meta object for the attribute '{@link com.euclideanspace.aldor.editor.ConditionExpression#getOp <em>Op</em>}'.
+   * Returns the meta object for class '{@link com.euclideanspace.aldor.editor.UnqualOp_PlusTok <em>Unqual Op Plus Tok</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Op</em>'.
-   * @see com.euclideanspace.aldor.editor.ConditionExpression#getOp()
-   * @see #getConditionExpression()
+   * @return the meta object for class '<em>Unqual Op Plus Tok</em>'.
+   * @see com.euclideanspace.aldor.editor.UnqualOp_PlusTok
    * @generated
    */
-  EAttribute getConditionExpression_Op();
+  EClass getUnqualOp_PlusTok();
 
   /**
-   * Returns the meta object for the containment reference '{@link com.euclideanspace.aldor.editor.ConditionExpression#getRight <em>Right</em>}'.
+   * Returns the meta object for class '{@link com.euclideanspace.aldor.editor.UnqualOp_QuotientTok <em>Unqual Op Quotient Tok</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Right</em>'.
-   * @see com.euclideanspace.aldor.editor.ConditionExpression#getRight()
-   * @see #getConditionExpression()
+   * @return the meta object for class '<em>Unqual Op Quotient Tok</em>'.
+   * @see com.euclideanspace.aldor.editor.UnqualOp_QuotientTok
    * @generated
    */
-  EReference getConditionExpression_Right();
+  EClass getUnqualOp_QuotientTok();
 
   /**
-   * Returns the meta object for class '{@link com.euclideanspace.aldor.editor.OrExpression <em>Or Expression</em>}'.
+   * Returns the meta object for class '{@link com.euclideanspace.aldor.editor.UnqualOp_TimesTok <em>Unqual Op Times Tok</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Or Expression</em>'.
-   * @see com.euclideanspace.aldor.editor.OrExpression
+   * @return the meta object for class '<em>Unqual Op Times Tok</em>'.
+   * @see com.euclideanspace.aldor.editor.UnqualOp_TimesTok
    * @generated
    */
-  EClass getOrExpression();
+  EClass getUnqualOp_TimesTok();
 
   /**
-   * Returns the meta object for the containment reference '{@link com.euclideanspace.aldor.editor.OrExpression#getLeft <em>Left</em>}'.
+   * Returns the meta object for class '{@link com.euclideanspace.aldor.editor.UnqualOp_PowerTok <em>Unqual Op Power Tok</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Left</em>'.
-   * @see com.euclideanspace.aldor.editor.OrExpression#getLeft()
-   * @see #getOrExpression()
+   * @return the meta object for class '<em>Unqual Op Power Tok</em>'.
+   * @see com.euclideanspace.aldor.editor.UnqualOp_PowerTok
    * @generated
    */
-  EReference getOrExpression_Left();
+  EClass getUnqualOp_PowerTok();
 
   /**
-   * Returns the meta object for the attribute '{@link com.euclideanspace.aldor.editor.OrExpression#getOp <em>Op</em>}'.
+   * Returns the meta object for class '{@link com.euclideanspace.aldor.editor.QualOp_ArrowTok <em>Qual Op Arrow Tok</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Op</em>'.
-   * @see com.euclideanspace.aldor.editor.OrExpression#getOp()
-   * @see #getOrExpression()
+   * @return the meta object for class '<em>Qual Op Arrow Tok</em>'.
+   * @see com.euclideanspace.aldor.editor.QualOp_ArrowTok
    * @generated
    */
-  EAttribute getOrExpression_Op();
+  EClass getQualOp_ArrowTok();
 
   /**
-   * Returns the meta object for the containment reference '{@link com.euclideanspace.aldor.editor.OrExpression#getRight <em>Right</em>}'.
+   * Returns the meta object for class '{@link com.euclideanspace.aldor.editor.QualOp_LatticeTok <em>Qual Op Lattice Tok</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Right</em>'.
-   * @see com.euclideanspace.aldor.editor.OrExpression#getRight()
-   * @see #getOrExpression()
+   * @return the meta object for class '<em>Qual Op Lattice Tok</em>'.
+   * @see com.euclideanspace.aldor.editor.QualOp_LatticeTok
    * @generated
    */
-  EReference getOrExpression_Right();
+  EClass getQualOp_LatticeTok();
 
   /**
-   * Returns the meta object for class '{@link com.euclideanspace.aldor.editor.AndExpression <em>And Expression</em>}'.
+   * Returns the meta object for class '{@link com.euclideanspace.aldor.editor.QualOp_RelationTok <em>Qual Op Relation Tok</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>And Expression</em>'.
-   * @see com.euclideanspace.aldor.editor.AndExpression
+   * @return the meta object for class '<em>Qual Op Relation Tok</em>'.
+   * @see com.euclideanspace.aldor.editor.QualOp_RelationTok
    * @generated
    */
-  EClass getAndExpression();
+  EClass getQualOp_RelationTok();
 
   /**
-   * Returns the meta object for the containment reference '{@link com.euclideanspace.aldor.editor.AndExpression#getLeft <em>Left</em>}'.
+   * Returns the meta object for class '{@link com.euclideanspace.aldor.editor.QualOp_SegTok <em>Qual Op Seg Tok</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Left</em>'.
-   * @see com.euclideanspace.aldor.editor.AndExpression#getLeft()
-   * @see #getAndExpression()
+   * @return the meta object for class '<em>Qual Op Seg Tok</em>'.
+   * @see com.euclideanspace.aldor.editor.QualOp_SegTok
    * @generated
    */
-  EReference getAndExpression_Left();
+  EClass getQualOp_SegTok();
 
   /**
-   * Returns the meta object for the attribute '{@link com.euclideanspace.aldor.editor.AndExpression#getOp <em>Op</em>}'.
+   * Returns the meta object for class '{@link com.euclideanspace.aldor.editor.QualOp_PlusTok <em>Qual Op Plus Tok</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Op</em>'.
-   * @see com.euclideanspace.aldor.editor.AndExpression#getOp()
-   * @see #getAndExpression()
+   * @return the meta object for class '<em>Qual Op Plus Tok</em>'.
+   * @see com.euclideanspace.aldor.editor.QualOp_PlusTok
    * @generated
    */
-  EAttribute getAndExpression_Op();
+  EClass getQualOp_PlusTok();
 
   /**
-   * Returns the meta object for the containment reference '{@link com.euclideanspace.aldor.editor.AndExpression#getRight <em>Right</em>}'.
+   * Returns the meta object for class '{@link com.euclideanspace.aldor.editor.QualOp_QuotientTok <em>Qual Op Quotient Tok</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Right</em>'.
-   * @see com.euclideanspace.aldor.editor.AndExpression#getRight()
-   * @see #getAndExpression()
+   * @return the meta object for class '<em>Qual Op Quotient Tok</em>'.
+   * @see com.euclideanspace.aldor.editor.QualOp_QuotientTok
    * @generated
    */
-  EReference getAndExpression_Right();
+  EClass getQualOp_QuotientTok();
 
   /**
-   * Returns the meta object for class '{@link com.euclideanspace.aldor.editor.InnerProdExpression <em>Inner Prod Expression</em>}'.
+   * Returns the meta object for class '{@link com.euclideanspace.aldor.editor.QualOp_TimesTok <em>Qual Op Times Tok</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Inner Prod Expression</em>'.
-   * @see com.euclideanspace.aldor.editor.InnerProdExpression
+   * @return the meta object for class '<em>Qual Op Times Tok</em>'.
+   * @see com.euclideanspace.aldor.editor.QualOp_TimesTok
    * @generated
    */
-  EClass getInnerProdExpression();
+  EClass getQualOp_TimesTok();
 
   /**
-   * Returns the meta object for the containment reference '{@link com.euclideanspace.aldor.editor.InnerProdExpression#getLeft <em>Left</em>}'.
+   * Returns the meta object for class '{@link com.euclideanspace.aldor.editor.QualOp_PowerTok <em>Qual Op Power Tok</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Left</em>'.
-   * @see com.euclideanspace.aldor.editor.InnerProdExpression#getLeft()
-   * @see #getInnerProdExpression()
+   * @return the meta object for class '<em>Qual Op Power Tok</em>'.
+   * @see com.euclideanspace.aldor.editor.QualOp_PowerTok
    * @generated
    */
-  EReference getInnerProdExpression_Left();
+  EClass getQualOp_PowerTok();
 
   /**
-   * Returns the meta object for the attribute '{@link com.euclideanspace.aldor.editor.InnerProdExpression#getOp <em>Op</em>}'.
+   * Returns the meta object for class '{@link com.euclideanspace.aldor.editor.enlist1a_Labeled_Semicolon_AB <em>enlist1a Labeled Semicolon AB</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Op</em>'.
-   * @see com.euclideanspace.aldor.editor.InnerProdExpression#getOp()
-   * @see #getInnerProdExpression()
+   * @return the meta object for class '<em>enlist1a Labeled Semicolon AB</em>'.
+   * @see com.euclideanspace.aldor.editor.enlist1a_Labeled_Semicolon_AB
    * @generated
    */
-  EAttribute getInnerProdExpression_Op();
+  EClass getenlist1a_Labeled_Semicolon_AB();
 
   /**
-   * Returns the meta object for the containment reference '{@link com.euclideanspace.aldor.editor.InnerProdExpression#getRight <em>Right</em>}'.
+   * Returns the meta object for class '{@link com.euclideanspace.aldor.editor.enlister1a_Labeled_Semicolon <em>enlister1a Labeled Semicolon</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Right</em>'.
-   * @see com.euclideanspace.aldor.editor.InnerProdExpression#getRight()
-   * @see #getInnerProdExpression()
+   * @return the meta object for class '<em>enlister1a Labeled Semicolon</em>'.
+   * @see com.euclideanspace.aldor.editor.enlister1a_Labeled_Semicolon
    * @generated
    */
-  EReference getInnerProdExpression_Right();
+  EClass getenlister1a_Labeled_Semicolon();
 
   /**
-   * Returns the meta object for class '{@link com.euclideanspace.aldor.editor.OuterProdExpression <em>Outer Prod Expression</em>}'.
+   * Returns the meta object for the containment reference list '{@link com.euclideanspace.aldor.editor.enlister1a_Labeled_Semicolon#getStatemnts <em>Statemnts</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Outer Prod Expression</em>'.
-   * @see com.euclideanspace.aldor.editor.OuterProdExpression
+   * @return the meta object for the containment reference list '<em>Statemnts</em>'.
+   * @see com.euclideanspace.aldor.editor.enlister1a_Labeled_Semicolon#getStatemnts()
+   * @see #getenlister1a_Labeled_Semicolon()
    * @generated
    */
-  EClass getOuterProdExpression();
+  EReference getenlister1a_Labeled_Semicolon_Statemnts();
 
   /**
-   * Returns the meta object for the containment reference '{@link com.euclideanspace.aldor.editor.OuterProdExpression#getLeft <em>Left</em>}'.
+   * Returns the meta object for class '{@link com.euclideanspace.aldor.editor.Curly_Labeled <em>Curly Labeled</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Left</em>'.
-   * @see com.euclideanspace.aldor.editor.OuterProdExpression#getLeft()
-   * @see #getOuterProdExpression()
+   * @return the meta object for class '<em>Curly Labeled</em>'.
+   * @see com.euclideanspace.aldor.editor.Curly_Labeled
    * @generated
    */
-  EReference getOuterProdExpression_Left();
+  EClass getCurly_Labeled();
 
   /**
-   * Returns the meta object for the attribute '{@link com.euclideanspace.aldor.editor.OuterProdExpression#getOp <em>Op</em>}'.
+   * Returns the meta object for class '{@link com.euclideanspace.aldor.editor.CurlyContents_Labeled <em>Curly Contents Labeled</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Op</em>'.
-   * @see com.euclideanspace.aldor.editor.OuterProdExpression#getOp()
-   * @see #getOuterProdExpression()
+   * @return the meta object for class '<em>Curly Contents Labeled</em>'.
+   * @see com.euclideanspace.aldor.editor.CurlyContents_Labeled
    * @generated
    */
-  EAttribute getOuterProdExpression_Op();
+  EClass getCurlyContents_Labeled();
 
   /**
-   * Returns the meta object for the containment reference '{@link com.euclideanspace.aldor.editor.OuterProdExpression#getRight <em>Right</em>}'.
+   * Returns the meta object for class '{@link com.euclideanspace.aldor.editor.CurlyContentsList_Labeled <em>Curly Contents List Labeled</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Right</em>'.
-   * @see com.euclideanspace.aldor.editor.OuterProdExpression#getRight()
-   * @see #getOuterProdExpression()
+   * @return the meta object for class '<em>Curly Contents List Labeled</em>'.
+   * @see com.euclideanspace.aldor.editor.CurlyContentsList_Labeled
    * @generated
    */
-  EReference getOuterProdExpression_Right();
+  EClass getCurlyContentsList_Labeled();
 
   /**
-   * Returns the meta object for class '{@link com.euclideanspace.aldor.editor.HasExpression <em>Has Expression</em>}'.
+   * Returns the meta object for the containment reference list '{@link com.euclideanspace.aldor.editor.CurlyContentsList_Labeled#getStatemts <em>Statemts</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Has Expression</em>'.
-   * @see com.euclideanspace.aldor.editor.HasExpression
+   * @return the meta object for the containment reference list '<em>Statemts</em>'.
+   * @see com.euclideanspace.aldor.editor.CurlyContentsList_Labeled#getStatemts()
+   * @see #getCurlyContentsList_Labeled()
    * @generated
    */
-  EClass getHasExpression();
+  EReference getCurlyContentsList_Labeled_Statemts();
 
   /**
-   * Returns the meta object for the containment reference '{@link com.euclideanspace.aldor.editor.HasExpression#getLeft <em>Left</em>}'.
+   * Returns the meta object for class '{@link com.euclideanspace.aldor.editor.ArrowTok <em>Arrow Tok</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Left</em>'.
-   * @see com.euclideanspace.aldor.editor.HasExpression#getLeft()
-   * @see #getHasExpression()
+   * @return the meta object for class '<em>Arrow Tok</em>'.
+   * @see com.euclideanspace.aldor.editor.ArrowTok
    * @generated
    */
-  EReference getHasExpression_Left();
+  EClass getArrowTok();
 
   /**
-   * Returns the meta object for the attribute '{@link com.euclideanspace.aldor.editor.HasExpression#getOp <em>Op</em>}'.
+   * Returns the meta object for class '{@link com.euclideanspace.aldor.editor.LatticeTok <em>Lattice Tok</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Op</em>'.
-   * @see com.euclideanspace.aldor.editor.HasExpression#getOp()
-   * @see #getHasExpression()
+   * @return the meta object for class '<em>Lattice Tok</em>'.
+   * @see com.euclideanspace.aldor.editor.LatticeTok
    * @generated
    */
-  EAttribute getHasExpression_Op();
+  EClass getLatticeTok();
 
   /**
-   * Returns the meta object for the containment reference '{@link com.euclideanspace.aldor.editor.HasExpression#getRightType <em>Right Type</em>}'.
+   * Returns the meta object for class '{@link com.euclideanspace.aldor.editor.RelationTok <em>Relation Tok</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Right Type</em>'.
-   * @see com.euclideanspace.aldor.editor.HasExpression#getRightType()
-   * @see #getHasExpression()
+   * @return the meta object for class '<em>Relation Tok</em>'.
+   * @see com.euclideanspace.aldor.editor.RelationTok
    * @generated
    */
-  EReference getHasExpression_RightType();
+  EClass getRelationTok();
 
   /**
-   * Returns the meta object for class '{@link com.euclideanspace.aldor.editor.CaseExpression <em>Case Expression</em>}'.
+   * Returns the meta object for class '{@link com.euclideanspace.aldor.editor.SegTok <em>Seg Tok</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Case Expression</em>'.
-   * @see com.euclideanspace.aldor.editor.CaseExpression
+   * @return the meta object for class '<em>Seg Tok</em>'.
+   * @see com.euclideanspace.aldor.editor.SegTok
    * @generated
    */
-  EClass getCaseExpression();
+  EClass getSegTok();
 
   /**
-   * Returns the meta object for the containment reference '{@link com.euclideanspace.aldor.editor.CaseExpression#getLeft <em>Left</em>}'.
+   * Returns the meta object for class '{@link com.euclideanspace.aldor.editor.PlusTok <em>Plus Tok</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Left</em>'.
-   * @see com.euclideanspace.aldor.editor.CaseExpression#getLeft()
-   * @see #getCaseExpression()
+   * @return the meta object for class '<em>Plus Tok</em>'.
+   * @see com.euclideanspace.aldor.editor.PlusTok
    * @generated
    */
-  EReference getCaseExpression_Left();
+  EClass getPlusTok();
 
   /**
-   * Returns the meta object for the attribute '{@link com.euclideanspace.aldor.editor.CaseExpression#getOp <em>Op</em>}'.
+   * Returns the meta object for class '{@link com.euclideanspace.aldor.editor.QuotientTok <em>Quotient Tok</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Op</em>'.
-   * @see com.euclideanspace.aldor.editor.CaseExpression#getOp()
-   * @see #getCaseExpression()
+   * @return the meta object for class '<em>Quotient Tok</em>'.
+   * @see com.euclideanspace.aldor.editor.QuotientTok
    * @generated
    */
-  EAttribute getCaseExpression_Op();
+  EClass getQuotientTok();
 
   /**
-   * Returns the meta object for the containment reference '{@link com.euclideanspace.aldor.editor.CaseExpression#getRight <em>Right</em>}'.
+   * Returns the meta object for class '{@link com.euclideanspace.aldor.editor.TimesTok <em>Times Tok</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Right</em>'.
-   * @see com.euclideanspace.aldor.editor.CaseExpression#getRight()
-   * @see #getCaseExpression()
+   * @return the meta object for class '<em>Times Tok</em>'.
+   * @see com.euclideanspace.aldor.editor.TimesTok
    * @generated
    */
-  EReference getCaseExpression_Right();
+  EClass getTimesTok();
 
   /**
-   * Returns the meta object for class '{@link com.euclideanspace.aldor.editor.EqualityExpression <em>Equality Expression</em>}'.
+   * Returns the meta object for class '{@link com.euclideanspace.aldor.editor.PowerTok <em>Power Tok</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Equality Expression</em>'.
-   * @see com.euclideanspace.aldor.editor.EqualityExpression
+   * @return the meta object for class '<em>Power Tok</em>'.
+   * @see com.euclideanspace.aldor.editor.PowerTok
    * @generated
    */
-  EClass getEqualityExpression();
-
-  /**
-   * Returns the meta object for the containment reference '{@link com.euclideanspace.aldor.editor.EqualityExpression#getLeft <em>Left</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Left</em>'.
-   * @see com.euclideanspace.aldor.editor.EqualityExpression#getLeft()
-   * @see #getEqualityExpression()
-   * @generated
-   */
-  EReference getEqualityExpression_Left();
-
-  /**
-   * Returns the meta object for the attribute '{@link com.euclideanspace.aldor.editor.EqualityExpression#getOp <em>Op</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Op</em>'.
-   * @see com.euclideanspace.aldor.editor.EqualityExpression#getOp()
-   * @see #getEqualityExpression()
-   * @generated
-   */
-  EAttribute getEqualityExpression_Op();
-
-  /**
-   * Returns the meta object for the attribute '{@link com.euclideanspace.aldor.editor.EqualityExpression#getTe <em>Te</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Te</em>'.
-   * @see com.euclideanspace.aldor.editor.EqualityExpression#getTe()
-   * @see #getEqualityExpression()
-   * @generated
-   */
-  EAttribute getEqualityExpression_Te();
-
-  /**
-   * Returns the meta object for the containment reference '{@link com.euclideanspace.aldor.editor.EqualityExpression#getRight <em>Right</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Right</em>'.
-   * @see com.euclideanspace.aldor.editor.EqualityExpression#getRight()
-   * @see #getEqualityExpression()
-   * @generated
-   */
-  EReference getEqualityExpression_Right();
-
-  /**
-   * Returns the meta object for class '{@link com.euclideanspace.aldor.editor.RelationalExpression <em>Relational Expression</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Relational Expression</em>'.
-   * @see com.euclideanspace.aldor.editor.RelationalExpression
-   * @generated
-   */
-  EClass getRelationalExpression();
-
-  /**
-   * Returns the meta object for the containment reference '{@link com.euclideanspace.aldor.editor.RelationalExpression#getLeft <em>Left</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Left</em>'.
-   * @see com.euclideanspace.aldor.editor.RelationalExpression#getLeft()
-   * @see #getRelationalExpression()
-   * @generated
-   */
-  EReference getRelationalExpression_Left();
-
-  /**
-   * Returns the meta object for the attribute '{@link com.euclideanspace.aldor.editor.RelationalExpression#getOp <em>Op</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Op</em>'.
-   * @see com.euclideanspace.aldor.editor.RelationalExpression#getOp()
-   * @see #getRelationalExpression()
-   * @generated
-   */
-  EAttribute getRelationalExpression_Op();
-
-  /**
-   * Returns the meta object for the containment reference '{@link com.euclideanspace.aldor.editor.RelationalExpression#getRight <em>Right</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Right</em>'.
-   * @see com.euclideanspace.aldor.editor.RelationalExpression#getRight()
-   * @see #getRelationalExpression()
-   * @generated
-   */
-  EReference getRelationalExpression_Right();
-
-  /**
-   * Returns the meta object for class '{@link com.euclideanspace.aldor.editor.IsExpression <em>Is Expression</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Is Expression</em>'.
-   * @see com.euclideanspace.aldor.editor.IsExpression
-   * @generated
-   */
-  EClass getIsExpression();
-
-  /**
-   * Returns the meta object for the containment reference '{@link com.euclideanspace.aldor.editor.IsExpression#getLeft <em>Left</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Left</em>'.
-   * @see com.euclideanspace.aldor.editor.IsExpression#getLeft()
-   * @see #getIsExpression()
-   * @generated
-   */
-  EReference getIsExpression_Left();
-
-  /**
-   * Returns the meta object for the attribute '{@link com.euclideanspace.aldor.editor.IsExpression#getOp <em>Op</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Op</em>'.
-   * @see com.euclideanspace.aldor.editor.IsExpression#getOp()
-   * @see #getIsExpression()
-   * @generated
-   */
-  EAttribute getIsExpression_Op();
-
-  /**
-   * Returns the meta object for the containment reference '{@link com.euclideanspace.aldor.editor.IsExpression#getRightType <em>Right Type</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Right Type</em>'.
-   * @see com.euclideanspace.aldor.editor.IsExpression#getRightType()
-   * @see #getIsExpression()
-   * @generated
-   */
-  EReference getIsExpression_RightType();
-
-  /**
-   * Returns the meta object for class '{@link com.euclideanspace.aldor.editor.SegmentExpression <em>Segment Expression</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Segment Expression</em>'.
-   * @see com.euclideanspace.aldor.editor.SegmentExpression
-   * @generated
-   */
-  EClass getSegmentExpression();
-
-  /**
-   * Returns the meta object for the containment reference '{@link com.euclideanspace.aldor.editor.SegmentExpression#getLeft <em>Left</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Left</em>'.
-   * @see com.euclideanspace.aldor.editor.SegmentExpression#getLeft()
-   * @see #getSegmentExpression()
-   * @generated
-   */
-  EReference getSegmentExpression_Left();
-
-  /**
-   * Returns the meta object for the attribute '{@link com.euclideanspace.aldor.editor.SegmentExpression#getOp <em>Op</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Op</em>'.
-   * @see com.euclideanspace.aldor.editor.SegmentExpression#getOp()
-   * @see #getSegmentExpression()
-   * @generated
-   */
-  EAttribute getSegmentExpression_Op();
-
-  /**
-   * Returns the meta object for the containment reference '{@link com.euclideanspace.aldor.editor.SegmentExpression#getRight <em>Right</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Right</em>'.
-   * @see com.euclideanspace.aldor.editor.SegmentExpression#getRight()
-   * @see #getSegmentExpression()
-   * @generated
-   */
-  EReference getSegmentExpression_Right();
-
-  /**
-   * Returns the meta object for class '{@link com.euclideanspace.aldor.editor.AdditiveExpression <em>Additive Expression</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Additive Expression</em>'.
-   * @see com.euclideanspace.aldor.editor.AdditiveExpression
-   * @generated
-   */
-  EClass getAdditiveExpression();
-
-  /**
-   * Returns the meta object for the containment reference '{@link com.euclideanspace.aldor.editor.AdditiveExpression#getLeft <em>Left</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Left</em>'.
-   * @see com.euclideanspace.aldor.editor.AdditiveExpression#getLeft()
-   * @see #getAdditiveExpression()
-   * @generated
-   */
-  EReference getAdditiveExpression_Left();
-
-  /**
-   * Returns the meta object for the attribute '{@link com.euclideanspace.aldor.editor.AdditiveExpression#getOp <em>Op</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Op</em>'.
-   * @see com.euclideanspace.aldor.editor.AdditiveExpression#getOp()
-   * @see #getAdditiveExpression()
-   * @generated
-   */
-  EAttribute getAdditiveExpression_Op();
-
-  /**
-   * Returns the meta object for the attribute '{@link com.euclideanspace.aldor.editor.AdditiveExpression#getTe <em>Te</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Te</em>'.
-   * @see com.euclideanspace.aldor.editor.AdditiveExpression#getTe()
-   * @see #getAdditiveExpression()
-   * @generated
-   */
-  EAttribute getAdditiveExpression_Te();
-
-  /**
-   * Returns the meta object for the containment reference '{@link com.euclideanspace.aldor.editor.AdditiveExpression#getRight <em>Right</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Right</em>'.
-   * @see com.euclideanspace.aldor.editor.AdditiveExpression#getRight()
-   * @see #getAdditiveExpression()
-   * @generated
-   */
-  EReference getAdditiveExpression_Right();
-
-  /**
-   * Returns the meta object for class '{@link com.euclideanspace.aldor.editor.ExquoExpression <em>Exquo Expression</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Exquo Expression</em>'.
-   * @see com.euclideanspace.aldor.editor.ExquoExpression
-   * @generated
-   */
-  EClass getExquoExpression();
-
-  /**
-   * Returns the meta object for the containment reference '{@link com.euclideanspace.aldor.editor.ExquoExpression#getLeft <em>Left</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Left</em>'.
-   * @see com.euclideanspace.aldor.editor.ExquoExpression#getLeft()
-   * @see #getExquoExpression()
-   * @generated
-   */
-  EReference getExquoExpression_Left();
-
-  /**
-   * Returns the meta object for the attribute '{@link com.euclideanspace.aldor.editor.ExquoExpression#getOp <em>Op</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Op</em>'.
-   * @see com.euclideanspace.aldor.editor.ExquoExpression#getOp()
-   * @see #getExquoExpression()
-   * @generated
-   */
-  EAttribute getExquoExpression_Op();
-
-  /**
-   * Returns the meta object for the containment reference '{@link com.euclideanspace.aldor.editor.ExquoExpression#getRight <em>Right</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Right</em>'.
-   * @see com.euclideanspace.aldor.editor.ExquoExpression#getRight()
-   * @see #getExquoExpression()
-   * @generated
-   */
-  EReference getExquoExpression_Right();
-
-  /**
-   * Returns the meta object for class '{@link com.euclideanspace.aldor.editor.DivisionExpression <em>Division Expression</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Division Expression</em>'.
-   * @see com.euclideanspace.aldor.editor.DivisionExpression
-   * @generated
-   */
-  EClass getDivisionExpression();
-
-  /**
-   * Returns the meta object for the containment reference '{@link com.euclideanspace.aldor.editor.DivisionExpression#getLeft <em>Left</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Left</em>'.
-   * @see com.euclideanspace.aldor.editor.DivisionExpression#getLeft()
-   * @see #getDivisionExpression()
-   * @generated
-   */
-  EReference getDivisionExpression_Left();
-
-  /**
-   * Returns the meta object for the attribute '{@link com.euclideanspace.aldor.editor.DivisionExpression#getOp <em>Op</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Op</em>'.
-   * @see com.euclideanspace.aldor.editor.DivisionExpression#getOp()
-   * @see #getDivisionExpression()
-   * @generated
-   */
-  EAttribute getDivisionExpression_Op();
-
-  /**
-   * Returns the meta object for the attribute '{@link com.euclideanspace.aldor.editor.DivisionExpression#getTe <em>Te</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Te</em>'.
-   * @see com.euclideanspace.aldor.editor.DivisionExpression#getTe()
-   * @see #getDivisionExpression()
-   * @generated
-   */
-  EAttribute getDivisionExpression_Te();
-
-  /**
-   * Returns the meta object for the containment reference '{@link com.euclideanspace.aldor.editor.DivisionExpression#getRight <em>Right</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Right</em>'.
-   * @see com.euclideanspace.aldor.editor.DivisionExpression#getRight()
-   * @see #getDivisionExpression()
-   * @generated
-   */
-  EReference getDivisionExpression_Right();
-
-  /**
-   * Returns the meta object for class '{@link com.euclideanspace.aldor.editor.QuoExpression <em>Quo Expression</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Quo Expression</em>'.
-   * @see com.euclideanspace.aldor.editor.QuoExpression
-   * @generated
-   */
-  EClass getQuoExpression();
-
-  /**
-   * Returns the meta object for the containment reference '{@link com.euclideanspace.aldor.editor.QuoExpression#getLeft <em>Left</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Left</em>'.
-   * @see com.euclideanspace.aldor.editor.QuoExpression#getLeft()
-   * @see #getQuoExpression()
-   * @generated
-   */
-  EReference getQuoExpression_Left();
-
-  /**
-   * Returns the meta object for the attribute '{@link com.euclideanspace.aldor.editor.QuoExpression#getOp <em>Op</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Op</em>'.
-   * @see com.euclideanspace.aldor.editor.QuoExpression#getOp()
-   * @see #getQuoExpression()
-   * @generated
-   */
-  EAttribute getQuoExpression_Op();
-
-  /**
-   * Returns the meta object for the containment reference '{@link com.euclideanspace.aldor.editor.QuoExpression#getRight <em>Right</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Right</em>'.
-   * @see com.euclideanspace.aldor.editor.QuoExpression#getRight()
-   * @see #getQuoExpression()
-   * @generated
-   */
-  EReference getQuoExpression_Right();
-
-  /**
-   * Returns the meta object for class '{@link com.euclideanspace.aldor.editor.ModExpression <em>Mod Expression</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Mod Expression</em>'.
-   * @see com.euclideanspace.aldor.editor.ModExpression
-   * @generated
-   */
-  EClass getModExpression();
-
-  /**
-   * Returns the meta object for the containment reference '{@link com.euclideanspace.aldor.editor.ModExpression#getLeft <em>Left</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Left</em>'.
-   * @see com.euclideanspace.aldor.editor.ModExpression#getLeft()
-   * @see #getModExpression()
-   * @generated
-   */
-  EReference getModExpression_Left();
-
-  /**
-   * Returns the meta object for the attribute '{@link com.euclideanspace.aldor.editor.ModExpression#getOp <em>Op</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Op</em>'.
-   * @see com.euclideanspace.aldor.editor.ModExpression#getOp()
-   * @see #getModExpression()
-   * @generated
-   */
-  EAttribute getModExpression_Op();
-
-  /**
-   * Returns the meta object for the containment reference '{@link com.euclideanspace.aldor.editor.ModExpression#getRight <em>Right</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Right</em>'.
-   * @see com.euclideanspace.aldor.editor.ModExpression#getRight()
-   * @see #getModExpression()
-   * @generated
-   */
-  EReference getModExpression_Right();
-
-  /**
-   * Returns the meta object for class '{@link com.euclideanspace.aldor.editor.RemExpression <em>Rem Expression</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Rem Expression</em>'.
-   * @see com.euclideanspace.aldor.editor.RemExpression
-   * @generated
-   */
-  EClass getRemExpression();
-
-  /**
-   * Returns the meta object for the containment reference '{@link com.euclideanspace.aldor.editor.RemExpression#getLeft <em>Left</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Left</em>'.
-   * @see com.euclideanspace.aldor.editor.RemExpression#getLeft()
-   * @see #getRemExpression()
-   * @generated
-   */
-  EReference getRemExpression_Left();
-
-  /**
-   * Returns the meta object for the attribute '{@link com.euclideanspace.aldor.editor.RemExpression#getOp <em>Op</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Op</em>'.
-   * @see com.euclideanspace.aldor.editor.RemExpression#getOp()
-   * @see #getRemExpression()
-   * @generated
-   */
-  EAttribute getRemExpression_Op();
-
-  /**
-   * Returns the meta object for the containment reference '{@link com.euclideanspace.aldor.editor.RemExpression#getRight <em>Right</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Right</em>'.
-   * @see com.euclideanspace.aldor.editor.RemExpression#getRight()
-   * @see #getRemExpression()
-   * @generated
-   */
-  EReference getRemExpression_Right();
-
-  /**
-   * Returns the meta object for class '{@link com.euclideanspace.aldor.editor.MultiplicativeExpression <em>Multiplicative Expression</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Multiplicative Expression</em>'.
-   * @see com.euclideanspace.aldor.editor.MultiplicativeExpression
-   * @generated
-   */
-  EClass getMultiplicativeExpression();
-
-  /**
-   * Returns the meta object for the containment reference '{@link com.euclideanspace.aldor.editor.MultiplicativeExpression#getLeft <em>Left</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Left</em>'.
-   * @see com.euclideanspace.aldor.editor.MultiplicativeExpression#getLeft()
-   * @see #getMultiplicativeExpression()
-   * @generated
-   */
-  EReference getMultiplicativeExpression_Left();
-
-  /**
-   * Returns the meta object for the attribute '{@link com.euclideanspace.aldor.editor.MultiplicativeExpression#getOp <em>Op</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Op</em>'.
-   * @see com.euclideanspace.aldor.editor.MultiplicativeExpression#getOp()
-   * @see #getMultiplicativeExpression()
-   * @generated
-   */
-  EAttribute getMultiplicativeExpression_Op();
-
-  /**
-   * Returns the meta object for the attribute '{@link com.euclideanspace.aldor.editor.MultiplicativeExpression#getTe <em>Te</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Te</em>'.
-   * @see com.euclideanspace.aldor.editor.MultiplicativeExpression#getTe()
-   * @see #getMultiplicativeExpression()
-   * @generated
-   */
-  EAttribute getMultiplicativeExpression_Te();
-
-  /**
-   * Returns the meta object for the containment reference '{@link com.euclideanspace.aldor.editor.MultiplicativeExpression#getRight <em>Right</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Right</em>'.
-   * @see com.euclideanspace.aldor.editor.MultiplicativeExpression#getRight()
-   * @see #getMultiplicativeExpression()
-   * @generated
-   */
-  EReference getMultiplicativeExpression_Right();
-
-  /**
-   * Returns the meta object for class '{@link com.euclideanspace.aldor.editor.ExponentExpression <em>Exponent Expression</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Exponent Expression</em>'.
-   * @see com.euclideanspace.aldor.editor.ExponentExpression
-   * @generated
-   */
-  EClass getExponentExpression();
-
-  /**
-   * Returns the meta object for the containment reference '{@link com.euclideanspace.aldor.editor.ExponentExpression#getLeft <em>Left</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Left</em>'.
-   * @see com.euclideanspace.aldor.editor.ExponentExpression#getLeft()
-   * @see #getExponentExpression()
-   * @generated
-   */
-  EReference getExponentExpression_Left();
-
-  /**
-   * Returns the meta object for the attribute '{@link com.euclideanspace.aldor.editor.ExponentExpression#getOp <em>Op</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Op</em>'.
-   * @see com.euclideanspace.aldor.editor.ExponentExpression#getOp()
-   * @see #getExponentExpression()
-   * @generated
-   */
-  EAttribute getExponentExpression_Op();
-
-  /**
-   * Returns the meta object for the containment reference '{@link com.euclideanspace.aldor.editor.ExponentExpression#getRight <em>Right</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Right</em>'.
-   * @see com.euclideanspace.aldor.editor.ExponentExpression#getRight()
-   * @see #getExponentExpression()
-   * @generated
-   */
-  EReference getExponentExpression_Right();
-
-  /**
-   * Returns the meta object for class '{@link com.euclideanspace.aldor.editor.MapDefinition <em>Map Definition</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Map Definition</em>'.
-   * @see com.euclideanspace.aldor.editor.MapDefinition
-   * @generated
-   */
-  EClass getMapDefinition();
-
-  /**
-   * Returns the meta object for the containment reference '{@link com.euclideanspace.aldor.editor.MapDefinition#getLeft <em>Left</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Left</em>'.
-   * @see com.euclideanspace.aldor.editor.MapDefinition#getLeft()
-   * @see #getMapDefinition()
-   * @generated
-   */
-  EReference getMapDefinition_Left();
-
-  /**
-   * Returns the meta object for the attribute '{@link com.euclideanspace.aldor.editor.MapDefinition#getOp <em>Op</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Op</em>'.
-   * @see com.euclideanspace.aldor.editor.MapDefinition#getOp()
-   * @see #getMapDefinition()
-   * @generated
-   */
-  EAttribute getMapDefinition_Op();
-
-  /**
-   * Returns the meta object for the containment reference '{@link com.euclideanspace.aldor.editor.MapDefinition#getRight <em>Right</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Right</em>'.
-   * @see com.euclideanspace.aldor.editor.MapDefinition#getRight()
-   * @see #getMapDefinition()
-   * @generated
-   */
-  EReference getMapDefinition_Right();
-
-  /**
-   * Returns the meta object for the attribute '{@link com.euclideanspace.aldor.editor.MapDefinition#getPar <em>Par</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Par</em>'.
-   * @see com.euclideanspace.aldor.editor.MapDefinition#getPar()
-   * @see #getMapDefinition()
-   * @generated
-   */
-  EAttribute getMapDefinition_Par();
-
-  /**
-   * Returns the meta object for class '{@link com.euclideanspace.aldor.editor.AssignExpression <em>Assign Expression</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Assign Expression</em>'.
-   * @see com.euclideanspace.aldor.editor.AssignExpression
-   * @generated
-   */
-  EClass getAssignExpression();
-
-  /**
-   * Returns the meta object for the containment reference '{@link com.euclideanspace.aldor.editor.AssignExpression#getLeft <em>Left</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Left</em>'.
-   * @see com.euclideanspace.aldor.editor.AssignExpression#getLeft()
-   * @see #getAssignExpression()
-   * @generated
-   */
-  EReference getAssignExpression_Left();
-
-  /**
-   * Returns the meta object for the attribute '{@link com.euclideanspace.aldor.editor.AssignExpression#getOp <em>Op</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Op</em>'.
-   * @see com.euclideanspace.aldor.editor.AssignExpression#getOp()
-   * @see #getAssignExpression()
-   * @generated
-   */
-  EAttribute getAssignExpression_Op();
-
-  /**
-   * Returns the meta object for the containment reference '{@link com.euclideanspace.aldor.editor.AssignExpression#getRight <em>Right</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Right</em>'.
-   * @see com.euclideanspace.aldor.editor.AssignExpression#getRight()
-   * @see #getAssignExpression()
-   * @generated
-   */
-  EReference getAssignExpression_Right();
-
-  /**
-   * Returns the meta object for class '{@link com.euclideanspace.aldor.editor.PretendExpression <em>Pretend Expression</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Pretend Expression</em>'.
-   * @see com.euclideanspace.aldor.editor.PretendExpression
-   * @generated
-   */
-  EClass getPretendExpression();
-
-  /**
-   * Returns the meta object for the containment reference '{@link com.euclideanspace.aldor.editor.PretendExpression#getLeft <em>Left</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Left</em>'.
-   * @see com.euclideanspace.aldor.editor.PretendExpression#getLeft()
-   * @see #getPretendExpression()
-   * @generated
-   */
-  EReference getPretendExpression_Left();
-
-  /**
-   * Returns the meta object for the attribute '{@link com.euclideanspace.aldor.editor.PretendExpression#getOp <em>Op</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Op</em>'.
-   * @see com.euclideanspace.aldor.editor.PretendExpression#getOp()
-   * @see #getPretendExpression()
-   * @generated
-   */
-  EAttribute getPretendExpression_Op();
-
-  /**
-   * Returns the meta object for the containment reference '{@link com.euclideanspace.aldor.editor.PretendExpression#getRightType <em>Right Type</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Right Type</em>'.
-   * @see com.euclideanspace.aldor.editor.PretendExpression#getRightType()
-   * @see #getPretendExpression()
-   * @generated
-   */
-  EReference getPretendExpression_RightType();
-
-  /**
-   * Returns the meta object for class '{@link com.euclideanspace.aldor.editor.CoerceExpression <em>Coerce Expression</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Coerce Expression</em>'.
-   * @see com.euclideanspace.aldor.editor.CoerceExpression
-   * @generated
-   */
-  EClass getCoerceExpression();
-
-  /**
-   * Returns the meta object for the containment reference '{@link com.euclideanspace.aldor.editor.CoerceExpression#getLeft <em>Left</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Left</em>'.
-   * @see com.euclideanspace.aldor.editor.CoerceExpression#getLeft()
-   * @see #getCoerceExpression()
-   * @generated
-   */
-  EReference getCoerceExpression_Left();
-
-  /**
-   * Returns the meta object for the attribute '{@link com.euclideanspace.aldor.editor.CoerceExpression#getOp <em>Op</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Op</em>'.
-   * @see com.euclideanspace.aldor.editor.CoerceExpression#getOp()
-   * @see #getCoerceExpression()
-   * @generated
-   */
-  EAttribute getCoerceExpression_Op();
-
-  /**
-   * Returns the meta object for the containment reference '{@link com.euclideanspace.aldor.editor.CoerceExpression#getRightType <em>Right Type</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Right Type</em>'.
-   * @see com.euclideanspace.aldor.editor.CoerceExpression#getRightType()
-   * @see #getCoerceExpression()
-   * @generated
-   */
-  EReference getCoerceExpression_RightType();
-
-  /**
-   * Returns the meta object for class '{@link com.euclideanspace.aldor.editor.HintTypeExpression <em>Hint Type Expression</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Hint Type Expression</em>'.
-   * @see com.euclideanspace.aldor.editor.HintTypeExpression
-   * @generated
-   */
-  EClass getHintTypeExpression();
-
-  /**
-   * Returns the meta object for the containment reference '{@link com.euclideanspace.aldor.editor.HintTypeExpression#getLeft <em>Left</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Left</em>'.
-   * @see com.euclideanspace.aldor.editor.HintTypeExpression#getLeft()
-   * @see #getHintTypeExpression()
-   * @generated
-   */
-  EReference getHintTypeExpression_Left();
-
-  /**
-   * Returns the meta object for the attribute '{@link com.euclideanspace.aldor.editor.HintTypeExpression#getOp <em>Op</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Op</em>'.
-   * @see com.euclideanspace.aldor.editor.HintTypeExpression#getOp()
-   * @see #getHintTypeExpression()
-   * @generated
-   */
-  EAttribute getHintTypeExpression_Op();
-
-  /**
-   * Returns the meta object for the containment reference '{@link com.euclideanspace.aldor.editor.HintTypeExpression#getRightType <em>Right Type</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Right Type</em>'.
-   * @see com.euclideanspace.aldor.editor.HintTypeExpression#getRightType()
-   * @see #getHintTypeExpression()
-   * @generated
-   */
-  EReference getHintTypeExpression_RightType();
-
-  /**
-   * Returns the meta object for class '{@link com.euclideanspace.aldor.editor.EltExpression <em>Elt Expression</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Elt Expression</em>'.
-   * @see com.euclideanspace.aldor.editor.EltExpression
-   * @generated
-   */
-  EClass getEltExpression();
-
-  /**
-   * Returns the meta object for the containment reference '{@link com.euclideanspace.aldor.editor.EltExpression#getLeft <em>Left</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Left</em>'.
-   * @see com.euclideanspace.aldor.editor.EltExpression#getLeft()
-   * @see #getEltExpression()
-   * @generated
-   */
-  EReference getEltExpression_Left();
-
-  /**
-   * Returns the meta object for the attribute '{@link com.euclideanspace.aldor.editor.EltExpression#getOp <em>Op</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Op</em>'.
-   * @see com.euclideanspace.aldor.editor.EltExpression#getOp()
-   * @see #getEltExpression()
-   * @generated
-   */
-  EAttribute getEltExpression_Op();
-
-  /**
-   * Returns the meta object for the containment reference '{@link com.euclideanspace.aldor.editor.EltExpression#getRight <em>Right</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Right</em>'.
-   * @see com.euclideanspace.aldor.editor.EltExpression#getRight()
-   * @see #getEltExpression()
-   * @generated
-   */
-  EReference getEltExpression_Right();
-
-  /**
-   * Returns the meta object for class '{@link com.euclideanspace.aldor.editor.ExplicitTypeExpression <em>Explicit Type Expression</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Explicit Type Expression</em>'.
-   * @see com.euclideanspace.aldor.editor.ExplicitTypeExpression
-   * @generated
-   */
-  EClass getExplicitTypeExpression();
-
-  /**
-   * Returns the meta object for the containment reference '{@link com.euclideanspace.aldor.editor.ExplicitTypeExpression#getLeft <em>Left</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Left</em>'.
-   * @see com.euclideanspace.aldor.editor.ExplicitTypeExpression#getLeft()
-   * @see #getExplicitTypeExpression()
-   * @generated
-   */
-  EReference getExplicitTypeExpression_Left();
-
-  /**
-   * Returns the meta object for the attribute '{@link com.euclideanspace.aldor.editor.ExplicitTypeExpression#getOp <em>Op</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Op</em>'.
-   * @see com.euclideanspace.aldor.editor.ExplicitTypeExpression#getOp()
-   * @see #getExplicitTypeExpression()
-   * @generated
-   */
-  EAttribute getExplicitTypeExpression_Op();
-
-  /**
-   * Returns the meta object for the containment reference '{@link com.euclideanspace.aldor.editor.ExplicitTypeExpression#getRightType <em>Right Type</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Right Type</em>'.
-   * @see com.euclideanspace.aldor.editor.ExplicitTypeExpression#getRightType()
-   * @see #getExplicitTypeExpression()
-   * @generated
-   */
-  EReference getExplicitTypeExpression_RightType();
-
-  /**
-   * Returns the meta object for class '{@link com.euclideanspace.aldor.editor.UnaryExpression <em>Unary Expression</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Unary Expression</em>'.
-   * @see com.euclideanspace.aldor.editor.UnaryExpression
-   * @generated
-   */
-  EClass getUnaryExpression();
-
-  /**
-   * Returns the meta object for the attribute '{@link com.euclideanspace.aldor.editor.UnaryExpression#getUop <em>Uop</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Uop</em>'.
-   * @see com.euclideanspace.aldor.editor.UnaryExpression#getUop()
-   * @see #getUnaryExpression()
-   * @generated
-   */
-  EAttribute getUnaryExpression_Uop();
-
-  /**
-   * Returns the meta object for the containment reference '{@link com.euclideanspace.aldor.editor.UnaryExpression#getExpr <em>Expr</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Expr</em>'.
-   * @see com.euclideanspace.aldor.editor.UnaryExpression#getExpr()
-   * @see #getUnaryExpression()
-   * @generated
-   */
-  EReference getUnaryExpression_Expr();
-
-  /**
-   * Returns the meta object for the attribute '{@link com.euclideanspace.aldor.editor.UnaryExpression#getTe <em>Te</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Te</em>'.
-   * @see com.euclideanspace.aldor.editor.UnaryExpression#getTe()
-   * @see #getUnaryExpression()
-   * @generated
-   */
-  EAttribute getUnaryExpression_Te();
+  EClass getPowerTok();
 
   /**
    * Returns the factory that creates the instances of the model.
@@ -16147,2624 +2036,336 @@ public interface EditorPackage extends EPackage
     EClass MODEL = eINSTANCE.getModel();
 
     /**
-     * The meta object literal for the '<em><b>C</b></em>' containment reference feature.
+     * The meta object literal for the '{@link com.euclideanspace.aldor.editor.impl.ExpressionImpl <em>Expression</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
+     * @see com.euclideanspace.aldor.editor.impl.ExpressionImpl
+     * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getExpression()
      * @generated
      */
-    EReference MODEL__C = eINSTANCE.getModel_C();
+    EClass EXPRESSION = eINSTANCE.getExpression();
 
     /**
-     * The meta object literal for the '<em><b>P</b></em>' containment reference feature.
+     * The meta object literal for the '{@link com.euclideanspace.aldor.editor.impl.LabeledImpl <em>Labeled</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
+     * @see com.euclideanspace.aldor.editor.impl.LabeledImpl
+     * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getLabeled()
      * @generated
      */
-    EReference MODEL__P = eINSTANCE.getModel_P();
+    EClass LABELED = eINSTANCE.getLabeled();
 
     /**
-     * The meta object literal for the '<em><b>D</b></em>' containment reference feature.
+     * The meta object literal for the '{@link com.euclideanspace.aldor.editor.impl.OpQualTailImpl <em>Op Qual Tail</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
+     * @see com.euclideanspace.aldor.editor.impl.OpQualTailImpl
+     * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getOpQualTail()
      * @generated
      */
-    EReference MODEL__D = eINSTANCE.getModel_D();
+    EClass OP_QUAL_TAIL = eINSTANCE.getOpQualTail();
 
     /**
-     * The meta object literal for the '{@link com.euclideanspace.aldor.editor.impl.CategoryDefImpl <em>Category Def</em>}' class.
+     * The meta object literal for the '<em><b>Name</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see com.euclideanspace.aldor.editor.impl.CategoryDefImpl
-     * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getCategoryDef()
      * @generated
      */
-    EClass CATEGORY_DEF = eINSTANCE.getCategoryDef();
+    EReference OP_QUAL_TAIL__NAME = eINSTANCE.getOpQualTail_Name();
 
     /**
-     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * The meta object literal for the '{@link com.euclideanspace.aldor.editor.impl.OpImpl <em>Op</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
+     * @see com.euclideanspace.aldor.editor.impl.OpImpl
+     * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getOp()
      * @generated
      */
-    EAttribute CATEGORY_DEF__NAME = eINSTANCE.getCategoryDef_Name();
+    EClass OP = eINSTANCE.getOp();
 
     /**
-     * The meta object literal for the '<em><b>Shortname</b></em>' attribute feature.
+     * The meta object literal for the '{@link com.euclideanspace.aldor.editor.impl.NakedOpImpl <em>Naked Op</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
+     * @see com.euclideanspace.aldor.editor.impl.NakedOpImpl
+     * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getNakedOp()
      * @generated
      */
-    EAttribute CATEGORY_DEF__SHORTNAME = eINSTANCE.getCategoryDef_Shortname();
+    EClass NAKED_OP = eINSTANCE.getNakedOp();
 
     /**
-     * The meta object literal for the '<em><b>Longname</b></em>' attribute feature.
+     * The meta object literal for the '{@link com.euclideanspace.aldor.editor.impl.ArrowOpImpl <em>Arrow Op</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
+     * @see com.euclideanspace.aldor.editor.impl.ArrowOpImpl
+     * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getArrowOp()
      * @generated
      */
-    EAttribute CATEGORY_DEF__LONGNAME = eINSTANCE.getCategoryDef_Longname();
+    EClass ARROW_OP = eINSTANCE.getArrowOp();
 
     /**
-     * The meta object literal for the '<em><b>Longname2</b></em>' attribute feature.
+     * The meta object literal for the '{@link com.euclideanspace.aldor.editor.impl.LatticeOpImpl <em>Lattice Op</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
+     * @see com.euclideanspace.aldor.editor.impl.LatticeOpImpl
+     * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getLatticeOp()
      * @generated
      */
-    EAttribute CATEGORY_DEF__LONGNAME2 = eINSTANCE.getCategoryDef_Longname2();
+    EClass LATTICE_OP = eINSTANCE.getLatticeOp();
 
     /**
-     * The meta object literal for the '<em><b>Cp</b></em>' containment reference feature.
+     * The meta object literal for the '{@link com.euclideanspace.aldor.editor.impl.RelationOpImpl <em>Relation Op</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
+     * @see com.euclideanspace.aldor.editor.impl.RelationOpImpl
+     * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getRelationOp()
      * @generated
      */
-    EReference CATEGORY_DEF__CP = eINSTANCE.getCategoryDef_Cp();
+    EClass RELATION_OP = eINSTANCE.getRelationOp();
 
     /**
-     * The meta object literal for the '<em><b>Impl Name</b></em>' containment reference feature.
+     * The meta object literal for the '{@link com.euclideanspace.aldor.editor.impl.SegOpImpl <em>Seg Op</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
+     * @see com.euclideanspace.aldor.editor.impl.SegOpImpl
+     * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getSegOp()
      * @generated
      */
-    EReference CATEGORY_DEF__IMPL_NAME = eINSTANCE.getCategoryDef_ImplName();
+    EClass SEG_OP = eINSTANCE.getSegOp();
 
     /**
-     * The meta object literal for the '<em><b>W</b></em>' containment reference feature.
+     * The meta object literal for the '{@link com.euclideanspace.aldor.editor.impl.PlusOpImpl <em>Plus Op</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
+     * @see com.euclideanspace.aldor.editor.impl.PlusOpImpl
+     * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getPlusOp()
      * @generated
      */
-    EReference CATEGORY_DEF__W = eINSTANCE.getCategoryDef_W();
+    EClass PLUS_OP = eINSTANCE.getPlusOp();
 
     /**
-     * The meta object literal for the '<em><b>A</b></em>' containment reference feature.
+     * The meta object literal for the '{@link com.euclideanspace.aldor.editor.impl.QuotientOpImpl <em>Quotient Op</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
+     * @see com.euclideanspace.aldor.editor.impl.QuotientOpImpl
+     * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getQuotientOp()
      * @generated
      */
-    EReference CATEGORY_DEF__A = eINSTANCE.getCategoryDef_A();
+    EClass QUOTIENT_OP = eINSTANCE.getQuotientOp();
 
     /**
-     * The meta object literal for the '<em><b>Wh5</b></em>' containment reference feature.
+     * The meta object literal for the '{@link com.euclideanspace.aldor.editor.impl.TimesOpImpl <em>Times Op</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
+     * @see com.euclideanspace.aldor.editor.impl.TimesOpImpl
+     * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getTimesOp()
      * @generated
      */
-    EReference CATEGORY_DEF__WH5 = eINSTANCE.getCategoryDef_Wh5();
+    EClass TIMES_OP = eINSTANCE.getTimesOp();
 
     /**
-     * The meta object literal for the '<em><b>A2</b></em>' containment reference feature.
+     * The meta object literal for the '{@link com.euclideanspace.aldor.editor.impl.PowerOpImpl <em>Power Op</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
+     * @see com.euclideanspace.aldor.editor.impl.PowerOpImpl
+     * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getPowerOp()
      * @generated
      */
-    EReference CATEGORY_DEF__A2 = eINSTANCE.getCategoryDef_A2();
+    EClass POWER_OP = eINSTANCE.getPowerOp();
 
     /**
-     * The meta object literal for the '{@link com.euclideanspace.aldor.editor.impl.PackageDefImpl <em>Package Def</em>}' class.
+     * The meta object literal for the '{@link com.euclideanspace.aldor.editor.impl.Jleft_MoleculeImpl <em>Jleft Molecule</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see com.euclideanspace.aldor.editor.impl.PackageDefImpl
-     * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getPackageDef()
+     * @see com.euclideanspace.aldor.editor.impl.Jleft_MoleculeImpl
+     * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getJleft_Molecule()
      * @generated
      */
-    EClass PACKAGE_DEF = eINSTANCE.getPackageDef();
+    EClass JLEFT_MOLECULE = eINSTANCE.getJleft_Molecule();
 
     /**
-     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * The meta object literal for the '{@link com.euclideanspace.aldor.editor.impl.Jleft_AtomImpl <em>Jleft Atom</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
+     * @see com.euclideanspace.aldor.editor.impl.Jleft_AtomImpl
+     * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getJleft_Atom()
      * @generated
      */
-    EAttribute PACKAGE_DEF__NAME = eINSTANCE.getPackageDef_Name();
+    EClass JLEFT_ATOM = eINSTANCE.getJleft_Atom();
 
     /**
-     * The meta object literal for the '<em><b>Shortname</b></em>' attribute feature.
+     * The meta object literal for the '{@link com.euclideanspace.aldor.editor.impl.MoleculeImpl <em>Molecule</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
+     * @see com.euclideanspace.aldor.editor.impl.MoleculeImpl
+     * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getMolecule()
      * @generated
      */
-    EAttribute PACKAGE_DEF__SHORTNAME = eINSTANCE.getPackageDef_Shortname();
+    EClass MOLECULE = eINSTANCE.getMolecule();
 
     /**
-     * The meta object literal for the '<em><b>Longname</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Bm</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute PACKAGE_DEF__LONGNAME = eINSTANCE.getPackageDef_Longname();
+    EReference MOLECULE__BM = eINSTANCE.getMolecule_Bm();
 
     /**
-     * The meta object literal for the '<em><b>Longname2</b></em>' attribute feature.
+     * The meta object literal for the '{@link com.euclideanspace.aldor.editor.impl.EnclosureImpl <em>Enclosure</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
+     * @see com.euclideanspace.aldor.editor.impl.EnclosureImpl
+     * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getEnclosure()
      * @generated
      */
-    EAttribute PACKAGE_DEF__LONGNAME2 = eINSTANCE.getPackageDef_Longname2();
+    EClass ENCLOSURE = eINSTANCE.getEnclosure();
 
     /**
-     * The meta object literal for the '<em><b>Cp</b></em>' containment reference feature.
+     * The meta object literal for the '{@link com.euclideanspace.aldor.editor.impl.BlockMoleculeImpl <em>Block Molecule</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
+     * @see com.euclideanspace.aldor.editor.impl.BlockMoleculeImpl
+     * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getBlockMolecule()
      * @generated
      */
-    EReference PACKAGE_DEF__CP = eINSTANCE.getPackageDef_Cp();
+    EClass BLOCK_MOLECULE = eINSTANCE.getBlockMolecule();
 
     /**
-     * The meta object literal for the '<em><b>Export Name</b></em>' attribute feature.
+     * The meta object literal for the '{@link com.euclideanspace.aldor.editor.impl.BlockEnclosureImpl <em>Block Enclosure</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
+     * @see com.euclideanspace.aldor.editor.impl.BlockEnclosureImpl
+     * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getBlockEnclosure()
      * @generated
      */
-    EAttribute PACKAGE_DEF__EXPORT_NAME = eINSTANCE.getPackageDef_ExportName();
+    EClass BLOCK_ENCLOSURE = eINSTANCE.getBlockEnclosure();
 
     /**
-     * The meta object literal for the '<em><b>Impl Name</b></em>' attribute feature.
+     * The meta object literal for the '{@link com.euclideanspace.aldor.editor.impl.ParenedImpl <em>Parened</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
+     * @see com.euclideanspace.aldor.editor.impl.ParenedImpl
+     * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getParened()
      * @generated
      */
-    EAttribute PACKAGE_DEF__IMPL_NAME = eINSTANCE.getPackageDef_ImplName();
+    EClass PARENED = eINSTANCE.getParened();
 
     /**
-     * The meta object literal for the '<em><b>W</b></em>' containment reference feature.
+     * The meta object literal for the '{@link com.euclideanspace.aldor.editor.impl.BracketedImpl <em>Bracketed</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
+     * @see com.euclideanspace.aldor.editor.impl.BracketedImpl
+     * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getBracketed()
      * @generated
      */
-    EReference PACKAGE_DEF__W = eINSTANCE.getPackageDef_W();
+    EClass BRACKETED = eINSTANCE.getBracketed();
 
     /**
-     * The meta object literal for the '<em><b>Wh5</b></em>' containment reference feature.
+     * The meta object literal for the '{@link com.euclideanspace.aldor.editor.impl.QuotedIdsImpl <em>Quoted Ids</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
+     * @see com.euclideanspace.aldor.editor.impl.QuotedIdsImpl
+     * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getQuotedIds()
      * @generated
      */
-    EReference PACKAGE_DEF__WH5 = eINSTANCE.getPackageDef_Wh5();
+    EClass QUOTED_IDS = eINSTANCE.getQuotedIds();
 
     /**
-     * The meta object literal for the '<em><b>Add2</b></em>' containment reference feature.
+     * The meta object literal for the '{@link com.euclideanspace.aldor.editor.impl.NamesImpl <em>Names</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
+     * @see com.euclideanspace.aldor.editor.impl.NamesImpl
+     * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getNames()
      * @generated
      */
-    EReference PACKAGE_DEF__ADD2 = eINSTANCE.getPackageDef_Add2();
+    EClass NAMES = eINSTANCE.getNames();
 
     /**
-     * The meta object literal for the '{@link com.euclideanspace.aldor.editor.impl.DomainDefImpl <em>Domain Def</em>}' class.
+     * The meta object literal for the '<em><b>First Name</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see com.euclideanspace.aldor.editor.impl.DomainDefImpl
-     * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getDomainDef()
      * @generated
      */
-    EClass DOMAIN_DEF = eINSTANCE.getDomainDef();
+    EAttribute NAMES__FIRST_NAME = eINSTANCE.getNames_FirstName();
 
     /**
-     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Subsequent Names</b></em>' attribute list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute DOMAIN_DEF__NAME = eINSTANCE.getDomainDef_Name();
+    EAttribute NAMES__SUBSEQUENT_NAMES = eINSTANCE.getNames_SubsequentNames();
 
     /**
-     * The meta object literal for the '<em><b>Shortname5</b></em>' attribute feature.
+     * The meta object literal for the '{@link com.euclideanspace.aldor.editor.impl.AtomImpl <em>Atom</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
+     * @see com.euclideanspace.aldor.editor.impl.AtomImpl
+     * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getAtom()
      * @generated
      */
-    EAttribute DOMAIN_DEF__SHORTNAME5 = eINSTANCE.getDomainDef_Shortname5();
+    EClass ATOM = eINSTANCE.getAtom();
 
     /**
-     * The meta object literal for the '<em><b>Longname5</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Lab</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute DOMAIN_DEF__LONGNAME5 = eINSTANCE.getDomainDef_Longname5();
+    EReference ATOM__LAB = eINSTANCE.getAtom_Lab();
 
     /**
-     * The meta object literal for the '<em><b>Longname6</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Bm4</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute DOMAIN_DEF__LONGNAME6 = eINSTANCE.getDomainDef_Longname6();
+    EReference ATOM__BM4 = eINSTANCE.getAtom_Bm4();
 
     /**
-     * The meta object literal for the '<em><b>Cp5</b></em>' containment reference feature.
+     * The meta object literal for the '<em><b>Id</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference DOMAIN_DEF__CP5 = eINSTANCE.getDomainDef_Cp5();
+    EReference ATOM__ID = eINSTANCE.getAtom_Id();
 
     /**
-     * The meta object literal for the '<em><b>Export Name</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Lit</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute DOMAIN_DEF__EXPORT_NAME = eINSTANCE.getDomainDef_ExportName();
+    EAttribute ATOM__LIT = eINSTANCE.getAtom_Lit();
 
     /**
-     * The meta object literal for the '<em><b>Cp6</b></em>' containment reference feature.
+     * The meta object literal for the '{@link com.euclideanspace.aldor.editor.impl.NameImpl <em>Name</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
+     * @see com.euclideanspace.aldor.editor.impl.NameImpl
+     * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getName_()
      * @generated
      */
-    EReference DOMAIN_DEF__CP6 = eINSTANCE.getDomainDef_Cp6();
+    EClass NAME = eINSTANCE.getName_();
 
     /**
-     * The meta object literal for the '<em><b>Impl Name5</b></em>' attribute feature.
+     * The meta object literal for the '{@link com.euclideanspace.aldor.editor.impl.IdImpl <em>Id</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
+     * @see com.euclideanspace.aldor.editor.impl.IdImpl
+     * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getId()
      * @generated
      */
-    EAttribute DOMAIN_DEF__IMPL_NAME5 = eINSTANCE.getDomainDef_ImplName5();
+    EClass ID = eINSTANCE.getId();
 
     /**
-     * The meta object literal for the '<em><b>W</b></em>' containment reference feature.
+     * The meta object literal for the '<em><b>AB Id</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference DOMAIN_DEF__W = eINSTANCE.getDomainDef_W();
-
-    /**
-     * The meta object literal for the '<em><b>Wh5</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference DOMAIN_DEF__WH5 = eINSTANCE.getDomainDef_Wh5();
-
-    /**
-     * The meta object literal for the '<em><b>A</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference DOMAIN_DEF__A = eINSTANCE.getDomainDef_A();
-
-    /**
-     * The meta object literal for the '{@link com.euclideanspace.aldor.editor.impl.WherePartImpl <em>Where Part</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see com.euclideanspace.aldor.editor.impl.WherePartImpl
-     * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getWherePart()
-     * @generated
-     */
-    EClass WHERE_PART = eINSTANCE.getWherePart();
-
-    /**
-     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute WHERE_PART__NAME = eINSTANCE.getWherePart_Name();
-
-    /**
-     * The meta object literal for the '<em><b>Where Assig</b></em>' containment reference list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference WHERE_PART__WHERE_ASSIG = eINSTANCE.getWherePart_WhereAssig();
-
-    /**
-     * The meta object literal for the '<em><b>Longname8</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute WHERE_PART__LONGNAME8 = eINSTANCE.getWherePart_Longname8();
-
-    /**
-     * The meta object literal for the '<em><b>Imp</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference WHERE_PART__IMP = eINSTANCE.getWherePart_Imp();
-
-    /**
-     * The meta object literal for the '<em><b>W8</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference WHERE_PART__W8 = eINSTANCE.getWherePart_W8();
-
-    /**
-     * The meta object literal for the '<em><b>Longname9</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute WHERE_PART__LONGNAME9 = eINSTANCE.getWherePart_Longname9();
-
-    /**
-     * The meta object literal for the '<em><b>Fs</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute WHERE_PART__FS = eINSTANCE.getWherePart_Fs();
-
-    /**
-     * The meta object literal for the '<em><b>Par2</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute WHERE_PART__PAR2 = eINSTANCE.getWherePart_Par2();
-
-    /**
-     * The meta object literal for the '<em><b>Par3</b></em>' attribute list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute WHERE_PART__PAR3 = eINSTANCE.getWherePart_Par3();
-
-    /**
-     * The meta object literal for the '<em><b>F2</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute WHERE_PART__F2 = eINSTANCE.getWherePart_F2();
-
-    /**
-     * The meta object literal for the '<em><b>Add</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference WHERE_PART__ADD = eINSTANCE.getWherePart_Add();
-
-    /**
-     * The meta object literal for the '{@link com.euclideanspace.aldor.editor.impl.WhereAssignmentsImpl <em>Where Assignments</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see com.euclideanspace.aldor.editor.impl.WhereAssignmentsImpl
-     * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getWhereAssignments()
-     * @generated
-     */
-    EClass WHERE_ASSIGNMENTS = eINSTANCE.getWhereAssignments();
-
-    /**
-     * The meta object literal for the '{@link com.euclideanspace.aldor.editor.impl.WithPartImpl <em>With Part</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see com.euclideanspace.aldor.editor.impl.WithPartImpl
-     * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getWithPart()
-     * @generated
-     */
-    EClass WITH_PART = eINSTANCE.getWithPart();
-
-    /**
-     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute WITH_PART__NAME = eINSTANCE.getWithPart_Name();
-
-    /**
-     * The meta object literal for the '<em><b>Fundec</b></em>' containment reference list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference WITH_PART__FUNDEC = eINSTANCE.getWithPart_Fundec();
-
-    /**
-     * The meta object literal for the '{@link com.euclideanspace.aldor.editor.impl.WithInlineImpl <em>With Inline</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see com.euclideanspace.aldor.editor.impl.WithInlineImpl
-     * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getWithInline()
-     * @generated
-     */
-    EClass WITH_INLINE = eINSTANCE.getWithInline();
-
-    /**
-     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute WITH_INLINE__NAME = eINSTANCE.getWithInline_Name();
-
-    /**
-     * The meta object literal for the '<em><b>Fundec</b></em>' containment reference list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference WITH_INLINE__FUNDEC = eINSTANCE.getWithInline_Fundec();
-
-    /**
-     * The meta object literal for the '{@link com.euclideanspace.aldor.editor.impl.AddPartImpl <em>Add Part</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see com.euclideanspace.aldor.editor.impl.AddPartImpl
-     * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getAddPart()
-     * @generated
-     */
-    EClass ADD_PART = eINSTANCE.getAddPart();
-
-    /**
-     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute ADD_PART__NAME = eINSTANCE.getAddPart_Name();
-
-    /**
-     * The meta object literal for the '<em><b>T</b></em>' containment reference list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference ADD_PART__T = eINSTANCE.getAddPart_T();
-
-    /**
-     * The meta object literal for the '{@link com.euclideanspace.aldor.editor.impl.AddStatementsImpl <em>Add Statements</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see com.euclideanspace.aldor.editor.impl.AddStatementsImpl
-     * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getAddStatements()
-     * @generated
-     */
-    EClass ADD_STATEMENTS = eINSTANCE.getAddStatements();
-
-    /**
-     * The meta object literal for the '<em><b>T1</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference ADD_STATEMENTS__T1 = eINSTANCE.getAddStatements_T1();
-
-    /**
-     * The meta object literal for the '<em><b>T13</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference ADD_STATEMENTS__T13 = eINSTANCE.getAddStatements_T13();
-
-    /**
-     * The meta object literal for the '<em><b>T14</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference ADD_STATEMENTS__T14 = eINSTANCE.getAddStatements_T14();
-
-    /**
-     * The meta object literal for the '<em><b>T15</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference ADD_STATEMENTS__T15 = eINSTANCE.getAddStatements_T15();
-
-    /**
-     * The meta object literal for the '{@link com.euclideanspace.aldor.editor.impl.FunctionDefinitionImpl <em>Function Definition</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see com.euclideanspace.aldor.editor.impl.FunctionDefinitionImpl
-     * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getFunctionDefinition()
-     * @generated
-     */
-    EClass FUNCTION_DEFINITION = eINSTANCE.getFunctionDefinition();
-
-    /**
-     * The meta object literal for the '<em><b>Par3</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference FUNCTION_DEFINITION__PAR3 = eINSTANCE.getFunctionDefinition_Par3();
-
-    /**
-     * The meta object literal for the '<em><b>Par4</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference FUNCTION_DEFINITION__PAR4 = eINSTANCE.getFunctionDefinition_Par4();
-
-    /**
-     * The meta object literal for the '<em><b>Par5</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference FUNCTION_DEFINITION__PAR5 = eINSTANCE.getFunctionDefinition_Par5();
-
-    /**
-     * The meta object literal for the '<em><b>Fn Nam</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute FUNCTION_DEFINITION__FN_NAM = eINSTANCE.getFunctionDefinition_FnNam();
-
-    /**
-     * The meta object literal for the '{@link com.euclideanspace.aldor.editor.impl.FunctionDefinitionBlockImpl <em>Function Definition Block</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see com.euclideanspace.aldor.editor.impl.FunctionDefinitionBlockImpl
-     * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getFunctionDefinitionBlock()
-     * @generated
-     */
-    EClass FUNCTION_DEFINITION_BLOCK = eINSTANCE.getFunctionDefinitionBlock();
-
-    /**
-     * The meta object literal for the '<em><b>Fn Dec Br</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute FUNCTION_DEFINITION_BLOCK__FN_DEC_BR = eINSTANCE.getFunctionDefinitionBlock_FnDecBr();
-
-    /**
-     * The meta object literal for the '<em><b>Fn Dec Bk</b></em>' containment reference list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference FUNCTION_DEFINITION_BLOCK__FN_DEC_BK = eINSTANCE.getFunctionDefinitionBlock_FnDecBk();
-
-    /**
-     * The meta object literal for the '<em><b>Vars</b></em>' containment reference list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference FUNCTION_DEFINITION_BLOCK__VARS = eINSTANCE.getFunctionDefinitionBlock_Vars();
-
-    /**
-     * The meta object literal for the '<em><b>T1</b></em>' containment reference list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference FUNCTION_DEFINITION_BLOCK__T1 = eINSTANCE.getFunctionDefinitionBlock_T1();
-
-    /**
-     * The meta object literal for the '<em><b>T13</b></em>' containment reference list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference FUNCTION_DEFINITION_BLOCK__T13 = eINSTANCE.getFunctionDefinitionBlock_T13();
-
-    /**
-     * The meta object literal for the '<em><b>T14</b></em>' containment reference list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference FUNCTION_DEFINITION_BLOCK__T14 = eINSTANCE.getFunctionDefinitionBlock_T14();
-
-    /**
-     * The meta object literal for the '<em><b>I1</b></em>' containment reference list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference FUNCTION_DEFINITION_BLOCK__I1 = eINSTANCE.getFunctionDefinitionBlock_I1();
-
-    /**
-     * The meta object literal for the '<em><b>E</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference FUNCTION_DEFINITION_BLOCK__E = eINSTANCE.getFunctionDefinitionBlock_E();
-
-    /**
-     * The meta object literal for the '{@link com.euclideanspace.aldor.editor.impl.FunctionSignatureImpl <em>Function Signature</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see com.euclideanspace.aldor.editor.impl.FunctionSignatureImpl
-     * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getFunctionSignature()
-     * @generated
-     */
-    EClass FUNCTION_SIGNATURE = eINSTANCE.getFunctionSignature();
-
-    /**
-     * The meta object literal for the '<em><b>Fn Nam</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute FUNCTION_SIGNATURE__FN_NAM = eINSTANCE.getFunctionSignature_FnNam();
-
-    /**
-     * The meta object literal for the '<em><b>Par2</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference FUNCTION_SIGNATURE__PAR2 = eINSTANCE.getFunctionSignature_Par2();
-
-    /**
-     * The meta object literal for the '<em><b>Par3</b></em>' containment reference list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference FUNCTION_SIGNATURE__PAR3 = eINSTANCE.getFunctionSignature_Par3();
-
-    /**
-     * The meta object literal for the '<em><b>Par</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute FUNCTION_SIGNATURE__PAR = eINSTANCE.getFunctionSignature_Par();
-
-    /**
-     * The meta object literal for the '<em><b>T4</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute FUNCTION_SIGNATURE__T4 = eINSTANCE.getFunctionSignature_T4();
-
-    /**
-     * The meta object literal for the '<em><b>B1</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute FUNCTION_SIGNATURE__B1 = eINSTANCE.getFunctionSignature_B1();
-
-    /**
-     * The meta object literal for the '<em><b>T5</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute FUNCTION_SIGNATURE__T5 = eINSTANCE.getFunctionSignature_T5();
-
-    /**
-     * The meta object literal for the '<em><b>B3</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute FUNCTION_SIGNATURE__B3 = eINSTANCE.getFunctionSignature_B3();
-
-    /**
-     * The meta object literal for the '<em><b>B2</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute FUNCTION_SIGNATURE__B2 = eINSTANCE.getFunctionSignature_B2();
-
-    /**
-     * The meta object literal for the '<em><b>T6</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute FUNCTION_SIGNATURE__T6 = eINSTANCE.getFunctionSignature_T6();
-
-    /**
-     * The meta object literal for the '<em><b>B4</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute FUNCTION_SIGNATURE__B4 = eINSTANCE.getFunctionSignature_B4();
-
-    /**
-     * The meta object literal for the '<em><b>T7</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute FUNCTION_SIGNATURE__T7 = eINSTANCE.getFunctionSignature_T7();
-
-    /**
-     * The meta object literal for the '<em><b>B5</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute FUNCTION_SIGNATURE__B5 = eINSTANCE.getFunctionSignature_B5();
-
-    /**
-     * The meta object literal for the '<em><b>T8</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute FUNCTION_SIGNATURE__T8 = eINSTANCE.getFunctionSignature_T8();
-
-    /**
-     * The meta object literal for the '<em><b>B6</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute FUNCTION_SIGNATURE__B6 = eINSTANCE.getFunctionSignature_B6();
-
-    /**
-     * The meta object literal for the '{@link com.euclideanspace.aldor.editor.impl.MacroDefImpl <em>Macro Def</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see com.euclideanspace.aldor.editor.impl.MacroDefImpl
-     * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getMacroDef()
-     * @generated
-     */
-    EClass MACRO_DEF = eINSTANCE.getMacroDef();
-
-    /**
-     * The meta object literal for the '<em><b>Macroname</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute MACRO_DEF__MACRONAME = eINSTANCE.getMacroDef_Macroname();
-
-    /**
-     * The meta object literal for the '{@link com.euclideanspace.aldor.editor.impl.ImportImpl <em>Import</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see com.euclideanspace.aldor.editor.impl.ImportImpl
-     * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getImport()
-     * @generated
-     */
-    EClass IMPORT = eINSTANCE.getImport();
-
-    /**
-     * The meta object literal for the '<em><b>Impname</b></em>' attribute list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute IMPORT__IMPNAME = eINSTANCE.getImport_Impname();
-
-    /**
-     * The meta object literal for the '<em><b>Par22</b></em>' containment reference list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference IMPORT__PAR22 = eINSTANCE.getImport_Par22();
-
-    /**
-     * The meta object literal for the '{@link com.euclideanspace.aldor.editor.impl.VariableDeclarationBlockImpl <em>Variable Declaration Block</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see com.euclideanspace.aldor.editor.impl.VariableDeclarationBlockImpl
-     * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getVariableDeclarationBlock()
-     * @generated
-     */
-    EClass VARIABLE_DECLARATION_BLOCK = eINSTANCE.getVariableDeclarationBlock();
-
-    /**
-     * The meta object literal for the '<em><b>Vardecbr</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute VARIABLE_DECLARATION_BLOCK__VARDECBR = eINSTANCE.getVariableDeclarationBlock_Vardecbr();
-
-    /**
-     * The meta object literal for the '<em><b>Vardec Blk</b></em>' containment reference list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference VARIABLE_DECLARATION_BLOCK__VARDEC_BLK = eINSTANCE.getVariableDeclarationBlock_VardecBlk();
-
-    /**
-     * The meta object literal for the '{@link com.euclideanspace.aldor.editor.impl.VariableDeclarationImpl <em>Variable Declaration</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see com.euclideanspace.aldor.editor.impl.VariableDeclarationImpl
-     * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getVariableDeclaration()
-     * @generated
-     */
-    EClass VARIABLE_DECLARATION = eINSTANCE.getVariableDeclaration();
-
-    /**
-     * The meta object literal for the '<em><b>T1</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference VARIABLE_DECLARATION__T1 = eINSTANCE.getVariableDeclaration_T1();
-
-    /**
-     * The meta object literal for the '<em><b>V1</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference VARIABLE_DECLARATION__V1 = eINSTANCE.getVariableDeclaration_V1();
-
-    /**
-     * The meta object literal for the '<em><b>V2</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference VARIABLE_DECLARATION__V2 = eINSTANCE.getVariableDeclaration_V2();
-
-    /**
-     * The meta object literal for the '{@link com.euclideanspace.aldor.editor.impl.TypeWithNameImpl <em>Type With Name</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see com.euclideanspace.aldor.editor.impl.TypeWithNameImpl
-     * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getTypeWithName()
-     * @generated
-     */
-    EClass TYPE_WITH_NAME = eINSTANCE.getTypeWithName();
-
-    /**
-     * The meta object literal for the '<em><b>Var Name</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute TYPE_WITH_NAME__VAR_NAME = eINSTANCE.getTypeWithName_VarName();
-
-    /**
-     * The meta object literal for the '<em><b>Var Name St</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute TYPE_WITH_NAME__VAR_NAME_ST = eINSTANCE.getTypeWithName_VarNameSt();
-
-    /**
-     * The meta object literal for the '<em><b>Var Name2</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute TYPE_WITH_NAME__VAR_NAME2 = eINSTANCE.getTypeWithName_VarName2();
-
-    /**
-     * The meta object literal for the '<em><b>Typ</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference TYPE_WITH_NAME__TYP = eINSTANCE.getTypeWithName_Typ();
-
-    /**
-     * The meta object literal for the '{@link com.euclideanspace.aldor.editor.impl.VariableTypedImpl <em>Variable Typed</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see com.euclideanspace.aldor.editor.impl.VariableTypedImpl
-     * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getVariableTyped()
-     * @generated
-     */
-    EClass VARIABLE_TYPED = eINSTANCE.getVariableTyped();
-
-    /**
-     * The meta object literal for the '<em><b>Var Name</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute VARIABLE_TYPED__VAR_NAME = eINSTANCE.getVariableTyped_VarName();
-
-    /**
-     * The meta object literal for the '<em><b>Var Name St</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute VARIABLE_TYPED__VAR_NAME_ST = eINSTANCE.getVariableTyped_VarNameSt();
-
-    /**
-     * The meta object literal for the '<em><b>Typ</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference VARIABLE_TYPED__TYP = eINSTANCE.getVariableTyped_Typ();
-
-    /**
-     * The meta object literal for the '{@link com.euclideanspace.aldor.editor.impl.VariableDeclarationAssignImpl <em>Variable Declaration Assign</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see com.euclideanspace.aldor.editor.impl.VariableDeclarationAssignImpl
-     * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getVariableDeclarationAssign()
-     * @generated
-     */
-    EClass VARIABLE_DECLARATION_ASSIGN = eINSTANCE.getVariableDeclarationAssign();
-
-    /**
-     * The meta object literal for the '<em><b>Var Name</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute VARIABLE_DECLARATION_ASSIGN__VAR_NAME = eINSTANCE.getVariableDeclarationAssign_VarName();
-
-    /**
-     * The meta object literal for the '<em><b>T12</b></em>' attribute list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute VARIABLE_DECLARATION_ASSIGN__T12 = eINSTANCE.getVariableDeclarationAssign_T12();
-
-    /**
-     * The meta object literal for the '<em><b>Typ</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference VARIABLE_DECLARATION_ASSIGN__TYP = eINSTANCE.getVariableDeclarationAssign_Typ();
-
-    /**
-     * The meta object literal for the '<em><b>T4</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference VARIABLE_DECLARATION_ASSIGN__T4 = eINSTANCE.getVariableDeclarationAssign_T4();
-
-    /**
-     * The meta object literal for the '{@link com.euclideanspace.aldor.editor.impl.FreeVariableImpl <em>Free Variable</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see com.euclideanspace.aldor.editor.impl.FreeVariableImpl
-     * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getFreeVariable()
-     * @generated
-     */
-    EClass FREE_VARIABLE = eINSTANCE.getFreeVariable();
-
-    /**
-     * The meta object literal for the '<em><b>Var</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute FREE_VARIABLE__VAR = eINSTANCE.getFreeVariable_Var();
-
-    /**
-     * The meta object literal for the '{@link com.euclideanspace.aldor.editor.impl.LocalVariableImpl <em>Local Variable</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see com.euclideanspace.aldor.editor.impl.LocalVariableImpl
-     * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getLocalVariable()
-     * @generated
-     */
-    EClass LOCAL_VARIABLE = eINSTANCE.getLocalVariable();
-
-    /**
-     * The meta object literal for the '<em><b>Var</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute LOCAL_VARIABLE__VAR = eINSTANCE.getLocalVariable_Var();
-
-    /**
-     * The meta object literal for the '{@link com.euclideanspace.aldor.editor.impl.TypeExpressionImpl <em>Type Expression</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see com.euclideanspace.aldor.editor.impl.TypeExpressionImpl
-     * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getTypeExpression()
-     * @generated
-     */
-    EClass TYPE_EXPRESSION = eINSTANCE.getTypeExpression();
-
-    /**
-     * The meta object literal for the '<em><b>T2</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference TYPE_EXPRESSION__T2 = eINSTANCE.getTypeExpression_T2();
-
-    /**
-     * The meta object literal for the '<em><b>T3</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference TYPE_EXPRESSION__T3 = eINSTANCE.getTypeExpression_T3();
-
-    /**
-     * The meta object literal for the '<em><b>T92</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference TYPE_EXPRESSION__T92 = eINSTANCE.getTypeExpression_T92();
-
-    /**
-     * The meta object literal for the '<em><b>T93</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference TYPE_EXPRESSION__T93 = eINSTANCE.getTypeExpression_T93();
-
-    /**
-     * The meta object literal for the '{@link com.euclideanspace.aldor.editor.impl.TypeParameterListImpl <em>Type Parameter List</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see com.euclideanspace.aldor.editor.impl.TypeParameterListImpl
-     * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getTypeParameterList()
-     * @generated
-     */
-    EClass TYPE_PARAMETER_LIST = eINSTANCE.getTypeParameterList();
-
-    /**
-     * The meta object literal for the '<em><b>Tyname</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute TYPE_PARAMETER_LIST__TYNAME = eINSTANCE.getTypeParameterList_Tyname();
-
-    /**
-     * The meta object literal for the '<em><b>Par</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute TYPE_PARAMETER_LIST__PAR = eINSTANCE.getTypeParameterList_Par();
-
-    /**
-     * The meta object literal for the '<em><b>Par21</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference TYPE_PARAMETER_LIST__PAR21 = eINSTANCE.getTypeParameterList_Par21();
-
-    /**
-     * The meta object literal for the '<em><b>Par2</b></em>' attribute list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute TYPE_PARAMETER_LIST__PAR2 = eINSTANCE.getTypeParameterList_Par2();
-
-    /**
-     * The meta object literal for the '<em><b>Par22</b></em>' containment reference list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference TYPE_PARAMETER_LIST__PAR22 = eINSTANCE.getTypeParameterList_Par22();
-
-    /**
-     * The meta object literal for the '{@link com.euclideanspace.aldor.editor.impl.TypeArgumentsImpl <em>Type Arguments</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see com.euclideanspace.aldor.editor.impl.TypeArgumentsImpl
-     * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getTypeArguments()
-     * @generated
-     */
-    EClass TYPE_ARGUMENTS = eINSTANCE.getTypeArguments();
-
-    /**
-     * The meta object literal for the '<em><b>T</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference TYPE_ARGUMENTS__T = eINSTANCE.getTypeArguments_T();
-
-    /**
-     * The meta object literal for the '<em><b>T2</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute TYPE_ARGUMENTS__T2 = eINSTANCE.getTypeArguments_T2();
-
-    /**
-     * The meta object literal for the '<em><b>T3</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute TYPE_ARGUMENTS__T3 = eINSTANCE.getTypeArguments_T3();
-
-    /**
-     * The meta object literal for the '<em><b>B1</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute TYPE_ARGUMENTS__B1 = eINSTANCE.getTypeArguments_B1();
-
-    /**
-     * The meta object literal for the '<em><b>T4</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference TYPE_ARGUMENTS__T4 = eINSTANCE.getTypeArguments_T4();
-
-    /**
-     * The meta object literal for the '<em><b>T16</b></em>' containment reference list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference TYPE_ARGUMENTS__T16 = eINSTANCE.getTypeArguments_T16();
-
-    /**
-     * The meta object literal for the '<em><b>T5</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute TYPE_ARGUMENTS__T5 = eINSTANCE.getTypeArguments_T5();
-
-    /**
-     * The meta object literal for the '<em><b>T6</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference TYPE_ARGUMENTS__T6 = eINSTANCE.getTypeArguments_T6();
-
-    /**
-     * The meta object literal for the '<em><b>T22</b></em>' containment reference list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference TYPE_ARGUMENTS__T22 = eINSTANCE.getTypeArguments_T22();
-
-    /**
-     * The meta object literal for the '<em><b>T21</b></em>' containment reference list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference TYPE_ARGUMENTS__T21 = eINSTANCE.getTypeArguments_T21();
-
-    /**
-     * The meta object literal for the '<em><b>T23</b></em>' containment reference list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference TYPE_ARGUMENTS__T23 = eINSTANCE.getTypeArguments_T23();
-
-    /**
-     * The meta object literal for the '<em><b>T9</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute TYPE_ARGUMENTS__T9 = eINSTANCE.getTypeArguments_T9();
-
-    /**
-     * The meta object literal for the '<em><b>T10</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference TYPE_ARGUMENTS__T10 = eINSTANCE.getTypeArguments_T10();
-
-    /**
-     * The meta object literal for the '<em><b>T25</b></em>' containment reference list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference TYPE_ARGUMENTS__T25 = eINSTANCE.getTypeArguments_T25();
-
-    /**
-     * The meta object literal for the '<em><b>T24</b></em>' containment reference list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference TYPE_ARGUMENTS__T24 = eINSTANCE.getTypeArguments_T24();
-
-    /**
-     * The meta object literal for the '<em><b>T26</b></em>' containment reference list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference TYPE_ARGUMENTS__T26 = eINSTANCE.getTypeArguments_T26();
-
-    /**
-     * The meta object literal for the '<em><b>T11</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute TYPE_ARGUMENTS__T11 = eINSTANCE.getTypeArguments_T11();
-
-    /**
-     * The meta object literal for the '<em><b>T12</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference TYPE_ARGUMENTS__T12 = eINSTANCE.getTypeArguments_T12();
-
-    /**
-     * The meta object literal for the '<em><b>T13</b></em>' containment reference list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference TYPE_ARGUMENTS__T13 = eINSTANCE.getTypeArguments_T13();
-
-    /**
-     * The meta object literal for the '<em><b>T15</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference TYPE_ARGUMENTS__T15 = eINSTANCE.getTypeArguments_T15();
-
-    /**
-     * The meta object literal for the '{@link com.euclideanspace.aldor.editor.impl.TypeResultImpl <em>Type Result</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see com.euclideanspace.aldor.editor.impl.TypeResultImpl
-     * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getTypeResult()
-     * @generated
-     */
-    EClass TYPE_RESULT = eINSTANCE.getTypeResult();
-
-    /**
-     * The meta object literal for the '<em><b>T</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference TYPE_RESULT__T = eINSTANCE.getTypeResult_T();
-
-    /**
-     * The meta object literal for the '<em><b>T2</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute TYPE_RESULT__T2 = eINSTANCE.getTypeResult_T2();
-
-    /**
-     * The meta object literal for the '<em><b>Tyname</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute TYPE_RESULT__TYNAME = eINSTANCE.getTypeResult_Tyname();
-
-    /**
-     * The meta object literal for the '<em><b>T7</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference TYPE_RESULT__T7 = eINSTANCE.getTypeResult_T7();
-
-    /**
-     * The meta object literal for the '<em><b>T8</b></em>' containment reference list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference TYPE_RESULT__T8 = eINSTANCE.getTypeResult_T8();
-
-    /**
-     * The meta object literal for the '<em><b>T21</b></em>' containment reference list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference TYPE_RESULT__T21 = eINSTANCE.getTypeResult_T21();
-
-    /**
-     * The meta object literal for the '<em><b>T23</b></em>' containment reference list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference TYPE_RESULT__T23 = eINSTANCE.getTypeResult_T23();
-
-    /**
-     * The meta object literal for the '<em><b>T10</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference TYPE_RESULT__T10 = eINSTANCE.getTypeResult_T10();
-
-    /**
-     * The meta object literal for the '<em><b>T11</b></em>' containment reference list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference TYPE_RESULT__T11 = eINSTANCE.getTypeResult_T11();
-
-    /**
-     * The meta object literal for the '<em><b>T24</b></em>' containment reference list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference TYPE_RESULT__T24 = eINSTANCE.getTypeResult_T24();
-
-    /**
-     * The meta object literal for the '<em><b>T26</b></em>' containment reference list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference TYPE_RESULT__T26 = eINSTANCE.getTypeResult_T26();
-
-    /**
-     * The meta object literal for the '<em><b>T12</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference TYPE_RESULT__T12 = eINSTANCE.getTypeResult_T12();
-
-    /**
-     * The meta object literal for the '<em><b>T13</b></em>' containment reference list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference TYPE_RESULT__T13 = eINSTANCE.getTypeResult_T13();
-
-    /**
-     * The meta object literal for the '<em><b>T15</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference TYPE_RESULT__T15 = eINSTANCE.getTypeResult_T15();
-
-    /**
-     * The meta object literal for the '{@link com.euclideanspace.aldor.editor.impl.TypePrimaryExpressionImpl <em>Type Primary Expression</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see com.euclideanspace.aldor.editor.impl.TypePrimaryExpressionImpl
-     * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getTypePrimaryExpression()
-     * @generated
-     */
-    EClass TYPE_PRIMARY_EXPRESSION = eINSTANCE.getTypePrimaryExpression();
-
-    /**
-     * The meta object literal for the '<em><b>T32</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute TYPE_PRIMARY_EXPRESSION__T32 = eINSTANCE.getTypePrimaryExpression_T32();
-
-    /**
-     * The meta object literal for the '<em><b>Tyname</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute TYPE_PRIMARY_EXPRESSION__TYNAME = eINSTANCE.getTypePrimaryExpression_Tyname();
-
-    /**
-     * The meta object literal for the '<em><b>T5</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference TYPE_PRIMARY_EXPRESSION__T5 = eINSTANCE.getTypePrimaryExpression_T5();
-
-    /**
-     * The meta object literal for the '<em><b>T7</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference TYPE_PRIMARY_EXPRESSION__T7 = eINSTANCE.getTypePrimaryExpression_T7();
-
-    /**
-     * The meta object literal for the '<em><b>T8</b></em>' containment reference list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference TYPE_PRIMARY_EXPRESSION__T8 = eINSTANCE.getTypePrimaryExpression_T8();
-
-    /**
-     * The meta object literal for the '<em><b>T21</b></em>' containment reference list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference TYPE_PRIMARY_EXPRESSION__T21 = eINSTANCE.getTypePrimaryExpression_T21();
-
-    /**
-     * The meta object literal for the '<em><b>T23</b></em>' containment reference list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference TYPE_PRIMARY_EXPRESSION__T23 = eINSTANCE.getTypePrimaryExpression_T23();
-
-    /**
-     * The meta object literal for the '<em><b>T10</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference TYPE_PRIMARY_EXPRESSION__T10 = eINSTANCE.getTypePrimaryExpression_T10();
-
-    /**
-     * The meta object literal for the '<em><b>T11</b></em>' containment reference list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference TYPE_PRIMARY_EXPRESSION__T11 = eINSTANCE.getTypePrimaryExpression_T11();
-
-    /**
-     * The meta object literal for the '<em><b>T24</b></em>' containment reference list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference TYPE_PRIMARY_EXPRESSION__T24 = eINSTANCE.getTypePrimaryExpression_T24();
-
-    /**
-     * The meta object literal for the '<em><b>T26</b></em>' containment reference list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference TYPE_PRIMARY_EXPRESSION__T26 = eINSTANCE.getTypePrimaryExpression_T26();
-
-    /**
-     * The meta object literal for the '<em><b>T13</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference TYPE_PRIMARY_EXPRESSION__T13 = eINSTANCE.getTypePrimaryExpression_T13();
-
-    /**
-     * The meta object literal for the '<em><b>T14</b></em>' containment reference list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference TYPE_PRIMARY_EXPRESSION__T14 = eINSTANCE.getTypePrimaryExpression_T14();
-
-    /**
-     * The meta object literal for the '{@link com.euclideanspace.aldor.editor.impl.TypeNameOrFunctionCallImpl <em>Type Name Or Function Call</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see com.euclideanspace.aldor.editor.impl.TypeNameOrFunctionCallImpl
-     * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getTypeNameOrFunctionCall()
-     * @generated
-     */
-    EClass TYPE_NAME_OR_FUNCTION_CALL = eINSTANCE.getTypeNameOrFunctionCall();
-
-    /**
-     * The meta object literal for the '<em><b>Tfnname</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute TYPE_NAME_OR_FUNCTION_CALL__TFNNAME = eINSTANCE.getTypeNameOrFunctionCall_Tfnname();
-
-    /**
-     * The meta object literal for the '<em><b>T4</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference TYPE_NAME_OR_FUNCTION_CALL__T4 = eINSTANCE.getTypeNameOrFunctionCall_T4();
-
-    /**
-     * The meta object literal for the '<em><b>T25</b></em>' containment reference list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference TYPE_NAME_OR_FUNCTION_CALL__T25 = eINSTANCE.getTypeNameOrFunctionCall_T25();
-
-    /**
-     * The meta object literal for the '<em><b>T44</b></em>' containment reference list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference TYPE_NAME_OR_FUNCTION_CALL__T44 = eINSTANCE.getTypeNameOrFunctionCall_T44();
-
-    /**
-     * The meta object literal for the '<em><b>T45</b></em>' containment reference list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference TYPE_NAME_OR_FUNCTION_CALL__T45 = eINSTANCE.getTypeNameOrFunctionCall_T45();
-
-    /**
-     * The meta object literal for the '<em><b>T6</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference TYPE_NAME_OR_FUNCTION_CALL__T6 = eINSTANCE.getTypeNameOrFunctionCall_T6();
-
-    /**
-     * The meta object literal for the '<em><b>W</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference TYPE_NAME_OR_FUNCTION_CALL__W = eINSTANCE.getTypeNameOrFunctionCall_W();
-
-    /**
-     * The meta object literal for the '{@link com.euclideanspace.aldor.editor.impl.TypeNameOrFunctionCall2Impl <em>Type Name Or Function Call2</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see com.euclideanspace.aldor.editor.impl.TypeNameOrFunctionCall2Impl
-     * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getTypeNameOrFunctionCall2()
-     * @generated
-     */
-    EClass TYPE_NAME_OR_FUNCTION_CALL2 = eINSTANCE.getTypeNameOrFunctionCall2();
-
-    /**
-     * The meta object literal for the '<em><b>Tfnname</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute TYPE_NAME_OR_FUNCTION_CALL2__TFNNAME = eINSTANCE.getTypeNameOrFunctionCall2_Tfnname();
-
-    /**
-     * The meta object literal for the '<em><b>T4</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference TYPE_NAME_OR_FUNCTION_CALL2__T4 = eINSTANCE.getTypeNameOrFunctionCall2_T4();
-
-    /**
-     * The meta object literal for the '<em><b>T25</b></em>' containment reference list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference TYPE_NAME_OR_FUNCTION_CALL2__T25 = eINSTANCE.getTypeNameOrFunctionCall2_T25();
-
-    /**
-     * The meta object literal for the '<em><b>T44</b></em>' containment reference list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference TYPE_NAME_OR_FUNCTION_CALL2__T44 = eINSTANCE.getTypeNameOrFunctionCall2_T44();
-
-    /**
-     * The meta object literal for the '<em><b>T45</b></em>' containment reference list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference TYPE_NAME_OR_FUNCTION_CALL2__T45 = eINSTANCE.getTypeNameOrFunctionCall2_T45();
-
-    /**
-     * The meta object literal for the '<em><b>T6</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference TYPE_NAME_OR_FUNCTION_CALL2__T6 = eINSTANCE.getTypeNameOrFunctionCall2_T6();
-
-    /**
-     * The meta object literal for the '{@link com.euclideanspace.aldor.editor.impl.TupleDefinitionImpl <em>Tuple Definition</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see com.euclideanspace.aldor.editor.impl.TupleDefinitionImpl
-     * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getTupleDefinition()
-     * @generated
-     */
-    EClass TUPLE_DEFINITION = eINSTANCE.getTupleDefinition();
-
-    /**
-     * The meta object literal for the '<em><b>T4</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference TUPLE_DEFINITION__T4 = eINSTANCE.getTupleDefinition_T4();
-
-    /**
-     * The meta object literal for the '<em><b>T25</b></em>' containment reference list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference TUPLE_DEFINITION__T25 = eINSTANCE.getTupleDefinition_T25();
-
-    /**
-     * The meta object literal for the '{@link com.euclideanspace.aldor.editor.impl.TypeLiteralImpl <em>Type Literal</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see com.euclideanspace.aldor.editor.impl.TypeLiteralImpl
-     * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getTypeLiteral()
-     * @generated
-     */
-    EClass TYPE_LITERAL = eINSTANCE.getTypeLiteral();
-
-    /**
-     * The meta object literal for the '<em><b>T1</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute TYPE_LITERAL__T1 = eINSTANCE.getTypeLiteral_T1();
-
-    /**
-     * The meta object literal for the '<em><b>T22</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute TYPE_LITERAL__T22 = eINSTANCE.getTypeLiteral_T22();
-
-    /**
-     * The meta object literal for the '<em><b>T34</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference TYPE_LITERAL__T34 = eINSTANCE.getTypeLiteral_T34();
-
-    /**
-     * The meta object literal for the '<em><b>T35</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference TYPE_LITERAL__T35 = eINSTANCE.getTypeLiteral_T35();
-
-    /**
-     * The meta object literal for the '{@link com.euclideanspace.aldor.editor.impl.StatementImpl <em>Statement</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see com.euclideanspace.aldor.editor.impl.StatementImpl
-     * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getStatement()
-     * @generated
-     */
-    EClass STATEMENT = eINSTANCE.getStatement();
-
-    /**
-     * The meta object literal for the '<em><b>S1</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference STATEMENT__S1 = eINSTANCE.getStatement_S1();
-
-    /**
-     * The meta object literal for the '<em><b>S3</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference STATEMENT__S3 = eINSTANCE.getStatement_S3();
-
-    /**
-     * The meta object literal for the '<em><b>S4</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference STATEMENT__S4 = eINSTANCE.getStatement_S4();
-
-    /**
-     * The meta object literal for the '<em><b>S4b</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference STATEMENT__S4B = eINSTANCE.getStatement_S4b();
-
-    /**
-     * The meta object literal for the '<em><b>S5</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference STATEMENT__S5 = eINSTANCE.getStatement_S5();
-
-    /**
-     * The meta object literal for the '<em><b>S6</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference STATEMENT__S6 = eINSTANCE.getStatement_S6();
-
-    /**
-     * The meta object literal for the '<em><b>S7</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference STATEMENT__S7 = eINSTANCE.getStatement_S7();
-
-    /**
-     * The meta object literal for the '<em><b>S8</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference STATEMENT__S8 = eINSTANCE.getStatement_S8();
-
-    /**
-     * The meta object literal for the '<em><b>S12</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference STATEMENT__S12 = eINSTANCE.getStatement_S12();
-
-    /**
-     * The meta object literal for the '<em><b>S9</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference STATEMENT__S9 = eINSTANCE.getStatement_S9();
-
-    /**
-     * The meta object literal for the '<em><b>S10</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference STATEMENT__S10 = eINSTANCE.getStatement_S10();
-
-    /**
-     * The meta object literal for the '<em><b>E</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference STATEMENT__E = eINSTANCE.getStatement_E();
-
-    /**
-     * The meta object literal for the '{@link com.euclideanspace.aldor.editor.impl.BlockImpl <em>Block</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see com.euclideanspace.aldor.editor.impl.BlockImpl
-     * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getBlock()
-     * @generated
-     */
-    EClass BLOCK = eINSTANCE.getBlock();
-
-    /**
-     * The meta object literal for the '<em><b>Stname</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute BLOCK__STNAME = eINSTANCE.getBlock_Stname();
-
-    /**
-     * The meta object literal for the '<em><b>Statem Bl</b></em>' containment reference list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference BLOCK__STATEM_BL = eINSTANCE.getBlock_StatemBl();
-
-    /**
-     * The meta object literal for the '{@link com.euclideanspace.aldor.editor.impl.StatementExpressionImpl <em>Statement Expression</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see com.euclideanspace.aldor.editor.impl.StatementExpressionImpl
-     * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getStatementExpression()
-     * @generated
-     */
-    EClass STATEMENT_EXPRESSION = eINSTANCE.getStatementExpression();
-
-    /**
-     * The meta object literal for the '<em><b>T</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference STATEMENT_EXPRESSION__T = eINSTANCE.getStatementExpression_T();
-
-    /**
-     * The meta object literal for the '<em><b>T5</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference STATEMENT_EXPRESSION__T5 = eINSTANCE.getStatementExpression_T5();
-
-    /**
-     * The meta object literal for the '<em><b>T4</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference STATEMENT_EXPRESSION__T4 = eINSTANCE.getStatementExpression_T4();
-
-    /**
-     * The meta object literal for the '{@link com.euclideanspace.aldor.editor.impl.ForStatementImpl <em>For Statement</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see com.euclideanspace.aldor.editor.impl.ForStatementImpl
-     * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getForStatement()
-     * @generated
-     */
-    EClass FOR_STATEMENT = eINSTANCE.getForStatement();
-
-    /**
-     * The meta object literal for the '<em><b>Stname</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute FOR_STATEMENT__STNAME = eINSTANCE.getForStatement_Stname();
-
-    /**
-     * The meta object literal for the '<em><b>T1</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference FOR_STATEMENT__T1 = eINSTANCE.getForStatement_T1();
-
-    /**
-     * The meta object literal for the '<em><b>By1</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference FOR_STATEMENT__BY1 = eINSTANCE.getForStatement_By1();
-
-    /**
-     * The meta object literal for the '<em><b>Stname2</b></em>' attribute list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute FOR_STATEMENT__STNAME2 = eINSTANCE.getForStatement_Stname2();
-
-    /**
-     * The meta object literal for the '<em><b>T2</b></em>' containment reference list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference FOR_STATEMENT__T2 = eINSTANCE.getForStatement_T2();
-
-    /**
-     * The meta object literal for the '<em><b>By2</b></em>' containment reference list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference FOR_STATEMENT__BY2 = eINSTANCE.getForStatement_By2();
-
-    /**
-     * The meta object literal for the '<em><b>S1</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference FOR_STATEMENT__S1 = eINSTANCE.getForStatement_S1();
-
-    /**
-     * The meta object literal for the '{@link com.euclideanspace.aldor.editor.impl.WhileStatementImpl <em>While Statement</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see com.euclideanspace.aldor.editor.impl.WhileStatementImpl
-     * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getWhileStatement()
-     * @generated
-     */
-    EClass WHILE_STATEMENT = eINSTANCE.getWhileStatement();
-
-    /**
-     * The meta object literal for the '<em><b>Stname</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute WHILE_STATEMENT__STNAME = eINSTANCE.getWhileStatement_Stname();
-
-    /**
-     * The meta object literal for the '<em><b>T2</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference WHILE_STATEMENT__T2 = eINSTANCE.getWhileStatement_T2();
-
-    /**
-     * The meta object literal for the '<em><b>S1</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference WHILE_STATEMENT__S1 = eINSTANCE.getWhileStatement_S1();
-
-    /**
-     * The meta object literal for the '{@link com.euclideanspace.aldor.editor.impl.DoStatementImpl <em>Do Statement</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see com.euclideanspace.aldor.editor.impl.DoStatementImpl
-     * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getDoStatement()
-     * @generated
-     */
-    EClass DO_STATEMENT = eINSTANCE.getDoStatement();
-
-    /**
-     * The meta object literal for the '<em><b>Stname</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute DO_STATEMENT__STNAME = eINSTANCE.getDoStatement_Stname();
-
-    /**
-     * The meta object literal for the '<em><b>S1</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference DO_STATEMENT__S1 = eINSTANCE.getDoStatement_S1();
-
-    /**
-     * The meta object literal for the '<em><b>T2</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference DO_STATEMENT__T2 = eINSTANCE.getDoStatement_T2();
-
-    /**
-     * The meta object literal for the '{@link com.euclideanspace.aldor.editor.impl.RepeatStatementImpl <em>Repeat Statement</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see com.euclideanspace.aldor.editor.impl.RepeatStatementImpl
-     * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getRepeatStatement()
-     * @generated
-     */
-    EClass REPEAT_STATEMENT = eINSTANCE.getRepeatStatement();
-
-    /**
-     * The meta object literal for the '<em><b>Stname</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute REPEAT_STATEMENT__STNAME = eINSTANCE.getRepeatStatement_Stname();
-
-    /**
-     * The meta object literal for the '<em><b>S1</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference REPEAT_STATEMENT__S1 = eINSTANCE.getRepeatStatement_S1();
-
-    /**
-     * The meta object literal for the '{@link com.euclideanspace.aldor.editor.impl.IterateStatementImpl <em>Iterate Statement</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see com.euclideanspace.aldor.editor.impl.IterateStatementImpl
-     * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getIterateStatement()
-     * @generated
-     */
-    EClass ITERATE_STATEMENT = eINSTANCE.getIterateStatement();
-
-    /**
-     * The meta object literal for the '<em><b>Stname</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute ITERATE_STATEMENT__STNAME = eINSTANCE.getIterateStatement_Stname();
-
-    /**
-     * The meta object literal for the '{@link com.euclideanspace.aldor.editor.impl.BreakStatementImpl <em>Break Statement</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see com.euclideanspace.aldor.editor.impl.BreakStatementImpl
-     * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getBreakStatement()
-     * @generated
-     */
-    EClass BREAK_STATEMENT = eINSTANCE.getBreakStatement();
-
-    /**
-     * The meta object literal for the '<em><b>Stname</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute BREAK_STATEMENT__STNAME = eINSTANCE.getBreakStatement_Stname();
-
-    /**
-     * The meta object literal for the '{@link com.euclideanspace.aldor.editor.impl.ReturnStatementImpl <em>Return Statement</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see com.euclideanspace.aldor.editor.impl.ReturnStatementImpl
-     * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getReturnStatement()
-     * @generated
-     */
-    EClass RETURN_STATEMENT = eINSTANCE.getReturnStatement();
-
-    /**
-     * The meta object literal for the '<em><b>Stname</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute RETURN_STATEMENT__STNAME = eINSTANCE.getReturnStatement_Stname();
-
-    /**
-     * The meta object literal for the '<em><b>T2</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference RETURN_STATEMENT__T2 = eINSTANCE.getReturnStatement_T2();
-
-    /**
-     * The meta object literal for the '{@link com.euclideanspace.aldor.editor.impl.IfStatementImpl <em>If Statement</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see com.euclideanspace.aldor.editor.impl.IfStatementImpl
-     * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getIfStatement()
-     * @generated
-     */
-    EClass IF_STATEMENT = eINSTANCE.getIfStatement();
-
-    /**
-     * The meta object literal for the '<em><b>T2</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference IF_STATEMENT__T2 = eINSTANCE.getIfStatement_T2();
-
-    /**
-     * The meta object literal for the '<em><b>S1</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference IF_STATEMENT__S1 = eINSTANCE.getIfStatement_S1();
-
-    /**
-     * The meta object literal for the '<em><b>S2</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference IF_STATEMENT__S2 = eINSTANCE.getIfStatement_S2();
-
-    /**
-     * The meta object literal for the '<em><b>B</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute IF_STATEMENT__B = eINSTANCE.getIfStatement_B();
-
-    /**
-     * The meta object literal for the '<em><b>S11</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference IF_STATEMENT__S11 = eINSTANCE.getIfStatement_S11();
-
-    /**
-     * The meta object literal for the '<em><b>S12</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference IF_STATEMENT__S12 = eINSTANCE.getIfStatement_S12();
-
-    /**
-     * The meta object literal for the '{@link com.euclideanspace.aldor.editor.impl.IfElseStatementImpl <em>If Else Statement</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see com.euclideanspace.aldor.editor.impl.IfElseStatementImpl
-     * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getIfElseStatement()
-     * @generated
-     */
-    EClass IF_ELSE_STATEMENT = eINSTANCE.getIfElseStatement();
-
-    /**
-     * The meta object literal for the '<em><b>S2</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference IF_ELSE_STATEMENT__S2 = eINSTANCE.getIfElseStatement_S2();
-
-    /**
-     * The meta object literal for the '{@link com.euclideanspace.aldor.editor.impl.ExprImpl <em>Expr</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see com.euclideanspace.aldor.editor.impl.ExprImpl
-     * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getExpr()
-     * @generated
-     */
-    EClass EXPR = eINSTANCE.getExpr();
-
-    /**
-     * The meta object literal for the '<em><b>Ifname</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute EXPR__IFNAME = eINSTANCE.getExpr_Ifname();
-
-    /**
-     * The meta object literal for the '<em><b>Ifpred</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference EXPR__IFPRED = eINSTANCE.getExpr_Ifpred();
-
-    /**
-     * The meta object literal for the '<em><b>Thenexp</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference EXPR__THENEXP = eINSTANCE.getExpr_Thenexp();
-
-    /**
-     * The meta object literal for the '<em><b>Elseexp</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference EXPR__ELSEEXP = eINSTANCE.getExpr_Elseexp();
-
-    /**
-     * The meta object literal for the '<em><b>E2</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute EXPR__E2 = eINSTANCE.getExpr_E2();
-
-    /**
-     * The meta object literal for the '<em><b>E3</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute EXPR__E3 = eINSTANCE.getExpr_E3();
-
-    /**
-     * The meta object literal for the '<em><b>E5</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute EXPR__E5 = eINSTANCE.getExpr_E5();
-
-    /**
-     * The meta object literal for the '<em><b>E6</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference EXPR__E6 = eINSTANCE.getExpr_E6();
-
-    /**
-     * The meta object literal for the '<em><b>E22</b></em>' containment reference list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference EXPR__E22 = eINSTANCE.getExpr_E22();
-
-    /**
-     * The meta object literal for the '<em><b>E21</b></em>' containment reference list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference EXPR__E21 = eINSTANCE.getExpr_E21();
-
-    /**
-     * The meta object literal for the '<em><b>E23</b></em>' containment reference list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference EXPR__E23 = eINSTANCE.getExpr_E23();
-
-    /**
-     * The meta object literal for the '<em><b>E9</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute EXPR__E9 = eINSTANCE.getExpr_E9();
-
-    /**
-     * The meta object literal for the '<em><b>E10</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference EXPR__E10 = eINSTANCE.getExpr_E10();
-
-    /**
-     * The meta object literal for the '<em><b>E25</b></em>' containment reference list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference EXPR__E25 = eINSTANCE.getExpr_E25();
-
-    /**
-     * The meta object literal for the '<em><b>E24</b></em>' containment reference list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference EXPR__E24 = eINSTANCE.getExpr_E24();
-
-    /**
-     * The meta object literal for the '<em><b>E26</b></em>' containment reference list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference EXPR__E26 = eINSTANCE.getExpr_E26();
-
-    /**
-     * The meta object literal for the '<em><b>E11</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute EXPR__E11 = eINSTANCE.getExpr_E11();
-
-    /**
-     * The meta object literal for the '<em><b>E12</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference EXPR__E12 = eINSTANCE.getExpr_E12();
-
-    /**
-     * The meta object literal for the '<em><b>E13</b></em>' containment reference list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference EXPR__E13 = eINSTANCE.getExpr_E13();
-
-    /**
-     * The meta object literal for the '{@link com.euclideanspace.aldor.editor.impl.PrimaryPrefixImpl <em>Primary Prefix</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see com.euclideanspace.aldor.editor.impl.PrimaryPrefixImpl
-     * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getPrimaryPrefix()
-     * @generated
-     */
-    EClass PRIMARY_PREFIX = eINSTANCE.getPrimaryPrefix();
-
-    /**
-     * The meta object literal for the '<em><b>T4</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference PRIMARY_PREFIX__T4 = eINSTANCE.getPrimaryPrefix_T4();
-
-    /**
-     * The meta object literal for the '<em><b>T25</b></em>' containment reference list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference PRIMARY_PREFIX__T25 = eINSTANCE.getPrimaryPrefix_T25();
-
-    /**
-     * The meta object literal for the '<em><b>Right Type3</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference PRIMARY_PREFIX__RIGHT_TYPE3 = eINSTANCE.getPrimaryPrefix_RightType3();
-
-    /**
-     * The meta object literal for the '<em><b>T7</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference PRIMARY_PREFIX__T7 = eINSTANCE.getPrimaryPrefix_T7();
-
-    /**
-     * The meta object literal for the '{@link com.euclideanspace.aldor.editor.impl.NameOrFunctionCallImpl <em>Name Or Function Call</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see com.euclideanspace.aldor.editor.impl.NameOrFunctionCallImpl
-     * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getNameOrFunctionCall()
-     * @generated
-     */
-    EClass NAME_OR_FUNCTION_CALL = eINSTANCE.getNameOrFunctionCall();
-
-    /**
-     * The meta object literal for the '<em><b>Fnname</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute NAME_OR_FUNCTION_CALL__FNNAME = eINSTANCE.getNameOrFunctionCall_Fnname();
-
-    /**
-     * The meta object literal for the '<em><b>Lsp</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute NAME_OR_FUNCTION_CALL__LSP = eINSTANCE.getNameOrFunctionCall_Lsp();
-
-    /**
-     * The meta object literal for the '<em><b>T4</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference NAME_OR_FUNCTION_CALL__T4 = eINSTANCE.getNameOrFunctionCall_T4();
-
-    /**
-     * The meta object literal for the '<em><b>T5</b></em>' containment reference list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference NAME_OR_FUNCTION_CALL__T5 = eINSTANCE.getNameOrFunctionCall_T5();
-
-    /**
-     * The meta object literal for the '<em><b>T14</b></em>' containment reference list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference NAME_OR_FUNCTION_CALL__T14 = eINSTANCE.getNameOrFunctionCall_T14();
-
-    /**
-     * The meta object literal for the '<em><b>T15</b></em>' containment reference list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference NAME_OR_FUNCTION_CALL__T15 = eINSTANCE.getNameOrFunctionCall_T15();
-
-    /**
-     * The meta object literal for the '<em><b>T6</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference NAME_OR_FUNCTION_CALL__T6 = eINSTANCE.getNameOrFunctionCall_T6();
-
-    /**
-     * The meta object literal for the '<em><b>Right Type2</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference NAME_OR_FUNCTION_CALL__RIGHT_TYPE2 = eINSTANCE.getNameOrFunctionCall_RightType2();
-
-    /**
-     * The meta object literal for the '{@link com.euclideanspace.aldor.editor.impl.LiteralImpl <em>Literal</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see com.euclideanspace.aldor.editor.impl.LiteralImpl
-     * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getLiteral()
-     * @generated
-     */
-    EClass LITERAL = eINSTANCE.getLiteral();
-
-    /**
-     * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute LITERAL__VALUE = eINSTANCE.getLiteral_Value();
-
-    /**
-     * The meta object literal for the '<em><b>T2</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute LITERAL__T2 = eINSTANCE.getLiteral_T2();
-
-    /**
-     * The meta object literal for the '<em><b>E1</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference LITERAL__E1 = eINSTANCE.getLiteral_E1();
-
-    /**
-     * The meta object literal for the '<em><b>T31</b></em>' attribute list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute LITERAL__T31 = eINSTANCE.getLiteral_T31();
-
-    /**
-     * The meta object literal for the '<em><b>E4</b></em>' containment reference list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference LITERAL__E4 = eINSTANCE.getLiteral_E4();
-
-    /**
-     * The meta object literal for the '{@link com.euclideanspace.aldor.editor.impl.CharacterLiteralImpl <em>Character Literal</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see com.euclideanspace.aldor.editor.impl.CharacterLiteralImpl
-     * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getCharacterLiteral()
-     * @generated
-     */
-    EClass CHARACTER_LITERAL = eINSTANCE.getCharacterLiteral();
-
-    /**
-     * The meta object literal for the '<em><b>C1</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute CHARACTER_LITERAL__C1 = eINSTANCE.getCharacterLiteral_C1();
-
-    /**
-     * The meta object literal for the '{@link com.euclideanspace.aldor.editor.impl.BooleanLiteralImpl <em>Boolean Literal</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see com.euclideanspace.aldor.editor.impl.BooleanLiteralImpl
-     * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getBooleanLiteral()
-     * @generated
-     */
-    EClass BOOLEAN_LITERAL = eINSTANCE.getBooleanLiteral();
-
-    /**
-     * The meta object literal for the '<em><b>Litname</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute BOOLEAN_LITERAL__LITNAME = eINSTANCE.getBooleanLiteral_Litname();
-
-    /**
-     * The meta object literal for the '{@link com.euclideanspace.aldor.editor.impl.ListLiteralImpl <em>List Literal</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see com.euclideanspace.aldor.editor.impl.ListLiteralImpl
-     * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getListLiteral()
-     * @generated
-     */
-    EClass LIST_LITERAL = eINSTANCE.getListLiteral();
-
-    /**
-     * The meta object literal for the '<em><b>Litname</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute LIST_LITERAL__LITNAME = eINSTANCE.getListLiteral_Litname();
-
-    /**
-     * The meta object literal for the '<em><b>L2</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference LIST_LITERAL__L2 = eINSTANCE.getListLiteral_L2();
-
-    /**
-     * The meta object literal for the '<em><b>T3</b></em>' containment reference list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference LIST_LITERAL__T3 = eINSTANCE.getListLiteral_T3();
-
-    /**
-     * The meta object literal for the '<em><b>T14</b></em>' containment reference list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference LIST_LITERAL__T14 = eINSTANCE.getListLiteral_T14();
-
-    /**
-     * The meta object literal for the '<em><b>L5</b></em>' containment reference list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference LIST_LITERAL__L5 = eINSTANCE.getListLiteral_L5();
-
-    /**
-     * The meta object literal for the '{@link com.euclideanspace.aldor.editor.impl.ExitExpressionImpl <em>Exit Expression</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see com.euclideanspace.aldor.editor.impl.ExitExpressionImpl
-     * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getExitExpression()
-     * @generated
-     */
-    EClass EXIT_EXPRESSION = eINSTANCE.getExitExpression();
-
-    /**
-     * The meta object literal for the '<em><b>Left</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference EXIT_EXPRESSION__LEFT = eINSTANCE.getExitExpression_Left();
+    EAttribute ID__AB_ID = eINSTANCE.getId_AB_Id();
 
     /**
      * The meta object literal for the '<em><b>Op</b></em>' attribute feature.
@@ -18772,981 +2373,313 @@ public interface EditorPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute EXIT_EXPRESSION__OP = eINSTANCE.getExitExpression_Op();
+    EAttribute ID__OP = eINSTANCE.getId_Op();
 
     /**
-     * The meta object literal for the '<em><b>Right</b></em>' containment reference feature.
+     * The meta object literal for the '{@link com.euclideanspace.aldor.editor.impl.UnqualOp_ArrowTokImpl <em>Unqual Op Arrow Tok</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
+     * @see com.euclideanspace.aldor.editor.impl.UnqualOp_ArrowTokImpl
+     * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getUnqualOp_ArrowTok()
      * @generated
      */
-    EReference EXIT_EXPRESSION__RIGHT = eINSTANCE.getExitExpression_Right();
+    EClass UNQUAL_OP_ARROW_TOK = eINSTANCE.getUnqualOp_ArrowTok();
 
     /**
-     * The meta object literal for the '<em><b>R2</b></em>' containment reference feature.
+     * The meta object literal for the '{@link com.euclideanspace.aldor.editor.impl.UnqualOp_LatticeTokImpl <em>Unqual Op Lattice Tok</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
+     * @see com.euclideanspace.aldor.editor.impl.UnqualOp_LatticeTokImpl
+     * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getUnqualOp_LatticeTok()
      * @generated
      */
-    EReference EXIT_EXPRESSION__R2 = eINSTANCE.getExitExpression_R2();
+    EClass UNQUAL_OP_LATTICE_TOK = eINSTANCE.getUnqualOp_LatticeTok();
 
     /**
-     * The meta object literal for the '{@link com.euclideanspace.aldor.editor.impl.ConditionExpressionImpl <em>Condition Expression</em>}' class.
+     * The meta object literal for the '{@link com.euclideanspace.aldor.editor.impl.UnqualOp_RelationTokImpl <em>Unqual Op Relation Tok</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see com.euclideanspace.aldor.editor.impl.ConditionExpressionImpl
-     * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getConditionExpression()
+     * @see com.euclideanspace.aldor.editor.impl.UnqualOp_RelationTokImpl
+     * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getUnqualOp_RelationTok()
      * @generated
      */
-    EClass CONDITION_EXPRESSION = eINSTANCE.getConditionExpression();
+    EClass UNQUAL_OP_RELATION_TOK = eINSTANCE.getUnqualOp_RelationTok();
 
     /**
-     * The meta object literal for the '<em><b>Left</b></em>' containment reference feature.
+     * The meta object literal for the '{@link com.euclideanspace.aldor.editor.impl.UnqualOp_SegTokImpl <em>Unqual Op Seg Tok</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
+     * @see com.euclideanspace.aldor.editor.impl.UnqualOp_SegTokImpl
+     * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getUnqualOp_SegTok()
      * @generated
      */
-    EReference CONDITION_EXPRESSION__LEFT = eINSTANCE.getConditionExpression_Left();
+    EClass UNQUAL_OP_SEG_TOK = eINSTANCE.getUnqualOp_SegTok();
 
     /**
-     * The meta object literal for the '<em><b>Op</b></em>' attribute feature.
+     * The meta object literal for the '{@link com.euclideanspace.aldor.editor.impl.UnqualOp_PlusTokImpl <em>Unqual Op Plus Tok</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
+     * @see com.euclideanspace.aldor.editor.impl.UnqualOp_PlusTokImpl
+     * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getUnqualOp_PlusTok()
      * @generated
      */
-    EAttribute CONDITION_EXPRESSION__OP = eINSTANCE.getConditionExpression_Op();
+    EClass UNQUAL_OP_PLUS_TOK = eINSTANCE.getUnqualOp_PlusTok();
 
     /**
-     * The meta object literal for the '<em><b>Right</b></em>' containment reference feature.
+     * The meta object literal for the '{@link com.euclideanspace.aldor.editor.impl.UnqualOp_QuotientTokImpl <em>Unqual Op Quotient Tok</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
+     * @see com.euclideanspace.aldor.editor.impl.UnqualOp_QuotientTokImpl
+     * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getUnqualOp_QuotientTok()
      * @generated
      */
-    EReference CONDITION_EXPRESSION__RIGHT = eINSTANCE.getConditionExpression_Right();
+    EClass UNQUAL_OP_QUOTIENT_TOK = eINSTANCE.getUnqualOp_QuotientTok();
 
     /**
-     * The meta object literal for the '{@link com.euclideanspace.aldor.editor.impl.OrExpressionImpl <em>Or Expression</em>}' class.
+     * The meta object literal for the '{@link com.euclideanspace.aldor.editor.impl.UnqualOp_TimesTokImpl <em>Unqual Op Times Tok</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see com.euclideanspace.aldor.editor.impl.OrExpressionImpl
-     * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getOrExpression()
+     * @see com.euclideanspace.aldor.editor.impl.UnqualOp_TimesTokImpl
+     * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getUnqualOp_TimesTok()
      * @generated
      */
-    EClass OR_EXPRESSION = eINSTANCE.getOrExpression();
+    EClass UNQUAL_OP_TIMES_TOK = eINSTANCE.getUnqualOp_TimesTok();
 
     /**
-     * The meta object literal for the '<em><b>Left</b></em>' containment reference feature.
+     * The meta object literal for the '{@link com.euclideanspace.aldor.editor.impl.UnqualOp_PowerTokImpl <em>Unqual Op Power Tok</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
+     * @see com.euclideanspace.aldor.editor.impl.UnqualOp_PowerTokImpl
+     * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getUnqualOp_PowerTok()
      * @generated
      */
-    EReference OR_EXPRESSION__LEFT = eINSTANCE.getOrExpression_Left();
+    EClass UNQUAL_OP_POWER_TOK = eINSTANCE.getUnqualOp_PowerTok();
 
     /**
-     * The meta object literal for the '<em><b>Op</b></em>' attribute feature.
+     * The meta object literal for the '{@link com.euclideanspace.aldor.editor.impl.QualOp_ArrowTokImpl <em>Qual Op Arrow Tok</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
+     * @see com.euclideanspace.aldor.editor.impl.QualOp_ArrowTokImpl
+     * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getQualOp_ArrowTok()
      * @generated
      */
-    EAttribute OR_EXPRESSION__OP = eINSTANCE.getOrExpression_Op();
+    EClass QUAL_OP_ARROW_TOK = eINSTANCE.getQualOp_ArrowTok();
 
     /**
-     * The meta object literal for the '<em><b>Right</b></em>' containment reference feature.
+     * The meta object literal for the '{@link com.euclideanspace.aldor.editor.impl.QualOp_LatticeTokImpl <em>Qual Op Lattice Tok</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
+     * @see com.euclideanspace.aldor.editor.impl.QualOp_LatticeTokImpl
+     * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getQualOp_LatticeTok()
      * @generated
      */
-    EReference OR_EXPRESSION__RIGHT = eINSTANCE.getOrExpression_Right();
+    EClass QUAL_OP_LATTICE_TOK = eINSTANCE.getQualOp_LatticeTok();
 
     /**
-     * The meta object literal for the '{@link com.euclideanspace.aldor.editor.impl.AndExpressionImpl <em>And Expression</em>}' class.
+     * The meta object literal for the '{@link com.euclideanspace.aldor.editor.impl.QualOp_RelationTokImpl <em>Qual Op Relation Tok</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see com.euclideanspace.aldor.editor.impl.AndExpressionImpl
-     * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getAndExpression()
+     * @see com.euclideanspace.aldor.editor.impl.QualOp_RelationTokImpl
+     * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getQualOp_RelationTok()
      * @generated
      */
-    EClass AND_EXPRESSION = eINSTANCE.getAndExpression();
+    EClass QUAL_OP_RELATION_TOK = eINSTANCE.getQualOp_RelationTok();
 
     /**
-     * The meta object literal for the '<em><b>Left</b></em>' containment reference feature.
+     * The meta object literal for the '{@link com.euclideanspace.aldor.editor.impl.QualOp_SegTokImpl <em>Qual Op Seg Tok</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
+     * @see com.euclideanspace.aldor.editor.impl.QualOp_SegTokImpl
+     * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getQualOp_SegTok()
      * @generated
      */
-    EReference AND_EXPRESSION__LEFT = eINSTANCE.getAndExpression_Left();
+    EClass QUAL_OP_SEG_TOK = eINSTANCE.getQualOp_SegTok();
 
     /**
-     * The meta object literal for the '<em><b>Op</b></em>' attribute feature.
+     * The meta object literal for the '{@link com.euclideanspace.aldor.editor.impl.QualOp_PlusTokImpl <em>Qual Op Plus Tok</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
+     * @see com.euclideanspace.aldor.editor.impl.QualOp_PlusTokImpl
+     * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getQualOp_PlusTok()
      * @generated
      */
-    EAttribute AND_EXPRESSION__OP = eINSTANCE.getAndExpression_Op();
+    EClass QUAL_OP_PLUS_TOK = eINSTANCE.getQualOp_PlusTok();
 
     /**
-     * The meta object literal for the '<em><b>Right</b></em>' containment reference feature.
+     * The meta object literal for the '{@link com.euclideanspace.aldor.editor.impl.QualOp_QuotientTokImpl <em>Qual Op Quotient Tok</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
+     * @see com.euclideanspace.aldor.editor.impl.QualOp_QuotientTokImpl
+     * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getQualOp_QuotientTok()
      * @generated
      */
-    EReference AND_EXPRESSION__RIGHT = eINSTANCE.getAndExpression_Right();
+    EClass QUAL_OP_QUOTIENT_TOK = eINSTANCE.getQualOp_QuotientTok();
 
     /**
-     * The meta object literal for the '{@link com.euclideanspace.aldor.editor.impl.InnerProdExpressionImpl <em>Inner Prod Expression</em>}' class.
+     * The meta object literal for the '{@link com.euclideanspace.aldor.editor.impl.QualOp_TimesTokImpl <em>Qual Op Times Tok</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see com.euclideanspace.aldor.editor.impl.InnerProdExpressionImpl
-     * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getInnerProdExpression()
+     * @see com.euclideanspace.aldor.editor.impl.QualOp_TimesTokImpl
+     * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getQualOp_TimesTok()
      * @generated
      */
-    EClass INNER_PROD_EXPRESSION = eINSTANCE.getInnerProdExpression();
+    EClass QUAL_OP_TIMES_TOK = eINSTANCE.getQualOp_TimesTok();
 
     /**
-     * The meta object literal for the '<em><b>Left</b></em>' containment reference feature.
+     * The meta object literal for the '{@link com.euclideanspace.aldor.editor.impl.QualOp_PowerTokImpl <em>Qual Op Power Tok</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
+     * @see com.euclideanspace.aldor.editor.impl.QualOp_PowerTokImpl
+     * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getQualOp_PowerTok()
      * @generated
      */
-    EReference INNER_PROD_EXPRESSION__LEFT = eINSTANCE.getInnerProdExpression_Left();
+    EClass QUAL_OP_POWER_TOK = eINSTANCE.getQualOp_PowerTok();
 
     /**
-     * The meta object literal for the '<em><b>Op</b></em>' attribute feature.
+     * The meta object literal for the '{@link com.euclideanspace.aldor.editor.impl.enlist1a_Labeled_Semicolon_ABImpl <em>enlist1a Labeled Semicolon AB</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
+     * @see com.euclideanspace.aldor.editor.impl.enlist1a_Labeled_Semicolon_ABImpl
+     * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getenlist1a_Labeled_Semicolon_AB()
      * @generated
      */
-    EAttribute INNER_PROD_EXPRESSION__OP = eINSTANCE.getInnerProdExpression_Op();
+    EClass ENLIST1A_LABELED_SEMICOLON_AB = eINSTANCE.getenlist1a_Labeled_Semicolon_AB();
 
     /**
-     * The meta object literal for the '<em><b>Right</b></em>' containment reference feature.
+     * The meta object literal for the '{@link com.euclideanspace.aldor.editor.impl.enlister1a_Labeled_SemicolonImpl <em>enlister1a Labeled Semicolon</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
+     * @see com.euclideanspace.aldor.editor.impl.enlister1a_Labeled_SemicolonImpl
+     * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getenlister1a_Labeled_Semicolon()
      * @generated
      */
-    EReference INNER_PROD_EXPRESSION__RIGHT = eINSTANCE.getInnerProdExpression_Right();
+    EClass ENLISTER1A_LABELED_SEMICOLON = eINSTANCE.getenlister1a_Labeled_Semicolon();
 
     /**
-     * The meta object literal for the '{@link com.euclideanspace.aldor.editor.impl.OuterProdExpressionImpl <em>Outer Prod Expression</em>}' class.
+     * The meta object literal for the '<em><b>Statemnts</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see com.euclideanspace.aldor.editor.impl.OuterProdExpressionImpl
-     * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getOuterProdExpression()
      * @generated
      */
-    EClass OUTER_PROD_EXPRESSION = eINSTANCE.getOuterProdExpression();
+    EReference ENLISTER1A_LABELED_SEMICOLON__STATEMNTS = eINSTANCE.getenlister1a_Labeled_Semicolon_Statemnts();
 
     /**
-     * The meta object literal for the '<em><b>Left</b></em>' containment reference feature.
+     * The meta object literal for the '{@link com.euclideanspace.aldor.editor.impl.Curly_LabeledImpl <em>Curly Labeled</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
+     * @see com.euclideanspace.aldor.editor.impl.Curly_LabeledImpl
+     * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getCurly_Labeled()
      * @generated
      */
-    EReference OUTER_PROD_EXPRESSION__LEFT = eINSTANCE.getOuterProdExpression_Left();
+    EClass CURLY_LABELED = eINSTANCE.getCurly_Labeled();
 
     /**
-     * The meta object literal for the '<em><b>Op</b></em>' attribute feature.
+     * The meta object literal for the '{@link com.euclideanspace.aldor.editor.impl.CurlyContents_LabeledImpl <em>Curly Contents Labeled</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
+     * @see com.euclideanspace.aldor.editor.impl.CurlyContents_LabeledImpl
+     * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getCurlyContents_Labeled()
      * @generated
      */
-    EAttribute OUTER_PROD_EXPRESSION__OP = eINSTANCE.getOuterProdExpression_Op();
+    EClass CURLY_CONTENTS_LABELED = eINSTANCE.getCurlyContents_Labeled();
 
     /**
-     * The meta object literal for the '<em><b>Right</b></em>' containment reference feature.
+     * The meta object literal for the '{@link com.euclideanspace.aldor.editor.impl.CurlyContentsList_LabeledImpl <em>Curly Contents List Labeled</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
+     * @see com.euclideanspace.aldor.editor.impl.CurlyContentsList_LabeledImpl
+     * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getCurlyContentsList_Labeled()
      * @generated
      */
-    EReference OUTER_PROD_EXPRESSION__RIGHT = eINSTANCE.getOuterProdExpression_Right();
+    EClass CURLY_CONTENTS_LIST_LABELED = eINSTANCE.getCurlyContentsList_Labeled();
 
     /**
-     * The meta object literal for the '{@link com.euclideanspace.aldor.editor.impl.HasExpressionImpl <em>Has Expression</em>}' class.
+     * The meta object literal for the '<em><b>Statemts</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see com.euclideanspace.aldor.editor.impl.HasExpressionImpl
-     * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getHasExpression()
      * @generated
      */
-    EClass HAS_EXPRESSION = eINSTANCE.getHasExpression();
+    EReference CURLY_CONTENTS_LIST_LABELED__STATEMTS = eINSTANCE.getCurlyContentsList_Labeled_Statemts();
 
     /**
-     * The meta object literal for the '<em><b>Left</b></em>' containment reference feature.
+     * The meta object literal for the '{@link com.euclideanspace.aldor.editor.impl.ArrowTokImpl <em>Arrow Tok</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
+     * @see com.euclideanspace.aldor.editor.impl.ArrowTokImpl
+     * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getArrowTok()
      * @generated
      */
-    EReference HAS_EXPRESSION__LEFT = eINSTANCE.getHasExpression_Left();
+    EClass ARROW_TOK = eINSTANCE.getArrowTok();
 
     /**
-     * The meta object literal for the '<em><b>Op</b></em>' attribute feature.
+     * The meta object literal for the '{@link com.euclideanspace.aldor.editor.impl.LatticeTokImpl <em>Lattice Tok</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
+     * @see com.euclideanspace.aldor.editor.impl.LatticeTokImpl
+     * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getLatticeTok()
      * @generated
      */
-    EAttribute HAS_EXPRESSION__OP = eINSTANCE.getHasExpression_Op();
+    EClass LATTICE_TOK = eINSTANCE.getLatticeTok();
 
     /**
-     * The meta object literal for the '<em><b>Right Type</b></em>' containment reference feature.
+     * The meta object literal for the '{@link com.euclideanspace.aldor.editor.impl.RelationTokImpl <em>Relation Tok</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
+     * @see com.euclideanspace.aldor.editor.impl.RelationTokImpl
+     * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getRelationTok()
      * @generated
      */
-    EReference HAS_EXPRESSION__RIGHT_TYPE = eINSTANCE.getHasExpression_RightType();
+    EClass RELATION_TOK = eINSTANCE.getRelationTok();
 
     /**
-     * The meta object literal for the '{@link com.euclideanspace.aldor.editor.impl.CaseExpressionImpl <em>Case Expression</em>}' class.
+     * The meta object literal for the '{@link com.euclideanspace.aldor.editor.impl.SegTokImpl <em>Seg Tok</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see com.euclideanspace.aldor.editor.impl.CaseExpressionImpl
-     * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getCaseExpression()
+     * @see com.euclideanspace.aldor.editor.impl.SegTokImpl
+     * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getSegTok()
      * @generated
      */
-    EClass CASE_EXPRESSION = eINSTANCE.getCaseExpression();
+    EClass SEG_TOK = eINSTANCE.getSegTok();
 
     /**
-     * The meta object literal for the '<em><b>Left</b></em>' containment reference feature.
+     * The meta object literal for the '{@link com.euclideanspace.aldor.editor.impl.PlusTokImpl <em>Plus Tok</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
+     * @see com.euclideanspace.aldor.editor.impl.PlusTokImpl
+     * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getPlusTok()
      * @generated
      */
-    EReference CASE_EXPRESSION__LEFT = eINSTANCE.getCaseExpression_Left();
+    EClass PLUS_TOK = eINSTANCE.getPlusTok();
 
     /**
-     * The meta object literal for the '<em><b>Op</b></em>' attribute feature.
+     * The meta object literal for the '{@link com.euclideanspace.aldor.editor.impl.QuotientTokImpl <em>Quotient Tok</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
+     * @see com.euclideanspace.aldor.editor.impl.QuotientTokImpl
+     * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getQuotientTok()
      * @generated
      */
-    EAttribute CASE_EXPRESSION__OP = eINSTANCE.getCaseExpression_Op();
+    EClass QUOTIENT_TOK = eINSTANCE.getQuotientTok();
 
     /**
-     * The meta object literal for the '<em><b>Right</b></em>' containment reference feature.
+     * The meta object literal for the '{@link com.euclideanspace.aldor.editor.impl.TimesTokImpl <em>Times Tok</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
+     * @see com.euclideanspace.aldor.editor.impl.TimesTokImpl
+     * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getTimesTok()
      * @generated
      */
-    EReference CASE_EXPRESSION__RIGHT = eINSTANCE.getCaseExpression_Right();
+    EClass TIMES_TOK = eINSTANCE.getTimesTok();
 
     /**
-     * The meta object literal for the '{@link com.euclideanspace.aldor.editor.impl.EqualityExpressionImpl <em>Equality Expression</em>}' class.
+     * The meta object literal for the '{@link com.euclideanspace.aldor.editor.impl.PowerTokImpl <em>Power Tok</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see com.euclideanspace.aldor.editor.impl.EqualityExpressionImpl
-     * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getEqualityExpression()
+     * @see com.euclideanspace.aldor.editor.impl.PowerTokImpl
+     * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getPowerTok()
      * @generated
      */
-    EClass EQUALITY_EXPRESSION = eINSTANCE.getEqualityExpression();
-
-    /**
-     * The meta object literal for the '<em><b>Left</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference EQUALITY_EXPRESSION__LEFT = eINSTANCE.getEqualityExpression_Left();
-
-    /**
-     * The meta object literal for the '<em><b>Op</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute EQUALITY_EXPRESSION__OP = eINSTANCE.getEqualityExpression_Op();
-
-    /**
-     * The meta object literal for the '<em><b>Te</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute EQUALITY_EXPRESSION__TE = eINSTANCE.getEqualityExpression_Te();
-
-    /**
-     * The meta object literal for the '<em><b>Right</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference EQUALITY_EXPRESSION__RIGHT = eINSTANCE.getEqualityExpression_Right();
-
-    /**
-     * The meta object literal for the '{@link com.euclideanspace.aldor.editor.impl.RelationalExpressionImpl <em>Relational Expression</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see com.euclideanspace.aldor.editor.impl.RelationalExpressionImpl
-     * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getRelationalExpression()
-     * @generated
-     */
-    EClass RELATIONAL_EXPRESSION = eINSTANCE.getRelationalExpression();
-
-    /**
-     * The meta object literal for the '<em><b>Left</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference RELATIONAL_EXPRESSION__LEFT = eINSTANCE.getRelationalExpression_Left();
-
-    /**
-     * The meta object literal for the '<em><b>Op</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute RELATIONAL_EXPRESSION__OP = eINSTANCE.getRelationalExpression_Op();
-
-    /**
-     * The meta object literal for the '<em><b>Right</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference RELATIONAL_EXPRESSION__RIGHT = eINSTANCE.getRelationalExpression_Right();
-
-    /**
-     * The meta object literal for the '{@link com.euclideanspace.aldor.editor.impl.IsExpressionImpl <em>Is Expression</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see com.euclideanspace.aldor.editor.impl.IsExpressionImpl
-     * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getIsExpression()
-     * @generated
-     */
-    EClass IS_EXPRESSION = eINSTANCE.getIsExpression();
-
-    /**
-     * The meta object literal for the '<em><b>Left</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference IS_EXPRESSION__LEFT = eINSTANCE.getIsExpression_Left();
-
-    /**
-     * The meta object literal for the '<em><b>Op</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute IS_EXPRESSION__OP = eINSTANCE.getIsExpression_Op();
-
-    /**
-     * The meta object literal for the '<em><b>Right Type</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference IS_EXPRESSION__RIGHT_TYPE = eINSTANCE.getIsExpression_RightType();
-
-    /**
-     * The meta object literal for the '{@link com.euclideanspace.aldor.editor.impl.SegmentExpressionImpl <em>Segment Expression</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see com.euclideanspace.aldor.editor.impl.SegmentExpressionImpl
-     * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getSegmentExpression()
-     * @generated
-     */
-    EClass SEGMENT_EXPRESSION = eINSTANCE.getSegmentExpression();
-
-    /**
-     * The meta object literal for the '<em><b>Left</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference SEGMENT_EXPRESSION__LEFT = eINSTANCE.getSegmentExpression_Left();
-
-    /**
-     * The meta object literal for the '<em><b>Op</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute SEGMENT_EXPRESSION__OP = eINSTANCE.getSegmentExpression_Op();
-
-    /**
-     * The meta object literal for the '<em><b>Right</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference SEGMENT_EXPRESSION__RIGHT = eINSTANCE.getSegmentExpression_Right();
-
-    /**
-     * The meta object literal for the '{@link com.euclideanspace.aldor.editor.impl.AdditiveExpressionImpl <em>Additive Expression</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see com.euclideanspace.aldor.editor.impl.AdditiveExpressionImpl
-     * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getAdditiveExpression()
-     * @generated
-     */
-    EClass ADDITIVE_EXPRESSION = eINSTANCE.getAdditiveExpression();
-
-    /**
-     * The meta object literal for the '<em><b>Left</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference ADDITIVE_EXPRESSION__LEFT = eINSTANCE.getAdditiveExpression_Left();
-
-    /**
-     * The meta object literal for the '<em><b>Op</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute ADDITIVE_EXPRESSION__OP = eINSTANCE.getAdditiveExpression_Op();
-
-    /**
-     * The meta object literal for the '<em><b>Te</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute ADDITIVE_EXPRESSION__TE = eINSTANCE.getAdditiveExpression_Te();
-
-    /**
-     * The meta object literal for the '<em><b>Right</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference ADDITIVE_EXPRESSION__RIGHT = eINSTANCE.getAdditiveExpression_Right();
-
-    /**
-     * The meta object literal for the '{@link com.euclideanspace.aldor.editor.impl.ExquoExpressionImpl <em>Exquo Expression</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see com.euclideanspace.aldor.editor.impl.ExquoExpressionImpl
-     * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getExquoExpression()
-     * @generated
-     */
-    EClass EXQUO_EXPRESSION = eINSTANCE.getExquoExpression();
-
-    /**
-     * The meta object literal for the '<em><b>Left</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference EXQUO_EXPRESSION__LEFT = eINSTANCE.getExquoExpression_Left();
-
-    /**
-     * The meta object literal for the '<em><b>Op</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute EXQUO_EXPRESSION__OP = eINSTANCE.getExquoExpression_Op();
-
-    /**
-     * The meta object literal for the '<em><b>Right</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference EXQUO_EXPRESSION__RIGHT = eINSTANCE.getExquoExpression_Right();
-
-    /**
-     * The meta object literal for the '{@link com.euclideanspace.aldor.editor.impl.DivisionExpressionImpl <em>Division Expression</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see com.euclideanspace.aldor.editor.impl.DivisionExpressionImpl
-     * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getDivisionExpression()
-     * @generated
-     */
-    EClass DIVISION_EXPRESSION = eINSTANCE.getDivisionExpression();
-
-    /**
-     * The meta object literal for the '<em><b>Left</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference DIVISION_EXPRESSION__LEFT = eINSTANCE.getDivisionExpression_Left();
-
-    /**
-     * The meta object literal for the '<em><b>Op</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute DIVISION_EXPRESSION__OP = eINSTANCE.getDivisionExpression_Op();
-
-    /**
-     * The meta object literal for the '<em><b>Te</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute DIVISION_EXPRESSION__TE = eINSTANCE.getDivisionExpression_Te();
-
-    /**
-     * The meta object literal for the '<em><b>Right</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference DIVISION_EXPRESSION__RIGHT = eINSTANCE.getDivisionExpression_Right();
-
-    /**
-     * The meta object literal for the '{@link com.euclideanspace.aldor.editor.impl.QuoExpressionImpl <em>Quo Expression</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see com.euclideanspace.aldor.editor.impl.QuoExpressionImpl
-     * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getQuoExpression()
-     * @generated
-     */
-    EClass QUO_EXPRESSION = eINSTANCE.getQuoExpression();
-
-    /**
-     * The meta object literal for the '<em><b>Left</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference QUO_EXPRESSION__LEFT = eINSTANCE.getQuoExpression_Left();
-
-    /**
-     * The meta object literal for the '<em><b>Op</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute QUO_EXPRESSION__OP = eINSTANCE.getQuoExpression_Op();
-
-    /**
-     * The meta object literal for the '<em><b>Right</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference QUO_EXPRESSION__RIGHT = eINSTANCE.getQuoExpression_Right();
-
-    /**
-     * The meta object literal for the '{@link com.euclideanspace.aldor.editor.impl.ModExpressionImpl <em>Mod Expression</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see com.euclideanspace.aldor.editor.impl.ModExpressionImpl
-     * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getModExpression()
-     * @generated
-     */
-    EClass MOD_EXPRESSION = eINSTANCE.getModExpression();
-
-    /**
-     * The meta object literal for the '<em><b>Left</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference MOD_EXPRESSION__LEFT = eINSTANCE.getModExpression_Left();
-
-    /**
-     * The meta object literal for the '<em><b>Op</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute MOD_EXPRESSION__OP = eINSTANCE.getModExpression_Op();
-
-    /**
-     * The meta object literal for the '<em><b>Right</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference MOD_EXPRESSION__RIGHT = eINSTANCE.getModExpression_Right();
-
-    /**
-     * The meta object literal for the '{@link com.euclideanspace.aldor.editor.impl.RemExpressionImpl <em>Rem Expression</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see com.euclideanspace.aldor.editor.impl.RemExpressionImpl
-     * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getRemExpression()
-     * @generated
-     */
-    EClass REM_EXPRESSION = eINSTANCE.getRemExpression();
-
-    /**
-     * The meta object literal for the '<em><b>Left</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference REM_EXPRESSION__LEFT = eINSTANCE.getRemExpression_Left();
-
-    /**
-     * The meta object literal for the '<em><b>Op</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute REM_EXPRESSION__OP = eINSTANCE.getRemExpression_Op();
-
-    /**
-     * The meta object literal for the '<em><b>Right</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference REM_EXPRESSION__RIGHT = eINSTANCE.getRemExpression_Right();
-
-    /**
-     * The meta object literal for the '{@link com.euclideanspace.aldor.editor.impl.MultiplicativeExpressionImpl <em>Multiplicative Expression</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see com.euclideanspace.aldor.editor.impl.MultiplicativeExpressionImpl
-     * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getMultiplicativeExpression()
-     * @generated
-     */
-    EClass MULTIPLICATIVE_EXPRESSION = eINSTANCE.getMultiplicativeExpression();
-
-    /**
-     * The meta object literal for the '<em><b>Left</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference MULTIPLICATIVE_EXPRESSION__LEFT = eINSTANCE.getMultiplicativeExpression_Left();
-
-    /**
-     * The meta object literal for the '<em><b>Op</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute MULTIPLICATIVE_EXPRESSION__OP = eINSTANCE.getMultiplicativeExpression_Op();
-
-    /**
-     * The meta object literal for the '<em><b>Te</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute MULTIPLICATIVE_EXPRESSION__TE = eINSTANCE.getMultiplicativeExpression_Te();
-
-    /**
-     * The meta object literal for the '<em><b>Right</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference MULTIPLICATIVE_EXPRESSION__RIGHT = eINSTANCE.getMultiplicativeExpression_Right();
-
-    /**
-     * The meta object literal for the '{@link com.euclideanspace.aldor.editor.impl.ExponentExpressionImpl <em>Exponent Expression</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see com.euclideanspace.aldor.editor.impl.ExponentExpressionImpl
-     * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getExponentExpression()
-     * @generated
-     */
-    EClass EXPONENT_EXPRESSION = eINSTANCE.getExponentExpression();
-
-    /**
-     * The meta object literal for the '<em><b>Left</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference EXPONENT_EXPRESSION__LEFT = eINSTANCE.getExponentExpression_Left();
-
-    /**
-     * The meta object literal for the '<em><b>Op</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute EXPONENT_EXPRESSION__OP = eINSTANCE.getExponentExpression_Op();
-
-    /**
-     * The meta object literal for the '<em><b>Right</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference EXPONENT_EXPRESSION__RIGHT = eINSTANCE.getExponentExpression_Right();
-
-    /**
-     * The meta object literal for the '{@link com.euclideanspace.aldor.editor.impl.MapDefinitionImpl <em>Map Definition</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see com.euclideanspace.aldor.editor.impl.MapDefinitionImpl
-     * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getMapDefinition()
-     * @generated
-     */
-    EClass MAP_DEFINITION = eINSTANCE.getMapDefinition();
-
-    /**
-     * The meta object literal for the '<em><b>Left</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference MAP_DEFINITION__LEFT = eINSTANCE.getMapDefinition_Left();
-
-    /**
-     * The meta object literal for the '<em><b>Op</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute MAP_DEFINITION__OP = eINSTANCE.getMapDefinition_Op();
-
-    /**
-     * The meta object literal for the '<em><b>Right</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference MAP_DEFINITION__RIGHT = eINSTANCE.getMapDefinition_Right();
-
-    /**
-     * The meta object literal for the '<em><b>Par</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute MAP_DEFINITION__PAR = eINSTANCE.getMapDefinition_Par();
-
-    /**
-     * The meta object literal for the '{@link com.euclideanspace.aldor.editor.impl.AssignExpressionImpl <em>Assign Expression</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see com.euclideanspace.aldor.editor.impl.AssignExpressionImpl
-     * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getAssignExpression()
-     * @generated
-     */
-    EClass ASSIGN_EXPRESSION = eINSTANCE.getAssignExpression();
-
-    /**
-     * The meta object literal for the '<em><b>Left</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference ASSIGN_EXPRESSION__LEFT = eINSTANCE.getAssignExpression_Left();
-
-    /**
-     * The meta object literal for the '<em><b>Op</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute ASSIGN_EXPRESSION__OP = eINSTANCE.getAssignExpression_Op();
-
-    /**
-     * The meta object literal for the '<em><b>Right</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference ASSIGN_EXPRESSION__RIGHT = eINSTANCE.getAssignExpression_Right();
-
-    /**
-     * The meta object literal for the '{@link com.euclideanspace.aldor.editor.impl.PretendExpressionImpl <em>Pretend Expression</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see com.euclideanspace.aldor.editor.impl.PretendExpressionImpl
-     * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getPretendExpression()
-     * @generated
-     */
-    EClass PRETEND_EXPRESSION = eINSTANCE.getPretendExpression();
-
-    /**
-     * The meta object literal for the '<em><b>Left</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference PRETEND_EXPRESSION__LEFT = eINSTANCE.getPretendExpression_Left();
-
-    /**
-     * The meta object literal for the '<em><b>Op</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute PRETEND_EXPRESSION__OP = eINSTANCE.getPretendExpression_Op();
-
-    /**
-     * The meta object literal for the '<em><b>Right Type</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference PRETEND_EXPRESSION__RIGHT_TYPE = eINSTANCE.getPretendExpression_RightType();
-
-    /**
-     * The meta object literal for the '{@link com.euclideanspace.aldor.editor.impl.CoerceExpressionImpl <em>Coerce Expression</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see com.euclideanspace.aldor.editor.impl.CoerceExpressionImpl
-     * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getCoerceExpression()
-     * @generated
-     */
-    EClass COERCE_EXPRESSION = eINSTANCE.getCoerceExpression();
-
-    /**
-     * The meta object literal for the '<em><b>Left</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference COERCE_EXPRESSION__LEFT = eINSTANCE.getCoerceExpression_Left();
-
-    /**
-     * The meta object literal for the '<em><b>Op</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute COERCE_EXPRESSION__OP = eINSTANCE.getCoerceExpression_Op();
-
-    /**
-     * The meta object literal for the '<em><b>Right Type</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference COERCE_EXPRESSION__RIGHT_TYPE = eINSTANCE.getCoerceExpression_RightType();
-
-    /**
-     * The meta object literal for the '{@link com.euclideanspace.aldor.editor.impl.HintTypeExpressionImpl <em>Hint Type Expression</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see com.euclideanspace.aldor.editor.impl.HintTypeExpressionImpl
-     * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getHintTypeExpression()
-     * @generated
-     */
-    EClass HINT_TYPE_EXPRESSION = eINSTANCE.getHintTypeExpression();
-
-    /**
-     * The meta object literal for the '<em><b>Left</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference HINT_TYPE_EXPRESSION__LEFT = eINSTANCE.getHintTypeExpression_Left();
-
-    /**
-     * The meta object literal for the '<em><b>Op</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute HINT_TYPE_EXPRESSION__OP = eINSTANCE.getHintTypeExpression_Op();
-
-    /**
-     * The meta object literal for the '<em><b>Right Type</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference HINT_TYPE_EXPRESSION__RIGHT_TYPE = eINSTANCE.getHintTypeExpression_RightType();
-
-    /**
-     * The meta object literal for the '{@link com.euclideanspace.aldor.editor.impl.EltExpressionImpl <em>Elt Expression</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see com.euclideanspace.aldor.editor.impl.EltExpressionImpl
-     * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getEltExpression()
-     * @generated
-     */
-    EClass ELT_EXPRESSION = eINSTANCE.getEltExpression();
-
-    /**
-     * The meta object literal for the '<em><b>Left</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference ELT_EXPRESSION__LEFT = eINSTANCE.getEltExpression_Left();
-
-    /**
-     * The meta object literal for the '<em><b>Op</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute ELT_EXPRESSION__OP = eINSTANCE.getEltExpression_Op();
-
-    /**
-     * The meta object literal for the '<em><b>Right</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference ELT_EXPRESSION__RIGHT = eINSTANCE.getEltExpression_Right();
-
-    /**
-     * The meta object literal for the '{@link com.euclideanspace.aldor.editor.impl.ExplicitTypeExpressionImpl <em>Explicit Type Expression</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see com.euclideanspace.aldor.editor.impl.ExplicitTypeExpressionImpl
-     * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getExplicitTypeExpression()
-     * @generated
-     */
-    EClass EXPLICIT_TYPE_EXPRESSION = eINSTANCE.getExplicitTypeExpression();
-
-    /**
-     * The meta object literal for the '<em><b>Left</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference EXPLICIT_TYPE_EXPRESSION__LEFT = eINSTANCE.getExplicitTypeExpression_Left();
-
-    /**
-     * The meta object literal for the '<em><b>Op</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute EXPLICIT_TYPE_EXPRESSION__OP = eINSTANCE.getExplicitTypeExpression_Op();
-
-    /**
-     * The meta object literal for the '<em><b>Right Type</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference EXPLICIT_TYPE_EXPRESSION__RIGHT_TYPE = eINSTANCE.getExplicitTypeExpression_RightType();
-
-    /**
-     * The meta object literal for the '{@link com.euclideanspace.aldor.editor.impl.UnaryExpressionImpl <em>Unary Expression</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see com.euclideanspace.aldor.editor.impl.UnaryExpressionImpl
-     * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getUnaryExpression()
-     * @generated
-     */
-    EClass UNARY_EXPRESSION = eINSTANCE.getUnaryExpression();
-
-    /**
-     * The meta object literal for the '<em><b>Uop</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute UNARY_EXPRESSION__UOP = eINSTANCE.getUnaryExpression_Uop();
-
-    /**
-     * The meta object literal for the '<em><b>Expr</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference UNARY_EXPRESSION__EXPR = eINSTANCE.getUnaryExpression_Expr();
-
-    /**
-     * The meta object literal for the '<em><b>Te</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute UNARY_EXPRESSION__TE = eINSTANCE.getUnaryExpression_Te();
+    EClass POWER_TOK = eINSTANCE.getPowerTok();
 
   }
 
