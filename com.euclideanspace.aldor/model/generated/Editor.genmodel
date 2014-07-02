@@ -19,6 +19,7 @@
     <genClasses ecoreClass="Editor.ecore#//FromPart"/>
     <genClasses ecoreClass="Editor.ecore#//MacroBody"/>
     <genClasses ecoreClass="Editor.ecore#//Sig"/>
+    <genClasses ecoreClass="Editor.ecore#//DeclPart"/>
     <genClasses ecoreClass="Editor.ecore#//Comma"/>
     <genClasses ecoreClass="Editor.ecore#//CommaItem">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//CommaItem/bbs"/>
@@ -27,6 +28,10 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//CommaItem/ci"/>
     </genClasses>
     <genClasses ecoreClass="Editor.ecore#//DeclBinding"/>
+    <genClasses ecoreClass="Editor.ecore#//InfixedExprsDecl">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//InfixedExprsDecl/dp"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//InfixedExprsDecl/bas"/>
+    </genClasses>
     <genClasses ecoreClass="Editor.ecore#//Binding_AnyStatement">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//Binding_AnyStatement/be"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//Binding_AnyStatement/apa"/>
@@ -71,14 +76,31 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Editor.ecore#//Iterator/i"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Editor.ecore#//Iterator/sp"/>
     </genClasses>
+    <genClasses ecoreClass="Editor.ecore#//Expr">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//Expr/left"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//Expr/right"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//Expr/op5"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//Expr/op6"/>
+    </genClasses>
+    <genClasses ecoreClass="Editor.ecore#//Type"/>
+    <genClasses ecoreClass="Editor.ecore#//E12">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//E12/left"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//E12/op"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//E12/right"/>
+    </genClasses>
+    <genClasses ecoreClass="Editor.ecore#//E13">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//E13/left"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Editor.ecore#//E13/op"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Editor.ecore#//E13/right"/>
+    </genClasses>
     <genClasses ecoreClass="Editor.ecore#//OpQualTail">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//OpQualTail/name"/>
     </genClasses>
+    <genClasses ecoreClass="Editor.ecore#//E14"/>
     <genClasses ecoreClass="Editor.ecore#//Op"/>
     <genClasses ecoreClass="Editor.ecore#//NakedOp"/>
     <genClasses ecoreClass="Editor.ecore#//ArrowOp"/>
     <genClasses ecoreClass="Editor.ecore#//LatticeOp"/>
-    <genClasses ecoreClass="Editor.ecore#//RelationOp"/>
     <genClasses ecoreClass="Editor.ecore#//SegOp"/>
     <genClasses ecoreClass="Editor.ecore#//PlusOp"/>
     <genClasses ecoreClass="Editor.ecore#//QuotientOp"/>
@@ -122,7 +144,6 @@
     <genClasses ecoreClass="Editor.ecore#//UnqualOp_PowerTok"/>
     <genClasses ecoreClass="Editor.ecore#//QualOp_ArrowTok"/>
     <genClasses ecoreClass="Editor.ecore#//QualOp_LatticeTok"/>
-    <genClasses ecoreClass="Editor.ecore#//QualOp_RelationTok"/>
     <genClasses ecoreClass="Editor.ecore#//QualOp_SegTok"/>
     <genClasses ecoreClass="Editor.ecore#//QualOp_PlusTok"/>
     <genClasses ecoreClass="Editor.ecore#//QualOp_QuotientTok"/>
@@ -142,6 +163,31 @@
     <genClasses ecoreClass="Editor.ecore#//CurlyContents_Labeled"/>
     <genClasses ecoreClass="Editor.ecore#//CurlyContentsList_Labeled">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//CurlyContentsList_Labeled/statemts"/>
+    </genClasses>
+    <genClasses ecoreClass="Editor.ecore#//E3">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Editor.ecore#//E3/op"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//E3/op2"/>
+    </genClasses>
+    <genClasses ecoreClass="Editor.ecore#//E4">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Editor.ecore#//E4/op"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Editor.ecore#//E4/op2"/>
+    </genClasses>
+    <genClasses ecoreClass="Editor.ecore#//E5"/>
+    <genClasses ecoreClass="Editor.ecore#//E6"/>
+    <genClasses ecoreClass="Editor.ecore#//E7">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//E7/op7"/>
+    </genClasses>
+    <genClasses ecoreClass="Editor.ecore#//E8">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//E8/op8"/>
+    </genClasses>
+    <genClasses ecoreClass="Editor.ecore#//E9">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//E9/op9"/>
+    </genClasses>
+    <genClasses ecoreClass="Editor.ecore#//E11_E12">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Editor.ecore#//E11_E12/op"/>
+    </genClasses>
+    <genClasses ecoreClass="Editor.ecore#//E11_Op">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Editor.ecore#//E11_Op/op"/>
     </genClasses>
     <genClasses ecoreClass="Editor.ecore#//ArrowTok"/>
     <genClasses ecoreClass="Editor.ecore#//LatticeTok"/>

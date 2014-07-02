@@ -95,6 +95,15 @@ public interface EditorFactory extends EFactory
   Sig createSig();
 
   /**
+   * Returns a new object of class '<em>Decl Part</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Decl Part</em>'.
+   * @generated
+   */
+  DeclPart createDeclPart();
+
+  /**
    * Returns a new object of class '<em>Comma</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -120,6 +129,15 @@ public interface EditorFactory extends EFactory
    * @generated
    */
   DeclBinding createDeclBinding();
+
+  /**
+   * Returns a new object of class '<em>Infixed Exprs Decl</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Infixed Exprs Decl</em>'.
+   * @generated
+   */
+  InfixedExprsDecl createInfixedExprsDecl();
 
   /**
    * Returns a new object of class '<em>Binding Any Statement</em>'.
@@ -266,6 +284,42 @@ public interface EditorFactory extends EFactory
   Iterator createIterator();
 
   /**
+   * Returns a new object of class '<em>Expr</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Expr</em>'.
+   * @generated
+   */
+  Expr createExpr();
+
+  /**
+   * Returns a new object of class '<em>Type</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Type</em>'.
+   * @generated
+   */
+  Type createType();
+
+  /**
+   * Returns a new object of class '<em>E12</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>E12</em>'.
+   * @generated
+   */
+  E12 createE12();
+
+  /**
+   * Returns a new object of class '<em>E13</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>E13</em>'.
+   * @generated
+   */
+  E13 createE13();
+
+  /**
    * Returns a new object of class '<em>Op Qual Tail</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -273,6 +327,15 @@ public interface EditorFactory extends EFactory
    * @generated
    */
   OpQualTail createOpQualTail();
+
+  /**
+   * Returns a new object of class '<em>E14</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>E14</em>'.
+   * @generated
+   */
+  E14 createE14();
 
   /**
    * Returns a new object of class '<em>Op</em>'.
@@ -309,15 +372,6 @@ public interface EditorFactory extends EFactory
    * @generated
    */
   LatticeOp createLatticeOp();
-
-  /**
-   * Returns a new object of class '<em>Relation Op</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Relation Op</em>'.
-   * @generated
-   */
-  RelationOp createRelationOp();
 
   /**
    * Returns a new object of class '<em>Seg Op</em>'.
@@ -590,15 +644,6 @@ public interface EditorFactory extends EFactory
   QualOp_LatticeTok createQualOp_LatticeTok();
 
   /**
-   * Returns a new object of class '<em>Qual Op Relation Tok</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Qual Op Relation Tok</em>'.
-   * @generated
-   */
-  QualOp_RelationTok createQualOp_RelationTok();
-
-  /**
    * Returns a new object of class '<em>Qual Op Seg Tok</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -723,6 +768,87 @@ public interface EditorFactory extends EFactory
    * @generated
    */
   CurlyContentsList_Labeled createCurlyContentsList_Labeled();
+
+  /**
+   * Returns a new object of class '<em>E3</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>E3</em>'.
+   * @generated
+   */
+  E3 createE3();
+
+  /**
+   * Returns a new object of class '<em>E4</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>E4</em>'.
+   * @generated
+   */
+  E4 createE4();
+
+  /**
+   * Returns a new object of class '<em>E5</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>E5</em>'.
+   * @generated
+   */
+  E5 createE5();
+
+  /**
+   * Returns a new object of class '<em>E6</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>E6</em>'.
+   * @generated
+   */
+  E6 createE6();
+
+  /**
+   * Returns a new object of class '<em>E7</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>E7</em>'.
+   * @generated
+   */
+  E7 createE7();
+
+  /**
+   * Returns a new object of class '<em>E8</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>E8</em>'.
+   * @generated
+   */
+  E8 createE8();
+
+  /**
+   * Returns a new object of class '<em>E9</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>E9</em>'.
+   * @generated
+   */
+  E9 createE9();
+
+  /**
+   * Returns a new object of class '<em>E11 E12</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>E11 E12</em>'.
+   * @generated
+   */
+  E11_E12 createE11_E12();
+
+  /**
+   * Returns a new object of class '<em>E11 Op</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>E11 Op</em>'.
+   * @generated
+   */
+  E11_Op createE11_Op();
 
   /**
    * Returns a new object of class '<em>Arrow Tok</em>'.

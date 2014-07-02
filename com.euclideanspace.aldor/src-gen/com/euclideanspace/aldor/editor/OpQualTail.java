@@ -19,7 +19,7 @@ package com.euclideanspace.aldor.editor;
  * @model
  * @generated
  */
-public interface OpQualTail extends QualOp_ArrowTok, QualOp_LatticeTok, QualOp_RelationTok, QualOp_SegTok, QualOp_PlusTok, QualOp_QuotientTok, QualOp_TimesTok, QualOp_PowerTok
+public interface OpQualTail extends QualOp_ArrowTok, QualOp_LatticeTok, QualOp_SegTok, QualOp_PlusTok, QualOp_QuotientTok, QualOp_TimesTok, QualOp_PowerTok
 {
   /**
    * Returns the value of the '<em><b>Name</b></em>' containment reference.

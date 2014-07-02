@@ -72,9 +72,11 @@ public class EditorFactoryImpl extends EFactoryImpl implements EditorFactory
       case EditorPackage.FROM_PART: return createFromPart();
       case EditorPackage.MACRO_BODY: return createMacroBody();
       case EditorPackage.SIG: return createSig();
+      case EditorPackage.DECL_PART: return createDeclPart();
       case EditorPackage.COMMA: return createComma();
       case EditorPackage.COMMA_ITEM: return createCommaItem();
       case EditorPackage.DECL_BINDING: return createDeclBinding();
+      case EditorPackage.INFIXED_EXPRS_DECL: return createInfixedExprsDecl();
       case EditorPackage.BINDING_ANY_STATEMENT: return createBinding_AnyStatement();
       case EditorPackage.BINDING_BAL_STATEMENT: return createBinding_BalStatement();
       case EditorPackage.BINDING_COLLECTION: return createBinding_Collection();
@@ -91,12 +93,16 @@ public class EditorFactoryImpl extends EFactoryImpl implements EditorFactory
       case EditorPackage.ALWAYS_PART_BAL_STATEMENT: return createAlwaysPart_BalStatement();
       case EditorPackage.COLLECTION: return createCollection();
       case EditorPackage.ITERATOR: return createIterator();
+      case EditorPackage.EXPR: return createExpr();
+      case EditorPackage.TYPE: return createType();
+      case EditorPackage.E12: return createE12();
+      case EditorPackage.E13: return createE13();
       case EditorPackage.OP_QUAL_TAIL: return createOpQualTail();
+      case EditorPackage.E14: return createE14();
       case EditorPackage.OP: return createOp();
       case EditorPackage.NAKED_OP: return createNakedOp();
       case EditorPackage.ARROW_OP: return createArrowOp();
       case EditorPackage.LATTICE_OP: return createLatticeOp();
-      case EditorPackage.RELATION_OP: return createRelationOp();
       case EditorPackage.SEG_OP: return createSegOp();
       case EditorPackage.PLUS_OP: return createPlusOp();
       case EditorPackage.QUOTIENT_OP: return createQuotientOp();
@@ -127,7 +133,6 @@ public class EditorFactoryImpl extends EFactoryImpl implements EditorFactory
       case EditorPackage.UNQUAL_OP_POWER_TOK: return createUnqualOp_PowerTok();
       case EditorPackage.QUAL_OP_ARROW_TOK: return createQualOp_ArrowTok();
       case EditorPackage.QUAL_OP_LATTICE_TOK: return createQualOp_LatticeTok();
-      case EditorPackage.QUAL_OP_RELATION_TOK: return createQualOp_RelationTok();
       case EditorPackage.QUAL_OP_SEG_TOK: return createQualOp_SegTok();
       case EditorPackage.QUAL_OP_PLUS_TOK: return createQualOp_PlusTok();
       case EditorPackage.QUAL_OP_QUOTIENT_TOK: return createQualOp_QuotientTok();
@@ -142,6 +147,15 @@ public class EditorFactoryImpl extends EFactoryImpl implements EditorFactory
       case EditorPackage.CURLY_LABELED: return createCurly_Labeled();
       case EditorPackage.CURLY_CONTENTS_LABELED: return createCurlyContents_Labeled();
       case EditorPackage.CURLY_CONTENTS_LIST_LABELED: return createCurlyContentsList_Labeled();
+      case EditorPackage.E3: return createE3();
+      case EditorPackage.E4: return createE4();
+      case EditorPackage.E5: return createE5();
+      case EditorPackage.E6: return createE6();
+      case EditorPackage.E7: return createE7();
+      case EditorPackage.E8: return createE8();
+      case EditorPackage.E9: return createE9();
+      case EditorPackage.E11_E12: return createE11_E12();
+      case EditorPackage.E11_OP: return createE11_Op();
       case EditorPackage.ARROW_TOK: return createArrowTok();
       case EditorPackage.LATTICE_TOK: return createLatticeTok();
       case EditorPackage.RELATION_TOK: return createRelationTok();
@@ -248,6 +262,17 @@ public class EditorFactoryImpl extends EFactoryImpl implements EditorFactory
    * <!-- end-user-doc -->
    * @generated
    */
+  public DeclPart createDeclPart()
+  {
+    DeclPartImpl declPart = new DeclPartImpl();
+    return declPart;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public Comma createComma()
   {
     CommaImpl comma = new CommaImpl();
@@ -274,6 +299,17 @@ public class EditorFactoryImpl extends EFactoryImpl implements EditorFactory
   {
     DeclBindingImpl declBinding = new DeclBindingImpl();
     return declBinding;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public InfixedExprsDecl createInfixedExprsDecl()
+  {
+    InfixedExprsDeclImpl infixedExprsDecl = new InfixedExprsDeclImpl();
+    return infixedExprsDecl;
   }
 
   /**
@@ -457,10 +493,65 @@ public class EditorFactoryImpl extends EFactoryImpl implements EditorFactory
    * <!-- end-user-doc -->
    * @generated
    */
+  public Expr createExpr()
+  {
+    ExprImpl expr = new ExprImpl();
+    return expr;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Type createType()
+  {
+    TypeImpl type = new TypeImpl();
+    return type;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public E12 createE12()
+  {
+    E12Impl e12 = new E12Impl();
+    return e12;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public E13 createE13()
+  {
+    E13Impl e13 = new E13Impl();
+    return e13;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public OpQualTail createOpQualTail()
   {
     OpQualTailImpl opQualTail = new OpQualTailImpl();
     return opQualTail;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public E14 createE14()
+  {
+    E14Impl e14 = new E14Impl();
+    return e14;
   }
 
   /**
@@ -505,17 +596,6 @@ public class EditorFactoryImpl extends EFactoryImpl implements EditorFactory
   {
     LatticeOpImpl latticeOp = new LatticeOpImpl();
     return latticeOp;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public RelationOp createRelationOp()
-  {
-    RelationOpImpl relationOp = new RelationOpImpl();
-    return relationOp;
   }
 
   /**
@@ -853,17 +933,6 @@ public class EditorFactoryImpl extends EFactoryImpl implements EditorFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public QualOp_RelationTok createQualOp_RelationTok()
-  {
-    QualOp_RelationTokImpl qualOp_RelationTok = new QualOp_RelationTokImpl();
-    return qualOp_RelationTok;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public QualOp_SegTok createQualOp_SegTok()
   {
     QualOp_SegTokImpl qualOp_SegTok = new QualOp_SegTokImpl();
@@ -1011,6 +1080,105 @@ public class EditorFactoryImpl extends EFactoryImpl implements EditorFactory
   {
     CurlyContentsList_LabeledImpl curlyContentsList_Labeled = new CurlyContentsList_LabeledImpl();
     return curlyContentsList_Labeled;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public E3 createE3()
+  {
+    E3Impl e3 = new E3Impl();
+    return e3;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public E4 createE4()
+  {
+    E4Impl e4 = new E4Impl();
+    return e4;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public E5 createE5()
+  {
+    E5Impl e5 = new E5Impl();
+    return e5;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public E6 createE6()
+  {
+    E6Impl e6 = new E6Impl();
+    return e6;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public E7 createE7()
+  {
+    E7Impl e7 = new E7Impl();
+    return e7;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public E8 createE8()
+  {
+    E8Impl e8 = new E8Impl();
+    return e8;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public E9 createE9()
+  {
+    E9Impl e9 = new E9Impl();
+    return e9;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public E11_E12 createE11_E12()
+  {
+    E11_E12Impl e11_E12 = new E11_E12Impl();
+    return e11_E12;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public E11_Op createE11_Op()
+  {
+    E11_OpImpl e11_Op = new E11_OpImpl();
+    return e11_Op;
   }
 
   /**

@@ -9,6 +9,7 @@ import com.euclideanspace.aldor.editor.CurlyContents_Labeled;
 import com.euclideanspace.aldor.editor.Curly_Labeled;
 import com.euclideanspace.aldor.editor.DeclMolecule;
 import com.euclideanspace.aldor.editor.Declaration;
+import com.euclideanspace.aldor.editor.E14;
 import com.euclideanspace.aldor.editor.EditorPackage;
 import com.euclideanspace.aldor.editor.ExportDecl;
 import com.euclideanspace.aldor.editor.FromPart;
@@ -301,6 +302,13 @@ public class CurlyContents_LabeledImpl extends ModelImpl implements CurlyContent
         default: return -1;
       }
     }
+    if (baseClass == E14.class)
+    {
+      switch (derivedFeatureID)
+      {
+        default: return -1;
+      }
+    }
     if (baseClass == DeclMolecule.class)
     {
       switch (derivedFeatureID)
@@ -392,6 +400,13 @@ public class CurlyContents_LabeledImpl extends ModelImpl implements CurlyContent
       }
     }
     if (baseClass == Sig.class)
+    {
+      switch (baseFeatureID)
+      {
+        default: return -1;
+      }
+    }
+    if (baseClass == E14.class)
     {
       switch (baseFeatureID)
       {

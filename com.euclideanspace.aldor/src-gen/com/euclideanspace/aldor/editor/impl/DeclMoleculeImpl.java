@@ -7,8 +7,6 @@ import com.euclideanspace.aldor.editor.EditorPackage;
 
 import org.eclipse.emf.ecore.EClass;
 
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
 /**
  * <!-- begin-user-doc -->
  * An implementation of the model object '<em><b>Decl Molecule</b></em>'.
@@ -18,7 +16,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  *
  * @generated
  */
-public class DeclMoleculeImpl extends MinimalEObjectImpl.Container implements DeclMolecule
+public class DeclMoleculeImpl extends E14Impl implements DeclMolecule
 {
   /**
    * <!-- begin-user-doc -->

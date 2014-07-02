@@ -22,7 +22,7 @@ package com.euclideanspace.aldor.editor;
  * @model
  * @generated
  */
-public interface Binding_AnyStatement extends CommaItem, BindingR_InfixedExprsDecl_AnyStatement, AlwaysPart_AnyStatement
+public interface Binding_AnyStatement extends CommaItem, AlwaysPart_AnyStatement
 {
   /**
    * Returns the value of the '<em><b>Be</b></em>' containment reference.

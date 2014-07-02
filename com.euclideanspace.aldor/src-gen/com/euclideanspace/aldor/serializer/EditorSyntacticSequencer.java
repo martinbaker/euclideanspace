@@ -21,20 +21,21 @@ public class EditorSyntacticSequencer extends AbstractSyntacticSequencer {
 	protected EditorGrammarAccess grammarAccess;
 	protected AbstractElementAlias match_AlwaysPart_AnyStatement_AlwaysKeyword_0_0_or_FinallyKeyword_1_0;
 	protected AbstractElementAlias match_AlwaysPart_BalStatement_AlwaysKeyword_0_0_or_FinallyKeyword_1_0;
-	protected AbstractElementAlias match_BindingR_InfixedExprsDecl_AnyStatement_Declaration_ExportDecl_MacroBody_______DefaultKeyword_5_0_or_DefineKeyword_6_0_or_ExtendKeyword_1_0_or_FixKeyword_7_0_or_FluidKeyword_4_0_or_FreeKeyword_3_0_or_ImportKeyword_9_0_or_InlineKeyword_8_0_or_LocalKeyword_2_0___or___MacroKeyword_0_0_q_ImportKeyword_2_0_q___or___MacroKeyword_0_0_q___ExportKeyword_0_0_or_ExportKeyword_1_0_0_or_ExportKeyword_2_0_0___________InfixedExprsDeclParserRuleCall_1_0_AssignKeyword_1_1___or___InfixedExprsDeclParserRuleCall_2_0_KW_2EQTerminalRuleCall_2_1___or___InfixedExprsDeclParserRuleCall_3_0_KW_MARROWTerminalRuleCall_3_1___or___InfixedExprsDeclParserRuleCall_4_0_KW_MAPSTOTerminalRuleCall_4_1___or___InfixedExprsDeclParserRuleCall_5_0_KW_MAPSTOSTARTerminalRuleCall_5_1______q;
-	protected AbstractElementAlias match_BindingR_InfixedExprsDecl_AnyStatement_Declaration_ImportKeyword_9_0_or___InlineKeyword_8_0_InfixedExprsDeclParserRuleCall_0__;
-	protected AbstractElementAlias match_BindingR_InfixedExprsDecl_AnyStatement_Declaration_InlineKeyword_8_0_or___ImportKeyword_9_0_InfixedExprsDeclParserRuleCall_0__;
-	protected AbstractElementAlias match_BindingR_InfixedExprsDecl_AnyStatement_Declaration___ImportKeyword_9_0_or_InlineKeyword_8_0___or_____DefaultKeyword_5_0_or_DefineKeyword_6_0_or_ExtendKeyword_1_0_or_FixKeyword_7_0_or_FluidKeyword_4_0_or_FreeKeyword_3_0_or_LocalKeyword_2_0___InfixedExprsDeclParserRuleCall_0__;
-	protected AbstractElementAlias match_BindingR_InfixedExprsDecl_AnyStatement_ExportDecl_ExportKeyword_1_0_0_or___ExportKeyword_2_0_0_InfixedExprsDeclParserRuleCall_0__;
-	protected AbstractElementAlias match_BindingR_InfixedExprsDecl_AnyStatement_ExportDecl_ExportKeyword_2_0_0_or___ExportKeyword_1_0_0_InfixedExprsDeclParserRuleCall_0__;
-	protected AbstractElementAlias match_BindingR_InfixedExprsDecl_AnyStatement___InfixedExprsDeclParserRuleCall_1_0_AssignKeyword_1_1___or___InfixedExprsDeclParserRuleCall_2_0_KW_2EQTerminalRuleCall_2_1___or___InfixedExprsDeclParserRuleCall_3_0_KW_MARROWTerminalRuleCall_3_1___or___InfixedExprsDeclParserRuleCall_4_0_KW_MAPSTOTerminalRuleCall_4_1___or___InfixedExprsDeclParserRuleCall_5_0_KW_MAPSTOSTARTerminalRuleCall_5_1__;
 	protected AbstractElementAlias match_Bracketed_Parened_KW_OBRACKTerminalRuleCall_1_0_or_KW_OPARENTerminalRuleCall_1_0;
 	protected AbstractElementAlias match_CurlyContentsList_Labeled_KW_SEMICOLONTerminalRuleCall_2_q;
 	protected AbstractElementAlias match_DeclMolecule_ApplicationParserRuleCall_0_q;
+	protected AbstractElementAlias match_DeclPart_KW_COLONSTARTerminalRuleCall_1_0_or_KW_COLONTerminalRuleCall_0_0;
 	protected AbstractElementAlias match_Declaration_ExportDecl_MacroBody___DefaultKeyword_5_0_or_DefineKeyword_6_0_or_ExtendKeyword_1_0_or_FixKeyword_7_0_or_FluidKeyword_4_0_or_FreeKeyword_3_0_or_ImportKeyword_9_0_or_InlineKeyword_8_0_or_LocalKeyword_2_0___or___MacroKeyword_0_0_q_ImportKeyword_2_0_q___or___MacroKeyword_0_0_q___ExportKeyword_0_0_or_ExportKeyword_1_0_0_or_ExportKeyword_2_0_0____;
 	protected AbstractElementAlias match_Declaration_ImportKeyword_9_0_or_InlineKeyword_8_0;
+	protected AbstractElementAlias match_Declaration_InfixedExprsDecl_ImportKeyword_9_0_or___InlineKeyword_8_0_InfixedExprsParserRuleCall_0__;
+	protected AbstractElementAlias match_Declaration_InfixedExprsDecl_InlineKeyword_8_0_or___ImportKeyword_9_0_InfixedExprsParserRuleCall_0__;
+	protected AbstractElementAlias match_Declaration_InfixedExprsDecl___ImportKeyword_9_0_or_InlineKeyword_8_0___or_____DefaultKeyword_5_0_or_DefineKeyword_6_0_or_ExtendKeyword_1_0_or_FixKeyword_7_0_or_FluidKeyword_4_0_or_FreeKeyword_3_0_or_LocalKeyword_2_0___InfixedExprsParserRuleCall_0__;
 	protected AbstractElementAlias match_Declaration_MacroKeyword_0_0_q;
+	protected AbstractElementAlias match_E14_E15ParserRuleCall_0_or___E15ParserRuleCall_3_0_ExceptKeyword_3_1_E15ParserRuleCall_3_2___or___E15ParserRuleCall_4_0_ThrowKeyword_4_1_E15ParserRuleCall_4_2__;
+	protected AbstractElementAlias match_E14___E15ParserRuleCall_1_0_q_WithKeyword_1_1___or___E15ParserRuleCall_2_0_q_AddKeyword_2_1__;
 	protected AbstractElementAlias match_ExportDecl_ExportKeyword_0_0_or_ExportKeyword_1_0_0_or_ExportKeyword_2_0_0;
+	protected AbstractElementAlias match_ExportDecl_InfixedExprsDecl_ExportKeyword_1_0_0_or___ExportKeyword_2_0_0_InfixedExprsParserRuleCall_0__;
+	protected AbstractElementAlias match_ExportDecl_InfixedExprsDecl_ExportKeyword_2_0_0_or___ExportKeyword_1_0_0_InfixedExprsParserRuleCall_0__;
 	protected AbstractElementAlias match_ExportDecl_MacroBody___ExportKeyword_0_0_or_ExportKeyword_1_0_0_or_ExportKeyword_2_0_0_or_ImportKeyword_2_0__q;
 	protected AbstractElementAlias match_Flow_AnyStatement_BreakKeyword_14_0_or_GotoKeyword_19_0_or_IterateKeyword_13_0;
 	protected AbstractElementAlias match_Flow_AnyStatement_BreakKeyword_14_0_or_IterateKeyword_13_0;
@@ -49,7 +50,7 @@ public class EditorSyntacticSequencer extends AbstractSyntacticSequencer {
 	protected AbstractElementAlias match_Flow_BalStatement_GenBound___GenerateKeyword_11_0_ToKeyword_0___or___IfKeyword_1_0_or_SelectKeyword_7_0_or_TryKeyword_5_0_or_TryKeyword_6_0__;
 	protected AbstractElementAlias match_Flow_BalStatement_ReturnKeyword_15_0_q;
 	protected AbstractElementAlias match_Jleft_Molecule_NotKeyword_0_0_q;
-	protected AbstractElementAlias match_QualOp_ArrowTok_QualOp_LatticeTok_QualOp_PlusTok_QualOp_PowerTok_QualOp_QuotientTok_QualOp_RelationTok_QualOp_SegTok_QualOp_TimesTok___ArrowTokParserRuleCall_1_0_KW_DOLLARTerminalRuleCall_1_1___or___LatticeTokParserRuleCall_1_0_KW_DOLLARTerminalRuleCall_1_1___or___PlusTokParserRuleCall_1_0_KW_DOLLARTerminalRuleCall_1_1___or___PowerTokParserRuleCall_1_0_KW_DOLLARTerminalRuleCall_1_1___or___QuotientTokParserRuleCall_1_0_KW_DOLLARTerminalRuleCall_1_1___or___RelationTokParserRuleCall_1_0_KW_DOLLARTerminalRuleCall_1_1___or___SegTokParserRuleCall_1_0_KW_DOLLARTerminalRuleCall_1_1___or___TimesTokParserRuleCall_1_0_KW_DOLLARTerminalRuleCall_1_1__;
+	protected AbstractElementAlias match_QualOp_ArrowTok_QualOp_LatticeTok_QualOp_PlusTok_QualOp_PowerTok_QualOp_QuotientTok_QualOp_SegTok_QualOp_TimesTok___ArrowTokParserRuleCall_1_0_KW_DOLLARTerminalRuleCall_1_1___or___LatticeTokParserRuleCall_1_0_KW_DOLLARTerminalRuleCall_1_1___or___PlusTokParserRuleCall_1_0_KW_DOLLARTerminalRuleCall_1_1___or___PowerTokParserRuleCall_1_0_KW_DOLLARTerminalRuleCall_1_1___or___QuotientTokParserRuleCall_1_0_KW_DOLLARTerminalRuleCall_1_1___or___SegTokParserRuleCall_1_0_KW_DOLLARTerminalRuleCall_1_1___or___TimesTokParserRuleCall_1_0_KW_DOLLARTerminalRuleCall_1_1__;
 	protected AbstractElementAlias match_enlister1a_Labeled_Semicolon_KW_SEMICOLONTerminalRuleCall_2_q;
 	
 	@Inject
@@ -57,20 +58,21 @@ public class EditorSyntacticSequencer extends AbstractSyntacticSequencer {
 		grammarAccess = (EditorGrammarAccess) access;
 		match_AlwaysPart_AnyStatement_AlwaysKeyword_0_0_or_FinallyKeyword_1_0 = new AlternativeAlias(false, false, new TokenAlias(false, false, grammarAccess.getAlwaysPart_AnyStatementAccess().getAlwaysKeyword_0_0()), new TokenAlias(false, false, grammarAccess.getAlwaysPart_AnyStatementAccess().getFinallyKeyword_1_0()));
 		match_AlwaysPart_BalStatement_AlwaysKeyword_0_0_or_FinallyKeyword_1_0 = new AlternativeAlias(false, false, new TokenAlias(false, false, grammarAccess.getAlwaysPart_BalStatementAccess().getAlwaysKeyword_0_0()), new TokenAlias(false, false, grammarAccess.getAlwaysPart_BalStatementAccess().getFinallyKeyword_1_0()));
-		match_BindingR_InfixedExprsDecl_AnyStatement_Declaration_ExportDecl_MacroBody_______DefaultKeyword_5_0_or_DefineKeyword_6_0_or_ExtendKeyword_1_0_or_FixKeyword_7_0_or_FluidKeyword_4_0_or_FreeKeyword_3_0_or_ImportKeyword_9_0_or_InlineKeyword_8_0_or_LocalKeyword_2_0___or___MacroKeyword_0_0_q_ImportKeyword_2_0_q___or___MacroKeyword_0_0_q___ExportKeyword_0_0_or_ExportKeyword_1_0_0_or_ExportKeyword_2_0_0___________InfixedExprsDeclParserRuleCall_1_0_AssignKeyword_1_1___or___InfixedExprsDeclParserRuleCall_2_0_KW_2EQTerminalRuleCall_2_1___or___InfixedExprsDeclParserRuleCall_3_0_KW_MARROWTerminalRuleCall_3_1___or___InfixedExprsDeclParserRuleCall_4_0_KW_MAPSTOTerminalRuleCall_4_1___or___InfixedExprsDeclParserRuleCall_5_0_KW_MAPSTOSTARTerminalRuleCall_5_1______q = new GroupAlias(false, true, new AlternativeAlias(false, false, new AlternativeAlias(false, false, new TokenAlias(false, false, grammarAccess.getDeclarationAccess().getDefaultKeyword_5_0()), new TokenAlias(false, false, grammarAccess.getDeclarationAccess().getDefineKeyword_6_0()), new TokenAlias(false, false, grammarAccess.getDeclarationAccess().getExtendKeyword_1_0()), new TokenAlias(false, false, grammarAccess.getDeclarationAccess().getFixKeyword_7_0()), new TokenAlias(false, false, grammarAccess.getDeclarationAccess().getFluidKeyword_4_0()), new TokenAlias(false, false, grammarAccess.getDeclarationAccess().getFreeKeyword_3_0()), new TokenAlias(false, false, grammarAccess.getDeclarationAccess().getImportKeyword_9_0()), new TokenAlias(false, false, grammarAccess.getDeclarationAccess().getInlineKeyword_8_0()), new TokenAlias(false, false, grammarAccess.getDeclarationAccess().getLocalKeyword_2_0())), new GroupAlias(false, false, new TokenAlias(false, true, grammarAccess.getDeclarationAccess().getMacroKeyword_0_0()), new AlternativeAlias(false, false, new TokenAlias(false, false, grammarAccess.getExportDeclAccess().getExportKeyword_0_0()), new TokenAlias(false, false, grammarAccess.getExportDeclAccess().getExportKeyword_1_0_0()), new TokenAlias(false, false, grammarAccess.getExportDeclAccess().getExportKeyword_2_0_0()))), new GroupAlias(false, false, new TokenAlias(false, true, grammarAccess.getDeclarationAccess().getMacroKeyword_0_0()), new TokenAlias(false, true, grammarAccess.getMacroBodyAccess().getImportKeyword_2_0()))), new AlternativeAlias(false, false, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getBindingR_InfixedExprsDecl_AnyStatementAccess().getInfixedExprsDeclParserRuleCall_1_0()), new TokenAlias(false, false, grammarAccess.getBindingR_InfixedExprsDecl_AnyStatementAccess().getAssignKeyword_1_1())), new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getBindingR_InfixedExprsDecl_AnyStatementAccess().getInfixedExprsDeclParserRuleCall_2_0()), new TokenAlias(false, false, grammarAccess.getBindingR_InfixedExprsDecl_AnyStatementAccess().getKW_2EQTerminalRuleCall_2_1())), new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getBindingR_InfixedExprsDecl_AnyStatementAccess().getInfixedExprsDeclParserRuleCall_3_0()), new TokenAlias(false, false, grammarAccess.getBindingR_InfixedExprsDecl_AnyStatementAccess().getKW_MARROWTerminalRuleCall_3_1())), new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getBindingR_InfixedExprsDecl_AnyStatementAccess().getInfixedExprsDeclParserRuleCall_4_0()), new TokenAlias(false, false, grammarAccess.getBindingR_InfixedExprsDecl_AnyStatementAccess().getKW_MAPSTOTerminalRuleCall_4_1())), new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getBindingR_InfixedExprsDecl_AnyStatementAccess().getInfixedExprsDeclParserRuleCall_5_0()), new TokenAlias(false, false, grammarAccess.getBindingR_InfixedExprsDecl_AnyStatementAccess().getKW_MAPSTOSTARTerminalRuleCall_5_1()))));
-		match_BindingR_InfixedExprsDecl_AnyStatement_Declaration_ImportKeyword_9_0_or___InlineKeyword_8_0_InfixedExprsDeclParserRuleCall_0__ = new AlternativeAlias(false, false, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getDeclarationAccess().getInlineKeyword_8_0()), new TokenAlias(false, false, grammarAccess.getBindingR_InfixedExprsDecl_AnyStatementAccess().getInfixedExprsDeclParserRuleCall_0())), new TokenAlias(false, false, grammarAccess.getDeclarationAccess().getImportKeyword_9_0()));
-		match_BindingR_InfixedExprsDecl_AnyStatement_Declaration_InlineKeyword_8_0_or___ImportKeyword_9_0_InfixedExprsDeclParserRuleCall_0__ = new AlternativeAlias(false, false, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getDeclarationAccess().getImportKeyword_9_0()), new TokenAlias(false, false, grammarAccess.getBindingR_InfixedExprsDecl_AnyStatementAccess().getInfixedExprsDeclParserRuleCall_0())), new TokenAlias(false, false, grammarAccess.getDeclarationAccess().getInlineKeyword_8_0()));
-		match_BindingR_InfixedExprsDecl_AnyStatement_Declaration___ImportKeyword_9_0_or_InlineKeyword_8_0___or_____DefaultKeyword_5_0_or_DefineKeyword_6_0_or_ExtendKeyword_1_0_or_FixKeyword_7_0_or_FluidKeyword_4_0_or_FreeKeyword_3_0_or_LocalKeyword_2_0___InfixedExprsDeclParserRuleCall_0__ = new AlternativeAlias(false, false, new AlternativeAlias(false, false, new TokenAlias(false, false, grammarAccess.getDeclarationAccess().getImportKeyword_9_0()), new TokenAlias(false, false, grammarAccess.getDeclarationAccess().getInlineKeyword_8_0())), new GroupAlias(false, false, new AlternativeAlias(false, false, new TokenAlias(false, false, grammarAccess.getDeclarationAccess().getDefaultKeyword_5_0()), new TokenAlias(false, false, grammarAccess.getDeclarationAccess().getDefineKeyword_6_0()), new TokenAlias(false, false, grammarAccess.getDeclarationAccess().getExtendKeyword_1_0()), new TokenAlias(false, false, grammarAccess.getDeclarationAccess().getFixKeyword_7_0()), new TokenAlias(false, false, grammarAccess.getDeclarationAccess().getFluidKeyword_4_0()), new TokenAlias(false, false, grammarAccess.getDeclarationAccess().getFreeKeyword_3_0()), new TokenAlias(false, false, grammarAccess.getDeclarationAccess().getLocalKeyword_2_0())), new TokenAlias(false, false, grammarAccess.getBindingR_InfixedExprsDecl_AnyStatementAccess().getInfixedExprsDeclParserRuleCall_0())));
-		match_BindingR_InfixedExprsDecl_AnyStatement_ExportDecl_ExportKeyword_1_0_0_or___ExportKeyword_2_0_0_InfixedExprsDeclParserRuleCall_0__ = new AlternativeAlias(false, false, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getExportDeclAccess().getExportKeyword_2_0_0()), new TokenAlias(false, false, grammarAccess.getBindingR_InfixedExprsDecl_AnyStatementAccess().getInfixedExprsDeclParserRuleCall_0())), new TokenAlias(false, false, grammarAccess.getExportDeclAccess().getExportKeyword_1_0_0()));
-		match_BindingR_InfixedExprsDecl_AnyStatement_ExportDecl_ExportKeyword_2_0_0_or___ExportKeyword_1_0_0_InfixedExprsDeclParserRuleCall_0__ = new AlternativeAlias(false, false, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getExportDeclAccess().getExportKeyword_1_0_0()), new TokenAlias(false, false, grammarAccess.getBindingR_InfixedExprsDecl_AnyStatementAccess().getInfixedExprsDeclParserRuleCall_0())), new TokenAlias(false, false, grammarAccess.getExportDeclAccess().getExportKeyword_2_0_0()));
-		match_BindingR_InfixedExprsDecl_AnyStatement___InfixedExprsDeclParserRuleCall_1_0_AssignKeyword_1_1___or___InfixedExprsDeclParserRuleCall_2_0_KW_2EQTerminalRuleCall_2_1___or___InfixedExprsDeclParserRuleCall_3_0_KW_MARROWTerminalRuleCall_3_1___or___InfixedExprsDeclParserRuleCall_4_0_KW_MAPSTOTerminalRuleCall_4_1___or___InfixedExprsDeclParserRuleCall_5_0_KW_MAPSTOSTARTerminalRuleCall_5_1__ = new AlternativeAlias(false, false, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getBindingR_InfixedExprsDecl_AnyStatementAccess().getInfixedExprsDeclParserRuleCall_1_0()), new TokenAlias(false, false, grammarAccess.getBindingR_InfixedExprsDecl_AnyStatementAccess().getAssignKeyword_1_1())), new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getBindingR_InfixedExprsDecl_AnyStatementAccess().getInfixedExprsDeclParserRuleCall_2_0()), new TokenAlias(false, false, grammarAccess.getBindingR_InfixedExprsDecl_AnyStatementAccess().getKW_2EQTerminalRuleCall_2_1())), new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getBindingR_InfixedExprsDecl_AnyStatementAccess().getInfixedExprsDeclParserRuleCall_3_0()), new TokenAlias(false, false, grammarAccess.getBindingR_InfixedExprsDecl_AnyStatementAccess().getKW_MARROWTerminalRuleCall_3_1())), new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getBindingR_InfixedExprsDecl_AnyStatementAccess().getInfixedExprsDeclParserRuleCall_4_0()), new TokenAlias(false, false, grammarAccess.getBindingR_InfixedExprsDecl_AnyStatementAccess().getKW_MAPSTOTerminalRuleCall_4_1())), new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getBindingR_InfixedExprsDecl_AnyStatementAccess().getInfixedExprsDeclParserRuleCall_5_0()), new TokenAlias(false, false, grammarAccess.getBindingR_InfixedExprsDecl_AnyStatementAccess().getKW_MAPSTOSTARTerminalRuleCall_5_1())));
 		match_Bracketed_Parened_KW_OBRACKTerminalRuleCall_1_0_or_KW_OPARENTerminalRuleCall_1_0 = new AlternativeAlias(false, false, new TokenAlias(false, false, grammarAccess.getBracketedAccess().getKW_OBRACKTerminalRuleCall_1_0()), new TokenAlias(false, false, grammarAccess.getParenedAccess().getKW_OPARENTerminalRuleCall_1_0()));
 		match_CurlyContentsList_Labeled_KW_SEMICOLONTerminalRuleCall_2_q = new TokenAlias(false, true, grammarAccess.getCurlyContentsList_LabeledAccess().getKW_SEMICOLONTerminalRuleCall_2());
 		match_DeclMolecule_ApplicationParserRuleCall_0_q = new TokenAlias(false, true, grammarAccess.getDeclMoleculeAccess().getApplicationParserRuleCall_0());
+		match_DeclPart_KW_COLONSTARTerminalRuleCall_1_0_or_KW_COLONTerminalRuleCall_0_0 = new AlternativeAlias(false, false, new TokenAlias(false, false, grammarAccess.getDeclPartAccess().getKW_COLONSTARTerminalRuleCall_1_0()), new TokenAlias(false, false, grammarAccess.getDeclPartAccess().getKW_COLONTerminalRuleCall_0_0()));
 		match_Declaration_ExportDecl_MacroBody___DefaultKeyword_5_0_or_DefineKeyword_6_0_or_ExtendKeyword_1_0_or_FixKeyword_7_0_or_FluidKeyword_4_0_or_FreeKeyword_3_0_or_ImportKeyword_9_0_or_InlineKeyword_8_0_or_LocalKeyword_2_0___or___MacroKeyword_0_0_q_ImportKeyword_2_0_q___or___MacroKeyword_0_0_q___ExportKeyword_0_0_or_ExportKeyword_1_0_0_or_ExportKeyword_2_0_0____ = new AlternativeAlias(false, false, new AlternativeAlias(false, false, new TokenAlias(false, false, grammarAccess.getDeclarationAccess().getDefaultKeyword_5_0()), new TokenAlias(false, false, grammarAccess.getDeclarationAccess().getDefineKeyword_6_0()), new TokenAlias(false, false, grammarAccess.getDeclarationAccess().getExtendKeyword_1_0()), new TokenAlias(false, false, grammarAccess.getDeclarationAccess().getFixKeyword_7_0()), new TokenAlias(false, false, grammarAccess.getDeclarationAccess().getFluidKeyword_4_0()), new TokenAlias(false, false, grammarAccess.getDeclarationAccess().getFreeKeyword_3_0()), new TokenAlias(false, false, grammarAccess.getDeclarationAccess().getImportKeyword_9_0()), new TokenAlias(false, false, grammarAccess.getDeclarationAccess().getInlineKeyword_8_0()), new TokenAlias(false, false, grammarAccess.getDeclarationAccess().getLocalKeyword_2_0())), new GroupAlias(false, false, new TokenAlias(false, true, grammarAccess.getDeclarationAccess().getMacroKeyword_0_0()), new AlternativeAlias(false, false, new TokenAlias(false, false, grammarAccess.getExportDeclAccess().getExportKeyword_0_0()), new TokenAlias(false, false, grammarAccess.getExportDeclAccess().getExportKeyword_1_0_0()), new TokenAlias(false, false, grammarAccess.getExportDeclAccess().getExportKeyword_2_0_0()))), new GroupAlias(false, false, new TokenAlias(false, true, grammarAccess.getDeclarationAccess().getMacroKeyword_0_0()), new TokenAlias(false, true, grammarAccess.getMacroBodyAccess().getImportKeyword_2_0())));
 		match_Declaration_ImportKeyword_9_0_or_InlineKeyword_8_0 = new AlternativeAlias(false, false, new TokenAlias(false, false, grammarAccess.getDeclarationAccess().getImportKeyword_9_0()), new TokenAlias(false, false, grammarAccess.getDeclarationAccess().getInlineKeyword_8_0()));
+		match_Declaration_InfixedExprsDecl_ImportKeyword_9_0_or___InlineKeyword_8_0_InfixedExprsParserRuleCall_0__ = new AlternativeAlias(false, false, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getDeclarationAccess().getInlineKeyword_8_0()), new TokenAlias(false, false, grammarAccess.getInfixedExprsDeclAccess().getInfixedExprsParserRuleCall_0())), new TokenAlias(false, false, grammarAccess.getDeclarationAccess().getImportKeyword_9_0()));
+		match_Declaration_InfixedExprsDecl_InlineKeyword_8_0_or___ImportKeyword_9_0_InfixedExprsParserRuleCall_0__ = new AlternativeAlias(false, false, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getDeclarationAccess().getImportKeyword_9_0()), new TokenAlias(false, false, grammarAccess.getInfixedExprsDeclAccess().getInfixedExprsParserRuleCall_0())), new TokenAlias(false, false, grammarAccess.getDeclarationAccess().getInlineKeyword_8_0()));
+		match_Declaration_InfixedExprsDecl___ImportKeyword_9_0_or_InlineKeyword_8_0___or_____DefaultKeyword_5_0_or_DefineKeyword_6_0_or_ExtendKeyword_1_0_or_FixKeyword_7_0_or_FluidKeyword_4_0_or_FreeKeyword_3_0_or_LocalKeyword_2_0___InfixedExprsParserRuleCall_0__ = new AlternativeAlias(false, false, new AlternativeAlias(false, false, new TokenAlias(false, false, grammarAccess.getDeclarationAccess().getImportKeyword_9_0()), new TokenAlias(false, false, grammarAccess.getDeclarationAccess().getInlineKeyword_8_0())), new GroupAlias(false, false, new AlternativeAlias(false, false, new TokenAlias(false, false, grammarAccess.getDeclarationAccess().getDefaultKeyword_5_0()), new TokenAlias(false, false, grammarAccess.getDeclarationAccess().getDefineKeyword_6_0()), new TokenAlias(false, false, grammarAccess.getDeclarationAccess().getExtendKeyword_1_0()), new TokenAlias(false, false, grammarAccess.getDeclarationAccess().getFixKeyword_7_0()), new TokenAlias(false, false, grammarAccess.getDeclarationAccess().getFluidKeyword_4_0()), new TokenAlias(false, false, grammarAccess.getDeclarationAccess().getFreeKeyword_3_0()), new TokenAlias(false, false, grammarAccess.getDeclarationAccess().getLocalKeyword_2_0())), new TokenAlias(false, false, grammarAccess.getInfixedExprsDeclAccess().getInfixedExprsParserRuleCall_0())));
 		match_Declaration_MacroKeyword_0_0_q = new TokenAlias(false, true, grammarAccess.getDeclarationAccess().getMacroKeyword_0_0());
+		match_E14_E15ParserRuleCall_0_or___E15ParserRuleCall_3_0_ExceptKeyword_3_1_E15ParserRuleCall_3_2___or___E15ParserRuleCall_4_0_ThrowKeyword_4_1_E15ParserRuleCall_4_2__ = new AlternativeAlias(false, false, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getE14Access().getE15ParserRuleCall_3_0()), new TokenAlias(false, false, grammarAccess.getE14Access().getExceptKeyword_3_1()), new TokenAlias(false, false, grammarAccess.getE14Access().getE15ParserRuleCall_3_2())), new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getE14Access().getE15ParserRuleCall_4_0()), new TokenAlias(false, false, grammarAccess.getE14Access().getThrowKeyword_4_1()), new TokenAlias(false, false, grammarAccess.getE14Access().getE15ParserRuleCall_4_2())), new TokenAlias(false, false, grammarAccess.getE14Access().getE15ParserRuleCall_0()));
+		match_E14___E15ParserRuleCall_1_0_q_WithKeyword_1_1___or___E15ParserRuleCall_2_0_q_AddKeyword_2_1__ = new AlternativeAlias(false, false, new GroupAlias(false, false, new TokenAlias(false, true, grammarAccess.getE14Access().getE15ParserRuleCall_1_0()), new TokenAlias(false, false, grammarAccess.getE14Access().getWithKeyword_1_1())), new GroupAlias(false, false, new TokenAlias(false, true, grammarAccess.getE14Access().getE15ParserRuleCall_2_0()), new TokenAlias(false, false, grammarAccess.getE14Access().getAddKeyword_2_1())));
 		match_ExportDecl_ExportKeyword_0_0_or_ExportKeyword_1_0_0_or_ExportKeyword_2_0_0 = new AlternativeAlias(false, false, new TokenAlias(false, false, grammarAccess.getExportDeclAccess().getExportKeyword_0_0()), new TokenAlias(false, false, grammarAccess.getExportDeclAccess().getExportKeyword_1_0_0()), new TokenAlias(false, false, grammarAccess.getExportDeclAccess().getExportKeyword_2_0_0()));
+		match_ExportDecl_InfixedExprsDecl_ExportKeyword_1_0_0_or___ExportKeyword_2_0_0_InfixedExprsParserRuleCall_0__ = new AlternativeAlias(false, false, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getExportDeclAccess().getExportKeyword_2_0_0()), new TokenAlias(false, false, grammarAccess.getInfixedExprsDeclAccess().getInfixedExprsParserRuleCall_0())), new TokenAlias(false, false, grammarAccess.getExportDeclAccess().getExportKeyword_1_0_0()));
+		match_ExportDecl_InfixedExprsDecl_ExportKeyword_2_0_0_or___ExportKeyword_1_0_0_InfixedExprsParserRuleCall_0__ = new AlternativeAlias(false, false, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getExportDeclAccess().getExportKeyword_1_0_0()), new TokenAlias(false, false, grammarAccess.getInfixedExprsDeclAccess().getInfixedExprsParserRuleCall_0())), new TokenAlias(false, false, grammarAccess.getExportDeclAccess().getExportKeyword_2_0_0()));
 		match_ExportDecl_MacroBody___ExportKeyword_0_0_or_ExportKeyword_1_0_0_or_ExportKeyword_2_0_0_or_ImportKeyword_2_0__q = new AlternativeAlias(false, true, new TokenAlias(false, false, grammarAccess.getExportDeclAccess().getExportKeyword_0_0()), new TokenAlias(false, false, grammarAccess.getExportDeclAccess().getExportKeyword_1_0_0()), new TokenAlias(false, false, grammarAccess.getExportDeclAccess().getExportKeyword_2_0_0()), new TokenAlias(false, false, grammarAccess.getMacroBodyAccess().getImportKeyword_2_0()));
 		match_Flow_AnyStatement_BreakKeyword_14_0_or_GotoKeyword_19_0_or_IterateKeyword_13_0 = new AlternativeAlias(false, false, new TokenAlias(false, false, grammarAccess.getFlow_AnyStatementAccess().getBreakKeyword_14_0()), new TokenAlias(false, false, grammarAccess.getFlow_AnyStatementAccess().getGotoKeyword_19_0()), new TokenAlias(false, false, grammarAccess.getFlow_AnyStatementAccess().getIterateKeyword_13_0()));
 		match_Flow_AnyStatement_BreakKeyword_14_0_or_IterateKeyword_13_0 = new AlternativeAlias(false, false, new TokenAlias(false, false, grammarAccess.getFlow_AnyStatementAccess().getBreakKeyword_14_0()), new TokenAlias(false, false, grammarAccess.getFlow_AnyStatementAccess().getIterateKeyword_13_0()));
@@ -85,7 +87,7 @@ public class EditorSyntacticSequencer extends AbstractSyntacticSequencer {
 		match_Flow_BalStatement_GenBound___GenerateKeyword_11_0_ToKeyword_0___or___IfKeyword_1_0_or_SelectKeyword_7_0_or_TryKeyword_5_0_or_TryKeyword_6_0__ = new AlternativeAlias(false, false, new AlternativeAlias(false, false, new TokenAlias(false, false, grammarAccess.getFlow_BalStatementAccess().getIfKeyword_1_0()), new TokenAlias(false, false, grammarAccess.getFlow_BalStatementAccess().getSelectKeyword_7_0()), new TokenAlias(false, false, grammarAccess.getFlow_BalStatementAccess().getTryKeyword_5_0()), new TokenAlias(false, false, grammarAccess.getFlow_BalStatementAccess().getTryKeyword_6_0())), new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getFlow_BalStatementAccess().getGenerateKeyword_11_0()), new TokenAlias(false, false, grammarAccess.getGenBoundAccess().getToKeyword_0())));
 		match_Flow_BalStatement_ReturnKeyword_15_0_q = new TokenAlias(false, true, grammarAccess.getFlow_BalStatementAccess().getReturnKeyword_15_0());
 		match_Jleft_Molecule_NotKeyword_0_0_q = new TokenAlias(false, true, grammarAccess.getJleft_MoleculeAccess().getNotKeyword_0_0());
-		match_QualOp_ArrowTok_QualOp_LatticeTok_QualOp_PlusTok_QualOp_PowerTok_QualOp_QuotientTok_QualOp_RelationTok_QualOp_SegTok_QualOp_TimesTok___ArrowTokParserRuleCall_1_0_KW_DOLLARTerminalRuleCall_1_1___or___LatticeTokParserRuleCall_1_0_KW_DOLLARTerminalRuleCall_1_1___or___PlusTokParserRuleCall_1_0_KW_DOLLARTerminalRuleCall_1_1___or___PowerTokParserRuleCall_1_0_KW_DOLLARTerminalRuleCall_1_1___or___QuotientTokParserRuleCall_1_0_KW_DOLLARTerminalRuleCall_1_1___or___RelationTokParserRuleCall_1_0_KW_DOLLARTerminalRuleCall_1_1___or___SegTokParserRuleCall_1_0_KW_DOLLARTerminalRuleCall_1_1___or___TimesTokParserRuleCall_1_0_KW_DOLLARTerminalRuleCall_1_1__ = new AlternativeAlias(false, false, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getQualOp_ArrowTokAccess().getArrowTokParserRuleCall_1_0()), new TokenAlias(false, false, grammarAccess.getQualOp_ArrowTokAccess().getKW_DOLLARTerminalRuleCall_1_1())), new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getQualOp_LatticeTokAccess().getLatticeTokParserRuleCall_1_0()), new TokenAlias(false, false, grammarAccess.getQualOp_LatticeTokAccess().getKW_DOLLARTerminalRuleCall_1_1())), new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getQualOp_PlusTokAccess().getPlusTokParserRuleCall_1_0()), new TokenAlias(false, false, grammarAccess.getQualOp_PlusTokAccess().getKW_DOLLARTerminalRuleCall_1_1())), new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getQualOp_PowerTokAccess().getPowerTokParserRuleCall_1_0()), new TokenAlias(false, false, grammarAccess.getQualOp_PowerTokAccess().getKW_DOLLARTerminalRuleCall_1_1())), new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getQualOp_QuotientTokAccess().getQuotientTokParserRuleCall_1_0()), new TokenAlias(false, false, grammarAccess.getQualOp_QuotientTokAccess().getKW_DOLLARTerminalRuleCall_1_1())), new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getQualOp_RelationTokAccess().getRelationTokParserRuleCall_1_0()), new TokenAlias(false, false, grammarAccess.getQualOp_RelationTokAccess().getKW_DOLLARTerminalRuleCall_1_1())), new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getQualOp_SegTokAccess().getSegTokParserRuleCall_1_0()), new TokenAlias(false, false, grammarAccess.getQualOp_SegTokAccess().getKW_DOLLARTerminalRuleCall_1_1())), new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getQualOp_TimesTokAccess().getTimesTokParserRuleCall_1_0()), new TokenAlias(false, false, grammarAccess.getQualOp_TimesTokAccess().getKW_DOLLARTerminalRuleCall_1_1())));
+		match_QualOp_ArrowTok_QualOp_LatticeTok_QualOp_PlusTok_QualOp_PowerTok_QualOp_QuotientTok_QualOp_SegTok_QualOp_TimesTok___ArrowTokParserRuleCall_1_0_KW_DOLLARTerminalRuleCall_1_1___or___LatticeTokParserRuleCall_1_0_KW_DOLLARTerminalRuleCall_1_1___or___PlusTokParserRuleCall_1_0_KW_DOLLARTerminalRuleCall_1_1___or___PowerTokParserRuleCall_1_0_KW_DOLLARTerminalRuleCall_1_1___or___QuotientTokParserRuleCall_1_0_KW_DOLLARTerminalRuleCall_1_1___or___SegTokParserRuleCall_1_0_KW_DOLLARTerminalRuleCall_1_1___or___TimesTokParserRuleCall_1_0_KW_DOLLARTerminalRuleCall_1_1__ = new AlternativeAlias(false, false, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getQualOp_ArrowTokAccess().getArrowTokParserRuleCall_1_0()), new TokenAlias(false, false, grammarAccess.getQualOp_ArrowTokAccess().getKW_DOLLARTerminalRuleCall_1_1())), new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getQualOp_LatticeTokAccess().getLatticeTokParserRuleCall_1_0()), new TokenAlias(false, false, grammarAccess.getQualOp_LatticeTokAccess().getKW_DOLLARTerminalRuleCall_1_1())), new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getQualOp_PlusTokAccess().getPlusTokParserRuleCall_1_0()), new TokenAlias(false, false, grammarAccess.getQualOp_PlusTokAccess().getKW_DOLLARTerminalRuleCall_1_1())), new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getQualOp_PowerTokAccess().getPowerTokParserRuleCall_1_0()), new TokenAlias(false, false, grammarAccess.getQualOp_PowerTokAccess().getKW_DOLLARTerminalRuleCall_1_1())), new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getQualOp_QuotientTokAccess().getQuotientTokParserRuleCall_1_0()), new TokenAlias(false, false, grammarAccess.getQualOp_QuotientTokAccess().getKW_DOLLARTerminalRuleCall_1_1())), new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getQualOp_SegTokAccess().getSegTokParserRuleCall_1_0()), new TokenAlias(false, false, grammarAccess.getQualOp_SegTokAccess().getKW_DOLLARTerminalRuleCall_1_1())), new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getQualOp_TimesTokAccess().getTimesTokParserRuleCall_1_0()), new TokenAlias(false, false, grammarAccess.getQualOp_TimesTokAccess().getKW_DOLLARTerminalRuleCall_1_1())));
 		match_enlister1a_Labeled_Semicolon_KW_SEMICOLONTerminalRuleCall_2_q = new TokenAlias(false, true, grammarAccess.getEnlister1a_Labeled_SemicolonAccess().getKW_SEMICOLONTerminalRuleCall_2());
 	}
 	
@@ -99,12 +101,14 @@ public class EditorSyntacticSequencer extends AbstractSyntacticSequencer {
 			return getArrowTokToken(semanticObject, ruleCall, node);
 		else if(ruleCall.getRule() == grammarAccess.getBalStatementRule())
 			return getBalStatementToken(semanticObject, ruleCall, node);
+		else if(ruleCall.getRule() == grammarAccess.getE15Rule())
+			return getE15Token(semanticObject, ruleCall, node);
 		else if(ruleCall.getRule() == grammarAccess.getForLhsRule())
 			return getForLhsToken(semanticObject, ruleCall, node);
 		else if(ruleCall.getRule() == grammarAccess.getInfixedRule())
 			return getInfixedToken(semanticObject, ruleCall, node);
-		else if(ruleCall.getRule() == grammarAccess.getInfixedExprsDeclRule())
-			return getInfixedExprsDeclToken(semanticObject, ruleCall, node);
+		else if(ruleCall.getRule() == grammarAccess.getInfixedExprsRule())
+			return getInfixedExprsToken(semanticObject, ruleCall, node);
 		else if(ruleCall.getRule() == grammarAccess.getIteratorsRule())
 			return getIteratorsToken(semanticObject, ruleCall, node);
 		else if(ruleCall.getRule() == grammarAccess.getKW_2EQRule())
@@ -115,6 +119,10 @@ public class EditorSyntacticSequencer extends AbstractSyntacticSequencer {
 			return getKW_CBRACKToken(semanticObject, ruleCall, node);
 		else if(ruleCall.getRule() == grammarAccess.getKW_CCURLYRule())
 			return getKW_CCURLYToken(semanticObject, ruleCall, node);
+		else if(ruleCall.getRule() == grammarAccess.getKW_COLONRule())
+			return getKW_COLONToken(semanticObject, ruleCall, node);
+		else if(ruleCall.getRule() == grammarAccess.getKW_COLONSTARRule())
+			return getKW_COLONSTARToken(semanticObject, ruleCall, node);
 		else if(ruleCall.getRule() == grammarAccess.getKW_COMMARule())
 			return getKW_COMMAToken(semanticObject, ruleCall, node);
 		else if(ruleCall.getRule() == grammarAccess.getKW_CPARENRule())
@@ -147,6 +155,8 @@ public class EditorSyntacticSequencer extends AbstractSyntacticSequencer {
 			return getPowerTokToken(semanticObject, ruleCall, node);
 		else if(ruleCall.getRule() == grammarAccess.getQuotientTokRule())
 			return getQuotientTokToken(semanticObject, ruleCall, node);
+		else if(ruleCall.getRule() == grammarAccess.getRelationOpRule())
+			return getRelationOpToken(semanticObject, ruleCall, node);
 		else if(ruleCall.getRule() == grammarAccess.getRelationTokRule())
 			return getRelationTokToken(semanticObject, ruleCall, node);
 		else if(ruleCall.getRule() == grammarAccess.getSegTokRule())
@@ -199,6 +209,17 @@ public class EditorSyntacticSequencer extends AbstractSyntacticSequencer {
 	}
 	
 	/**
+	 * E15 hidden(WS,KW_NEWLINE):
+	 *   Application
+	 * ;
+	 */
+	protected String getE15Token(EObject semanticObject, RuleCall ruleCall, INode node) {
+		if (node != null)
+			return getTokenText(node);
+		return "temp52";
+	}
+	
+	/**
 	 * ForLhs
 	 * : Infixed
 	 * | 'free' Infixed
@@ -224,11 +245,11 @@ public class EditorSyntacticSequencer extends AbstractSyntacticSequencer {
 	}
 	
 	/**
-	 * InfixedExprsDecl hidden(WS,KW_NEWLINE):
-	 *  InfixedExprs DeclPart*
+	 * InfixedExprs hidden(WS,KW_NEWLINE):
+	 *  enlist1_InfixedExpr_Comma_AB
 	 * ;
 	 */
-	protected String getInfixedExprsDeclToken(EObject semanticObject, RuleCall ruleCall, INode node) {
+	protected String getInfixedExprsToken(EObject semanticObject, RuleCall ruleCall, INode node) {
 		if (node != null)
 			return getTokenText(node);
 		return "temp32";
@@ -279,6 +300,24 @@ public class EditorSyntacticSequencer extends AbstractSyntacticSequencer {
 		if (node != null)
 			return getTokenText(node);
 		return "}";
+	}
+	
+	/**
+	 * terminal KW_COLON: ':';
+	 */
+	protected String getKW_COLONToken(EObject semanticObject, RuleCall ruleCall, INode node) {
+		if (node != null)
+			return getTokenText(node);
+		return ":";
+	}
+	
+	/**
+	 * terminal KW_COLONSTAR: ':*';
+	 */
+	protected String getKW_COLONSTARToken(EObject semanticObject, RuleCall ruleCall, INode node) {
+		if (node != null)
+			return getTokenText(node);
+		return ":*";
 	}
 	
 	/**
@@ -426,6 +465,15 @@ public class EditorSyntacticSequencer extends AbstractSyntacticSequencer {
 	}
 	
 	/**
+	 * RelationOp: QualOp_RelationTok;
+	 */
+	protected String getRelationOpToken(EObject semanticObject, RuleCall ruleCall, INode node) {
+		if (node != null)
+			return getTokenText(node);
+		return "temp99";
+	}
+	
+	/**
 	 * RelationTok:KW_EQ | KW_TILDEE | KW_HATE |
 	 * KW_GE | KW_GT | KW_2GT |
 	 * KW_LE | KW_LT | KW_2LT |
@@ -465,34 +513,36 @@ public class EditorSyntacticSequencer extends AbstractSyntacticSequencer {
 				emit_AlwaysPart_AnyStatement_AlwaysKeyword_0_0_or_FinallyKeyword_1_0(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if(match_AlwaysPart_BalStatement_AlwaysKeyword_0_0_or_FinallyKeyword_1_0.equals(syntax))
 				emit_AlwaysPart_BalStatement_AlwaysKeyword_0_0_or_FinallyKeyword_1_0(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if(match_BindingR_InfixedExprsDecl_AnyStatement_Declaration_ExportDecl_MacroBody_______DefaultKeyword_5_0_or_DefineKeyword_6_0_or_ExtendKeyword_1_0_or_FixKeyword_7_0_or_FluidKeyword_4_0_or_FreeKeyword_3_0_or_ImportKeyword_9_0_or_InlineKeyword_8_0_or_LocalKeyword_2_0___or___MacroKeyword_0_0_q_ImportKeyword_2_0_q___or___MacroKeyword_0_0_q___ExportKeyword_0_0_or_ExportKeyword_1_0_0_or_ExportKeyword_2_0_0___________InfixedExprsDeclParserRuleCall_1_0_AssignKeyword_1_1___or___InfixedExprsDeclParserRuleCall_2_0_KW_2EQTerminalRuleCall_2_1___or___InfixedExprsDeclParserRuleCall_3_0_KW_MARROWTerminalRuleCall_3_1___or___InfixedExprsDeclParserRuleCall_4_0_KW_MAPSTOTerminalRuleCall_4_1___or___InfixedExprsDeclParserRuleCall_5_0_KW_MAPSTOSTARTerminalRuleCall_5_1______q.equals(syntax))
-				emit_BindingR_InfixedExprsDecl_AnyStatement_Declaration_ExportDecl_MacroBody_______DefaultKeyword_5_0_or_DefineKeyword_6_0_or_ExtendKeyword_1_0_or_FixKeyword_7_0_or_FluidKeyword_4_0_or_FreeKeyword_3_0_or_ImportKeyword_9_0_or_InlineKeyword_8_0_or_LocalKeyword_2_0___or___MacroKeyword_0_0_q_ImportKeyword_2_0_q___or___MacroKeyword_0_0_q___ExportKeyword_0_0_or_ExportKeyword_1_0_0_or_ExportKeyword_2_0_0___________InfixedExprsDeclParserRuleCall_1_0_AssignKeyword_1_1___or___InfixedExprsDeclParserRuleCall_2_0_KW_2EQTerminalRuleCall_2_1___or___InfixedExprsDeclParserRuleCall_3_0_KW_MARROWTerminalRuleCall_3_1___or___InfixedExprsDeclParserRuleCall_4_0_KW_MAPSTOTerminalRuleCall_4_1___or___InfixedExprsDeclParserRuleCall_5_0_KW_MAPSTOSTARTerminalRuleCall_5_1______q(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if(match_BindingR_InfixedExprsDecl_AnyStatement_Declaration_ImportKeyword_9_0_or___InlineKeyword_8_0_InfixedExprsDeclParserRuleCall_0__.equals(syntax))
-				emit_BindingR_InfixedExprsDecl_AnyStatement_Declaration_ImportKeyword_9_0_or___InlineKeyword_8_0_InfixedExprsDeclParserRuleCall_0__(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if(match_BindingR_InfixedExprsDecl_AnyStatement_Declaration_InlineKeyword_8_0_or___ImportKeyword_9_0_InfixedExprsDeclParserRuleCall_0__.equals(syntax))
-				emit_BindingR_InfixedExprsDecl_AnyStatement_Declaration_InlineKeyword_8_0_or___ImportKeyword_9_0_InfixedExprsDeclParserRuleCall_0__(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if(match_BindingR_InfixedExprsDecl_AnyStatement_Declaration___ImportKeyword_9_0_or_InlineKeyword_8_0___or_____DefaultKeyword_5_0_or_DefineKeyword_6_0_or_ExtendKeyword_1_0_or_FixKeyword_7_0_or_FluidKeyword_4_0_or_FreeKeyword_3_0_or_LocalKeyword_2_0___InfixedExprsDeclParserRuleCall_0__.equals(syntax))
-				emit_BindingR_InfixedExprsDecl_AnyStatement_Declaration___ImportKeyword_9_0_or_InlineKeyword_8_0___or_____DefaultKeyword_5_0_or_DefineKeyword_6_0_or_ExtendKeyword_1_0_or_FixKeyword_7_0_or_FluidKeyword_4_0_or_FreeKeyword_3_0_or_LocalKeyword_2_0___InfixedExprsDeclParserRuleCall_0__(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if(match_BindingR_InfixedExprsDecl_AnyStatement_ExportDecl_ExportKeyword_1_0_0_or___ExportKeyword_2_0_0_InfixedExprsDeclParserRuleCall_0__.equals(syntax))
-				emit_BindingR_InfixedExprsDecl_AnyStatement_ExportDecl_ExportKeyword_1_0_0_or___ExportKeyword_2_0_0_InfixedExprsDeclParserRuleCall_0__(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if(match_BindingR_InfixedExprsDecl_AnyStatement_ExportDecl_ExportKeyword_2_0_0_or___ExportKeyword_1_0_0_InfixedExprsDeclParserRuleCall_0__.equals(syntax))
-				emit_BindingR_InfixedExprsDecl_AnyStatement_ExportDecl_ExportKeyword_2_0_0_or___ExportKeyword_1_0_0_InfixedExprsDeclParserRuleCall_0__(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if(match_BindingR_InfixedExprsDecl_AnyStatement___InfixedExprsDeclParserRuleCall_1_0_AssignKeyword_1_1___or___InfixedExprsDeclParserRuleCall_2_0_KW_2EQTerminalRuleCall_2_1___or___InfixedExprsDeclParserRuleCall_3_0_KW_MARROWTerminalRuleCall_3_1___or___InfixedExprsDeclParserRuleCall_4_0_KW_MAPSTOTerminalRuleCall_4_1___or___InfixedExprsDeclParserRuleCall_5_0_KW_MAPSTOSTARTerminalRuleCall_5_1__.equals(syntax))
-				emit_BindingR_InfixedExprsDecl_AnyStatement___InfixedExprsDeclParserRuleCall_1_0_AssignKeyword_1_1___or___InfixedExprsDeclParserRuleCall_2_0_KW_2EQTerminalRuleCall_2_1___or___InfixedExprsDeclParserRuleCall_3_0_KW_MARROWTerminalRuleCall_3_1___or___InfixedExprsDeclParserRuleCall_4_0_KW_MAPSTOTerminalRuleCall_4_1___or___InfixedExprsDeclParserRuleCall_5_0_KW_MAPSTOSTARTerminalRuleCall_5_1__(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if(match_Bracketed_Parened_KW_OBRACKTerminalRuleCall_1_0_or_KW_OPARENTerminalRuleCall_1_0.equals(syntax))
 				emit_Bracketed_Parened_KW_OBRACKTerminalRuleCall_1_0_or_KW_OPARENTerminalRuleCall_1_0(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if(match_CurlyContentsList_Labeled_KW_SEMICOLONTerminalRuleCall_2_q.equals(syntax))
 				emit_CurlyContentsList_Labeled_KW_SEMICOLONTerminalRuleCall_2_q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if(match_DeclMolecule_ApplicationParserRuleCall_0_q.equals(syntax))
 				emit_DeclMolecule_ApplicationParserRuleCall_0_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if(match_DeclPart_KW_COLONSTARTerminalRuleCall_1_0_or_KW_COLONTerminalRuleCall_0_0.equals(syntax))
+				emit_DeclPart_KW_COLONSTARTerminalRuleCall_1_0_or_KW_COLONTerminalRuleCall_0_0(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if(match_Declaration_ExportDecl_MacroBody___DefaultKeyword_5_0_or_DefineKeyword_6_0_or_ExtendKeyword_1_0_or_FixKeyword_7_0_or_FluidKeyword_4_0_or_FreeKeyword_3_0_or_ImportKeyword_9_0_or_InlineKeyword_8_0_or_LocalKeyword_2_0___or___MacroKeyword_0_0_q_ImportKeyword_2_0_q___or___MacroKeyword_0_0_q___ExportKeyword_0_0_or_ExportKeyword_1_0_0_or_ExportKeyword_2_0_0____.equals(syntax))
 				emit_Declaration_ExportDecl_MacroBody___DefaultKeyword_5_0_or_DefineKeyword_6_0_or_ExtendKeyword_1_0_or_FixKeyword_7_0_or_FluidKeyword_4_0_or_FreeKeyword_3_0_or_ImportKeyword_9_0_or_InlineKeyword_8_0_or_LocalKeyword_2_0___or___MacroKeyword_0_0_q_ImportKeyword_2_0_q___or___MacroKeyword_0_0_q___ExportKeyword_0_0_or_ExportKeyword_1_0_0_or_ExportKeyword_2_0_0____(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if(match_Declaration_ImportKeyword_9_0_or_InlineKeyword_8_0.equals(syntax))
 				emit_Declaration_ImportKeyword_9_0_or_InlineKeyword_8_0(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if(match_Declaration_InfixedExprsDecl_ImportKeyword_9_0_or___InlineKeyword_8_0_InfixedExprsParserRuleCall_0__.equals(syntax))
+				emit_Declaration_InfixedExprsDecl_ImportKeyword_9_0_or___InlineKeyword_8_0_InfixedExprsParserRuleCall_0__(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if(match_Declaration_InfixedExprsDecl_InlineKeyword_8_0_or___ImportKeyword_9_0_InfixedExprsParserRuleCall_0__.equals(syntax))
+				emit_Declaration_InfixedExprsDecl_InlineKeyword_8_0_or___ImportKeyword_9_0_InfixedExprsParserRuleCall_0__(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if(match_Declaration_InfixedExprsDecl___ImportKeyword_9_0_or_InlineKeyword_8_0___or_____DefaultKeyword_5_0_or_DefineKeyword_6_0_or_ExtendKeyword_1_0_or_FixKeyword_7_0_or_FluidKeyword_4_0_or_FreeKeyword_3_0_or_LocalKeyword_2_0___InfixedExprsParserRuleCall_0__.equals(syntax))
+				emit_Declaration_InfixedExprsDecl___ImportKeyword_9_0_or_InlineKeyword_8_0___or_____DefaultKeyword_5_0_or_DefineKeyword_6_0_or_ExtendKeyword_1_0_or_FixKeyword_7_0_or_FluidKeyword_4_0_or_FreeKeyword_3_0_or_LocalKeyword_2_0___InfixedExprsParserRuleCall_0__(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if(match_Declaration_MacroKeyword_0_0_q.equals(syntax))
 				emit_Declaration_MacroKeyword_0_0_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if(match_E14_E15ParserRuleCall_0_or___E15ParserRuleCall_3_0_ExceptKeyword_3_1_E15ParserRuleCall_3_2___or___E15ParserRuleCall_4_0_ThrowKeyword_4_1_E15ParserRuleCall_4_2__.equals(syntax))
+				emit_E14_E15ParserRuleCall_0_or___E15ParserRuleCall_3_0_ExceptKeyword_3_1_E15ParserRuleCall_3_2___or___E15ParserRuleCall_4_0_ThrowKeyword_4_1_E15ParserRuleCall_4_2__(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if(match_E14___E15ParserRuleCall_1_0_q_WithKeyword_1_1___or___E15ParserRuleCall_2_0_q_AddKeyword_2_1__.equals(syntax))
+				emit_E14___E15ParserRuleCall_1_0_q_WithKeyword_1_1___or___E15ParserRuleCall_2_0_q_AddKeyword_2_1__(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if(match_ExportDecl_ExportKeyword_0_0_or_ExportKeyword_1_0_0_or_ExportKeyword_2_0_0.equals(syntax))
 				emit_ExportDecl_ExportKeyword_0_0_or_ExportKeyword_1_0_0_or_ExportKeyword_2_0_0(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if(match_ExportDecl_InfixedExprsDecl_ExportKeyword_1_0_0_or___ExportKeyword_2_0_0_InfixedExprsParserRuleCall_0__.equals(syntax))
+				emit_ExportDecl_InfixedExprsDecl_ExportKeyword_1_0_0_or___ExportKeyword_2_0_0_InfixedExprsParserRuleCall_0__(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if(match_ExportDecl_InfixedExprsDecl_ExportKeyword_2_0_0_or___ExportKeyword_1_0_0_InfixedExprsParserRuleCall_0__.equals(syntax))
+				emit_ExportDecl_InfixedExprsDecl_ExportKeyword_2_0_0_or___ExportKeyword_1_0_0_InfixedExprsParserRuleCall_0__(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if(match_ExportDecl_MacroBody___ExportKeyword_0_0_or_ExportKeyword_1_0_0_or_ExportKeyword_2_0_0_or_ImportKeyword_2_0__q.equals(syntax))
 				emit_ExportDecl_MacroBody___ExportKeyword_0_0_or_ExportKeyword_1_0_0_or_ExportKeyword_2_0_0_or_ImportKeyword_2_0__q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if(match_Flow_AnyStatement_BreakKeyword_14_0_or_GotoKeyword_19_0_or_IterateKeyword_13_0.equals(syntax))
@@ -521,8 +571,8 @@ public class EditorSyntacticSequencer extends AbstractSyntacticSequencer {
 				emit_Flow_BalStatement_ReturnKeyword_15_0_q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if(match_Jleft_Molecule_NotKeyword_0_0_q.equals(syntax))
 				emit_Jleft_Molecule_NotKeyword_0_0_q(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if(match_QualOp_ArrowTok_QualOp_LatticeTok_QualOp_PlusTok_QualOp_PowerTok_QualOp_QuotientTok_QualOp_RelationTok_QualOp_SegTok_QualOp_TimesTok___ArrowTokParserRuleCall_1_0_KW_DOLLARTerminalRuleCall_1_1___or___LatticeTokParserRuleCall_1_0_KW_DOLLARTerminalRuleCall_1_1___or___PlusTokParserRuleCall_1_0_KW_DOLLARTerminalRuleCall_1_1___or___PowerTokParserRuleCall_1_0_KW_DOLLARTerminalRuleCall_1_1___or___QuotientTokParserRuleCall_1_0_KW_DOLLARTerminalRuleCall_1_1___or___RelationTokParserRuleCall_1_0_KW_DOLLARTerminalRuleCall_1_1___or___SegTokParserRuleCall_1_0_KW_DOLLARTerminalRuleCall_1_1___or___TimesTokParserRuleCall_1_0_KW_DOLLARTerminalRuleCall_1_1__.equals(syntax))
-				emit_QualOp_ArrowTok_QualOp_LatticeTok_QualOp_PlusTok_QualOp_PowerTok_QualOp_QuotientTok_QualOp_RelationTok_QualOp_SegTok_QualOp_TimesTok___ArrowTokParserRuleCall_1_0_KW_DOLLARTerminalRuleCall_1_1___or___LatticeTokParserRuleCall_1_0_KW_DOLLARTerminalRuleCall_1_1___or___PlusTokParserRuleCall_1_0_KW_DOLLARTerminalRuleCall_1_1___or___PowerTokParserRuleCall_1_0_KW_DOLLARTerminalRuleCall_1_1___or___QuotientTokParserRuleCall_1_0_KW_DOLLARTerminalRuleCall_1_1___or___RelationTokParserRuleCall_1_0_KW_DOLLARTerminalRuleCall_1_1___or___SegTokParserRuleCall_1_0_KW_DOLLARTerminalRuleCall_1_1___or___TimesTokParserRuleCall_1_0_KW_DOLLARTerminalRuleCall_1_1__(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if(match_QualOp_ArrowTok_QualOp_LatticeTok_QualOp_PlusTok_QualOp_PowerTok_QualOp_QuotientTok_QualOp_SegTok_QualOp_TimesTok___ArrowTokParserRuleCall_1_0_KW_DOLLARTerminalRuleCall_1_1___or___LatticeTokParserRuleCall_1_0_KW_DOLLARTerminalRuleCall_1_1___or___PlusTokParserRuleCall_1_0_KW_DOLLARTerminalRuleCall_1_1___or___PowerTokParserRuleCall_1_0_KW_DOLLARTerminalRuleCall_1_1___or___QuotientTokParserRuleCall_1_0_KW_DOLLARTerminalRuleCall_1_1___or___SegTokParserRuleCall_1_0_KW_DOLLARTerminalRuleCall_1_1___or___TimesTokParserRuleCall_1_0_KW_DOLLARTerminalRuleCall_1_1__.equals(syntax))
+				emit_QualOp_ArrowTok_QualOp_LatticeTok_QualOp_PlusTok_QualOp_PowerTok_QualOp_QuotientTok_QualOp_SegTok_QualOp_TimesTok___ArrowTokParserRuleCall_1_0_KW_DOLLARTerminalRuleCall_1_1___or___LatticeTokParserRuleCall_1_0_KW_DOLLARTerminalRuleCall_1_1___or___PlusTokParserRuleCall_1_0_KW_DOLLARTerminalRuleCall_1_1___or___PowerTokParserRuleCall_1_0_KW_DOLLARTerminalRuleCall_1_1___or___QuotientTokParserRuleCall_1_0_KW_DOLLARTerminalRuleCall_1_1___or___SegTokParserRuleCall_1_0_KW_DOLLARTerminalRuleCall_1_1___or___TimesTokParserRuleCall_1_0_KW_DOLLARTerminalRuleCall_1_1__(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if(match_enlister1a_Labeled_Semicolon_KW_SEMICOLONTerminalRuleCall_2_q.equals(syntax))
 				emit_enlister1a_Labeled_Semicolon_KW_SEMICOLONTerminalRuleCall_2_q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else acceptNodes(getLastNavigableState(), syntaxNodes);
@@ -531,7 +581,7 @@ public class EditorSyntacticSequencer extends AbstractSyntacticSequencer {
 
 	/**
 	 * Syntax:
-	 *     'finally' | 'always'
+	 *     'always' | 'finally'
 	 */
 	protected void emit_AlwaysPart_AnyStatement_AlwaysKeyword_0_0_or_FinallyKeyword_1_0(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
@@ -542,93 +592,6 @@ public class EditorSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     'always' | 'finally'
 	 */
 	protected void emit_AlwaysPart_BalStatement_AlwaysKeyword_0_0_or_FinallyKeyword_1_0(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
-		acceptNodes(transition, nodes);
-	}
-	
-	/**
-	 * Syntax:
-	 *     (
-	     (
-	         ('macro'? ('export' | 'export' | 'export')) | 
-	         ('macro'? 'import'?) | 
-	         (
-	             'import' | 
-	             'define' | 
-	             'fluid' | 
-	             'extend' | 
-	             'free' | 
-	             'default' | 
-	             'local' | 
-	             'fix' | 
-	             'inline'
-	         )
-	     ) 
-	     ((InfixedExprsDecl 'assign') | (InfixedExprsDecl KW_2EQ) | (InfixedExprsDecl KW_MARROW) | (InfixedExprsDecl KW_MAPSTOSTAR) | (InfixedExprsDecl KW_MAPSTO))
-	 )?
-	 */
-	protected void emit_BindingR_InfixedExprsDecl_AnyStatement_Declaration_ExportDecl_MacroBody_______DefaultKeyword_5_0_or_DefineKeyword_6_0_or_ExtendKeyword_1_0_or_FixKeyword_7_0_or_FluidKeyword_4_0_or_FreeKeyword_3_0_or_ImportKeyword_9_0_or_InlineKeyword_8_0_or_LocalKeyword_2_0___or___MacroKeyword_0_0_q_ImportKeyword_2_0_q___or___MacroKeyword_0_0_q___ExportKeyword_0_0_or_ExportKeyword_1_0_0_or_ExportKeyword_2_0_0___________InfixedExprsDeclParserRuleCall_1_0_AssignKeyword_1_1___or___InfixedExprsDeclParserRuleCall_2_0_KW_2EQTerminalRuleCall_2_1___or___InfixedExprsDeclParserRuleCall_3_0_KW_MARROWTerminalRuleCall_3_1___or___InfixedExprsDeclParserRuleCall_4_0_KW_MAPSTOTerminalRuleCall_4_1___or___InfixedExprsDeclParserRuleCall_5_0_KW_MAPSTOSTARTerminalRuleCall_5_1______q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
-		acceptNodes(transition, nodes);
-	}
-	
-	/**
-	 * Syntax:
-	 *     'import' | ('inline' InfixedExprsDecl)
-	 */
-	protected void emit_BindingR_InfixedExprsDecl_AnyStatement_Declaration_ImportKeyword_9_0_or___InlineKeyword_8_0_InfixedExprsDeclParserRuleCall_0__(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
-		acceptNodes(transition, nodes);
-	}
-	
-	/**
-	 * Syntax:
-	 *     'inline' | ('import' InfixedExprsDecl)
-	 */
-	protected void emit_BindingR_InfixedExprsDecl_AnyStatement_Declaration_InlineKeyword_8_0_or___ImportKeyword_9_0_InfixedExprsDeclParserRuleCall_0__(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
-		acceptNodes(transition, nodes);
-	}
-	
-	/**
-	 * Syntax:
-	 *     (
-	     ('import' | 'inline') | 
-	     (
-	         (
-	             'define' | 
-	             'extend' | 
-	             'fluid' | 
-	             'free' | 
-	             'default' | 
-	             'fix' | 
-	             'local'
-	         ) 
-	         InfixedExprsDecl
-	     )
-	 )
-	 */
-	protected void emit_BindingR_InfixedExprsDecl_AnyStatement_Declaration___ImportKeyword_9_0_or_InlineKeyword_8_0___or_____DefaultKeyword_5_0_or_DefineKeyword_6_0_or_ExtendKeyword_1_0_or_FixKeyword_7_0_or_FluidKeyword_4_0_or_FreeKeyword_3_0_or_LocalKeyword_2_0___InfixedExprsDeclParserRuleCall_0__(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
-		acceptNodes(transition, nodes);
-	}
-	
-	/**
-	 * Syntax:
-	 *     'export' | ('export' InfixedExprsDecl)
-	 */
-	protected void emit_BindingR_InfixedExprsDecl_AnyStatement_ExportDecl_ExportKeyword_1_0_0_or___ExportKeyword_2_0_0_InfixedExprsDeclParserRuleCall_0__(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
-		acceptNodes(transition, nodes);
-	}
-	
-	/**
-	 * Syntax:
-	 *     ('export' InfixedExprsDecl) | 'export'
-	 */
-	protected void emit_BindingR_InfixedExprsDecl_AnyStatement_ExportDecl_ExportKeyword_2_0_0_or___ExportKeyword_1_0_0_InfixedExprsDeclParserRuleCall_0__(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
-		acceptNodes(transition, nodes);
-	}
-	
-	/**
-	 * Syntax:
-	 *     (InfixedExprsDecl KW_2EQ) | (InfixedExprsDecl 'assign') | (InfixedExprsDecl KW_MARROW) | (InfixedExprsDecl KW_MAPSTOSTAR) | (InfixedExprsDecl KW_MAPSTO)
-	 */
-	protected void emit_BindingR_InfixedExprsDecl_AnyStatement___InfixedExprsDeclParserRuleCall_1_0_AssignKeyword_1_1___or___InfixedExprsDeclParserRuleCall_2_0_KW_2EQTerminalRuleCall_2_1___or___InfixedExprsDeclParserRuleCall_3_0_KW_MARROWTerminalRuleCall_3_1___or___InfixedExprsDeclParserRuleCall_4_0_KW_MAPSTOTerminalRuleCall_4_1___or___InfixedExprsDeclParserRuleCall_5_0_KW_MAPSTOSTARTerminalRuleCall_5_1__(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
@@ -658,19 +621,27 @@ public class EditorSyntacticSequencer extends AbstractSyntacticSequencer {
 	
 	/**
 	 * Syntax:
+	 *     KW_COLON | KW_COLONSTAR
+	 */
+	protected void emit_DeclPart_KW_COLONSTARTerminalRuleCall_1_0_or_KW_COLONTerminalRuleCall_0_0(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * Syntax:
 	 *     (
 	     ('macro'? ('export' | 'export' | 'export')) | 
 	     ('macro'? 'import'?) | 
 	     (
-	         'import' | 
-	         'define' | 
-	         'extend' | 
-	         'fluid' | 
 	         'free' | 
+	         'inline' | 
+	         'import' | 
+	         'fluid' | 
+	         'fix' | 
+	         'extend' | 
 	         'default' | 
 	         'local' | 
-	         'fix' | 
-	         'inline'
+	         'define'
 	     )
 	 )
 	 */
@@ -680,9 +651,47 @@ public class EditorSyntacticSequencer extends AbstractSyntacticSequencer {
 	
 	/**
 	 * Syntax:
-	 *     'import' | 'inline'
+	 *     'inline' | 'import'
 	 */
 	protected void emit_Declaration_ImportKeyword_9_0_or_InlineKeyword_8_0(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * Syntax:
+	 *     'import' | ('inline' InfixedExprs)
+	 */
+	protected void emit_Declaration_InfixedExprsDecl_ImportKeyword_9_0_or___InlineKeyword_8_0_InfixedExprsParserRuleCall_0__(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * Syntax:
+	 *     'inline' | ('import' InfixedExprs)
+	 */
+	protected void emit_Declaration_InfixedExprsDecl_InlineKeyword_8_0_or___ImportKeyword_9_0_InfixedExprsParserRuleCall_0__(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * Syntax:
+	 *     (
+	     ('inline' | 'import') | 
+	     (
+	         (
+	             'free' | 
+	             'fluid' | 
+	             'fix' | 
+	             'extend' | 
+	             'default' | 
+	             'local' | 
+	             'define'
+	         ) 
+	         InfixedExprs
+	     )
+	 )
+	 */
+	protected void emit_Declaration_InfixedExprsDecl___ImportKeyword_9_0_or_InlineKeyword_8_0___or_____DefaultKeyword_5_0_or_DefineKeyword_6_0_or_ExtendKeyword_1_0_or_FixKeyword_7_0_or_FluidKeyword_4_0_or_FreeKeyword_3_0_or_LocalKeyword_2_0___InfixedExprsParserRuleCall_0__(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
@@ -696,6 +705,22 @@ public class EditorSyntacticSequencer extends AbstractSyntacticSequencer {
 	
 	/**
 	 * Syntax:
+	 *     (E15 'throw' E15) | E15 | (E15 'except' E15)
+	 */
+	protected void emit_E14_E15ParserRuleCall_0_or___E15ParserRuleCall_3_0_ExceptKeyword_3_1_E15ParserRuleCall_3_2___or___E15ParserRuleCall_4_0_ThrowKeyword_4_1_E15ParserRuleCall_4_2__(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * Syntax:
+	 *     (E15? 'with') | (E15? 'add')
+	 */
+	protected void emit_E14___E15ParserRuleCall_1_0_q_WithKeyword_1_1___or___E15ParserRuleCall_2_0_q_AddKeyword_2_1__(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * Syntax:
 	 *     'export' | 'export' | 'export'
 	 */
 	protected void emit_ExportDecl_ExportKeyword_0_0_or_ExportKeyword_1_0_0_or_ExportKeyword_2_0_0(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
@@ -704,7 +729,23 @@ public class EditorSyntacticSequencer extends AbstractSyntacticSequencer {
 	
 	/**
 	 * Syntax:
-	 *     ('export' | 'import' | 'export' | 'export')?
+	 *     ('export' InfixedExprs) | 'export'
+	 */
+	protected void emit_ExportDecl_InfixedExprsDecl_ExportKeyword_1_0_0_or___ExportKeyword_2_0_0_InfixedExprsParserRuleCall_0__(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * Syntax:
+	 *     'export' | ('export' InfixedExprs)
+	 */
+	protected void emit_ExportDecl_InfixedExprsDecl_ExportKeyword_2_0_0_or___ExportKeyword_1_0_0_InfixedExprsParserRuleCall_0__(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * Syntax:
+	 *     ('import' | 'export' | 'export' | 'export')?
 	 */
 	protected void emit_ExportDecl_MacroBody___ExportKeyword_0_0_or_ExportKeyword_1_0_0_or_ExportKeyword_2_0_0_or_ImportKeyword_2_0__q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
@@ -712,7 +753,7 @@ public class EditorSyntacticSequencer extends AbstractSyntacticSequencer {
 	
 	/**
 	 * Syntax:
-	 *     'break' | 'goto' | 'iterate'
+	 *     'iterate' | 'break' | 'goto'
 	 */
 	protected void emit_Flow_AnyStatement_BreakKeyword_14_0_or_GotoKeyword_19_0_or_IterateKeyword_13_0(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
@@ -728,7 +769,7 @@ public class EditorSyntacticSequencer extends AbstractSyntacticSequencer {
 	
 	/**
 	 * Syntax:
-	 *     'break' | 'never' | 'iterate'
+	 *     'iterate' | 'break' | 'never'
 	 */
 	protected void emit_Flow_AnyStatement_BreakKeyword_14_0_or_IterateKeyword_13_0_or_NeverKeyword_20(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
@@ -739,18 +780,18 @@ public class EditorSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     (
 	     ('generate' 'to') | 
 	     (
-	         'yield' | 
-	         'try' | 
-	         'do' | 
-	         'throw' | 
-	         'except' | 
 	         'delay' | 
+	         'throw' | 
+	         'reference' | 
+	         'yield' | 
 	         'if' | 
 	         'repeat' | 
-	         'try' | 
-	         'select' | 
 	         'assert' | 
-	         'reference'
+	         'do' | 
+	         'select' | 
+	         'try' | 
+	         'except' | 
+	         'try'
 	     )
 	 )
 	 */
@@ -760,7 +801,7 @@ public class EditorSyntacticSequencer extends AbstractSyntacticSequencer {
 	
 	/**
 	 * Syntax:
-	 *     ('generate' 'to') | ('try' | 'if' | 'try' | 'select')
+	 *     ('generate' 'to') | ('if' | 'select' | 'try' | 'try')
 	 */
 	protected void emit_Flow_AnyStatement_GenBound___GenerateKeyword_11_0_ToKeyword_0___or___IfKeyword_1_0_or_SelectKeyword_7_0_or_TryKeyword_5_0_or_TryKeyword_6_0__(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
@@ -777,14 +818,14 @@ public class EditorSyntacticSequencer extends AbstractSyntacticSequencer {
 	/**
 	 * Syntax:
 	 *     (
-	     'do' | 
 	     'except' | 
-	     'reference' | 
 	     'yield' | 
+	     'reference' | 
 	     'delay' | 
-	     'repeat' | 
 	     'assert' | 
-	     'throw'
+	     'do' | 
+	     'throw' | 
+	     'repeat'
 	 )
 	 */
 	protected void emit_Flow_BalStatement_AssertKeyword_12_0_or_DelayKeyword_9_0_or_DoKeyword_8_0_or_ExceptKeyword_17_0_or_ReferenceKeyword_10_0_or_RepeatKeyword_4_0_or_ThrowKeyword_18_0_or_YieldKeyword_16_0(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
@@ -793,7 +834,7 @@ public class EditorSyntacticSequencer extends AbstractSyntacticSequencer {
 	
 	/**
 	 * Syntax:
-	 *     'goto' | 'iterate' | 'break'
+	 *     'iterate' | 'break' | 'goto'
 	 */
 	protected void emit_Flow_BalStatement_BreakKeyword_14_0_or_GotoKeyword_19_0_or_IterateKeyword_13_0(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
@@ -809,7 +850,7 @@ public class EditorSyntacticSequencer extends AbstractSyntacticSequencer {
 	
 	/**
 	 * Syntax:
-	 *     'iterate' | 'never' | 'break'
+	 *     'iterate' | 'break' | 'never'
 	 */
 	protected void emit_Flow_BalStatement_BreakKeyword_14_0_or_IterateKeyword_13_0_or_NeverKeyword_20(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
@@ -817,7 +858,7 @@ public class EditorSyntacticSequencer extends AbstractSyntacticSequencer {
 	
 	/**
 	 * Syntax:
-	 *     ('select' | 'if' | 'try' | 'try') | ('generate' 'to')
+	 *     ('if' | 'try' | 'try' | 'select') | ('generate' 'to')
 	 */
 	protected void emit_Flow_BalStatement_GenBound___GenerateKeyword_11_0_ToKeyword_0___or___IfKeyword_1_0_or_SelectKeyword_7_0_or_TryKeyword_5_0_or_TryKeyword_6_0__(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
@@ -842,17 +883,16 @@ public class EditorSyntacticSequencer extends AbstractSyntacticSequencer {
 	/**
 	 * Syntax:
 	 *     (
-	     (TimesTok KW_DOLLAR) | 
-	     (QuotientTok KW_DOLLAR) | 
-	     (PowerTok KW_DOLLAR) | 
 	     (SegTok KW_DOLLAR) | 
-	     (RelationTok KW_DOLLAR) | 
 	     (ArrowTok KW_DOLLAR) | 
 	     (LatticeTok KW_DOLLAR) | 
-	     (PlusTok KW_DOLLAR)
+	     (PowerTok KW_DOLLAR) | 
+	     (PlusTok KW_DOLLAR) | 
+	     (TimesTok KW_DOLLAR) | 
+	     (QuotientTok KW_DOLLAR)
 	 )
 	 */
-	protected void emit_QualOp_ArrowTok_QualOp_LatticeTok_QualOp_PlusTok_QualOp_PowerTok_QualOp_QuotientTok_QualOp_RelationTok_QualOp_SegTok_QualOp_TimesTok___ArrowTokParserRuleCall_1_0_KW_DOLLARTerminalRuleCall_1_1___or___LatticeTokParserRuleCall_1_0_KW_DOLLARTerminalRuleCall_1_1___or___PlusTokParserRuleCall_1_0_KW_DOLLARTerminalRuleCall_1_1___or___PowerTokParserRuleCall_1_0_KW_DOLLARTerminalRuleCall_1_1___or___QuotientTokParserRuleCall_1_0_KW_DOLLARTerminalRuleCall_1_1___or___RelationTokParserRuleCall_1_0_KW_DOLLARTerminalRuleCall_1_1___or___SegTokParserRuleCall_1_0_KW_DOLLARTerminalRuleCall_1_1___or___TimesTokParserRuleCall_1_0_KW_DOLLARTerminalRuleCall_1_1__(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+	protected void emit_QualOp_ArrowTok_QualOp_LatticeTok_QualOp_PlusTok_QualOp_PowerTok_QualOp_QuotientTok_QualOp_SegTok_QualOp_TimesTok___ArrowTokParserRuleCall_1_0_KW_DOLLARTerminalRuleCall_1_1___or___LatticeTokParserRuleCall_1_0_KW_DOLLARTerminalRuleCall_1_1___or___PlusTokParserRuleCall_1_0_KW_DOLLARTerminalRuleCall_1_1___or___PowerTokParserRuleCall_1_0_KW_DOLLARTerminalRuleCall_1_1___or___QuotientTokParserRuleCall_1_0_KW_DOLLARTerminalRuleCall_1_1___or___SegTokParserRuleCall_1_0_KW_DOLLARTerminalRuleCall_1_1___or___TimesTokParserRuleCall_1_0_KW_DOLLARTerminalRuleCall_1_1__(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
