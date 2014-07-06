@@ -7,8 +7,6 @@ import com.euclideanspace.aldor.editor.Jleft_Atom;
 
 import org.eclipse.emf.ecore.EClass;
 
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
 /**
  * <!-- begin-user-doc -->
  * An implementation of the model object '<em><b>Jleft Atom</b></em>'.
@@ -18,7 +16,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  *
  * @generated
  */
-public class Jleft_AtomImpl extends MinimalEObjectImpl.Container implements Jleft_Atom
+public class Jleft_AtomImpl extends Jright_AtomImpl implements Jleft_Atom
 {
   /**
    * <!-- begin-user-doc -->

@@ -140,6 +140,11 @@ public class EditorAdapterFactory extends AdapterFactoryImpl
         return createInfixedExprsDeclAdapter();
       }
       @Override
+      public Adapter caseInfixedExprs(InfixedExprs object)
+      {
+        return createInfixedExprsAdapter();
+      }
+      @Override
       public Adapter caseBinding_AnyStatement(Binding_AnyStatement object)
       {
         return createBinding_AnyStatementAdapter();
@@ -220,6 +225,11 @@ public class EditorAdapterFactory extends AdapterFactoryImpl
         return createIteratorAdapter();
       }
       @Override
+      public Adapter caseInfixedExpr(InfixedExpr object)
+      {
+        return createInfixedExprAdapter();
+      }
+      @Override
       public Adapter caseExpr(Expr object)
       {
         return createExprAdapter();
@@ -238,6 +248,11 @@ public class EditorAdapterFactory extends AdapterFactoryImpl
       public Adapter caseE13(E13 object)
       {
         return createE13Adapter();
+      }
+      @Override
+      public Adapter caseQualTail(QualTail object)
+      {
+        return createQualTailAdapter();
       }
       @Override
       public Adapter caseOpQualTail(OpQualTail object)
@@ -293,6 +308,16 @@ public class EditorAdapterFactory extends AdapterFactoryImpl
       public Adapter casePowerOp(PowerOp object)
       {
         return createPowerOpAdapter();
+      }
+      @Override
+      public Adapter caseLeftJuxtaposed(LeftJuxtaposed object)
+      {
+        return createLeftJuxtaposedAdapter();
+      }
+      @Override
+      public Adapter caseJright_Atom(Jright_Atom object)
+      {
+        return createJright_AtomAdapter();
       }
       @Override
       public Adapter caseJleft_Molecule(Jleft_Molecule object)
@@ -455,6 +480,11 @@ public class EditorAdapterFactory extends AdapterFactoryImpl
         return createenlist1_Infixed_Comma_ABAdapter();
       }
       @Override
+      public Adapter caseenlist1_InfixedExpr_Comma_AB(enlist1_InfixedExpr_Comma_AB object)
+      {
+        return createenlist1_InfixedExpr_Comma_ABAdapter();
+      }
+      @Override
       public Adapter caseenlister1_CommaItem_Comma(enlister1_CommaItem_Comma object)
       {
         return createenlister1_CommaItem_CommaAdapter();
@@ -463,6 +493,11 @@ public class EditorAdapterFactory extends AdapterFactoryImpl
       public Adapter caseenlister1_Infixed_Comma(enlister1_Infixed_Comma object)
       {
         return createenlister1_Infixed_CommaAdapter();
+      }
+      @Override
+      public Adapter caseenlister1_InfixedExpr_Comma(enlister1_InfixedExpr_Comma object)
+      {
+        return createenlister1_InfixedExpr_CommaAdapter();
       }
       @Override
       public Adapter caseenlist1a_Labeled_Semicolon_AB(enlist1a_Labeled_Semicolon_AB object)
@@ -488,6 +523,11 @@ public class EditorAdapterFactory extends AdapterFactoryImpl
       public Adapter caseCurlyContentsList_Labeled(CurlyContentsList_Labeled object)
       {
         return createCurlyContentsList_LabeledAdapter();
+      }
+      @Override
+      public Adapter caseCurlyContentB_Labeled(CurlyContentB_Labeled object)
+      {
+        return createCurlyContentB_LabeledAdapter();
       }
       @Override
       public Adapter caseE3(E3 object)
@@ -792,6 +832,21 @@ public class EditorAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
+   * Creates a new adapter for an object of class '{@link com.euclideanspace.aldor.editor.InfixedExprs <em>Infixed Exprs</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see com.euclideanspace.aldor.editor.InfixedExprs
+   * @generated
+   */
+  public Adapter createInfixedExprsAdapter()
+  {
+    return null;
+  }
+
+  /**
    * Creates a new adapter for an object of class '{@link com.euclideanspace.aldor.editor.Binding_AnyStatement <em>Binding Any Statement</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
@@ -1032,6 +1087,21 @@ public class EditorAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
+   * Creates a new adapter for an object of class '{@link com.euclideanspace.aldor.editor.InfixedExpr <em>Infixed Expr</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see com.euclideanspace.aldor.editor.InfixedExpr
+   * @generated
+   */
+  public Adapter createInfixedExprAdapter()
+  {
+    return null;
+  }
+
+  /**
    * Creates a new adapter for an object of class '{@link com.euclideanspace.aldor.editor.Expr <em>Expr</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
@@ -1087,6 +1157,21 @@ public class EditorAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createE13Adapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link com.euclideanspace.aldor.editor.QualTail <em>Qual Tail</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see com.euclideanspace.aldor.editor.QualTail
+   * @generated
+   */
+  public Adapter createQualTailAdapter()
   {
     return null;
   }
@@ -1252,6 +1337,36 @@ public class EditorAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createPowerOpAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link com.euclideanspace.aldor.editor.LeftJuxtaposed <em>Left Juxtaposed</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see com.euclideanspace.aldor.editor.LeftJuxtaposed
+   * @generated
+   */
+  public Adapter createLeftJuxtaposedAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link com.euclideanspace.aldor.editor.Jright_Atom <em>Jright Atom</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see com.euclideanspace.aldor.editor.Jright_Atom
+   * @generated
+   */
+  public Adapter createJright_AtomAdapter()
   {
     return null;
   }
@@ -1737,6 +1852,21 @@ public class EditorAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
+   * Creates a new adapter for an object of class '{@link com.euclideanspace.aldor.editor.enlist1_InfixedExpr_Comma_AB <em>enlist1 Infixed Expr Comma AB</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see com.euclideanspace.aldor.editor.enlist1_InfixedExpr_Comma_AB
+   * @generated
+   */
+  public Adapter createenlist1_InfixedExpr_Comma_ABAdapter()
+  {
+    return null;
+  }
+
+  /**
    * Creates a new adapter for an object of class '{@link com.euclideanspace.aldor.editor.enlister1_CommaItem_Comma <em>enlister1 Comma Item Comma</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
@@ -1762,6 +1892,21 @@ public class EditorAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createenlister1_Infixed_CommaAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link com.euclideanspace.aldor.editor.enlister1_InfixedExpr_Comma <em>enlister1 Infixed Expr Comma</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see com.euclideanspace.aldor.editor.enlister1_InfixedExpr_Comma
+   * @generated
+   */
+  public Adapter createenlister1_InfixedExpr_CommaAdapter()
   {
     return null;
   }
@@ -1837,6 +1982,21 @@ public class EditorAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createCurlyContentsList_LabeledAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link com.euclideanspace.aldor.editor.CurlyContentB_Labeled <em>Curly Content BLabeled</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see com.euclideanspace.aldor.editor.CurlyContentB_Labeled
+   * @generated
+   */
+  public Adapter createCurlyContentB_LabeledAdapter()
   {
     return null;
   }

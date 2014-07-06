@@ -2,7 +2,6 @@
  */
 package com.euclideanspace.aldor.editor;
 
-import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
@@ -14,6 +13,6 @@ import org.eclipse.emf.ecore.EObject;
  * @model
  * @generated
  */
-public interface Jleft_Atom extends EObject
+public interface Jleft_Atom extends Jright_Atom
 {
 } // Jleft_Atom

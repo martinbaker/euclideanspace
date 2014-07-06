@@ -142,20 +142,22 @@ generate editor "http://www.euclideanspace.com/aldor/Editor"
 
 /*
  * replaces Goal rule in Aldor grammar
- * Parser starts here
- * CategoryDef,PackageDef and DomainDef must end with newline to ensure that
- * only an '@' at the start of a line will be taken as the end.
- *
- * On this line whitespace (WS) is not hidden so is explicitly included.
+ * 
+ * #include is not in axl.z grammar, I assume the includes are
+ * done before the grammar is called. So I have added include
+ * support here.
+ * 
+ * Goal
+ * : CurlyContents(Labeled)
+ * { yypval = $$ = $1; }
+ * ;
+ * 
  */
-Model :
-  CurlyContents_Labeled
+Model hidden(WS,KW_NEWLINE):
+  ('#include' insert+=TK_STRING)*
+  cc=CurlyContents_Labeled
 ;
 
-//Goal
-//: CurlyContents(Labeled)
-//{ yypval = $$ = $1; }
-//;
 
 ////////// start of lexer rules ///////////////
 
@@ -852,9 +854,8 @@ Infixed hidden(WS,KW_NEWLINE):
 ;
 
 InfixedExpr hidden(WS,KW_NEWLINE):
-	'temp32'
-// E11(Op)
-//| E3
+ E11_Op
+| E3
 ;
 
 
@@ -872,9 +873,13 @@ E5 returns Expr hidden(WS,KW_NEWLINE):
 | left=E6 op5+=SegOp
 ;
 
+/* If unary plus operation is enabled then we get error in
+* InfixedExpr non-LL(*) decision  due to recursive rule invocations
+* reachable from alts 1,2
+* That is we can get a PlusOp from InfixedExpr in 2 ways */
 E6 returns Expr hidden(WS,KW_NEWLINE):
  (left=E7 ({E6.left=current}op6+=PlusOp right=E7)*)
-| op6+=PlusOp right=E7
+//| (op6+=PlusOp right=E7)
 ;
 
 E7 returns Expr hidden(WS,KW_NEWLINE):
@@ -924,7 +929,7 @@ E13:
 
 QualTail:
  LeftJuxtaposed
-| => LeftJuxtaposed KW_DOLLAR QualTail
+| => LeftJuxtaposed KW_DOLLAR qt=QualTail
 ;
 
 OpQualTail hidden(WS,KW_NEWLINE):
@@ -933,12 +938,11 @@ OpQualTail hidden(WS,KW_NEWLINE):
 ;
 
 E14 hidden(WS,KW_NEWLINE):
-	//'temp46'
- E15
-| => E15? 'with' DeclMolecule
-| => E15? 'add' DeclMolecule
-| => E15 'except' E15
-| => E15 'throw' E15
+ e15left=E15
+| => e15left=E15? 'with' dm=DeclMolecule
+| => e15left=E15? 'add' dm=DeclMolecule
+| => e15left=E15 'except' e15right=E15
+| => e15left=E15 'throw' e15right=E15
 ;
 
 E15 hidden(WS,KW_NEWLINE):
@@ -1024,18 +1028,16 @@ PowerTok: KW_2STAR | KW_HAT ;
  */
 
 Application hidden(WS,KW_NEWLINE):
-	'temp52'
- //RightJuxtaposed
+ RightJuxtaposed
 ;
 
 RightJuxtaposed hidden(WS,KW_NEWLINE):
-	'temp53'
-// Jright_Molecule
+ Jright_Molecule
 ;
 
 LeftJuxtaposed hidden(WS,KW_NEWLINE):
-	'temp54'
-// Jleft_Molecule
+//	'temp54'
+ Jleft_Molecule
 ;
 
 /* Substituted Rules in Xtext:
@@ -1049,16 +1051,25 @@ LeftJuxtaposed hidden(WS,KW_NEWLINE):
  * { $$ = abNewNot(TPOS($1),TEST($2)); }
  * ;
  */
+/*
+ * causes problems:
+ * If first option is enabled;
+ * Decision can match input such as "RULE_TK_STRING" using multiple
+ * alternatives: 1, 2, 3, 4, 5
+ * If second option is enabled:
+ * Decision can match input such as "'not'" using multiple
+ * alternatives
+ */
 Jright_Molecule hidden(WS,KW_NEWLINE):
 	'temp56'
 //	(Jleft_Molecule (right=Jright_Atom)?)
-//	| ('not' Jright_Atom)
+//	|
+//  ('not' right=Jright_Atom)
 ;
 
 Jright_Atom hidden(WS,KW_NEWLINE):
-	'temp57'
-//	(Jleft_Atom (right2=Jright_Atom)?)
-//	| 'not' Jright_Atom
+	(Jleft_Atom (right2=Jright_Atom)?)
+	| 'not' right2=Jright_Atom
 ;
 
 /* Substituted Rules in Xtext:
@@ -1075,8 +1086,8 @@ Jright_Atom hidden(WS,KW_NEWLINE):
  * ;
  */
 Jleft_Molecule hidden(WS,KW_NEWLINE):
-'not' BlockEnclosure
-| (Molecule (KW_DOT bm+=BlockMolecule)*)
+'not' be=BlockEnclosure
+| (m=Molecule (KW_DOT bm+=BlockMolecule)*)
 ;
 
 Jleft_Atom hidden(WS,KW_NEWLINE):
@@ -1099,8 +1110,8 @@ Enclosure hidden(WS,KW_NEWLINE):
 ;
 
 DeclMolecule hidden(WS,KW_NEWLINE):
- Application?
-| Block
+ a=Application?
+| b=Block
 ;
 
 BlockMolecule hidden(WS,KW_NEWLINE):
@@ -1238,10 +1249,18 @@ LatticeTok
 | LatticeTok KW_DOLLAR OpQualTail
 ;
 
+/*InfixedExpr has non-LL(*) decision due to recursive rule
+* invocations reachable from alts 1,2.  Resolve by left-factoring
+* or using syntactic predicates or using backtrack=true option.
+* 
+* RelationTok is KW_EQ | KW_TILDEE | KW_HATE |
+* KW_GE | KW_GT | KW_2GT |
+* KW_LE | KW_LT | KW_2LT |
+* 'is' | 'isnt' | 'case' ;
+ */
 QualOp_RelationTok hidden(WS,KW_NEWLINE):
 	'temp99'
-//RelationTok
-//| => RelationTok KW_DOLLAR OpQualTail
+//RelationTok (op+=KW_DOLLAR oqt=OpQualTail)?
 ;
 
 QualOp_SegTok hidden(WS,KW_NEWLINE):
@@ -1283,20 +1302,22 @@ PowerTok
 //}
 //;
 
-PreDocument hidden(WS,KW_NEWLINE):
-  PreDocumentList
+//PreDocument hidden(WS,KW_NEWLINE):
+//  PreDocumentList
+//;
+
+//PostDocument hidden(WS,KW_NEWLINE):
+//  PostDocumentList
+//;
+
+/* list of lines starting with -- */
+PreDocument:
+  TK_PREDOC*
 ;
 
-PostDocument hidden(WS,KW_NEWLINE):
-  PostDocumentList
-;
-
-PreDocumentList hidden(WS,KW_NEWLINE):
-  (TK_PREDOC PreDocumentList)?
-;
-
-PostDocumentList hidden(WS,KW_NEWLINE):
-  (TK_POSTDOC PostDocumentList)?
+/* list of lines starting with ++ */
+PostDocument:
+  TK_POSTDOC*
 ;
 
 /* Substituted Rules in Xtext:
@@ -1356,7 +1377,7 @@ enlister1_Infixed_Comma hidden(WS,KW_NEWLINE):
 ;
 
 enlister1_InfixedExpr_Comma hidden(WS,KW_NEWLINE):
-  InfixedExpr (KW_COMMA InfixedExpr)*
+  InfixedExpr (KW_COMMA ie=InfixedExpr)*
 ;
 
 /* Substituted Rules in Xtext:
@@ -1431,8 +1452,8 @@ CurlyContents_Labeled hidden(WS):
 * ;
 */
 CurlyContentsList_Labeled hidden(WS):
-	statemts += Labeled
-	(KW_SEMICOLON statemts += Labeled)*
+	statemts += CurlyContentB_Labeled
+	(KW_SEMICOLON statemts += CurlyContentB_Labeled)*
 	KW_SEMICOLON?
 //CurlyContent1_Labeled
 //| CurlyContent1_Labeled ccb=CurlyContentB_Labeled
@@ -1467,8 +1488,7 @@ CurlyContentsList_Labeled hidden(WS):
 * 
 */
 CurlyContentB_Labeled:
-	'temp100'
-//PreDocument Labeled pd=PostDocument
+pred=PreDocument l=Labeled pd=PostDocument
 ;
 
 ///////// end of Aldor stuff

@@ -140,6 +140,15 @@ public interface EditorFactory extends EFactory
   InfixedExprsDecl createInfixedExprsDecl();
 
   /**
+   * Returns a new object of class '<em>Infixed Exprs</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Infixed Exprs</em>'.
+   * @generated
+   */
+  InfixedExprs createInfixedExprs();
+
+  /**
    * Returns a new object of class '<em>Binding Any Statement</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -284,6 +293,15 @@ public interface EditorFactory extends EFactory
   Iterator createIterator();
 
   /**
+   * Returns a new object of class '<em>Infixed Expr</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Infixed Expr</em>'.
+   * @generated
+   */
+  InfixedExpr createInfixedExpr();
+
+  /**
    * Returns a new object of class '<em>Expr</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -318,6 +336,15 @@ public interface EditorFactory extends EFactory
    * @generated
    */
   E13 createE13();
+
+  /**
+   * Returns a new object of class '<em>Qual Tail</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Qual Tail</em>'.
+   * @generated
+   */
+  QualTail createQualTail();
 
   /**
    * Returns a new object of class '<em>Op Qual Tail</em>'.
@@ -417,6 +444,24 @@ public interface EditorFactory extends EFactory
    * @generated
    */
   PowerOp createPowerOp();
+
+  /**
+   * Returns a new object of class '<em>Left Juxtaposed</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Left Juxtaposed</em>'.
+   * @generated
+   */
+  LeftJuxtaposed createLeftJuxtaposed();
+
+  /**
+   * Returns a new object of class '<em>Jright Atom</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Jright Atom</em>'.
+   * @generated
+   */
+  Jright_Atom createJright_Atom();
 
   /**
    * Returns a new object of class '<em>Jleft Molecule</em>'.
@@ -707,6 +752,15 @@ public interface EditorFactory extends EFactory
   enlist1_Infixed_Comma_AB createenlist1_Infixed_Comma_AB();
 
   /**
+   * Returns a new object of class '<em>enlist1 Infixed Expr Comma AB</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>enlist1 Infixed Expr Comma AB</em>'.
+   * @generated
+   */
+  enlist1_InfixedExpr_Comma_AB createenlist1_InfixedExpr_Comma_AB();
+
+  /**
    * Returns a new object of class '<em>enlister1 Comma Item Comma</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -723,6 +777,15 @@ public interface EditorFactory extends EFactory
    * @generated
    */
   enlister1_Infixed_Comma createenlister1_Infixed_Comma();
+
+  /**
+   * Returns a new object of class '<em>enlister1 Infixed Expr Comma</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>enlister1 Infixed Expr Comma</em>'.
+   * @generated
+   */
+  enlister1_InfixedExpr_Comma createenlister1_InfixedExpr_Comma();
 
   /**
    * Returns a new object of class '<em>enlist1a Labeled Semicolon AB</em>'.
@@ -768,6 +831,15 @@ public interface EditorFactory extends EFactory
    * @generated
    */
   CurlyContentsList_Labeled createCurlyContentsList_Labeled();
+
+  /**
+   * Returns a new object of class '<em>Curly Content BLabeled</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Curly Content BLabeled</em>'.
+   * @generated
+   */
+  CurlyContentB_Labeled createCurlyContentB_Labeled();
 
   /**
    * Returns a new object of class '<em>E3</em>'.

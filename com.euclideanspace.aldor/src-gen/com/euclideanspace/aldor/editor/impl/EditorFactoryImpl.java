@@ -77,6 +77,7 @@ public class EditorFactoryImpl extends EFactoryImpl implements EditorFactory
       case EditorPackage.COMMA_ITEM: return createCommaItem();
       case EditorPackage.DECL_BINDING: return createDeclBinding();
       case EditorPackage.INFIXED_EXPRS_DECL: return createInfixedExprsDecl();
+      case EditorPackage.INFIXED_EXPRS: return createInfixedExprs();
       case EditorPackage.BINDING_ANY_STATEMENT: return createBinding_AnyStatement();
       case EditorPackage.BINDING_BAL_STATEMENT: return createBinding_BalStatement();
       case EditorPackage.BINDING_COLLECTION: return createBinding_Collection();
@@ -93,10 +94,12 @@ public class EditorFactoryImpl extends EFactoryImpl implements EditorFactory
       case EditorPackage.ALWAYS_PART_BAL_STATEMENT: return createAlwaysPart_BalStatement();
       case EditorPackage.COLLECTION: return createCollection();
       case EditorPackage.ITERATOR: return createIterator();
+      case EditorPackage.INFIXED_EXPR: return createInfixedExpr();
       case EditorPackage.EXPR: return createExpr();
       case EditorPackage.TYPE: return createType();
       case EditorPackage.E12: return createE12();
       case EditorPackage.E13: return createE13();
+      case EditorPackage.QUAL_TAIL: return createQualTail();
       case EditorPackage.OP_QUAL_TAIL: return createOpQualTail();
       case EditorPackage.E14: return createE14();
       case EditorPackage.OP: return createOp();
@@ -108,6 +111,8 @@ public class EditorFactoryImpl extends EFactoryImpl implements EditorFactory
       case EditorPackage.QUOTIENT_OP: return createQuotientOp();
       case EditorPackage.TIMES_OP: return createTimesOp();
       case EditorPackage.POWER_OP: return createPowerOp();
+      case EditorPackage.LEFT_JUXTAPOSED: return createLeftJuxtaposed();
+      case EditorPackage.JRIGHT_ATOM: return createJright_Atom();
       case EditorPackage.JLEFT_MOLECULE: return createJleft_Molecule();
       case EditorPackage.JLEFT_ATOM: return createJleft_Atom();
       case EditorPackage.MOLECULE: return createMolecule();
@@ -140,13 +145,16 @@ public class EditorFactoryImpl extends EFactoryImpl implements EditorFactory
       case EditorPackage.QUAL_OP_POWER_TOK: return createQualOp_PowerTok();
       case EditorPackage.ENLIST1_COMMA_ITEM_COMMA_AB: return createenlist1_CommaItem_Comma_AB();
       case EditorPackage.ENLIST1_INFIXED_COMMA_AB: return createenlist1_Infixed_Comma_AB();
+      case EditorPackage.ENLIST1_INFIXED_EXPR_COMMA_AB: return createenlist1_InfixedExpr_Comma_AB();
       case EditorPackage.ENLISTER1_COMMA_ITEM_COMMA: return createenlister1_CommaItem_Comma();
       case EditorPackage.ENLISTER1_INFIXED_COMMA: return createenlister1_Infixed_Comma();
+      case EditorPackage.ENLISTER1_INFIXED_EXPR_COMMA: return createenlister1_InfixedExpr_Comma();
       case EditorPackage.ENLIST1A_LABELED_SEMICOLON_AB: return createenlist1a_Labeled_Semicolon_AB();
       case EditorPackage.ENLISTER1A_LABELED_SEMICOLON: return createenlister1a_Labeled_Semicolon();
       case EditorPackage.CURLY_LABELED: return createCurly_Labeled();
       case EditorPackage.CURLY_CONTENTS_LABELED: return createCurlyContents_Labeled();
       case EditorPackage.CURLY_CONTENTS_LIST_LABELED: return createCurlyContentsList_Labeled();
+      case EditorPackage.CURLY_CONTENT_BLABELED: return createCurlyContentB_Labeled();
       case EditorPackage.E3: return createE3();
       case EditorPackage.E4: return createE4();
       case EditorPackage.E5: return createE5();
@@ -310,6 +318,17 @@ public class EditorFactoryImpl extends EFactoryImpl implements EditorFactory
   {
     InfixedExprsDeclImpl infixedExprsDecl = new InfixedExprsDeclImpl();
     return infixedExprsDecl;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public InfixedExprs createInfixedExprs()
+  {
+    InfixedExprsImpl infixedExprs = new InfixedExprsImpl();
+    return infixedExprs;
   }
 
   /**
@@ -493,6 +512,17 @@ public class EditorFactoryImpl extends EFactoryImpl implements EditorFactory
    * <!-- end-user-doc -->
    * @generated
    */
+  public InfixedExpr createInfixedExpr()
+  {
+    InfixedExprImpl infixedExpr = new InfixedExprImpl();
+    return infixedExpr;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public Expr createExpr()
   {
     ExprImpl expr = new ExprImpl();
@@ -530,6 +560,17 @@ public class EditorFactoryImpl extends EFactoryImpl implements EditorFactory
   {
     E13Impl e13 = new E13Impl();
     return e13;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public QualTail createQualTail()
+  {
+    QualTailImpl qualTail = new QualTailImpl();
+    return qualTail;
   }
 
   /**
@@ -651,6 +692,28 @@ public class EditorFactoryImpl extends EFactoryImpl implements EditorFactory
   {
     PowerOpImpl powerOp = new PowerOpImpl();
     return powerOp;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public LeftJuxtaposed createLeftJuxtaposed()
+  {
+    LeftJuxtaposedImpl leftJuxtaposed = new LeftJuxtaposedImpl();
+    return leftJuxtaposed;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Jright_Atom createJright_Atom()
+  {
+    Jright_AtomImpl jright_Atom = new Jright_AtomImpl();
+    return jright_Atom;
   }
 
   /**
@@ -1010,6 +1073,17 @@ public class EditorFactoryImpl extends EFactoryImpl implements EditorFactory
    * <!-- end-user-doc -->
    * @generated
    */
+  public enlist1_InfixedExpr_Comma_AB createenlist1_InfixedExpr_Comma_AB()
+  {
+    enlist1_InfixedExpr_Comma_ABImpl enlist1_InfixedExpr_Comma_AB = new enlist1_InfixedExpr_Comma_ABImpl();
+    return enlist1_InfixedExpr_Comma_AB;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public enlister1_CommaItem_Comma createenlister1_CommaItem_Comma()
   {
     enlister1_CommaItem_CommaImpl enlister1_CommaItem_Comma = new enlister1_CommaItem_CommaImpl();
@@ -1025,6 +1099,17 @@ public class EditorFactoryImpl extends EFactoryImpl implements EditorFactory
   {
     enlister1_Infixed_CommaImpl enlister1_Infixed_Comma = new enlister1_Infixed_CommaImpl();
     return enlister1_Infixed_Comma;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public enlister1_InfixedExpr_Comma createenlister1_InfixedExpr_Comma()
+  {
+    enlister1_InfixedExpr_CommaImpl enlister1_InfixedExpr_Comma = new enlister1_InfixedExpr_CommaImpl();
+    return enlister1_InfixedExpr_Comma;
   }
 
   /**
@@ -1080,6 +1165,17 @@ public class EditorFactoryImpl extends EFactoryImpl implements EditorFactory
   {
     CurlyContentsList_LabeledImpl curlyContentsList_Labeled = new CurlyContentsList_LabeledImpl();
     return curlyContentsList_Labeled;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public CurlyContentB_Labeled createCurlyContentB_Labeled()
+  {
+    CurlyContentB_LabeledImpl curlyContentB_Labeled = new CurlyContentB_LabeledImpl();
+    return curlyContentB_Labeled;
   }
 
   /**

@@ -13,6 +13,6 @@ package com.euclideanspace.aldor.editor;
  * @model
  * @generated
  */
-public interface BlockEnclosure extends Jleft_Molecule, Jleft_Atom
+public interface BlockEnclosure extends Jleft_Atom
 {
 } // BlockEnclosure

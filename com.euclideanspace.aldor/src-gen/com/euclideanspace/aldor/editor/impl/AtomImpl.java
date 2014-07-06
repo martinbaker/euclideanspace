@@ -7,7 +7,7 @@ import com.euclideanspace.aldor.editor.BlockMolecule;
 import com.euclideanspace.aldor.editor.EditorPackage;
 import com.euclideanspace.aldor.editor.Id;
 import com.euclideanspace.aldor.editor.Jleft_Atom;
-import com.euclideanspace.aldor.editor.Jleft_Molecule;
+import com.euclideanspace.aldor.editor.Jright_Atom;
 import com.euclideanspace.aldor.editor.Labeled;
 import com.euclideanspace.aldor.editor.Molecule;
 
@@ -33,7 +33,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link com.euclideanspace.aldor.editor.impl.AtomImpl#getBm <em>Bm</em>}</li>
+ *   <li>{@link com.euclideanspace.aldor.editor.impl.AtomImpl#getRight2 <em>Right2</em>}</li>
  *   <li>{@link com.euclideanspace.aldor.editor.impl.AtomImpl#getLab <em>Lab</em>}</li>
  *   <li>{@link com.euclideanspace.aldor.editor.impl.AtomImpl#getBm4 <em>Bm4</em>}</li>
  *   <li>{@link com.euclideanspace.aldor.editor.impl.AtomImpl#getId <em>Id</em>}</li>
@@ -46,14 +46,14 @@ import org.eclipse.emf.ecore.util.InternalEList;
 public class AtomImpl extends LabeledImpl implements Atom
 {
   /**
-   * The cached value of the '{@link #getBm() <em>Bm</em>}' containment reference list.
+   * The cached value of the '{@link #getRight2() <em>Right2</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getBm()
+   * @see #getRight2()
    * @generated
    * @ordered
    */
-  protected EList<BlockMolecule> bm;
+  protected Jright_Atom right2;
 
   /**
    * The cached value of the '{@link #getLab() <em>Lab</em>}' containment reference.
@@ -131,13 +131,47 @@ public class AtomImpl extends LabeledImpl implements Atom
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<BlockMolecule> getBm()
+  public Jright_Atom getRight2()
   {
-    if (bm == null)
+    return right2;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetRight2(Jright_Atom newRight2, NotificationChain msgs)
+  {
+    Jright_Atom oldRight2 = right2;
+    right2 = newRight2;
+    if (eNotificationRequired())
     {
-      bm = new EObjectContainmentEList<BlockMolecule>(BlockMolecule.class, this, EditorPackage.ATOM__BM);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, EditorPackage.ATOM__RIGHT2, oldRight2, newRight2);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
     }
-    return bm;
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setRight2(Jright_Atom newRight2)
+  {
+    if (newRight2 != right2)
+    {
+      NotificationChain msgs = null;
+      if (right2 != null)
+        msgs = ((InternalEObject)right2).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - EditorPackage.ATOM__RIGHT2, null, msgs);
+      if (newRight2 != null)
+        msgs = ((InternalEObject)newRight2).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - EditorPackage.ATOM__RIGHT2, null, msgs);
+      msgs = basicSetRight2(newRight2, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, EditorPackage.ATOM__RIGHT2, newRight2, newRight2));
   }
 
   /**
@@ -283,8 +317,8 @@ public class AtomImpl extends LabeledImpl implements Atom
   {
     switch (featureID)
     {
-      case EditorPackage.ATOM__BM:
-        return ((InternalEList<?>)getBm()).basicRemove(otherEnd, msgs);
+      case EditorPackage.ATOM__RIGHT2:
+        return basicSetRight2(null, msgs);
       case EditorPackage.ATOM__LAB:
         return basicSetLab(null, msgs);
       case EditorPackage.ATOM__BM4:
@@ -305,8 +339,8 @@ public class AtomImpl extends LabeledImpl implements Atom
   {
     switch (featureID)
     {
-      case EditorPackage.ATOM__BM:
-        return getBm();
+      case EditorPackage.ATOM__RIGHT2:
+        return getRight2();
       case EditorPackage.ATOM__LAB:
         return getLab();
       case EditorPackage.ATOM__BM4:
@@ -330,9 +364,8 @@ public class AtomImpl extends LabeledImpl implements Atom
   {
     switch (featureID)
     {
-      case EditorPackage.ATOM__BM:
-        getBm().clear();
-        getBm().addAll((Collection<? extends BlockMolecule>)newValue);
+      case EditorPackage.ATOM__RIGHT2:
+        setRight2((Jright_Atom)newValue);
         return;
       case EditorPackage.ATOM__LAB:
         setLab((Labeled)newValue);
@@ -361,8 +394,8 @@ public class AtomImpl extends LabeledImpl implements Atom
   {
     switch (featureID)
     {
-      case EditorPackage.ATOM__BM:
-        getBm().clear();
+      case EditorPackage.ATOM__RIGHT2:
+        setRight2((Jright_Atom)null);
         return;
       case EditorPackage.ATOM__LAB:
         setLab((Labeled)null);
@@ -390,8 +423,8 @@ public class AtomImpl extends LabeledImpl implements Atom
   {
     switch (featureID)
     {
-      case EditorPackage.ATOM__BM:
-        return bm != null && !bm.isEmpty();
+      case EditorPackage.ATOM__RIGHT2:
+        return right2 != null;
       case EditorPackage.ATOM__LAB:
         return lab != null;
       case EditorPackage.ATOM__BM4:
@@ -412,14 +445,15 @@ public class AtomImpl extends LabeledImpl implements Atom
   @Override
   public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass)
   {
-    if (baseClass == Jleft_Atom.class)
+    if (baseClass == Jright_Atom.class)
     {
       switch (derivedFeatureID)
       {
+        case EditorPackage.ATOM__RIGHT2: return EditorPackage.JRIGHT_ATOM__RIGHT2;
         default: return -1;
       }
     }
-    if (baseClass == Jleft_Molecule.class)
+    if (baseClass == Jleft_Atom.class)
     {
       switch (derivedFeatureID)
       {
@@ -430,7 +464,6 @@ public class AtomImpl extends LabeledImpl implements Atom
     {
       switch (derivedFeatureID)
       {
-        case EditorPackage.ATOM__BM: return EditorPackage.MOLECULE__BM;
         default: return -1;
       }
     }
@@ -452,14 +485,15 @@ public class AtomImpl extends LabeledImpl implements Atom
   @Override
   public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass)
   {
-    if (baseClass == Jleft_Atom.class)
+    if (baseClass == Jright_Atom.class)
     {
       switch (baseFeatureID)
       {
+        case EditorPackage.JRIGHT_ATOM__RIGHT2: return EditorPackage.ATOM__RIGHT2;
         default: return -1;
       }
     }
-    if (baseClass == Jleft_Molecule.class)
+    if (baseClass == Jleft_Atom.class)
     {
       switch (baseFeatureID)
       {
@@ -470,7 +504,6 @@ public class AtomImpl extends LabeledImpl implements Atom
     {
       switch (baseFeatureID)
       {
-        case EditorPackage.MOLECULE__BM: return EditorPackage.ATOM__BM;
         default: return -1;
       }
     }

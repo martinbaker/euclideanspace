@@ -53,11 +53,11 @@ public class EditorParser extends AbstractContentAssistParser {
 					put(grammarAccess.getAlwaysPart_BalStatementAccess().getAlternatives(), "rule__AlwaysPart_BalStatement__Alternatives");
 					put(grammarAccess.getIteratorAccess().getAlternatives(), "rule__Iterator__Alternatives");
 					put(grammarAccess.getForLhsAccess().getAlternatives(), "rule__ForLhs__Alternatives");
+					put(grammarAccess.getInfixedExprAccess().getAlternatives(), "rule__InfixedExpr__Alternatives");
 					put(grammarAccess.getE3Access().getAlternatives_1_1(), "rule__E3__Alternatives_1_1");
 					put(grammarAccess.getE4Access().getAlternatives(), "rule__E4__Alternatives");
 					put(grammarAccess.getE4Access().getAlternatives_0_1_1(), "rule__E4__Alternatives_0_1_1");
 					put(grammarAccess.getE5Access().getAlternatives(), "rule__E5__Alternatives");
-					put(grammarAccess.getE6Access().getAlternatives(), "rule__E6__Alternatives");
 					put(grammarAccess.getE11_E12Access().getAlternatives_1_1(), "rule__E11_E12__Alternatives_1_1");
 					put(grammarAccess.getE11_OpAccess().getAlternatives_1_1(), "rule__E11_Op__Alternatives_1_1");
 					put(grammarAccess.getQualTailAccess().getAlternatives(), "rule__QualTail__Alternatives");
@@ -73,6 +73,7 @@ public class EditorParser extends AbstractContentAssistParser {
 					put(grammarAccess.getQuotientTokAccess().getAlternatives(), "rule__QuotientTok__Alternatives");
 					put(grammarAccess.getTimesTokAccess().getAlternatives(), "rule__TimesTok__Alternatives");
 					put(grammarAccess.getPowerTokAccess().getAlternatives(), "rule__PowerTok__Alternatives");
+					put(grammarAccess.getJright_AtomAccess().getAlternatives(), "rule__Jright_Atom__Alternatives");
 					put(grammarAccess.getJleft_MoleculeAccess().getAlternatives(), "rule__Jleft_Molecule__Alternatives");
 					put(grammarAccess.getJleft_AtomAccess().getAlternatives(), "rule__Jleft_Atom__Alternatives");
 					put(grammarAccess.getMoleculeAccess().getAlternatives(), "rule__Molecule__Alternatives");
@@ -94,6 +95,8 @@ public class EditorParser extends AbstractContentAssistParser {
 					put(grammarAccess.getQualOp_QuotientTokAccess().getAlternatives(), "rule__QualOp_QuotientTok__Alternatives");
 					put(grammarAccess.getQualOp_TimesTokAccess().getAlternatives(), "rule__QualOp_TimesTok__Alternatives");
 					put(grammarAccess.getQualOp_PowerTokAccess().getAlternatives(), "rule__QualOp_PowerTok__Alternatives");
+					put(grammarAccess.getModelAccess().getGroup(), "rule__Model__Group__0");
+					put(grammarAccess.getModelAccess().getGroup_0(), "rule__Model__Group_0__0");
 					put(grammarAccess.getLabeledAccess().getGroup_2(), "rule__Labeled__Group_2__0");
 					put(grammarAccess.getDeclarationAccess().getGroup_0(), "rule__Declaration__Group_0__0");
 					put(grammarAccess.getDeclarationAccess().getGroup_1(), "rule__Declaration__Group_1__0");
@@ -199,8 +202,7 @@ public class EditorParser extends AbstractContentAssistParser {
 					put(grammarAccess.getE5Access().getGroup_0_0(), "rule__E5__Group_0_0__0");
 					put(grammarAccess.getE5Access().getGroup_0_0_1(), "rule__E5__Group_0_0_1__0");
 					put(grammarAccess.getE5Access().getGroup_1(), "rule__E5__Group_1__0");
-					put(grammarAccess.getE6Access().getGroup_0(), "rule__E6__Group_0__0");
-					put(grammarAccess.getE6Access().getGroup_0_1(), "rule__E6__Group_0_1__0");
+					put(grammarAccess.getE6Access().getGroup(), "rule__E6__Group__0");
 					put(grammarAccess.getE6Access().getGroup_1(), "rule__E6__Group_1__0");
 					put(grammarAccess.getE7Access().getGroup(), "rule__E7__Group__0");
 					put(grammarAccess.getE7Access().getGroup_1(), "rule__E7__Group_1__0");
@@ -223,6 +225,8 @@ public class EditorParser extends AbstractContentAssistParser {
 					put(grammarAccess.getE14Access().getGroup_2(), "rule__E14__Group_2__0");
 					put(grammarAccess.getE14Access().getGroup_3(), "rule__E14__Group_3__0");
 					put(grammarAccess.getE14Access().getGroup_4(), "rule__E14__Group_4__0");
+					put(grammarAccess.getJright_AtomAccess().getGroup_0(), "rule__Jright_Atom__Group_0__0");
+					put(grammarAccess.getJright_AtomAccess().getGroup_1(), "rule__Jright_Atom__Group_1__0");
 					put(grammarAccess.getJleft_MoleculeAccess().getGroup_0(), "rule__Jleft_Molecule__Group_0__0");
 					put(grammarAccess.getJleft_MoleculeAccess().getGroup_1(), "rule__Jleft_Molecule__Group_1__0");
 					put(grammarAccess.getJleft_MoleculeAccess().getGroup_1_1(), "rule__Jleft_Molecule__Group_1_1__0");
@@ -252,8 +256,6 @@ public class EditorParser extends AbstractContentAssistParser {
 					put(grammarAccess.getQualOp_QuotientTokAccess().getGroup_1(), "rule__QualOp_QuotientTok__Group_1__0");
 					put(grammarAccess.getQualOp_TimesTokAccess().getGroup_1(), "rule__QualOp_TimesTok__Group_1__0");
 					put(grammarAccess.getQualOp_PowerTokAccess().getGroup_1(), "rule__QualOp_PowerTok__Group_1__0");
-					put(grammarAccess.getPreDocumentListAccess().getGroup(), "rule__PreDocumentList__Group__0");
-					put(grammarAccess.getPostDocumentListAccess().getGroup(), "rule__PostDocumentList__Group__0");
 					put(grammarAccess.getEnlister1_CommaItem_CommaAccess().getGroup(), "rule__Enlister1_CommaItem_Comma__Group__0");
 					put(grammarAccess.getEnlister1_CommaItem_CommaAccess().getGroup_1(), "rule__Enlister1_CommaItem_Comma__Group_1__0");
 					put(grammarAccess.getEnlister1_Infixed_CommaAccess().getGroup(), "rule__Enlister1_Infixed_Comma__Group__0");
@@ -265,6 +267,9 @@ public class EditorParser extends AbstractContentAssistParser {
 					put(grammarAccess.getCurly_LabeledAccess().getGroup(), "rule__Curly_Labeled__Group__0");
 					put(grammarAccess.getCurlyContentsList_LabeledAccess().getGroup(), "rule__CurlyContentsList_Labeled__Group__0");
 					put(grammarAccess.getCurlyContentsList_LabeledAccess().getGroup_1(), "rule__CurlyContentsList_Labeled__Group_1__0");
+					put(grammarAccess.getCurlyContentB_LabeledAccess().getGroup(), "rule__CurlyContentB_Labeled__Group__0");
+					put(grammarAccess.getModelAccess().getInsertAssignment_0_1(), "rule__Model__InsertAssignment_0_1");
+					put(grammarAccess.getModelAccess().getCcAssignment_1(), "rule__Model__CcAssignment_1");
 					put(grammarAccess.getLabeledAccess().getLabAssignment_2_2(), "rule__Labeled__LabAssignment_2_2");
 					put(grammarAccess.getDeclarationAccess().getFpAssignment_8_2(), "rule__Declaration__FpAssignment_8_2");
 					put(grammarAccess.getDeclarationAccess().getFpAssignment_9_2(), "rule__Declaration__FpAssignment_9_2");
@@ -333,11 +338,9 @@ public class EditorParser extends AbstractContentAssistParser {
 					put(grammarAccess.getE5Access().getRightAssignment_0_0_1_2(), "rule__E5__RightAssignment_0_0_1_2");
 					put(grammarAccess.getE5Access().getLeftAssignment_1_0(), "rule__E5__LeftAssignment_1_0");
 					put(grammarAccess.getE5Access().getOp5Assignment_1_1(), "rule__E5__Op5Assignment_1_1");
-					put(grammarAccess.getE6Access().getLeftAssignment_0_0(), "rule__E6__LeftAssignment_0_0");
-					put(grammarAccess.getE6Access().getOp6Assignment_0_1_1(), "rule__E6__Op6Assignment_0_1_1");
-					put(grammarAccess.getE6Access().getRightAssignment_0_1_2(), "rule__E6__RightAssignment_0_1_2");
-					put(grammarAccess.getE6Access().getOp6Assignment_1_0(), "rule__E6__Op6Assignment_1_0");
-					put(grammarAccess.getE6Access().getRightAssignment_1_1(), "rule__E6__RightAssignment_1_1");
+					put(grammarAccess.getE6Access().getLeftAssignment_0(), "rule__E6__LeftAssignment_0");
+					put(grammarAccess.getE6Access().getOp6Assignment_1_1(), "rule__E6__Op6Assignment_1_1");
+					put(grammarAccess.getE6Access().getRightAssignment_1_2(), "rule__E6__RightAssignment_1_2");
 					put(grammarAccess.getE7Access().getLeftAssignment_0(), "rule__E7__LeftAssignment_0");
 					put(grammarAccess.getE7Access().getOp7Assignment_1_1(), "rule__E7__Op7Assignment_1_1");
 					put(grammarAccess.getE7Access().getRightAssignment_1_2(), "rule__E7__RightAssignment_1_2");
@@ -363,10 +366,26 @@ public class EditorParser extends AbstractContentAssistParser {
 					put(grammarAccess.getE13Access().getLeftAssignment_0(), "rule__E13__LeftAssignment_0");
 					put(grammarAccess.getE13Access().getOpAssignment_1_1(), "rule__E13__OpAssignment_1_1");
 					put(grammarAccess.getE13Access().getRightAssignment_1_2(), "rule__E13__RightAssignment_1_2");
+					put(grammarAccess.getQualTailAccess().getQtAssignment_1_2(), "rule__QualTail__QtAssignment_1_2");
 					put(grammarAccess.getOpQualTailAccess().getNameAssignment_0(), "rule__OpQualTail__NameAssignment_0");
 					put(grammarAccess.getOpQualTailAccess().getNameAssignment_1_0_0(), "rule__OpQualTail__NameAssignment_1_0_0");
+					put(grammarAccess.getE14Access().getE15leftAssignment_0(), "rule__E14__E15leftAssignment_0");
+					put(grammarAccess.getE14Access().getE15leftAssignment_1_0(), "rule__E14__E15leftAssignment_1_0");
+					put(grammarAccess.getE14Access().getDmAssignment_1_2(), "rule__E14__DmAssignment_1_2");
+					put(grammarAccess.getE14Access().getE15leftAssignment_2_0(), "rule__E14__E15leftAssignment_2_0");
+					put(grammarAccess.getE14Access().getDmAssignment_2_2(), "rule__E14__DmAssignment_2_2");
+					put(grammarAccess.getE14Access().getE15leftAssignment_3_0(), "rule__E14__E15leftAssignment_3_0");
+					put(grammarAccess.getE14Access().getE15rightAssignment_3_2(), "rule__E14__E15rightAssignment_3_2");
+					put(grammarAccess.getE14Access().getE15leftAssignment_4_0(), "rule__E14__E15leftAssignment_4_0");
+					put(grammarAccess.getE14Access().getE15rightAssignment_4_2(), "rule__E14__E15rightAssignment_4_2");
+					put(grammarAccess.getJright_AtomAccess().getRight2Assignment_0_1(), "rule__Jright_Atom__Right2Assignment_0_1");
+					put(grammarAccess.getJright_AtomAccess().getRight2Assignment_1_1(), "rule__Jright_Atom__Right2Assignment_1_1");
+					put(grammarAccess.getJleft_MoleculeAccess().getBeAssignment_0_1(), "rule__Jleft_Molecule__BeAssignment_0_1");
+					put(grammarAccess.getJleft_MoleculeAccess().getMAssignment_1_0(), "rule__Jleft_Molecule__MAssignment_1_0");
 					put(grammarAccess.getJleft_MoleculeAccess().getBmAssignment_1_1_1(), "rule__Jleft_Molecule__BmAssignment_1_1_1");
 					put(grammarAccess.getJleft_AtomAccess().getBm4Assignment_1_1_1(), "rule__Jleft_Atom__Bm4Assignment_1_1_1");
+					put(grammarAccess.getDeclMoleculeAccess().getAAssignment_0(), "rule__DeclMolecule__AAssignment_0");
+					put(grammarAccess.getDeclMoleculeAccess().getBAssignment_1(), "rule__DeclMolecule__BAssignment_1");
 					put(grammarAccess.getNamesAccess().getFirstNameAssignment_0(), "rule__Names__FirstNameAssignment_0");
 					put(grammarAccess.getNamesAccess().getSubsequentNamesAssignment_1_1(), "rule__Names__SubsequentNamesAssignment_1_1");
 					put(grammarAccess.getAtomAccess().getIdAssignment_0(), "rule__Atom__IdAssignment_0");
@@ -376,10 +395,14 @@ public class EditorParser extends AbstractContentAssistParser {
 					put(grammarAccess.getIdAccess().getOpAssignment_2(), "rule__Id__OpAssignment_2");
 					put(grammarAccess.getEnlister1_CommaItem_CommaAccess().getCiAssignment_1_1(), "rule__Enlister1_CommaItem_Comma__CiAssignment_1_1");
 					put(grammarAccess.getEnlister1_Infixed_CommaAccess().getIAssignment_1_1(), "rule__Enlister1_Infixed_Comma__IAssignment_1_1");
+					put(grammarAccess.getEnlister1_InfixedExpr_CommaAccess().getIeAssignment_1_1(), "rule__Enlister1_InfixedExpr_Comma__IeAssignment_1_1");
 					put(grammarAccess.getEnlister1a_Labeled_SemicolonAccess().getStatemntsAssignment_0(), "rule__Enlister1a_Labeled_Semicolon__StatemntsAssignment_0");
 					put(grammarAccess.getEnlister1a_Labeled_SemicolonAccess().getStatemntsAssignment_1_1(), "rule__Enlister1a_Labeled_Semicolon__StatemntsAssignment_1_1");
 					put(grammarAccess.getCurlyContentsList_LabeledAccess().getStatemtsAssignment_0(), "rule__CurlyContentsList_Labeled__StatemtsAssignment_0");
 					put(grammarAccess.getCurlyContentsList_LabeledAccess().getStatemtsAssignment_1_1(), "rule__CurlyContentsList_Labeled__StatemtsAssignment_1_1");
+					put(grammarAccess.getCurlyContentB_LabeledAccess().getPredAssignment_0(), "rule__CurlyContentB_Labeled__PredAssignment_0");
+					put(grammarAccess.getCurlyContentB_LabeledAccess().getLAssignment_1(), "rule__CurlyContentB_Labeled__LAssignment_1");
+					put(grammarAccess.getCurlyContentB_LabeledAccess().getPdAssignment_2(), "rule__CurlyContentB_Labeled__PdAssignment_2");
 				}
 			};
 		}

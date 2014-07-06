@@ -23,6 +23,7 @@ import com.euclideanspace.aldor.editor.Cases;
 import com.euclideanspace.aldor.editor.Collection;
 import com.euclideanspace.aldor.editor.Comma;
 import com.euclideanspace.aldor.editor.CommaItem;
+import com.euclideanspace.aldor.editor.CurlyContentB_Labeled;
 import com.euclideanspace.aldor.editor.CurlyContentsList_Labeled;
 import com.euclideanspace.aldor.editor.CurlyContents_Labeled;
 import com.euclideanspace.aldor.editor.Curly_Labeled;
@@ -42,13 +43,17 @@ import com.euclideanspace.aldor.editor.Flow_BalStatement;
 import com.euclideanspace.aldor.editor.FromPart;
 import com.euclideanspace.aldor.editor.GenBound;
 import com.euclideanspace.aldor.editor.Id;
+import com.euclideanspace.aldor.editor.InfixedExpr;
+import com.euclideanspace.aldor.editor.InfixedExprs;
 import com.euclideanspace.aldor.editor.InfixedExprsDecl;
 import com.euclideanspace.aldor.editor.Iterator;
 import com.euclideanspace.aldor.editor.Jleft_Atom;
 import com.euclideanspace.aldor.editor.Jleft_Molecule;
+import com.euclideanspace.aldor.editor.Jright_Atom;
 import com.euclideanspace.aldor.editor.Labeled;
 import com.euclideanspace.aldor.editor.LatticeOp;
 import com.euclideanspace.aldor.editor.LatticeTok;
+import com.euclideanspace.aldor.editor.LeftJuxtaposed;
 import com.euclideanspace.aldor.editor.MacroBody;
 import com.euclideanspace.aldor.editor.Model;
 import com.euclideanspace.aldor.editor.Molecule;
@@ -69,6 +74,7 @@ import com.euclideanspace.aldor.editor.QualOp_PowerTok;
 import com.euclideanspace.aldor.editor.QualOp_QuotientTok;
 import com.euclideanspace.aldor.editor.QualOp_SegTok;
 import com.euclideanspace.aldor.editor.QualOp_TimesTok;
+import com.euclideanspace.aldor.editor.QualTail;
 import com.euclideanspace.aldor.editor.QuotedIds;
 import com.euclideanspace.aldor.editor.QuotientOp;
 import com.euclideanspace.aldor.editor.QuotientTok;
@@ -88,9 +94,11 @@ import com.euclideanspace.aldor.editor.UnqualOp_RelationTok;
 import com.euclideanspace.aldor.editor.UnqualOp_SegTok;
 import com.euclideanspace.aldor.editor.UnqualOp_TimesTok;
 import com.euclideanspace.aldor.editor.enlist1_CommaItem_Comma_AB;
+import com.euclideanspace.aldor.editor.enlist1_InfixedExpr_Comma_AB;
 import com.euclideanspace.aldor.editor.enlist1_Infixed_Comma_AB;
 import com.euclideanspace.aldor.editor.enlist1a_Labeled_Semicolon_AB;
 import com.euclideanspace.aldor.editor.enlister1_CommaItem_Comma;
+import com.euclideanspace.aldor.editor.enlister1_InfixedExpr_Comma;
 import com.euclideanspace.aldor.editor.enlister1_Infixed_Comma;
 import com.euclideanspace.aldor.editor.enlister1a_Labeled_Semicolon;
 
@@ -199,6 +207,13 @@ public class EditorPackageImpl extends EPackageImpl implements EditorPackage
    * @generated
    */
   private EClass infixedExprsDeclEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass infixedExprsEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -317,6 +332,13 @@ public class EditorPackageImpl extends EPackageImpl implements EditorPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  private EClass infixedExprEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   private EClass exprEClass = null;
 
   /**
@@ -339,6 +361,13 @@ public class EditorPackageImpl extends EPackageImpl implements EditorPackage
    * @generated
    */
   private EClass e13EClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass qualTailEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -416,6 +445,20 @@ public class EditorPackageImpl extends EPackageImpl implements EditorPackage
    * @generated
    */
   private EClass powerOpEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass leftJuxtaposedEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass jright_AtomEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -646,6 +689,13 @@ public class EditorPackageImpl extends EPackageImpl implements EditorPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  private EClass enlist1_InfixedExpr_Comma_ABEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   private EClass enlister1_CommaItem_CommaEClass = null;
 
   /**
@@ -654,6 +704,13 @@ public class EditorPackageImpl extends EPackageImpl implements EditorPackage
    * @generated
    */
   private EClass enlister1_Infixed_CommaEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass enlister1_InfixedExpr_CommaEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -689,6 +746,13 @@ public class EditorPackageImpl extends EPackageImpl implements EditorPackage
    * @generated
    */
   private EClass curlyContentsList_LabeledEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass curlyContentB_LabeledEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -887,6 +951,26 @@ public class EditorPackageImpl extends EPackageImpl implements EditorPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  public EAttribute getModel_Insert()
+  {
+    return (EAttribute)modelEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getModel_Cc()
+  {
+    return (EReference)modelEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EClass getExpression()
   {
     return expressionEClass;
@@ -1067,7 +1151,7 @@ public class EditorPackageImpl extends EPackageImpl implements EditorPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getInfixedExprsDecl_Dp()
+  public EReference getInfixedExprsDecl_Bas()
   {
     return (EReference)infixedExprsDeclEClass.getEStructuralFeatures().get(0);
   }
@@ -1077,9 +1161,19 @@ public class EditorPackageImpl extends EPackageImpl implements EditorPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getInfixedExprsDecl_Bas()
+  public EClass getInfixedExprs()
   {
-    return (EReference)infixedExprsDeclEClass.getEStructuralFeatures().get(1);
+    return infixedExprsEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getInfixedExprs_Dp()
+  {
+    return (EReference)infixedExprsEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -1427,6 +1521,26 @@ public class EditorPackageImpl extends EPackageImpl implements EditorPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  public EClass getInfixedExpr()
+  {
+    return infixedExprEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getInfixedExpr_Ie()
+  {
+    return (EReference)infixedExprEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EClass getExpr()
   {
     return exprEClass;
@@ -1460,16 +1574,6 @@ public class EditorPackageImpl extends EPackageImpl implements EditorPackage
   public EReference getExpr_Op5()
   {
     return (EReference)exprEClass.getEStructuralFeatures().get(2);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getExpr_Op6()
-  {
-    return (EReference)exprEClass.getEStructuralFeatures().get(3);
   }
 
   /**
@@ -1557,9 +1661,19 @@ public class EditorPackageImpl extends EPackageImpl implements EditorPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getE13_Right()
+  public EReference getE13_Right()
   {
-    return (EAttribute)e13EClass.getEStructuralFeatures().get(2);
+    return (EReference)e13EClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getQualTail()
+  {
+    return qualTailEClass;
   }
 
   /**
@@ -1590,6 +1704,36 @@ public class EditorPackageImpl extends EPackageImpl implements EditorPackage
   public EClass getE14()
   {
     return e14EClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getE14_E15left()
+  {
+    return (EAttribute)e14EClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getE14_Dm()
+  {
+    return (EReference)e14EClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getE14_E15right()
+  {
+    return (EAttribute)e14EClass.getEStructuralFeatures().get(2);
   }
 
   /**
@@ -1687,9 +1831,79 @@ public class EditorPackageImpl extends EPackageImpl implements EditorPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  public EClass getLeftJuxtaposed()
+  {
+    return leftJuxtaposedEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getLeftJuxtaposed_Qt()
+  {
+    return (EReference)leftJuxtaposedEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getJright_Atom()
+  {
+    return jright_AtomEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getJright_Atom_Right2()
+  {
+    return (EReference)jright_AtomEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EClass getJleft_Molecule()
   {
     return jleft_MoleculeEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getJleft_Molecule_Be()
+  {
+    return (EReference)jleft_MoleculeEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getJleft_Molecule_M()
+  {
+    return (EReference)jleft_MoleculeEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getJleft_Molecule_Bm()
+  {
+    return (EReference)jleft_MoleculeEClass.getEStructuralFeatures().get(2);
   }
 
   /**
@@ -1717,16 +1931,6 @@ public class EditorPackageImpl extends EPackageImpl implements EditorPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getMolecule_Bm()
-  {
-    return (EReference)moleculeEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public EClass getEnclosure()
   {
     return enclosureEClass;
@@ -1740,6 +1944,26 @@ public class EditorPackageImpl extends EPackageImpl implements EditorPackage
   public EClass getDeclMolecule()
   {
     return declMoleculeEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getDeclMolecule_A()
+  {
+    return (EAttribute)declMoleculeEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getDeclMolecule_B()
+  {
+    return (EReference)declMoleculeEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -2097,6 +2321,16 @@ public class EditorPackageImpl extends EPackageImpl implements EditorPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  public EClass getenlist1_InfixedExpr_Comma_AB()
+  {
+    return enlist1_InfixedExpr_Comma_ABEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EClass getenlister1_CommaItem_Comma()
   {
     return enlister1_CommaItem_CommaEClass;
@@ -2120,6 +2354,16 @@ public class EditorPackageImpl extends EPackageImpl implements EditorPackage
   public EAttribute getenlister1_Infixed_Comma_I()
   {
     return (EAttribute)enlister1_Infixed_CommaEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getenlister1_InfixedExpr_Comma()
+  {
+    return enlister1_InfixedExpr_CommaEClass;
   }
 
   /**
@@ -2190,6 +2434,46 @@ public class EditorPackageImpl extends EPackageImpl implements EditorPackage
   public EReference getCurlyContentsList_Labeled_Statemts()
   {
     return (EReference)curlyContentsList_LabeledEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getCurlyContentB_Labeled()
+  {
+    return curlyContentB_LabeledEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getCurlyContentB_Labeled_Pred()
+  {
+    return (EAttribute)curlyContentB_LabeledEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getCurlyContentB_Labeled_L()
+  {
+    return (EReference)curlyContentB_LabeledEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getCurlyContentB_Labeled_Pd()
+  {
+    return (EAttribute)curlyContentB_LabeledEClass.getEStructuralFeatures().get(2);
   }
 
   /**
@@ -2270,6 +2554,16 @@ public class EditorPackageImpl extends EPackageImpl implements EditorPackage
   public EClass getE6()
   {
     return e6EClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getE6_Op6()
+  {
+    return (EReference)e6EClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -2483,6 +2777,8 @@ public class EditorPackageImpl extends EPackageImpl implements EditorPackage
 
     // Create classes and their features
     modelEClass = createEClass(MODEL);
+    createEAttribute(modelEClass, MODEL__INSERT);
+    createEReference(modelEClass, MODEL__CC);
 
     expressionEClass = createEClass(EXPRESSION);
 
@@ -2513,8 +2809,10 @@ public class EditorPackageImpl extends EPackageImpl implements EditorPackage
     declBindingEClass = createEClass(DECL_BINDING);
 
     infixedExprsDeclEClass = createEClass(INFIXED_EXPRS_DECL);
-    createEReference(infixedExprsDeclEClass, INFIXED_EXPRS_DECL__DP);
     createEReference(infixedExprsDeclEClass, INFIXED_EXPRS_DECL__BAS);
+
+    infixedExprsEClass = createEClass(INFIXED_EXPRS);
+    createEReference(infixedExprsEClass, INFIXED_EXPRS__DP);
 
     binding_AnyStatementEClass = createEClass(BINDING_ANY_STATEMENT);
     createEReference(binding_AnyStatementEClass, BINDING_ANY_STATEMENT__BE);
@@ -2566,11 +2864,13 @@ public class EditorPackageImpl extends EPackageImpl implements EditorPackage
     createEAttribute(iteratorEClass, ITERATOR__I);
     createEAttribute(iteratorEClass, ITERATOR__SP);
 
+    infixedExprEClass = createEClass(INFIXED_EXPR);
+    createEReference(infixedExprEClass, INFIXED_EXPR__IE);
+
     exprEClass = createEClass(EXPR);
     createEReference(exprEClass, EXPR__LEFT);
     createEReference(exprEClass, EXPR__RIGHT);
     createEReference(exprEClass, EXPR__OP5);
-    createEReference(exprEClass, EXPR__OP6);
 
     typeEClass = createEClass(TYPE);
 
@@ -2582,12 +2882,17 @@ public class EditorPackageImpl extends EPackageImpl implements EditorPackage
     e13EClass = createEClass(E13);
     createEReference(e13EClass, E13__LEFT);
     createEAttribute(e13EClass, E13__OP);
-    createEAttribute(e13EClass, E13__RIGHT);
+    createEReference(e13EClass, E13__RIGHT);
+
+    qualTailEClass = createEClass(QUAL_TAIL);
 
     opQualTailEClass = createEClass(OP_QUAL_TAIL);
     createEReference(opQualTailEClass, OP_QUAL_TAIL__NAME);
 
     e14EClass = createEClass(E14);
+    createEAttribute(e14EClass, E14__E15LEFT);
+    createEReference(e14EClass, E14__DM);
+    createEAttribute(e14EClass, E14__E15RIGHT);
 
     opEClass = createEClass(OP);
 
@@ -2607,16 +2912,26 @@ public class EditorPackageImpl extends EPackageImpl implements EditorPackage
 
     powerOpEClass = createEClass(POWER_OP);
 
+    leftJuxtaposedEClass = createEClass(LEFT_JUXTAPOSED);
+    createEReference(leftJuxtaposedEClass, LEFT_JUXTAPOSED__QT);
+
+    jright_AtomEClass = createEClass(JRIGHT_ATOM);
+    createEReference(jright_AtomEClass, JRIGHT_ATOM__RIGHT2);
+
     jleft_MoleculeEClass = createEClass(JLEFT_MOLECULE);
+    createEReference(jleft_MoleculeEClass, JLEFT_MOLECULE__BE);
+    createEReference(jleft_MoleculeEClass, JLEFT_MOLECULE__M);
+    createEReference(jleft_MoleculeEClass, JLEFT_MOLECULE__BM);
 
     jleft_AtomEClass = createEClass(JLEFT_ATOM);
 
     moleculeEClass = createEClass(MOLECULE);
-    createEReference(moleculeEClass, MOLECULE__BM);
 
     enclosureEClass = createEClass(ENCLOSURE);
 
     declMoleculeEClass = createEClass(DECL_MOLECULE);
+    createEAttribute(declMoleculeEClass, DECL_MOLECULE__A);
+    createEReference(declMoleculeEClass, DECL_MOLECULE__B);
 
     blockMoleculeEClass = createEClass(BLOCK_MOLECULE);
 
@@ -2680,10 +2995,14 @@ public class EditorPackageImpl extends EPackageImpl implements EditorPackage
 
     enlist1_Infixed_Comma_ABEClass = createEClass(ENLIST1_INFIXED_COMMA_AB);
 
+    enlist1_InfixedExpr_Comma_ABEClass = createEClass(ENLIST1_INFIXED_EXPR_COMMA_AB);
+
     enlister1_CommaItem_CommaEClass = createEClass(ENLISTER1_COMMA_ITEM_COMMA);
 
     enlister1_Infixed_CommaEClass = createEClass(ENLISTER1_INFIXED_COMMA);
     createEAttribute(enlister1_Infixed_CommaEClass, ENLISTER1_INFIXED_COMMA__I);
+
+    enlister1_InfixedExpr_CommaEClass = createEClass(ENLISTER1_INFIXED_EXPR_COMMA);
 
     enlist1a_Labeled_Semicolon_ABEClass = createEClass(ENLIST1A_LABELED_SEMICOLON_AB);
 
@@ -2697,6 +3016,11 @@ public class EditorPackageImpl extends EPackageImpl implements EditorPackage
     curlyContentsList_LabeledEClass = createEClass(CURLY_CONTENTS_LIST_LABELED);
     createEReference(curlyContentsList_LabeledEClass, CURLY_CONTENTS_LIST_LABELED__STATEMTS);
 
+    curlyContentB_LabeledEClass = createEClass(CURLY_CONTENT_BLABELED);
+    createEAttribute(curlyContentB_LabeledEClass, CURLY_CONTENT_BLABELED__PRED);
+    createEReference(curlyContentB_LabeledEClass, CURLY_CONTENT_BLABELED__L);
+    createEAttribute(curlyContentB_LabeledEClass, CURLY_CONTENT_BLABELED__PD);
+
     e3EClass = createEClass(E3);
     createEAttribute(e3EClass, E3__OP);
     createEReference(e3EClass, E3__OP2);
@@ -2708,6 +3032,7 @@ public class EditorPackageImpl extends EPackageImpl implements EditorPackage
     e5EClass = createEClass(E5);
 
     e6EClass = createEClass(E6);
+    createEReference(e6EClass, E6__OP6);
 
     e7EClass = createEClass(E7);
     createEReference(e7EClass, E7__OP7);
@@ -2786,6 +3111,7 @@ public class EditorPackageImpl extends EPackageImpl implements EditorPackage
     commaItemEClass.getESuperTypes().add(this.getenlister1_CommaItem_Comma());
     declBindingEClass.getESuperTypes().add(this.getSig());
     infixedExprsDeclEClass.getESuperTypes().add(this.getBindingR_InfixedExprsDecl_AnyStatement());
+    infixedExprsEClass.getESuperTypes().add(this.getInfixedExprsDecl());
     binding_AnyStatementEClass.getESuperTypes().add(this.getCommaItem());
     binding_AnyStatementEClass.getESuperTypes().add(this.getAlwaysPart_AnyStatement());
     binding_BalStatementEClass.getESuperTypes().add(this.getFlow_BalStatement());
@@ -2800,6 +3126,8 @@ public class EditorPackageImpl extends EPackageImpl implements EditorPackage
     collectionEClass.getESuperTypes().add(this.getBindingL_Infixed_Collection());
     collectionEClass.getESuperTypes().add(this.getFlow_AnyStatement());
     collectionEClass.getESuperTypes().add(this.getFlow_BalStatement());
+    infixedExprEClass.getESuperTypes().add(this.getenlister1_InfixedExpr_Comma());
+    exprEClass.getESuperTypes().add(this.getInfixedExpr());
     exprEClass.getESuperTypes().add(this.getType());
     typeEClass.getESuperTypes().add(this.getDeclPart());
     opQualTailEClass.getESuperTypes().add(this.getQualOp_ArrowTok());
@@ -2817,15 +3145,14 @@ public class EditorPackageImpl extends EPackageImpl implements EditorPackage
     quotientOpEClass.getESuperTypes().add(this.getOp());
     timesOpEClass.getESuperTypes().add(this.getOp());
     powerOpEClass.getESuperTypes().add(this.getOp());
-    moleculeEClass.getESuperTypes().add(this.getJleft_Molecule());
+    leftJuxtaposedEClass.getESuperTypes().add(this.getQualTail());
+    jleft_MoleculeEClass.getESuperTypes().add(this.getLeftJuxtaposed());
+    jleft_AtomEClass.getESuperTypes().add(this.getJright_Atom());
     enclosureEClass.getESuperTypes().add(this.getMolecule());
     enclosureEClass.getESuperTypes().add(this.getBlockMolecule());
     enclosureEClass.getESuperTypes().add(this.getBlockEnclosure());
-    declMoleculeEClass.getESuperTypes().add(this.getE14());
-    blockEnclosureEClass.getESuperTypes().add(this.getJleft_Molecule());
     blockEnclosureEClass.getESuperTypes().add(this.getJleft_Atom());
     blockEClass.getESuperTypes().add(this.getSig());
-    blockEClass.getESuperTypes().add(this.getDeclMolecule());
     blockEClass.getESuperTypes().add(this.getBlockMolecule());
     blockEClass.getESuperTypes().add(this.getBlockEnclosure());
     parenedEClass.getESuperTypes().add(this.getEnclosure());
@@ -2858,12 +3185,13 @@ public class EditorPackageImpl extends EPackageImpl implements EditorPackage
     qualOp_PowerTokEClass.getESuperTypes().add(this.getPowerOp());
     enlist1_CommaItem_Comma_ABEClass.getESuperTypes().add(this.getComma());
     enlist1_Infixed_Comma_ABEClass.getESuperTypes().add(this.getFromPart());
+    enlist1_InfixedExpr_Comma_ABEClass.getESuperTypes().add(this.getInfixedExprs());
     enlister1_CommaItem_CommaEClass.getESuperTypes().add(this.getenlist1_CommaItem_Comma_AB());
     enlister1_Infixed_CommaEClass.getESuperTypes().add(this.getenlist1_Infixed_Comma_AB());
+    enlister1_InfixedExpr_CommaEClass.getESuperTypes().add(this.getenlist1_InfixedExpr_Comma_AB());
     enlist1a_Labeled_Semicolon_ABEClass.getESuperTypes().add(this.getExpression());
     enlister1a_Labeled_SemicolonEClass.getESuperTypes().add(this.getenlist1a_Labeled_Semicolon_AB());
     curly_LabeledEClass.getESuperTypes().add(this.getBlock());
-    curlyContents_LabeledEClass.getESuperTypes().add(this.getModel());
     curlyContents_LabeledEClass.getESuperTypes().add(this.getCurly_Labeled());
     curlyContentsList_LabeledEClass.getESuperTypes().add(this.getCurlyContents_Labeled());
     e3EClass.getESuperTypes().add(this.getExpr());
@@ -2886,6 +3214,8 @@ public class EditorPackageImpl extends EPackageImpl implements EditorPackage
 
     // Initialize classes and features; add operations and parameters
     initEClass(modelEClass, Model.class, "Model", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getModel_Insert(), ecorePackage.getEString(), "insert", null, 0, -1, Model.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getModel_Cc(), this.getCurlyContents_Labeled(), null, "cc", null, 0, 1, Model.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(expressionEClass, Expression.class, "Expression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -2916,8 +3246,10 @@ public class EditorPackageImpl extends EPackageImpl implements EditorPackage
     initEClass(declBindingEClass, DeclBinding.class, "DeclBinding", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
     initEClass(infixedExprsDeclEClass, InfixedExprsDecl.class, "InfixedExprsDecl", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getInfixedExprsDecl_Dp(), this.getDeclPart(), null, "dp", null, 0, -1, InfixedExprsDecl.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getInfixedExprsDecl_Bas(), this.getBinding_AnyStatement(), null, "bas", null, 0, 1, InfixedExprsDecl.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(infixedExprsEClass, InfixedExprs.class, "InfixedExprs", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getInfixedExprs_Dp(), this.getDeclPart(), null, "dp", null, 0, -1, InfixedExprs.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(binding_AnyStatementEClass, Binding_AnyStatement.class, "Binding_AnyStatement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getBinding_AnyStatement_Be(), this.getButExpr(), null, "be", null, 0, 1, Binding_AnyStatement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -2969,11 +3301,13 @@ public class EditorPackageImpl extends EPackageImpl implements EditorPackage
     initEAttribute(getIterator_I(), ecorePackage.getEString(), "i", null, 0, 1, Iterator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getIterator_Sp(), ecorePackage.getEString(), "sp", null, 0, 1, Iterator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
+    initEClass(infixedExprEClass, InfixedExpr.class, "InfixedExpr", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getInfixedExpr_Ie(), this.getInfixedExpr(), null, "ie", null, 0, 1, InfixedExpr.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
     initEClass(exprEClass, Expr.class, "Expr", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getExpr_Left(), ecorePackage.getEObject(), null, "left", null, 0, 1, Expr.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getExpr_Right(), ecorePackage.getEObject(), null, "right", null, 0, 1, Expr.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getExpr_Op5(), this.getSegOp(), null, "op5", null, 0, -1, Expr.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getExpr_Op6(), this.getPlusOp(), null, "op6", null, 0, -1, Expr.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(typeEClass, Type.class, "Type", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -2985,12 +3319,17 @@ public class EditorPackageImpl extends EPackageImpl implements EditorPackage
     initEClass(e13EClass, com.euclideanspace.aldor.editor.E13.class, "E13", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getE13_Left(), ecorePackage.getEObject(), null, "left", null, 0, 1, com.euclideanspace.aldor.editor.E13.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getE13_Op(), ecorePackage.getEString(), "op", null, 0, -1, com.euclideanspace.aldor.editor.E13.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getE13_Right(), ecorePackage.getEString(), "right", null, 0, 1, com.euclideanspace.aldor.editor.E13.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getE13_Right(), this.getQualTail(), null, "right", null, 0, 1, com.euclideanspace.aldor.editor.E13.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(qualTailEClass, QualTail.class, "QualTail", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
     initEClass(opQualTailEClass, OpQualTail.class, "OpQualTail", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getOpQualTail_Name(), this.getMolecule(), null, "name", null, 0, 1, OpQualTail.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(e14EClass, com.euclideanspace.aldor.editor.E14.class, "E14", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getE14_E15left(), ecorePackage.getEString(), "e15left", null, 0, 1, com.euclideanspace.aldor.editor.E14.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getE14_Dm(), this.getDeclMolecule(), null, "dm", null, 0, 1, com.euclideanspace.aldor.editor.E14.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getE14_E15right(), ecorePackage.getEString(), "e15right", null, 0, 1, com.euclideanspace.aldor.editor.E14.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(opEClass, Op.class, "Op", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -3010,16 +3349,26 @@ public class EditorPackageImpl extends EPackageImpl implements EditorPackage
 
     initEClass(powerOpEClass, PowerOp.class, "PowerOp", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
+    initEClass(leftJuxtaposedEClass, LeftJuxtaposed.class, "LeftJuxtaposed", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getLeftJuxtaposed_Qt(), this.getQualTail(), null, "qt", null, 0, 1, LeftJuxtaposed.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(jright_AtomEClass, Jright_Atom.class, "Jright_Atom", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getJright_Atom_Right2(), this.getJright_Atom(), null, "right2", null, 0, 1, Jright_Atom.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
     initEClass(jleft_MoleculeEClass, Jleft_Molecule.class, "Jleft_Molecule", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getJleft_Molecule_Be(), this.getBlockEnclosure(), null, "be", null, 0, 1, Jleft_Molecule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getJleft_Molecule_M(), this.getMolecule(), null, "m", null, 0, 1, Jleft_Molecule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getJleft_Molecule_Bm(), this.getBlockMolecule(), null, "bm", null, 0, -1, Jleft_Molecule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(jleft_AtomEClass, Jleft_Atom.class, "Jleft_Atom", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
     initEClass(moleculeEClass, Molecule.class, "Molecule", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getMolecule_Bm(), this.getBlockMolecule(), null, "bm", null, 0, -1, Molecule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(enclosureEClass, Enclosure.class, "Enclosure", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
     initEClass(declMoleculeEClass, DeclMolecule.class, "DeclMolecule", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getDeclMolecule_A(), ecorePackage.getEString(), "a", null, 0, 1, DeclMolecule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getDeclMolecule_B(), this.getBlock(), null, "b", null, 0, 1, DeclMolecule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(blockMoleculeEClass, BlockMolecule.class, "BlockMolecule", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -3083,10 +3432,14 @@ public class EditorPackageImpl extends EPackageImpl implements EditorPackage
 
     initEClass(enlist1_Infixed_Comma_ABEClass, enlist1_Infixed_Comma_AB.class, "enlist1_Infixed_Comma_AB", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
+    initEClass(enlist1_InfixedExpr_Comma_ABEClass, enlist1_InfixedExpr_Comma_AB.class, "enlist1_InfixedExpr_Comma_AB", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
     initEClass(enlister1_CommaItem_CommaEClass, enlister1_CommaItem_Comma.class, "enlister1_CommaItem_Comma", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
     initEClass(enlister1_Infixed_CommaEClass, enlister1_Infixed_Comma.class, "enlister1_Infixed_Comma", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getenlister1_Infixed_Comma_I(), ecorePackage.getEString(), "i", null, 0, 1, enlister1_Infixed_Comma.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(enlister1_InfixedExpr_CommaEClass, enlister1_InfixedExpr_Comma.class, "enlister1_InfixedExpr_Comma", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
     initEClass(enlist1a_Labeled_Semicolon_ABEClass, enlist1a_Labeled_Semicolon_AB.class, "enlist1a_Labeled_Semicolon_AB", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -3098,7 +3451,12 @@ public class EditorPackageImpl extends EPackageImpl implements EditorPackage
     initEClass(curlyContents_LabeledEClass, CurlyContents_Labeled.class, "CurlyContents_Labeled", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
     initEClass(curlyContentsList_LabeledEClass, CurlyContentsList_Labeled.class, "CurlyContentsList_Labeled", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getCurlyContentsList_Labeled_Statemts(), this.getLabeled(), null, "statemts", null, 0, -1, CurlyContentsList_Labeled.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getCurlyContentsList_Labeled_Statemts(), this.getCurlyContentB_Labeled(), null, "statemts", null, 0, -1, CurlyContentsList_Labeled.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(curlyContentB_LabeledEClass, CurlyContentB_Labeled.class, "CurlyContentB_Labeled", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getCurlyContentB_Labeled_Pred(), ecorePackage.getEString(), "pred", null, 0, 1, CurlyContentB_Labeled.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getCurlyContentB_Labeled_L(), this.getLabeled(), null, "l", null, 0, 1, CurlyContentB_Labeled.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getCurlyContentB_Labeled_Pd(), ecorePackage.getEString(), "pd", null, 0, 1, CurlyContentB_Labeled.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(e3EClass, com.euclideanspace.aldor.editor.E3.class, "E3", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getE3_Op(), ecorePackage.getEString(), "op", null, 0, -1, com.euclideanspace.aldor.editor.E3.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -3111,6 +3469,7 @@ public class EditorPackageImpl extends EPackageImpl implements EditorPackage
     initEClass(e5EClass, com.euclideanspace.aldor.editor.E5.class, "E5", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
     initEClass(e6EClass, com.euclideanspace.aldor.editor.E6.class, "E6", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getE6_Op6(), this.getPlusOp(), null, "op6", null, 0, -1, com.euclideanspace.aldor.editor.E6.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(e7EClass, com.euclideanspace.aldor.editor.E7.class, "E7", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getE7_Op7(), this.getQuotientOp(), null, "op7", null, 0, -1, com.euclideanspace.aldor.editor.E7.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

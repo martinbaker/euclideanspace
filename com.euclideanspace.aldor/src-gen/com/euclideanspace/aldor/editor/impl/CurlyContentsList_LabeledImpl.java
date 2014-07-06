@@ -2,9 +2,9 @@
  */
 package com.euclideanspace.aldor.editor.impl;
 
+import com.euclideanspace.aldor.editor.CurlyContentB_Labeled;
 import com.euclideanspace.aldor.editor.CurlyContentsList_Labeled;
 import com.euclideanspace.aldor.editor.EditorPackage;
-import com.euclideanspace.aldor.editor.Labeled;
 
 import java.util.Collection;
 
@@ -41,7 +41,7 @@ public class CurlyContentsList_LabeledImpl extends CurlyContents_LabeledImpl imp
    * @generated
    * @ordered
    */
-  protected EList<Labeled> statemts;
+  protected EList<CurlyContentB_Labeled> statemts;
 
   /**
    * <!-- begin-user-doc -->
@@ -69,11 +69,11 @@ public class CurlyContentsList_LabeledImpl extends CurlyContents_LabeledImpl imp
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<Labeled> getStatemts()
+  public EList<CurlyContentB_Labeled> getStatemts()
   {
     if (statemts == null)
     {
-      statemts = new EObjectContainmentEList<Labeled>(Labeled.class, this, EditorPackage.CURLY_CONTENTS_LIST_LABELED__STATEMTS);
+      statemts = new EObjectContainmentEList<CurlyContentB_Labeled>(CurlyContentB_Labeled.class, this, EditorPackage.CURLY_CONTENTS_LIST_LABELED__STATEMTS);
     }
     return statemts;
   }
@@ -123,7 +123,7 @@ public class CurlyContentsList_LabeledImpl extends CurlyContents_LabeledImpl imp
     {
       case EditorPackage.CURLY_CONTENTS_LIST_LABELED__STATEMTS:
         getStatemts().clear();
-        getStatemts().addAll((Collection<? extends Labeled>)newValue);
+        getStatemts().addAll((Collection<? extends CurlyContentB_Labeled>)newValue);
         return;
     }
     super.eSet(featureID, newValue);

@@ -16,7 +16,7 @@ import org.eclipse.emf.ecore.EClass;
  *
  * @generated
  */
-public class BlockEnclosureImpl extends Jleft_MoleculeImpl implements BlockEnclosure
+public class BlockEnclosureImpl extends Jleft_AtomImpl implements BlockEnclosure
 {
   /**
    * <!-- begin-user-doc -->

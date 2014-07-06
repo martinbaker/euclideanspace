@@ -24,7 +24,7 @@ public interface CurlyContentsList_Labeled extends CurlyContents_Labeled
 {
   /**
    * Returns the value of the '<em><b>Statemts</b></em>' containment reference list.
-   * The list contents are of type {@link com.euclideanspace.aldor.editor.Labeled}.
+   * The list contents are of type {@link com.euclideanspace.aldor.editor.CurlyContentB_Labeled}.
    * <!-- begin-user-doc -->
    * <p>
    * If the meaning of the '<em>Statemts</em>' containment reference list isn't clear,
@@ -36,6 +36,6 @@ public interface CurlyContentsList_Labeled extends CurlyContents_Labeled
    * @model containment="true"
    * @generated
    */
-  EList<Labeled> getStatemts();
+  EList<CurlyContentB_Labeled> getStatemts();
 
 } // CurlyContentsList_Labeled

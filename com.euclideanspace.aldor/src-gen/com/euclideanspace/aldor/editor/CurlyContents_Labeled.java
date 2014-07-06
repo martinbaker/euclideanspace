@@ -13,6 +13,6 @@ package com.euclideanspace.aldor.editor;
  * @model
  * @generated
  */
-public interface CurlyContents_Labeled extends Model, Curly_Labeled
+public interface CurlyContents_Labeled extends Curly_Labeled
 {
 } // CurlyContents_Labeled

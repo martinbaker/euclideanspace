@@ -13,6 +13,6 @@ package com.euclideanspace.aldor.editor;
  * @model
  * @generated
  */
-public interface Block extends Sig, DeclMolecule, BlockMolecule, BlockEnclosure
+public interface Block extends Sig, BlockMolecule, BlockEnclosure
 {
 } // Block
