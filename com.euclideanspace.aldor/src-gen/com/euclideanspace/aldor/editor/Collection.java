@@ -13,7 +13,6 @@ package com.euclideanspace.aldor.editor;
  * <ul>
  *   <li>{@link com.euclideanspace.aldor.editor.Collection#getBas2 <em>Bas2</em>}</li>
  *   <li>{@link com.euclideanspace.aldor.editor.Collection#getBbs3 <em>Bbs3</em>}</li>
- *   <li>{@link com.euclideanspace.aldor.editor.Collection#getI <em>I</em>}</li>
  * </ul>
  * </p>
  *
@@ -74,31 +73,5 @@ public interface Collection extends BindingL_Infixed_Collection, Flow_AnyStateme
    * @generated
    */
   void setBbs3(Binding_BalStatement value);
-
-  /**
-   * Returns the value of the '<em><b>I</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>I</em>' attribute isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>I</em>' attribute.
-   * @see #setI(String)
-   * @see com.euclideanspace.aldor.editor.EditorPackage#getCollection_I()
-   * @model
-   * @generated
-   */
-  String getI();
-
-  /**
-   * Sets the value of the '{@link com.euclideanspace.aldor.editor.Collection#getI <em>I</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>I</em>' attribute.
-   * @see #getI()
-   * @generated
-   */
-  void setI(String value);
 
 } // Collection

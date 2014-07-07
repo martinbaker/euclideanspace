@@ -776,32 +776,38 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 	public class BindingL_Infixed_AnyStatementElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "BindingL_Infixed_AnyStatement");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
-		private final RuleCall cAnyStatementParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
+		private final Assignment cBas9Assignment_0 = (Assignment)cAlternatives.eContents().get(0);
+		private final RuleCall cBas9AnyStatementParserRuleCall_0_0 = (RuleCall)cBas9Assignment_0.eContents().get(0);
 		private final Group cGroup_1 = (Group)cAlternatives.eContents().get(1);
-		private final RuleCall cInfixedParserRuleCall_1_0 = (RuleCall)cGroup_1.eContents().get(0);
-		private final Keyword cAssignKeyword_1_1 = (Keyword)cGroup_1.eContents().get(1);
-		private final Assignment cBiaAssignment_1_2 = (Assignment)cGroup_1.eContents().get(2);
-		private final RuleCall cBiaBindingL_Infixed_AnyStatementParserRuleCall_1_2_0 = (RuleCall)cBiaAssignment_1_2.eContents().get(0);
+		private final Group cGroup_1_0 = (Group)cGroup_1.eContents().get(0);
+		private final RuleCall cInfixedParserRuleCall_1_0_0 = (RuleCall)cGroup_1_0.eContents().get(0);
+		private final Keyword cAssignKeyword_1_0_1 = (Keyword)cGroup_1_0.eContents().get(1);
+		private final Assignment cBiaAssignment_1_0_2 = (Assignment)cGroup_1_0.eContents().get(2);
+		private final RuleCall cBiaBindingL_Infixed_AnyStatementParserRuleCall_1_0_2_0 = (RuleCall)cBiaAssignment_1_0_2.eContents().get(0);
 		private final Group cGroup_2 = (Group)cAlternatives.eContents().get(2);
-		private final RuleCall cInfixedParserRuleCall_2_0 = (RuleCall)cGroup_2.eContents().get(0);
-		private final RuleCall cKW_2EQTerminalRuleCall_2_1 = (RuleCall)cGroup_2.eContents().get(1);
-		private final Assignment cBiaAssignment_2_2 = (Assignment)cGroup_2.eContents().get(2);
-		private final RuleCall cBiaBindingL_Infixed_AnyStatementParserRuleCall_2_2_0 = (RuleCall)cBiaAssignment_2_2.eContents().get(0);
+		private final Group cGroup_2_0 = (Group)cGroup_2.eContents().get(0);
+		private final RuleCall cInfixedParserRuleCall_2_0_0 = (RuleCall)cGroup_2_0.eContents().get(0);
+		private final RuleCall cKW_2EQTerminalRuleCall_2_0_1 = (RuleCall)cGroup_2_0.eContents().get(1);
+		private final Assignment cBiaAssignment_2_0_2 = (Assignment)cGroup_2_0.eContents().get(2);
+		private final RuleCall cBiaBindingL_Infixed_AnyStatementParserRuleCall_2_0_2_0 = (RuleCall)cBiaAssignment_2_0_2.eContents().get(0);
 		private final Group cGroup_3 = (Group)cAlternatives.eContents().get(3);
-		private final RuleCall cInfixedParserRuleCall_3_0 = (RuleCall)cGroup_3.eContents().get(0);
-		private final RuleCall cKW_MARROWTerminalRuleCall_3_1 = (RuleCall)cGroup_3.eContents().get(1);
-		private final Assignment cBiaAssignment_3_2 = (Assignment)cGroup_3.eContents().get(2);
-		private final RuleCall cBiaBindingL_Infixed_AnyStatementParserRuleCall_3_2_0 = (RuleCall)cBiaAssignment_3_2.eContents().get(0);
+		private final Group cGroup_3_0 = (Group)cGroup_3.eContents().get(0);
+		private final RuleCall cInfixedParserRuleCall_3_0_0 = (RuleCall)cGroup_3_0.eContents().get(0);
+		private final RuleCall cKW_MARROWTerminalRuleCall_3_0_1 = (RuleCall)cGroup_3_0.eContents().get(1);
+		private final Assignment cBiaAssignment_3_0_2 = (Assignment)cGroup_3_0.eContents().get(2);
+		private final RuleCall cBiaBindingL_Infixed_AnyStatementParserRuleCall_3_0_2_0 = (RuleCall)cBiaAssignment_3_0_2.eContents().get(0);
 		private final Group cGroup_4 = (Group)cAlternatives.eContents().get(4);
-		private final RuleCall cInfixedParserRuleCall_4_0 = (RuleCall)cGroup_4.eContents().get(0);
-		private final RuleCall cKW_MAPSTOTerminalRuleCall_4_1 = (RuleCall)cGroup_4.eContents().get(1);
-		private final Assignment cBiaAssignment_4_2 = (Assignment)cGroup_4.eContents().get(2);
-		private final RuleCall cBiaBindingL_Infixed_AnyStatementParserRuleCall_4_2_0 = (RuleCall)cBiaAssignment_4_2.eContents().get(0);
+		private final Group cGroup_4_0 = (Group)cGroup_4.eContents().get(0);
+		private final RuleCall cInfixedParserRuleCall_4_0_0 = (RuleCall)cGroup_4_0.eContents().get(0);
+		private final RuleCall cKW_MAPSTOTerminalRuleCall_4_0_1 = (RuleCall)cGroup_4_0.eContents().get(1);
+		private final Assignment cBiaAssignment_4_0_2 = (Assignment)cGroup_4_0.eContents().get(2);
+		private final RuleCall cBiaBindingL_Infixed_AnyStatementParserRuleCall_4_0_2_0 = (RuleCall)cBiaAssignment_4_0_2.eContents().get(0);
 		private final Group cGroup_5 = (Group)cAlternatives.eContents().get(5);
-		private final RuleCall cInfixedParserRuleCall_5_0 = (RuleCall)cGroup_5.eContents().get(0);
-		private final RuleCall cKW_MAPSTOSTARTerminalRuleCall_5_1 = (RuleCall)cGroup_5.eContents().get(1);
-		private final Assignment cBiaAssignment_5_2 = (Assignment)cGroup_5.eContents().get(2);
-		private final RuleCall cBiaBindingL_Infixed_AnyStatementParserRuleCall_5_2_0 = (RuleCall)cBiaAssignment_5_2.eContents().get(0);
+		private final Group cGroup_5_0 = (Group)cGroup_5.eContents().get(0);
+		private final RuleCall cInfixedParserRuleCall_5_0_0 = (RuleCall)cGroup_5_0.eContents().get(0);
+		private final RuleCall cKW_MAPSTOSTARTerminalRuleCall_5_0_1 = (RuleCall)cGroup_5_0.eContents().get(1);
+		private final Assignment cBiaAssignment_5_0_2 = (Assignment)cGroup_5_0.eContents().get(2);
+		private final RuleCall cBiaBindingL_Infixed_AnyStatementParserRuleCall_5_0_2_0 = (RuleCall)cBiaAssignment_5_0_2.eContents().get(0);
 		
 		/// * Substituted Rules in Xtext:
 		// * BindingL(Infixed,E) where E is in Binding
@@ -819,93 +825,111 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		// * { $$ = abNewPLambda(APOS($1),$1,abZip,$3); }
 		// * ;
 		// * / BindingL_Infixed_AnyStatement hidden(WS, KW_NEWLINE):
-		//	AnyStatement | Infixed "assign" bia=BindingL_Infixed_AnyStatement | Infixed KW_2EQ bia=BindingL_Infixed_AnyStatement |
-		//	Infixed KW_MARROW bia=BindingL_Infixed_AnyStatement | Infixed KW_MAPSTO bia=BindingL_Infixed_AnyStatement | Infixed
-		//	KW_MAPSTOSTAR bia=BindingL_Infixed_AnyStatement;
+		//	bas9=AnyStatement | => (Infixed "assign" bia=BindingL_Infixed_AnyStatement) | => (Infixed KW_2EQ
+		//	bia=BindingL_Infixed_AnyStatement) | => (Infixed KW_MARROW bia=BindingL_Infixed_AnyStatement) | => (Infixed KW_MAPSTO
+		//	bia=BindingL_Infixed_AnyStatement) | => (Infixed KW_MAPSTOSTAR bia=BindingL_Infixed_AnyStatement);
 		public ParserRule getRule() { return rule; }
 
-		//AnyStatement | Infixed "assign" bia=BindingL_Infixed_AnyStatement | Infixed KW_2EQ bia=BindingL_Infixed_AnyStatement |
-		//Infixed KW_MARROW bia=BindingL_Infixed_AnyStatement | Infixed KW_MAPSTO bia=BindingL_Infixed_AnyStatement | Infixed
-		//KW_MAPSTOSTAR bia=BindingL_Infixed_AnyStatement
+		//bas9=AnyStatement | => (Infixed "assign" bia=BindingL_Infixed_AnyStatement) | => (Infixed KW_2EQ
+		//bia=BindingL_Infixed_AnyStatement) | => (Infixed KW_MARROW bia=BindingL_Infixed_AnyStatement) | => (Infixed KW_MAPSTO
+		//bia=BindingL_Infixed_AnyStatement) | => (Infixed KW_MAPSTOSTAR bia=BindingL_Infixed_AnyStatement)
 		public Alternatives getAlternatives() { return cAlternatives; }
 
-		//AnyStatement
-		public RuleCall getAnyStatementParserRuleCall_0() { return cAnyStatementParserRuleCall_0; }
+		//bas9=AnyStatement
+		public Assignment getBas9Assignment_0() { return cBas9Assignment_0; }
 
-		//Infixed "assign" bia=BindingL_Infixed_AnyStatement
+		//AnyStatement
+		public RuleCall getBas9AnyStatementParserRuleCall_0_0() { return cBas9AnyStatementParserRuleCall_0_0; }
+
+		//=> (Infixed "assign" bia=BindingL_Infixed_AnyStatement)
 		public Group getGroup_1() { return cGroup_1; }
 
+		//Infixed "assign" bia=BindingL_Infixed_AnyStatement
+		public Group getGroup_1_0() { return cGroup_1_0; }
+
 		//Infixed
-		public RuleCall getInfixedParserRuleCall_1_0() { return cInfixedParserRuleCall_1_0; }
+		public RuleCall getInfixedParserRuleCall_1_0_0() { return cInfixedParserRuleCall_1_0_0; }
 
 		//"assign"
-		public Keyword getAssignKeyword_1_1() { return cAssignKeyword_1_1; }
+		public Keyword getAssignKeyword_1_0_1() { return cAssignKeyword_1_0_1; }
 
 		//bia=BindingL_Infixed_AnyStatement
-		public Assignment getBiaAssignment_1_2() { return cBiaAssignment_1_2; }
+		public Assignment getBiaAssignment_1_0_2() { return cBiaAssignment_1_0_2; }
 
 		//BindingL_Infixed_AnyStatement
-		public RuleCall getBiaBindingL_Infixed_AnyStatementParserRuleCall_1_2_0() { return cBiaBindingL_Infixed_AnyStatementParserRuleCall_1_2_0; }
+		public RuleCall getBiaBindingL_Infixed_AnyStatementParserRuleCall_1_0_2_0() { return cBiaBindingL_Infixed_AnyStatementParserRuleCall_1_0_2_0; }
 
-		//Infixed KW_2EQ bia=BindingL_Infixed_AnyStatement
+		//=> (Infixed KW_2EQ bia=BindingL_Infixed_AnyStatement)
 		public Group getGroup_2() { return cGroup_2; }
 
+		//Infixed KW_2EQ bia=BindingL_Infixed_AnyStatement
+		public Group getGroup_2_0() { return cGroup_2_0; }
+
 		//Infixed
-		public RuleCall getInfixedParserRuleCall_2_0() { return cInfixedParserRuleCall_2_0; }
+		public RuleCall getInfixedParserRuleCall_2_0_0() { return cInfixedParserRuleCall_2_0_0; }
 
 		//KW_2EQ
-		public RuleCall getKW_2EQTerminalRuleCall_2_1() { return cKW_2EQTerminalRuleCall_2_1; }
+		public RuleCall getKW_2EQTerminalRuleCall_2_0_1() { return cKW_2EQTerminalRuleCall_2_0_1; }
 
 		//bia=BindingL_Infixed_AnyStatement
-		public Assignment getBiaAssignment_2_2() { return cBiaAssignment_2_2; }
+		public Assignment getBiaAssignment_2_0_2() { return cBiaAssignment_2_0_2; }
 
 		//BindingL_Infixed_AnyStatement
-		public RuleCall getBiaBindingL_Infixed_AnyStatementParserRuleCall_2_2_0() { return cBiaBindingL_Infixed_AnyStatementParserRuleCall_2_2_0; }
+		public RuleCall getBiaBindingL_Infixed_AnyStatementParserRuleCall_2_0_2_0() { return cBiaBindingL_Infixed_AnyStatementParserRuleCall_2_0_2_0; }
 
-		//Infixed KW_MARROW bia=BindingL_Infixed_AnyStatement
+		//=> (Infixed KW_MARROW bia=BindingL_Infixed_AnyStatement)
 		public Group getGroup_3() { return cGroup_3; }
 
+		//Infixed KW_MARROW bia=BindingL_Infixed_AnyStatement
+		public Group getGroup_3_0() { return cGroup_3_0; }
+
 		//Infixed
-		public RuleCall getInfixedParserRuleCall_3_0() { return cInfixedParserRuleCall_3_0; }
+		public RuleCall getInfixedParserRuleCall_3_0_0() { return cInfixedParserRuleCall_3_0_0; }
 
 		//KW_MARROW
-		public RuleCall getKW_MARROWTerminalRuleCall_3_1() { return cKW_MARROWTerminalRuleCall_3_1; }
+		public RuleCall getKW_MARROWTerminalRuleCall_3_0_1() { return cKW_MARROWTerminalRuleCall_3_0_1; }
 
 		//bia=BindingL_Infixed_AnyStatement
-		public Assignment getBiaAssignment_3_2() { return cBiaAssignment_3_2; }
+		public Assignment getBiaAssignment_3_0_2() { return cBiaAssignment_3_0_2; }
 
 		//BindingL_Infixed_AnyStatement
-		public RuleCall getBiaBindingL_Infixed_AnyStatementParserRuleCall_3_2_0() { return cBiaBindingL_Infixed_AnyStatementParserRuleCall_3_2_0; }
+		public RuleCall getBiaBindingL_Infixed_AnyStatementParserRuleCall_3_0_2_0() { return cBiaBindingL_Infixed_AnyStatementParserRuleCall_3_0_2_0; }
 
-		//Infixed KW_MAPSTO bia=BindingL_Infixed_AnyStatement
+		//=> (Infixed KW_MAPSTO bia=BindingL_Infixed_AnyStatement)
 		public Group getGroup_4() { return cGroup_4; }
 
+		//Infixed KW_MAPSTO bia=BindingL_Infixed_AnyStatement
+		public Group getGroup_4_0() { return cGroup_4_0; }
+
 		//Infixed
-		public RuleCall getInfixedParserRuleCall_4_0() { return cInfixedParserRuleCall_4_0; }
+		public RuleCall getInfixedParserRuleCall_4_0_0() { return cInfixedParserRuleCall_4_0_0; }
 
 		//KW_MAPSTO
-		public RuleCall getKW_MAPSTOTerminalRuleCall_4_1() { return cKW_MAPSTOTerminalRuleCall_4_1; }
+		public RuleCall getKW_MAPSTOTerminalRuleCall_4_0_1() { return cKW_MAPSTOTerminalRuleCall_4_0_1; }
 
 		//bia=BindingL_Infixed_AnyStatement
-		public Assignment getBiaAssignment_4_2() { return cBiaAssignment_4_2; }
+		public Assignment getBiaAssignment_4_0_2() { return cBiaAssignment_4_0_2; }
 
 		//BindingL_Infixed_AnyStatement
-		public RuleCall getBiaBindingL_Infixed_AnyStatementParserRuleCall_4_2_0() { return cBiaBindingL_Infixed_AnyStatementParserRuleCall_4_2_0; }
+		public RuleCall getBiaBindingL_Infixed_AnyStatementParserRuleCall_4_0_2_0() { return cBiaBindingL_Infixed_AnyStatementParserRuleCall_4_0_2_0; }
 
-		//Infixed KW_MAPSTOSTAR bia=BindingL_Infixed_AnyStatement
+		//=> (Infixed KW_MAPSTOSTAR bia=BindingL_Infixed_AnyStatement)
 		public Group getGroup_5() { return cGroup_5; }
 
+		//Infixed KW_MAPSTOSTAR bia=BindingL_Infixed_AnyStatement
+		public Group getGroup_5_0() { return cGroup_5_0; }
+
 		//Infixed
-		public RuleCall getInfixedParserRuleCall_5_0() { return cInfixedParserRuleCall_5_0; }
+		public RuleCall getInfixedParserRuleCall_5_0_0() { return cInfixedParserRuleCall_5_0_0; }
 
 		//KW_MAPSTOSTAR
-		public RuleCall getKW_MAPSTOSTARTerminalRuleCall_5_1() { return cKW_MAPSTOSTARTerminalRuleCall_5_1; }
+		public RuleCall getKW_MAPSTOSTARTerminalRuleCall_5_0_1() { return cKW_MAPSTOSTARTerminalRuleCall_5_0_1; }
 
 		//bia=BindingL_Infixed_AnyStatement
-		public Assignment getBiaAssignment_5_2() { return cBiaAssignment_5_2; }
+		public Assignment getBiaAssignment_5_0_2() { return cBiaAssignment_5_0_2; }
 
 		//BindingL_Infixed_AnyStatement
-		public RuleCall getBiaBindingL_Infixed_AnyStatementParserRuleCall_5_2_0() { return cBiaBindingL_Infixed_AnyStatementParserRuleCall_5_2_0; }
+		public RuleCall getBiaBindingL_Infixed_AnyStatementParserRuleCall_5_0_2_0() { return cBiaBindingL_Infixed_AnyStatementParserRuleCall_5_0_2_0; }
 	}
 
 	public class BindingL_Infixed_BalStatementElements extends AbstractParserRuleElementFinder {
@@ -913,119 +937,139 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
 		private final RuleCall cBalStatementParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
 		private final Group cGroup_1 = (Group)cAlternatives.eContents().get(1);
-		private final RuleCall cInfixedParserRuleCall_1_0 = (RuleCall)cGroup_1.eContents().get(0);
-		private final Keyword cAssignKeyword_1_1 = (Keyword)cGroup_1.eContents().get(1);
-		private final Assignment cBibAssignment_1_2 = (Assignment)cGroup_1.eContents().get(2);
-		private final RuleCall cBibBindingL_Infixed_BalStatementParserRuleCall_1_2_0 = (RuleCall)cBibAssignment_1_2.eContents().get(0);
+		private final Group cGroup_1_0 = (Group)cGroup_1.eContents().get(0);
+		private final RuleCall cInfixedParserRuleCall_1_0_0 = (RuleCall)cGroup_1_0.eContents().get(0);
+		private final Keyword cAssignKeyword_1_0_1 = (Keyword)cGroup_1_0.eContents().get(1);
+		private final Assignment cBibAssignment_1_0_2 = (Assignment)cGroup_1_0.eContents().get(2);
+		private final RuleCall cBibBindingL_Infixed_BalStatementParserRuleCall_1_0_2_0 = (RuleCall)cBibAssignment_1_0_2.eContents().get(0);
 		private final Group cGroup_2 = (Group)cAlternatives.eContents().get(2);
-		private final RuleCall cInfixedParserRuleCall_2_0 = (RuleCall)cGroup_2.eContents().get(0);
-		private final RuleCall cKW_2EQTerminalRuleCall_2_1 = (RuleCall)cGroup_2.eContents().get(1);
-		private final Assignment cBibAssignment_2_2 = (Assignment)cGroup_2.eContents().get(2);
-		private final RuleCall cBibBindingL_Infixed_BalStatementParserRuleCall_2_2_0 = (RuleCall)cBibAssignment_2_2.eContents().get(0);
+		private final Group cGroup_2_0 = (Group)cGroup_2.eContents().get(0);
+		private final RuleCall cInfixedParserRuleCall_2_0_0 = (RuleCall)cGroup_2_0.eContents().get(0);
+		private final RuleCall cKW_2EQTerminalRuleCall_2_0_1 = (RuleCall)cGroup_2_0.eContents().get(1);
+		private final Assignment cBibAssignment_2_0_2 = (Assignment)cGroup_2_0.eContents().get(2);
+		private final RuleCall cBibBindingL_Infixed_BalStatementParserRuleCall_2_0_2_0 = (RuleCall)cBibAssignment_2_0_2.eContents().get(0);
 		private final Group cGroup_3 = (Group)cAlternatives.eContents().get(3);
-		private final RuleCall cInfixedParserRuleCall_3_0 = (RuleCall)cGroup_3.eContents().get(0);
-		private final RuleCall cKW_MARROWTerminalRuleCall_3_1 = (RuleCall)cGroup_3.eContents().get(1);
-		private final Assignment cBibAssignment_3_2 = (Assignment)cGroup_3.eContents().get(2);
-		private final RuleCall cBibBindingL_Infixed_BalStatementParserRuleCall_3_2_0 = (RuleCall)cBibAssignment_3_2.eContents().get(0);
+		private final Group cGroup_3_0 = (Group)cGroup_3.eContents().get(0);
+		private final RuleCall cInfixedParserRuleCall_3_0_0 = (RuleCall)cGroup_3_0.eContents().get(0);
+		private final RuleCall cKW_MARROWTerminalRuleCall_3_0_1 = (RuleCall)cGroup_3_0.eContents().get(1);
+		private final Assignment cBibAssignment_3_0_2 = (Assignment)cGroup_3_0.eContents().get(2);
+		private final RuleCall cBibBindingL_Infixed_BalStatementParserRuleCall_3_0_2_0 = (RuleCall)cBibAssignment_3_0_2.eContents().get(0);
 		private final Group cGroup_4 = (Group)cAlternatives.eContents().get(4);
-		private final RuleCall cInfixedParserRuleCall_4_0 = (RuleCall)cGroup_4.eContents().get(0);
-		private final RuleCall cKW_MAPSTOTerminalRuleCall_4_1 = (RuleCall)cGroup_4.eContents().get(1);
-		private final Assignment cBibAssignment_4_2 = (Assignment)cGroup_4.eContents().get(2);
-		private final RuleCall cBibBindingL_Infixed_BalStatementParserRuleCall_4_2_0 = (RuleCall)cBibAssignment_4_2.eContents().get(0);
+		private final Group cGroup_4_0 = (Group)cGroup_4.eContents().get(0);
+		private final RuleCall cInfixedParserRuleCall_4_0_0 = (RuleCall)cGroup_4_0.eContents().get(0);
+		private final RuleCall cKW_MAPSTOTerminalRuleCall_4_0_1 = (RuleCall)cGroup_4_0.eContents().get(1);
+		private final Assignment cBibAssignment_4_0_2 = (Assignment)cGroup_4_0.eContents().get(2);
+		private final RuleCall cBibBindingL_Infixed_BalStatementParserRuleCall_4_0_2_0 = (RuleCall)cBibAssignment_4_0_2.eContents().get(0);
 		private final Group cGroup_5 = (Group)cAlternatives.eContents().get(5);
-		private final RuleCall cInfixedParserRuleCall_5_0 = (RuleCall)cGroup_5.eContents().get(0);
-		private final RuleCall cKW_MAPSTOSTARTerminalRuleCall_5_1 = (RuleCall)cGroup_5.eContents().get(1);
-		private final Assignment cBibAssignment_5_2 = (Assignment)cGroup_5.eContents().get(2);
-		private final RuleCall cBibBindingL_Infixed_BalStatementParserRuleCall_5_2_0 = (RuleCall)cBibAssignment_5_2.eContents().get(0);
+		private final Group cGroup_5_0 = (Group)cGroup_5.eContents().get(0);
+		private final RuleCall cInfixedParserRuleCall_5_0_0 = (RuleCall)cGroup_5_0.eContents().get(0);
+		private final RuleCall cKW_MAPSTOSTARTerminalRuleCall_5_0_1 = (RuleCall)cGroup_5_0.eContents().get(1);
+		private final Assignment cBibAssignment_5_0_2 = (Assignment)cGroup_5_0.eContents().get(2);
+		private final RuleCall cBibBindingL_Infixed_BalStatementParserRuleCall_5_0_2_0 = (RuleCall)cBibAssignment_5_0_2.eContents().get(0);
 		
 		//BindingL_Infixed_BalStatement hidden(WS, KW_NEWLINE):
-		//	BalStatement | Infixed "assign" bib=BindingL_Infixed_BalStatement | Infixed KW_2EQ bib=BindingL_Infixed_BalStatement |
-		//	Infixed KW_MARROW bib=BindingL_Infixed_BalStatement | Infixed KW_MAPSTO bib=BindingL_Infixed_BalStatement | Infixed
-		//	KW_MAPSTOSTAR bib=BindingL_Infixed_BalStatement;
+		//	BalStatement | => (Infixed "assign" bib=BindingL_Infixed_BalStatement) | => (Infixed KW_2EQ
+		//	bib=BindingL_Infixed_BalStatement) | => (Infixed KW_MARROW bib=BindingL_Infixed_BalStatement) | => (Infixed KW_MAPSTO
+		//	bib=BindingL_Infixed_BalStatement) | => (Infixed KW_MAPSTOSTAR bib=BindingL_Infixed_BalStatement);
 		public ParserRule getRule() { return rule; }
 
-		//BalStatement | Infixed "assign" bib=BindingL_Infixed_BalStatement | Infixed KW_2EQ bib=BindingL_Infixed_BalStatement |
-		//Infixed KW_MARROW bib=BindingL_Infixed_BalStatement | Infixed KW_MAPSTO bib=BindingL_Infixed_BalStatement | Infixed
-		//KW_MAPSTOSTAR bib=BindingL_Infixed_BalStatement
+		//BalStatement | => (Infixed "assign" bib=BindingL_Infixed_BalStatement) | => (Infixed KW_2EQ
+		//bib=BindingL_Infixed_BalStatement) | => (Infixed KW_MARROW bib=BindingL_Infixed_BalStatement) | => (Infixed KW_MAPSTO
+		//bib=BindingL_Infixed_BalStatement) | => (Infixed KW_MAPSTOSTAR bib=BindingL_Infixed_BalStatement)
 		public Alternatives getAlternatives() { return cAlternatives; }
 
 		//BalStatement
 		public RuleCall getBalStatementParserRuleCall_0() { return cBalStatementParserRuleCall_0; }
 
-		//Infixed "assign" bib=BindingL_Infixed_BalStatement
+		//=> (Infixed "assign" bib=BindingL_Infixed_BalStatement)
 		public Group getGroup_1() { return cGroup_1; }
 
+		//Infixed "assign" bib=BindingL_Infixed_BalStatement
+		public Group getGroup_1_0() { return cGroup_1_0; }
+
 		//Infixed
-		public RuleCall getInfixedParserRuleCall_1_0() { return cInfixedParserRuleCall_1_0; }
+		public RuleCall getInfixedParserRuleCall_1_0_0() { return cInfixedParserRuleCall_1_0_0; }
 
 		//"assign"
-		public Keyword getAssignKeyword_1_1() { return cAssignKeyword_1_1; }
+		public Keyword getAssignKeyword_1_0_1() { return cAssignKeyword_1_0_1; }
 
 		//bib=BindingL_Infixed_BalStatement
-		public Assignment getBibAssignment_1_2() { return cBibAssignment_1_2; }
+		public Assignment getBibAssignment_1_0_2() { return cBibAssignment_1_0_2; }
 
 		//BindingL_Infixed_BalStatement
-		public RuleCall getBibBindingL_Infixed_BalStatementParserRuleCall_1_2_0() { return cBibBindingL_Infixed_BalStatementParserRuleCall_1_2_0; }
+		public RuleCall getBibBindingL_Infixed_BalStatementParserRuleCall_1_0_2_0() { return cBibBindingL_Infixed_BalStatementParserRuleCall_1_0_2_0; }
 
-		//Infixed KW_2EQ bib=BindingL_Infixed_BalStatement
+		//=> (Infixed KW_2EQ bib=BindingL_Infixed_BalStatement)
 		public Group getGroup_2() { return cGroup_2; }
 
+		//Infixed KW_2EQ bib=BindingL_Infixed_BalStatement
+		public Group getGroup_2_0() { return cGroup_2_0; }
+
 		//Infixed
-		public RuleCall getInfixedParserRuleCall_2_0() { return cInfixedParserRuleCall_2_0; }
+		public RuleCall getInfixedParserRuleCall_2_0_0() { return cInfixedParserRuleCall_2_0_0; }
 
 		//KW_2EQ
-		public RuleCall getKW_2EQTerminalRuleCall_2_1() { return cKW_2EQTerminalRuleCall_2_1; }
+		public RuleCall getKW_2EQTerminalRuleCall_2_0_1() { return cKW_2EQTerminalRuleCall_2_0_1; }
 
 		//bib=BindingL_Infixed_BalStatement
-		public Assignment getBibAssignment_2_2() { return cBibAssignment_2_2; }
+		public Assignment getBibAssignment_2_0_2() { return cBibAssignment_2_0_2; }
 
 		//BindingL_Infixed_BalStatement
-		public RuleCall getBibBindingL_Infixed_BalStatementParserRuleCall_2_2_0() { return cBibBindingL_Infixed_BalStatementParserRuleCall_2_2_0; }
+		public RuleCall getBibBindingL_Infixed_BalStatementParserRuleCall_2_0_2_0() { return cBibBindingL_Infixed_BalStatementParserRuleCall_2_0_2_0; }
 
-		//Infixed KW_MARROW bib=BindingL_Infixed_BalStatement
+		//=> (Infixed KW_MARROW bib=BindingL_Infixed_BalStatement)
 		public Group getGroup_3() { return cGroup_3; }
 
+		//Infixed KW_MARROW bib=BindingL_Infixed_BalStatement
+		public Group getGroup_3_0() { return cGroup_3_0; }
+
 		//Infixed
-		public RuleCall getInfixedParserRuleCall_3_0() { return cInfixedParserRuleCall_3_0; }
+		public RuleCall getInfixedParserRuleCall_3_0_0() { return cInfixedParserRuleCall_3_0_0; }
 
 		//KW_MARROW
-		public RuleCall getKW_MARROWTerminalRuleCall_3_1() { return cKW_MARROWTerminalRuleCall_3_1; }
+		public RuleCall getKW_MARROWTerminalRuleCall_3_0_1() { return cKW_MARROWTerminalRuleCall_3_0_1; }
 
 		//bib=BindingL_Infixed_BalStatement
-		public Assignment getBibAssignment_3_2() { return cBibAssignment_3_2; }
+		public Assignment getBibAssignment_3_0_2() { return cBibAssignment_3_0_2; }
 
 		//BindingL_Infixed_BalStatement
-		public RuleCall getBibBindingL_Infixed_BalStatementParserRuleCall_3_2_0() { return cBibBindingL_Infixed_BalStatementParserRuleCall_3_2_0; }
+		public RuleCall getBibBindingL_Infixed_BalStatementParserRuleCall_3_0_2_0() { return cBibBindingL_Infixed_BalStatementParserRuleCall_3_0_2_0; }
 
-		//Infixed KW_MAPSTO bib=BindingL_Infixed_BalStatement
+		//=> (Infixed KW_MAPSTO bib=BindingL_Infixed_BalStatement)
 		public Group getGroup_4() { return cGroup_4; }
 
+		//Infixed KW_MAPSTO bib=BindingL_Infixed_BalStatement
+		public Group getGroup_4_0() { return cGroup_4_0; }
+
 		//Infixed
-		public RuleCall getInfixedParserRuleCall_4_0() { return cInfixedParserRuleCall_4_0; }
+		public RuleCall getInfixedParserRuleCall_4_0_0() { return cInfixedParserRuleCall_4_0_0; }
 
 		//KW_MAPSTO
-		public RuleCall getKW_MAPSTOTerminalRuleCall_4_1() { return cKW_MAPSTOTerminalRuleCall_4_1; }
+		public RuleCall getKW_MAPSTOTerminalRuleCall_4_0_1() { return cKW_MAPSTOTerminalRuleCall_4_0_1; }
 
 		//bib=BindingL_Infixed_BalStatement
-		public Assignment getBibAssignment_4_2() { return cBibAssignment_4_2; }
+		public Assignment getBibAssignment_4_0_2() { return cBibAssignment_4_0_2; }
 
 		//BindingL_Infixed_BalStatement
-		public RuleCall getBibBindingL_Infixed_BalStatementParserRuleCall_4_2_0() { return cBibBindingL_Infixed_BalStatementParserRuleCall_4_2_0; }
+		public RuleCall getBibBindingL_Infixed_BalStatementParserRuleCall_4_0_2_0() { return cBibBindingL_Infixed_BalStatementParserRuleCall_4_0_2_0; }
 
-		//Infixed KW_MAPSTOSTAR bib=BindingL_Infixed_BalStatement
+		//=> (Infixed KW_MAPSTOSTAR bib=BindingL_Infixed_BalStatement)
 		public Group getGroup_5() { return cGroup_5; }
 
+		//Infixed KW_MAPSTOSTAR bib=BindingL_Infixed_BalStatement
+		public Group getGroup_5_0() { return cGroup_5_0; }
+
 		//Infixed
-		public RuleCall getInfixedParserRuleCall_5_0() { return cInfixedParserRuleCall_5_0; }
+		public RuleCall getInfixedParserRuleCall_5_0_0() { return cInfixedParserRuleCall_5_0_0; }
 
 		//KW_MAPSTOSTAR
-		public RuleCall getKW_MAPSTOSTARTerminalRuleCall_5_1() { return cKW_MAPSTOSTARTerminalRuleCall_5_1; }
+		public RuleCall getKW_MAPSTOSTARTerminalRuleCall_5_0_1() { return cKW_MAPSTOSTARTerminalRuleCall_5_0_1; }
 
 		//bib=BindingL_Infixed_BalStatement
-		public Assignment getBibAssignment_5_2() { return cBibAssignment_5_2; }
+		public Assignment getBibAssignment_5_0_2() { return cBibAssignment_5_0_2; }
 
 		//BindingL_Infixed_BalStatement
-		public RuleCall getBibBindingL_Infixed_BalStatementParserRuleCall_5_2_0() { return cBibBindingL_Infixed_BalStatementParserRuleCall_5_2_0; }
+		public RuleCall getBibBindingL_Infixed_BalStatementParserRuleCall_5_0_2_0() { return cBibBindingL_Infixed_BalStatementParserRuleCall_5_0_2_0; }
 	}
 
 	public class BindingL_Infixed_CollectionElements extends AbstractParserRuleElementFinder {
@@ -1033,119 +1077,139 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
 		private final RuleCall cCollectionParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
 		private final Group cGroup_1 = (Group)cAlternatives.eContents().get(1);
-		private final RuleCall cInfixedParserRuleCall_1_0 = (RuleCall)cGroup_1.eContents().get(0);
-		private final Keyword cAssignKeyword_1_1 = (Keyword)cGroup_1.eContents().get(1);
-		private final Assignment cBicAssignment_1_2 = (Assignment)cGroup_1.eContents().get(2);
-		private final RuleCall cBicBindingL_Infixed_CollectionParserRuleCall_1_2_0 = (RuleCall)cBicAssignment_1_2.eContents().get(0);
+		private final Group cGroup_1_0 = (Group)cGroup_1.eContents().get(0);
+		private final RuleCall cInfixedParserRuleCall_1_0_0 = (RuleCall)cGroup_1_0.eContents().get(0);
+		private final Keyword cAssignKeyword_1_0_1 = (Keyword)cGroup_1_0.eContents().get(1);
+		private final Assignment cBicAssignment_1_0_2 = (Assignment)cGroup_1_0.eContents().get(2);
+		private final RuleCall cBicBindingL_Infixed_CollectionParserRuleCall_1_0_2_0 = (RuleCall)cBicAssignment_1_0_2.eContents().get(0);
 		private final Group cGroup_2 = (Group)cAlternatives.eContents().get(2);
-		private final RuleCall cInfixedParserRuleCall_2_0 = (RuleCall)cGroup_2.eContents().get(0);
-		private final RuleCall cKW_2EQTerminalRuleCall_2_1 = (RuleCall)cGroup_2.eContents().get(1);
-		private final Assignment cBicAssignment_2_2 = (Assignment)cGroup_2.eContents().get(2);
-		private final RuleCall cBicBindingL_Infixed_CollectionParserRuleCall_2_2_0 = (RuleCall)cBicAssignment_2_2.eContents().get(0);
+		private final Group cGroup_2_0 = (Group)cGroup_2.eContents().get(0);
+		private final RuleCall cInfixedParserRuleCall_2_0_0 = (RuleCall)cGroup_2_0.eContents().get(0);
+		private final RuleCall cKW_2EQTerminalRuleCall_2_0_1 = (RuleCall)cGroup_2_0.eContents().get(1);
+		private final Assignment cBicAssignment_2_0_2 = (Assignment)cGroup_2_0.eContents().get(2);
+		private final RuleCall cBicBindingL_Infixed_CollectionParserRuleCall_2_0_2_0 = (RuleCall)cBicAssignment_2_0_2.eContents().get(0);
 		private final Group cGroup_3 = (Group)cAlternatives.eContents().get(3);
-		private final RuleCall cInfixedParserRuleCall_3_0 = (RuleCall)cGroup_3.eContents().get(0);
-		private final RuleCall cKW_MARROWTerminalRuleCall_3_1 = (RuleCall)cGroup_3.eContents().get(1);
-		private final Assignment cBicAssignment_3_2 = (Assignment)cGroup_3.eContents().get(2);
-		private final RuleCall cBicBindingL_Infixed_CollectionParserRuleCall_3_2_0 = (RuleCall)cBicAssignment_3_2.eContents().get(0);
+		private final Group cGroup_3_0 = (Group)cGroup_3.eContents().get(0);
+		private final RuleCall cInfixedParserRuleCall_3_0_0 = (RuleCall)cGroup_3_0.eContents().get(0);
+		private final RuleCall cKW_MARROWTerminalRuleCall_3_0_1 = (RuleCall)cGroup_3_0.eContents().get(1);
+		private final Assignment cBicAssignment_3_0_2 = (Assignment)cGroup_3_0.eContents().get(2);
+		private final RuleCall cBicBindingL_Infixed_CollectionParserRuleCall_3_0_2_0 = (RuleCall)cBicAssignment_3_0_2.eContents().get(0);
 		private final Group cGroup_4 = (Group)cAlternatives.eContents().get(4);
-		private final RuleCall cInfixedParserRuleCall_4_0 = (RuleCall)cGroup_4.eContents().get(0);
-		private final RuleCall cKW_MAPSTOTerminalRuleCall_4_1 = (RuleCall)cGroup_4.eContents().get(1);
-		private final Assignment cBicAssignment_4_2 = (Assignment)cGroup_4.eContents().get(2);
-		private final RuleCall cBicBindingL_Infixed_CollectionParserRuleCall_4_2_0 = (RuleCall)cBicAssignment_4_2.eContents().get(0);
+		private final Group cGroup_4_0 = (Group)cGroup_4.eContents().get(0);
+		private final RuleCall cInfixedParserRuleCall_4_0_0 = (RuleCall)cGroup_4_0.eContents().get(0);
+		private final RuleCall cKW_MAPSTOTerminalRuleCall_4_0_1 = (RuleCall)cGroup_4_0.eContents().get(1);
+		private final Assignment cBicAssignment_4_0_2 = (Assignment)cGroup_4_0.eContents().get(2);
+		private final RuleCall cBicBindingL_Infixed_CollectionParserRuleCall_4_0_2_0 = (RuleCall)cBicAssignment_4_0_2.eContents().get(0);
 		private final Group cGroup_5 = (Group)cAlternatives.eContents().get(5);
-		private final RuleCall cInfixedParserRuleCall_5_0 = (RuleCall)cGroup_5.eContents().get(0);
-		private final RuleCall cKW_MAPSTOSTARTerminalRuleCall_5_1 = (RuleCall)cGroup_5.eContents().get(1);
-		private final Assignment cBicAssignment_5_2 = (Assignment)cGroup_5.eContents().get(2);
-		private final RuleCall cBicBindingL_Infixed_CollectionParserRuleCall_5_2_0 = (RuleCall)cBicAssignment_5_2.eContents().get(0);
+		private final Group cGroup_5_0 = (Group)cGroup_5.eContents().get(0);
+		private final RuleCall cInfixedParserRuleCall_5_0_0 = (RuleCall)cGroup_5_0.eContents().get(0);
+		private final RuleCall cKW_MAPSTOSTARTerminalRuleCall_5_0_1 = (RuleCall)cGroup_5_0.eContents().get(1);
+		private final Assignment cBicAssignment_5_0_2 = (Assignment)cGroup_5_0.eContents().get(2);
+		private final RuleCall cBicBindingL_Infixed_CollectionParserRuleCall_5_0_2_0 = (RuleCall)cBicAssignment_5_0_2.eContents().get(0);
 		
 		//BindingL_Infixed_Collection hidden(WS, KW_NEWLINE):
-		//	Collection | Infixed "assign" bic=BindingL_Infixed_Collection | Infixed KW_2EQ bic=BindingL_Infixed_Collection |
-		//	Infixed KW_MARROW bic=BindingL_Infixed_Collection | Infixed KW_MAPSTO bic=BindingL_Infixed_Collection | Infixed
-		//	KW_MAPSTOSTAR bic=BindingL_Infixed_Collection;
+		//	Collection | => (Infixed "assign" bic=BindingL_Infixed_Collection) | => (Infixed KW_2EQ
+		//	bic=BindingL_Infixed_Collection) | => (Infixed KW_MARROW bic=BindingL_Infixed_Collection) | => (Infixed KW_MAPSTO
+		//	bic=BindingL_Infixed_Collection) | => (Infixed KW_MAPSTOSTAR bic=BindingL_Infixed_Collection);
 		public ParserRule getRule() { return rule; }
 
-		//Collection | Infixed "assign" bic=BindingL_Infixed_Collection | Infixed KW_2EQ bic=BindingL_Infixed_Collection | Infixed
-		//KW_MARROW bic=BindingL_Infixed_Collection | Infixed KW_MAPSTO bic=BindingL_Infixed_Collection | Infixed KW_MAPSTOSTAR
-		//bic=BindingL_Infixed_Collection
+		//Collection | => (Infixed "assign" bic=BindingL_Infixed_Collection) | => (Infixed KW_2EQ bic=BindingL_Infixed_Collection)
+		//| => (Infixed KW_MARROW bic=BindingL_Infixed_Collection) | => (Infixed KW_MAPSTO bic=BindingL_Infixed_Collection) | =>
+		//(Infixed KW_MAPSTOSTAR bic=BindingL_Infixed_Collection)
 		public Alternatives getAlternatives() { return cAlternatives; }
 
 		//Collection
 		public RuleCall getCollectionParserRuleCall_0() { return cCollectionParserRuleCall_0; }
 
-		//Infixed "assign" bic=BindingL_Infixed_Collection
+		//=> (Infixed "assign" bic=BindingL_Infixed_Collection)
 		public Group getGroup_1() { return cGroup_1; }
 
+		//Infixed "assign" bic=BindingL_Infixed_Collection
+		public Group getGroup_1_0() { return cGroup_1_0; }
+
 		//Infixed
-		public RuleCall getInfixedParserRuleCall_1_0() { return cInfixedParserRuleCall_1_0; }
+		public RuleCall getInfixedParserRuleCall_1_0_0() { return cInfixedParserRuleCall_1_0_0; }
 
 		//"assign"
-		public Keyword getAssignKeyword_1_1() { return cAssignKeyword_1_1; }
+		public Keyword getAssignKeyword_1_0_1() { return cAssignKeyword_1_0_1; }
 
 		//bic=BindingL_Infixed_Collection
-		public Assignment getBicAssignment_1_2() { return cBicAssignment_1_2; }
+		public Assignment getBicAssignment_1_0_2() { return cBicAssignment_1_0_2; }
 
 		//BindingL_Infixed_Collection
-		public RuleCall getBicBindingL_Infixed_CollectionParserRuleCall_1_2_0() { return cBicBindingL_Infixed_CollectionParserRuleCall_1_2_0; }
+		public RuleCall getBicBindingL_Infixed_CollectionParserRuleCall_1_0_2_0() { return cBicBindingL_Infixed_CollectionParserRuleCall_1_0_2_0; }
 
-		//Infixed KW_2EQ bic=BindingL_Infixed_Collection
+		//=> (Infixed KW_2EQ bic=BindingL_Infixed_Collection)
 		public Group getGroup_2() { return cGroup_2; }
 
+		//Infixed KW_2EQ bic=BindingL_Infixed_Collection
+		public Group getGroup_2_0() { return cGroup_2_0; }
+
 		//Infixed
-		public RuleCall getInfixedParserRuleCall_2_0() { return cInfixedParserRuleCall_2_0; }
+		public RuleCall getInfixedParserRuleCall_2_0_0() { return cInfixedParserRuleCall_2_0_0; }
 
 		//KW_2EQ
-		public RuleCall getKW_2EQTerminalRuleCall_2_1() { return cKW_2EQTerminalRuleCall_2_1; }
+		public RuleCall getKW_2EQTerminalRuleCall_2_0_1() { return cKW_2EQTerminalRuleCall_2_0_1; }
 
 		//bic=BindingL_Infixed_Collection
-		public Assignment getBicAssignment_2_2() { return cBicAssignment_2_2; }
+		public Assignment getBicAssignment_2_0_2() { return cBicAssignment_2_0_2; }
 
 		//BindingL_Infixed_Collection
-		public RuleCall getBicBindingL_Infixed_CollectionParserRuleCall_2_2_0() { return cBicBindingL_Infixed_CollectionParserRuleCall_2_2_0; }
+		public RuleCall getBicBindingL_Infixed_CollectionParserRuleCall_2_0_2_0() { return cBicBindingL_Infixed_CollectionParserRuleCall_2_0_2_0; }
 
-		//Infixed KW_MARROW bic=BindingL_Infixed_Collection
+		//=> (Infixed KW_MARROW bic=BindingL_Infixed_Collection)
 		public Group getGroup_3() { return cGroup_3; }
 
+		//Infixed KW_MARROW bic=BindingL_Infixed_Collection
+		public Group getGroup_3_0() { return cGroup_3_0; }
+
 		//Infixed
-		public RuleCall getInfixedParserRuleCall_3_0() { return cInfixedParserRuleCall_3_0; }
+		public RuleCall getInfixedParserRuleCall_3_0_0() { return cInfixedParserRuleCall_3_0_0; }
 
 		//KW_MARROW
-		public RuleCall getKW_MARROWTerminalRuleCall_3_1() { return cKW_MARROWTerminalRuleCall_3_1; }
+		public RuleCall getKW_MARROWTerminalRuleCall_3_0_1() { return cKW_MARROWTerminalRuleCall_3_0_1; }
 
 		//bic=BindingL_Infixed_Collection
-		public Assignment getBicAssignment_3_2() { return cBicAssignment_3_2; }
+		public Assignment getBicAssignment_3_0_2() { return cBicAssignment_3_0_2; }
 
 		//BindingL_Infixed_Collection
-		public RuleCall getBicBindingL_Infixed_CollectionParserRuleCall_3_2_0() { return cBicBindingL_Infixed_CollectionParserRuleCall_3_2_0; }
+		public RuleCall getBicBindingL_Infixed_CollectionParserRuleCall_3_0_2_0() { return cBicBindingL_Infixed_CollectionParserRuleCall_3_0_2_0; }
 
-		//Infixed KW_MAPSTO bic=BindingL_Infixed_Collection
+		//=> (Infixed KW_MAPSTO bic=BindingL_Infixed_Collection)
 		public Group getGroup_4() { return cGroup_4; }
 
+		//Infixed KW_MAPSTO bic=BindingL_Infixed_Collection
+		public Group getGroup_4_0() { return cGroup_4_0; }
+
 		//Infixed
-		public RuleCall getInfixedParserRuleCall_4_0() { return cInfixedParserRuleCall_4_0; }
+		public RuleCall getInfixedParserRuleCall_4_0_0() { return cInfixedParserRuleCall_4_0_0; }
 
 		//KW_MAPSTO
-		public RuleCall getKW_MAPSTOTerminalRuleCall_4_1() { return cKW_MAPSTOTerminalRuleCall_4_1; }
+		public RuleCall getKW_MAPSTOTerminalRuleCall_4_0_1() { return cKW_MAPSTOTerminalRuleCall_4_0_1; }
 
 		//bic=BindingL_Infixed_Collection
-		public Assignment getBicAssignment_4_2() { return cBicAssignment_4_2; }
+		public Assignment getBicAssignment_4_0_2() { return cBicAssignment_4_0_2; }
 
 		//BindingL_Infixed_Collection
-		public RuleCall getBicBindingL_Infixed_CollectionParserRuleCall_4_2_0() { return cBicBindingL_Infixed_CollectionParserRuleCall_4_2_0; }
+		public RuleCall getBicBindingL_Infixed_CollectionParserRuleCall_4_0_2_0() { return cBicBindingL_Infixed_CollectionParserRuleCall_4_0_2_0; }
 
-		//Infixed KW_MAPSTOSTAR bic=BindingL_Infixed_Collection
+		//=> (Infixed KW_MAPSTOSTAR bic=BindingL_Infixed_Collection)
 		public Group getGroup_5() { return cGroup_5; }
 
+		//Infixed KW_MAPSTOSTAR bic=BindingL_Infixed_Collection
+		public Group getGroup_5_0() { return cGroup_5_0; }
+
 		//Infixed
-		public RuleCall getInfixedParserRuleCall_5_0() { return cInfixedParserRuleCall_5_0; }
+		public RuleCall getInfixedParserRuleCall_5_0_0() { return cInfixedParserRuleCall_5_0_0; }
 
 		//KW_MAPSTOSTAR
-		public RuleCall getKW_MAPSTOSTARTerminalRuleCall_5_1() { return cKW_MAPSTOSTARTerminalRuleCall_5_1; }
+		public RuleCall getKW_MAPSTOSTARTerminalRuleCall_5_0_1() { return cKW_MAPSTOSTARTerminalRuleCall_5_0_1; }
 
 		//bic=BindingL_Infixed_Collection
-		public Assignment getBicAssignment_5_2() { return cBicAssignment_5_2; }
+		public Assignment getBicAssignment_5_0_2() { return cBicAssignment_5_0_2; }
 
 		//BindingL_Infixed_Collection
-		public RuleCall getBicBindingL_Infixed_CollectionParserRuleCall_5_2_0() { return cBicBindingL_Infixed_CollectionParserRuleCall_5_2_0; }
+		public RuleCall getBicBindingL_Infixed_CollectionParserRuleCall_5_0_2_0() { return cBicBindingL_Infixed_CollectionParserRuleCall_5_0_2_0; }
 	}
 
 	public class BindingR_InfixedExprsDecl_AnyStatementElements extends AbstractParserRuleElementFinder {
@@ -1153,30 +1217,35 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
 		private final RuleCall cInfixedExprsDeclParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
 		private final Group cGroup_1 = (Group)cAlternatives.eContents().get(1);
-		private final RuleCall cInfixedExprsDeclParserRuleCall_1_0 = (RuleCall)cGroup_1.eContents().get(0);
-		private final Keyword cAssignKeyword_1_1 = (Keyword)cGroup_1.eContents().get(1);
-		private final Assignment cBasAssignment_1_2 = (Assignment)cGroup_1.eContents().get(2);
-		private final RuleCall cBasBinding_AnyStatementParserRuleCall_1_2_0 = (RuleCall)cBasAssignment_1_2.eContents().get(0);
+		private final Group cGroup_1_0 = (Group)cGroup_1.eContents().get(0);
+		private final RuleCall cInfixedExprsDeclParserRuleCall_1_0_0 = (RuleCall)cGroup_1_0.eContents().get(0);
+		private final Keyword cAssignKeyword_1_0_1 = (Keyword)cGroup_1_0.eContents().get(1);
+		private final Assignment cBasAssignment_1_0_2 = (Assignment)cGroup_1_0.eContents().get(2);
+		private final RuleCall cBasBinding_AnyStatementParserRuleCall_1_0_2_0 = (RuleCall)cBasAssignment_1_0_2.eContents().get(0);
 		private final Group cGroup_2 = (Group)cAlternatives.eContents().get(2);
-		private final RuleCall cInfixedExprsDeclParserRuleCall_2_0 = (RuleCall)cGroup_2.eContents().get(0);
-		private final RuleCall cKW_2EQTerminalRuleCall_2_1 = (RuleCall)cGroup_2.eContents().get(1);
-		private final Assignment cBasAssignment_2_2 = (Assignment)cGroup_2.eContents().get(2);
-		private final RuleCall cBasBinding_AnyStatementParserRuleCall_2_2_0 = (RuleCall)cBasAssignment_2_2.eContents().get(0);
+		private final Group cGroup_2_0 = (Group)cGroup_2.eContents().get(0);
+		private final RuleCall cInfixedExprsDeclParserRuleCall_2_0_0 = (RuleCall)cGroup_2_0.eContents().get(0);
+		private final RuleCall cKW_2EQTerminalRuleCall_2_0_1 = (RuleCall)cGroup_2_0.eContents().get(1);
+		private final Assignment cBasAssignment_2_0_2 = (Assignment)cGroup_2_0.eContents().get(2);
+		private final RuleCall cBasBinding_AnyStatementParserRuleCall_2_0_2_0 = (RuleCall)cBasAssignment_2_0_2.eContents().get(0);
 		private final Group cGroup_3 = (Group)cAlternatives.eContents().get(3);
-		private final RuleCall cInfixedExprsDeclParserRuleCall_3_0 = (RuleCall)cGroup_3.eContents().get(0);
-		private final RuleCall cKW_MARROWTerminalRuleCall_3_1 = (RuleCall)cGroup_3.eContents().get(1);
-		private final Assignment cBasAssignment_3_2 = (Assignment)cGroup_3.eContents().get(2);
-		private final RuleCall cBasBinding_AnyStatementParserRuleCall_3_2_0 = (RuleCall)cBasAssignment_3_2.eContents().get(0);
+		private final Group cGroup_3_0 = (Group)cGroup_3.eContents().get(0);
+		private final RuleCall cInfixedExprsDeclParserRuleCall_3_0_0 = (RuleCall)cGroup_3_0.eContents().get(0);
+		private final RuleCall cKW_MARROWTerminalRuleCall_3_0_1 = (RuleCall)cGroup_3_0.eContents().get(1);
+		private final Assignment cBasAssignment_3_0_2 = (Assignment)cGroup_3_0.eContents().get(2);
+		private final RuleCall cBasBinding_AnyStatementParserRuleCall_3_0_2_0 = (RuleCall)cBasAssignment_3_0_2.eContents().get(0);
 		private final Group cGroup_4 = (Group)cAlternatives.eContents().get(4);
-		private final RuleCall cInfixedExprsDeclParserRuleCall_4_0 = (RuleCall)cGroup_4.eContents().get(0);
-		private final RuleCall cKW_MAPSTOTerminalRuleCall_4_1 = (RuleCall)cGroup_4.eContents().get(1);
-		private final Assignment cBasAssignment_4_2 = (Assignment)cGroup_4.eContents().get(2);
-		private final RuleCall cBasBinding_AnyStatementParserRuleCall_4_2_0 = (RuleCall)cBasAssignment_4_2.eContents().get(0);
+		private final Group cGroup_4_0 = (Group)cGroup_4.eContents().get(0);
+		private final RuleCall cInfixedExprsDeclParserRuleCall_4_0_0 = (RuleCall)cGroup_4_0.eContents().get(0);
+		private final RuleCall cKW_MAPSTOTerminalRuleCall_4_0_1 = (RuleCall)cGroup_4_0.eContents().get(1);
+		private final Assignment cBasAssignment_4_0_2 = (Assignment)cGroup_4_0.eContents().get(2);
+		private final RuleCall cBasBinding_AnyStatementParserRuleCall_4_0_2_0 = (RuleCall)cBasAssignment_4_0_2.eContents().get(0);
 		private final Group cGroup_5 = (Group)cAlternatives.eContents().get(5);
-		private final RuleCall cInfixedExprsDeclParserRuleCall_5_0 = (RuleCall)cGroup_5.eContents().get(0);
-		private final RuleCall cKW_MAPSTOSTARTerminalRuleCall_5_1 = (RuleCall)cGroup_5.eContents().get(1);
-		private final Assignment cBasAssignment_5_2 = (Assignment)cGroup_5.eContents().get(2);
-		private final RuleCall cBasBinding_AnyStatementParserRuleCall_5_2_0 = (RuleCall)cBasAssignment_5_2.eContents().get(0);
+		private final Group cGroup_5_0 = (Group)cGroup_5.eContents().get(0);
+		private final RuleCall cInfixedExprsDeclParserRuleCall_5_0_0 = (RuleCall)cGroup_5_0.eContents().get(0);
+		private final RuleCall cKW_MAPSTOSTARTerminalRuleCall_5_0_1 = (RuleCall)cGroup_5_0.eContents().get(1);
+		private final Assignment cBasAssignment_5_0_2 = (Assignment)cGroup_5_0.eContents().get(2);
+		private final RuleCall cBasBinding_AnyStatementParserRuleCall_5_0_2_0 = (RuleCall)cBasAssignment_5_0_2.eContents().get(0);
 		
 		/// * Substituted Rules in Xtext:
 		// * BindingR(InfixedExprsDecl,AnyStatement)
@@ -1194,132 +1263,180 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		// * { $$ = abNewPLambda(APOS($1),$1,abZip,$3); }
 		// * ;
 		// * / BindingR_InfixedExprsDecl_AnyStatement hidden(WS, KW_NEWLINE):
-		//	InfixedExprsDecl | InfixedExprsDecl "assign" bas=Binding_AnyStatement | InfixedExprsDecl KW_2EQ
-		//	bas=Binding_AnyStatement | InfixedExprsDecl KW_MARROW bas=Binding_AnyStatement | InfixedExprsDecl KW_MAPSTO
-		//	bas=Binding_AnyStatement | InfixedExprsDecl KW_MAPSTOSTAR bas=Binding_AnyStatement;
+		//	InfixedExprsDecl | => (InfixedExprsDecl "assign" bas=Binding_AnyStatement) | => (InfixedExprsDecl KW_2EQ
+		//	bas=Binding_AnyStatement) | => (InfixedExprsDecl KW_MARROW bas=Binding_AnyStatement) | => (InfixedExprsDecl KW_MAPSTO
+		//	bas=Binding_AnyStatement) | => (InfixedExprsDecl KW_MAPSTOSTAR bas=Binding_AnyStatement);
 		public ParserRule getRule() { return rule; }
 
-		//InfixedExprsDecl | InfixedExprsDecl "assign" bas=Binding_AnyStatement | InfixedExprsDecl KW_2EQ bas=Binding_AnyStatement
-		//| InfixedExprsDecl KW_MARROW bas=Binding_AnyStatement | InfixedExprsDecl KW_MAPSTO bas=Binding_AnyStatement |
-		//InfixedExprsDecl KW_MAPSTOSTAR bas=Binding_AnyStatement
+		//InfixedExprsDecl | => (InfixedExprsDecl "assign" bas=Binding_AnyStatement) | => (InfixedExprsDecl KW_2EQ
+		//bas=Binding_AnyStatement) | => (InfixedExprsDecl KW_MARROW bas=Binding_AnyStatement) | => (InfixedExprsDecl KW_MAPSTO
+		//bas=Binding_AnyStatement) | => (InfixedExprsDecl KW_MAPSTOSTAR bas=Binding_AnyStatement)
 		public Alternatives getAlternatives() { return cAlternatives; }
 
 		//InfixedExprsDecl
 		public RuleCall getInfixedExprsDeclParserRuleCall_0() { return cInfixedExprsDeclParserRuleCall_0; }
 
-		//=> InfixedExprsDecl "assign" bas=Binding_AnyStatement
+		//=> (InfixedExprsDecl "assign" bas=Binding_AnyStatement)
 		public Group getGroup_1() { return cGroup_1; }
 
-		//=> InfixedExprsDecl
-		public RuleCall getInfixedExprsDeclParserRuleCall_1_0() { return cInfixedExprsDeclParserRuleCall_1_0; }
+		//InfixedExprsDecl "assign" bas=Binding_AnyStatement
+		public Group getGroup_1_0() { return cGroup_1_0; }
+
+		//InfixedExprsDecl
+		public RuleCall getInfixedExprsDeclParserRuleCall_1_0_0() { return cInfixedExprsDeclParserRuleCall_1_0_0; }
 
 		//"assign"
-		public Keyword getAssignKeyword_1_1() { return cAssignKeyword_1_1; }
+		public Keyword getAssignKeyword_1_0_1() { return cAssignKeyword_1_0_1; }
 
 		//bas=Binding_AnyStatement
-		public Assignment getBasAssignment_1_2() { return cBasAssignment_1_2; }
+		public Assignment getBasAssignment_1_0_2() { return cBasAssignment_1_0_2; }
 
 		//Binding_AnyStatement
-		public RuleCall getBasBinding_AnyStatementParserRuleCall_1_2_0() { return cBasBinding_AnyStatementParserRuleCall_1_2_0; }
+		public RuleCall getBasBinding_AnyStatementParserRuleCall_1_0_2_0() { return cBasBinding_AnyStatementParserRuleCall_1_0_2_0; }
 
-		//=> InfixedExprsDecl KW_2EQ bas=Binding_AnyStatement
+		//=> (InfixedExprsDecl KW_2EQ bas=Binding_AnyStatement)
 		public Group getGroup_2() { return cGroup_2; }
 
-		//=> InfixedExprsDecl
-		public RuleCall getInfixedExprsDeclParserRuleCall_2_0() { return cInfixedExprsDeclParserRuleCall_2_0; }
+		//InfixedExprsDecl KW_2EQ bas=Binding_AnyStatement
+		public Group getGroup_2_0() { return cGroup_2_0; }
+
+		//InfixedExprsDecl
+		public RuleCall getInfixedExprsDeclParserRuleCall_2_0_0() { return cInfixedExprsDeclParserRuleCall_2_0_0; }
 
 		//KW_2EQ
-		public RuleCall getKW_2EQTerminalRuleCall_2_1() { return cKW_2EQTerminalRuleCall_2_1; }
+		public RuleCall getKW_2EQTerminalRuleCall_2_0_1() { return cKW_2EQTerminalRuleCall_2_0_1; }
 
 		//bas=Binding_AnyStatement
-		public Assignment getBasAssignment_2_2() { return cBasAssignment_2_2; }
+		public Assignment getBasAssignment_2_0_2() { return cBasAssignment_2_0_2; }
 
 		//Binding_AnyStatement
-		public RuleCall getBasBinding_AnyStatementParserRuleCall_2_2_0() { return cBasBinding_AnyStatementParserRuleCall_2_2_0; }
+		public RuleCall getBasBinding_AnyStatementParserRuleCall_2_0_2_0() { return cBasBinding_AnyStatementParserRuleCall_2_0_2_0; }
 
-		//=> InfixedExprsDecl KW_MARROW bas=Binding_AnyStatement
+		//=> (InfixedExprsDecl KW_MARROW bas=Binding_AnyStatement)
 		public Group getGroup_3() { return cGroup_3; }
 
-		//=> InfixedExprsDecl
-		public RuleCall getInfixedExprsDeclParserRuleCall_3_0() { return cInfixedExprsDeclParserRuleCall_3_0; }
+		//InfixedExprsDecl KW_MARROW bas=Binding_AnyStatement
+		public Group getGroup_3_0() { return cGroup_3_0; }
+
+		//InfixedExprsDecl
+		public RuleCall getInfixedExprsDeclParserRuleCall_3_0_0() { return cInfixedExprsDeclParserRuleCall_3_0_0; }
 
 		//KW_MARROW
-		public RuleCall getKW_MARROWTerminalRuleCall_3_1() { return cKW_MARROWTerminalRuleCall_3_1; }
+		public RuleCall getKW_MARROWTerminalRuleCall_3_0_1() { return cKW_MARROWTerminalRuleCall_3_0_1; }
 
 		//bas=Binding_AnyStatement
-		public Assignment getBasAssignment_3_2() { return cBasAssignment_3_2; }
+		public Assignment getBasAssignment_3_0_2() { return cBasAssignment_3_0_2; }
 
 		//Binding_AnyStatement
-		public RuleCall getBasBinding_AnyStatementParserRuleCall_3_2_0() { return cBasBinding_AnyStatementParserRuleCall_3_2_0; }
+		public RuleCall getBasBinding_AnyStatementParserRuleCall_3_0_2_0() { return cBasBinding_AnyStatementParserRuleCall_3_0_2_0; }
 
-		//=> InfixedExprsDecl KW_MAPSTO bas=Binding_AnyStatement
+		//=> (InfixedExprsDecl KW_MAPSTO bas=Binding_AnyStatement)
 		public Group getGroup_4() { return cGroup_4; }
 
-		//=> InfixedExprsDecl
-		public RuleCall getInfixedExprsDeclParserRuleCall_4_0() { return cInfixedExprsDeclParserRuleCall_4_0; }
+		//InfixedExprsDecl KW_MAPSTO bas=Binding_AnyStatement
+		public Group getGroup_4_0() { return cGroup_4_0; }
+
+		//InfixedExprsDecl
+		public RuleCall getInfixedExprsDeclParserRuleCall_4_0_0() { return cInfixedExprsDeclParserRuleCall_4_0_0; }
 
 		//KW_MAPSTO
-		public RuleCall getKW_MAPSTOTerminalRuleCall_4_1() { return cKW_MAPSTOTerminalRuleCall_4_1; }
+		public RuleCall getKW_MAPSTOTerminalRuleCall_4_0_1() { return cKW_MAPSTOTerminalRuleCall_4_0_1; }
 
 		//bas=Binding_AnyStatement
-		public Assignment getBasAssignment_4_2() { return cBasAssignment_4_2; }
+		public Assignment getBasAssignment_4_0_2() { return cBasAssignment_4_0_2; }
 
 		//Binding_AnyStatement
-		public RuleCall getBasBinding_AnyStatementParserRuleCall_4_2_0() { return cBasBinding_AnyStatementParserRuleCall_4_2_0; }
+		public RuleCall getBasBinding_AnyStatementParserRuleCall_4_0_2_0() { return cBasBinding_AnyStatementParserRuleCall_4_0_2_0; }
 
-		//=> InfixedExprsDecl KW_MAPSTOSTAR bas=Binding_AnyStatement
+		//=> (InfixedExprsDecl KW_MAPSTOSTAR bas=Binding_AnyStatement)
 		public Group getGroup_5() { return cGroup_5; }
 
-		//=> InfixedExprsDecl
-		public RuleCall getInfixedExprsDeclParserRuleCall_5_0() { return cInfixedExprsDeclParserRuleCall_5_0; }
+		//InfixedExprsDecl KW_MAPSTOSTAR bas=Binding_AnyStatement
+		public Group getGroup_5_0() { return cGroup_5_0; }
+
+		//InfixedExprsDecl
+		public RuleCall getInfixedExprsDeclParserRuleCall_5_0_0() { return cInfixedExprsDeclParserRuleCall_5_0_0; }
 
 		//KW_MAPSTOSTAR
-		public RuleCall getKW_MAPSTOSTARTerminalRuleCall_5_1() { return cKW_MAPSTOSTARTerminalRuleCall_5_1; }
+		public RuleCall getKW_MAPSTOSTARTerminalRuleCall_5_0_1() { return cKW_MAPSTOSTARTerminalRuleCall_5_0_1; }
 
 		//bas=Binding_AnyStatement
-		public Assignment getBasAssignment_5_2() { return cBasAssignment_5_2; }
+		public Assignment getBasAssignment_5_0_2() { return cBasAssignment_5_0_2; }
 
 		//Binding_AnyStatement
-		public RuleCall getBasBinding_AnyStatementParserRuleCall_5_2_0() { return cBasBinding_AnyStatementParserRuleCall_5_2_0; }
+		public RuleCall getBasBinding_AnyStatementParserRuleCall_5_0_2_0() { return cBasBinding_AnyStatementParserRuleCall_5_0_2_0; }
 	}
 
 	public class AnyStatementElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "AnyStatement");
-		private final Keyword cTemp19Keyword = (Keyword)rule.eContents().get(1);
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final Group cGroup_0 = (Group)cAlternatives.eContents().get(0);
+		private final Group cGroup_0_0 = (Group)cGroup_0.eContents().get(0);
+		private final Keyword cIfKeyword_0_0_0 = (Keyword)cGroup_0_0.eContents().get(0);
+		private final RuleCall cCommaItemParserRuleCall_0_0_1 = (RuleCall)cGroup_0_0.eContents().get(1);
+		private final Keyword cThenKeyword_0_0_2 = (Keyword)cGroup_0_0.eContents().get(2);
+		private final Assignment cBasAssignment_0_0_3 = (Assignment)cGroup_0_0.eContents().get(3);
+		private final RuleCall cBasBinding_AnyStatementParserRuleCall_0_0_3_0 = (RuleCall)cBasAssignment_0_0_3.eContents().get(0);
+		private final RuleCall cFlow_AnyStatementParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
 		
 		/// *
 		// * Statements
 		// *
 		// * It is easier to spot conflicts when explicitly handling dangling else.
-		// * / // if we enable the following we get:
-		//// 'A class may not be a super type of itself' error
-		//// 'if' CommaItem 'then' bas=Binding_AnyStatement
-		////| Flow_AnyStatement
-		//AnyStatement hidden(WS, KW_NEWLINE):
-		//	"temp19";
+		// * / AnyStatement hidden(WS, KW_NEWLINE):
+		//	=> ("if" CommaItem "then" bas=Binding_AnyStatement) | Flow_AnyStatement;
 		public ParserRule getRule() { return rule; }
 
-		//"temp19"
-		public Keyword getTemp19Keyword() { return cTemp19Keyword; }
+		//=> ("if" CommaItem "then" bas=Binding_AnyStatement) | Flow_AnyStatement
+		public Alternatives getAlternatives() { return cAlternatives; }
+
+		//=> ("if" CommaItem "then" bas=Binding_AnyStatement)
+		public Group getGroup_0() { return cGroup_0; }
+
+		//"if" CommaItem "then" bas=Binding_AnyStatement
+		public Group getGroup_0_0() { return cGroup_0_0; }
+
+		//"if"
+		public Keyword getIfKeyword_0_0_0() { return cIfKeyword_0_0_0; }
+
+		//CommaItem
+		public RuleCall getCommaItemParserRuleCall_0_0_1() { return cCommaItemParserRuleCall_0_0_1; }
+
+		//"then"
+		public Keyword getThenKeyword_0_0_2() { return cThenKeyword_0_0_2; }
+
+		//bas=Binding_AnyStatement
+		public Assignment getBasAssignment_0_0_3() { return cBasAssignment_0_0_3; }
+
+		//Binding_AnyStatement
+		public RuleCall getBasBinding_AnyStatementParserRuleCall_0_0_3_0() { return cBasBinding_AnyStatementParserRuleCall_0_0_3_0; }
+
+		//Flow_AnyStatement
+		public RuleCall getFlow_AnyStatementParserRuleCall_1() { return cFlow_AnyStatementParserRuleCall_1; }
 	}
 
 	public class BalStatementElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "BalStatement");
-		private final Keyword cTemp20Keyword = (Keyword)rule.eContents().get(1);
+		private final RuleCall cFlow_BalStatementParserRuleCall = (RuleCall)rule.eContents().get(1);
 		
-		//// Flow_BalStatement
-		//BalStatement hidden(WS, KW_NEWLINE):
-		//	"temp20";
+		/// * 
+		// * / BalStatement hidden(WS, KW_NEWLINE):
+		//	Flow_BalStatement;
 		public ParserRule getRule() { return rule; }
 
-		//"temp20"
-		public Keyword getTemp20Keyword() { return cTemp20Keyword; }
+		//Flow_BalStatement
+		public RuleCall getFlow_BalStatementParserRuleCall() { return cFlow_BalStatementParserRuleCall; }
 	}
 
 	public class Flow_AnyStatementElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Flow_AnyStatement");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
-		private final RuleCall cCollectionParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
+		private final Group cGroup_0 = (Group)cAlternatives.eContents().get(0);
+		private final RuleCall cCollectionParserRuleCall_0_0 = (RuleCall)cGroup_0.eContents().get(0);
+		private final Group cGroup_0_1 = (Group)cGroup_0.eContents().get(1);
+		private final Keyword cImpliesKeyword_0_1_0 = (Keyword)cGroup_0_1.eContents().get(0);
+		private final Assignment cBas2Assignment_0_1_1 = (Assignment)cGroup_0_1.eContents().get(1);
+		private final RuleCall cBas2Binding_AnyStatementParserRuleCall_0_1_1_0 = (RuleCall)cBas2Assignment_0_1_1.eContents().get(0);
 		private final Group cGroup_1 = (Group)cAlternatives.eContents().get(1);
 		private final Keyword cIfKeyword_1_0 = (Keyword)cGroup_1.eContents().get(0);
 		private final RuleCall cCommaItemParserRuleCall_1_1 = (RuleCall)cGroup_1.eContents().get(1);
@@ -1330,79 +1447,69 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cBasAssignment_1_5 = (Assignment)cGroup_1.eContents().get(5);
 		private final RuleCall cBasBinding_AnyStatementParserRuleCall_1_5_0 = (RuleCall)cBasAssignment_1_5.eContents().get(0);
 		private final Group cGroup_2 = (Group)cAlternatives.eContents().get(2);
-		private final RuleCall cCollectionParserRuleCall_2_0 = (RuleCall)cGroup_2.eContents().get(0);
-		private final Keyword cImpliesKeyword_2_1 = (Keyword)cGroup_2.eContents().get(1);
-		private final Assignment cBas2Assignment_2_2 = (Assignment)cGroup_2.eContents().get(2);
-		private final RuleCall cBas2Binding_AnyStatementParserRuleCall_2_2_0 = (RuleCall)cBas2Assignment_2_2.eContents().get(0);
+		private final Group cGroup_2_0 = (Group)cGroup_2.eContents().get(0);
+		private final RuleCall cIteratorsParserRuleCall_2_0_0 = (RuleCall)cGroup_2_0.eContents().get(0);
+		private final Keyword cRepeatKeyword_2_0_1 = (Keyword)cGroup_2_0.eContents().get(1);
+		private final Assignment cBas3Assignment_2_0_2 = (Assignment)cGroup_2_0.eContents().get(2);
+		private final RuleCall cBas3Binding_AnyStatementParserRuleCall_2_0_2_0 = (RuleCall)cBas3Assignment_2_0_2.eContents().get(0);
 		private final Group cGroup_3 = (Group)cAlternatives.eContents().get(3);
-		private final RuleCall cIteratorsParserRuleCall_3_0 = (RuleCall)cGroup_3.eContents().get(0);
-		private final Keyword cRepeatKeyword_3_1 = (Keyword)cGroup_3.eContents().get(1);
-		private final Assignment cBas3Assignment_3_2 = (Assignment)cGroup_3.eContents().get(2);
-		private final RuleCall cBas3Binding_AnyStatementParserRuleCall_3_2_0 = (RuleCall)cBas3Assignment_3_2.eContents().get(0);
+		private final Keyword cRepeatKeyword_3_0 = (Keyword)cGroup_3.eContents().get(0);
+		private final RuleCall cBinding_AnyStatementParserRuleCall_3_1 = (RuleCall)cGroup_3.eContents().get(1);
 		private final Group cGroup_4 = (Group)cAlternatives.eContents().get(4);
-		private final Keyword cRepeatKeyword_4_0 = (Keyword)cGroup_4.eContents().get(0);
+		private final Keyword cTryKeyword_4_0 = (Keyword)cGroup_4.eContents().get(0);
 		private final RuleCall cBinding_AnyStatementParserRuleCall_4_1 = (RuleCall)cGroup_4.eContents().get(1);
+		private final Alternatives cAlternatives_4_2 = (Alternatives)cGroup_4.eContents().get(2);
+		private final Keyword cButKeyword_4_2_0 = (Keyword)cAlternatives_4_2.eContents().get(0);
+		private final Keyword cCatchKeyword_4_2_1 = (Keyword)cAlternatives_4_2.eContents().get(1);
+		private final Assignment cBeAssignment_4_3 = (Assignment)cGroup_4.eContents().get(3);
+		private final RuleCall cBeButExprParserRuleCall_4_3_0 = (RuleCall)cBeAssignment_4_3.eContents().get(0);
+		private final Assignment cApaAssignment_4_4 = (Assignment)cGroup_4.eContents().get(4);
+		private final RuleCall cApaAlwaysPart_AnyStatementParserRuleCall_4_4_0 = (RuleCall)cApaAssignment_4_4.eContents().get(0);
 		private final Group cGroup_5 = (Group)cAlternatives.eContents().get(5);
-		private final Keyword cTryKeyword_5_0 = (Keyword)cGroup_5.eContents().get(0);
+		private final Keyword cSelectKeyword_5_0 = (Keyword)cGroup_5.eContents().get(0);
 		private final RuleCall cBinding_AnyStatementParserRuleCall_5_1 = (RuleCall)cGroup_5.eContents().get(1);
-		private final Keyword cButKeyword_5_2 = (Keyword)cGroup_5.eContents().get(2);
-		private final Assignment cBeAssignment_5_3 = (Assignment)cGroup_5.eContents().get(3);
-		private final RuleCall cBeButExprParserRuleCall_5_3_0 = (RuleCall)cBeAssignment_5_3.eContents().get(0);
-		private final Assignment cApaAssignment_5_4 = (Assignment)cGroup_5.eContents().get(4);
-		private final RuleCall cApaAlwaysPart_AnyStatementParserRuleCall_5_4_0 = (RuleCall)cApaAssignment_5_4.eContents().get(0);
+		private final Keyword cInKeyword_5_2 = (Keyword)cGroup_5.eContents().get(2);
+		private final Assignment cCAssignment_5_3 = (Assignment)cGroup_5.eContents().get(3);
+		private final RuleCall cCCasesParserRuleCall_5_3_0 = (RuleCall)cCAssignment_5_3.eContents().get(0);
 		private final Group cGroup_6 = (Group)cAlternatives.eContents().get(6);
-		private final Keyword cTryKeyword_6_0 = (Keyword)cGroup_6.eContents().get(0);
+		private final Keyword cDoKeyword_6_0 = (Keyword)cGroup_6.eContents().get(0);
 		private final RuleCall cBinding_AnyStatementParserRuleCall_6_1 = (RuleCall)cGroup_6.eContents().get(1);
-		private final Keyword cCatchKeyword_6_2 = (Keyword)cGroup_6.eContents().get(2);
-		private final Assignment cBeAssignment_6_3 = (Assignment)cGroup_6.eContents().get(3);
-		private final RuleCall cBeButExprParserRuleCall_6_3_0 = (RuleCall)cBeAssignment_6_3.eContents().get(0);
-		private final Assignment cApaAssignment_6_4 = (Assignment)cGroup_6.eContents().get(4);
-		private final RuleCall cApaAlwaysPart_AnyStatementParserRuleCall_6_4_0 = (RuleCall)cApaAssignment_6_4.eContents().get(0);
 		private final Group cGroup_7 = (Group)cAlternatives.eContents().get(7);
-		private final Keyword cSelectKeyword_7_0 = (Keyword)cGroup_7.eContents().get(0);
+		private final Keyword cDelayKeyword_7_0 = (Keyword)cGroup_7.eContents().get(0);
 		private final RuleCall cBinding_AnyStatementParserRuleCall_7_1 = (RuleCall)cGroup_7.eContents().get(1);
-		private final Keyword cInKeyword_7_2 = (Keyword)cGroup_7.eContents().get(2);
-		private final Assignment cCAssignment_7_3 = (Assignment)cGroup_7.eContents().get(3);
-		private final RuleCall cCCasesParserRuleCall_7_3_0 = (RuleCall)cCAssignment_7_3.eContents().get(0);
 		private final Group cGroup_8 = (Group)cAlternatives.eContents().get(8);
-		private final Keyword cDoKeyword_8_0 = (Keyword)cGroup_8.eContents().get(0);
+		private final Keyword cReferenceKeyword_8_0 = (Keyword)cGroup_8.eContents().get(0);
 		private final RuleCall cBinding_AnyStatementParserRuleCall_8_1 = (RuleCall)cGroup_8.eContents().get(1);
 		private final Group cGroup_9 = (Group)cAlternatives.eContents().get(9);
-		private final Keyword cDelayKeyword_9_0 = (Keyword)cGroup_9.eContents().get(0);
-		private final RuleCall cBinding_AnyStatementParserRuleCall_9_1 = (RuleCall)cGroup_9.eContents().get(1);
+		private final Keyword cGenerateKeyword_9_0 = (Keyword)cGroup_9.eContents().get(0);
+		private final RuleCall cGenBoundParserRuleCall_9_1 = (RuleCall)cGroup_9.eContents().get(1);
+		private final Assignment cBas4Assignment_9_2 = (Assignment)cGroup_9.eContents().get(2);
+		private final RuleCall cBas4Binding_AnyStatementParserRuleCall_9_2_0 = (RuleCall)cBas4Assignment_9_2.eContents().get(0);
 		private final Group cGroup_10 = (Group)cAlternatives.eContents().get(10);
-		private final Keyword cReferenceKeyword_10_0 = (Keyword)cGroup_10.eContents().get(0);
+		private final Keyword cAssertKeyword_10_0 = (Keyword)cGroup_10.eContents().get(0);
 		private final RuleCall cBinding_AnyStatementParserRuleCall_10_1 = (RuleCall)cGroup_10.eContents().get(1);
 		private final Group cGroup_11 = (Group)cAlternatives.eContents().get(11);
-		private final Keyword cGenerateKeyword_11_0 = (Keyword)cGroup_11.eContents().get(0);
-		private final RuleCall cGenBoundParserRuleCall_11_1 = (RuleCall)cGroup_11.eContents().get(1);
-		private final Assignment cBas4Assignment_11_2 = (Assignment)cGroup_11.eContents().get(2);
-		private final RuleCall cBas4Binding_AnyStatementParserRuleCall_11_2_0 = (RuleCall)cBas4Assignment_11_2.eContents().get(0);
+		private final Keyword cIterateKeyword_11_0 = (Keyword)cGroup_11.eContents().get(0);
+		private final RuleCall cNameParserRuleCall_11_1 = (RuleCall)cGroup_11.eContents().get(1);
 		private final Group cGroup_12 = (Group)cAlternatives.eContents().get(12);
-		private final Keyword cAssertKeyword_12_0 = (Keyword)cGroup_12.eContents().get(0);
-		private final RuleCall cBinding_AnyStatementParserRuleCall_12_1 = (RuleCall)cGroup_12.eContents().get(1);
+		private final Keyword cBreakKeyword_12_0 = (Keyword)cGroup_12.eContents().get(0);
+		private final RuleCall cNameParserRuleCall_12_1 = (RuleCall)cGroup_12.eContents().get(1);
 		private final Group cGroup_13 = (Group)cAlternatives.eContents().get(13);
-		private final Keyword cIterateKeyword_13_0 = (Keyword)cGroup_13.eContents().get(0);
-		private final RuleCall cNameParserRuleCall_13_1 = (RuleCall)cGroup_13.eContents().get(1);
+		private final Keyword cReturnKeyword_13_0 = (Keyword)cGroup_13.eContents().get(0);
+		private final RuleCall cCollectionParserRuleCall_13_1 = (RuleCall)cGroup_13.eContents().get(1);
 		private final Group cGroup_14 = (Group)cAlternatives.eContents().get(14);
-		private final Keyword cBreakKeyword_14_0 = (Keyword)cGroup_14.eContents().get(0);
-		private final RuleCall cNameParserRuleCall_14_1 = (RuleCall)cGroup_14.eContents().get(1);
+		private final Keyword cYieldKeyword_14_0 = (Keyword)cGroup_14.eContents().get(0);
+		private final RuleCall cBinding_AnyStatementParserRuleCall_14_1 = (RuleCall)cGroup_14.eContents().get(1);
 		private final Group cGroup_15 = (Group)cAlternatives.eContents().get(15);
-		private final Keyword cReturnKeyword_15_0 = (Keyword)cGroup_15.eContents().get(0);
-		private final RuleCall cCollectionParserRuleCall_15_1 = (RuleCall)cGroup_15.eContents().get(1);
+		private final Keyword cExceptKeyword_15_0 = (Keyword)cGroup_15.eContents().get(0);
+		private final RuleCall cBinding_AnyStatementParserRuleCall_15_1 = (RuleCall)cGroup_15.eContents().get(1);
 		private final Group cGroup_16 = (Group)cAlternatives.eContents().get(16);
-		private final Keyword cYieldKeyword_16_0 = (Keyword)cGroup_16.eContents().get(0);
+		private final Keyword cThrowKeyword_16_0 = (Keyword)cGroup_16.eContents().get(0);
 		private final RuleCall cBinding_AnyStatementParserRuleCall_16_1 = (RuleCall)cGroup_16.eContents().get(1);
 		private final Group cGroup_17 = (Group)cAlternatives.eContents().get(17);
-		private final Keyword cExceptKeyword_17_0 = (Keyword)cGroup_17.eContents().get(0);
-		private final RuleCall cBinding_AnyStatementParserRuleCall_17_1 = (RuleCall)cGroup_17.eContents().get(1);
-		private final Group cGroup_18 = (Group)cAlternatives.eContents().get(18);
-		private final Keyword cThrowKeyword_18_0 = (Keyword)cGroup_18.eContents().get(0);
-		private final RuleCall cBinding_AnyStatementParserRuleCall_18_1 = (RuleCall)cGroup_18.eContents().get(1);
-		private final Group cGroup_19 = (Group)cAlternatives.eContents().get(19);
-		private final Keyword cGotoKeyword_19_0 = (Keyword)cGroup_19.eContents().get(0);
-		private final RuleCall cIdParserRuleCall_19_1 = (RuleCall)cGroup_19.eContents().get(1);
-		private final Keyword cNeverKeyword_20 = (Keyword)cAlternatives.eContents().get(20);
+		private final Keyword cGotoKeyword_17_0 = (Keyword)cGroup_17.eContents().get(0);
+		private final RuleCall cIdParserRuleCall_17_1 = (RuleCall)cGroup_17.eContents().get(1);
+		private final Keyword cNeverKeyword_18 = (Keyword)cAlternatives.eContents().get(18);
 		
 		/// * Substituted Rules in Xtext:
 		//Flow(XX) -> Flow_AnyStatement or Flow_BalStatement
@@ -1450,28 +1557,43 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		////{ $$ = abNewNever(TPOS($1)); }
 		////;
 		// * / Flow_AnyStatement hidden(WS, KW_NEWLINE):
-		//	Collection | "if" CommaItem "then" bbs=Binding_BalStatement "else" bas=Binding_AnyStatement | Collection "implies"
-		//	bas2=Binding_AnyStatement | Iterators "repeat" bas3=Binding_AnyStatement | "repeat" Binding_AnyStatement | "try"
-		//	Binding_AnyStatement "but" be=ButExpr apa=AlwaysPart_AnyStatement | "try" Binding_AnyStatement "catch" be=ButExpr
-		//	apa=AlwaysPart_AnyStatement | "select" Binding_AnyStatement "in" c=Cases | "do" Binding_AnyStatement | "delay"
-		//	Binding_AnyStatement | "reference" Binding_AnyStatement | "generate" GenBound bas4=Binding_AnyStatement | "assert"
-		//	Binding_AnyStatement | "iterate" Name? | "break" Name? | "return" Collection? | "yield" Binding_AnyStatement |
-		//	"except" Binding_AnyStatement | "throw" Binding_AnyStatement | "goto" Id | "never";
+		//	Collection ("implies" bas2=Binding_AnyStatement)? | "if" CommaItem "then" bbs=Binding_BalStatement => "else"
+		//	bas=Binding_AnyStatement | => (Iterators "repeat" bas3=Binding_AnyStatement) | "repeat" Binding_AnyStatement | "try"
+		//	Binding_AnyStatement ("but" | "catch") be=ButExpr apa=AlwaysPart_AnyStatement | "select" Binding_AnyStatement "in"
+		//	c=Cases | "do" Binding_AnyStatement | "delay" Binding_AnyStatement | "reference" Binding_AnyStatement | "generate"
+		//	GenBound bas4=Binding_AnyStatement | "assert" Binding_AnyStatement | "iterate" Name? | "break" Name? | "return"
+		//	Collection? | "yield" Binding_AnyStatement | "except" Binding_AnyStatement | "throw" Binding_AnyStatement | "goto" Id
+		//	| "never";
 		public ParserRule getRule() { return rule; }
 
-		//Collection | "if" CommaItem "then" bbs=Binding_BalStatement "else" bas=Binding_AnyStatement | Collection "implies"
-		//bas2=Binding_AnyStatement | Iterators "repeat" bas3=Binding_AnyStatement | "repeat" Binding_AnyStatement | "try"
-		//Binding_AnyStatement "but" be=ButExpr apa=AlwaysPart_AnyStatement | "try" Binding_AnyStatement "catch" be=ButExpr
-		//apa=AlwaysPart_AnyStatement | "select" Binding_AnyStatement "in" c=Cases | "do" Binding_AnyStatement | "delay"
-		//Binding_AnyStatement | "reference" Binding_AnyStatement | "generate" GenBound bas4=Binding_AnyStatement | "assert"
-		//Binding_AnyStatement | "iterate" Name? | "break" Name? | "return" Collection? | "yield" Binding_AnyStatement | "except"
-		//Binding_AnyStatement | "throw" Binding_AnyStatement | "goto" Id | "never"
+		//Collection ("implies" bas2=Binding_AnyStatement)? | "if" CommaItem "then" bbs=Binding_BalStatement => "else"
+		//bas=Binding_AnyStatement | => (Iterators "repeat" bas3=Binding_AnyStatement) | "repeat" Binding_AnyStatement | "try"
+		//Binding_AnyStatement ("but" | "catch") be=ButExpr apa=AlwaysPart_AnyStatement | "select" Binding_AnyStatement "in"
+		//c=Cases | "do" Binding_AnyStatement | "delay" Binding_AnyStatement | "reference" Binding_AnyStatement | "generate"
+		//GenBound bas4=Binding_AnyStatement | "assert" Binding_AnyStatement | "iterate" Name? | "break" Name? | "return"
+		//Collection? | "yield" Binding_AnyStatement | "except" Binding_AnyStatement | "throw" Binding_AnyStatement | "goto" Id |
+		//"never"
 		public Alternatives getAlternatives() { return cAlternatives; }
 
-		//Collection
-		public RuleCall getCollectionParserRuleCall_0() { return cCollectionParserRuleCall_0; }
+		//Collection ("implies" bas2=Binding_AnyStatement)?
+		public Group getGroup_0() { return cGroup_0; }
 
-		//"if" CommaItem "then" bbs=Binding_BalStatement "else" bas=Binding_AnyStatement
+		//Collection
+		public RuleCall getCollectionParserRuleCall_0_0() { return cCollectionParserRuleCall_0_0; }
+
+		//("implies" bas2=Binding_AnyStatement)?
+		public Group getGroup_0_1() { return cGroup_0_1; }
+
+		//"implies"
+		public Keyword getImpliesKeyword_0_1_0() { return cImpliesKeyword_0_1_0; }
+
+		//bas2=Binding_AnyStatement
+		public Assignment getBas2Assignment_0_1_1() { return cBas2Assignment_0_1_1; }
+
+		//Binding_AnyStatement
+		public RuleCall getBas2Binding_AnyStatementParserRuleCall_0_1_1_0() { return cBas2Binding_AnyStatementParserRuleCall_0_1_1_0; }
+
+		//"if" CommaItem "then" bbs=Binding_BalStatement => "else" bas=Binding_AnyStatement
 		public Group getGroup_1() { return cGroup_1; }
 
 		//"if"
@@ -1489,7 +1611,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		//Binding_BalStatement
 		public RuleCall getBbsBinding_BalStatementParserRuleCall_1_3_0() { return cBbsBinding_BalStatementParserRuleCall_1_3_0; }
 
-		//"else"
+		//=> "else"
 		public Keyword getElseKeyword_1_4() { return cElseKeyword_1_4; }
 
 		//bas=Binding_AnyStatement
@@ -1498,233 +1620,208 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		//Binding_AnyStatement
 		public RuleCall getBasBinding_AnyStatementParserRuleCall_1_5_0() { return cBasBinding_AnyStatementParserRuleCall_1_5_0; }
 
-		//Collection "implies" bas2=Binding_AnyStatement
+		//=> (Iterators "repeat" bas3=Binding_AnyStatement)
 		public Group getGroup_2() { return cGroup_2; }
 
-		//Collection
-		public RuleCall getCollectionParserRuleCall_2_0() { return cCollectionParserRuleCall_2_0; }
-
-		//"implies"
-		public Keyword getImpliesKeyword_2_1() { return cImpliesKeyword_2_1; }
-
-		//bas2=Binding_AnyStatement
-		public Assignment getBas2Assignment_2_2() { return cBas2Assignment_2_2; }
-
-		//Binding_AnyStatement
-		public RuleCall getBas2Binding_AnyStatementParserRuleCall_2_2_0() { return cBas2Binding_AnyStatementParserRuleCall_2_2_0; }
-
 		//Iterators "repeat" bas3=Binding_AnyStatement
-		public Group getGroup_3() { return cGroup_3; }
+		public Group getGroup_2_0() { return cGroup_2_0; }
 
 		//Iterators
-		public RuleCall getIteratorsParserRuleCall_3_0() { return cIteratorsParserRuleCall_3_0; }
+		public RuleCall getIteratorsParserRuleCall_2_0_0() { return cIteratorsParserRuleCall_2_0_0; }
 
 		//"repeat"
-		public Keyword getRepeatKeyword_3_1() { return cRepeatKeyword_3_1; }
+		public Keyword getRepeatKeyword_2_0_1() { return cRepeatKeyword_2_0_1; }
 
 		//bas3=Binding_AnyStatement
-		public Assignment getBas3Assignment_3_2() { return cBas3Assignment_3_2; }
+		public Assignment getBas3Assignment_2_0_2() { return cBas3Assignment_2_0_2; }
 
 		//Binding_AnyStatement
-		public RuleCall getBas3Binding_AnyStatementParserRuleCall_3_2_0() { return cBas3Binding_AnyStatementParserRuleCall_3_2_0; }
+		public RuleCall getBas3Binding_AnyStatementParserRuleCall_2_0_2_0() { return cBas3Binding_AnyStatementParserRuleCall_2_0_2_0; }
 
 		//"repeat" Binding_AnyStatement
-		public Group getGroup_4() { return cGroup_4; }
+		public Group getGroup_3() { return cGroup_3; }
 
 		//"repeat"
-		public Keyword getRepeatKeyword_4_0() { return cRepeatKeyword_4_0; }
+		public Keyword getRepeatKeyword_3_0() { return cRepeatKeyword_3_0; }
+
+		//Binding_AnyStatement
+		public RuleCall getBinding_AnyStatementParserRuleCall_3_1() { return cBinding_AnyStatementParserRuleCall_3_1; }
+
+		//"try" Binding_AnyStatement ("but" | "catch") be=ButExpr apa=AlwaysPart_AnyStatement
+		public Group getGroup_4() { return cGroup_4; }
+
+		//"try"
+		public Keyword getTryKeyword_4_0() { return cTryKeyword_4_0; }
 
 		//Binding_AnyStatement
 		public RuleCall getBinding_AnyStatementParserRuleCall_4_1() { return cBinding_AnyStatementParserRuleCall_4_1; }
 
-		//"try" Binding_AnyStatement "but" be=ButExpr apa=AlwaysPart_AnyStatement
+		//"but" | "catch"
+		public Alternatives getAlternatives_4_2() { return cAlternatives_4_2; }
+
+		//"but"
+		public Keyword getButKeyword_4_2_0() { return cButKeyword_4_2_0; }
+
+		//"catch"
+		public Keyword getCatchKeyword_4_2_1() { return cCatchKeyword_4_2_1; }
+
+		//be=ButExpr
+		public Assignment getBeAssignment_4_3() { return cBeAssignment_4_3; }
+
+		//ButExpr
+		public RuleCall getBeButExprParserRuleCall_4_3_0() { return cBeButExprParserRuleCall_4_3_0; }
+
+		//apa=AlwaysPart_AnyStatement
+		public Assignment getApaAssignment_4_4() { return cApaAssignment_4_4; }
+
+		//AlwaysPart_AnyStatement
+		public RuleCall getApaAlwaysPart_AnyStatementParserRuleCall_4_4_0() { return cApaAlwaysPart_AnyStatementParserRuleCall_4_4_0; }
+
+		//"select" Binding_AnyStatement "in" c=Cases
 		public Group getGroup_5() { return cGroup_5; }
 
-		//"try"
-		public Keyword getTryKeyword_5_0() { return cTryKeyword_5_0; }
+		//"select"
+		public Keyword getSelectKeyword_5_0() { return cSelectKeyword_5_0; }
 
 		//Binding_AnyStatement
 		public RuleCall getBinding_AnyStatementParserRuleCall_5_1() { return cBinding_AnyStatementParserRuleCall_5_1; }
 
-		//"but"
-		public Keyword getButKeyword_5_2() { return cButKeyword_5_2; }
+		//"in"
+		public Keyword getInKeyword_5_2() { return cInKeyword_5_2; }
 
-		//be=ButExpr
-		public Assignment getBeAssignment_5_3() { return cBeAssignment_5_3; }
+		//c=Cases
+		public Assignment getCAssignment_5_3() { return cCAssignment_5_3; }
 
-		//ButExpr
-		public RuleCall getBeButExprParserRuleCall_5_3_0() { return cBeButExprParserRuleCall_5_3_0; }
+		//Cases
+		public RuleCall getCCasesParserRuleCall_5_3_0() { return cCCasesParserRuleCall_5_3_0; }
 
-		//apa=AlwaysPart_AnyStatement
-		public Assignment getApaAssignment_5_4() { return cApaAssignment_5_4; }
-
-		//AlwaysPart_AnyStatement
-		public RuleCall getApaAlwaysPart_AnyStatementParserRuleCall_5_4_0() { return cApaAlwaysPart_AnyStatementParserRuleCall_5_4_0; }
-
-		//"try" Binding_AnyStatement "catch" be=ButExpr apa=AlwaysPart_AnyStatement
+		//"do" Binding_AnyStatement
 		public Group getGroup_6() { return cGroup_6; }
 
-		//"try"
-		public Keyword getTryKeyword_6_0() { return cTryKeyword_6_0; }
+		//"do"
+		public Keyword getDoKeyword_6_0() { return cDoKeyword_6_0; }
 
 		//Binding_AnyStatement
 		public RuleCall getBinding_AnyStatementParserRuleCall_6_1() { return cBinding_AnyStatementParserRuleCall_6_1; }
 
-		//"catch"
-		public Keyword getCatchKeyword_6_2() { return cCatchKeyword_6_2; }
-
-		//be=ButExpr
-		public Assignment getBeAssignment_6_3() { return cBeAssignment_6_3; }
-
-		//ButExpr
-		public RuleCall getBeButExprParserRuleCall_6_3_0() { return cBeButExprParserRuleCall_6_3_0; }
-
-		//apa=AlwaysPart_AnyStatement
-		public Assignment getApaAssignment_6_4() { return cApaAssignment_6_4; }
-
-		//AlwaysPart_AnyStatement
-		public RuleCall getApaAlwaysPart_AnyStatementParserRuleCall_6_4_0() { return cApaAlwaysPart_AnyStatementParserRuleCall_6_4_0; }
-
-		//"select" Binding_AnyStatement "in" c=Cases
+		//"delay" Binding_AnyStatement
 		public Group getGroup_7() { return cGroup_7; }
 
-		//"select"
-		public Keyword getSelectKeyword_7_0() { return cSelectKeyword_7_0; }
+		//"delay"
+		public Keyword getDelayKeyword_7_0() { return cDelayKeyword_7_0; }
 
 		//Binding_AnyStatement
 		public RuleCall getBinding_AnyStatementParserRuleCall_7_1() { return cBinding_AnyStatementParserRuleCall_7_1; }
 
-		//"in"
-		public Keyword getInKeyword_7_2() { return cInKeyword_7_2; }
-
-		//c=Cases
-		public Assignment getCAssignment_7_3() { return cCAssignment_7_3; }
-
-		//Cases
-		public RuleCall getCCasesParserRuleCall_7_3_0() { return cCCasesParserRuleCall_7_3_0; }
-
-		//"do" Binding_AnyStatement
+		//"reference" Binding_AnyStatement
 		public Group getGroup_8() { return cGroup_8; }
 
-		//"do"
-		public Keyword getDoKeyword_8_0() { return cDoKeyword_8_0; }
+		//"reference"
+		public Keyword getReferenceKeyword_8_0() { return cReferenceKeyword_8_0; }
 
 		//Binding_AnyStatement
 		public RuleCall getBinding_AnyStatementParserRuleCall_8_1() { return cBinding_AnyStatementParserRuleCall_8_1; }
 
-		//"delay" Binding_AnyStatement
+		//"generate" GenBound bas4=Binding_AnyStatement
 		public Group getGroup_9() { return cGroup_9; }
 
-		//"delay"
-		public Keyword getDelayKeyword_9_0() { return cDelayKeyword_9_0; }
+		//"generate"
+		public Keyword getGenerateKeyword_9_0() { return cGenerateKeyword_9_0; }
+
+		//GenBound
+		public RuleCall getGenBoundParserRuleCall_9_1() { return cGenBoundParserRuleCall_9_1; }
+
+		//bas4=Binding_AnyStatement
+		public Assignment getBas4Assignment_9_2() { return cBas4Assignment_9_2; }
 
 		//Binding_AnyStatement
-		public RuleCall getBinding_AnyStatementParserRuleCall_9_1() { return cBinding_AnyStatementParserRuleCall_9_1; }
+		public RuleCall getBas4Binding_AnyStatementParserRuleCall_9_2_0() { return cBas4Binding_AnyStatementParserRuleCall_9_2_0; }
 
-		//"reference" Binding_AnyStatement
+		//"assert" Binding_AnyStatement
 		public Group getGroup_10() { return cGroup_10; }
 
-		//"reference"
-		public Keyword getReferenceKeyword_10_0() { return cReferenceKeyword_10_0; }
+		//"assert"
+		public Keyword getAssertKeyword_10_0() { return cAssertKeyword_10_0; }
 
 		//Binding_AnyStatement
 		public RuleCall getBinding_AnyStatementParserRuleCall_10_1() { return cBinding_AnyStatementParserRuleCall_10_1; }
 
-		//"generate" GenBound bas4=Binding_AnyStatement
+		//"iterate" Name?
 		public Group getGroup_11() { return cGroup_11; }
 
-		//"generate"
-		public Keyword getGenerateKeyword_11_0() { return cGenerateKeyword_11_0; }
-
-		//GenBound
-		public RuleCall getGenBoundParserRuleCall_11_1() { return cGenBoundParserRuleCall_11_1; }
-
-		//bas4=Binding_AnyStatement
-		public Assignment getBas4Assignment_11_2() { return cBas4Assignment_11_2; }
-
-		//Binding_AnyStatement
-		public RuleCall getBas4Binding_AnyStatementParserRuleCall_11_2_0() { return cBas4Binding_AnyStatementParserRuleCall_11_2_0; }
-
-		//"assert" Binding_AnyStatement
-		public Group getGroup_12() { return cGroup_12; }
-
-		//"assert"
-		public Keyword getAssertKeyword_12_0() { return cAssertKeyword_12_0; }
-
-		//Binding_AnyStatement
-		public RuleCall getBinding_AnyStatementParserRuleCall_12_1() { return cBinding_AnyStatementParserRuleCall_12_1; }
-
-		//"iterate" Name?
-		public Group getGroup_13() { return cGroup_13; }
-
 		//"iterate"
-		public Keyword getIterateKeyword_13_0() { return cIterateKeyword_13_0; }
+		public Keyword getIterateKeyword_11_0() { return cIterateKeyword_11_0; }
 
 		//Name?
-		public RuleCall getNameParserRuleCall_13_1() { return cNameParserRuleCall_13_1; }
+		public RuleCall getNameParserRuleCall_11_1() { return cNameParserRuleCall_11_1; }
 
 		//"break" Name?
-		public Group getGroup_14() { return cGroup_14; }
+		public Group getGroup_12() { return cGroup_12; }
 
 		//"break"
-		public Keyword getBreakKeyword_14_0() { return cBreakKeyword_14_0; }
+		public Keyword getBreakKeyword_12_0() { return cBreakKeyword_12_0; }
 
 		//Name?
-		public RuleCall getNameParserRuleCall_14_1() { return cNameParserRuleCall_14_1; }
+		public RuleCall getNameParserRuleCall_12_1() { return cNameParserRuleCall_12_1; }
 
 		//"return" Collection?
-		public Group getGroup_15() { return cGroup_15; }
+		public Group getGroup_13() { return cGroup_13; }
 
 		//"return"
-		public Keyword getReturnKeyword_15_0() { return cReturnKeyword_15_0; }
+		public Keyword getReturnKeyword_13_0() { return cReturnKeyword_13_0; }
 
 		//Collection?
-		public RuleCall getCollectionParserRuleCall_15_1() { return cCollectionParserRuleCall_15_1; }
+		public RuleCall getCollectionParserRuleCall_13_1() { return cCollectionParserRuleCall_13_1; }
 
 		//"yield" Binding_AnyStatement
-		public Group getGroup_16() { return cGroup_16; }
+		public Group getGroup_14() { return cGroup_14; }
 
 		//"yield"
-		public Keyword getYieldKeyword_16_0() { return cYieldKeyword_16_0; }
+		public Keyword getYieldKeyword_14_0() { return cYieldKeyword_14_0; }
+
+		//Binding_AnyStatement
+		public RuleCall getBinding_AnyStatementParserRuleCall_14_1() { return cBinding_AnyStatementParserRuleCall_14_1; }
+
+		//"except" Binding_AnyStatement
+		public Group getGroup_15() { return cGroup_15; }
+
+		//"except"
+		public Keyword getExceptKeyword_15_0() { return cExceptKeyword_15_0; }
+
+		//Binding_AnyStatement
+		public RuleCall getBinding_AnyStatementParserRuleCall_15_1() { return cBinding_AnyStatementParserRuleCall_15_1; }
+
+		//"throw" Binding_AnyStatement
+		public Group getGroup_16() { return cGroup_16; }
+
+		//"throw"
+		public Keyword getThrowKeyword_16_0() { return cThrowKeyword_16_0; }
 
 		//Binding_AnyStatement
 		public RuleCall getBinding_AnyStatementParserRuleCall_16_1() { return cBinding_AnyStatementParserRuleCall_16_1; }
 
-		//"except" Binding_AnyStatement
+		//"goto" Id
 		public Group getGroup_17() { return cGroup_17; }
 
-		//"except"
-		public Keyword getExceptKeyword_17_0() { return cExceptKeyword_17_0; }
-
-		//Binding_AnyStatement
-		public RuleCall getBinding_AnyStatementParserRuleCall_17_1() { return cBinding_AnyStatementParserRuleCall_17_1; }
-
-		//"throw" Binding_AnyStatement
-		public Group getGroup_18() { return cGroup_18; }
-
-		//"throw"
-		public Keyword getThrowKeyword_18_0() { return cThrowKeyword_18_0; }
-
-		//Binding_AnyStatement
-		public RuleCall getBinding_AnyStatementParserRuleCall_18_1() { return cBinding_AnyStatementParserRuleCall_18_1; }
-
-		//"goto" Id
-		public Group getGroup_19() { return cGroup_19; }
-
 		//"goto"
-		public Keyword getGotoKeyword_19_0() { return cGotoKeyword_19_0; }
+		public Keyword getGotoKeyword_17_0() { return cGotoKeyword_17_0; }
 
 		//Id
-		public RuleCall getIdParserRuleCall_19_1() { return cIdParserRuleCall_19_1; }
+		public RuleCall getIdParserRuleCall_17_1() { return cIdParserRuleCall_17_1; }
 
 		//"never"
-		public Keyword getNeverKeyword_20() { return cNeverKeyword_20; }
+		public Keyword getNeverKeyword_18() { return cNeverKeyword_18; }
 	}
 
 	public class Flow_BalStatementElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Flow_BalStatement");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
-		private final RuleCall cCollectionParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
+		private final Group cGroup_0 = (Group)cAlternatives.eContents().get(0);
+		private final RuleCall cCollectionParserRuleCall_0_0 = (RuleCall)cGroup_0.eContents().get(0);
+		private final Group cGroup_0_1 = (Group)cGroup_0.eContents().get(1);
+		private final Keyword cImpliesKeyword_0_1_0 = (Keyword)cGroup_0_1.eContents().get(0);
+		private final Assignment cBbs3Assignment_0_1_1 = (Assignment)cGroup_0_1.eContents().get(1);
+		private final RuleCall cBbs3Binding_BalStatementParserRuleCall_0_1_1_0 = (RuleCall)cBbs3Assignment_0_1_1.eContents().get(0);
 		private final Group cGroup_1 = (Group)cAlternatives.eContents().get(1);
 		private final Keyword cIfKeyword_1_0 = (Keyword)cGroup_1.eContents().get(0);
 		private final RuleCall cCommaItemParserRuleCall_1_1 = (RuleCall)cGroup_1.eContents().get(1);
@@ -1735,103 +1832,118 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cBbs2Assignment_1_5 = (Assignment)cGroup_1.eContents().get(5);
 		private final RuleCall cBbs2Binding_BalStatementParserRuleCall_1_5_0 = (RuleCall)cBbs2Assignment_1_5.eContents().get(0);
 		private final Group cGroup_2 = (Group)cAlternatives.eContents().get(2);
-		private final RuleCall cCollectionParserRuleCall_2_0 = (RuleCall)cGroup_2.eContents().get(0);
-		private final Keyword cImpliesKeyword_2_1 = (Keyword)cGroup_2.eContents().get(1);
-		private final Assignment cBbs3Assignment_2_2 = (Assignment)cGroup_2.eContents().get(2);
-		private final RuleCall cBbs3Binding_BalStatementParserRuleCall_2_2_0 = (RuleCall)cBbs3Assignment_2_2.eContents().get(0);
+		private final Group cGroup_2_0 = (Group)cGroup_2.eContents().get(0);
+		private final RuleCall cIteratorsParserRuleCall_2_0_0 = (RuleCall)cGroup_2_0.eContents().get(0);
+		private final Keyword cRepeatKeyword_2_0_1 = (Keyword)cGroup_2_0.eContents().get(1);
+		private final Assignment cBbs4Assignment_2_0_2 = (Assignment)cGroup_2_0.eContents().get(2);
+		private final RuleCall cBbs4Binding_BalStatementParserRuleCall_2_0_2_0 = (RuleCall)cBbs4Assignment_2_0_2.eContents().get(0);
 		private final Group cGroup_3 = (Group)cAlternatives.eContents().get(3);
-		private final RuleCall cIteratorsParserRuleCall_3_0 = (RuleCall)cGroup_3.eContents().get(0);
-		private final Keyword cRepeatKeyword_3_1 = (Keyword)cGroup_3.eContents().get(1);
-		private final Assignment cBbs4Assignment_3_2 = (Assignment)cGroup_3.eContents().get(2);
-		private final RuleCall cBbs4Binding_BalStatementParserRuleCall_3_2_0 = (RuleCall)cBbs4Assignment_3_2.eContents().get(0);
+		private final Keyword cRepeatKeyword_3_0 = (Keyword)cGroup_3.eContents().get(0);
+		private final Assignment cBbs5Assignment_3_1 = (Assignment)cGroup_3.eContents().get(1);
+		private final RuleCall cBbs5Binding_BalStatementParserRuleCall_3_1_0 = (RuleCall)cBbs5Assignment_3_1.eContents().get(0);
 		private final Group cGroup_4 = (Group)cAlternatives.eContents().get(4);
-		private final Keyword cRepeatKeyword_4_0 = (Keyword)cGroup_4.eContents().get(0);
-		private final RuleCall cBinding_BalStatementParserRuleCall_4_1 = (RuleCall)cGroup_4.eContents().get(1);
+		private final Keyword cTryKeyword_4_0 = (Keyword)cGroup_4.eContents().get(0);
+		private final RuleCall cBinding_AnyStatementParserRuleCall_4_1 = (RuleCall)cGroup_4.eContents().get(1);
+		private final Alternatives cAlternatives_4_2 = (Alternatives)cGroup_4.eContents().get(2);
+		private final Keyword cButKeyword_4_2_0 = (Keyword)cAlternatives_4_2.eContents().get(0);
+		private final Keyword cCatchKeyword_4_2_1 = (Keyword)cAlternatives_4_2.eContents().get(1);
+		private final Assignment cBeAssignment_4_3 = (Assignment)cGroup_4.eContents().get(3);
+		private final RuleCall cBeButExprParserRuleCall_4_3_0 = (RuleCall)cBeAssignment_4_3.eContents().get(0);
+		private final Assignment cApbAssignment_4_4 = (Assignment)cGroup_4.eContents().get(4);
+		private final RuleCall cApbAlwaysPart_BalStatementParserRuleCall_4_4_0 = (RuleCall)cApbAssignment_4_4.eContents().get(0);
 		private final Group cGroup_5 = (Group)cAlternatives.eContents().get(5);
-		private final Keyword cTryKeyword_5_0 = (Keyword)cGroup_5.eContents().get(0);
+		private final Keyword cSelectKeyword_5_0 = (Keyword)cGroup_5.eContents().get(0);
 		private final RuleCall cBinding_AnyStatementParserRuleCall_5_1 = (RuleCall)cGroup_5.eContents().get(1);
-		private final Keyword cButKeyword_5_2 = (Keyword)cGroup_5.eContents().get(2);
-		private final Assignment cBeAssignment_5_3 = (Assignment)cGroup_5.eContents().get(3);
-		private final RuleCall cBeButExprParserRuleCall_5_3_0 = (RuleCall)cBeAssignment_5_3.eContents().get(0);
-		private final Assignment cApbAssignment_5_4 = (Assignment)cGroup_5.eContents().get(4);
-		private final RuleCall cApbAlwaysPart_BalStatementParserRuleCall_5_4_0 = (RuleCall)cApbAssignment_5_4.eContents().get(0);
+		private final Keyword cInKeyword_5_2 = (Keyword)cGroup_5.eContents().get(2);
+		private final Assignment cCAssignment_5_3 = (Assignment)cGroup_5.eContents().get(3);
+		private final RuleCall cCCasesParserRuleCall_5_3_0 = (RuleCall)cCAssignment_5_3.eContents().get(0);
 		private final Group cGroup_6 = (Group)cAlternatives.eContents().get(6);
-		private final Keyword cTryKeyword_6_0 = (Keyword)cGroup_6.eContents().get(0);
-		private final RuleCall cBinding_AnyStatementParserRuleCall_6_1 = (RuleCall)cGroup_6.eContents().get(1);
-		private final Keyword cCatchKeyword_6_2 = (Keyword)cGroup_6.eContents().get(2);
-		private final Assignment cBeAssignment_6_3 = (Assignment)cGroup_6.eContents().get(3);
-		private final RuleCall cBeButExprParserRuleCall_6_3_0 = (RuleCall)cBeAssignment_6_3.eContents().get(0);
-		private final Assignment cApbAssignment_6_4 = (Assignment)cGroup_6.eContents().get(4);
-		private final RuleCall cApbAlwaysPart_BalStatementParserRuleCall_6_4_0 = (RuleCall)cApbAssignment_6_4.eContents().get(0);
+		private final Keyword cDoKeyword_6_0 = (Keyword)cGroup_6.eContents().get(0);
+		private final Assignment cBbs5Assignment_6_1 = (Assignment)cGroup_6.eContents().get(1);
+		private final RuleCall cBbs5Binding_BalStatementParserRuleCall_6_1_0 = (RuleCall)cBbs5Assignment_6_1.eContents().get(0);
 		private final Group cGroup_7 = (Group)cAlternatives.eContents().get(7);
-		private final Keyword cSelectKeyword_7_0 = (Keyword)cGroup_7.eContents().get(0);
-		private final RuleCall cBinding_AnyStatementParserRuleCall_7_1 = (RuleCall)cGroup_7.eContents().get(1);
-		private final Keyword cInKeyword_7_2 = (Keyword)cGroup_7.eContents().get(2);
-		private final Assignment cCAssignment_7_3 = (Assignment)cGroup_7.eContents().get(3);
-		private final RuleCall cCCasesParserRuleCall_7_3_0 = (RuleCall)cCAssignment_7_3.eContents().get(0);
+		private final Keyword cDelayKeyword_7_0 = (Keyword)cGroup_7.eContents().get(0);
+		private final Assignment cBbs5Assignment_7_1 = (Assignment)cGroup_7.eContents().get(1);
+		private final RuleCall cBbs5Binding_BalStatementParserRuleCall_7_1_0 = (RuleCall)cBbs5Assignment_7_1.eContents().get(0);
 		private final Group cGroup_8 = (Group)cAlternatives.eContents().get(8);
-		private final Keyword cDoKeyword_8_0 = (Keyword)cGroup_8.eContents().get(0);
-		private final RuleCall cBinding_BalStatementParserRuleCall_8_1 = (RuleCall)cGroup_8.eContents().get(1);
+		private final Keyword cReferenceKeyword_8_0 = (Keyword)cGroup_8.eContents().get(0);
+		private final Assignment cBbs5Assignment_8_1 = (Assignment)cGroup_8.eContents().get(1);
+		private final RuleCall cBbs5Binding_BalStatementParserRuleCall_8_1_0 = (RuleCall)cBbs5Assignment_8_1.eContents().get(0);
 		private final Group cGroup_9 = (Group)cAlternatives.eContents().get(9);
-		private final Keyword cDelayKeyword_9_0 = (Keyword)cGroup_9.eContents().get(0);
-		private final RuleCall cBinding_BalStatementParserRuleCall_9_1 = (RuleCall)cGroup_9.eContents().get(1);
+		private final Keyword cGenerateKeyword_9_0 = (Keyword)cGroup_9.eContents().get(0);
+		private final RuleCall cGenBoundParserRuleCall_9_1 = (RuleCall)cGroup_9.eContents().get(1);
+		private final Assignment cBbs5Assignment_9_2 = (Assignment)cGroup_9.eContents().get(2);
+		private final RuleCall cBbs5Binding_BalStatementParserRuleCall_9_2_0 = (RuleCall)cBbs5Assignment_9_2.eContents().get(0);
 		private final Group cGroup_10 = (Group)cAlternatives.eContents().get(10);
-		private final Keyword cReferenceKeyword_10_0 = (Keyword)cGroup_10.eContents().get(0);
-		private final RuleCall cBinding_BalStatementParserRuleCall_10_1 = (RuleCall)cGroup_10.eContents().get(1);
+		private final Keyword cAssertKeyword_10_0 = (Keyword)cGroup_10.eContents().get(0);
+		private final Assignment cBbs5Assignment_10_1 = (Assignment)cGroup_10.eContents().get(1);
+		private final RuleCall cBbs5Binding_BalStatementParserRuleCall_10_1_0 = (RuleCall)cBbs5Assignment_10_1.eContents().get(0);
 		private final Group cGroup_11 = (Group)cAlternatives.eContents().get(11);
-		private final Keyword cGenerateKeyword_11_0 = (Keyword)cGroup_11.eContents().get(0);
-		private final RuleCall cGenBoundParserRuleCall_11_1 = (RuleCall)cGroup_11.eContents().get(1);
-		private final Assignment cBbs5Assignment_11_2 = (Assignment)cGroup_11.eContents().get(2);
-		private final RuleCall cBbs5Binding_BalStatementParserRuleCall_11_2_0 = (RuleCall)cBbs5Assignment_11_2.eContents().get(0);
+		private final Keyword cIterateKeyword_11_0 = (Keyword)cGroup_11.eContents().get(0);
+		private final RuleCall cNameParserRuleCall_11_1 = (RuleCall)cGroup_11.eContents().get(1);
 		private final Group cGroup_12 = (Group)cAlternatives.eContents().get(12);
-		private final Keyword cAssertKeyword_12_0 = (Keyword)cGroup_12.eContents().get(0);
-		private final RuleCall cBinding_BalStatementParserRuleCall_12_1 = (RuleCall)cGroup_12.eContents().get(1);
+		private final Keyword cBreakKeyword_12_0 = (Keyword)cGroup_12.eContents().get(0);
+		private final RuleCall cNameParserRuleCall_12_1 = (RuleCall)cGroup_12.eContents().get(1);
 		private final Group cGroup_13 = (Group)cAlternatives.eContents().get(13);
-		private final Keyword cIterateKeyword_13_0 = (Keyword)cGroup_13.eContents().get(0);
-		private final RuleCall cNameParserRuleCall_13_1 = (RuleCall)cGroup_13.eContents().get(1);
+		private final Keyword cReturnKeyword_13_0 = (Keyword)cGroup_13.eContents().get(0);
+		private final RuleCall cCollectionParserRuleCall_13_1 = (RuleCall)cGroup_13.eContents().get(1);
 		private final Group cGroup_14 = (Group)cAlternatives.eContents().get(14);
-		private final Keyword cBreakKeyword_14_0 = (Keyword)cGroup_14.eContents().get(0);
-		private final RuleCall cNameParserRuleCall_14_1 = (RuleCall)cGroup_14.eContents().get(1);
+		private final Keyword cYieldKeyword_14_0 = (Keyword)cGroup_14.eContents().get(0);
+		private final Assignment cBbs5Assignment_14_1 = (Assignment)cGroup_14.eContents().get(1);
+		private final RuleCall cBbs5Binding_BalStatementParserRuleCall_14_1_0 = (RuleCall)cBbs5Assignment_14_1.eContents().get(0);
 		private final Group cGroup_15 = (Group)cAlternatives.eContents().get(15);
-		private final Keyword cReturnKeyword_15_0 = (Keyword)cGroup_15.eContents().get(0);
-		private final RuleCall cCollectionParserRuleCall_15_1 = (RuleCall)cGroup_15.eContents().get(1);
+		private final Keyword cExceptKeyword_15_0 = (Keyword)cGroup_15.eContents().get(0);
+		private final Assignment cBbs5Assignment_15_1 = (Assignment)cGroup_15.eContents().get(1);
+		private final RuleCall cBbs5Binding_BalStatementParserRuleCall_15_1_0 = (RuleCall)cBbs5Assignment_15_1.eContents().get(0);
 		private final Group cGroup_16 = (Group)cAlternatives.eContents().get(16);
-		private final Keyword cYieldKeyword_16_0 = (Keyword)cGroup_16.eContents().get(0);
-		private final RuleCall cBinding_BalStatementParserRuleCall_16_1 = (RuleCall)cGroup_16.eContents().get(1);
+		private final Keyword cThrowKeyword_16_0 = (Keyword)cGroup_16.eContents().get(0);
+		private final Assignment cBbs5Assignment_16_1 = (Assignment)cGroup_16.eContents().get(1);
+		private final RuleCall cBbs5Binding_BalStatementParserRuleCall_16_1_0 = (RuleCall)cBbs5Assignment_16_1.eContents().get(0);
 		private final Group cGroup_17 = (Group)cAlternatives.eContents().get(17);
-		private final Keyword cExceptKeyword_17_0 = (Keyword)cGroup_17.eContents().get(0);
-		private final RuleCall cBinding_BalStatementParserRuleCall_17_1 = (RuleCall)cGroup_17.eContents().get(1);
-		private final Group cGroup_18 = (Group)cAlternatives.eContents().get(18);
-		private final Keyword cThrowKeyword_18_0 = (Keyword)cGroup_18.eContents().get(0);
-		private final RuleCall cBinding_BalStatementParserRuleCall_18_1 = (RuleCall)cGroup_18.eContents().get(1);
-		private final Group cGroup_19 = (Group)cAlternatives.eContents().get(19);
-		private final Keyword cGotoKeyword_19_0 = (Keyword)cGroup_19.eContents().get(0);
-		private final RuleCall cIdParserRuleCall_19_1 = (RuleCall)cGroup_19.eContents().get(1);
-		private final Keyword cNeverKeyword_20 = (Keyword)cAlternatives.eContents().get(20);
+		private final Keyword cGotoKeyword_17_0 = (Keyword)cGroup_17.eContents().get(0);
+		private final RuleCall cIdParserRuleCall_17_1 = (RuleCall)cGroup_17.eContents().get(1);
+		private final Keyword cNeverKeyword_18 = (Keyword)cAlternatives.eContents().get(18);
 		
-		//Flow_BalStatement hidden(WS, KW_NEWLINE):
-		//	Collection | "if" CommaItem "then" bbs=Binding_BalStatement "else" bbs2=Binding_BalStatement | Collection "implies"
-		//	bbs3=Binding_BalStatement | Iterators "repeat" bbs4=Binding_BalStatement | "repeat" Binding_BalStatement | "try"
-		//	Binding_AnyStatement "but" be=ButExpr apb=AlwaysPart_BalStatement | "try" Binding_AnyStatement "catch" be=ButExpr
-		//	apb=AlwaysPart_BalStatement | "select" Binding_AnyStatement "in" c=Cases | "do" Binding_BalStatement | "delay"
-		//	Binding_BalStatement | "reference" Binding_BalStatement | "generate" GenBound bbs5=Binding_BalStatement | "assert"
-		//	Binding_BalStatement | "iterate" Name? | "break" Name? | "return" Collection? | "yield" Binding_BalStatement |
-		//	"except" Binding_BalStatement | "throw" Binding_BalStatement | "goto" Id | "never";
+		/// * rule ruleFlow_BalStatement has non-LL(*) decision due to recursive
+		// * rule invocations reachable from alts 6,7.  Resolve by left-factoring
+		// * or using syntactic predicates or using backtrack=true option. * / Flow_BalStatement hidden(WS, KW_NEWLINE):
+		//	Collection ("implies" bbs3=Binding_BalStatement)? | "if" CommaItem "then" bbs=Binding_BalStatement => "else"
+		//	bbs2=Binding_BalStatement | => (Iterators "repeat" bbs4=Binding_BalStatement) | "repeat" bbs5=Binding_BalStatement |
+		//	"try" Binding_AnyStatement ("but" | "catch") be=ButExpr apb=AlwaysPart_BalStatement | "select" Binding_AnyStatement
+		//	"in" c=Cases | "do" bbs5=Binding_BalStatement | "delay" bbs5=Binding_BalStatement | "reference"
+		//	bbs5=Binding_BalStatement | "generate" GenBound bbs5=Binding_BalStatement | "assert" bbs5=Binding_BalStatement |
+		//	"iterate" Name? | "break" Name? | "return" Collection? | "yield" bbs5=Binding_BalStatement | "except"
+		//	bbs5=Binding_BalStatement | "throw" bbs5=Binding_BalStatement | "goto" Id | "never";
 		public ParserRule getRule() { return rule; }
 
-		//Collection | "if" CommaItem "then" bbs=Binding_BalStatement "else" bbs2=Binding_BalStatement | Collection "implies"
-		//bbs3=Binding_BalStatement | Iterators "repeat" bbs4=Binding_BalStatement | "repeat" Binding_BalStatement | "try"
-		//Binding_AnyStatement "but" be=ButExpr apb=AlwaysPart_BalStatement | "try" Binding_AnyStatement "catch" be=ButExpr
-		//apb=AlwaysPart_BalStatement | "select" Binding_AnyStatement "in" c=Cases | "do" Binding_BalStatement | "delay"
-		//Binding_BalStatement | "reference" Binding_BalStatement | "generate" GenBound bbs5=Binding_BalStatement | "assert"
-		//Binding_BalStatement | "iterate" Name? | "break" Name? | "return" Collection? | "yield" Binding_BalStatement | "except"
-		//Binding_BalStatement | "throw" Binding_BalStatement | "goto" Id | "never"
+		//Collection ("implies" bbs3=Binding_BalStatement)? | "if" CommaItem "then" bbs=Binding_BalStatement => "else"
+		//bbs2=Binding_BalStatement | => (Iterators "repeat" bbs4=Binding_BalStatement) | "repeat" bbs5=Binding_BalStatement |
+		//"try" Binding_AnyStatement ("but" | "catch") be=ButExpr apb=AlwaysPart_BalStatement | "select" Binding_AnyStatement
+		//"in" c=Cases | "do" bbs5=Binding_BalStatement | "delay" bbs5=Binding_BalStatement | "reference"
+		//bbs5=Binding_BalStatement | "generate" GenBound bbs5=Binding_BalStatement | "assert" bbs5=Binding_BalStatement |
+		//"iterate" Name? | "break" Name? | "return" Collection? | "yield" bbs5=Binding_BalStatement | "except"
+		//bbs5=Binding_BalStatement | "throw" bbs5=Binding_BalStatement | "goto" Id | "never"
 		public Alternatives getAlternatives() { return cAlternatives; }
 
-		//Collection
-		public RuleCall getCollectionParserRuleCall_0() { return cCollectionParserRuleCall_0; }
+		//Collection ("implies" bbs3=Binding_BalStatement)?
+		public Group getGroup_0() { return cGroup_0; }
 
-		//"if" CommaItem "then" bbs=Binding_BalStatement "else" bbs2=Binding_BalStatement
+		//Collection
+		public RuleCall getCollectionParserRuleCall_0_0() { return cCollectionParserRuleCall_0_0; }
+
+		//("implies" bbs3=Binding_BalStatement)?
+		public Group getGroup_0_1() { return cGroup_0_1; }
+
+		//"implies"
+		public Keyword getImpliesKeyword_0_1_0() { return cImpliesKeyword_0_1_0; }
+
+		//bbs3=Binding_BalStatement
+		public Assignment getBbs3Assignment_0_1_1() { return cBbs3Assignment_0_1_1; }
+
+		//Binding_BalStatement
+		public RuleCall getBbs3Binding_BalStatementParserRuleCall_0_1_1_0() { return cBbs3Binding_BalStatementParserRuleCall_0_1_1_0; }
+
+		//"if" CommaItem "then" bbs=Binding_BalStatement => "else" bbs2=Binding_BalStatement
 		public Group getGroup_1() { return cGroup_1; }
 
 		//"if"
@@ -1849,7 +1961,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		//Binding_BalStatement
 		public RuleCall getBbsBinding_BalStatementParserRuleCall_1_3_0() { return cBbsBinding_BalStatementParserRuleCall_1_3_0; }
 
-		//"else"
+		//=> "else"
 		public Keyword getElseKeyword_1_4() { return cElseKeyword_1_4; }
 
 		//bbs2=Binding_BalStatement
@@ -1858,227 +1970,221 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		//Binding_BalStatement
 		public RuleCall getBbs2Binding_BalStatementParserRuleCall_1_5_0() { return cBbs2Binding_BalStatementParserRuleCall_1_5_0; }
 
-		//Collection "implies" bbs3=Binding_BalStatement
+		//=> (Iterators "repeat" bbs4=Binding_BalStatement)
 		public Group getGroup_2() { return cGroup_2; }
 
-		//Collection
-		public RuleCall getCollectionParserRuleCall_2_0() { return cCollectionParserRuleCall_2_0; }
-
-		//"implies"
-		public Keyword getImpliesKeyword_2_1() { return cImpliesKeyword_2_1; }
-
-		//bbs3=Binding_BalStatement
-		public Assignment getBbs3Assignment_2_2() { return cBbs3Assignment_2_2; }
-
-		//Binding_BalStatement
-		public RuleCall getBbs3Binding_BalStatementParserRuleCall_2_2_0() { return cBbs3Binding_BalStatementParserRuleCall_2_2_0; }
-
 		//Iterators "repeat" bbs4=Binding_BalStatement
-		public Group getGroup_3() { return cGroup_3; }
+		public Group getGroup_2_0() { return cGroup_2_0; }
 
 		//Iterators
-		public RuleCall getIteratorsParserRuleCall_3_0() { return cIteratorsParserRuleCall_3_0; }
+		public RuleCall getIteratorsParserRuleCall_2_0_0() { return cIteratorsParserRuleCall_2_0_0; }
 
 		//"repeat"
-		public Keyword getRepeatKeyword_3_1() { return cRepeatKeyword_3_1; }
+		public Keyword getRepeatKeyword_2_0_1() { return cRepeatKeyword_2_0_1; }
 
 		//bbs4=Binding_BalStatement
-		public Assignment getBbs4Assignment_3_2() { return cBbs4Assignment_3_2; }
+		public Assignment getBbs4Assignment_2_0_2() { return cBbs4Assignment_2_0_2; }
 
 		//Binding_BalStatement
-		public RuleCall getBbs4Binding_BalStatementParserRuleCall_3_2_0() { return cBbs4Binding_BalStatementParserRuleCall_3_2_0; }
+		public RuleCall getBbs4Binding_BalStatementParserRuleCall_2_0_2_0() { return cBbs4Binding_BalStatementParserRuleCall_2_0_2_0; }
 
-		//"repeat" Binding_BalStatement
-		public Group getGroup_4() { return cGroup_4; }
+		//"repeat" bbs5=Binding_BalStatement
+		public Group getGroup_3() { return cGroup_3; }
 
 		//"repeat"
-		public Keyword getRepeatKeyword_4_0() { return cRepeatKeyword_4_0; }
+		public Keyword getRepeatKeyword_3_0() { return cRepeatKeyword_3_0; }
+
+		//bbs5=Binding_BalStatement
+		public Assignment getBbs5Assignment_3_1() { return cBbs5Assignment_3_1; }
 
 		//Binding_BalStatement
-		public RuleCall getBinding_BalStatementParserRuleCall_4_1() { return cBinding_BalStatementParserRuleCall_4_1; }
+		public RuleCall getBbs5Binding_BalStatementParserRuleCall_3_1_0() { return cBbs5Binding_BalStatementParserRuleCall_3_1_0; }
 
-		//"try" Binding_AnyStatement "but" be=ButExpr apb=AlwaysPart_BalStatement
-		public Group getGroup_5() { return cGroup_5; }
+		//"try" Binding_AnyStatement ("but" | "catch") be=ButExpr apb=AlwaysPart_BalStatement
+		public Group getGroup_4() { return cGroup_4; }
 
 		//"try"
-		public Keyword getTryKeyword_5_0() { return cTryKeyword_5_0; }
+		public Keyword getTryKeyword_4_0() { return cTryKeyword_4_0; }
+
+		//Binding_AnyStatement
+		public RuleCall getBinding_AnyStatementParserRuleCall_4_1() { return cBinding_AnyStatementParserRuleCall_4_1; }
+
+		//"but" | "catch"
+		public Alternatives getAlternatives_4_2() { return cAlternatives_4_2; }
+
+		//"but"
+		public Keyword getButKeyword_4_2_0() { return cButKeyword_4_2_0; }
+
+		//"catch"
+		public Keyword getCatchKeyword_4_2_1() { return cCatchKeyword_4_2_1; }
+
+		//be=ButExpr
+		public Assignment getBeAssignment_4_3() { return cBeAssignment_4_3; }
+
+		//ButExpr
+		public RuleCall getBeButExprParserRuleCall_4_3_0() { return cBeButExprParserRuleCall_4_3_0; }
+
+		//apb=AlwaysPart_BalStatement
+		public Assignment getApbAssignment_4_4() { return cApbAssignment_4_4; }
+
+		//AlwaysPart_BalStatement
+		public RuleCall getApbAlwaysPart_BalStatementParserRuleCall_4_4_0() { return cApbAlwaysPart_BalStatementParserRuleCall_4_4_0; }
+
+		//"select" Binding_AnyStatement "in" c=Cases
+		public Group getGroup_5() { return cGroup_5; }
+
+		//"select"
+		public Keyword getSelectKeyword_5_0() { return cSelectKeyword_5_0; }
 
 		//Binding_AnyStatement
 		public RuleCall getBinding_AnyStatementParserRuleCall_5_1() { return cBinding_AnyStatementParserRuleCall_5_1; }
 
-		//"but"
-		public Keyword getButKeyword_5_2() { return cButKeyword_5_2; }
-
-		//be=ButExpr
-		public Assignment getBeAssignment_5_3() { return cBeAssignment_5_3; }
-
-		//ButExpr
-		public RuleCall getBeButExprParserRuleCall_5_3_0() { return cBeButExprParserRuleCall_5_3_0; }
-
-		//apb=AlwaysPart_BalStatement
-		public Assignment getApbAssignment_5_4() { return cApbAssignment_5_4; }
-
-		//AlwaysPart_BalStatement
-		public RuleCall getApbAlwaysPart_BalStatementParserRuleCall_5_4_0() { return cApbAlwaysPart_BalStatementParserRuleCall_5_4_0; }
-
-		//"try" Binding_AnyStatement "catch" be=ButExpr apb=AlwaysPart_BalStatement
-		public Group getGroup_6() { return cGroup_6; }
-
-		//"try"
-		public Keyword getTryKeyword_6_0() { return cTryKeyword_6_0; }
-
-		//Binding_AnyStatement
-		public RuleCall getBinding_AnyStatementParserRuleCall_6_1() { return cBinding_AnyStatementParserRuleCall_6_1; }
-
-		//"catch"
-		public Keyword getCatchKeyword_6_2() { return cCatchKeyword_6_2; }
-
-		//be=ButExpr
-		public Assignment getBeAssignment_6_3() { return cBeAssignment_6_3; }
-
-		//ButExpr
-		public RuleCall getBeButExprParserRuleCall_6_3_0() { return cBeButExprParserRuleCall_6_3_0; }
-
-		//apb=AlwaysPart_BalStatement
-		public Assignment getApbAssignment_6_4() { return cApbAssignment_6_4; }
-
-		//AlwaysPart_BalStatement
-		public RuleCall getApbAlwaysPart_BalStatementParserRuleCall_6_4_0() { return cApbAlwaysPart_BalStatementParserRuleCall_6_4_0; }
-
-		//"select" Binding_AnyStatement "in" c=Cases
-		public Group getGroup_7() { return cGroup_7; }
-
-		//"select"
-		public Keyword getSelectKeyword_7_0() { return cSelectKeyword_7_0; }
-
-		//Binding_AnyStatement
-		public RuleCall getBinding_AnyStatementParserRuleCall_7_1() { return cBinding_AnyStatementParserRuleCall_7_1; }
-
 		//"in"
-		public Keyword getInKeyword_7_2() { return cInKeyword_7_2; }
+		public Keyword getInKeyword_5_2() { return cInKeyword_5_2; }
 
 		//c=Cases
-		public Assignment getCAssignment_7_3() { return cCAssignment_7_3; }
+		public Assignment getCAssignment_5_3() { return cCAssignment_5_3; }
 
 		//Cases
-		public RuleCall getCCasesParserRuleCall_7_3_0() { return cCCasesParserRuleCall_7_3_0; }
+		public RuleCall getCCasesParserRuleCall_5_3_0() { return cCCasesParserRuleCall_5_3_0; }
 
-		//"do" Binding_BalStatement
-		public Group getGroup_8() { return cGroup_8; }
+		//"do" bbs5=Binding_BalStatement
+		public Group getGroup_6() { return cGroup_6; }
 
 		//"do"
-		public Keyword getDoKeyword_8_0() { return cDoKeyword_8_0; }
-
-		//Binding_BalStatement
-		public RuleCall getBinding_BalStatementParserRuleCall_8_1() { return cBinding_BalStatementParserRuleCall_8_1; }
-
-		//"delay" Binding_BalStatement
-		public Group getGroup_9() { return cGroup_9; }
-
-		//"delay"
-		public Keyword getDelayKeyword_9_0() { return cDelayKeyword_9_0; }
-
-		//Binding_BalStatement
-		public RuleCall getBinding_BalStatementParserRuleCall_9_1() { return cBinding_BalStatementParserRuleCall_9_1; }
-
-		//"reference" Binding_BalStatement
-		public Group getGroup_10() { return cGroup_10; }
-
-		//"reference"
-		public Keyword getReferenceKeyword_10_0() { return cReferenceKeyword_10_0; }
-
-		//Binding_BalStatement
-		public RuleCall getBinding_BalStatementParserRuleCall_10_1() { return cBinding_BalStatementParserRuleCall_10_1; }
-
-		//"generate" GenBound bbs5=Binding_BalStatement
-		public Group getGroup_11() { return cGroup_11; }
-
-		//"generate"
-		public Keyword getGenerateKeyword_11_0() { return cGenerateKeyword_11_0; }
-
-		//GenBound
-		public RuleCall getGenBoundParserRuleCall_11_1() { return cGenBoundParserRuleCall_11_1; }
+		public Keyword getDoKeyword_6_0() { return cDoKeyword_6_0; }
 
 		//bbs5=Binding_BalStatement
-		public Assignment getBbs5Assignment_11_2() { return cBbs5Assignment_11_2; }
+		public Assignment getBbs5Assignment_6_1() { return cBbs5Assignment_6_1; }
 
 		//Binding_BalStatement
-		public RuleCall getBbs5Binding_BalStatementParserRuleCall_11_2_0() { return cBbs5Binding_BalStatementParserRuleCall_11_2_0; }
+		public RuleCall getBbs5Binding_BalStatementParserRuleCall_6_1_0() { return cBbs5Binding_BalStatementParserRuleCall_6_1_0; }
 
-		//"assert" Binding_BalStatement
-		public Group getGroup_12() { return cGroup_12; }
+		//"delay" bbs5=Binding_BalStatement
+		public Group getGroup_7() { return cGroup_7; }
+
+		//"delay"
+		public Keyword getDelayKeyword_7_0() { return cDelayKeyword_7_0; }
+
+		//bbs5=Binding_BalStatement
+		public Assignment getBbs5Assignment_7_1() { return cBbs5Assignment_7_1; }
+
+		//Binding_BalStatement
+		public RuleCall getBbs5Binding_BalStatementParserRuleCall_7_1_0() { return cBbs5Binding_BalStatementParserRuleCall_7_1_0; }
+
+		//"reference" bbs5=Binding_BalStatement
+		public Group getGroup_8() { return cGroup_8; }
+
+		//"reference"
+		public Keyword getReferenceKeyword_8_0() { return cReferenceKeyword_8_0; }
+
+		//bbs5=Binding_BalStatement
+		public Assignment getBbs5Assignment_8_1() { return cBbs5Assignment_8_1; }
+
+		//Binding_BalStatement
+		public RuleCall getBbs5Binding_BalStatementParserRuleCall_8_1_0() { return cBbs5Binding_BalStatementParserRuleCall_8_1_0; }
+
+		//"generate" GenBound bbs5=Binding_BalStatement
+		public Group getGroup_9() { return cGroup_9; }
+
+		//"generate"
+		public Keyword getGenerateKeyword_9_0() { return cGenerateKeyword_9_0; }
+
+		//GenBound
+		public RuleCall getGenBoundParserRuleCall_9_1() { return cGenBoundParserRuleCall_9_1; }
+
+		//bbs5=Binding_BalStatement
+		public Assignment getBbs5Assignment_9_2() { return cBbs5Assignment_9_2; }
+
+		//Binding_BalStatement
+		public RuleCall getBbs5Binding_BalStatementParserRuleCall_9_2_0() { return cBbs5Binding_BalStatementParserRuleCall_9_2_0; }
+
+		//"assert" bbs5=Binding_BalStatement
+		public Group getGroup_10() { return cGroup_10; }
 
 		//"assert"
-		public Keyword getAssertKeyword_12_0() { return cAssertKeyword_12_0; }
+		public Keyword getAssertKeyword_10_0() { return cAssertKeyword_10_0; }
+
+		//bbs5=Binding_BalStatement
+		public Assignment getBbs5Assignment_10_1() { return cBbs5Assignment_10_1; }
 
 		//Binding_BalStatement
-		public RuleCall getBinding_BalStatementParserRuleCall_12_1() { return cBinding_BalStatementParserRuleCall_12_1; }
+		public RuleCall getBbs5Binding_BalStatementParserRuleCall_10_1_0() { return cBbs5Binding_BalStatementParserRuleCall_10_1_0; }
 
 		//"iterate" Name?
-		public Group getGroup_13() { return cGroup_13; }
+		public Group getGroup_11() { return cGroup_11; }
 
 		//"iterate"
-		public Keyword getIterateKeyword_13_0() { return cIterateKeyword_13_0; }
+		public Keyword getIterateKeyword_11_0() { return cIterateKeyword_11_0; }
 
 		//Name?
-		public RuleCall getNameParserRuleCall_13_1() { return cNameParserRuleCall_13_1; }
+		public RuleCall getNameParserRuleCall_11_1() { return cNameParserRuleCall_11_1; }
 
 		//"break" Name?
-		public Group getGroup_14() { return cGroup_14; }
+		public Group getGroup_12() { return cGroup_12; }
 
 		//"break"
-		public Keyword getBreakKeyword_14_0() { return cBreakKeyword_14_0; }
+		public Keyword getBreakKeyword_12_0() { return cBreakKeyword_12_0; }
 
 		//Name?
-		public RuleCall getNameParserRuleCall_14_1() { return cNameParserRuleCall_14_1; }
+		public RuleCall getNameParserRuleCall_12_1() { return cNameParserRuleCall_12_1; }
 
 		//"return" Collection?
-		public Group getGroup_15() { return cGroup_15; }
+		public Group getGroup_13() { return cGroup_13; }
 
 		//"return"
-		public Keyword getReturnKeyword_15_0() { return cReturnKeyword_15_0; }
+		public Keyword getReturnKeyword_13_0() { return cReturnKeyword_13_0; }
 
 		//Collection?
-		public RuleCall getCollectionParserRuleCall_15_1() { return cCollectionParserRuleCall_15_1; }
+		public RuleCall getCollectionParserRuleCall_13_1() { return cCollectionParserRuleCall_13_1; }
 
-		//"yield" Binding_BalStatement
-		public Group getGroup_16() { return cGroup_16; }
+		//"yield" bbs5=Binding_BalStatement
+		public Group getGroup_14() { return cGroup_14; }
 
 		//"yield"
-		public Keyword getYieldKeyword_16_0() { return cYieldKeyword_16_0; }
+		public Keyword getYieldKeyword_14_0() { return cYieldKeyword_14_0; }
+
+		//bbs5=Binding_BalStatement
+		public Assignment getBbs5Assignment_14_1() { return cBbs5Assignment_14_1; }
 
 		//Binding_BalStatement
-		public RuleCall getBinding_BalStatementParserRuleCall_16_1() { return cBinding_BalStatementParserRuleCall_16_1; }
+		public RuleCall getBbs5Binding_BalStatementParserRuleCall_14_1_0() { return cBbs5Binding_BalStatementParserRuleCall_14_1_0; }
 
-		//"except" Binding_BalStatement
-		public Group getGroup_17() { return cGroup_17; }
+		//"except" bbs5=Binding_BalStatement
+		public Group getGroup_15() { return cGroup_15; }
 
 		//"except"
-		public Keyword getExceptKeyword_17_0() { return cExceptKeyword_17_0; }
+		public Keyword getExceptKeyword_15_0() { return cExceptKeyword_15_0; }
+
+		//bbs5=Binding_BalStatement
+		public Assignment getBbs5Assignment_15_1() { return cBbs5Assignment_15_1; }
 
 		//Binding_BalStatement
-		public RuleCall getBinding_BalStatementParserRuleCall_17_1() { return cBinding_BalStatementParserRuleCall_17_1; }
+		public RuleCall getBbs5Binding_BalStatementParserRuleCall_15_1_0() { return cBbs5Binding_BalStatementParserRuleCall_15_1_0; }
 
-		//"throw" Binding_BalStatement
-		public Group getGroup_18() { return cGroup_18; }
+		//"throw" bbs5=Binding_BalStatement
+		public Group getGroup_16() { return cGroup_16; }
 
 		//"throw"
-		public Keyword getThrowKeyword_18_0() { return cThrowKeyword_18_0; }
+		public Keyword getThrowKeyword_16_0() { return cThrowKeyword_16_0; }
+
+		//bbs5=Binding_BalStatement
+		public Assignment getBbs5Assignment_16_1() { return cBbs5Assignment_16_1; }
 
 		//Binding_BalStatement
-		public RuleCall getBinding_BalStatementParserRuleCall_18_1() { return cBinding_BalStatementParserRuleCall_18_1; }
+		public RuleCall getBbs5Binding_BalStatementParserRuleCall_16_1_0() { return cBbs5Binding_BalStatementParserRuleCall_16_1_0; }
 
 		//"goto" Id
-		public Group getGroup_19() { return cGroup_19; }
+		public Group getGroup_17() { return cGroup_17; }
 
 		//"goto"
-		public Keyword getGotoKeyword_19_0() { return cGotoKeyword_19_0; }
+		public Keyword getGotoKeyword_17_0() { return cGotoKeyword_17_0; }
 
 		//Id
-		public RuleCall getIdParserRuleCall_19_1() { return cIdParserRuleCall_19_1; }
+		public RuleCall getIdParserRuleCall_17_1() { return cIdParserRuleCall_17_1; }
 
 		//"never"
-		public Keyword getNeverKeyword_20() { return cNeverKeyword_20; }
+		public Keyword getNeverKeyword_18() { return cNeverKeyword_18; }
 	}
 
 	public class GenBoundElements extends AbstractParserRuleElementFinder {
@@ -2235,26 +2341,26 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Collection");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final RuleCall cInfixedParserRuleCall_0 = (RuleCall)cGroup.eContents().get(0);
-		private final Assignment cIAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cIIteratorsParserRuleCall_1_0 = (RuleCall)cIAssignment_1.eContents().get(0);
+		private final Assignment cI3Assignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cI3IteratorsParserRuleCall_1_0 = (RuleCall)cI3Assignment_1.eContents().get(0);
 		
 		/// *
 		// * Iterators
 		// * / Collection hidden(WS, KW_NEWLINE):
-		//	Infixed i=Iterators?;
+		//	Infixed i3=Iterators?;
 		public ParserRule getRule() { return rule; }
 
-		//Infixed i=Iterators?
+		//Infixed i3=Iterators?
 		public Group getGroup() { return cGroup; }
 
 		//Infixed
 		public RuleCall getInfixedParserRuleCall_0() { return cInfixedParserRuleCall_0; }
 
-		//i=Iterators?
-		public Assignment getIAssignment_1() { return cIAssignment_1; }
+		//i3=Iterators?
+		public Assignment getI3Assignment_1() { return cI3Assignment_1; }
 
 		//Iterators
-		public RuleCall getIIteratorsParserRuleCall_1_0() { return cIIteratorsParserRuleCall_1_0; }
+		public RuleCall getI3IteratorsParserRuleCall_1_0() { return cI3IteratorsParserRuleCall_1_0; }
 	}
 
 	public class IteratorsElements extends AbstractParserRuleElementFinder {
@@ -2271,17 +2377,32 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 
 	public class Iterators1Elements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Iterators1");
-		private final Keyword cTemp27Keyword = (Keyword)rule.eContents().get(1);
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Action cIterators1Action_0 = (Action)cGroup.eContents().get(0);
+		private final Keyword cTemp27Keyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Assignment cItrAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cItrIteratorParserRuleCall_2_0 = (RuleCall)cItrAssignment_2.eContents().get(0);
 		
-		//// left recursive when following uncommented
-		//// Iterator
-		////| Iterators1 itr=Iterator
-		//Iterators1 hidden(WS, KW_NEWLINE):
-		//	"temp27";
+		/// *
+		// * Decision can match input such as "'temp31'" using multiple alternatives: 1, 3
+		// * / Iterators1 hidden(WS, KW_NEWLINE):
+		//	{Iterators1} "temp27" itr+=Iterator*;
 		public ParserRule getRule() { return rule; }
 
+		//{Iterators1} "temp27" itr+=Iterator*
+		public Group getGroup() { return cGroup; }
+
+		//{Iterators1}
+		public Action getIterators1Action_0() { return cIterators1Action_0; }
+
 		//"temp27"
-		public Keyword getTemp27Keyword() { return cTemp27Keyword; }
+		public Keyword getTemp27Keyword_1() { return cTemp27Keyword_1; }
+
+		//itr+=Iterator*
+		public Assignment getItrAssignment_2() { return cItrAssignment_2; }
+
+		//Iterator
+		public RuleCall getItrIteratorParserRuleCall_2_0() { return cItrIteratorParserRuleCall_2_0; }
 	}
 
 	public class IteratorElements extends AbstractParserRuleElementFinder {
@@ -2297,13 +2418,16 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cSpSuchthatPartParserRuleCall_0_4_0 = (RuleCall)cSpAssignment_0_4.eContents().get(0);
 		private final Group cGroup_1 = (Group)cAlternatives.eContents().get(1);
 		private final Keyword cWhileKeyword_1_0 = (Keyword)cGroup_1.eContents().get(0);
-		private final RuleCall cInfixedParserRuleCall_1_1 = (RuleCall)cGroup_1.eContents().get(1);
+		private final Assignment cIAssignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
+		private final RuleCall cIInfixedParserRuleCall_1_1_0 = (RuleCall)cIAssignment_1_1.eContents().get(0);
 		
-		//Iterator:
-		//	"for" ForLhs "in" i=Infixed sp=SuchthatPart? | "while" Infixed;
+		//Iterator hidden(WS, KW_NEWLINE):
+		//	"for" ForLhs "in" i=Infixed sp=SuchthatPart? //	'temp28'
+		//	| "while" i=Infixed;
 		public ParserRule getRule() { return rule; }
 
-		//"for" ForLhs "in" i=Infixed sp=SuchthatPart? | "while" Infixed
+		//"for" ForLhs "in" i=Infixed sp=SuchthatPart? //	'temp28'
+		//| "while" i=Infixed
 		public Alternatives getAlternatives() { return cAlternatives; }
 
 		//"for" ForLhs "in" i=Infixed sp=SuchthatPart?
@@ -2330,107 +2454,113 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		//SuchthatPart
 		public RuleCall getSpSuchthatPartParserRuleCall_0_4_0() { return cSpSuchthatPartParserRuleCall_0_4_0; }
 
-		//"while" Infixed
+		//"while" i=Infixed
 		public Group getGroup_1() { return cGroup_1; }
 
 		//"while"
 		public Keyword getWhileKeyword_1_0() { return cWhileKeyword_1_0; }
 
+		//i=Infixed
+		public Assignment getIAssignment_1_1() { return cIAssignment_1_1; }
+
 		//Infixed
-		public RuleCall getInfixedParserRuleCall_1_1() { return cInfixedParserRuleCall_1_1; }
+		public RuleCall getIInfixedParserRuleCall_1_1_0() { return cIInfixedParserRuleCall_1_1_0; }
 	}
 
 	public class ForLhsElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "ForLhs");
-		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
-		private final RuleCall cInfixedParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
-		private final Group cGroup_1 = (Group)cAlternatives.eContents().get(1);
-		private final Keyword cFreeKeyword_1_0 = (Keyword)cGroup_1.eContents().get(0);
-		private final RuleCall cInfixedParserRuleCall_1_1 = (RuleCall)cGroup_1.eContents().get(1);
-		private final Group cGroup_2 = (Group)cAlternatives.eContents().get(2);
-		private final Keyword cLocalKeyword_2_0 = (Keyword)cGroup_2.eContents().get(0);
-		private final RuleCall cInfixedParserRuleCall_2_1 = (RuleCall)cGroup_2.eContents().get(1);
-		private final Group cGroup_3 = (Group)cAlternatives.eContents().get(3);
-		private final Keyword cFluidKeyword_3_0 = (Keyword)cGroup_3.eContents().get(0);
-		private final RuleCall cInfixedParserRuleCall_3_1 = (RuleCall)cGroup_3.eContents().get(1);
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Alternatives cAlternatives_0 = (Alternatives)cGroup.eContents().get(0);
+		private final Keyword cFreeKeyword_0_0 = (Keyword)cAlternatives_0.eContents().get(0);
+		private final Keyword cLocalKeyword_0_1 = (Keyword)cAlternatives_0.eContents().get(1);
+		private final Keyword cFluidKeyword_0_2 = (Keyword)cAlternatives_0.eContents().get(2);
+		private final RuleCall cInfixedParserRuleCall_1 = (RuleCall)cGroup.eContents().get(1);
 		
-		//ForLhs:
-		//	Infixed | "free" Infixed | "local" Infixed | "fluid" Infixed;
+		//ForLhs hidden(WS, KW_NEWLINE):
+		//	("free" | "local" | "fluid")? Infixed;
 		public ParserRule getRule() { return rule; }
 
-		//Infixed | "free" Infixed | "local" Infixed | "fluid" Infixed
-		public Alternatives getAlternatives() { return cAlternatives; }
+		//("free" | "local" | "fluid")? Infixed
+		public Group getGroup() { return cGroup; }
 
-		//Infixed
-		public RuleCall getInfixedParserRuleCall_0() { return cInfixedParserRuleCall_0; }
-
-		//"free" Infixed
-		public Group getGroup_1() { return cGroup_1; }
+		//("free" | "local" | "fluid")?
+		public Alternatives getAlternatives_0() { return cAlternatives_0; }
 
 		//"free"
-		public Keyword getFreeKeyword_1_0() { return cFreeKeyword_1_0; }
-
-		//Infixed
-		public RuleCall getInfixedParserRuleCall_1_1() { return cInfixedParserRuleCall_1_1; }
-
-		//"local" Infixed
-		public Group getGroup_2() { return cGroup_2; }
+		public Keyword getFreeKeyword_0_0() { return cFreeKeyword_0_0; }
 
 		//"local"
-		public Keyword getLocalKeyword_2_0() { return cLocalKeyword_2_0; }
-
-		//Infixed
-		public RuleCall getInfixedParserRuleCall_2_1() { return cInfixedParserRuleCall_2_1; }
-
-		//"fluid" Infixed
-		public Group getGroup_3() { return cGroup_3; }
+		public Keyword getLocalKeyword_0_1() { return cLocalKeyword_0_1; }
 
 		//"fluid"
-		public Keyword getFluidKeyword_3_0() { return cFluidKeyword_3_0; }
+		public Keyword getFluidKeyword_0_2() { return cFluidKeyword_0_2; }
 
 		//Infixed
-		public RuleCall getInfixedParserRuleCall_3_1() { return cInfixedParserRuleCall_3_1; }
+		public RuleCall getInfixedParserRuleCall_1() { return cInfixedParserRuleCall_1; }
 	}
 
 	public class SuchthatPartElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "SuchthatPart");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cTemp30Keyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final RuleCall cKW_BARTerminalRuleCall_1 = (RuleCall)cGroup.eContents().get(1);
-		private final RuleCall cInfixedParserRuleCall_2 = (RuleCall)cGroup.eContents().get(2);
+		private final RuleCall cKW_BARTerminalRuleCall_0 = (RuleCall)cGroup.eContents().get(0);
+		private final RuleCall cInfixedParserRuleCall_1 = (RuleCall)cGroup.eContents().get(1);
 		
-		//SuchthatPart hidden(WS, KW_NEWLINE):
-		//	"temp30" KW_BAR Infixed;
+		//SuchthatPart hidden(WS, KW_NEWLINE): //	'temp30'
+		//	KW_BAR Infixed;
 		public ParserRule getRule() { return rule; }
 
-		//"temp30" KW_BAR Infixed
+		////	'temp30'
+		//KW_BAR Infixed
 		public Group getGroup() { return cGroup; }
 
-		//"temp30"
-		public Keyword getTemp30Keyword_0() { return cTemp30Keyword_0; }
-
+		////	'temp30'
 		//KW_BAR
-		public RuleCall getKW_BARTerminalRuleCall_1() { return cKW_BARTerminalRuleCall_1; }
+		public RuleCall getKW_BARTerminalRuleCall_0() { return cKW_BARTerminalRuleCall_0; }
 
 		//Infixed
-		public RuleCall getInfixedParserRuleCall_2() { return cInfixedParserRuleCall_2; }
+		public RuleCall getInfixedParserRuleCall_1() { return cInfixedParserRuleCall_1; }
 	}
 
 	public class InfixedElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Infixed");
-		private final Keyword cTemp31Keyword = (Keyword)rule.eContents().get(1);
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final Group cGroup_0 = (Group)cAlternatives.eContents().get(0);
+		private final Assignment cIfxAssignment_0_0 = (Assignment)cGroup_0.eContents().get(0);
+		private final RuleCall cIfxInfixedExprParserRuleCall_0_0_0 = (RuleCall)cIfxAssignment_0_0.eContents().get(0);
+		private final Assignment cDpAssignment_0_1 = (Assignment)cGroup_0.eContents().get(1);
+		private final RuleCall cDpDeclPartParserRuleCall_0_1_0 = (RuleCall)cDpAssignment_0_1.eContents().get(0);
+		private final Assignment cBAssignment_1 = (Assignment)cAlternatives.eContents().get(1);
+		private final RuleCall cBBlockParserRuleCall_1_0 = (RuleCall)cBAssignment_1.eContents().get(0);
 		
 		/// *
 		// * Infixed Expressions
-		// * / // causes constraint error when following is uncommented
-		//// InfixedExpr DeclPart*
-		//// | Block
-		//Infixed hidden(WS, KW_NEWLINE):
-		//	"temp31";
+		// * / Infixed hidden(WS, KW_NEWLINE):
+		//	ifx=InfixedExpr dp+=DeclPart* | b=Block;
 		public ParserRule getRule() { return rule; }
 
-		//"temp31"
-		public Keyword getTemp31Keyword() { return cTemp31Keyword; }
+		//ifx=InfixedExpr dp+=DeclPart* | b=Block
+		public Alternatives getAlternatives() { return cAlternatives; }
+
+		//ifx=InfixedExpr dp+=DeclPart*
+		public Group getGroup_0() { return cGroup_0; }
+
+		//ifx=InfixedExpr
+		public Assignment getIfxAssignment_0_0() { return cIfxAssignment_0_0; }
+
+		//InfixedExpr
+		public RuleCall getIfxInfixedExprParserRuleCall_0_0_0() { return cIfxInfixedExprParserRuleCall_0_0_0; }
+
+		//dp+=DeclPart*
+		public Assignment getDpAssignment_0_1() { return cDpAssignment_0_1; }
+
+		//DeclPart
+		public RuleCall getDpDeclPartParserRuleCall_0_1_0() { return cDpDeclPartParserRuleCall_0_1_0; }
+
+		//b=Block
+		public Assignment getBAssignment_1() { return cBAssignment_1; }
+
+		//Block
+		public RuleCall getBBlockParserRuleCall_1_0() { return cBBlockParserRuleCall_1_0; }
 	}
 
 	public class InfixedExprElements extends AbstractParserRuleElementFinder {
@@ -4934,30 +5064,30 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cInfixedParserRuleCall_0 = (RuleCall)cGroup.eContents().get(0);
 		private final Group cGroup_1 = (Group)cGroup.eContents().get(1);
 		private final RuleCall cKW_COMMATerminalRuleCall_1_0 = (RuleCall)cGroup_1.eContents().get(0);
-		private final Assignment cIAssignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
-		private final RuleCall cIInfixedParserRuleCall_1_1_0 = (RuleCall)cIAssignment_1_1.eContents().get(0);
+		private final Assignment cI2Assignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
+		private final RuleCall cI2InfixedParserRuleCall_1_1_0 = (RuleCall)cI2Assignment_1_1.eContents().get(0);
 		
 		//enlister1_Infixed_Comma hidden(WS, KW_NEWLINE):
-		//	Infixed (KW_COMMA i=Infixed)*;
+		//	Infixed (KW_COMMA i2=Infixed)*;
 		public ParserRule getRule() { return rule; }
 
-		//Infixed (KW_COMMA i=Infixed)*
+		//Infixed (KW_COMMA i2=Infixed)*
 		public Group getGroup() { return cGroup; }
 
 		//Infixed
 		public RuleCall getInfixedParserRuleCall_0() { return cInfixedParserRuleCall_0; }
 
-		//(KW_COMMA i=Infixed)*
+		//(KW_COMMA i2=Infixed)*
 		public Group getGroup_1() { return cGroup_1; }
 
 		//KW_COMMA
 		public RuleCall getKW_COMMATerminalRuleCall_1_0() { return cKW_COMMATerminalRuleCall_1_0; }
 
-		//i=Infixed
-		public Assignment getIAssignment_1_1() { return cIAssignment_1_1; }
+		//i2=Infixed
+		public Assignment getI2Assignment_1_1() { return cI2Assignment_1_1; }
 
 		//Infixed
-		public RuleCall getIInfixedParserRuleCall_1_1_0() { return cIInfixedParserRuleCall_1_1_0; }
+		public RuleCall getI2InfixedParserRuleCall_1_1_0() { return cI2InfixedParserRuleCall_1_1_0; }
 	}
 
 	public class Enlister1_InfixedExpr_CommaElements extends AbstractParserRuleElementFinder {
@@ -5198,1109 +5328,13 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		// * CurlyContentB(E) E is from CurlyContentA(E)
 		// * or CurlyContentsList(E)
 		// * 
-		// * causes:
-		// * in editor we get:
-		// * java.lang.IllegalArgumentException: CurlyContentB_Labeled.pd does not exist
-		// *
-		// * in the calling instance of Eclipse we get
-		// * CompoundXtextEditorCallback  - different instances of editor were given.
-		// * / ///////// end of Aldor stuff
-		/// *
-		// * longname and longname2 should both be ID and have the same value. Since the
-		// * runtime values can't be checked by the parser this must be checked later.
-		// * / //CategoryDef hidden(WS,KW_NEWLINE,TK_COMMENT):
-		////name='category' shortname=TK_ID longname=TK_ID
-		////longname2=TK_ID / *[CategoryDef]* /
-		////    (cp=TypeParameterList)?
-		////    KW_COLON 'Category' KW_2EQ
-		////    (
-		////    implName=TypeArguments? ((w=WithPart? a=AddPart?)| wh5=WherePart)
-		////    | KW_OCURLY KW_NEWLINE*
-		////      implName=TypeArguments ((w=WithPart? a=AddPart?)| wh5=WherePart)
-		////      KW_CCURLY KW_NEWLINE* a2=AddPart?
-		////    )
-		////;
-		/// *
-		// * longname and longname2 should both be ID and have the same value. Since the
-		// * runtime values can't be checked by the parser this must be checked later.
-		// * / //PackageDef hidden(WS,KW_NEWLINE,TK_COMMENT):
-		////name='package' shortname=TK_ID longname=TK_ID
-		////longname2=TK_ID / *[PackageDef]* /
-		////    (cp=TypeParameterList)? KW_COLON
-		////    (
-		////     exportName=TK_ID KW_2EQ implName=TK_ID
-		////        (w=WithPart | wh5=WherePart)
-		////     |
-		////     w=WithPart
-		////     (KW_2EQ add2=AddPart)?
-		////    )
-		////;
-		/// *
-		// * longname and longname2 should both be ID and have the same value. Since the
-		// * runtime values can't be checked by the parser this must be checked later.
-		// * / //DomainDef hidden(WS,KW_NEWLINE,TK_COMMENT):
-		////name='domain' shortname5=TK_ID longname5=TK_ID
-		////longname6=TK_ID / *[DomainDef]* /
-		////    (cp5=TypeParameterList)?
-		////    KW_COLON exportName=TK_ID (cp6=TypeParameterList)?
-		////    KW_2EQ implName5=TK_ID?
-		////    (w=WithPart | wh5=WherePart | a=AddPart)
-		////;
-		/// *
-		// * both category and domain can have 'where' part which holds overall information
-		// * such as category/domain parameter information and general macros. This is
-		// * followed by export('with') and import ('add') information.
-		// * Forms allowed include:
-		// * Exports == PlottablePlaneCurveCategory with {
-		// * Exports ==> PlottablePlaneCurveCategory with {
-		// * Exports ==> with {
-		// * / //WherePart hidden(WS,TK_COMMENT):
-		////name='where' KW_NEWLINE* KW_OCURLY KW_NEWLINE*
-		////    (whereAssig +=WhereAssignments (KW_NEWLINE|KW_SEMICOLON)+)*
-		////    // with part
-		////    (longname8=TK_ID (KW_2EQ | KW_MARROW) (imp=TypeExpression2)? w8=WithPart)?
-		////    // add part
-		////    (
-		////     (longname9=TK_ID (KW_2EQ | KW_MARROW))?
-		////        ((fs=TK_ID KW_OPAREN par2=TK_ID? (KW_COMMA par3 += TK_ID)* KW_CPAREN)
-		////         | (fs=TK_ID f2=TK_ID)
-		////        )?
-		////        add=AddPart
-		////    )?
-		////    KW_CCURLY KW_NEWLINE+
-		////;
-		/// * each one must be on a separate line or separated by ';'
-		// * need to add name=
-		// * / //WhereAssignments hidden(WS):
-		////VariableDeclaration
-		////| MacroDef |Import
-		////;
-		/// *
-		// * the 'where' part contains a 'with' part which holds export information
-		// * such as function signatures (function declarations) but not function definitions.
-		// * / //WithPart hidden(WS,TK_COMMENT):
-		////name='with' KW_NEWLINE* KW_OCURLY KW_NEWLINE*
-		////    (fundec += VariableDeclaration (KW_NEWLINE|KW_SEMICOLON)+)*
-		////    KW_CCURLY KW_NEWLINE*
-		////;
-		/// *
-		// * similar to 'WithPart' but no trailing NL
-		// * / //WithInline hidden(WS,TK_COMMENT):
-		////name='with' KW_NEWLINE* KW_OCURLY KW_NEWLINE*
-		////    (fundec += VariableDeclaration (KW_NEWLINE|KW_SEMICOLON)+)*
-		////    KW_CCURLY
-		////;
-		/// *
-		// * the 'where' part contains a 'add' part which holds function and other
-		// * declarations.
-		// * / //AddPart hidden(WS,TK_COMMENT):
-		////name='add' KW_NEWLINE* KW_OCURLY KW_NEWLINE*
-		////    (t+=AddStatements (KW_NEWLINE|KW_SEMICOLON)+)* KW_CCURLY KW_NEWLINE*
-		////;
-		/// *
-		// * The add section of domain or package may contain multiple lines
-		// *
-		// * Examples:
-		// * if (r := recip leadingCoefficient M) case "failed" then {
-		// * error "Modulus cannot be made monic"
-		// * }
-		// * / //AddStatements hidden(WS,TK_COMMENT):
-		////   VariableDeclarationAssign
-		////   | FunctionDefinition
-		////   | ('if' t1=Expression // expression has form 'x has y'
-		////      'then' t13=FunctionDefinitionBlock)
-		////   | 'else' t14=FunctionDefinitionBlock
-		////   | 'else' t15=AddStatements
-		////   | MacroDef
-		////   | Import
-		////;
-		/// * function definition in add part (called by AddStatements)
-		// * has a form like:
-		// * name(params) == statement
-		// * or, option for single parameter without brackets:
-		// * name param == statement
-		// * or, option for zero parameters without brackets:
-		// * This does not always work at the moment, for instance, this does not work:
-		// * size == size$R ^ d
-		// * but this does
-		// * size() == size$R ^ d
-		// *
-		// * or, for infix operators,
-		// * a = b == statement
-		// * or, for multiple statements,
-		// * name(params) == {
-		// * statement
-		// * statement
-		// * }
-		// * some function definitions may be conditional like this:
-		// * if % has finiteAggregate then {
-		// * ... }
-		// * / //FunctionDefinition hidden(WS,TK_COMMENT):
-		////  ((
-		////par3=FunctionSignature
-		////    (KW_COLON par4=TypeExpression1)?
-		////    KW_2EQ par5=Statement
-		////   )|(
-		////    // this is case where FunctionSignature is just an identifier
-		////    fnNam=TK_ID KW_2EQ par5=Statement
-		////   ))
-		////;
-		/// *
-		// * called by 'AddStatements' rule.
-		// * allows more add statements inside:
-		// * if a has y then 'more add statements'
-		// * / //FunctionDefinitionBlock hidden(WS,TK_COMMENT):
-		////    fnDecBr=KW_OCURLY KW_NEWLINE*
-		////      (
-		////       fnDecBk += FunctionDefinition (KW_NEWLINE|KW_SEMICOLON)+
-		////       |
-		////       vars+=VariableDeclarationAssign (KW_NEWLINE|KW_SEMICOLON)+
-		////     | ('if' t1+=Expression // expression has form 'x has y'
-		////        'then' t13+=FunctionDefinitionBlock (KW_NEWLINE|KW_SEMICOLON)+)
-		////     | ('else' t14+=FunctionDefinitionBlock (KW_NEWLINE|KW_SEMICOLON)+)
-		////     | i1+=Import (KW_NEWLINE|KW_SEMICOLON)+
-		////      )*
-		////      KW_CCURLY
-		////      | 'error' e=Expression
-		////      | KW_OCURLY KW_NEWLINE* 'error' e=Expression (KW_NEWLINE|KW_SEMICOLON)+ KW_CCURLY
-		////;
-		/// * This is the first part of the function definition without the return type or
-		// * the function implementation. Usually the function signature has a form like:
-		// * name(params)
-		// * We allow a single parameter to be given without brackets:
-		// * name param
-		// *
-		// * We also allow some alternative forms to represent infix operators like:
-		// * a = b to represent _=(a,b)
-		// * or the following (this works but only for % we need it to work for every type)
-		// * s:% = t:%
-		// * or
-		// * a > b to represent _>(a,b)
-		// * 0 or 1 can be used as a function signature as a short form of
-		// * _0() or _1()
-		// * / //FunctionSignature hidden(WS,TK_COMMENT):
-		////  (
-		////fnNam=TK_ID
-		////    KW_OPAREN
-		////    par2=VariableTyped?
-		////    (KW_COMMA par3 += VariableTyped)*
-		////    KW_CPAREN
-		////  ) | (
-		////   // fnNam=ID par2=VariableDeclaration causes recursive definition so use:
-		////   fnNam=TK_ID par=TK_ID
-		////// ) | (
-		////// t4=ID // no parameters without brackets
-		////// commented out as it causes recursive rule invocation
-		////// with ruleAddStatements and ruleFunctionDefinitionBlock
-		////  ) | (
-		////   t4=TK_ID (KW_COLON (PERCENT | TK_ID))? //(COLON te1=TypeExpression)?
-		////   ( b1=KW_EQ | b1=KW_LT | b1=KW_GT | b1=KW_LE | b1=KW_GE |
-		////            b1=KW_PLUS | b1=KW_MINUS | b1=KW_STAR | b1=KW_SLASH | b1=KW_AMPERSAND |
-		////            b1=KW_BAR | b1=KW_HAT) t5=TK_ID
-		////  ) | (
-		////   b3=TK_INT // allows special form of function signature using '0' or '1'
-		////   // can't specify '0' or '1' explicitly as this would affect lex
-		////   // order
-		////  ) | (
-		////   b2=KW_MINUS t6=TK_ID
-		////  ) | (
-		////   b4=KW_TILDE t7=TK_ID
-		////  ) | (
-		////   b5='not' t8=TK_ID
-		////  ) | (
-		////   b6=KW_SHARP t8=TK_ID
-		////  )
-		////;
-		/// * macros provide a general textual substitution
-		// * there are two forms:
-		// * name ==> body
-		// * and
-		// * name macro == body
-		// * / //MacroDef: macroname=TK_ID MACROVALUE ; //MACRO val=ID NL;
-		/// *
-		// * import domain
-		// * / //Import hidden(WS):
-		////'import' (impname += TK_ID)+ (KW_OPAREN par22+=TypeExpression1
-		////(KW_COMMA par22+=TypeExpression1)* KW_CPAREN)?
-		////;
-		/// * Variable declaration in where and with sections:
-		// * A 'variable' can be simple like:
-		// * x:Float
-		// * or something more complicated like:
-		// * x:Record(newPt: Pt,type: String)
-		// * or it can be a function like:
-		// * x:(Float,Integer) -> Float
-		// * or it can be conditional like:
-		// * if
-		// * / //VariableDeclarationBlock hidden(WS,TK_COMMENT):
-		////    vardecbr=KW_OCURLY KW_NEWLINE*
-		////      //=>(i1=Import NL*)?
-		////      (vardecBlk += VariableDeclaration (KW_NEWLINE|KW_SEMICOLON)+)*
-		////      KW_CCURLY
-		////;
-		/// * Variable declaration in where and with sections:
-		// * A 'variable' can be simple like:
-		// * x:Float
-		// * or something more complicated like:
-		// * x:Record(newPt: Pt,type: String)
-		// * or it can be a function like:
-		// * x:(Float,Integer) -> Float
-		// * or it can be conditional like:
-		// * if
-		// * / //VariableDeclaration hidden(WS,TK_COMMENT):
-		//////Import?
-		////    ('if' t1=Expression 'then')? // expression has form 'x has y'
-		////( v1=TypeWithName
-		////      | v2=VariableDeclarationBlock
-		////)
-		////;
-		/// *
-		// * This rule is used where a type is expected like:
-		// * Float
-		// * but it may also have an optional name like:
-		// * x:Float
-		// * / //TypeWithName hidden(WS,TK_COMMENT):
-		////(
-		////(varName=TK_ID | varNameSt=TK_STRING) (KW_COMMA varName2=TK_ID)?
-		////KW_COLON
-		////)? typ=TypeExpression1
-		////;
-		/// * Variable name with optional type. This is used in function signature
-		// * and also by VariableDeclaration:
-		// * A 'variable' can be simple like:
-		// * x:Float
-		// * or something more complicated like:
-		// * x:Record(newPt: Pt,type: String)
-		// * or it can be a function like:
-		// * x:(Float,Integer) -> Float
-		// * we can define multiple variables together:
-		// * i,j : Integer
-		// * / //VariableTyped hidden(WS,TK_COMMENT):
-		////(varName=TK_ID | varNameSt=TK_STRING)
-		////// =>(COMMA t2+=ID)* // multiple declarations in same line
-		////    (KW_COLON typ=TypeExpression1)?
-		////;
-		/// * in add part we can declare and assign in same part
-		// * such as:
-		// * a := 3
-		// * a:Integer := 3
-		// * a := sin(x)
-		// *
-		// * There are two forms of multiple assignment:
-		// * a,b,c := 0@Integer
-		// * or:
-		// * a := b := c := 0@Integer
-		// * / //VariableDeclarationAssign hidden(WS):
-		////  varName=TK_ID // name of variable
-		////  // if I just use name=ID then, when the ui program is running, I get:
-		////  // Duplicate xxx 'coerce' in yyy
-		////  (
-		////    (KW_COMMA t12+=TK_ID)* // multiple declarations in same line
-		////    (KW_COLON typ=TypeExpression1)? // option to explicitly define type
-		////    (KW_ASSIGN (t4=Expression / * |(LBRACE NL* Expression NL* RBRACE) * /))?
-		////    // we need block since we can't always detect continuation after ':='
-		////    // but this causes infinite loop
-		////  )// | (BECOMES t2+=ID)+ BECOMES t4=Expression
-		////;
-		/// *
-		// * free variable allows us to declare a variable that is global
-		// * / //FreeVariable hidden(WS):
-		////'free' var=TK_ID
-		////;
-		/// *
-		// * allows us to declare a variable that is not global
-		// * / //LocalVariable hidden(WS):
-		////'local' var=TK_ID
-		////;
-		/// *
-		// * This is similar to Expression but known to be of type.
-		// * (Expression can also be of type) but if we know that
-		// * this is a type we can exclude some possibilities.
-		// *
-		// * A 'typeExpression' can be simple like:
-		// * Float
-		// * or something more complicated like:
-		// * Record(newPt: Pt,type: String)
-		// * or it can be a function like:
-		// * (Float,Integer) -> Float
-		// *
-		// * first we check for a function like: Integer -> Integer
-		// * / //TypeExpression1 returns TypeExpression hidden(WS):
-		////   =>(t2=TypeArguments KW_RARROW t3=TypeResult)
-		////   | TypePrimaryExpression1
-		////;
-		/// *
-		// * This is the same as TypeExpression except it does not allow
-		// * the type to be extended by using a 'with' keyword. It is used
-		// * in the 'where' rule because the 'with' in that case has a
-		// * slightly different syntax.
-		// * / //TypeExpression2 returns TypeExpression hidden(WS):
-		////   =>(t92=TypeArguments KW_RARROW t93=TypeResult)
-		////   | TypePrimaryExpression2
-		////;
-		/// *
-		// * we use a type parameter list for parameters of category, package or domains
-		// * Parameter list may be empty '()'.
-		// * in this case parameters may be just ID or they may be nameID:typeID
-		// *
-		// * examples are:
-		// * ()
-		// * (String)
-		// * (s:String)
-		// * (String,Integer)
-		// * (s:String,i:Integer)
-		// * / //TypeParameterList hidden(WS):
-		////tyname=KW_OPAREN par=TK_ID?
-		////(KW_COLON par21=TypeExpression1)?
-		////(KW_COMMA par2 += TK_ID (KW_COLON par22+=TypeExpression1)?)* KW_CPAREN;
-		/// *
-		// * we use type arguments for first part of function type, that is
-		// * x in x-> y
-		// * usually this is enclosed in parenthesis
-		// * (x) in (x)-> y
-		// * but if x is a single argument (Including Record, Union, etc.) then it does
-		// * not need to be in parenthesis.
-		// * / //TypeArguments hidden(WS):
-		////  t=TypeLiteral |
-		////  t2=PERCENT |
-		////  t3='Type' |
-		////  // usually, but not always type arguments are in parenthesis, and empty
-		////  // parenthesis are allowed
-		////  b1 ?= KW_OPAREN ((TK_ID KW_COLON)? t4=TypeExpression1)?
-		////               ( KW_COMMA (TK_ID KW_COLON)? t16 +=TypeExpression1)* KW_CPAREN |
-		////  t5='Record' KW_OPAREN t6=TypeExpression1
-		////               (KW_COLON t22+=TypeExpression1)?
-		////               (KW_COMMA t21+=TypeExpression1 (KW_COLON t23+=TypeExpression1)?)*
-		////                KW_CPAREN |
-		////  t9='Union' KW_OPAREN t10=TypeExpression1
-		////              (KW_COLON t25+=TypeExpression1)?
-		////              (KW_COMMA t24+=TypeExpression1 (KW_COLON t26+=TypeExpression1)?)*
-		////              KW_CPAREN |
-		////  t11='Join' KW_OPAREN t12=TypeExpression1 (KW_COMMA t13+=TypeExpression1)* KW_CPAREN |
-		////  t15=TypeNameOrFunctionCall
-		////;
-		/// *
-		// * we use type arguments for final part of function type, that is
-		// * y in x-> y
-		// * / //TypeResult hidden(WS):
-		////  t=TypeLiteral |
-		////  t2=PERCENT |
-		////  tyname='Type' |
-		////  tyname='Record' KW_OPAREN t7=TypeExpression1
-		////               (KW_COLON t8+=TypeExpression1)?
-		////               (KW_COMMA t21+=TypeExpression1 (KW_COLON t23+=TypeExpression1)?)*
-		////                KW_CPAREN |
-		////  tyname='Union' KW_OPAREN t10=TypeExpression1
-		////              (KW_COLON t11+=TypeExpression1)?
-		////              (KW_COMMA t24+=TypeExpression1 (KW_COLON t26+=TypeExpression1)?)*
-		////              KW_CPAREN |
-		////  tyname='Join' KW_OPAREN t12=TypeExpression1 (KW_COMMA t13+=TypeExpression1)* KW_CPAREN |
-		////  t15=TypeNameOrFunctionCall
-		////;
-		/// *
-		// * this matches various specific types
-		// * / //TypePrimaryExpression1 returns TypePrimaryExpression hidden(WS):
-		//// TypeLiteral
-		//// | ({TypePrimaryExpression}t32=PERCENT)
-		//// | ({TypePrimaryExpression}tyname='Type') // 'Type' is top of the category hierarchy
-		//// | ({TypePrimaryExpression}tyname='Lisp') // 'Lisp' is used for native lisp function calls such as Say$Lisp
-		//// | ({TypePrimaryExpression}KW_OPAREN t5=TypeExpression1 KW_CPAREN)
-		//// | ({TypePrimaryExpression}tyname='Record' KW_OPAREN t7=TypeExpression1
-		////               (KW_COLON t8+=TypeExpression1)?
-		////               (KW_COMMA t21+=TypeExpression1 (KW_COLON t23+=TypeExpression1)?)*
-		////                KW_CPAREN)
-		//// | ({TypePrimaryExpression}tyname='Union' KW_OPAREN t10=TypeExpression1
-		////              (KW_COLON t11+=TypeExpression1)?
-		////              (KW_COMMA t24+=TypeExpression1 (KW_COLON t26+=TypeExpression1)?)*
-		////              KW_CPAREN)
-		//// | ({TypePrimaryExpression}tyname='Join'
-		////    KW_OPAREN t13=TypeExpression1 (KW_COMMA t14+=TypeExpression1)* KW_CPAREN)
-		//// | TypeNameOrFunctionCall
-		//// | => TupleDefinition
-		////;
-		/// *
-		// * This is the same as TypePrimaryExpression except it does not allow
-		// * the type to be extended by using a 'with' keyword. It is used
-		// * in the 'where' rule because the 'with' in that case has a
-		// * slightly different syntax.
-		// * / //TypePrimaryExpression2 returns TypePrimaryExpression hidden(WS):
-		//// TypeLiteral
-		//// | ({TypePrimaryExpression}t32=PERCENT)
-		//// | ({TypePrimaryExpression}tyname='Type') // 'Type' is top of the category hierarchy
-		//// | ({TypePrimaryExpression}tyname='Lisp') // 'Lisp' is used for native lisp function calls such as Say$Lisp
-		//// | ({TypePrimaryExpression}KW_OPAREN t5=TypeExpression1 KW_CPAREN)
-		//// | ({TypePrimaryExpression}tyname='Record' KW_OPAREN t7=TypeExpression1
-		////               (KW_COLON t8+=TypeExpression1)?
-		////               (KW_COMMA t21+=TypeExpression1 (KW_COLON t23+=TypeExpression1)?)*
-		////                KW_CPAREN)
-		//// | ({TypePrimaryExpression}tyname='Union' KW_OPAREN t10=TypeExpression1
-		////              (KW_COLON t11+=TypeExpression1)?
-		////              (KW_COMMA t24+=TypeExpression1 (KW_COLON t26+=TypeExpression1)?)*
-		////              KW_CPAREN)
-		//// | ({TypePrimaryExpression}tyname='Join'
-		////    KW_OPAREN t13=TypeExpression1 (KW_COMMA t14+=TypeExpression1)* KW_CPAREN)
-		//// | TypeNameOrFunctionCall2
-		//// | => TupleDefinition
-		////;
-		/// * This rule will match:
-		// * Float - an ID representation of a type
-		// * List(Float) - a type function call
-		// * List Float - a non-parenthesis form if only one parameter
-		// *
-		// * A type function is also known as a parameterised type or
-		// * functor (not necessarily a true
-		// * functor since it may not obey the axioms of a functor).
-		// * If there is only one parameter then the parenthesis are optional
-		// * / //TypeNameOrFunctionCall hidden(WS):
-		////  tfnname=TK_ID
-		////  (
-		////    (KW_OPAREN (TK_ID KW_COLON)? t4=TypeExpression1? (KW_COMMA (TK_ID KW_COLON)? t25+=TypeExpression1)* KW_CPAREN)
-		////    // optional curried function:
-		////    (KW_OPAREN t44+=StatementExpression? (KW_COMMA t45+=Expression)* KW_CPAREN)*
-		////    // option of no parenthesis for single parameter
-		////    | => t6=TypePrimaryExpression1
-		////    | => w=WithInline
-		////  )?
-		////;
-		////TypeNameOrFunctionCall2 hidden(WS):
-		////  tfnname=TK_ID
-		////  (
-		////    (KW_OPAREN (TK_ID KW_COLON)? t4=TypeExpression1? (KW_COMMA (TK_ID KW_COLON)? t25+=TypeExpression1)* KW_CPAREN)
-		////    // optional curried function:
-		////    (KW_OPAREN t44+=StatementExpression? (KW_COMMA t45+=Expression)* KW_CPAREN)*
-		////    // option of no parenthesis for single parameter
-		////    | => t6=TypePrimaryExpression1
-		////  )?
-		////;
-		/// * This has a form like: (Integer,Float,String)
-		// * like an array where each entry can be of a different type
-		// * / //TupleDefinition hidden(WS):
-		////  (KW_OPAREN t4=TypeExpression1 (KW_COMMA t25+=TypeExpression1)* KW_CPAREN)
-		////;
-		/// * Since SPAD supports dependent types then numbers and strings can occur here.
-		// * Outstanding issues:
-		// * 1) Float literals are parsed as elt(Int,Int) so we need to recognise this
-		// * and convert to float literal
-		// * 2) We need to be able to recognise exponent notation for floats
-		// * 3) Integers without '-' prefix can be converted to PI or NNI
-		// * 4) need to add hex or octal notation for integers (0xhhhh)
-		// * 5) String and Character literals need to have backslash "\" doubled to
-		// * "\\" otherwise xtext will interpret backslash as an escape character.
-		// * 6) values following immediately after string literal such as "abc"d should
-		// * represent an implied concat: concat("abc",d)
-		// * / //TypeLiteral hidden(WS):
-		////  t1=TK_INT |
-		////  t22=TK_STRING |
-		////// t3=FloatLiteral |
-		////  t34=CharacterLiteral |
-		////  t35=BooleanLiteral
-		////;
-		/// * In FunctionDefinition the algorithm is defined by a sequence of the
-		// * following statements:
-		// * / //Statement hidden(WS,TK_COMMENT):
-		////    s1=Block |
-		////    s3= StatementExpression |
-		////    // 'if' can occur in an expression or in
-		////    // a statement so we use '=>' to choose
-		////    // expression if there is any ambiguity
-		////    s4=IfStatement |
-		////    s4b=IfElseStatement |
-		////// s4c=IfThenStatement |
-		////    s5=WhileStatement |
-		////    s6=DoStatement |
-		////    s7=ForStatement |
-		////    s8=BreakStatement |
-		////    s12=RepeatStatement |
-		////    s9= IterateStatement |
-		////// s11= ContinueStatement|
-		////    s10= ReturnStatement |
-		////// s11= Import |
-		////    'error' e=Expression
-		////;
-		/// * allows multiple statements which are grouped by wrapping in
-		// * braces (curly brackets) * / //Block hidden(WS,TK_COMMENT):
-		////stname=KW_OCURLY KW_NEWLINE*
-		////    (statemBl += Statement (KW_NEWLINE|KW_SEMICOLON)+)*
-		////    KW_CCURLY
-		////;
-		/// *
-		// * Gives a value or assigns a value to a variable or does conditional exit
-		// *
-		// * examples:
-		// * x
-		// * x:Int
-		// * x,y:INT -- multiple assignment
-		// * x:Int := 3
-		// *
-		// * x=y => 3
-		// * / //StatementExpression hidden(WS,TK_COMMENT):
-		////  //(ID COMMA)* // allow multiple assignment
-		////  t=ConditionExpression // was Expression but changed so that 'if' statement
-		////                        // does not clash with if-then-else expression
-		////// (COLON t2=TypeExpression)?
-		////// (BECOMES t3=Expression (BECOMES t33+=Expression)*)?
-		////    (KW_ASSIGN t5=Block)?
-		////    // breaks out of a block if predicate before '=>' is true then program
-		////    // control leaves the block.
-		////    // Put it here so that it can only occur at the top level of an expression.
-		////    // if inside some complicated expression then it must be terminated with ';'.
-		////    (KW_IMPLIES t4=Statement)?
-		////;
-		/// *
-		// * for i in n..m repeat ... is 1
-		// * for i in n..m by s repeat ...
-		// * for i in list repeat ...
-		// * for i in list for i in 1..length() repeat ...
-		// * for i in list for i in 1.. repeat ...
-		// * for j in n..m repeat loopBody
-		// * for j in n..m | odd? j repeat
-		// *
-		// * To Do
-		// * -----
-		// * As a temporary measure we check for '..' as a suffix operator
-		// * here, but we should really put this into expression?
-		// *
-		// * We need to allow conditions using BAR '|'
-		// * / //ForStatement hidden(WS,TK_COMMENT):
-		////'for' (
-		////       stname=TK_ID 'in' t1=Expression KW_2DOT? //(=> '..' t2=Expression)?
-		////       ('by' by1=Expression)?
-		////// (=> BAR t2=PredicateOr)? // condition
-		////       ('for' stname2+=TK_ID
-		////        'in' t2+=Expression KW_2DOT?
-		////        ('by' by2+=Expression)?
-		////        )*
-		////       ('while' t2+=Expression)*
-		////) 'repeat' KW_NEWLINE? s1=Statement //('is' s2=Statement)?
-		////;
-		/// *
-		// * while BoolExpr repeat loopBody
-		// * / //WhileStatement hidden(WS,TK_COMMENT):
-		////stname='while' (
-		////       t2=Expression / *PredicateOr* /
-		////) 'repeat' KW_NEWLINE? s1=Statement
-		////;
-		/// *
-		// * do loopBody while BoolExpr
-		// * / //DoStatement hidden(WS,TK_COMMENT):
-		////stname='do' (
-		////       s1=Statement
-		////) 'while' KW_NEWLINE? t2=Expression / *PredicateOr* /
-		////;
-		/// *
-		// * will repeat until we jump out. For instance by calling return.
-		// * / //RepeatStatement hidden(WS,TK_COMMENT):
-		////stname='repeat' (
-		////       s1=Statement
-		////)
-		////;
-		/// *
-		// * iterate ...
-		// * skips over the remainder of a loop
-		// * / //IterateStatement hidden(WS,TK_COMMENT):
-		////stname='iterate'
-		////;
-		/// *
-		// * break leave current loop
-		// * / //BreakStatement hidden(WS,TK_COMMENT):
-		////stname='break'
-		////;
-		/// *
-		// * return leave current function
-		// * / //ReturnStatement hidden(WS):
-		////stname='return' t2=Expression
-		////;
-		/// *
-		// * import - use 'Import' instead
-		// * / //ImportStatement hidden(WS):
-		//// stname='import' t2=Expression
-		////;
-		/// * 'if' statement allows program flow to be switched
-		// * forms:
-		// * if boolean then
-		// * if equation then
-		// * if ... not ... and ...or ... then
-		// * if ... then ... else ...
-		// * note1:
-		// * if ... then ... else ... always returns a value so we can use this
-		// * on the right hand side of an assignment
-		// * note2:
-		// * since there is an explicit 'then' keyword there is no need to put
-		// * the condition in brackets
-		// *
-		// * examples:
-		// * a:= if x >0 then x else -x
-		// * if R has Field then ...
-		// * if myUnion case mtType then ...
-		// *
-		// * we also need to allow a form like this:
-		// * if x >0 {
-		// * then x
-		// * else -x
-		// * }
-		// *
-		// * also this form (this requires IfElseStatement rule):
-		// * if x >0 then {
-		// * x
-		// * }
-		// * else {
-		// * -x
-		// * }
-		// * / //IfStatement hidden(WS,TK_COMMENT):
-		////  'if' t2=Expression
-		////// 'if' t2=ConditionExpression
-		////  (
-		////    'then' s1=Statement
-		////    (=> 'else' s2=Statement)?
-		////   |
-		////    b?=KW_OCURLY
-		////    KW_NEWLINE+ 'then' s11=Statement KW_NEWLINE*
-		////    (=>'else' s12=Statement KW_NEWLINE*)?
-		////    KW_CCURLY
-		////  )
-		////;
-		////IfElseStatement hidden(WS,TK_COMMENT):
-		////'else' s2=Statement
-		////;
-		/////////////// Expression syntax follows //////////////
-		/// * This is the top level for expressions
-		// *
-		// * This level handles special cases such as:
-		// * if x then y else z
-		// * (x,y) +-> z
-		// *
-		// * We can consider expressions as elements of statements
-		// * expressions contain no newlines unless preceded by underscore
-		// * (which is handled by WS)
-		// * / //Expression returns Expr hidden(WS,TK_COMMENT):
-		////  (ifname='if' ifpred=Expression 'then' thenexp=Expression 'else' elseexp=Expression)
-		////// | LPAREN t24=ConditionExpression (COMMA t25+=ConditionExpression)+ RPAREN (COLON rightType2 =TypeExpression)? GIVES ConditionExpression
-		////  | ExitExpression
-		////;
-		/// *
-		// * condition '=>' expr1 ';' expr2
-		// * / //ExitExpression returns Expr hidden(WS,TK_COMMENT):
-		////  ConditionExpression
-		////  ({ExitExpression.left=current} op=KW_IMPLIES right = ConditionExpression KW_SEMICOLON r2=ConditionExpression)*
-		////;
-		/// *
-		// * BAR "|" precedence: 108, 111
-		// * / //ConditionExpression returns Expr hidden(WS,TK_COMMENT):
-		////  OrExpression
-		////  ({ConditionExpression.left=current} op=KW_BAR right = OrExpression )*
-		////;
-		/// *
-		// * COMMA"," precedence: 110, 111
-		// * / //CommaExpression returns Expr hidden(WS,TK_COMMENT):
-		//// ConditionalAndExpression
-		//// ({ConditionExpression.left=current} op=BAR right = ConditionalAndExpression )*
-		////;
-		/// *
-		// * There is also another rule that looks for 'or' which is PredicateOr,
-		// * this version is used in a general expression and the other version is
-		// * used when we know we have a predicate.
-		// * "or", precedence: 200, 201
-		// * / //OrExpression returns Expr hidden(WS,TK_COMMENT):
-		////  AndExpression
-		////  ( {OrExpression.left=current} op='or' right = AndExpression)*
-		////;
-		/// *
-		// * There is also another rule that looks for 'and' which is PredicateAnd,
-		// * this version is used in a general expression and the other version is
-		// * used when we know we have a predicate.
-		// * "and", precedence: 250, 251
-		// * / //AndExpression returns Expr hidden(WS,TK_COMMENT):
-		////  InnerProdExpression
-		////  ( {AndExpression.left=current} op='and' right = InnerProdExpression)*
-		////;
-		/// *
-		// * This has multiple uses such as inner product and logical or.
-		// *
-		// * "\/", BACKSLASHSLASH precedence: 200, 201
-		// *
-		// * the backslash is duplicated here because it is the escape character for
-		// * strings, it will not be duplicated when used.
-		// * / //InnerProdExpression returns Expr hidden(WS,TK_COMMENT):
-		////  OuterProdExpression
-		////  ( {InnerProdExpression.left=current} op=KW_VEE right = OuterProdExpression)*
-		////;
-		/// *
-		// * This has multiple uses such as outer product and logical and.
-		// *
-		// * "/\", SLASHBACKSLASH precedence: 250, 251
-		// *
-		// * the backslash is duplicated here because it is the escape character for
-		// * strings, it will not be duplicated when used.
-		// * / //OuterProdExpression returns Expr hidden(WS,TK_COMMENT):
-		////  HasExpression
-		////  ( {OuterProdExpression.left=current} op=KW_WEDGE right = HasExpression)*
-		////;
-		/// * Predicate which returns true if preceding value is of a given type
-		// * example:
-		// * if R has Field then ..
-		// *
-		// * "has", precedence: 400, 400
-		// * / //HasExpression returns Expr hidden(WS,TK_COMMENT):
-		////  CaseExpression
-		////  ({HasExpression.left=current} op='has' rightType = TypeExpression1)*
-		////;
-		/// * Select from Union values
-		// * example:
-		// * if myUnion case mtType then ...
-		// *
-		// * "case", precedence: 400, 400
-		// * / //CaseExpression returns Expr hidden(WS,TK_COMMENT):
-		////  EqualityExpression
-		////  ( {CaseExpression.left=current} op='case' right = EqualityExpression)?
-		////;
-		/// * used in list comprehension
-		// *
-		// * "in", precedence: 400, 400
-		// * / / *InExpression returns Expr hidden(WS,TK_COMMENT):
-		//  RelationalExpression
-		//  ( {CaseExpression.left=current} op='in' right = RelationalExpression)?
-		//;* / / *
-		// * "~=", precedence: 400, 400
-		// * "^=", precedence: 400, 400
-		// * "=", precedence: 400, 400
-		// * / //EqualityExpression returns Expr hidden(WS,TK_COMMENT):
-		////  RelationalExpression
-		////// ambiguous because EQ can be in top level expression
-		////  ( {EqualityExpression.left=current}
-		////   ( op=KW_EQ | op=KW_TILDEE | op=KW_HATE | (op=EQUALSDOLAR te=TK_ID))
-		////   //(DOLAR te=ID)?
-		////   right = RelationalExpression
-		////  )*
-		////;
-		/// *
-		// * ">=", precedence: 400, 400
-		// * "<=", precedence: 400, 400
-		// * ">>", precedence: 400, 400
-		// * "<<", precedence: 400, 400
-		// * ">", precedence: 400, 400
-		// * "<", precedence: 400, 400
-		// * / //RelationalExpression returns Expr hidden(WS,TK_COMMENT):
-		////  IsExpression
-		////  ( {RelationalExpression.left=current}
-		////   ( op=KW_LT | op=KW_GT | op=KW_LE | op=KW_GE )
-		////      right = IsExpression
-		////  )?
-		////;
-		/// *
-		// *
-		// * "isnt", precedence: 400, 400
-		// * "is", precedence: 400, 400
-		// * / //IsExpression returns Expr hidden(WS,TK_COMMENT):
-		////  SegmentExpression
-		////  ({IsExpression.left=current} (op='is' | op='isnt') rightType = TypeExpression1)*
-		////;
-		/// *
-		// * this is used to indicate a range:
-		// * 1..4 means the range from 1 to 4
-		// * 1.. means the range from 1 to infinity. This is used in cases where
-		// * no top bounds is necessary, when the end point is determined by other
-		// * means.
-		// * "..", "SEGMENT", precedence: 401, 699, ["parse_Seg"]
-		// * / //SegmentExpression returns Expr hidden(WS,TK_COMMENT):
-		////  AdditiveExpression
-		////  ( {SegmentExpression.left=current} op=KW_2DOT right = AdditiveExpression)*
-		////;
-		/// *
-		// * add expression
-		// * we include both '+' and '-' in the same case as this allows a
-		// * multiple sequence like:
-		// * a + b + c - d + e -f
-		// *
-		// * "-", precedence: 700, 701
-		// * "+", precedence: 700, 701
-		// * / //AdditiveExpression returns Expr hidden(WS,TK_COMMENT):
-		////  ExquoExpression
-		////  ( {AdditiveExpression.left=current}
-		////    ( op=KW_PLUS | op=KW_MINUS | (op=PLUSDOLAR te=TK_ID) | (op=MINUSDOLAR te=TK_ID))
-		////    right = ExquoExpression
-		////  )*
-		////;
-		/// *
-		// * "exquo", precedence: 800, 801
-		// * / //ExquoExpression returns Expr hidden(WS,TK_COMMENT):
-		////  DivisionExpression
-		////  ({ExquoExpression.left=current} op='exquo' right = DivisionExpression)*
-		////;
-		/// *
-		// * division expression
-		// * "/", precedence: 800, 801
-		// * / //DivisionExpression returns Expr hidden(WS,TK_COMMENT):
-		////  QuoExpression
-		////  ( {DivisionExpression.left=current}
-		////   (op=KW_SLASH | (op=DIVDOLAR te=TK_ID))
-		////   right = QuoExpression
-		////  )*
-		////;
-		/// *
-		// *"quo", precedence: 800, 801
-		// * / //QuoExpression returns Expr hidden(WS,TK_COMMENT):
-		////  ModExpression
-		////  ({QuoExpression.left=current} op='quo' right = ModExpression)*
-		////;
-		/// *
-		// *"mod", precedence: 800, 801
-		// * / //ModExpression returns Expr hidden(WS,TK_COMMENT):
-		////  RemExpression
-		////  ({ModExpression.left=current} op='mod' right = RemExpression)*
-		////;
-		/// *
-		// *"rem", precedence: 800, 801
-		// * / //RemExpression returns Expr hidden(WS,TK_COMMENT):
-		////  MultiplicativeExpression
-		////  ({RemExpression.left=current} op='rem' right = MultiplicativeExpression)*
-		////;
-		/// *
-		// * multiplication expression
-		// * a * b * c
-		// *
-		// * "*", precedence: 800, 801
-		// * / //MultiplicativeExpression returns Expr hidden(WS,TK_COMMENT):
-		////  ExponentExpression
-		////  ( {MultiplicativeExpression.left=current}
-		////    (op=KW_STAR | (op=TIMESDOLAR te=TK_ID))
-		////    right = ExponentExpression
-		////  )*
-		////;
-		/// *
-		// *
-		// * "^", precedence: 901, 900
-		// * "**", precedence: 901, 900
-		// * / //ExponentExpression returns Expr hidden(WS,TK_COMMENT):
-		////  MapDefinition
-		////  ({ExponentExpression.left=current} (op=KW_HAT | op=KW_2STAR) right = MapDefinition)*
-		////;
-		/// * Map or Lambda expression
-		// * var +-> function
-		// *
-		// * +-> is an infix operator meaning 'maps-to'
-		// * It can be used to create a function literal (an anonymous function), so
-		// * instead of:
-		// * myFunct(x:Type):Type == if x >0 then x else -x
-		// * we can have forms such as:
-		// * x +-> if x >0 then x else -x
-		// * or:
-		// * (x,y) +-> if x >0 then y else -x
-		// *
-		// * fricas compatibility:
-		// * "+->", precedence: 995, 112
-		// * / //MapDefinition returns Expr hidden(WS,TK_COMMENT):
-		////// (PretendExpression | LPAREN PretendExpression (COMMA t25+=PretendExpression)+ RPAREN) (COLON rightType2 =TypeExpression)?
-		////  AssignExpression
-		////  ({MapDefinition.left=current}
-		////   op=KW_MAPSTO right = AssignExpression
-		////   (par = TK_ID)? // optional parameter which function
-		////                             // is applied to
-		////  )*
-		////;
-		/// *
-		// * an assign expression like this:
-		// * x := y
-		// * can also be an inner assign like this:
-		// * x := (y := z)
-		// * or just:
-		// * x := y := z
-		// *
-		// * right is expression to allow forms like
-		// * x := if y<0 then -y else y
-		// * / //AssignExpression returns Expr hidden(WS,TK_COMMENT):
-		////  PretendExpression
-		////  ({AssignExpression.left=current} op=KW_ASSIGN (
-		////   right = PretendExpression
-		////   | ifname='if' ifpred=ConditionExpression 'then' thenexp=ConditionExpression 'else' elseexp=PretendExpression
-		////   )
-		////  )*
-		////;
-		/// *
-		// * pretend Type: treat one type as another,
-		// * only works if they have the same internal structure.
-		// *
-		// * Not very safe and should be avoided, if possible, unfortunately
-		// * its not always possible to avoid.
-		// *
-		// * "pretend", precedence: 995, 996
-		// * / // PretendExpression returns Expr hidden(WS,TK_COMMENT):
-		////  CoerceExpression
-		////  ({PretendExpression.left=current} op='pretend' rightType = TypeExpression1)*
-		////;
-		/// *
-		// * "::", precedence: 996, 997
-		// *
-		// * although '::' and '@' apparently have the same precidence we want
-		// * '@' to bind more tightly than '::'. As we can see in the following example:
-		// * "dictionary"@String :: OutputForm.
-		// * / //CoerceExpression returns Expr hidden(WS,TK_COMMENT):
-		////  HintTypeExpression
-		////  ({CoerceExpression.left=current} op=KW_2COLON rightType = TypeExpression1)*
-		////;
-		/// *
-		// * "@", precedence: 996, 997
-		// * / //HintTypeExpression returns Expr hidden(WS,TK_COMMENT):
-		////  EltExpression
-		////  ( {HintTypeExpression.left=current} op=KW_AT rightType = TypeExpression1)?
-		////;
-		/// * We treat these as part of the language
-		// * : indicates type
-		// * ! is part of name to indicate mutable
-		// *
-		// * ":", precedence: 996, 997
-		// * "!", precedence: 1002, 1001
-		// *
-		// * / / *BangExpression returns Expr hidden(WS,TK_COMMENT):
-		//  EqualityExpression
-		//  ({AndExpression.left=current} op=AMPERSAND right = EqualityExpression)*
-		//;* / / *
-		// * "with", precedence: 2000, 400, ["parse_InfixWith"]
-		// *
-		// * / / *WithExpression returns Expr hidden(WS,TK_COMMENT):
-		//  EqualityExpression
-		//  ({AndExpression.left=current} op='with' right = EqualityExpression)*
-		//;* / / * Elt is Lisp terminology for the use of '.' to select parameters
-		// * the left expression is something that has selectable elements such as
-		// * a list, array, string, Record or union, the right element should be a
-		// * non-negative integer.
-		// * / //EltExpression returns Expr hidden(WS,TK_COMMENT):
-		////  ExplicitTypeExpression
-		////  ( {EltExpression.left=current}
-		////   op=KW_DOT right = ExplicitTypeExpression
-		////  )*
-		////;
-		//////////////// unary expressions ////////////////////
-		/// *
-		// * '$'
-		// * / //ExplicitTypeExpression returns Expr hidden(WS,TK_COMMENT):
-		////  UnaryExpression
-		////  ({ExplicitTypeExpression.left=current} op=KW_DOLLAR rightType = TypeExpression1)?
-		////;
-		/// * UnaryExpression
-		// * unary prefixes:
-		// * "~" TILDE : precedence 260, 259, nil
-		// * ":" COLON : precedence 194, 195
-		// * "-" MINUS : precedence 701, 700
-		// * "#" HASH : precedence 999, 998
-		// * "'" : precedence 999, 999, ["parse_Data"]
-		// * unary suffixes
-		// * ".." : range can be unary suffix
-		// * / //UnaryExpression returns Expr hidden(WS,TK_COMMENT):
-		////  PrimaryExpression |
-		////  ({UnaryExpression} uop=KW_TILDE expr=UnaryExpression) |
-		////// ({UnaryExpression} uop=COLON expr=UnaryExpression) |
-		////  ({UnaryExpression} uop=KW_MINUS expr=UnaryExpression) |
-		////  ({UnaryExpression} uop=MINUSDOLAR te=TK_ID expr=UnaryExpression) |
-		////  ({UnaryExpression} uop=KW_SHARP expr=UnaryExpression) |
-		////  ({UnaryExpression} uop='not' expr=PrimaryExpression) |
-		////  ({UnaryExpression} uop=SUMLIST expr=PrimaryExpression) |
-		////  ({UnaryExpression} uop=PRIMEPERCENT expr=PrimaryExpression) |
-		////   e2=PERCENT |
-		////  e3='Type' |
-		////  e5='Record' KW_OPAREN e6=TypeExpression1
-		////               (KW_COLON e22+=TypeExpression1)?
-		////               (KW_COMMA e21+=TypeExpression1 (KW_COLON e23+=TypeExpression1)?)*
-		////                KW_CPAREN |
-		////  e9='Union' KW_OPAREN e10=TypeExpression1
-		////              (KW_COLON e25+=TypeExpression1)?
-		////              (KW_COMMA e24+=TypeExpression1 (KW_COLON e26+=TypeExpression1)?)*
-		////              KW_CPAREN |
-		////  e11='Join' KW_OPAREN e12=TypeExpression1 (KW_COMMA e13+=TypeExpression1)* KW_CPAREN
-		////;
-		/// *
-		// *
-		// * / / *UnaryExpressionHash returns Expr hidden(WS,TK_COMMENT):
-		//// HASH? PrimaryExpression
-		//  PrimaryExpression | ({UnaryExpressionHash} uop=HASH expr=UnaryExpressionHash)
-		//;* / / *
-		// *
-		// * / //PrimaryExpression returns Expr hidden(WS,TK_COMMENT):
-		////  PrimaryPrefix / * ( t2+=PrimarySuffix )* * /
-		////;
-		/// *
-		// * Can contain an expression in parenthesis, this expression is
-		// * 'StatementExpression' which means that it can contain an
-		// * inner assignment.
-		// *
-		// * The comma option allows us to define a tuple
-		// * / //PrimaryPrefix hidden(WS,TK_COMMENT):
-		//// Literal
-		//// | KW_OPAREN t4=Expression (KW_COMMA t25+=Expression)* KW_CPAREN =>(KW_COLON rightType3 =TypeExpression1)?
-		//// | t7=NameOrFunctionCall
-		////;
-		/// * function call such as List(Integer)
-		// * known as a parameterised type or functor (not necessarily a true functor since
-		// * it may not obey the axioms of a functor)
-		// * if there is only one parameter then the parenthesis are optional
-		// *
-		// * function binds most tightly
-		// * / //NameOrFunctionCall hidden(WS,TK_COMMENT):
-		////  (KW_QUOTE)?
-		////  fnname=TK_ID (=> lsp=KW_DOLLAR 'Lisp'/ *t2=TypeExpression* /)?
-		////  // option for parameters in parenthesis
-		////  (
-		////// LPAREN t4=StatementExpression? (COMMA t5+=Expression)* RPAREN //(COLON rightType2 =TypeExpression)?
-		////    KW_OPAREN t4=Expression? (KW_COMMA t5+=Expression)* KW_CPAREN //(COLON rightType2 =TypeExpression)?
-		////    // optional curried function:
-		////    (KW_OPAREN t14+=Statement? (KW_COMMA t15+=Expression)* KW_CPAREN)*
-		////    // option of no parenthesis for single parameter
-		////    | => t6=PrimaryExpression
-		////  )?
-		////  => ((KW_COMMA TK_ID)* KW_COLON rightType2 =TypeExpression1)?
-		////  // allow multiple assignment
-		////  //=>(op=GIVES lambda = Expression 'xxx')?
-		/////;
-		/// * Literals are actual values of a given type
-		// * Outstanding issues:
-		// * 1) Float literals are parsed as elt(Int,Int) so we need to recognise this
-		// * and convert to float literal
-		// * 2) We need to be able to recognise exponent notation for floats
-		// * 3) Integers without '-' prefix can be converted to PI or NNI
-		// * 4) need to add hex or octal notation for integers (0xhhhh)
-		// * 5) String and Character literals need to have backslash "\" doubled to
-		// * "\\" otherwise xtext will interpret backslash as an escape character.
-		// * 6) values following immediately after string literal such as "abc"d should
-		// * represent an implied concat: concat("abc",d)
-		// * / //Literal hidden(WS,TK_COMMENT):
-		////  value=TK_INT
-		////  | t2=TK_STRING (=> e1=NameOrFunctionCall =>(t31+=TK_STRING (=> e4+=NameOrFunctionCall)?)*)?
-		//// | t3=FloatLiteral // conflicts with use of '.' for elt
-		////  | ListLiteral
-		////  | CharacterLiteral
-		////  | BooleanLiteral
-		////;
-		/// * Contains a single character whereas a string contains multiple
-		// * characters.
-		// * / //CharacterLiteral hidden(WS,TK_COMMENT):
-		//// KW_QUOTE c1=ANY_OTHER KW_QUOTE
-		////;
-		/// * This may not need to be specified here at the syntax level. Perhaps we
-		// * should treat boolean as any other library defined type.
-		// * / //BooleanLiteral hidden(WS,TK_COMMENT):
-		//// litname = 'true' | litname = 'false'
-		//// | litname = 'true' KW_OPAREN KW_CPAREN
-		//// | litname = 'false' KW_OPAREN KW_CPAREN
-		////;
-		/// *
-		// * a list literal may consist of:
-		// * [] an empty list
-		// * [a] a single element
-		// * [a,b] multiple elements
-		// * [a for b in c] a list comprehension
-		// * / //ListLiteral hidden(WS,TK_COMMENT):
-		//// litname = KW_OBRACK l2=Expression?
-		////     (KW_COMMA t3+=Expression)*
-		////     ('for' t14+=Expression 'in' l5+=Expression)?
-		////     KW_CBRACK
-		////; CurlyContentB_Labeled: //	Labeled
+		// * / CurlyContentB_Labeled:
 		//	pred=PreDocument l=Labeled pd=PostDocument;
 		public ParserRule getRule() { return rule; }
 
-		////	Labeled
 		//pred=PreDocument l=Labeled pd=PostDocument
 		public Group getGroup() { return cGroup; }
 
-		////	Labeled
 		//pred=PreDocument
 		public Assignment getPredAssignment_0() { return cPredAssignment_0; }
 
@@ -6327,7 +5361,6 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 	private TerminalRule tKW_NEWLINE;
 	private TerminalRule tTK_PREDOC;
 	private TerminalRule tTK_POSTDOC;
-	private TerminalRule tMACROVALUE;
 	private TerminalRule tTK_STRING;
 	private TerminalRule tTK_INT;
 	private TerminalRule tKW_QUOTE;
@@ -6368,15 +5401,8 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 	private TerminalRule tKW_DOLLAR;
 	private TerminalRule tKW_SLASH;
 	private TerminalRule tKW_BACKSLASH;
-	private TerminalRule tSLASHSLASH;
-	private TerminalRule tBACKSLASHBACKSLASH;
 	private TerminalRule tKW_WEDGE;
 	private TerminalRule tKW_VEE;
-	private TerminalRule tTIMESDOLAR;
-	private TerminalRule tDIVDOLAR;
-	private TerminalRule tPLUSDOLAR;
-	private TerminalRule tMINUSDOLAR;
-	private TerminalRule tEQUALSDOLAR;
 	private TerminalRule tKW_IMPLIES;
 	private TerminalRule tKW_ASSIGN;
 	private TerminalRule tKW_2EQ;
@@ -6385,10 +5411,6 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 	private TerminalRule tKW_MAPSTO;
 	private TerminalRule tKW_MAPSTOSTAR;
 	private TerminalRule tKW_MAPSTAR;
-	private TerminalRule tPERCENT;
-	private TerminalRule tPRIMEPERCENT;
-	private TerminalRule tELLIPSIS;
-	private TerminalRule tSUMLIST;
 	private TerminalRule tANY_OTHER;
 	private ErrorElements pError;
 	private ExpressionElements pExpression;
@@ -6764,12 +5786,8 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 	// * Macro is really '==>' but the pre-processor inserts an extra '=' so
 	// * that we can distinguish from where ==> is used in 'with' or 'add' parts
 	// * It is difficult for a LL(*) parser to handle macros so we want to
-	// * substitute the macro in a pre-processor * / terminal MACROVALUE:
-	//	"===>" !("\n" | "\r")*;
-	public TerminalRule getMACROVALUERule() {
-		return (tMACROVALUE != null) ? tMACROVALUE : (tMACROVALUE = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "MACROVALUE"));
-	} 
-
+	// * substitute the macro in a pre-processor * / //terminal MACROVALUE :
+	////  '===>' !('\n'|'\r')*;
 	/// * '==>' is used in 'with' or 'add' parts so is not really a macro?
 	// * / //terminal MACRO:
 	//// '==>'
@@ -7121,18 +6139,8 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		return (tKW_BACKSLASH != null) ? tKW_BACKSLASH : (tKW_BACKSLASH = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "KW_BACKSLASH"));
 	} 
 
-	//terminal SLASHSLASH:
-	//	"//";
-	public TerminalRule getSLASHSLASHRule() {
-		return (tSLASHSLASH != null) ? tSLASHSLASH : (tSLASHSLASH = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "SLASHSLASH"));
-	} 
-
-	//terminal BACKSLASHBACKSLASH:
-	//	"\\\\";
-	public TerminalRule getBACKSLASHBACKSLASHRule() {
-		return (tBACKSLASHBACKSLASH != null) ? tBACKSLASHBACKSLASH : (tBACKSLASHBACKSLASH = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "BACKSLASHBACKSLASH"));
-	} 
-
+	////terminal SLASHSLASH: '//';
+	////terminal BACKSLASHBACKSLASH: '\\\\';
 	/// * '/\\' SLASH-BACKSLASH or wedge
 	// * outer product or logical 'and'
 	// * {KW_WEDGE, 0,"/\\", 0, 0, 0, 0, 0, 0, 1, 1, 40, 0},
@@ -7151,36 +6159,11 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		return (tKW_VEE != null) ? tKW_VEE : (tKW_VEE = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "KW_VEE"));
 	} 
 
-	/// * *$ multiply with specific type* / terminal TIMESDOLAR:
-	//	"*$";
-	public TerminalRule getTIMESDOLARRule() {
-		return (tTIMESDOLAR != null) ? tTIMESDOLAR : (tTIMESDOLAR = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "TIMESDOLAR"));
-	} 
-
-	/// * /$ divide with specific type* / terminal DIVDOLAR:
-	//	"/$";
-	public TerminalRule getDIVDOLARRule() {
-		return (tDIVDOLAR != null) ? tDIVDOLAR : (tDIVDOLAR = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "DIVDOLAR"));
-	} 
-
-	/// * +$ add with specific type* / terminal PLUSDOLAR:
-	//	"+$";
-	public TerminalRule getPLUSDOLARRule() {
-		return (tPLUSDOLAR != null) ? tPLUSDOLAR : (tPLUSDOLAR = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "PLUSDOLAR"));
-	} 
-
-	/// * -$ subtract or minus with specific type* / terminal MINUSDOLAR:
-	//	"-$";
-	public TerminalRule getMINUSDOLARRule() {
-		return (tMINUSDOLAR != null) ? tMINUSDOLAR : (tMINUSDOLAR = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "MINUSDOLAR"));
-	} 
-
-	/// * =$ equals with specific type* / terminal EQUALSDOLAR:
-	//	"=$";
-	public TerminalRule getEQUALSDOLARRule() {
-		return (tEQUALSDOLAR != null) ? tEQUALSDOLAR : (tEQUALSDOLAR = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "EQUALSDOLAR"));
-	} 
-
+	/// * *$ multiply with specific type* / //terminal TIMESDOLAR: '*$';
+	/// * /$ divide with specific type* / //terminal DIVDOLAR: '/$';
+	/// * +$ add with specific type* / //terminal PLUSDOLAR: '+$';
+	/// * -$ subtract or minus with specific type* / //terminal MINUSDOLAR: '-$';
+	/// * =$ equals with specific type* / //terminal EQUALSDOLAR: '=$';
 	/// * '=>' implies or exit
 	// * {KW_Implies, 0,"=>", 0, 0, 0, 0, 0, 0, 1, 1, 35, 0},
 	// * / terminal KW_IMPLIES:
@@ -7243,30 +6226,10 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		return (tKW_MAPSTAR != null) ? tKW_MAPSTAR : (tKW_MAPSTAR = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "KW_MAPSTAR"));
 	} 
 
-	/// * % represents an instance of this type * / terminal PERCENT:
-	//	"%";
-	public TerminalRule getPERCENTRule() {
-		return (tPERCENT != null) ? tPERCENT : (tPERCENT = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "PERCENT"));
-	} 
-
-	/// * '% * / terminal PRIMEPERCENT:
-	//	"\'%";
-	public TerminalRule getPRIMEPERCENTRule() {
-		return (tPRIMEPERCENT != null) ? tPRIMEPERCENT : (tPRIMEPERCENT = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "PRIMEPERCENT"));
-	} 
-
-	/// * ... * / terminal ELLIPSIS:
-	//	"...";
-	public TerminalRule getELLIPSISRule() {
-		return (tELLIPSIS != null) ? tELLIPSIS : (tELLIPSIS = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "ELLIPSIS"));
-	} 
-
-	/// * +/ takes the sum of a list * / terminal SUMLIST:
-	//	"+/";
-	public TerminalRule getSUMLISTRule() {
-		return (tSUMLIST != null) ? tSUMLIST : (tSUMLIST = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "SUMLIST"));
-	} 
-
+	/// * % represents an instance of this type * / //terminal PERCENT: '%';
+	/// * '% * / //terminal PRIMEPERCENT: "'%";
+	/// * ... * / //terminal ELLIPSIS: '...';
+	/// * +/ takes the sum of a list * / //terminal SUMLIST: '+/';
 	//terminal ANY_OTHER:
 	//	.;
 	public TerminalRule getANY_OTHERRule() {
@@ -7490,9 +6453,9 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 	// * { $$ = abNewPLambda(APOS($1),$1,abZip,$3); }
 	// * ;
 	// * / BindingL_Infixed_AnyStatement hidden(WS, KW_NEWLINE):
-	//	AnyStatement | Infixed "assign" bia=BindingL_Infixed_AnyStatement | Infixed KW_2EQ bia=BindingL_Infixed_AnyStatement |
-	//	Infixed KW_MARROW bia=BindingL_Infixed_AnyStatement | Infixed KW_MAPSTO bia=BindingL_Infixed_AnyStatement | Infixed
-	//	KW_MAPSTOSTAR bia=BindingL_Infixed_AnyStatement;
+	//	bas9=AnyStatement | => (Infixed "assign" bia=BindingL_Infixed_AnyStatement) | => (Infixed KW_2EQ
+	//	bia=BindingL_Infixed_AnyStatement) | => (Infixed KW_MARROW bia=BindingL_Infixed_AnyStatement) | => (Infixed KW_MAPSTO
+	//	bia=BindingL_Infixed_AnyStatement) | => (Infixed KW_MAPSTOSTAR bia=BindingL_Infixed_AnyStatement);
 	public BindingL_Infixed_AnyStatementElements getBindingL_Infixed_AnyStatementAccess() {
 		return (pBindingL_Infixed_AnyStatement != null) ? pBindingL_Infixed_AnyStatement : (pBindingL_Infixed_AnyStatement = new BindingL_Infixed_AnyStatementElements());
 	}
@@ -7502,9 +6465,9 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//BindingL_Infixed_BalStatement hidden(WS, KW_NEWLINE):
-	//	BalStatement | Infixed "assign" bib=BindingL_Infixed_BalStatement | Infixed KW_2EQ bib=BindingL_Infixed_BalStatement |
-	//	Infixed KW_MARROW bib=BindingL_Infixed_BalStatement | Infixed KW_MAPSTO bib=BindingL_Infixed_BalStatement | Infixed
-	//	KW_MAPSTOSTAR bib=BindingL_Infixed_BalStatement;
+	//	BalStatement | => (Infixed "assign" bib=BindingL_Infixed_BalStatement) | => (Infixed KW_2EQ
+	//	bib=BindingL_Infixed_BalStatement) | => (Infixed KW_MARROW bib=BindingL_Infixed_BalStatement) | => (Infixed KW_MAPSTO
+	//	bib=BindingL_Infixed_BalStatement) | => (Infixed KW_MAPSTOSTAR bib=BindingL_Infixed_BalStatement);
 	public BindingL_Infixed_BalStatementElements getBindingL_Infixed_BalStatementAccess() {
 		return (pBindingL_Infixed_BalStatement != null) ? pBindingL_Infixed_BalStatement : (pBindingL_Infixed_BalStatement = new BindingL_Infixed_BalStatementElements());
 	}
@@ -7514,9 +6477,9 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//BindingL_Infixed_Collection hidden(WS, KW_NEWLINE):
-	//	Collection | Infixed "assign" bic=BindingL_Infixed_Collection | Infixed KW_2EQ bic=BindingL_Infixed_Collection |
-	//	Infixed KW_MARROW bic=BindingL_Infixed_Collection | Infixed KW_MAPSTO bic=BindingL_Infixed_Collection | Infixed
-	//	KW_MAPSTOSTAR bic=BindingL_Infixed_Collection;
+	//	Collection | => (Infixed "assign" bic=BindingL_Infixed_Collection) | => (Infixed KW_2EQ
+	//	bic=BindingL_Infixed_Collection) | => (Infixed KW_MARROW bic=BindingL_Infixed_Collection) | => (Infixed KW_MAPSTO
+	//	bic=BindingL_Infixed_Collection) | => (Infixed KW_MAPSTOSTAR bic=BindingL_Infixed_Collection);
 	public BindingL_Infixed_CollectionElements getBindingL_Infixed_CollectionAccess() {
 		return (pBindingL_Infixed_Collection != null) ? pBindingL_Infixed_Collection : (pBindingL_Infixed_Collection = new BindingL_Infixed_CollectionElements());
 	}
@@ -7541,9 +6504,9 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 	// * { $$ = abNewPLambda(APOS($1),$1,abZip,$3); }
 	// * ;
 	// * / BindingR_InfixedExprsDecl_AnyStatement hidden(WS, KW_NEWLINE):
-	//	InfixedExprsDecl | InfixedExprsDecl "assign" bas=Binding_AnyStatement | InfixedExprsDecl KW_2EQ
-	//	bas=Binding_AnyStatement | InfixedExprsDecl KW_MARROW bas=Binding_AnyStatement | InfixedExprsDecl KW_MAPSTO
-	//	bas=Binding_AnyStatement | InfixedExprsDecl KW_MAPSTOSTAR bas=Binding_AnyStatement;
+	//	InfixedExprsDecl | => (InfixedExprsDecl "assign" bas=Binding_AnyStatement) | => (InfixedExprsDecl KW_2EQ
+	//	bas=Binding_AnyStatement) | => (InfixedExprsDecl KW_MARROW bas=Binding_AnyStatement) | => (InfixedExprsDecl KW_MAPSTO
+	//	bas=Binding_AnyStatement) | => (InfixedExprsDecl KW_MAPSTOSTAR bas=Binding_AnyStatement);
 	public BindingR_InfixedExprsDecl_AnyStatementElements getBindingR_InfixedExprsDecl_AnyStatementAccess() {
 		return (pBindingR_InfixedExprsDecl_AnyStatement != null) ? pBindingR_InfixedExprsDecl_AnyStatement : (pBindingR_InfixedExprsDecl_AnyStatement = new BindingR_InfixedExprsDecl_AnyStatementElements());
 	}
@@ -7556,12 +6519,8 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 	// * Statements
 	// *
 	// * It is easier to spot conflicts when explicitly handling dangling else.
-	// * / // if we enable the following we get:
-	//// 'A class may not be a super type of itself' error
-	//// 'if' CommaItem 'then' bas=Binding_AnyStatement
-	////| Flow_AnyStatement
-	//AnyStatement hidden(WS, KW_NEWLINE):
-	//	"temp19";
+	// * / AnyStatement hidden(WS, KW_NEWLINE):
+	//	=> ("if" CommaItem "then" bas=Binding_AnyStatement) | Flow_AnyStatement;
 	public AnyStatementElements getAnyStatementAccess() {
 		return (pAnyStatement != null) ? pAnyStatement : (pAnyStatement = new AnyStatementElements());
 	}
@@ -7570,9 +6529,9 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		return getAnyStatementAccess().getRule();
 	}
 
-	//// Flow_BalStatement
-	//BalStatement hidden(WS, KW_NEWLINE):
-	//	"temp20";
+	/// * 
+	// * / BalStatement hidden(WS, KW_NEWLINE):
+	//	Flow_BalStatement;
 	public BalStatementElements getBalStatementAccess() {
 		return (pBalStatement != null) ? pBalStatement : (pBalStatement = new BalStatementElements());
 	}
@@ -7627,13 +6586,13 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 	////{ $$ = abNewNever(TPOS($1)); }
 	////;
 	// * / Flow_AnyStatement hidden(WS, KW_NEWLINE):
-	//	Collection | "if" CommaItem "then" bbs=Binding_BalStatement "else" bas=Binding_AnyStatement | Collection "implies"
-	//	bas2=Binding_AnyStatement | Iterators "repeat" bas3=Binding_AnyStatement | "repeat" Binding_AnyStatement | "try"
-	//	Binding_AnyStatement "but" be=ButExpr apa=AlwaysPart_AnyStatement | "try" Binding_AnyStatement "catch" be=ButExpr
-	//	apa=AlwaysPart_AnyStatement | "select" Binding_AnyStatement "in" c=Cases | "do" Binding_AnyStatement | "delay"
-	//	Binding_AnyStatement | "reference" Binding_AnyStatement | "generate" GenBound bas4=Binding_AnyStatement | "assert"
-	//	Binding_AnyStatement | "iterate" Name? | "break" Name? | "return" Collection? | "yield" Binding_AnyStatement |
-	//	"except" Binding_AnyStatement | "throw" Binding_AnyStatement | "goto" Id | "never";
+	//	Collection ("implies" bas2=Binding_AnyStatement)? | "if" CommaItem "then" bbs=Binding_BalStatement => "else"
+	//	bas=Binding_AnyStatement | => (Iterators "repeat" bas3=Binding_AnyStatement) | "repeat" Binding_AnyStatement | "try"
+	//	Binding_AnyStatement ("but" | "catch") be=ButExpr apa=AlwaysPart_AnyStatement | "select" Binding_AnyStatement "in"
+	//	c=Cases | "do" Binding_AnyStatement | "delay" Binding_AnyStatement | "reference" Binding_AnyStatement | "generate"
+	//	GenBound bas4=Binding_AnyStatement | "assert" Binding_AnyStatement | "iterate" Name? | "break" Name? | "return"
+	//	Collection? | "yield" Binding_AnyStatement | "except" Binding_AnyStatement | "throw" Binding_AnyStatement | "goto" Id
+	//	| "never";
 	public Flow_AnyStatementElements getFlow_AnyStatementAccess() {
 		return (pFlow_AnyStatement != null) ? pFlow_AnyStatement : (pFlow_AnyStatement = new Flow_AnyStatementElements());
 	}
@@ -7642,14 +6601,16 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		return getFlow_AnyStatementAccess().getRule();
 	}
 
-	//Flow_BalStatement hidden(WS, KW_NEWLINE):
-	//	Collection | "if" CommaItem "then" bbs=Binding_BalStatement "else" bbs2=Binding_BalStatement | Collection "implies"
-	//	bbs3=Binding_BalStatement | Iterators "repeat" bbs4=Binding_BalStatement | "repeat" Binding_BalStatement | "try"
-	//	Binding_AnyStatement "but" be=ButExpr apb=AlwaysPart_BalStatement | "try" Binding_AnyStatement "catch" be=ButExpr
-	//	apb=AlwaysPart_BalStatement | "select" Binding_AnyStatement "in" c=Cases | "do" Binding_BalStatement | "delay"
-	//	Binding_BalStatement | "reference" Binding_BalStatement | "generate" GenBound bbs5=Binding_BalStatement | "assert"
-	//	Binding_BalStatement | "iterate" Name? | "break" Name? | "return" Collection? | "yield" Binding_BalStatement |
-	//	"except" Binding_BalStatement | "throw" Binding_BalStatement | "goto" Id | "never";
+	/// * rule ruleFlow_BalStatement has non-LL(*) decision due to recursive
+	// * rule invocations reachable from alts 6,7.  Resolve by left-factoring
+	// * or using syntactic predicates or using backtrack=true option. * / Flow_BalStatement hidden(WS, KW_NEWLINE):
+	//	Collection ("implies" bbs3=Binding_BalStatement)? | "if" CommaItem "then" bbs=Binding_BalStatement => "else"
+	//	bbs2=Binding_BalStatement | => (Iterators "repeat" bbs4=Binding_BalStatement) | "repeat" bbs5=Binding_BalStatement |
+	//	"try" Binding_AnyStatement ("but" | "catch") be=ButExpr apb=AlwaysPart_BalStatement | "select" Binding_AnyStatement
+	//	"in" c=Cases | "do" bbs5=Binding_BalStatement | "delay" bbs5=Binding_BalStatement | "reference"
+	//	bbs5=Binding_BalStatement | "generate" GenBound bbs5=Binding_BalStatement | "assert" bbs5=Binding_BalStatement |
+	//	"iterate" Name? | "break" Name? | "return" Collection? | "yield" bbs5=Binding_BalStatement | "except"
+	//	bbs5=Binding_BalStatement | "throw" bbs5=Binding_BalStatement | "goto" Id | "never";
 	public Flow_BalStatementElements getFlow_BalStatementAccess() {
 		return (pFlow_BalStatement != null) ? pFlow_BalStatement : (pFlow_BalStatement = new Flow_BalStatementElements());
 	}
@@ -7721,7 +6682,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 	/// *
 	// * Iterators
 	// * / Collection hidden(WS, KW_NEWLINE):
-	//	Infixed i=Iterators?;
+	//	Infixed i3=Iterators?;
 	public CollectionElements getCollectionAccess() {
 		return (pCollection != null) ? pCollection : (pCollection = new CollectionElements());
 	}
@@ -7740,11 +6701,10 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		return getIteratorsAccess().getRule();
 	}
 
-	//// left recursive when following uncommented
-	//// Iterator
-	////| Iterators1 itr=Iterator
-	//Iterators1 hidden(WS, KW_NEWLINE):
-	//	"temp27";
+	/// *
+	// * Decision can match input such as "'temp31'" using multiple alternatives: 1, 3
+	// * / Iterators1 hidden(WS, KW_NEWLINE):
+	//	{Iterators1} "temp27" itr+=Iterator*;
 	public Iterators1Elements getIterators1Access() {
 		return (pIterators1 != null) ? pIterators1 : (pIterators1 = new Iterators1Elements());
 	}
@@ -7753,8 +6713,9 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		return getIterators1Access().getRule();
 	}
 
-	//Iterator:
-	//	"for" ForLhs "in" i=Infixed sp=SuchthatPart? | "while" Infixed;
+	//Iterator hidden(WS, KW_NEWLINE):
+	//	"for" ForLhs "in" i=Infixed sp=SuchthatPart? //	'temp28'
+	//	| "while" i=Infixed;
 	public IteratorElements getIteratorAccess() {
 		return (pIterator != null) ? pIterator : (pIterator = new IteratorElements());
 	}
@@ -7763,8 +6724,8 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		return getIteratorAccess().getRule();
 	}
 
-	//ForLhs:
-	//	Infixed | "free" Infixed | "local" Infixed | "fluid" Infixed;
+	//ForLhs hidden(WS, KW_NEWLINE):
+	//	("free" | "local" | "fluid")? Infixed;
 	public ForLhsElements getForLhsAccess() {
 		return (pForLhs != null) ? pForLhs : (pForLhs = new ForLhsElements());
 	}
@@ -7773,8 +6734,8 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		return getForLhsAccess().getRule();
 	}
 
-	//SuchthatPart hidden(WS, KW_NEWLINE):
-	//	"temp30" KW_BAR Infixed;
+	//SuchthatPart hidden(WS, KW_NEWLINE): //	'temp30'
+	//	KW_BAR Infixed;
 	public SuchthatPartElements getSuchthatPartAccess() {
 		return (pSuchthatPart != null) ? pSuchthatPart : (pSuchthatPart = new SuchthatPartElements());
 	}
@@ -7785,11 +6746,8 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 
 	/// *
 	// * Infixed Expressions
-	// * / // causes constraint error when following is uncommented
-	//// InfixedExpr DeclPart*
-	//// | Block
-	//Infixed hidden(WS, KW_NEWLINE):
-	//	"temp31";
+	// * / Infixed hidden(WS, KW_NEWLINE):
+	//	ifx=InfixedExpr dp+=DeclPart* | b=Block;
 	public InfixedElements getInfixedAccess() {
 		return (pInfixed != null) ? pInfixed : (pInfixed = new InfixedElements());
 	}
@@ -8749,7 +7707,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//enlister1_Infixed_Comma hidden(WS, KW_NEWLINE):
-	//	Infixed (KW_COMMA i=Infixed)*;
+	//	Infixed (KW_COMMA i2=Infixed)*;
 	public Enlister1_Infixed_CommaElements getEnlister1_Infixed_CommaAccess() {
 		return (pEnlister1_Infixed_Comma != null) ? pEnlister1_Infixed_Comma : (pEnlister1_Infixed_Comma = new Enlister1_Infixed_CommaElements());
 	}
@@ -8886,1101 +7844,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 	// * CurlyContentB(E) E is from CurlyContentA(E)
 	// * or CurlyContentsList(E)
 	// * 
-	// * causes:
-	// * in editor we get:
-	// * java.lang.IllegalArgumentException: CurlyContentB_Labeled.pd does not exist
-	// *
-	// * in the calling instance of Eclipse we get
-	// * CompoundXtextEditorCallback  - different instances of editor were given.
-	// * / ///////// end of Aldor stuff
-	/// *
-	// * longname and longname2 should both be ID and have the same value. Since the
-	// * runtime values can't be checked by the parser this must be checked later.
-	// * / //CategoryDef hidden(WS,KW_NEWLINE,TK_COMMENT):
-	////name='category' shortname=TK_ID longname=TK_ID
-	////longname2=TK_ID / *[CategoryDef]* /
-	////    (cp=TypeParameterList)?
-	////    KW_COLON 'Category' KW_2EQ
-	////    (
-	////    implName=TypeArguments? ((w=WithPart? a=AddPart?)| wh5=WherePart)
-	////    | KW_OCURLY KW_NEWLINE*
-	////      implName=TypeArguments ((w=WithPart? a=AddPart?)| wh5=WherePart)
-	////      KW_CCURLY KW_NEWLINE* a2=AddPart?
-	////    )
-	////;
-	/// *
-	// * longname and longname2 should both be ID and have the same value. Since the
-	// * runtime values can't be checked by the parser this must be checked later.
-	// * / //PackageDef hidden(WS,KW_NEWLINE,TK_COMMENT):
-	////name='package' shortname=TK_ID longname=TK_ID
-	////longname2=TK_ID / *[PackageDef]* /
-	////    (cp=TypeParameterList)? KW_COLON
-	////    (
-	////     exportName=TK_ID KW_2EQ implName=TK_ID
-	////        (w=WithPart | wh5=WherePart)
-	////     |
-	////     w=WithPart
-	////     (KW_2EQ add2=AddPart)?
-	////    )
-	////;
-	/// *
-	// * longname and longname2 should both be ID and have the same value. Since the
-	// * runtime values can't be checked by the parser this must be checked later.
-	// * / //DomainDef hidden(WS,KW_NEWLINE,TK_COMMENT):
-	////name='domain' shortname5=TK_ID longname5=TK_ID
-	////longname6=TK_ID / *[DomainDef]* /
-	////    (cp5=TypeParameterList)?
-	////    KW_COLON exportName=TK_ID (cp6=TypeParameterList)?
-	////    KW_2EQ implName5=TK_ID?
-	////    (w=WithPart | wh5=WherePart | a=AddPart)
-	////;
-	/// *
-	// * both category and domain can have 'where' part which holds overall information
-	// * such as category/domain parameter information and general macros. This is
-	// * followed by export('with') and import ('add') information.
-	// * Forms allowed include:
-	// * Exports == PlottablePlaneCurveCategory with {
-	// * Exports ==> PlottablePlaneCurveCategory with {
-	// * Exports ==> with {
-	// * / //WherePart hidden(WS,TK_COMMENT):
-	////name='where' KW_NEWLINE* KW_OCURLY KW_NEWLINE*
-	////    (whereAssig +=WhereAssignments (KW_NEWLINE|KW_SEMICOLON)+)*
-	////    // with part
-	////    (longname8=TK_ID (KW_2EQ | KW_MARROW) (imp=TypeExpression2)? w8=WithPart)?
-	////    // add part
-	////    (
-	////     (longname9=TK_ID (KW_2EQ | KW_MARROW))?
-	////        ((fs=TK_ID KW_OPAREN par2=TK_ID? (KW_COMMA par3 += TK_ID)* KW_CPAREN)
-	////         | (fs=TK_ID f2=TK_ID)
-	////        )?
-	////        add=AddPart
-	////    )?
-	////    KW_CCURLY KW_NEWLINE+
-	////;
-	/// * each one must be on a separate line or separated by ';'
-	// * need to add name=
-	// * / //WhereAssignments hidden(WS):
-	////VariableDeclaration
-	////| MacroDef |Import
-	////;
-	/// *
-	// * the 'where' part contains a 'with' part which holds export information
-	// * such as function signatures (function declarations) but not function definitions.
-	// * / //WithPart hidden(WS,TK_COMMENT):
-	////name='with' KW_NEWLINE* KW_OCURLY KW_NEWLINE*
-	////    (fundec += VariableDeclaration (KW_NEWLINE|KW_SEMICOLON)+)*
-	////    KW_CCURLY KW_NEWLINE*
-	////;
-	/// *
-	// * similar to 'WithPart' but no trailing NL
-	// * / //WithInline hidden(WS,TK_COMMENT):
-	////name='with' KW_NEWLINE* KW_OCURLY KW_NEWLINE*
-	////    (fundec += VariableDeclaration (KW_NEWLINE|KW_SEMICOLON)+)*
-	////    KW_CCURLY
-	////;
-	/// *
-	// * the 'where' part contains a 'add' part which holds function and other
-	// * declarations.
-	// * / //AddPart hidden(WS,TK_COMMENT):
-	////name='add' KW_NEWLINE* KW_OCURLY KW_NEWLINE*
-	////    (t+=AddStatements (KW_NEWLINE|KW_SEMICOLON)+)* KW_CCURLY KW_NEWLINE*
-	////;
-	/// *
-	// * The add section of domain or package may contain multiple lines
-	// *
-	// * Examples:
-	// * if (r := recip leadingCoefficient M) case "failed" then {
-	// * error "Modulus cannot be made monic"
-	// * }
-	// * / //AddStatements hidden(WS,TK_COMMENT):
-	////   VariableDeclarationAssign
-	////   | FunctionDefinition
-	////   | ('if' t1=Expression // expression has form 'x has y'
-	////      'then' t13=FunctionDefinitionBlock)
-	////   | 'else' t14=FunctionDefinitionBlock
-	////   | 'else' t15=AddStatements
-	////   | MacroDef
-	////   | Import
-	////;
-	/// * function definition in add part (called by AddStatements)
-	// * has a form like:
-	// * name(params) == statement
-	// * or, option for single parameter without brackets:
-	// * name param == statement
-	// * or, option for zero parameters without brackets:
-	// * This does not always work at the moment, for instance, this does not work:
-	// * size == size$R ^ d
-	// * but this does
-	// * size() == size$R ^ d
-	// *
-	// * or, for infix operators,
-	// * a = b == statement
-	// * or, for multiple statements,
-	// * name(params) == {
-	// * statement
-	// * statement
-	// * }
-	// * some function definitions may be conditional like this:
-	// * if % has finiteAggregate then {
-	// * ... }
-	// * / //FunctionDefinition hidden(WS,TK_COMMENT):
-	////  ((
-	////par3=FunctionSignature
-	////    (KW_COLON par4=TypeExpression1)?
-	////    KW_2EQ par5=Statement
-	////   )|(
-	////    // this is case where FunctionSignature is just an identifier
-	////    fnNam=TK_ID KW_2EQ par5=Statement
-	////   ))
-	////;
-	/// *
-	// * called by 'AddStatements' rule.
-	// * allows more add statements inside:
-	// * if a has y then 'more add statements'
-	// * / //FunctionDefinitionBlock hidden(WS,TK_COMMENT):
-	////    fnDecBr=KW_OCURLY KW_NEWLINE*
-	////      (
-	////       fnDecBk += FunctionDefinition (KW_NEWLINE|KW_SEMICOLON)+
-	////       |
-	////       vars+=VariableDeclarationAssign (KW_NEWLINE|KW_SEMICOLON)+
-	////     | ('if' t1+=Expression // expression has form 'x has y'
-	////        'then' t13+=FunctionDefinitionBlock (KW_NEWLINE|KW_SEMICOLON)+)
-	////     | ('else' t14+=FunctionDefinitionBlock (KW_NEWLINE|KW_SEMICOLON)+)
-	////     | i1+=Import (KW_NEWLINE|KW_SEMICOLON)+
-	////      )*
-	////      KW_CCURLY
-	////      | 'error' e=Expression
-	////      | KW_OCURLY KW_NEWLINE* 'error' e=Expression (KW_NEWLINE|KW_SEMICOLON)+ KW_CCURLY
-	////;
-	/// * This is the first part of the function definition without the return type or
-	// * the function implementation. Usually the function signature has a form like:
-	// * name(params)
-	// * We allow a single parameter to be given without brackets:
-	// * name param
-	// *
-	// * We also allow some alternative forms to represent infix operators like:
-	// * a = b to represent _=(a,b)
-	// * or the following (this works but only for % we need it to work for every type)
-	// * s:% = t:%
-	// * or
-	// * a > b to represent _>(a,b)
-	// * 0 or 1 can be used as a function signature as a short form of
-	// * _0() or _1()
-	// * / //FunctionSignature hidden(WS,TK_COMMENT):
-	////  (
-	////fnNam=TK_ID
-	////    KW_OPAREN
-	////    par2=VariableTyped?
-	////    (KW_COMMA par3 += VariableTyped)*
-	////    KW_CPAREN
-	////  ) | (
-	////   // fnNam=ID par2=VariableDeclaration causes recursive definition so use:
-	////   fnNam=TK_ID par=TK_ID
-	////// ) | (
-	////// t4=ID // no parameters without brackets
-	////// commented out as it causes recursive rule invocation
-	////// with ruleAddStatements and ruleFunctionDefinitionBlock
-	////  ) | (
-	////   t4=TK_ID (KW_COLON (PERCENT | TK_ID))? //(COLON te1=TypeExpression)?
-	////   ( b1=KW_EQ | b1=KW_LT | b1=KW_GT | b1=KW_LE | b1=KW_GE |
-	////            b1=KW_PLUS | b1=KW_MINUS | b1=KW_STAR | b1=KW_SLASH | b1=KW_AMPERSAND |
-	////            b1=KW_BAR | b1=KW_HAT) t5=TK_ID
-	////  ) | (
-	////   b3=TK_INT // allows special form of function signature using '0' or '1'
-	////   // can't specify '0' or '1' explicitly as this would affect lex
-	////   // order
-	////  ) | (
-	////   b2=KW_MINUS t6=TK_ID
-	////  ) | (
-	////   b4=KW_TILDE t7=TK_ID
-	////  ) | (
-	////   b5='not' t8=TK_ID
-	////  ) | (
-	////   b6=KW_SHARP t8=TK_ID
-	////  )
-	////;
-	/// * macros provide a general textual substitution
-	// * there are two forms:
-	// * name ==> body
-	// * and
-	// * name macro == body
-	// * / //MacroDef: macroname=TK_ID MACROVALUE ; //MACRO val=ID NL;
-	/// *
-	// * import domain
-	// * / //Import hidden(WS):
-	////'import' (impname += TK_ID)+ (KW_OPAREN par22+=TypeExpression1
-	////(KW_COMMA par22+=TypeExpression1)* KW_CPAREN)?
-	////;
-	/// * Variable declaration in where and with sections:
-	// * A 'variable' can be simple like:
-	// * x:Float
-	// * or something more complicated like:
-	// * x:Record(newPt: Pt,type: String)
-	// * or it can be a function like:
-	// * x:(Float,Integer) -> Float
-	// * or it can be conditional like:
-	// * if
-	// * / //VariableDeclarationBlock hidden(WS,TK_COMMENT):
-	////    vardecbr=KW_OCURLY KW_NEWLINE*
-	////      //=>(i1=Import NL*)?
-	////      (vardecBlk += VariableDeclaration (KW_NEWLINE|KW_SEMICOLON)+)*
-	////      KW_CCURLY
-	////;
-	/// * Variable declaration in where and with sections:
-	// * A 'variable' can be simple like:
-	// * x:Float
-	// * or something more complicated like:
-	// * x:Record(newPt: Pt,type: String)
-	// * or it can be a function like:
-	// * x:(Float,Integer) -> Float
-	// * or it can be conditional like:
-	// * if
-	// * / //VariableDeclaration hidden(WS,TK_COMMENT):
-	//////Import?
-	////    ('if' t1=Expression 'then')? // expression has form 'x has y'
-	////( v1=TypeWithName
-	////      | v2=VariableDeclarationBlock
-	////)
-	////;
-	/// *
-	// * This rule is used where a type is expected like:
-	// * Float
-	// * but it may also have an optional name like:
-	// * x:Float
-	// * / //TypeWithName hidden(WS,TK_COMMENT):
-	////(
-	////(varName=TK_ID | varNameSt=TK_STRING) (KW_COMMA varName2=TK_ID)?
-	////KW_COLON
-	////)? typ=TypeExpression1
-	////;
-	/// * Variable name with optional type. This is used in function signature
-	// * and also by VariableDeclaration:
-	// * A 'variable' can be simple like:
-	// * x:Float
-	// * or something more complicated like:
-	// * x:Record(newPt: Pt,type: String)
-	// * or it can be a function like:
-	// * x:(Float,Integer) -> Float
-	// * we can define multiple variables together:
-	// * i,j : Integer
-	// * / //VariableTyped hidden(WS,TK_COMMENT):
-	////(varName=TK_ID | varNameSt=TK_STRING)
-	////// =>(COMMA t2+=ID)* // multiple declarations in same line
-	////    (KW_COLON typ=TypeExpression1)?
-	////;
-	/// * in add part we can declare and assign in same part
-	// * such as:
-	// * a := 3
-	// * a:Integer := 3
-	// * a := sin(x)
-	// *
-	// * There are two forms of multiple assignment:
-	// * a,b,c := 0@Integer
-	// * or:
-	// * a := b := c := 0@Integer
-	// * / //VariableDeclarationAssign hidden(WS):
-	////  varName=TK_ID // name of variable
-	////  // if I just use name=ID then, when the ui program is running, I get:
-	////  // Duplicate xxx 'coerce' in yyy
-	////  (
-	////    (KW_COMMA t12+=TK_ID)* // multiple declarations in same line
-	////    (KW_COLON typ=TypeExpression1)? // option to explicitly define type
-	////    (KW_ASSIGN (t4=Expression / * |(LBRACE NL* Expression NL* RBRACE) * /))?
-	////    // we need block since we can't always detect continuation after ':='
-	////    // but this causes infinite loop
-	////  )// | (BECOMES t2+=ID)+ BECOMES t4=Expression
-	////;
-	/// *
-	// * free variable allows us to declare a variable that is global
-	// * / //FreeVariable hidden(WS):
-	////'free' var=TK_ID
-	////;
-	/// *
-	// * allows us to declare a variable that is not global
-	// * / //LocalVariable hidden(WS):
-	////'local' var=TK_ID
-	////;
-	/// *
-	// * This is similar to Expression but known to be of type.
-	// * (Expression can also be of type) but if we know that
-	// * this is a type we can exclude some possibilities.
-	// *
-	// * A 'typeExpression' can be simple like:
-	// * Float
-	// * or something more complicated like:
-	// * Record(newPt: Pt,type: String)
-	// * or it can be a function like:
-	// * (Float,Integer) -> Float
-	// *
-	// * first we check for a function like: Integer -> Integer
-	// * / //TypeExpression1 returns TypeExpression hidden(WS):
-	////   =>(t2=TypeArguments KW_RARROW t3=TypeResult)
-	////   | TypePrimaryExpression1
-	////;
-	/// *
-	// * This is the same as TypeExpression except it does not allow
-	// * the type to be extended by using a 'with' keyword. It is used
-	// * in the 'where' rule because the 'with' in that case has a
-	// * slightly different syntax.
-	// * / //TypeExpression2 returns TypeExpression hidden(WS):
-	////   =>(t92=TypeArguments KW_RARROW t93=TypeResult)
-	////   | TypePrimaryExpression2
-	////;
-	/// *
-	// * we use a type parameter list for parameters of category, package or domains
-	// * Parameter list may be empty '()'.
-	// * in this case parameters may be just ID or they may be nameID:typeID
-	// *
-	// * examples are:
-	// * ()
-	// * (String)
-	// * (s:String)
-	// * (String,Integer)
-	// * (s:String,i:Integer)
-	// * / //TypeParameterList hidden(WS):
-	////tyname=KW_OPAREN par=TK_ID?
-	////(KW_COLON par21=TypeExpression1)?
-	////(KW_COMMA par2 += TK_ID (KW_COLON par22+=TypeExpression1)?)* KW_CPAREN;
-	/// *
-	// * we use type arguments for first part of function type, that is
-	// * x in x-> y
-	// * usually this is enclosed in parenthesis
-	// * (x) in (x)-> y
-	// * but if x is a single argument (Including Record, Union, etc.) then it does
-	// * not need to be in parenthesis.
-	// * / //TypeArguments hidden(WS):
-	////  t=TypeLiteral |
-	////  t2=PERCENT |
-	////  t3='Type' |
-	////  // usually, but not always type arguments are in parenthesis, and empty
-	////  // parenthesis are allowed
-	////  b1 ?= KW_OPAREN ((TK_ID KW_COLON)? t4=TypeExpression1)?
-	////               ( KW_COMMA (TK_ID KW_COLON)? t16 +=TypeExpression1)* KW_CPAREN |
-	////  t5='Record' KW_OPAREN t6=TypeExpression1
-	////               (KW_COLON t22+=TypeExpression1)?
-	////               (KW_COMMA t21+=TypeExpression1 (KW_COLON t23+=TypeExpression1)?)*
-	////                KW_CPAREN |
-	////  t9='Union' KW_OPAREN t10=TypeExpression1
-	////              (KW_COLON t25+=TypeExpression1)?
-	////              (KW_COMMA t24+=TypeExpression1 (KW_COLON t26+=TypeExpression1)?)*
-	////              KW_CPAREN |
-	////  t11='Join' KW_OPAREN t12=TypeExpression1 (KW_COMMA t13+=TypeExpression1)* KW_CPAREN |
-	////  t15=TypeNameOrFunctionCall
-	////;
-	/// *
-	// * we use type arguments for final part of function type, that is
-	// * y in x-> y
-	// * / //TypeResult hidden(WS):
-	////  t=TypeLiteral |
-	////  t2=PERCENT |
-	////  tyname='Type' |
-	////  tyname='Record' KW_OPAREN t7=TypeExpression1
-	////               (KW_COLON t8+=TypeExpression1)?
-	////               (KW_COMMA t21+=TypeExpression1 (KW_COLON t23+=TypeExpression1)?)*
-	////                KW_CPAREN |
-	////  tyname='Union' KW_OPAREN t10=TypeExpression1
-	////              (KW_COLON t11+=TypeExpression1)?
-	////              (KW_COMMA t24+=TypeExpression1 (KW_COLON t26+=TypeExpression1)?)*
-	////              KW_CPAREN |
-	////  tyname='Join' KW_OPAREN t12=TypeExpression1 (KW_COMMA t13+=TypeExpression1)* KW_CPAREN |
-	////  t15=TypeNameOrFunctionCall
-	////;
-	/// *
-	// * this matches various specific types
-	// * / //TypePrimaryExpression1 returns TypePrimaryExpression hidden(WS):
-	//// TypeLiteral
-	//// | ({TypePrimaryExpression}t32=PERCENT)
-	//// | ({TypePrimaryExpression}tyname='Type') // 'Type' is top of the category hierarchy
-	//// | ({TypePrimaryExpression}tyname='Lisp') // 'Lisp' is used for native lisp function calls such as Say$Lisp
-	//// | ({TypePrimaryExpression}KW_OPAREN t5=TypeExpression1 KW_CPAREN)
-	//// | ({TypePrimaryExpression}tyname='Record' KW_OPAREN t7=TypeExpression1
-	////               (KW_COLON t8+=TypeExpression1)?
-	////               (KW_COMMA t21+=TypeExpression1 (KW_COLON t23+=TypeExpression1)?)*
-	////                KW_CPAREN)
-	//// | ({TypePrimaryExpression}tyname='Union' KW_OPAREN t10=TypeExpression1
-	////              (KW_COLON t11+=TypeExpression1)?
-	////              (KW_COMMA t24+=TypeExpression1 (KW_COLON t26+=TypeExpression1)?)*
-	////              KW_CPAREN)
-	//// | ({TypePrimaryExpression}tyname='Join'
-	////    KW_OPAREN t13=TypeExpression1 (KW_COMMA t14+=TypeExpression1)* KW_CPAREN)
-	//// | TypeNameOrFunctionCall
-	//// | => TupleDefinition
-	////;
-	/// *
-	// * This is the same as TypePrimaryExpression except it does not allow
-	// * the type to be extended by using a 'with' keyword. It is used
-	// * in the 'where' rule because the 'with' in that case has a
-	// * slightly different syntax.
-	// * / //TypePrimaryExpression2 returns TypePrimaryExpression hidden(WS):
-	//// TypeLiteral
-	//// | ({TypePrimaryExpression}t32=PERCENT)
-	//// | ({TypePrimaryExpression}tyname='Type') // 'Type' is top of the category hierarchy
-	//// | ({TypePrimaryExpression}tyname='Lisp') // 'Lisp' is used for native lisp function calls such as Say$Lisp
-	//// | ({TypePrimaryExpression}KW_OPAREN t5=TypeExpression1 KW_CPAREN)
-	//// | ({TypePrimaryExpression}tyname='Record' KW_OPAREN t7=TypeExpression1
-	////               (KW_COLON t8+=TypeExpression1)?
-	////               (KW_COMMA t21+=TypeExpression1 (KW_COLON t23+=TypeExpression1)?)*
-	////                KW_CPAREN)
-	//// | ({TypePrimaryExpression}tyname='Union' KW_OPAREN t10=TypeExpression1
-	////              (KW_COLON t11+=TypeExpression1)?
-	////              (KW_COMMA t24+=TypeExpression1 (KW_COLON t26+=TypeExpression1)?)*
-	////              KW_CPAREN)
-	//// | ({TypePrimaryExpression}tyname='Join'
-	////    KW_OPAREN t13=TypeExpression1 (KW_COMMA t14+=TypeExpression1)* KW_CPAREN)
-	//// | TypeNameOrFunctionCall2
-	//// | => TupleDefinition
-	////;
-	/// * This rule will match:
-	// * Float - an ID representation of a type
-	// * List(Float) - a type function call
-	// * List Float - a non-parenthesis form if only one parameter
-	// *
-	// * A type function is also known as a parameterised type or
-	// * functor (not necessarily a true
-	// * functor since it may not obey the axioms of a functor).
-	// * If there is only one parameter then the parenthesis are optional
-	// * / //TypeNameOrFunctionCall hidden(WS):
-	////  tfnname=TK_ID
-	////  (
-	////    (KW_OPAREN (TK_ID KW_COLON)? t4=TypeExpression1? (KW_COMMA (TK_ID KW_COLON)? t25+=TypeExpression1)* KW_CPAREN)
-	////    // optional curried function:
-	////    (KW_OPAREN t44+=StatementExpression? (KW_COMMA t45+=Expression)* KW_CPAREN)*
-	////    // option of no parenthesis for single parameter
-	////    | => t6=TypePrimaryExpression1
-	////    | => w=WithInline
-	////  )?
-	////;
-	////TypeNameOrFunctionCall2 hidden(WS):
-	////  tfnname=TK_ID
-	////  (
-	////    (KW_OPAREN (TK_ID KW_COLON)? t4=TypeExpression1? (KW_COMMA (TK_ID KW_COLON)? t25+=TypeExpression1)* KW_CPAREN)
-	////    // optional curried function:
-	////    (KW_OPAREN t44+=StatementExpression? (KW_COMMA t45+=Expression)* KW_CPAREN)*
-	////    // option of no parenthesis for single parameter
-	////    | => t6=TypePrimaryExpression1
-	////  )?
-	////;
-	/// * This has a form like: (Integer,Float,String)
-	// * like an array where each entry can be of a different type
-	// * / //TupleDefinition hidden(WS):
-	////  (KW_OPAREN t4=TypeExpression1 (KW_COMMA t25+=TypeExpression1)* KW_CPAREN)
-	////;
-	/// * Since SPAD supports dependent types then numbers and strings can occur here.
-	// * Outstanding issues:
-	// * 1) Float literals are parsed as elt(Int,Int) so we need to recognise this
-	// * and convert to float literal
-	// * 2) We need to be able to recognise exponent notation for floats
-	// * 3) Integers without '-' prefix can be converted to PI or NNI
-	// * 4) need to add hex or octal notation for integers (0xhhhh)
-	// * 5) String and Character literals need to have backslash "\" doubled to
-	// * "\\" otherwise xtext will interpret backslash as an escape character.
-	// * 6) values following immediately after string literal such as "abc"d should
-	// * represent an implied concat: concat("abc",d)
-	// * / //TypeLiteral hidden(WS):
-	////  t1=TK_INT |
-	////  t22=TK_STRING |
-	////// t3=FloatLiteral |
-	////  t34=CharacterLiteral |
-	////  t35=BooleanLiteral
-	////;
-	/// * In FunctionDefinition the algorithm is defined by a sequence of the
-	// * following statements:
-	// * / //Statement hidden(WS,TK_COMMENT):
-	////    s1=Block |
-	////    s3= StatementExpression |
-	////    // 'if' can occur in an expression or in
-	////    // a statement so we use '=>' to choose
-	////    // expression if there is any ambiguity
-	////    s4=IfStatement |
-	////    s4b=IfElseStatement |
-	////// s4c=IfThenStatement |
-	////    s5=WhileStatement |
-	////    s6=DoStatement |
-	////    s7=ForStatement |
-	////    s8=BreakStatement |
-	////    s12=RepeatStatement |
-	////    s9= IterateStatement |
-	////// s11= ContinueStatement|
-	////    s10= ReturnStatement |
-	////// s11= Import |
-	////    'error' e=Expression
-	////;
-	/// * allows multiple statements which are grouped by wrapping in
-	// * braces (curly brackets) * / //Block hidden(WS,TK_COMMENT):
-	////stname=KW_OCURLY KW_NEWLINE*
-	////    (statemBl += Statement (KW_NEWLINE|KW_SEMICOLON)+)*
-	////    KW_CCURLY
-	////;
-	/// *
-	// * Gives a value or assigns a value to a variable or does conditional exit
-	// *
-	// * examples:
-	// * x
-	// * x:Int
-	// * x,y:INT -- multiple assignment
-	// * x:Int := 3
-	// *
-	// * x=y => 3
-	// * / //StatementExpression hidden(WS,TK_COMMENT):
-	////  //(ID COMMA)* // allow multiple assignment
-	////  t=ConditionExpression // was Expression but changed so that 'if' statement
-	////                        // does not clash with if-then-else expression
-	////// (COLON t2=TypeExpression)?
-	////// (BECOMES t3=Expression (BECOMES t33+=Expression)*)?
-	////    (KW_ASSIGN t5=Block)?
-	////    // breaks out of a block if predicate before '=>' is true then program
-	////    // control leaves the block.
-	////    // Put it here so that it can only occur at the top level of an expression.
-	////    // if inside some complicated expression then it must be terminated with ';'.
-	////    (KW_IMPLIES t4=Statement)?
-	////;
-	/// *
-	// * for i in n..m repeat ... is 1
-	// * for i in n..m by s repeat ...
-	// * for i in list repeat ...
-	// * for i in list for i in 1..length() repeat ...
-	// * for i in list for i in 1.. repeat ...
-	// * for j in n..m repeat loopBody
-	// * for j in n..m | odd? j repeat
-	// *
-	// * To Do
-	// * -----
-	// * As a temporary measure we check for '..' as a suffix operator
-	// * here, but we should really put this into expression?
-	// *
-	// * We need to allow conditions using BAR '|'
-	// * / //ForStatement hidden(WS,TK_COMMENT):
-	////'for' (
-	////       stname=TK_ID 'in' t1=Expression KW_2DOT? //(=> '..' t2=Expression)?
-	////       ('by' by1=Expression)?
-	////// (=> BAR t2=PredicateOr)? // condition
-	////       ('for' stname2+=TK_ID
-	////        'in' t2+=Expression KW_2DOT?
-	////        ('by' by2+=Expression)?
-	////        )*
-	////       ('while' t2+=Expression)*
-	////) 'repeat' KW_NEWLINE? s1=Statement //('is' s2=Statement)?
-	////;
-	/// *
-	// * while BoolExpr repeat loopBody
-	// * / //WhileStatement hidden(WS,TK_COMMENT):
-	////stname='while' (
-	////       t2=Expression / *PredicateOr* /
-	////) 'repeat' KW_NEWLINE? s1=Statement
-	////;
-	/// *
-	// * do loopBody while BoolExpr
-	// * / //DoStatement hidden(WS,TK_COMMENT):
-	////stname='do' (
-	////       s1=Statement
-	////) 'while' KW_NEWLINE? t2=Expression / *PredicateOr* /
-	////;
-	/// *
-	// * will repeat until we jump out. For instance by calling return.
-	// * / //RepeatStatement hidden(WS,TK_COMMENT):
-	////stname='repeat' (
-	////       s1=Statement
-	////)
-	////;
-	/// *
-	// * iterate ...
-	// * skips over the remainder of a loop
-	// * / //IterateStatement hidden(WS,TK_COMMENT):
-	////stname='iterate'
-	////;
-	/// *
-	// * break leave current loop
-	// * / //BreakStatement hidden(WS,TK_COMMENT):
-	////stname='break'
-	////;
-	/// *
-	// * return leave current function
-	// * / //ReturnStatement hidden(WS):
-	////stname='return' t2=Expression
-	////;
-	/// *
-	// * import - use 'Import' instead
-	// * / //ImportStatement hidden(WS):
-	//// stname='import' t2=Expression
-	////;
-	/// * 'if' statement allows program flow to be switched
-	// * forms:
-	// * if boolean then
-	// * if equation then
-	// * if ... not ... and ...or ... then
-	// * if ... then ... else ...
-	// * note1:
-	// * if ... then ... else ... always returns a value so we can use this
-	// * on the right hand side of an assignment
-	// * note2:
-	// * since there is an explicit 'then' keyword there is no need to put
-	// * the condition in brackets
-	// *
-	// * examples:
-	// * a:= if x >0 then x else -x
-	// * if R has Field then ...
-	// * if myUnion case mtType then ...
-	// *
-	// * we also need to allow a form like this:
-	// * if x >0 {
-	// * then x
-	// * else -x
-	// * }
-	// *
-	// * also this form (this requires IfElseStatement rule):
-	// * if x >0 then {
-	// * x
-	// * }
-	// * else {
-	// * -x
-	// * }
-	// * / //IfStatement hidden(WS,TK_COMMENT):
-	////  'if' t2=Expression
-	////// 'if' t2=ConditionExpression
-	////  (
-	////    'then' s1=Statement
-	////    (=> 'else' s2=Statement)?
-	////   |
-	////    b?=KW_OCURLY
-	////    KW_NEWLINE+ 'then' s11=Statement KW_NEWLINE*
-	////    (=>'else' s12=Statement KW_NEWLINE*)?
-	////    KW_CCURLY
-	////  )
-	////;
-	////IfElseStatement hidden(WS,TK_COMMENT):
-	////'else' s2=Statement
-	////;
-	/////////////// Expression syntax follows //////////////
-	/// * This is the top level for expressions
-	// *
-	// * This level handles special cases such as:
-	// * if x then y else z
-	// * (x,y) +-> z
-	// *
-	// * We can consider expressions as elements of statements
-	// * expressions contain no newlines unless preceded by underscore
-	// * (which is handled by WS)
-	// * / //Expression returns Expr hidden(WS,TK_COMMENT):
-	////  (ifname='if' ifpred=Expression 'then' thenexp=Expression 'else' elseexp=Expression)
-	////// | LPAREN t24=ConditionExpression (COMMA t25+=ConditionExpression)+ RPAREN (COLON rightType2 =TypeExpression)? GIVES ConditionExpression
-	////  | ExitExpression
-	////;
-	/// *
-	// * condition '=>' expr1 ';' expr2
-	// * / //ExitExpression returns Expr hidden(WS,TK_COMMENT):
-	////  ConditionExpression
-	////  ({ExitExpression.left=current} op=KW_IMPLIES right = ConditionExpression KW_SEMICOLON r2=ConditionExpression)*
-	////;
-	/// *
-	// * BAR "|" precedence: 108, 111
-	// * / //ConditionExpression returns Expr hidden(WS,TK_COMMENT):
-	////  OrExpression
-	////  ({ConditionExpression.left=current} op=KW_BAR right = OrExpression )*
-	////;
-	/// *
-	// * COMMA"," precedence: 110, 111
-	// * / //CommaExpression returns Expr hidden(WS,TK_COMMENT):
-	//// ConditionalAndExpression
-	//// ({ConditionExpression.left=current} op=BAR right = ConditionalAndExpression )*
-	////;
-	/// *
-	// * There is also another rule that looks for 'or' which is PredicateOr,
-	// * this version is used in a general expression and the other version is
-	// * used when we know we have a predicate.
-	// * "or", precedence: 200, 201
-	// * / //OrExpression returns Expr hidden(WS,TK_COMMENT):
-	////  AndExpression
-	////  ( {OrExpression.left=current} op='or' right = AndExpression)*
-	////;
-	/// *
-	// * There is also another rule that looks for 'and' which is PredicateAnd,
-	// * this version is used in a general expression and the other version is
-	// * used when we know we have a predicate.
-	// * "and", precedence: 250, 251
-	// * / //AndExpression returns Expr hidden(WS,TK_COMMENT):
-	////  InnerProdExpression
-	////  ( {AndExpression.left=current} op='and' right = InnerProdExpression)*
-	////;
-	/// *
-	// * This has multiple uses such as inner product and logical or.
-	// *
-	// * "\/", BACKSLASHSLASH precedence: 200, 201
-	// *
-	// * the backslash is duplicated here because it is the escape character for
-	// * strings, it will not be duplicated when used.
-	// * / //InnerProdExpression returns Expr hidden(WS,TK_COMMENT):
-	////  OuterProdExpression
-	////  ( {InnerProdExpression.left=current} op=KW_VEE right = OuterProdExpression)*
-	////;
-	/// *
-	// * This has multiple uses such as outer product and logical and.
-	// *
-	// * "/\", SLASHBACKSLASH precedence: 250, 251
-	// *
-	// * the backslash is duplicated here because it is the escape character for
-	// * strings, it will not be duplicated when used.
-	// * / //OuterProdExpression returns Expr hidden(WS,TK_COMMENT):
-	////  HasExpression
-	////  ( {OuterProdExpression.left=current} op=KW_WEDGE right = HasExpression)*
-	////;
-	/// * Predicate which returns true if preceding value is of a given type
-	// * example:
-	// * if R has Field then ..
-	// *
-	// * "has", precedence: 400, 400
-	// * / //HasExpression returns Expr hidden(WS,TK_COMMENT):
-	////  CaseExpression
-	////  ({HasExpression.left=current} op='has' rightType = TypeExpression1)*
-	////;
-	/// * Select from Union values
-	// * example:
-	// * if myUnion case mtType then ...
-	// *
-	// * "case", precedence: 400, 400
-	// * / //CaseExpression returns Expr hidden(WS,TK_COMMENT):
-	////  EqualityExpression
-	////  ( {CaseExpression.left=current} op='case' right = EqualityExpression)?
-	////;
-	/// * used in list comprehension
-	// *
-	// * "in", precedence: 400, 400
-	// * / / *InExpression returns Expr hidden(WS,TK_COMMENT):
-	//  RelationalExpression
-	//  ( {CaseExpression.left=current} op='in' right = RelationalExpression)?
-	//;* / / *
-	// * "~=", precedence: 400, 400
-	// * "^=", precedence: 400, 400
-	// * "=", precedence: 400, 400
-	// * / //EqualityExpression returns Expr hidden(WS,TK_COMMENT):
-	////  RelationalExpression
-	////// ambiguous because EQ can be in top level expression
-	////  ( {EqualityExpression.left=current}
-	////   ( op=KW_EQ | op=KW_TILDEE | op=KW_HATE | (op=EQUALSDOLAR te=TK_ID))
-	////   //(DOLAR te=ID)?
-	////   right = RelationalExpression
-	////  )*
-	////;
-	/// *
-	// * ">=", precedence: 400, 400
-	// * "<=", precedence: 400, 400
-	// * ">>", precedence: 400, 400
-	// * "<<", precedence: 400, 400
-	// * ">", precedence: 400, 400
-	// * "<", precedence: 400, 400
-	// * / //RelationalExpression returns Expr hidden(WS,TK_COMMENT):
-	////  IsExpression
-	////  ( {RelationalExpression.left=current}
-	////   ( op=KW_LT | op=KW_GT | op=KW_LE | op=KW_GE )
-	////      right = IsExpression
-	////  )?
-	////;
-	/// *
-	// *
-	// * "isnt", precedence: 400, 400
-	// * "is", precedence: 400, 400
-	// * / //IsExpression returns Expr hidden(WS,TK_COMMENT):
-	////  SegmentExpression
-	////  ({IsExpression.left=current} (op='is' | op='isnt') rightType = TypeExpression1)*
-	////;
-	/// *
-	// * this is used to indicate a range:
-	// * 1..4 means the range from 1 to 4
-	// * 1.. means the range from 1 to infinity. This is used in cases where
-	// * no top bounds is necessary, when the end point is determined by other
-	// * means.
-	// * "..", "SEGMENT", precedence: 401, 699, ["parse_Seg"]
-	// * / //SegmentExpression returns Expr hidden(WS,TK_COMMENT):
-	////  AdditiveExpression
-	////  ( {SegmentExpression.left=current} op=KW_2DOT right = AdditiveExpression)*
-	////;
-	/// *
-	// * add expression
-	// * we include both '+' and '-' in the same case as this allows a
-	// * multiple sequence like:
-	// * a + b + c - d + e -f
-	// *
-	// * "-", precedence: 700, 701
-	// * "+", precedence: 700, 701
-	// * / //AdditiveExpression returns Expr hidden(WS,TK_COMMENT):
-	////  ExquoExpression
-	////  ( {AdditiveExpression.left=current}
-	////    ( op=KW_PLUS | op=KW_MINUS | (op=PLUSDOLAR te=TK_ID) | (op=MINUSDOLAR te=TK_ID))
-	////    right = ExquoExpression
-	////  )*
-	////;
-	/// *
-	// * "exquo", precedence: 800, 801
-	// * / //ExquoExpression returns Expr hidden(WS,TK_COMMENT):
-	////  DivisionExpression
-	////  ({ExquoExpression.left=current} op='exquo' right = DivisionExpression)*
-	////;
-	/// *
-	// * division expression
-	// * "/", precedence: 800, 801
-	// * / //DivisionExpression returns Expr hidden(WS,TK_COMMENT):
-	////  QuoExpression
-	////  ( {DivisionExpression.left=current}
-	////   (op=KW_SLASH | (op=DIVDOLAR te=TK_ID))
-	////   right = QuoExpression
-	////  )*
-	////;
-	/// *
-	// *"quo", precedence: 800, 801
-	// * / //QuoExpression returns Expr hidden(WS,TK_COMMENT):
-	////  ModExpression
-	////  ({QuoExpression.left=current} op='quo' right = ModExpression)*
-	////;
-	/// *
-	// *"mod", precedence: 800, 801
-	// * / //ModExpression returns Expr hidden(WS,TK_COMMENT):
-	////  RemExpression
-	////  ({ModExpression.left=current} op='mod' right = RemExpression)*
-	////;
-	/// *
-	// *"rem", precedence: 800, 801
-	// * / //RemExpression returns Expr hidden(WS,TK_COMMENT):
-	////  MultiplicativeExpression
-	////  ({RemExpression.left=current} op='rem' right = MultiplicativeExpression)*
-	////;
-	/// *
-	// * multiplication expression
-	// * a * b * c
-	// *
-	// * "*", precedence: 800, 801
-	// * / //MultiplicativeExpression returns Expr hidden(WS,TK_COMMENT):
-	////  ExponentExpression
-	////  ( {MultiplicativeExpression.left=current}
-	////    (op=KW_STAR | (op=TIMESDOLAR te=TK_ID))
-	////    right = ExponentExpression
-	////  )*
-	////;
-	/// *
-	// *
-	// * "^", precedence: 901, 900
-	// * "**", precedence: 901, 900
-	// * / //ExponentExpression returns Expr hidden(WS,TK_COMMENT):
-	////  MapDefinition
-	////  ({ExponentExpression.left=current} (op=KW_HAT | op=KW_2STAR) right = MapDefinition)*
-	////;
-	/// * Map or Lambda expression
-	// * var +-> function
-	// *
-	// * +-> is an infix operator meaning 'maps-to'
-	// * It can be used to create a function literal (an anonymous function), so
-	// * instead of:
-	// * myFunct(x:Type):Type == if x >0 then x else -x
-	// * we can have forms such as:
-	// * x +-> if x >0 then x else -x
-	// * or:
-	// * (x,y) +-> if x >0 then y else -x
-	// *
-	// * fricas compatibility:
-	// * "+->", precedence: 995, 112
-	// * / //MapDefinition returns Expr hidden(WS,TK_COMMENT):
-	////// (PretendExpression | LPAREN PretendExpression (COMMA t25+=PretendExpression)+ RPAREN) (COLON rightType2 =TypeExpression)?
-	////  AssignExpression
-	////  ({MapDefinition.left=current}
-	////   op=KW_MAPSTO right = AssignExpression
-	////   (par = TK_ID)? // optional parameter which function
-	////                             // is applied to
-	////  )*
-	////;
-	/// *
-	// * an assign expression like this:
-	// * x := y
-	// * can also be an inner assign like this:
-	// * x := (y := z)
-	// * or just:
-	// * x := y := z
-	// *
-	// * right is expression to allow forms like
-	// * x := if y<0 then -y else y
-	// * / //AssignExpression returns Expr hidden(WS,TK_COMMENT):
-	////  PretendExpression
-	////  ({AssignExpression.left=current} op=KW_ASSIGN (
-	////   right = PretendExpression
-	////   | ifname='if' ifpred=ConditionExpression 'then' thenexp=ConditionExpression 'else' elseexp=PretendExpression
-	////   )
-	////  )*
-	////;
-	/// *
-	// * pretend Type: treat one type as another,
-	// * only works if they have the same internal structure.
-	// *
-	// * Not very safe and should be avoided, if possible, unfortunately
-	// * its not always possible to avoid.
-	// *
-	// * "pretend", precedence: 995, 996
-	// * / // PretendExpression returns Expr hidden(WS,TK_COMMENT):
-	////  CoerceExpression
-	////  ({PretendExpression.left=current} op='pretend' rightType = TypeExpression1)*
-	////;
-	/// *
-	// * "::", precedence: 996, 997
-	// *
-	// * although '::' and '@' apparently have the same precidence we want
-	// * '@' to bind more tightly than '::'. As we can see in the following example:
-	// * "dictionary"@String :: OutputForm.
-	// * / //CoerceExpression returns Expr hidden(WS,TK_COMMENT):
-	////  HintTypeExpression
-	////  ({CoerceExpression.left=current} op=KW_2COLON rightType = TypeExpression1)*
-	////;
-	/// *
-	// * "@", precedence: 996, 997
-	// * / //HintTypeExpression returns Expr hidden(WS,TK_COMMENT):
-	////  EltExpression
-	////  ( {HintTypeExpression.left=current} op=KW_AT rightType = TypeExpression1)?
-	////;
-	/// * We treat these as part of the language
-	// * : indicates type
-	// * ! is part of name to indicate mutable
-	// *
-	// * ":", precedence: 996, 997
-	// * "!", precedence: 1002, 1001
-	// *
-	// * / / *BangExpression returns Expr hidden(WS,TK_COMMENT):
-	//  EqualityExpression
-	//  ({AndExpression.left=current} op=AMPERSAND right = EqualityExpression)*
-	//;* / / *
-	// * "with", precedence: 2000, 400, ["parse_InfixWith"]
-	// *
-	// * / / *WithExpression returns Expr hidden(WS,TK_COMMENT):
-	//  EqualityExpression
-	//  ({AndExpression.left=current} op='with' right = EqualityExpression)*
-	//;* / / * Elt is Lisp terminology for the use of '.' to select parameters
-	// * the left expression is something that has selectable elements such as
-	// * a list, array, string, Record or union, the right element should be a
-	// * non-negative integer.
-	// * / //EltExpression returns Expr hidden(WS,TK_COMMENT):
-	////  ExplicitTypeExpression
-	////  ( {EltExpression.left=current}
-	////   op=KW_DOT right = ExplicitTypeExpression
-	////  )*
-	////;
-	//////////////// unary expressions ////////////////////
-	/// *
-	// * '$'
-	// * / //ExplicitTypeExpression returns Expr hidden(WS,TK_COMMENT):
-	////  UnaryExpression
-	////  ({ExplicitTypeExpression.left=current} op=KW_DOLLAR rightType = TypeExpression1)?
-	////;
-	/// * UnaryExpression
-	// * unary prefixes:
-	// * "~" TILDE : precedence 260, 259, nil
-	// * ":" COLON : precedence 194, 195
-	// * "-" MINUS : precedence 701, 700
-	// * "#" HASH : precedence 999, 998
-	// * "'" : precedence 999, 999, ["parse_Data"]
-	// * unary suffixes
-	// * ".." : range can be unary suffix
-	// * / //UnaryExpression returns Expr hidden(WS,TK_COMMENT):
-	////  PrimaryExpression |
-	////  ({UnaryExpression} uop=KW_TILDE expr=UnaryExpression) |
-	////// ({UnaryExpression} uop=COLON expr=UnaryExpression) |
-	////  ({UnaryExpression} uop=KW_MINUS expr=UnaryExpression) |
-	////  ({UnaryExpression} uop=MINUSDOLAR te=TK_ID expr=UnaryExpression) |
-	////  ({UnaryExpression} uop=KW_SHARP expr=UnaryExpression) |
-	////  ({UnaryExpression} uop='not' expr=PrimaryExpression) |
-	////  ({UnaryExpression} uop=SUMLIST expr=PrimaryExpression) |
-	////  ({UnaryExpression} uop=PRIMEPERCENT expr=PrimaryExpression) |
-	////   e2=PERCENT |
-	////  e3='Type' |
-	////  e5='Record' KW_OPAREN e6=TypeExpression1
-	////               (KW_COLON e22+=TypeExpression1)?
-	////               (KW_COMMA e21+=TypeExpression1 (KW_COLON e23+=TypeExpression1)?)*
-	////                KW_CPAREN |
-	////  e9='Union' KW_OPAREN e10=TypeExpression1
-	////              (KW_COLON e25+=TypeExpression1)?
-	////              (KW_COMMA e24+=TypeExpression1 (KW_COLON e26+=TypeExpression1)?)*
-	////              KW_CPAREN |
-	////  e11='Join' KW_OPAREN e12=TypeExpression1 (KW_COMMA e13+=TypeExpression1)* KW_CPAREN
-	////;
-	/// *
-	// *
-	// * / / *UnaryExpressionHash returns Expr hidden(WS,TK_COMMENT):
-	//// HASH? PrimaryExpression
-	//  PrimaryExpression | ({UnaryExpressionHash} uop=HASH expr=UnaryExpressionHash)
-	//;* / / *
-	// *
-	// * / //PrimaryExpression returns Expr hidden(WS,TK_COMMENT):
-	////  PrimaryPrefix / * ( t2+=PrimarySuffix )* * /
-	////;
-	/// *
-	// * Can contain an expression in parenthesis, this expression is
-	// * 'StatementExpression' which means that it can contain an
-	// * inner assignment.
-	// *
-	// * The comma option allows us to define a tuple
-	// * / //PrimaryPrefix hidden(WS,TK_COMMENT):
-	//// Literal
-	//// | KW_OPAREN t4=Expression (KW_COMMA t25+=Expression)* KW_CPAREN =>(KW_COLON rightType3 =TypeExpression1)?
-	//// | t7=NameOrFunctionCall
-	////;
-	/// * function call such as List(Integer)
-	// * known as a parameterised type or functor (not necessarily a true functor since
-	// * it may not obey the axioms of a functor)
-	// * if there is only one parameter then the parenthesis are optional
-	// *
-	// * function binds most tightly
-	// * / //NameOrFunctionCall hidden(WS,TK_COMMENT):
-	////  (KW_QUOTE)?
-	////  fnname=TK_ID (=> lsp=KW_DOLLAR 'Lisp'/ *t2=TypeExpression* /)?
-	////  // option for parameters in parenthesis
-	////  (
-	////// LPAREN t4=StatementExpression? (COMMA t5+=Expression)* RPAREN //(COLON rightType2 =TypeExpression)?
-	////    KW_OPAREN t4=Expression? (KW_COMMA t5+=Expression)* KW_CPAREN //(COLON rightType2 =TypeExpression)?
-	////    // optional curried function:
-	////    (KW_OPAREN t14+=Statement? (KW_COMMA t15+=Expression)* KW_CPAREN)*
-	////    // option of no parenthesis for single parameter
-	////    | => t6=PrimaryExpression
-	////  )?
-	////  => ((KW_COMMA TK_ID)* KW_COLON rightType2 =TypeExpression1)?
-	////  // allow multiple assignment
-	////  //=>(op=GIVES lambda = Expression 'xxx')?
-	/////;
-	/// * Literals are actual values of a given type
-	// * Outstanding issues:
-	// * 1) Float literals are parsed as elt(Int,Int) so we need to recognise this
-	// * and convert to float literal
-	// * 2) We need to be able to recognise exponent notation for floats
-	// * 3) Integers without '-' prefix can be converted to PI or NNI
-	// * 4) need to add hex or octal notation for integers (0xhhhh)
-	// * 5) String and Character literals need to have backslash "\" doubled to
-	// * "\\" otherwise xtext will interpret backslash as an escape character.
-	// * 6) values following immediately after string literal such as "abc"d should
-	// * represent an implied concat: concat("abc",d)
-	// * / //Literal hidden(WS,TK_COMMENT):
-	////  value=TK_INT
-	////  | t2=TK_STRING (=> e1=NameOrFunctionCall =>(t31+=TK_STRING (=> e4+=NameOrFunctionCall)?)*)?
-	//// | t3=FloatLiteral // conflicts with use of '.' for elt
-	////  | ListLiteral
-	////  | CharacterLiteral
-	////  | BooleanLiteral
-	////;
-	/// * Contains a single character whereas a string contains multiple
-	// * characters.
-	// * / //CharacterLiteral hidden(WS,TK_COMMENT):
-	//// KW_QUOTE c1=ANY_OTHER KW_QUOTE
-	////;
-	/// * This may not need to be specified here at the syntax level. Perhaps we
-	// * should treat boolean as any other library defined type.
-	// * / //BooleanLiteral hidden(WS,TK_COMMENT):
-	//// litname = 'true' | litname = 'false'
-	//// | litname = 'true' KW_OPAREN KW_CPAREN
-	//// | litname = 'false' KW_OPAREN KW_CPAREN
-	////;
-	/// *
-	// * a list literal may consist of:
-	// * [] an empty list
-	// * [a] a single element
-	// * [a,b] multiple elements
-	// * [a for b in c] a list comprehension
-	// * / //ListLiteral hidden(WS,TK_COMMENT):
-	//// litname = KW_OBRACK l2=Expression?
-	////     (KW_COMMA t3+=Expression)*
-	////     ('for' t14+=Expression 'in' l5+=Expression)?
-	////     KW_CBRACK
-	////; CurlyContentB_Labeled: //	Labeled
+	// * / CurlyContentB_Labeled:
 	//	pred=PreDocument l=Labeled pd=PostDocument;
 	public CurlyContentB_LabeledElements getCurlyContentB_LabeledAccess() {
 		return (pCurlyContentB_Labeled != null) ? pCurlyContentB_Labeled : (pCurlyContentB_Labeled = new CurlyContentB_LabeledElements());

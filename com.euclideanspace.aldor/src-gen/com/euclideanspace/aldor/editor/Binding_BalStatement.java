@@ -13,6 +13,6 @@ package com.euclideanspace.aldor.editor;
  * @model
  * @generated
  */
-public interface Binding_BalStatement extends Flow_BalStatement, AlwaysPart_BalStatement
+public interface Binding_BalStatement extends AlwaysPart_BalStatement
 {
 } // Binding_BalStatement

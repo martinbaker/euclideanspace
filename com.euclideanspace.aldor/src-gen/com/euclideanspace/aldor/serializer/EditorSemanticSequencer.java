@@ -3,11 +3,8 @@ package com.euclideanspace.aldor.serializer;
 import com.euclideanspace.aldor.editor.ArrowTok;
 import com.euclideanspace.aldor.editor.Atom;
 import com.euclideanspace.aldor.editor.BindingL_Infixed_AnyStatement;
-import com.euclideanspace.aldor.editor.BindingL_Infixed_BalStatement;
-import com.euclideanspace.aldor.editor.BindingL_Infixed_Collection;
 import com.euclideanspace.aldor.editor.Bracketed;
 import com.euclideanspace.aldor.editor.ButExpr;
-import com.euclideanspace.aldor.editor.Collection;
 import com.euclideanspace.aldor.editor.CurlyContentB_Labeled;
 import com.euclideanspace.aldor.editor.CurlyContentsList_Labeled;
 import com.euclideanspace.aldor.editor.DeclMolecule;
@@ -27,10 +24,11 @@ import com.euclideanspace.aldor.editor.E9;
 import com.euclideanspace.aldor.editor.EditorPackage;
 import com.euclideanspace.aldor.editor.ExportDecl;
 import com.euclideanspace.aldor.editor.Expr;
-import com.euclideanspace.aldor.editor.Flow_AnyStatement;
 import com.euclideanspace.aldor.editor.Flow_BalStatement;
 import com.euclideanspace.aldor.editor.Id;
+import com.euclideanspace.aldor.editor.Infixed;
 import com.euclideanspace.aldor.editor.Iterator;
+import com.euclideanspace.aldor.editor.Iterators1;
 import com.euclideanspace.aldor.editor.Jleft_Molecule;
 import com.euclideanspace.aldor.editor.Jright_Atom;
 import com.euclideanspace.aldor.editor.LatticeTok;
@@ -45,7 +43,6 @@ import com.euclideanspace.aldor.editor.QuotientTok;
 import com.euclideanspace.aldor.editor.RelationTok;
 import com.euclideanspace.aldor.editor.SegTok;
 import com.euclideanspace.aldor.editor.TimesTok;
-import com.euclideanspace.aldor.editor.enlister1_Infixed_Comma;
 import com.euclideanspace.aldor.editor.enlister1a_Labeled_Semicolon;
 import com.euclideanspace.aldor.services.EditorGrammarAccess;
 import com.google.inject.Inject;
@@ -71,7 +68,12 @@ public class EditorSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	public void createSequence(EObject context, EObject semanticObject) {
 		if(semanticObject.eClass().getEPackage() == EditorPackage.eINSTANCE) switch(semanticObject.eClass().getClassifierID()) {
 			case EditorPackage.ARROW_TOK:
-				if(context == grammarAccess.getFlow_AnyStatementRule() ||
+				if(context == grammarAccess.getAlwaysPart_BalStatementRule() ||
+				   context == grammarAccess.getAnyStatementRule() ||
+				   context == grammarAccess.getBalStatementRule() ||
+				   context == grammarAccess.getBindingL_Infixed_BalStatementRule() ||
+				   context == grammarAccess.getBinding_BalStatementRule() ||
+				   context == grammarAccess.getFlow_AnyStatementRule() ||
 				   context == grammarAccess.getFlow_BalStatementRule() ||
 				   context == grammarAccess.getNakedOpRule() ||
 				   context == grammarAccess.getNameRule() ||
@@ -101,7 +103,11 @@ public class EditorSemanticSequencer extends AbstractDelegatingSemanticSequencer
 				}
 				else break;
 			case EditorPackage.BINDING_LINFIXED_ANY_STATEMENT:
-				if(context == grammarAccess.getAlwaysPart_AnyStatementRule() ||
+				if(context == grammarAccess.getAnyStatementRule()) {
+					sequence_AnyStatement_BindingL_Infixed_AnyStatement_CommaItem(context, (BindingL_Infixed_AnyStatement) semanticObject); 
+					return; 
+				}
+				else if(context == grammarAccess.getAlwaysPart_AnyStatementRule() ||
 				   context == grammarAccess.getBindingL_Infixed_AnyStatementRule() ||
 				   context == grammarAccess.getBinding_AnyStatementRule()) {
 					sequence_BindingL_Infixed_AnyStatement(context, (BindingL_Infixed_AnyStatement) semanticObject); 
@@ -116,7 +122,11 @@ public class EditorSemanticSequencer extends AbstractDelegatingSemanticSequencer
 					sequence_BindingL_Infixed_AnyStatement_CommaItem_Flow_AnyStatement(context, (BindingL_Infixed_AnyStatement) semanticObject); 
 					return; 
 				}
-				else if(context == grammarAccess.getFlow_BalStatementRule()) {
+				else if(context == grammarAccess.getAlwaysPart_BalStatementRule() ||
+				   context == grammarAccess.getBalStatementRule() ||
+				   context == grammarAccess.getBindingL_Infixed_BalStatementRule() ||
+				   context == grammarAccess.getBinding_BalStatementRule() ||
+				   context == grammarAccess.getFlow_BalStatementRule()) {
 					sequence_BindingL_Infixed_AnyStatement_CommaItem_Flow_BalStatement(context, (BindingL_Infixed_AnyStatement) semanticObject); 
 					return; 
 				}
@@ -125,23 +135,6 @@ public class EditorSemanticSequencer extends AbstractDelegatingSemanticSequencer
 				   context == grammarAccess.getEnlist1_CommaItem_Comma_ABRule() ||
 				   context == grammarAccess.getEnlister1_CommaItem_CommaRule()) {
 					sequence_BindingL_Infixed_AnyStatement_CommaItem_enlister1_CommaItem_Comma(context, (BindingL_Infixed_AnyStatement) semanticObject); 
-					return; 
-				}
-				else break;
-			case EditorPackage.BINDING_LINFIXED_BAL_STATEMENT:
-				if(context == grammarAccess.getAlwaysPart_BalStatementRule() ||
-				   context == grammarAccess.getBindingL_Infixed_BalStatementRule() ||
-				   context == grammarAccess.getBinding_BalStatementRule() ||
-				   context == grammarAccess.getFlow_BalStatementRule()) {
-					sequence_BindingL_Infixed_BalStatement(context, (BindingL_Infixed_BalStatement) semanticObject); 
-					return; 
-				}
-				else break;
-			case EditorPackage.BINDING_LINFIXED_COLLECTION:
-				if(context == grammarAccess.getBindingL_Infixed_CollectionRule() ||
-				   context == grammarAccess.getBinding_CollectionRule() ||
-				   context == grammarAccess.getCasesRule()) {
-					sequence_BindingL_Infixed_Collection(context, (BindingL_Infixed_Collection) semanticObject); 
 					return; 
 				}
 				else break;
@@ -154,17 +147,6 @@ public class EditorSemanticSequencer extends AbstractDelegatingSemanticSequencer
 			case EditorPackage.BUT_EXPR:
 				if(context == grammarAccess.getButExprRule()) {
 					sequence_ButExpr(context, (ButExpr) semanticObject); 
-					return; 
-				}
-				else break;
-			case EditorPackage.COLLECTION:
-				if(context == grammarAccess.getBindingL_Infixed_CollectionRule() ||
-				   context == grammarAccess.getBinding_CollectionRule() ||
-				   context == grammarAccess.getCasesRule() ||
-				   context == grammarAccess.getCollectionRule() ||
-				   context == grammarAccess.getFlow_AnyStatementRule() ||
-				   context == grammarAccess.getFlow_BalStatementRule()) {
-					sequence_Collection(context, (Collection) semanticObject); 
 					return; 
 				}
 				else break;
@@ -414,20 +396,23 @@ public class EditorSemanticSequencer extends AbstractDelegatingSemanticSequencer
 					return; 
 				}
 				else break;
-			case EditorPackage.FLOW_ANY_STATEMENT:
-				if(context == grammarAccess.getFlow_AnyStatementRule()) {
-					sequence_Flow_AnyStatement(context, (Flow_AnyStatement) semanticObject); 
-					return; 
-				}
-				else break;
 			case EditorPackage.FLOW_BAL_STATEMENT:
-				if(context == grammarAccess.getFlow_BalStatementRule()) {
+				if(context == grammarAccess.getAlwaysPart_BalStatementRule() ||
+				   context == grammarAccess.getBalStatementRule() ||
+				   context == grammarAccess.getBindingL_Infixed_BalStatementRule() ||
+				   context == grammarAccess.getBinding_BalStatementRule() ||
+				   context == grammarAccess.getFlow_BalStatementRule()) {
 					sequence_Flow_BalStatement(context, (Flow_BalStatement) semanticObject); 
 					return; 
 				}
 				else break;
 			case EditorPackage.ID:
-				if(context == grammarAccess.getFlow_AnyStatementRule() ||
+				if(context == grammarAccess.getAlwaysPart_BalStatementRule() ||
+				   context == grammarAccess.getAnyStatementRule() ||
+				   context == grammarAccess.getBalStatementRule() ||
+				   context == grammarAccess.getBindingL_Infixed_BalStatementRule() ||
+				   context == grammarAccess.getBinding_BalStatementRule() ||
+				   context == grammarAccess.getFlow_AnyStatementRule() ||
 				   context == grammarAccess.getFlow_BalStatementRule() ||
 				   context == grammarAccess.getIdRule() ||
 				   context == grammarAccess.getNameRule()) {
@@ -435,9 +420,89 @@ public class EditorSemanticSequencer extends AbstractDelegatingSemanticSequencer
 					return; 
 				}
 				else break;
+			case EditorPackage.INFIXED:
+				if(context == grammarAccess.getAnyStatementRule()) {
+					sequence_AnyStatement_BindingL_Infixed_AnyStatement_CommaItem_Infixed(context, (Infixed) semanticObject); 
+					return; 
+				}
+				else if(context == grammarAccess.getCommaItemRule() ||
+				   context == grammarAccess.getGenBoundRule()) {
+					sequence_BindingL_Infixed_AnyStatement_CommaItem_Infixed(context, (Infixed) semanticObject); 
+					return; 
+				}
+				else if(context == grammarAccess.getCommaRule() ||
+				   context == grammarAccess.getLabeledRule() ||
+				   context == grammarAccess.getEnlist1_CommaItem_Comma_ABRule() ||
+				   context == grammarAccess.getEnlister1_CommaItem_CommaRule()) {
+					sequence_BindingL_Infixed_AnyStatement_CommaItem_Infixed_enlister1_CommaItem_Comma(context, (Infixed) semanticObject); 
+					return; 
+				}
+				else if(context == grammarAccess.getAlwaysPart_AnyStatementRule() ||
+				   context == grammarAccess.getBindingL_Infixed_AnyStatementRule() ||
+				   context == grammarAccess.getBinding_AnyStatementRule()) {
+					sequence_BindingL_Infixed_AnyStatement_Infixed(context, (Infixed) semanticObject); 
+					return; 
+				}
+				else if(context == grammarAccess.getFlow_AnyStatementRule()) {
+					sequence_Collection_Flow_AnyStatement_Infixed(context, (Infixed) semanticObject); 
+					return; 
+				}
+				else if(context == grammarAccess.getAlwaysPart_BalStatementRule() ||
+				   context == grammarAccess.getBalStatementRule() ||
+				   context == grammarAccess.getBindingL_Infixed_BalStatementRule() ||
+				   context == grammarAccess.getBinding_BalStatementRule() ||
+				   context == grammarAccess.getFlow_BalStatementRule()) {
+					sequence_Collection_Flow_BalStatement_Infixed(context, (Infixed) semanticObject); 
+					return; 
+				}
+				else if(context == grammarAccess.getBindingL_Infixed_CollectionRule() ||
+				   context == grammarAccess.getBinding_CollectionRule() ||
+				   context == grammarAccess.getCasesRule() ||
+				   context == grammarAccess.getCollectionRule()) {
+					sequence_Collection_Infixed(context, (Infixed) semanticObject); 
+					return; 
+				}
+				else if(context == grammarAccess.getForLhsRule() ||
+				   context == grammarAccess.getInfixedRule() ||
+				   context == grammarAccess.getSuchthatPartRule() ||
+				   context == grammarAccess.getToPartRule()) {
+					sequence_Infixed(context, (Infixed) semanticObject); 
+					return; 
+				}
+				else if(context == grammarAccess.getIteratorRule()) {
+					sequence_Infixed_Iterator(context, (Infixed) semanticObject); 
+					return; 
+				}
+				else if(context == grammarAccess.getFromPartRule() ||
+				   context == grammarAccess.getEnlist1_Infixed_Comma_ABRule() ||
+				   context == grammarAccess.getEnlister1_Infixed_CommaRule()) {
+					sequence_Infixed_enlister1_Infixed_Comma(context, (Infixed) semanticObject); 
+					return; 
+				}
+				else break;
 			case EditorPackage.ITERATOR:
 				if(context == grammarAccess.getIteratorRule()) {
 					sequence_Iterator(context, (Iterator) semanticObject); 
+					return; 
+				}
+				else break;
+			case EditorPackage.ITERATORS1:
+				if(context == grammarAccess.getAnyStatementRule() ||
+				   context == grammarAccess.getFlow_AnyStatementRule()) {
+					sequence_Flow_AnyStatement_Iterators1(context, (Iterators1) semanticObject); 
+					return; 
+				}
+				else if(context == grammarAccess.getAlwaysPart_BalStatementRule() ||
+				   context == grammarAccess.getBalStatementRule() ||
+				   context == grammarAccess.getBindingL_Infixed_BalStatementRule() ||
+				   context == grammarAccess.getBinding_BalStatementRule() ||
+				   context == grammarAccess.getFlow_BalStatementRule()) {
+					sequence_Flow_BalStatement_Iterators1(context, (Iterators1) semanticObject); 
+					return; 
+				}
+				else if(context == grammarAccess.getIteratorsRule() ||
+				   context == grammarAccess.getIterators1Rule()) {
+					sequence_Iterators1(context, (Iterators1) semanticObject); 
 					return; 
 				}
 				else break;
@@ -456,7 +521,12 @@ public class EditorSemanticSequencer extends AbstractDelegatingSemanticSequencer
 				}
 				else break;
 			case EditorPackage.LATTICE_TOK:
-				if(context == grammarAccess.getFlow_AnyStatementRule() ||
+				if(context == grammarAccess.getAlwaysPart_BalStatementRule() ||
+				   context == grammarAccess.getAnyStatementRule() ||
+				   context == grammarAccess.getBalStatementRule() ||
+				   context == grammarAccess.getBindingL_Infixed_BalStatementRule() ||
+				   context == grammarAccess.getBinding_BalStatementRule() ||
+				   context == grammarAccess.getFlow_AnyStatementRule() ||
 				   context == grammarAccess.getFlow_BalStatementRule() ||
 				   context == grammarAccess.getNakedOpRule() ||
 				   context == grammarAccess.getNameRule() ||
@@ -515,7 +585,12 @@ public class EditorSemanticSequencer extends AbstractDelegatingSemanticSequencer
 				}
 				else break;
 			case EditorPackage.PLUS_TOK:
-				if(context == grammarAccess.getFlow_AnyStatementRule() ||
+				if(context == grammarAccess.getAlwaysPart_BalStatementRule() ||
+				   context == grammarAccess.getAnyStatementRule() ||
+				   context == grammarAccess.getBalStatementRule() ||
+				   context == grammarAccess.getBindingL_Infixed_BalStatementRule() ||
+				   context == grammarAccess.getBinding_BalStatementRule() ||
+				   context == grammarAccess.getFlow_AnyStatementRule() ||
 				   context == grammarAccess.getFlow_BalStatementRule() ||
 				   context == grammarAccess.getNakedOpRule() ||
 				   context == grammarAccess.getNameRule() ||
@@ -525,7 +600,12 @@ public class EditorSemanticSequencer extends AbstractDelegatingSemanticSequencer
 				}
 				else break;
 			case EditorPackage.POWER_TOK:
-				if(context == grammarAccess.getFlow_AnyStatementRule() ||
+				if(context == grammarAccess.getAlwaysPart_BalStatementRule() ||
+				   context == grammarAccess.getAnyStatementRule() ||
+				   context == grammarAccess.getBalStatementRule() ||
+				   context == grammarAccess.getBindingL_Infixed_BalStatementRule() ||
+				   context == grammarAccess.getBinding_BalStatementRule() ||
+				   context == grammarAccess.getFlow_AnyStatementRule() ||
 				   context == grammarAccess.getFlow_BalStatementRule() ||
 				   context == grammarAccess.getNakedOpRule() ||
 				   context == grammarAccess.getNameRule() ||
@@ -541,7 +621,12 @@ public class EditorSemanticSequencer extends AbstractDelegatingSemanticSequencer
 				}
 				else break;
 			case EditorPackage.QUOTIENT_TOK:
-				if(context == grammarAccess.getFlow_AnyStatementRule() ||
+				if(context == grammarAccess.getAlwaysPart_BalStatementRule() ||
+				   context == grammarAccess.getAnyStatementRule() ||
+				   context == grammarAccess.getBalStatementRule() ||
+				   context == grammarAccess.getBindingL_Infixed_BalStatementRule() ||
+				   context == grammarAccess.getBinding_BalStatementRule() ||
+				   context == grammarAccess.getFlow_AnyStatementRule() ||
 				   context == grammarAccess.getFlow_BalStatementRule() ||
 				   context == grammarAccess.getNakedOpRule() ||
 				   context == grammarAccess.getNameRule() ||
@@ -551,7 +636,12 @@ public class EditorSemanticSequencer extends AbstractDelegatingSemanticSequencer
 				}
 				else break;
 			case EditorPackage.RELATION_TOK:
-				if(context == grammarAccess.getFlow_AnyStatementRule() ||
+				if(context == grammarAccess.getAlwaysPart_BalStatementRule() ||
+				   context == grammarAccess.getAnyStatementRule() ||
+				   context == grammarAccess.getBalStatementRule() ||
+				   context == grammarAccess.getBindingL_Infixed_BalStatementRule() ||
+				   context == grammarAccess.getBinding_BalStatementRule() ||
+				   context == grammarAccess.getFlow_AnyStatementRule() ||
 				   context == grammarAccess.getFlow_BalStatementRule() ||
 				   context == grammarAccess.getNakedOpRule() ||
 				   context == grammarAccess.getNameRule() ||
@@ -561,7 +651,12 @@ public class EditorSemanticSequencer extends AbstractDelegatingSemanticSequencer
 				}
 				else break;
 			case EditorPackage.SEG_TOK:
-				if(context == grammarAccess.getFlow_AnyStatementRule() ||
+				if(context == grammarAccess.getAlwaysPart_BalStatementRule() ||
+				   context == grammarAccess.getAnyStatementRule() ||
+				   context == grammarAccess.getBalStatementRule() ||
+				   context == grammarAccess.getBindingL_Infixed_BalStatementRule() ||
+				   context == grammarAccess.getBinding_BalStatementRule() ||
+				   context == grammarAccess.getFlow_AnyStatementRule() ||
 				   context == grammarAccess.getFlow_BalStatementRule() ||
 				   context == grammarAccess.getNakedOpRule() ||
 				   context == grammarAccess.getNameRule() ||
@@ -571,20 +666,17 @@ public class EditorSemanticSequencer extends AbstractDelegatingSemanticSequencer
 				}
 				else break;
 			case EditorPackage.TIMES_TOK:
-				if(context == grammarAccess.getFlow_AnyStatementRule() ||
+				if(context == grammarAccess.getAlwaysPart_BalStatementRule() ||
+				   context == grammarAccess.getAnyStatementRule() ||
+				   context == grammarAccess.getBalStatementRule() ||
+				   context == grammarAccess.getBindingL_Infixed_BalStatementRule() ||
+				   context == grammarAccess.getBinding_BalStatementRule() ||
+				   context == grammarAccess.getFlow_AnyStatementRule() ||
 				   context == grammarAccess.getFlow_BalStatementRule() ||
 				   context == grammarAccess.getNakedOpRule() ||
 				   context == grammarAccess.getNameRule() ||
 				   context == grammarAccess.getUnqualOp_TimesTokRule()) {
 					sequence_UnqualOp_TimesTok(context, (TimesTok) semanticObject); 
-					return; 
-				}
-				else break;
-			case EditorPackage.ENLISTER1_INFIXED_COMMA:
-				if(context == grammarAccess.getFromPartRule() ||
-				   context == grammarAccess.getEnlist1_Infixed_Comma_ABRule() ||
-				   context == grammarAccess.getEnlister1_Infixed_CommaRule()) {
-					sequence_enlister1_Infixed_Comma(context, (enlister1_Infixed_Comma) semanticObject); 
 					return; 
 				}
 				else break;
@@ -610,6 +702,24 @@ public class EditorSemanticSequencer extends AbstractDelegatingSemanticSequencer
 			}
 		if (errorAcceptor != null) errorAcceptor.accept(diagnosticProvider.createInvalidContextOrTypeDiagnostic(semanticObject, context));
 	}
+	
+	/**
+	 * Constraint:
+	 *     (bas9=AnyStatement ci=CommaItem* bas=Binding_AnyStatement)
+	 */
+	protected void sequence_AnyStatement_BindingL_Infixed_AnyStatement_CommaItem(EObject context, BindingL_Infixed_AnyStatement semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (((ifx=InfixedExpr dp+=DeclPart*) | b=Block) bia=BindingL_Infixed_AnyStatement ci=CommaItem* bas=Binding_AnyStatement)
+	 */
+	protected void sequence_AnyStatement_BindingL_Infixed_AnyStatement_CommaItem_Infixed(EObject context, Infixed semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
 	
 	/**
 	 * Constraint:
@@ -649,13 +759,7 @@ public class EditorSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	
 	/**
 	 * Constraint:
-	 *     (
-	 *         bia=BindingL_Infixed_AnyStatement | 
-	 *         bia=BindingL_Infixed_AnyStatement | 
-	 *         bia=BindingL_Infixed_AnyStatement | 
-	 *         bia=BindingL_Infixed_AnyStatement | 
-	 *         bia=BindingL_Infixed_AnyStatement
-	 *     )
+	 *     bas9=AnyStatement
 	 */
 	protected void sequence_BindingL_Infixed_AnyStatement(EObject context, BindingL_Infixed_AnyStatement semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -664,16 +768,7 @@ public class EditorSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	
 	/**
 	 * Constraint:
-	 *     (
-	 *         (
-	 *             bia=BindingL_Infixed_AnyStatement | 
-	 *             bia=BindingL_Infixed_AnyStatement | 
-	 *             bia=BindingL_Infixed_AnyStatement | 
-	 *             bia=BindingL_Infixed_AnyStatement | 
-	 *             bia=BindingL_Infixed_AnyStatement
-	 *         ) 
-	 *         ci=CommaItem*
-	 *     )
+	 *     (bas9=AnyStatement ci=CommaItem*)
 	 */
 	protected void sequence_BindingL_Infixed_AnyStatement_CommaItem(EObject context, BindingL_Infixed_AnyStatement semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -682,18 +777,7 @@ public class EditorSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	
 	/**
 	 * Constraint:
-	 *     (
-	 *         (
-	 *             bia=BindingL_Infixed_AnyStatement | 
-	 *             bia=BindingL_Infixed_AnyStatement | 
-	 *             bia=BindingL_Infixed_AnyStatement | 
-	 *             bia=BindingL_Infixed_AnyStatement | 
-	 *             bia=BindingL_Infixed_AnyStatement
-	 *         ) 
-	 *         ci=CommaItem* 
-	 *         bbs=Binding_BalStatement 
-	 *         bas=Binding_AnyStatement
-	 *     )
+	 *     (bas9=AnyStatement ci=CommaItem* bbs=Binding_BalStatement bas=Binding_AnyStatement)
 	 */
 	protected void sequence_BindingL_Infixed_AnyStatement_CommaItem_Flow_AnyStatement(EObject context, BindingL_Infixed_AnyStatement semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -702,18 +786,7 @@ public class EditorSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	
 	/**
 	 * Constraint:
-	 *     (
-	 *         (
-	 *             bia=BindingL_Infixed_AnyStatement | 
-	 *             bia=BindingL_Infixed_AnyStatement | 
-	 *             bia=BindingL_Infixed_AnyStatement | 
-	 *             bia=BindingL_Infixed_AnyStatement | 
-	 *             bia=BindingL_Infixed_AnyStatement
-	 *         ) 
-	 *         ci=CommaItem* 
-	 *         bbs=Binding_BalStatement 
-	 *         bbs2=Binding_BalStatement
-	 *     )
+	 *     (bas9=AnyStatement ci=CommaItem* bbs=Binding_BalStatement bbs2=Binding_BalStatement)
 	 */
 	protected void sequence_BindingL_Infixed_AnyStatement_CommaItem_Flow_BalStatement(EObject context, BindingL_Infixed_AnyStatement semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -722,17 +795,25 @@ public class EditorSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	
 	/**
 	 * Constraint:
-	 *     (
-	 *         (
-	 *             bia=BindingL_Infixed_AnyStatement | 
-	 *             bia=BindingL_Infixed_AnyStatement | 
-	 *             bia=BindingL_Infixed_AnyStatement | 
-	 *             bia=BindingL_Infixed_AnyStatement | 
-	 *             bia=BindingL_Infixed_AnyStatement
-	 *         ) 
-	 *         ci=CommaItem* 
-	 *         ci=CommaItem*
-	 *     )
+	 *     (((ifx=InfixedExpr dp+=DeclPart*) | b=Block) bia=BindingL_Infixed_AnyStatement ci=CommaItem*)
+	 */
+	protected void sequence_BindingL_Infixed_AnyStatement_CommaItem_Infixed(EObject context, Infixed semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (((ifx=InfixedExpr dp+=DeclPart*) | b=Block) bia=BindingL_Infixed_AnyStatement ci=CommaItem* ci=CommaItem*)
+	 */
+	protected void sequence_BindingL_Infixed_AnyStatement_CommaItem_Infixed_enlister1_CommaItem_Comma(EObject context, Infixed semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (bas9=AnyStatement ci=CommaItem* ci=CommaItem*)
 	 */
 	protected void sequence_BindingL_Infixed_AnyStatement_CommaItem_enlister1_CommaItem_Comma(EObject context, BindingL_Infixed_AnyStatement semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -741,30 +822,9 @@ public class EditorSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	
 	/**
 	 * Constraint:
-	 *     (
-	 *         bib=BindingL_Infixed_BalStatement | 
-	 *         bib=BindingL_Infixed_BalStatement | 
-	 *         bib=BindingL_Infixed_BalStatement | 
-	 *         bib=BindingL_Infixed_BalStatement | 
-	 *         bib=BindingL_Infixed_BalStatement
-	 *     )
+	 *     (((ifx=InfixedExpr dp+=DeclPart*) | b=Block) bia=BindingL_Infixed_AnyStatement)
 	 */
-	protected void sequence_BindingL_Infixed_BalStatement(EObject context, BindingL_Infixed_BalStatement semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * Constraint:
-	 *     (
-	 *         bic=BindingL_Infixed_Collection | 
-	 *         bic=BindingL_Infixed_Collection | 
-	 *         bic=BindingL_Infixed_Collection | 
-	 *         bic=BindingL_Infixed_Collection | 
-	 *         bic=BindingL_Infixed_Collection
-	 *     )
-	 */
-	protected void sequence_BindingL_Infixed_Collection(EObject context, BindingL_Infixed_Collection semanticObject) {
+	protected void sequence_BindingL_Infixed_AnyStatement_Infixed(EObject context, Infixed semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -790,9 +850,27 @@ public class EditorSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	
 	/**
 	 * Constraint:
-	 *     i=Iterators
+	 *     (((ifx=InfixedExpr dp+=DeclPart*) | b=Block) i3=Iterators? bas2=Binding_AnyStatement?)
 	 */
-	protected void sequence_Collection(EObject context, Collection semanticObject) {
+	protected void sequence_Collection_Flow_AnyStatement_Infixed(EObject context, Infixed semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (((ifx=InfixedExpr dp+=DeclPart*) | b=Block) i3=Iterators? bbs3=Binding_BalStatement?)
+	 */
+	protected void sequence_Collection_Flow_BalStatement_Infixed(EObject context, Infixed semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (((ifx=InfixedExpr dp+=DeclPart*) | b=Block) i3=Iterators?)
+	 */
+	protected void sequence_Collection_Infixed(EObject context, Infixed semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -1136,18 +1214,36 @@ public class EditorSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	
 	/**
 	 * Constraint:
-	 *     bas3=Binding_AnyStatement?
+	 *     (itr+=Iterator* bas3=Binding_AnyStatement)
 	 */
-	protected void sequence_Flow_AnyStatement(EObject context, Flow_AnyStatement semanticObject) {
+	protected void sequence_Flow_AnyStatement_Iterators1(EObject context, Iterators1 semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
 	/**
 	 * Constraint:
-	 *     bbs4=Binding_BalStatement?
+	 *     (
+	 *         bbs5=Binding_BalStatement | 
+	 *         bbs5=Binding_BalStatement | 
+	 *         bbs5=Binding_BalStatement | 
+	 *         bbs5=Binding_BalStatement | 
+	 *         bbs5=Binding_BalStatement | 
+	 *         bbs5=Binding_BalStatement | 
+	 *         bbs5=Binding_BalStatement | 
+	 *         bbs5=Binding_BalStatement
+	 *     )
 	 */
 	protected void sequence_Flow_BalStatement(EObject context, Flow_BalStatement semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (itr+=Iterator* bbs4=Binding_BalStatement)
+	 */
+	protected void sequence_Flow_BalStatement_Iterators1(EObject context, Iterators1 semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -1163,9 +1259,52 @@ public class EditorSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	
 	/**
 	 * Constraint:
-	 *     (i=Infixed sp=SuchthatPart?)?
+	 *     ((ifx=InfixedExpr dp+=DeclPart*) | b=Block)
+	 */
+	protected void sequence_Infixed(EObject context, Infixed semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (((ifx=InfixedExpr dp+=DeclPart*) | b=Block) i=Infixed sp=SuchthatPart?)
+	 */
+	protected void sequence_Infixed_Iterator(EObject context, Infixed semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (((ifx=InfixedExpr dp+=DeclPart*) | b=Block) i2=Infixed*)
+	 */
+	protected void sequence_Infixed_enlister1_Infixed_Comma(EObject context, Infixed semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     i=Infixed
 	 */
 	protected void sequence_Iterator(EObject context, Iterator semanticObject) {
+		if(errorAcceptor != null) {
+			if(transientValues.isValueTransient(semanticObject, EditorPackage.Literals.ITERATOR__I) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, EditorPackage.Literals.ITERATOR__I));
+		}
+		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
+		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
+		feeder.accept(grammarAccess.getIteratorAccess().getIInfixedParserRuleCall_1_1_0(), semanticObject.getI());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (itr+=Iterator*)
+	 */
+	protected void sequence_Iterators1(EObject context, Iterators1 semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -1363,15 +1502,6 @@ public class EditorSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	 *     {TimesTok}
 	 */
 	protected void sequence_UnqualOp_TimesTok(EObject context, TimesTok semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * Constraint:
-	 *     i=Infixed+
-	 */
-	protected void sequence_enlister1_Infixed_Comma(EObject context, enlister1_Infixed_Comma semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	

@@ -69,6 +69,7 @@ public class EditorFactoryImpl extends EFactoryImpl implements EditorFactory
       case EditorPackage.LABELED: return createLabeled();
       case EditorPackage.DECLARATION: return createDeclaration();
       case EditorPackage.EXPORT_DECL: return createExportDecl();
+      case EditorPackage.TO_PART: return createToPart();
       case EditorPackage.FROM_PART: return createFromPart();
       case EditorPackage.MACRO_BODY: return createMacroBody();
       case EditorPackage.SIG: return createSig();
@@ -85,6 +86,8 @@ public class EditorFactoryImpl extends EFactoryImpl implements EditorFactory
       case EditorPackage.BINDING_LINFIXED_BAL_STATEMENT: return createBindingL_Infixed_BalStatement();
       case EditorPackage.BINDING_LINFIXED_COLLECTION: return createBindingL_Infixed_Collection();
       case EditorPackage.BINDING_RINFIXED_EXPRS_DECL_ANY_STATEMENT: return createBindingR_InfixedExprsDecl_AnyStatement();
+      case EditorPackage.ANY_STATEMENT: return createAnyStatement();
+      case EditorPackage.BAL_STATEMENT: return createBalStatement();
       case EditorPackage.FLOW_ANY_STATEMENT: return createFlow_AnyStatement();
       case EditorPackage.FLOW_BAL_STATEMENT: return createFlow_BalStatement();
       case EditorPackage.GEN_BOUND: return createGenBound();
@@ -93,7 +96,12 @@ public class EditorFactoryImpl extends EFactoryImpl implements EditorFactory
       case EditorPackage.ALWAYS_PART_ANY_STATEMENT: return createAlwaysPart_AnyStatement();
       case EditorPackage.ALWAYS_PART_BAL_STATEMENT: return createAlwaysPart_BalStatement();
       case EditorPackage.COLLECTION: return createCollection();
+      case EditorPackage.ITERATORS: return createIterators();
+      case EditorPackage.ITERATORS1: return createIterators1();
       case EditorPackage.ITERATOR: return createIterator();
+      case EditorPackage.FOR_LHS: return createForLhs();
+      case EditorPackage.SUCHTHAT_PART: return createSuchthatPart();
+      case EditorPackage.INFIXED: return createInfixed();
       case EditorPackage.INFIXED_EXPR: return createInfixedExpr();
       case EditorPackage.EXPR: return createExpr();
       case EditorPackage.TYPE: return createType();
@@ -230,6 +238,17 @@ public class EditorFactoryImpl extends EFactoryImpl implements EditorFactory
   {
     ExportDeclImpl exportDecl = new ExportDeclImpl();
     return exportDecl;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public ToPart createToPart()
+  {
+    ToPartImpl toPart = new ToPartImpl();
+    return toPart;
   }
 
   /**
@@ -413,6 +432,28 @@ public class EditorFactoryImpl extends EFactoryImpl implements EditorFactory
    * <!-- end-user-doc -->
    * @generated
    */
+  public AnyStatement createAnyStatement()
+  {
+    AnyStatementImpl anyStatement = new AnyStatementImpl();
+    return anyStatement;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public BalStatement createBalStatement()
+  {
+    BalStatementImpl balStatement = new BalStatementImpl();
+    return balStatement;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public Flow_AnyStatement createFlow_AnyStatement()
   {
     Flow_AnyStatementImpl flow_AnyStatement = new Flow_AnyStatementImpl();
@@ -501,10 +542,65 @@ public class EditorFactoryImpl extends EFactoryImpl implements EditorFactory
    * <!-- end-user-doc -->
    * @generated
    */
+  public Iterators createIterators()
+  {
+    IteratorsImpl iterators = new IteratorsImpl();
+    return iterators;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Iterators1 createIterators1()
+  {
+    Iterators1Impl iterators1 = new Iterators1Impl();
+    return iterators1;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public Iterator createIterator()
   {
     IteratorImpl iterator = new IteratorImpl();
     return iterator;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public ForLhs createForLhs()
+  {
+    ForLhsImpl forLhs = new ForLhsImpl();
+    return forLhs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public SuchthatPart createSuchthatPart()
+  {
+    SuchthatPartImpl suchthatPart = new SuchthatPartImpl();
+    return suchthatPart;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Infixed createInfixed()
+  {
+    InfixedImpl infixed = new InfixedImpl();
+    return infixed;
   }
 
   /**

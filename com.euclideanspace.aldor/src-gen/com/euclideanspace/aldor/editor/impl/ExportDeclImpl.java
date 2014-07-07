@@ -4,10 +4,13 @@ package com.euclideanspace.aldor.editor.impl;
 
 import com.euclideanspace.aldor.editor.EditorPackage;
 import com.euclideanspace.aldor.editor.ExportDecl;
+import com.euclideanspace.aldor.editor.ToPart;
 
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
@@ -27,24 +30,14 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 public class ExportDeclImpl extends DeclarationImpl implements ExportDecl
 {
   /**
-   * The default value of the '{@link #getTp() <em>Tp</em>}' attribute.
+   * The cached value of the '{@link #getTp() <em>Tp</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getTp()
    * @generated
    * @ordered
    */
-  protected static final String TP_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getTp() <em>Tp</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getTp()
-   * @generated
-   * @ordered
-   */
-  protected String tp = TP_EDEFAULT;
+  protected ToPart tp;
 
   /**
    * <!-- begin-user-doc -->
@@ -72,7 +65,7 @@ public class ExportDeclImpl extends DeclarationImpl implements ExportDecl
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getTp()
+  public ToPart getTp()
   {
     return tp;
   }
@@ -82,12 +75,53 @@ public class ExportDeclImpl extends DeclarationImpl implements ExportDecl
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setTp(String newTp)
+  public NotificationChain basicSetTp(ToPart newTp, NotificationChain msgs)
   {
-    String oldTp = tp;
+    ToPart oldTp = tp;
     tp = newTp;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, EditorPackage.EXPORT_DECL__TP, oldTp, tp));
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, EditorPackage.EXPORT_DECL__TP, oldTp, newTp);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setTp(ToPart newTp)
+  {
+    if (newTp != tp)
+    {
+      NotificationChain msgs = null;
+      if (tp != null)
+        msgs = ((InternalEObject)tp).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - EditorPackage.EXPORT_DECL__TP, null, msgs);
+      if (newTp != null)
+        msgs = ((InternalEObject)newTp).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - EditorPackage.EXPORT_DECL__TP, null, msgs);
+      msgs = basicSetTp(newTp, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, EditorPackage.EXPORT_DECL__TP, newTp, newTp));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
+  {
+    switch (featureID)
+    {
+      case EditorPackage.EXPORT_DECL__TP:
+        return basicSetTp(null, msgs);
+    }
+    return super.eInverseRemove(otherEnd, featureID, msgs);
   }
 
   /**
@@ -117,7 +151,7 @@ public class ExportDeclImpl extends DeclarationImpl implements ExportDecl
     switch (featureID)
     {
       case EditorPackage.EXPORT_DECL__TP:
-        setTp((String)newValue);
+        setTp((ToPart)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -134,7 +168,7 @@ public class ExportDeclImpl extends DeclarationImpl implements ExportDecl
     switch (featureID)
     {
       case EditorPackage.EXPORT_DECL__TP:
-        setTp(TP_EDEFAULT);
+        setTp((ToPart)null);
         return;
     }
     super.eUnset(featureID);
@@ -151,26 +185,9 @@ public class ExportDeclImpl extends DeclarationImpl implements ExportDecl
     switch (featureID)
     {
       case EditorPackage.EXPORT_DECL__TP:
-        return TP_EDEFAULT == null ? tp != null : !TP_EDEFAULT.equals(tp);
+        return tp != null;
     }
     return super.eIsSet(featureID);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public String toString()
-  {
-    if (eIsProxy()) return super.toString();
-
-    StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (tp: ");
-    result.append(tp);
-    result.append(')');
-    return result.toString();
   }
 
 } //ExportDeclImpl

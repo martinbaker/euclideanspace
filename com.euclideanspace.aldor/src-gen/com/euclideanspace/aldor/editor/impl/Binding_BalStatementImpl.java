@@ -16,7 +16,7 @@ import org.eclipse.emf.ecore.EClass;
  *
  * @generated
  */
-public class Binding_BalStatementImpl extends Flow_BalStatementImpl implements Binding_BalStatement
+public class Binding_BalStatementImpl extends AlwaysPart_BalStatementImpl implements Binding_BalStatement
 {
   /**
    * <!-- begin-user-doc -->

@@ -13,7 +13,6 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -22,23 +21,23 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link com.euclideanspace.aldor.editor.impl.Flow_BalStatementImpl#getBbs4 <em>Bbs4</em>}</li>
+ *   <li>{@link com.euclideanspace.aldor.editor.impl.Flow_BalStatementImpl#getBbs5 <em>Bbs5</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class Flow_BalStatementImpl extends MinimalEObjectImpl.Container implements Flow_BalStatement
+public class Flow_BalStatementImpl extends BalStatementImpl implements Flow_BalStatement
 {
   /**
-   * The cached value of the '{@link #getBbs4() <em>Bbs4</em>}' containment reference.
+   * The cached value of the '{@link #getBbs5() <em>Bbs5</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getBbs4()
+   * @see #getBbs5()
    * @generated
    * @ordered
    */
-  protected Binding_BalStatement bbs4;
+  protected Binding_BalStatement bbs5;
 
   /**
    * <!-- begin-user-doc -->
@@ -66,9 +65,9 @@ public class Flow_BalStatementImpl extends MinimalEObjectImpl.Container implemen
    * <!-- end-user-doc -->
    * @generated
    */
-  public Binding_BalStatement getBbs4()
+  public Binding_BalStatement getBbs5()
   {
-    return bbs4;
+    return bbs5;
   }
 
   /**
@@ -76,13 +75,13 @@ public class Flow_BalStatementImpl extends MinimalEObjectImpl.Container implemen
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetBbs4(Binding_BalStatement newBbs4, NotificationChain msgs)
+  public NotificationChain basicSetBbs5(Binding_BalStatement newBbs5, NotificationChain msgs)
   {
-    Binding_BalStatement oldBbs4 = bbs4;
-    bbs4 = newBbs4;
+    Binding_BalStatement oldBbs5 = bbs5;
+    bbs5 = newBbs5;
     if (eNotificationRequired())
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, EditorPackage.FLOW_BAL_STATEMENT__BBS4, oldBbs4, newBbs4);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, EditorPackage.FLOW_BAL_STATEMENT__BBS5, oldBbs5, newBbs5);
       if (msgs == null) msgs = notification; else msgs.add(notification);
     }
     return msgs;
@@ -93,20 +92,20 @@ public class Flow_BalStatementImpl extends MinimalEObjectImpl.Container implemen
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setBbs4(Binding_BalStatement newBbs4)
+  public void setBbs5(Binding_BalStatement newBbs5)
   {
-    if (newBbs4 != bbs4)
+    if (newBbs5 != bbs5)
     {
       NotificationChain msgs = null;
-      if (bbs4 != null)
-        msgs = ((InternalEObject)bbs4).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - EditorPackage.FLOW_BAL_STATEMENT__BBS4, null, msgs);
-      if (newBbs4 != null)
-        msgs = ((InternalEObject)newBbs4).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - EditorPackage.FLOW_BAL_STATEMENT__BBS4, null, msgs);
-      msgs = basicSetBbs4(newBbs4, msgs);
+      if (bbs5 != null)
+        msgs = ((InternalEObject)bbs5).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - EditorPackage.FLOW_BAL_STATEMENT__BBS5, null, msgs);
+      if (newBbs5 != null)
+        msgs = ((InternalEObject)newBbs5).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - EditorPackage.FLOW_BAL_STATEMENT__BBS5, null, msgs);
+      msgs = basicSetBbs5(newBbs5, msgs);
       if (msgs != null) msgs.dispatch();
     }
     else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, EditorPackage.FLOW_BAL_STATEMENT__BBS4, newBbs4, newBbs4));
+      eNotify(new ENotificationImpl(this, Notification.SET, EditorPackage.FLOW_BAL_STATEMENT__BBS5, newBbs5, newBbs5));
   }
 
   /**
@@ -119,8 +118,8 @@ public class Flow_BalStatementImpl extends MinimalEObjectImpl.Container implemen
   {
     switch (featureID)
     {
-      case EditorPackage.FLOW_BAL_STATEMENT__BBS4:
-        return basicSetBbs4(null, msgs);
+      case EditorPackage.FLOW_BAL_STATEMENT__BBS5:
+        return basicSetBbs5(null, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -135,8 +134,8 @@ public class Flow_BalStatementImpl extends MinimalEObjectImpl.Container implemen
   {
     switch (featureID)
     {
-      case EditorPackage.FLOW_BAL_STATEMENT__BBS4:
-        return getBbs4();
+      case EditorPackage.FLOW_BAL_STATEMENT__BBS5:
+        return getBbs5();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -151,8 +150,8 @@ public class Flow_BalStatementImpl extends MinimalEObjectImpl.Container implemen
   {
     switch (featureID)
     {
-      case EditorPackage.FLOW_BAL_STATEMENT__BBS4:
-        setBbs4((Binding_BalStatement)newValue);
+      case EditorPackage.FLOW_BAL_STATEMENT__BBS5:
+        setBbs5((Binding_BalStatement)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -168,8 +167,8 @@ public class Flow_BalStatementImpl extends MinimalEObjectImpl.Container implemen
   {
     switch (featureID)
     {
-      case EditorPackage.FLOW_BAL_STATEMENT__BBS4:
-        setBbs4((Binding_BalStatement)null);
+      case EditorPackage.FLOW_BAL_STATEMENT__BBS5:
+        setBbs5((Binding_BalStatement)null);
         return;
     }
     super.eUnset(featureID);
@@ -185,8 +184,8 @@ public class Flow_BalStatementImpl extends MinimalEObjectImpl.Container implemen
   {
     switch (featureID)
     {
-      case EditorPackage.FLOW_BAL_STATEMENT__BBS4:
-        return bbs4 != null;
+      case EditorPackage.FLOW_BAL_STATEMENT__BBS5:
+        return bbs5 != null;
     }
     return super.eIsSet(featureID);
   }

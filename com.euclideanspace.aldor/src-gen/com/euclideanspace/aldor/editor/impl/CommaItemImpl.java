@@ -2,11 +2,15 @@
  */
 package com.euclideanspace.aldor.editor.impl;
 
+import com.euclideanspace.aldor.editor.AlwaysPart_BalStatement;
+import com.euclideanspace.aldor.editor.BalStatement;
+import com.euclideanspace.aldor.editor.BindingL_Infixed_BalStatement;
 import com.euclideanspace.aldor.editor.Binding_AnyStatement;
 import com.euclideanspace.aldor.editor.Binding_BalStatement;
 import com.euclideanspace.aldor.editor.Comma;
 import com.euclideanspace.aldor.editor.CommaItem;
 import com.euclideanspace.aldor.editor.EditorPackage;
+import com.euclideanspace.aldor.editor.Flow_AnyStatement;
 import com.euclideanspace.aldor.editor.Flow_BalStatement;
 import com.euclideanspace.aldor.editor.GenBound;
 import com.euclideanspace.aldor.editor.Labeled;
@@ -28,11 +32,10 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link com.euclideanspace.aldor.editor.impl.CommaItemImpl#getBbs4 <em>Bbs4</em>}</li>
- *   <li>{@link com.euclideanspace.aldor.editor.impl.CommaItemImpl#getBas4 <em>Bas4</em>}</li>
  *   <li>{@link com.euclideanspace.aldor.editor.impl.CommaItemImpl#getBbs5 <em>Bbs5</em>}</li>
- *   <li>{@link com.euclideanspace.aldor.editor.impl.CommaItemImpl#getBbs <em>Bbs</em>}</li>
+ *   <li>{@link com.euclideanspace.aldor.editor.impl.CommaItemImpl#getBas4 <em>Bas4</em>}</li>
  *   <li>{@link com.euclideanspace.aldor.editor.impl.CommaItemImpl#getBas <em>Bas</em>}</li>
+ *   <li>{@link com.euclideanspace.aldor.editor.impl.CommaItemImpl#getBbs <em>Bbs</em>}</li>
  *   <li>{@link com.euclideanspace.aldor.editor.impl.CommaItemImpl#getBbs2 <em>Bbs2</em>}</li>
  *   <li>{@link com.euclideanspace.aldor.editor.impl.CommaItemImpl#getCi <em>Ci</em>}</li>
  * </ul>
@@ -40,17 +43,17 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *
  * @generated
  */
-public class CommaItemImpl extends Flow_AnyStatementImpl implements CommaItem
+public class CommaItemImpl extends AnyStatementImpl implements CommaItem
 {
   /**
-   * The cached value of the '{@link #getBbs4() <em>Bbs4</em>}' containment reference.
+   * The cached value of the '{@link #getBbs5() <em>Bbs5</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getBbs4()
+   * @see #getBbs5()
    * @generated
    * @ordered
    */
-  protected Binding_BalStatement bbs4;
+  protected Binding_BalStatement bbs5;
 
   /**
    * The cached value of the '{@link #getBas4() <em>Bas4</em>}' containment reference.
@@ -63,14 +66,14 @@ public class CommaItemImpl extends Flow_AnyStatementImpl implements CommaItem
   protected Binding_AnyStatement bas4;
 
   /**
-   * The cached value of the '{@link #getBbs5() <em>Bbs5</em>}' containment reference.
+   * The cached value of the '{@link #getBas() <em>Bas</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getBbs5()
+   * @see #getBas()
    * @generated
    * @ordered
    */
-  protected Binding_BalStatement bbs5;
+  protected Binding_AnyStatement bas;
 
   /**
    * The cached value of the '{@link #getBbs() <em>Bbs</em>}' containment reference.
@@ -81,16 +84,6 @@ public class CommaItemImpl extends Flow_AnyStatementImpl implements CommaItem
    * @ordered
    */
   protected Binding_BalStatement bbs;
-
-  /**
-   * The cached value of the '{@link #getBas() <em>Bas</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getBas()
-   * @generated
-   * @ordered
-   */
-  protected Binding_AnyStatement bas;
 
   /**
    * The cached value of the '{@link #getBbs2() <em>Bbs2</em>}' containment reference.
@@ -131,102 +124,6 @@ public class CommaItemImpl extends Flow_AnyStatementImpl implements CommaItem
   protected EClass eStaticClass()
   {
     return EditorPackage.Literals.COMMA_ITEM;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public Binding_BalStatement getBbs4()
-  {
-    return bbs4;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public NotificationChain basicSetBbs4(Binding_BalStatement newBbs4, NotificationChain msgs)
-  {
-    Binding_BalStatement oldBbs4 = bbs4;
-    bbs4 = newBbs4;
-    if (eNotificationRequired())
-    {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, EditorPackage.COMMA_ITEM__BBS4, oldBbs4, newBbs4);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setBbs4(Binding_BalStatement newBbs4)
-  {
-    if (newBbs4 != bbs4)
-    {
-      NotificationChain msgs = null;
-      if (bbs4 != null)
-        msgs = ((InternalEObject)bbs4).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - EditorPackage.COMMA_ITEM__BBS4, null, msgs);
-      if (newBbs4 != null)
-        msgs = ((InternalEObject)newBbs4).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - EditorPackage.COMMA_ITEM__BBS4, null, msgs);
-      msgs = basicSetBbs4(newBbs4, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, EditorPackage.COMMA_ITEM__BBS4, newBbs4, newBbs4));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public Binding_AnyStatement getBas4()
-  {
-    return bas4;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public NotificationChain basicSetBas4(Binding_AnyStatement newBas4, NotificationChain msgs)
-  {
-    Binding_AnyStatement oldBas4 = bas4;
-    bas4 = newBas4;
-    if (eNotificationRequired())
-    {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, EditorPackage.COMMA_ITEM__BAS4, oldBas4, newBas4);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setBas4(Binding_AnyStatement newBas4)
-  {
-    if (newBas4 != bas4)
-    {
-      NotificationChain msgs = null;
-      if (bas4 != null)
-        msgs = ((InternalEObject)bas4).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - EditorPackage.COMMA_ITEM__BAS4, null, msgs);
-      if (newBas4 != null)
-        msgs = ((InternalEObject)newBas4).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - EditorPackage.COMMA_ITEM__BAS4, null, msgs);
-      msgs = basicSetBas4(newBas4, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, EditorPackage.COMMA_ITEM__BAS4, newBas4, newBas4));
   }
 
   /**
@@ -282,9 +179,9 @@ public class CommaItemImpl extends Flow_AnyStatementImpl implements CommaItem
    * <!-- end-user-doc -->
    * @generated
    */
-  public Binding_BalStatement getBbs()
+  public Binding_AnyStatement getBas4()
   {
-    return bbs;
+    return bas4;
   }
 
   /**
@@ -292,13 +189,13 @@ public class CommaItemImpl extends Flow_AnyStatementImpl implements CommaItem
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetBbs(Binding_BalStatement newBbs, NotificationChain msgs)
+  public NotificationChain basicSetBas4(Binding_AnyStatement newBas4, NotificationChain msgs)
   {
-    Binding_BalStatement oldBbs = bbs;
-    bbs = newBbs;
+    Binding_AnyStatement oldBas4 = bas4;
+    bas4 = newBas4;
     if (eNotificationRequired())
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, EditorPackage.COMMA_ITEM__BBS, oldBbs, newBbs);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, EditorPackage.COMMA_ITEM__BAS4, oldBas4, newBas4);
       if (msgs == null) msgs = notification; else msgs.add(notification);
     }
     return msgs;
@@ -309,20 +206,20 @@ public class CommaItemImpl extends Flow_AnyStatementImpl implements CommaItem
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setBbs(Binding_BalStatement newBbs)
+  public void setBas4(Binding_AnyStatement newBas4)
   {
-    if (newBbs != bbs)
+    if (newBas4 != bas4)
     {
       NotificationChain msgs = null;
-      if (bbs != null)
-        msgs = ((InternalEObject)bbs).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - EditorPackage.COMMA_ITEM__BBS, null, msgs);
-      if (newBbs != null)
-        msgs = ((InternalEObject)newBbs).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - EditorPackage.COMMA_ITEM__BBS, null, msgs);
-      msgs = basicSetBbs(newBbs, msgs);
+      if (bas4 != null)
+        msgs = ((InternalEObject)bas4).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - EditorPackage.COMMA_ITEM__BAS4, null, msgs);
+      if (newBas4 != null)
+        msgs = ((InternalEObject)newBas4).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - EditorPackage.COMMA_ITEM__BAS4, null, msgs);
+      msgs = basicSetBas4(newBas4, msgs);
       if (msgs != null) msgs.dispatch();
     }
     else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, EditorPackage.COMMA_ITEM__BBS, newBbs, newBbs));
+      eNotify(new ENotificationImpl(this, Notification.SET, EditorPackage.COMMA_ITEM__BAS4, newBas4, newBas4));
   }
 
   /**
@@ -371,6 +268,54 @@ public class CommaItemImpl extends Flow_AnyStatementImpl implements CommaItem
     }
     else if (eNotificationRequired())
       eNotify(new ENotificationImpl(this, Notification.SET, EditorPackage.COMMA_ITEM__BAS, newBas, newBas));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Binding_BalStatement getBbs()
+  {
+    return bbs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetBbs(Binding_BalStatement newBbs, NotificationChain msgs)
+  {
+    Binding_BalStatement oldBbs = bbs;
+    bbs = newBbs;
+    if (eNotificationRequired())
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, EditorPackage.COMMA_ITEM__BBS, oldBbs, newBbs);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setBbs(Binding_BalStatement newBbs)
+  {
+    if (newBbs != bbs)
+    {
+      NotificationChain msgs = null;
+      if (bbs != null)
+        msgs = ((InternalEObject)bbs).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - EditorPackage.COMMA_ITEM__BBS, null, msgs);
+      if (newBbs != null)
+        msgs = ((InternalEObject)newBbs).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - EditorPackage.COMMA_ITEM__BBS, null, msgs);
+      msgs = basicSetBbs(newBbs, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, EditorPackage.COMMA_ITEM__BBS, newBbs, newBbs));
   }
 
   /**
@@ -479,16 +424,14 @@ public class CommaItemImpl extends Flow_AnyStatementImpl implements CommaItem
   {
     switch (featureID)
     {
-      case EditorPackage.COMMA_ITEM__BBS4:
-        return basicSetBbs4(null, msgs);
-      case EditorPackage.COMMA_ITEM__BAS4:
-        return basicSetBas4(null, msgs);
       case EditorPackage.COMMA_ITEM__BBS5:
         return basicSetBbs5(null, msgs);
-      case EditorPackage.COMMA_ITEM__BBS:
-        return basicSetBbs(null, msgs);
+      case EditorPackage.COMMA_ITEM__BAS4:
+        return basicSetBas4(null, msgs);
       case EditorPackage.COMMA_ITEM__BAS:
         return basicSetBas(null, msgs);
+      case EditorPackage.COMMA_ITEM__BBS:
+        return basicSetBbs(null, msgs);
       case EditorPackage.COMMA_ITEM__BBS2:
         return basicSetBbs2(null, msgs);
       case EditorPackage.COMMA_ITEM__CI:
@@ -507,16 +450,14 @@ public class CommaItemImpl extends Flow_AnyStatementImpl implements CommaItem
   {
     switch (featureID)
     {
-      case EditorPackage.COMMA_ITEM__BBS4:
-        return getBbs4();
-      case EditorPackage.COMMA_ITEM__BAS4:
-        return getBas4();
       case EditorPackage.COMMA_ITEM__BBS5:
         return getBbs5();
-      case EditorPackage.COMMA_ITEM__BBS:
-        return getBbs();
+      case EditorPackage.COMMA_ITEM__BAS4:
+        return getBas4();
       case EditorPackage.COMMA_ITEM__BAS:
         return getBas();
+      case EditorPackage.COMMA_ITEM__BBS:
+        return getBbs();
       case EditorPackage.COMMA_ITEM__BBS2:
         return getBbs2();
       case EditorPackage.COMMA_ITEM__CI:
@@ -535,20 +476,17 @@ public class CommaItemImpl extends Flow_AnyStatementImpl implements CommaItem
   {
     switch (featureID)
     {
-      case EditorPackage.COMMA_ITEM__BBS4:
-        setBbs4((Binding_BalStatement)newValue);
+      case EditorPackage.COMMA_ITEM__BBS5:
+        setBbs5((Binding_BalStatement)newValue);
         return;
       case EditorPackage.COMMA_ITEM__BAS4:
         setBas4((Binding_AnyStatement)newValue);
         return;
-      case EditorPackage.COMMA_ITEM__BBS5:
-        setBbs5((Binding_BalStatement)newValue);
+      case EditorPackage.COMMA_ITEM__BAS:
+        setBas((Binding_AnyStatement)newValue);
         return;
       case EditorPackage.COMMA_ITEM__BBS:
         setBbs((Binding_BalStatement)newValue);
-        return;
-      case EditorPackage.COMMA_ITEM__BAS:
-        setBas((Binding_AnyStatement)newValue);
         return;
       case EditorPackage.COMMA_ITEM__BBS2:
         setBbs2((Binding_BalStatement)newValue);
@@ -570,20 +508,17 @@ public class CommaItemImpl extends Flow_AnyStatementImpl implements CommaItem
   {
     switch (featureID)
     {
-      case EditorPackage.COMMA_ITEM__BBS4:
-        setBbs4((Binding_BalStatement)null);
+      case EditorPackage.COMMA_ITEM__BBS5:
+        setBbs5((Binding_BalStatement)null);
         return;
       case EditorPackage.COMMA_ITEM__BAS4:
         setBas4((Binding_AnyStatement)null);
         return;
-      case EditorPackage.COMMA_ITEM__BBS5:
-        setBbs5((Binding_BalStatement)null);
+      case EditorPackage.COMMA_ITEM__BAS:
+        setBas((Binding_AnyStatement)null);
         return;
       case EditorPackage.COMMA_ITEM__BBS:
         setBbs((Binding_BalStatement)null);
-        return;
-      case EditorPackage.COMMA_ITEM__BAS:
-        setBas((Binding_AnyStatement)null);
         return;
       case EditorPackage.COMMA_ITEM__BBS2:
         setBbs2((Binding_BalStatement)null);
@@ -605,16 +540,14 @@ public class CommaItemImpl extends Flow_AnyStatementImpl implements CommaItem
   {
     switch (featureID)
     {
-      case EditorPackage.COMMA_ITEM__BBS4:
-        return bbs4 != null;
-      case EditorPackage.COMMA_ITEM__BAS4:
-        return bas4 != null;
       case EditorPackage.COMMA_ITEM__BBS5:
         return bbs5 != null;
-      case EditorPackage.COMMA_ITEM__BBS:
-        return bbs != null;
+      case EditorPackage.COMMA_ITEM__BAS4:
+        return bas4 != null;
       case EditorPackage.COMMA_ITEM__BAS:
         return bas != null;
+      case EditorPackage.COMMA_ITEM__BBS:
+        return bbs != null;
       case EditorPackage.COMMA_ITEM__BBS2:
         return bbs2 != null;
       case EditorPackage.COMMA_ITEM__CI:
@@ -631,11 +564,46 @@ public class CommaItemImpl extends Flow_AnyStatementImpl implements CommaItem
   @Override
   public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass)
   {
+    if (baseClass == Flow_AnyStatement.class)
+    {
+      switch (derivedFeatureID)
+      {
+        default: return -1;
+      }
+    }
+    if (baseClass == AlwaysPart_BalStatement.class)
+    {
+      switch (derivedFeatureID)
+      {
+        default: return -1;
+      }
+    }
+    if (baseClass == Binding_BalStatement.class)
+    {
+      switch (derivedFeatureID)
+      {
+        default: return -1;
+      }
+    }
+    if (baseClass == BindingL_Infixed_BalStatement.class)
+    {
+      switch (derivedFeatureID)
+      {
+        default: return -1;
+      }
+    }
+    if (baseClass == BalStatement.class)
+    {
+      switch (derivedFeatureID)
+      {
+        default: return -1;
+      }
+    }
     if (baseClass == Flow_BalStatement.class)
     {
       switch (derivedFeatureID)
       {
-        case EditorPackage.COMMA_ITEM__BBS4: return EditorPackage.FLOW_BAL_STATEMENT__BBS4;
+        case EditorPackage.COMMA_ITEM__BBS5: return EditorPackage.FLOW_BAL_STATEMENT__BBS5;
         default: return -1;
       }
     }
@@ -644,7 +612,6 @@ public class CommaItemImpl extends Flow_AnyStatementImpl implements CommaItem
       switch (derivedFeatureID)
       {
         case EditorPackage.COMMA_ITEM__BAS4: return EditorPackage.GEN_BOUND__BAS4;
-        case EditorPackage.COMMA_ITEM__BBS5: return EditorPackage.GEN_BOUND__BBS5;
         default: return -1;
       }
     }
@@ -687,11 +654,46 @@ public class CommaItemImpl extends Flow_AnyStatementImpl implements CommaItem
   @Override
   public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass)
   {
+    if (baseClass == Flow_AnyStatement.class)
+    {
+      switch (baseFeatureID)
+      {
+        default: return -1;
+      }
+    }
+    if (baseClass == AlwaysPart_BalStatement.class)
+    {
+      switch (baseFeatureID)
+      {
+        default: return -1;
+      }
+    }
+    if (baseClass == Binding_BalStatement.class)
+    {
+      switch (baseFeatureID)
+      {
+        default: return -1;
+      }
+    }
+    if (baseClass == BindingL_Infixed_BalStatement.class)
+    {
+      switch (baseFeatureID)
+      {
+        default: return -1;
+      }
+    }
+    if (baseClass == BalStatement.class)
+    {
+      switch (baseFeatureID)
+      {
+        default: return -1;
+      }
+    }
     if (baseClass == Flow_BalStatement.class)
     {
       switch (baseFeatureID)
       {
-        case EditorPackage.FLOW_BAL_STATEMENT__BBS4: return EditorPackage.COMMA_ITEM__BBS4;
+        case EditorPackage.FLOW_BAL_STATEMENT__BBS5: return EditorPackage.COMMA_ITEM__BBS5;
         default: return -1;
       }
     }
@@ -700,7 +702,6 @@ public class CommaItemImpl extends Flow_AnyStatementImpl implements CommaItem
       switch (baseFeatureID)
       {
         case EditorPackage.GEN_BOUND__BAS4: return EditorPackage.COMMA_ITEM__BAS4;
-        case EditorPackage.GEN_BOUND__BBS5: return EditorPackage.COMMA_ITEM__BBS5;
         default: return -1;
       }
     }

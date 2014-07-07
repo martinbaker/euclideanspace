@@ -68,6 +68,15 @@ public interface EditorFactory extends EFactory
   ExportDecl createExportDecl();
 
   /**
+   * Returns a new object of class '<em>To Part</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>To Part</em>'.
+   * @generated
+   */
+  ToPart createToPart();
+
+  /**
    * Returns a new object of class '<em>From Part</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -212,6 +221,24 @@ public interface EditorFactory extends EFactory
   BindingR_InfixedExprsDecl_AnyStatement createBindingR_InfixedExprsDecl_AnyStatement();
 
   /**
+   * Returns a new object of class '<em>Any Statement</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Any Statement</em>'.
+   * @generated
+   */
+  AnyStatement createAnyStatement();
+
+  /**
+   * Returns a new object of class '<em>Bal Statement</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Bal Statement</em>'.
+   * @generated
+   */
+  BalStatement createBalStatement();
+
+  /**
    * Returns a new object of class '<em>Flow Any Statement</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -284,6 +311,24 @@ public interface EditorFactory extends EFactory
   Collection createCollection();
 
   /**
+   * Returns a new object of class '<em>Iterators</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Iterators</em>'.
+   * @generated
+   */
+  Iterators createIterators();
+
+  /**
+   * Returns a new object of class '<em>Iterators1</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Iterators1</em>'.
+   * @generated
+   */
+  Iterators1 createIterators1();
+
+  /**
    * Returns a new object of class '<em>Iterator</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -291,6 +336,33 @@ public interface EditorFactory extends EFactory
    * @generated
    */
   Iterator createIterator();
+
+  /**
+   * Returns a new object of class '<em>For Lhs</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>For Lhs</em>'.
+   * @generated
+   */
+  ForLhs createForLhs();
+
+  /**
+   * Returns a new object of class '<em>Suchthat Part</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Suchthat Part</em>'.
+   * @generated
+   */
+  SuchthatPart createSuchthatPart();
+
+  /**
+   * Returns a new object of class '<em>Infixed</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Infixed</em>'.
+   * @generated
+   */
+  Infixed createInfixed();
 
   /**
    * Returns a new object of class '<em>Infixed Expr</em>'.

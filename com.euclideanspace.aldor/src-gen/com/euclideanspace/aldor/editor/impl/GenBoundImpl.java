@@ -2,6 +2,9 @@
  */
 package com.euclideanspace.aldor.editor.impl;
 
+import com.euclideanspace.aldor.editor.AlwaysPart_BalStatement;
+import com.euclideanspace.aldor.editor.BalStatement;
+import com.euclideanspace.aldor.editor.BindingL_Infixed_BalStatement;
 import com.euclideanspace.aldor.editor.Binding_AnyStatement;
 import com.euclideanspace.aldor.editor.Binding_BalStatement;
 import com.euclideanspace.aldor.editor.EditorPackage;
@@ -23,9 +26,8 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link com.euclideanspace.aldor.editor.impl.GenBoundImpl#getBbs4 <em>Bbs4</em>}</li>
- *   <li>{@link com.euclideanspace.aldor.editor.impl.GenBoundImpl#getBas4 <em>Bas4</em>}</li>
  *   <li>{@link com.euclideanspace.aldor.editor.impl.GenBoundImpl#getBbs5 <em>Bbs5</em>}</li>
+ *   <li>{@link com.euclideanspace.aldor.editor.impl.GenBoundImpl#getBas4 <em>Bas4</em>}</li>
  * </ul>
  * </p>
  *
@@ -34,14 +36,14 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 public class GenBoundImpl extends Flow_AnyStatementImpl implements GenBound
 {
   /**
-   * The cached value of the '{@link #getBbs4() <em>Bbs4</em>}' containment reference.
+   * The cached value of the '{@link #getBbs5() <em>Bbs5</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getBbs4()
+   * @see #getBbs5()
    * @generated
    * @ordered
    */
-  protected Binding_BalStatement bbs4;
+  protected Binding_BalStatement bbs5;
 
   /**
    * The cached value of the '{@link #getBas4() <em>Bas4</em>}' containment reference.
@@ -52,16 +54,6 @@ public class GenBoundImpl extends Flow_AnyStatementImpl implements GenBound
    * @ordered
    */
   protected Binding_AnyStatement bas4;
-
-  /**
-   * The cached value of the '{@link #getBbs5() <em>Bbs5</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getBbs5()
-   * @generated
-   * @ordered
-   */
-  protected Binding_BalStatement bbs5;
 
   /**
    * <!-- begin-user-doc -->
@@ -82,102 +74,6 @@ public class GenBoundImpl extends Flow_AnyStatementImpl implements GenBound
   protected EClass eStaticClass()
   {
     return EditorPackage.Literals.GEN_BOUND;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public Binding_BalStatement getBbs4()
-  {
-    return bbs4;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public NotificationChain basicSetBbs4(Binding_BalStatement newBbs4, NotificationChain msgs)
-  {
-    Binding_BalStatement oldBbs4 = bbs4;
-    bbs4 = newBbs4;
-    if (eNotificationRequired())
-    {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, EditorPackage.GEN_BOUND__BBS4, oldBbs4, newBbs4);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setBbs4(Binding_BalStatement newBbs4)
-  {
-    if (newBbs4 != bbs4)
-    {
-      NotificationChain msgs = null;
-      if (bbs4 != null)
-        msgs = ((InternalEObject)bbs4).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - EditorPackage.GEN_BOUND__BBS4, null, msgs);
-      if (newBbs4 != null)
-        msgs = ((InternalEObject)newBbs4).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - EditorPackage.GEN_BOUND__BBS4, null, msgs);
-      msgs = basicSetBbs4(newBbs4, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, EditorPackage.GEN_BOUND__BBS4, newBbs4, newBbs4));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public Binding_AnyStatement getBas4()
-  {
-    return bas4;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public NotificationChain basicSetBas4(Binding_AnyStatement newBas4, NotificationChain msgs)
-  {
-    Binding_AnyStatement oldBas4 = bas4;
-    bas4 = newBas4;
-    if (eNotificationRequired())
-    {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, EditorPackage.GEN_BOUND__BAS4, oldBas4, newBas4);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setBas4(Binding_AnyStatement newBas4)
-  {
-    if (newBas4 != bas4)
-    {
-      NotificationChain msgs = null;
-      if (bas4 != null)
-        msgs = ((InternalEObject)bas4).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - EditorPackage.GEN_BOUND__BAS4, null, msgs);
-      if (newBas4 != null)
-        msgs = ((InternalEObject)newBas4).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - EditorPackage.GEN_BOUND__BAS4, null, msgs);
-      msgs = basicSetBas4(newBas4, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, EditorPackage.GEN_BOUND__BAS4, newBas4, newBas4));
   }
 
   /**
@@ -233,17 +129,63 @@ public class GenBoundImpl extends Flow_AnyStatementImpl implements GenBound
    * <!-- end-user-doc -->
    * @generated
    */
+  public Binding_AnyStatement getBas4()
+  {
+    return bas4;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetBas4(Binding_AnyStatement newBas4, NotificationChain msgs)
+  {
+    Binding_AnyStatement oldBas4 = bas4;
+    bas4 = newBas4;
+    if (eNotificationRequired())
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, EditorPackage.GEN_BOUND__BAS4, oldBas4, newBas4);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setBas4(Binding_AnyStatement newBas4)
+  {
+    if (newBas4 != bas4)
+    {
+      NotificationChain msgs = null;
+      if (bas4 != null)
+        msgs = ((InternalEObject)bas4).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - EditorPackage.GEN_BOUND__BAS4, null, msgs);
+      if (newBas4 != null)
+        msgs = ((InternalEObject)newBas4).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - EditorPackage.GEN_BOUND__BAS4, null, msgs);
+      msgs = basicSetBas4(newBas4, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, EditorPackage.GEN_BOUND__BAS4, newBas4, newBas4));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
     switch (featureID)
     {
-      case EditorPackage.GEN_BOUND__BBS4:
-        return basicSetBbs4(null, msgs);
-      case EditorPackage.GEN_BOUND__BAS4:
-        return basicSetBas4(null, msgs);
       case EditorPackage.GEN_BOUND__BBS5:
         return basicSetBbs5(null, msgs);
+      case EditorPackage.GEN_BOUND__BAS4:
+        return basicSetBas4(null, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -258,12 +200,10 @@ public class GenBoundImpl extends Flow_AnyStatementImpl implements GenBound
   {
     switch (featureID)
     {
-      case EditorPackage.GEN_BOUND__BBS4:
-        return getBbs4();
-      case EditorPackage.GEN_BOUND__BAS4:
-        return getBas4();
       case EditorPackage.GEN_BOUND__BBS5:
         return getBbs5();
+      case EditorPackage.GEN_BOUND__BAS4:
+        return getBas4();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -278,14 +218,11 @@ public class GenBoundImpl extends Flow_AnyStatementImpl implements GenBound
   {
     switch (featureID)
     {
-      case EditorPackage.GEN_BOUND__BBS4:
-        setBbs4((Binding_BalStatement)newValue);
+      case EditorPackage.GEN_BOUND__BBS5:
+        setBbs5((Binding_BalStatement)newValue);
         return;
       case EditorPackage.GEN_BOUND__BAS4:
         setBas4((Binding_AnyStatement)newValue);
-        return;
-      case EditorPackage.GEN_BOUND__BBS5:
-        setBbs5((Binding_BalStatement)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -301,14 +238,11 @@ public class GenBoundImpl extends Flow_AnyStatementImpl implements GenBound
   {
     switch (featureID)
     {
-      case EditorPackage.GEN_BOUND__BBS4:
-        setBbs4((Binding_BalStatement)null);
+      case EditorPackage.GEN_BOUND__BBS5:
+        setBbs5((Binding_BalStatement)null);
         return;
       case EditorPackage.GEN_BOUND__BAS4:
         setBas4((Binding_AnyStatement)null);
-        return;
-      case EditorPackage.GEN_BOUND__BBS5:
-        setBbs5((Binding_BalStatement)null);
         return;
     }
     super.eUnset(featureID);
@@ -324,12 +258,10 @@ public class GenBoundImpl extends Flow_AnyStatementImpl implements GenBound
   {
     switch (featureID)
     {
-      case EditorPackage.GEN_BOUND__BBS4:
-        return bbs4 != null;
-      case EditorPackage.GEN_BOUND__BAS4:
-        return bas4 != null;
       case EditorPackage.GEN_BOUND__BBS5:
         return bbs5 != null;
+      case EditorPackage.GEN_BOUND__BAS4:
+        return bas4 != null;
     }
     return super.eIsSet(featureID);
   }
@@ -342,11 +274,39 @@ public class GenBoundImpl extends Flow_AnyStatementImpl implements GenBound
   @Override
   public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass)
   {
+    if (baseClass == AlwaysPart_BalStatement.class)
+    {
+      switch (derivedFeatureID)
+      {
+        default: return -1;
+      }
+    }
+    if (baseClass == Binding_BalStatement.class)
+    {
+      switch (derivedFeatureID)
+      {
+        default: return -1;
+      }
+    }
+    if (baseClass == BindingL_Infixed_BalStatement.class)
+    {
+      switch (derivedFeatureID)
+      {
+        default: return -1;
+      }
+    }
+    if (baseClass == BalStatement.class)
+    {
+      switch (derivedFeatureID)
+      {
+        default: return -1;
+      }
+    }
     if (baseClass == Flow_BalStatement.class)
     {
       switch (derivedFeatureID)
       {
-        case EditorPackage.GEN_BOUND__BBS4: return EditorPackage.FLOW_BAL_STATEMENT__BBS4;
+        case EditorPackage.GEN_BOUND__BBS5: return EditorPackage.FLOW_BAL_STATEMENT__BBS5;
         default: return -1;
       }
     }
@@ -361,11 +321,39 @@ public class GenBoundImpl extends Flow_AnyStatementImpl implements GenBound
   @Override
   public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass)
   {
+    if (baseClass == AlwaysPart_BalStatement.class)
+    {
+      switch (baseFeatureID)
+      {
+        default: return -1;
+      }
+    }
+    if (baseClass == Binding_BalStatement.class)
+    {
+      switch (baseFeatureID)
+      {
+        default: return -1;
+      }
+    }
+    if (baseClass == BindingL_Infixed_BalStatement.class)
+    {
+      switch (baseFeatureID)
+      {
+        default: return -1;
+      }
+    }
+    if (baseClass == BalStatement.class)
+    {
+      switch (baseFeatureID)
+      {
+        default: return -1;
+      }
+    }
     if (baseClass == Flow_BalStatement.class)
     {
       switch (baseFeatureID)
       {
-        case EditorPackage.FLOW_BAL_STATEMENT__BBS4: return EditorPackage.GEN_BOUND__BBS4;
+        case EditorPackage.FLOW_BAL_STATEMENT__BBS5: return EditorPackage.GEN_BOUND__BBS5;
         default: return -1;
       }
     }

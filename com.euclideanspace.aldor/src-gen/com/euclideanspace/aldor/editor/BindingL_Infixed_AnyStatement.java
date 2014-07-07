@@ -11,7 +11,7 @@ package com.euclideanspace.aldor.editor;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link com.euclideanspace.aldor.editor.BindingL_Infixed_AnyStatement#getBia <em>Bia</em>}</li>
+ *   <li>{@link com.euclideanspace.aldor.editor.BindingL_Infixed_AnyStatement#getBas9 <em>Bas9</em>}</li>
  * </ul>
  * </p>
  *
@@ -22,29 +22,29 @@ package com.euclideanspace.aldor.editor;
 public interface BindingL_Infixed_AnyStatement extends Binding_AnyStatement
 {
   /**
-   * Returns the value of the '<em><b>Bia</b></em>' containment reference.
+   * Returns the value of the '<em><b>Bas9</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Bia</em>' containment reference isn't clear,
+   * If the meaning of the '<em>Bas9</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Bia</em>' containment reference.
-   * @see #setBia(BindingL_Infixed_AnyStatement)
-   * @see com.euclideanspace.aldor.editor.EditorPackage#getBindingL_Infixed_AnyStatement_Bia()
+   * @return the value of the '<em>Bas9</em>' containment reference.
+   * @see #setBas9(AnyStatement)
+   * @see com.euclideanspace.aldor.editor.EditorPackage#getBindingL_Infixed_AnyStatement_Bas9()
    * @model containment="true"
    * @generated
    */
-  BindingL_Infixed_AnyStatement getBia();
+  AnyStatement getBas9();
 
   /**
-   * Sets the value of the '{@link com.euclideanspace.aldor.editor.BindingL_Infixed_AnyStatement#getBia <em>Bia</em>}' containment reference.
+   * Sets the value of the '{@link com.euclideanspace.aldor.editor.BindingL_Infixed_AnyStatement#getBas9 <em>Bas9</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Bia</em>' containment reference.
-   * @see #getBia()
+   * @param value the new value of the '<em>Bas9</em>' containment reference.
+   * @see #getBas9()
    * @generated
    */
-  void setBia(BindingL_Infixed_AnyStatement value);
+  void setBas9(AnyStatement value);
 
 } // BindingL_Infixed_AnyStatement

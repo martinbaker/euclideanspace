@@ -100,6 +100,11 @@ public class EditorAdapterFactory extends AdapterFactoryImpl
         return createExportDeclAdapter();
       }
       @Override
+      public Adapter caseToPart(ToPart object)
+      {
+        return createToPartAdapter();
+      }
+      @Override
       public Adapter caseFromPart(FromPart object)
       {
         return createFromPartAdapter();
@@ -180,6 +185,16 @@ public class EditorAdapterFactory extends AdapterFactoryImpl
         return createBindingR_InfixedExprsDecl_AnyStatementAdapter();
       }
       @Override
+      public Adapter caseAnyStatement(AnyStatement object)
+      {
+        return createAnyStatementAdapter();
+      }
+      @Override
+      public Adapter caseBalStatement(BalStatement object)
+      {
+        return createBalStatementAdapter();
+      }
+      @Override
       public Adapter caseFlow_AnyStatement(Flow_AnyStatement object)
       {
         return createFlow_AnyStatementAdapter();
@@ -220,9 +235,34 @@ public class EditorAdapterFactory extends AdapterFactoryImpl
         return createCollectionAdapter();
       }
       @Override
+      public Adapter caseIterators(Iterators object)
+      {
+        return createIteratorsAdapter();
+      }
+      @Override
+      public Adapter caseIterators1(Iterators1 object)
+      {
+        return createIterators1Adapter();
+      }
+      @Override
       public Adapter caseIterator(Iterator object)
       {
         return createIteratorAdapter();
+      }
+      @Override
+      public Adapter caseForLhs(ForLhs object)
+      {
+        return createForLhsAdapter();
+      }
+      @Override
+      public Adapter caseSuchthatPart(SuchthatPart object)
+      {
+        return createSuchthatPartAdapter();
+      }
+      @Override
+      public Adapter caseInfixed(Infixed object)
+      {
+        return createInfixedAdapter();
       }
       @Override
       public Adapter caseInfixedExpr(InfixedExpr object)
@@ -712,6 +752,21 @@ public class EditorAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
+   * Creates a new adapter for an object of class '{@link com.euclideanspace.aldor.editor.ToPart <em>To Part</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see com.euclideanspace.aldor.editor.ToPart
+   * @generated
+   */
+  public Adapter createToPartAdapter()
+  {
+    return null;
+  }
+
+  /**
    * Creates a new adapter for an object of class '{@link com.euclideanspace.aldor.editor.FromPart <em>From Part</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
@@ -952,6 +1007,36 @@ public class EditorAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
+   * Creates a new adapter for an object of class '{@link com.euclideanspace.aldor.editor.AnyStatement <em>Any Statement</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see com.euclideanspace.aldor.editor.AnyStatement
+   * @generated
+   */
+  public Adapter createAnyStatementAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link com.euclideanspace.aldor.editor.BalStatement <em>Bal Statement</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see com.euclideanspace.aldor.editor.BalStatement
+   * @generated
+   */
+  public Adapter createBalStatementAdapter()
+  {
+    return null;
+  }
+
+  /**
    * Creates a new adapter for an object of class '{@link com.euclideanspace.aldor.editor.Flow_AnyStatement <em>Flow Any Statement</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
@@ -1072,6 +1157,36 @@ public class EditorAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
+   * Creates a new adapter for an object of class '{@link com.euclideanspace.aldor.editor.Iterators <em>Iterators</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see com.euclideanspace.aldor.editor.Iterators
+   * @generated
+   */
+  public Adapter createIteratorsAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link com.euclideanspace.aldor.editor.Iterators1 <em>Iterators1</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see com.euclideanspace.aldor.editor.Iterators1
+   * @generated
+   */
+  public Adapter createIterators1Adapter()
+  {
+    return null;
+  }
+
+  /**
    * Creates a new adapter for an object of class '{@link com.euclideanspace.aldor.editor.Iterator <em>Iterator</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
@@ -1082,6 +1197,51 @@ public class EditorAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createIteratorAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link com.euclideanspace.aldor.editor.ForLhs <em>For Lhs</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see com.euclideanspace.aldor.editor.ForLhs
+   * @generated
+   */
+  public Adapter createForLhsAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link com.euclideanspace.aldor.editor.SuchthatPart <em>Suchthat Part</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see com.euclideanspace.aldor.editor.SuchthatPart
+   * @generated
+   */
+  public Adapter createSuchthatPartAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link com.euclideanspace.aldor.editor.Infixed <em>Infixed</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see com.euclideanspace.aldor.editor.Infixed
+   * @generated
+   */
+  public Adapter createInfixedAdapter()
   {
     return null;
   }

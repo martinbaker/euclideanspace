@@ -3,11 +3,14 @@
 package com.euclideanspace.aldor.editor.impl;
 
 import com.euclideanspace.aldor.editor.EditorPackage;
+import com.euclideanspace.aldor.editor.Infixed;
 import com.euclideanspace.aldor.editor.Iterator;
 
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
@@ -20,7 +23,6 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * The following features are implemented:
  * <ul>
  *   <li>{@link com.euclideanspace.aldor.editor.impl.IteratorImpl#getI <em>I</em>}</li>
- *   <li>{@link com.euclideanspace.aldor.editor.impl.IteratorImpl#getSp <em>Sp</em>}</li>
  * </ul>
  * </p>
  *
@@ -29,44 +31,14 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 public class IteratorImpl extends MinimalEObjectImpl.Container implements Iterator
 {
   /**
-   * The default value of the '{@link #getI() <em>I</em>}' attribute.
+   * The cached value of the '{@link #getI() <em>I</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getI()
    * @generated
    * @ordered
    */
-  protected static final String I_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getI() <em>I</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getI()
-   * @generated
-   * @ordered
-   */
-  protected String i = I_EDEFAULT;
-
-  /**
-   * The default value of the '{@link #getSp() <em>Sp</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getSp()
-   * @generated
-   * @ordered
-   */
-  protected static final String SP_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getSp() <em>Sp</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getSp()
-   * @generated
-   * @ordered
-   */
-  protected String sp = SP_EDEFAULT;
+  protected Infixed i;
 
   /**
    * <!-- begin-user-doc -->
@@ -94,7 +66,7 @@ public class IteratorImpl extends MinimalEObjectImpl.Container implements Iterat
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getI()
+  public Infixed getI()
   {
     return i;
   }
@@ -104,12 +76,16 @@ public class IteratorImpl extends MinimalEObjectImpl.Container implements Iterat
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setI(String newI)
+  public NotificationChain basicSetI(Infixed newI, NotificationChain msgs)
   {
-    String oldI = i;
+    Infixed oldI = i;
     i = newI;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, EditorPackage.ITERATOR__I, oldI, i));
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, EditorPackage.ITERATOR__I, oldI, newI);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
   }
 
   /**
@@ -117,9 +93,20 @@ public class IteratorImpl extends MinimalEObjectImpl.Container implements Iterat
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getSp()
+  public void setI(Infixed newI)
   {
-    return sp;
+    if (newI != i)
+    {
+      NotificationChain msgs = null;
+      if (i != null)
+        msgs = ((InternalEObject)i).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - EditorPackage.ITERATOR__I, null, msgs);
+      if (newI != null)
+        msgs = ((InternalEObject)newI).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - EditorPackage.ITERATOR__I, null, msgs);
+      msgs = basicSetI(newI, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, EditorPackage.ITERATOR__I, newI, newI));
   }
 
   /**
@@ -127,12 +114,15 @@ public class IteratorImpl extends MinimalEObjectImpl.Container implements Iterat
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setSp(String newSp)
+  @Override
+  public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
-    String oldSp = sp;
-    sp = newSp;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, EditorPackage.ITERATOR__SP, oldSp, sp));
+    switch (featureID)
+    {
+      case EditorPackage.ITERATOR__I:
+        return basicSetI(null, msgs);
+    }
+    return super.eInverseRemove(otherEnd, featureID, msgs);
   }
 
   /**
@@ -147,8 +137,6 @@ public class IteratorImpl extends MinimalEObjectImpl.Container implements Iterat
     {
       case EditorPackage.ITERATOR__I:
         return getI();
-      case EditorPackage.ITERATOR__SP:
-        return getSp();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -164,10 +152,7 @@ public class IteratorImpl extends MinimalEObjectImpl.Container implements Iterat
     switch (featureID)
     {
       case EditorPackage.ITERATOR__I:
-        setI((String)newValue);
-        return;
-      case EditorPackage.ITERATOR__SP:
-        setSp((String)newValue);
+        setI((Infixed)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -184,10 +169,7 @@ public class IteratorImpl extends MinimalEObjectImpl.Container implements Iterat
     switch (featureID)
     {
       case EditorPackage.ITERATOR__I:
-        setI(I_EDEFAULT);
-        return;
-      case EditorPackage.ITERATOR__SP:
-        setSp(SP_EDEFAULT);
+        setI((Infixed)null);
         return;
     }
     super.eUnset(featureID);
@@ -204,30 +186,9 @@ public class IteratorImpl extends MinimalEObjectImpl.Container implements Iterat
     switch (featureID)
     {
       case EditorPackage.ITERATOR__I:
-        return I_EDEFAULT == null ? i != null : !I_EDEFAULT.equals(i);
-      case EditorPackage.ITERATOR__SP:
-        return SP_EDEFAULT == null ? sp != null : !SP_EDEFAULT.equals(sp);
+        return i != null;
     }
     return super.eIsSet(featureID);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public String toString()
-  {
-    if (eIsProxy()) return super.toString();
-
-    StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (i: ");
-    result.append(i);
-    result.append(", sp: ");
-    result.append(sp);
-    result.append(')');
-    return result.toString();
   }
 
 } //IteratorImpl
