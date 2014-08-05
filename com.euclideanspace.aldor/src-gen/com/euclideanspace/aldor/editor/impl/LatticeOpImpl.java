@@ -7,6 +7,8 @@ import com.euclideanspace.aldor.editor.LatticeOp;
 
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+
 /**
  * <!-- begin-user-doc -->
  * An implementation of the model object '<em><b>Lattice Op</b></em>'.
@@ -16,7 +18,7 @@ import org.eclipse.emf.ecore.EClass;
  *
  * @generated
  */
-public class LatticeOpImpl extends OpImpl implements LatticeOp
+public class LatticeOpImpl extends MinimalEObjectImpl.Container implements LatticeOp
 {
   /**
    * <!-- begin-user-doc -->

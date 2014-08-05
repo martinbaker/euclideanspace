@@ -7,6 +7,8 @@ import com.euclideanspace.aldor.editor.SegOp;
 
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+
 /**
  * <!-- begin-user-doc -->
  * An implementation of the model object '<em><b>Seg Op</b></em>'.
@@ -16,7 +18,7 @@ import org.eclipse.emf.ecore.EClass;
  *
  * @generated
  */
-public class SegOpImpl extends OpImpl implements SegOp
+public class SegOpImpl extends MinimalEObjectImpl.Container implements SegOp
 {
   /**
    * <!-- begin-user-doc -->

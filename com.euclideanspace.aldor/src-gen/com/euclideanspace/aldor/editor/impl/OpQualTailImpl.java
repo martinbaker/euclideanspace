@@ -13,6 +13,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -27,7 +28,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *
  * @generated
  */
-public class OpQualTailImpl extends QualOp_ArrowTokImpl implements OpQualTail
+public class OpQualTailImpl extends MinimalEObjectImpl.Container implements OpQualTail
 {
   /**
    * The cached value of the '{@link #getName() <em>Name</em>}' containment reference.

@@ -103,9 +103,16 @@ Workflow {
     
     		// content assist API
     		fragment = contentAssist.ContentAssistFragment auto-inject {}
+
+    		// The antlr parser generator fragment.
+    		fragment = parser.antlr.XtextAntlrGeneratorFragment {
+    			antlrParam = "-Xconversiontimeout" antlrParam = "10000"
+    		}
     
     		// generates a more lightweight Antlr parser and lexer tailored for content assist
-    		fragment = parser.antlr.XtextAntlrUiGeneratorFragment auto-inject {}
+    		fragment = parser.antlr.XtextAntlrUiGeneratorFragment auto-inject {
+    			antlrParam = "-Xconversiontimeout" antlrParam = "10000"
+    		}
     
     		// generates junit test support classes into Generator#pathTestProject
     		fragment = junit.Junit4Fragment auto-inject {}

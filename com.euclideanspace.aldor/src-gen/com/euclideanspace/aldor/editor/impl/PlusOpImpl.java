@@ -7,6 +7,8 @@ import com.euclideanspace.aldor.editor.PlusOp;
 
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+
 /**
  * <!-- begin-user-doc -->
  * An implementation of the model object '<em><b>Plus Op</b></em>'.
@@ -16,7 +18,7 @@ import org.eclipse.emf.ecore.EClass;
  *
  * @generated
  */
-public class PlusOpImpl extends OpImpl implements PlusOp
+public class PlusOpImpl extends MinimalEObjectImpl.Container implements PlusOp
 {
   /**
    * <!-- begin-user-doc -->

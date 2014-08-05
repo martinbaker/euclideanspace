@@ -25,6 +25,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * <ul>
  *   <li>{@link com.euclideanspace.aldor.editor.impl.EnclosureImpl#getRight2 <em>Right2</em>}</li>
+ *   <li>{@link com.euclideanspace.aldor.editor.impl.EnclosureImpl#getOp <em>Op</em>}</li>
  * </ul>
  * </p>
  *
@@ -41,6 +42,26 @@ public class EnclosureImpl extends MoleculeImpl implements Enclosure
    * @ordered
    */
   protected Jright_Atom right2;
+
+  /**
+   * The default value of the '{@link #getOp() <em>Op</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getOp()
+   * @generated
+   * @ordered
+   */
+  protected static final String OP_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getOp() <em>Op</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getOp()
+   * @generated
+   * @ordered
+   */
+  protected String op = OP_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
@@ -116,6 +137,29 @@ public class EnclosureImpl extends MoleculeImpl implements Enclosure
    * <!-- end-user-doc -->
    * @generated
    */
+  public String getOp()
+  {
+    return op;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setOp(String newOp)
+  {
+    String oldOp = op;
+    op = newOp;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, EditorPackage.ENCLOSURE__OP, oldOp, op));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
@@ -139,6 +183,8 @@ public class EnclosureImpl extends MoleculeImpl implements Enclosure
     {
       case EditorPackage.ENCLOSURE__RIGHT2:
         return getRight2();
+      case EditorPackage.ENCLOSURE__OP:
+        return getOp();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -155,6 +201,9 @@ public class EnclosureImpl extends MoleculeImpl implements Enclosure
     {
       case EditorPackage.ENCLOSURE__RIGHT2:
         setRight2((Jright_Atom)newValue);
+        return;
+      case EditorPackage.ENCLOSURE__OP:
+        setOp((String)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -173,6 +222,9 @@ public class EnclosureImpl extends MoleculeImpl implements Enclosure
       case EditorPackage.ENCLOSURE__RIGHT2:
         setRight2((Jright_Atom)null);
         return;
+      case EditorPackage.ENCLOSURE__OP:
+        setOp(OP_EDEFAULT);
+        return;
     }
     super.eUnset(featureID);
   }
@@ -189,6 +241,8 @@ public class EnclosureImpl extends MoleculeImpl implements Enclosure
     {
       case EditorPackage.ENCLOSURE__RIGHT2:
         return right2 != null;
+      case EditorPackage.ENCLOSURE__OP:
+        return OP_EDEFAULT == null ? op != null : !OP_EDEFAULT.equals(op);
     }
     return super.eIsSet(featureID);
   }
@@ -271,6 +325,23 @@ public class EnclosureImpl extends MoleculeImpl implements Enclosure
       }
     }
     return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String toString()
+  {
+    if (eIsProxy()) return super.toString();
+
+    StringBuffer result = new StringBuffer(super.toString());
+    result.append(" (op: ");
+    result.append(op);
+    result.append(')');
+    return result.toString();
   }
 
 } //EnclosureImpl

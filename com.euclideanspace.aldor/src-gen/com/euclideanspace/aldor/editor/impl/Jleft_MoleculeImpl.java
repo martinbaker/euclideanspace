@@ -2,11 +2,16 @@
  */
 package com.euclideanspace.aldor.editor.impl;
 
+import com.euclideanspace.aldor.editor.Application;
 import com.euclideanspace.aldor.editor.BlockEnclosure;
 import com.euclideanspace.aldor.editor.BlockMolecule;
+import com.euclideanspace.aldor.editor.E15;
 import com.euclideanspace.aldor.editor.EditorPackage;
 import com.euclideanspace.aldor.editor.Jleft_Molecule;
+import com.euclideanspace.aldor.editor.Jright_Atom;
+import com.euclideanspace.aldor.editor.Jright_Molecule;
 import com.euclideanspace.aldor.editor.Molecule;
+import com.euclideanspace.aldor.editor.RightJuxtaposed;
 
 import java.util.Collection;
 
@@ -30,6 +35,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <p>
  * The following features are implemented:
  * <ul>
+ *   <li>{@link com.euclideanspace.aldor.editor.impl.Jleft_MoleculeImpl#getRight <em>Right</em>}</li>
  *   <li>{@link com.euclideanspace.aldor.editor.impl.Jleft_MoleculeImpl#getBe <em>Be</em>}</li>
  *   <li>{@link com.euclideanspace.aldor.editor.impl.Jleft_MoleculeImpl#getM <em>M</em>}</li>
  *   <li>{@link com.euclideanspace.aldor.editor.impl.Jleft_MoleculeImpl#getBm <em>Bm</em>}</li>
@@ -40,6 +46,16 @@ import org.eclipse.emf.ecore.util.InternalEList;
  */
 public class Jleft_MoleculeImpl extends LeftJuxtaposedImpl implements Jleft_Molecule
 {
+  /**
+   * The cached value of the '{@link #getRight() <em>Right</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getRight()
+   * @generated
+   * @ordered
+   */
+  protected Jright_Atom right;
+
   /**
    * The cached value of the '{@link #getBe() <em>Be</em>}' containment reference.
    * <!-- begin-user-doc -->
@@ -89,6 +105,54 @@ public class Jleft_MoleculeImpl extends LeftJuxtaposedImpl implements Jleft_Mole
   protected EClass eStaticClass()
   {
     return EditorPackage.Literals.JLEFT_MOLECULE;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Jright_Atom getRight()
+  {
+    return right;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetRight(Jright_Atom newRight, NotificationChain msgs)
+  {
+    Jright_Atom oldRight = right;
+    right = newRight;
+    if (eNotificationRequired())
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, EditorPackage.JLEFT_MOLECULE__RIGHT, oldRight, newRight);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setRight(Jright_Atom newRight)
+  {
+    if (newRight != right)
+    {
+      NotificationChain msgs = null;
+      if (right != null)
+        msgs = ((InternalEObject)right).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - EditorPackage.JLEFT_MOLECULE__RIGHT, null, msgs);
+      if (newRight != null)
+        msgs = ((InternalEObject)newRight).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - EditorPackage.JLEFT_MOLECULE__RIGHT, null, msgs);
+      msgs = basicSetRight(newRight, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, EditorPackage.JLEFT_MOLECULE__RIGHT, newRight, newRight));
   }
 
   /**
@@ -211,6 +275,8 @@ public class Jleft_MoleculeImpl extends LeftJuxtaposedImpl implements Jleft_Mole
   {
     switch (featureID)
     {
+      case EditorPackage.JLEFT_MOLECULE__RIGHT:
+        return basicSetRight(null, msgs);
       case EditorPackage.JLEFT_MOLECULE__BE:
         return basicSetBe(null, msgs);
       case EditorPackage.JLEFT_MOLECULE__M:
@@ -231,6 +297,8 @@ public class Jleft_MoleculeImpl extends LeftJuxtaposedImpl implements Jleft_Mole
   {
     switch (featureID)
     {
+      case EditorPackage.JLEFT_MOLECULE__RIGHT:
+        return getRight();
       case EditorPackage.JLEFT_MOLECULE__BE:
         return getBe();
       case EditorPackage.JLEFT_MOLECULE__M:
@@ -252,6 +320,9 @@ public class Jleft_MoleculeImpl extends LeftJuxtaposedImpl implements Jleft_Mole
   {
     switch (featureID)
     {
+      case EditorPackage.JLEFT_MOLECULE__RIGHT:
+        setRight((Jright_Atom)newValue);
+        return;
       case EditorPackage.JLEFT_MOLECULE__BE:
         setBe((BlockEnclosure)newValue);
         return;
@@ -276,6 +347,9 @@ public class Jleft_MoleculeImpl extends LeftJuxtaposedImpl implements Jleft_Mole
   {
     switch (featureID)
     {
+      case EditorPackage.JLEFT_MOLECULE__RIGHT:
+        setRight((Jright_Atom)null);
+        return;
       case EditorPackage.JLEFT_MOLECULE__BE:
         setBe((BlockEnclosure)null);
         return;
@@ -299,6 +373,8 @@ public class Jleft_MoleculeImpl extends LeftJuxtaposedImpl implements Jleft_Mole
   {
     switch (featureID)
     {
+      case EditorPackage.JLEFT_MOLECULE__RIGHT:
+        return right != null;
       case EditorPackage.JLEFT_MOLECULE__BE:
         return be != null;
       case EditorPackage.JLEFT_MOLECULE__M:
@@ -307,6 +383,86 @@ public class Jleft_MoleculeImpl extends LeftJuxtaposedImpl implements Jleft_Mole
         return bm != null && !bm.isEmpty();
     }
     return super.eIsSet(featureID);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass)
+  {
+    if (baseClass == E15.class)
+    {
+      switch (derivedFeatureID)
+      {
+        default: return -1;
+      }
+    }
+    if (baseClass == Application.class)
+    {
+      switch (derivedFeatureID)
+      {
+        default: return -1;
+      }
+    }
+    if (baseClass == RightJuxtaposed.class)
+    {
+      switch (derivedFeatureID)
+      {
+        default: return -1;
+      }
+    }
+    if (baseClass == Jright_Molecule.class)
+    {
+      switch (derivedFeatureID)
+      {
+        case EditorPackage.JLEFT_MOLECULE__RIGHT: return EditorPackage.JRIGHT_MOLECULE__RIGHT;
+        default: return -1;
+      }
+    }
+    return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass)
+  {
+    if (baseClass == E15.class)
+    {
+      switch (baseFeatureID)
+      {
+        default: return -1;
+      }
+    }
+    if (baseClass == Application.class)
+    {
+      switch (baseFeatureID)
+      {
+        default: return -1;
+      }
+    }
+    if (baseClass == RightJuxtaposed.class)
+    {
+      switch (baseFeatureID)
+      {
+        default: return -1;
+      }
+    }
+    if (baseClass == Jright_Molecule.class)
+    {
+      switch (baseFeatureID)
+      {
+        case EditorPackage.JRIGHT_MOLECULE__RIGHT: return EditorPackage.JLEFT_MOLECULE__RIGHT;
+        default: return -1;
+      }
+    }
+    return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
   }
 
 } //Jleft_MoleculeImpl

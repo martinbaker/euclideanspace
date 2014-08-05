@@ -110,6 +110,7 @@ public class EditorFactoryImpl extends EFactoryImpl implements EditorFactory
       case EditorPackage.QUAL_TAIL: return createQualTail();
       case EditorPackage.OP_QUAL_TAIL: return createOpQualTail();
       case EditorPackage.E14: return createE14();
+      case EditorPackage.E15: return createE15();
       case EditorPackage.OP: return createOp();
       case EditorPackage.NAKED_OP: return createNakedOp();
       case EditorPackage.ARROW_OP: return createArrowOp();
@@ -119,7 +120,10 @@ public class EditorFactoryImpl extends EFactoryImpl implements EditorFactory
       case EditorPackage.QUOTIENT_OP: return createQuotientOp();
       case EditorPackage.TIMES_OP: return createTimesOp();
       case EditorPackage.POWER_OP: return createPowerOp();
+      case EditorPackage.APPLICATION: return createApplication();
+      case EditorPackage.RIGHT_JUXTAPOSED: return createRightJuxtaposed();
       case EditorPackage.LEFT_JUXTAPOSED: return createLeftJuxtaposed();
+      case EditorPackage.JRIGHT_MOLECULE: return createJright_Molecule();
       case EditorPackage.JRIGHT_ATOM: return createJright_Atom();
       case EditorPackage.JLEFT_MOLECULE: return createJleft_Molecule();
       case EditorPackage.JLEFT_ATOM: return createJleft_Atom();
@@ -696,6 +700,17 @@ public class EditorFactoryImpl extends EFactoryImpl implements EditorFactory
    * <!-- end-user-doc -->
    * @generated
    */
+  public E15 createE15()
+  {
+    E15Impl e15 = new E15Impl();
+    return e15;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public Op createOp()
   {
     OpImpl op = new OpImpl();
@@ -795,10 +810,43 @@ public class EditorFactoryImpl extends EFactoryImpl implements EditorFactory
    * <!-- end-user-doc -->
    * @generated
    */
+  public Application createApplication()
+  {
+    ApplicationImpl application = new ApplicationImpl();
+    return application;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public RightJuxtaposed createRightJuxtaposed()
+  {
+    RightJuxtaposedImpl rightJuxtaposed = new RightJuxtaposedImpl();
+    return rightJuxtaposed;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public LeftJuxtaposed createLeftJuxtaposed()
   {
     LeftJuxtaposedImpl leftJuxtaposed = new LeftJuxtaposedImpl();
     return leftJuxtaposed;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Jright_Molecule createJright_Molecule()
+  {
+    Jright_MoleculeImpl jright_Molecule = new Jright_MoleculeImpl();
+    return jright_Molecule;
   }
 
   /**

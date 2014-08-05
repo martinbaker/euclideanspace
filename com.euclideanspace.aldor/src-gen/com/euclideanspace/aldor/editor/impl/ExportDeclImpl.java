@@ -4,6 +4,7 @@ package com.euclideanspace.aldor.editor.impl;
 
 import com.euclideanspace.aldor.editor.EditorPackage;
 import com.euclideanspace.aldor.editor.ExportDecl;
+import com.euclideanspace.aldor.editor.Sig;
 import com.euclideanspace.aldor.editor.ToPart;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -21,14 +22,25 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * <p>
  * The following features are implemented:
  * <ul>
+ *   <li>{@link com.euclideanspace.aldor.editor.impl.ExportDeclImpl#getS <em>S</em>}</li>
  *   <li>{@link com.euclideanspace.aldor.editor.impl.ExportDeclImpl#getTp <em>Tp</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class ExportDeclImpl extends DeclarationImpl implements ExportDecl
+public class ExportDeclImpl extends MacroBodyImpl implements ExportDecl
 {
+  /**
+   * The cached value of the '{@link #getS() <em>S</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getS()
+   * @generated
+   * @ordered
+   */
+  protected Sig s;
+
   /**
    * The cached value of the '{@link #getTp() <em>Tp</em>}' containment reference.
    * <!-- begin-user-doc -->
@@ -58,6 +70,54 @@ public class ExportDeclImpl extends DeclarationImpl implements ExportDecl
   protected EClass eStaticClass()
   {
     return EditorPackage.Literals.EXPORT_DECL;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Sig getS()
+  {
+    return s;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetS(Sig newS, NotificationChain msgs)
+  {
+    Sig oldS = s;
+    s = newS;
+    if (eNotificationRequired())
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, EditorPackage.EXPORT_DECL__S, oldS, newS);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setS(Sig newS)
+  {
+    if (newS != s)
+    {
+      NotificationChain msgs = null;
+      if (s != null)
+        msgs = ((InternalEObject)s).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - EditorPackage.EXPORT_DECL__S, null, msgs);
+      if (newS != null)
+        msgs = ((InternalEObject)newS).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - EditorPackage.EXPORT_DECL__S, null, msgs);
+      msgs = basicSetS(newS, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, EditorPackage.EXPORT_DECL__S, newS, newS));
   }
 
   /**
@@ -118,6 +178,8 @@ public class ExportDeclImpl extends DeclarationImpl implements ExportDecl
   {
     switch (featureID)
     {
+      case EditorPackage.EXPORT_DECL__S:
+        return basicSetS(null, msgs);
       case EditorPackage.EXPORT_DECL__TP:
         return basicSetTp(null, msgs);
     }
@@ -134,6 +196,8 @@ public class ExportDeclImpl extends DeclarationImpl implements ExportDecl
   {
     switch (featureID)
     {
+      case EditorPackage.EXPORT_DECL__S:
+        return getS();
       case EditorPackage.EXPORT_DECL__TP:
         return getTp();
     }
@@ -150,6 +214,9 @@ public class ExportDeclImpl extends DeclarationImpl implements ExportDecl
   {
     switch (featureID)
     {
+      case EditorPackage.EXPORT_DECL__S:
+        setS((Sig)newValue);
+        return;
       case EditorPackage.EXPORT_DECL__TP:
         setTp((ToPart)newValue);
         return;
@@ -167,6 +234,9 @@ public class ExportDeclImpl extends DeclarationImpl implements ExportDecl
   {
     switch (featureID)
     {
+      case EditorPackage.EXPORT_DECL__S:
+        setS((Sig)null);
+        return;
       case EditorPackage.EXPORT_DECL__TP:
         setTp((ToPart)null);
         return;
@@ -184,6 +254,8 @@ public class ExportDeclImpl extends DeclarationImpl implements ExportDecl
   {
     switch (featureID)
     {
+      case EditorPackage.EXPORT_DECL__S:
+        return s != null;
       case EditorPackage.EXPORT_DECL__TP:
         return tp != null;
     }

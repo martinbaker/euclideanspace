@@ -24,30 +24,30 @@ import org.eclipse.emf.ecore.EObject;
 public interface DeclMolecule extends EObject
 {
   /**
-   * Returns the value of the '<em><b>A</b></em>' attribute.
+   * Returns the value of the '<em><b>A</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>A</em>' attribute isn't clear,
+   * If the meaning of the '<em>A</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>A</em>' attribute.
-   * @see #setA(String)
+   * @return the value of the '<em>A</em>' containment reference.
+   * @see #setA(Application)
    * @see com.euclideanspace.aldor.editor.EditorPackage#getDeclMolecule_A()
-   * @model
+   * @model containment="true"
    * @generated
    */
-  String getA();
+  Application getA();
 
   /**
-   * Sets the value of the '{@link com.euclideanspace.aldor.editor.DeclMolecule#getA <em>A</em>}' attribute.
+   * Sets the value of the '{@link com.euclideanspace.aldor.editor.DeclMolecule#getA <em>A</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>A</em>' attribute.
+   * @param value the new value of the '<em>A</em>' containment reference.
    * @see #getA()
    * @generated
    */
-  void setA(String value);
+  void setA(Application value);
 
   /**
    * Returns the value of the '<em><b>B</b></em>' containment reference.

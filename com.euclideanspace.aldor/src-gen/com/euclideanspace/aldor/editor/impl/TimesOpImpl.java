@@ -7,6 +7,8 @@ import com.euclideanspace.aldor.editor.TimesOp;
 
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+
 /**
  * <!-- begin-user-doc -->
  * An implementation of the model object '<em><b>Times Op</b></em>'.
@@ -16,7 +18,7 @@ import org.eclipse.emf.ecore.EClass;
  *
  * @generated
  */
-public class TimesOpImpl extends OpImpl implements TimesOp
+public class TimesOpImpl extends MinimalEObjectImpl.Container implements TimesOp
 {
   /**
    * <!-- begin-user-doc -->

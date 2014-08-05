@@ -2,6 +2,7 @@
  */
 package com.euclideanspace.aldor.editor;
 
+import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
@@ -11,7 +12,7 @@ package com.euclideanspace.aldor.editor;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link com.euclideanspace.aldor.editor.GenBound#getBas4 <em>Bas4</em>}</li>
+ *   <li>{@link com.euclideanspace.aldor.editor.GenBound#getCi <em>Ci</em>}</li>
  * </ul>
  * </p>
  *
@@ -19,32 +20,32 @@ package com.euclideanspace.aldor.editor;
  * @model
  * @generated
  */
-public interface GenBound extends Flow_AnyStatement, Flow_BalStatement
+public interface GenBound extends EObject
 {
   /**
-   * Returns the value of the '<em><b>Bas4</b></em>' containment reference.
+   * Returns the value of the '<em><b>Ci</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Bas4</em>' containment reference isn't clear,
+   * If the meaning of the '<em>Ci</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Bas4</em>' containment reference.
-   * @see #setBas4(Binding_AnyStatement)
-   * @see com.euclideanspace.aldor.editor.EditorPackage#getGenBound_Bas4()
+   * @return the value of the '<em>Ci</em>' containment reference.
+   * @see #setCi(CommaItem)
+   * @see com.euclideanspace.aldor.editor.EditorPackage#getGenBound_Ci()
    * @model containment="true"
    * @generated
    */
-  Binding_AnyStatement getBas4();
+  CommaItem getCi();
 
   /**
-   * Sets the value of the '{@link com.euclideanspace.aldor.editor.GenBound#getBas4 <em>Bas4</em>}' containment reference.
+   * Sets the value of the '{@link com.euclideanspace.aldor.editor.GenBound#getCi <em>Ci</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Bas4</em>' containment reference.
-   * @see #getBas4()
+   * @param value the new value of the '<em>Ci</em>' containment reference.
+   * @see #getCi()
    * @generated
    */
-  void setBas4(Binding_AnyStatement value);
+  void setCi(CommaItem value);
 
 } // GenBound

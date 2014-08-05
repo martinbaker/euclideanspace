@@ -2,6 +2,7 @@
  */
 package com.euclideanspace.aldor.editor;
 
+import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
@@ -13,6 +14,6 @@ package com.euclideanspace.aldor.editor;
  * @model
  * @generated
  */
-public interface Binding_BalStatement extends AlwaysPart_BalStatement
+public interface Binding_BalStatement extends EObject
 {
 } // Binding_BalStatement

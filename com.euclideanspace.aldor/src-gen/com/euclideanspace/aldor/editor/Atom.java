@@ -14,7 +14,7 @@ import org.eclipse.emf.common.util.EList;
  * <ul>
  *   <li>{@link com.euclideanspace.aldor.editor.Atom#getLab <em>Lab</em>}</li>
  *   <li>{@link com.euclideanspace.aldor.editor.Atom#getBm4 <em>Bm4</em>}</li>
- *   <li>{@link com.euclideanspace.aldor.editor.Atom#getId <em>Id</em>}</li>
+ *   <li>{@link com.euclideanspace.aldor.editor.Atom#getIden <em>Iden</em>}</li>
  *   <li>{@link com.euclideanspace.aldor.editor.Atom#getLit <em>Lit</em>}</li>
  * </ul>
  * </p>
@@ -68,30 +68,30 @@ public interface Atom extends Labeled, Jleft_Atom, Molecule, BlockMolecule
   EList<BlockMolecule> getBm4();
 
   /**
-   * Returns the value of the '<em><b>Id</b></em>' containment reference.
+   * Returns the value of the '<em><b>Iden</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Id</em>' containment reference isn't clear,
+   * If the meaning of the '<em>Iden</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Id</em>' containment reference.
-   * @see #setId(Id)
-   * @see com.euclideanspace.aldor.editor.EditorPackage#getAtom_Id()
+   * @return the value of the '<em>Iden</em>' containment reference.
+   * @see #setIden(Id)
+   * @see com.euclideanspace.aldor.editor.EditorPackage#getAtom_Iden()
    * @model containment="true"
    * @generated
    */
-  Id getId();
+  Id getIden();
 
   /**
-   * Sets the value of the '{@link com.euclideanspace.aldor.editor.Atom#getId <em>Id</em>}' containment reference.
+   * Sets the value of the '{@link com.euclideanspace.aldor.editor.Atom#getIden <em>Iden</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Id</em>' containment reference.
-   * @see #getId()
+   * @param value the new value of the '<em>Iden</em>' containment reference.
+   * @see #getIden()
    * @generated
    */
-  void setId(Id value);
+  void setIden(Id value);
 
   /**
    * Returns the value of the '<em><b>Lit</b></em>' attribute.

@@ -305,6 +305,11 @@ public class EditorAdapterFactory extends AdapterFactoryImpl
         return createE14Adapter();
       }
       @Override
+      public Adapter caseE15(E15 object)
+      {
+        return createE15Adapter();
+      }
+      @Override
       public Adapter caseOp(Op object)
       {
         return createOpAdapter();
@@ -350,9 +355,24 @@ public class EditorAdapterFactory extends AdapterFactoryImpl
         return createPowerOpAdapter();
       }
       @Override
+      public Adapter caseApplication(Application object)
+      {
+        return createApplicationAdapter();
+      }
+      @Override
+      public Adapter caseRightJuxtaposed(RightJuxtaposed object)
+      {
+        return createRightJuxtaposedAdapter();
+      }
+      @Override
       public Adapter caseLeftJuxtaposed(LeftJuxtaposed object)
       {
         return createLeftJuxtaposedAdapter();
+      }
+      @Override
+      public Adapter caseJright_Molecule(Jright_Molecule object)
+      {
+        return createJright_MoleculeAdapter();
       }
       @Override
       public Adapter caseJright_Atom(Jright_Atom object)
@@ -1367,6 +1387,21 @@ public class EditorAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
+   * Creates a new adapter for an object of class '{@link com.euclideanspace.aldor.editor.E15 <em>E15</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see com.euclideanspace.aldor.editor.E15
+   * @generated
+   */
+  public Adapter createE15Adapter()
+  {
+    return null;
+  }
+
+  /**
    * Creates a new adapter for an object of class '{@link com.euclideanspace.aldor.editor.Op <em>Op</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
@@ -1502,6 +1537,36 @@ public class EditorAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
+   * Creates a new adapter for an object of class '{@link com.euclideanspace.aldor.editor.Application <em>Application</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see com.euclideanspace.aldor.editor.Application
+   * @generated
+   */
+  public Adapter createApplicationAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link com.euclideanspace.aldor.editor.RightJuxtaposed <em>Right Juxtaposed</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see com.euclideanspace.aldor.editor.RightJuxtaposed
+   * @generated
+   */
+  public Adapter createRightJuxtaposedAdapter()
+  {
+    return null;
+  }
+
+  /**
    * Creates a new adapter for an object of class '{@link com.euclideanspace.aldor.editor.LeftJuxtaposed <em>Left Juxtaposed</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
@@ -1512,6 +1577,21 @@ public class EditorAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createLeftJuxtaposedAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link com.euclideanspace.aldor.editor.Jright_Molecule <em>Jright Molecule</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see com.euclideanspace.aldor.editor.Jright_Molecule
+   * @generated
+   */
+  public Adapter createJright_MoleculeAdapter()
   {
     return null;
   }

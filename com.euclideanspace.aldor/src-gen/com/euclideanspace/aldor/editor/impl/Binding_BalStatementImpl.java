@@ -7,6 +7,8 @@ import com.euclideanspace.aldor.editor.EditorPackage;
 
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+
 /**
  * <!-- begin-user-doc -->
  * An implementation of the model object '<em><b>Binding Bal Statement</b></em>'.
@@ -16,7 +18,7 @@ import org.eclipse.emf.ecore.EClass;
  *
  * @generated
  */
-public class Binding_BalStatementImpl extends AlwaysPart_BalStatementImpl implements Binding_BalStatement
+public class Binding_BalStatementImpl extends MinimalEObjectImpl.Container implements Binding_BalStatement
 {
   /**
    * <!-- begin-user-doc -->

@@ -437,6 +437,15 @@ public interface EditorFactory extends EFactory
   E14 createE14();
 
   /**
+   * Returns a new object of class '<em>E15</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>E15</em>'.
+   * @generated
+   */
+  E15 createE15();
+
+  /**
    * Returns a new object of class '<em>Op</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -518,6 +527,24 @@ public interface EditorFactory extends EFactory
   PowerOp createPowerOp();
 
   /**
+   * Returns a new object of class '<em>Application</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Application</em>'.
+   * @generated
+   */
+  Application createApplication();
+
+  /**
+   * Returns a new object of class '<em>Right Juxtaposed</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Right Juxtaposed</em>'.
+   * @generated
+   */
+  RightJuxtaposed createRightJuxtaposed();
+
+  /**
    * Returns a new object of class '<em>Left Juxtaposed</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -525,6 +552,15 @@ public interface EditorFactory extends EFactory
    * @generated
    */
   LeftJuxtaposed createLeftJuxtaposed();
+
+  /**
+   * Returns a new object of class '<em>Jright Molecule</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Jright Molecule</em>'.
+   * @generated
+   */
+  Jright_Molecule createJright_Molecule();
 
   /**
    * Returns a new object of class '<em>Jright Atom</em>'.

@@ -7,6 +7,8 @@ import com.euclideanspace.aldor.editor.PowerOp;
 
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+
 /**
  * <!-- begin-user-doc -->
  * An implementation of the model object '<em><b>Power Op</b></em>'.
@@ -16,7 +18,7 @@ import org.eclipse.emf.ecore.EClass;
  *
  * @generated
  */
-public class PowerOpImpl extends OpImpl implements PowerOp
+public class PowerOpImpl extends MinimalEObjectImpl.Container implements PowerOp
 {
   /**
    * <!-- begin-user-doc -->

@@ -14,6 +14,7 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.emf.ecore.util.EDataTypeEList;
 
@@ -31,7 +32,7 @@ import org.eclipse.emf.ecore.util.EDataTypeEList;
  *
  * @generated
  */
-public class NamesImpl extends QuotedIdsImpl implements Names
+public class NamesImpl extends MinimalEObjectImpl.Container implements Names
 {
   /**
    * The default value of the '{@link #getFirstName() <em>First Name</em>}' attribute.

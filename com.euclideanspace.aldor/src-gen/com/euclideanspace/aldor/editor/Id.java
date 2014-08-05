@@ -2,6 +2,7 @@
  */
 package com.euclideanspace.aldor.editor;
 
+import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
@@ -20,7 +21,7 @@ package com.euclideanspace.aldor.editor;
  * @model
  * @generated
  */
-public interface Id extends Flow_AnyStatement, Flow_BalStatement, Name
+public interface Id extends EObject
 {
   /**
    * Returns the value of the '<em><b>AB Id</b></em>' attribute.

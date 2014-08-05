@@ -4,6 +4,8 @@ package com.euclideanspace.aldor.editor;
 
 import org.eclipse.emf.common.util.EList;
 
+import org.eclipse.emf.ecore.EObject;
+
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Names</b></em>'.
@@ -21,7 +23,7 @@ import org.eclipse.emf.common.util.EList;
  * @model
  * @generated
  */
-public interface Names extends QuotedIds
+public interface Names extends EObject
 {
   /**
    * Returns the value of the '<em><b>First Name</b></em>' attribute.

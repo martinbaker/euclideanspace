@@ -7,29 +7,32 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="cc" eType="#//CurlyContents_Labeled"
         containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Expression" eSuperTypes="#//Parened #//Bracketed"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Expression"/>
   <eClassifiers xsi:type="ecore:EClass" name="Labeled"/>
   <eClassifiers xsi:type="ecore:EClass" name="Declaration" eSuperTypes="#//Labeled">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="mb" eType="#//MacroBody"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="si" eType="#//Sig" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="fp" eType="#//FromPart"
         containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ed" eType="#//ExportDecl"
+        containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ExportDecl" eSuperTypes="#//Declaration #//MacroBody">
+  <eClassifiers xsi:type="ecore:EClass" name="ExportDecl" eSuperTypes="#//MacroBody">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="s" eType="#//Sig" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="tp" eType="#//ToPart" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ToPart"/>
   <eClassifiers xsi:type="ecore:EClass" name="FromPart"/>
-  <eClassifiers xsi:type="ecore:EClass" name="MacroBody" eSuperTypes="#//Declaration"/>
-  <eClassifiers xsi:type="ecore:EClass" name="Sig" eSuperTypes="#//Declaration #//ExportDecl #//MacroBody"/>
+  <eClassifiers xsi:type="ecore:EClass" name="MacroBody">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="fp" eType="#//FromPart"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Sig" eSuperTypes="#//MacroBody"/>
   <eClassifiers xsi:type="ecore:EClass" name="DeclPart"/>
   <eClassifiers xsi:type="ecore:EClass" name="Comma" eSuperTypes="#//Labeled"/>
-  <eClassifiers xsi:type="ecore:EClass" name="CommaItem" eSuperTypes="#//AnyStatement #//Flow_AnyStatement #//Flow_BalStatement #//GenBound #//enlister1_CommaItem_Comma">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="bas" eType="#//Binding_AnyStatement"
-        containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="bbs" eType="#//Binding_BalStatement"
-        containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="bbs2" eType="#//Binding_BalStatement"
-        containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="ci" eType="#//CommaItem"
+  <eClassifiers xsi:type="ecore:EClass" name="CommaItem" eSuperTypes="#//AnyStatement #//enlister1_CommaItem_Comma">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ci" upperBound="-1" eType="#//CommaItem"
         containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="DeclBinding" eSuperTypes="#//Sig"/>
@@ -41,16 +44,8 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="dp" upperBound="-1" eType="#//DeclPart"
         containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Binding_AnyStatement" eSuperTypes="#//CommaItem #//AlwaysPart_AnyStatement">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="be" eType="#//ButExpr"
-        containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="apa" eType="#//AlwaysPart_AnyStatement"
-        containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="c" eType="#//Cases" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="apb" eType="#//AlwaysPart_BalStatement"
-        containment="true"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Binding_BalStatement" eSuperTypes="#//AlwaysPart_BalStatement"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Binding_AnyStatement" eSuperTypes="#//CommaItem"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Binding_BalStatement"/>
   <eClassifiers xsi:type="ecore:EClass" name="Binding_Collection" eSuperTypes="#//Cases"/>
   <eClassifiers xsi:type="ecore:EClass" name="BindingL_Infixed_AnyStatement" eSuperTypes="#//Binding_AnyStatement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="bas9" eType="#//AnyStatement"
@@ -60,15 +55,60 @@
   <eClassifiers xsi:type="ecore:EClass" name="BindingL_Infixed_Collection" eSuperTypes="#//Binding_Collection"/>
   <eClassifiers xsi:type="ecore:EClass" name="BindingR_InfixedExprsDecl_AnyStatement"
       eSuperTypes="#//DeclBinding"/>
-  <eClassifiers xsi:type="ecore:EClass" name="AnyStatement"/>
-  <eClassifiers xsi:type="ecore:EClass" name="BalStatement" eSuperTypes="#//BindingL_Infixed_BalStatement"/>
-  <eClassifiers xsi:type="ecore:EClass" name="Flow_AnyStatement" eSuperTypes="#//AnyStatement"/>
-  <eClassifiers xsi:type="ecore:EClass" name="Flow_BalStatement" eSuperTypes="#//BalStatement">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="bbs5" eType="#//Binding_BalStatement"
+  <eClassifiers xsi:type="ecore:EClass" name="AnyStatement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="bas" eType="#//Binding_AnyStatement"
         containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="GenBound" eSuperTypes="#//Flow_AnyStatement #//Flow_BalStatement">
+  <eClassifiers xsi:type="ecore:EClass" name="BalStatement" eSuperTypes="#//BindingL_Infixed_BalStatement"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Flow_AnyStatement" eSuperTypes="#//AnyStatement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="c" eType="#//Collection"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="st" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="bas2" eType="#//Binding_AnyStatement"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ci" eType="#//CommaItem"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="bbs" eType="#//Binding_BalStatement"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="be2" eType="#//ButExpr"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="apa" eType="#//AlwaysPart_AnyStatement"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ca" eType="#//Cases" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="gb" eType="#//GenBound"
+        containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="bas4" eType="#//Binding_AnyStatement"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="n" eType="#//Name" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="i2" eType="#//Id" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Flow_BalStatement" eSuperTypes="#//BalStatement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="st2" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ci2" eType="#//CommaItem"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="bbs4" upperBound="-1" eType="#//Binding_BalStatement"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="bbs5" eType="#//Binding_BalStatement"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="bbs2" eType="#//Binding_AnyStatement"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="be" eType="#//ButExpr"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="apb" eType="#//AlwaysPart_BalStatement"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ca2" eType="#//Cases" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="gb2" eType="#//GenBound"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="n2" eType="#//Name" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="c2" eType="#//Collection"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="i3" eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EObject"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="bbs3" eType="#//Binding_BalStatement"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="GenBound">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ci" eType="#//CommaItem"
         containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ButExpr">
@@ -77,18 +117,17 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="ca" eType="#//Cases" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Cases"/>
-  <eClassifiers xsi:type="ecore:EClass" name="AlwaysPart_AnyStatement"/>
-  <eClassifiers xsi:type="ecore:EClass" name="AlwaysPart_BalStatement"/>
-  <eClassifiers xsi:type="ecore:EClass" name="Collection" eSuperTypes="#//BindingL_Infixed_Collection #//Flow_AnyStatement #//Flow_BalStatement">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="bas2" eType="#//Binding_AnyStatement"
-        containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="bbs3" eType="#//Binding_BalStatement"
+  <eClassifiers xsi:type="ecore:EClass" name="AlwaysPart_AnyStatement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="bas7" eType="#//Binding_AnyStatement"
         containment="true"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AlwaysPart_BalStatement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="bas7" eType="#//Binding_BalStatement"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Collection" eSuperTypes="#//BindingL_Infixed_Collection #//Flow_BalStatement"/>
   <eClassifiers xsi:type="ecore:EClass" name="Iterators" eSuperTypes="#//Flow_AnyStatement #//Flow_BalStatement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="bas3" eType="#//Binding_AnyStatement"
-        containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="bbs4" eType="#//Binding_BalStatement"
         containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Iterators1" eSuperTypes="#//Iterators">
@@ -110,18 +149,16 @@
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="bic" eType="#//BindingL_Infixed_Collection"
         containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="i3" eType="#//Iterators"
-        containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="ifx" eType="#//InfixedExpr"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="dp" upperBound="-1" eType="#//DeclPart"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="b" eType="#//Block" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="i2" eType="#//Infixed"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="i2" upperBound="-1" eType="#//Infixed"
         containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="InfixedExpr" eSuperTypes="#//enlister1_InfixedExpr_Comma">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="ie" eType="#//InfixedExpr"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ie" upperBound="-1" eType="#//InfixedExpr"
         containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Expr" eSuperTypes="#//InfixedExpr #//Type">
@@ -149,34 +186,46 @@
         containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="QualTail"/>
-  <eClassifiers xsi:type="ecore:EClass" name="OpQualTail" eSuperTypes="#//QualOp_ArrowTok #//QualOp_LatticeTok #//QualOp_SegTok #//QualOp_PlusTok #//QualOp_QuotientTok #//QualOp_TimesTok #//QualOp_PowerTok">
+  <eClassifiers xsi:type="ecore:EClass" name="OpQualTail">
     <eStructuralFeatures xsi:type="ecore:EReference" name="name" eType="#//Molecule"
         containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="E14">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="e15left" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="e15left" eType="#//E15"
+        containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="dm" eType="#//DeclMolecule"
         containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="e15right" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="e15right" eType="#//E15"
+        containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Op"/>
-  <eClassifiers xsi:type="ecore:EClass" name="NakedOp" eSuperTypes="#//Name"/>
-  <eClassifiers xsi:type="ecore:EClass" name="ArrowOp" eSuperTypes="#//Op"/>
-  <eClassifiers xsi:type="ecore:EClass" name="LatticeOp" eSuperTypes="#//Op"/>
-  <eClassifiers xsi:type="ecore:EClass" name="SegOp" eSuperTypes="#//Op"/>
-  <eClassifiers xsi:type="ecore:EClass" name="PlusOp" eSuperTypes="#//Op"/>
-  <eClassifiers xsi:type="ecore:EClass" name="QuotientOp" eSuperTypes="#//Op"/>
-  <eClassifiers xsi:type="ecore:EClass" name="TimesOp" eSuperTypes="#//Op"/>
-  <eClassifiers xsi:type="ecore:EClass" name="PowerOp" eSuperTypes="#//Op"/>
+  <eClassifiers xsi:type="ecore:EClass" name="E15"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Op">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="aop" eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EObject"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="NakedOp"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ArrowOp"/>
+  <eClassifiers xsi:type="ecore:EClass" name="LatticeOp"/>
+  <eClassifiers xsi:type="ecore:EClass" name="SegOp"/>
+  <eClassifiers xsi:type="ecore:EClass" name="PlusOp"/>
+  <eClassifiers xsi:type="ecore:EClass" name="QuotientOp"/>
+  <eClassifiers xsi:type="ecore:EClass" name="TimesOp"/>
+  <eClassifiers xsi:type="ecore:EClass" name="PowerOp"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Application" eSuperTypes="#//E15"/>
+  <eClassifiers xsi:type="ecore:EClass" name="RightJuxtaposed" eSuperTypes="#//Application"/>
   <eClassifiers xsi:type="ecore:EClass" name="LeftJuxtaposed" eSuperTypes="#//QualTail">
     <eStructuralFeatures xsi:type="ecore:EReference" name="qt" eType="#//QualTail"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Jright_Molecule" eSuperTypes="#//RightJuxtaposed">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="right" eType="#//Jright_Atom"
         containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Jright_Atom">
     <eStructuralFeatures xsi:type="ecore:EReference" name="right2" eType="#//Jright_Atom"
         containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Jleft_Molecule" eSuperTypes="#//LeftJuxtaposed">
+  <eClassifiers xsi:type="ecore:EClass" name="Jleft_Molecule" eSuperTypes="#//LeftJuxtaposed #//Jright_Molecule">
     <eStructuralFeatures xsi:type="ecore:EReference" name="be" eType="#//BlockEnclosure"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="m" eType="#//Molecule"
@@ -186,18 +235,27 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Jleft_Atom" eSuperTypes="#//Jright_Atom"/>
   <eClassifiers xsi:type="ecore:EClass" name="Molecule"/>
-  <eClassifiers xsi:type="ecore:EClass" name="Enclosure" eSuperTypes="#//Molecule #//BlockMolecule #//BlockEnclosure"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Enclosure" eSuperTypes="#//Molecule #//BlockMolecule #//BlockEnclosure">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="op" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="DeclMolecule">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="a" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="a" eType="#//Application"
+        containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="b" eType="#//Block" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="BlockMolecule"/>
   <eClassifiers xsi:type="ecore:EClass" name="BlockEnclosure" eSuperTypes="#//Jleft_Atom"/>
   <eClassifiers xsi:type="ecore:EClass" name="Block" eSuperTypes="#//Sig #//BlockMolecule #//BlockEnclosure"/>
-  <eClassifiers xsi:type="ecore:EClass" name="Parened" eSuperTypes="#//Enclosure"/>
-  <eClassifiers xsi:type="ecore:EClass" name="Bracketed" eSuperTypes="#//Enclosure"/>
-  <eClassifiers xsi:type="ecore:EClass" name="QuotedIds" eSuperTypes="#//Enclosure"/>
-  <eClassifiers xsi:type="ecore:EClass" name="Names" eSuperTypes="#//QuotedIds">
+  <eClassifiers xsi:type="ecore:EClass" name="Parened" eSuperTypes="#//Enclosure">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="e" eType="#//Atom" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Bracketed" eSuperTypes="#//Enclosure">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="e" eType="#//Atom" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="QuotedIds" eSuperTypes="#//Enclosure">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="n" eType="#//Names" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Names">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="firstName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="subsequentNames" unique="false"
         upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -207,11 +265,15 @@
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="bm4" upperBound="-1" eType="#//BlockMolecule"
         containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="id" eType="#//Id" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="iden" eType="#//Id" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="lit" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Name" eSuperTypes="#//Flow_AnyStatement #//Flow_BalStatement"/>
-  <eClassifiers xsi:type="ecore:EClass" name="Id" eSuperTypes="#//Flow_AnyStatement #//Flow_BalStatement #//Name">
+  <eClassifiers xsi:type="ecore:EClass" name="Name">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="name" eType="#//Id" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="no" eType="#//NakedOp"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Id">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="AB_Id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="op" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
@@ -223,13 +285,34 @@
   <eClassifiers xsi:type="ecore:EClass" name="UnqualOp_QuotientTok" eSuperTypes="#//NakedOp"/>
   <eClassifiers xsi:type="ecore:EClass" name="UnqualOp_TimesTok" eSuperTypes="#//NakedOp"/>
   <eClassifiers xsi:type="ecore:EClass" name="UnqualOp_PowerTok" eSuperTypes="#//NakedOp"/>
-  <eClassifiers xsi:type="ecore:EClass" name="QualOp_ArrowTok" eSuperTypes="#//ArrowOp"/>
-  <eClassifiers xsi:type="ecore:EClass" name="QualOp_LatticeTok" eSuperTypes="#//LatticeOp"/>
-  <eClassifiers xsi:type="ecore:EClass" name="QualOp_SegTok" eSuperTypes="#//SegOp"/>
-  <eClassifiers xsi:type="ecore:EClass" name="QualOp_PlusTok" eSuperTypes="#//PlusOp"/>
-  <eClassifiers xsi:type="ecore:EClass" name="QualOp_QuotientTok" eSuperTypes="#//QuotientOp"/>
-  <eClassifiers xsi:type="ecore:EClass" name="QualOp_TimesTok" eSuperTypes="#//TimesOp"/>
-  <eClassifiers xsi:type="ecore:EClass" name="QualOp_PowerTok" eSuperTypes="#//PowerOp"/>
+  <eClassifiers xsi:type="ecore:EClass" name="QualOp_ArrowTok" eSuperTypes="#//ArrowOp">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="oqt" eType="#//OpQualTail"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="QualOp_LatticeTok" eSuperTypes="#//LatticeOp">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="oqt" eType="#//OpQualTail"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="QualOp_SegTok" eSuperTypes="#//SegOp">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="oqt" eType="#//OpQualTail"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="QualOp_PlusTok" eSuperTypes="#//PlusOp">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="oqt" eType="#//OpQualTail"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="QualOp_QuotientTok" eSuperTypes="#//QuotientOp">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="oqt" eType="#//OpQualTail"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="QualOp_TimesTok" eSuperTypes="#//TimesOp">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="oqt" eType="#//OpQualTail"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="QualOp_PowerTok" eSuperTypes="#//PowerOp">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="oqt" eType="#//OpQualTail"
+        containment="true"/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="enlist1_CommaItem_Comma_AB" eSuperTypes="#//Comma"/>
   <eClassifiers xsi:type="ecore:EClass" name="enlist1_Infixed_Comma_AB" eSuperTypes="#//FromPart"/>
   <eClassifiers xsi:type="ecore:EClass" name="enlist1_InfixedExpr_Comma_AB" eSuperTypes="#//InfixedExprs"/>

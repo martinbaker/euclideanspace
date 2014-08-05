@@ -23,21 +23,6 @@ public abstract class AbstractEditorUiModule extends DefaultUiModule {
 		return org.eclipse.xtext.ui.shared.Access.getJavaProjectsState();
 	}
 
-	// contributed by org.eclipse.xtext.generator.parser.antlr.XtextAntlrGeneratorFragment
-	public Class<? extends org.eclipse.xtext.ui.editor.contentassist.IProposalConflictHelper> bindIProposalConflictHelper() {
-		return org.eclipse.xtext.ui.editor.contentassist.antlr.AntlrProposalConflictHelper.class;
-	}
-
-	// contributed by org.eclipse.xtext.generator.parser.antlr.XtextAntlrGeneratorFragment
-	public void configureHighlightingLexer(com.google.inject.Binder binder) {
-		binder.bind(org.eclipse.xtext.parser.antlr.Lexer.class).annotatedWith(com.google.inject.name.Names.named(org.eclipse.xtext.ui.LexerUIBindings.HIGHLIGHTING)).to(com.euclideanspace.aldor.parser.antlr.internal.InternalEditorLexer.class);
-	}
-
-	// contributed by org.eclipse.xtext.generator.parser.antlr.XtextAntlrGeneratorFragment
-	public void configureHighlightingTokenDefProvider(com.google.inject.Binder binder) {
-		binder.bind(org.eclipse.xtext.parser.antlr.ITokenDefProvider.class).annotatedWith(com.google.inject.name.Names.named(org.eclipse.xtext.ui.LexerUIBindings.HIGHLIGHTING)).to(org.eclipse.xtext.parser.antlr.AntlrTokenDefProvider.class);
-	}
-
 	// contributed by org.eclipse.xtext.generator.exporting.QualifiedNamesFragment
 	public Class<? extends org.eclipse.xtext.ui.refactoring.IDependentElementsCalculator> bindIDependentElementsCalculator() {
 		return org.eclipse.xtext.ui.refactoring.impl.DefaultDependentElementsCalculator.class;
@@ -106,6 +91,21 @@ public abstract class AbstractEditorUiModule extends DefaultUiModule {
 	// contributed by org.eclipse.xtext.ui.generator.contentAssist.ContentAssistFragment
 	public Class<? extends org.eclipse.xtext.ui.editor.contentassist.IContentProposalProvider> bindIContentProposalProvider() {
 		return com.euclideanspace.aldor.ui.contentassist.EditorProposalProvider.class;
+	}
+
+	// contributed by org.eclipse.xtext.generator.parser.antlr.XtextAntlrGeneratorFragment
+	public Class<? extends org.eclipse.xtext.ui.editor.contentassist.IProposalConflictHelper> bindIProposalConflictHelper() {
+		return org.eclipse.xtext.ui.editor.contentassist.antlr.AntlrProposalConflictHelper.class;
+	}
+
+	// contributed by org.eclipse.xtext.generator.parser.antlr.XtextAntlrGeneratorFragment
+	public void configureHighlightingLexer(com.google.inject.Binder binder) {
+		binder.bind(org.eclipse.xtext.parser.antlr.Lexer.class).annotatedWith(com.google.inject.name.Names.named(org.eclipse.xtext.ui.LexerUIBindings.HIGHLIGHTING)).to(com.euclideanspace.aldor.parser.antlr.internal.InternalEditorLexer.class);
+	}
+
+	// contributed by org.eclipse.xtext.generator.parser.antlr.XtextAntlrGeneratorFragment
+	public void configureHighlightingTokenDefProvider(com.google.inject.Binder binder) {
+		binder.bind(org.eclipse.xtext.parser.antlr.ITokenDefProvider.class).annotatedWith(com.google.inject.name.Names.named(org.eclipse.xtext.ui.LexerUIBindings.HIGHLIGHTING)).to(org.eclipse.xtext.parser.antlr.AntlrTokenDefProvider.class);
 	}
 
 	// contributed by org.eclipse.xtext.generator.parser.antlr.XtextAntlrUiGeneratorFragment

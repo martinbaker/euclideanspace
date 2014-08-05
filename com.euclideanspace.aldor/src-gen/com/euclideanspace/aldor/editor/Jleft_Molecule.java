@@ -22,7 +22,7 @@ import org.eclipse.emf.common.util.EList;
  * @model
  * @generated
  */
-public interface Jleft_Molecule extends LeftJuxtaposed
+public interface Jleft_Molecule extends LeftJuxtaposed, Jright_Molecule
 {
   /**
    * Returns the value of the '<em><b>Be</b></em>' containment reference.

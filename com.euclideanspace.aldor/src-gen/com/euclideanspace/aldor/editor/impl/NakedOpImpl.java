@@ -7,6 +7,8 @@ import com.euclideanspace.aldor.editor.NakedOp;
 
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+
 /**
  * <!-- begin-user-doc -->
  * An implementation of the model object '<em><b>Naked Op</b></em>'.
@@ -16,7 +18,7 @@ import org.eclipse.emf.ecore.EClass;
  *
  * @generated
  */
-public class NakedOpImpl extends NameImpl implements NakedOp
+public class NakedOpImpl extends MinimalEObjectImpl.Container implements NakedOp
 {
   /**
    * <!-- begin-user-doc -->

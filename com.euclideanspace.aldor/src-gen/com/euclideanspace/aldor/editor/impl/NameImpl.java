@@ -2,12 +2,9 @@
  */
 package com.euclideanspace.aldor.editor.impl;
 
-import com.euclideanspace.aldor.editor.AlwaysPart_BalStatement;
-import com.euclideanspace.aldor.editor.BalStatement;
-import com.euclideanspace.aldor.editor.BindingL_Infixed_BalStatement;
-import com.euclideanspace.aldor.editor.Binding_BalStatement;
 import com.euclideanspace.aldor.editor.EditorPackage;
-import com.euclideanspace.aldor.editor.Flow_BalStatement;
+import com.euclideanspace.aldor.editor.Id;
+import com.euclideanspace.aldor.editor.NakedOp;
 import com.euclideanspace.aldor.editor.Name;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -17,6 +14,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -25,23 +23,34 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link com.euclideanspace.aldor.editor.impl.NameImpl#getBbs5 <em>Bbs5</em>}</li>
+ *   <li>{@link com.euclideanspace.aldor.editor.impl.NameImpl#getName <em>Name</em>}</li>
+ *   <li>{@link com.euclideanspace.aldor.editor.impl.NameImpl#getNo <em>No</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class NameImpl extends Flow_AnyStatementImpl implements Name
+public class NameImpl extends MinimalEObjectImpl.Container implements Name
 {
   /**
-   * The cached value of the '{@link #getBbs5() <em>Bbs5</em>}' containment reference.
+   * The cached value of the '{@link #getName() <em>Name</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getBbs5()
+   * @see #getName()
    * @generated
    * @ordered
    */
-  protected Binding_BalStatement bbs5;
+  protected Id name;
+
+  /**
+   * The cached value of the '{@link #getNo() <em>No</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getNo()
+   * @generated
+   * @ordered
+   */
+  protected NakedOp no;
 
   /**
    * <!-- begin-user-doc -->
@@ -69,9 +78,9 @@ public class NameImpl extends Flow_AnyStatementImpl implements Name
    * <!-- end-user-doc -->
    * @generated
    */
-  public Binding_BalStatement getBbs5()
+  public Id getName()
   {
-    return bbs5;
+    return name;
   }
 
   /**
@@ -79,13 +88,13 @@ public class NameImpl extends Flow_AnyStatementImpl implements Name
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetBbs5(Binding_BalStatement newBbs5, NotificationChain msgs)
+  public NotificationChain basicSetName(Id newName, NotificationChain msgs)
   {
-    Binding_BalStatement oldBbs5 = bbs5;
-    bbs5 = newBbs5;
+    Id oldName = name;
+    name = newName;
     if (eNotificationRequired())
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, EditorPackage.NAME__BBS5, oldBbs5, newBbs5);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, EditorPackage.NAME__NAME, oldName, newName);
       if (msgs == null) msgs = notification; else msgs.add(notification);
     }
     return msgs;
@@ -96,20 +105,68 @@ public class NameImpl extends Flow_AnyStatementImpl implements Name
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setBbs5(Binding_BalStatement newBbs5)
+  public void setName(Id newName)
   {
-    if (newBbs5 != bbs5)
+    if (newName != name)
     {
       NotificationChain msgs = null;
-      if (bbs5 != null)
-        msgs = ((InternalEObject)bbs5).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - EditorPackage.NAME__BBS5, null, msgs);
-      if (newBbs5 != null)
-        msgs = ((InternalEObject)newBbs5).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - EditorPackage.NAME__BBS5, null, msgs);
-      msgs = basicSetBbs5(newBbs5, msgs);
+      if (name != null)
+        msgs = ((InternalEObject)name).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - EditorPackage.NAME__NAME, null, msgs);
+      if (newName != null)
+        msgs = ((InternalEObject)newName).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - EditorPackage.NAME__NAME, null, msgs);
+      msgs = basicSetName(newName, msgs);
       if (msgs != null) msgs.dispatch();
     }
     else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, EditorPackage.NAME__BBS5, newBbs5, newBbs5));
+      eNotify(new ENotificationImpl(this, Notification.SET, EditorPackage.NAME__NAME, newName, newName));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NakedOp getNo()
+  {
+    return no;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetNo(NakedOp newNo, NotificationChain msgs)
+  {
+    NakedOp oldNo = no;
+    no = newNo;
+    if (eNotificationRequired())
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, EditorPackage.NAME__NO, oldNo, newNo);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setNo(NakedOp newNo)
+  {
+    if (newNo != no)
+    {
+      NotificationChain msgs = null;
+      if (no != null)
+        msgs = ((InternalEObject)no).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - EditorPackage.NAME__NO, null, msgs);
+      if (newNo != null)
+        msgs = ((InternalEObject)newNo).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - EditorPackage.NAME__NO, null, msgs);
+      msgs = basicSetNo(newNo, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, EditorPackage.NAME__NO, newNo, newNo));
   }
 
   /**
@@ -122,8 +179,10 @@ public class NameImpl extends Flow_AnyStatementImpl implements Name
   {
     switch (featureID)
     {
-      case EditorPackage.NAME__BBS5:
-        return basicSetBbs5(null, msgs);
+      case EditorPackage.NAME__NAME:
+        return basicSetName(null, msgs);
+      case EditorPackage.NAME__NO:
+        return basicSetNo(null, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -138,8 +197,10 @@ public class NameImpl extends Flow_AnyStatementImpl implements Name
   {
     switch (featureID)
     {
-      case EditorPackage.NAME__BBS5:
-        return getBbs5();
+      case EditorPackage.NAME__NAME:
+        return getName();
+      case EditorPackage.NAME__NO:
+        return getNo();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -154,8 +215,11 @@ public class NameImpl extends Flow_AnyStatementImpl implements Name
   {
     switch (featureID)
     {
-      case EditorPackage.NAME__BBS5:
-        setBbs5((Binding_BalStatement)newValue);
+      case EditorPackage.NAME__NAME:
+        setName((Id)newValue);
+        return;
+      case EditorPackage.NAME__NO:
+        setNo((NakedOp)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -171,8 +235,11 @@ public class NameImpl extends Flow_AnyStatementImpl implements Name
   {
     switch (featureID)
     {
-      case EditorPackage.NAME__BBS5:
-        setBbs5((Binding_BalStatement)null);
+      case EditorPackage.NAME__NAME:
+        setName((Id)null);
+        return;
+      case EditorPackage.NAME__NO:
+        setNo((NakedOp)null);
         return;
     }
     super.eUnset(featureID);
@@ -188,104 +255,12 @@ public class NameImpl extends Flow_AnyStatementImpl implements Name
   {
     switch (featureID)
     {
-      case EditorPackage.NAME__BBS5:
-        return bbs5 != null;
+      case EditorPackage.NAME__NAME:
+        return name != null;
+      case EditorPackage.NAME__NO:
+        return no != null;
     }
     return super.eIsSet(featureID);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass)
-  {
-    if (baseClass == AlwaysPart_BalStatement.class)
-    {
-      switch (derivedFeatureID)
-      {
-        default: return -1;
-      }
-    }
-    if (baseClass == Binding_BalStatement.class)
-    {
-      switch (derivedFeatureID)
-      {
-        default: return -1;
-      }
-    }
-    if (baseClass == BindingL_Infixed_BalStatement.class)
-    {
-      switch (derivedFeatureID)
-      {
-        default: return -1;
-      }
-    }
-    if (baseClass == BalStatement.class)
-    {
-      switch (derivedFeatureID)
-      {
-        default: return -1;
-      }
-    }
-    if (baseClass == Flow_BalStatement.class)
-    {
-      switch (derivedFeatureID)
-      {
-        case EditorPackage.NAME__BBS5: return EditorPackage.FLOW_BAL_STATEMENT__BBS5;
-        default: return -1;
-      }
-    }
-    return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass)
-  {
-    if (baseClass == AlwaysPart_BalStatement.class)
-    {
-      switch (baseFeatureID)
-      {
-        default: return -1;
-      }
-    }
-    if (baseClass == Binding_BalStatement.class)
-    {
-      switch (baseFeatureID)
-      {
-        default: return -1;
-      }
-    }
-    if (baseClass == BindingL_Infixed_BalStatement.class)
-    {
-      switch (baseFeatureID)
-      {
-        default: return -1;
-      }
-    }
-    if (baseClass == BalStatement.class)
-    {
-      switch (baseFeatureID)
-      {
-        default: return -1;
-      }
-    }
-    if (baseClass == Flow_BalStatement.class)
-    {
-      switch (baseFeatureID)
-      {
-        case EditorPackage.FLOW_BAL_STATEMENT__BBS5: return EditorPackage.NAME__BBS5;
-        default: return -1;
-      }
-    }
-    return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
   }
 
 } //NameImpl

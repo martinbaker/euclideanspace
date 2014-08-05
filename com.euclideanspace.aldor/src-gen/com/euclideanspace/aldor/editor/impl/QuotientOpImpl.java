@@ -7,6 +7,8 @@ import com.euclideanspace.aldor.editor.QuotientOp;
 
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+
 /**
  * <!-- begin-user-doc -->
  * An implementation of the model object '<em><b>Quotient Op</b></em>'.
@@ -16,7 +18,7 @@ import org.eclipse.emf.ecore.EClass;
  *
  * @generated
  */
-public class QuotientOpImpl extends OpImpl implements QuotientOp
+public class QuotientOpImpl extends MinimalEObjectImpl.Container implements QuotientOp
 {
   /**
    * <!-- begin-user-doc -->

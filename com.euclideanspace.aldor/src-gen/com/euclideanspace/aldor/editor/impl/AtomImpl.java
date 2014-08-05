@@ -36,7 +36,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link com.euclideanspace.aldor.editor.impl.AtomImpl#getRight2 <em>Right2</em>}</li>
  *   <li>{@link com.euclideanspace.aldor.editor.impl.AtomImpl#getLab <em>Lab</em>}</li>
  *   <li>{@link com.euclideanspace.aldor.editor.impl.AtomImpl#getBm4 <em>Bm4</em>}</li>
- *   <li>{@link com.euclideanspace.aldor.editor.impl.AtomImpl#getId <em>Id</em>}</li>
+ *   <li>{@link com.euclideanspace.aldor.editor.impl.AtomImpl#getIden <em>Iden</em>}</li>
  *   <li>{@link com.euclideanspace.aldor.editor.impl.AtomImpl#getLit <em>Lit</em>}</li>
  * </ul>
  * </p>
@@ -76,14 +76,14 @@ public class AtomImpl extends LabeledImpl implements Atom
   protected EList<BlockMolecule> bm4;
 
   /**
-   * The cached value of the '{@link #getId() <em>Id</em>}' containment reference.
+   * The cached value of the '{@link #getIden() <em>Iden</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getId()
+   * @see #getIden()
    * @generated
    * @ordered
    */
-  protected Id id;
+  protected Id iden;
 
   /**
    * The default value of the '{@link #getLit() <em>Lit</em>}' attribute.
@@ -241,9 +241,9 @@ public class AtomImpl extends LabeledImpl implements Atom
    * <!-- end-user-doc -->
    * @generated
    */
-  public Id getId()
+  public Id getIden()
   {
-    return id;
+    return iden;
   }
 
   /**
@@ -251,13 +251,13 @@ public class AtomImpl extends LabeledImpl implements Atom
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetId(Id newId, NotificationChain msgs)
+  public NotificationChain basicSetIden(Id newIden, NotificationChain msgs)
   {
-    Id oldId = id;
-    id = newId;
+    Id oldIden = iden;
+    iden = newIden;
     if (eNotificationRequired())
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, EditorPackage.ATOM__ID, oldId, newId);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, EditorPackage.ATOM__IDEN, oldIden, newIden);
       if (msgs == null) msgs = notification; else msgs.add(notification);
     }
     return msgs;
@@ -268,20 +268,20 @@ public class AtomImpl extends LabeledImpl implements Atom
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setId(Id newId)
+  public void setIden(Id newIden)
   {
-    if (newId != id)
+    if (newIden != iden)
     {
       NotificationChain msgs = null;
-      if (id != null)
-        msgs = ((InternalEObject)id).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - EditorPackage.ATOM__ID, null, msgs);
-      if (newId != null)
-        msgs = ((InternalEObject)newId).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - EditorPackage.ATOM__ID, null, msgs);
-      msgs = basicSetId(newId, msgs);
+      if (iden != null)
+        msgs = ((InternalEObject)iden).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - EditorPackage.ATOM__IDEN, null, msgs);
+      if (newIden != null)
+        msgs = ((InternalEObject)newIden).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - EditorPackage.ATOM__IDEN, null, msgs);
+      msgs = basicSetIden(newIden, msgs);
       if (msgs != null) msgs.dispatch();
     }
     else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, EditorPackage.ATOM__ID, newId, newId));
+      eNotify(new ENotificationImpl(this, Notification.SET, EditorPackage.ATOM__IDEN, newIden, newIden));
   }
 
   /**
@@ -323,8 +323,8 @@ public class AtomImpl extends LabeledImpl implements Atom
         return basicSetLab(null, msgs);
       case EditorPackage.ATOM__BM4:
         return ((InternalEList<?>)getBm4()).basicRemove(otherEnd, msgs);
-      case EditorPackage.ATOM__ID:
-        return basicSetId(null, msgs);
+      case EditorPackage.ATOM__IDEN:
+        return basicSetIden(null, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -345,8 +345,8 @@ public class AtomImpl extends LabeledImpl implements Atom
         return getLab();
       case EditorPackage.ATOM__BM4:
         return getBm4();
-      case EditorPackage.ATOM__ID:
-        return getId();
+      case EditorPackage.ATOM__IDEN:
+        return getIden();
       case EditorPackage.ATOM__LIT:
         return getLit();
     }
@@ -374,8 +374,8 @@ public class AtomImpl extends LabeledImpl implements Atom
         getBm4().clear();
         getBm4().addAll((Collection<? extends BlockMolecule>)newValue);
         return;
-      case EditorPackage.ATOM__ID:
-        setId((Id)newValue);
+      case EditorPackage.ATOM__IDEN:
+        setIden((Id)newValue);
         return;
       case EditorPackage.ATOM__LIT:
         setLit((String)newValue);
@@ -403,8 +403,8 @@ public class AtomImpl extends LabeledImpl implements Atom
       case EditorPackage.ATOM__BM4:
         getBm4().clear();
         return;
-      case EditorPackage.ATOM__ID:
-        setId((Id)null);
+      case EditorPackage.ATOM__IDEN:
+        setIden((Id)null);
         return;
       case EditorPackage.ATOM__LIT:
         setLit(LIT_EDEFAULT);
@@ -429,8 +429,8 @@ public class AtomImpl extends LabeledImpl implements Atom
         return lab != null;
       case EditorPackage.ATOM__BM4:
         return bm4 != null && !bm4.isEmpty();
-      case EditorPackage.ATOM__ID:
-        return id != null;
+      case EditorPackage.ATOM__IDEN:
+        return iden != null;
       case EditorPackage.ATOM__LIT:
         return LIT_EDEFAULT == null ? lit != null : !LIT_EDEFAULT.equals(lit);
     }

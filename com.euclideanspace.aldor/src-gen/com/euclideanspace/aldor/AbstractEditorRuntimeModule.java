@@ -54,41 +54,6 @@ public abstract class AbstractEditorRuntimeModule extends DefaultRuntimeModule {
 		return org.eclipse.xtext.serializer.impl.Serializer.class;
 	}
 
-	// contributed by org.eclipse.xtext.generator.parser.antlr.XtextAntlrGeneratorFragment
-	public Class<? extends org.eclipse.xtext.parser.IParser> bindIParser() {
-		return com.euclideanspace.aldor.parser.antlr.EditorParser.class;
-	}
-
-	// contributed by org.eclipse.xtext.generator.parser.antlr.XtextAntlrGeneratorFragment
-	public Class<? extends org.eclipse.xtext.parser.ITokenToStringConverter> bindITokenToStringConverter() {
-		return org.eclipse.xtext.parser.antlr.AntlrTokenToStringConverter.class;
-	}
-
-	// contributed by org.eclipse.xtext.generator.parser.antlr.XtextAntlrGeneratorFragment
-	public Class<? extends org.eclipse.xtext.parser.antlr.IAntlrTokenFileProvider> bindIAntlrTokenFileProvider() {
-		return com.euclideanspace.aldor.parser.antlr.EditorAntlrTokenFileProvider.class;
-	}
-
-	// contributed by org.eclipse.xtext.generator.parser.antlr.XtextAntlrGeneratorFragment
-	public Class<? extends org.eclipse.xtext.parser.antlr.Lexer> bindLexer() {
-		return com.euclideanspace.aldor.parser.antlr.internal.InternalEditorLexer.class;
-	}
-
-	// contributed by org.eclipse.xtext.generator.parser.antlr.XtextAntlrGeneratorFragment
-	public com.google.inject.Provider<com.euclideanspace.aldor.parser.antlr.internal.InternalEditorLexer> provideInternalEditorLexer() {
-		return org.eclipse.xtext.parser.antlr.LexerProvider.create(com.euclideanspace.aldor.parser.antlr.internal.InternalEditorLexer.class);
-	}
-
-	// contributed by org.eclipse.xtext.generator.parser.antlr.XtextAntlrGeneratorFragment
-	public void configureRuntimeLexer(com.google.inject.Binder binder) {
-		binder.bind(org.eclipse.xtext.parser.antlr.Lexer.class).annotatedWith(com.google.inject.name.Names.named(org.eclipse.xtext.parser.antlr.LexerBindings.RUNTIME)).to(com.euclideanspace.aldor.parser.antlr.internal.InternalEditorLexer.class);
-	}
-
-	// contributed by org.eclipse.xtext.generator.parser.antlr.XtextAntlrGeneratorFragment
-	public Class<? extends org.eclipse.xtext.parser.antlr.ITokenDefProvider> bindITokenDefProvider() {
-		return org.eclipse.xtext.parser.antlr.AntlrTokenDefProvider.class;
-	}
-
 	// contributed by org.eclipse.xtext.generator.validation.ValidatorFragment
 	@org.eclipse.xtext.service.SingletonBinding(eager=true)	public Class<? extends com.euclideanspace.aldor.validation.EditorValidator> bindEditorValidator() {
 		return com.euclideanspace.aldor.validation.EditorValidator.class;
@@ -137,6 +102,41 @@ public abstract class AbstractEditorRuntimeModule extends DefaultRuntimeModule {
 	// contributed by org.eclipse.xtext.generator.formatting.FormatterFragment
 	public Class<? extends org.eclipse.xtext.formatting.IFormatter> bindIFormatter() {
 		return com.euclideanspace.aldor.formatting.EditorFormatter.class;
+	}
+
+	// contributed by org.eclipse.xtext.generator.parser.antlr.XtextAntlrGeneratorFragment
+	public Class<? extends org.eclipse.xtext.parser.IParser> bindIParser() {
+		return com.euclideanspace.aldor.parser.antlr.EditorParser.class;
+	}
+
+	// contributed by org.eclipse.xtext.generator.parser.antlr.XtextAntlrGeneratorFragment
+	public Class<? extends org.eclipse.xtext.parser.ITokenToStringConverter> bindITokenToStringConverter() {
+		return org.eclipse.xtext.parser.antlr.AntlrTokenToStringConverter.class;
+	}
+
+	// contributed by org.eclipse.xtext.generator.parser.antlr.XtextAntlrGeneratorFragment
+	public Class<? extends org.eclipse.xtext.parser.antlr.IAntlrTokenFileProvider> bindIAntlrTokenFileProvider() {
+		return com.euclideanspace.aldor.parser.antlr.EditorAntlrTokenFileProvider.class;
+	}
+
+	// contributed by org.eclipse.xtext.generator.parser.antlr.XtextAntlrGeneratorFragment
+	public Class<? extends org.eclipse.xtext.parser.antlr.Lexer> bindLexer() {
+		return com.euclideanspace.aldor.parser.antlr.internal.InternalEditorLexer.class;
+	}
+
+	// contributed by org.eclipse.xtext.generator.parser.antlr.XtextAntlrGeneratorFragment
+	public com.google.inject.Provider<com.euclideanspace.aldor.parser.antlr.internal.InternalEditorLexer> provideInternalEditorLexer() {
+		return org.eclipse.xtext.parser.antlr.LexerProvider.create(com.euclideanspace.aldor.parser.antlr.internal.InternalEditorLexer.class);
+	}
+
+	// contributed by org.eclipse.xtext.generator.parser.antlr.XtextAntlrGeneratorFragment
+	public void configureRuntimeLexer(com.google.inject.Binder binder) {
+		binder.bind(org.eclipse.xtext.parser.antlr.Lexer.class).annotatedWith(com.google.inject.name.Names.named(org.eclipse.xtext.parser.antlr.LexerBindings.RUNTIME)).to(com.euclideanspace.aldor.parser.antlr.internal.InternalEditorLexer.class);
+	}
+
+	// contributed by org.eclipse.xtext.generator.parser.antlr.XtextAntlrGeneratorFragment
+	public Class<? extends org.eclipse.xtext.parser.antlr.ITokenDefProvider> bindITokenDefProvider() {
+		return org.eclipse.xtext.parser.antlr.AntlrTokenDefProvider.class;
 	}
 
 	// contributed by org.eclipse.xtext.generator.types.TypesGeneratorFragment

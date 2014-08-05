@@ -13,6 +13,6 @@ package com.euclideanspace.aldor.editor;
  * @model
  * @generated
  */
-public interface Sig extends Declaration, ExportDecl, MacroBody
+public interface Sig extends MacroBody
 {
 } // Sig

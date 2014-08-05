@@ -2,6 +2,7 @@
  */
 package com.euclideanspace.aldor.editor.impl;
 
+import com.euclideanspace.aldor.editor.Application;
 import com.euclideanspace.aldor.editor.Block;
 import com.euclideanspace.aldor.editor.DeclMolecule;
 import com.euclideanspace.aldor.editor.EditorPackage;
@@ -32,24 +33,14 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 public class DeclMoleculeImpl extends MinimalEObjectImpl.Container implements DeclMolecule
 {
   /**
-   * The default value of the '{@link #getA() <em>A</em>}' attribute.
+   * The cached value of the '{@link #getA() <em>A</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getA()
    * @generated
    * @ordered
    */
-  protected static final String A_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getA() <em>A</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getA()
-   * @generated
-   * @ordered
-   */
-  protected String a = A_EDEFAULT;
+  protected Application a;
 
   /**
    * The cached value of the '{@link #getB() <em>B</em>}' containment reference.
@@ -87,7 +78,7 @@ public class DeclMoleculeImpl extends MinimalEObjectImpl.Container implements De
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getA()
+  public Application getA()
   {
     return a;
   }
@@ -97,12 +88,37 @@ public class DeclMoleculeImpl extends MinimalEObjectImpl.Container implements De
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setA(String newA)
+  public NotificationChain basicSetA(Application newA, NotificationChain msgs)
   {
-    String oldA = a;
+    Application oldA = a;
     a = newA;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, EditorPackage.DECL_MOLECULE__A, oldA, a));
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, EditorPackage.DECL_MOLECULE__A, oldA, newA);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setA(Application newA)
+  {
+    if (newA != a)
+    {
+      NotificationChain msgs = null;
+      if (a != null)
+        msgs = ((InternalEObject)a).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - EditorPackage.DECL_MOLECULE__A, null, msgs);
+      if (newA != null)
+        msgs = ((InternalEObject)newA).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - EditorPackage.DECL_MOLECULE__A, null, msgs);
+      msgs = basicSetA(newA, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, EditorPackage.DECL_MOLECULE__A, newA, newA));
   }
 
   /**
@@ -163,6 +179,8 @@ public class DeclMoleculeImpl extends MinimalEObjectImpl.Container implements De
   {
     switch (featureID)
     {
+      case EditorPackage.DECL_MOLECULE__A:
+        return basicSetA(null, msgs);
       case EditorPackage.DECL_MOLECULE__B:
         return basicSetB(null, msgs);
     }
@@ -198,7 +216,7 @@ public class DeclMoleculeImpl extends MinimalEObjectImpl.Container implements De
     switch (featureID)
     {
       case EditorPackage.DECL_MOLECULE__A:
-        setA((String)newValue);
+        setA((Application)newValue);
         return;
       case EditorPackage.DECL_MOLECULE__B:
         setB((Block)newValue);
@@ -218,7 +236,7 @@ public class DeclMoleculeImpl extends MinimalEObjectImpl.Container implements De
     switch (featureID)
     {
       case EditorPackage.DECL_MOLECULE__A:
-        setA(A_EDEFAULT);
+        setA((Application)null);
         return;
       case EditorPackage.DECL_MOLECULE__B:
         setB((Block)null);
@@ -238,28 +256,11 @@ public class DeclMoleculeImpl extends MinimalEObjectImpl.Container implements De
     switch (featureID)
     {
       case EditorPackage.DECL_MOLECULE__A:
-        return A_EDEFAULT == null ? a != null : !A_EDEFAULT.equals(a);
+        return a != null;
       case EditorPackage.DECL_MOLECULE__B:
         return b != null;
     }
     return super.eIsSet(featureID);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public String toString()
-  {
-    if (eIsProxy()) return super.toString();
-
-    StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (a: ");
-    result.append(a);
-    result.append(')');
-    return result.toString();
   }
 
 } //DeclMoleculeImpl
