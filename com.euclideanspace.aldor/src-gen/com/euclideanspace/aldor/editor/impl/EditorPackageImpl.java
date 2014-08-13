@@ -80,12 +80,14 @@ import com.euclideanspace.aldor.editor.QualOp_LatticeTok;
 import com.euclideanspace.aldor.editor.QualOp_PlusTok;
 import com.euclideanspace.aldor.editor.QualOp_PowerTok;
 import com.euclideanspace.aldor.editor.QualOp_QuotientTok;
+import com.euclideanspace.aldor.editor.QualOp_RelationTok;
 import com.euclideanspace.aldor.editor.QualOp_SegTok;
 import com.euclideanspace.aldor.editor.QualOp_TimesTok;
 import com.euclideanspace.aldor.editor.QualTail;
 import com.euclideanspace.aldor.editor.QuotedIds;
 import com.euclideanspace.aldor.editor.QuotientOp;
 import com.euclideanspace.aldor.editor.QuotientTok;
+import com.euclideanspace.aldor.editor.RelationOp;
 import com.euclideanspace.aldor.editor.RelationTok;
 import com.euclideanspace.aldor.editor.RightJuxtaposed;
 import com.euclideanspace.aldor.editor.SegOp;
@@ -490,6 +492,13 @@ public class EditorPackageImpl extends EPackageImpl implements EditorPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  private EClass relationOpEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   private EClass segOpEClass = null;
 
   /**
@@ -729,6 +738,13 @@ public class EditorPackageImpl extends EPackageImpl implements EditorPackage
    * @generated
    */
   private EClass qualOp_LatticeTokEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass qualOp_RelationTokEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -1896,7 +1912,7 @@ public class EditorPackageImpl extends EPackageImpl implements EditorPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getInfixed_Bia()
+  public EReference getInfixed_Bib()
   {
     return (EReference)infixedEClass.getEStructuralFeatures().get(0);
   }
@@ -1906,7 +1922,7 @@ public class EditorPackageImpl extends EPackageImpl implements EditorPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getInfixed_Bib()
+  public EReference getInfixed_Bic()
   {
     return (EReference)infixedEClass.getEStructuralFeatures().get(1);
   }
@@ -1916,7 +1932,7 @@ public class EditorPackageImpl extends EPackageImpl implements EditorPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getInfixed_Bic()
+  public EReference getInfixed_Ifx()
   {
     return (EReference)infixedEClass.getEStructuralFeatures().get(2);
   }
@@ -1926,7 +1942,7 @@ public class EditorPackageImpl extends EPackageImpl implements EditorPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getInfixed_Ifx()
+  public EReference getInfixed_Dp()
   {
     return (EReference)infixedEClass.getEStructuralFeatures().get(3);
   }
@@ -1936,7 +1952,7 @@ public class EditorPackageImpl extends EPackageImpl implements EditorPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getInfixed_Dp()
+  public EReference getInfixed_B()
   {
     return (EReference)infixedEClass.getEStructuralFeatures().get(4);
   }
@@ -1946,19 +1962,9 @@ public class EditorPackageImpl extends EPackageImpl implements EditorPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getInfixed_B()
-  {
-    return (EReference)infixedEClass.getEStructuralFeatures().get(5);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public EReference getInfixed_I2()
   {
-    return (EReference)infixedEClass.getEStructuralFeatures().get(6);
+    return (EReference)infixedEClass.getEStructuralFeatures().get(5);
   }
 
   /**
@@ -2006,19 +2012,9 @@ public class EditorPackageImpl extends EPackageImpl implements EditorPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getExpr_Right()
-  {
-    return (EReference)exprEClass.getEStructuralFeatures().get(1);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public EReference getExpr_Op5()
   {
-    return (EReference)exprEClass.getEStructuralFeatures().get(2);
+    return (EReference)exprEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -2166,9 +2162,19 @@ public class EditorPackageImpl extends EPackageImpl implements EditorPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  public EAttribute getE14_Op()
+  {
+    return (EAttribute)e14EClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EReference getE14_Dm()
   {
-    return (EReference)e14EClass.getEStructuralFeatures().get(1);
+    return (EReference)e14EClass.getEStructuralFeatures().get(2);
   }
 
   /**
@@ -2178,7 +2184,7 @@ public class EditorPackageImpl extends EPackageImpl implements EditorPackage
    */
   public EReference getE14_E15right()
   {
-    return (EReference)e14EClass.getEStructuralFeatures().get(2);
+    return (EReference)e14EClass.getEStructuralFeatures().get(3);
   }
 
   /**
@@ -2239,6 +2245,26 @@ public class EditorPackageImpl extends EPackageImpl implements EditorPackage
   public EClass getLatticeOp()
   {
     return latticeOpEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getRelationOp()
+  {
+    return relationOpEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getRelationOp_Right()
+  {
+    return (EReference)relationOpEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -2419,6 +2445,36 @@ public class EditorPackageImpl extends EPackageImpl implements EditorPackage
   public EClass getJleft_Atom()
   {
     return jleft_AtomEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getJleft_Atom_A()
+  {
+    return (EReference)jleft_AtomEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getJleft_Atom_Be()
+  {
+    return (EReference)jleft_AtomEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getJleft_Atom_N()
+  {
+    return (EAttribute)jleft_AtomEClass.getEStructuralFeatures().get(2);
   }
 
   /**
@@ -2836,6 +2892,36 @@ public class EditorPackageImpl extends EPackageImpl implements EditorPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  public EClass getQualOp_RelationTok()
+  {
+    return qualOp_RelationTokEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getQualOp_RelationTok_Op()
+  {
+    return (EAttribute)qualOp_RelationTokEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getQualOp_RelationTok_Oqt()
+  {
+    return (EReference)qualOp_RelationTokEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EClass getQualOp_SegTok()
   {
     return qualOp_SegTokEClass;
@@ -3136,6 +3222,16 @@ public class EditorPackageImpl extends EPackageImpl implements EditorPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  public EReference getE3_Right()
+  {
+    return (EReference)e3EClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EClass getE4()
   {
     return e4EClass;
@@ -3156,9 +3252,19 @@ public class EditorPackageImpl extends EPackageImpl implements EditorPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getE4_Op2()
+  public EReference getE4_Op2()
   {
-    return (EAttribute)e4EClass.getEStructuralFeatures().get(1);
+    return (EReference)e4EClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getE4_Right()
+  {
+    return (EReference)e4EClass.getEStructuralFeatures().get(2);
   }
 
   /**
@@ -3169,6 +3275,16 @@ public class EditorPackageImpl extends EPackageImpl implements EditorPackage
   public EClass getE5()
   {
     return e5EClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getE5_Right()
+  {
+    return (EReference)e5EClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -3196,6 +3312,16 @@ public class EditorPackageImpl extends EPackageImpl implements EditorPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  public EReference getE6_Right()
+  {
+    return (EReference)e6EClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EClass getE7()
   {
     return e7EClass;
@@ -3209,6 +3335,16 @@ public class EditorPackageImpl extends EPackageImpl implements EditorPackage
   public EReference getE7_Op7()
   {
     return (EReference)e7EClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getE7_Right()
+  {
+    return (EReference)e7EClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -3236,6 +3372,16 @@ public class EditorPackageImpl extends EPackageImpl implements EditorPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  public EReference getE8_Right()
+  {
+    return (EReference)e8EClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EClass getE9()
   {
     return e9EClass;
@@ -3249,6 +3395,16 @@ public class EditorPackageImpl extends EPackageImpl implements EditorPackage
   public EReference getE9_Op9()
   {
     return (EReference)e9EClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getE9_Right()
+  {
+    return (EReference)e9EClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -3276,6 +3432,16 @@ public class EditorPackageImpl extends EPackageImpl implements EditorPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  public EReference getE11_E12_Right()
+  {
+    return (EReference)e11_E12EClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EClass getE11_Op()
   {
     return e11_OpEClass;
@@ -3289,6 +3455,16 @@ public class EditorPackageImpl extends EPackageImpl implements EditorPackage
   public EAttribute getE11_Op_Op()
   {
     return (EAttribute)e11_OpEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getE11_Op_Right()
+  {
+    return (EReference)e11_OpEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -3524,7 +3700,6 @@ public class EditorPackageImpl extends EPackageImpl implements EditorPackage
     suchthatPartEClass = createEClass(SUCHTHAT_PART);
 
     infixedEClass = createEClass(INFIXED);
-    createEReference(infixedEClass, INFIXED__BIA);
     createEReference(infixedEClass, INFIXED__BIB);
     createEReference(infixedEClass, INFIXED__BIC);
     createEReference(infixedEClass, INFIXED__IFX);
@@ -3537,7 +3712,6 @@ public class EditorPackageImpl extends EPackageImpl implements EditorPackage
 
     exprEClass = createEClass(EXPR);
     createEReference(exprEClass, EXPR__LEFT);
-    createEReference(exprEClass, EXPR__RIGHT);
     createEReference(exprEClass, EXPR__OP5);
 
     typeEClass = createEClass(TYPE);
@@ -3559,6 +3733,7 @@ public class EditorPackageImpl extends EPackageImpl implements EditorPackage
 
     e14EClass = createEClass(E14);
     createEReference(e14EClass, E14__E15LEFT);
+    createEAttribute(e14EClass, E14__OP);
     createEReference(e14EClass, E14__DM);
     createEReference(e14EClass, E14__E15RIGHT);
 
@@ -3572,6 +3747,9 @@ public class EditorPackageImpl extends EPackageImpl implements EditorPackage
     arrowOpEClass = createEClass(ARROW_OP);
 
     latticeOpEClass = createEClass(LATTICE_OP);
+
+    relationOpEClass = createEClass(RELATION_OP);
+    createEReference(relationOpEClass, RELATION_OP__RIGHT);
 
     segOpEClass = createEClass(SEG_OP);
 
@@ -3602,6 +3780,9 @@ public class EditorPackageImpl extends EPackageImpl implements EditorPackage
     createEReference(jleft_MoleculeEClass, JLEFT_MOLECULE__BM);
 
     jleft_AtomEClass = createEClass(JLEFT_ATOM);
+    createEReference(jleft_AtomEClass, JLEFT_ATOM__A);
+    createEReference(jleft_AtomEClass, JLEFT_ATOM__BE);
+    createEAttribute(jleft_AtomEClass, JLEFT_ATOM__N);
 
     moleculeEClass = createEClass(MOLECULE);
 
@@ -3667,6 +3848,10 @@ public class EditorPackageImpl extends EPackageImpl implements EditorPackage
     qualOp_LatticeTokEClass = createEClass(QUAL_OP_LATTICE_TOK);
     createEReference(qualOp_LatticeTokEClass, QUAL_OP_LATTICE_TOK__OQT);
 
+    qualOp_RelationTokEClass = createEClass(QUAL_OP_RELATION_TOK);
+    createEAttribute(qualOp_RelationTokEClass, QUAL_OP_RELATION_TOK__OP);
+    createEReference(qualOp_RelationTokEClass, QUAL_OP_RELATION_TOK__OQT);
+
     qualOp_SegTokEClass = createEClass(QUAL_OP_SEG_TOK);
     createEReference(qualOp_SegTokEClass, QUAL_OP_SEG_TOK__OQT);
 
@@ -3714,30 +3899,39 @@ public class EditorPackageImpl extends EPackageImpl implements EditorPackage
     e3EClass = createEClass(E3);
     createEAttribute(e3EClass, E3__OP);
     createEReference(e3EClass, E3__OP2);
+    createEReference(e3EClass, E3__RIGHT);
 
     e4EClass = createEClass(E4);
     createEAttribute(e4EClass, E4__OP);
-    createEAttribute(e4EClass, E4__OP2);
+    createEReference(e4EClass, E4__OP2);
+    createEReference(e4EClass, E4__RIGHT);
 
     e5EClass = createEClass(E5);
+    createEReference(e5EClass, E5__RIGHT);
 
     e6EClass = createEClass(E6);
     createEReference(e6EClass, E6__OP6);
+    createEReference(e6EClass, E6__RIGHT);
 
     e7EClass = createEClass(E7);
     createEReference(e7EClass, E7__OP7);
+    createEReference(e7EClass, E7__RIGHT);
 
     e8EClass = createEClass(E8);
     createEReference(e8EClass, E8__OP8);
+    createEReference(e8EClass, E8__RIGHT);
 
     e9EClass = createEClass(E9);
     createEReference(e9EClass, E9__OP9);
+    createEReference(e9EClass, E9__RIGHT);
 
     e11_E12EClass = createEClass(E11_E12);
     createEAttribute(e11_E12EClass, E11_E12__OP);
+    createEReference(e11_E12EClass, E11_E12__RIGHT);
 
     e11_OpEClass = createEClass(E11_OP);
     createEAttribute(e11_OpEClass, E11_OP__OP);
+    createEReference(e11_OpEClass, E11_OP__RIGHT);
 
     arrowTokEClass = createEClass(ARROW_TOK);
 
@@ -3810,7 +4004,6 @@ public class EditorPackageImpl extends EPackageImpl implements EditorPackage
     iterators1EClass.getESuperTypes().add(this.getIterators());
     forLhsEClass.getESuperTypes().add(this.getIterator());
     infixedEClass.getESuperTypes().add(this.getToPart());
-    infixedEClass.getESuperTypes().add(this.getBindingL_Infixed_AnyStatement());
     infixedEClass.getESuperTypes().add(this.getBindingL_Infixed_BalStatement());
     infixedEClass.getESuperTypes().add(this.getBindingL_Infixed_Collection());
     infixedEClass.getESuperTypes().add(this.getCollection());
@@ -3821,6 +4014,7 @@ public class EditorPackageImpl extends EPackageImpl implements EditorPackage
     exprEClass.getESuperTypes().add(this.getInfixedExpr());
     exprEClass.getESuperTypes().add(this.getType());
     typeEClass.getESuperTypes().add(this.getDeclPart());
+    relationOpEClass.getESuperTypes().add(this.getExpr());
     applicationEClass.getESuperTypes().add(this.getE15());
     rightJuxtaposedEClass.getESuperTypes().add(this.getApplication());
     leftJuxtaposedEClass.getESuperTypes().add(this.getQualTail());
@@ -3831,7 +4025,6 @@ public class EditorPackageImpl extends EPackageImpl implements EditorPackage
     enclosureEClass.getESuperTypes().add(this.getMolecule());
     enclosureEClass.getESuperTypes().add(this.getBlockMolecule());
     enclosureEClass.getESuperTypes().add(this.getBlockEnclosure());
-    blockEnclosureEClass.getESuperTypes().add(this.getJleft_Atom());
     blockEClass.getESuperTypes().add(this.getSig());
     blockEClass.getESuperTypes().add(this.getBlockMolecule());
     blockEClass.getESuperTypes().add(this.getBlockEnclosure());
@@ -3852,6 +4045,7 @@ public class EditorPackageImpl extends EPackageImpl implements EditorPackage
     unqualOp_PowerTokEClass.getESuperTypes().add(this.getNakedOp());
     qualOp_ArrowTokEClass.getESuperTypes().add(this.getArrowOp());
     qualOp_LatticeTokEClass.getESuperTypes().add(this.getLatticeOp());
+    qualOp_RelationTokEClass.getESuperTypes().add(this.getRelationOp());
     qualOp_SegTokEClass.getESuperTypes().add(this.getSegOp());
     qualOp_PlusTokEClass.getESuperTypes().add(this.getPlusOp());
     qualOp_QuotientTokEClass.getESuperTypes().add(this.getQuotientOp());
@@ -4010,7 +4204,6 @@ public class EditorPackageImpl extends EPackageImpl implements EditorPackage
     initEClass(suchthatPartEClass, SuchthatPart.class, "SuchthatPart", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
     initEClass(infixedEClass, Infixed.class, "Infixed", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getInfixed_Bia(), this.getBindingL_Infixed_AnyStatement(), null, "bia", null, 0, 1, Infixed.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getInfixed_Bib(), this.getBindingL_Infixed_BalStatement(), null, "bib", null, 0, 1, Infixed.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getInfixed_Bic(), this.getBindingL_Infixed_Collection(), null, "bic", null, 0, 1, Infixed.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getInfixed_Ifx(), this.getInfixedExpr(), null, "ifx", null, 0, 1, Infixed.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -4023,7 +4216,6 @@ public class EditorPackageImpl extends EPackageImpl implements EditorPackage
 
     initEClass(exprEClass, Expr.class, "Expr", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getExpr_Left(), ecorePackage.getEObject(), null, "left", null, 0, 1, Expr.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getExpr_Right(), ecorePackage.getEObject(), null, "right", null, 0, 1, Expr.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getExpr_Op5(), this.getSegOp(), null, "op5", null, 0, -1, Expr.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(typeEClass, Type.class, "Type", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -4045,6 +4237,7 @@ public class EditorPackageImpl extends EPackageImpl implements EditorPackage
 
     initEClass(e14EClass, com.euclideanspace.aldor.editor.E14.class, "E14", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getE14_E15left(), this.getE15(), null, "e15left", null, 0, 1, com.euclideanspace.aldor.editor.E14.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getE14_Op(), ecorePackage.getEString(), "op", null, 0, 1, com.euclideanspace.aldor.editor.E14.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getE14_Dm(), this.getDeclMolecule(), null, "dm", null, 0, 1, com.euclideanspace.aldor.editor.E14.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getE14_E15right(), this.getE15(), null, "e15right", null, 0, 1, com.euclideanspace.aldor.editor.E14.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
@@ -4058,6 +4251,9 @@ public class EditorPackageImpl extends EPackageImpl implements EditorPackage
     initEClass(arrowOpEClass, ArrowOp.class, "ArrowOp", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
     initEClass(latticeOpEClass, LatticeOp.class, "LatticeOp", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+    initEClass(relationOpEClass, RelationOp.class, "RelationOp", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getRelationOp_Right(), this.getExpr(), null, "right", null, 0, 1, RelationOp.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(segOpEClass, SegOp.class, "SegOp", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -4083,11 +4279,14 @@ public class EditorPackageImpl extends EPackageImpl implements EditorPackage
     initEReference(getJright_Atom_Right2(), this.getJright_Atom(), null, "right2", null, 0, 1, Jright_Atom.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(jleft_MoleculeEClass, Jleft_Molecule.class, "Jleft_Molecule", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getJleft_Molecule_Be(), this.getBlockEnclosure(), null, "be", null, 0, 1, Jleft_Molecule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getJleft_Molecule_Be(), this.getBlockEnclosure(), null, "be", null, 0, -1, Jleft_Molecule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getJleft_Molecule_M(), this.getMolecule(), null, "m", null, 0, 1, Jleft_Molecule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getJleft_Molecule_Bm(), this.getBlockMolecule(), null, "bm", null, 0, -1, Jleft_Molecule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(jleft_AtomEClass, Jleft_Atom.class, "Jleft_Atom", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getJleft_Atom_A(), this.getAtom(), null, "a", null, 0, 1, Jleft_Atom.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getJleft_Atom_Be(), this.getBlockEnclosure(), null, "be", null, 0, -1, Jleft_Atom.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getJleft_Atom_N(), ecorePackage.getEString(), "n", null, 0, 1, Jleft_Atom.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(moleculeEClass, Molecule.class, "Molecule", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -4105,10 +4304,10 @@ public class EditorPackageImpl extends EPackageImpl implements EditorPackage
     initEClass(blockEClass, Block.class, "Block", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
     initEClass(parenedEClass, Parened.class, "Parened", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getParened_E(), this.getAtom(), null, "e", null, 0, 1, Parened.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getParened_E(), this.getExpression(), null, "e", null, 0, 1, Parened.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(bracketedEClass, Bracketed.class, "Bracketed", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getBracketed_E(), this.getAtom(), null, "e", null, 0, 1, Bracketed.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getBracketed_E(), this.getExpression(), null, "e", null, 0, 1, Bracketed.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(quotedIdsEClass, QuotedIds.class, "QuotedIds", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getQuotedIds_N(), this.getNames(), null, "n", null, 0, 1, QuotedIds.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -4152,6 +4351,10 @@ public class EditorPackageImpl extends EPackageImpl implements EditorPackage
 
     initEClass(qualOp_LatticeTokEClass, QualOp_LatticeTok.class, "QualOp_LatticeTok", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getQualOp_LatticeTok_Oqt(), this.getOpQualTail(), null, "oqt", null, 0, 1, QualOp_LatticeTok.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(qualOp_RelationTokEClass, QualOp_RelationTok.class, "QualOp_RelationTok", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getQualOp_RelationTok_Op(), ecorePackage.getEString(), "op", null, 0, -1, QualOp_RelationTok.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getQualOp_RelationTok_Oqt(), this.getOpQualTail(), null, "oqt", null, 0, 1, QualOp_RelationTok.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(qualOp_SegTokEClass, QualOp_SegTok.class, "QualOp_SegTok", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getQualOp_SegTok_Oqt(), this.getOpQualTail(), null, "oqt", null, 0, 1, QualOp_SegTok.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -4200,30 +4403,39 @@ public class EditorPackageImpl extends EPackageImpl implements EditorPackage
     initEClass(e3EClass, com.euclideanspace.aldor.editor.E3.class, "E3", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getE3_Op(), ecorePackage.getEString(), "op", null, 0, -1, com.euclideanspace.aldor.editor.E3.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getE3_Op2(), this.getLatticeOp(), null, "op2", null, 0, -1, com.euclideanspace.aldor.editor.E3.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getE3_Right(), this.getExpr(), null, "right", null, 0, 1, com.euclideanspace.aldor.editor.E3.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(e4EClass, com.euclideanspace.aldor.editor.E4.class, "E4", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getE4_Op(), ecorePackage.getEString(), "op", null, 0, -1, com.euclideanspace.aldor.editor.E4.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getE4_Op2(), ecorePackage.getEString(), "op2", null, 0, -1, com.euclideanspace.aldor.editor.E4.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getE4_Op2(), this.getRelationOp(), null, "op2", null, 0, -1, com.euclideanspace.aldor.editor.E4.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getE4_Right(), this.getExpr(), null, "right", null, 0, 1, com.euclideanspace.aldor.editor.E4.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(e5EClass, com.euclideanspace.aldor.editor.E5.class, "E5", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getE5_Right(), this.getExpr(), null, "right", null, 0, 1, com.euclideanspace.aldor.editor.E5.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(e6EClass, com.euclideanspace.aldor.editor.E6.class, "E6", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getE6_Op6(), this.getPlusOp(), null, "op6", null, 0, -1, com.euclideanspace.aldor.editor.E6.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getE6_Right(), this.getExpr(), null, "right", null, 0, 1, com.euclideanspace.aldor.editor.E6.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(e7EClass, com.euclideanspace.aldor.editor.E7.class, "E7", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getE7_Op7(), this.getQuotientOp(), null, "op7", null, 0, -1, com.euclideanspace.aldor.editor.E7.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getE7_Right(), this.getExpr(), null, "right", null, 0, 1, com.euclideanspace.aldor.editor.E7.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(e8EClass, com.euclideanspace.aldor.editor.E8.class, "E8", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getE8_Op8(), this.getTimesOp(), null, "op8", null, 0, -1, com.euclideanspace.aldor.editor.E8.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getE8_Right(), this.getExpr(), null, "right", null, 0, 1, com.euclideanspace.aldor.editor.E8.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(e9EClass, com.euclideanspace.aldor.editor.E9.class, "E9", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getE9_Op9(), this.getPowerOp(), null, "op9", null, 0, -1, com.euclideanspace.aldor.editor.E9.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getE9_Right(), this.getExpr(), null, "right", null, 0, 1, com.euclideanspace.aldor.editor.E9.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(e11_E12EClass, com.euclideanspace.aldor.editor.E11_E12.class, "E11_E12", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getE11_E12_Op(), ecorePackage.getEString(), "op", null, 0, -1, com.euclideanspace.aldor.editor.E11_E12.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getE11_E12_Right(), this.getE12(), null, "right", null, 0, 1, com.euclideanspace.aldor.editor.E11_E12.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(e11_OpEClass, E11_Op.class, "E11_Op", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getE11_Op_Op(), ecorePackage.getEString(), "op", null, 0, -1, E11_Op.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getE11_Op_Right(), this.getE12(), null, "right", null, 0, 1, E11_Op.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(arrowTokEClass, ArrowTok.class, "ArrowTok", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 

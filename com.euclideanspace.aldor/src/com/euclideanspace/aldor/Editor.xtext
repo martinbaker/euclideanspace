@@ -611,31 +611,23 @@ Binding_Collection hidden(WS,KW_NEWLINE):
  * { $$ = abNewPLambda(APOS($1),$1,abZip,$3); }
  * ;
  */
+ /* This rule allows any statement or new: Assign, Define or Lambda 
+  * I have had to comment out Assign, Define or Lambdas for now
+  * as they seem to cause left recursion
+  */
 BindingL_Infixed_AnyStatement hidden(WS,KW_NEWLINE):
  bas9=AnyStatement
-| =>(Infixed 'assign' bia=BindingL_Infixed_AnyStatement)
-| =>(Infixed KW_2EQ bia=BindingL_Infixed_AnyStatement)
-| =>(Infixed KW_MARROW bia=BindingL_Infixed_AnyStatement)
-| =>(Infixed KW_MAPSTO bia=BindingL_Infixed_AnyStatement)
-| =>(Infixed KW_MAPSTOSTAR bia=BindingL_Infixed_AnyStatement)
+//| =>(Infixed ('assign'|KW_2EQ|KW_MARROW|KW_MAPSTO|KW_MAPSTOSTAR) bia=BindingL_Infixed_AnyStatement)
 ;
 
 BindingL_Infixed_BalStatement hidden(WS,KW_NEWLINE):
  BalStatement
-| =>(Infixed 'assign' bib=BindingL_Infixed_BalStatement)
-| =>(Infixed KW_2EQ bib=BindingL_Infixed_BalStatement)
-| =>(Infixed KW_MARROW bib=BindingL_Infixed_BalStatement)
-| =>(Infixed KW_MAPSTO bib=BindingL_Infixed_BalStatement)
-| =>(Infixed KW_MAPSTOSTAR bib=BindingL_Infixed_BalStatement)
+| =>(Infixed ('assign'|KW_2EQ|KW_MARROW|KW_MAPSTO|KW_MAPSTOSTAR) bib=BindingL_Infixed_BalStatement)
 ;
 
 BindingL_Infixed_Collection hidden(WS,KW_NEWLINE):
  Collection
-| =>(Infixed 'assign' bic=BindingL_Infixed_Collection)
-| =>(Infixed KW_2EQ bic=BindingL_Infixed_Collection)
-| =>(Infixed KW_MARROW bic=BindingL_Infixed_Collection)
-| =>(Infixed KW_MAPSTO bic=BindingL_Infixed_Collection)
-| =>(Infixed KW_MAPSTOSTAR bic=BindingL_Infixed_Collection)
+| =>(Infixed ('assign'|KW_2EQ|KW_MARROW|KW_MAPSTO|KW_MAPSTOSTAR) bic=BindingL_Infixed_Collection)
 ;
 
 /* Substituted Rules in Xtext:
@@ -654,13 +646,18 @@ BindingL_Infixed_Collection hidden(WS,KW_NEWLINE):
  * { $$ = abNewPLambda(APOS($1),$1,abZip,$3); }
  * ;
  */
+//BindingR_InfixedExprsDecl_AnyStatement hidden(WS,KW_NEWLINE):
+// InfixedExprsDecl
+//| => (InfixedExprsDecl 'assign' bas=Binding_AnyStatement)
+//| => (InfixedExprsDecl KW_2EQ bas=Binding_AnyStatement)
+//| => (InfixedExprsDecl KW_MARROW bas=Binding_AnyStatement)
+//| => (InfixedExprsDecl KW_MAPSTO bas=Binding_AnyStatement)
+//| => (InfixedExprsDecl KW_MAPSTOSTAR bas=Binding_AnyStatement)
+//;
 BindingR_InfixedExprsDecl_AnyStatement hidden(WS,KW_NEWLINE):
- InfixedExprsDecl
-| => (InfixedExprsDecl 'assign' bas=Binding_AnyStatement)
-| => (InfixedExprsDecl KW_2EQ bas=Binding_AnyStatement)
-| => (InfixedExprsDecl KW_MARROW bas=Binding_AnyStatement)
-| => (InfixedExprsDecl KW_MAPSTO bas=Binding_AnyStatement)
-| => (InfixedExprsDecl KW_MAPSTOSTAR bas=Binding_AnyStatement)
+ InfixedExprsDecl (
+   ('assign'|KW_2EQ|KW_MARROW|KW_MAPSTO|KW_MAPSTOSTAR)
+     bas=Binding_AnyStatement)?
 ;
 
 /*
@@ -815,7 +812,8 @@ AlwaysPart_BalStatement hidden(WS,KW_NEWLINE):
  * Iterators
  */
 Collection hidden(WS,KW_NEWLINE):
- Infixed i3=Iterators?
+ //Infixed i3=Iterators? // iterators allow for zero cases
+ Infixed i3=Iterators
 ;
 
 Iterators hidden(WS,KW_NEWLINE):
@@ -827,7 +825,7 @@ Iterators hidden(WS,KW_NEWLINE):
  */
 Iterators1 hidden(WS,KW_NEWLINE):
 	{Iterators1}
-	'temp27'
+//	'temp27'
   itr += Iterator*
 ;
 
@@ -858,7 +856,7 @@ Infixed hidden(WS,KW_NEWLINE):
 
 InfixedExpr hidden(WS,KW_NEWLINE):
  E11_Op
-| E3
+| =>E3
 ;
 
 
@@ -940,10 +938,10 @@ OpQualTail hidden(WS,KW_NEWLINE):
 
 E14 hidden(WS,KW_NEWLINE):
  e15left=E15
-| => (e15left=E15? 'with' dm=DeclMolecule)
-| => (e15left=E15? 'add' dm=DeclMolecule)
-| => (e15left=E15 'except' e15right=E15)
-| => (e15left=E15 'throw' e15right=E15)
+| => (e15left=E15? op='with' dm=DeclMolecule)
+| => (e15left=E15? op='add' dm=DeclMolecule)
+| => (e15left=E15 op='except' e15right=E15)
+| => (e15left=E15 op='throw' e15right=E15)
 ;
 
 E15 hidden(WS,KW_NEWLINE):
@@ -956,7 +954,7 @@ E15 hidden(WS,KW_NEWLINE):
 Op hidden(WS,KW_NEWLINE):
  {Op}aop=ArrowOp
 | {Op}aop=LatticeOp
-| {Op}RelationOp
+| {Op}aop=RelationOp
 | {Op}aop=SegOp
 | {Op}aop=PlusOp
 | {Op}aop=QuotientOp
@@ -1005,11 +1003,12 @@ TimesTok: KW_STAR | KW_SLASH | KW_BACKSLASH ;
 PowerTok: KW_2STAR | KW_HAT ;
 
 /*
- * Juxtaposed Expressions
- * 
- * A prefix application typically has the following form:
- * 
- *  f(a1, ..., an)
+ * Function Application
+ * We can express function application by using bracket notation like this:
+ * f(a1, ..., an)
+ * So the function is expressed as a prefix to its arguments.
+ * If there is only one argument then Aldor also allows us to express
+ * function application by using juxtaposed expressions.
  * 
  * There are two additional forms for specifying a prefix
  * application to one argument: juxtaposition and an infix dot.
@@ -1027,7 +1026,6 @@ PowerTok: KW_2STAR | KW_HAT ;
  *  f(a)(b)(c)   -- is equivalent to (((f(a))(b))(c))
  *
  */
-
 Application hidden(WS,KW_NEWLINE):
  RightJuxtaposed
 ;
@@ -1040,9 +1038,7 @@ LeftJuxtaposed hidden(WS,KW_NEWLINE):
  Jleft_Molecule
 ;
 
-/* Substituted Rules in Xtext:
- * Jright(Molecule)
- * Jright(Atom)
+/* Substituted Rules in Xtext: Jright(Molecule) and Jright(Atom)
  * Jright(H)
  * : Jleft(H)
  * | Jleft(H) Jright(Atom)
@@ -1102,12 +1098,24 @@ Jright_Atom hidden(WS,KW_NEWLINE):
  * ;
  */
 Jleft_Molecule hidden(WS,KW_NEWLINE):
-'not' be=BlockEnclosure
+('not' be+=BlockEnclosure)
+| =>(m=Molecule be+=BlockEnclosure*)
 | (m=Molecule (KW_DOT bm+=BlockMolecule)*)
 ;
 
+/*
+ * not quite correct. We need to implement:
+ * Jleft(H)
+ * : H
+ * | KW_Not BlockEnclosure
+ * | Jleft(H) BlockEnclosure
+ * | Jleft(H) KW_Dot BlockMolecule
+;
+ */
 Jleft_Atom hidden(WS,KW_NEWLINE):
-'not' BlockEnclosure
+(a=Atom be+=BlockEnclosure*)
+(n='not' be+=BlockEnclosure)
+//| =>(a=Atom be+=BlockEnclosure*)
 | (Atom (KW_DOT bm4+=BlockMolecule)*)
 ;
 
@@ -1150,26 +1158,16 @@ Block hidden(WS,KW_NEWLINE):
 ;
 
 /*
- * Parened and Bracketed work correctly with e=Atom but we really need e=Expression
- * which causes error - may be too complex
+ * 
  */
 Parened hidden(WS,KW_NEWLINE):
-//	{Parened}
-//KW_OPAREN KW_CPAREN
-//| KW_OPAREN e=Expression KW_CPAREN
-//| KW_OPAREN e=Application KW_CPAREN
- op=KW_OPAREN e=Atom? KW_CPAREN
+ op=KW_OPAREN e=Expression? KW_CPAREN
+// op=KW_OPAREN e=E3? KW_CPAREN
 ;
 
 Bracketed hidden(WS,KW_NEWLINE):
-//  ({Bracketed} KW_OBRACK KW_CBRACK)
-//  | (KW_OBRACK e=Expression KW_CBRACK)
-//  | KW_OBRACK e=Application KW_CBRACK
-//|
-  (op=KW_OBRACK e=Atom? KW_CBRACK) //ok
-//  (op=KW_OBRACK e=Enclosure? KW_CBRACK) //notOK
-//  (op=KW_OBRACK =>e=Bracketed? KW_CBRACK) //notOK
-//  (s='start' e=Bracketed? 'end') //notOK
+ op=KW_OBRACK e=Expression? KW_CBRACK
+// op=KW_OBRACK e=E3? KW_CBRACK
 ;
 
 QuotedIds hidden(WS,KW_NEWLINE):
@@ -1295,8 +1293,9 @@ LatticeTok =>(KW_DOLLAR oqt=OpQualTail)?
 * 'is' | 'isnt' | 'case' ;
  */
 QualOp_RelationTok hidden(WS,KW_NEWLINE):
-	'temp99'
-//RelationTok (op+=KW_DOLLAR oqt=OpQualTail)?
+//	'temp99'
+{QualOp_RelationTok}
+RelationTok (op+=KW_DOLLAR oqt=OpQualTail)?
 ;
 
 QualOp_SegTok hidden(WS,KW_NEWLINE):

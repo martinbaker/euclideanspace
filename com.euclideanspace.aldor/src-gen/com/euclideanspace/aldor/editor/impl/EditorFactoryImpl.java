@@ -115,6 +115,7 @@ public class EditorFactoryImpl extends EFactoryImpl implements EditorFactory
       case EditorPackage.NAKED_OP: return createNakedOp();
       case EditorPackage.ARROW_OP: return createArrowOp();
       case EditorPackage.LATTICE_OP: return createLatticeOp();
+      case EditorPackage.RELATION_OP: return createRelationOp();
       case EditorPackage.SEG_OP: return createSegOp();
       case EditorPackage.PLUS_OP: return createPlusOp();
       case EditorPackage.QUOTIENT_OP: return createQuotientOp();
@@ -150,6 +151,7 @@ public class EditorFactoryImpl extends EFactoryImpl implements EditorFactory
       case EditorPackage.UNQUAL_OP_POWER_TOK: return createUnqualOp_PowerTok();
       case EditorPackage.QUAL_OP_ARROW_TOK: return createQualOp_ArrowTok();
       case EditorPackage.QUAL_OP_LATTICE_TOK: return createQualOp_LatticeTok();
+      case EditorPackage.QUAL_OP_RELATION_TOK: return createQualOp_RelationTok();
       case EditorPackage.QUAL_OP_SEG_TOK: return createQualOp_SegTok();
       case EditorPackage.QUAL_OP_PLUS_TOK: return createQualOp_PlusTok();
       case EditorPackage.QUAL_OP_QUOTIENT_TOK: return createQualOp_QuotientTok();
@@ -755,6 +757,17 @@ public class EditorFactoryImpl extends EFactoryImpl implements EditorFactory
    * <!-- end-user-doc -->
    * @generated
    */
+  public RelationOp createRelationOp()
+  {
+    RelationOpImpl relationOp = new RelationOpImpl();
+    return relationOp;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public SegOp createSegOp()
   {
     SegOpImpl segOp = new SegOpImpl();
@@ -1133,6 +1146,17 @@ public class EditorFactoryImpl extends EFactoryImpl implements EditorFactory
   {
     QualOp_LatticeTokImpl qualOp_LatticeTok = new QualOp_LatticeTokImpl();
     return qualOp_LatticeTok;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public QualOp_RelationTok createQualOp_RelationTok()
+  {
+    QualOp_RelationTokImpl qualOp_RelationTok = new QualOp_RelationTokImpl();
+    return qualOp_RelationTok;
   }
 
   /**

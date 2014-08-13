@@ -3,6 +3,7 @@
 package com.euclideanspace.aldor.editor.impl;
 
 import com.euclideanspace.aldor.editor.Atom;
+import com.euclideanspace.aldor.editor.BlockEnclosure;
 import com.euclideanspace.aldor.editor.BlockMolecule;
 import com.euclideanspace.aldor.editor.EditorPackage;
 import com.euclideanspace.aldor.editor.Id;
@@ -34,6 +35,9 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * The following features are implemented:
  * <ul>
  *   <li>{@link com.euclideanspace.aldor.editor.impl.AtomImpl#getRight2 <em>Right2</em>}</li>
+ *   <li>{@link com.euclideanspace.aldor.editor.impl.AtomImpl#getA <em>A</em>}</li>
+ *   <li>{@link com.euclideanspace.aldor.editor.impl.AtomImpl#getBe <em>Be</em>}</li>
+ *   <li>{@link com.euclideanspace.aldor.editor.impl.AtomImpl#getN <em>N</em>}</li>
  *   <li>{@link com.euclideanspace.aldor.editor.impl.AtomImpl#getLab <em>Lab</em>}</li>
  *   <li>{@link com.euclideanspace.aldor.editor.impl.AtomImpl#getBm4 <em>Bm4</em>}</li>
  *   <li>{@link com.euclideanspace.aldor.editor.impl.AtomImpl#getIden <em>Iden</em>}</li>
@@ -54,6 +58,46 @@ public class AtomImpl extends LabeledImpl implements Atom
    * @ordered
    */
   protected Jright_Atom right2;
+
+  /**
+   * The cached value of the '{@link #getA() <em>A</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getA()
+   * @generated
+   * @ordered
+   */
+  protected Atom a;
+
+  /**
+   * The cached value of the '{@link #getBe() <em>Be</em>}' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getBe()
+   * @generated
+   * @ordered
+   */
+  protected EList<BlockEnclosure> be;
+
+  /**
+   * The default value of the '{@link #getN() <em>N</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getN()
+   * @generated
+   * @ordered
+   */
+  protected static final String N_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getN() <em>N</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getN()
+   * @generated
+   * @ordered
+   */
+  protected String n = N_EDEFAULT;
 
   /**
    * The cached value of the '{@link #getLab() <em>Lab</em>}' containment reference.
@@ -172,6 +216,91 @@ public class AtomImpl extends LabeledImpl implements Atom
     }
     else if (eNotificationRequired())
       eNotify(new ENotificationImpl(this, Notification.SET, EditorPackage.ATOM__RIGHT2, newRight2, newRight2));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Atom getA()
+  {
+    return a;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetA(Atom newA, NotificationChain msgs)
+  {
+    Atom oldA = a;
+    a = newA;
+    if (eNotificationRequired())
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, EditorPackage.ATOM__A, oldA, newA);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setA(Atom newA)
+  {
+    if (newA != a)
+    {
+      NotificationChain msgs = null;
+      if (a != null)
+        msgs = ((InternalEObject)a).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - EditorPackage.ATOM__A, null, msgs);
+      if (newA != null)
+        msgs = ((InternalEObject)newA).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - EditorPackage.ATOM__A, null, msgs);
+      msgs = basicSetA(newA, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, EditorPackage.ATOM__A, newA, newA));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EList<BlockEnclosure> getBe()
+  {
+    if (be == null)
+    {
+      be = new EObjectContainmentEList<BlockEnclosure>(BlockEnclosure.class, this, EditorPackage.ATOM__BE);
+    }
+    return be;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public String getN()
+  {
+    return n;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setN(String newN)
+  {
+    String oldN = n;
+    n = newN;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, EditorPackage.ATOM__N, oldN, n));
   }
 
   /**
@@ -319,6 +448,10 @@ public class AtomImpl extends LabeledImpl implements Atom
     {
       case EditorPackage.ATOM__RIGHT2:
         return basicSetRight2(null, msgs);
+      case EditorPackage.ATOM__A:
+        return basicSetA(null, msgs);
+      case EditorPackage.ATOM__BE:
+        return ((InternalEList<?>)getBe()).basicRemove(otherEnd, msgs);
       case EditorPackage.ATOM__LAB:
         return basicSetLab(null, msgs);
       case EditorPackage.ATOM__BM4:
@@ -341,6 +474,12 @@ public class AtomImpl extends LabeledImpl implements Atom
     {
       case EditorPackage.ATOM__RIGHT2:
         return getRight2();
+      case EditorPackage.ATOM__A:
+        return getA();
+      case EditorPackage.ATOM__BE:
+        return getBe();
+      case EditorPackage.ATOM__N:
+        return getN();
       case EditorPackage.ATOM__LAB:
         return getLab();
       case EditorPackage.ATOM__BM4:
@@ -366,6 +505,16 @@ public class AtomImpl extends LabeledImpl implements Atom
     {
       case EditorPackage.ATOM__RIGHT2:
         setRight2((Jright_Atom)newValue);
+        return;
+      case EditorPackage.ATOM__A:
+        setA((Atom)newValue);
+        return;
+      case EditorPackage.ATOM__BE:
+        getBe().clear();
+        getBe().addAll((Collection<? extends BlockEnclosure>)newValue);
+        return;
+      case EditorPackage.ATOM__N:
+        setN((String)newValue);
         return;
       case EditorPackage.ATOM__LAB:
         setLab((Labeled)newValue);
@@ -397,6 +546,15 @@ public class AtomImpl extends LabeledImpl implements Atom
       case EditorPackage.ATOM__RIGHT2:
         setRight2((Jright_Atom)null);
         return;
+      case EditorPackage.ATOM__A:
+        setA((Atom)null);
+        return;
+      case EditorPackage.ATOM__BE:
+        getBe().clear();
+        return;
+      case EditorPackage.ATOM__N:
+        setN(N_EDEFAULT);
+        return;
       case EditorPackage.ATOM__LAB:
         setLab((Labeled)null);
         return;
@@ -425,6 +583,12 @@ public class AtomImpl extends LabeledImpl implements Atom
     {
       case EditorPackage.ATOM__RIGHT2:
         return right2 != null;
+      case EditorPackage.ATOM__A:
+        return a != null;
+      case EditorPackage.ATOM__BE:
+        return be != null && !be.isEmpty();
+      case EditorPackage.ATOM__N:
+        return N_EDEFAULT == null ? n != null : !N_EDEFAULT.equals(n);
       case EditorPackage.ATOM__LAB:
         return lab != null;
       case EditorPackage.ATOM__BM4:
@@ -457,6 +621,9 @@ public class AtomImpl extends LabeledImpl implements Atom
     {
       switch (derivedFeatureID)
       {
+        case EditorPackage.ATOM__A: return EditorPackage.JLEFT_ATOM__A;
+        case EditorPackage.ATOM__BE: return EditorPackage.JLEFT_ATOM__BE;
+        case EditorPackage.ATOM__N: return EditorPackage.JLEFT_ATOM__N;
         default: return -1;
       }
     }
@@ -497,6 +664,9 @@ public class AtomImpl extends LabeledImpl implements Atom
     {
       switch (baseFeatureID)
       {
+        case EditorPackage.JLEFT_ATOM__A: return EditorPackage.ATOM__A;
+        case EditorPackage.JLEFT_ATOM__BE: return EditorPackage.ATOM__BE;
+        case EditorPackage.JLEFT_ATOM__N: return EditorPackage.ATOM__N;
         default: return -1;
       }
     }
@@ -528,7 +698,9 @@ public class AtomImpl extends LabeledImpl implements Atom
     if (eIsProxy()) return super.toString();
 
     StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (lit: ");
+    result.append(" (n: ");
+    result.append(n);
+    result.append(", lit: ");
     result.append(lit);
     result.append(')');
     return result.toString();

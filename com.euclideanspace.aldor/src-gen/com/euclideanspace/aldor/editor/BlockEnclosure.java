@@ -2,6 +2,7 @@
  */
 package com.euclideanspace.aldor.editor;
 
+import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
@@ -13,6 +14,6 @@ package com.euclideanspace.aldor.editor;
  * @model
  * @generated
  */
-public interface BlockEnclosure extends Jleft_Atom
+public interface BlockEnclosure extends EObject
 {
 } // BlockEnclosure

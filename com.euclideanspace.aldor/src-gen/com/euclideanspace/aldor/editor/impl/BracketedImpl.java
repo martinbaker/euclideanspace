@@ -2,9 +2,9 @@
  */
 package com.euclideanspace.aldor.editor.impl;
 
-import com.euclideanspace.aldor.editor.Atom;
 import com.euclideanspace.aldor.editor.Bracketed;
 import com.euclideanspace.aldor.editor.EditorPackage;
+import com.euclideanspace.aldor.editor.Expression;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
@@ -37,7 +37,7 @@ public class BracketedImpl extends EnclosureImpl implements Bracketed
    * @generated
    * @ordered
    */
-  protected Atom e;
+  protected Expression e;
 
   /**
    * <!-- begin-user-doc -->
@@ -65,7 +65,7 @@ public class BracketedImpl extends EnclosureImpl implements Bracketed
    * <!-- end-user-doc -->
    * @generated
    */
-  public Atom getE()
+  public Expression getE()
   {
     return e;
   }
@@ -75,9 +75,9 @@ public class BracketedImpl extends EnclosureImpl implements Bracketed
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetE(Atom newE, NotificationChain msgs)
+  public NotificationChain basicSetE(Expression newE, NotificationChain msgs)
   {
-    Atom oldE = e;
+    Expression oldE = e;
     e = newE;
     if (eNotificationRequired())
     {
@@ -92,7 +92,7 @@ public class BracketedImpl extends EnclosureImpl implements Bracketed
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setE(Atom newE)
+  public void setE(Expression newE)
   {
     if (newE != e)
     {
@@ -151,7 +151,7 @@ public class BracketedImpl extends EnclosureImpl implements Bracketed
     switch (featureID)
     {
       case EditorPackage.BRACKETED__E:
-        setE((Atom)newValue);
+        setE((Expression)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -168,7 +168,7 @@ public class BracketedImpl extends EnclosureImpl implements Bracketed
     switch (featureID)
     {
       case EditorPackage.BRACKETED__E:
-        setE((Atom)null);
+        setE((Expression)null);
         return;
     }
     super.eUnset(featureID);

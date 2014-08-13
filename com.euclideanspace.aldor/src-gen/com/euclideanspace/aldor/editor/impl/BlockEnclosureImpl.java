@@ -7,6 +7,8 @@ import com.euclideanspace.aldor.editor.EditorPackage;
 
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+
 /**
  * <!-- begin-user-doc -->
  * An implementation of the model object '<em><b>Block Enclosure</b></em>'.
@@ -16,7 +18,7 @@ import org.eclipse.emf.ecore.EClass;
  *
  * @generated
  */
-public class BlockEnclosureImpl extends Jleft_AtomImpl implements BlockEnclosure
+public class BlockEnclosureImpl extends MinimalEObjectImpl.Container implements BlockEnclosure
 {
   /**
    * <!-- begin-user-doc -->

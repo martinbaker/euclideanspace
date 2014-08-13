@@ -2,8 +2,8 @@
  */
 package com.euclideanspace.aldor.editor.impl;
 
-import com.euclideanspace.aldor.editor.Atom;
 import com.euclideanspace.aldor.editor.EditorPackage;
+import com.euclideanspace.aldor.editor.Expression;
 import com.euclideanspace.aldor.editor.Parened;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -37,7 +37,7 @@ public class ParenedImpl extends EnclosureImpl implements Parened
    * @generated
    * @ordered
    */
-  protected Atom e;
+  protected Expression e;
 
   /**
    * <!-- begin-user-doc -->
@@ -65,7 +65,7 @@ public class ParenedImpl extends EnclosureImpl implements Parened
    * <!-- end-user-doc -->
    * @generated
    */
-  public Atom getE()
+  public Expression getE()
   {
     return e;
   }
@@ -75,9 +75,9 @@ public class ParenedImpl extends EnclosureImpl implements Parened
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetE(Atom newE, NotificationChain msgs)
+  public NotificationChain basicSetE(Expression newE, NotificationChain msgs)
   {
-    Atom oldE = e;
+    Expression oldE = e;
     e = newE;
     if (eNotificationRequired())
     {
@@ -92,7 +92,7 @@ public class ParenedImpl extends EnclosureImpl implements Parened
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setE(Atom newE)
+  public void setE(Expression newE)
   {
     if (newE != e)
     {
@@ -151,7 +151,7 @@ public class ParenedImpl extends EnclosureImpl implements Parened
     switch (featureID)
     {
       case EditorPackage.PARENED__E:
-        setE((Atom)newValue);
+        setE((Expression)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -168,7 +168,7 @@ public class ParenedImpl extends EnclosureImpl implements Parened
     switch (featureID)
     {
       case EditorPackage.PARENED__E:
-        setE((Atom)null);
+        setE((Expression)null);
         return;
     }
     super.eUnset(featureID);

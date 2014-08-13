@@ -330,6 +330,11 @@ public class EditorAdapterFactory extends AdapterFactoryImpl
         return createLatticeOpAdapter();
       }
       @Override
+      public Adapter caseRelationOp(RelationOp object)
+      {
+        return createRelationOpAdapter();
+      }
+      @Override
       public Adapter caseSegOp(SegOp object)
       {
         return createSegOpAdapter();
@@ -503,6 +508,11 @@ public class EditorAdapterFactory extends AdapterFactoryImpl
       public Adapter caseQualOp_LatticeTok(QualOp_LatticeTok object)
       {
         return createQualOp_LatticeTokAdapter();
+      }
+      @Override
+      public Adapter caseQualOp_RelationTok(QualOp_RelationTok object)
+      {
+        return createQualOp_RelationTokAdapter();
       }
       @Override
       public Adapter caseQualOp_SegTok(QualOp_SegTok object)
@@ -1462,6 +1472,21 @@ public class EditorAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
+   * Creates a new adapter for an object of class '{@link com.euclideanspace.aldor.editor.RelationOp <em>Relation Op</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see com.euclideanspace.aldor.editor.RelationOp
+   * @generated
+   */
+  public Adapter createRelationOpAdapter()
+  {
+    return null;
+  }
+
+  /**
    * Creates a new adapter for an object of class '{@link com.euclideanspace.aldor.editor.SegOp <em>Seg Op</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
@@ -1982,6 +2007,21 @@ public class EditorAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createQualOp_LatticeTokAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link com.euclideanspace.aldor.editor.QualOp_RelationTok <em>Qual Op Relation Tok</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see com.euclideanspace.aldor.editor.QualOp_RelationTok
+   * @generated
+   */
+  public Adapter createQualOp_RelationTokAdapter()
   {
     return null;
   }

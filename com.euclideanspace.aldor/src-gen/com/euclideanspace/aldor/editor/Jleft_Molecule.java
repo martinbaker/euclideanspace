@@ -25,30 +25,20 @@ import org.eclipse.emf.common.util.EList;
 public interface Jleft_Molecule extends LeftJuxtaposed, Jright_Molecule
 {
   /**
-   * Returns the value of the '<em><b>Be</b></em>' containment reference.
+   * Returns the value of the '<em><b>Be</b></em>' containment reference list.
+   * The list contents are of type {@link com.euclideanspace.aldor.editor.BlockEnclosure}.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Be</em>' containment reference isn't clear,
+   * If the meaning of the '<em>Be</em>' containment reference list isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Be</em>' containment reference.
-   * @see #setBe(BlockEnclosure)
+   * @return the value of the '<em>Be</em>' containment reference list.
    * @see com.euclideanspace.aldor.editor.EditorPackage#getJleft_Molecule_Be()
    * @model containment="true"
    * @generated
    */
-  BlockEnclosure getBe();
-
-  /**
-   * Sets the value of the '{@link com.euclideanspace.aldor.editor.Jleft_Molecule#getBe <em>Be</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Be</em>' containment reference.
-   * @see #getBe()
-   * @generated
-   */
-  void setBe(BlockEnclosure value);
+  EList<BlockEnclosure> getBe();
 
   /**
    * Returns the value of the '<em><b>M</b></em>' containment reference.

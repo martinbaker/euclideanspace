@@ -30,12 +30,12 @@ public interface Parened extends Enclosure
    * </p>
    * <!-- end-user-doc -->
    * @return the value of the '<em>E</em>' containment reference.
-   * @see #setE(Atom)
+   * @see #setE(Expression)
    * @see com.euclideanspace.aldor.editor.EditorPackage#getParened_E()
    * @model containment="true"
    * @generated
    */
-  Atom getE();
+  Expression getE();
 
   /**
    * Sets the value of the '{@link com.euclideanspace.aldor.editor.Parened#getE <em>E</em>}' containment reference.
@@ -45,6 +45,6 @@ public interface Parened extends Enclosure
    * @see #getE()
    * @generated
    */
-  void setE(Atom value);
+  void setE(Expression value);
 
 } // Parened

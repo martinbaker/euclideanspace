@@ -57,14 +57,14 @@ public class Jleft_MoleculeImpl extends LeftJuxtaposedImpl implements Jleft_Mole
   protected Jright_Atom right;
 
   /**
-   * The cached value of the '{@link #getBe() <em>Be</em>}' containment reference.
+   * The cached value of the '{@link #getBe() <em>Be</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getBe()
    * @generated
    * @ordered
    */
-  protected BlockEnclosure be;
+  protected EList<BlockEnclosure> be;
 
   /**
    * The cached value of the '{@link #getM() <em>M</em>}' containment reference.
@@ -160,47 +160,13 @@ public class Jleft_MoleculeImpl extends LeftJuxtaposedImpl implements Jleft_Mole
    * <!-- end-user-doc -->
    * @generated
    */
-  public BlockEnclosure getBe()
+  public EList<BlockEnclosure> getBe()
   {
+    if (be == null)
+    {
+      be = new EObjectContainmentEList<BlockEnclosure>(BlockEnclosure.class, this, EditorPackage.JLEFT_MOLECULE__BE);
+    }
     return be;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public NotificationChain basicSetBe(BlockEnclosure newBe, NotificationChain msgs)
-  {
-    BlockEnclosure oldBe = be;
-    be = newBe;
-    if (eNotificationRequired())
-    {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, EditorPackage.JLEFT_MOLECULE__BE, oldBe, newBe);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setBe(BlockEnclosure newBe)
-  {
-    if (newBe != be)
-    {
-      NotificationChain msgs = null;
-      if (be != null)
-        msgs = ((InternalEObject)be).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - EditorPackage.JLEFT_MOLECULE__BE, null, msgs);
-      if (newBe != null)
-        msgs = ((InternalEObject)newBe).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - EditorPackage.JLEFT_MOLECULE__BE, null, msgs);
-      msgs = basicSetBe(newBe, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, EditorPackage.JLEFT_MOLECULE__BE, newBe, newBe));
   }
 
   /**
@@ -278,7 +244,7 @@ public class Jleft_MoleculeImpl extends LeftJuxtaposedImpl implements Jleft_Mole
       case EditorPackage.JLEFT_MOLECULE__RIGHT:
         return basicSetRight(null, msgs);
       case EditorPackage.JLEFT_MOLECULE__BE:
-        return basicSetBe(null, msgs);
+        return ((InternalEList<?>)getBe()).basicRemove(otherEnd, msgs);
       case EditorPackage.JLEFT_MOLECULE__M:
         return basicSetM(null, msgs);
       case EditorPackage.JLEFT_MOLECULE__BM:
@@ -324,7 +290,8 @@ public class Jleft_MoleculeImpl extends LeftJuxtaposedImpl implements Jleft_Mole
         setRight((Jright_Atom)newValue);
         return;
       case EditorPackage.JLEFT_MOLECULE__BE:
-        setBe((BlockEnclosure)newValue);
+        getBe().clear();
+        getBe().addAll((Collection<? extends BlockEnclosure>)newValue);
         return;
       case EditorPackage.JLEFT_MOLECULE__M:
         setM((Molecule)newValue);
@@ -351,7 +318,7 @@ public class Jleft_MoleculeImpl extends LeftJuxtaposedImpl implements Jleft_Mole
         setRight((Jright_Atom)null);
         return;
       case EditorPackage.JLEFT_MOLECULE__BE:
-        setBe((BlockEnclosure)null);
+        getBe().clear();
         return;
       case EditorPackage.JLEFT_MOLECULE__M:
         setM((Molecule)null);
@@ -376,7 +343,7 @@ public class Jleft_MoleculeImpl extends LeftJuxtaposedImpl implements Jleft_Mole
       case EditorPackage.JLEFT_MOLECULE__RIGHT:
         return right != null;
       case EditorPackage.JLEFT_MOLECULE__BE:
-        return be != null;
+        return be != null && !be.isEmpty();
       case EditorPackage.JLEFT_MOLECULE__M:
         return m != null;
       case EditorPackage.JLEFT_MOLECULE__BM:

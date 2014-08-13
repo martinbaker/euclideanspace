@@ -482,6 +482,15 @@ public interface EditorFactory extends EFactory
   LatticeOp createLatticeOp();
 
   /**
+   * Returns a new object of class '<em>Relation Op</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Relation Op</em>'.
+   * @generated
+   */
+  RelationOp createRelationOp();
+
+  /**
    * Returns a new object of class '<em>Seg Op</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -795,6 +804,15 @@ public interface EditorFactory extends EFactory
    * @generated
    */
   QualOp_LatticeTok createQualOp_LatticeTok();
+
+  /**
+   * Returns a new object of class '<em>Qual Op Relation Tok</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Qual Op Relation Tok</em>'.
+   * @generated
+   */
+  QualOp_RelationTok createQualOp_RelationTok();
 
   /**
    * Returns a new object of class '<em>Qual Op Seg Tok</em>'.
