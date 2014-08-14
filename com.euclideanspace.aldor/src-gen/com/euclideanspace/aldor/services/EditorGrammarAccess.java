@@ -2634,7 +2634,9 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cE11_OpParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
 		private final RuleCall cE3ParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
 		
-		//InfixedExpr hidden(WS, KW_NEWLINE):
+		/// *
+		// * if we enable 'returns Expr' then 'E11_E12' replaces id in AST
+		// * / / *returns Expr* / InfixedExpr hidden(WS, KW_NEWLINE):
 		//	E11_Op | => E3;
 		public ParserRule getRule() { return rule; }
 
@@ -2655,21 +2657,22 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cLeftE4ParserRuleCall_0_0 = (RuleCall)cLeftAssignment_0.eContents().get(0);
 		private final Group cGroup_1 = (Group)cGroup.eContents().get(1);
 		private final Action cE3LeftAction_1_0 = (Action)cGroup_1.eContents().get(0);
-		private final Alternatives cAlternatives_1_1 = (Alternatives)cGroup_1.eContents().get(1);
-		private final Assignment cOpAssignment_1_1_0 = (Assignment)cAlternatives_1_1.eContents().get(0);
-		private final Keyword cOpAndKeyword_1_1_0_0 = (Keyword)cOpAssignment_1_1_0.eContents().get(0);
-		private final Assignment cOpAssignment_1_1_1 = (Assignment)cAlternatives_1_1.eContents().get(1);
-		private final Keyword cOpOrKeyword_1_1_1_0 = (Keyword)cOpAssignment_1_1_1.eContents().get(0);
-		private final Assignment cOp2Assignment_1_1_2 = (Assignment)cAlternatives_1_1.eContents().get(2);
-		private final RuleCall cOp2LatticeOpParserRuleCall_1_1_2_0 = (RuleCall)cOp2Assignment_1_1_2.eContents().get(0);
+		private final Assignment cOpAssignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
+		private final Alternatives cOpAlternatives_1_1_0 = (Alternatives)cOpAssignment_1_1.eContents().get(0);
+		private final Keyword cOpAndKeyword_1_1_0_0 = (Keyword)cOpAlternatives_1_1_0.eContents().get(0);
+		private final Keyword cOpOrKeyword_1_1_0_1 = (Keyword)cOpAlternatives_1_1_0.eContents().get(1);
+		private final RuleCall cOpLatticeTokParserRuleCall_1_1_0_2 = (RuleCall)cOpAlternatives_1_1_0.eContents().get(2);
 		private final Assignment cRightAssignment_1_2 = (Assignment)cGroup_1.eContents().get(2);
 		private final RuleCall cRightE4ParserRuleCall_1_2_0 = (RuleCall)cRightAssignment_1_2.eContents().get(0);
 		
-		//E3 returns Expr hidden(WS, KW_NEWLINE):
-		//	left=E4 ({E3.left=current} (op+="and" | op+="or" | op2+=LatticeOp) right=E4)*;
+		/// *
+		// * 'and','or' logic operators
+		// * need to allow a 'qualified op', that is an operation followed by '$' and a type
+		// * / E3 returns Expr hidden(WS, KW_NEWLINE):
+		//	left=E4 ({E3.left=current} op=("and" / *QualOp_LatticeTok* / | "or" | LatticeTok) right=E4)*;
 		public ParserRule getRule() { return rule; }
 
-		//left=E4 ({E3.left=current} (op+="and" | op+="or" | op2+=LatticeOp) right=E4)*
+		//left=E4 ({E3.left=current} op=("and" / *QualOp_LatticeTok* / | "or" | LatticeTok) right=E4)*
 		public Group getGroup() { return cGroup; }
 
 		//left=E4
@@ -2678,32 +2681,26 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		//E4
 		public RuleCall getLeftE4ParserRuleCall_0_0() { return cLeftE4ParserRuleCall_0_0; }
 
-		//({E3.left=current} (op+="and" | op+="or" | op2+=LatticeOp) right=E4)*
+		//({E3.left=current} op=("and" / *QualOp_LatticeTok* / | "or" | LatticeTok) right=E4)*
 		public Group getGroup_1() { return cGroup_1; }
 
 		//{E3.left=current}
 		public Action getE3LeftAction_1_0() { return cE3LeftAction_1_0; }
 
-		//op+="and" | op+="or" | op2+=LatticeOp
-		public Alternatives getAlternatives_1_1() { return cAlternatives_1_1; }
+		//op=("and" / *QualOp_LatticeTok* / | "or" | LatticeTok)
+		public Assignment getOpAssignment_1_1() { return cOpAssignment_1_1; }
 
-		//op+="and"
-		public Assignment getOpAssignment_1_1_0() { return cOpAssignment_1_1_0; }
+		//"and" / *QualOp_LatticeTok* / | "or" | LatticeTok
+		public Alternatives getOpAlternatives_1_1_0() { return cOpAlternatives_1_1_0; }
 
 		//"and"
 		public Keyword getOpAndKeyword_1_1_0_0() { return cOpAndKeyword_1_1_0_0; }
 
-		//op+="or"
-		public Assignment getOpAssignment_1_1_1() { return cOpAssignment_1_1_1; }
-
 		//"or"
-		public Keyword getOpOrKeyword_1_1_1_0() { return cOpOrKeyword_1_1_1_0; }
+		public Keyword getOpOrKeyword_1_1_0_1() { return cOpOrKeyword_1_1_0_1; }
 
-		//op2+=LatticeOp
-		public Assignment getOp2Assignment_1_1_2() { return cOp2Assignment_1_1_2; }
-
-		//LatticeOp
-		public RuleCall getOp2LatticeOpParserRuleCall_1_1_2_0() { return cOp2LatticeOpParserRuleCall_1_1_2_0; }
+		//LatticeTok
+		public RuleCall getOpLatticeTokParserRuleCall_1_1_0_2() { return cOpLatticeTokParserRuleCall_1_1_0_2; }
 
 		//right=E4
 		public Assignment getRightAssignment_1_2() { return cRightAssignment_1_2; }
@@ -2714,150 +2711,111 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 
 	public class E4Elements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "E4");
-		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
-		private final Group cGroup_0 = (Group)cAlternatives.eContents().get(0);
-		private final Assignment cLeftAssignment_0_0 = (Assignment)cGroup_0.eContents().get(0);
-		private final RuleCall cLeftE5ParserRuleCall_0_0_0 = (RuleCall)cLeftAssignment_0_0.eContents().get(0);
-		private final Group cGroup_0_1 = (Group)cGroup_0.eContents().get(1);
-		private final Action cE4LeftAction_0_1_0 = (Action)cGroup_0_1.eContents().get(0);
-		private final Alternatives cAlternatives_0_1_1 = (Alternatives)cGroup_0_1.eContents().get(1);
-		private final Assignment cOpAssignment_0_1_1_0 = (Assignment)cAlternatives_0_1_1.eContents().get(0);
-		private final Keyword cOpHasKeyword_0_1_1_0_0 = (Keyword)cOpAssignment_0_1_1_0.eContents().get(0);
-		private final Assignment cOp2Assignment_0_1_1_1 = (Assignment)cAlternatives_0_1_1.eContents().get(1);
-		private final RuleCall cOp2RelationOpParserRuleCall_0_1_1_1_0 = (RuleCall)cOp2Assignment_0_1_1_1.eContents().get(0);
-		private final Assignment cRightAssignment_0_1_2 = (Assignment)cGroup_0_1.eContents().get(2);
-		private final RuleCall cRightE5ParserRuleCall_0_1_2_0 = (RuleCall)cRightAssignment_0_1_2.eContents().get(0);
-		private final Group cGroup_1 = (Group)cAlternatives.eContents().get(1);
-		private final RuleCall cRelationOpParserRuleCall_1_0 = (RuleCall)cGroup_1.eContents().get(0);
-		private final Assignment cRightAssignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
-		private final RuleCall cRightE5ParserRuleCall_1_1_0 = (RuleCall)cRightAssignment_1_1.eContents().get(0);
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Assignment cLeftAssignment_0 = (Assignment)cGroup.eContents().get(0);
+		private final RuleCall cLeftE5ParserRuleCall_0_0 = (RuleCall)cLeftAssignment_0.eContents().get(0);
+		private final Group cGroup_1 = (Group)cGroup.eContents().get(1);
+		private final Action cE4LeftAction_1_0 = (Action)cGroup_1.eContents().get(0);
+		private final Assignment cOpAssignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
+		private final Alternatives cOpAlternatives_1_1_0 = (Alternatives)cOpAssignment_1_1.eContents().get(0);
+		private final Keyword cOpHasKeyword_1_1_0_0 = (Keyword)cOpAlternatives_1_1_0.eContents().get(0);
+		private final RuleCall cOpRelationTokParserRuleCall_1_1_0_1 = (RuleCall)cOpAlternatives_1_1_0.eContents().get(1);
+		private final Assignment cRightAssignment_1_2 = (Assignment)cGroup_1.eContents().get(2);
+		private final RuleCall cRightE5ParserRuleCall_1_2_0 = (RuleCall)cRightAssignment_1_2.eContents().get(0);
 		
+		/// * relation operators
+		// * in YACC version this rule also includes relation operators as prefix
+		// * but for Antlr we need to move prefix operators somewhere else
+		// * 
+		// * need to allow a 'qualified op', that is an operation followed by '$' and a type
+		// * / //| (RelationOp {E4.left=current} right+=E5)
 		//E4 returns Expr hidden(WS, KW_NEWLINE):
-		//	left=E5 ({E4.left=current} (op+="has" | op2+=RelationOp) right=E5)* | RelationOp right=E5;
+		//	left=E5 ({E4.left=current} op=("has" / *RelationOp* / | RelationTok) right=E5)*;
 		public ParserRule getRule() { return rule; }
 
-		//left=E5 ({E4.left=current} (op+="has" | op2+=RelationOp) right=E5)* | RelationOp right=E5
-		public Alternatives getAlternatives() { return cAlternatives; }
-
-		//left=E5 ({E4.left=current} (op+="has" | op2+=RelationOp) right=E5)*
-		public Group getGroup_0() { return cGroup_0; }
+		//left=E5 ({E4.left=current} op=("has" / *RelationOp* / | RelationTok) right=E5)*
+		public Group getGroup() { return cGroup; }
 
 		//left=E5
-		public Assignment getLeftAssignment_0_0() { return cLeftAssignment_0_0; }
+		public Assignment getLeftAssignment_0() { return cLeftAssignment_0; }
 
 		//E5
-		public RuleCall getLeftE5ParserRuleCall_0_0_0() { return cLeftE5ParserRuleCall_0_0_0; }
+		public RuleCall getLeftE5ParserRuleCall_0_0() { return cLeftE5ParserRuleCall_0_0; }
 
-		//({E4.left=current} (op+="has" | op2+=RelationOp) right=E5)*
-		public Group getGroup_0_1() { return cGroup_0_1; }
-
-		//{E4.left=current}
-		public Action getE4LeftAction_0_1_0() { return cE4LeftAction_0_1_0; }
-
-		//op+="has" | op2+=RelationOp
-		public Alternatives getAlternatives_0_1_1() { return cAlternatives_0_1_1; }
-
-		//op+="has"
-		public Assignment getOpAssignment_0_1_1_0() { return cOpAssignment_0_1_1_0; }
-
-		//"has"
-		public Keyword getOpHasKeyword_0_1_1_0_0() { return cOpHasKeyword_0_1_1_0_0; }
-
-		//op2+=RelationOp
-		public Assignment getOp2Assignment_0_1_1_1() { return cOp2Assignment_0_1_1_1; }
-
-		//RelationOp
-		public RuleCall getOp2RelationOpParserRuleCall_0_1_1_1_0() { return cOp2RelationOpParserRuleCall_0_1_1_1_0; }
-
-		//right=E5
-		public Assignment getRightAssignment_0_1_2() { return cRightAssignment_0_1_2; }
-
-		//E5
-		public RuleCall getRightE5ParserRuleCall_0_1_2_0() { return cRightE5ParserRuleCall_0_1_2_0; }
-
-		//RelationOp right=E5
+		//({E4.left=current} op=("has" / *RelationOp* / | RelationTok) right=E5)*
 		public Group getGroup_1() { return cGroup_1; }
 
-		//RelationOp
-		public RuleCall getRelationOpParserRuleCall_1_0() { return cRelationOpParserRuleCall_1_0; }
+		//{E4.left=current}
+		public Action getE4LeftAction_1_0() { return cE4LeftAction_1_0; }
+
+		//op=("has" / *RelationOp* / | RelationTok)
+		public Assignment getOpAssignment_1_1() { return cOpAssignment_1_1; }
+
+		//"has" / *RelationOp* / | RelationTok
+		public Alternatives getOpAlternatives_1_1_0() { return cOpAlternatives_1_1_0; }
+
+		//"has"
+		public Keyword getOpHasKeyword_1_1_0_0() { return cOpHasKeyword_1_1_0_0; }
+
+		//RelationTok
+		public RuleCall getOpRelationTokParserRuleCall_1_1_0_1() { return cOpRelationTokParserRuleCall_1_1_0_1; }
 
 		//right=E5
-		public Assignment getRightAssignment_1_1() { return cRightAssignment_1_1; }
+		public Assignment getRightAssignment_1_2() { return cRightAssignment_1_2; }
 
 		//E5
-		public RuleCall getRightE5ParserRuleCall_1_1_0() { return cRightE5ParserRuleCall_1_1_0; }
+		public RuleCall getRightE5ParserRuleCall_1_2_0() { return cRightE5ParserRuleCall_1_2_0; }
 	}
 
 	public class E5Elements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "E5");
-		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
-		private final Group cGroup_0 = (Group)cAlternatives.eContents().get(0);
-		private final Group cGroup_0_0 = (Group)cGroup_0.eContents().get(0);
-		private final Assignment cLeftAssignment_0_0_0 = (Assignment)cGroup_0_0.eContents().get(0);
-		private final RuleCall cLeftE6ParserRuleCall_0_0_0_0 = (RuleCall)cLeftAssignment_0_0_0.eContents().get(0);
-		private final Group cGroup_0_0_1 = (Group)cGroup_0_0.eContents().get(1);
-		private final Action cE5LeftAction_0_0_1_0 = (Action)cGroup_0_0_1.eContents().get(0);
-		private final Assignment cOp5Assignment_0_0_1_1 = (Assignment)cGroup_0_0_1.eContents().get(1);
-		private final RuleCall cOp5SegOpParserRuleCall_0_0_1_1_0 = (RuleCall)cOp5Assignment_0_0_1_1.eContents().get(0);
-		private final Assignment cRightAssignment_0_0_1_2 = (Assignment)cGroup_0_0_1.eContents().get(2);
-		private final RuleCall cRightE6ParserRuleCall_0_0_1_2_0 = (RuleCall)cRightAssignment_0_0_1_2.eContents().get(0);
-		private final Group cGroup_1 = (Group)cAlternatives.eContents().get(1);
-		private final Assignment cLeftAssignment_1_0 = (Assignment)cGroup_1.eContents().get(0);
-		private final RuleCall cLeftE6ParserRuleCall_1_0_0 = (RuleCall)cLeftAssignment_1_0.eContents().get(0);
-		private final Assignment cOp5Assignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
-		private final RuleCall cOp5SegOpParserRuleCall_1_1_0 = (RuleCall)cOp5Assignment_1_1.eContents().get(0);
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Assignment cLeftAssignment_0 = (Assignment)cGroup.eContents().get(0);
+		private final RuleCall cLeftE6ParserRuleCall_0_0 = (RuleCall)cLeftAssignment_0.eContents().get(0);
+		private final Group cGroup_1 = (Group)cGroup.eContents().get(1);
+		private final Action cE5LeftAction_1_0 = (Action)cGroup_1.eContents().get(0);
+		private final Assignment cOpAssignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
+		private final RuleCall cOpSegTokParserRuleCall_1_1_0 = (RuleCall)cOpAssignment_1_1.eContents().get(0);
+		private final Assignment cRightAssignment_1_2 = (Assignment)cGroup_1.eContents().get(2);
+		private final RuleCall cRightE6ParserRuleCall_1_2_0 = (RuleCall)cRightAssignment_1_2.eContents().get(0);
 		
+		/// * segment operators: '..' and 'by'
+		// * in YACC version this rule also includes segment operators as postfix
+		// * but for Antlr we need to move postfix operators somewhere else
+		// * 
+		// * need to allow a 'qualified op', that is an operation followed by '$' and a type
+		// * / //=>
+		////| (left=E6 {E5.left=current} op5+=SegOp)
 		//E5 returns Expr hidden(WS, KW_NEWLINE):
-		//	=> (left=E6 ({E5.left=current} op5+=SegOp right=E6)*) | left=E6 op5+=SegOp;
+		//	left=E6 ({E5.left=current} op=SegTok / *SegOp* / right=E6)*;
 		public ParserRule getRule() { return rule; }
 
-		//=> (left=E6 ({E5.left=current} op5+=SegOp right=E6)*) | left=E6 op5+=SegOp
-		public Alternatives getAlternatives() { return cAlternatives; }
-
-		//=> (left=E6 ({E5.left=current} op5+=SegOp right=E6)*)
-		public Group getGroup_0() { return cGroup_0; }
-
-		//left=E6 ({E5.left=current} op5+=SegOp right=E6)*
-		public Group getGroup_0_0() { return cGroup_0_0; }
+		//left=E6 ({E5.left=current} op=SegTok / *SegOp* / right=E6)*
+		public Group getGroup() { return cGroup; }
 
 		//left=E6
-		public Assignment getLeftAssignment_0_0_0() { return cLeftAssignment_0_0_0; }
+		public Assignment getLeftAssignment_0() { return cLeftAssignment_0; }
 
 		//E6
-		public RuleCall getLeftE6ParserRuleCall_0_0_0_0() { return cLeftE6ParserRuleCall_0_0_0_0; }
+		public RuleCall getLeftE6ParserRuleCall_0_0() { return cLeftE6ParserRuleCall_0_0; }
 
-		//({E5.left=current} op5+=SegOp right=E6)*
-		public Group getGroup_0_0_1() { return cGroup_0_0_1; }
-
-		//{E5.left=current}
-		public Action getE5LeftAction_0_0_1_0() { return cE5LeftAction_0_0_1_0; }
-
-		//op5+=SegOp
-		public Assignment getOp5Assignment_0_0_1_1() { return cOp5Assignment_0_0_1_1; }
-
-		//SegOp
-		public RuleCall getOp5SegOpParserRuleCall_0_0_1_1_0() { return cOp5SegOpParserRuleCall_0_0_1_1_0; }
-
-		//right=E6
-		public Assignment getRightAssignment_0_0_1_2() { return cRightAssignment_0_0_1_2; }
-
-		//E6
-		public RuleCall getRightE6ParserRuleCall_0_0_1_2_0() { return cRightE6ParserRuleCall_0_0_1_2_0; }
-
-		//left=E6 op5+=SegOp
+		//({E5.left=current} op=SegTok / *SegOp* / right=E6)*
 		public Group getGroup_1() { return cGroup_1; }
 
-		//left=E6
-		public Assignment getLeftAssignment_1_0() { return cLeftAssignment_1_0; }
+		//{E5.left=current}
+		public Action getE5LeftAction_1_0() { return cE5LeftAction_1_0; }
+
+		//op=SegTok
+		public Assignment getOpAssignment_1_1() { return cOpAssignment_1_1; }
+
+		//SegTok
+		public RuleCall getOpSegTokParserRuleCall_1_1_0() { return cOpSegTokParserRuleCall_1_1_0; }
+
+		/// *SegOp* / right=E6
+		public Assignment getRightAssignment_1_2() { return cRightAssignment_1_2; }
 
 		//E6
-		public RuleCall getLeftE6ParserRuleCall_1_0_0() { return cLeftE6ParserRuleCall_1_0_0; }
-
-		//op5+=SegOp
-		public Assignment getOp5Assignment_1_1() { return cOp5Assignment_1_1; }
-
-		//SegOp
-		public RuleCall getOp5SegOpParserRuleCall_1_1_0() { return cOp5SegOpParserRuleCall_1_1_0; }
+		public RuleCall getRightE6ParserRuleCall_1_2_0() { return cRightE6ParserRuleCall_1_2_0; }
 	}
 
 	public class E6Elements extends AbstractParserRuleElementFinder {
@@ -2867,20 +2825,22 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cLeftE7ParserRuleCall_0_0 = (RuleCall)cLeftAssignment_0.eContents().get(0);
 		private final Group cGroup_1 = (Group)cGroup.eContents().get(1);
 		private final Action cE6LeftAction_1_0 = (Action)cGroup_1.eContents().get(0);
-		private final Assignment cOp6Assignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
-		private final RuleCall cOp6PlusOpParserRuleCall_1_1_0 = (RuleCall)cOp6Assignment_1_1.eContents().get(0);
+		private final Assignment cOpAssignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
+		private final RuleCall cOpPlusTokParserRuleCall_1_1_0 = (RuleCall)cOpAssignment_1_1.eContents().get(0);
 		private final Assignment cRightAssignment_1_2 = (Assignment)cGroup_1.eContents().get(2);
 		private final RuleCall cRightE7ParserRuleCall_1_2_0 = (RuleCall)cRightAssignment_1_2.eContents().get(0);
 		
-		/// * If unary plus operation is enabled then we get error in
-		// * InfixedExpr non-LL(*) decision  due to recursive rule invocations
-		// * reachable from alts 1,2
-		// * That is we can get a PlusOp from InfixedExpr in 2 ways * / //| (op6+=PlusOp right=E7)
+		/// *
+		// * in YACC version this rule also includes relation operators as prefix (unary plus)
+		// * but for Antlr we need to move prefix operators somewhere else
+		// * 
+		// * need to allow a 'qualified op', that is an operation followed by '$' and a type
+		// * / //| (op6+=PlusOp right=E7)
 		//E6 returns Expr hidden(WS, KW_NEWLINE):
-		//	left=E7 ({E6.left=current} op6+=PlusOp right=E7)*;
+		//	left=E7 ({E6.left=current} op=PlusTok / *PlusOp* / right=E7)*;
 		public ParserRule getRule() { return rule; }
 
-		//left=E7 ({E6.left=current} op6+=PlusOp right=E7)*
+		//left=E7 ({E6.left=current} op=PlusTok / *PlusOp* / right=E7)*
 		public Group getGroup() { return cGroup; }
 
 		//left=E7
@@ -2889,19 +2849,19 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		//E7
 		public RuleCall getLeftE7ParserRuleCall_0_0() { return cLeftE7ParserRuleCall_0_0; }
 
-		//({E6.left=current} op6+=PlusOp right=E7)*
+		//({E6.left=current} op=PlusTok / *PlusOp* / right=E7)*
 		public Group getGroup_1() { return cGroup_1; }
 
 		//{E6.left=current}
 		public Action getE6LeftAction_1_0() { return cE6LeftAction_1_0; }
 
-		//op6+=PlusOp
-		public Assignment getOp6Assignment_1_1() { return cOp6Assignment_1_1; }
+		//op=PlusTok
+		public Assignment getOpAssignment_1_1() { return cOpAssignment_1_1; }
 
-		//PlusOp
-		public RuleCall getOp6PlusOpParserRuleCall_1_1_0() { return cOp6PlusOpParserRuleCall_1_1_0; }
+		//PlusTok
+		public RuleCall getOpPlusTokParserRuleCall_1_1_0() { return cOpPlusTokParserRuleCall_1_1_0; }
 
-		//right=E7
+		/// *PlusOp* / right=E7
 		public Assignment getRightAssignment_1_2() { return cRightAssignment_1_2; }
 
 		//E7
@@ -2915,16 +2875,20 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cLeftE8ParserRuleCall_0_0 = (RuleCall)cLeftAssignment_0.eContents().get(0);
 		private final Group cGroup_1 = (Group)cGroup.eContents().get(1);
 		private final Action cE7LeftAction_1_0 = (Action)cGroup_1.eContents().get(0);
-		private final Assignment cOp7Assignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
-		private final RuleCall cOp7QuotientOpParserRuleCall_1_1_0 = (RuleCall)cOp7Assignment_1_1.eContents().get(0);
+		private final Assignment cOpAssignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
+		private final RuleCall cOpQuotientTokParserRuleCall_1_1_0 = (RuleCall)cOpAssignment_1_1.eContents().get(0);
 		private final Assignment cRightAssignment_1_2 = (Assignment)cGroup_1.eContents().get(2);
 		private final RuleCall cRightE8ParserRuleCall_1_2_0 = (RuleCall)cRightAssignment_1_2.eContents().get(0);
 		
-		//E7 returns Expr hidden(WS, KW_NEWLINE):
-		//	left=E8 ({E7.left=current} op7+=QuotientOp right=E8)*;
+		/// *
+		// * quotient operations
+		// * 
+		// * need to allow a 'qualified op', that is an operation followed by '$' and a type
+		// * / E7 returns Expr hidden(WS, KW_NEWLINE):
+		//	left=E8 ({E7.left=current} op=QuotientTok / *QuotientOp* / right=E8)*;
 		public ParserRule getRule() { return rule; }
 
-		//left=E8 ({E7.left=current} op7+=QuotientOp right=E8)*
+		//left=E8 ({E7.left=current} op=QuotientTok / *QuotientOp* / right=E8)*
 		public Group getGroup() { return cGroup; }
 
 		//left=E8
@@ -2933,19 +2897,19 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		//E8
 		public RuleCall getLeftE8ParserRuleCall_0_0() { return cLeftE8ParserRuleCall_0_0; }
 
-		//({E7.left=current} op7+=QuotientOp right=E8)*
+		//({E7.left=current} op=QuotientTok / *QuotientOp* / right=E8)*
 		public Group getGroup_1() { return cGroup_1; }
 
 		//{E7.left=current}
 		public Action getE7LeftAction_1_0() { return cE7LeftAction_1_0; }
 
-		//op7+=QuotientOp
-		public Assignment getOp7Assignment_1_1() { return cOp7Assignment_1_1; }
+		//op=QuotientTok
+		public Assignment getOpAssignment_1_1() { return cOpAssignment_1_1; }
 
-		//QuotientOp
-		public RuleCall getOp7QuotientOpParserRuleCall_1_1_0() { return cOp7QuotientOpParserRuleCall_1_1_0; }
+		//QuotientTok
+		public RuleCall getOpQuotientTokParserRuleCall_1_1_0() { return cOpQuotientTokParserRuleCall_1_1_0; }
 
-		//right=E8
+		/// *QuotientOp* / right=E8
 		public Assignment getRightAssignment_1_2() { return cRightAssignment_1_2; }
 
 		//E8
@@ -2959,16 +2923,20 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cLeftE9ParserRuleCall_0_0 = (RuleCall)cLeftAssignment_0.eContents().get(0);
 		private final Group cGroup_1 = (Group)cGroup.eContents().get(1);
 		private final Action cE8LeftAction_1_0 = (Action)cGroup_1.eContents().get(0);
-		private final Assignment cOp8Assignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
-		private final RuleCall cOp8TimesOpParserRuleCall_1_1_0 = (RuleCall)cOp8Assignment_1_1.eContents().get(0);
+		private final Assignment cOpAssignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
+		private final RuleCall cOpTimesTokParserRuleCall_1_1_0 = (RuleCall)cOpAssignment_1_1.eContents().get(0);
 		private final Assignment cRightAssignment_1_2 = (Assignment)cGroup_1.eContents().get(2);
 		private final RuleCall cRightE9ParserRuleCall_1_2_0 = (RuleCall)cRightAssignment_1_2.eContents().get(0);
 		
-		//E8 returns Expr hidden(WS, KW_NEWLINE):
-		//	left=E9 ({E8.left=current} op8+=TimesOp right=E9)*;
+		/// *
+		// * multiplication operations
+		// * 
+		// * need to allow a 'qualified op', that is an operation followed by '$' and a type
+		// * / E8 returns Expr hidden(WS, KW_NEWLINE):
+		//	left=E9 ({E8.left=current} op=TimesTok / *TimesOp* / right=E9)*;
 		public ParserRule getRule() { return rule; }
 
-		//left=E9 ({E8.left=current} op8+=TimesOp right=E9)*
+		//left=E9 ({E8.left=current} op=TimesTok / *TimesOp* / right=E9)*
 		public Group getGroup() { return cGroup; }
 
 		//left=E9
@@ -2977,19 +2945,19 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		//E9
 		public RuleCall getLeftE9ParserRuleCall_0_0() { return cLeftE9ParserRuleCall_0_0; }
 
-		//({E8.left=current} op8+=TimesOp right=E9)*
+		//({E8.left=current} op=TimesTok / *TimesOp* / right=E9)*
 		public Group getGroup_1() { return cGroup_1; }
 
 		//{E8.left=current}
 		public Action getE8LeftAction_1_0() { return cE8LeftAction_1_0; }
 
-		//op8+=TimesOp
-		public Assignment getOp8Assignment_1_1() { return cOp8Assignment_1_1; }
+		//op=TimesTok
+		public Assignment getOpAssignment_1_1() { return cOpAssignment_1_1; }
 
-		//TimesOp
-		public RuleCall getOp8TimesOpParserRuleCall_1_1_0() { return cOp8TimesOpParserRuleCall_1_1_0; }
+		//TimesTok
+		public RuleCall getOpTimesTokParserRuleCall_1_1_0() { return cOpTimesTokParserRuleCall_1_1_0; }
 
-		//right=E9
+		/// *TimesOp* / right=E9
 		public Assignment getRightAssignment_1_2() { return cRightAssignment_1_2; }
 
 		//E9
@@ -3003,16 +2971,20 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cLeftE11_E12ParserRuleCall_0_0 = (RuleCall)cLeftAssignment_0.eContents().get(0);
 		private final Group cGroup_1 = (Group)cGroup.eContents().get(1);
 		private final Action cE9LeftAction_1_0 = (Action)cGroup_1.eContents().get(0);
-		private final Assignment cOp9Assignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
-		private final RuleCall cOp9PowerOpParserRuleCall_1_1_0 = (RuleCall)cOp9Assignment_1_1.eContents().get(0);
+		private final Assignment cOpAssignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
+		private final RuleCall cOpPowerTokParserRuleCall_1_1_0 = (RuleCall)cOpAssignment_1_1.eContents().get(0);
 		private final Assignment cRightAssignment_1_2 = (Assignment)cGroup_1.eContents().get(2);
 		private final RuleCall cRightE11_E12ParserRuleCall_1_2_0 = (RuleCall)cRightAssignment_1_2.eContents().get(0);
 		
-		//E9 returns Expr hidden(WS, KW_NEWLINE):
-		//	left=E11_E12 ({E9.left=current} op9+=PowerOp right=E11_E12)*;
+		/// *
+		// * exponent operations
+		// * 
+		// * need to allow a 'qualified op', that is an operation followed by '$' and a type
+		// * / E9 returns Expr hidden(WS, KW_NEWLINE):
+		//	left=E11_E12 ({E9.left=current} op=PowerTok / *PowerOp* / right=E11_E12)*;
 		public ParserRule getRule() { return rule; }
 
-		//left=E11_E12 ({E9.left=current} op9+=PowerOp right=E11_E12)*
+		//left=E11_E12 ({E9.left=current} op=PowerTok / *PowerOp* / right=E11_E12)*
 		public Group getGroup() { return cGroup; }
 
 		//left=E11_E12
@@ -3021,19 +2993,19 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		//E11_E12
 		public RuleCall getLeftE11_E12ParserRuleCall_0_0() { return cLeftE11_E12ParserRuleCall_0_0; }
 
-		//({E9.left=current} op9+=PowerOp right=E11_E12)*
+		//({E9.left=current} op=PowerTok / *PowerOp* / right=E11_E12)*
 		public Group getGroup_1() { return cGroup_1; }
 
 		//{E9.left=current}
 		public Action getE9LeftAction_1_0() { return cE9LeftAction_1_0; }
 
-		//op9+=PowerOp
-		public Assignment getOp9Assignment_1_1() { return cOp9Assignment_1_1; }
+		//op=PowerTok
+		public Assignment getOpAssignment_1_1() { return cOpAssignment_1_1; }
 
-		//PowerOp
-		public RuleCall getOp9PowerOpParserRuleCall_1_1_0() { return cOp9PowerOpParserRuleCall_1_1_0; }
+		//PowerTok
+		public RuleCall getOpPowerTokParserRuleCall_1_1_0() { return cOpPowerTokParserRuleCall_1_1_0; }
 
-		//right=E11_E12
+		/// *PowerOp* / right=E11_E12
 		public Assignment getRightAssignment_1_2() { return cRightAssignment_1_2; }
 
 		//E11_E12
@@ -3046,16 +3018,15 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cLeftAssignment_0 = (Assignment)cGroup.eContents().get(0);
 		private final RuleCall cLeftE12ParserRuleCall_0_0 = (RuleCall)cLeftAssignment_0.eContents().get(0);
 		private final Group cGroup_1 = (Group)cGroup.eContents().get(1);
-		private final Action cE11_E12LeftAction_1_0 = (Action)cGroup_1.eContents().get(0);
-		private final Alternatives cAlternatives_1_1 = (Alternatives)cGroup_1.eContents().get(1);
-		private final Assignment cOpAssignment_1_1_0 = (Assignment)cAlternatives_1_1.eContents().get(0);
-		private final RuleCall cOpKW_2COLONTerminalRuleCall_1_1_0_0 = (RuleCall)cOpAssignment_1_1_0.eContents().get(0);
-		private final Assignment cOpAssignment_1_1_1 = (Assignment)cAlternatives_1_1.eContents().get(1);
-		private final RuleCall cOpKW_ATTerminalRuleCall_1_1_1_0 = (RuleCall)cOpAssignment_1_1_1.eContents().get(0);
-		private final Assignment cOpAssignment_1_1_2 = (Assignment)cAlternatives_1_1.eContents().get(2);
-		private final Keyword cOpPretendKeyword_1_1_2_0 = (Keyword)cOpAssignment_1_1_2.eContents().get(0);
-		private final Assignment cRightAssignment_1_2 = (Assignment)cGroup_1.eContents().get(2);
-		private final RuleCall cRightE12ParserRuleCall_1_2_0 = (RuleCall)cRightAssignment_1_2.eContents().get(0);
+		private final Alternatives cAlternatives_1_0 = (Alternatives)cGroup_1.eContents().get(0);
+		private final Assignment cOpAssignment_1_0_0 = (Assignment)cAlternatives_1_0.eContents().get(0);
+		private final RuleCall cOpKW_2COLONTerminalRuleCall_1_0_0_0 = (RuleCall)cOpAssignment_1_0_0.eContents().get(0);
+		private final Assignment cOpAssignment_1_0_1 = (Assignment)cAlternatives_1_0.eContents().get(1);
+		private final RuleCall cOpKW_ATTerminalRuleCall_1_0_1_0 = (RuleCall)cOpAssignment_1_0_1.eContents().get(0);
+		private final Assignment cOpAssignment_1_0_2 = (Assignment)cAlternatives_1_0.eContents().get(2);
+		private final Keyword cOpPretendKeyword_1_0_2_0 = (Keyword)cOpAssignment_1_0_2.eContents().get(0);
+		private final Assignment cRightAssignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
+		private final RuleCall cRightE12ParserRuleCall_1_1_0 = (RuleCall)cRightAssignment_1_1.eContents().get(0);
 		
 		/// * Substituted Rules in Xtext:
 		// * E11_E12
@@ -3069,11 +3040,13 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		// * | E11(X) KW_Pretend E12
 		// * { $$ = abNewPretendTo(TPOS($2),$1,$3); }
 		// * ;
+		// * / / *
+		// * This version of E11 is used in the middle of the precedence stack
 		// * / E11_E12 returns Expr hidden(WS, KW_NEWLINE):
-		//	left=E12 ({E11_E12.left=current} (op+=KW_2COLON | op+=KW_AT | op+="pretend") right=E12)*;
+		//	left=E12 ((op+=KW_2COLON / *{E11_E12.left=current}* / | op+=KW_AT | op+="pretend") right+=E12)*;
 		public ParserRule getRule() { return rule; }
 
-		//left=E12 ({E11_E12.left=current} (op+=KW_2COLON | op+=KW_AT | op+="pretend") right=E12)*
+		//left=E12 ((op+=KW_2COLON / *{E11_E12.left=current}* / | op+=KW_AT | op+="pretend") right+=E12)*
 		public Group getGroup() { return cGroup; }
 
 		//left=E12
@@ -3082,38 +3055,35 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		//E12
 		public RuleCall getLeftE12ParserRuleCall_0_0() { return cLeftE12ParserRuleCall_0_0; }
 
-		//({E11_E12.left=current} (op+=KW_2COLON | op+=KW_AT | op+="pretend") right=E12)*
+		//((op+=KW_2COLON / *{E11_E12.left=current}* / | op+=KW_AT | op+="pretend") right+=E12)*
 		public Group getGroup_1() { return cGroup_1; }
 
-		//{E11_E12.left=current}
-		public Action getE11_E12LeftAction_1_0() { return cE11_E12LeftAction_1_0; }
-
-		//op+=KW_2COLON | op+=KW_AT | op+="pretend"
-		public Alternatives getAlternatives_1_1() { return cAlternatives_1_1; }
+		//op+=KW_2COLON / *{E11_E12.left=current}* / | op+=KW_AT | op+="pretend"
+		public Alternatives getAlternatives_1_0() { return cAlternatives_1_0; }
 
 		//op+=KW_2COLON
-		public Assignment getOpAssignment_1_1_0() { return cOpAssignment_1_1_0; }
+		public Assignment getOpAssignment_1_0_0() { return cOpAssignment_1_0_0; }
 
 		//KW_2COLON
-		public RuleCall getOpKW_2COLONTerminalRuleCall_1_1_0_0() { return cOpKW_2COLONTerminalRuleCall_1_1_0_0; }
+		public RuleCall getOpKW_2COLONTerminalRuleCall_1_0_0_0() { return cOpKW_2COLONTerminalRuleCall_1_0_0_0; }
 
 		//op+=KW_AT
-		public Assignment getOpAssignment_1_1_1() { return cOpAssignment_1_1_1; }
+		public Assignment getOpAssignment_1_0_1() { return cOpAssignment_1_0_1; }
 
 		//KW_AT
-		public RuleCall getOpKW_ATTerminalRuleCall_1_1_1_0() { return cOpKW_ATTerminalRuleCall_1_1_1_0; }
+		public RuleCall getOpKW_ATTerminalRuleCall_1_0_1_0() { return cOpKW_ATTerminalRuleCall_1_0_1_0; }
 
 		//op+="pretend"
-		public Assignment getOpAssignment_1_1_2() { return cOpAssignment_1_1_2; }
+		public Assignment getOpAssignment_1_0_2() { return cOpAssignment_1_0_2; }
 
 		//"pretend"
-		public Keyword getOpPretendKeyword_1_1_2_0() { return cOpPretendKeyword_1_1_2_0; }
+		public Keyword getOpPretendKeyword_1_0_2_0() { return cOpPretendKeyword_1_0_2_0; }
 
-		//right=E12
-		public Assignment getRightAssignment_1_2() { return cRightAssignment_1_2; }
+		//right+=E12
+		public Assignment getRightAssignment_1_1() { return cRightAssignment_1_1; }
 
 		//E12
-		public RuleCall getRightE12ParserRuleCall_1_2_0() { return cRightE12ParserRuleCall_1_2_0; }
+		public RuleCall getRightE12ParserRuleCall_1_1_0() { return cRightE12ParserRuleCall_1_1_0; }
 	}
 
 	public class E11_OpElements extends AbstractParserRuleElementFinder {
@@ -3122,22 +3092,24 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cLeftAssignment_0 = (Assignment)cGroup.eContents().get(0);
 		private final RuleCall cLeftOpParserRuleCall_0_0 = (RuleCall)cLeftAssignment_0.eContents().get(0);
 		private final Group cGroup_1 = (Group)cGroup.eContents().get(1);
-		private final Action cE11_OpLeftAction_1_0 = (Action)cGroup_1.eContents().get(0);
-		private final Alternatives cAlternatives_1_1 = (Alternatives)cGroup_1.eContents().get(1);
-		private final Assignment cOpAssignment_1_1_0 = (Assignment)cAlternatives_1_1.eContents().get(0);
-		private final RuleCall cOpKW_2COLONTerminalRuleCall_1_1_0_0 = (RuleCall)cOpAssignment_1_1_0.eContents().get(0);
-		private final Assignment cOpAssignment_1_1_1 = (Assignment)cAlternatives_1_1.eContents().get(1);
-		private final RuleCall cOpKW_ATTerminalRuleCall_1_1_1_0 = (RuleCall)cOpAssignment_1_1_1.eContents().get(0);
-		private final Assignment cOpAssignment_1_1_2 = (Assignment)cAlternatives_1_1.eContents().get(2);
-		private final Keyword cOpPretendKeyword_1_1_2_0 = (Keyword)cOpAssignment_1_1_2.eContents().get(0);
-		private final Assignment cRightAssignment_1_2 = (Assignment)cGroup_1.eContents().get(2);
-		private final RuleCall cRightE12ParserRuleCall_1_2_0 = (RuleCall)cRightAssignment_1_2.eContents().get(0);
+		private final Alternatives cAlternatives_1_0 = (Alternatives)cGroup_1.eContents().get(0);
+		private final Assignment cOpAssignment_1_0_0 = (Assignment)cAlternatives_1_0.eContents().get(0);
+		private final RuleCall cOpKW_2COLONTerminalRuleCall_1_0_0_0 = (RuleCall)cOpAssignment_1_0_0.eContents().get(0);
+		private final Assignment cOpAssignment_1_0_1 = (Assignment)cAlternatives_1_0.eContents().get(1);
+		private final RuleCall cOpKW_ATTerminalRuleCall_1_0_1_0 = (RuleCall)cOpAssignment_1_0_1.eContents().get(0);
+		private final Assignment cOpAssignment_1_0_2 = (Assignment)cAlternatives_1_0.eContents().get(2);
+		private final Keyword cOpPretendKeyword_1_0_2_0 = (Keyword)cOpAssignment_1_0_2.eContents().get(0);
+		private final Assignment cRightAssignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
+		private final RuleCall cRightE12ParserRuleCall_1_1_0 = (RuleCall)cRightAssignment_1_1.eContents().get(0);
 		
-		//E11_Op returns Expr hidden(WS, KW_NEWLINE):
-		//	left=Op ({E11_Op.left=current} (op+=KW_2COLON | op+=KW_AT | op+="pretend") right=E12)*;
+		/// *
+		// * This version of E11 is used at the top of the precedence stack in
+		// * 'InfixedExpr'
+		// * / E11_Op returns Expr hidden(WS, KW_NEWLINE):
+		//	left=Op ((op+=KW_2COLON / *{E11_Op.left=current}* / | op+=KW_AT | op+="pretend") right+=E12)*;
 		public ParserRule getRule() { return rule; }
 
-		//left=Op ({E11_Op.left=current} (op+=KW_2COLON | op+=KW_AT | op+="pretend") right=E12)*
+		//left=Op ((op+=KW_2COLON / *{E11_Op.left=current}* / | op+=KW_AT | op+="pretend") right+=E12)*
 		public Group getGroup() { return cGroup; }
 
 		//left=Op
@@ -3146,45 +3118,45 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		//Op
 		public RuleCall getLeftOpParserRuleCall_0_0() { return cLeftOpParserRuleCall_0_0; }
 
-		//({E11_Op.left=current} (op+=KW_2COLON | op+=KW_AT | op+="pretend") right=E12)*
+		//((op+=KW_2COLON / *{E11_Op.left=current}* / | op+=KW_AT | op+="pretend") right+=E12)*
 		public Group getGroup_1() { return cGroup_1; }
 
-		//{E11_Op.left=current}
-		public Action getE11_OpLeftAction_1_0() { return cE11_OpLeftAction_1_0; }
-
-		//op+=KW_2COLON | op+=KW_AT | op+="pretend"
-		public Alternatives getAlternatives_1_1() { return cAlternatives_1_1; }
+		//op+=KW_2COLON / *{E11_Op.left=current}* / | op+=KW_AT | op+="pretend"
+		public Alternatives getAlternatives_1_0() { return cAlternatives_1_0; }
 
 		//op+=KW_2COLON
-		public Assignment getOpAssignment_1_1_0() { return cOpAssignment_1_1_0; }
+		public Assignment getOpAssignment_1_0_0() { return cOpAssignment_1_0_0; }
 
 		//KW_2COLON
-		public RuleCall getOpKW_2COLONTerminalRuleCall_1_1_0_0() { return cOpKW_2COLONTerminalRuleCall_1_1_0_0; }
+		public RuleCall getOpKW_2COLONTerminalRuleCall_1_0_0_0() { return cOpKW_2COLONTerminalRuleCall_1_0_0_0; }
 
 		//op+=KW_AT
-		public Assignment getOpAssignment_1_1_1() { return cOpAssignment_1_1_1; }
+		public Assignment getOpAssignment_1_0_1() { return cOpAssignment_1_0_1; }
 
 		//KW_AT
-		public RuleCall getOpKW_ATTerminalRuleCall_1_1_1_0() { return cOpKW_ATTerminalRuleCall_1_1_1_0; }
+		public RuleCall getOpKW_ATTerminalRuleCall_1_0_1_0() { return cOpKW_ATTerminalRuleCall_1_0_1_0; }
 
 		//op+="pretend"
-		public Assignment getOpAssignment_1_1_2() { return cOpAssignment_1_1_2; }
+		public Assignment getOpAssignment_1_0_2() { return cOpAssignment_1_0_2; }
 
 		//"pretend"
-		public Keyword getOpPretendKeyword_1_1_2_0() { return cOpPretendKeyword_1_1_2_0; }
+		public Keyword getOpPretendKeyword_1_0_2_0() { return cOpPretendKeyword_1_0_2_0; }
 
-		//right=E12
-		public Assignment getRightAssignment_1_2() { return cRightAssignment_1_2; }
+		//right+=E12
+		public Assignment getRightAssignment_1_1() { return cRightAssignment_1_1; }
 
 		//E12
-		public RuleCall getRightE12ParserRuleCall_1_2_0() { return cRightE12ParserRuleCall_1_2_0; }
+		public RuleCall getRightE12ParserRuleCall_1_1_0() { return cRightE12ParserRuleCall_1_1_0; }
 	}
 
 	public class TypeElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Type");
 		private final RuleCall cE11_E12ParserRuleCall = (RuleCall)rule.eContents().get(1);
 		
-		//Type hidden(WS, KW_NEWLINE):
+		/// *
+		// * use this rule when we know it is a type.
+		// * That is in 'DeclPart' where it follows '$'
+		// * / Type hidden(WS, KW_NEWLINE):
 		//	E11_E12;
 		public ParserRule getRule() { return rule; }
 
@@ -3204,11 +3176,11 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cRightAssignment_1_2 = (Assignment)cGroup_1.eContents().get(2);
 		private final RuleCall cRightE13ParserRuleCall_1_2_0 = (RuleCall)cRightAssignment_1_2.eContents().get(0);
 		
-		//E12:
-		//	left=E13 ({E12.left=current} op+=ArrowOp right=E13)*;
+		//E12 hidden(WS, KW_NEWLINE):
+		//	left=E13 ({E12.left=current} op+=ArrowOp right+=E13)*;
 		public ParserRule getRule() { return rule; }
 
-		//left=E13 ({E12.left=current} op+=ArrowOp right=E13)*
+		//left=E13 ({E12.left=current} op+=ArrowOp right+=E13)*
 		public Group getGroup() { return cGroup; }
 
 		//left=E13
@@ -3217,7 +3189,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		//E13
 		public RuleCall getLeftE13ParserRuleCall_0_0() { return cLeftE13ParserRuleCall_0_0; }
 
-		//({E12.left=current} op+=ArrowOp right=E13)*
+		//({E12.left=current} op+=ArrowOp right+=E13)*
 		public Group getGroup_1() { return cGroup_1; }
 
 		//{E12.left=current}
@@ -3229,7 +3201,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		//ArrowOp
 		public RuleCall getOpArrowOpParserRuleCall_1_1_0() { return cOpArrowOpParserRuleCall_1_1_0; }
 
-		//right=E13
+		//right+=E13
 		public Assignment getRightAssignment_1_2() { return cRightAssignment_1_2; }
 
 		//E13
@@ -3248,11 +3220,11 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cRightAssignment_1_2 = (Assignment)cGroup_1.eContents().get(2);
 		private final RuleCall cRightQualTailParserRuleCall_1_2_0 = (RuleCall)cRightAssignment_1_2.eContents().get(0);
 		
-		//E13:
-		//	left=E14 ({E13.left=current} op+=KW_DOLLAR right=QualTail)*;
+		//E13 hidden(WS, KW_NEWLINE):
+		//	left=E14 ({E13.left=current} op+=KW_DOLLAR right+=QualTail)*;
 		public ParserRule getRule() { return rule; }
 
-		//left=E14 ({E13.left=current} op+=KW_DOLLAR right=QualTail)*
+		//left=E14 ({E13.left=current} op+=KW_DOLLAR right+=QualTail)*
 		public Group getGroup() { return cGroup; }
 
 		//left=E14
@@ -3261,7 +3233,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		//E14
 		public RuleCall getLeftE14ParserRuleCall_0_0() { return cLeftE14ParserRuleCall_0_0; }
 
-		//({E13.left=current} op+=KW_DOLLAR right=QualTail)*
+		//({E13.left=current} op+=KW_DOLLAR right+=QualTail)*
 		public Group getGroup_1() { return cGroup_1; }
 
 		//{E13.left=current}
@@ -3273,7 +3245,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		//KW_DOLLAR
 		public RuleCall getOpKW_DOLLARTerminalRuleCall_1_1_0() { return cOpKW_DOLLARTerminalRuleCall_1_1_0; }
 
-		//right=QualTail
+		//right+=QualTail
 		public Assignment getRightAssignment_1_2() { return cRightAssignment_1_2; }
 
 		//QualTail
@@ -3290,7 +3262,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cQtAssignment_1_0_1 = (Assignment)cGroup_1_0.eContents().get(1);
 		private final RuleCall cQtQualTailParserRuleCall_1_0_1_0 = (RuleCall)cQtAssignment_1_0_1.eContents().get(0);
 		
-		//QualTail:
+		//QualTail hidden(WS, KW_NEWLINE):
 		//	LeftJuxtaposed => (KW_DOLLAR qt=QualTail)?;
 		public ParserRule getRule() { return rule; }
 
@@ -3319,25 +3291,25 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 	public class OpQualTailElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "OpQualTail");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Assignment cNameAssignment_0 = (Assignment)cGroup.eContents().get(0);
-		private final RuleCall cNameMoleculeParserRuleCall_0_0 = (RuleCall)cNameAssignment_0.eContents().get(0);
+		private final Assignment cNamAssignment_0 = (Assignment)cGroup.eContents().get(0);
+		private final RuleCall cNamMoleculeParserRuleCall_0_0 = (RuleCall)cNamAssignment_0.eContents().get(0);
 		private final Group cGroup_1 = (Group)cGroup.eContents().get(1);
 		private final Group cGroup_1_0 = (Group)cGroup_1.eContents().get(0);
 		private final RuleCall cKW_DOLLARTerminalRuleCall_1_0_0 = (RuleCall)cGroup_1_0.eContents().get(0);
 		private final RuleCall cOpQualTailParserRuleCall_1_0_1 = (RuleCall)cGroup_1_0.eContents().get(1);
 		
 		//OpQualTail hidden(WS, KW_NEWLINE):
-		//	name=Molecule => (KW_DOLLAR OpQualTail)?;
+		//	nam=Molecule => (KW_DOLLAR OpQualTail)?;
 		public ParserRule getRule() { return rule; }
 
-		//name=Molecule => (KW_DOLLAR OpQualTail)?
+		//nam=Molecule => (KW_DOLLAR OpQualTail)?
 		public Group getGroup() { return cGroup; }
 
-		//name=Molecule
-		public Assignment getNameAssignment_0() { return cNameAssignment_0; }
+		//nam=Molecule
+		public Assignment getNamAssignment_0() { return cNamAssignment_0; }
 
 		//Molecule
-		public RuleCall getNameMoleculeParserRuleCall_0_0() { return cNameMoleculeParserRuleCall_0_0; }
+		public RuleCall getNamMoleculeParserRuleCall_0_0() { return cNamMoleculeParserRuleCall_0_0; }
 
 		//=> (KW_DOLLAR OpQualTail)?
 		public Group getGroup_1() { return cGroup_1; }
@@ -4739,41 +4711,33 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 
 	public class IdElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Id");
-		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
-		private final Assignment cAB_IdAssignment_0 = (Assignment)cAlternatives.eContents().get(0);
-		private final RuleCall cAB_IdTK_IDTerminalRuleCall_0_0 = (RuleCall)cAB_IdAssignment_0.eContents().get(0);
-		private final Assignment cOpAssignment_1 = (Assignment)cAlternatives.eContents().get(1);
-		private final RuleCall cOpKW_SHARPTerminalRuleCall_1_0 = (RuleCall)cOpAssignment_1.eContents().get(0);
-		private final Assignment cOpAssignment_2 = (Assignment)cAlternatives.eContents().get(2);
-		private final RuleCall cOpKW_TILDETerminalRuleCall_2_0 = (RuleCall)cOpAssignment_2.eContents().get(0);
+		private final Assignment cNameAssignment = (Assignment)rule.eContents().get(1);
+		private final Alternatives cNameAlternatives_0 = (Alternatives)cNameAssignment.eContents().get(0);
+		private final RuleCall cNameTK_IDTerminalRuleCall_0_0 = (RuleCall)cNameAlternatives_0.eContents().get(0);
+		private final RuleCall cNameKW_SHARPTerminalRuleCall_0_1 = (RuleCall)cNameAlternatives_0.eContents().get(1);
+		private final RuleCall cNameKW_TILDETerminalRuleCall_0_2 = (RuleCall)cNameAlternatives_0.eContents().get(2);
 		
 		/// * original Aldor grammar uses abNewOfToken which is defined
 		// * in Aldor file absyn.c: Abstract syntax construction and
 		// * manipulation.
 		// * / Id hidden(WS, KW_NEWLINE):
-		//	AB_Id=TK_ID | op=KW_SHARP | op=KW_TILDE;
+		//	name=(TK_ID | KW_SHARP | KW_TILDE);
 		public ParserRule getRule() { return rule; }
 
-		//AB_Id=TK_ID | op=KW_SHARP | op=KW_TILDE
-		public Alternatives getAlternatives() { return cAlternatives; }
+		//name=(TK_ID | KW_SHARP | KW_TILDE)
+		public Assignment getNameAssignment() { return cNameAssignment; }
 
-		//AB_Id=TK_ID
-		public Assignment getAB_IdAssignment_0() { return cAB_IdAssignment_0; }
+		//TK_ID | KW_SHARP | KW_TILDE
+		public Alternatives getNameAlternatives_0() { return cNameAlternatives_0; }
 
 		//TK_ID
-		public RuleCall getAB_IdTK_IDTerminalRuleCall_0_0() { return cAB_IdTK_IDTerminalRuleCall_0_0; }
-
-		//op=KW_SHARP
-		public Assignment getOpAssignment_1() { return cOpAssignment_1; }
+		public RuleCall getNameTK_IDTerminalRuleCall_0_0() { return cNameTK_IDTerminalRuleCall_0_0; }
 
 		//KW_SHARP
-		public RuleCall getOpKW_SHARPTerminalRuleCall_1_0() { return cOpKW_SHARPTerminalRuleCall_1_0; }
-
-		//op=KW_TILDE
-		public Assignment getOpAssignment_2() { return cOpAssignment_2; }
+		public RuleCall getNameKW_SHARPTerminalRuleCall_0_1() { return cNameKW_SHARPTerminalRuleCall_0_1; }
 
 		//KW_TILDE
-		public RuleCall getOpKW_TILDETerminalRuleCall_2_0() { return cOpKW_TILDETerminalRuleCall_2_0; }
+		public RuleCall getNameKW_TILDETerminalRuleCall_0_2() { return cNameKW_TILDETerminalRuleCall_0_2; }
 	}
 
 	public class LiteralElements extends AbstractParserRuleElementFinder {
@@ -7147,7 +7111,9 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		return getInfixedAccess().getRule();
 	}
 
-	//InfixedExpr hidden(WS, KW_NEWLINE):
+	/// *
+	// * if we enable 'returns Expr' then 'E11_E12' replaces id in AST
+	// * / / *returns Expr* / InfixedExpr hidden(WS, KW_NEWLINE):
 	//	E11_Op | => E3;
 	public InfixedExprElements getInfixedExprAccess() {
 		return (pInfixedExpr != null) ? pInfixedExpr : (pInfixedExpr = new InfixedExprElements());
@@ -7157,8 +7123,11 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		return getInfixedExprAccess().getRule();
 	}
 
-	//E3 returns Expr hidden(WS, KW_NEWLINE):
-	//	left=E4 ({E3.left=current} (op+="and" | op+="or" | op2+=LatticeOp) right=E4)*;
+	/// *
+	// * 'and','or' logic operators
+	// * need to allow a 'qualified op', that is an operation followed by '$' and a type
+	// * / E3 returns Expr hidden(WS, KW_NEWLINE):
+	//	left=E4 ({E3.left=current} op=("and" / *QualOp_LatticeTok* / | "or" | LatticeTok) right=E4)*;
 	public E3Elements getE3Access() {
 		return (pE3 != null) ? pE3 : (pE3 = new E3Elements());
 	}
@@ -7167,8 +7136,14 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		return getE3Access().getRule();
 	}
 
+	/// * relation operators
+	// * in YACC version this rule also includes relation operators as prefix
+	// * but for Antlr we need to move prefix operators somewhere else
+	// * 
+	// * need to allow a 'qualified op', that is an operation followed by '$' and a type
+	// * / //| (RelationOp {E4.left=current} right+=E5)
 	//E4 returns Expr hidden(WS, KW_NEWLINE):
-	//	left=E5 ({E4.left=current} (op+="has" | op2+=RelationOp) right=E5)* | RelationOp right=E5;
+	//	left=E5 ({E4.left=current} op=("has" / *RelationOp* / | RelationTok) right=E5)*;
 	public E4Elements getE4Access() {
 		return (pE4 != null) ? pE4 : (pE4 = new E4Elements());
 	}
@@ -7177,8 +7152,15 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		return getE4Access().getRule();
 	}
 
+	/// * segment operators: '..' and 'by'
+	// * in YACC version this rule also includes segment operators as postfix
+	// * but for Antlr we need to move postfix operators somewhere else
+	// * 
+	// * need to allow a 'qualified op', that is an operation followed by '$' and a type
+	// * / //=>
+	////| (left=E6 {E5.left=current} op5+=SegOp)
 	//E5 returns Expr hidden(WS, KW_NEWLINE):
-	//	=> (left=E6 ({E5.left=current} op5+=SegOp right=E6)*) | left=E6 op5+=SegOp;
+	//	left=E6 ({E5.left=current} op=SegTok / *SegOp* / right=E6)*;
 	public E5Elements getE5Access() {
 		return (pE5 != null) ? pE5 : (pE5 = new E5Elements());
 	}
@@ -7187,12 +7169,14 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		return getE5Access().getRule();
 	}
 
-	/// * If unary plus operation is enabled then we get error in
-	// * InfixedExpr non-LL(*) decision  due to recursive rule invocations
-	// * reachable from alts 1,2
-	// * That is we can get a PlusOp from InfixedExpr in 2 ways * / //| (op6+=PlusOp right=E7)
+	/// *
+	// * in YACC version this rule also includes relation operators as prefix (unary plus)
+	// * but for Antlr we need to move prefix operators somewhere else
+	// * 
+	// * need to allow a 'qualified op', that is an operation followed by '$' and a type
+	// * / //| (op6+=PlusOp right=E7)
 	//E6 returns Expr hidden(WS, KW_NEWLINE):
-	//	left=E7 ({E6.left=current} op6+=PlusOp right=E7)*;
+	//	left=E7 ({E6.left=current} op=PlusTok / *PlusOp* / right=E7)*;
 	public E6Elements getE6Access() {
 		return (pE6 != null) ? pE6 : (pE6 = new E6Elements());
 	}
@@ -7201,8 +7185,12 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		return getE6Access().getRule();
 	}
 
-	//E7 returns Expr hidden(WS, KW_NEWLINE):
-	//	left=E8 ({E7.left=current} op7+=QuotientOp right=E8)*;
+	/// *
+	// * quotient operations
+	// * 
+	// * need to allow a 'qualified op', that is an operation followed by '$' and a type
+	// * / E7 returns Expr hidden(WS, KW_NEWLINE):
+	//	left=E8 ({E7.left=current} op=QuotientTok / *QuotientOp* / right=E8)*;
 	public E7Elements getE7Access() {
 		return (pE7 != null) ? pE7 : (pE7 = new E7Elements());
 	}
@@ -7211,8 +7199,12 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		return getE7Access().getRule();
 	}
 
-	//E8 returns Expr hidden(WS, KW_NEWLINE):
-	//	left=E9 ({E8.left=current} op8+=TimesOp right=E9)*;
+	/// *
+	// * multiplication operations
+	// * 
+	// * need to allow a 'qualified op', that is an operation followed by '$' and a type
+	// * / E8 returns Expr hidden(WS, KW_NEWLINE):
+	//	left=E9 ({E8.left=current} op=TimesTok / *TimesOp* / right=E9)*;
 	public E8Elements getE8Access() {
 		return (pE8 != null) ? pE8 : (pE8 = new E8Elements());
 	}
@@ -7221,8 +7213,12 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		return getE8Access().getRule();
 	}
 
-	//E9 returns Expr hidden(WS, KW_NEWLINE):
-	//	left=E11_E12 ({E9.left=current} op9+=PowerOp right=E11_E12)*;
+	/// *
+	// * exponent operations
+	// * 
+	// * need to allow a 'qualified op', that is an operation followed by '$' and a type
+	// * / E9 returns Expr hidden(WS, KW_NEWLINE):
+	//	left=E11_E12 ({E9.left=current} op=PowerTok / *PowerOp* / right=E11_E12)*;
 	public E9Elements getE9Access() {
 		return (pE9 != null) ? pE9 : (pE9 = new E9Elements());
 	}
@@ -7243,8 +7239,10 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 	// * | E11(X) KW_Pretend E12
 	// * { $$ = abNewPretendTo(TPOS($2),$1,$3); }
 	// * ;
+	// * / / *
+	// * This version of E11 is used in the middle of the precedence stack
 	// * / E11_E12 returns Expr hidden(WS, KW_NEWLINE):
-	//	left=E12 ({E11_E12.left=current} (op+=KW_2COLON | op+=KW_AT | op+="pretend") right=E12)*;
+	//	left=E12 ((op+=KW_2COLON / *{E11_E12.left=current}* / | op+=KW_AT | op+="pretend") right+=E12)*;
 	public E11_E12Elements getE11_E12Access() {
 		return (pE11_E12 != null) ? pE11_E12 : (pE11_E12 = new E11_E12Elements());
 	}
@@ -7253,8 +7251,11 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		return getE11_E12Access().getRule();
 	}
 
-	//E11_Op returns Expr hidden(WS, KW_NEWLINE):
-	//	left=Op ({E11_Op.left=current} (op+=KW_2COLON | op+=KW_AT | op+="pretend") right=E12)*;
+	/// *
+	// * This version of E11 is used at the top of the precedence stack in
+	// * 'InfixedExpr'
+	// * / E11_Op returns Expr hidden(WS, KW_NEWLINE):
+	//	left=Op ((op+=KW_2COLON / *{E11_Op.left=current}* / | op+=KW_AT | op+="pretend") right+=E12)*;
 	public E11_OpElements getE11_OpAccess() {
 		return (pE11_Op != null) ? pE11_Op : (pE11_Op = new E11_OpElements());
 	}
@@ -7263,7 +7264,10 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		return getE11_OpAccess().getRule();
 	}
 
-	//Type hidden(WS, KW_NEWLINE):
+	/// *
+	// * use this rule when we know it is a type.
+	// * That is in 'DeclPart' where it follows '$'
+	// * / Type hidden(WS, KW_NEWLINE):
 	//	E11_E12;
 	public TypeElements getTypeAccess() {
 		return (pType != null) ? pType : (pType = new TypeElements());
@@ -7273,8 +7277,8 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		return getTypeAccess().getRule();
 	}
 
-	//E12:
-	//	left=E13 ({E12.left=current} op+=ArrowOp right=E13)*;
+	//E12 hidden(WS, KW_NEWLINE):
+	//	left=E13 ({E12.left=current} op+=ArrowOp right+=E13)*;
 	public E12Elements getE12Access() {
 		return (pE12 != null) ? pE12 : (pE12 = new E12Elements());
 	}
@@ -7283,8 +7287,8 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		return getE12Access().getRule();
 	}
 
-	//E13:
-	//	left=E14 ({E13.left=current} op+=KW_DOLLAR right=QualTail)*;
+	//E13 hidden(WS, KW_NEWLINE):
+	//	left=E14 ({E13.left=current} op+=KW_DOLLAR right+=QualTail)*;
 	public E13Elements getE13Access() {
 		return (pE13 != null) ? pE13 : (pE13 = new E13Elements());
 	}
@@ -7293,7 +7297,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		return getE13Access().getRule();
 	}
 
-	//QualTail:
+	//QualTail hidden(WS, KW_NEWLINE):
 	//	LeftJuxtaposed => (KW_DOLLAR qt=QualTail)?;
 	public QualTailElements getQualTailAccess() {
 		return (pQualTail != null) ? pQualTail : (pQualTail = new QualTailElements());
@@ -7304,7 +7308,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//OpQualTail hidden(WS, KW_NEWLINE):
-	//	name=Molecule => (KW_DOLLAR OpQualTail)?;
+	//	nam=Molecule => (KW_DOLLAR OpQualTail)?;
 	public OpQualTailElements getOpQualTailAccess() {
 		return (pOpQualTail != null) ? pOpQualTail : (pOpQualTail = new OpQualTailElements());
 	}
@@ -7799,7 +7803,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 	// * in Aldor file absyn.c: Abstract syntax construction and
 	// * manipulation.
 	// * / Id hidden(WS, KW_NEWLINE):
-	//	AB_Id=TK_ID | op=KW_SHARP | op=KW_TILDE;
+	//	name=(TK_ID | KW_SHARP | KW_TILDE);
 	public IdElements getIdAccess() {
 		return (pId != null) ? pId : (pId = new IdElements());
 	}

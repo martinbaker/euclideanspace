@@ -71,16 +71,16 @@ class EditorLabelProvider extends org.eclipse.xtext.ui.label.DefaultEObjectLabel
 	  return "Sig";
 	}
 
-	def String text(DeclPart ele) {
-	  return "DeclPart";
-	}
+//	def String text(DeclPart ele) {
+//	  return "DeclPart";
+//	}
 
 	def String text(Comma ele) {
 	  return "Comma";
 	}
 
 	def String text(CommaItem ele) {
-	  return "CommaItem"+ele.ci;
+	  return "CommaItem";//+ele.ci;
 	}
 
 	def String text(DeclBinding ele) {
@@ -108,36 +108,68 @@ class EditorLabelProvider extends org.eclipse.xtext.ui.label.DefaultEObjectLabel
 	}
 
 	def String text(BindingL_Infixed_AnyStatement ele) {
-		  return "BindingL_Infixed_AnyStatement :"+ele.getBas9();
+		  return "BindingL_Infixed_AnyStatement"+ele.getBas9();
 	}
 
 	def String text(BindingL_Infixed_BalStatement ele) {
-		  return "BindingL_Infixed_BalStatement :";
+		  return "BindingL_Infixed_BalStatement";
 	}
 
 	def String text(BindingL_Infixed_Collection ele) {
-		  return "BindingL_Infixed_Collection :";
+		  return "BindingL_Infixed_Collection";
 	}
 
 	def String text(BindingR_InfixedExprsDecl_AnyStatement ele) {
-		  return "BindingR_InfixedExprsDecl_AnyStatement :";
+		  return "BindingR_InfixedExprsDecl_AnyStatement";
+	}
+
+	def String text(AnyStatement ele) {
+		return "AnyStatement";
+	}
+
+	def String text(BalStatement ele) {
+		return "BalStatement";
 	}
 
 	def String text(Flow_AnyStatement ele) {
 //		if (ele.getC()!=null)  return "Flow_AnyStatement :"+ele.getC();
 //		if (ele.getSt()!=null)  return "Flow_AnyStatement :"+ele.getSt();
-		return "Flow_AnyStatement : none";
+		return "Flow_AnyStatement";
 	}
 
 	def String text(Flow_BalStatement ele) {
 //		if (ele.getC2()!=null)  return "Flow_BalStatement :"+ele.getC2();
 //		if (ele.getSt2()!=null)  return "Flow_BalStatement :"+ele.getSt2();
-		return "Flow_BalStatement : none";
+		return "Flow_BalStatement";
+	}
+
+	def String text(GenBound ele) {
+		return "GenBound";
+	}
+
+	def String text(ButExpr ele) {
+		return "ButExpr";
+	}
+
+	def String text(Cases ele) {
+		return "Cases";
+	}
+
+	def String text(AlwaysPart_AnyStatement ele) {
+		return "AlwaysPart_AnyStatement";
+	}
+
+	def String text(AlwaysPart_BalStatement ele) {
+		return "AlwaysPart_BalStatement";
 	}
 
 	def String text(Collection ele) {
 //		  return "Collection :"+ele.getI3();
-		  return "Collection :";
+		  return "Collection";
+	}
+
+	def String text(Iterators ele) {
+		return "Iterators";
 	}
 
 	def String text(Iterators1 ele) {
@@ -149,111 +181,186 @@ class EditorLabelProvider extends org.eclipse.xtext.ui.label.DefaultEObjectLabel
 		return "Iterator";
 	}
 
+	def String text(ForLhs ele) {
+		return "ForLhs";
+	}
+
+	def String text(SuchthatPart ele) {
+		return "SuchthatPart";
+	}
+
 	def String text(Infixed ele) {
 //		if (ele.getIfx()!=null)  return "Infixed :"+ele.getIfx();
 //		return "Infixed : "+ele.getB();
-		return "Infixed : ";
+		return "Infixed";
+	}
+
+	def String text(InfixedExpr ele) {
+		return "InfixedExpr";
+	}
+
+	def String text(Expr ele) {
+		  //return "E3 :"+ele.getLeft()+" "+ele.getOp()+" "+ele.getRight();
+		  return "Expr";
 	}
 
 	def String text(E3 ele) {
 		  //return "E3 :"+ele.getLeft()+" "+ele.getOp()+" "+ele.getRight();
-		  return "E3 "+ele.op;
+		  return "E3 ";//+ele.op;
 	}
 
 	def String text(E4 ele) {
 		  //return "E4 :"+ele.getLeft()+" "+ele.getOp()+" "+ele.getRight();
-		  return "E4 :"+ele.op;
+		  return "E4 ";//+ele.op;
 	}
 
 	def String text(E5 ele) {
 		  //return "E5 :"+ele.getLeft()+" "+ele.getOp5()+" "+ele.getRight();
-		  return "E5 :"+ele.op5;
+		  return "E5 ";//+ele.op5;
 	}
 
 	def String text(E6 ele) {
 		  //return "E6 :"+ele.getLeft()+" "+ele.getOp6()+" "+ele.getRight();
-		  return "E6 :"+ele.op6;
+		  return "E6 ";//+ele.op6;
 	}
 
 	def String text(E7 ele) {
 		  //return "E7 :"+ele.getLeft()+" "+ele.getOp7()+" "+ele.getRight();
-		  return "E7 :"+ele.op7;
+		  return "E7 ";//+ele.op7;
 	}
 
 	def String text(E8 ele) {
 		  //return "E8 :"+ele.getLeft()+" "+ele.getOp8()+" "+ele.getRight();
-		  return "E8 :"+ele.op8;
+		  return "E8 ";//+ele.op8;
 	}
 
 	def String text(E9 ele) {
 		  //return "E9 :"+ele.getLeft()+" "+ele.getOp9()+" "+ele.getRight();
-		  return "E9 :"+ele.op9;
+		  return "E9 ";//+ele.op9;
 	}
 
-	def String text(E11_E12 ele) {
+//	def String text(E11_E12 ele) {
 		  //return "E11_E12 :"+ele.getLeft()+" "+ele.getOp()+" "+ele.getRight();
-		  return "E11_E12 :"+ele.op;
-	}
+//		  return "E11_E12 ";//+ele.op;
+//	}
 
-	def String text(E11_Op ele) {
+//	def String text(E11_Op ele) {
 		  //return "E11_Op :"+ele.getLeft()+" "+ele.getOp()+" "+ele.getRight();
-		  return "E11_Op :"+ele.op;
-	}
+//		  return "E11_Op ";//+ele.op;
+//	}
 
 	def String text(E12 ele) {
 		  //return "E12 :"+ele.getLeft()+" "+ele.getOp()+" "+ele.getRight();
-		  return "E12 :"+ele.op;
+		  return "E12 ";//+ele.op;
+	}
+	
+	def String text(Type ele) {
+		  return "Type";//+ele.op;
+	}
+	
+	def String text(QualTail ele) {
+		  return "QualTail";//+ele.op;
+	}
+	
+	def String text(OpQualTail ele) {
+		  return "OpQualTail ";//+ele.op;
 	}
 
 	def String text(E13 ele) {
 		  //return "E13 :"+ele.getLeft()+" "+ele.getOp()+" "+ele.getRight();
-		  return "E13 :"+ele.op;
+		  return "E13 ";//+ele.op;
 	}
 
 	def String text(E14 ele) {
 		  //return "E14 :"+ele.getE15left()+" "+ele.getDm()+" "+ele.getE15right();
-		  return "E14 :"+ele.op;
+		  return "E14 ";//+ele.op;
 	}
 
 	def String text(Op ele) {
 //		  return "Op :"+ele.getAop();
-		  return "Op :";
+		  return "Op";
 	}
 
-//	def String text(Jright_Molecule ele) {
-//		  return "Jright_Molecule :"+ele.getRight();
-//	}
+	def String text(Application ele) {
+		  return "Application";
+	}
 
+	def String text(RightJuxtaposed ele) {
+		  return "RightJuxtaposed";
+	}
+
+	def String text(LeftJuxtaposed ele) {
+		  return "LeftJuxtaposed";
+	}
+
+  	def String text(Jright_Molecule ele) {
+		  return "Jright_Molecule";//+ele.getRight();
+	}
+
+    /*
+     * when uncommented this causes Unhandled event loop exception
+     */
 //	def String text(Jright_Atom ele) {
-//		  return "Jright_Atom :"+ele.getRight2();
+//		  return "Jright_Atom";//+ele.getRight2();
 //	}
 
-//	def String text(Jleft_Molecule ele) {
-//		  return "Jleft_Molecule :"+ele.getM();
-//	}
+ 	def String text(Jleft_Molecule ele) {
+		  return "Jleft_Molecule";//+ele.getM();
+	}
 
+    /*
+     * when uncommented this causes Unhandled event loop exception
+     */
 //	def String text(Jleft_Atom ele) {
-//		  return "Jleft_Atom :"+ele.getBe();
+//		  return "Jleft_Atom";//+ele.getBe();
 //	}
 
-//	def String text(Parened ele) {
-//		  return "Parened :"+ele.getOp()+" "+ele.getE();
-//	}
+	def String text(Molecule ele) {
+		  return "Molecule";
+	}
 
-//	def String text(Bracketed ele) {
-//		  return "Bracketed :"+ele.getOp()+" "+ele.getE();
-//	}
+	def String text(Enclosure ele) {
+		  return "Enclosure";
+	}
 
-//	def String text(QuotedIds ele) {
-//		  return "QuotedIds :"+ele.getOp()+" "+ele.getN();
-//	}
+	def String text(DeclMolecule ele) {
+		  return "DeclMolecule";
+	}
 
-//	def String text(Names ele) {
-//		  return "Names :"+ele.getFirstName();
-//	}
+	def String text(BlockMolecule ele) {
+		  return "BlockMolecule";
+	}
+
+	def String text(BlockEnclosure ele) {
+		  return "BlockEnclosure";
+	}
+
+	def String text(Block ele) {
+		  return "Block";
+	}
+
+	def String text(Parened ele) {
+		  return "Parened";//+ele.getOp()+" "+ele.getE();
+	}
+
+ 	def String text(Bracketed ele) {
+		  return "Bracketed";//+ele.getOp()+" "+ele.getE();
+	}
+
+	def String text(QuotedIds ele) {
+		  return "QuotedIds";//+ele.getOp()+" "+ele.getN();
+	}
+
+	def String text(Names ele) {
+		  return "Names";//+ele.getFirstName();
+	}
+
+	def String text(Atom ele) {
+		  return "Atom";
+	}
 
 //	def String text(Id ele) {
-//		  return "Id :"+ele.getAB_Id();
+//		  return "Id";//+ele.getAB_Id();
 //	}
 
 //	def String text(QualOp_ArrowTok ele) {
@@ -290,14 +397,14 @@ class EditorLabelProvider extends org.eclipse.xtext.ui.label.DefaultEObjectLabel
 
 	def String text(CurlyContentsList_Labeled ele) {
 //		  return "CurlyContentsList_Labeled :"+ele.statemts;
-      return "CurlyContentsList_Labeled :"
+      return "CurlyContentsList_Labeled"
 	}
 
 	def String text(CurlyContentB_Labeled ele) {
 //		if (ele.getPred()!=null)  return "CurlyContentB_Labeled :"+ele.getPred();
 //		if (ele.getL()!=null)  return "CurlyContentB_Labeled :"+ele.getL();
 //		return "CurlyContentB_Labeled : "+ele.getPd();
-      return "CurlyContentB_Labeled : "
+      return "CurlyContentB_Labeled"
 	}
 
 }

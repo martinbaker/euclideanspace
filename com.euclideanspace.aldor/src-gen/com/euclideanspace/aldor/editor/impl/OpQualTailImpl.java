@@ -22,7 +22,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link com.euclideanspace.aldor.editor.impl.OpQualTailImpl#getName <em>Name</em>}</li>
+ *   <li>{@link com.euclideanspace.aldor.editor.impl.OpQualTailImpl#getNam <em>Nam</em>}</li>
  * </ul>
  * </p>
  *
@@ -31,14 +31,14 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 public class OpQualTailImpl extends MinimalEObjectImpl.Container implements OpQualTail
 {
   /**
-   * The cached value of the '{@link #getName() <em>Name</em>}' containment reference.
+   * The cached value of the '{@link #getNam() <em>Nam</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getName()
+   * @see #getNam()
    * @generated
    * @ordered
    */
-  protected Molecule name;
+  protected Molecule nam;
 
   /**
    * <!-- begin-user-doc -->
@@ -66,9 +66,9 @@ public class OpQualTailImpl extends MinimalEObjectImpl.Container implements OpQu
    * <!-- end-user-doc -->
    * @generated
    */
-  public Molecule getName()
+  public Molecule getNam()
   {
-    return name;
+    return nam;
   }
 
   /**
@@ -76,13 +76,13 @@ public class OpQualTailImpl extends MinimalEObjectImpl.Container implements OpQu
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetName(Molecule newName, NotificationChain msgs)
+  public NotificationChain basicSetNam(Molecule newNam, NotificationChain msgs)
   {
-    Molecule oldName = name;
-    name = newName;
+    Molecule oldNam = nam;
+    nam = newNam;
     if (eNotificationRequired())
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, EditorPackage.OP_QUAL_TAIL__NAME, oldName, newName);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, EditorPackage.OP_QUAL_TAIL__NAM, oldNam, newNam);
       if (msgs == null) msgs = notification; else msgs.add(notification);
     }
     return msgs;
@@ -93,20 +93,20 @@ public class OpQualTailImpl extends MinimalEObjectImpl.Container implements OpQu
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setName(Molecule newName)
+  public void setNam(Molecule newNam)
   {
-    if (newName != name)
+    if (newNam != nam)
     {
       NotificationChain msgs = null;
-      if (name != null)
-        msgs = ((InternalEObject)name).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - EditorPackage.OP_QUAL_TAIL__NAME, null, msgs);
-      if (newName != null)
-        msgs = ((InternalEObject)newName).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - EditorPackage.OP_QUAL_TAIL__NAME, null, msgs);
-      msgs = basicSetName(newName, msgs);
+      if (nam != null)
+        msgs = ((InternalEObject)nam).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - EditorPackage.OP_QUAL_TAIL__NAM, null, msgs);
+      if (newNam != null)
+        msgs = ((InternalEObject)newNam).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - EditorPackage.OP_QUAL_TAIL__NAM, null, msgs);
+      msgs = basicSetNam(newNam, msgs);
       if (msgs != null) msgs.dispatch();
     }
     else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, EditorPackage.OP_QUAL_TAIL__NAME, newName, newName));
+      eNotify(new ENotificationImpl(this, Notification.SET, EditorPackage.OP_QUAL_TAIL__NAM, newNam, newNam));
   }
 
   /**
@@ -119,8 +119,8 @@ public class OpQualTailImpl extends MinimalEObjectImpl.Container implements OpQu
   {
     switch (featureID)
     {
-      case EditorPackage.OP_QUAL_TAIL__NAME:
-        return basicSetName(null, msgs);
+      case EditorPackage.OP_QUAL_TAIL__NAM:
+        return basicSetNam(null, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -135,8 +135,8 @@ public class OpQualTailImpl extends MinimalEObjectImpl.Container implements OpQu
   {
     switch (featureID)
     {
-      case EditorPackage.OP_QUAL_TAIL__NAME:
-        return getName();
+      case EditorPackage.OP_QUAL_TAIL__NAM:
+        return getNam();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -151,8 +151,8 @@ public class OpQualTailImpl extends MinimalEObjectImpl.Container implements OpQu
   {
     switch (featureID)
     {
-      case EditorPackage.OP_QUAL_TAIL__NAME:
-        setName((Molecule)newValue);
+      case EditorPackage.OP_QUAL_TAIL__NAM:
+        setNam((Molecule)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -168,8 +168,8 @@ public class OpQualTailImpl extends MinimalEObjectImpl.Container implements OpQu
   {
     switch (featureID)
     {
-      case EditorPackage.OP_QUAL_TAIL__NAME:
-        setName((Molecule)null);
+      case EditorPackage.OP_QUAL_TAIL__NAM:
+        setNam((Molecule)null);
         return;
     }
     super.eUnset(featureID);
@@ -185,8 +185,8 @@ public class OpQualTailImpl extends MinimalEObjectImpl.Container implements OpQu
   {
     switch (featureID)
     {
-      case EditorPackage.OP_QUAL_TAIL__NAME:
-        return name != null;
+      case EditorPackage.OP_QUAL_TAIL__NAM:
+        return nam != null;
     }
     return super.eIsSet(featureID);
   }

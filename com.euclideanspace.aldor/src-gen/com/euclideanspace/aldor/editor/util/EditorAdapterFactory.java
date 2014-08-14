@@ -635,16 +635,6 @@ public class EditorAdapterFactory extends AdapterFactoryImpl
         return createE9Adapter();
       }
       @Override
-      public Adapter caseE11_E12(E11_E12 object)
-      {
-        return createE11_E12Adapter();
-      }
-      @Override
-      public Adapter caseE11_Op(E11_Op object)
-      {
-        return createE11_OpAdapter();
-      }
-      @Override
       public Adapter caseArrowTok(ArrowTok object)
       {
         return createArrowTokAdapter();
@@ -2382,36 +2372,6 @@ public class EditorAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createE9Adapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link com.euclideanspace.aldor.editor.E11_E12 <em>E11 E12</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see com.euclideanspace.aldor.editor.E11_E12
-   * @generated
-   */
-  public Adapter createE11_E12Adapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link com.euclideanspace.aldor.editor.E11_Op <em>E11 Op</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see com.euclideanspace.aldor.editor.E11_Op
-   * @generated
-   */
-  public Adapter createE11_OpAdapter()
   {
     return null;
   }

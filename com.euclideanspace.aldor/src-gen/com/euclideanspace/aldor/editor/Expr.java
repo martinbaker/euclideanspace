@@ -15,7 +15,8 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * <ul>
  *   <li>{@link com.euclideanspace.aldor.editor.Expr#getLeft <em>Left</em>}</li>
- *   <li>{@link com.euclideanspace.aldor.editor.Expr#getOp5 <em>Op5</em>}</li>
+ *   <li>{@link com.euclideanspace.aldor.editor.Expr#getOp <em>Op</em>}</li>
+ *   <li>{@link com.euclideanspace.aldor.editor.Expr#getRight <em>Right</em>}</li>
  * </ul>
  * </p>
  *
@@ -52,19 +53,35 @@ public interface Expr extends InfixedExpr, Type
   void setLeft(EObject value);
 
   /**
-   * Returns the value of the '<em><b>Op5</b></em>' containment reference list.
-   * The list contents are of type {@link com.euclideanspace.aldor.editor.SegOp}.
+   * Returns the value of the '<em><b>Op</b></em>' attribute list.
+   * The list contents are of type {@link java.lang.String}.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Op5</em>' containment reference list isn't clear,
+   * If the meaning of the '<em>Op</em>' attribute list isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Op5</em>' containment reference list.
-   * @see com.euclideanspace.aldor.editor.EditorPackage#getExpr_Op5()
+   * @return the value of the '<em>Op</em>' attribute list.
+   * @see com.euclideanspace.aldor.editor.EditorPackage#getExpr_Op()
+   * @model unique="false"
+   * @generated
+   */
+  EList<String> getOp();
+
+  /**
+   * Returns the value of the '<em><b>Right</b></em>' containment reference list.
+   * The list contents are of type {@link org.eclipse.emf.ecore.EObject}.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Right</em>' containment reference list isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Right</em>' containment reference list.
+   * @see com.euclideanspace.aldor.editor.EditorPackage#getExpr_Right()
    * @model containment="true"
    * @generated
    */
-  EList<SegOp> getOp5();
+  EList<EObject> getRight();
 
 } // Expr

@@ -69,29 +69,19 @@ public interface E12 extends EObject
   EList<ArrowOp> getOp();
 
   /**
-   * Returns the value of the '<em><b>Right</b></em>' containment reference.
+   * Returns the value of the '<em><b>Right</b></em>' containment reference list.
+   * The list contents are of type {@link com.euclideanspace.aldor.editor.E13}.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Right</em>' containment reference isn't clear,
+   * If the meaning of the '<em>Right</em>' containment reference list isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Right</em>' containment reference.
-   * @see #setRight(E13)
+   * @return the value of the '<em>Right</em>' containment reference list.
    * @see com.euclideanspace.aldor.editor.EditorPackage#getE12_Right()
    * @model containment="true"
    * @generated
    */
-  E13 getRight();
-
-  /**
-   * Sets the value of the '{@link com.euclideanspace.aldor.editor.E12#getRight <em>Right</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Right</em>' containment reference.
-   * @see #getRight()
-   * @generated
-   */
-  void setRight(E13 value);
+  EList<E13> getRight();
 
 } // E12

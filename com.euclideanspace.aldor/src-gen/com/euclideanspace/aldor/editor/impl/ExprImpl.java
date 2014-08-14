@@ -4,7 +4,6 @@ package com.euclideanspace.aldor.editor.impl;
 
 import com.euclideanspace.aldor.editor.EditorPackage;
 import com.euclideanspace.aldor.editor.Expr;
-import com.euclideanspace.aldor.editor.SegOp;
 
 import java.util.Collection;
 
@@ -19,6 +18,7 @@ import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
+import org.eclipse.emf.ecore.util.EDataTypeEList;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
@@ -30,7 +30,8 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * The following features are implemented:
  * <ul>
  *   <li>{@link com.euclideanspace.aldor.editor.impl.ExprImpl#getLeft <em>Left</em>}</li>
- *   <li>{@link com.euclideanspace.aldor.editor.impl.ExprImpl#getOp5 <em>Op5</em>}</li>
+ *   <li>{@link com.euclideanspace.aldor.editor.impl.ExprImpl#getOp <em>Op</em>}</li>
+ *   <li>{@link com.euclideanspace.aldor.editor.impl.ExprImpl#getRight <em>Right</em>}</li>
  * </ul>
  * </p>
  *
@@ -49,14 +50,24 @@ public class ExprImpl extends InfixedExprImpl implements Expr
   protected EObject left;
 
   /**
-   * The cached value of the '{@link #getOp5() <em>Op5</em>}' containment reference list.
+   * The cached value of the '{@link #getOp() <em>Op</em>}' attribute list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getOp5()
+   * @see #getOp()
    * @generated
    * @ordered
    */
-  protected EList<SegOp> op5;
+  protected EList<String> op;
+
+  /**
+   * The cached value of the '{@link #getRight() <em>Right</em>}' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getRight()
+   * @generated
+   * @ordered
+   */
+  protected EList<EObject> right;
 
   /**
    * <!-- begin-user-doc -->
@@ -132,13 +143,27 @@ public class ExprImpl extends InfixedExprImpl implements Expr
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<SegOp> getOp5()
+  public EList<String> getOp()
   {
-    if (op5 == null)
+    if (op == null)
     {
-      op5 = new EObjectContainmentEList<SegOp>(SegOp.class, this, EditorPackage.EXPR__OP5);
+      op = new EDataTypeEList<String>(String.class, this, EditorPackage.EXPR__OP);
     }
-    return op5;
+    return op;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EList<EObject> getRight()
+  {
+    if (right == null)
+    {
+      right = new EObjectContainmentEList<EObject>(EObject.class, this, EditorPackage.EXPR__RIGHT);
+    }
+    return right;
   }
 
   /**
@@ -153,8 +178,8 @@ public class ExprImpl extends InfixedExprImpl implements Expr
     {
       case EditorPackage.EXPR__LEFT:
         return basicSetLeft(null, msgs);
-      case EditorPackage.EXPR__OP5:
-        return ((InternalEList<?>)getOp5()).basicRemove(otherEnd, msgs);
+      case EditorPackage.EXPR__RIGHT:
+        return ((InternalEList<?>)getRight()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -171,8 +196,10 @@ public class ExprImpl extends InfixedExprImpl implements Expr
     {
       case EditorPackage.EXPR__LEFT:
         return getLeft();
-      case EditorPackage.EXPR__OP5:
-        return getOp5();
+      case EditorPackage.EXPR__OP:
+        return getOp();
+      case EditorPackage.EXPR__RIGHT:
+        return getRight();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -191,9 +218,13 @@ public class ExprImpl extends InfixedExprImpl implements Expr
       case EditorPackage.EXPR__LEFT:
         setLeft((EObject)newValue);
         return;
-      case EditorPackage.EXPR__OP5:
-        getOp5().clear();
-        getOp5().addAll((Collection<? extends SegOp>)newValue);
+      case EditorPackage.EXPR__OP:
+        getOp().clear();
+        getOp().addAll((Collection<? extends String>)newValue);
+        return;
+      case EditorPackage.EXPR__RIGHT:
+        getRight().clear();
+        getRight().addAll((Collection<? extends EObject>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -212,8 +243,11 @@ public class ExprImpl extends InfixedExprImpl implements Expr
       case EditorPackage.EXPR__LEFT:
         setLeft((EObject)null);
         return;
-      case EditorPackage.EXPR__OP5:
-        getOp5().clear();
+      case EditorPackage.EXPR__OP:
+        getOp().clear();
+        return;
+      case EditorPackage.EXPR__RIGHT:
+        getRight().clear();
         return;
     }
     super.eUnset(featureID);
@@ -231,10 +265,29 @@ public class ExprImpl extends InfixedExprImpl implements Expr
     {
       case EditorPackage.EXPR__LEFT:
         return left != null;
-      case EditorPackage.EXPR__OP5:
-        return op5 != null && !op5.isEmpty();
+      case EditorPackage.EXPR__OP:
+        return op != null && !op.isEmpty();
+      case EditorPackage.EXPR__RIGHT:
+        return right != null && !right.isEmpty();
     }
     return super.eIsSet(featureID);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String toString()
+  {
+    if (eIsProxy()) return super.toString();
+
+    StringBuffer result = new StringBuffer(super.toString());
+    result.append(" (op: ");
+    result.append(op);
+    result.append(')');
+    return result.toString();
   }
 
 } //ExprImpl

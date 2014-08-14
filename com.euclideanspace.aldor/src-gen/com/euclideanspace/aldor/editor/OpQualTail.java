@@ -12,7 +12,7 @@ import org.eclipse.emf.ecore.EObject;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link com.euclideanspace.aldor.editor.OpQualTail#getName <em>Name</em>}</li>
+ *   <li>{@link com.euclideanspace.aldor.editor.OpQualTail#getNam <em>Nam</em>}</li>
  * </ul>
  * </p>
  *
@@ -23,29 +23,29 @@ import org.eclipse.emf.ecore.EObject;
 public interface OpQualTail extends EObject
 {
   /**
-   * Returns the value of the '<em><b>Name</b></em>' containment reference.
+   * Returns the value of the '<em><b>Nam</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Name</em>' containment reference isn't clear,
+   * If the meaning of the '<em>Nam</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Name</em>' containment reference.
-   * @see #setName(Molecule)
-   * @see com.euclideanspace.aldor.editor.EditorPackage#getOpQualTail_Name()
+   * @return the value of the '<em>Nam</em>' containment reference.
+   * @see #setNam(Molecule)
+   * @see com.euclideanspace.aldor.editor.EditorPackage#getOpQualTail_Nam()
    * @model containment="true"
    * @generated
    */
-  Molecule getName();
+  Molecule getNam();
 
   /**
-   * Sets the value of the '{@link com.euclideanspace.aldor.editor.OpQualTail#getName <em>Name</em>}' containment reference.
+   * Sets the value of the '{@link com.euclideanspace.aldor.editor.OpQualTail#getNam <em>Nam</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Name</em>' containment reference.
-   * @see #getName()
+   * @param value the new value of the '<em>Nam</em>' containment reference.
+   * @see #getNam()
    * @generated
    */
-  void setName(Molecule value);
+  void setNam(Molecule value);
 
 } // OpQualTail

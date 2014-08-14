@@ -176,8 +176,6 @@ public class EditorFactoryImpl extends EFactoryImpl implements EditorFactory
       case EditorPackage.E7: return createE7();
       case EditorPackage.E8: return createE8();
       case EditorPackage.E9: return createE9();
-      case EditorPackage.E11_E12: return createE11_E12();
-      case EditorPackage.E11_OP: return createE11_Op();
       case EditorPackage.ARROW_TOK: return createArrowTok();
       case EditorPackage.LATTICE_TOK: return createLatticeTok();
       case EditorPackage.RELATION_TOK: return createRelationTok();
@@ -1421,28 +1419,6 @@ public class EditorFactoryImpl extends EFactoryImpl implements EditorFactory
   {
     E9Impl e9 = new E9Impl();
     return e9;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public E11_E12 createE11_E12()
-  {
-    E11_E12Impl e11_E12 = new E11_E12Impl();
-    return e11_E12;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public E11_Op createE11_Op()
-  {
-    E11_OpImpl e11_Op = new E11_OpImpl();
-    return e11_Op;
   }
 
   /**

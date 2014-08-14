@@ -535,18 +535,6 @@ public class EditorSwitch<T> extends Switch<T>
       {
         RelationOp relationOp = (RelationOp)theEObject;
         T result = caseRelationOp(relationOp);
-        if (result == null) result = caseExpr(relationOp);
-        if (result == null) result = caseInfixedExpr(relationOp);
-        if (result == null) result = caseType(relationOp);
-        if (result == null) result = caseenlister1_InfixedExpr_Comma(relationOp);
-        if (result == null) result = caseDeclPart(relationOp);
-        if (result == null) result = caseenlist1_InfixedExpr_Comma_AB(relationOp);
-        if (result == null) result = caseInfixedExprs(relationOp);
-        if (result == null) result = caseInfixedExprsDecl(relationOp);
-        if (result == null) result = caseBindingR_InfixedExprsDecl_AnyStatement(relationOp);
-        if (result == null) result = caseDeclBinding(relationOp);
-        if (result == null) result = caseSig(relationOp);
-        if (result == null) result = caseMacroBody(relationOp);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -848,18 +836,6 @@ public class EditorSwitch<T> extends Switch<T>
         QualOp_RelationTok qualOp_RelationTok = (QualOp_RelationTok)theEObject;
         T result = caseQualOp_RelationTok(qualOp_RelationTok);
         if (result == null) result = caseRelationOp(qualOp_RelationTok);
-        if (result == null) result = caseExpr(qualOp_RelationTok);
-        if (result == null) result = caseInfixedExpr(qualOp_RelationTok);
-        if (result == null) result = caseType(qualOp_RelationTok);
-        if (result == null) result = caseenlister1_InfixedExpr_Comma(qualOp_RelationTok);
-        if (result == null) result = caseDeclPart(qualOp_RelationTok);
-        if (result == null) result = caseenlist1_InfixedExpr_Comma_AB(qualOp_RelationTok);
-        if (result == null) result = caseInfixedExprs(qualOp_RelationTok);
-        if (result == null) result = caseInfixedExprsDecl(qualOp_RelationTok);
-        if (result == null) result = caseBindingR_InfixedExprsDecl_AnyStatement(qualOp_RelationTok);
-        if (result == null) result = caseDeclBinding(qualOp_RelationTok);
-        if (result == null) result = caseSig(qualOp_RelationTok);
-        if (result == null) result = caseMacroBody(qualOp_RelationTok);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -1159,44 +1135,6 @@ public class EditorSwitch<T> extends Switch<T>
         if (result == null) result = caseDeclBinding(e9);
         if (result == null) result = caseSig(e9);
         if (result == null) result = caseMacroBody(e9);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case EditorPackage.E11_E12:
-      {
-        E11_E12 e11_E12 = (E11_E12)theEObject;
-        T result = caseE11_E12(e11_E12);
-        if (result == null) result = caseExpr(e11_E12);
-        if (result == null) result = caseInfixedExpr(e11_E12);
-        if (result == null) result = caseType(e11_E12);
-        if (result == null) result = caseenlister1_InfixedExpr_Comma(e11_E12);
-        if (result == null) result = caseDeclPart(e11_E12);
-        if (result == null) result = caseenlist1_InfixedExpr_Comma_AB(e11_E12);
-        if (result == null) result = caseInfixedExprs(e11_E12);
-        if (result == null) result = caseInfixedExprsDecl(e11_E12);
-        if (result == null) result = caseBindingR_InfixedExprsDecl_AnyStatement(e11_E12);
-        if (result == null) result = caseDeclBinding(e11_E12);
-        if (result == null) result = caseSig(e11_E12);
-        if (result == null) result = caseMacroBody(e11_E12);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case EditorPackage.E11_OP:
-      {
-        E11_Op e11_Op = (E11_Op)theEObject;
-        T result = caseE11_Op(e11_Op);
-        if (result == null) result = caseExpr(e11_Op);
-        if (result == null) result = caseInfixedExpr(e11_Op);
-        if (result == null) result = caseType(e11_Op);
-        if (result == null) result = caseenlister1_InfixedExpr_Comma(e11_Op);
-        if (result == null) result = caseDeclPart(e11_Op);
-        if (result == null) result = caseenlist1_InfixedExpr_Comma_AB(e11_Op);
-        if (result == null) result = caseInfixedExprs(e11_Op);
-        if (result == null) result = caseInfixedExprsDecl(e11_Op);
-        if (result == null) result = caseBindingR_InfixedExprsDecl_AnyStatement(e11_Op);
-        if (result == null) result = caseDeclBinding(e11_Op);
-        if (result == null) result = caseSig(e11_Op);
-        if (result == null) result = caseMacroBody(e11_Op);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -3064,38 +3002,6 @@ public class EditorSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseE9(E9 object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>E11 E12</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>E11 E12</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseE11_E12(E11_E12 object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>E11 Op</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>E11 Op</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseE11_Op(E11_Op object)
   {
     return null;
   }

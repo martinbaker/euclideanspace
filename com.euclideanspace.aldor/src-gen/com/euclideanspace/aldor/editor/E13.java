@@ -69,29 +69,19 @@ public interface E13 extends EObject
   EList<String> getOp();
 
   /**
-   * Returns the value of the '<em><b>Right</b></em>' containment reference.
+   * Returns the value of the '<em><b>Right</b></em>' containment reference list.
+   * The list contents are of type {@link com.euclideanspace.aldor.editor.QualTail}.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Right</em>' containment reference isn't clear,
+   * If the meaning of the '<em>Right</em>' containment reference list isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Right</em>' containment reference.
-   * @see #setRight(QualTail)
+   * @return the value of the '<em>Right</em>' containment reference list.
    * @see com.euclideanspace.aldor.editor.EditorPackage#getE13_Right()
    * @model containment="true"
    * @generated
    */
-  QualTail getRight();
-
-  /**
-   * Sets the value of the '{@link com.euclideanspace.aldor.editor.E13#getRight <em>Right</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Right</em>' containment reference.
-   * @see #getRight()
-   * @generated
-   */
-  void setRight(QualTail value);
+  EList<QualTail> getRight();
 
 } // E13

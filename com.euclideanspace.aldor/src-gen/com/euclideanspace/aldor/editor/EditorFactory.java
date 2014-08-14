@@ -1031,24 +1031,6 @@ public interface EditorFactory extends EFactory
   E9 createE9();
 
   /**
-   * Returns a new object of class '<em>E11 E12</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>E11 E12</em>'.
-   * @generated
-   */
-  E11_E12 createE11_E12();
-
-  /**
-   * Returns a new object of class '<em>E11 Op</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>E11 Op</em>'.
-   * @generated
-   */
-  E11_Op createE11_Op();
-
-  /**
    * Returns a new object of class '<em>Arrow Tok</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

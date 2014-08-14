@@ -854,45 +854,81 @@ Infixed hidden(WS,KW_NEWLINE):
   b=Block
 ;
 
-InfixedExpr hidden(WS,KW_NEWLINE):
+/*
+ * if we enable 'returns Expr' then 'E11_E12' replaces id in AST
+ */
+InfixedExpr /*returns Expr*/ hidden(WS,KW_NEWLINE):
  E11_Op
 | =>E3
 ;
 
-
+/*
+ * 'and','or' logic operators
+ * need to allow a 'qualified op', that is an operation followed by '$' and a type
+ */
 E3 returns Expr hidden(WS,KW_NEWLINE):
-  left=E4 ({E3.left=current}(op+='and'|op+='or'|op2 += LatticeOp) right=E4)*
+  left=E4 ({E3.left=current} op=('and'|'or'|LatticeTok /*QualOp_LatticeTok*/) right=E4)*
 ;
 
+/* relation operators
+ * in YACC version this rule also includes relation operators as prefix
+ * but for Antlr we need to move prefix operators somewhere else
+ * 
+ * need to allow a 'qualified op', that is an operation followed by '$' and a type
+ */
 E4 returns Expr hidden(WS,KW_NEWLINE):
- (left=E5 ({E4.left=current}(op+='has'|op2 += RelationOp) right=E5)*)
-| RelationOp right=E5
+ (left=E5 ({E4.left=current}op=('has'|RelationTok /*RelationOp*/) right=E5)*)
+//| (RelationOp {E4.left=current} right+=E5)
 ;
 
+/* segment operators: '..' and 'by'
+ * in YACC version this rule also includes segment operators as postfix
+ * but for Antlr we need to move postfix operators somewhere else
+ * 
+ * need to allow a 'qualified op', that is an operation followed by '$' and a type
+ */
 E5 returns Expr hidden(WS,KW_NEWLINE):
-=> (left=E6 ({E5.left=current}op5+=SegOp right=E6)*)
-| left=E6 op5+=SegOp
+//=>
+  (left=E6 ({E5.left=current}op=SegTok /*SegOp*/ right=E6)*)
+//| (left=E6 {E5.left=current} op5+=SegOp)
 ;
 
-/* If unary plus operation is enabled then we get error in
-* InfixedExpr non-LL(*) decision  due to recursive rule invocations
-* reachable from alts 1,2
-* That is we can get a PlusOp from InfixedExpr in 2 ways */
+/*
+ * in YACC version this rule also includes relation operators as prefix (unary plus)
+ * but for Antlr we need to move prefix operators somewhere else
+ * 
+ * need to allow a 'qualified op', that is an operation followed by '$' and a type
+ */
 E6 returns Expr hidden(WS,KW_NEWLINE):
- (left=E7 ({E6.left=current}op6+=PlusOp right=E7)*)
+ (left=E7 ({E6.left=current}op=PlusTok /*PlusOp*/ right=E7)*)
 //| (op6+=PlusOp right=E7)
 ;
 
+/*
+ * quotient operations
+ * 
+ * need to allow a 'qualified op', that is an operation followed by '$' and a type
+ */
 E7 returns Expr hidden(WS,KW_NEWLINE):
- left=E8 ({E7.left=current}op7+=QuotientOp right=E8)*
+ left=E8 ({E7.left=current}op=QuotientTok /*QuotientOp*/ right=E8)*
 ;
 
+/*
+ * multiplication operations
+ * 
+ * need to allow a 'qualified op', that is an operation followed by '$' and a type
+ */
 E8 returns Expr hidden(WS,KW_NEWLINE):
- left=E9 ({E8.left=current}op8+=TimesOp right=E9)*
+ left=E9 ({E8.left=current}op=TimesTok /*TimesOp*/ right=E9)*
 ;
 
+/*
+ * exponent operations
+ * 
+ * need to allow a 'qualified op', that is an operation followed by '$' and a type
+ */
 E9 returns Expr hidden(WS,KW_NEWLINE):
- left=E11_E12 ({E9.left=current}op9+=PowerOp right=E11_E12)*
+ left=E11_E12 ({E9.left=current}op=PowerTok /*PowerOp*/ right=E11_E12)*
 ;
 
 /* Substituted Rules in Xtext:
@@ -908,32 +944,44 @@ E9 returns Expr hidden(WS,KW_NEWLINE):
  * { $$ = abNewPretendTo(TPOS($2),$1,$3); }
  * ;
  */
+ 
+/*
+ * This version of E11 is used in the middle of the precedence stack
+ */
 E11_E12 returns Expr hidden(WS,KW_NEWLINE):
-	(left=E12 ({E11_E12.left=current}(op+=KW_2COLON|op+=KW_AT|op+='pretend') right=E12)*)
+	(left=E12 (/*{E11_E12.left=current}*/(op+=KW_2COLON|op+=KW_AT|op+='pretend') right+=E12)*)
 ;
 
+/*
+ * This version of E11 is used at the top of the precedence stack in
+ * 'InfixedExpr'
+ */
 E11_Op returns Expr hidden(WS,KW_NEWLINE):
-	(left=Op ({E11_Op.left=current}(op+=KW_2COLON|op+=KW_AT|op+='pretend') right=E12)*)
+	(left=Op (/*{E11_Op.left=current}*/(op+=KW_2COLON|op+=KW_AT|op+='pretend') right+=E12)*)
 ;
 
+/*
+ * use this rule when we know it is a type.
+ * That is in 'DeclPart' where it follows '$'
+ */
 Type hidden(WS,KW_NEWLINE):
 	E11_E12
 ;
 
-E12:
-  (left=E13 ({E12.left=current}op+=ArrowOp right=E13)*)
+E12 hidden(WS,KW_NEWLINE):
+  (left=E13 ({E12.left=current}op+=ArrowOp right+=E13)*)
 ;
 
-E13:
-  (left=E14 ({E13.left=current}op+=KW_DOLLAR right=QualTail)*)
+E13 hidden(WS,KW_NEWLINE):
+  (left=E14 ({E13.left=current}op+=KW_DOLLAR right+=QualTail)*)
 ;
 
-QualTail:
+QualTail hidden(WS,KW_NEWLINE):
  LeftJuxtaposed =>(KW_DOLLAR qt=QualTail)?
 ;
 
 OpQualTail hidden(WS,KW_NEWLINE):
- name=Molecule => (KW_DOLLAR OpQualTail)?
+ nam=Molecule => (KW_DOLLAR OpQualTail)?
 ;
 
 E14 hidden(WS,KW_NEWLINE):
@@ -1202,9 +1250,7 @@ name=Id
  * manipulation.
  */
 Id hidden(WS,KW_NEWLINE):
-AB_Id=TK_ID
-| op=KW_SHARP
-| op=KW_TILDE
+name=(TK_ID | KW_SHARP | KW_TILDE)
 ;
 
 Literal hidden(WS,KW_NEWLINE):

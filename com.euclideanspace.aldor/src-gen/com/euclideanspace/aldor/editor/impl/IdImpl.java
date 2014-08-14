@@ -19,8 +19,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link com.euclideanspace.aldor.editor.impl.IdImpl#getAB_Id <em>AB Id</em>}</li>
- *   <li>{@link com.euclideanspace.aldor.editor.impl.IdImpl#getOp <em>Op</em>}</li>
+ *   <li>{@link com.euclideanspace.aldor.editor.impl.IdImpl#getName <em>Name</em>}</li>
  * </ul>
  * </p>
  *
@@ -29,44 +28,24 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 public class IdImpl extends MinimalEObjectImpl.Container implements Id
 {
   /**
-   * The default value of the '{@link #getAB_Id() <em>AB Id</em>}' attribute.
+   * The default value of the '{@link #getName() <em>Name</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getAB_Id()
+   * @see #getName()
    * @generated
    * @ordered
    */
-  protected static final String AB_ID_EDEFAULT = null;
+  protected static final String NAME_EDEFAULT = null;
 
   /**
-   * The cached value of the '{@link #getAB_Id() <em>AB Id</em>}' attribute.
+   * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getAB_Id()
+   * @see #getName()
    * @generated
    * @ordered
    */
-  protected String aB_Id = AB_ID_EDEFAULT;
-
-  /**
-   * The default value of the '{@link #getOp() <em>Op</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getOp()
-   * @generated
-   * @ordered
-   */
-  protected static final String OP_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getOp() <em>Op</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getOp()
-   * @generated
-   * @ordered
-   */
-  protected String op = OP_EDEFAULT;
+  protected String name = NAME_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
@@ -94,9 +73,9 @@ public class IdImpl extends MinimalEObjectImpl.Container implements Id
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getAB_Id()
+  public String getName()
   {
-    return aB_Id;
+    return name;
   }
 
   /**
@@ -104,35 +83,12 @@ public class IdImpl extends MinimalEObjectImpl.Container implements Id
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setAB_Id(String newAB_Id)
+  public void setName(String newName)
   {
-    String oldAB_Id = aB_Id;
-    aB_Id = newAB_Id;
+    String oldName = name;
+    name = newName;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, EditorPackage.ID__AB_ID, oldAB_Id, aB_Id));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public String getOp()
-  {
-    return op;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setOp(String newOp)
-  {
-    String oldOp = op;
-    op = newOp;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, EditorPackage.ID__OP, oldOp, op));
+      eNotify(new ENotificationImpl(this, Notification.SET, EditorPackage.ID__NAME, oldName, name));
   }
 
   /**
@@ -145,10 +101,8 @@ public class IdImpl extends MinimalEObjectImpl.Container implements Id
   {
     switch (featureID)
     {
-      case EditorPackage.ID__AB_ID:
-        return getAB_Id();
-      case EditorPackage.ID__OP:
-        return getOp();
+      case EditorPackage.ID__NAME:
+        return getName();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -163,11 +117,8 @@ public class IdImpl extends MinimalEObjectImpl.Container implements Id
   {
     switch (featureID)
     {
-      case EditorPackage.ID__AB_ID:
-        setAB_Id((String)newValue);
-        return;
-      case EditorPackage.ID__OP:
-        setOp((String)newValue);
+      case EditorPackage.ID__NAME:
+        setName((String)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -183,11 +134,8 @@ public class IdImpl extends MinimalEObjectImpl.Container implements Id
   {
     switch (featureID)
     {
-      case EditorPackage.ID__AB_ID:
-        setAB_Id(AB_ID_EDEFAULT);
-        return;
-      case EditorPackage.ID__OP:
-        setOp(OP_EDEFAULT);
+      case EditorPackage.ID__NAME:
+        setName(NAME_EDEFAULT);
         return;
     }
     super.eUnset(featureID);
@@ -203,10 +151,8 @@ public class IdImpl extends MinimalEObjectImpl.Container implements Id
   {
     switch (featureID)
     {
-      case EditorPackage.ID__AB_ID:
-        return AB_ID_EDEFAULT == null ? aB_Id != null : !AB_ID_EDEFAULT.equals(aB_Id);
-      case EditorPackage.ID__OP:
-        return OP_EDEFAULT == null ? op != null : !OP_EDEFAULT.equals(op);
+      case EditorPackage.ID__NAME:
+        return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
     }
     return super.eIsSet(featureID);
   }
@@ -222,10 +168,8 @@ public class IdImpl extends MinimalEObjectImpl.Container implements Id
     if (eIsProxy()) return super.toString();
 
     StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (AB_Id: ");
-    result.append(aB_Id);
-    result.append(", op: ");
-    result.append(op);
+    result.append(" (name: ");
+    result.append(name);
     result.append(')');
     return result.toString();
   }
