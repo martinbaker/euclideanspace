@@ -363,7 +363,7 @@ public class EditorSyntacticSequencer extends AbstractSyntacticSequencer {
 
 	/**
 	 * Syntax:
-	 *     KW_2EQ | KW_MAPSTOSTAR | KW_MARROW | 'assign' | KW_MAPSTO
+	 *     'assign' | KW_MAPSTOSTAR | KW_2EQ | KW_MARROW | KW_MAPSTO
 	 */
 	protected void emit_BindingL_Infixed_BalStatement_AssignKeyword_1_0_1_0_or_KW_2EQTerminalRuleCall_1_0_1_1_or_KW_MAPSTOSTARTerminalRuleCall_1_0_1_4_or_KW_MAPSTOTerminalRuleCall_1_0_1_3_or_KW_MARROWTerminalRuleCall_1_0_1_2(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
@@ -371,7 +371,7 @@ public class EditorSyntacticSequencer extends AbstractSyntacticSequencer {
 	
 	/**
 	 * Syntax:
-	 *     KW_MAPSTO | KW_MARROW | KW_2EQ | 'assign' | KW_MAPSTOSTAR
+	 *     KW_MAPSTO | KW_2EQ | 'assign' | KW_MAPSTOSTAR | KW_MARROW
 	 */
 	protected void emit_BindingL_Infixed_Collection_AssignKeyword_1_0_1_0_or_KW_2EQTerminalRuleCall_1_0_1_1_or_KW_MAPSTOSTARTerminalRuleCall_1_0_1_4_or_KW_MAPSTOTerminalRuleCall_1_0_1_3_or_KW_MARROWTerminalRuleCall_1_0_1_2(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
@@ -379,7 +379,7 @@ public class EditorSyntacticSequencer extends AbstractSyntacticSequencer {
 	
 	/**
 	 * Syntax:
-	 *     KW_MARROW | KW_MAPSTO | 'assign' | KW_2EQ | KW_MAPSTOSTAR
+	 *     KW_MARROW | KW_2EQ | KW_MAPSTOSTAR | KW_MAPSTO | 'assign'
 	 */
 	protected void emit_BindingR_InfixedExprsDecl_AnyStatement_AssignKeyword_1_0_0_or_KW_2EQTerminalRuleCall_1_0_1_or_KW_MAPSTOSTARTerminalRuleCall_1_0_4_or_KW_MAPSTOTerminalRuleCall_1_0_3_or_KW_MARROWTerminalRuleCall_1_0_2(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
@@ -395,7 +395,7 @@ public class EditorSyntacticSequencer extends AbstractSyntacticSequencer {
 	
 	/**
 	 * Syntax:
-	 *     KW_COLON | KW_COLONSTAR
+	 *     KW_COLONSTAR | KW_COLON
 	 */
 	protected void emit_DeclPart_KW_COLONSTARTerminalRuleCall_1_0_or_KW_COLONTerminalRuleCall_0_0(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
@@ -411,7 +411,7 @@ public class EditorSyntacticSequencer extends AbstractSyntacticSequencer {
 	
 	/**
 	 * Syntax:
-	 *     'but' | 'catch'
+	 *     'catch' | 'but'
 	 */
 	protected void emit_Flow_AnyStatement_ButKeyword_4_2_0_or_CatchKeyword_4_2_1(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
@@ -427,7 +427,7 @@ public class EditorSyntacticSequencer extends AbstractSyntacticSequencer {
 	
 	/**
 	 * Syntax:
-	 *     ('local' | 'free' | 'fluid')?
+	 *     ('local' | 'fluid' | 'free')?
 	 */
 	protected void emit_ForLhs___FluidKeyword_0_2_or_FreeKeyword_0_0_or_LocalKeyword_0_1__q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);

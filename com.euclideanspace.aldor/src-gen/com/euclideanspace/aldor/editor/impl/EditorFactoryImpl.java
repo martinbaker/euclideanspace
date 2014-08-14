@@ -105,8 +105,6 @@ public class EditorFactoryImpl extends EFactoryImpl implements EditorFactory
       case EditorPackage.INFIXED_EXPR: return createInfixedExpr();
       case EditorPackage.EXPR: return createExpr();
       case EditorPackage.TYPE: return createType();
-      case EditorPackage.E12: return createE12();
-      case EditorPackage.E13: return createE13();
       case EditorPackage.QUAL_TAIL: return createQualTail();
       case EditorPackage.OP_QUAL_TAIL: return createOpQualTail();
       case EditorPackage.E14: return createE14();
@@ -176,6 +174,10 @@ public class EditorFactoryImpl extends EFactoryImpl implements EditorFactory
       case EditorPackage.E7: return createE7();
       case EditorPackage.E8: return createE8();
       case EditorPackage.E9: return createE9();
+      case EditorPackage.E11_E12: return createE11_E12();
+      case EditorPackage.E11_OP: return createE11_Op();
+      case EditorPackage.E12: return createE12();
+      case EditorPackage.E13: return createE13();
       case EditorPackage.ARROW_TOK: return createArrowTok();
       case EditorPackage.LATTICE_TOK: return createLatticeTok();
       case EditorPackage.RELATION_TOK: return createRelationTok();
@@ -638,28 +640,6 @@ public class EditorFactoryImpl extends EFactoryImpl implements EditorFactory
   {
     TypeImpl type = new TypeImpl();
     return type;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public E12 createE12()
-  {
-    E12Impl e12 = new E12Impl();
-    return e12;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public E13 createE13()
-  {
-    E13Impl e13 = new E13Impl();
-    return e13;
   }
 
   /**
@@ -1419,6 +1399,50 @@ public class EditorFactoryImpl extends EFactoryImpl implements EditorFactory
   {
     E9Impl e9 = new E9Impl();
     return e9;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public E11_E12 createE11_E12()
+  {
+    E11_E12Impl e11_E12 = new E11_E12Impl();
+    return e11_E12;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public E11_Op createE11_Op()
+  {
+    E11_OpImpl e11_Op = new E11_OpImpl();
+    return e11_Op;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public E12 createE12()
+  {
+    E12Impl e12 = new E12Impl();
+    return e12;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public E13 createE13()
+  {
+    E13Impl e13 = new E13Impl();
+    return e13;
   }
 
   /**

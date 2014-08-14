@@ -14,7 +14,6 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -32,7 +31,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  *
  * @generated
  */
-public class E14Impl extends MinimalEObjectImpl.Container implements E14
+public class E14Impl extends ExprImpl implements E14
 {
   /**
    * The cached value of the '{@link #getE15left() <em>E1 5left</em>}' containment reference.

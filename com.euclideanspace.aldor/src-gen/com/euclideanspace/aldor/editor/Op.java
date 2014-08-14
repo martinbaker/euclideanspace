@@ -20,7 +20,7 @@ import org.eclipse.emf.ecore.EObject;
  * @model
  * @generated
  */
-public interface Op extends EObject
+public interface Op extends Expr
 {
   /**
    * Returns the value of the '<em><b>Aop</b></em>' containment reference.

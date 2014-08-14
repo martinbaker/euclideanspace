@@ -2,9 +2,6 @@
  */
 package com.euclideanspace.aldor.editor;
 
-import org.eclipse.emf.common.util.EList;
-
-import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
@@ -24,7 +21,7 @@ import org.eclipse.emf.ecore.EObject;
  * @model
  * @generated
  */
-public interface E13 extends EObject
+public interface E13 extends Expr
 {
   /**
    * Returns the value of the '<em><b>Left</b></em>' containment reference.
@@ -35,12 +32,12 @@ public interface E13 extends EObject
    * </p>
    * <!-- end-user-doc -->
    * @return the value of the '<em>Left</em>' containment reference.
-   * @see #setLeft(EObject)
+   * @see #setLeft(E14)
    * @see com.euclideanspace.aldor.editor.EditorPackage#getE13_Left()
    * @model containment="true"
    * @generated
    */
-  EObject getLeft();
+  E14 getLeft();
 
   /**
    * Sets the value of the '{@link com.euclideanspace.aldor.editor.E13#getLeft <em>Left</em>}' containment reference.
@@ -50,38 +47,58 @@ public interface E13 extends EObject
    * @see #getLeft()
    * @generated
    */
-  void setLeft(EObject value);
+  void setLeft(E14 value);
 
   /**
-   * Returns the value of the '<em><b>Op</b></em>' attribute list.
-   * The list contents are of type {@link java.lang.String}.
+   * Returns the value of the '<em><b>Op</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Op</em>' attribute list isn't clear,
+   * If the meaning of the '<em>Op</em>' attribute isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Op</em>' attribute list.
+   * @return the value of the '<em>Op</em>' attribute.
+   * @see #setOp(String)
    * @see com.euclideanspace.aldor.editor.EditorPackage#getE13_Op()
-   * @model unique="false"
+   * @model
    * @generated
    */
-  EList<String> getOp();
+  String getOp();
 
   /**
-   * Returns the value of the '<em><b>Right</b></em>' containment reference list.
-   * The list contents are of type {@link com.euclideanspace.aldor.editor.QualTail}.
+   * Sets the value of the '{@link com.euclideanspace.aldor.editor.E13#getOp <em>Op</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Op</em>' attribute.
+   * @see #getOp()
+   * @generated
+   */
+  void setOp(String value);
+
+  /**
+   * Returns the value of the '<em><b>Right</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Right</em>' containment reference list isn't clear,
+   * If the meaning of the '<em>Right</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Right</em>' containment reference list.
+   * @return the value of the '<em>Right</em>' containment reference.
+   * @see #setRight(QualTail)
    * @see com.euclideanspace.aldor.editor.EditorPackage#getE13_Right()
    * @model containment="true"
    * @generated
    */
-  EList<QualTail> getRight();
+  QualTail getRight();
+
+  /**
+   * Sets the value of the '{@link com.euclideanspace.aldor.editor.E13#getRight <em>Right</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Right</em>' containment reference.
+   * @see #getRight()
+   * @generated
+   */
+  void setRight(QualTail value);
 
 } // E13

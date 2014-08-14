@@ -392,24 +392,6 @@ public interface EditorFactory extends EFactory
   Type createType();
 
   /**
-   * Returns a new object of class '<em>E12</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>E12</em>'.
-   * @generated
-   */
-  E12 createE12();
-
-  /**
-   * Returns a new object of class '<em>E13</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>E13</em>'.
-   * @generated
-   */
-  E13 createE13();
-
-  /**
    * Returns a new object of class '<em>Qual Tail</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1029,6 +1011,42 @@ public interface EditorFactory extends EFactory
    * @generated
    */
   E9 createE9();
+
+  /**
+   * Returns a new object of class '<em>E11 E12</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>E11 E12</em>'.
+   * @generated
+   */
+  E11_E12 createE11_E12();
+
+  /**
+   * Returns a new object of class '<em>E11 Op</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>E11 Op</em>'.
+   * @generated
+   */
+  E11_Op createE11_Op();
+
+  /**
+   * Returns a new object of class '<em>E12</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>E12</em>'.
+   * @generated
+   */
+  E12 createE12();
+
+  /**
+   * Returns a new object of class '<em>E13</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>E13</em>'.
+   * @generated
+   */
+  E13 createE13();
 
   /**
    * Returns a new object of class '<em>Arrow Tok</em>'.

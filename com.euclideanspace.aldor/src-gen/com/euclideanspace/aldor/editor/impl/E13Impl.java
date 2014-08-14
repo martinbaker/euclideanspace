@@ -3,26 +3,17 @@
 package com.euclideanspace.aldor.editor.impl;
 
 import com.euclideanspace.aldor.editor.E13;
+import com.euclideanspace.aldor.editor.E14;
 import com.euclideanspace.aldor.editor.EditorPackage;
 import com.euclideanspace.aldor.editor.QualTail;
-
-import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
-import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
-import org.eclipse.emf.ecore.util.EDataTypeEList;
-import org.eclipse.emf.ecore.util.EObjectContainmentEList;
-import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -39,7 +30,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *
  * @generated
  */
-public class E13Impl extends MinimalEObjectImpl.Container implements E13
+public class E13Impl extends ExprImpl implements E13
 {
   /**
    * The cached value of the '{@link #getLeft() <em>Left</em>}' containment reference.
@@ -49,27 +40,37 @@ public class E13Impl extends MinimalEObjectImpl.Container implements E13
    * @generated
    * @ordered
    */
-  protected EObject left;
+  protected E14 left;
 
   /**
-   * The cached value of the '{@link #getOp() <em>Op</em>}' attribute list.
+   * The default value of the '{@link #getOp() <em>Op</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getOp()
    * @generated
    * @ordered
    */
-  protected EList<String> op;
+  protected static final String OP_EDEFAULT = null;
 
   /**
-   * The cached value of the '{@link #getRight() <em>Right</em>}' containment reference list.
+   * The cached value of the '{@link #getOp() <em>Op</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getOp()
+   * @generated
+   * @ordered
+   */
+  protected String op = OP_EDEFAULT;
+
+  /**
+   * The cached value of the '{@link #getRight() <em>Right</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getRight()
    * @generated
    * @ordered
    */
-  protected EList<QualTail> right;
+  protected QualTail right;
 
   /**
    * <!-- begin-user-doc -->
@@ -97,7 +98,7 @@ public class E13Impl extends MinimalEObjectImpl.Container implements E13
    * <!-- end-user-doc -->
    * @generated
    */
-  public EObject getLeft()
+  public E14 getLeft()
   {
     return left;
   }
@@ -107,9 +108,9 @@ public class E13Impl extends MinimalEObjectImpl.Container implements E13
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetLeft(EObject newLeft, NotificationChain msgs)
+  public NotificationChain basicSetLeft(E14 newLeft, NotificationChain msgs)
   {
-    EObject oldLeft = left;
+    E14 oldLeft = left;
     left = newLeft;
     if (eNotificationRequired())
     {
@@ -124,7 +125,7 @@ public class E13Impl extends MinimalEObjectImpl.Container implements E13
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setLeft(EObject newLeft)
+  public void setLeft(E14 newLeft)
   {
     if (newLeft != left)
     {
@@ -145,12 +146,8 @@ public class E13Impl extends MinimalEObjectImpl.Container implements E13
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<String> getOp()
+  public String getOp()
   {
-    if (op == null)
-    {
-      op = new EDataTypeEList<String>(String.class, this, EditorPackage.E13__OP);
-    }
     return op;
   }
 
@@ -159,13 +156,60 @@ public class E13Impl extends MinimalEObjectImpl.Container implements E13
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<QualTail> getRight()
+  public void setOp(String newOp)
   {
-    if (right == null)
-    {
-      right = new EObjectContainmentEList<QualTail>(QualTail.class, this, EditorPackage.E13__RIGHT);
-    }
+    String oldOp = op;
+    op = newOp;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, EditorPackage.E13__OP, oldOp, op));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public QualTail getRight()
+  {
     return right;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetRight(QualTail newRight, NotificationChain msgs)
+  {
+    QualTail oldRight = right;
+    right = newRight;
+    if (eNotificationRequired())
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, EditorPackage.E13__RIGHT, oldRight, newRight);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setRight(QualTail newRight)
+  {
+    if (newRight != right)
+    {
+      NotificationChain msgs = null;
+      if (right != null)
+        msgs = ((InternalEObject)right).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - EditorPackage.E13__RIGHT, null, msgs);
+      if (newRight != null)
+        msgs = ((InternalEObject)newRight).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - EditorPackage.E13__RIGHT, null, msgs);
+      msgs = basicSetRight(newRight, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, EditorPackage.E13__RIGHT, newRight, newRight));
   }
 
   /**
@@ -181,7 +225,7 @@ public class E13Impl extends MinimalEObjectImpl.Container implements E13
       case EditorPackage.E13__LEFT:
         return basicSetLeft(null, msgs);
       case EditorPackage.E13__RIGHT:
-        return ((InternalEList<?>)getRight()).basicRemove(otherEnd, msgs);
+        return basicSetRight(null, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -211,22 +255,19 @@ public class E13Impl extends MinimalEObjectImpl.Container implements E13
    * <!-- end-user-doc -->
    * @generated
    */
-  @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue)
   {
     switch (featureID)
     {
       case EditorPackage.E13__LEFT:
-        setLeft((EObject)newValue);
+        setLeft((E14)newValue);
         return;
       case EditorPackage.E13__OP:
-        getOp().clear();
-        getOp().addAll((Collection<? extends String>)newValue);
+        setOp((String)newValue);
         return;
       case EditorPackage.E13__RIGHT:
-        getRight().clear();
-        getRight().addAll((Collection<? extends QualTail>)newValue);
+        setRight((QualTail)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -243,13 +284,13 @@ public class E13Impl extends MinimalEObjectImpl.Container implements E13
     switch (featureID)
     {
       case EditorPackage.E13__LEFT:
-        setLeft((EObject)null);
+        setLeft((E14)null);
         return;
       case EditorPackage.E13__OP:
-        getOp().clear();
+        setOp(OP_EDEFAULT);
         return;
       case EditorPackage.E13__RIGHT:
-        getRight().clear();
+        setRight((QualTail)null);
         return;
     }
     super.eUnset(featureID);
@@ -268,9 +309,9 @@ public class E13Impl extends MinimalEObjectImpl.Container implements E13
       case EditorPackage.E13__LEFT:
         return left != null;
       case EditorPackage.E13__OP:
-        return op != null && !op.isEmpty();
+        return OP_EDEFAULT == null ? op != null : !OP_EDEFAULT.equals(op);
       case EditorPackage.E13__RIGHT:
-        return right != null && !right.isEmpty();
+        return right != null;
     }
     return super.eIsSet(featureID);
   }

@@ -867,7 +867,7 @@ InfixedExpr /*returns Expr*/ hidden(WS,KW_NEWLINE):
  * need to allow a 'qualified op', that is an operation followed by '$' and a type
  */
 E3 returns Expr hidden(WS,KW_NEWLINE):
-  left=E4 ({E3.left=current} op=('and'|'or'|LatticeTok /*QualOp_LatticeTok*/) right=E4)*
+  E4 ({E3.left=current} op=('and'|'or'|LatticeTok /*QualOp_LatticeTok*/) right=E4)*
 ;
 
 /* relation operators
@@ -877,7 +877,7 @@ E3 returns Expr hidden(WS,KW_NEWLINE):
  * need to allow a 'qualified op', that is an operation followed by '$' and a type
  */
 E4 returns Expr hidden(WS,KW_NEWLINE):
- (left=E5 ({E4.left=current}op=('has'|RelationTok /*RelationOp*/) right=E5)*)
+ (E5 ({E4.left=current}op=('has'|RelationTok /*RelationOp*/) right=E5)*)
 //| (RelationOp {E4.left=current} right+=E5)
 ;
 
@@ -889,7 +889,7 @@ E4 returns Expr hidden(WS,KW_NEWLINE):
  */
 E5 returns Expr hidden(WS,KW_NEWLINE):
 //=>
-  (left=E6 ({E5.left=current}op=SegTok /*SegOp*/ right=E6)*)
+  (E6 ({E5.left=current}op=SegTok /*SegOp*/ right=E6)*)
 //| (left=E6 {E5.left=current} op5+=SegOp)
 ;
 
@@ -900,7 +900,7 @@ E5 returns Expr hidden(WS,KW_NEWLINE):
  * need to allow a 'qualified op', that is an operation followed by '$' and a type
  */
 E6 returns Expr hidden(WS,KW_NEWLINE):
- (left=E7 ({E6.left=current}op=PlusTok /*PlusOp*/ right=E7)*)
+ (E7 ({E6.left=current}op=PlusTok /*PlusOp*/ right=E7)*)
 //| (op6+=PlusOp right=E7)
 ;
 
@@ -910,7 +910,7 @@ E6 returns Expr hidden(WS,KW_NEWLINE):
  * need to allow a 'qualified op', that is an operation followed by '$' and a type
  */
 E7 returns Expr hidden(WS,KW_NEWLINE):
- left=E8 ({E7.left=current}op=QuotientTok /*QuotientOp*/ right=E8)*
+ E8 ({E7.left=current}op=QuotientTok /*QuotientOp*/ right=E8)*
 ;
 
 /*
@@ -919,7 +919,7 @@ E7 returns Expr hidden(WS,KW_NEWLINE):
  * need to allow a 'qualified op', that is an operation followed by '$' and a type
  */
 E8 returns Expr hidden(WS,KW_NEWLINE):
- left=E9 ({E8.left=current}op=TimesTok /*TimesOp*/ right=E9)*
+ E9 ({E8.left=current}op=TimesTok /*TimesOp*/ right=E9)*
 ;
 
 /*
@@ -928,28 +928,14 @@ E8 returns Expr hidden(WS,KW_NEWLINE):
  * need to allow a 'qualified op', that is an operation followed by '$' and a type
  */
 E9 returns Expr hidden(WS,KW_NEWLINE):
- left=E11_E12 ({E9.left=current}op=PowerTok /*PowerOp*/ right=E11_E12)*
+ E11_E12 ({E9.left=current}op=PowerTok /*PowerOp*/ right=E11_E12)*
 ;
-
-/* Substituted Rules in Xtext:
- * E11_E12
- * E11_Op
- * E11(X)
- * : X
- * | E11(X) KW_2Colon E12
- * { $$ = abNewCoerceTo(TPOS($2),$1,$3); }
- * | E11(X) KW_At E12
- * { $$ = abNewRestrictTo(TPOS($2),$1,$3); }
- * | E11(X) KW_Pretend E12
- * { $$ = abNewPretendTo(TPOS($2),$1,$3); }
- * ;
- */
  
 /*
  * This version of E11 is used in the middle of the precedence stack
  */
 E11_E12 returns Expr hidden(WS,KW_NEWLINE):
-	(left=E12 (/*{E11_E12.left=current}*/(op+=KW_2COLON|op+=KW_AT|op+='pretend') right+=E12)*)
+	(E12 ({E11_E12.left=current}(op=KW_2COLON|op=KW_AT|op='pretend') right=E12)*)
 ;
 
 /*
@@ -957,7 +943,7 @@ E11_E12 returns Expr hidden(WS,KW_NEWLINE):
  * 'InfixedExpr'
  */
 E11_Op returns Expr hidden(WS,KW_NEWLINE):
-	(left=Op (/*{E11_Op.left=current}*/(op+=KW_2COLON|op+=KW_AT|op+='pretend') right+=E12)*)
+	(Op ({E11_Op.left=current}(op=KW_2COLON|op=KW_AT|op='pretend') right=E12)*)
 ;
 
 /*
@@ -968,12 +954,12 @@ Type hidden(WS,KW_NEWLINE):
 	E11_E12
 ;
 
-E12 hidden(WS,KW_NEWLINE):
-  (left=E13 ({E12.left=current}op+=ArrowOp right+=E13)*)
+E12 returns Expr hidden(WS,KW_NEWLINE):
+  (E13 ({E12.left=current}op=ArrowOp right=E13)*)
 ;
 
-E13 hidden(WS,KW_NEWLINE):
-  (left=E14 ({E13.left=current}op+=KW_DOLLAR right+=QualTail)*)
+E13 returns Expr hidden(WS,KW_NEWLINE):
+  (E14 ({E13.left=current}op=KW_DOLLAR right=QualTail)*)
 ;
 
 QualTail hidden(WS,KW_NEWLINE):

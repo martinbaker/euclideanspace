@@ -2,7 +2,6 @@
  */
 package com.euclideanspace.aldor.editor;
 
-import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
@@ -23,7 +22,7 @@ import org.eclipse.emf.ecore.EObject;
  * @model
  * @generated
  */
-public interface E14 extends EObject
+public interface E14 extends Expr
 {
   /**
    * Returns the value of the '<em><b>E1 5left</b></em>' containment reference.
