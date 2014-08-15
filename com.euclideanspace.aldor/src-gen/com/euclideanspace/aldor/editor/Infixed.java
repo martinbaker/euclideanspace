@@ -12,8 +12,7 @@ import org.eclipse.emf.common.util.EList;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link com.euclideanspace.aldor.editor.Infixed#getBib <em>Bib</em>}</li>
- *   <li>{@link com.euclideanspace.aldor.editor.Infixed#getBic <em>Bic</em>}</li>
+ *   <li>{@link com.euclideanspace.aldor.editor.Infixed#getI3 <em>I3</em>}</li>
  *   <li>{@link com.euclideanspace.aldor.editor.Infixed#getIfx <em>Ifx</em>}</li>
  *   <li>{@link com.euclideanspace.aldor.editor.Infixed#getDp <em>Dp</em>}</li>
  *   <li>{@link com.euclideanspace.aldor.editor.Infixed#getB <em>B</em>}</li>
@@ -25,59 +24,33 @@ import org.eclipse.emf.common.util.EList;
  * @model
  * @generated
  */
-public interface Infixed extends ToPart, BindingL_Infixed_BalStatement, BindingL_Infixed_Collection, Collection, ForLhs, SuchthatPart, enlister1_Infixed_Comma
+public interface Infixed extends ToPart, Collection, ForLhs, SuchthatPart, enlister1_Infixed_Comma
 {
   /**
-   * Returns the value of the '<em><b>Bib</b></em>' containment reference.
+   * Returns the value of the '<em><b>I3</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Bib</em>' containment reference isn't clear,
+   * If the meaning of the '<em>I3</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Bib</em>' containment reference.
-   * @see #setBib(BindingL_Infixed_BalStatement)
-   * @see com.euclideanspace.aldor.editor.EditorPackage#getInfixed_Bib()
+   * @return the value of the '<em>I3</em>' containment reference.
+   * @see #setI3(Iterators)
+   * @see com.euclideanspace.aldor.editor.EditorPackage#getInfixed_I3()
    * @model containment="true"
    * @generated
    */
-  BindingL_Infixed_BalStatement getBib();
+  Iterators getI3();
 
   /**
-   * Sets the value of the '{@link com.euclideanspace.aldor.editor.Infixed#getBib <em>Bib</em>}' containment reference.
+   * Sets the value of the '{@link com.euclideanspace.aldor.editor.Infixed#getI3 <em>I3</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Bib</em>' containment reference.
-   * @see #getBib()
+   * @param value the new value of the '<em>I3</em>' containment reference.
+   * @see #getI3()
    * @generated
    */
-  void setBib(BindingL_Infixed_BalStatement value);
-
-  /**
-   * Returns the value of the '<em><b>Bic</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Bic</em>' containment reference isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Bic</em>' containment reference.
-   * @see #setBic(BindingL_Infixed_Collection)
-   * @see com.euclideanspace.aldor.editor.EditorPackage#getInfixed_Bic()
-   * @model containment="true"
-   * @generated
-   */
-  BindingL_Infixed_Collection getBic();
-
-  /**
-   * Sets the value of the '{@link com.euclideanspace.aldor.editor.Infixed#getBic <em>Bic</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Bic</em>' containment reference.
-   * @see #getBic()
-   * @generated
-   */
-  void setBic(BindingL_Infixed_Collection value);
+  void setI3(Iterators value);
 
   /**
    * Returns the value of the '<em><b>Ifx</b></em>' containment reference.

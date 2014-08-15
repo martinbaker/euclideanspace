@@ -50,16 +50,36 @@
   <eClassifiers xsi:type="ecore:EClass" name="BindingL_Infixed_AnyStatement" eSuperTypes="#//Binding_AnyStatement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="bas9" eType="#//AnyStatement"
         containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="lft" eType="#//Id" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="op" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="bia" eType="#//BindingL_Infixed_AnyStatement"
+        containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="BindingL_Infixed_BalStatement" eSuperTypes="#//Binding_BalStatement"/>
-  <eClassifiers xsi:type="ecore:EClass" name="BindingL_Infixed_Collection" eSuperTypes="#//Binding_Collection"/>
+  <eClassifiers xsi:type="ecore:EClass" name="BindingL_Infixed_BalStatement" eSuperTypes="#//Binding_BalStatement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="bas9" eType="#//BalStatement"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="lft" eType="#//Infixed"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="op" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="bia" eType="#//BindingL_Infixed_BalStatement"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="BindingL_Infixed_Collection" eSuperTypes="#//Binding_Collection">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="bas9" eType="#//Collection"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="lft" eType="#//Infixed"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="op" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="bia" eType="#//BindingL_Infixed_Collection"
+        containment="true"/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="BindingR_InfixedExprsDecl_AnyStatement"
       eSuperTypes="#//DeclBinding"/>
   <eClassifiers xsi:type="ecore:EClass" name="AnyStatement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="bas" eType="#//Binding_AnyStatement"
         containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="BalStatement" eSuperTypes="#//BindingL_Infixed_BalStatement"/>
+  <eClassifiers xsi:type="ecore:EClass" name="BalStatement"/>
   <eClassifiers xsi:type="ecore:EClass" name="Flow_AnyStatement" eSuperTypes="#//AnyStatement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="c" eType="#//Collection"
         containment="true"/>
@@ -83,7 +103,11 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="i2" eType="#//Id" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Flow_BalStatement" eSuperTypes="#//BalStatement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="c2" eType="#//Collection"
+        containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="st2" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="bbs3" eType="#//Binding_BalStatement"
+        containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="ci2" eType="#//CommaItem"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="bbs4" upperBound="-1" eType="#//Binding_BalStatement"
@@ -100,12 +124,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="gb2" eType="#//GenBound"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="n2" eType="#//Name" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="c2" eType="#//Collection"
-        containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="i3" eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EObject"
-        containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="bbs3" eType="#//Binding_BalStatement"
-        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="i3" eType="#//Id" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="GenBound">
     <eStructuralFeatures xsi:type="ecore:EReference" name="ci" eType="#//CommaItem"
@@ -125,7 +144,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="bas7" eType="#//Binding_BalStatement"
         containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Collection" eSuperTypes="#//BindingL_Infixed_Collection #//Flow_BalStatement"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Collection"/>
   <eClassifiers xsi:type="ecore:EClass" name="Iterators" eSuperTypes="#//Flow_AnyStatement #//Flow_BalStatement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="bas3" eType="#//Binding_AnyStatement"
         containment="true"/>
@@ -142,10 +161,8 @@
         containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="SuchthatPart"/>
-  <eClassifiers xsi:type="ecore:EClass" name="Infixed" eSuperTypes="#//ToPart #//BindingL_Infixed_BalStatement #//BindingL_Infixed_Collection #//Collection #//ForLhs #//SuchthatPart #//enlister1_Infixed_Comma">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="bib" eType="#//BindingL_Infixed_BalStatement"
-        containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="bic" eType="#//BindingL_Infixed_Collection"
+  <eClassifiers xsi:type="ecore:EClass" name="Infixed" eSuperTypes="#//ToPart #//Collection #//ForLhs #//SuchthatPart #//enlister1_Infixed_Comma">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="i3" eType="#//Iterators"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="ifx" eType="#//InfixedExpr"
         containment="true"/>

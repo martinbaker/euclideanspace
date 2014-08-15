@@ -108,15 +108,15 @@ class EditorLabelProvider extends org.eclipse.xtext.ui.label.DefaultEObjectLabel
 	}
 
 	def String text(BindingL_Infixed_AnyStatement ele) {
-		  return "BindingL_Infixed_AnyStatement"+ele.getBas9();
+		  return "BindingL_Infixed_AnyStatement "+ele.op;
 	}
 
 	def String text(BindingL_Infixed_BalStatement ele) {
-		  return "BindingL_Infixed_BalStatement";
+		  return "BindingL_Infixed_BalStatement "+ele.op;
 	}
 
 	def String text(BindingL_Infixed_Collection ele) {
-		  return "BindingL_Infixed_Collection";
+		  return "BindingL_Infixed_Collection "+ele.op;
 	}
 
 	def String text(BindingR_InfixedExprsDecl_AnyStatement ele) {
@@ -206,37 +206,37 @@ class EditorLabelProvider extends org.eclipse.xtext.ui.label.DefaultEObjectLabel
 
 	def String text(E3 ele) {
 		  //return "E3 :"+ele.getLeft()+" "+ele.getOp()+" "+ele.getRight();
-		  return "E3 ";//+ele.op;
+		  return "E3 "+ele.op;
 	}
 
 	def String text(E4 ele) {
 		  //return "E4 :"+ele.getLeft()+" "+ele.getOp()+" "+ele.getRight();
-		  return "E4 ";//+ele.op;
+		  return "E4 "+ele.op;
 	}
 
 	def String text(E5 ele) {
 		  //return "E5 :"+ele.getLeft()+" "+ele.getOp5()+" "+ele.getRight();
-		  return "E5 ";//+ele.op5;
+		  return "E5 "+ele.op;
 	}
 
 	def String text(E6 ele) {
 		  //return "E6 :"+ele.getLeft()+" "+ele.getOp6()+" "+ele.getRight();
-		  return "E6 ";//+ele.op6;
+		  return "E6 "+ele.op;
 	}
 
 	def String text(E7 ele) {
 		  //return "E7 :"+ele.getLeft()+" "+ele.getOp7()+" "+ele.getRight();
-		  return "E7 ";//+ele.op7;
+		  return "E7 "+ele.op;
 	}
 
 	def String text(E8 ele) {
 		  //return "E8 :"+ele.getLeft()+" "+ele.getOp8()+" "+ele.getRight();
-		  return "E8 ";//+ele.op8;
+		  return "E8 "+ele.op;
 	}
 
 	def String text(E9 ele) {
 		  //return "E9 :"+ele.getLeft()+" "+ele.getOp9()+" "+ele.getRight();
-		  return "E9 ";//+ele.op9;
+		  return "E9 "+ele.op;
 	}
 
 //	def String text(E11_E12 ele) {
@@ -251,7 +251,7 @@ class EditorLabelProvider extends org.eclipse.xtext.ui.label.DefaultEObjectLabel
 
 	def String text(E12 ele) {
 		  //return "E12 :"+ele.getLeft()+" "+ele.getOp()+" "+ele.getRight();
-		  return "E12 ";//+ele.op;
+		  return "E12 "+ele.op;
 	}
 	
 	def String text(Type ele) {
@@ -268,12 +268,12 @@ class EditorLabelProvider extends org.eclipse.xtext.ui.label.DefaultEObjectLabel
 
 	def String text(E13 ele) {
 		  //return "E13 :"+ele.getLeft()+" "+ele.getOp()+" "+ele.getRight();
-		  return "E13 ";//+ele.op;
+		  return "E13 "+ele.op;
 	}
 
 	def String text(E14 ele) {
 		  //return "E14 :"+ele.getE15left()+" "+ele.getDm()+" "+ele.getE15right();
-		  return "E14 ";//+ele.op;
+		  return "E14 "+ele.op;
 	}
 
 	def String text(Op ele) {

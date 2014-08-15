@@ -700,13 +700,40 @@ public interface EditorPackage extends EPackage
   int BINDING_LINFIXED_ANY_STATEMENT__BAS9 = BINDING_ANY_STATEMENT_FEATURE_COUNT + 0;
 
   /**
+   * The feature id for the '<em><b>Lft</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int BINDING_LINFIXED_ANY_STATEMENT__LFT = BINDING_ANY_STATEMENT_FEATURE_COUNT + 1;
+
+  /**
+   * The feature id for the '<em><b>Op</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int BINDING_LINFIXED_ANY_STATEMENT__OP = BINDING_ANY_STATEMENT_FEATURE_COUNT + 2;
+
+  /**
+   * The feature id for the '<em><b>Bia</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int BINDING_LINFIXED_ANY_STATEMENT__BIA = BINDING_ANY_STATEMENT_FEATURE_COUNT + 3;
+
+  /**
    * The number of structural features of the '<em>Binding LInfixed Any Statement</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int BINDING_LINFIXED_ANY_STATEMENT_FEATURE_COUNT = BINDING_ANY_STATEMENT_FEATURE_COUNT + 1;
+  int BINDING_LINFIXED_ANY_STATEMENT_FEATURE_COUNT = BINDING_ANY_STATEMENT_FEATURE_COUNT + 4;
 
   /**
    * The meta object id for the '{@link com.euclideanspace.aldor.editor.impl.BindingL_Infixed_BalStatementImpl <em>Binding LInfixed Bal Statement</em>}' class.
@@ -719,13 +746,49 @@ public interface EditorPackage extends EPackage
   int BINDING_LINFIXED_BAL_STATEMENT = 19;
 
   /**
+   * The feature id for the '<em><b>Bas9</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int BINDING_LINFIXED_BAL_STATEMENT__BAS9 = BINDING_BAL_STATEMENT_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Lft</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int BINDING_LINFIXED_BAL_STATEMENT__LFT = BINDING_BAL_STATEMENT_FEATURE_COUNT + 1;
+
+  /**
+   * The feature id for the '<em><b>Op</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int BINDING_LINFIXED_BAL_STATEMENT__OP = BINDING_BAL_STATEMENT_FEATURE_COUNT + 2;
+
+  /**
+   * The feature id for the '<em><b>Bia</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int BINDING_LINFIXED_BAL_STATEMENT__BIA = BINDING_BAL_STATEMENT_FEATURE_COUNT + 3;
+
+  /**
    * The number of structural features of the '<em>Binding LInfixed Bal Statement</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int BINDING_LINFIXED_BAL_STATEMENT_FEATURE_COUNT = BINDING_BAL_STATEMENT_FEATURE_COUNT + 0;
+  int BINDING_LINFIXED_BAL_STATEMENT_FEATURE_COUNT = BINDING_BAL_STATEMENT_FEATURE_COUNT + 4;
 
   /**
    * The meta object id for the '{@link com.euclideanspace.aldor.editor.impl.BindingL_Infixed_CollectionImpl <em>Binding LInfixed Collection</em>}' class.
@@ -738,13 +801,49 @@ public interface EditorPackage extends EPackage
   int BINDING_LINFIXED_COLLECTION = 20;
 
   /**
+   * The feature id for the '<em><b>Bas9</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int BINDING_LINFIXED_COLLECTION__BAS9 = BINDING_COLLECTION_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Lft</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int BINDING_LINFIXED_COLLECTION__LFT = BINDING_COLLECTION_FEATURE_COUNT + 1;
+
+  /**
+   * The feature id for the '<em><b>Op</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int BINDING_LINFIXED_COLLECTION__OP = BINDING_COLLECTION_FEATURE_COUNT + 2;
+
+  /**
+   * The feature id for the '<em><b>Bia</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int BINDING_LINFIXED_COLLECTION__BIA = BINDING_COLLECTION_FEATURE_COUNT + 3;
+
+  /**
    * The number of structural features of the '<em>Binding LInfixed Collection</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int BINDING_LINFIXED_COLLECTION_FEATURE_COUNT = BINDING_COLLECTION_FEATURE_COUNT + 0;
+  int BINDING_LINFIXED_COLLECTION_FEATURE_COUNT = BINDING_COLLECTION_FEATURE_COUNT + 4;
 
   /**
    * The meta object id for the '{@link com.euclideanspace.aldor.editor.impl.BalStatementImpl <em>Bal Statement</em>}' class.
@@ -763,7 +862,7 @@ public interface EditorPackage extends EPackage
    * @generated
    * @ordered
    */
-  int BAL_STATEMENT_FEATURE_COUNT = BINDING_LINFIXED_BAL_STATEMENT_FEATURE_COUNT + 0;
+  int BAL_STATEMENT_FEATURE_COUNT = 0;
 
   /**
    * The meta object id for the '{@link com.euclideanspace.aldor.editor.impl.Flow_AnyStatementImpl <em>Flow Any Statement</em>}' class.
@@ -912,112 +1011,22 @@ public interface EditorPackage extends EPackage
   int FLOW_BAL_STATEMENT = 25;
 
   /**
-   * The feature id for the '<em><b>St2</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int FLOW_BAL_STATEMENT__ST2 = BAL_STATEMENT_FEATURE_COUNT + 0;
-
-  /**
-   * The feature id for the '<em><b>Ci2</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int FLOW_BAL_STATEMENT__CI2 = BAL_STATEMENT_FEATURE_COUNT + 1;
-
-  /**
-   * The feature id for the '<em><b>Bbs4</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int FLOW_BAL_STATEMENT__BBS4 = BAL_STATEMENT_FEATURE_COUNT + 2;
-
-  /**
-   * The feature id for the '<em><b>Bbs5</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int FLOW_BAL_STATEMENT__BBS5 = BAL_STATEMENT_FEATURE_COUNT + 3;
-
-  /**
-   * The feature id for the '<em><b>Bbs2</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int FLOW_BAL_STATEMENT__BBS2 = BAL_STATEMENT_FEATURE_COUNT + 4;
-
-  /**
-   * The feature id for the '<em><b>Be</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int FLOW_BAL_STATEMENT__BE = BAL_STATEMENT_FEATURE_COUNT + 5;
-
-  /**
-   * The feature id for the '<em><b>Apb</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int FLOW_BAL_STATEMENT__APB = BAL_STATEMENT_FEATURE_COUNT + 6;
-
-  /**
-   * The feature id for the '<em><b>Ca2</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int FLOW_BAL_STATEMENT__CA2 = BAL_STATEMENT_FEATURE_COUNT + 7;
-
-  /**
-   * The feature id for the '<em><b>Gb2</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int FLOW_BAL_STATEMENT__GB2 = BAL_STATEMENT_FEATURE_COUNT + 8;
-
-  /**
-   * The feature id for the '<em><b>N2</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int FLOW_BAL_STATEMENT__N2 = BAL_STATEMENT_FEATURE_COUNT + 9;
-
-  /**
    * The feature id for the '<em><b>C2</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int FLOW_BAL_STATEMENT__C2 = BAL_STATEMENT_FEATURE_COUNT + 10;
+  int FLOW_BAL_STATEMENT__C2 = BAL_STATEMENT_FEATURE_COUNT + 0;
 
   /**
-   * The feature id for the '<em><b>I3</b></em>' containment reference.
+   * The feature id for the '<em><b>St2</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int FLOW_BAL_STATEMENT__I3 = BAL_STATEMENT_FEATURE_COUNT + 11;
+  int FLOW_BAL_STATEMENT__ST2 = BAL_STATEMENT_FEATURE_COUNT + 1;
 
   /**
    * The feature id for the '<em><b>Bbs3</b></em>' containment reference.
@@ -1026,7 +1035,97 @@ public interface EditorPackage extends EPackage
    * @generated
    * @ordered
    */
-  int FLOW_BAL_STATEMENT__BBS3 = BAL_STATEMENT_FEATURE_COUNT + 12;
+  int FLOW_BAL_STATEMENT__BBS3 = BAL_STATEMENT_FEATURE_COUNT + 2;
+
+  /**
+   * The feature id for the '<em><b>Ci2</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FLOW_BAL_STATEMENT__CI2 = BAL_STATEMENT_FEATURE_COUNT + 3;
+
+  /**
+   * The feature id for the '<em><b>Bbs4</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FLOW_BAL_STATEMENT__BBS4 = BAL_STATEMENT_FEATURE_COUNT + 4;
+
+  /**
+   * The feature id for the '<em><b>Bbs5</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FLOW_BAL_STATEMENT__BBS5 = BAL_STATEMENT_FEATURE_COUNT + 5;
+
+  /**
+   * The feature id for the '<em><b>Bbs2</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FLOW_BAL_STATEMENT__BBS2 = BAL_STATEMENT_FEATURE_COUNT + 6;
+
+  /**
+   * The feature id for the '<em><b>Be</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FLOW_BAL_STATEMENT__BE = BAL_STATEMENT_FEATURE_COUNT + 7;
+
+  /**
+   * The feature id for the '<em><b>Apb</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FLOW_BAL_STATEMENT__APB = BAL_STATEMENT_FEATURE_COUNT + 8;
+
+  /**
+   * The feature id for the '<em><b>Ca2</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FLOW_BAL_STATEMENT__CA2 = BAL_STATEMENT_FEATURE_COUNT + 9;
+
+  /**
+   * The feature id for the '<em><b>Gb2</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FLOW_BAL_STATEMENT__GB2 = BAL_STATEMENT_FEATURE_COUNT + 10;
+
+  /**
+   * The feature id for the '<em><b>N2</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FLOW_BAL_STATEMENT__N2 = BAL_STATEMENT_FEATURE_COUNT + 11;
+
+  /**
+   * The feature id for the '<em><b>I3</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FLOW_BAL_STATEMENT__I3 = BAL_STATEMENT_FEATURE_COUNT + 12;
 
   /**
    * The number of structural features of the '<em>Flow Bal Statement</em>' class.
@@ -1169,130 +1268,13 @@ public interface EditorPackage extends EPackage
   int COLLECTION = 31;
 
   /**
-   * The feature id for the '<em><b>St2</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int COLLECTION__ST2 = BINDING_LINFIXED_COLLECTION_FEATURE_COUNT + 0;
-
-  /**
-   * The feature id for the '<em><b>Ci2</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int COLLECTION__CI2 = BINDING_LINFIXED_COLLECTION_FEATURE_COUNT + 1;
-
-  /**
-   * The feature id for the '<em><b>Bbs4</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int COLLECTION__BBS4 = BINDING_LINFIXED_COLLECTION_FEATURE_COUNT + 2;
-
-  /**
-   * The feature id for the '<em><b>Bbs5</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int COLLECTION__BBS5 = BINDING_LINFIXED_COLLECTION_FEATURE_COUNT + 3;
-
-  /**
-   * The feature id for the '<em><b>Bbs2</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int COLLECTION__BBS2 = BINDING_LINFIXED_COLLECTION_FEATURE_COUNT + 4;
-
-  /**
-   * The feature id for the '<em><b>Be</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int COLLECTION__BE = BINDING_LINFIXED_COLLECTION_FEATURE_COUNT + 5;
-
-  /**
-   * The feature id for the '<em><b>Apb</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int COLLECTION__APB = BINDING_LINFIXED_COLLECTION_FEATURE_COUNT + 6;
-
-  /**
-   * The feature id for the '<em><b>Ca2</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int COLLECTION__CA2 = BINDING_LINFIXED_COLLECTION_FEATURE_COUNT + 7;
-
-  /**
-   * The feature id for the '<em><b>Gb2</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int COLLECTION__GB2 = BINDING_LINFIXED_COLLECTION_FEATURE_COUNT + 8;
-
-  /**
-   * The feature id for the '<em><b>N2</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int COLLECTION__N2 = BINDING_LINFIXED_COLLECTION_FEATURE_COUNT + 9;
-
-  /**
-   * The feature id for the '<em><b>C2</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int COLLECTION__C2 = BINDING_LINFIXED_COLLECTION_FEATURE_COUNT + 10;
-
-  /**
-   * The feature id for the '<em><b>I3</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int COLLECTION__I3 = BINDING_LINFIXED_COLLECTION_FEATURE_COUNT + 11;
-
-  /**
-   * The feature id for the '<em><b>Bbs3</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int COLLECTION__BBS3 = BINDING_LINFIXED_COLLECTION_FEATURE_COUNT + 12;
-
-  /**
    * The number of structural features of the '<em>Collection</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int COLLECTION_FEATURE_COUNT = BINDING_LINFIXED_COLLECTION_FEATURE_COUNT + 13;
+  int COLLECTION_FEATURE_COUNT = 0;
 
   /**
    * The meta object id for the '{@link com.euclideanspace.aldor.editor.impl.IteratorsImpl <em>Iterators</em>}' class.
@@ -1422,112 +1404,22 @@ public interface EditorPackage extends EPackage
   int ITERATORS__I2 = FLOW_ANY_STATEMENT__I2;
 
   /**
-   * The feature id for the '<em><b>St2</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ITERATORS__ST2 = FLOW_ANY_STATEMENT_FEATURE_COUNT + 0;
-
-  /**
-   * The feature id for the '<em><b>Ci2</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ITERATORS__CI2 = FLOW_ANY_STATEMENT_FEATURE_COUNT + 1;
-
-  /**
-   * The feature id for the '<em><b>Bbs4</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ITERATORS__BBS4 = FLOW_ANY_STATEMENT_FEATURE_COUNT + 2;
-
-  /**
-   * The feature id for the '<em><b>Bbs5</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ITERATORS__BBS5 = FLOW_ANY_STATEMENT_FEATURE_COUNT + 3;
-
-  /**
-   * The feature id for the '<em><b>Bbs2</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ITERATORS__BBS2 = FLOW_ANY_STATEMENT_FEATURE_COUNT + 4;
-
-  /**
-   * The feature id for the '<em><b>Be</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ITERATORS__BE = FLOW_ANY_STATEMENT_FEATURE_COUNT + 5;
-
-  /**
-   * The feature id for the '<em><b>Apb</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ITERATORS__APB = FLOW_ANY_STATEMENT_FEATURE_COUNT + 6;
-
-  /**
-   * The feature id for the '<em><b>Ca2</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ITERATORS__CA2 = FLOW_ANY_STATEMENT_FEATURE_COUNT + 7;
-
-  /**
-   * The feature id for the '<em><b>Gb2</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ITERATORS__GB2 = FLOW_ANY_STATEMENT_FEATURE_COUNT + 8;
-
-  /**
-   * The feature id for the '<em><b>N2</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ITERATORS__N2 = FLOW_ANY_STATEMENT_FEATURE_COUNT + 9;
-
-  /**
    * The feature id for the '<em><b>C2</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int ITERATORS__C2 = FLOW_ANY_STATEMENT_FEATURE_COUNT + 10;
+  int ITERATORS__C2 = FLOW_ANY_STATEMENT_FEATURE_COUNT + 0;
 
   /**
-   * The feature id for the '<em><b>I3</b></em>' containment reference.
+   * The feature id for the '<em><b>St2</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int ITERATORS__I3 = FLOW_ANY_STATEMENT_FEATURE_COUNT + 11;
+  int ITERATORS__ST2 = FLOW_ANY_STATEMENT_FEATURE_COUNT + 1;
 
   /**
    * The feature id for the '<em><b>Bbs3</b></em>' containment reference.
@@ -1536,7 +1428,97 @@ public interface EditorPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ITERATORS__BBS3 = FLOW_ANY_STATEMENT_FEATURE_COUNT + 12;
+  int ITERATORS__BBS3 = FLOW_ANY_STATEMENT_FEATURE_COUNT + 2;
+
+  /**
+   * The feature id for the '<em><b>Ci2</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ITERATORS__CI2 = FLOW_ANY_STATEMENT_FEATURE_COUNT + 3;
+
+  /**
+   * The feature id for the '<em><b>Bbs4</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ITERATORS__BBS4 = FLOW_ANY_STATEMENT_FEATURE_COUNT + 4;
+
+  /**
+   * The feature id for the '<em><b>Bbs5</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ITERATORS__BBS5 = FLOW_ANY_STATEMENT_FEATURE_COUNT + 5;
+
+  /**
+   * The feature id for the '<em><b>Bbs2</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ITERATORS__BBS2 = FLOW_ANY_STATEMENT_FEATURE_COUNT + 6;
+
+  /**
+   * The feature id for the '<em><b>Be</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ITERATORS__BE = FLOW_ANY_STATEMENT_FEATURE_COUNT + 7;
+
+  /**
+   * The feature id for the '<em><b>Apb</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ITERATORS__APB = FLOW_ANY_STATEMENT_FEATURE_COUNT + 8;
+
+  /**
+   * The feature id for the '<em><b>Ca2</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ITERATORS__CA2 = FLOW_ANY_STATEMENT_FEATURE_COUNT + 9;
+
+  /**
+   * The feature id for the '<em><b>Gb2</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ITERATORS__GB2 = FLOW_ANY_STATEMENT_FEATURE_COUNT + 10;
+
+  /**
+   * The feature id for the '<em><b>N2</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ITERATORS__N2 = FLOW_ANY_STATEMENT_FEATURE_COUNT + 11;
+
+  /**
+   * The feature id for the '<em><b>I3</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ITERATORS__I3 = FLOW_ANY_STATEMENT_FEATURE_COUNT + 12;
 
   /**
    * The feature id for the '<em><b>Bas3</b></em>' containment reference.
@@ -1684,6 +1666,15 @@ public interface EditorPackage extends EPackage
   int ITERATORS1__I2 = ITERATORS__I2;
 
   /**
+   * The feature id for the '<em><b>C2</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ITERATORS1__C2 = ITERATORS__C2;
+
+  /**
    * The feature id for the '<em><b>St2</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1691,6 +1682,15 @@ public interface EditorPackage extends EPackage
    * @ordered
    */
   int ITERATORS1__ST2 = ITERATORS__ST2;
+
+  /**
+   * The feature id for the '<em><b>Bbs3</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ITERATORS1__BBS3 = ITERATORS__BBS3;
 
   /**
    * The feature id for the '<em><b>Ci2</b></em>' containment reference.
@@ -1774,15 +1774,6 @@ public interface EditorPackage extends EPackage
   int ITERATORS1__N2 = ITERATORS__N2;
 
   /**
-   * The feature id for the '<em><b>C2</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ITERATORS1__C2 = ITERATORS__C2;
-
-  /**
    * The feature id for the '<em><b>I3</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1790,15 +1781,6 @@ public interface EditorPackage extends EPackage
    * @ordered
    */
   int ITERATORS1__I3 = ITERATORS__I3;
-
-  /**
-   * The feature id for the '<em><b>Bbs3</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ITERATORS1__BBS3 = ITERATORS__BBS3;
 
   /**
    * The feature id for the '<em><b>Bas3</b></em>' containment reference.
@@ -1922,130 +1904,13 @@ public interface EditorPackage extends EPackage
   int INFIXED = 37;
 
   /**
-   * The feature id for the '<em><b>St2</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int INFIXED__ST2 = TO_PART_FEATURE_COUNT + 0;
-
-  /**
-   * The feature id for the '<em><b>Ci2</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int INFIXED__CI2 = TO_PART_FEATURE_COUNT + 1;
-
-  /**
-   * The feature id for the '<em><b>Bbs4</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int INFIXED__BBS4 = TO_PART_FEATURE_COUNT + 2;
-
-  /**
-   * The feature id for the '<em><b>Bbs5</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int INFIXED__BBS5 = TO_PART_FEATURE_COUNT + 3;
-
-  /**
-   * The feature id for the '<em><b>Bbs2</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int INFIXED__BBS2 = TO_PART_FEATURE_COUNT + 4;
-
-  /**
-   * The feature id for the '<em><b>Be</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int INFIXED__BE = TO_PART_FEATURE_COUNT + 5;
-
-  /**
-   * The feature id for the '<em><b>Apb</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int INFIXED__APB = TO_PART_FEATURE_COUNT + 6;
-
-  /**
-   * The feature id for the '<em><b>Ca2</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int INFIXED__CA2 = TO_PART_FEATURE_COUNT + 7;
-
-  /**
-   * The feature id for the '<em><b>Gb2</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int INFIXED__GB2 = TO_PART_FEATURE_COUNT + 8;
-
-  /**
-   * The feature id for the '<em><b>N2</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int INFIXED__N2 = TO_PART_FEATURE_COUNT + 9;
-
-  /**
-   * The feature id for the '<em><b>C2</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int INFIXED__C2 = TO_PART_FEATURE_COUNT + 10;
-
-  /**
-   * The feature id for the '<em><b>I3</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int INFIXED__I3 = TO_PART_FEATURE_COUNT + 11;
-
-  /**
-   * The feature id for the '<em><b>Bbs3</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int INFIXED__BBS3 = TO_PART_FEATURE_COUNT + 12;
-
-  /**
    * The feature id for the '<em><b>I</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int INFIXED__I = TO_PART_FEATURE_COUNT + 13;
+  int INFIXED__I = TO_PART_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>Sp</b></em>' containment reference.
@@ -2054,25 +1919,16 @@ public interface EditorPackage extends EPackage
    * @generated
    * @ordered
    */
-  int INFIXED__SP = TO_PART_FEATURE_COUNT + 14;
+  int INFIXED__SP = TO_PART_FEATURE_COUNT + 1;
 
   /**
-   * The feature id for the '<em><b>Bib</b></em>' containment reference.
+   * The feature id for the '<em><b>I3</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int INFIXED__BIB = TO_PART_FEATURE_COUNT + 15;
-
-  /**
-   * The feature id for the '<em><b>Bic</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int INFIXED__BIC = TO_PART_FEATURE_COUNT + 16;
+  int INFIXED__I3 = TO_PART_FEATURE_COUNT + 2;
 
   /**
    * The feature id for the '<em><b>Ifx</b></em>' containment reference.
@@ -2081,7 +1937,7 @@ public interface EditorPackage extends EPackage
    * @generated
    * @ordered
    */
-  int INFIXED__IFX = TO_PART_FEATURE_COUNT + 17;
+  int INFIXED__IFX = TO_PART_FEATURE_COUNT + 3;
 
   /**
    * The feature id for the '<em><b>Dp</b></em>' containment reference list.
@@ -2090,7 +1946,7 @@ public interface EditorPackage extends EPackage
    * @generated
    * @ordered
    */
-  int INFIXED__DP = TO_PART_FEATURE_COUNT + 18;
+  int INFIXED__DP = TO_PART_FEATURE_COUNT + 4;
 
   /**
    * The feature id for the '<em><b>B</b></em>' containment reference.
@@ -2099,7 +1955,7 @@ public interface EditorPackage extends EPackage
    * @generated
    * @ordered
    */
-  int INFIXED__B = TO_PART_FEATURE_COUNT + 19;
+  int INFIXED__B = TO_PART_FEATURE_COUNT + 5;
 
   /**
    * The feature id for the '<em><b>I2</b></em>' containment reference list.
@@ -2108,7 +1964,7 @@ public interface EditorPackage extends EPackage
    * @generated
    * @ordered
    */
-  int INFIXED__I2 = TO_PART_FEATURE_COUNT + 20;
+  int INFIXED__I2 = TO_PART_FEATURE_COUNT + 6;
 
   /**
    * The number of structural features of the '<em>Infixed</em>' class.
@@ -2117,7 +1973,7 @@ public interface EditorPackage extends EPackage
    * @generated
    * @ordered
    */
-  int INFIXED_FEATURE_COUNT = TO_PART_FEATURE_COUNT + 21;
+  int INFIXED_FEATURE_COUNT = TO_PART_FEATURE_COUNT + 7;
 
   /**
    * The meta object id for the '{@link com.euclideanspace.aldor.editor.impl.enlist1_InfixedExpr_Comma_ABImpl <em>enlist1 Infixed Expr Comma AB</em>}' class.
@@ -5463,6 +5319,39 @@ public interface EditorPackage extends EPackage
   EReference getBindingL_Infixed_AnyStatement_Bas9();
 
   /**
+   * Returns the meta object for the containment reference '{@link com.euclideanspace.aldor.editor.BindingL_Infixed_AnyStatement#getLft <em>Lft</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Lft</em>'.
+   * @see com.euclideanspace.aldor.editor.BindingL_Infixed_AnyStatement#getLft()
+   * @see #getBindingL_Infixed_AnyStatement()
+   * @generated
+   */
+  EReference getBindingL_Infixed_AnyStatement_Lft();
+
+  /**
+   * Returns the meta object for the attribute '{@link com.euclideanspace.aldor.editor.BindingL_Infixed_AnyStatement#getOp <em>Op</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Op</em>'.
+   * @see com.euclideanspace.aldor.editor.BindingL_Infixed_AnyStatement#getOp()
+   * @see #getBindingL_Infixed_AnyStatement()
+   * @generated
+   */
+  EAttribute getBindingL_Infixed_AnyStatement_Op();
+
+  /**
+   * Returns the meta object for the containment reference '{@link com.euclideanspace.aldor.editor.BindingL_Infixed_AnyStatement#getBia <em>Bia</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Bia</em>'.
+   * @see com.euclideanspace.aldor.editor.BindingL_Infixed_AnyStatement#getBia()
+   * @see #getBindingL_Infixed_AnyStatement()
+   * @generated
+   */
+  EReference getBindingL_Infixed_AnyStatement_Bia();
+
+  /**
    * Returns the meta object for class '{@link com.euclideanspace.aldor.editor.BindingL_Infixed_BalStatement <em>Binding LInfixed Bal Statement</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -5473,6 +5362,50 @@ public interface EditorPackage extends EPackage
   EClass getBindingL_Infixed_BalStatement();
 
   /**
+   * Returns the meta object for the containment reference '{@link com.euclideanspace.aldor.editor.BindingL_Infixed_BalStatement#getBas9 <em>Bas9</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Bas9</em>'.
+   * @see com.euclideanspace.aldor.editor.BindingL_Infixed_BalStatement#getBas9()
+   * @see #getBindingL_Infixed_BalStatement()
+   * @generated
+   */
+  EReference getBindingL_Infixed_BalStatement_Bas9();
+
+  /**
+   * Returns the meta object for the containment reference '{@link com.euclideanspace.aldor.editor.BindingL_Infixed_BalStatement#getLft <em>Lft</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Lft</em>'.
+   * @see com.euclideanspace.aldor.editor.BindingL_Infixed_BalStatement#getLft()
+   * @see #getBindingL_Infixed_BalStatement()
+   * @generated
+   */
+  EReference getBindingL_Infixed_BalStatement_Lft();
+
+  /**
+   * Returns the meta object for the attribute '{@link com.euclideanspace.aldor.editor.BindingL_Infixed_BalStatement#getOp <em>Op</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Op</em>'.
+   * @see com.euclideanspace.aldor.editor.BindingL_Infixed_BalStatement#getOp()
+   * @see #getBindingL_Infixed_BalStatement()
+   * @generated
+   */
+  EAttribute getBindingL_Infixed_BalStatement_Op();
+
+  /**
+   * Returns the meta object for the containment reference '{@link com.euclideanspace.aldor.editor.BindingL_Infixed_BalStatement#getBia <em>Bia</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Bia</em>'.
+   * @see com.euclideanspace.aldor.editor.BindingL_Infixed_BalStatement#getBia()
+   * @see #getBindingL_Infixed_BalStatement()
+   * @generated
+   */
+  EReference getBindingL_Infixed_BalStatement_Bia();
+
+  /**
    * Returns the meta object for class '{@link com.euclideanspace.aldor.editor.BindingL_Infixed_Collection <em>Binding LInfixed Collection</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -5481,6 +5414,50 @@ public interface EditorPackage extends EPackage
    * @generated
    */
   EClass getBindingL_Infixed_Collection();
+
+  /**
+   * Returns the meta object for the containment reference '{@link com.euclideanspace.aldor.editor.BindingL_Infixed_Collection#getBas9 <em>Bas9</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Bas9</em>'.
+   * @see com.euclideanspace.aldor.editor.BindingL_Infixed_Collection#getBas9()
+   * @see #getBindingL_Infixed_Collection()
+   * @generated
+   */
+  EReference getBindingL_Infixed_Collection_Bas9();
+
+  /**
+   * Returns the meta object for the containment reference '{@link com.euclideanspace.aldor.editor.BindingL_Infixed_Collection#getLft <em>Lft</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Lft</em>'.
+   * @see com.euclideanspace.aldor.editor.BindingL_Infixed_Collection#getLft()
+   * @see #getBindingL_Infixed_Collection()
+   * @generated
+   */
+  EReference getBindingL_Infixed_Collection_Lft();
+
+  /**
+   * Returns the meta object for the attribute '{@link com.euclideanspace.aldor.editor.BindingL_Infixed_Collection#getOp <em>Op</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Op</em>'.
+   * @see com.euclideanspace.aldor.editor.BindingL_Infixed_Collection#getOp()
+   * @see #getBindingL_Infixed_Collection()
+   * @generated
+   */
+  EAttribute getBindingL_Infixed_Collection_Op();
+
+  /**
+   * Returns the meta object for the containment reference '{@link com.euclideanspace.aldor.editor.BindingL_Infixed_Collection#getBia <em>Bia</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Bia</em>'.
+   * @see com.euclideanspace.aldor.editor.BindingL_Infixed_Collection#getBia()
+   * @see #getBindingL_Infixed_Collection()
+   * @generated
+   */
+  EReference getBindingL_Infixed_Collection_Bia();
 
   /**
    * Returns the meta object for class '{@link com.euclideanspace.aldor.editor.BindingR_InfixedExprsDecl_AnyStatement <em>Binding RInfixed Exprs Decl Any Statement</em>}'.
@@ -5676,6 +5653,17 @@ public interface EditorPackage extends EPackage
   EClass getFlow_BalStatement();
 
   /**
+   * Returns the meta object for the containment reference '{@link com.euclideanspace.aldor.editor.Flow_BalStatement#getC2 <em>C2</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>C2</em>'.
+   * @see com.euclideanspace.aldor.editor.Flow_BalStatement#getC2()
+   * @see #getFlow_BalStatement()
+   * @generated
+   */
+  EReference getFlow_BalStatement_C2();
+
+  /**
    * Returns the meta object for the attribute '{@link com.euclideanspace.aldor.editor.Flow_BalStatement#getSt2 <em>St2</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -5685,6 +5673,17 @@ public interface EditorPackage extends EPackage
    * @generated
    */
   EAttribute getFlow_BalStatement_St2();
+
+  /**
+   * Returns the meta object for the containment reference '{@link com.euclideanspace.aldor.editor.Flow_BalStatement#getBbs3 <em>Bbs3</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Bbs3</em>'.
+   * @see com.euclideanspace.aldor.editor.Flow_BalStatement#getBbs3()
+   * @see #getFlow_BalStatement()
+   * @generated
+   */
+  EReference getFlow_BalStatement_Bbs3();
 
   /**
    * Returns the meta object for the containment reference '{@link com.euclideanspace.aldor.editor.Flow_BalStatement#getCi2 <em>Ci2</em>}'.
@@ -5786,17 +5785,6 @@ public interface EditorPackage extends EPackage
   EReference getFlow_BalStatement_N2();
 
   /**
-   * Returns the meta object for the containment reference '{@link com.euclideanspace.aldor.editor.Flow_BalStatement#getC2 <em>C2</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>C2</em>'.
-   * @see com.euclideanspace.aldor.editor.Flow_BalStatement#getC2()
-   * @see #getFlow_BalStatement()
-   * @generated
-   */
-  EReference getFlow_BalStatement_C2();
-
-  /**
    * Returns the meta object for the containment reference '{@link com.euclideanspace.aldor.editor.Flow_BalStatement#getI3 <em>I3</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -5806,17 +5794,6 @@ public interface EditorPackage extends EPackage
    * @generated
    */
   EReference getFlow_BalStatement_I3();
-
-  /**
-   * Returns the meta object for the containment reference '{@link com.euclideanspace.aldor.editor.Flow_BalStatement#getBbs3 <em>Bbs3</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Bbs3</em>'.
-   * @see com.euclideanspace.aldor.editor.Flow_BalStatement#getBbs3()
-   * @see #getFlow_BalStatement()
-   * @generated
-   */
-  EReference getFlow_BalStatement_Bbs3();
 
   /**
    * Returns the meta object for class '{@link com.euclideanspace.aldor.editor.GenBound <em>Gen Bound</em>}'.
@@ -6038,26 +6015,15 @@ public interface EditorPackage extends EPackage
   EClass getInfixed();
 
   /**
-   * Returns the meta object for the containment reference '{@link com.euclideanspace.aldor.editor.Infixed#getBib <em>Bib</em>}'.
+   * Returns the meta object for the containment reference '{@link com.euclideanspace.aldor.editor.Infixed#getI3 <em>I3</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Bib</em>'.
-   * @see com.euclideanspace.aldor.editor.Infixed#getBib()
+   * @return the meta object for the containment reference '<em>I3</em>'.
+   * @see com.euclideanspace.aldor.editor.Infixed#getI3()
    * @see #getInfixed()
    * @generated
    */
-  EReference getInfixed_Bib();
-
-  /**
-   * Returns the meta object for the containment reference '{@link com.euclideanspace.aldor.editor.Infixed#getBic <em>Bic</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Bic</em>'.
-   * @see com.euclideanspace.aldor.editor.Infixed#getBic()
-   * @see #getInfixed()
-   * @generated
-   */
-  EReference getInfixed_Bic();
+  EReference getInfixed_I3();
 
   /**
    * Returns the meta object for the containment reference '{@link com.euclideanspace.aldor.editor.Infixed#getIfx <em>Ifx</em>}'.
@@ -8119,6 +8085,30 @@ public interface EditorPackage extends EPackage
     EReference BINDING_LINFIXED_ANY_STATEMENT__BAS9 = eINSTANCE.getBindingL_Infixed_AnyStatement_Bas9();
 
     /**
+     * The meta object literal for the '<em><b>Lft</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference BINDING_LINFIXED_ANY_STATEMENT__LFT = eINSTANCE.getBindingL_Infixed_AnyStatement_Lft();
+
+    /**
+     * The meta object literal for the '<em><b>Op</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute BINDING_LINFIXED_ANY_STATEMENT__OP = eINSTANCE.getBindingL_Infixed_AnyStatement_Op();
+
+    /**
+     * The meta object literal for the '<em><b>Bia</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference BINDING_LINFIXED_ANY_STATEMENT__BIA = eINSTANCE.getBindingL_Infixed_AnyStatement_Bia();
+
+    /**
      * The meta object literal for the '{@link com.euclideanspace.aldor.editor.impl.BindingL_Infixed_BalStatementImpl <em>Binding LInfixed Bal Statement</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -8129,6 +8119,38 @@ public interface EditorPackage extends EPackage
     EClass BINDING_LINFIXED_BAL_STATEMENT = eINSTANCE.getBindingL_Infixed_BalStatement();
 
     /**
+     * The meta object literal for the '<em><b>Bas9</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference BINDING_LINFIXED_BAL_STATEMENT__BAS9 = eINSTANCE.getBindingL_Infixed_BalStatement_Bas9();
+
+    /**
+     * The meta object literal for the '<em><b>Lft</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference BINDING_LINFIXED_BAL_STATEMENT__LFT = eINSTANCE.getBindingL_Infixed_BalStatement_Lft();
+
+    /**
+     * The meta object literal for the '<em><b>Op</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute BINDING_LINFIXED_BAL_STATEMENT__OP = eINSTANCE.getBindingL_Infixed_BalStatement_Op();
+
+    /**
+     * The meta object literal for the '<em><b>Bia</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference BINDING_LINFIXED_BAL_STATEMENT__BIA = eINSTANCE.getBindingL_Infixed_BalStatement_Bia();
+
+    /**
      * The meta object literal for the '{@link com.euclideanspace.aldor.editor.impl.BindingL_Infixed_CollectionImpl <em>Binding LInfixed Collection</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -8137,6 +8159,38 @@ public interface EditorPackage extends EPackage
      * @generated
      */
     EClass BINDING_LINFIXED_COLLECTION = eINSTANCE.getBindingL_Infixed_Collection();
+
+    /**
+     * The meta object literal for the '<em><b>Bas9</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference BINDING_LINFIXED_COLLECTION__BAS9 = eINSTANCE.getBindingL_Infixed_Collection_Bas9();
+
+    /**
+     * The meta object literal for the '<em><b>Lft</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference BINDING_LINFIXED_COLLECTION__LFT = eINSTANCE.getBindingL_Infixed_Collection_Lft();
+
+    /**
+     * The meta object literal for the '<em><b>Op</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute BINDING_LINFIXED_COLLECTION__OP = eINSTANCE.getBindingL_Infixed_Collection_Op();
+
+    /**
+     * The meta object literal for the '<em><b>Bia</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference BINDING_LINFIXED_COLLECTION__BIA = eINSTANCE.getBindingL_Infixed_Collection_Bia();
 
     /**
      * The meta object literal for the '{@link com.euclideanspace.aldor.editor.impl.BindingR_InfixedExprsDecl_AnyStatementImpl <em>Binding RInfixed Exprs Decl Any Statement</em>}' class.
@@ -8293,12 +8347,28 @@ public interface EditorPackage extends EPackage
     EClass FLOW_BAL_STATEMENT = eINSTANCE.getFlow_BalStatement();
 
     /**
+     * The meta object literal for the '<em><b>C2</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference FLOW_BAL_STATEMENT__C2 = eINSTANCE.getFlow_BalStatement_C2();
+
+    /**
      * The meta object literal for the '<em><b>St2</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
     EAttribute FLOW_BAL_STATEMENT__ST2 = eINSTANCE.getFlow_BalStatement_St2();
+
+    /**
+     * The meta object literal for the '<em><b>Bbs3</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference FLOW_BAL_STATEMENT__BBS3 = eINSTANCE.getFlow_BalStatement_Bbs3();
 
     /**
      * The meta object literal for the '<em><b>Ci2</b></em>' containment reference feature.
@@ -8373,28 +8443,12 @@ public interface EditorPackage extends EPackage
     EReference FLOW_BAL_STATEMENT__N2 = eINSTANCE.getFlow_BalStatement_N2();
 
     /**
-     * The meta object literal for the '<em><b>C2</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference FLOW_BAL_STATEMENT__C2 = eINSTANCE.getFlow_BalStatement_C2();
-
-    /**
      * The meta object literal for the '<em><b>I3</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
     EReference FLOW_BAL_STATEMENT__I3 = eINSTANCE.getFlow_BalStatement_I3();
-
-    /**
-     * The meta object literal for the '<em><b>Bbs3</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference FLOW_BAL_STATEMENT__BBS3 = eINSTANCE.getFlow_BalStatement_Bbs3();
 
     /**
      * The meta object literal for the '{@link com.euclideanspace.aldor.editor.impl.GenBoundImpl <em>Gen Bound</em>}' class.
@@ -8589,20 +8643,12 @@ public interface EditorPackage extends EPackage
     EClass INFIXED = eINSTANCE.getInfixed();
 
     /**
-     * The meta object literal for the '<em><b>Bib</b></em>' containment reference feature.
+     * The meta object literal for the '<em><b>I3</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference INFIXED__BIB = eINSTANCE.getInfixed_Bib();
-
-    /**
-     * The meta object literal for the '<em><b>Bic</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference INFIXED__BIC = eINSTANCE.getInfixed_Bic();
+    EReference INFIXED__I3 = eINSTANCE.getInfixed_I3();
 
     /**
      * The meta object literal for the '<em><b>Ifx</b></em>' containment reference feature.

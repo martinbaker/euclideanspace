@@ -12,6 +12,9 @@ package com.euclideanspace.aldor.editor;
  * The following features are supported:
  * <ul>
  *   <li>{@link com.euclideanspace.aldor.editor.BindingL_Infixed_AnyStatement#getBas9 <em>Bas9</em>}</li>
+ *   <li>{@link com.euclideanspace.aldor.editor.BindingL_Infixed_AnyStatement#getLft <em>Lft</em>}</li>
+ *   <li>{@link com.euclideanspace.aldor.editor.BindingL_Infixed_AnyStatement#getOp <em>Op</em>}</li>
+ *   <li>{@link com.euclideanspace.aldor.editor.BindingL_Infixed_AnyStatement#getBia <em>Bia</em>}</li>
  * </ul>
  * </p>
  *
@@ -46,5 +49,83 @@ public interface BindingL_Infixed_AnyStatement extends Binding_AnyStatement
    * @generated
    */
   void setBas9(AnyStatement value);
+
+  /**
+   * Returns the value of the '<em><b>Lft</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Lft</em>' containment reference isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Lft</em>' containment reference.
+   * @see #setLft(Id)
+   * @see com.euclideanspace.aldor.editor.EditorPackage#getBindingL_Infixed_AnyStatement_Lft()
+   * @model containment="true"
+   * @generated
+   */
+  Id getLft();
+
+  /**
+   * Sets the value of the '{@link com.euclideanspace.aldor.editor.BindingL_Infixed_AnyStatement#getLft <em>Lft</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Lft</em>' containment reference.
+   * @see #getLft()
+   * @generated
+   */
+  void setLft(Id value);
+
+  /**
+   * Returns the value of the '<em><b>Op</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Op</em>' attribute isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Op</em>' attribute.
+   * @see #setOp(String)
+   * @see com.euclideanspace.aldor.editor.EditorPackage#getBindingL_Infixed_AnyStatement_Op()
+   * @model
+   * @generated
+   */
+  String getOp();
+
+  /**
+   * Sets the value of the '{@link com.euclideanspace.aldor.editor.BindingL_Infixed_AnyStatement#getOp <em>Op</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Op</em>' attribute.
+   * @see #getOp()
+   * @generated
+   */
+  void setOp(String value);
+
+  /**
+   * Returns the value of the '<em><b>Bia</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Bia</em>' containment reference isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Bia</em>' containment reference.
+   * @see #setBia(BindingL_Infixed_AnyStatement)
+   * @see com.euclideanspace.aldor.editor.EditorPackage#getBindingL_Infixed_AnyStatement_Bia()
+   * @model containment="true"
+   * @generated
+   */
+  BindingL_Infixed_AnyStatement getBia();
+
+  /**
+   * Sets the value of the '{@link com.euclideanspace.aldor.editor.BindingL_Infixed_AnyStatement#getBia <em>Bia</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Bia</em>' containment reference.
+   * @see #getBia()
+   * @generated
+   */
+  void setBia(BindingL_Infixed_AnyStatement value);
 
 } // BindingL_Infixed_AnyStatement

@@ -18,8 +18,6 @@ import org.eclipse.xtext.serializer.sequencer.AbstractSyntacticSequencer;
 public class EditorSyntacticSequencer extends AbstractSyntacticSequencer {
 
 	protected EditorGrammarAccess grammarAccess;
-	protected AbstractElementAlias match_BindingL_Infixed_BalStatement_AssignKeyword_1_0_1_0_or_KW_2EQTerminalRuleCall_1_0_1_1_or_KW_MAPSTOSTARTerminalRuleCall_1_0_1_4_or_KW_MAPSTOTerminalRuleCall_1_0_1_3_or_KW_MARROWTerminalRuleCall_1_0_1_2;
-	protected AbstractElementAlias match_BindingL_Infixed_Collection_AssignKeyword_1_0_1_0_or_KW_2EQTerminalRuleCall_1_0_1_1_or_KW_MAPSTOSTARTerminalRuleCall_1_0_1_4_or_KW_MAPSTOTerminalRuleCall_1_0_1_3_or_KW_MARROWTerminalRuleCall_1_0_1_2;
 	protected AbstractElementAlias match_BindingR_InfixedExprsDecl_AnyStatement_AssignKeyword_1_0_0_or_KW_2EQTerminalRuleCall_1_0_1_or_KW_MAPSTOSTARTerminalRuleCall_1_0_4_or_KW_MAPSTOTerminalRuleCall_1_0_3_or_KW_MARROWTerminalRuleCall_1_0_2;
 	protected AbstractElementAlias match_CurlyContentsList_Labeled_KW_SEMICOLONTerminalRuleCall_2_q;
 	protected AbstractElementAlias match_DeclPart_KW_COLONSTARTerminalRuleCall_1_0_or_KW_COLONTerminalRuleCall_0_0;
@@ -33,8 +31,6 @@ public class EditorSyntacticSequencer extends AbstractSyntacticSequencer {
 	@Inject
 	protected void init(IGrammarAccess access) {
 		grammarAccess = (EditorGrammarAccess) access;
-		match_BindingL_Infixed_BalStatement_AssignKeyword_1_0_1_0_or_KW_2EQTerminalRuleCall_1_0_1_1_or_KW_MAPSTOSTARTerminalRuleCall_1_0_1_4_or_KW_MAPSTOTerminalRuleCall_1_0_1_3_or_KW_MARROWTerminalRuleCall_1_0_1_2 = new AlternativeAlias(false, false, new TokenAlias(false, false, grammarAccess.getBindingL_Infixed_BalStatementAccess().getAssignKeyword_1_0_1_0()), new TokenAlias(false, false, grammarAccess.getBindingL_Infixed_BalStatementAccess().getKW_2EQTerminalRuleCall_1_0_1_1()), new TokenAlias(false, false, grammarAccess.getBindingL_Infixed_BalStatementAccess().getKW_MAPSTOSTARTerminalRuleCall_1_0_1_4()), new TokenAlias(false, false, grammarAccess.getBindingL_Infixed_BalStatementAccess().getKW_MAPSTOTerminalRuleCall_1_0_1_3()), new TokenAlias(false, false, grammarAccess.getBindingL_Infixed_BalStatementAccess().getKW_MARROWTerminalRuleCall_1_0_1_2()));
-		match_BindingL_Infixed_Collection_AssignKeyword_1_0_1_0_or_KW_2EQTerminalRuleCall_1_0_1_1_or_KW_MAPSTOSTARTerminalRuleCall_1_0_1_4_or_KW_MAPSTOTerminalRuleCall_1_0_1_3_or_KW_MARROWTerminalRuleCall_1_0_1_2 = new AlternativeAlias(false, false, new TokenAlias(false, false, grammarAccess.getBindingL_Infixed_CollectionAccess().getAssignKeyword_1_0_1_0()), new TokenAlias(false, false, grammarAccess.getBindingL_Infixed_CollectionAccess().getKW_2EQTerminalRuleCall_1_0_1_1()), new TokenAlias(false, false, grammarAccess.getBindingL_Infixed_CollectionAccess().getKW_MAPSTOSTARTerminalRuleCall_1_0_1_4()), new TokenAlias(false, false, grammarAccess.getBindingL_Infixed_CollectionAccess().getKW_MAPSTOTerminalRuleCall_1_0_1_3()), new TokenAlias(false, false, grammarAccess.getBindingL_Infixed_CollectionAccess().getKW_MARROWTerminalRuleCall_1_0_1_2()));
 		match_BindingR_InfixedExprsDecl_AnyStatement_AssignKeyword_1_0_0_or_KW_2EQTerminalRuleCall_1_0_1_or_KW_MAPSTOSTARTerminalRuleCall_1_0_4_or_KW_MAPSTOTerminalRuleCall_1_0_3_or_KW_MARROWTerminalRuleCall_1_0_2 = new AlternativeAlias(false, false, new TokenAlias(false, false, grammarAccess.getBindingR_InfixedExprsDecl_AnyStatementAccess().getAssignKeyword_1_0_0()), new TokenAlias(false, false, grammarAccess.getBindingR_InfixedExprsDecl_AnyStatementAccess().getKW_2EQTerminalRuleCall_1_0_1()), new TokenAlias(false, false, grammarAccess.getBindingR_InfixedExprsDecl_AnyStatementAccess().getKW_MAPSTOSTARTerminalRuleCall_1_0_4()), new TokenAlias(false, false, grammarAccess.getBindingR_InfixedExprsDecl_AnyStatementAccess().getKW_MAPSTOTerminalRuleCall_1_0_3()), new TokenAlias(false, false, grammarAccess.getBindingR_InfixedExprsDecl_AnyStatementAccess().getKW_MARROWTerminalRuleCall_1_0_2()));
 		match_CurlyContentsList_Labeled_KW_SEMICOLONTerminalRuleCall_2_q = new TokenAlias(false, true, grammarAccess.getCurlyContentsList_LabeledAccess().getKW_SEMICOLONTerminalRuleCall_2());
 		match_DeclPart_KW_COLONSTARTerminalRuleCall_1_0_or_KW_COLONTerminalRuleCall_0_0 = new AlternativeAlias(false, false, new TokenAlias(false, false, grammarAccess.getDeclPartAccess().getKW_COLONSTARTerminalRuleCall_1_0()), new TokenAlias(false, false, grammarAccess.getDeclPartAccess().getKW_COLONTerminalRuleCall_0_0()));
@@ -335,11 +331,7 @@ public class EditorSyntacticSequencer extends AbstractSyntacticSequencer {
 		List<INode> transitionNodes = collectNodes(fromNode, toNode);
 		for (AbstractElementAlias syntax : transition.getAmbiguousSyntaxes()) {
 			List<INode> syntaxNodes = getNodesFor(transitionNodes, syntax);
-			if(match_BindingL_Infixed_BalStatement_AssignKeyword_1_0_1_0_or_KW_2EQTerminalRuleCall_1_0_1_1_or_KW_MAPSTOSTARTerminalRuleCall_1_0_1_4_or_KW_MAPSTOTerminalRuleCall_1_0_1_3_or_KW_MARROWTerminalRuleCall_1_0_1_2.equals(syntax))
-				emit_BindingL_Infixed_BalStatement_AssignKeyword_1_0_1_0_or_KW_2EQTerminalRuleCall_1_0_1_1_or_KW_MAPSTOSTARTerminalRuleCall_1_0_1_4_or_KW_MAPSTOTerminalRuleCall_1_0_1_3_or_KW_MARROWTerminalRuleCall_1_0_1_2(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if(match_BindingL_Infixed_Collection_AssignKeyword_1_0_1_0_or_KW_2EQTerminalRuleCall_1_0_1_1_or_KW_MAPSTOSTARTerminalRuleCall_1_0_1_4_or_KW_MAPSTOTerminalRuleCall_1_0_1_3_or_KW_MARROWTerminalRuleCall_1_0_1_2.equals(syntax))
-				emit_BindingL_Infixed_Collection_AssignKeyword_1_0_1_0_or_KW_2EQTerminalRuleCall_1_0_1_1_or_KW_MAPSTOSTARTerminalRuleCall_1_0_1_4_or_KW_MAPSTOTerminalRuleCall_1_0_1_3_or_KW_MARROWTerminalRuleCall_1_0_1_2(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if(match_BindingR_InfixedExprsDecl_AnyStatement_AssignKeyword_1_0_0_or_KW_2EQTerminalRuleCall_1_0_1_or_KW_MAPSTOSTARTerminalRuleCall_1_0_4_or_KW_MAPSTOTerminalRuleCall_1_0_3_or_KW_MARROWTerminalRuleCall_1_0_2.equals(syntax))
+			if(match_BindingR_InfixedExprsDecl_AnyStatement_AssignKeyword_1_0_0_or_KW_2EQTerminalRuleCall_1_0_1_or_KW_MAPSTOSTARTerminalRuleCall_1_0_4_or_KW_MAPSTOTerminalRuleCall_1_0_3_or_KW_MARROWTerminalRuleCall_1_0_2.equals(syntax))
 				emit_BindingR_InfixedExprsDecl_AnyStatement_AssignKeyword_1_0_0_or_KW_2EQTerminalRuleCall_1_0_1_or_KW_MAPSTOSTARTerminalRuleCall_1_0_4_or_KW_MAPSTOTerminalRuleCall_1_0_3_or_KW_MARROWTerminalRuleCall_1_0_2(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if(match_CurlyContentsList_Labeled_KW_SEMICOLONTerminalRuleCall_2_q.equals(syntax))
 				emit_CurlyContentsList_Labeled_KW_SEMICOLONTerminalRuleCall_2_q(semanticObject, getLastNavigableState(), syntaxNodes);
@@ -363,23 +355,7 @@ public class EditorSyntacticSequencer extends AbstractSyntacticSequencer {
 
 	/**
 	 * Syntax:
-	 *     'assign' | KW_MAPSTOSTAR | KW_2EQ | KW_MARROW | KW_MAPSTO
-	 */
-	protected void emit_BindingL_Infixed_BalStatement_AssignKeyword_1_0_1_0_or_KW_2EQTerminalRuleCall_1_0_1_1_or_KW_MAPSTOSTARTerminalRuleCall_1_0_1_4_or_KW_MAPSTOTerminalRuleCall_1_0_1_3_or_KW_MARROWTerminalRuleCall_1_0_1_2(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
-		acceptNodes(transition, nodes);
-	}
-	
-	/**
-	 * Syntax:
-	 *     KW_MAPSTO | KW_2EQ | 'assign' | KW_MAPSTOSTAR | KW_MARROW
-	 */
-	protected void emit_BindingL_Infixed_Collection_AssignKeyword_1_0_1_0_or_KW_2EQTerminalRuleCall_1_0_1_1_or_KW_MAPSTOSTARTerminalRuleCall_1_0_1_4_or_KW_MAPSTOTerminalRuleCall_1_0_1_3_or_KW_MARROWTerminalRuleCall_1_0_1_2(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
-		acceptNodes(transition, nodes);
-	}
-	
-	/**
-	 * Syntax:
-	 *     KW_MARROW | KW_2EQ | KW_MAPSTOSTAR | KW_MAPSTO | 'assign'
+	 *     KW_MAPSTOSTAR | 'assign' | KW_2EQ | KW_MAPSTO | KW_MARROW
 	 */
 	protected void emit_BindingR_InfixedExprsDecl_AnyStatement_AssignKeyword_1_0_0_or_KW_2EQTerminalRuleCall_1_0_1_or_KW_MAPSTOSTARTerminalRuleCall_1_0_4_or_KW_MAPSTOTerminalRuleCall_1_0_3_or_KW_MARROWTerminalRuleCall_1_0_2(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
@@ -395,7 +371,7 @@ public class EditorSyntacticSequencer extends AbstractSyntacticSequencer {
 	
 	/**
 	 * Syntax:
-	 *     KW_COLONSTAR | KW_COLON
+	 *     KW_COLON | KW_COLONSTAR
 	 */
 	protected void emit_DeclPart_KW_COLONSTARTerminalRuleCall_1_0_or_KW_COLONTerminalRuleCall_0_0(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
@@ -403,7 +379,7 @@ public class EditorSyntacticSequencer extends AbstractSyntacticSequencer {
 	
 	/**
 	 * Syntax:
-	 *     'import' | 'inline'
+	 *     'inline' | 'import'
 	 */
 	protected void emit_Declaration_ImportKeyword_9_1_or_InlineKeyword_8_1(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
@@ -411,7 +387,7 @@ public class EditorSyntacticSequencer extends AbstractSyntacticSequencer {
 	
 	/**
 	 * Syntax:
-	 *     'catch' | 'but'
+	 *     'but' | 'catch'
 	 */
 	protected void emit_Flow_AnyStatement_ButKeyword_4_2_0_or_CatchKeyword_4_2_1(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
@@ -427,7 +403,7 @@ public class EditorSyntacticSequencer extends AbstractSyntacticSequencer {
 	
 	/**
 	 * Syntax:
-	 *     ('local' | 'fluid' | 'free')?
+	 *     ('local' | 'free' | 'fluid')?
 	 */
 	protected void emit_ForLhs___FluidKeyword_0_2_or_FreeKeyword_0_0_or_LocalKeyword_0_1__q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);

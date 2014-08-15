@@ -277,8 +277,6 @@ public class EditorSwitch<T> extends Switch<T>
       {
         BalStatement balStatement = (BalStatement)theEObject;
         T result = caseBalStatement(balStatement);
-        if (result == null) result = caseBindingL_Infixed_BalStatement(balStatement);
-        if (result == null) result = caseBinding_BalStatement(balStatement);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -295,8 +293,6 @@ public class EditorSwitch<T> extends Switch<T>
         Flow_BalStatement flow_BalStatement = (Flow_BalStatement)theEObject;
         T result = caseFlow_BalStatement(flow_BalStatement);
         if (result == null) result = caseBalStatement(flow_BalStatement);
-        if (result == null) result = caseBindingL_Infixed_BalStatement(flow_BalStatement);
-        if (result == null) result = caseBinding_BalStatement(flow_BalStatement);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -339,13 +335,6 @@ public class EditorSwitch<T> extends Switch<T>
       {
         Collection collection = (Collection)theEObject;
         T result = caseCollection(collection);
-        if (result == null) result = caseBindingL_Infixed_Collection(collection);
-        if (result == null) result = caseFlow_BalStatement(collection);
-        if (result == null) result = caseBinding_Collection(collection);
-        if (result == null) result = caseBalStatement(collection);
-        if (result == null) result = caseCases(collection);
-        if (result == null) result = caseBindingL_Infixed_BalStatement(collection);
-        if (result == null) result = caseBinding_BalStatement(collection);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -357,8 +346,6 @@ public class EditorSwitch<T> extends Switch<T>
         if (result == null) result = caseFlow_BalStatement(iterators);
         if (result == null) result = caseAnyStatement(iterators);
         if (result == null) result = caseBalStatement(iterators);
-        if (result == null) result = caseBindingL_Infixed_BalStatement(iterators);
-        if (result == null) result = caseBinding_BalStatement(iterators);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -371,8 +358,6 @@ public class EditorSwitch<T> extends Switch<T>
         if (result == null) result = caseFlow_BalStatement(iterators1);
         if (result == null) result = caseAnyStatement(iterators1);
         if (result == null) result = caseBalStatement(iterators1);
-        if (result == null) result = caseBindingL_Infixed_BalStatement(iterators1);
-        if (result == null) result = caseBinding_BalStatement(iterators1);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -407,16 +392,9 @@ public class EditorSwitch<T> extends Switch<T>
         if (result == null) result = caseForLhs(infixed);
         if (result == null) result = caseSuchthatPart(infixed);
         if (result == null) result = caseenlister1_Infixed_Comma(infixed);
-        if (result == null) result = caseBinding_BalStatement(infixed);
-        if (result == null) result = caseBindingL_Infixed_Collection(infixed);
-        if (result == null) result = caseBinding_Collection(infixed);
-        if (result == null) result = caseFlow_BalStatement(infixed);
         if (result == null) result = caseIterator(infixed);
         if (result == null) result = caseenlist1_Infixed_Comma_AB(infixed);
-        if (result == null) result = caseCases(infixed);
-        if (result == null) result = caseBalStatement(infixed);
         if (result == null) result = caseFromPart(infixed);
-        if (result == null) result = caseBindingL_Infixed_BalStatement(infixed);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }

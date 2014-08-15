@@ -12,6 +12,7 @@ import com.euclideanspace.aldor.editor.CommaItem;
 import com.euclideanspace.aldor.editor.EditorPackage;
 import com.euclideanspace.aldor.editor.Flow_BalStatement;
 import com.euclideanspace.aldor.editor.GenBound;
+import com.euclideanspace.aldor.editor.Id;
 import com.euclideanspace.aldor.editor.Name;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -20,7 +21,6 @@ import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
@@ -35,7 +35,9 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <p>
  * The following features are implemented:
  * <ul>
+ *   <li>{@link com.euclideanspace.aldor.editor.impl.Flow_BalStatementImpl#getC2 <em>C2</em>}</li>
  *   <li>{@link com.euclideanspace.aldor.editor.impl.Flow_BalStatementImpl#getSt2 <em>St2</em>}</li>
+ *   <li>{@link com.euclideanspace.aldor.editor.impl.Flow_BalStatementImpl#getBbs3 <em>Bbs3</em>}</li>
  *   <li>{@link com.euclideanspace.aldor.editor.impl.Flow_BalStatementImpl#getCi2 <em>Ci2</em>}</li>
  *   <li>{@link com.euclideanspace.aldor.editor.impl.Flow_BalStatementImpl#getBbs4 <em>Bbs4</em>}</li>
  *   <li>{@link com.euclideanspace.aldor.editor.impl.Flow_BalStatementImpl#getBbs5 <em>Bbs5</em>}</li>
@@ -45,9 +47,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link com.euclideanspace.aldor.editor.impl.Flow_BalStatementImpl#getCa2 <em>Ca2</em>}</li>
  *   <li>{@link com.euclideanspace.aldor.editor.impl.Flow_BalStatementImpl#getGb2 <em>Gb2</em>}</li>
  *   <li>{@link com.euclideanspace.aldor.editor.impl.Flow_BalStatementImpl#getN2 <em>N2</em>}</li>
- *   <li>{@link com.euclideanspace.aldor.editor.impl.Flow_BalStatementImpl#getC2 <em>C2</em>}</li>
  *   <li>{@link com.euclideanspace.aldor.editor.impl.Flow_BalStatementImpl#getI3 <em>I3</em>}</li>
- *   <li>{@link com.euclideanspace.aldor.editor.impl.Flow_BalStatementImpl#getBbs3 <em>Bbs3</em>}</li>
  * </ul>
  * </p>
  *
@@ -55,6 +55,16 @@ import org.eclipse.emf.ecore.util.InternalEList;
  */
 public class Flow_BalStatementImpl extends BalStatementImpl implements Flow_BalStatement
 {
+  /**
+   * The cached value of the '{@link #getC2() <em>C2</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getC2()
+   * @generated
+   * @ordered
+   */
+  protected Collection c2;
+
   /**
    * The default value of the '{@link #getSt2() <em>St2</em>}' attribute.
    * <!-- begin-user-doc -->
@@ -74,6 +84,16 @@ public class Flow_BalStatementImpl extends BalStatementImpl implements Flow_BalS
    * @ordered
    */
   protected String st2 = ST2_EDEFAULT;
+
+  /**
+   * The cached value of the '{@link #getBbs3() <em>Bbs3</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getBbs3()
+   * @generated
+   * @ordered
+   */
+  protected Binding_BalStatement bbs3;
 
   /**
    * The cached value of the '{@link #getCi2() <em>Ci2</em>}' containment reference.
@@ -166,16 +186,6 @@ public class Flow_BalStatementImpl extends BalStatementImpl implements Flow_BalS
   protected Name n2;
 
   /**
-   * The cached value of the '{@link #getC2() <em>C2</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getC2()
-   * @generated
-   * @ordered
-   */
-  protected Collection c2;
-
-  /**
    * The cached value of the '{@link #getI3() <em>I3</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -183,17 +193,7 @@ public class Flow_BalStatementImpl extends BalStatementImpl implements Flow_BalS
    * @generated
    * @ordered
    */
-  protected EObject i3;
-
-  /**
-   * The cached value of the '{@link #getBbs3() <em>Bbs3</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getBbs3()
-   * @generated
-   * @ordered
-   */
-  protected Binding_BalStatement bbs3;
+  protected Id i3;
 
   /**
    * <!-- begin-user-doc -->
@@ -221,6 +221,54 @@ public class Flow_BalStatementImpl extends BalStatementImpl implements Flow_BalS
    * <!-- end-user-doc -->
    * @generated
    */
+  public Collection getC2()
+  {
+    return c2;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetC2(Collection newC2, NotificationChain msgs)
+  {
+    Collection oldC2 = c2;
+    c2 = newC2;
+    if (eNotificationRequired())
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, EditorPackage.FLOW_BAL_STATEMENT__C2, oldC2, newC2);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setC2(Collection newC2)
+  {
+    if (newC2 != c2)
+    {
+      NotificationChain msgs = null;
+      if (c2 != null)
+        msgs = ((InternalEObject)c2).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - EditorPackage.FLOW_BAL_STATEMENT__C2, null, msgs);
+      if (newC2 != null)
+        msgs = ((InternalEObject)newC2).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - EditorPackage.FLOW_BAL_STATEMENT__C2, null, msgs);
+      msgs = basicSetC2(newC2, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, EditorPackage.FLOW_BAL_STATEMENT__C2, newC2, newC2));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public String getSt2()
   {
     return st2;
@@ -237,6 +285,54 @@ public class Flow_BalStatementImpl extends BalStatementImpl implements Flow_BalS
     st2 = newSt2;
     if (eNotificationRequired())
       eNotify(new ENotificationImpl(this, Notification.SET, EditorPackage.FLOW_BAL_STATEMENT__ST2, oldSt2, st2));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Binding_BalStatement getBbs3()
+  {
+    return bbs3;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetBbs3(Binding_BalStatement newBbs3, NotificationChain msgs)
+  {
+    Binding_BalStatement oldBbs3 = bbs3;
+    bbs3 = newBbs3;
+    if (eNotificationRequired())
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, EditorPackage.FLOW_BAL_STATEMENT__BBS3, oldBbs3, newBbs3);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setBbs3(Binding_BalStatement newBbs3)
+  {
+    if (newBbs3 != bbs3)
+    {
+      NotificationChain msgs = null;
+      if (bbs3 != null)
+        msgs = ((InternalEObject)bbs3).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - EditorPackage.FLOW_BAL_STATEMENT__BBS3, null, msgs);
+      if (newBbs3 != null)
+        msgs = ((InternalEObject)newBbs3).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - EditorPackage.FLOW_BAL_STATEMENT__BBS3, null, msgs);
+      msgs = basicSetBbs3(newBbs3, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, EditorPackage.FLOW_BAL_STATEMENT__BBS3, newBbs3, newBbs3));
   }
 
   /**
@@ -642,55 +738,7 @@ public class Flow_BalStatementImpl extends BalStatementImpl implements Flow_BalS
    * <!-- end-user-doc -->
    * @generated
    */
-  public Collection getC2()
-  {
-    return c2;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public NotificationChain basicSetC2(Collection newC2, NotificationChain msgs)
-  {
-    Collection oldC2 = c2;
-    c2 = newC2;
-    if (eNotificationRequired())
-    {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, EditorPackage.FLOW_BAL_STATEMENT__C2, oldC2, newC2);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setC2(Collection newC2)
-  {
-    if (newC2 != c2)
-    {
-      NotificationChain msgs = null;
-      if (c2 != null)
-        msgs = ((InternalEObject)c2).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - EditorPackage.FLOW_BAL_STATEMENT__C2, null, msgs);
-      if (newC2 != null)
-        msgs = ((InternalEObject)newC2).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - EditorPackage.FLOW_BAL_STATEMENT__C2, null, msgs);
-      msgs = basicSetC2(newC2, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, EditorPackage.FLOW_BAL_STATEMENT__C2, newC2, newC2));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EObject getI3()
+  public Id getI3()
   {
     return i3;
   }
@@ -700,9 +748,9 @@ public class Flow_BalStatementImpl extends BalStatementImpl implements Flow_BalS
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetI3(EObject newI3, NotificationChain msgs)
+  public NotificationChain basicSetI3(Id newI3, NotificationChain msgs)
   {
-    EObject oldI3 = i3;
+    Id oldI3 = i3;
     i3 = newI3;
     if (eNotificationRequired())
     {
@@ -717,7 +765,7 @@ public class Flow_BalStatementImpl extends BalStatementImpl implements Flow_BalS
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setI3(EObject newI3)
+  public void setI3(Id newI3)
   {
     if (newI3 != i3)
     {
@@ -738,59 +786,15 @@ public class Flow_BalStatementImpl extends BalStatementImpl implements Flow_BalS
    * <!-- end-user-doc -->
    * @generated
    */
-  public Binding_BalStatement getBbs3()
-  {
-    return bbs3;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public NotificationChain basicSetBbs3(Binding_BalStatement newBbs3, NotificationChain msgs)
-  {
-    Binding_BalStatement oldBbs3 = bbs3;
-    bbs3 = newBbs3;
-    if (eNotificationRequired())
-    {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, EditorPackage.FLOW_BAL_STATEMENT__BBS3, oldBbs3, newBbs3);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setBbs3(Binding_BalStatement newBbs3)
-  {
-    if (newBbs3 != bbs3)
-    {
-      NotificationChain msgs = null;
-      if (bbs3 != null)
-        msgs = ((InternalEObject)bbs3).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - EditorPackage.FLOW_BAL_STATEMENT__BBS3, null, msgs);
-      if (newBbs3 != null)
-        msgs = ((InternalEObject)newBbs3).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - EditorPackage.FLOW_BAL_STATEMENT__BBS3, null, msgs);
-      msgs = basicSetBbs3(newBbs3, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, EditorPackage.FLOW_BAL_STATEMENT__BBS3, newBbs3, newBbs3));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
     switch (featureID)
     {
+      case EditorPackage.FLOW_BAL_STATEMENT__C2:
+        return basicSetC2(null, msgs);
+      case EditorPackage.FLOW_BAL_STATEMENT__BBS3:
+        return basicSetBbs3(null, msgs);
       case EditorPackage.FLOW_BAL_STATEMENT__CI2:
         return basicSetCi2(null, msgs);
       case EditorPackage.FLOW_BAL_STATEMENT__BBS4:
@@ -809,12 +813,8 @@ public class Flow_BalStatementImpl extends BalStatementImpl implements Flow_BalS
         return basicSetGb2(null, msgs);
       case EditorPackage.FLOW_BAL_STATEMENT__N2:
         return basicSetN2(null, msgs);
-      case EditorPackage.FLOW_BAL_STATEMENT__C2:
-        return basicSetC2(null, msgs);
       case EditorPackage.FLOW_BAL_STATEMENT__I3:
         return basicSetI3(null, msgs);
-      case EditorPackage.FLOW_BAL_STATEMENT__BBS3:
-        return basicSetBbs3(null, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -829,8 +829,12 @@ public class Flow_BalStatementImpl extends BalStatementImpl implements Flow_BalS
   {
     switch (featureID)
     {
+      case EditorPackage.FLOW_BAL_STATEMENT__C2:
+        return getC2();
       case EditorPackage.FLOW_BAL_STATEMENT__ST2:
         return getSt2();
+      case EditorPackage.FLOW_BAL_STATEMENT__BBS3:
+        return getBbs3();
       case EditorPackage.FLOW_BAL_STATEMENT__CI2:
         return getCi2();
       case EditorPackage.FLOW_BAL_STATEMENT__BBS4:
@@ -849,12 +853,8 @@ public class Flow_BalStatementImpl extends BalStatementImpl implements Flow_BalS
         return getGb2();
       case EditorPackage.FLOW_BAL_STATEMENT__N2:
         return getN2();
-      case EditorPackage.FLOW_BAL_STATEMENT__C2:
-        return getC2();
       case EditorPackage.FLOW_BAL_STATEMENT__I3:
         return getI3();
-      case EditorPackage.FLOW_BAL_STATEMENT__BBS3:
-        return getBbs3();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -870,8 +870,14 @@ public class Flow_BalStatementImpl extends BalStatementImpl implements Flow_BalS
   {
     switch (featureID)
     {
+      case EditorPackage.FLOW_BAL_STATEMENT__C2:
+        setC2((Collection)newValue);
+        return;
       case EditorPackage.FLOW_BAL_STATEMENT__ST2:
         setSt2((String)newValue);
+        return;
+      case EditorPackage.FLOW_BAL_STATEMENT__BBS3:
+        setBbs3((Binding_BalStatement)newValue);
         return;
       case EditorPackage.FLOW_BAL_STATEMENT__CI2:
         setCi2((CommaItem)newValue);
@@ -901,14 +907,8 @@ public class Flow_BalStatementImpl extends BalStatementImpl implements Flow_BalS
       case EditorPackage.FLOW_BAL_STATEMENT__N2:
         setN2((Name)newValue);
         return;
-      case EditorPackage.FLOW_BAL_STATEMENT__C2:
-        setC2((Collection)newValue);
-        return;
       case EditorPackage.FLOW_BAL_STATEMENT__I3:
-        setI3((EObject)newValue);
-        return;
-      case EditorPackage.FLOW_BAL_STATEMENT__BBS3:
-        setBbs3((Binding_BalStatement)newValue);
+        setI3((Id)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -924,8 +924,14 @@ public class Flow_BalStatementImpl extends BalStatementImpl implements Flow_BalS
   {
     switch (featureID)
     {
+      case EditorPackage.FLOW_BAL_STATEMENT__C2:
+        setC2((Collection)null);
+        return;
       case EditorPackage.FLOW_BAL_STATEMENT__ST2:
         setSt2(ST2_EDEFAULT);
+        return;
+      case EditorPackage.FLOW_BAL_STATEMENT__BBS3:
+        setBbs3((Binding_BalStatement)null);
         return;
       case EditorPackage.FLOW_BAL_STATEMENT__CI2:
         setCi2((CommaItem)null);
@@ -954,14 +960,8 @@ public class Flow_BalStatementImpl extends BalStatementImpl implements Flow_BalS
       case EditorPackage.FLOW_BAL_STATEMENT__N2:
         setN2((Name)null);
         return;
-      case EditorPackage.FLOW_BAL_STATEMENT__C2:
-        setC2((Collection)null);
-        return;
       case EditorPackage.FLOW_BAL_STATEMENT__I3:
-        setI3((EObject)null);
-        return;
-      case EditorPackage.FLOW_BAL_STATEMENT__BBS3:
-        setBbs3((Binding_BalStatement)null);
+        setI3((Id)null);
         return;
     }
     super.eUnset(featureID);
@@ -977,8 +977,12 @@ public class Flow_BalStatementImpl extends BalStatementImpl implements Flow_BalS
   {
     switch (featureID)
     {
+      case EditorPackage.FLOW_BAL_STATEMENT__C2:
+        return c2 != null;
       case EditorPackage.FLOW_BAL_STATEMENT__ST2:
         return ST2_EDEFAULT == null ? st2 != null : !ST2_EDEFAULT.equals(st2);
+      case EditorPackage.FLOW_BAL_STATEMENT__BBS3:
+        return bbs3 != null;
       case EditorPackage.FLOW_BAL_STATEMENT__CI2:
         return ci2 != null;
       case EditorPackage.FLOW_BAL_STATEMENT__BBS4:
@@ -997,12 +1001,8 @@ public class Flow_BalStatementImpl extends BalStatementImpl implements Flow_BalS
         return gb2 != null;
       case EditorPackage.FLOW_BAL_STATEMENT__N2:
         return n2 != null;
-      case EditorPackage.FLOW_BAL_STATEMENT__C2:
-        return c2 != null;
       case EditorPackage.FLOW_BAL_STATEMENT__I3:
         return i3 != null;
-      case EditorPackage.FLOW_BAL_STATEMENT__BBS3:
-        return bbs3 != null;
     }
     return super.eIsSet(featureID);
   }

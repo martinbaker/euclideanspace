@@ -496,7 +496,7 @@ Expression:
 Labeled hidden(WS,KW_NEWLINE):
  Comma
 | Declaration
-| KW_AT Atom lab=Labeled?
+| (KW_AT Atom lab=Labeled?)
 ;
 
 Declaration hidden(WS,KW_NEWLINE):
@@ -595,39 +595,25 @@ Binding_Collection hidden(WS,KW_NEWLINE):
   BindingL_Infixed_Collection
 ;
 
-/* Substituted Rules in Xtext:
- * BindingL(Infixed,E) where E is in Binding
- * BindingL(R,L)
- * : L
- * | R KW_Assign BindingL(R,L)
- * { $$ = abNewAssign(APOS($1),$1,$3); }
- * | R KW_2EQ BindingL(R,L)
- * { $$ = abNewDefine(APOS($1),$1,$3); }
- * | R KW_MARROW BindingL(R,L)
- * { $$ = abNewMDefine(APOS($1),$1,$3); }
- * | R KW_MAPSTO BindingL(R,L)
- * { $$ = abNewLambda(APOS($1),$1,abZip,$3); }
- * | R KW_MAPSTOStar BindingL(R,L)
- * { $$ = abNewPLambda(APOS($1),$1,abZip,$3); }
- * ;
- */
  /* This rule allows any statement or new: Assign, Define or Lambda 
-  * I have had to comment out Assign, Define or Lambdas for now
-  * as they seem to cause left recursion
+  *
+  * the rule to left of Assign/Define/Lambda should be 'Infixed' not 'Id'
+  * but this never matches.
   */
 BindingL_Infixed_AnyStatement hidden(WS,KW_NEWLINE):
  bas9=AnyStatement
-//| =>(Infixed ('assign'|KW_2EQ|KW_MARROW|KW_MAPSTO|KW_MAPSTOSTAR) bia=BindingL_Infixed_AnyStatement)
+// | =>(lft=Infixed op=('assign'|KW_2EQ|KW_MARROW|KW_MAPSTO|KW_MAPSTOSTAR) bia=BindingL_Infixed_AnyStatement)
+ | =>(lft=Id op=('assign'|KW_2EQ|KW_MARROW|KW_MAPSTO|KW_MAPSTOSTAR) bia=BindingL_Infixed_AnyStatement)
 ;
 
 BindingL_Infixed_BalStatement hidden(WS,KW_NEWLINE):
- BalStatement
-| =>(Infixed ('assign'|KW_2EQ|KW_MARROW|KW_MAPSTO|KW_MAPSTOSTAR) bib=BindingL_Infixed_BalStatement)
+ bas9=BalStatement
+| =>(lft=Infixed op=('assign'|KW_2EQ|KW_MARROW|KW_MAPSTO|KW_MAPSTOSTAR) bia=BindingL_Infixed_BalStatement)
 ;
 
 BindingL_Infixed_Collection hidden(WS,KW_NEWLINE):
- Collection
-| =>(Infixed ('assign'|KW_2EQ|KW_MARROW|KW_MAPSTO|KW_MAPSTOSTAR) bic=BindingL_Infixed_Collection)
+ bas9=Collection
+| =>(lft=Infixed op=('assign'|KW_2EQ|KW_MARROW|KW_MAPSTO|KW_MAPSTOSTAR) bia=BindingL_Infixed_Collection)
 ;
 
 /* Substituted Rules in Xtext:
@@ -724,10 +710,10 @@ Flow(XX) -> Flow_AnyStatement or Flow_BalStatement
 //;
 */
 Flow_AnyStatement hidden(WS,KW_NEWLINE):
-	{Flow_AnyStatement}
- (c=Collection (st='implies' bas2=Binding_AnyStatement)?)
+//	{Flow_AnyStatement}
+ (c=Collection (st='implies' bas2=Binding_AnyStatement)?) // '.... for' or 'while ....'
 | (st='if' ci=CommaItem 'then' bbs=Binding_BalStatement =>'else' bas=Binding_AnyStatement)
-| =>(Iterators 'repeat' bas3=Binding_AnyStatement)
+| =>(Iterators 'repeat' bas3=Binding_AnyStatement) // 'for .... in' or 'while ....'
 | (st='repeat' bas=Binding_AnyStatement)
 | (st='try' bas=Binding_AnyStatement ('but'|'catch') be2=ButExpr apa=AlwaysPart_AnyStatement)
 | (st='select' bas=Binding_AnyStatement 'in' ca=Cases)
@@ -746,13 +732,11 @@ Flow_AnyStatement hidden(WS,KW_NEWLINE):
 | (st='never')
 ;
 
-/* rule ruleFlow_BalStatement has non-LL(*) decision due to recursive
- * rule invocations reachable from alts 6,7.  Resolve by left-factoring
- * or using syntactic predicates or using backtrack=true option. */
+/*  */
 Flow_BalStatement hidden(WS,KW_NEWLINE):
-	(Collection (st2='implies' bbs3=Binding_BalStatement)?)
+	(c2=Collection (st2='implies' bbs3=Binding_BalStatement)?) // '.... for' or 'while ....'
 | (st2='if' ci2=CommaItem 'then' bbs4+=Binding_BalStatement =>'else' bbs4+=Binding_BalStatement)
-| => (Iterators st2='repeat' bbs3=Binding_BalStatement)
+| => (Iterators st2='repeat' bbs3=Binding_BalStatement) // 'for .... in' or 'while ....'
 | (st2='repeat' bbs5=Binding_BalStatement)
 | (st2='try' bbs2=Binding_AnyStatement ('but'|'catch') be=ButExpr apb=AlwaysPart_BalStatement)
 | (st2='select' bbs2=Binding_AnyStatement 'in' ca2=Cases)
@@ -810,6 +794,8 @@ AlwaysPart_BalStatement hidden(WS,KW_NEWLINE):
 
 /*
  * Iterators
+ * .... for .... in .... | ....
+ * while ....
  */
 Collection hidden(WS,KW_NEWLINE):
  //Infixed i3=Iterators? // iterators allow for zero cases
@@ -1115,7 +1101,8 @@ Jright_Molecule hidden(WS,KW_NEWLINE):
 
 Jright_Atom hidden(WS,KW_NEWLINE):
 	(Jleft_Atom (right2=Jright_Atom)?)
-	| 'not' right2=Jright_Atom
+	|
+	('not' right2=Jright_Atom)
 ;
 
 /* Substituted Rules in Xtext:
@@ -1175,12 +1162,14 @@ DeclMolecule hidden(WS,KW_NEWLINE):
 | b=Block
 ;
 
+/* atom, enclosure: (....),[....],"...." or block {....} */
 BlockMolecule hidden(WS,KW_NEWLINE):
  Atom
 | Enclosure
 | Block
 ;
 
+/* enclosure: (....),[....],"...." or block {....} */
 BlockEnclosure hidden(WS,KW_NEWLINE):
 Enclosure
 | Block
@@ -1196,6 +1185,7 @@ Block hidden(WS,KW_NEWLINE):
  */
 Parened hidden(WS,KW_NEWLINE):
  op=KW_OPAREN e=Expression? KW_CPAREN
+// op=KW_OPAREN e=Labeled? KW_CPAREN
 // op=KW_OPAREN e=E3? KW_CPAREN
 ;
 
@@ -1461,7 +1451,7 @@ enlist1a_Labeled_Semicolon_AB hidden(WS,KW_NEWLINE):
 */
 enlister1a_Labeled_Semicolon hidden(WS,KW_NEWLINE):
   statemnts += Labeled
-  (KW_SEMICOLON statemnts += Labeled)
+  (KW_SEMICOLON statemnts += Labeled)*
   KW_SEMICOLON?
 //Labeled
 //| enlister1a_Labeled_Semicolon KW_SEMICOLON Labeled

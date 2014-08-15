@@ -4,8 +4,6 @@ package com.euclideanspace.aldor.editor;
 
 import org.eclipse.emf.common.util.EList;
 
-import org.eclipse.emf.ecore.EObject;
-
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Flow Bal Statement</b></em>'.
@@ -14,7 +12,9 @@ import org.eclipse.emf.ecore.EObject;
  * <p>
  * The following features are supported:
  * <ul>
+ *   <li>{@link com.euclideanspace.aldor.editor.Flow_BalStatement#getC2 <em>C2</em>}</li>
  *   <li>{@link com.euclideanspace.aldor.editor.Flow_BalStatement#getSt2 <em>St2</em>}</li>
+ *   <li>{@link com.euclideanspace.aldor.editor.Flow_BalStatement#getBbs3 <em>Bbs3</em>}</li>
  *   <li>{@link com.euclideanspace.aldor.editor.Flow_BalStatement#getCi2 <em>Ci2</em>}</li>
  *   <li>{@link com.euclideanspace.aldor.editor.Flow_BalStatement#getBbs4 <em>Bbs4</em>}</li>
  *   <li>{@link com.euclideanspace.aldor.editor.Flow_BalStatement#getBbs5 <em>Bbs5</em>}</li>
@@ -24,9 +24,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link com.euclideanspace.aldor.editor.Flow_BalStatement#getCa2 <em>Ca2</em>}</li>
  *   <li>{@link com.euclideanspace.aldor.editor.Flow_BalStatement#getGb2 <em>Gb2</em>}</li>
  *   <li>{@link com.euclideanspace.aldor.editor.Flow_BalStatement#getN2 <em>N2</em>}</li>
- *   <li>{@link com.euclideanspace.aldor.editor.Flow_BalStatement#getC2 <em>C2</em>}</li>
  *   <li>{@link com.euclideanspace.aldor.editor.Flow_BalStatement#getI3 <em>I3</em>}</li>
- *   <li>{@link com.euclideanspace.aldor.editor.Flow_BalStatement#getBbs3 <em>Bbs3</em>}</li>
  * </ul>
  * </p>
  *
@@ -36,6 +34,32 @@ import org.eclipse.emf.ecore.EObject;
  */
 public interface Flow_BalStatement extends BalStatement
 {
+  /**
+   * Returns the value of the '<em><b>C2</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>C2</em>' containment reference isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>C2</em>' containment reference.
+   * @see #setC2(Collection)
+   * @see com.euclideanspace.aldor.editor.EditorPackage#getFlow_BalStatement_C2()
+   * @model containment="true"
+   * @generated
+   */
+  Collection getC2();
+
+  /**
+   * Sets the value of the '{@link com.euclideanspace.aldor.editor.Flow_BalStatement#getC2 <em>C2</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>C2</em>' containment reference.
+   * @see #getC2()
+   * @generated
+   */
+  void setC2(Collection value);
+
   /**
    * Returns the value of the '<em><b>St2</b></em>' attribute.
    * <!-- begin-user-doc -->
@@ -61,6 +85,32 @@ public interface Flow_BalStatement extends BalStatement
    * @generated
    */
   void setSt2(String value);
+
+  /**
+   * Returns the value of the '<em><b>Bbs3</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Bbs3</em>' containment reference isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Bbs3</em>' containment reference.
+   * @see #setBbs3(Binding_BalStatement)
+   * @see com.euclideanspace.aldor.editor.EditorPackage#getFlow_BalStatement_Bbs3()
+   * @model containment="true"
+   * @generated
+   */
+  Binding_BalStatement getBbs3();
+
+  /**
+   * Sets the value of the '{@link com.euclideanspace.aldor.editor.Flow_BalStatement#getBbs3 <em>Bbs3</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Bbs3</em>' containment reference.
+   * @see #getBbs3()
+   * @generated
+   */
+  void setBbs3(Binding_BalStatement value);
 
   /**
    * Returns the value of the '<em><b>Ci2</b></em>' containment reference.
@@ -287,32 +337,6 @@ public interface Flow_BalStatement extends BalStatement
   void setN2(Name value);
 
   /**
-   * Returns the value of the '<em><b>C2</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>C2</em>' containment reference isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>C2</em>' containment reference.
-   * @see #setC2(Collection)
-   * @see com.euclideanspace.aldor.editor.EditorPackage#getFlow_BalStatement_C2()
-   * @model containment="true"
-   * @generated
-   */
-  Collection getC2();
-
-  /**
-   * Sets the value of the '{@link com.euclideanspace.aldor.editor.Flow_BalStatement#getC2 <em>C2</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>C2</em>' containment reference.
-   * @see #getC2()
-   * @generated
-   */
-  void setC2(Collection value);
-
-  /**
    * Returns the value of the '<em><b>I3</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <p>
@@ -321,12 +345,12 @@ public interface Flow_BalStatement extends BalStatement
    * </p>
    * <!-- end-user-doc -->
    * @return the value of the '<em>I3</em>' containment reference.
-   * @see #setI3(EObject)
+   * @see #setI3(Id)
    * @see com.euclideanspace.aldor.editor.EditorPackage#getFlow_BalStatement_I3()
    * @model containment="true"
    * @generated
    */
-  EObject getI3();
+  Id getI3();
 
   /**
    * Sets the value of the '{@link com.euclideanspace.aldor.editor.Flow_BalStatement#getI3 <em>I3</em>}' containment reference.
@@ -336,32 +360,6 @@ public interface Flow_BalStatement extends BalStatement
    * @see #getI3()
    * @generated
    */
-  void setI3(EObject value);
-
-  /**
-   * Returns the value of the '<em><b>Bbs3</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Bbs3</em>' containment reference isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Bbs3</em>' containment reference.
-   * @see #setBbs3(Binding_BalStatement)
-   * @see com.euclideanspace.aldor.editor.EditorPackage#getFlow_BalStatement_Bbs3()
-   * @model containment="true"
-   * @generated
-   */
-  Binding_BalStatement getBbs3();
-
-  /**
-   * Sets the value of the '{@link com.euclideanspace.aldor.editor.Flow_BalStatement#getBbs3 <em>Bbs3</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Bbs3</em>' containment reference.
-   * @see #getBbs3()
-   * @generated
-   */
-  void setBbs3(Binding_BalStatement value);
+  void setI3(Id value);
 
 } // Flow_BalStatement

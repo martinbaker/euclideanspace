@@ -4,7 +4,6 @@ package com.euclideanspace.aldor.editor.impl;
 
 import com.euclideanspace.aldor.editor.AlwaysPart_BalStatement;
 import com.euclideanspace.aldor.editor.BalStatement;
-import com.euclideanspace.aldor.editor.BindingL_Infixed_BalStatement;
 import com.euclideanspace.aldor.editor.Binding_AnyStatement;
 import com.euclideanspace.aldor.editor.Binding_BalStatement;
 import com.euclideanspace.aldor.editor.ButExpr;
@@ -14,6 +13,7 @@ import com.euclideanspace.aldor.editor.CommaItem;
 import com.euclideanspace.aldor.editor.EditorPackage;
 import com.euclideanspace.aldor.editor.Flow_BalStatement;
 import com.euclideanspace.aldor.editor.GenBound;
+import com.euclideanspace.aldor.editor.Id;
 import com.euclideanspace.aldor.editor.Iterators;
 import com.euclideanspace.aldor.editor.Name;
 
@@ -23,7 +23,6 @@ import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
@@ -38,7 +37,9 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <p>
  * The following features are implemented:
  * <ul>
+ *   <li>{@link com.euclideanspace.aldor.editor.impl.IteratorsImpl#getC2 <em>C2</em>}</li>
  *   <li>{@link com.euclideanspace.aldor.editor.impl.IteratorsImpl#getSt2 <em>St2</em>}</li>
+ *   <li>{@link com.euclideanspace.aldor.editor.impl.IteratorsImpl#getBbs3 <em>Bbs3</em>}</li>
  *   <li>{@link com.euclideanspace.aldor.editor.impl.IteratorsImpl#getCi2 <em>Ci2</em>}</li>
  *   <li>{@link com.euclideanspace.aldor.editor.impl.IteratorsImpl#getBbs4 <em>Bbs4</em>}</li>
  *   <li>{@link com.euclideanspace.aldor.editor.impl.IteratorsImpl#getBbs5 <em>Bbs5</em>}</li>
@@ -48,9 +49,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link com.euclideanspace.aldor.editor.impl.IteratorsImpl#getCa2 <em>Ca2</em>}</li>
  *   <li>{@link com.euclideanspace.aldor.editor.impl.IteratorsImpl#getGb2 <em>Gb2</em>}</li>
  *   <li>{@link com.euclideanspace.aldor.editor.impl.IteratorsImpl#getN2 <em>N2</em>}</li>
- *   <li>{@link com.euclideanspace.aldor.editor.impl.IteratorsImpl#getC2 <em>C2</em>}</li>
  *   <li>{@link com.euclideanspace.aldor.editor.impl.IteratorsImpl#getI3 <em>I3</em>}</li>
- *   <li>{@link com.euclideanspace.aldor.editor.impl.IteratorsImpl#getBbs3 <em>Bbs3</em>}</li>
  *   <li>{@link com.euclideanspace.aldor.editor.impl.IteratorsImpl#getBas3 <em>Bas3</em>}</li>
  * </ul>
  * </p>
@@ -59,6 +58,16 @@ import org.eclipse.emf.ecore.util.InternalEList;
  */
 public class IteratorsImpl extends Flow_AnyStatementImpl implements Iterators
 {
+  /**
+   * The cached value of the '{@link #getC2() <em>C2</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getC2()
+   * @generated
+   * @ordered
+   */
+  protected Collection c2;
+
   /**
    * The default value of the '{@link #getSt2() <em>St2</em>}' attribute.
    * <!-- begin-user-doc -->
@@ -78,6 +87,16 @@ public class IteratorsImpl extends Flow_AnyStatementImpl implements Iterators
    * @ordered
    */
   protected String st2 = ST2_EDEFAULT;
+
+  /**
+   * The cached value of the '{@link #getBbs3() <em>Bbs3</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getBbs3()
+   * @generated
+   * @ordered
+   */
+  protected Binding_BalStatement bbs3;
 
   /**
    * The cached value of the '{@link #getCi2() <em>Ci2</em>}' containment reference.
@@ -170,16 +189,6 @@ public class IteratorsImpl extends Flow_AnyStatementImpl implements Iterators
   protected Name n2;
 
   /**
-   * The cached value of the '{@link #getC2() <em>C2</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getC2()
-   * @generated
-   * @ordered
-   */
-  protected Collection c2;
-
-  /**
    * The cached value of the '{@link #getI3() <em>I3</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -187,17 +196,7 @@ public class IteratorsImpl extends Flow_AnyStatementImpl implements Iterators
    * @generated
    * @ordered
    */
-  protected EObject i3;
-
-  /**
-   * The cached value of the '{@link #getBbs3() <em>Bbs3</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getBbs3()
-   * @generated
-   * @ordered
-   */
-  protected Binding_BalStatement bbs3;
+  protected Id i3;
 
   /**
    * The cached value of the '{@link #getBas3() <em>Bas3</em>}' containment reference.
@@ -235,6 +234,54 @@ public class IteratorsImpl extends Flow_AnyStatementImpl implements Iterators
    * <!-- end-user-doc -->
    * @generated
    */
+  public Collection getC2()
+  {
+    return c2;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetC2(Collection newC2, NotificationChain msgs)
+  {
+    Collection oldC2 = c2;
+    c2 = newC2;
+    if (eNotificationRequired())
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, EditorPackage.ITERATORS__C2, oldC2, newC2);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setC2(Collection newC2)
+  {
+    if (newC2 != c2)
+    {
+      NotificationChain msgs = null;
+      if (c2 != null)
+        msgs = ((InternalEObject)c2).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - EditorPackage.ITERATORS__C2, null, msgs);
+      if (newC2 != null)
+        msgs = ((InternalEObject)newC2).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - EditorPackage.ITERATORS__C2, null, msgs);
+      msgs = basicSetC2(newC2, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, EditorPackage.ITERATORS__C2, newC2, newC2));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public String getSt2()
   {
     return st2;
@@ -251,6 +298,54 @@ public class IteratorsImpl extends Flow_AnyStatementImpl implements Iterators
     st2 = newSt2;
     if (eNotificationRequired())
       eNotify(new ENotificationImpl(this, Notification.SET, EditorPackage.ITERATORS__ST2, oldSt2, st2));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Binding_BalStatement getBbs3()
+  {
+    return bbs3;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetBbs3(Binding_BalStatement newBbs3, NotificationChain msgs)
+  {
+    Binding_BalStatement oldBbs3 = bbs3;
+    bbs3 = newBbs3;
+    if (eNotificationRequired())
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, EditorPackage.ITERATORS__BBS3, oldBbs3, newBbs3);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setBbs3(Binding_BalStatement newBbs3)
+  {
+    if (newBbs3 != bbs3)
+    {
+      NotificationChain msgs = null;
+      if (bbs3 != null)
+        msgs = ((InternalEObject)bbs3).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - EditorPackage.ITERATORS__BBS3, null, msgs);
+      if (newBbs3 != null)
+        msgs = ((InternalEObject)newBbs3).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - EditorPackage.ITERATORS__BBS3, null, msgs);
+      msgs = basicSetBbs3(newBbs3, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, EditorPackage.ITERATORS__BBS3, newBbs3, newBbs3));
   }
 
   /**
@@ -656,55 +751,7 @@ public class IteratorsImpl extends Flow_AnyStatementImpl implements Iterators
    * <!-- end-user-doc -->
    * @generated
    */
-  public Collection getC2()
-  {
-    return c2;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public NotificationChain basicSetC2(Collection newC2, NotificationChain msgs)
-  {
-    Collection oldC2 = c2;
-    c2 = newC2;
-    if (eNotificationRequired())
-    {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, EditorPackage.ITERATORS__C2, oldC2, newC2);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setC2(Collection newC2)
-  {
-    if (newC2 != c2)
-    {
-      NotificationChain msgs = null;
-      if (c2 != null)
-        msgs = ((InternalEObject)c2).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - EditorPackage.ITERATORS__C2, null, msgs);
-      if (newC2 != null)
-        msgs = ((InternalEObject)newC2).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - EditorPackage.ITERATORS__C2, null, msgs);
-      msgs = basicSetC2(newC2, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, EditorPackage.ITERATORS__C2, newC2, newC2));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EObject getI3()
+  public Id getI3()
   {
     return i3;
   }
@@ -714,9 +761,9 @@ public class IteratorsImpl extends Flow_AnyStatementImpl implements Iterators
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetI3(EObject newI3, NotificationChain msgs)
+  public NotificationChain basicSetI3(Id newI3, NotificationChain msgs)
   {
-    EObject oldI3 = i3;
+    Id oldI3 = i3;
     i3 = newI3;
     if (eNotificationRequired())
     {
@@ -731,7 +778,7 @@ public class IteratorsImpl extends Flow_AnyStatementImpl implements Iterators
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setI3(EObject newI3)
+  public void setI3(Id newI3)
   {
     if (newI3 != i3)
     {
@@ -745,54 +792,6 @@ public class IteratorsImpl extends Flow_AnyStatementImpl implements Iterators
     }
     else if (eNotificationRequired())
       eNotify(new ENotificationImpl(this, Notification.SET, EditorPackage.ITERATORS__I3, newI3, newI3));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public Binding_BalStatement getBbs3()
-  {
-    return bbs3;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public NotificationChain basicSetBbs3(Binding_BalStatement newBbs3, NotificationChain msgs)
-  {
-    Binding_BalStatement oldBbs3 = bbs3;
-    bbs3 = newBbs3;
-    if (eNotificationRequired())
-    {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, EditorPackage.ITERATORS__BBS3, oldBbs3, newBbs3);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setBbs3(Binding_BalStatement newBbs3)
-  {
-    if (newBbs3 != bbs3)
-    {
-      NotificationChain msgs = null;
-      if (bbs3 != null)
-        msgs = ((InternalEObject)bbs3).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - EditorPackage.ITERATORS__BBS3, null, msgs);
-      if (newBbs3 != null)
-        msgs = ((InternalEObject)newBbs3).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - EditorPackage.ITERATORS__BBS3, null, msgs);
-      msgs = basicSetBbs3(newBbs3, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, EditorPackage.ITERATORS__BBS3, newBbs3, newBbs3));
   }
 
   /**
@@ -853,6 +852,10 @@ public class IteratorsImpl extends Flow_AnyStatementImpl implements Iterators
   {
     switch (featureID)
     {
+      case EditorPackage.ITERATORS__C2:
+        return basicSetC2(null, msgs);
+      case EditorPackage.ITERATORS__BBS3:
+        return basicSetBbs3(null, msgs);
       case EditorPackage.ITERATORS__CI2:
         return basicSetCi2(null, msgs);
       case EditorPackage.ITERATORS__BBS4:
@@ -871,12 +874,8 @@ public class IteratorsImpl extends Flow_AnyStatementImpl implements Iterators
         return basicSetGb2(null, msgs);
       case EditorPackage.ITERATORS__N2:
         return basicSetN2(null, msgs);
-      case EditorPackage.ITERATORS__C2:
-        return basicSetC2(null, msgs);
       case EditorPackage.ITERATORS__I3:
         return basicSetI3(null, msgs);
-      case EditorPackage.ITERATORS__BBS3:
-        return basicSetBbs3(null, msgs);
       case EditorPackage.ITERATORS__BAS3:
         return basicSetBas3(null, msgs);
     }
@@ -893,8 +892,12 @@ public class IteratorsImpl extends Flow_AnyStatementImpl implements Iterators
   {
     switch (featureID)
     {
+      case EditorPackage.ITERATORS__C2:
+        return getC2();
       case EditorPackage.ITERATORS__ST2:
         return getSt2();
+      case EditorPackage.ITERATORS__BBS3:
+        return getBbs3();
       case EditorPackage.ITERATORS__CI2:
         return getCi2();
       case EditorPackage.ITERATORS__BBS4:
@@ -913,12 +916,8 @@ public class IteratorsImpl extends Flow_AnyStatementImpl implements Iterators
         return getGb2();
       case EditorPackage.ITERATORS__N2:
         return getN2();
-      case EditorPackage.ITERATORS__C2:
-        return getC2();
       case EditorPackage.ITERATORS__I3:
         return getI3();
-      case EditorPackage.ITERATORS__BBS3:
-        return getBbs3();
       case EditorPackage.ITERATORS__BAS3:
         return getBas3();
     }
@@ -936,8 +935,14 @@ public class IteratorsImpl extends Flow_AnyStatementImpl implements Iterators
   {
     switch (featureID)
     {
+      case EditorPackage.ITERATORS__C2:
+        setC2((Collection)newValue);
+        return;
       case EditorPackage.ITERATORS__ST2:
         setSt2((String)newValue);
+        return;
+      case EditorPackage.ITERATORS__BBS3:
+        setBbs3((Binding_BalStatement)newValue);
         return;
       case EditorPackage.ITERATORS__CI2:
         setCi2((CommaItem)newValue);
@@ -967,14 +972,8 @@ public class IteratorsImpl extends Flow_AnyStatementImpl implements Iterators
       case EditorPackage.ITERATORS__N2:
         setN2((Name)newValue);
         return;
-      case EditorPackage.ITERATORS__C2:
-        setC2((Collection)newValue);
-        return;
       case EditorPackage.ITERATORS__I3:
-        setI3((EObject)newValue);
-        return;
-      case EditorPackage.ITERATORS__BBS3:
-        setBbs3((Binding_BalStatement)newValue);
+        setI3((Id)newValue);
         return;
       case EditorPackage.ITERATORS__BAS3:
         setBas3((Binding_AnyStatement)newValue);
@@ -993,8 +992,14 @@ public class IteratorsImpl extends Flow_AnyStatementImpl implements Iterators
   {
     switch (featureID)
     {
+      case EditorPackage.ITERATORS__C2:
+        setC2((Collection)null);
+        return;
       case EditorPackage.ITERATORS__ST2:
         setSt2(ST2_EDEFAULT);
+        return;
+      case EditorPackage.ITERATORS__BBS3:
+        setBbs3((Binding_BalStatement)null);
         return;
       case EditorPackage.ITERATORS__CI2:
         setCi2((CommaItem)null);
@@ -1023,14 +1028,8 @@ public class IteratorsImpl extends Flow_AnyStatementImpl implements Iterators
       case EditorPackage.ITERATORS__N2:
         setN2((Name)null);
         return;
-      case EditorPackage.ITERATORS__C2:
-        setC2((Collection)null);
-        return;
       case EditorPackage.ITERATORS__I3:
-        setI3((EObject)null);
-        return;
-      case EditorPackage.ITERATORS__BBS3:
-        setBbs3((Binding_BalStatement)null);
+        setI3((Id)null);
         return;
       case EditorPackage.ITERATORS__BAS3:
         setBas3((Binding_AnyStatement)null);
@@ -1049,8 +1048,12 @@ public class IteratorsImpl extends Flow_AnyStatementImpl implements Iterators
   {
     switch (featureID)
     {
+      case EditorPackage.ITERATORS__C2:
+        return c2 != null;
       case EditorPackage.ITERATORS__ST2:
         return ST2_EDEFAULT == null ? st2 != null : !ST2_EDEFAULT.equals(st2);
+      case EditorPackage.ITERATORS__BBS3:
+        return bbs3 != null;
       case EditorPackage.ITERATORS__CI2:
         return ci2 != null;
       case EditorPackage.ITERATORS__BBS4:
@@ -1069,12 +1072,8 @@ public class IteratorsImpl extends Flow_AnyStatementImpl implements Iterators
         return gb2 != null;
       case EditorPackage.ITERATORS__N2:
         return n2 != null;
-      case EditorPackage.ITERATORS__C2:
-        return c2 != null;
       case EditorPackage.ITERATORS__I3:
         return i3 != null;
-      case EditorPackage.ITERATORS__BBS3:
-        return bbs3 != null;
       case EditorPackage.ITERATORS__BAS3:
         return bas3 != null;
     }
@@ -1089,20 +1088,6 @@ public class IteratorsImpl extends Flow_AnyStatementImpl implements Iterators
   @Override
   public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass)
   {
-    if (baseClass == Binding_BalStatement.class)
-    {
-      switch (derivedFeatureID)
-      {
-        default: return -1;
-      }
-    }
-    if (baseClass == BindingL_Infixed_BalStatement.class)
-    {
-      switch (derivedFeatureID)
-      {
-        default: return -1;
-      }
-    }
     if (baseClass == BalStatement.class)
     {
       switch (derivedFeatureID)
@@ -1114,7 +1099,9 @@ public class IteratorsImpl extends Flow_AnyStatementImpl implements Iterators
     {
       switch (derivedFeatureID)
       {
+        case EditorPackage.ITERATORS__C2: return EditorPackage.FLOW_BAL_STATEMENT__C2;
         case EditorPackage.ITERATORS__ST2: return EditorPackage.FLOW_BAL_STATEMENT__ST2;
+        case EditorPackage.ITERATORS__BBS3: return EditorPackage.FLOW_BAL_STATEMENT__BBS3;
         case EditorPackage.ITERATORS__CI2: return EditorPackage.FLOW_BAL_STATEMENT__CI2;
         case EditorPackage.ITERATORS__BBS4: return EditorPackage.FLOW_BAL_STATEMENT__BBS4;
         case EditorPackage.ITERATORS__BBS5: return EditorPackage.FLOW_BAL_STATEMENT__BBS5;
@@ -1124,9 +1111,7 @@ public class IteratorsImpl extends Flow_AnyStatementImpl implements Iterators
         case EditorPackage.ITERATORS__CA2: return EditorPackage.FLOW_BAL_STATEMENT__CA2;
         case EditorPackage.ITERATORS__GB2: return EditorPackage.FLOW_BAL_STATEMENT__GB2;
         case EditorPackage.ITERATORS__N2: return EditorPackage.FLOW_BAL_STATEMENT__N2;
-        case EditorPackage.ITERATORS__C2: return EditorPackage.FLOW_BAL_STATEMENT__C2;
         case EditorPackage.ITERATORS__I3: return EditorPackage.FLOW_BAL_STATEMENT__I3;
-        case EditorPackage.ITERATORS__BBS3: return EditorPackage.FLOW_BAL_STATEMENT__BBS3;
         default: return -1;
       }
     }
@@ -1141,20 +1126,6 @@ public class IteratorsImpl extends Flow_AnyStatementImpl implements Iterators
   @Override
   public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass)
   {
-    if (baseClass == Binding_BalStatement.class)
-    {
-      switch (baseFeatureID)
-      {
-        default: return -1;
-      }
-    }
-    if (baseClass == BindingL_Infixed_BalStatement.class)
-    {
-      switch (baseFeatureID)
-      {
-        default: return -1;
-      }
-    }
     if (baseClass == BalStatement.class)
     {
       switch (baseFeatureID)
@@ -1166,7 +1137,9 @@ public class IteratorsImpl extends Flow_AnyStatementImpl implements Iterators
     {
       switch (baseFeatureID)
       {
+        case EditorPackage.FLOW_BAL_STATEMENT__C2: return EditorPackage.ITERATORS__C2;
         case EditorPackage.FLOW_BAL_STATEMENT__ST2: return EditorPackage.ITERATORS__ST2;
+        case EditorPackage.FLOW_BAL_STATEMENT__BBS3: return EditorPackage.ITERATORS__BBS3;
         case EditorPackage.FLOW_BAL_STATEMENT__CI2: return EditorPackage.ITERATORS__CI2;
         case EditorPackage.FLOW_BAL_STATEMENT__BBS4: return EditorPackage.ITERATORS__BBS4;
         case EditorPackage.FLOW_BAL_STATEMENT__BBS5: return EditorPackage.ITERATORS__BBS5;
@@ -1176,9 +1149,7 @@ public class IteratorsImpl extends Flow_AnyStatementImpl implements Iterators
         case EditorPackage.FLOW_BAL_STATEMENT__CA2: return EditorPackage.ITERATORS__CA2;
         case EditorPackage.FLOW_BAL_STATEMENT__GB2: return EditorPackage.ITERATORS__GB2;
         case EditorPackage.FLOW_BAL_STATEMENT__N2: return EditorPackage.ITERATORS__N2;
-        case EditorPackage.FLOW_BAL_STATEMENT__C2: return EditorPackage.ITERATORS__C2;
         case EditorPackage.FLOW_BAL_STATEMENT__I3: return EditorPackage.ITERATORS__I3;
-        case EditorPackage.FLOW_BAL_STATEMENT__BBS3: return EditorPackage.ITERATORS__BBS3;
         default: return -1;
       }
     }

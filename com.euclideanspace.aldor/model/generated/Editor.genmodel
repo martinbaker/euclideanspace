@@ -46,9 +46,22 @@
     <genClasses ecoreClass="Editor.ecore#//Binding_Collection"/>
     <genClasses ecoreClass="Editor.ecore#//BindingL_Infixed_AnyStatement">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//BindingL_Infixed_AnyStatement/bas9"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//BindingL_Infixed_AnyStatement/lft"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Editor.ecore#//BindingL_Infixed_AnyStatement/op"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//BindingL_Infixed_AnyStatement/bia"/>
     </genClasses>
-    <genClasses ecoreClass="Editor.ecore#//BindingL_Infixed_BalStatement"/>
-    <genClasses ecoreClass="Editor.ecore#//BindingL_Infixed_Collection"/>
+    <genClasses ecoreClass="Editor.ecore#//BindingL_Infixed_BalStatement">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//BindingL_Infixed_BalStatement/bas9"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//BindingL_Infixed_BalStatement/lft"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Editor.ecore#//BindingL_Infixed_BalStatement/op"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//BindingL_Infixed_BalStatement/bia"/>
+    </genClasses>
+    <genClasses ecoreClass="Editor.ecore#//BindingL_Infixed_Collection">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//BindingL_Infixed_Collection/bas9"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//BindingL_Infixed_Collection/lft"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Editor.ecore#//BindingL_Infixed_Collection/op"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//BindingL_Infixed_Collection/bia"/>
+    </genClasses>
     <genClasses ecoreClass="Editor.ecore#//BindingR_InfixedExprsDecl_AnyStatement"/>
     <genClasses ecoreClass="Editor.ecore#//AnyStatement">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//AnyStatement/bas"/>
@@ -69,7 +82,9 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//Flow_AnyStatement/i2"/>
     </genClasses>
     <genClasses ecoreClass="Editor.ecore#//Flow_BalStatement">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//Flow_BalStatement/c2"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Editor.ecore#//Flow_BalStatement/st2"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//Flow_BalStatement/bbs3"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//Flow_BalStatement/ci2"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//Flow_BalStatement/bbs4"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//Flow_BalStatement/bbs5"/>
@@ -79,9 +94,7 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//Flow_BalStatement/ca2"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//Flow_BalStatement/gb2"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//Flow_BalStatement/n2"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//Flow_BalStatement/c2"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//Flow_BalStatement/i3"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//Flow_BalStatement/bbs3"/>
     </genClasses>
     <genClasses ecoreClass="Editor.ecore#//GenBound">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//GenBound/ci"/>
@@ -112,8 +125,7 @@
     </genClasses>
     <genClasses ecoreClass="Editor.ecore#//SuchthatPart"/>
     <genClasses ecoreClass="Editor.ecore#//Infixed">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//Infixed/bib"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//Infixed/bic"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//Infixed/i3"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//Infixed/ifx"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//Infixed/dp"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//Infixed/b"/>
