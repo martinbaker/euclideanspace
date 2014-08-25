@@ -11,10 +11,10 @@ package com.euclideanspace.aldor.editor;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link com.euclideanspace.aldor.editor.BindingL_Infixed_BalStatement#getBas9 <em>Bas9</em>}</li>
  *   <li>{@link com.euclideanspace.aldor.editor.BindingL_Infixed_BalStatement#getLft <em>Lft</em>}</li>
  *   <li>{@link com.euclideanspace.aldor.editor.BindingL_Infixed_BalStatement#getOp <em>Op</em>}</li>
  *   <li>{@link com.euclideanspace.aldor.editor.BindingL_Infixed_BalStatement#getBia <em>Bia</em>}</li>
+ *   <li>{@link com.euclideanspace.aldor.editor.BindingL_Infixed_BalStatement#getBas9 <em>Bas9</em>}</li>
  * </ul>
  * </p>
  *
@@ -24,32 +24,6 @@ package com.euclideanspace.aldor.editor;
  */
 public interface BindingL_Infixed_BalStatement extends Binding_BalStatement
 {
-  /**
-   * Returns the value of the '<em><b>Bas9</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Bas9</em>' containment reference isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Bas9</em>' containment reference.
-   * @see #setBas9(BalStatement)
-   * @see com.euclideanspace.aldor.editor.EditorPackage#getBindingL_Infixed_BalStatement_Bas9()
-   * @model containment="true"
-   * @generated
-   */
-  BalStatement getBas9();
-
-  /**
-   * Sets the value of the '{@link com.euclideanspace.aldor.editor.BindingL_Infixed_BalStatement#getBas9 <em>Bas9</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Bas9</em>' containment reference.
-   * @see #getBas9()
-   * @generated
-   */
-  void setBas9(BalStatement value);
-
   /**
    * Returns the value of the '<em><b>Lft</b></em>' containment reference.
    * <!-- begin-user-doc -->
@@ -127,5 +101,31 @@ public interface BindingL_Infixed_BalStatement extends Binding_BalStatement
    * @generated
    */
   void setBia(BindingL_Infixed_BalStatement value);
+
+  /**
+   * Returns the value of the '<em><b>Bas9</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Bas9</em>' containment reference isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Bas9</em>' containment reference.
+   * @see #setBas9(BalStatement)
+   * @see com.euclideanspace.aldor.editor.EditorPackage#getBindingL_Infixed_BalStatement_Bas9()
+   * @model containment="true"
+   * @generated
+   */
+  BalStatement getBas9();
+
+  /**
+   * Sets the value of the '{@link com.euclideanspace.aldor.editor.BindingL_Infixed_BalStatement#getBas9 <em>Bas9</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Bas9</em>' containment reference.
+   * @see #getBas9()
+   * @generated
+   */
+  void setBas9(BalStatement value);
 
 } // BindingL_Infixed_BalStatement

@@ -45,22 +45,22 @@
     <genClasses ecoreClass="Editor.ecore#//Binding_BalStatement"/>
     <genClasses ecoreClass="Editor.ecore#//Binding_Collection"/>
     <genClasses ecoreClass="Editor.ecore#//BindingL_Infixed_AnyStatement">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//BindingL_Infixed_AnyStatement/bas9"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//BindingL_Infixed_AnyStatement/lft"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Editor.ecore#//BindingL_Infixed_AnyStatement/op"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//BindingL_Infixed_AnyStatement/bia"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//BindingL_Infixed_AnyStatement/bas9"/>
     </genClasses>
     <genClasses ecoreClass="Editor.ecore#//BindingL_Infixed_BalStatement">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//BindingL_Infixed_BalStatement/bas9"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//BindingL_Infixed_BalStatement/lft"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Editor.ecore#//BindingL_Infixed_BalStatement/op"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//BindingL_Infixed_BalStatement/bia"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//BindingL_Infixed_BalStatement/bas9"/>
     </genClasses>
     <genClasses ecoreClass="Editor.ecore#//BindingL_Infixed_Collection">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//BindingL_Infixed_Collection/bas9"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//BindingL_Infixed_Collection/lft"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Editor.ecore#//BindingL_Infixed_Collection/op"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//BindingL_Infixed_Collection/bia"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//BindingL_Infixed_Collection/bas9"/>
     </genClasses>
     <genClasses ecoreClass="Editor.ecore#//BindingR_InfixedExprsDecl_AnyStatement"/>
     <genClasses ecoreClass="Editor.ecore#//AnyStatement">

@@ -48,29 +48,30 @@
   <eClassifiers xsi:type="ecore:EClass" name="Binding_BalStatement"/>
   <eClassifiers xsi:type="ecore:EClass" name="Binding_Collection" eSuperTypes="#//Cases"/>
   <eClassifiers xsi:type="ecore:EClass" name="BindingL_Infixed_AnyStatement" eSuperTypes="#//Binding_AnyStatement">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="bas9" eType="#//AnyStatement"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="lft" eType="#//Infixed"
         containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="lft" eType="#//Id" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="op" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="bia" eType="#//BindingL_Infixed_AnyStatement"
         containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="bas9" eType="#//AnyStatement"
+        containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="BindingL_Infixed_BalStatement" eSuperTypes="#//Binding_BalStatement">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="bas9" eType="#//BalStatement"
-        containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="lft" eType="#//Infixed"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="op" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="bia" eType="#//BindingL_Infixed_BalStatement"
         containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="bas9" eType="#//BalStatement"
+        containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="BindingL_Infixed_Collection" eSuperTypes="#//Binding_Collection">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="bas9" eType="#//Collection"
-        containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="lft" eType="#//Infixed"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="op" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="bia" eType="#//BindingL_Infixed_Collection"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="bas9" eType="#//Collection"
         containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="BindingR_InfixedExprsDecl_AnyStatement"

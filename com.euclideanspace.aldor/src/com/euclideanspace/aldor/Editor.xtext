@@ -483,16 +483,16 @@ terminal ANY_OTHER: .;
 /* error seems to be defined externally in Aldor grammar
  * so I have added this rule so it will compile
  */
-error:
+error hidden(WS,KW_NEWLINE):
 	'error'
 ;
 
-Expression:
+Expression hidden(WS,KW_NEWLINE):
   enlist1a_Labeled_Semicolon_AB
 ;
 
-/* An '.as' file is effectivly a list of 'Labeled' 
- * by semicolons*/
+/* An '.as' file is effectively a list of 'Labeled' 
+ * separated by semicolons*/
 Labeled hidden(WS,KW_NEWLINE):
  Comma
 | Declaration
@@ -596,24 +596,24 @@ Binding_Collection hidden(WS,KW_NEWLINE):
 ;
 
  /* This rule allows any statement or new: Assign, Define or Lambda 
-  *
-  * the rule to left of Assign/Define/Lambda should be 'Infixed' not 'Id'
-  * but this never matches.
   */
 BindingL_Infixed_AnyStatement hidden(WS,KW_NEWLINE):
+ =>(lft=Infixed
+      op=('assign'|KW_2EQ|KW_MARROW|KW_MAPSTO|KW_MAPSTOSTAR) bia=BindingL_Infixed_AnyStatement)
+ |
  bas9=AnyStatement
-// | =>(lft=Infixed op=('assign'|KW_2EQ|KW_MARROW|KW_MAPSTO|KW_MAPSTOSTAR) bia=BindingL_Infixed_AnyStatement)
- | =>(lft=Id op=('assign'|KW_2EQ|KW_MARROW|KW_MAPSTO|KW_MAPSTOSTAR) bia=BindingL_Infixed_AnyStatement)
 ;
 
 BindingL_Infixed_BalStatement hidden(WS,KW_NEWLINE):
+ =>(lft=Infixed op=('assign'|KW_2EQ|KW_MARROW|KW_MAPSTO|KW_MAPSTOSTAR) bia=BindingL_Infixed_BalStatement)
+ |
  bas9=BalStatement
-| =>(lft=Infixed op=('assign'|KW_2EQ|KW_MARROW|KW_MAPSTO|KW_MAPSTOSTAR) bia=BindingL_Infixed_BalStatement)
 ;
 
 BindingL_Infixed_Collection hidden(WS,KW_NEWLINE):
+ =>(lft=Infixed op=('assign'|KW_2EQ|KW_MARROW|KW_MAPSTO|KW_MAPSTOSTAR) bia=BindingL_Infixed_Collection)
+ |
  bas9=Collection
-| =>(lft=Infixed op=('assign'|KW_2EQ|KW_MARROW|KW_MAPSTO|KW_MAPSTOSTAR) bia=BindingL_Infixed_Collection)
 ;
 
 /* Substituted Rules in Xtext:
@@ -993,34 +993,34 @@ NakedOp hidden(WS,KW_NEWLINE):
 | UnqualOp_PowerTok
 ;
 
-ArrowOp: QualOp_ArrowTok;
-LatticeOp: QualOp_LatticeTok;
-RelationOp: QualOp_RelationTok;
-SegOp: QualOp_SegTok;
-PlusOp: QualOp_PlusTok;
-QuotientOp: QualOp_QuotientTok;
-TimesOp: QualOp_TimesTok;
-PowerOp: QualOp_PowerTok;
+ArrowOp hidden(WS,KW_NEWLINE): QualOp_ArrowTok;
+LatticeOp hidden(WS,KW_NEWLINE): QualOp_LatticeTok;
+RelationOp hidden(WS,KW_NEWLINE): QualOp_RelationTok;
+SegOp hidden(WS,KW_NEWLINE): QualOp_SegTok;
+PlusOp hidden(WS,KW_NEWLINE): QualOp_PlusTok;
+QuotientOp hidden(WS,KW_NEWLINE): QualOp_QuotientTok;
+TimesOp hidden(WS,KW_NEWLINE): QualOp_TimesTok;
+PowerOp hidden(WS,KW_NEWLINE): QualOp_PowerTok;
 
 /* in Aldor grammar this is ArrowTok<tok> */
-ArrowTok: KW_RARROW | KW_LARROW | KW_MAPSTAR ;
+ArrowTok hidden(WS,KW_NEWLINE): KW_RARROW | KW_LARROW | KW_MAPSTAR ;
 /* in Aldor grammar this is LatticeTok<tok> */
-LatticeTok: KW_VEE | KW_WEDGE ;
+LatticeTok hidden(WS,KW_NEWLINE): KW_VEE | KW_WEDGE ;
 /* in Aldor grammar this is RelationTok<tok> */
-RelationTok:KW_EQ | KW_TILDEE | KW_HATE |
+RelationTok hidden(WS,KW_NEWLINE):KW_EQ | KW_TILDEE | KW_HATE |
 KW_GE | KW_GT | KW_2GT |
 KW_LE | KW_LT | KW_2LT |
 'is' | 'isnt' | 'case' ;
 /* in Aldor grammar this is SegTok<tok> */
-SegTok: KW_2DOT | 'by' ;
+SegTok hidden(WS,KW_NEWLINE): KW_2DOT | 'by' ;
 /* in Aldor grammar this is PlusTok<tok> */
-PlusTok: KW_PLUS | KW_MINUS | KW_PLUSMINUS ;
+PlusTok hidden(WS,KW_NEWLINE): KW_PLUS | KW_MINUS | KW_PLUSMINUS ;
 /* in Aldor grammar this is QuotientTok<tok> */
-QuotientTok:'mod' | 'quo' | 'rem' | 'exquo' ;
+QuotientTok hidden(WS,KW_NEWLINE):'mod' | 'quo' | 'rem' | 'exquo' ;
 /* in Aldor grammar this is TimesTok<tok> */
-TimesTok: KW_STAR | KW_SLASH | KW_BACKSLASH ;
+TimesTok hidden(WS,KW_NEWLINE): KW_STAR | KW_SLASH | KW_BACKSLASH ;
 /* in Aldor grammar this is PowerTok<tok> */
-PowerTok: KW_2STAR | KW_HAT ;
+PowerTok hidden(WS,KW_NEWLINE): KW_2STAR | KW_HAT ;
 
 /*
  * Function Application
@@ -1368,12 +1368,12 @@ PowerTok (KW_DOLLAR oqt=OpQualTail)?
 //;
 
 /* list of lines starting with -- */
-PreDocument:
+PreDocument hidden(WS,KW_NEWLINE):
   TK_PREDOC*
 ;
 
 /* list of lines starting with ++ */
-PostDocument:
+PostDocument hidden(WS,KW_NEWLINE):
   TK_POSTDOC*
 ;
 
@@ -1437,25 +1437,22 @@ enlister1_InfixedExpr_Comma hidden(WS,KW_NEWLINE):
   InfixedExpr (KW_COMMA ie+=InfixedExpr)*
 ;
 
-/* Substituted Rules in Xtext:
-* enlist1a(Labeled, KW_SEMICOLON, `AB_Sequence)
-* 
-* E {sep+ E sep+ E sep*} */
+/* A list of (at least one) statement(s)
+ * seperated by semicolons and optionally ending with a semicolon
+ * 
+ * AB_Sequence
+ */ 
 enlist1a_Labeled_Semicolon_AB hidden(WS,KW_NEWLINE):
   enlister1a_Labeled_Semicolon
 ;
 
-/* Substituted Rules in Xtext:
-* enlister1a(E, Sep) where E is from enlist1a
-* 
-*/
+/* A list of (at least one) statement(s)
+ * seperated by semicolons and optionally ending with a semicolon
+ */ 
 enlister1a_Labeled_Semicolon hidden(WS,KW_NEWLINE):
   statemnts += Labeled
   (KW_SEMICOLON statemnts += Labeled)*
   KW_SEMICOLON?
-//Labeled
-//| enlister1a_Labeled_Semicolon KW_SEMICOLON Labeled
-//| enlister1a_Labeled_Semicolon KW_SEMICOLON
 ;
 
 /* Substituted Rules in Xtext:
@@ -1472,48 +1469,30 @@ enlister1a_Labeled_Semicolon hidden(WS,KW_NEWLINE):
 * Curly(Labeled)
 * 
 */
-Curly_Labeled:
+Curly_Labeled hidden(WS,KW_NEWLINE):
 KW_OCURLY CurlyContents_Labeled KW_CCURLY
 ;
 
-/* Substituted Rules in Xtext:
-* PileContents(E) E is from piled
-* 
-*/
-//PileContents(E)<ablist>
-//: Doc(E)
-//{ $$ = listCons(AbSyn)($1, listNil(AbSyn)); }
-//| PileContents(E) KW_BackSet Doc(E)
-//{ $$ = listCons(AbSyn)($3, $1); }
-//| error KW_BackSet Doc(E)
-//{ yyerrok; $$ = listCons(AbSyn)($3, listNil(AbSyn)); }
-//;
-
-/* Substituted Rules in Xtext:
-* CurlyContents(Labeled)
-* CurlyContents(E) E is from Curly
-* 
-* CurlyContents(E) : CurlyContentsList(E);
-*/
+/* A list of (at least one) statement(s)
+ * seperated by semicolons and optionally ending with a semicolon
+ * 
+ * statements can have pre or post comments
+ * 
+ * called by Curly_Labeled and Model
+ */ 
 CurlyContents_Labeled hidden(WS):
   CurlyContentsList_Labeled
 ;
 
-/* Substituted Rules in Xtext:
-* is CurlyContentsList(E)<ablist> in Aldor grammar
-* CurlyContentsList(E) E is from CurlyContents(E)
-* 
-* CurlyContentsList(E)<ablist>:
-* CurlyContent1(E)
-* | CurlyContent1(E) CurlyContentB(E)
-* ;
-*/
+/* A list of (at least one) statement(s)
+ * seperated by semicolons and optionally ending with a semicolon
+ * 
+ * statements can have pre or post comments
+ */ 
 CurlyContentsList_Labeled hidden(WS):
 	statemts += CurlyContentB_Labeled
 	(KW_SEMICOLON statemts += CurlyContentB_Labeled)*
 	KW_SEMICOLON?
-//CurlyContent1_Labeled
-//| CurlyContent1_Labeled ccb=CurlyContentB_Labeled
 ;
 
 /* CurlyContent1_Labeled
@@ -1544,6 +1523,6 @@ CurlyContentsList_Labeled hidden(WS):
 * or CurlyContentsList(E)
 * 
 */
-CurlyContentB_Labeled:
+CurlyContentB_Labeled hidden(WS,KW_NEWLINE):
 pred=PreDocument l=Labeled pd=PostDocument
 ;

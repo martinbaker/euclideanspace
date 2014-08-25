@@ -98,7 +98,7 @@ public class EditorSyntacticSequencer extends AbstractSyntacticSequencer {
 	}
 	
 	/**
-	 * ArrowTok: KW_RARROW | KW_LARROW | KW_MAPSTAR ;
+	 * ArrowTok hidden(WS,KW_NEWLINE): KW_RARROW | KW_LARROW | KW_MAPSTAR ;
 	 */
 	protected String getArrowTokToken(EObject semanticObject, RuleCall ruleCall, INode node) {
 		if (node != null)
@@ -260,7 +260,7 @@ public class EditorSyntacticSequencer extends AbstractSyntacticSequencer {
 	}
 	
 	/**
-	 * LatticeTok: KW_VEE | KW_WEDGE ;
+	 * LatticeTok hidden(WS,KW_NEWLINE): KW_VEE | KW_WEDGE ;
 	 */
 	protected String getLatticeTokToken(EObject semanticObject, RuleCall ruleCall, INode node) {
 		if (node != null)
@@ -269,7 +269,7 @@ public class EditorSyntacticSequencer extends AbstractSyntacticSequencer {
 	}
 	
 	/**
-	 * PlusTok: KW_PLUS | KW_MINUS | KW_PLUSMINUS ;
+	 * PlusTok hidden(WS,KW_NEWLINE): KW_PLUS | KW_MINUS | KW_PLUSMINUS ;
 	 */
 	protected String getPlusTokToken(EObject semanticObject, RuleCall ruleCall, INode node) {
 		if (node != null)
@@ -278,7 +278,7 @@ public class EditorSyntacticSequencer extends AbstractSyntacticSequencer {
 	}
 	
 	/**
-	 * PowerTok: KW_2STAR | KW_HAT ;
+	 * PowerTok hidden(WS,KW_NEWLINE): KW_2STAR | KW_HAT ;
 	 */
 	protected String getPowerTokToken(EObject semanticObject, RuleCall ruleCall, INode node) {
 		if (node != null)
@@ -287,7 +287,7 @@ public class EditorSyntacticSequencer extends AbstractSyntacticSequencer {
 	}
 	
 	/**
-	 * QuotientTok:'mod' | 'quo' | 'rem' | 'exquo' ;
+	 * QuotientTok hidden(WS,KW_NEWLINE):'mod' | 'quo' | 'rem' | 'exquo' ;
 	 */
 	protected String getQuotientTokToken(EObject semanticObject, RuleCall ruleCall, INode node) {
 		if (node != null)
@@ -296,7 +296,7 @@ public class EditorSyntacticSequencer extends AbstractSyntacticSequencer {
 	}
 	
 	/**
-	 * RelationTok:KW_EQ | KW_TILDEE | KW_HATE |
+	 * RelationTok hidden(WS,KW_NEWLINE):KW_EQ | KW_TILDEE | KW_HATE |
 	 * KW_GE | KW_GT | KW_2GT |
 	 * KW_LE | KW_LT | KW_2LT |
 	 * 'is' | 'isnt' | 'case' ;
@@ -308,7 +308,7 @@ public class EditorSyntacticSequencer extends AbstractSyntacticSequencer {
 	}
 	
 	/**
-	 * SegTok: KW_2DOT | 'by' ;
+	 * SegTok hidden(WS,KW_NEWLINE): KW_2DOT | 'by' ;
 	 */
 	protected String getSegTokToken(EObject semanticObject, RuleCall ruleCall, INode node) {
 		if (node != null)
@@ -317,7 +317,7 @@ public class EditorSyntacticSequencer extends AbstractSyntacticSequencer {
 	}
 	
 	/**
-	 * TimesTok: KW_STAR | KW_SLASH | KW_BACKSLASH ;
+	 * TimesTok hidden(WS,KW_NEWLINE): KW_STAR | KW_SLASH | KW_BACKSLASH ;
 	 */
 	protected String getTimesTokToken(EObject semanticObject, RuleCall ruleCall, INode node) {
 		if (node != null)
@@ -355,7 +355,7 @@ public class EditorSyntacticSequencer extends AbstractSyntacticSequencer {
 
 	/**
 	 * Syntax:
-	 *     KW_MAPSTOSTAR | 'assign' | KW_2EQ | KW_MAPSTO | KW_MARROW
+	 *     'assign' | KW_2EQ | KW_MARROW | KW_MAPSTOSTAR | KW_MAPSTO
 	 */
 	protected void emit_BindingR_InfixedExprsDecl_AnyStatement_AssignKeyword_1_0_0_or_KW_2EQTerminalRuleCall_1_0_1_or_KW_MAPSTOSTARTerminalRuleCall_1_0_4_or_KW_MAPSTOTerminalRuleCall_1_0_3_or_KW_MARROWTerminalRuleCall_1_0_2(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
@@ -371,7 +371,7 @@ public class EditorSyntacticSequencer extends AbstractSyntacticSequencer {
 	
 	/**
 	 * Syntax:
-	 *     KW_COLON | KW_COLONSTAR
+	 *     KW_COLONSTAR | KW_COLON
 	 */
 	protected void emit_DeclPart_KW_COLONSTARTerminalRuleCall_1_0_or_KW_COLONTerminalRuleCall_0_0(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
@@ -387,7 +387,7 @@ public class EditorSyntacticSequencer extends AbstractSyntacticSequencer {
 	
 	/**
 	 * Syntax:
-	 *     'but' | 'catch'
+	 *     'catch' | 'but'
 	 */
 	protected void emit_Flow_AnyStatement_ButKeyword_4_2_0_or_CatchKeyword_4_2_1(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
@@ -403,7 +403,7 @@ public class EditorSyntacticSequencer extends AbstractSyntacticSequencer {
 	
 	/**
 	 * Syntax:
-	 *     ('local' | 'free' | 'fluid')?
+	 *     ('local' | 'fluid' | 'free')?
 	 */
 	protected void emit_ForLhs___FluidKeyword_0_2_or_FreeKeyword_0_0_or_LocalKeyword_0_1__q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);

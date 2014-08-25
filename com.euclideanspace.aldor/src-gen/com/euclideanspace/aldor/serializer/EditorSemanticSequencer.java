@@ -955,7 +955,7 @@ public class EditorSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	/**
 	 * Constraint:
 	 *     (
-	 *         (bas9=AnyStatement | (lft=Id (op='assign' | op=KW_2EQ | op=KW_MARROW | op=KW_MAPSTO | op=KW_MAPSTOSTAR) bia=BindingL_Infixed_AnyStatement)) 
+	 *         ((lft=Infixed (op='assign' | op=KW_2EQ | op=KW_MARROW | op=KW_MAPSTO | op=KW_MAPSTOSTAR) bia=BindingL_Infixed_AnyStatement) | bas9=AnyStatement) 
 	 *         ci+=CommaItem* 
 	 *         bas=Binding_AnyStatement
 	 *     )
@@ -1003,7 +1003,7 @@ public class EditorSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	
 	/**
 	 * Constraint:
-	 *     (bas9=AnyStatement | (lft=Id (op='assign' | op=KW_2EQ | op=KW_MARROW | op=KW_MAPSTO | op=KW_MAPSTOSTAR) bia=BindingL_Infixed_AnyStatement))
+	 *     ((lft=Infixed (op='assign' | op=KW_2EQ | op=KW_MARROW | op=KW_MAPSTO | op=KW_MAPSTOSTAR) bia=BindingL_Infixed_AnyStatement) | bas9=AnyStatement)
 	 */
 	protected void sequence_BindingL_Infixed_AnyStatement(EObject context, BindingL_Infixed_AnyStatement semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -1013,7 +1013,7 @@ public class EditorSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	/**
 	 * Constraint:
 	 *     (
-	 *         (bas9=AnyStatement | (lft=Id (op='assign' | op=KW_2EQ | op=KW_MARROW | op=KW_MAPSTO | op=KW_MAPSTOSTAR) bia=BindingL_Infixed_AnyStatement)) 
+	 *         ((lft=Infixed (op='assign' | op=KW_2EQ | op=KW_MARROW | op=KW_MAPSTO | op=KW_MAPSTOSTAR) bia=BindingL_Infixed_AnyStatement) | bas9=AnyStatement) 
 	 *         ci+=CommaItem*
 	 *     )
 	 */
@@ -1025,7 +1025,7 @@ public class EditorSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	/**
 	 * Constraint:
 	 *     (
-	 *         (bas9=AnyStatement | (lft=Id (op='assign' | op=KW_2EQ | op=KW_MARROW | op=KW_MAPSTO | op=KW_MAPSTOSTAR) bia=BindingL_Infixed_AnyStatement)) 
+	 *         ((lft=Infixed (op='assign' | op=KW_2EQ | op=KW_MARROW | op=KW_MAPSTO | op=KW_MAPSTOSTAR) bia=BindingL_Infixed_AnyStatement) | bas9=AnyStatement) 
 	 *         ci+=CommaItem* 
 	 *         ci+=CommaItem*
 	 *     )
@@ -1037,7 +1037,7 @@ public class EditorSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	
 	/**
 	 * Constraint:
-	 *     (bas9=BalStatement | (lft=Infixed (op='assign' | op=KW_2EQ | op=KW_MARROW | op=KW_MAPSTO | op=KW_MAPSTOSTAR) bia=BindingL_Infixed_BalStatement))
+	 *     ((lft=Infixed (op='assign' | op=KW_2EQ | op=KW_MARROW | op=KW_MAPSTO | op=KW_MAPSTOSTAR) bia=BindingL_Infixed_BalStatement) | bas9=BalStatement)
 	 */
 	protected void sequence_BindingL_Infixed_BalStatement(EObject context, BindingL_Infixed_BalStatement semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -1046,7 +1046,7 @@ public class EditorSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	
 	/**
 	 * Constraint:
-	 *     (bas9=Collection | (lft=Infixed (op='assign' | op=KW_2EQ | op=KW_MARROW | op=KW_MAPSTO | op=KW_MAPSTOSTAR) bia=BindingL_Infixed_Collection))
+	 *     ((lft=Infixed (op='assign' | op=KW_2EQ | op=KW_MARROW | op=KW_MAPSTO | op=KW_MAPSTOSTAR) bia=BindingL_Infixed_Collection) | bas9=Collection)
 	 */
 	protected void sequence_BindingL_Infixed_Collection(EObject context, BindingL_Infixed_Collection semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

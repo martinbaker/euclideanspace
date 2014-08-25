@@ -691,22 +691,13 @@ public interface EditorPackage extends EPackage
   int BINDING_LINFIXED_ANY_STATEMENT__CI = BINDING_ANY_STATEMENT__CI;
 
   /**
-   * The feature id for the '<em><b>Bas9</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int BINDING_LINFIXED_ANY_STATEMENT__BAS9 = BINDING_ANY_STATEMENT_FEATURE_COUNT + 0;
-
-  /**
    * The feature id for the '<em><b>Lft</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int BINDING_LINFIXED_ANY_STATEMENT__LFT = BINDING_ANY_STATEMENT_FEATURE_COUNT + 1;
+  int BINDING_LINFIXED_ANY_STATEMENT__LFT = BINDING_ANY_STATEMENT_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>Op</b></em>' attribute.
@@ -715,7 +706,7 @@ public interface EditorPackage extends EPackage
    * @generated
    * @ordered
    */
-  int BINDING_LINFIXED_ANY_STATEMENT__OP = BINDING_ANY_STATEMENT_FEATURE_COUNT + 2;
+  int BINDING_LINFIXED_ANY_STATEMENT__OP = BINDING_ANY_STATEMENT_FEATURE_COUNT + 1;
 
   /**
    * The feature id for the '<em><b>Bia</b></em>' containment reference.
@@ -724,7 +715,16 @@ public interface EditorPackage extends EPackage
    * @generated
    * @ordered
    */
-  int BINDING_LINFIXED_ANY_STATEMENT__BIA = BINDING_ANY_STATEMENT_FEATURE_COUNT + 3;
+  int BINDING_LINFIXED_ANY_STATEMENT__BIA = BINDING_ANY_STATEMENT_FEATURE_COUNT + 2;
+
+  /**
+   * The feature id for the '<em><b>Bas9</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int BINDING_LINFIXED_ANY_STATEMENT__BAS9 = BINDING_ANY_STATEMENT_FEATURE_COUNT + 3;
 
   /**
    * The number of structural features of the '<em>Binding LInfixed Any Statement</em>' class.
@@ -746,22 +746,13 @@ public interface EditorPackage extends EPackage
   int BINDING_LINFIXED_BAL_STATEMENT = 19;
 
   /**
-   * The feature id for the '<em><b>Bas9</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int BINDING_LINFIXED_BAL_STATEMENT__BAS9 = BINDING_BAL_STATEMENT_FEATURE_COUNT + 0;
-
-  /**
    * The feature id for the '<em><b>Lft</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int BINDING_LINFIXED_BAL_STATEMENT__LFT = BINDING_BAL_STATEMENT_FEATURE_COUNT + 1;
+  int BINDING_LINFIXED_BAL_STATEMENT__LFT = BINDING_BAL_STATEMENT_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>Op</b></em>' attribute.
@@ -770,7 +761,7 @@ public interface EditorPackage extends EPackage
    * @generated
    * @ordered
    */
-  int BINDING_LINFIXED_BAL_STATEMENT__OP = BINDING_BAL_STATEMENT_FEATURE_COUNT + 2;
+  int BINDING_LINFIXED_BAL_STATEMENT__OP = BINDING_BAL_STATEMENT_FEATURE_COUNT + 1;
 
   /**
    * The feature id for the '<em><b>Bia</b></em>' containment reference.
@@ -779,7 +770,16 @@ public interface EditorPackage extends EPackage
    * @generated
    * @ordered
    */
-  int BINDING_LINFIXED_BAL_STATEMENT__BIA = BINDING_BAL_STATEMENT_FEATURE_COUNT + 3;
+  int BINDING_LINFIXED_BAL_STATEMENT__BIA = BINDING_BAL_STATEMENT_FEATURE_COUNT + 2;
+
+  /**
+   * The feature id for the '<em><b>Bas9</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int BINDING_LINFIXED_BAL_STATEMENT__BAS9 = BINDING_BAL_STATEMENT_FEATURE_COUNT + 3;
 
   /**
    * The number of structural features of the '<em>Binding LInfixed Bal Statement</em>' class.
@@ -801,22 +801,13 @@ public interface EditorPackage extends EPackage
   int BINDING_LINFIXED_COLLECTION = 20;
 
   /**
-   * The feature id for the '<em><b>Bas9</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int BINDING_LINFIXED_COLLECTION__BAS9 = BINDING_COLLECTION_FEATURE_COUNT + 0;
-
-  /**
    * The feature id for the '<em><b>Lft</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int BINDING_LINFIXED_COLLECTION__LFT = BINDING_COLLECTION_FEATURE_COUNT + 1;
+  int BINDING_LINFIXED_COLLECTION__LFT = BINDING_COLLECTION_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>Op</b></em>' attribute.
@@ -825,7 +816,7 @@ public interface EditorPackage extends EPackage
    * @generated
    * @ordered
    */
-  int BINDING_LINFIXED_COLLECTION__OP = BINDING_COLLECTION_FEATURE_COUNT + 2;
+  int BINDING_LINFIXED_COLLECTION__OP = BINDING_COLLECTION_FEATURE_COUNT + 1;
 
   /**
    * The feature id for the '<em><b>Bia</b></em>' containment reference.
@@ -834,7 +825,16 @@ public interface EditorPackage extends EPackage
    * @generated
    * @ordered
    */
-  int BINDING_LINFIXED_COLLECTION__BIA = BINDING_COLLECTION_FEATURE_COUNT + 3;
+  int BINDING_LINFIXED_COLLECTION__BIA = BINDING_COLLECTION_FEATURE_COUNT + 2;
+
+  /**
+   * The feature id for the '<em><b>Bas9</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int BINDING_LINFIXED_COLLECTION__BAS9 = BINDING_COLLECTION_FEATURE_COUNT + 3;
 
   /**
    * The number of structural features of the '<em>Binding LInfixed Collection</em>' class.
@@ -5308,17 +5308,6 @@ public interface EditorPackage extends EPackage
   EClass getBindingL_Infixed_AnyStatement();
 
   /**
-   * Returns the meta object for the containment reference '{@link com.euclideanspace.aldor.editor.BindingL_Infixed_AnyStatement#getBas9 <em>Bas9</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Bas9</em>'.
-   * @see com.euclideanspace.aldor.editor.BindingL_Infixed_AnyStatement#getBas9()
-   * @see #getBindingL_Infixed_AnyStatement()
-   * @generated
-   */
-  EReference getBindingL_Infixed_AnyStatement_Bas9();
-
-  /**
    * Returns the meta object for the containment reference '{@link com.euclideanspace.aldor.editor.BindingL_Infixed_AnyStatement#getLft <em>Lft</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -5352,6 +5341,17 @@ public interface EditorPackage extends EPackage
   EReference getBindingL_Infixed_AnyStatement_Bia();
 
   /**
+   * Returns the meta object for the containment reference '{@link com.euclideanspace.aldor.editor.BindingL_Infixed_AnyStatement#getBas9 <em>Bas9</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Bas9</em>'.
+   * @see com.euclideanspace.aldor.editor.BindingL_Infixed_AnyStatement#getBas9()
+   * @see #getBindingL_Infixed_AnyStatement()
+   * @generated
+   */
+  EReference getBindingL_Infixed_AnyStatement_Bas9();
+
+  /**
    * Returns the meta object for class '{@link com.euclideanspace.aldor.editor.BindingL_Infixed_BalStatement <em>Binding LInfixed Bal Statement</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -5360,17 +5360,6 @@ public interface EditorPackage extends EPackage
    * @generated
    */
   EClass getBindingL_Infixed_BalStatement();
-
-  /**
-   * Returns the meta object for the containment reference '{@link com.euclideanspace.aldor.editor.BindingL_Infixed_BalStatement#getBas9 <em>Bas9</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Bas9</em>'.
-   * @see com.euclideanspace.aldor.editor.BindingL_Infixed_BalStatement#getBas9()
-   * @see #getBindingL_Infixed_BalStatement()
-   * @generated
-   */
-  EReference getBindingL_Infixed_BalStatement_Bas9();
 
   /**
    * Returns the meta object for the containment reference '{@link com.euclideanspace.aldor.editor.BindingL_Infixed_BalStatement#getLft <em>Lft</em>}'.
@@ -5406,6 +5395,17 @@ public interface EditorPackage extends EPackage
   EReference getBindingL_Infixed_BalStatement_Bia();
 
   /**
+   * Returns the meta object for the containment reference '{@link com.euclideanspace.aldor.editor.BindingL_Infixed_BalStatement#getBas9 <em>Bas9</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Bas9</em>'.
+   * @see com.euclideanspace.aldor.editor.BindingL_Infixed_BalStatement#getBas9()
+   * @see #getBindingL_Infixed_BalStatement()
+   * @generated
+   */
+  EReference getBindingL_Infixed_BalStatement_Bas9();
+
+  /**
    * Returns the meta object for class '{@link com.euclideanspace.aldor.editor.BindingL_Infixed_Collection <em>Binding LInfixed Collection</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -5414,17 +5414,6 @@ public interface EditorPackage extends EPackage
    * @generated
    */
   EClass getBindingL_Infixed_Collection();
-
-  /**
-   * Returns the meta object for the containment reference '{@link com.euclideanspace.aldor.editor.BindingL_Infixed_Collection#getBas9 <em>Bas9</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Bas9</em>'.
-   * @see com.euclideanspace.aldor.editor.BindingL_Infixed_Collection#getBas9()
-   * @see #getBindingL_Infixed_Collection()
-   * @generated
-   */
-  EReference getBindingL_Infixed_Collection_Bas9();
 
   /**
    * Returns the meta object for the containment reference '{@link com.euclideanspace.aldor.editor.BindingL_Infixed_Collection#getLft <em>Lft</em>}'.
@@ -5458,6 +5447,17 @@ public interface EditorPackage extends EPackage
    * @generated
    */
   EReference getBindingL_Infixed_Collection_Bia();
+
+  /**
+   * Returns the meta object for the containment reference '{@link com.euclideanspace.aldor.editor.BindingL_Infixed_Collection#getBas9 <em>Bas9</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Bas9</em>'.
+   * @see com.euclideanspace.aldor.editor.BindingL_Infixed_Collection#getBas9()
+   * @see #getBindingL_Infixed_Collection()
+   * @generated
+   */
+  EReference getBindingL_Infixed_Collection_Bas9();
 
   /**
    * Returns the meta object for class '{@link com.euclideanspace.aldor.editor.BindingR_InfixedExprsDecl_AnyStatement <em>Binding RInfixed Exprs Decl Any Statement</em>}'.
@@ -8077,14 +8077,6 @@ public interface EditorPackage extends EPackage
     EClass BINDING_LINFIXED_ANY_STATEMENT = eINSTANCE.getBindingL_Infixed_AnyStatement();
 
     /**
-     * The meta object literal for the '<em><b>Bas9</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference BINDING_LINFIXED_ANY_STATEMENT__BAS9 = eINSTANCE.getBindingL_Infixed_AnyStatement_Bas9();
-
-    /**
      * The meta object literal for the '<em><b>Lft</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -8109,6 +8101,14 @@ public interface EditorPackage extends EPackage
     EReference BINDING_LINFIXED_ANY_STATEMENT__BIA = eINSTANCE.getBindingL_Infixed_AnyStatement_Bia();
 
     /**
+     * The meta object literal for the '<em><b>Bas9</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference BINDING_LINFIXED_ANY_STATEMENT__BAS9 = eINSTANCE.getBindingL_Infixed_AnyStatement_Bas9();
+
+    /**
      * The meta object literal for the '{@link com.euclideanspace.aldor.editor.impl.BindingL_Infixed_BalStatementImpl <em>Binding LInfixed Bal Statement</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -8117,14 +8117,6 @@ public interface EditorPackage extends EPackage
      * @generated
      */
     EClass BINDING_LINFIXED_BAL_STATEMENT = eINSTANCE.getBindingL_Infixed_BalStatement();
-
-    /**
-     * The meta object literal for the '<em><b>Bas9</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference BINDING_LINFIXED_BAL_STATEMENT__BAS9 = eINSTANCE.getBindingL_Infixed_BalStatement_Bas9();
 
     /**
      * The meta object literal for the '<em><b>Lft</b></em>' containment reference feature.
@@ -8151,6 +8143,14 @@ public interface EditorPackage extends EPackage
     EReference BINDING_LINFIXED_BAL_STATEMENT__BIA = eINSTANCE.getBindingL_Infixed_BalStatement_Bia();
 
     /**
+     * The meta object literal for the '<em><b>Bas9</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference BINDING_LINFIXED_BAL_STATEMENT__BAS9 = eINSTANCE.getBindingL_Infixed_BalStatement_Bas9();
+
+    /**
      * The meta object literal for the '{@link com.euclideanspace.aldor.editor.impl.BindingL_Infixed_CollectionImpl <em>Binding LInfixed Collection</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -8159,14 +8159,6 @@ public interface EditorPackage extends EPackage
      * @generated
      */
     EClass BINDING_LINFIXED_COLLECTION = eINSTANCE.getBindingL_Infixed_Collection();
-
-    /**
-     * The meta object literal for the '<em><b>Bas9</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference BINDING_LINFIXED_COLLECTION__BAS9 = eINSTANCE.getBindingL_Infixed_Collection_Bas9();
 
     /**
      * The meta object literal for the '<em><b>Lft</b></em>' containment reference feature.
@@ -8191,6 +8183,14 @@ public interface EditorPackage extends EPackage
      * @generated
      */
     EReference BINDING_LINFIXED_COLLECTION__BIA = eINSTANCE.getBindingL_Infixed_Collection_Bia();
+
+    /**
+     * The meta object literal for the '<em><b>Bas9</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference BINDING_LINFIXED_COLLECTION__BAS9 = eINSTANCE.getBindingL_Infixed_Collection_Bas9();
 
     /**
      * The meta object literal for the '{@link com.euclideanspace.aldor.editor.impl.BindingR_InfixedExprsDecl_AnyStatementImpl <em>Binding RInfixed Exprs Decl Any Statement</em>}' class.

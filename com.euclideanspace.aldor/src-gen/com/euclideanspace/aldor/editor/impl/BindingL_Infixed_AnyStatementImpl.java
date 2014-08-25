@@ -5,7 +5,7 @@ package com.euclideanspace.aldor.editor.impl;
 import com.euclideanspace.aldor.editor.AnyStatement;
 import com.euclideanspace.aldor.editor.BindingL_Infixed_AnyStatement;
 import com.euclideanspace.aldor.editor.EditorPackage;
-import com.euclideanspace.aldor.editor.Id;
+import com.euclideanspace.aldor.editor.Infixed;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
@@ -22,10 +22,10 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link com.euclideanspace.aldor.editor.impl.BindingL_Infixed_AnyStatementImpl#getBas9 <em>Bas9</em>}</li>
  *   <li>{@link com.euclideanspace.aldor.editor.impl.BindingL_Infixed_AnyStatementImpl#getLft <em>Lft</em>}</li>
  *   <li>{@link com.euclideanspace.aldor.editor.impl.BindingL_Infixed_AnyStatementImpl#getOp <em>Op</em>}</li>
  *   <li>{@link com.euclideanspace.aldor.editor.impl.BindingL_Infixed_AnyStatementImpl#getBia <em>Bia</em>}</li>
+ *   <li>{@link com.euclideanspace.aldor.editor.impl.BindingL_Infixed_AnyStatementImpl#getBas9 <em>Bas9</em>}</li>
  * </ul>
  * </p>
  *
@@ -34,16 +34,6 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 public class BindingL_Infixed_AnyStatementImpl extends Binding_AnyStatementImpl implements BindingL_Infixed_AnyStatement
 {
   /**
-   * The cached value of the '{@link #getBas9() <em>Bas9</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getBas9()
-   * @generated
-   * @ordered
-   */
-  protected AnyStatement bas9;
-
-  /**
    * The cached value of the '{@link #getLft() <em>Lft</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -51,7 +41,7 @@ public class BindingL_Infixed_AnyStatementImpl extends Binding_AnyStatementImpl 
    * @generated
    * @ordered
    */
-  protected Id lft;
+  protected Infixed lft;
 
   /**
    * The default value of the '{@link #getOp() <em>Op</em>}' attribute.
@@ -84,6 +74,16 @@ public class BindingL_Infixed_AnyStatementImpl extends Binding_AnyStatementImpl 
   protected BindingL_Infixed_AnyStatement bia;
 
   /**
+   * The cached value of the '{@link #getBas9() <em>Bas9</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getBas9()
+   * @generated
+   * @ordered
+   */
+  protected AnyStatement bas9;
+
+  /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -109,55 +109,7 @@ public class BindingL_Infixed_AnyStatementImpl extends Binding_AnyStatementImpl 
    * <!-- end-user-doc -->
    * @generated
    */
-  public AnyStatement getBas9()
-  {
-    return bas9;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public NotificationChain basicSetBas9(AnyStatement newBas9, NotificationChain msgs)
-  {
-    AnyStatement oldBas9 = bas9;
-    bas9 = newBas9;
-    if (eNotificationRequired())
-    {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, EditorPackage.BINDING_LINFIXED_ANY_STATEMENT__BAS9, oldBas9, newBas9);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setBas9(AnyStatement newBas9)
-  {
-    if (newBas9 != bas9)
-    {
-      NotificationChain msgs = null;
-      if (bas9 != null)
-        msgs = ((InternalEObject)bas9).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - EditorPackage.BINDING_LINFIXED_ANY_STATEMENT__BAS9, null, msgs);
-      if (newBas9 != null)
-        msgs = ((InternalEObject)newBas9).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - EditorPackage.BINDING_LINFIXED_ANY_STATEMENT__BAS9, null, msgs);
-      msgs = basicSetBas9(newBas9, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, EditorPackage.BINDING_LINFIXED_ANY_STATEMENT__BAS9, newBas9, newBas9));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public Id getLft()
+  public Infixed getLft()
   {
     return lft;
   }
@@ -167,9 +119,9 @@ public class BindingL_Infixed_AnyStatementImpl extends Binding_AnyStatementImpl 
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetLft(Id newLft, NotificationChain msgs)
+  public NotificationChain basicSetLft(Infixed newLft, NotificationChain msgs)
   {
-    Id oldLft = lft;
+    Infixed oldLft = lft;
     lft = newLft;
     if (eNotificationRequired())
     {
@@ -184,7 +136,7 @@ public class BindingL_Infixed_AnyStatementImpl extends Binding_AnyStatementImpl 
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setLft(Id newLft)
+  public void setLft(Infixed newLft)
   {
     if (newLft != lft)
     {
@@ -276,17 +228,65 @@ public class BindingL_Infixed_AnyStatementImpl extends Binding_AnyStatementImpl 
    * <!-- end-user-doc -->
    * @generated
    */
+  public AnyStatement getBas9()
+  {
+    return bas9;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetBas9(AnyStatement newBas9, NotificationChain msgs)
+  {
+    AnyStatement oldBas9 = bas9;
+    bas9 = newBas9;
+    if (eNotificationRequired())
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, EditorPackage.BINDING_LINFIXED_ANY_STATEMENT__BAS9, oldBas9, newBas9);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setBas9(AnyStatement newBas9)
+  {
+    if (newBas9 != bas9)
+    {
+      NotificationChain msgs = null;
+      if (bas9 != null)
+        msgs = ((InternalEObject)bas9).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - EditorPackage.BINDING_LINFIXED_ANY_STATEMENT__BAS9, null, msgs);
+      if (newBas9 != null)
+        msgs = ((InternalEObject)newBas9).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - EditorPackage.BINDING_LINFIXED_ANY_STATEMENT__BAS9, null, msgs);
+      msgs = basicSetBas9(newBas9, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, EditorPackage.BINDING_LINFIXED_ANY_STATEMENT__BAS9, newBas9, newBas9));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
     switch (featureID)
     {
-      case EditorPackage.BINDING_LINFIXED_ANY_STATEMENT__BAS9:
-        return basicSetBas9(null, msgs);
       case EditorPackage.BINDING_LINFIXED_ANY_STATEMENT__LFT:
         return basicSetLft(null, msgs);
       case EditorPackage.BINDING_LINFIXED_ANY_STATEMENT__BIA:
         return basicSetBia(null, msgs);
+      case EditorPackage.BINDING_LINFIXED_ANY_STATEMENT__BAS9:
+        return basicSetBas9(null, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -301,14 +301,14 @@ public class BindingL_Infixed_AnyStatementImpl extends Binding_AnyStatementImpl 
   {
     switch (featureID)
     {
-      case EditorPackage.BINDING_LINFIXED_ANY_STATEMENT__BAS9:
-        return getBas9();
       case EditorPackage.BINDING_LINFIXED_ANY_STATEMENT__LFT:
         return getLft();
       case EditorPackage.BINDING_LINFIXED_ANY_STATEMENT__OP:
         return getOp();
       case EditorPackage.BINDING_LINFIXED_ANY_STATEMENT__BIA:
         return getBia();
+      case EditorPackage.BINDING_LINFIXED_ANY_STATEMENT__BAS9:
+        return getBas9();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -323,17 +323,17 @@ public class BindingL_Infixed_AnyStatementImpl extends Binding_AnyStatementImpl 
   {
     switch (featureID)
     {
-      case EditorPackage.BINDING_LINFIXED_ANY_STATEMENT__BAS9:
-        setBas9((AnyStatement)newValue);
-        return;
       case EditorPackage.BINDING_LINFIXED_ANY_STATEMENT__LFT:
-        setLft((Id)newValue);
+        setLft((Infixed)newValue);
         return;
       case EditorPackage.BINDING_LINFIXED_ANY_STATEMENT__OP:
         setOp((String)newValue);
         return;
       case EditorPackage.BINDING_LINFIXED_ANY_STATEMENT__BIA:
         setBia((BindingL_Infixed_AnyStatement)newValue);
+        return;
+      case EditorPackage.BINDING_LINFIXED_ANY_STATEMENT__BAS9:
+        setBas9((AnyStatement)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -349,17 +349,17 @@ public class BindingL_Infixed_AnyStatementImpl extends Binding_AnyStatementImpl 
   {
     switch (featureID)
     {
-      case EditorPackage.BINDING_LINFIXED_ANY_STATEMENT__BAS9:
-        setBas9((AnyStatement)null);
-        return;
       case EditorPackage.BINDING_LINFIXED_ANY_STATEMENT__LFT:
-        setLft((Id)null);
+        setLft((Infixed)null);
         return;
       case EditorPackage.BINDING_LINFIXED_ANY_STATEMENT__OP:
         setOp(OP_EDEFAULT);
         return;
       case EditorPackage.BINDING_LINFIXED_ANY_STATEMENT__BIA:
         setBia((BindingL_Infixed_AnyStatement)null);
+        return;
+      case EditorPackage.BINDING_LINFIXED_ANY_STATEMENT__BAS9:
+        setBas9((AnyStatement)null);
         return;
     }
     super.eUnset(featureID);
@@ -375,14 +375,14 @@ public class BindingL_Infixed_AnyStatementImpl extends Binding_AnyStatementImpl 
   {
     switch (featureID)
     {
-      case EditorPackage.BINDING_LINFIXED_ANY_STATEMENT__BAS9:
-        return bas9 != null;
       case EditorPackage.BINDING_LINFIXED_ANY_STATEMENT__LFT:
         return lft != null;
       case EditorPackage.BINDING_LINFIXED_ANY_STATEMENT__OP:
         return OP_EDEFAULT == null ? op != null : !OP_EDEFAULT.equals(op);
       case EditorPackage.BINDING_LINFIXED_ANY_STATEMENT__BIA:
         return bia != null;
+      case EditorPackage.BINDING_LINFIXED_ANY_STATEMENT__BAS9:
+        return bas9 != null;
     }
     return super.eIsSet(featureID);
   }

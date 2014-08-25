@@ -22,10 +22,10 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link com.euclideanspace.aldor.editor.impl.BindingL_Infixed_CollectionImpl#getBas9 <em>Bas9</em>}</li>
  *   <li>{@link com.euclideanspace.aldor.editor.impl.BindingL_Infixed_CollectionImpl#getLft <em>Lft</em>}</li>
  *   <li>{@link com.euclideanspace.aldor.editor.impl.BindingL_Infixed_CollectionImpl#getOp <em>Op</em>}</li>
  *   <li>{@link com.euclideanspace.aldor.editor.impl.BindingL_Infixed_CollectionImpl#getBia <em>Bia</em>}</li>
+ *   <li>{@link com.euclideanspace.aldor.editor.impl.BindingL_Infixed_CollectionImpl#getBas9 <em>Bas9</em>}</li>
  * </ul>
  * </p>
  *
@@ -33,16 +33,6 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  */
 public class BindingL_Infixed_CollectionImpl extends Binding_CollectionImpl implements BindingL_Infixed_Collection
 {
-  /**
-   * The cached value of the '{@link #getBas9() <em>Bas9</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getBas9()
-   * @generated
-   * @ordered
-   */
-  protected Collection bas9;
-
   /**
    * The cached value of the '{@link #getLft() <em>Lft</em>}' containment reference.
    * <!-- begin-user-doc -->
@@ -84,6 +74,16 @@ public class BindingL_Infixed_CollectionImpl extends Binding_CollectionImpl impl
   protected BindingL_Infixed_Collection bia;
 
   /**
+   * The cached value of the '{@link #getBas9() <em>Bas9</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getBas9()
+   * @generated
+   * @ordered
+   */
+  protected Collection bas9;
+
+  /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -102,54 +102,6 @@ public class BindingL_Infixed_CollectionImpl extends Binding_CollectionImpl impl
   protected EClass eStaticClass()
   {
     return EditorPackage.Literals.BINDING_LINFIXED_COLLECTION;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public Collection getBas9()
-  {
-    return bas9;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public NotificationChain basicSetBas9(Collection newBas9, NotificationChain msgs)
-  {
-    Collection oldBas9 = bas9;
-    bas9 = newBas9;
-    if (eNotificationRequired())
-    {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, EditorPackage.BINDING_LINFIXED_COLLECTION__BAS9, oldBas9, newBas9);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setBas9(Collection newBas9)
-  {
-    if (newBas9 != bas9)
-    {
-      NotificationChain msgs = null;
-      if (bas9 != null)
-        msgs = ((InternalEObject)bas9).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - EditorPackage.BINDING_LINFIXED_COLLECTION__BAS9, null, msgs);
-      if (newBas9 != null)
-        msgs = ((InternalEObject)newBas9).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - EditorPackage.BINDING_LINFIXED_COLLECTION__BAS9, null, msgs);
-      msgs = basicSetBas9(newBas9, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, EditorPackage.BINDING_LINFIXED_COLLECTION__BAS9, newBas9, newBas9));
   }
 
   /**
@@ -276,17 +228,65 @@ public class BindingL_Infixed_CollectionImpl extends Binding_CollectionImpl impl
    * <!-- end-user-doc -->
    * @generated
    */
+  public Collection getBas9()
+  {
+    return bas9;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetBas9(Collection newBas9, NotificationChain msgs)
+  {
+    Collection oldBas9 = bas9;
+    bas9 = newBas9;
+    if (eNotificationRequired())
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, EditorPackage.BINDING_LINFIXED_COLLECTION__BAS9, oldBas9, newBas9);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setBas9(Collection newBas9)
+  {
+    if (newBas9 != bas9)
+    {
+      NotificationChain msgs = null;
+      if (bas9 != null)
+        msgs = ((InternalEObject)bas9).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - EditorPackage.BINDING_LINFIXED_COLLECTION__BAS9, null, msgs);
+      if (newBas9 != null)
+        msgs = ((InternalEObject)newBas9).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - EditorPackage.BINDING_LINFIXED_COLLECTION__BAS9, null, msgs);
+      msgs = basicSetBas9(newBas9, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, EditorPackage.BINDING_LINFIXED_COLLECTION__BAS9, newBas9, newBas9));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
     switch (featureID)
     {
-      case EditorPackage.BINDING_LINFIXED_COLLECTION__BAS9:
-        return basicSetBas9(null, msgs);
       case EditorPackage.BINDING_LINFIXED_COLLECTION__LFT:
         return basicSetLft(null, msgs);
       case EditorPackage.BINDING_LINFIXED_COLLECTION__BIA:
         return basicSetBia(null, msgs);
+      case EditorPackage.BINDING_LINFIXED_COLLECTION__BAS9:
+        return basicSetBas9(null, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -301,14 +301,14 @@ public class BindingL_Infixed_CollectionImpl extends Binding_CollectionImpl impl
   {
     switch (featureID)
     {
-      case EditorPackage.BINDING_LINFIXED_COLLECTION__BAS9:
-        return getBas9();
       case EditorPackage.BINDING_LINFIXED_COLLECTION__LFT:
         return getLft();
       case EditorPackage.BINDING_LINFIXED_COLLECTION__OP:
         return getOp();
       case EditorPackage.BINDING_LINFIXED_COLLECTION__BIA:
         return getBia();
+      case EditorPackage.BINDING_LINFIXED_COLLECTION__BAS9:
+        return getBas9();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -323,9 +323,6 @@ public class BindingL_Infixed_CollectionImpl extends Binding_CollectionImpl impl
   {
     switch (featureID)
     {
-      case EditorPackage.BINDING_LINFIXED_COLLECTION__BAS9:
-        setBas9((Collection)newValue);
-        return;
       case EditorPackage.BINDING_LINFIXED_COLLECTION__LFT:
         setLft((Infixed)newValue);
         return;
@@ -334,6 +331,9 @@ public class BindingL_Infixed_CollectionImpl extends Binding_CollectionImpl impl
         return;
       case EditorPackage.BINDING_LINFIXED_COLLECTION__BIA:
         setBia((BindingL_Infixed_Collection)newValue);
+        return;
+      case EditorPackage.BINDING_LINFIXED_COLLECTION__BAS9:
+        setBas9((Collection)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -349,9 +349,6 @@ public class BindingL_Infixed_CollectionImpl extends Binding_CollectionImpl impl
   {
     switch (featureID)
     {
-      case EditorPackage.BINDING_LINFIXED_COLLECTION__BAS9:
-        setBas9((Collection)null);
-        return;
       case EditorPackage.BINDING_LINFIXED_COLLECTION__LFT:
         setLft((Infixed)null);
         return;
@@ -360,6 +357,9 @@ public class BindingL_Infixed_CollectionImpl extends Binding_CollectionImpl impl
         return;
       case EditorPackage.BINDING_LINFIXED_COLLECTION__BIA:
         setBia((BindingL_Infixed_Collection)null);
+        return;
+      case EditorPackage.BINDING_LINFIXED_COLLECTION__BAS9:
+        setBas9((Collection)null);
         return;
     }
     super.eUnset(featureID);
@@ -375,14 +375,14 @@ public class BindingL_Infixed_CollectionImpl extends Binding_CollectionImpl impl
   {
     switch (featureID)
     {
-      case EditorPackage.BINDING_LINFIXED_COLLECTION__BAS9:
-        return bas9 != null;
       case EditorPackage.BINDING_LINFIXED_COLLECTION__LFT:
         return lft != null;
       case EditorPackage.BINDING_LINFIXED_COLLECTION__OP:
         return OP_EDEFAULT == null ? op != null : !OP_EDEFAULT.equals(op);
       case EditorPackage.BINDING_LINFIXED_COLLECTION__BIA:
         return bia != null;
+      case EditorPackage.BINDING_LINFIXED_COLLECTION__BAS9:
+        return bas9 != null;
     }
     return super.eIsSet(featureID);
   }
