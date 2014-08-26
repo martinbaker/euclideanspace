@@ -48,126 +48,17 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		// * Here we are using a LL(*) recursive-descent parser generator and this
 		// * may not be able to exactly replicate axl.z which is a
 		// * LALR(1) conflict-free grammar for Aldor.
-		// * / / * from tokInfoTable[] in token.c: Lexical elements.
-		// * The TokenTag enumeration must use this order.
-		// *
-		// * This table MUST be laid out so that all "symbol" tokens starting with
-		// * the same character are contiguous.
-		// *
-		// * Be extra careful with fields F, G, H and K: if you get them wrong then
-		// * the lineariser will delete end-of-statement tokens when it ought not
-		// * to. This can lead to odd compiler behaviour that is hard to track down
-		// * unless you know about this table.
-		// *
-		// * struct tok_info tokInfoTable[] = {
-		// *
-		// * [A] TokenTag tag
-		// * [B] Symbol sym
-		// * [C] String str
-		// * [D] Byte hasString i.e. use val.str (vs val.sym)
-		// * [E] Byte isComment i.e. ++ --
-		// * [F] Byte isOpener i.e. ( [ { etc
-		// * [G] Byte isCloser i.e. ) ] } etc
-		// * [H] Byte isFollower i.e. then else always in etc
-		// * [I] Byte isLangword i.e. if then etc
-		// * [J] Byte isLeftAssoc i.e., associates left to right
-		// * [K] Byte isMaybeInfix i.e., add, with, +
-		// * [L] Byte precedence i.e., 0 is lowest, or don't know
-		// * [M] Byte isDisabled i.e., non-zero means disabled
-		// *
-		// * [A] [B][C] [D][E] [F] [G] [H] [I] [J] [K] [L] [M]
-		// *
-		//        {TK_Blank, 0,"TK_Blank", 0, 0, 0, 0, 0, 0, 1, 0, 170, 0},
-		//        {TK_FLOAT, 0,"TK_FLOAT", 1, 0, 0, 0, 0, 0, 1, 0, 170, 0},
-		//        {TK_SysCmd, 0,"TK_SysCmd", 1, 1, 0, 0, 0, 0, 1, 0, 170, 0},
-		//        {TK_Error, 0,"TK_Error", 1, 0, 0, 0, 0, 0, 1, 0, 0, 0},
-		//
-		//        {KW_Add, 0,"add", 0, 0, 0, 0, 0, 1, 1, 0, 0, 0},
-		//        {KW_And, 0,"and", 0, 0, 0, 0, 1, 1, 1, 1, 40, 0},
-		//        {KW_Always, 0,"always", 0, 0, 0, 0, 1, 1, 1, 1, 0, 0},
-		//        {KW_Assert, 0,"assert", 0, 0, 0, 0, 0, 1, 1, 0, 0, 0},
-		//        {KW_Break, 0,"break", 0, 0, 0, 0, 0, 1, 1, 0, 0, 0},
-		//        {KW_But, 0,"but", 0, 0, 0, 0, 1, 1, 1, 1, 0, 0},
-		//        {KW_By, 0,"by", 0, 0, 0, 0, 0, 0, 1, 1, 110, 0},
-		//        {KW_CASE, 0,"case", 0, 0, 0, 0, 0, 0, 1, 1, 0, 0},
-		//        {KW_Catch, 0,"catch", 0, 0, 0, 0, 1, 1, 1, 1, 0, 0},
-		//        {KW_Default, 0,"default", 0, 0, 0, 0, 0, 1, 1, 0, 0, 0},
-		//        {KW_Define, 0,"define", 0, 0, 0, 0, 0, 1, 1, 0, 0, 0},
-		//        {KW_Delay, 0,"delay", 0, 0, 0, 0, 0, 1, 1, 0, 0, 0},
-		//        {KW_Do, 0,"do", 0, 0, 0, 0, 0, 1, 1, 0, 0, 0},
-		//        {KW_Else, 0,"else", 0, 0, 0, 0, 1, 1, 1, 0, 0, 0},
-		//        {KW_Except, 0,"except", 0, 0, 0, 0, 0, 1, 1, 1, 0, 0},
-		//        {KW_Export, 0,"export", 0, 0, 0, 0, 0, 1, 1, 0, 0, 0},
-		//        {KW_Exquo, 0,"exquo", 0, 0, 0, 0, 0, 0, 1, 1, 125, 0},
-		//        {KW_Extend, 0,"extend", 0, 0, 0, 0, 0, 1, 1, 0, 0, 0},
-		//        {KW_Finally, 0,"finally", 0, 0, 0, 0, 1, 1, 1, 1, 0, 0},
-		//        {KW_Fix, 0,"fix", 0, 0, 0, 0, 0, 1, 1, 0, 0, 0},
-		//        {KW_For, 0,"for", 0, 0, 0, 0, 0, 1, 1, 0, 0, 0},
-		//        {KW_Fluid, 0,"fluid", 0, 0, 0, 0, 0, 1, 1, 0, 0, 0},
-		//        {KW_Free, 0,"free", 0, 0, 0, 0, 0, 1, 1, 0, 0, 0},
-		//        {KW_From, 0,"from", 0, 0, 0, 0, 1, 1, 1, 0, 0, 0},
-		//        {KW_Generate, 0,"generate", 0, 0, 0, 0, 0, 1, 1, 0, 0, 0},
-		//        {KW_Goto, 0,"goto", 0, 0, 0, 0, 0, 1, 1, 0, 0, 0},
-		//        {KW_Has, 0,"has", 0, 0, 0, 0, 0, 0, 1, 1, 40, 0},
-		//        {KW_If, 0,"if", 0, 0, 0, 0, 0, 1, 1, 0, 0, 0},
-		//        {KW_Import, 0,"import", 0, 0, 0, 0, 0, 1, 1, 0, 0, 0},
-		//        {KW_In, 0,"in", 0, 0, 0, 0, 1, 1, 1, 1, 0, 0},
-		//        {KW_Inline, 0,"inline", 0, 0, 0, 0, 0, 1, 1, 0, 0, 0},
-		//        {KW_IS, 0,"is", 0, 0, 0, 0, 0, 1, 1, 0, 0, 0},
-		//        {KW_ISNT, 0,"isnt", 0, 0, 0, 0, 0, 1, 1, 0, 0, 0},
-		//        {KW_Iterate, 0,"iterate", 0, 0, 0, 0, 0, 1, 1, 0, 0, 0},
-		//        {KW_Let, 0,"let", 0, 0, 0, 0, 0, 1, 1, 0, 0, 0},
-		//        {KW_Local, 0,"local", 0, 0, 0, 0, 0, 1, 1, 0, 0, 0},
-		//        {KW_Macro, 0,"macro", 0, 0, 0, 0, 0, 1, 1, 0, 0, 0},
-		//        {KW_Mod, 0,"mod", 0, 0, 0, 0, 0, 0, 1, 1, 125, 0},
-		//        {KW_Never, 0,"never", 0, 0, 0, 0, 0, 1, 1, 0, 0, 0},
-		//        {KW_Not, 0,"not", 0, 0, 0, 0, 0, 1, 1, 1, 150, 0},
-		//        {KW_Of, 0,"of", 0, 0, 0, 0, 1, 1, 1, 1, 40, 0},
-		//        {KW_Or, 0,"or", 0, 0, 0, 0, 1, 1, 1, 1, 40, 0},
-		//        {KW_Pretend, 0,"pretend", 0, 0, 0, 0, 1, 1, 1, 1, 150, 0},
-		//        {KW_Quo, 0,"quo", 0, 0, 0, 0, 0, 0, 1, 1, 125, 0},
-		//        {KW_Reference, 0,"ref", 0, 0, 0, 0, 0, 1, 1, 0, 0, 0},
-		//        {KW_Rem, 0,"rem", 0, 0, 0, 0, 0, 0, 1, 1, 125, 0},
-		//        {KW_Repeat, 0,"repeat", 0, 0, 0, 0, 0, 1, 1, 0, 0, 0},
-		//        {KW_Return, 0,"return", 0, 0, 0, 0, 0, 1, 1, 0, 0, 0},
-		//        {KW_Rule, 0,"rule", 0, 0, 0, 0, 0, 1, 1, 0, 0, 0},
-		//        {KW_Select, 0,"select", 0, 0, 0, 0, 0, 1, 1, 0, 0, 0},
-		//        {KW_Then, 0,"then", 0, 0, 0, 0, 1, 1, 1, 0, 0, 0},
-		//        {KW_Throw, 0,"throw", 0, 0, 0, 0, 0, 1, 1, 1, 0, 0},
-		//        {KW_To, 0,"to", 0, 0, 0, 0, 1, 1, 1, 0, 0, 0},
-		//        {KW_Try, 0,"try", 0, 0, 0, 0, 0, 1, 1, 0, 0, 0},
-		//        {KW_Where, 0,"where", 0, 0, 0, 0, 1, 1, 1, 0, 0, 0},
-		//        {KW_While, 0,"while", 0, 0, 0, 0, 0, 1, 1, 0, 0, 0},
-		//        {KW_With, 0,"with", 0, 0, 0, 0, 0, 1, 1, 0, 0, 0},
-		//        {KW_Yield, 0,"yield", 0, 0, 0, 0, 0, 1, 1, 0, 0, 0},
-		//
-		//        {KW_Grave, 0,"`", 0, 0, 0, 0, 0, 0, 1, 0, 0, 0},
-		//        
-		//
-		//        {KW_LARROW, 0,"<-", 0, 0, 0, 0, 0, 0, 1, 1, 0, 0},
-		//
-		//
-		//
-		//        {KW_STARtPile, 0,"#pile", 0, 0, 0, 0, 0, 0, 1, 0, 0, 0},
-		//        {KW_EndPile, 0,"#endpile", 0, 0, 0, 0, 0, 0, 1, 0, 0, 0},
-		//        {KW_SetTab, 0,"KW_SetTab", 0, 0, 0, 0, 0, 0, 1, 0, 0, 0},
-		//        {KW_BackSet, 0,"KW_BackSet", 0, 0, 0, 0, 0, 0, 1, 0, 0, 0},
-		//        {KW_BackTab, 0,"KW_BackTab", 0, 0, 0, 0, 0, 0, 1, 0, 0, 0},
-		//        {KW_Juxtapose, 0,"KW_Juxtapose",0, 0, 0, 0, 0, 0, 0, 0, 170, 0},
-		//
-		//        {TK_LIMIT, 0,"TK_LIMIT", 0, 0, 0, 0, 0, 0, 1, 0, 0, 0}
-		//};
+		// * 
+		// * known bugs
+		// * ----------
+		// * 1) floating point literal
+		// * 2) import statement
 		// * / / *
 		// * replaces Goal rule in Aldor grammar
 		// * 
 		// * #include is not in axl.z grammar, I assume the includes are
 		// * done before the grammar is called. So I have added include
 		// * support here.
-		// * 
-		// * Goal
-		// * : CurlyContents(Labeled)
-		// * { yypval = $$ = $1; }
-		// * ;
 		// * 
 		// * / Model hidden(WS, KW_NEWLINE):
 		//	("#include" insert+=TK_STRING)* cc=CurlyContents_Labeled;
@@ -233,8 +124,8 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cLabAssignment_2_2 = (Assignment)cGroup_2.eContents().get(2);
 		private final RuleCall cLabLabeledParserRuleCall_2_2_0 = (RuleCall)cLabAssignment_2_2.eContents().get(0);
 		
-		/// * An '.as' file is effectivly a list of 'Labeled' 
-		// * by semicolons* / Labeled hidden(WS, KW_NEWLINE):
+		/// * An '.as' file is effectively a list of 'Labeled' 
+		// * separated by semicolons* / Labeled hidden(WS, KW_NEWLINE):
 		//	Comma | Declaration | KW_AT Atom lab=Labeled?;
 		public ParserRule getRule() { return rule; }
 
@@ -894,7 +785,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cLftInfixedParserRuleCall_0_0_0_0 = (RuleCall)cLftAssignment_0_0_0.eContents().get(0);
 		private final Assignment cOpAssignment_0_0_1 = (Assignment)cGroup_0_0.eContents().get(1);
 		private final Alternatives cOpAlternatives_0_0_1_0 = (Alternatives)cOpAssignment_0_0_1.eContents().get(0);
-		private final Keyword cOpAssignKeyword_0_0_1_0_0 = (Keyword)cOpAlternatives_0_0_1_0.eContents().get(0);
+		private final RuleCall cOpKW_ASSIGNTerminalRuleCall_0_0_1_0_0 = (RuleCall)cOpAlternatives_0_0_1_0.eContents().get(0);
 		private final RuleCall cOpKW_2EQTerminalRuleCall_0_0_1_0_1 = (RuleCall)cOpAlternatives_0_0_1_0.eContents().get(1);
 		private final RuleCall cOpKW_MARROWTerminalRuleCall_0_0_1_0_2 = (RuleCall)cOpAlternatives_0_0_1_0.eContents().get(2);
 		private final RuleCall cOpKW_MAPSTOTerminalRuleCall_0_0_1_0_3 = (RuleCall)cOpAlternatives_0_0_1_0.eContents().get(3);
@@ -906,18 +797,18 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		
 		/// * This rule allows any statement or new: Assign, Define or Lambda 
 		//  * / BindingL_Infixed_AnyStatement hidden(WS, KW_NEWLINE):
-		//	=> (lft=Infixed op=("assign" | KW_2EQ | KW_MARROW | KW_MAPSTO | KW_MAPSTOSTAR) bia=BindingL_Infixed_AnyStatement) |
+		//	=> (lft=Infixed op=(KW_ASSIGN | KW_2EQ | KW_MARROW | KW_MAPSTO | KW_MAPSTOSTAR) bia=BindingL_Infixed_AnyStatement) |
 		//	bas9=AnyStatement;
 		public ParserRule getRule() { return rule; }
 
-		//=> (lft=Infixed op=("assign" | KW_2EQ | KW_MARROW | KW_MAPSTO | KW_MAPSTOSTAR) bia=BindingL_Infixed_AnyStatement) |
+		//=> (lft=Infixed op=(KW_ASSIGN | KW_2EQ | KW_MARROW | KW_MAPSTO | KW_MAPSTOSTAR) bia=BindingL_Infixed_AnyStatement) |
 		//bas9=AnyStatement
 		public Alternatives getAlternatives() { return cAlternatives; }
 
-		//=> (lft=Infixed op=("assign" | KW_2EQ | KW_MARROW | KW_MAPSTO | KW_MAPSTOSTAR) bia=BindingL_Infixed_AnyStatement)
+		//=> (lft=Infixed op=(KW_ASSIGN | KW_2EQ | KW_MARROW | KW_MAPSTO | KW_MAPSTOSTAR) bia=BindingL_Infixed_AnyStatement)
 		public Group getGroup_0() { return cGroup_0; }
 
-		//lft=Infixed op=("assign" | KW_2EQ | KW_MARROW | KW_MAPSTO | KW_MAPSTOSTAR) bia=BindingL_Infixed_AnyStatement
+		//lft=Infixed op=(KW_ASSIGN | KW_2EQ | KW_MARROW | KW_MAPSTO | KW_MAPSTOSTAR) bia=BindingL_Infixed_AnyStatement
 		public Group getGroup_0_0() { return cGroup_0_0; }
 
 		//lft=Infixed
@@ -926,14 +817,14 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		//Infixed
 		public RuleCall getLftInfixedParserRuleCall_0_0_0_0() { return cLftInfixedParserRuleCall_0_0_0_0; }
 
-		//op=("assign" | KW_2EQ | KW_MARROW | KW_MAPSTO | KW_MAPSTOSTAR)
+		//op=(KW_ASSIGN | KW_2EQ | KW_MARROW | KW_MAPSTO | KW_MAPSTOSTAR)
 		public Assignment getOpAssignment_0_0_1() { return cOpAssignment_0_0_1; }
 
-		//"assign" | KW_2EQ | KW_MARROW | KW_MAPSTO | KW_MAPSTOSTAR
+		//KW_ASSIGN | KW_2EQ | KW_MARROW | KW_MAPSTO | KW_MAPSTOSTAR
 		public Alternatives getOpAlternatives_0_0_1_0() { return cOpAlternatives_0_0_1_0; }
 
-		//"assign"
-		public Keyword getOpAssignKeyword_0_0_1_0_0() { return cOpAssignKeyword_0_0_1_0_0; }
+		//KW_ASSIGN
+		public RuleCall getOpKW_ASSIGNTerminalRuleCall_0_0_1_0_0() { return cOpKW_ASSIGNTerminalRuleCall_0_0_1_0_0; }
 
 		//KW_2EQ
 		public RuleCall getOpKW_2EQTerminalRuleCall_0_0_1_0_1() { return cOpKW_2EQTerminalRuleCall_0_0_1_0_1; }
@@ -969,7 +860,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cLftInfixedParserRuleCall_0_0_0_0 = (RuleCall)cLftAssignment_0_0_0.eContents().get(0);
 		private final Assignment cOpAssignment_0_0_1 = (Assignment)cGroup_0_0.eContents().get(1);
 		private final Alternatives cOpAlternatives_0_0_1_0 = (Alternatives)cOpAssignment_0_0_1.eContents().get(0);
-		private final Keyword cOpAssignKeyword_0_0_1_0_0 = (Keyword)cOpAlternatives_0_0_1_0.eContents().get(0);
+		private final RuleCall cOpKW_ASSIGNTerminalRuleCall_0_0_1_0_0 = (RuleCall)cOpAlternatives_0_0_1_0.eContents().get(0);
 		private final RuleCall cOpKW_2EQTerminalRuleCall_0_0_1_0_1 = (RuleCall)cOpAlternatives_0_0_1_0.eContents().get(1);
 		private final RuleCall cOpKW_MARROWTerminalRuleCall_0_0_1_0_2 = (RuleCall)cOpAlternatives_0_0_1_0.eContents().get(2);
 		private final RuleCall cOpKW_MAPSTOTerminalRuleCall_0_0_1_0_3 = (RuleCall)cOpAlternatives_0_0_1_0.eContents().get(3);
@@ -980,18 +871,18 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cBas9BalStatementParserRuleCall_1_0 = (RuleCall)cBas9Assignment_1.eContents().get(0);
 		
 		//BindingL_Infixed_BalStatement hidden(WS, KW_NEWLINE):
-		//	=> (lft=Infixed op=("assign" | KW_2EQ | KW_MARROW | KW_MAPSTO | KW_MAPSTOSTAR) bia=BindingL_Infixed_BalStatement) |
+		//	=> (lft=Infixed op=(KW_ASSIGN | KW_2EQ | KW_MARROW | KW_MAPSTO | KW_MAPSTOSTAR) bia=BindingL_Infixed_BalStatement) |
 		//	bas9=BalStatement;
 		public ParserRule getRule() { return rule; }
 
-		//=> (lft=Infixed op=("assign" | KW_2EQ | KW_MARROW | KW_MAPSTO | KW_MAPSTOSTAR) bia=BindingL_Infixed_BalStatement) |
+		//=> (lft=Infixed op=(KW_ASSIGN | KW_2EQ | KW_MARROW | KW_MAPSTO | KW_MAPSTOSTAR) bia=BindingL_Infixed_BalStatement) |
 		//bas9=BalStatement
 		public Alternatives getAlternatives() { return cAlternatives; }
 
-		//=> (lft=Infixed op=("assign" | KW_2EQ | KW_MARROW | KW_MAPSTO | KW_MAPSTOSTAR) bia=BindingL_Infixed_BalStatement)
+		//=> (lft=Infixed op=(KW_ASSIGN | KW_2EQ | KW_MARROW | KW_MAPSTO | KW_MAPSTOSTAR) bia=BindingL_Infixed_BalStatement)
 		public Group getGroup_0() { return cGroup_0; }
 
-		//lft=Infixed op=("assign" | KW_2EQ | KW_MARROW | KW_MAPSTO | KW_MAPSTOSTAR) bia=BindingL_Infixed_BalStatement
+		//lft=Infixed op=(KW_ASSIGN | KW_2EQ | KW_MARROW | KW_MAPSTO | KW_MAPSTOSTAR) bia=BindingL_Infixed_BalStatement
 		public Group getGroup_0_0() { return cGroup_0_0; }
 
 		//lft=Infixed
@@ -1000,14 +891,14 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		//Infixed
 		public RuleCall getLftInfixedParserRuleCall_0_0_0_0() { return cLftInfixedParserRuleCall_0_0_0_0; }
 
-		//op=("assign" | KW_2EQ | KW_MARROW | KW_MAPSTO | KW_MAPSTOSTAR)
+		//op=(KW_ASSIGN | KW_2EQ | KW_MARROW | KW_MAPSTO | KW_MAPSTOSTAR)
 		public Assignment getOpAssignment_0_0_1() { return cOpAssignment_0_0_1; }
 
-		//"assign" | KW_2EQ | KW_MARROW | KW_MAPSTO | KW_MAPSTOSTAR
+		//KW_ASSIGN | KW_2EQ | KW_MARROW | KW_MAPSTO | KW_MAPSTOSTAR
 		public Alternatives getOpAlternatives_0_0_1_0() { return cOpAlternatives_0_0_1_0; }
 
-		//"assign"
-		public Keyword getOpAssignKeyword_0_0_1_0_0() { return cOpAssignKeyword_0_0_1_0_0; }
+		//KW_ASSIGN
+		public RuleCall getOpKW_ASSIGNTerminalRuleCall_0_0_1_0_0() { return cOpKW_ASSIGNTerminalRuleCall_0_0_1_0_0; }
 
 		//KW_2EQ
 		public RuleCall getOpKW_2EQTerminalRuleCall_0_0_1_0_1() { return cOpKW_2EQTerminalRuleCall_0_0_1_0_1; }
@@ -1043,7 +934,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cLftInfixedParserRuleCall_0_0_0_0 = (RuleCall)cLftAssignment_0_0_0.eContents().get(0);
 		private final Assignment cOpAssignment_0_0_1 = (Assignment)cGroup_0_0.eContents().get(1);
 		private final Alternatives cOpAlternatives_0_0_1_0 = (Alternatives)cOpAssignment_0_0_1.eContents().get(0);
-		private final Keyword cOpAssignKeyword_0_0_1_0_0 = (Keyword)cOpAlternatives_0_0_1_0.eContents().get(0);
+		private final RuleCall cOpKW_ASSIGNTerminalRuleCall_0_0_1_0_0 = (RuleCall)cOpAlternatives_0_0_1_0.eContents().get(0);
 		private final RuleCall cOpKW_2EQTerminalRuleCall_0_0_1_0_1 = (RuleCall)cOpAlternatives_0_0_1_0.eContents().get(1);
 		private final RuleCall cOpKW_MARROWTerminalRuleCall_0_0_1_0_2 = (RuleCall)cOpAlternatives_0_0_1_0.eContents().get(2);
 		private final RuleCall cOpKW_MAPSTOTerminalRuleCall_0_0_1_0_3 = (RuleCall)cOpAlternatives_0_0_1_0.eContents().get(3);
@@ -1054,18 +945,18 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cBas9CollectionParserRuleCall_1_0 = (RuleCall)cBas9Assignment_1.eContents().get(0);
 		
 		//BindingL_Infixed_Collection hidden(WS, KW_NEWLINE):
-		//	=> (lft=Infixed op=("assign" | KW_2EQ | KW_MARROW | KW_MAPSTO | KW_MAPSTOSTAR) bia=BindingL_Infixed_Collection) |
+		//	=> (lft=Infixed op=(KW_ASSIGN | KW_2EQ | KW_MARROW | KW_MAPSTO | KW_MAPSTOSTAR) bia=BindingL_Infixed_Collection) |
 		//	bas9=Collection;
 		public ParserRule getRule() { return rule; }
 
-		//=> (lft=Infixed op=("assign" | KW_2EQ | KW_MARROW | KW_MAPSTO | KW_MAPSTOSTAR) bia=BindingL_Infixed_Collection) |
+		//=> (lft=Infixed op=(KW_ASSIGN | KW_2EQ | KW_MARROW | KW_MAPSTO | KW_MAPSTOSTAR) bia=BindingL_Infixed_Collection) |
 		//bas9=Collection
 		public Alternatives getAlternatives() { return cAlternatives; }
 
-		//=> (lft=Infixed op=("assign" | KW_2EQ | KW_MARROW | KW_MAPSTO | KW_MAPSTOSTAR) bia=BindingL_Infixed_Collection)
+		//=> (lft=Infixed op=(KW_ASSIGN | KW_2EQ | KW_MARROW | KW_MAPSTO | KW_MAPSTOSTAR) bia=BindingL_Infixed_Collection)
 		public Group getGroup_0() { return cGroup_0; }
 
-		//lft=Infixed op=("assign" | KW_2EQ | KW_MARROW | KW_MAPSTO | KW_MAPSTOSTAR) bia=BindingL_Infixed_Collection
+		//lft=Infixed op=(KW_ASSIGN | KW_2EQ | KW_MARROW | KW_MAPSTO | KW_MAPSTOSTAR) bia=BindingL_Infixed_Collection
 		public Group getGroup_0_0() { return cGroup_0_0; }
 
 		//lft=Infixed
@@ -1074,14 +965,14 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		//Infixed
 		public RuleCall getLftInfixedParserRuleCall_0_0_0_0() { return cLftInfixedParserRuleCall_0_0_0_0; }
 
-		//op=("assign" | KW_2EQ | KW_MARROW | KW_MAPSTO | KW_MAPSTOSTAR)
+		//op=(KW_ASSIGN | KW_2EQ | KW_MARROW | KW_MAPSTO | KW_MAPSTOSTAR)
 		public Assignment getOpAssignment_0_0_1() { return cOpAssignment_0_0_1; }
 
-		//"assign" | KW_2EQ | KW_MARROW | KW_MAPSTO | KW_MAPSTOSTAR
+		//KW_ASSIGN | KW_2EQ | KW_MARROW | KW_MAPSTO | KW_MAPSTOSTAR
 		public Alternatives getOpAlternatives_0_0_1_0() { return cOpAlternatives_0_0_1_0; }
 
-		//"assign"
-		public Keyword getOpAssignKeyword_0_0_1_0_0() { return cOpAssignKeyword_0_0_1_0_0; }
+		//KW_ASSIGN
+		public RuleCall getOpKW_ASSIGNTerminalRuleCall_0_0_1_0_0() { return cOpKW_ASSIGNTerminalRuleCall_0_0_1_0_0; }
 
 		//KW_2EQ
 		public RuleCall getOpKW_2EQTerminalRuleCall_0_0_1_0_1() { return cOpKW_2EQTerminalRuleCall_0_0_1_0_1; }
@@ -1114,7 +1005,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cInfixedExprsDeclParserRuleCall_0 = (RuleCall)cGroup.eContents().get(0);
 		private final Group cGroup_1 = (Group)cGroup.eContents().get(1);
 		private final Alternatives cAlternatives_1_0 = (Alternatives)cGroup_1.eContents().get(0);
-		private final Keyword cAssignKeyword_1_0_0 = (Keyword)cAlternatives_1_0.eContents().get(0);
+		private final RuleCall cKW_ASSIGNTerminalRuleCall_1_0_0 = (RuleCall)cAlternatives_1_0.eContents().get(0);
 		private final RuleCall cKW_2EQTerminalRuleCall_1_0_1 = (RuleCall)cAlternatives_1_0.eContents().get(1);
 		private final RuleCall cKW_MARROWTerminalRuleCall_1_0_2 = (RuleCall)cAlternatives_1_0.eContents().get(2);
 		private final RuleCall cKW_MAPSTOTerminalRuleCall_1_0_3 = (RuleCall)cAlternatives_1_0.eContents().get(3);
@@ -1146,23 +1037,23 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		////| => (InfixedExprsDecl KW_MAPSTOSTAR bas=Binding_AnyStatement)
 		////;
 		//BindingR_InfixedExprsDecl_AnyStatement hidden(WS, KW_NEWLINE):
-		//	InfixedExprsDecl (("assign" | KW_2EQ | KW_MARROW | KW_MAPSTO | KW_MAPSTOSTAR) bas=Binding_AnyStatement)?;
+		//	InfixedExprsDecl ((KW_ASSIGN | KW_2EQ | KW_MARROW | KW_MAPSTO | KW_MAPSTOSTAR) bas=Binding_AnyStatement)?;
 		public ParserRule getRule() { return rule; }
 
-		//InfixedExprsDecl (("assign" | KW_2EQ | KW_MARROW | KW_MAPSTO | KW_MAPSTOSTAR) bas=Binding_AnyStatement)?
+		//InfixedExprsDecl ((KW_ASSIGN | KW_2EQ | KW_MARROW | KW_MAPSTO | KW_MAPSTOSTAR) bas=Binding_AnyStatement)?
 		public Group getGroup() { return cGroup; }
 
 		//InfixedExprsDecl
 		public RuleCall getInfixedExprsDeclParserRuleCall_0() { return cInfixedExprsDeclParserRuleCall_0; }
 
-		//(("assign" | KW_2EQ | KW_MARROW | KW_MAPSTO | KW_MAPSTOSTAR) bas=Binding_AnyStatement)?
+		//((KW_ASSIGN | KW_2EQ | KW_MARROW | KW_MAPSTO | KW_MAPSTOSTAR) bas=Binding_AnyStatement)?
 		public Group getGroup_1() { return cGroup_1; }
 
-		//"assign" | KW_2EQ | KW_MARROW | KW_MAPSTO | KW_MAPSTOSTAR
+		//KW_ASSIGN | KW_2EQ | KW_MARROW | KW_MAPSTO | KW_MAPSTOSTAR
 		public Alternatives getAlternatives_1_0() { return cAlternatives_1_0; }
 
-		//"assign"
-		public Keyword getAssignKeyword_1_0_0() { return cAssignKeyword_1_0_0; }
+		//KW_ASSIGN
+		public RuleCall getKW_ASSIGNTerminalRuleCall_1_0_0() { return cKW_ASSIGNTerminalRuleCall_1_0_0; }
 
 		//KW_2EQ
 		public RuleCall getKW_2EQTerminalRuleCall_1_0_1() { return cKW_2EQTerminalRuleCall_1_0_1; }
@@ -5511,19 +5402,18 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cStatemntsAssignment_0 = (Assignment)cGroup.eContents().get(0);
 		private final RuleCall cStatemntsLabeledParserRuleCall_0_0 = (RuleCall)cStatemntsAssignment_0.eContents().get(0);
 		private final Group cGroup_1 = (Group)cGroup.eContents().get(1);
-		private final Group cGroup_1_0 = (Group)cGroup_1.eContents().get(0);
-		private final RuleCall cKW_SEMICOLONTerminalRuleCall_1_0_0 = (RuleCall)cGroup_1_0.eContents().get(0);
-		private final Assignment cStatemntsAssignment_1_0_1 = (Assignment)cGroup_1_0.eContents().get(1);
-		private final RuleCall cStatemntsLabeledParserRuleCall_1_0_1_0 = (RuleCall)cStatemntsAssignment_1_0_1.eContents().get(0);
+		private final RuleCall cKW_SEMICOLONTerminalRuleCall_1_0 = (RuleCall)cGroup_1.eContents().get(0);
+		private final Assignment cStatemntsAssignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
+		private final RuleCall cStatemntsLabeledParserRuleCall_1_1_0 = (RuleCall)cStatemntsAssignment_1_1.eContents().get(0);
 		private final RuleCall cKW_SEMICOLONTerminalRuleCall_2 = (RuleCall)cGroup.eContents().get(2);
 		
 		/// * A list of (at least one) statement(s)
 		// * seperated by semicolons and optionally ending with a semicolon
 		// * / enlister1a_Labeled_Semicolon hidden(WS, KW_NEWLINE):
-		//	statemnts+=Labeled => (KW_SEMICOLON statemnts+=Labeled)* KW_SEMICOLON?;
+		//	statemnts+=Labeled (KW_SEMICOLON statemnts+=Labeled)* KW_SEMICOLON?;
 		public ParserRule getRule() { return rule; }
 
-		//statemnts+=Labeled => (KW_SEMICOLON statemnts+=Labeled)* KW_SEMICOLON?
+		//statemnts+=Labeled (KW_SEMICOLON statemnts+=Labeled)* KW_SEMICOLON?
 		public Group getGroup() { return cGroup; }
 
 		//statemnts+=Labeled
@@ -5532,20 +5422,17 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		//Labeled
 		public RuleCall getStatemntsLabeledParserRuleCall_0_0() { return cStatemntsLabeledParserRuleCall_0_0; }
 
-		//=> (KW_SEMICOLON statemnts+=Labeled)*
+		//(KW_SEMICOLON statemnts+=Labeled)*
 		public Group getGroup_1() { return cGroup_1; }
 
-		//KW_SEMICOLON statemnts+=Labeled
-		public Group getGroup_1_0() { return cGroup_1_0; }
-
 		//KW_SEMICOLON
-		public RuleCall getKW_SEMICOLONTerminalRuleCall_1_0_0() { return cKW_SEMICOLONTerminalRuleCall_1_0_0; }
+		public RuleCall getKW_SEMICOLONTerminalRuleCall_1_0() { return cKW_SEMICOLONTerminalRuleCall_1_0; }
 
 		//statemnts+=Labeled
-		public Assignment getStatemntsAssignment_1_0_1() { return cStatemntsAssignment_1_0_1; }
+		public Assignment getStatemntsAssignment_1_1() { return cStatemntsAssignment_1_1; }
 
 		//Labeled
-		public RuleCall getStatemntsLabeledParserRuleCall_1_0_1_0() { return cStatemntsLabeledParserRuleCall_1_0_1_0; }
+		public RuleCall getStatemntsLabeledParserRuleCall_1_1_0() { return cStatemntsLabeledParserRuleCall_1_1_0; }
 
 		//KW_SEMICOLON?
 		public RuleCall getKW_SEMICOLONTerminalRuleCall_2() { return cKW_SEMICOLONTerminalRuleCall_2; }
@@ -5595,7 +5482,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		// * statements can have pre or post comments
 		// * 
 		// * called by Curly_Labeled and Model
-		// * / CurlyContents_Labeled hidden(WS):
+		// * / CurlyContents_Labeled hidden(WS, KW_NEWLINE):
 		//	CurlyContentsList_Labeled;
 		public ParserRule getRule() { return rule; }
 
@@ -5609,21 +5496,20 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cStatemtsAssignment_0 = (Assignment)cGroup.eContents().get(0);
 		private final RuleCall cStatemtsCurlyContentB_LabeledParserRuleCall_0_0 = (RuleCall)cStatemtsAssignment_0.eContents().get(0);
 		private final Group cGroup_1 = (Group)cGroup.eContents().get(1);
-		private final Group cGroup_1_0 = (Group)cGroup_1.eContents().get(0);
-		private final RuleCall cKW_SEMICOLONTerminalRuleCall_1_0_0 = (RuleCall)cGroup_1_0.eContents().get(0);
-		private final Assignment cStatemtsAssignment_1_0_1 = (Assignment)cGroup_1_0.eContents().get(1);
-		private final RuleCall cStatemtsCurlyContentB_LabeledParserRuleCall_1_0_1_0 = (RuleCall)cStatemtsAssignment_1_0_1.eContents().get(0);
+		private final RuleCall cKW_SEMICOLONTerminalRuleCall_1_0 = (RuleCall)cGroup_1.eContents().get(0);
+		private final Assignment cStatemtsAssignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
+		private final RuleCall cStatemtsCurlyContentB_LabeledParserRuleCall_1_1_0 = (RuleCall)cStatemtsAssignment_1_1.eContents().get(0);
 		private final RuleCall cKW_SEMICOLONTerminalRuleCall_2 = (RuleCall)cGroup.eContents().get(2);
 		
 		/// * A list of (at least one) statement(s)
 		// * seperated by semicolons and optionally ending with a semicolon
 		// * 
 		// * statements can have pre or post comments
-		// * / CurlyContentsList_Labeled hidden(WS):
-		//	statemts+=CurlyContentB_Labeled => (KW_SEMICOLON statemts+=CurlyContentB_Labeled)* KW_SEMICOLON?;
+		// * / CurlyContentsList_Labeled hidden(WS, KW_NEWLINE):
+		//	statemts+=CurlyContentB_Labeled (KW_SEMICOLON statemts+=CurlyContentB_Labeled)* KW_SEMICOLON?;
 		public ParserRule getRule() { return rule; }
 
-		//statemts+=CurlyContentB_Labeled => (KW_SEMICOLON statemts+=CurlyContentB_Labeled)* KW_SEMICOLON?
+		//statemts+=CurlyContentB_Labeled (KW_SEMICOLON statemts+=CurlyContentB_Labeled)* KW_SEMICOLON?
 		public Group getGroup() { return cGroup; }
 
 		//statemts+=CurlyContentB_Labeled
@@ -5632,20 +5518,17 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		//CurlyContentB_Labeled
 		public RuleCall getStatemtsCurlyContentB_LabeledParserRuleCall_0_0() { return cStatemtsCurlyContentB_LabeledParserRuleCall_0_0; }
 
-		//=> (KW_SEMICOLON statemts+=CurlyContentB_Labeled)*
+		//(KW_SEMICOLON statemts+=CurlyContentB_Labeled)*
 		public Group getGroup_1() { return cGroup_1; }
 
-		//KW_SEMICOLON statemts+=CurlyContentB_Labeled
-		public Group getGroup_1_0() { return cGroup_1_0; }
-
 		//KW_SEMICOLON
-		public RuleCall getKW_SEMICOLONTerminalRuleCall_1_0_0() { return cKW_SEMICOLONTerminalRuleCall_1_0_0; }
+		public RuleCall getKW_SEMICOLONTerminalRuleCall_1_0() { return cKW_SEMICOLONTerminalRuleCall_1_0; }
 
 		//statemts+=CurlyContentB_Labeled
-		public Assignment getStatemtsAssignment_1_0_1() { return cStatemtsAssignment_1_0_1; }
+		public Assignment getStatemtsAssignment_1_1() { return cStatemtsAssignment_1_1; }
 
 		//CurlyContentB_Labeled
-		public RuleCall getStatemtsCurlyContentB_LabeledParserRuleCall_1_0_1_0() { return cStatemtsCurlyContentB_LabeledParserRuleCall_1_0_1_0; }
+		public RuleCall getStatemtsCurlyContentB_LabeledParserRuleCall_1_1_0() { return cStatemtsCurlyContentB_LabeledParserRuleCall_1_1_0; }
 
 		//KW_SEMICOLON?
 		public RuleCall getKW_SEMICOLONTerminalRuleCall_2() { return cKW_SEMICOLONTerminalRuleCall_2; }
@@ -5944,126 +5827,17 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 	// * Here we are using a LL(*) recursive-descent parser generator and this
 	// * may not be able to exactly replicate axl.z which is a
 	// * LALR(1) conflict-free grammar for Aldor.
-	// * / / * from tokInfoTable[] in token.c: Lexical elements.
-	// * The TokenTag enumeration must use this order.
-	// *
-	// * This table MUST be laid out so that all "symbol" tokens starting with
-	// * the same character are contiguous.
-	// *
-	// * Be extra careful with fields F, G, H and K: if you get them wrong then
-	// * the lineariser will delete end-of-statement tokens when it ought not
-	// * to. This can lead to odd compiler behaviour that is hard to track down
-	// * unless you know about this table.
-	// *
-	// * struct tok_info tokInfoTable[] = {
-	// *
-	// * [A] TokenTag tag
-	// * [B] Symbol sym
-	// * [C] String str
-	// * [D] Byte hasString i.e. use val.str (vs val.sym)
-	// * [E] Byte isComment i.e. ++ --
-	// * [F] Byte isOpener i.e. ( [ { etc
-	// * [G] Byte isCloser i.e. ) ] } etc
-	// * [H] Byte isFollower i.e. then else always in etc
-	// * [I] Byte isLangword i.e. if then etc
-	// * [J] Byte isLeftAssoc i.e., associates left to right
-	// * [K] Byte isMaybeInfix i.e., add, with, +
-	// * [L] Byte precedence i.e., 0 is lowest, or don't know
-	// * [M] Byte isDisabled i.e., non-zero means disabled
-	// *
-	// * [A] [B][C] [D][E] [F] [G] [H] [I] [J] [K] [L] [M]
-	// *
-	//        {TK_Blank, 0,"TK_Blank", 0, 0, 0, 0, 0, 0, 1, 0, 170, 0},
-	//        {TK_FLOAT, 0,"TK_FLOAT", 1, 0, 0, 0, 0, 0, 1, 0, 170, 0},
-	//        {TK_SysCmd, 0,"TK_SysCmd", 1, 1, 0, 0, 0, 0, 1, 0, 170, 0},
-	//        {TK_Error, 0,"TK_Error", 1, 0, 0, 0, 0, 0, 1, 0, 0, 0},
-	//
-	//        {KW_Add, 0,"add", 0, 0, 0, 0, 0, 1, 1, 0, 0, 0},
-	//        {KW_And, 0,"and", 0, 0, 0, 0, 1, 1, 1, 1, 40, 0},
-	//        {KW_Always, 0,"always", 0, 0, 0, 0, 1, 1, 1, 1, 0, 0},
-	//        {KW_Assert, 0,"assert", 0, 0, 0, 0, 0, 1, 1, 0, 0, 0},
-	//        {KW_Break, 0,"break", 0, 0, 0, 0, 0, 1, 1, 0, 0, 0},
-	//        {KW_But, 0,"but", 0, 0, 0, 0, 1, 1, 1, 1, 0, 0},
-	//        {KW_By, 0,"by", 0, 0, 0, 0, 0, 0, 1, 1, 110, 0},
-	//        {KW_CASE, 0,"case", 0, 0, 0, 0, 0, 0, 1, 1, 0, 0},
-	//        {KW_Catch, 0,"catch", 0, 0, 0, 0, 1, 1, 1, 1, 0, 0},
-	//        {KW_Default, 0,"default", 0, 0, 0, 0, 0, 1, 1, 0, 0, 0},
-	//        {KW_Define, 0,"define", 0, 0, 0, 0, 0, 1, 1, 0, 0, 0},
-	//        {KW_Delay, 0,"delay", 0, 0, 0, 0, 0, 1, 1, 0, 0, 0},
-	//        {KW_Do, 0,"do", 0, 0, 0, 0, 0, 1, 1, 0, 0, 0},
-	//        {KW_Else, 0,"else", 0, 0, 0, 0, 1, 1, 1, 0, 0, 0},
-	//        {KW_Except, 0,"except", 0, 0, 0, 0, 0, 1, 1, 1, 0, 0},
-	//        {KW_Export, 0,"export", 0, 0, 0, 0, 0, 1, 1, 0, 0, 0},
-	//        {KW_Exquo, 0,"exquo", 0, 0, 0, 0, 0, 0, 1, 1, 125, 0},
-	//        {KW_Extend, 0,"extend", 0, 0, 0, 0, 0, 1, 1, 0, 0, 0},
-	//        {KW_Finally, 0,"finally", 0, 0, 0, 0, 1, 1, 1, 1, 0, 0},
-	//        {KW_Fix, 0,"fix", 0, 0, 0, 0, 0, 1, 1, 0, 0, 0},
-	//        {KW_For, 0,"for", 0, 0, 0, 0, 0, 1, 1, 0, 0, 0},
-	//        {KW_Fluid, 0,"fluid", 0, 0, 0, 0, 0, 1, 1, 0, 0, 0},
-	//        {KW_Free, 0,"free", 0, 0, 0, 0, 0, 1, 1, 0, 0, 0},
-	//        {KW_From, 0,"from", 0, 0, 0, 0, 1, 1, 1, 0, 0, 0},
-	//        {KW_Generate, 0,"generate", 0, 0, 0, 0, 0, 1, 1, 0, 0, 0},
-	//        {KW_Goto, 0,"goto", 0, 0, 0, 0, 0, 1, 1, 0, 0, 0},
-	//        {KW_Has, 0,"has", 0, 0, 0, 0, 0, 0, 1, 1, 40, 0},
-	//        {KW_If, 0,"if", 0, 0, 0, 0, 0, 1, 1, 0, 0, 0},
-	//        {KW_Import, 0,"import", 0, 0, 0, 0, 0, 1, 1, 0, 0, 0},
-	//        {KW_In, 0,"in", 0, 0, 0, 0, 1, 1, 1, 1, 0, 0},
-	//        {KW_Inline, 0,"inline", 0, 0, 0, 0, 0, 1, 1, 0, 0, 0},
-	//        {KW_IS, 0,"is", 0, 0, 0, 0, 0, 1, 1, 0, 0, 0},
-	//        {KW_ISNT, 0,"isnt", 0, 0, 0, 0, 0, 1, 1, 0, 0, 0},
-	//        {KW_Iterate, 0,"iterate", 0, 0, 0, 0, 0, 1, 1, 0, 0, 0},
-	//        {KW_Let, 0,"let", 0, 0, 0, 0, 0, 1, 1, 0, 0, 0},
-	//        {KW_Local, 0,"local", 0, 0, 0, 0, 0, 1, 1, 0, 0, 0},
-	//        {KW_Macro, 0,"macro", 0, 0, 0, 0, 0, 1, 1, 0, 0, 0},
-	//        {KW_Mod, 0,"mod", 0, 0, 0, 0, 0, 0, 1, 1, 125, 0},
-	//        {KW_Never, 0,"never", 0, 0, 0, 0, 0, 1, 1, 0, 0, 0},
-	//        {KW_Not, 0,"not", 0, 0, 0, 0, 0, 1, 1, 1, 150, 0},
-	//        {KW_Of, 0,"of", 0, 0, 0, 0, 1, 1, 1, 1, 40, 0},
-	//        {KW_Or, 0,"or", 0, 0, 0, 0, 1, 1, 1, 1, 40, 0},
-	//        {KW_Pretend, 0,"pretend", 0, 0, 0, 0, 1, 1, 1, 1, 150, 0},
-	//        {KW_Quo, 0,"quo", 0, 0, 0, 0, 0, 0, 1, 1, 125, 0},
-	//        {KW_Reference, 0,"ref", 0, 0, 0, 0, 0, 1, 1, 0, 0, 0},
-	//        {KW_Rem, 0,"rem", 0, 0, 0, 0, 0, 0, 1, 1, 125, 0},
-	//        {KW_Repeat, 0,"repeat", 0, 0, 0, 0, 0, 1, 1, 0, 0, 0},
-	//        {KW_Return, 0,"return", 0, 0, 0, 0, 0, 1, 1, 0, 0, 0},
-	//        {KW_Rule, 0,"rule", 0, 0, 0, 0, 0, 1, 1, 0, 0, 0},
-	//        {KW_Select, 0,"select", 0, 0, 0, 0, 0, 1, 1, 0, 0, 0},
-	//        {KW_Then, 0,"then", 0, 0, 0, 0, 1, 1, 1, 0, 0, 0},
-	//        {KW_Throw, 0,"throw", 0, 0, 0, 0, 0, 1, 1, 1, 0, 0},
-	//        {KW_To, 0,"to", 0, 0, 0, 0, 1, 1, 1, 0, 0, 0},
-	//        {KW_Try, 0,"try", 0, 0, 0, 0, 0, 1, 1, 0, 0, 0},
-	//        {KW_Where, 0,"where", 0, 0, 0, 0, 1, 1, 1, 0, 0, 0},
-	//        {KW_While, 0,"while", 0, 0, 0, 0, 0, 1, 1, 0, 0, 0},
-	//        {KW_With, 0,"with", 0, 0, 0, 0, 0, 1, 1, 0, 0, 0},
-	//        {KW_Yield, 0,"yield", 0, 0, 0, 0, 0, 1, 1, 0, 0, 0},
-	//
-	//        {KW_Grave, 0,"`", 0, 0, 0, 0, 0, 0, 1, 0, 0, 0},
-	//        
-	//
-	//        {KW_LARROW, 0,"<-", 0, 0, 0, 0, 0, 0, 1, 1, 0, 0},
-	//
-	//
-	//
-	//        {KW_STARtPile, 0,"#pile", 0, 0, 0, 0, 0, 0, 1, 0, 0, 0},
-	//        {KW_EndPile, 0,"#endpile", 0, 0, 0, 0, 0, 0, 1, 0, 0, 0},
-	//        {KW_SetTab, 0,"KW_SetTab", 0, 0, 0, 0, 0, 0, 1, 0, 0, 0},
-	//        {KW_BackSet, 0,"KW_BackSet", 0, 0, 0, 0, 0, 0, 1, 0, 0, 0},
-	//        {KW_BackTab, 0,"KW_BackTab", 0, 0, 0, 0, 0, 0, 1, 0, 0, 0},
-	//        {KW_Juxtapose, 0,"KW_Juxtapose",0, 0, 0, 0, 0, 0, 0, 0, 170, 0},
-	//
-	//        {TK_LIMIT, 0,"TK_LIMIT", 0, 0, 0, 0, 0, 0, 1, 0, 0, 0}
-	//};
+	// * 
+	// * known bugs
+	// * ----------
+	// * 1) floating point literal
+	// * 2) import statement
 	// * / / *
 	// * replaces Goal rule in Aldor grammar
 	// * 
 	// * #include is not in axl.z grammar, I assume the includes are
 	// * done before the grammar is called. So I have added include
 	// * support here.
-	// * 
-	// * Goal
-	// * : CurlyContents(Labeled)
-	// * { yypval = $$ = $1; }
-	// * ;
 	// * 
 	// * / Model hidden(WS, KW_NEWLINE):
 	//	("#include" insert+=TK_STRING)* cc=CurlyContents_Labeled;
@@ -6083,7 +5857,6 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 	// * '?' indicates a function which returns a boolean value
 	// * '!' indicates a function which changes an existing domain value
 	// * (in a mutable domain)
-	//        {TK_ID, 0,"TK_ID", 0, 0, 0, 0, 0, 0, 1, 0, 170, 0},
 	// * / terminal TK_ID:
 	//	("a".."z" | "A".."Z" | "_" .) ("a".."z" | "A".."Z" | "_" . | "0".."9")* "!"? "?"?;
 	public TerminalRule getTK_IDRule() {
@@ -6104,7 +5877,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 	} 
 
 	/// * at least one newline or carriage return character.
-	// * This is not included with WS because whitespace is significant in SPAD.
+	// * This is not included with WS because whitespace is significant in Aldor/SPAD.
 	// * We usually absorb newlines like this: NL+ which absorbs any number of
 	// * blank lines and it also supports both the Linux and the Windows forms of
 	// * newlines.
@@ -6115,7 +5888,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		return (tKW_NEWLINE != null) ? tKW_NEWLINE : (tKW_NEWLINE = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "KW_NEWLINE"));
 	} 
 
-	/// * overwriting TK_COMMENTS we do not want Java syntax (//) but spad syntax (--)
+	/// * overwriting TK_COMMENTS we do not want Java syntax (//) but Aldor/spad syntax (--)
 	// * This absorbs everything from '--' or '++' to the end of the line (but not
 	// * including the newline or carriage return characters)
 	// * 
@@ -6138,16 +5911,6 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		return (tTK_POSTDOC != null) ? tTK_POSTDOC : (tTK_POSTDOC = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "TK_POSTDOC"));
 	} 
 
-	/// * Macro value can be anything until the end of line
-	// * Macro is really '==>' but the pre-processor inserts an extra '=' so
-	// * that we can distinguish from where ==> is used in 'with' or 'add' parts
-	// * It is difficult for a LL(*) parser to handle macros so we want to
-	// * substitute the macro in a pre-processor * / //terminal MACROVALUE :
-	////  '===>' !('\n'|'\r')*;
-	/// * '==>' is used in 'with' or 'add' parts so is not really a macro?
-	// * / //terminal MACRO:
-	//// '==>'
-	////;
 	/// * string literals are enclosed in double quotes
 	// *         {TK_STRING, 0,"TK_STRING", 1, 0, 0, 0, 0, 0, 1, 0, 170, 0},
 	// 
@@ -6615,8 +6378,8 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		return getExpressionAccess().getRule();
 	}
 
-	/// * An '.as' file is effectivly a list of 'Labeled' 
-	// * by semicolons* / Labeled hidden(WS, KW_NEWLINE):
+	/// * An '.as' file is effectively a list of 'Labeled' 
+	// * separated by semicolons* / Labeled hidden(WS, KW_NEWLINE):
 	//	Comma | Declaration | KW_AT Atom lab=Labeled?;
 	public LabeledElements getLabeledAccess() {
 		return (pLabeled != null) ? pLabeled : (pLabeled = new LabeledElements());
@@ -6797,7 +6560,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 
 	/// * This rule allows any statement or new: Assign, Define or Lambda 
 	//  * / BindingL_Infixed_AnyStatement hidden(WS, KW_NEWLINE):
-	//	=> (lft=Infixed op=("assign" | KW_2EQ | KW_MARROW | KW_MAPSTO | KW_MAPSTOSTAR) bia=BindingL_Infixed_AnyStatement) |
+	//	=> (lft=Infixed op=(KW_ASSIGN | KW_2EQ | KW_MARROW | KW_MAPSTO | KW_MAPSTOSTAR) bia=BindingL_Infixed_AnyStatement) |
 	//	bas9=AnyStatement;
 	public BindingL_Infixed_AnyStatementElements getBindingL_Infixed_AnyStatementAccess() {
 		return (pBindingL_Infixed_AnyStatement != null) ? pBindingL_Infixed_AnyStatement : (pBindingL_Infixed_AnyStatement = new BindingL_Infixed_AnyStatementElements());
@@ -6808,7 +6571,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//BindingL_Infixed_BalStatement hidden(WS, KW_NEWLINE):
-	//	=> (lft=Infixed op=("assign" | KW_2EQ | KW_MARROW | KW_MAPSTO | KW_MAPSTOSTAR) bia=BindingL_Infixed_BalStatement) |
+	//	=> (lft=Infixed op=(KW_ASSIGN | KW_2EQ | KW_MARROW | KW_MAPSTO | KW_MAPSTOSTAR) bia=BindingL_Infixed_BalStatement) |
 	//	bas9=BalStatement;
 	public BindingL_Infixed_BalStatementElements getBindingL_Infixed_BalStatementAccess() {
 		return (pBindingL_Infixed_BalStatement != null) ? pBindingL_Infixed_BalStatement : (pBindingL_Infixed_BalStatement = new BindingL_Infixed_BalStatementElements());
@@ -6819,7 +6582,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//BindingL_Infixed_Collection hidden(WS, KW_NEWLINE):
-	//	=> (lft=Infixed op=("assign" | KW_2EQ | KW_MARROW | KW_MAPSTO | KW_MAPSTOSTAR) bia=BindingL_Infixed_Collection) |
+	//	=> (lft=Infixed op=(KW_ASSIGN | KW_2EQ | KW_MARROW | KW_MAPSTO | KW_MAPSTOSTAR) bia=BindingL_Infixed_Collection) |
 	//	bas9=Collection;
 	public BindingL_Infixed_CollectionElements getBindingL_Infixed_CollectionAccess() {
 		return (pBindingL_Infixed_Collection != null) ? pBindingL_Infixed_Collection : (pBindingL_Infixed_Collection = new BindingL_Infixed_CollectionElements());
@@ -6853,7 +6616,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 	////| => (InfixedExprsDecl KW_MAPSTOSTAR bas=Binding_AnyStatement)
 	////;
 	//BindingR_InfixedExprsDecl_AnyStatement hidden(WS, KW_NEWLINE):
-	//	InfixedExprsDecl (("assign" | KW_2EQ | KW_MARROW | KW_MAPSTO | KW_MAPSTOSTAR) bas=Binding_AnyStatement)?;
+	//	InfixedExprsDecl ((KW_ASSIGN | KW_2EQ | KW_MARROW | KW_MAPSTO | KW_MAPSTOSTAR) bas=Binding_AnyStatement)?;
 	public BindingR_InfixedExprsDecl_AnyStatementElements getBindingR_InfixedExprsDecl_AnyStatementAccess() {
 		return (pBindingR_InfixedExprsDecl_AnyStatement != null) ? pBindingR_InfixedExprsDecl_AnyStatement : (pBindingR_InfixedExprsDecl_AnyStatement = new BindingR_InfixedExprsDecl_AnyStatementElements());
 	}
@@ -8154,7 +7917,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 	/// * A list of (at least one) statement(s)
 	// * seperated by semicolons and optionally ending with a semicolon
 	// * / enlister1a_Labeled_Semicolon hidden(WS, KW_NEWLINE):
-	//	statemnts+=Labeled => (KW_SEMICOLON statemnts+=Labeled)* KW_SEMICOLON?;
+	//	statemnts+=Labeled (KW_SEMICOLON statemnts+=Labeled)* KW_SEMICOLON?;
 	public Enlister1a_Labeled_SemicolonElements getEnlister1a_Labeled_SemicolonAccess() {
 		return (pEnlister1a_Labeled_Semicolon != null) ? pEnlister1a_Labeled_Semicolon : (pEnlister1a_Labeled_Semicolon = new Enlister1a_Labeled_SemicolonElements());
 	}
@@ -8189,7 +7952,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 	// * statements can have pre or post comments
 	// * 
 	// * called by Curly_Labeled and Model
-	// * / CurlyContents_Labeled hidden(WS):
+	// * / CurlyContents_Labeled hidden(WS, KW_NEWLINE):
 	//	CurlyContentsList_Labeled;
 	public CurlyContents_LabeledElements getCurlyContents_LabeledAccess() {
 		return (pCurlyContents_Labeled != null) ? pCurlyContents_Labeled : (pCurlyContents_Labeled = new CurlyContents_LabeledElements());
@@ -8203,8 +7966,8 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 	// * seperated by semicolons and optionally ending with a semicolon
 	// * 
 	// * statements can have pre or post comments
-	// * / CurlyContentsList_Labeled hidden(WS):
-	//	statemts+=CurlyContentB_Labeled => (KW_SEMICOLON statemts+=CurlyContentB_Labeled)* KW_SEMICOLON?;
+	// * / CurlyContentsList_Labeled hidden(WS, KW_NEWLINE):
+	//	statemts+=CurlyContentB_Labeled (KW_SEMICOLON statemts+=CurlyContentB_Labeled)* KW_SEMICOLON?;
 	public CurlyContentsList_LabeledElements getCurlyContentsList_LabeledAccess() {
 		return (pCurlyContentsList_Labeled != null) ? pCurlyContentsList_Labeled : (pCurlyContentsList_Labeled = new CurlyContentsList_LabeledElements());
 	}

@@ -27,118 +27,12 @@ generate editor "http://www.euclideanspace.com/aldor/Editor"
  * Here we are using a LL(*) recursive-descent parser generator and this
  * may not be able to exactly replicate axl.z which is a
  * LALR(1) conflict-free grammar for Aldor.
+ * 
+ * known bugs
+ * ----------
+ * 1) floating point literal
+ * 2) import statement
  */
-
-/* from tokInfoTable[] in token.c: Lexical elements.
-* The TokenTag enumeration must use this order.
-*
-* This table MUST be laid out so that all "symbol" tokens starting with
-* the same character are contiguous.
-*
-* Be extra careful with fields F, G, H and K: if you get them wrong then
-* the lineariser will delete end-of-statement tokens when it ought not
-* to. This can lead to odd compiler behaviour that is hard to track down
-* unless you know about this table.
-*
-* struct tok_info tokInfoTable[] = {
-*
-* [A] TokenTag tag
-* [B] Symbol sym
-* [C] String str
-* [D] Byte hasString i.e. use val.str (vs val.sym)
-* [E] Byte isComment i.e. ++ --
-* [F] Byte isOpener i.e. ( [ { etc
-* [G] Byte isCloser i.e. ) ] } etc
-* [H] Byte isFollower i.e. then else always in etc
-* [I] Byte isLangword i.e. if then etc
-* [J] Byte isLeftAssoc i.e., associates left to right
-* [K] Byte isMaybeInfix i.e., add, with, +
-* [L] Byte precedence i.e., 0 is lowest, or don't know
-* [M] Byte isDisabled i.e., non-zero means disabled
-*
-* [A] [B][C] [D][E] [F] [G] [H] [I] [J] [K] [L] [M]
-*
-        {TK_Blank, 0,"TK_Blank", 0, 0, 0, 0, 0, 0, 1, 0, 170, 0},
-        {TK_FLOAT, 0,"TK_FLOAT", 1, 0, 0, 0, 0, 0, 1, 0, 170, 0},
-        {TK_SysCmd, 0,"TK_SysCmd", 1, 1, 0, 0, 0, 0, 1, 0, 170, 0},
-        {TK_Error, 0,"TK_Error", 1, 0, 0, 0, 0, 0, 1, 0, 0, 0},
-
-        {KW_Add, 0,"add", 0, 0, 0, 0, 0, 1, 1, 0, 0, 0},
-        {KW_And, 0,"and", 0, 0, 0, 0, 1, 1, 1, 1, 40, 0},
-        {KW_Always, 0,"always", 0, 0, 0, 0, 1, 1, 1, 1, 0, 0},
-        {KW_Assert, 0,"assert", 0, 0, 0, 0, 0, 1, 1, 0, 0, 0},
-        {KW_Break, 0,"break", 0, 0, 0, 0, 0, 1, 1, 0, 0, 0},
-        {KW_But, 0,"but", 0, 0, 0, 0, 1, 1, 1, 1, 0, 0},
-        {KW_By, 0,"by", 0, 0, 0, 0, 0, 0, 1, 1, 110, 0},
-        {KW_CASE, 0,"case", 0, 0, 0, 0, 0, 0, 1, 1, 0, 0},
-        {KW_Catch, 0,"catch", 0, 0, 0, 0, 1, 1, 1, 1, 0, 0},
-        {KW_Default, 0,"default", 0, 0, 0, 0, 0, 1, 1, 0, 0, 0},
-        {KW_Define, 0,"define", 0, 0, 0, 0, 0, 1, 1, 0, 0, 0},
-        {KW_Delay, 0,"delay", 0, 0, 0, 0, 0, 1, 1, 0, 0, 0},
-        {KW_Do, 0,"do", 0, 0, 0, 0, 0, 1, 1, 0, 0, 0},
-        {KW_Else, 0,"else", 0, 0, 0, 0, 1, 1, 1, 0, 0, 0},
-        {KW_Except, 0,"except", 0, 0, 0, 0, 0, 1, 1, 1, 0, 0},
-        {KW_Export, 0,"export", 0, 0, 0, 0, 0, 1, 1, 0, 0, 0},
-        {KW_Exquo, 0,"exquo", 0, 0, 0, 0, 0, 0, 1, 1, 125, 0},
-        {KW_Extend, 0,"extend", 0, 0, 0, 0, 0, 1, 1, 0, 0, 0},
-        {KW_Finally, 0,"finally", 0, 0, 0, 0, 1, 1, 1, 1, 0, 0},
-        {KW_Fix, 0,"fix", 0, 0, 0, 0, 0, 1, 1, 0, 0, 0},
-        {KW_For, 0,"for", 0, 0, 0, 0, 0, 1, 1, 0, 0, 0},
-        {KW_Fluid, 0,"fluid", 0, 0, 0, 0, 0, 1, 1, 0, 0, 0},
-        {KW_Free, 0,"free", 0, 0, 0, 0, 0, 1, 1, 0, 0, 0},
-        {KW_From, 0,"from", 0, 0, 0, 0, 1, 1, 1, 0, 0, 0},
-        {KW_Generate, 0,"generate", 0, 0, 0, 0, 0, 1, 1, 0, 0, 0},
-        {KW_Goto, 0,"goto", 0, 0, 0, 0, 0, 1, 1, 0, 0, 0},
-        {KW_Has, 0,"has", 0, 0, 0, 0, 0, 0, 1, 1, 40, 0},
-        {KW_If, 0,"if", 0, 0, 0, 0, 0, 1, 1, 0, 0, 0},
-        {KW_Import, 0,"import", 0, 0, 0, 0, 0, 1, 1, 0, 0, 0},
-        {KW_In, 0,"in", 0, 0, 0, 0, 1, 1, 1, 1, 0, 0},
-        {KW_Inline, 0,"inline", 0, 0, 0, 0, 0, 1, 1, 0, 0, 0},
-        {KW_IS, 0,"is", 0, 0, 0, 0, 0, 1, 1, 0, 0, 0},
-        {KW_ISNT, 0,"isnt", 0, 0, 0, 0, 0, 1, 1, 0, 0, 0},
-        {KW_Iterate, 0,"iterate", 0, 0, 0, 0, 0, 1, 1, 0, 0, 0},
-        {KW_Let, 0,"let", 0, 0, 0, 0, 0, 1, 1, 0, 0, 0},
-        {KW_Local, 0,"local", 0, 0, 0, 0, 0, 1, 1, 0, 0, 0},
-        {KW_Macro, 0,"macro", 0, 0, 0, 0, 0, 1, 1, 0, 0, 0},
-        {KW_Mod, 0,"mod", 0, 0, 0, 0, 0, 0, 1, 1, 125, 0},
-        {KW_Never, 0,"never", 0, 0, 0, 0, 0, 1, 1, 0, 0, 0},
-        {KW_Not, 0,"not", 0, 0, 0, 0, 0, 1, 1, 1, 150, 0},
-        {KW_Of, 0,"of", 0, 0, 0, 0, 1, 1, 1, 1, 40, 0},
-        {KW_Or, 0,"or", 0, 0, 0, 0, 1, 1, 1, 1, 40, 0},
-        {KW_Pretend, 0,"pretend", 0, 0, 0, 0, 1, 1, 1, 1, 150, 0},
-        {KW_Quo, 0,"quo", 0, 0, 0, 0, 0, 0, 1, 1, 125, 0},
-        {KW_Reference, 0,"ref", 0, 0, 0, 0, 0, 1, 1, 0, 0, 0},
-        {KW_Rem, 0,"rem", 0, 0, 0, 0, 0, 0, 1, 1, 125, 0},
-        {KW_Repeat, 0,"repeat", 0, 0, 0, 0, 0, 1, 1, 0, 0, 0},
-        {KW_Return, 0,"return", 0, 0, 0, 0, 0, 1, 1, 0, 0, 0},
-        {KW_Rule, 0,"rule", 0, 0, 0, 0, 0, 1, 1, 0, 0, 0},
-        {KW_Select, 0,"select", 0, 0, 0, 0, 0, 1, 1, 0, 0, 0},
-        {KW_Then, 0,"then", 0, 0, 0, 0, 1, 1, 1, 0, 0, 0},
-        {KW_Throw, 0,"throw", 0, 0, 0, 0, 0, 1, 1, 1, 0, 0},
-        {KW_To, 0,"to", 0, 0, 0, 0, 1, 1, 1, 0, 0, 0},
-        {KW_Try, 0,"try", 0, 0, 0, 0, 0, 1, 1, 0, 0, 0},
-        {KW_Where, 0,"where", 0, 0, 0, 0, 1, 1, 1, 0, 0, 0},
-        {KW_While, 0,"while", 0, 0, 0, 0, 0, 1, 1, 0, 0, 0},
-        {KW_With, 0,"with", 0, 0, 0, 0, 0, 1, 1, 0, 0, 0},
-        {KW_Yield, 0,"yield", 0, 0, 0, 0, 0, 1, 1, 0, 0, 0},
-
-        {KW_Grave, 0,"`", 0, 0, 0, 0, 0, 0, 1, 0, 0, 0},
-        
-
-        {KW_LARROW, 0,"<-", 0, 0, 0, 0, 0, 0, 1, 1, 0, 0},
-
-
-
-        {KW_STARtPile, 0,"#pile", 0, 0, 0, 0, 0, 0, 1, 0, 0, 0},
-        {KW_EndPile, 0,"#endpile", 0, 0, 0, 0, 0, 0, 1, 0, 0, 0},
-        {KW_SetTab, 0,"KW_SetTab", 0, 0, 0, 0, 0, 0, 1, 0, 0, 0},
-        {KW_BackSet, 0,"KW_BackSet", 0, 0, 0, 0, 0, 0, 1, 0, 0, 0},
-        {KW_BackTab, 0,"KW_BackTab", 0, 0, 0, 0, 0, 0, 1, 0, 0, 0},
-        {KW_Juxtapose, 0,"KW_Juxtapose",0, 0, 0, 0, 0, 0, 0, 0, 170, 0},
-
-        {TK_LIMIT, 0,"TK_LIMIT", 0, 0, 0, 0, 0, 0, 1, 0, 0, 0}
-};
-*/
 
 /*
  * replaces Goal rule in Aldor grammar
@@ -147,17 +41,11 @@ generate editor "http://www.euclideanspace.com/aldor/Editor"
  * done before the grammar is called. So I have added include
  * support here.
  * 
- * Goal
- * : CurlyContents(Labeled)
- * { yypval = $$ = $1; }
- * ;
- * 
  */
 Model hidden(WS,KW_NEWLINE):
   ('#include' insert+=TK_STRING)*
   cc=CurlyContents_Labeled
 ;
-
 
 ////////// start of lexer rules ///////////////
 
@@ -168,7 +56,6 @@ Model hidden(WS,KW_NEWLINE):
  * '?' indicates a function which returns a boolean value
  * '!' indicates a function which changes an existing domain value
  * (in a mutable domain)
-        {TK_ID, 0,"TK_ID", 0, 0, 0, 0, 0, 0, 1, 0, 170, 0},
  */
 terminal TK_ID : ('a'..'z'|'A'..'Z'|('_'.)) ('a'..'z'|'A'..'Z'|('_'.)|'0'..'9')*'!'?'?'?;
 
@@ -183,7 +70,7 @@ terminal TK_ID : ('a'..'z'|'A'..'Z'|('_'.)) ('a'..'z'|'A'..'Z'|('_'.)|'0'..'9')*
 terminal WS : (' '|'\t')+;
 
 /* at least one newline or carriage return character.
- * This is not included with WS because whitespace is significant in SPAD.
+ * This is not included with WS because whitespace is significant in Aldor/SPAD.
  * We usually absorb newlines like this: NL+ which absorbs any number of
  * blank lines and it also supports both the Linux and the Windows forms of
  * newlines.
@@ -191,7 +78,7 @@ terminal WS : (' '|'\t')+;
  */
 terminal KW_NEWLINE: ('\r'|'\n') ;
 
-/* overwriting TK_COMMENTS we do not want Java syntax (//) but spad syntax (--)
+/* overwriting TK_COMMENTS we do not want Java syntax (//) but Aldor/spad syntax (--)
  * This absorbs everything from '--' or '++' to the end of the line (but not
  * including the newline or carriage return characters)
  * 
@@ -207,20 +94,6 @@ terminal TK_PREDOC :
 
 terminal TK_POSTDOC :
   ('++') !('\n'|'\r')* ;//('\r'|'\n')?;
-
-/* Macro value can be anything until the end of line
- * Macro is really '==>' but the pre-processor inserts an extra '=' so
- * that we can distinguish from where ==> is used in 'with' or 'add' parts
- * It is difficult for a LL(*) parser to handle macros so we want to
- * substitute the macro in a pre-processor */
-//terminal MACROVALUE :
-//  '===>' !('\n'|'\r')*;
-
-/* '==>' is used in 'with' or 'add' parts so is not really a macro?
- */
-//terminal MACRO:
-// '==>'
-//;
 
 /* string literals are enclosed in double quotes
  *         {TK_STRING, 0,"TK_STRING", 1, 0, 0, 0, 0, 0, 1, 0, 170, 0},
@@ -599,19 +472,19 @@ Binding_Collection hidden(WS,KW_NEWLINE):
   */
 BindingL_Infixed_AnyStatement hidden(WS,KW_NEWLINE):
  =>(lft=Infixed
-      op=('assign'|KW_2EQ|KW_MARROW|KW_MAPSTO|KW_MAPSTOSTAR) bia=BindingL_Infixed_AnyStatement)
+      op=(KW_ASSIGN|KW_2EQ|KW_MARROW|KW_MAPSTO|KW_MAPSTOSTAR) bia=BindingL_Infixed_AnyStatement)
  |
  bas9=AnyStatement
 ;
 
 BindingL_Infixed_BalStatement hidden(WS,KW_NEWLINE):
- =>(lft=Infixed op=('assign'|KW_2EQ|KW_MARROW|KW_MAPSTO|KW_MAPSTOSTAR) bia=BindingL_Infixed_BalStatement)
+ =>(lft=Infixed op=(KW_ASSIGN|KW_2EQ|KW_MARROW|KW_MAPSTO|KW_MAPSTOSTAR) bia=BindingL_Infixed_BalStatement)
  |
  bas9=BalStatement
 ;
 
 BindingL_Infixed_Collection hidden(WS,KW_NEWLINE):
- =>(lft=Infixed op=('assign'|KW_2EQ|KW_MARROW|KW_MAPSTO|KW_MAPSTOSTAR) bia=BindingL_Infixed_Collection)
+ =>(lft=Infixed op=(KW_ASSIGN|KW_2EQ|KW_MARROW|KW_MAPSTO|KW_MAPSTOSTAR) bia=BindingL_Infixed_Collection)
  |
  bas9=Collection
 ;
@@ -642,7 +515,7 @@ BindingL_Infixed_Collection hidden(WS,KW_NEWLINE):
 //;
 BindingR_InfixedExprsDecl_AnyStatement hidden(WS,KW_NEWLINE):
  InfixedExprsDecl (
-   ('assign'|KW_2EQ|KW_MARROW|KW_MAPSTO|KW_MAPSTOSTAR)
+   (KW_ASSIGN|KW_2EQ|KW_MARROW|KW_MAPSTO|KW_MAPSTOSTAR)
      bas=Binding_AnyStatement)?
 ;
 
@@ -1480,7 +1353,7 @@ KW_OCURLY CurlyContents_Labeled KW_CCURLY
  * 
  * called by Curly_Labeled and Model
  */ 
-CurlyContents_Labeled hidden(WS):
+CurlyContents_Labeled hidden(WS,KW_NEWLINE):
   CurlyContentsList_Labeled
 ;
 
@@ -1489,7 +1362,7 @@ CurlyContents_Labeled hidden(WS):
  * 
  * statements can have pre or post comments
  */ 
-CurlyContentsList_Labeled hidden(WS):
+CurlyContentsList_Labeled hidden(WS,KW_NEWLINE):
 	statemts += CurlyContentB_Labeled
 	(KW_SEMICOLON statemts += CurlyContentB_Labeled)*
 	KW_SEMICOLON?

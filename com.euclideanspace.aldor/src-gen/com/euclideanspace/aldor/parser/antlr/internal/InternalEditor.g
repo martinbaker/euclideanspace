@@ -1469,8 +1469,7 @@ ruleInfixed
 )(
 (
 (
-	'assign' 
- 
+RULE_KW_ASSIGN
 
     |		RULE_KW_2EQ
 
@@ -1508,16 +1507,19 @@ ruleBindingL_Infixed_AnyStatement
 )(
 (
 (
-		lv_op_1_1=	'assign' 
-    {
-        newLeafNode(lv_op_1_1, grammarAccess.getBindingL_Infixed_AnyStatementAccess().getOpAssignKeyword_0_0_1_0_0());
-    }
- 
-	    {
+		lv_op_1_1=RULE_KW_ASSIGN
+		{
+			newLeafNode(lv_op_1_1, grammarAccess.getBindingL_Infixed_AnyStatementAccess().getOpKW_ASSIGNTerminalRuleCall_0_0_1_0_0()); 
+		}
+		{
 	        if ($current==null) {
 	            $current = createModelElement(grammarAccess.getBindingL_Infixed_AnyStatementRule());
 	        }
-       		setWithLastConsumed($current, "op", lv_op_1_1, null);
+       		setWithLastConsumed(
+       			$current, 
+       			"op",
+        		lv_op_1_1, 
+        		"KW_ASSIGN");
 	    }
 
     |		lv_op_1_2=RULE_KW_2EQ
@@ -1658,8 +1660,7 @@ ruleInfixed
 )(
 (
 (
-	'assign' 
- 
+RULE_KW_ASSIGN
 
     |		RULE_KW_2EQ
 
@@ -1697,16 +1698,19 @@ ruleBindingL_Infixed_BalStatement
 )(
 (
 (
-		lv_op_1_1=	'assign' 
-    {
-        newLeafNode(lv_op_1_1, grammarAccess.getBindingL_Infixed_BalStatementAccess().getOpAssignKeyword_0_0_1_0_0());
-    }
- 
-	    {
+		lv_op_1_1=RULE_KW_ASSIGN
+		{
+			newLeafNode(lv_op_1_1, grammarAccess.getBindingL_Infixed_BalStatementAccess().getOpKW_ASSIGNTerminalRuleCall_0_0_1_0_0()); 
+		}
+		{
 	        if ($current==null) {
 	            $current = createModelElement(grammarAccess.getBindingL_Infixed_BalStatementRule());
 	        }
-       		setWithLastConsumed($current, "op", lv_op_1_1, null);
+       		setWithLastConsumed(
+       			$current, 
+       			"op",
+        		lv_op_1_1, 
+        		"KW_ASSIGN");
 	    }
 
     |		lv_op_1_2=RULE_KW_2EQ
@@ -1847,8 +1851,7 @@ ruleInfixed
 )(
 (
 (
-	'assign' 
- 
+RULE_KW_ASSIGN
 
     |		RULE_KW_2EQ
 
@@ -1886,16 +1889,19 @@ ruleBindingL_Infixed_Collection
 )(
 (
 (
-		lv_op_1_1=	'assign' 
-    {
-        newLeafNode(lv_op_1_1, grammarAccess.getBindingL_Infixed_CollectionAccess().getOpAssignKeyword_0_0_1_0_0());
-    }
- 
-	    {
+		lv_op_1_1=RULE_KW_ASSIGN
+		{
+			newLeafNode(lv_op_1_1, grammarAccess.getBindingL_Infixed_CollectionAccess().getOpKW_ASSIGNTerminalRuleCall_0_0_1_0_0()); 
+		}
+		{
 	        if ($current==null) {
 	            $current = createModelElement(grammarAccess.getBindingL_Infixed_CollectionRule());
 	        }
-       		setWithLastConsumed($current, "op", lv_op_1_1, null);
+       		setWithLastConsumed(
+       			$current, 
+       			"op",
+        		lv_op_1_1, 
+        		"KW_ASSIGN");
 	    }
 
     |		lv_op_1_2=RULE_KW_2EQ
@@ -2038,9 +2044,9 @@ ruleBindingR_InfixedExprsDecl_AnyStatement returns [EObject current=null]
         $current = $this_InfixedExprsDecl_0.current; 
         afterParserOrEnumRuleCall();
     }
-((	otherlv_1='assign' 
-    {
-    	newLeafNode(otherlv_1, grammarAccess.getBindingR_InfixedExprsDecl_AnyStatementAccess().getAssignKeyword_1_0_0());
+((this_KW_ASSIGN_1=RULE_KW_ASSIGN
+    { 
+    newLeafNode(this_KW_ASSIGN_1, grammarAccess.getBindingR_InfixedExprsDecl_AnyStatementAccess().getKW_ASSIGNTerminalRuleCall_1_0_0()); 
     }
 
     |this_KW_2EQ_2=RULE_KW_2EQ
@@ -10185,18 +10191,14 @@ ruleenlister1a_Labeled_Semicolon returns [EObject current=null]
 	    }
 
 )
-)(((	RULE_KW_SEMICOLON(
-(
-ruleLabeled
-)
-)))=>(this_KW_SEMICOLON_1=RULE_KW_SEMICOLON
+)(this_KW_SEMICOLON_1=RULE_KW_SEMICOLON
     { 
-    newLeafNode(this_KW_SEMICOLON_1, grammarAccess.getEnlister1a_Labeled_SemicolonAccess().getKW_SEMICOLONTerminalRuleCall_1_0_0()); 
+    newLeafNode(this_KW_SEMICOLON_1, grammarAccess.getEnlister1a_Labeled_SemicolonAccess().getKW_SEMICOLONTerminalRuleCall_1_0()); 
     }
 (
 (
 		{ 
-	        newCompositeNode(grammarAccess.getEnlister1a_Labeled_SemicolonAccess().getStatemntsLabeledParserRuleCall_1_0_1_0()); 
+	        newCompositeNode(grammarAccess.getEnlister1a_Labeled_SemicolonAccess().getStatemntsLabeledParserRuleCall_1_1_0()); 
 	    }
 		lv_statemnts_2_0=ruleLabeled		{
 	        if ($current==null) {
@@ -10211,7 +10213,7 @@ ruleLabeled
 	    }
 
 )
-)))*(this_KW_SEMICOLON_3=RULE_KW_SEMICOLON
+))*(this_KW_SEMICOLON_3=RULE_KW_SEMICOLON
     { 
     newLeafNode(this_KW_SEMICOLON_3, grammarAccess.getEnlister1a_Labeled_SemicolonAccess().getKW_SEMICOLONTerminalRuleCall_2()); 
     }
@@ -10276,7 +10278,7 @@ finally {
 // Entry rule entryRuleCurlyContents_Labeled
 entryRuleCurlyContents_Labeled returns [EObject current=null] 
 	@init { 
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
 	}
 	:
 	{ newCompositeNode(grammarAccess.getCurlyContents_LabeledRule()); }
@@ -10291,7 +10293,7 @@ finally {
 // Rule CurlyContents_Labeled
 ruleCurlyContents_Labeled returns [EObject current=null] 
     @init { enterRule(); 
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
     }
     @after { leaveRule(); }:
 
@@ -10316,7 +10318,7 @@ finally {
 // Entry rule entryRuleCurlyContentsList_Labeled
 entryRuleCurlyContentsList_Labeled returns [EObject current=null] 
 	@init { 
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
 	}
 	:
 	{ newCompositeNode(grammarAccess.getCurlyContentsList_LabeledRule()); }
@@ -10331,7 +10333,7 @@ finally {
 // Rule CurlyContentsList_Labeled
 ruleCurlyContentsList_Labeled returns [EObject current=null] 
     @init { enterRule(); 
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
     }
     @after { leaveRule(); }:
 ((
@@ -10352,18 +10354,14 @@ ruleCurlyContentsList_Labeled returns [EObject current=null]
 	    }
 
 )
-)(((	RULE_KW_SEMICOLON(
-(
-ruleCurlyContentB_Labeled
-)
-)))=>(this_KW_SEMICOLON_1=RULE_KW_SEMICOLON
+)(this_KW_SEMICOLON_1=RULE_KW_SEMICOLON
     { 
-    newLeafNode(this_KW_SEMICOLON_1, grammarAccess.getCurlyContentsList_LabeledAccess().getKW_SEMICOLONTerminalRuleCall_1_0_0()); 
+    newLeafNode(this_KW_SEMICOLON_1, grammarAccess.getCurlyContentsList_LabeledAccess().getKW_SEMICOLONTerminalRuleCall_1_0()); 
     }
 (
 (
 		{ 
-	        newCompositeNode(grammarAccess.getCurlyContentsList_LabeledAccess().getStatemtsCurlyContentB_LabeledParserRuleCall_1_0_1_0()); 
+	        newCompositeNode(grammarAccess.getCurlyContentsList_LabeledAccess().getStatemtsCurlyContentB_LabeledParserRuleCall_1_1_0()); 
 	    }
 		lv_statemts_2_0=ruleCurlyContentB_Labeled		{
 	        if ($current==null) {
@@ -10378,7 +10376,7 @@ ruleCurlyContentB_Labeled
 	    }
 
 )
-)))*(this_KW_SEMICOLON_3=RULE_KW_SEMICOLON
+))*(this_KW_SEMICOLON_3=RULE_KW_SEMICOLON
     { 
     newLeafNode(this_KW_SEMICOLON_3, grammarAccess.getCurlyContentsList_LabeledAccess().getKW_SEMICOLONTerminalRuleCall_2()); 
     }

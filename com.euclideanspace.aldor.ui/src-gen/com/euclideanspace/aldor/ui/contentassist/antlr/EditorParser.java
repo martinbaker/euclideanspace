@@ -283,11 +283,9 @@ public class EditorParser extends AbstractContentAssistParser {
 					put(grammarAccess.getEnlister1_InfixedExpr_CommaAccess().getGroup_1(), "rule__Enlister1_InfixedExpr_Comma__Group_1__0");
 					put(grammarAccess.getEnlister1a_Labeled_SemicolonAccess().getGroup(), "rule__Enlister1a_Labeled_Semicolon__Group__0");
 					put(grammarAccess.getEnlister1a_Labeled_SemicolonAccess().getGroup_1(), "rule__Enlister1a_Labeled_Semicolon__Group_1__0");
-					put(grammarAccess.getEnlister1a_Labeled_SemicolonAccess().getGroup_1_0(), "rule__Enlister1a_Labeled_Semicolon__Group_1_0__0");
 					put(grammarAccess.getCurly_LabeledAccess().getGroup(), "rule__Curly_Labeled__Group__0");
 					put(grammarAccess.getCurlyContentsList_LabeledAccess().getGroup(), "rule__CurlyContentsList_Labeled__Group__0");
 					put(grammarAccess.getCurlyContentsList_LabeledAccess().getGroup_1(), "rule__CurlyContentsList_Labeled__Group_1__0");
-					put(grammarAccess.getCurlyContentsList_LabeledAccess().getGroup_1_0(), "rule__CurlyContentsList_Labeled__Group_1_0__0");
 					put(grammarAccess.getCurlyContentB_LabeledAccess().getGroup(), "rule__CurlyContentB_Labeled__Group__0");
 					put(grammarAccess.getModelAccess().getInsertAssignment_0_1(), "rule__Model__InsertAssignment_0_1");
 					put(grammarAccess.getModelAccess().getCcAssignment_1(), "rule__Model__CcAssignment_1");
@@ -520,9 +518,9 @@ public class EditorParser extends AbstractContentAssistParser {
 					put(grammarAccess.getEnlister1_Infixed_CommaAccess().getI2Assignment_1_1(), "rule__Enlister1_Infixed_Comma__I2Assignment_1_1");
 					put(grammarAccess.getEnlister1_InfixedExpr_CommaAccess().getIeAssignment_1_1(), "rule__Enlister1_InfixedExpr_Comma__IeAssignment_1_1");
 					put(grammarAccess.getEnlister1a_Labeled_SemicolonAccess().getStatemntsAssignment_0(), "rule__Enlister1a_Labeled_Semicolon__StatemntsAssignment_0");
-					put(grammarAccess.getEnlister1a_Labeled_SemicolonAccess().getStatemntsAssignment_1_0_1(), "rule__Enlister1a_Labeled_Semicolon__StatemntsAssignment_1_0_1");
+					put(grammarAccess.getEnlister1a_Labeled_SemicolonAccess().getStatemntsAssignment_1_1(), "rule__Enlister1a_Labeled_Semicolon__StatemntsAssignment_1_1");
 					put(grammarAccess.getCurlyContentsList_LabeledAccess().getStatemtsAssignment_0(), "rule__CurlyContentsList_Labeled__StatemtsAssignment_0");
-					put(grammarAccess.getCurlyContentsList_LabeledAccess().getStatemtsAssignment_1_0_1(), "rule__CurlyContentsList_Labeled__StatemtsAssignment_1_0_1");
+					put(grammarAccess.getCurlyContentsList_LabeledAccess().getStatemtsAssignment_1_1(), "rule__CurlyContentsList_Labeled__StatemtsAssignment_1_1");
 					put(grammarAccess.getCurlyContentB_LabeledAccess().getPredAssignment_0(), "rule__CurlyContentB_Labeled__PredAssignment_0");
 					put(grammarAccess.getCurlyContentB_LabeledAccess().getLAssignment_1(), "rule__CurlyContentB_Labeled__LAssignment_1");
 					put(grammarAccess.getCurlyContentB_LabeledAccess().getPdAssignment_2(), "rule__CurlyContentB_Labeled__PdAssignment_2");
