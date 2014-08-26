@@ -390,7 +390,7 @@ public class EditorSyntacticSequencer extends AbstractSyntacticSequencer {
 	
 	/**
 	 * Syntax:
-	 *     'inline' | 'import'
+	 *     'import' | 'inline'
 	 */
 	protected void emit_Declaration_ImportKeyword_9_1_or_InlineKeyword_8_1(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
@@ -398,7 +398,7 @@ public class EditorSyntacticSequencer extends AbstractSyntacticSequencer {
 	
 	/**
 	 * Syntax:
-	 *     'catch' | 'but'
+	 *     'but' | 'catch'
 	 */
 	protected void emit_Flow_AnyStatement_ButKeyword_4_2_0_or_CatchKeyword_4_2_1(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
@@ -406,7 +406,7 @@ public class EditorSyntacticSequencer extends AbstractSyntacticSequencer {
 	
 	/**
 	 * Syntax:
-	 *     'catch' | 'but'
+	 *     'but' | 'catch'
 	 */
 	protected void emit_Flow_BalStatement_ButKeyword_4_2_0_or_CatchKeyword_4_2_1(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
@@ -414,7 +414,7 @@ public class EditorSyntacticSequencer extends AbstractSyntacticSequencer {
 	
 	/**
 	 * Syntax:
-	 *     ('free' | 'local' | 'fluid')?
+	 *     ('free' | 'fluid' | 'local')?
 	 */
 	protected void emit_ForLhs___FluidKeyword_0_2_or_FreeKeyword_0_0_or_LocalKeyword_0_1__q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);

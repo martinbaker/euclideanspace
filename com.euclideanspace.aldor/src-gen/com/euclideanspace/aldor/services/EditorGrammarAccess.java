@@ -51,8 +51,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		// * 
 		// * known bugs
 		// * ----------
-		// * 1) floating point literal
-		// * 2) import statement
+		// * 1) import statement
 		// * / / *
 		// * replaces Goal rule in Aldor grammar
 		// * 
@@ -4657,23 +4656,72 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 	public class LiteralElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Literal");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
-		private final RuleCall cTK_INTTerminalRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
-		private final RuleCall cTK_STRINGTerminalRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
+		private final Group cGroup_0 = (Group)cAlternatives.eContents().get(0);
+		private final Group cGroup_0_0 = (Group)cGroup_0.eContents().get(0);
+		private final Group cGroup_0_0_0 = (Group)cGroup_0_0.eContents().get(0);
+		private final RuleCall cTK_INTTerminalRuleCall_0_0_0_0 = (RuleCall)cGroup_0_0_0.eContents().get(0);
+		private final RuleCall cKW_DOTTerminalRuleCall_0_0_0_1 = (RuleCall)cGroup_0_0_0.eContents().get(1);
+		private final RuleCall cTK_FLOATTerminalRuleCall_0_0_1 = (RuleCall)cGroup_0_0.eContents().get(1);
+		private final Group cGroup_1 = (Group)cAlternatives.eContents().get(1);
+		private final Group cGroup_1_0 = (Group)cGroup_1.eContents().get(0);
+		private final Group cGroup_1_0_0 = (Group)cGroup_1_0.eContents().get(0);
+		private final RuleCall cTK_INTTerminalRuleCall_1_0_0_0 = (RuleCall)cGroup_1_0_0.eContents().get(0);
+		private final RuleCall cKW_DOTTerminalRuleCall_1_0_0_1 = (RuleCall)cGroup_1_0_0.eContents().get(1);
+		private final RuleCall cTK_INTTerminalRuleCall_1_1 = (RuleCall)cGroup_1.eContents().get(1);
+		private final RuleCall cTK_STRINGTerminalRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
 		
-		//Literal hidden(WS, KW_NEWLINE):
-		//	TK_INT //| TK_FLOAT
-		//	| TK_STRING;
+		//Literal hidden(WS, KW_NEWLINE): // example 2.4e5 or 2e5
+		//	=> ((TK_INT KW_DOT)? TK_FLOAT) // example 2.4 or 2
+		//	| => (TK_INT KW_DOT)? TK_INT | // example "abc"
+		//	TK_STRING;
 		public ParserRule getRule() { return rule; }
 
-		//TK_INT //| TK_FLOAT
-		//| TK_STRING
+		//// example 2.4e5 or 2e5
+		//=> ((TK_INT KW_DOT)? TK_FLOAT) // example 2.4 or 2
+		//| => (TK_INT KW_DOT)? TK_INT | // example "abc"
+		//TK_STRING
 		public Alternatives getAlternatives() { return cAlternatives; }
 
-		//TK_INT
-		public RuleCall getTK_INTTerminalRuleCall_0() { return cTK_INTTerminalRuleCall_0; }
+		//// example 2.4e5 or 2e5
+		//=> ((TK_INT KW_DOT)? TK_FLOAT)
+		public Group getGroup_0() { return cGroup_0; }
 
+		//(TK_INT KW_DOT)? TK_FLOAT
+		public Group getGroup_0_0() { return cGroup_0_0; }
+
+		//(TK_INT KW_DOT)?
+		public Group getGroup_0_0_0() { return cGroup_0_0_0; }
+
+		//TK_INT
+		public RuleCall getTK_INTTerminalRuleCall_0_0_0_0() { return cTK_INTTerminalRuleCall_0_0_0_0; }
+
+		//KW_DOT
+		public RuleCall getKW_DOTTerminalRuleCall_0_0_0_1() { return cKW_DOTTerminalRuleCall_0_0_0_1; }
+
+		//TK_FLOAT
+		public RuleCall getTK_FLOATTerminalRuleCall_0_0_1() { return cTK_FLOATTerminalRuleCall_0_0_1; }
+
+		//=> (TK_INT KW_DOT)? TK_INT
+		public Group getGroup_1() { return cGroup_1; }
+
+		//=> (TK_INT KW_DOT)?
+		public Group getGroup_1_0() { return cGroup_1_0; }
+
+		//TK_INT KW_DOT
+		public Group getGroup_1_0_0() { return cGroup_1_0_0; }
+
+		//TK_INT
+		public RuleCall getTK_INTTerminalRuleCall_1_0_0_0() { return cTK_INTTerminalRuleCall_1_0_0_0; }
+
+		//KW_DOT
+		public RuleCall getKW_DOTTerminalRuleCall_1_0_0_1() { return cKW_DOTTerminalRuleCall_1_0_0_1; }
+
+		//TK_INT
+		public RuleCall getTK_INTTerminalRuleCall_1_1() { return cTK_INTTerminalRuleCall_1_1; }
+
+		//// example "abc"
 		//TK_STRING
-		public RuleCall getTK_STRINGTerminalRuleCall_1() { return cTK_STRINGTerminalRuleCall_1; }
+		public RuleCall getTK_STRINGTerminalRuleCall_2() { return cTK_STRINGTerminalRuleCall_2; }
 	}
 
 	public class UnqualOp_ArrowTokElements extends AbstractParserRuleElementFinder {
@@ -5602,6 +5650,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 	private TerminalRule tTK_POSTDOC;
 	private TerminalRule tTK_STRING;
 	private TerminalRule tTK_INT;
+	private TerminalRule tTK_FLOAT;
 	private TerminalRule tKW_QUOTE;
 	private TerminalRule tKW_OPAREN;
 	private TerminalRule tKW_CPAREN;
@@ -5830,8 +5879,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 	// * 
 	// * known bugs
 	// * ----------
-	// * 1) floating point literal
-	// * 2) import statement
+	// * 1) import statement
 	// * / / *
 	// * replaces Goal rule in Aldor grammar
 	// * 
@@ -5913,7 +5961,6 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 
 	/// * string literals are enclosed in double quotes
 	// *         {TK_STRING, 0,"TK_STRING", 1, 0, 0, 0, 0, 0, 1, 0, 170, 0},
-	// 
 	// * / terminal TK_STRING:
 	//	"\"" !"\""* "\"";
 	public TerminalRule getTK_STRINGRule() {
@@ -5921,13 +5968,25 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 	} 
 
 	/// *
-	// * Integer
+	// * Integer Literal
 	// *
 	// * {TK_INT, 0,"TK_INT", 1, 0, 0, 0, 0, 0, 1, 0, 170, 0},
 	// * / terminal TK_INT returns ecore::EInt:
 	//	"0".."9"+;
 	public TerminalRule getTK_INTRule() {
 		return (tTK_INT != null) ? tTK_INT : (tTK_INT = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "TK_INT"));
+	} 
+
+	/// *
+	// * Floating Point Literal
+	// * This must be defined after: integer literal, otherwise integers will be hidden.
+	// * 
+	// * For a discussion about how to implement floats see this page:
+	// * http://www.euclideanspace.com/software/development/eclipse/xtext/grammar/lexer/index.htm#float
+	// * / terminal TK_FLOAT:
+	//	TK_INT ("e" | "E") ("+" | "-")? TK_INT;
+	public TerminalRule getTK_FLOATRule() {
+		return (tTK_FLOAT != null) ? tTK_FLOAT : (tTK_FLOAT = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "TK_FLOAT"));
 	} 
 
 	/// * grouping
@@ -7563,9 +7622,10 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		return getIdAccess().getRule();
 	}
 
-	//Literal hidden(WS, KW_NEWLINE):
-	//	TK_INT //| TK_FLOAT
-	//	| TK_STRING;
+	//Literal hidden(WS, KW_NEWLINE): // example 2.4e5 or 2e5
+	//	=> ((TK_INT KW_DOT)? TK_FLOAT) // example 2.4 or 2
+	//	| => (TK_INT KW_DOT)? TK_INT | // example "abc"
+	//	TK_STRING;
 	public LiteralElements getLiteralAccess() {
 		return (pLiteral != null) ? pLiteral : (pLiteral = new LiteralElements());
 	}

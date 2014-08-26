@@ -30,8 +30,7 @@ generate editor "http://www.euclideanspace.com/aldor/Editor"
  * 
  * known bugs
  * ----------
- * 1) floating point literal
- * 2) import statement
+ * 1) import statement
  */
 
 /*
@@ -94,21 +93,32 @@ terminal TK_PREDOC :
 
 terminal TK_POSTDOC :
   ('++') !('\n'|'\r')* ;//('\r'|'\n')?;
+  
 
 /* string literals are enclosed in double quotes
  *         {TK_STRING, 0,"TK_STRING", 1, 0, 0, 0, 0, 0, 1, 0, 170, 0},
- 
 */
 terminal TK_STRING :
 '"' ( !('"') )* '"'
 ;
+
 /*
- * Integer
+ * Integer Literal
  *
  * {TK_INT, 0,"TK_INT", 1, 0, 0, 0, 0, 0, 1, 0, 170, 0},
  */
 terminal TK_INT returns ecore::EInt: ('0'..'9')+;
 
+/*
+ * Floating Point Literal
+ * This must be defined after: integer literal, otherwise integers will be hidden.
+ * 
+ * For a discussion about how to implement floats see this page:
+ * http://www.euclideanspace.com/software/development/eclipse/xtext/grammar/lexer/index.htm#float
+ */
+terminal TK_FLOAT:
+	TK_INT ('e' | 'E') ('+' | '-')? TK_INT;
+    
 /* grouping
 * {KW_OBBrack, 0,"[|", 0, 0, 1, 0, 0, 0, 1, 0, 0, 0},
 * {KW_OBCurly, 0,"{|", 0, 0, 1, 0, 0, 0, 1, 0, 0, 0},
@@ -1058,19 +1068,14 @@ Block hidden(WS,KW_NEWLINE):
  */
 Parened hidden(WS,KW_NEWLINE):
  op=KW_OPAREN e=Expression? KW_CPAREN
-// op=KW_OPAREN e=Labeled? KW_CPAREN
-// op=KW_OPAREN e=E3? KW_CPAREN
 ;
 
 Bracketed hidden(WS,KW_NEWLINE):
  op=KW_OBRACK e=Expression? KW_CBRACK
-// op=KW_OBRACK e=E3? KW_CBRACK
 ;
 
 QuotedIds hidden(WS,KW_NEWLINE):
 	{QuotedIds}
-//KW_QUOTE KW_QUOTE
-//| 
  op=KW_QUOTE n=Names? KW_QUOTE
 ;
 
@@ -1103,9 +1108,11 @@ name=(TK_ID | KW_SHARP | KW_TILDE)
 ;
 
 Literal hidden(WS,KW_NEWLINE):
-TK_INT
-//| TK_FLOAT
-| TK_STRING
+  =>((TK_INT KW_DOT)? TK_FLOAT) // example 2.4e5 or 2e5
+  |
+  (=>(TK_INT KW_DOT)? TK_INT) // example 2.4 or 2
+  |
+  TK_STRING // example "abc"
 ;
 
 /*

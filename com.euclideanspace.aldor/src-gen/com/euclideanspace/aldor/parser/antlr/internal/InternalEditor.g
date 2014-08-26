@@ -8787,20 +8787,56 @@ ruleLiteral returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()
 		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
     }
     @after { leaveRule(); }:
-(    this_TK_INT_0=RULE_TK_INT    {
+((((( RULE_TK_INT RULE_KW_DOT)? RULE_TK_FLOAT))=>((    this_TK_INT_0=RULE_TK_INT    {
 		$current.merge(this_TK_INT_0);
     }
 
     { 
-    newLeafNode(this_TK_INT_0, grammarAccess.getLiteralAccess().getTK_INTTerminalRuleCall_0()); 
+    newLeafNode(this_TK_INT_0, grammarAccess.getLiteralAccess().getTK_INTTerminalRuleCall_0_0_0_0()); 
     }
-
-    |    this_TK_STRING_1=RULE_TK_STRING    {
-		$current.merge(this_TK_STRING_1);
+    this_KW_DOT_1=RULE_KW_DOT    {
+		$current.merge(this_KW_DOT_1);
     }
 
     { 
-    newLeafNode(this_TK_STRING_1, grammarAccess.getLiteralAccess().getTK_STRINGTerminalRuleCall_1()); 
+    newLeafNode(this_KW_DOT_1, grammarAccess.getLiteralAccess().getKW_DOTTerminalRuleCall_0_0_0_1()); 
+    }
+)?    this_TK_FLOAT_2=RULE_TK_FLOAT    {
+		$current.merge(this_TK_FLOAT_2);
+    }
+
+    { 
+    newLeafNode(this_TK_FLOAT_2, grammarAccess.getLiteralAccess().getTK_FLOATTerminalRuleCall_0_0_1()); 
+    }
+))
+    |(((( RULE_TK_INT RULE_KW_DOT))=>(    this_TK_INT_3=RULE_TK_INT    {
+		$current.merge(this_TK_INT_3);
+    }
+
+    { 
+    newLeafNode(this_TK_INT_3, grammarAccess.getLiteralAccess().getTK_INTTerminalRuleCall_1_0_0_0()); 
+    }
+    this_KW_DOT_4=RULE_KW_DOT    {
+		$current.merge(this_KW_DOT_4);
+    }
+
+    { 
+    newLeafNode(this_KW_DOT_4, grammarAccess.getLiteralAccess().getKW_DOTTerminalRuleCall_1_0_0_1()); 
+    }
+))?    this_TK_INT_5=RULE_TK_INT    {
+		$current.merge(this_TK_INT_5);
+    }
+
+    { 
+    newLeafNode(this_TK_INT_5, grammarAccess.getLiteralAccess().getTK_INTTerminalRuleCall_1_1()); 
+    }
+)
+    |    this_TK_STRING_6=RULE_TK_STRING    {
+		$current.merge(this_TK_STRING_6);
+    }
+
+    { 
+    newLeafNode(this_TK_STRING_6, grammarAccess.getLiteralAccess().getTK_STRINGTerminalRuleCall_2()); 
     }
 )
     ;
@@ -10488,6 +10524,8 @@ RULE_TK_POSTDOC : '++' ~(('\n'|'\r'))*;
 RULE_TK_STRING : '"' ~('"')* '"';
 
 RULE_TK_INT : ('0'..'9')+;
+
+RULE_TK_FLOAT : RULE_TK_INT ('e'|'E') ('+'|'-')? RULE_TK_INT;
 
 RULE_KW_QUOTE : '\'';
 

@@ -249,6 +249,12 @@ public class EditorParser extends AbstractContentAssistParser {
 					put(grammarAccess.getNamesAccess().getGroup(), "rule__Names__Group__0");
 					put(grammarAccess.getNamesAccess().getGroup_1(), "rule__Names__Group_1__0");
 					put(grammarAccess.getNameAccess().getGroup_0(), "rule__Name__Group_0__0");
+					put(grammarAccess.getLiteralAccess().getGroup_0(), "rule__Literal__Group_0__0");
+					put(grammarAccess.getLiteralAccess().getGroup_0_0(), "rule__Literal__Group_0_0__0");
+					put(grammarAccess.getLiteralAccess().getGroup_0_0_0(), "rule__Literal__Group_0_0_0__0");
+					put(grammarAccess.getLiteralAccess().getGroup_1(), "rule__Literal__Group_1__0");
+					put(grammarAccess.getLiteralAccess().getGroup_1_0(), "rule__Literal__Group_1_0__0");
+					put(grammarAccess.getLiteralAccess().getGroup_1_0_0(), "rule__Literal__Group_1_0_0__0");
 					put(grammarAccess.getUnqualOp_ArrowTokAccess().getGroup(), "rule__UnqualOp_ArrowTok__Group__0");
 					put(grammarAccess.getUnqualOp_LatticeTokAccess().getGroup(), "rule__UnqualOp_LatticeTok__Group__0");
 					put(grammarAccess.getUnqualOp_RelationTokAccess().getGroup(), "rule__UnqualOp_RelationTok__Group__0");

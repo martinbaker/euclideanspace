@@ -22,19 +22,20 @@ import java.util.HashMap;
 @SuppressWarnings("all")
 public class InternalEditorParser extends AbstractInternalAntlrParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_TK_STRING", "RULE_KW_AT", "RULE_KW_COLON", "RULE_KW_COLONSTAR", "RULE_KW_ASSIGN", "RULE_KW_2EQ", "RULE_KW_MARROW", "RULE_KW_MAPSTO", "RULE_KW_MAPSTOSTAR", "RULE_KW_BAR", "RULE_KW_2COLON", "RULE_KW_DOLLAR", "RULE_KW_RARROW", "RULE_KW_LARROW", "RULE_KW_MAPSTAR", "RULE_KW_VEE", "RULE_KW_WEDGE", "RULE_KW_EQ", "RULE_KW_TILDEE", "RULE_KW_HATE", "RULE_KW_GE", "RULE_KW_GT", "RULE_KW_2GT", "RULE_KW_LE", "RULE_KW_LT", "RULE_KW_2LT", "RULE_KW_2DOT", "RULE_KW_PLUS", "RULE_KW_MINUS", "RULE_KW_PLUSMINUS", "RULE_KW_STAR", "RULE_KW_SLASH", "RULE_KW_BACKSLASH", "RULE_KW_2STAR", "RULE_KW_HAT", "RULE_KW_DOT", "RULE_KW_OPAREN", "RULE_KW_CPAREN", "RULE_KW_OBRACK", "RULE_KW_CBRACK", "RULE_KW_QUOTE", "RULE_TK_ID", "RULE_KW_COMMA", "RULE_KW_SHARP", "RULE_KW_TILDE", "RULE_TK_INT", "RULE_TK_PREDOC", "RULE_TK_POSTDOC", "RULE_KW_SEMICOLON", "RULE_KW_OCURLY", "RULE_KW_CCURLY", "RULE_WS", "RULE_KW_NEWLINE", "RULE_KW_AMPERSAND", "RULE_KW_IMPLIES", "RULE_ANY_OTHER", "'#include'", "'macro'", "'extend'", "'local'", "'free'", "'fluid'", "'default'", "'define'", "'fix'", "'inline'", "'import'", "'export'", "'to'", "'from'", "'where'", "'if'", "'then'", "'implies'", "'else'", "'repeat'", "'try'", "'but'", "'catch'", "'select'", "'in'", "'do'", "'delay'", "'reference'", "'generate'", "'assert'", "'iterate'", "'break'", "'return'", "'yield'", "'except'", "'throw'", "'goto'", "'never'", "'of'", "'always'", "'finally'", "'for'", "'while'", "'and'", "'or'", "'has'", "'pretend'", "'with'", "'add'", "'is'", "'isnt'", "'case'", "'by'", "'mod'", "'quo'", "'rem'", "'exquo'", "'not'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_TK_STRING", "RULE_KW_AT", "RULE_KW_COLON", "RULE_KW_COLONSTAR", "RULE_KW_ASSIGN", "RULE_KW_2EQ", "RULE_KW_MARROW", "RULE_KW_MAPSTO", "RULE_KW_MAPSTOSTAR", "RULE_KW_BAR", "RULE_KW_2COLON", "RULE_KW_DOLLAR", "RULE_KW_RARROW", "RULE_KW_LARROW", "RULE_KW_MAPSTAR", "RULE_KW_VEE", "RULE_KW_WEDGE", "RULE_KW_EQ", "RULE_KW_TILDEE", "RULE_KW_HATE", "RULE_KW_GE", "RULE_KW_GT", "RULE_KW_2GT", "RULE_KW_LE", "RULE_KW_LT", "RULE_KW_2LT", "RULE_KW_2DOT", "RULE_KW_PLUS", "RULE_KW_MINUS", "RULE_KW_PLUSMINUS", "RULE_KW_STAR", "RULE_KW_SLASH", "RULE_KW_BACKSLASH", "RULE_KW_2STAR", "RULE_KW_HAT", "RULE_KW_DOT", "RULE_KW_OPAREN", "RULE_KW_CPAREN", "RULE_KW_OBRACK", "RULE_KW_CBRACK", "RULE_KW_QUOTE", "RULE_TK_ID", "RULE_KW_COMMA", "RULE_KW_SHARP", "RULE_KW_TILDE", "RULE_TK_INT", "RULE_TK_FLOAT", "RULE_TK_PREDOC", "RULE_TK_POSTDOC", "RULE_KW_SEMICOLON", "RULE_KW_OCURLY", "RULE_KW_CCURLY", "RULE_WS", "RULE_KW_NEWLINE", "RULE_KW_AMPERSAND", "RULE_KW_IMPLIES", "RULE_ANY_OTHER", "'#include'", "'macro'", "'extend'", "'local'", "'free'", "'fluid'", "'default'", "'define'", "'fix'", "'inline'", "'import'", "'export'", "'to'", "'from'", "'where'", "'if'", "'then'", "'implies'", "'else'", "'repeat'", "'try'", "'but'", "'catch'", "'select'", "'in'", "'do'", "'delay'", "'reference'", "'generate'", "'assert'", "'iterate'", "'break'", "'return'", "'yield'", "'except'", "'throw'", "'goto'", "'never'", "'of'", "'always'", "'finally'", "'for'", "'while'", "'and'", "'or'", "'has'", "'pretend'", "'with'", "'add'", "'is'", "'isnt'", "'case'", "'by'", "'mod'", "'quo'", "'rem'", "'exquo'", "'not'"
     };
     public static final int RULE_KW_GE=24;
-    public static final int RULE_KW_AMPERSAND=57;
+    public static final int RULE_KW_AMPERSAND=58;
     public static final int RULE_KW_DOT=39;
-    public static final int RULE_ANY_OTHER=59;
+    public static final int RULE_ANY_OTHER=60;
     public static final int RULE_KW_WEDGE=20;
+    public static final int RULE_TK_FLOAT=50;
     public static final int RULE_KW_GT=25;
     public static final int EOF=-1;
     public static final int T__93=93;
     public static final int T__94=94;
     public static final int T__91=91;
-    public static final int RULE_KW_IMPLIES=58;
+    public static final int RULE_KW_IMPLIES=59;
     public static final int T__92=92;
     public static final int RULE_KW_2EQ=9;
     public static final int T__90=90;
@@ -65,10 +66,10 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
     public static final int T__86=86;
     public static final int T__89=89;
     public static final int RULE_KW_TILDEE=22;
-    public static final int RULE_KW_CCURLY=54;
+    public static final int RULE_KW_CCURLY=55;
     public static final int T__88=88;
     public static final int T__71=71;
-    public static final int RULE_TK_POSTDOC=51;
+    public static final int RULE_TK_POSTDOC=52;
     public static final int T__72=72;
     public static final int RULE_KW_2GT=26;
     public static final int T__70=70;
@@ -92,10 +93,11 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
     public static final int T__67=67;
     public static final int RULE_KW_OPAREN=40;
     public static final int T__64=64;
-    public static final int RULE_TK_PREDOC=50;
+    public static final int RULE_TK_PREDOC=51;
     public static final int T__65=65;
     public static final int T__62=62;
     public static final int T__63=63;
+    public static final int T__118=118;
     public static final int T__116=116;
     public static final int RULE_KW_CPAREN=41;
     public static final int T__117=117;
@@ -106,8 +108,7 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
     public static final int RULE_KW_HATE=23;
     public static final int RULE_KW_PLUS=31;
     public static final int T__61=61;
-    public static final int T__60=60;
-    public static final int RULE_KW_SEMICOLON=52;
+    public static final int RULE_KW_SEMICOLON=53;
     public static final int RULE_KW_SHARP=47;
     public static final int RULE_KW_LE=27;
     public static final int T__107=107;
@@ -131,13 +132,13 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
     public static final int T__101=101;
     public static final int T__100=100;
     public static final int RULE_KW_EQ=21;
-    public static final int RULE_KW_NEWLINE=56;
+    public static final int RULE_KW_NEWLINE=57;
     public static final int RULE_TK_STRING=4;
-    public static final int RULE_KW_OCURLY=53;
+    public static final int RULE_KW_OCURLY=54;
     public static final int RULE_KW_COMMA=46;
     public static final int RULE_KW_2STAR=37;
     public static final int RULE_KW_2DOT=30;
-    public static final int RULE_WS=55;
+    public static final int RULE_WS=56;
     public static final int RULE_TK_INT=49;
 
     // delegates
@@ -250,7 +251,7 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
                 int alt1=2;
                 int LA1_0 = input.LA(1);
 
-                if ( (LA1_0==60) ) {
+                if ( (LA1_0==61) ) {
                     alt1=1;
                 }
 
@@ -259,7 +260,7 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
             	case 1 :
             	    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:87:4: otherlv_0= '#include' ( (lv_insert_1_0= RULE_TK_STRING ) )
             	    {
-            	    otherlv_0=(Token)match(input,60,FOLLOW_60_in_ruleModel133); if (state.failed) return current;
+            	    otherlv_0=(Token)match(input,61,FOLLOW_61_in_ruleModel133); if (state.failed) return current;
             	    if ( state.backtracking==0 ) {
 
             	          	newLeafNode(otherlv_0, grammarAccess.getModelAccess().getIncludeKeyword_0_0());
@@ -565,12 +566,12 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
             case RULE_KW_SHARP:
             case RULE_KW_TILDE:
             case RULE_TK_INT:
+            case RULE_TK_FLOAT:
             case RULE_KW_OCURLY:
-            case 75:
-            case 79:
+            case 76:
             case 80:
-            case 83:
-            case 85:
+            case 81:
+            case 84:
             case 86:
             case 87:
             case 88:
@@ -583,9 +584,9 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
             case 95:
             case 96:
             case 97:
-            case 101:
+            case 98:
             case 102:
-            case 107:
+            case 103:
             case 108:
             case 109:
             case 110:
@@ -596,11 +597,11 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
             case 115:
             case 116:
             case 117:
+            case 118:
                 {
                 alt3=1;
                 }
                 break;
-            case 61:
             case 62:
             case 63:
             case 64:
@@ -611,6 +612,7 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
             case 69:
             case 70:
             case 71:
+            case 72:
                 {
                 alt3=2;
                 }
@@ -705,7 +707,7 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
                     int alt2=2;
                     int LA2_0 = input.LA(1);
 
-                    if ( ((LA2_0>=RULE_TK_STRING && LA2_0<=RULE_KW_AT)||(LA2_0>=RULE_KW_RARROW && LA2_0<=RULE_KW_HAT)||LA2_0==RULE_KW_OPAREN||LA2_0==RULE_KW_OBRACK||(LA2_0>=RULE_KW_QUOTE && LA2_0<=RULE_TK_ID)||(LA2_0>=RULE_KW_SHARP && LA2_0<=RULE_TK_INT)||LA2_0==RULE_KW_OCURLY||(LA2_0>=61 && LA2_0<=71)||LA2_0==75||(LA2_0>=79 && LA2_0<=80)||LA2_0==83||(LA2_0>=85 && LA2_0<=97)||(LA2_0>=101 && LA2_0<=102)||(LA2_0>=107 && LA2_0<=117)) ) {
+                    if ( ((LA2_0>=RULE_TK_STRING && LA2_0<=RULE_KW_AT)||(LA2_0>=RULE_KW_RARROW && LA2_0<=RULE_KW_HAT)||LA2_0==RULE_KW_OPAREN||LA2_0==RULE_KW_OBRACK||(LA2_0>=RULE_KW_QUOTE && LA2_0<=RULE_TK_ID)||(LA2_0>=RULE_KW_SHARP && LA2_0<=RULE_TK_FLOAT)||LA2_0==RULE_KW_OCURLY||(LA2_0>=62 && LA2_0<=72)||LA2_0==76||(LA2_0>=80 && LA2_0<=81)||LA2_0==84||(LA2_0>=86 && LA2_0<=98)||(LA2_0>=102 && LA2_0<=103)||(LA2_0>=108 && LA2_0<=118)) ) {
                         alt2=1;
                     }
                     switch (alt2) {
@@ -896,7 +898,7 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    otherlv_1=(Token)match(input,61,FOLLOW_61_in_ruleDeclaration585); if (state.failed) return current;
+                    otherlv_1=(Token)match(input,62,FOLLOW_62_in_ruleDeclaration585); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                           	newLeafNode(otherlv_1, grammarAccess.getDeclarationAccess().getMacroKeyword_0_1());
@@ -962,7 +964,7 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    otherlv_4=(Token)match(input,62,FOLLOW_62_in_ruleDeclaration635); if (state.failed) return current;
+                    otherlv_4=(Token)match(input,63,FOLLOW_63_in_ruleDeclaration635); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                           	newLeafNode(otherlv_4, grammarAccess.getDeclarationAccess().getExtendKeyword_1_1());
@@ -1028,7 +1030,7 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    otherlv_7=(Token)match(input,63,FOLLOW_63_in_ruleDeclaration685); if (state.failed) return current;
+                    otherlv_7=(Token)match(input,64,FOLLOW_64_in_ruleDeclaration685); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                           	newLeafNode(otherlv_7, grammarAccess.getDeclarationAccess().getLocalKeyword_2_1());
@@ -1094,7 +1096,7 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    otherlv_10=(Token)match(input,64,FOLLOW_64_in_ruleDeclaration735); if (state.failed) return current;
+                    otherlv_10=(Token)match(input,65,FOLLOW_65_in_ruleDeclaration735); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                           	newLeafNode(otherlv_10, grammarAccess.getDeclarationAccess().getFreeKeyword_3_1());
@@ -1160,7 +1162,7 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    otherlv_13=(Token)match(input,65,FOLLOW_65_in_ruleDeclaration785); if (state.failed) return current;
+                    otherlv_13=(Token)match(input,66,FOLLOW_66_in_ruleDeclaration785); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                           	newLeafNode(otherlv_13, grammarAccess.getDeclarationAccess().getFluidKeyword_4_1());
@@ -1226,7 +1228,7 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    otherlv_16=(Token)match(input,66,FOLLOW_66_in_ruleDeclaration835); if (state.failed) return current;
+                    otherlv_16=(Token)match(input,67,FOLLOW_67_in_ruleDeclaration835); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                           	newLeafNode(otherlv_16, grammarAccess.getDeclarationAccess().getDefaultKeyword_5_1());
@@ -1292,7 +1294,7 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    otherlv_19=(Token)match(input,67,FOLLOW_67_in_ruleDeclaration885); if (state.failed) return current;
+                    otherlv_19=(Token)match(input,68,FOLLOW_68_in_ruleDeclaration885); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                           	newLeafNode(otherlv_19, grammarAccess.getDeclarationAccess().getDefineKeyword_6_1());
@@ -1358,7 +1360,7 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    otherlv_22=(Token)match(input,68,FOLLOW_68_in_ruleDeclaration935); if (state.failed) return current;
+                    otherlv_22=(Token)match(input,69,FOLLOW_69_in_ruleDeclaration935); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                           	newLeafNode(otherlv_22, grammarAccess.getDeclarationAccess().getFixKeyword_7_1());
@@ -1424,7 +1426,7 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    otherlv_25=(Token)match(input,69,FOLLOW_69_in_ruleDeclaration985); if (state.failed) return current;
+                    otherlv_25=(Token)match(input,70,FOLLOW_70_in_ruleDeclaration985); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                           	newLeafNode(otherlv_25, grammarAccess.getDeclarationAccess().getInlineKeyword_8_1());
@@ -1434,7 +1436,7 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
                     int alt4=2;
                     int LA4_0 = input.LA(1);
 
-                    if ( (LA4_0==RULE_TK_STRING||(LA4_0>=RULE_KW_RARROW && LA4_0<=RULE_KW_HAT)||LA4_0==RULE_KW_OPAREN||LA4_0==RULE_KW_OBRACK||(LA4_0>=RULE_KW_QUOTE && LA4_0<=RULE_TK_ID)||(LA4_0>=RULE_KW_SHARP && LA4_0<=RULE_TK_INT)||LA4_0==RULE_KW_OCURLY||(LA4_0>=107 && LA4_0<=117)) ) {
+                    if ( (LA4_0==RULE_TK_STRING||(LA4_0>=RULE_KW_RARROW && LA4_0<=RULE_KW_HAT)||LA4_0==RULE_KW_OPAREN||LA4_0==RULE_KW_OBRACK||(LA4_0>=RULE_KW_QUOTE && LA4_0<=RULE_TK_ID)||(LA4_0>=RULE_KW_SHARP && LA4_0<=RULE_TK_FLOAT)||LA4_0==RULE_KW_OCURLY||(LA4_0>=108 && LA4_0<=118)) ) {
                         alt4=1;
                     }
                     switch (alt4) {
@@ -1480,7 +1482,7 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
                     int alt5=2;
                     int LA5_0 = input.LA(1);
 
-                    if ( (LA5_0==73) ) {
+                    if ( (LA5_0==74) ) {
                         alt5=1;
                     }
                     switch (alt5) {
@@ -1547,7 +1549,7 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    otherlv_29=(Token)match(input,70,FOLLOW_70_in_ruleDeclaration1058); if (state.failed) return current;
+                    otherlv_29=(Token)match(input,71,FOLLOW_71_in_ruleDeclaration1058); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                           	newLeafNode(otherlv_29, grammarAccess.getDeclarationAccess().getImportKeyword_9_1());
@@ -1557,7 +1559,7 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
                     int alt6=2;
                     int LA6_0 = input.LA(1);
 
-                    if ( (LA6_0==RULE_TK_STRING||(LA6_0>=RULE_KW_RARROW && LA6_0<=RULE_KW_HAT)||LA6_0==RULE_KW_OPAREN||LA6_0==RULE_KW_OBRACK||(LA6_0>=RULE_KW_QUOTE && LA6_0<=RULE_TK_ID)||(LA6_0>=RULE_KW_SHARP && LA6_0<=RULE_TK_INT)||LA6_0==RULE_KW_OCURLY||(LA6_0>=107 && LA6_0<=117)) ) {
+                    if ( (LA6_0==RULE_TK_STRING||(LA6_0>=RULE_KW_RARROW && LA6_0<=RULE_KW_HAT)||LA6_0==RULE_KW_OPAREN||LA6_0==RULE_KW_OBRACK||(LA6_0>=RULE_KW_QUOTE && LA6_0<=RULE_TK_ID)||(LA6_0>=RULE_KW_SHARP && LA6_0<=RULE_TK_FLOAT)||LA6_0==RULE_KW_OCURLY||(LA6_0>=108 && LA6_0<=118)) ) {
                         alt6=1;
                     }
                     switch (alt6) {
@@ -1603,7 +1605,7 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
                     int alt7=2;
                     int LA7_0 = input.LA(1);
 
-                    if ( (LA7_0==73) ) {
+                    if ( (LA7_0==74) ) {
                         alt7=1;
                     }
                     switch (alt7) {
@@ -1812,7 +1814,7 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
             int alt12=3;
             int LA12_0 = input.LA(1);
 
-            if ( (LA12_0==71) ) {
+            if ( (LA12_0==72) ) {
                 int LA12_1 = input.LA(2);
 
                 if ( (true) ) {
@@ -1859,7 +1861,7 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    otherlv_1=(Token)match(input,71,FOLLOW_71_in_ruleExportDecl1248); if (state.failed) return current;
+                    otherlv_1=(Token)match(input,72,FOLLOW_72_in_ruleExportDecl1248); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                           	newLeafNode(otherlv_1, grammarAccess.getExportDeclAccess().getExportKeyword_0_1());
@@ -1869,7 +1871,7 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
                     int alt9=2;
                     int LA9_0 = input.LA(1);
 
-                    if ( (LA9_0==RULE_TK_STRING||(LA9_0>=RULE_KW_RARROW && LA9_0<=RULE_KW_HAT)||LA9_0==RULE_KW_OPAREN||LA9_0==RULE_KW_OBRACK||(LA9_0>=RULE_KW_QUOTE && LA9_0<=RULE_TK_ID)||(LA9_0>=RULE_KW_SHARP && LA9_0<=RULE_TK_INT)||LA9_0==RULE_KW_OCURLY||(LA9_0>=107 && LA9_0<=117)) ) {
+                    if ( (LA9_0==RULE_TK_STRING||(LA9_0>=RULE_KW_RARROW && LA9_0<=RULE_KW_HAT)||LA9_0==RULE_KW_OPAREN||LA9_0==RULE_KW_OBRACK||(LA9_0>=RULE_KW_QUOTE && LA9_0<=RULE_TK_ID)||(LA9_0>=RULE_KW_SHARP && LA9_0<=RULE_TK_FLOAT)||LA9_0==RULE_KW_OCURLY||(LA9_0>=108 && LA9_0<=118)) ) {
                         alt9=1;
                     }
                     switch (alt9) {
@@ -1926,7 +1928,7 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
                     // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:701:6: (otherlv_3= 'export' ( (lv_s_4_0= ruleSig ) )? ( (lv_tp_5_0= ruleToPart ) ) )
                     // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:701:8: otherlv_3= 'export' ( (lv_s_4_0= ruleSig ) )? ( (lv_tp_5_0= ruleToPart ) )
                     {
-                    otherlv_3=(Token)match(input,71,FOLLOW_71_in_ruleExportDecl1319); if (state.failed) return current;
+                    otherlv_3=(Token)match(input,72,FOLLOW_72_in_ruleExportDecl1319); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                           	newLeafNode(otherlv_3, grammarAccess.getExportDeclAccess().getExportKeyword_1_0_0());
@@ -1936,7 +1938,7 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
                     int alt10=2;
                     int LA10_0 = input.LA(1);
 
-                    if ( (LA10_0==RULE_TK_STRING||(LA10_0>=RULE_KW_RARROW && LA10_0<=RULE_KW_HAT)||LA10_0==RULE_KW_OPAREN||LA10_0==RULE_KW_OBRACK||(LA10_0>=RULE_KW_QUOTE && LA10_0<=RULE_TK_ID)||(LA10_0>=RULE_KW_SHARP && LA10_0<=RULE_TK_INT)||LA10_0==RULE_KW_OCURLY||(LA10_0>=107 && LA10_0<=117)) ) {
+                    if ( (LA10_0==RULE_TK_STRING||(LA10_0>=RULE_KW_RARROW && LA10_0<=RULE_KW_HAT)||LA10_0==RULE_KW_OPAREN||LA10_0==RULE_KW_OBRACK||(LA10_0>=RULE_KW_QUOTE && LA10_0<=RULE_TK_ID)||(LA10_0>=RULE_KW_SHARP && LA10_0<=RULE_TK_FLOAT)||LA10_0==RULE_KW_OCURLY||(LA10_0>=108 && LA10_0<=118)) ) {
                         alt10=1;
                     }
                     switch (alt10) {
@@ -2031,7 +2033,7 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
                     // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:751:6: (otherlv_6= 'export' ( (lv_s_7_0= ruleSig ) )? ( (lv_fp_8_0= ruleFromPart ) ) )
                     // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:751:8: otherlv_6= 'export' ( (lv_s_7_0= ruleSig ) )? ( (lv_fp_8_0= ruleFromPart ) )
                     {
-                    otherlv_6=(Token)match(input,71,FOLLOW_71_in_ruleExportDecl1412); if (state.failed) return current;
+                    otherlv_6=(Token)match(input,72,FOLLOW_72_in_ruleExportDecl1412); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                           	newLeafNode(otherlv_6, grammarAccess.getExportDeclAccess().getExportKeyword_2_0_0());
@@ -2041,7 +2043,7 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
                     int alt11=2;
                     int LA11_0 = input.LA(1);
 
-                    if ( (LA11_0==RULE_TK_STRING||(LA11_0>=RULE_KW_RARROW && LA11_0<=RULE_KW_HAT)||LA11_0==RULE_KW_OPAREN||LA11_0==RULE_KW_OBRACK||(LA11_0>=RULE_KW_QUOTE && LA11_0<=RULE_TK_ID)||(LA11_0>=RULE_KW_SHARP && LA11_0<=RULE_TK_INT)||LA11_0==RULE_KW_OCURLY||(LA11_0>=107 && LA11_0<=117)) ) {
+                    if ( (LA11_0==RULE_TK_STRING||(LA11_0>=RULE_KW_RARROW && LA11_0<=RULE_KW_HAT)||LA11_0==RULE_KW_OPAREN||LA11_0==RULE_KW_OBRACK||(LA11_0>=RULE_KW_QUOTE && LA11_0<=RULE_TK_ID)||(LA11_0>=RULE_KW_SHARP && LA11_0<=RULE_TK_FLOAT)||LA11_0==RULE_KW_OCURLY||(LA11_0>=108 && LA11_0<=118)) ) {
                         alt11=1;
                     }
                     switch (alt11) {
@@ -2217,7 +2219,7 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
             // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:822:1: (otherlv_0= 'to' this_Infixed_1= ruleInfixed )
             // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:822:3: otherlv_0= 'to' this_Infixed_1= ruleInfixed
             {
-            otherlv_0=(Token)match(input,72,FOLLOW_72_in_ruleToPart1554); if (state.failed) return current;
+            otherlv_0=(Token)match(input,73,FOLLOW_73_in_ruleToPart1554); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
                   	newLeafNode(otherlv_0, grammarAccess.getToPartAccess().getToKeyword_0());
@@ -2329,7 +2331,7 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
             // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:866:1: (otherlv_0= 'from' this_enlist1_Infixed_Comma_AB_1= ruleenlist1_Infixed_Comma_AB )
             // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:866:3: otherlv_0= 'from' this_enlist1_Infixed_Comma_AB_1= ruleenlist1_Infixed_Comma_AB
             {
-            otherlv_0=(Token)match(input,73,FOLLOW_73_in_ruleFromPart1672); if (state.failed) return current;
+            otherlv_0=(Token)match(input,74,FOLLOW_74_in_ruleFromPart1672); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
                   	newLeafNode(otherlv_0, grammarAccess.getFromPartAccess().getFromKeyword_0());
@@ -2478,8 +2480,8 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
             case RULE_KW_SHARP:
             case RULE_KW_TILDE:
             case RULE_TK_INT:
+            case RULE_TK_FLOAT:
             case RULE_KW_OCURLY:
-            case 107:
             case 108:
             case 109:
             case 110:
@@ -2490,16 +2492,17 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
             case 115:
             case 116:
             case 117:
+            case 118:
                 {
                 alt14=1;
                 }
                 break;
-            case 71:
+            case 72:
                 {
                 alt14=2;
                 }
                 break;
-            case 70:
+            case 71:
                 {
                 alt14=3;
                 }
@@ -2563,7 +2566,7 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
                     // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:930:6: (otherlv_2= 'import' this_Sig_3= ruleSig ( (lv_fp_4_0= ruleFromPart ) )? )
                     // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:930:8: otherlv_2= 'import' this_Sig_3= ruleSig ( (lv_fp_4_0= ruleFromPart ) )?
                     {
-                    otherlv_2=(Token)match(input,70,FOLLOW_70_in_ruleMacroBody1845); if (state.failed) return current;
+                    otherlv_2=(Token)match(input,71,FOLLOW_71_in_ruleMacroBody1845); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                           	newLeafNode(otherlv_2, grammarAccess.getMacroBodyAccess().getImportKeyword_2_0());
@@ -2589,7 +2592,7 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
                     int alt13=2;
                     int LA13_0 = input.LA(1);
 
-                    if ( (LA13_0==73) ) {
+                    if ( (LA13_0==74) ) {
                         alt13=1;
                     }
                     switch (alt13) {
@@ -2729,7 +2732,7 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
             int alt15=2;
             int LA15_0 = input.LA(1);
 
-            if ( (LA15_0==RULE_TK_STRING||(LA15_0>=RULE_KW_RARROW && LA15_0<=RULE_KW_HAT)||LA15_0==RULE_KW_OPAREN||LA15_0==RULE_KW_OBRACK||(LA15_0>=RULE_KW_QUOTE && LA15_0<=RULE_TK_ID)||(LA15_0>=RULE_KW_SHARP && LA15_0<=RULE_TK_INT)||(LA15_0>=107 && LA15_0<=117)) ) {
+            if ( (LA15_0==RULE_TK_STRING||(LA15_0>=RULE_KW_RARROW && LA15_0<=RULE_KW_HAT)||LA15_0==RULE_KW_OPAREN||LA15_0==RULE_KW_OBRACK||(LA15_0>=RULE_KW_QUOTE && LA15_0<=RULE_TK_ID)||(LA15_0>=RULE_KW_SHARP && LA15_0<=RULE_TK_FLOAT)||(LA15_0>=108 && LA15_0<=118)) ) {
                 alt15=1;
             }
             else if ( (LA15_0==RULE_KW_OCURLY) ) {
@@ -3176,7 +3179,7 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
                 int alt17=2;
                 int LA17_0 = input.LA(1);
 
-                if ( (LA17_0==74) ) {
+                if ( (LA17_0==75) ) {
                     int LA17_2 = input.LA(2);
 
                     if ( (synpred3_InternalEditor()) ) {
@@ -3194,7 +3197,7 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
             	    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:1154:6: (otherlv_1= 'where' ( (lv_ci_2_0= ruleCommaItem ) ) )
             	    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:1154:8: otherlv_1= 'where' ( (lv_ci_2_0= ruleCommaItem ) )
             	    {
-            	    otherlv_1=(Token)match(input,74,FOLLOW_74_in_ruleCommaItem2421); if (state.failed) return current;
+            	    otherlv_1=(Token)match(input,75,FOLLOW_75_in_ruleCommaItem2421); if (state.failed) return current;
             	    if ( state.backtracking==0 ) {
 
             	          	newLeafNode(otherlv_1, grammarAccess.getCommaItemAccess().getWhereKeyword_1_0_0());
@@ -5471,7 +5474,7 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
                     // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:2126:6: (otherlv_0= 'if' this_CommaItem_1= ruleCommaItem otherlv_2= 'then' ( (lv_bas_3_0= ruleBinding_AnyStatement ) ) )
                     // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:2126:8: otherlv_0= 'if' this_CommaItem_1= ruleCommaItem otherlv_2= 'then' ( (lv_bas_3_0= ruleBinding_AnyStatement ) )
                     {
-                    otherlv_0=(Token)match(input,75,FOLLOW_75_in_ruleAnyStatement4451); if (state.failed) return current;
+                    otherlv_0=(Token)match(input,76,FOLLOW_76_in_ruleAnyStatement4451); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                           	newLeafNode(otherlv_0, grammarAccess.getAnyStatementAccess().getIfKeyword_0_0_0());
@@ -5493,7 +5496,7 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
                               afterParserOrEnumRuleCall();
                           
                     }
-                    otherlv_2=(Token)match(input,76,FOLLOW_76_in_ruleAnyStatement4484); if (state.failed) return current;
+                    otherlv_2=(Token)match(input,77,FOLLOW_77_in_ruleAnyStatement4484); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                           	newLeafNode(otherlv_2, grammarAccess.getAnyStatementAccess().getThenKeyword_0_0_2());
@@ -5873,7 +5876,7 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
                     int alt28=2;
                     int LA28_0 = input.LA(1);
 
-                    if ( (LA28_0==77) ) {
+                    if ( (LA28_0==78) ) {
                         alt28=1;
                     }
                     switch (alt28) {
@@ -5886,7 +5889,7 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
                             // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:2261:1: (lv_st_1_0= 'implies' )
                             // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:2262:3: lv_st_1_0= 'implies'
                             {
-                            lv_st_1_0=(Token)match(input,77,FOLLOW_77_in_ruleFlow_AnyStatement4764); if (state.failed) return current;
+                            lv_st_1_0=(Token)match(input,78,FOLLOW_78_in_ruleFlow_AnyStatement4764); if (state.failed) return current;
                             if ( state.backtracking==0 ) {
 
                                       newLeafNode(lv_st_1_0, grammarAccess.getFlow_AnyStatementAccess().getStImpliesKeyword_0_1_0_0());
@@ -5965,7 +5968,7 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
                     // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:2295:1: (lv_st_3_0= 'if' )
                     // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:2296:3: lv_st_3_0= 'if'
                     {
-                    lv_st_3_0=(Token)match(input,75,FOLLOW_75_in_ruleFlow_AnyStatement4826); if (state.failed) return current;
+                    lv_st_3_0=(Token)match(input,76,FOLLOW_76_in_ruleFlow_AnyStatement4826); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               newLeafNode(lv_st_3_0, grammarAccess.getFlow_AnyStatementAccess().getStIfKeyword_1_0_0());
@@ -6020,7 +6023,7 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    otherlv_5=(Token)match(input,76,FOLLOW_76_in_ruleFlow_AnyStatement4872); if (state.failed) return current;
+                    otherlv_5=(Token)match(input,77,FOLLOW_77_in_ruleFlow_AnyStatement4872); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                           	newLeafNode(otherlv_5, grammarAccess.getFlow_AnyStatementAccess().getThenKeyword_1_2());
@@ -6064,7 +6067,7 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
                     // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:2349:2: ( ( 'else' )=>otherlv_7= 'else' )
                     // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:2349:3: ( 'else' )=>otherlv_7= 'else'
                     {
-                    otherlv_7=(Token)match(input,78,FOLLOW_78_in_ruleFlow_AnyStatement4913); if (state.failed) return current;
+                    otherlv_7=(Token)match(input,79,FOLLOW_79_in_ruleFlow_AnyStatement4913); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                           	newLeafNode(otherlv_7, grammarAccess.getFlow_AnyStatementAccess().getElseKeyword_1_4());
@@ -6139,7 +6142,7 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
                               afterParserOrEnumRuleCall();
                           
                     }
-                    otherlv_10=(Token)match(input,79,FOLLOW_79_in_ruleFlow_AnyStatement4997); if (state.failed) return current;
+                    otherlv_10=(Token)match(input,80,FOLLOW_80_in_ruleFlow_AnyStatement4997); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                           	newLeafNode(otherlv_10, grammarAccess.getFlow_AnyStatementAccess().getRepeatKeyword_2_0_1());
@@ -6201,7 +6204,7 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
                     // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:2411:1: (lv_st_12_0= 'repeat' )
                     // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:2412:3: lv_st_12_0= 'repeat'
                     {
-                    lv_st_12_0=(Token)match(input,79,FOLLOW_79_in_ruleFlow_AnyStatement5045); if (state.failed) return current;
+                    lv_st_12_0=(Token)match(input,80,FOLLOW_80_in_ruleFlow_AnyStatement5045); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               newLeafNode(lv_st_12_0, grammarAccess.getFlow_AnyStatementAccess().getStRepeatKeyword_3_0_0());
@@ -6274,7 +6277,7 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
                     // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:2445:1: (lv_st_14_0= 'try' )
                     // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:2446:3: lv_st_14_0= 'try'
                     {
-                    lv_st_14_0=(Token)match(input,80,FOLLOW_80_in_ruleFlow_AnyStatement5105); if (state.failed) return current;
+                    lv_st_14_0=(Token)match(input,81,FOLLOW_81_in_ruleFlow_AnyStatement5105); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               newLeafNode(lv_st_14_0, grammarAccess.getFlow_AnyStatementAccess().getStTryKeyword_4_0_0());
@@ -6333,10 +6336,10 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
                     int alt29=2;
                     int LA29_0 = input.LA(1);
 
-                    if ( (LA29_0==81) ) {
+                    if ( (LA29_0==82) ) {
                         alt29=1;
                     }
-                    else if ( (LA29_0==82) ) {
+                    else if ( (LA29_0==83) ) {
                         alt29=2;
                     }
                     else {
@@ -6350,7 +6353,7 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
                         case 1 :
                             // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:2477:4: otherlv_16= 'but'
                             {
-                            otherlv_16=(Token)match(input,81,FOLLOW_81_in_ruleFlow_AnyStatement5152); if (state.failed) return current;
+                            otherlv_16=(Token)match(input,82,FOLLOW_82_in_ruleFlow_AnyStatement5152); if (state.failed) return current;
                             if ( state.backtracking==0 ) {
 
                                   	newLeafNode(otherlv_16, grammarAccess.getFlow_AnyStatementAccess().getButKeyword_4_2_0());
@@ -6362,7 +6365,7 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
                         case 2 :
                             // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:2482:7: otherlv_17= 'catch'
                             {
-                            otherlv_17=(Token)match(input,82,FOLLOW_82_in_ruleFlow_AnyStatement5170); if (state.failed) return current;
+                            otherlv_17=(Token)match(input,83,FOLLOW_83_in_ruleFlow_AnyStatement5170); if (state.failed) return current;
                             if ( state.backtracking==0 ) {
 
                                   	newLeafNode(otherlv_17, grammarAccess.getFlow_AnyStatementAccess().getCatchKeyword_4_2_1());
@@ -6462,7 +6465,7 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
                     // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:2524:1: (lv_st_20_0= 'select' )
                     // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:2525:3: lv_st_20_0= 'select'
                     {
-                    lv_st_20_0=(Token)match(input,83,FOLLOW_83_in_ruleFlow_AnyStatement5239); if (state.failed) return current;
+                    lv_st_20_0=(Token)match(input,84,FOLLOW_84_in_ruleFlow_AnyStatement5239); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               newLeafNode(lv_st_20_0, grammarAccess.getFlow_AnyStatementAccess().getStSelectKeyword_5_0_0());
@@ -6517,7 +6520,7 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    otherlv_22=(Token)match(input,84,FOLLOW_84_in_ruleFlow_AnyStatement5285); if (state.failed) return current;
+                    otherlv_22=(Token)match(input,85,FOLLOW_85_in_ruleFlow_AnyStatement5285); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                           	newLeafNode(otherlv_22, grammarAccess.getFlow_AnyStatementAccess().getInKeyword_5_2());
@@ -6576,7 +6579,7 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
                     // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:2580:1: (lv_st_24_0= 'do' )
                     // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:2581:3: lv_st_24_0= 'do'
                     {
-                    lv_st_24_0=(Token)match(input,85,FOLLOW_85_in_ruleFlow_AnyStatement5332); if (state.failed) return current;
+                    lv_st_24_0=(Token)match(input,86,FOLLOW_86_in_ruleFlow_AnyStatement5332); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               newLeafNode(lv_st_24_0, grammarAccess.getFlow_AnyStatementAccess().getStDoKeyword_6_0_0());
@@ -6649,7 +6652,7 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
                     // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:2614:1: (lv_st_26_0= 'delay' )
                     // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:2615:3: lv_st_26_0= 'delay'
                     {
-                    lv_st_26_0=(Token)match(input,86,FOLLOW_86_in_ruleFlow_AnyStatement5392); if (state.failed) return current;
+                    lv_st_26_0=(Token)match(input,87,FOLLOW_87_in_ruleFlow_AnyStatement5392); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               newLeafNode(lv_st_26_0, grammarAccess.getFlow_AnyStatementAccess().getStDelayKeyword_7_0_0());
@@ -6722,7 +6725,7 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
                     // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:2648:1: (lv_st_28_0= 'reference' )
                     // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:2649:3: lv_st_28_0= 'reference'
                     {
-                    lv_st_28_0=(Token)match(input,87,FOLLOW_87_in_ruleFlow_AnyStatement5452); if (state.failed) return current;
+                    lv_st_28_0=(Token)match(input,88,FOLLOW_88_in_ruleFlow_AnyStatement5452); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               newLeafNode(lv_st_28_0, grammarAccess.getFlow_AnyStatementAccess().getStReferenceKeyword_8_0_0());
@@ -6795,7 +6798,7 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
                     // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:2682:1: (lv_st_30_0= 'generate' )
                     // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:2683:3: lv_st_30_0= 'generate'
                     {
-                    lv_st_30_0=(Token)match(input,88,FOLLOW_88_in_ruleFlow_AnyStatement5512); if (state.failed) return current;
+                    lv_st_30_0=(Token)match(input,89,FOLLOW_89_in_ruleFlow_AnyStatement5512); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               newLeafNode(lv_st_30_0, grammarAccess.getFlow_AnyStatementAccess().getStGenerateKeyword_9_0_0());
@@ -6903,7 +6906,7 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
                     // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:2734:1: (lv_st_33_0= 'assert' )
                     // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:2735:3: lv_st_33_0= 'assert'
                     {
-                    lv_st_33_0=(Token)match(input,89,FOLLOW_89_in_ruleFlow_AnyStatement5593); if (state.failed) return current;
+                    lv_st_33_0=(Token)match(input,90,FOLLOW_90_in_ruleFlow_AnyStatement5593); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               newLeafNode(lv_st_33_0, grammarAccess.getFlow_AnyStatementAccess().getStAssertKeyword_10_0_0());
@@ -6976,7 +6979,7 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
                     // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:2768:1: (lv_st_35_0= 'iterate' )
                     // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:2769:3: lv_st_35_0= 'iterate'
                     {
-                    lv_st_35_0=(Token)match(input,90,FOLLOW_90_in_ruleFlow_AnyStatement5653); if (state.failed) return current;
+                    lv_st_35_0=(Token)match(input,91,FOLLOW_91_in_ruleFlow_AnyStatement5653); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               newLeafNode(lv_st_35_0, grammarAccess.getFlow_AnyStatementAccess().getStIterateKeyword_11_0_0());
@@ -7000,7 +7003,7 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
                     int alt30=2;
                     int LA30_0 = input.LA(1);
 
-                    if ( ((LA30_0>=RULE_KW_RARROW && LA30_0<=RULE_KW_HAT)||LA30_0==RULE_TK_ID||(LA30_0>=RULE_KW_SHARP && LA30_0<=RULE_KW_TILDE)||(LA30_0>=109 && LA30_0<=116)) ) {
+                    if ( ((LA30_0>=RULE_KW_RARROW && LA30_0<=RULE_KW_HAT)||LA30_0==RULE_TK_ID||(LA30_0>=RULE_KW_SHARP && LA30_0<=RULE_KW_TILDE)||(LA30_0>=110 && LA30_0<=117)) ) {
                         alt30=1;
                     }
                     switch (alt30) {
@@ -7060,7 +7063,7 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
                     // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:2802:1: (lv_st_37_0= 'break' )
                     // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:2803:3: lv_st_37_0= 'break'
                     {
-                    lv_st_37_0=(Token)match(input,91,FOLLOW_91_in_ruleFlow_AnyStatement5714); if (state.failed) return current;
+                    lv_st_37_0=(Token)match(input,92,FOLLOW_92_in_ruleFlow_AnyStatement5714); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               newLeafNode(lv_st_37_0, grammarAccess.getFlow_AnyStatementAccess().getStBreakKeyword_12_0_0());
@@ -7084,7 +7087,7 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
                     int alt31=2;
                     int LA31_0 = input.LA(1);
 
-                    if ( ((LA31_0>=RULE_KW_RARROW && LA31_0<=RULE_KW_HAT)||LA31_0==RULE_TK_ID||(LA31_0>=RULE_KW_SHARP && LA31_0<=RULE_KW_TILDE)||(LA31_0>=109 && LA31_0<=116)) ) {
+                    if ( ((LA31_0>=RULE_KW_RARROW && LA31_0<=RULE_KW_HAT)||LA31_0==RULE_TK_ID||(LA31_0>=RULE_KW_SHARP && LA31_0<=RULE_KW_TILDE)||(LA31_0>=110 && LA31_0<=117)) ) {
                         alt31=1;
                     }
                     switch (alt31) {
@@ -7144,7 +7147,7 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
                     // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:2836:1: (lv_st_39_0= 'return' )
                     // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:2837:3: lv_st_39_0= 'return'
                     {
-                    lv_st_39_0=(Token)match(input,92,FOLLOW_92_in_ruleFlow_AnyStatement5775); if (state.failed) return current;
+                    lv_st_39_0=(Token)match(input,93,FOLLOW_93_in_ruleFlow_AnyStatement5775); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               newLeafNode(lv_st_39_0, grammarAccess.getFlow_AnyStatementAccess().getStReturnKeyword_13_0_0());
@@ -7168,7 +7171,7 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
                     int alt32=2;
                     int LA32_0 = input.LA(1);
 
-                    if ( (LA32_0==RULE_TK_STRING||(LA32_0>=RULE_KW_RARROW && LA32_0<=RULE_KW_HAT)||LA32_0==RULE_KW_OPAREN||LA32_0==RULE_KW_OBRACK||(LA32_0>=RULE_KW_QUOTE && LA32_0<=RULE_TK_ID)||(LA32_0>=RULE_KW_SHARP && LA32_0<=RULE_TK_INT)||LA32_0==RULE_KW_OCURLY||(LA32_0>=107 && LA32_0<=117)) ) {
+                    if ( (LA32_0==RULE_TK_STRING||(LA32_0>=RULE_KW_RARROW && LA32_0<=RULE_KW_HAT)||LA32_0==RULE_KW_OPAREN||LA32_0==RULE_KW_OBRACK||(LA32_0>=RULE_KW_QUOTE && LA32_0<=RULE_TK_ID)||(LA32_0>=RULE_KW_SHARP && LA32_0<=RULE_TK_FLOAT)||LA32_0==RULE_KW_OCURLY||(LA32_0>=108 && LA32_0<=118)) ) {
                         alt32=1;
                     }
                     switch (alt32) {
@@ -7228,7 +7231,7 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
                     // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:2870:1: (lv_st_41_0= 'yield' )
                     // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:2871:3: lv_st_41_0= 'yield'
                     {
-                    lv_st_41_0=(Token)match(input,93,FOLLOW_93_in_ruleFlow_AnyStatement5836); if (state.failed) return current;
+                    lv_st_41_0=(Token)match(input,94,FOLLOW_94_in_ruleFlow_AnyStatement5836); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               newLeafNode(lv_st_41_0, grammarAccess.getFlow_AnyStatementAccess().getStYieldKeyword_14_0_0());
@@ -7301,7 +7304,7 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
                     // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:2904:1: (lv_st_43_0= 'except' )
                     // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:2905:3: lv_st_43_0= 'except'
                     {
-                    lv_st_43_0=(Token)match(input,94,FOLLOW_94_in_ruleFlow_AnyStatement5896); if (state.failed) return current;
+                    lv_st_43_0=(Token)match(input,95,FOLLOW_95_in_ruleFlow_AnyStatement5896); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               newLeafNode(lv_st_43_0, grammarAccess.getFlow_AnyStatementAccess().getStExceptKeyword_15_0_0());
@@ -7374,7 +7377,7 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
                     // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:2938:1: (lv_st_45_0= 'throw' )
                     // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:2939:3: lv_st_45_0= 'throw'
                     {
-                    lv_st_45_0=(Token)match(input,95,FOLLOW_95_in_ruleFlow_AnyStatement5956); if (state.failed) return current;
+                    lv_st_45_0=(Token)match(input,96,FOLLOW_96_in_ruleFlow_AnyStatement5956); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               newLeafNode(lv_st_45_0, grammarAccess.getFlow_AnyStatementAccess().getStThrowKeyword_16_0_0());
@@ -7447,7 +7450,7 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
                     // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:2972:1: (lv_st_47_0= 'goto' )
                     // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:2973:3: lv_st_47_0= 'goto'
                     {
-                    lv_st_47_0=(Token)match(input,96,FOLLOW_96_in_ruleFlow_AnyStatement6016); if (state.failed) return current;
+                    lv_st_47_0=(Token)match(input,97,FOLLOW_97_in_ruleFlow_AnyStatement6016); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               newLeafNode(lv_st_47_0, grammarAccess.getFlow_AnyStatementAccess().getStGotoKeyword_17_0_0());
@@ -7517,7 +7520,7 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
                     // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:3006:1: (lv_st_49_0= 'never' )
                     // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:3007:3: lv_st_49_0= 'never'
                     {
-                    lv_st_49_0=(Token)match(input,97,FOLLOW_97_in_ruleFlow_AnyStatement6075); if (state.failed) return current;
+                    lv_st_49_0=(Token)match(input,98,FOLLOW_98_in_ruleFlow_AnyStatement6075); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               newLeafNode(lv_st_49_0, grammarAccess.getFlow_AnyStatementAccess().getStNeverKeyword_18_0());
@@ -7749,7 +7752,7 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
                     int alt34=2;
                     int LA34_0 = input.LA(1);
 
-                    if ( (LA34_0==77) ) {
+                    if ( (LA34_0==78) ) {
                         alt34=1;
                     }
                     switch (alt34) {
@@ -7762,7 +7765,7 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
                             // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:3070:1: (lv_st2_1_0= 'implies' )
                             // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:3071:3: lv_st2_1_0= 'implies'
                             {
-                            lv_st2_1_0=(Token)match(input,77,FOLLOW_77_in_ruleFlow_BalStatement6214); if (state.failed) return current;
+                            lv_st2_1_0=(Token)match(input,78,FOLLOW_78_in_ruleFlow_BalStatement6214); if (state.failed) return current;
                             if ( state.backtracking==0 ) {
 
                                       newLeafNode(lv_st2_1_0, grammarAccess.getFlow_BalStatementAccess().getSt2ImpliesKeyword_0_1_0_0());
@@ -7841,7 +7844,7 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
                     // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:3104:1: (lv_st2_3_0= 'if' )
                     // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:3105:3: lv_st2_3_0= 'if'
                     {
-                    lv_st2_3_0=(Token)match(input,75,FOLLOW_75_in_ruleFlow_BalStatement6276); if (state.failed) return current;
+                    lv_st2_3_0=(Token)match(input,76,FOLLOW_76_in_ruleFlow_BalStatement6276); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               newLeafNode(lv_st2_3_0, grammarAccess.getFlow_BalStatementAccess().getSt2IfKeyword_1_0_0());
@@ -7896,7 +7899,7 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    otherlv_5=(Token)match(input,76,FOLLOW_76_in_ruleFlow_BalStatement6322); if (state.failed) return current;
+                    otherlv_5=(Token)match(input,77,FOLLOW_77_in_ruleFlow_BalStatement6322); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                           	newLeafNode(otherlv_5, grammarAccess.getFlow_BalStatementAccess().getThenKeyword_1_2());
@@ -7940,7 +7943,7 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
                     // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:3158:2: ( ( 'else' )=>otherlv_7= 'else' )
                     // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:3158:3: ( 'else' )=>otherlv_7= 'else'
                     {
-                    otherlv_7=(Token)match(input,78,FOLLOW_78_in_ruleFlow_BalStatement6363); if (state.failed) return current;
+                    otherlv_7=(Token)match(input,79,FOLLOW_79_in_ruleFlow_BalStatement6363); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                           	newLeafNode(otherlv_7, grammarAccess.getFlow_BalStatementAccess().getElseKeyword_1_4());
@@ -8021,7 +8024,7 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
                     // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:3202:1: (lv_st2_10_0= 'repeat' )
                     // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:3203:3: lv_st2_10_0= 'repeat'
                     {
-                    lv_st2_10_0=(Token)match(input,79,FOLLOW_79_in_ruleFlow_BalStatement6463); if (state.failed) return current;
+                    lv_st2_10_0=(Token)match(input,80,FOLLOW_80_in_ruleFlow_BalStatement6463); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               newLeafNode(lv_st2_10_0, grammarAccess.getFlow_BalStatementAccess().getSt2RepeatKeyword_2_0_1_0());
@@ -8097,7 +8100,7 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
                     // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:3236:1: (lv_st2_12_0= 'repeat' )
                     // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:3237:3: lv_st2_12_0= 'repeat'
                     {
-                    lv_st2_12_0=(Token)match(input,79,FOLLOW_79_in_ruleFlow_BalStatement6524); if (state.failed) return current;
+                    lv_st2_12_0=(Token)match(input,80,FOLLOW_80_in_ruleFlow_BalStatement6524); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               newLeafNode(lv_st2_12_0, grammarAccess.getFlow_BalStatementAccess().getSt2RepeatKeyword_3_0_0());
@@ -8170,7 +8173,7 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
                     // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:3270:1: (lv_st2_14_0= 'try' )
                     // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:3271:3: lv_st2_14_0= 'try'
                     {
-                    lv_st2_14_0=(Token)match(input,80,FOLLOW_80_in_ruleFlow_BalStatement6584); if (state.failed) return current;
+                    lv_st2_14_0=(Token)match(input,81,FOLLOW_81_in_ruleFlow_BalStatement6584); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               newLeafNode(lv_st2_14_0, grammarAccess.getFlow_BalStatementAccess().getSt2TryKeyword_4_0_0());
@@ -8229,10 +8232,10 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
                     int alt35=2;
                     int LA35_0 = input.LA(1);
 
-                    if ( (LA35_0==81) ) {
+                    if ( (LA35_0==82) ) {
                         alt35=1;
                     }
-                    else if ( (LA35_0==82) ) {
+                    else if ( (LA35_0==83) ) {
                         alt35=2;
                     }
                     else {
@@ -8246,7 +8249,7 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
                         case 1 :
                             // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:3302:4: otherlv_16= 'but'
                             {
-                            otherlv_16=(Token)match(input,81,FOLLOW_81_in_ruleFlow_BalStatement6631); if (state.failed) return current;
+                            otherlv_16=(Token)match(input,82,FOLLOW_82_in_ruleFlow_BalStatement6631); if (state.failed) return current;
                             if ( state.backtracking==0 ) {
 
                                   	newLeafNode(otherlv_16, grammarAccess.getFlow_BalStatementAccess().getButKeyword_4_2_0());
@@ -8258,7 +8261,7 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
                         case 2 :
                             // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:3307:7: otherlv_17= 'catch'
                             {
-                            otherlv_17=(Token)match(input,82,FOLLOW_82_in_ruleFlow_BalStatement6649); if (state.failed) return current;
+                            otherlv_17=(Token)match(input,83,FOLLOW_83_in_ruleFlow_BalStatement6649); if (state.failed) return current;
                             if ( state.backtracking==0 ) {
 
                                   	newLeafNode(otherlv_17, grammarAccess.getFlow_BalStatementAccess().getCatchKeyword_4_2_1());
@@ -8358,7 +8361,7 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
                     // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:3349:1: (lv_st2_20_0= 'select' )
                     // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:3350:3: lv_st2_20_0= 'select'
                     {
-                    lv_st2_20_0=(Token)match(input,83,FOLLOW_83_in_ruleFlow_BalStatement6718); if (state.failed) return current;
+                    lv_st2_20_0=(Token)match(input,84,FOLLOW_84_in_ruleFlow_BalStatement6718); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               newLeafNode(lv_st2_20_0, grammarAccess.getFlow_BalStatementAccess().getSt2SelectKeyword_5_0_0());
@@ -8413,7 +8416,7 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    otherlv_22=(Token)match(input,84,FOLLOW_84_in_ruleFlow_BalStatement6764); if (state.failed) return current;
+                    otherlv_22=(Token)match(input,85,FOLLOW_85_in_ruleFlow_BalStatement6764); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                           	newLeafNode(otherlv_22, grammarAccess.getFlow_BalStatementAccess().getInKeyword_5_2());
@@ -8472,7 +8475,7 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
                     // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:3405:1: (lv_st2_24_0= 'do' )
                     // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:3406:3: lv_st2_24_0= 'do'
                     {
-                    lv_st2_24_0=(Token)match(input,85,FOLLOW_85_in_ruleFlow_BalStatement6811); if (state.failed) return current;
+                    lv_st2_24_0=(Token)match(input,86,FOLLOW_86_in_ruleFlow_BalStatement6811); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               newLeafNode(lv_st2_24_0, grammarAccess.getFlow_BalStatementAccess().getSt2DoKeyword_6_0_0());
@@ -8545,7 +8548,7 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
                     // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:3439:1: (lv_st2_26_0= 'delay' )
                     // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:3440:3: lv_st2_26_0= 'delay'
                     {
-                    lv_st2_26_0=(Token)match(input,86,FOLLOW_86_in_ruleFlow_BalStatement6871); if (state.failed) return current;
+                    lv_st2_26_0=(Token)match(input,87,FOLLOW_87_in_ruleFlow_BalStatement6871); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               newLeafNode(lv_st2_26_0, grammarAccess.getFlow_BalStatementAccess().getSt2DelayKeyword_7_0_0());
@@ -8618,7 +8621,7 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
                     // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:3473:1: (lv_st2_28_0= 'reference' )
                     // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:3474:3: lv_st2_28_0= 'reference'
                     {
-                    lv_st2_28_0=(Token)match(input,87,FOLLOW_87_in_ruleFlow_BalStatement6931); if (state.failed) return current;
+                    lv_st2_28_0=(Token)match(input,88,FOLLOW_88_in_ruleFlow_BalStatement6931); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               newLeafNode(lv_st2_28_0, grammarAccess.getFlow_BalStatementAccess().getSt2ReferenceKeyword_8_0_0());
@@ -8691,7 +8694,7 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
                     // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:3507:1: (lv_st2_30_0= 'generate' )
                     // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:3508:3: lv_st2_30_0= 'generate'
                     {
-                    lv_st2_30_0=(Token)match(input,88,FOLLOW_88_in_ruleFlow_BalStatement6991); if (state.failed) return current;
+                    lv_st2_30_0=(Token)match(input,89,FOLLOW_89_in_ruleFlow_BalStatement6991); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               newLeafNode(lv_st2_30_0, grammarAccess.getFlow_BalStatementAccess().getSt2GenerateKeyword_9_0_0());
@@ -8799,7 +8802,7 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
                     // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:3559:1: (lv_st2_33_0= 'assert' )
                     // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:3560:3: lv_st2_33_0= 'assert'
                     {
-                    lv_st2_33_0=(Token)match(input,89,FOLLOW_89_in_ruleFlow_BalStatement7072); if (state.failed) return current;
+                    lv_st2_33_0=(Token)match(input,90,FOLLOW_90_in_ruleFlow_BalStatement7072); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               newLeafNode(lv_st2_33_0, grammarAccess.getFlow_BalStatementAccess().getSt2AssertKeyword_10_0_0());
@@ -8872,7 +8875,7 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
                     // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:3593:1: (lv_st2_35_0= 'iterate' )
                     // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:3594:3: lv_st2_35_0= 'iterate'
                     {
-                    lv_st2_35_0=(Token)match(input,90,FOLLOW_90_in_ruleFlow_BalStatement7132); if (state.failed) return current;
+                    lv_st2_35_0=(Token)match(input,91,FOLLOW_91_in_ruleFlow_BalStatement7132); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               newLeafNode(lv_st2_35_0, grammarAccess.getFlow_BalStatementAccess().getSt2IterateKeyword_11_0_0());
@@ -8896,7 +8899,7 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
                     int alt36=2;
                     int LA36_0 = input.LA(1);
 
-                    if ( ((LA36_0>=RULE_KW_RARROW && LA36_0<=RULE_KW_HAT)||LA36_0==RULE_TK_ID||(LA36_0>=RULE_KW_SHARP && LA36_0<=RULE_KW_TILDE)||(LA36_0>=109 && LA36_0<=116)) ) {
+                    if ( ((LA36_0>=RULE_KW_RARROW && LA36_0<=RULE_KW_HAT)||LA36_0==RULE_TK_ID||(LA36_0>=RULE_KW_SHARP && LA36_0<=RULE_KW_TILDE)||(LA36_0>=110 && LA36_0<=117)) ) {
                         alt36=1;
                     }
                     switch (alt36) {
@@ -8956,7 +8959,7 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
                     // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:3627:1: (lv_st2_37_0= 'break' )
                     // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:3628:3: lv_st2_37_0= 'break'
                     {
-                    lv_st2_37_0=(Token)match(input,91,FOLLOW_91_in_ruleFlow_BalStatement7193); if (state.failed) return current;
+                    lv_st2_37_0=(Token)match(input,92,FOLLOW_92_in_ruleFlow_BalStatement7193); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               newLeafNode(lv_st2_37_0, grammarAccess.getFlow_BalStatementAccess().getSt2BreakKeyword_12_0_0());
@@ -8980,7 +8983,7 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
                     int alt37=2;
                     int LA37_0 = input.LA(1);
 
-                    if ( ((LA37_0>=RULE_KW_RARROW && LA37_0<=RULE_KW_HAT)||LA37_0==RULE_TK_ID||(LA37_0>=RULE_KW_SHARP && LA37_0<=RULE_KW_TILDE)||(LA37_0>=109 && LA37_0<=116)) ) {
+                    if ( ((LA37_0>=RULE_KW_RARROW && LA37_0<=RULE_KW_HAT)||LA37_0==RULE_TK_ID||(LA37_0>=RULE_KW_SHARP && LA37_0<=RULE_KW_TILDE)||(LA37_0>=110 && LA37_0<=117)) ) {
                         alt37=1;
                     }
                     switch (alt37) {
@@ -9040,7 +9043,7 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
                     // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:3661:1: (lv_st2_39_0= 'return' )
                     // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:3662:3: lv_st2_39_0= 'return'
                     {
-                    lv_st2_39_0=(Token)match(input,92,FOLLOW_92_in_ruleFlow_BalStatement7254); if (state.failed) return current;
+                    lv_st2_39_0=(Token)match(input,93,FOLLOW_93_in_ruleFlow_BalStatement7254); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               newLeafNode(lv_st2_39_0, grammarAccess.getFlow_BalStatementAccess().getSt2ReturnKeyword_13_0_0());
@@ -9064,7 +9067,7 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
                     int alt38=2;
                     int LA38_0 = input.LA(1);
 
-                    if ( (LA38_0==RULE_TK_STRING||(LA38_0>=RULE_KW_RARROW && LA38_0<=RULE_KW_HAT)||LA38_0==RULE_KW_OPAREN||LA38_0==RULE_KW_OBRACK||(LA38_0>=RULE_KW_QUOTE && LA38_0<=RULE_TK_ID)||(LA38_0>=RULE_KW_SHARP && LA38_0<=RULE_TK_INT)||LA38_0==RULE_KW_OCURLY||(LA38_0>=107 && LA38_0<=117)) ) {
+                    if ( (LA38_0==RULE_TK_STRING||(LA38_0>=RULE_KW_RARROW && LA38_0<=RULE_KW_HAT)||LA38_0==RULE_KW_OPAREN||LA38_0==RULE_KW_OBRACK||(LA38_0>=RULE_KW_QUOTE && LA38_0<=RULE_TK_ID)||(LA38_0>=RULE_KW_SHARP && LA38_0<=RULE_TK_FLOAT)||LA38_0==RULE_KW_OCURLY||(LA38_0>=108 && LA38_0<=118)) ) {
                         alt38=1;
                     }
                     switch (alt38) {
@@ -9124,7 +9127,7 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
                     // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:3695:1: (lv_st2_41_0= 'yield' )
                     // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:3696:3: lv_st2_41_0= 'yield'
                     {
-                    lv_st2_41_0=(Token)match(input,93,FOLLOW_93_in_ruleFlow_BalStatement7315); if (state.failed) return current;
+                    lv_st2_41_0=(Token)match(input,94,FOLLOW_94_in_ruleFlow_BalStatement7315); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               newLeafNode(lv_st2_41_0, grammarAccess.getFlow_BalStatementAccess().getSt2YieldKeyword_14_0_0());
@@ -9197,7 +9200,7 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
                     // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:3729:1: (lv_st2_43_0= 'except' )
                     // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:3730:3: lv_st2_43_0= 'except'
                     {
-                    lv_st2_43_0=(Token)match(input,94,FOLLOW_94_in_ruleFlow_BalStatement7375); if (state.failed) return current;
+                    lv_st2_43_0=(Token)match(input,95,FOLLOW_95_in_ruleFlow_BalStatement7375); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               newLeafNode(lv_st2_43_0, grammarAccess.getFlow_BalStatementAccess().getSt2ExceptKeyword_15_0_0());
@@ -9270,7 +9273,7 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
                     // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:3763:1: (lv_st2_45_0= 'throw' )
                     // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:3764:3: lv_st2_45_0= 'throw'
                     {
-                    lv_st2_45_0=(Token)match(input,95,FOLLOW_95_in_ruleFlow_BalStatement7435); if (state.failed) return current;
+                    lv_st2_45_0=(Token)match(input,96,FOLLOW_96_in_ruleFlow_BalStatement7435); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               newLeafNode(lv_st2_45_0, grammarAccess.getFlow_BalStatementAccess().getSt2ThrowKeyword_16_0_0());
@@ -9343,7 +9346,7 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
                     // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:3797:1: (lv_st2_47_0= 'goto' )
                     // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:3798:3: lv_st2_47_0= 'goto'
                     {
-                    lv_st2_47_0=(Token)match(input,96,FOLLOW_96_in_ruleFlow_BalStatement7495); if (state.failed) return current;
+                    lv_st2_47_0=(Token)match(input,97,FOLLOW_97_in_ruleFlow_BalStatement7495); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               newLeafNode(lv_st2_47_0, grammarAccess.getFlow_BalStatementAccess().getSt2GotoKeyword_17_0_0());
@@ -9413,7 +9416,7 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
                     // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:3831:1: (lv_st2_49_0= 'never' )
                     // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:3832:3: lv_st2_49_0= 'never'
                     {
-                    lv_st2_49_0=(Token)match(input,97,FOLLOW_97_in_ruleFlow_BalStatement7554); if (state.failed) return current;
+                    lv_st2_49_0=(Token)match(input,98,FOLLOW_98_in_ruleFlow_BalStatement7554); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               newLeafNode(lv_st2_49_0, grammarAccess.getFlow_BalStatementAccess().getSt2NeverKeyword_18_0());
@@ -9544,14 +9547,14 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
             int alt40=2;
             int LA40_0 = input.LA(1);
 
-            if ( (LA40_0==72) ) {
+            if ( (LA40_0==73) ) {
                 alt40=1;
             }
             switch (alt40) {
                 case 1 :
                     // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:3882:4: otherlv_1= 'to' ( (lv_ci_2_0= ruleCommaItem ) ) otherlv_3= 'of'
                     {
-                    otherlv_1=(Token)match(input,72,FOLLOW_72_in_ruleGenBound7674); if (state.failed) return current;
+                    otherlv_1=(Token)match(input,73,FOLLOW_73_in_ruleGenBound7674); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                           	newLeafNode(otherlv_1, grammarAccess.getGenBoundAccess().getToKeyword_1_0());
@@ -9592,7 +9595,7 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    otherlv_3=(Token)match(input,98,FOLLOW_98_in_ruleGenBound7707); if (state.failed) return current;
+                    otherlv_3=(Token)match(input,99,FOLLOW_99_in_ruleGenBound7707); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                           	newLeafNode(otherlv_3, grammarAccess.getGenBoundAccess().getOfKeyword_1_2());
@@ -9713,7 +9716,7 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
             int alt41=2;
             int LA41_0 = input.LA(1);
 
-            if ( (LA41_0==RULE_TK_STRING||(LA41_0>=RULE_KW_RARROW && LA41_0<=RULE_KW_HAT)||LA41_0==RULE_KW_OPAREN||LA41_0==RULE_KW_OBRACK||(LA41_0>=RULE_KW_QUOTE && LA41_0<=RULE_TK_ID)||(LA41_0>=RULE_KW_SHARP && LA41_0<=RULE_TK_INT)||(LA41_0>=107 && LA41_0<=117)) ) {
+            if ( (LA41_0==RULE_TK_STRING||(LA41_0>=RULE_KW_RARROW && LA41_0<=RULE_KW_HAT)||LA41_0==RULE_KW_OPAREN||LA41_0==RULE_KW_OBRACK||(LA41_0>=RULE_KW_QUOTE && LA41_0<=RULE_TK_ID)||(LA41_0>=RULE_KW_SHARP && LA41_0<=RULE_TK_FLOAT)||(LA41_0>=108 && LA41_0<=118)) ) {
                 alt41=1;
             }
             switch (alt41) {
@@ -9755,7 +9758,7 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    otherlv_2=(Token)match(input,84,FOLLOW_84_in_ruleButExpr7837); if (state.failed) return current;
+                    otherlv_2=(Token)match(input,85,FOLLOW_85_in_ruleButExpr7837); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                           	newLeafNode(otherlv_2, grammarAccess.getButExprAccess().getInKeyword_1_1());
@@ -10011,10 +10014,10 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
             int alt42=3;
             int LA42_0 = input.LA(1);
 
-            if ( (LA42_0==99) ) {
+            if ( (LA42_0==100) ) {
                 alt42=1;
             }
-            else if ( (LA42_0==100) ) {
+            else if ( (LA42_0==101) ) {
                 alt42=2;
             }
             switch (alt42) {
@@ -10024,7 +10027,7 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
                     // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:4062:3: (otherlv_1= 'always' ( (lv_bas7_2_0= ruleBinding_AnyStatement ) ) )
                     // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:4062:5: otherlv_1= 'always' ( (lv_bas7_2_0= ruleBinding_AnyStatement ) )
                     {
-                    otherlv_1=(Token)match(input,99,FOLLOW_99_in_ruleAlwaysPart_AnyStatement8072); if (state.failed) return current;
+                    otherlv_1=(Token)match(input,100,FOLLOW_100_in_ruleAlwaysPart_AnyStatement8072); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                           	newLeafNode(otherlv_1, grammarAccess.getAlwaysPart_AnyStatementAccess().getAlwaysKeyword_1_0_0());
@@ -10077,7 +10080,7 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
                     // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:4085:6: (otherlv_3= 'finally' ( (lv_bas7_4_0= ruleBinding_AnyStatement ) ) )
                     // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:4085:8: otherlv_3= 'finally' ( (lv_bas7_4_0= ruleBinding_AnyStatement ) )
                     {
-                    otherlv_3=(Token)match(input,100,FOLLOW_100_in_ruleAlwaysPart_AnyStatement8113); if (state.failed) return current;
+                    otherlv_3=(Token)match(input,101,FOLLOW_101_in_ruleAlwaysPart_AnyStatement8113); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                           	newLeafNode(otherlv_3, grammarAccess.getAlwaysPart_AnyStatementAccess().getFinallyKeyword_1_1_0());
@@ -10237,10 +10240,10 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
             int alt43=3;
             int LA43_0 = input.LA(1);
 
-            if ( (LA43_0==99) ) {
+            if ( (LA43_0==100) ) {
                 alt43=1;
             }
-            else if ( (LA43_0==100) ) {
+            else if ( (LA43_0==101) ) {
                 alt43=2;
             }
             switch (alt43) {
@@ -10250,7 +10253,7 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
                     // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:4144:3: (otherlv_1= 'always' ( (lv_bas7_2_0= ruleBinding_BalStatement ) ) )
                     // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:4144:5: otherlv_1= 'always' ( (lv_bas7_2_0= ruleBinding_BalStatement ) )
                     {
-                    otherlv_1=(Token)match(input,99,FOLLOW_99_in_ruleAlwaysPart_BalStatement8245); if (state.failed) return current;
+                    otherlv_1=(Token)match(input,100,FOLLOW_100_in_ruleAlwaysPart_BalStatement8245); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                           	newLeafNode(otherlv_1, grammarAccess.getAlwaysPart_BalStatementAccess().getAlwaysKeyword_1_0_0());
@@ -10303,7 +10306,7 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
                     // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:4167:6: (otherlv_3= 'finally' ( (lv_bas7_4_0= ruleBinding_BalStatement ) ) )
                     // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:4167:8: otherlv_3= 'finally' ( (lv_bas7_4_0= ruleBinding_BalStatement ) )
                     {
-                    otherlv_3=(Token)match(input,100,FOLLOW_100_in_ruleAlwaysPart_BalStatement8286); if (state.failed) return current;
+                    otherlv_3=(Token)match(input,101,FOLLOW_101_in_ruleAlwaysPart_BalStatement8286); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                           	newLeafNode(otherlv_3, grammarAccess.getAlwaysPart_BalStatementAccess().getFinallyKeyword_1_1_0());
@@ -10702,7 +10705,7 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
                 int alt44=2;
                 int LA44_0 = input.LA(1);
 
-                if ( ((LA44_0>=101 && LA44_0<=102)) ) {
+                if ( ((LA44_0>=102 && LA44_0<=103)) ) {
                     alt44=1;
                 }
 
@@ -10848,10 +10851,10 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
             int alt46=2;
             int LA46_0 = input.LA(1);
 
-            if ( (LA46_0==101) ) {
+            if ( (LA46_0==102) ) {
                 alt46=1;
             }
-            else if ( (LA46_0==102) ) {
+            else if ( (LA46_0==103) ) {
                 alt46=2;
             }
             else {
@@ -10868,7 +10871,7 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
                     // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:4373:2: (otherlv_0= 'for' this_ForLhs_1= ruleForLhs otherlv_2= 'in' ( (lv_i_3_0= ruleInfixed ) ) ( (lv_sp_4_0= ruleSuchthatPart ) )? )
                     // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:4373:4: otherlv_0= 'for' this_ForLhs_1= ruleForLhs otherlv_2= 'in' ( (lv_i_3_0= ruleInfixed ) ) ( (lv_sp_4_0= ruleSuchthatPart ) )?
                     {
-                    otherlv_0=(Token)match(input,101,FOLLOW_101_in_ruleIterator8755); if (state.failed) return current;
+                    otherlv_0=(Token)match(input,102,FOLLOW_102_in_ruleIterator8755); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                           	newLeafNode(otherlv_0, grammarAccess.getIteratorAccess().getForKeyword_0_0());
@@ -10890,7 +10893,7 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
                               afterParserOrEnumRuleCall();
                           
                     }
-                    otherlv_2=(Token)match(input,84,FOLLOW_84_in_ruleIterator8788); if (state.failed) return current;
+                    otherlv_2=(Token)match(input,85,FOLLOW_85_in_ruleIterator8788); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                           	newLeafNode(otherlv_2, grammarAccess.getIteratorAccess().getInKeyword_0_2());
@@ -10989,7 +10992,7 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
                     // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:4427:6: (otherlv_5= 'while' ( (lv_i_6_0= ruleInfixed ) ) )
                     // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:4427:8: otherlv_5= 'while' ( (lv_i_6_0= ruleInfixed ) )
                     {
-                    otherlv_5=(Token)match(input,102,FOLLOW_102_in_ruleIterator8851); if (state.failed) return current;
+                    otherlv_5=(Token)match(input,103,FOLLOW_103_in_ruleIterator8851); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                           	newLeafNode(otherlv_5, grammarAccess.getIteratorAccess().getWhileKeyword_1_0());
@@ -11131,17 +11134,17 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
             // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:4480:2: (otherlv_0= 'free' | otherlv_1= 'local' | otherlv_2= 'fluid' )?
             int alt47=4;
             switch ( input.LA(1) ) {
-                case 64:
+                case 65:
                     {
                     alt47=1;
                     }
                     break;
-                case 63:
+                case 64:
                     {
                     alt47=2;
                     }
                     break;
-                case 65:
+                case 66:
                     {
                     alt47=3;
                     }
@@ -11152,7 +11155,7 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
                 case 1 :
                     // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:4480:4: otherlv_0= 'free'
                     {
-                    otherlv_0=(Token)match(input,64,FOLLOW_64_in_ruleForLhs8971); if (state.failed) return current;
+                    otherlv_0=(Token)match(input,65,FOLLOW_65_in_ruleForLhs8971); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                           	newLeafNode(otherlv_0, grammarAccess.getForLhsAccess().getFreeKeyword_0_0());
@@ -11164,7 +11167,7 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
                 case 2 :
                     // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:4485:7: otherlv_1= 'local'
                     {
-                    otherlv_1=(Token)match(input,63,FOLLOW_63_in_ruleForLhs8989); if (state.failed) return current;
+                    otherlv_1=(Token)match(input,64,FOLLOW_64_in_ruleForLhs8989); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                           	newLeafNode(otherlv_1, grammarAccess.getForLhsAccess().getLocalKeyword_0_1());
@@ -11176,7 +11179,7 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
                 case 3 :
                     // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:4490:7: otherlv_2= 'fluid'
                     {
-                    otherlv_2=(Token)match(input,65,FOLLOW_65_in_ruleForLhs9007); if (state.failed) return current;
+                    otherlv_2=(Token)match(input,66,FOLLOW_66_in_ruleForLhs9007); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                           	newLeafNode(otherlv_2, grammarAccess.getForLhsAccess().getFluidKeyword_0_2());
@@ -11410,7 +11413,7 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
             int alt49=2;
             int LA49_0 = input.LA(1);
 
-            if ( (LA49_0==RULE_TK_STRING||(LA49_0>=RULE_KW_RARROW && LA49_0<=RULE_KW_HAT)||LA49_0==RULE_KW_OPAREN||LA49_0==RULE_KW_OBRACK||(LA49_0>=RULE_KW_QUOTE && LA49_0<=RULE_TK_ID)||(LA49_0>=RULE_KW_SHARP && LA49_0<=RULE_TK_INT)||(LA49_0>=107 && LA49_0<=117)) ) {
+            if ( (LA49_0==RULE_TK_STRING||(LA49_0>=RULE_KW_RARROW && LA49_0<=RULE_KW_HAT)||LA49_0==RULE_KW_OPAREN||LA49_0==RULE_KW_OBRACK||(LA49_0>=RULE_KW_QUOTE && LA49_0<=RULE_TK_ID)||(LA49_0>=RULE_KW_SHARP && LA49_0<=RULE_TK_FLOAT)||(LA49_0>=108 && LA49_0<=118)) ) {
                 alt49=1;
             }
             else if ( (LA49_0==RULE_KW_OCURLY) ) {
@@ -11824,7 +11827,7 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
                 int alt52=2;
                 int LA52_0 = input.LA(1);
 
-                if ( ((LA52_0>=RULE_KW_VEE && LA52_0<=RULE_KW_WEDGE)||(LA52_0>=103 && LA52_0<=104)) ) {
+                if ( ((LA52_0>=RULE_KW_VEE && LA52_0<=RULE_KW_WEDGE)||(LA52_0>=104 && LA52_0<=105)) ) {
                     alt52=1;
                 }
 
@@ -11855,12 +11858,12 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
             	    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:4731:1: (lv_op_2_1= 'and' | lv_op_2_2= 'or' | lv_op_2_3= ruleLatticeTok )
             	    int alt51=3;
             	    switch ( input.LA(1) ) {
-            	    case 103:
+            	    case 104:
             	        {
             	        alt51=1;
             	        }
             	        break;
-            	    case 104:
+            	    case 105:
             	        {
             	        alt51=2;
             	        }
@@ -11883,7 +11886,7 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
             	        case 1 :
             	            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:4732:3: lv_op_2_1= 'and'
             	            {
-            	            lv_op_2_1=(Token)match(input,103,FOLLOW_103_in_ruleE39579); if (state.failed) return current;
+            	            lv_op_2_1=(Token)match(input,104,FOLLOW_104_in_ruleE39579); if (state.failed) return current;
             	            if ( state.backtracking==0 ) {
 
             	                      newLeafNode(lv_op_2_1, grammarAccess.getE3Access().getOpAndKeyword_1_1_0_0());
@@ -11903,7 +11906,7 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
             	        case 2 :
             	            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:4744:8: lv_op_2_2= 'or'
             	            {
-            	            lv_op_2_2=(Token)match(input,104,FOLLOW_104_in_ruleE39608); if (state.failed) return current;
+            	            lv_op_2_2=(Token)match(input,105,FOLLOW_105_in_ruleE39608); if (state.failed) return current;
             	            if ( state.backtracking==0 ) {
 
             	                      newLeafNode(lv_op_2_2, grammarAccess.getE3Access().getOpOrKeyword_1_1_0_1());
@@ -12118,7 +12121,7 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
                 int alt54=2;
                 int LA54_0 = input.LA(1);
 
-                if ( ((LA54_0>=RULE_KW_EQ && LA54_0<=RULE_KW_2LT)||LA54_0==105||(LA54_0>=109 && LA54_0<=111)) ) {
+                if ( ((LA54_0>=RULE_KW_EQ && LA54_0<=RULE_KW_2LT)||LA54_0==106||(LA54_0>=110 && LA54_0<=112)) ) {
                     alt54=1;
                 }
 
@@ -12150,10 +12153,10 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
             	    int alt53=2;
             	    int LA53_0 = input.LA(1);
 
-            	    if ( (LA53_0==105) ) {
+            	    if ( (LA53_0==106) ) {
             	        alt53=1;
             	    }
-            	    else if ( ((LA53_0>=RULE_KW_EQ && LA53_0<=RULE_KW_2LT)||(LA53_0>=109 && LA53_0<=111)) ) {
+            	    else if ( ((LA53_0>=RULE_KW_EQ && LA53_0<=RULE_KW_2LT)||(LA53_0>=110 && LA53_0<=112)) ) {
             	        alt53=2;
             	    }
             	    else {
@@ -12167,7 +12170,7 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
             	        case 1 :
             	            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:4841:3: lv_op_2_1= 'has'
             	            {
-            	            lv_op_2_1=(Token)match(input,105,FOLLOW_105_in_ruleE49802); if (state.failed) return current;
+            	            lv_op_2_1=(Token)match(input,106,FOLLOW_106_in_ruleE49802); if (state.failed) return current;
             	            if ( state.backtracking==0 ) {
 
             	                      newLeafNode(lv_op_2_1, grammarAccess.getE4Access().getOpHasKeyword_1_1_0_0());
@@ -12381,7 +12384,7 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
                 int alt55=2;
                 int LA55_0 = input.LA(1);
 
-                if ( (LA55_0==RULE_KW_2DOT||LA55_0==112) ) {
+                if ( (LA55_0==RULE_KW_2DOT||LA55_0==113) ) {
                     alt55=1;
                 }
 
@@ -12813,7 +12816,7 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
                 int alt57=2;
                 int LA57_0 = input.LA(1);
 
-                if ( ((LA57_0>=113 && LA57_0<=116)) ) {
+                if ( ((LA57_0>=114 && LA57_0<=117)) ) {
                     alt57=1;
                 }
 
@@ -13462,7 +13465,7 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
                 int alt61=2;
                 int LA61_0 = input.LA(1);
 
-                if ( (LA61_0==RULE_KW_AT||LA61_0==RULE_KW_2COLON||LA61_0==106) ) {
+                if ( (LA61_0==RULE_KW_AT||LA61_0==RULE_KW_2COLON||LA61_0==107) ) {
                     alt61=1;
                 }
 
@@ -13497,7 +13500,7 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
             	        alt60=2;
             	        }
             	        break;
-            	    case 106:
+            	    case 107:
             	        {
             	        alt60=3;
             	        }
@@ -13592,7 +13595,7 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
             	            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:5384:1: (lv_op_4_0= 'pretend' )
             	            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:5385:3: lv_op_4_0= 'pretend'
             	            {
-            	            lv_op_4_0=(Token)match(input,106,FOLLOW_106_in_ruleE11_E1210851); if (state.failed) return current;
+            	            lv_op_4_0=(Token)match(input,107,FOLLOW_107_in_ruleE11_E1210851); if (state.failed) return current;
             	            if ( state.backtracking==0 ) {
 
             	                      newLeafNode(lv_op_4_0, grammarAccess.getE11_E12Access().getOpPretendKeyword_1_1_2_0());
@@ -13778,7 +13781,7 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
                 int alt63=2;
                 int LA63_0 = input.LA(1);
 
-                if ( (LA63_0==RULE_KW_AT||LA63_0==RULE_KW_2COLON||LA63_0==106) ) {
+                if ( (LA63_0==RULE_KW_AT||LA63_0==RULE_KW_2COLON||LA63_0==107) ) {
                     alt63=1;
                 }
 
@@ -13813,7 +13816,7 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
             	        alt62=2;
             	        }
             	        break;
-            	    case 106:
+            	    case 107:
             	        {
             	        alt62=3;
             	        }
@@ -13908,7 +13911,7 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
             	            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:5501:1: (lv_op_4_0= 'pretend' )
             	            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:5502:3: lv_op_4_0= 'pretend'
             	            {
-            	            lv_op_4_0=(Token)match(input,106,FOLLOW_106_in_ruleE11_Op11079); if (state.failed) return current;
+            	            lv_op_4_0=(Token)match(input,107,FOLLOW_107_in_ruleE11_Op11079); if (state.failed) return current;
             	            if ( state.backtracking==0 ) {
 
             	                      newLeafNode(lv_op_4_0, grammarAccess.getE11_OpAccess().getOpPretendKeyword_1_1_2_0());
@@ -15007,7 +15010,7 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
                     int alt68=2;
                     int LA68_0 = input.LA(1);
 
-                    if ( (LA68_0==RULE_TK_STRING||LA68_0==RULE_KW_OPAREN||LA68_0==RULE_KW_OBRACK||(LA68_0>=RULE_KW_QUOTE && LA68_0<=RULE_TK_ID)||(LA68_0>=RULE_KW_SHARP && LA68_0<=RULE_TK_INT)||LA68_0==117) ) {
+                    if ( (LA68_0==RULE_TK_STRING||LA68_0==RULE_KW_OPAREN||LA68_0==RULE_KW_OBRACK||(LA68_0>=RULE_KW_QUOTE && LA68_0<=RULE_TK_ID)||(LA68_0>=RULE_KW_SHARP && LA68_0<=RULE_TK_FLOAT)||LA68_0==118) ) {
                         alt68=1;
                     }
                     switch (alt68) {
@@ -15055,7 +15058,7 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
                     // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:5948:1: (lv_op_2_0= 'with' )
                     // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:5949:3: lv_op_2_0= 'with'
                     {
-                    lv_op_2_0=(Token)match(input,107,FOLLOW_107_in_ruleE1412042); if (state.failed) return current;
+                    lv_op_2_0=(Token)match(input,108,FOLLOW_108_in_ruleE1412042); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               newLeafNode(lv_op_2_0, grammarAccess.getE14Access().getOpWithKeyword_1_0_1_0());
@@ -15132,7 +15135,7 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
                     int alt69=2;
                     int LA69_0 = input.LA(1);
 
-                    if ( (LA69_0==RULE_TK_STRING||LA69_0==RULE_KW_OPAREN||LA69_0==RULE_KW_OBRACK||(LA69_0>=RULE_KW_QUOTE && LA69_0<=RULE_TK_ID)||(LA69_0>=RULE_KW_SHARP && LA69_0<=RULE_TK_INT)||LA69_0==117) ) {
+                    if ( (LA69_0==RULE_TK_STRING||LA69_0==RULE_KW_OPAREN||LA69_0==RULE_KW_OBRACK||(LA69_0>=RULE_KW_QUOTE && LA69_0<=RULE_TK_ID)||(LA69_0>=RULE_KW_SHARP && LA69_0<=RULE_TK_FLOAT)||LA69_0==118) ) {
                         alt69=1;
                     }
                     switch (alt69) {
@@ -15180,7 +15183,7 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
                     // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:6014:1: (lv_op_5_0= 'add' )
                     // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:6015:3: lv_op_5_0= 'add'
                     {
-                    lv_op_5_0=(Token)match(input,108,FOLLOW_108_in_ruleE1412164); if (state.failed) return current;
+                    lv_op_5_0=(Token)match(input,109,FOLLOW_109_in_ruleE1412164); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               newLeafNode(lv_op_5_0, grammarAccess.getE14Access().getOpAddKeyword_2_0_1_0());
@@ -15294,7 +15297,7 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
                     // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:6080:1: (lv_op_8_0= 'except' )
                     // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:6081:3: lv_op_8_0= 'except'
                     {
-                    lv_op_8_0=(Token)match(input,94,FOLLOW_94_in_ruleE1412284); if (state.failed) return current;
+                    lv_op_8_0=(Token)match(input,95,FOLLOW_95_in_ruleE1412284); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               newLeafNode(lv_op_8_0, grammarAccess.getE14Access().getOpExceptKeyword_3_0_1_0());
@@ -15408,7 +15411,7 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
                     // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:6146:1: (lv_op_11_0= 'throw' )
                     // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:6147:3: lv_op_11_0= 'throw'
                     {
-                    lv_op_11_0=(Token)match(input,95,FOLLOW_95_in_ruleE1412404); if (state.failed) return current;
+                    lv_op_11_0=(Token)match(input,96,FOLLOW_96_in_ruleE1412404); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               newLeafNode(lv_op_11_0, grammarAccess.getE14Access().getOpThrowKeyword_4_0_1_0());
@@ -15696,15 +15699,15 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
             case RULE_KW_LE:
             case RULE_KW_LT:
             case RULE_KW_2LT:
-            case 109:
             case 110:
             case 111:
+            case 112:
                 {
                 alt71=3;
                 }
                 break;
             case RULE_KW_2DOT:
-            case 112:
+            case 113:
                 {
                 alt71=4;
                 }
@@ -15716,10 +15719,10 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
                 alt71=5;
                 }
                 break;
-            case 113:
             case 114:
             case 115:
             case 116:
+            case 117:
                 {
                 alt71=6;
                 }
@@ -16351,15 +16354,15 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
             case RULE_KW_LE:
             case RULE_KW_LT:
             case RULE_KW_2LT:
-            case 109:
             case 110:
             case 111:
+            case 112:
                 {
                 alt72=3;
                 }
                 break;
             case RULE_KW_2DOT:
-            case 112:
+            case 113:
                 {
                 alt72=4;
                 }
@@ -16371,10 +16374,10 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
                 alt72=5;
                 }
                 break;
-            case 113:
             case 114:
             case 115:
             case 116:
+            case 117:
                 {
                 alt72=6;
                 }
@@ -17814,17 +17817,17 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
                 alt75=9;
                 }
                 break;
-            case 109:
+            case 110:
                 {
                 alt75=10;
                 }
                 break;
-            case 110:
+            case 111:
                 {
                 alt75=11;
                 }
                 break;
-            case 111:
+            case 112:
                 {
                 alt75=12;
                 }
@@ -17994,7 +17997,7 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
                 case 10 :
                     // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:7082:2: kw= 'is'
                     {
-                    kw=(Token)match(input,109,FOLLOW_109_in_ruleRelationTok14688); if (state.failed) return current;
+                    kw=(Token)match(input,110,FOLLOW_110_in_ruleRelationTok14688); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current.merge(kw);
@@ -18007,7 +18010,7 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
                 case 11 :
                     // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:7089:2: kw= 'isnt'
                     {
-                    kw=(Token)match(input,110,FOLLOW_110_in_ruleRelationTok14707); if (state.failed) return current;
+                    kw=(Token)match(input,111,FOLLOW_111_in_ruleRelationTok14707); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current.merge(kw);
@@ -18020,7 +18023,7 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
                 case 12 :
                     // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:7096:2: kw= 'case'
                     {
-                    kw=(Token)match(input,111,FOLLOW_111_in_ruleRelationTok14726); if (state.failed) return current;
+                    kw=(Token)match(input,112,FOLLOW_112_in_ruleRelationTok14726); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current.merge(kw);
@@ -18123,7 +18126,7 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
             if ( (LA76_0==RULE_KW_2DOT) ) {
                 alt76=1;
             }
-            else if ( (LA76_0==112) ) {
+            else if ( (LA76_0==113) ) {
                 alt76=2;
             }
             else {
@@ -18154,7 +18157,7 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
                 case 2 :
                     // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:7141:2: kw= 'by'
                     {
-                    kw=(Token)match(input,112,FOLLOW_112_in_ruleSegTok14856); if (state.failed) return current;
+                    kw=(Token)match(input,113,FOLLOW_113_in_ruleSegTok14856); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current.merge(kw);
@@ -18417,22 +18420,22 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
             // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:7231:1: (kw= 'mod' | kw= 'quo' | kw= 'rem' | kw= 'exquo' )
             int alt78=4;
             switch ( input.LA(1) ) {
-            case 113:
+            case 114:
                 {
                 alt78=1;
                 }
                 break;
-            case 114:
+            case 115:
                 {
                 alt78=2;
                 }
                 break;
-            case 115:
+            case 116:
                 {
                 alt78=3;
                 }
                 break;
-            case 116:
+            case 117:
                 {
                 alt78=4;
                 }
@@ -18449,7 +18452,7 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
                 case 1 :
                     // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:7232:2: kw= 'mod'
                     {
-                    kw=(Token)match(input,113,FOLLOW_113_in_ruleQuotientTok15123); if (state.failed) return current;
+                    kw=(Token)match(input,114,FOLLOW_114_in_ruleQuotientTok15123); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current.merge(kw);
@@ -18462,7 +18465,7 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
                 case 2 :
                     // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:7239:2: kw= 'quo'
                     {
-                    kw=(Token)match(input,114,FOLLOW_114_in_ruleQuotientTok15142); if (state.failed) return current;
+                    kw=(Token)match(input,115,FOLLOW_115_in_ruleQuotientTok15142); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current.merge(kw);
@@ -18475,7 +18478,7 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
                 case 3 :
                     // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:7246:2: kw= 'rem'
                     {
-                    kw=(Token)match(input,115,FOLLOW_115_in_ruleQuotientTok15161); if (state.failed) return current;
+                    kw=(Token)match(input,116,FOLLOW_116_in_ruleQuotientTok15161); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current.merge(kw);
@@ -18488,7 +18491,7 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
                 case 4 :
                     // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:7253:2: kw= 'exquo'
                     {
-                    kw=(Token)match(input,116,FOLLOW_116_in_ruleQuotientTok15180); if (state.failed) return current;
+                    kw=(Token)match(input,117,FOLLOW_117_in_ruleQuotientTok15180); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current.merge(kw);
@@ -19193,14 +19196,14 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
             int alt82=2;
             int LA82_0 = input.LA(1);
 
-            if ( (LA82_0==117) ) {
+            if ( (LA82_0==118) ) {
                 int LA82_1 = input.LA(2);
 
-                if ( (LA82_1==RULE_KW_OPAREN||LA82_1==RULE_KW_OBRACK||LA82_1==RULE_KW_QUOTE||LA82_1==RULE_KW_OCURLY) ) {
-                    alt82=1;
-                }
-                else if ( (LA82_1==RULE_TK_STRING||LA82_1==RULE_TK_ID||(LA82_1>=RULE_KW_SHARP && LA82_1<=RULE_TK_INT)||LA82_1==117) ) {
+                if ( (LA82_1==RULE_TK_STRING||LA82_1==RULE_TK_ID||(LA82_1>=RULE_KW_SHARP && LA82_1<=RULE_TK_FLOAT)||LA82_1==118) ) {
                     alt82=2;
+                }
+                else if ( (LA82_1==RULE_KW_OPAREN||LA82_1==RULE_KW_OBRACK||LA82_1==RULE_KW_QUOTE||LA82_1==RULE_KW_OCURLY) ) {
+                    alt82=1;
                 }
                 else {
                     if (state.backtracking>0) {state.failed=true; return current;}
@@ -19210,7 +19213,7 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
                     throw nvae;
                 }
             }
-            else if ( (LA82_0==RULE_TK_STRING||LA82_0==RULE_KW_OPAREN||LA82_0==RULE_KW_OBRACK||(LA82_0>=RULE_KW_QUOTE && LA82_0<=RULE_TK_ID)||(LA82_0>=RULE_KW_SHARP && LA82_0<=RULE_TK_INT)) ) {
+            else if ( (LA82_0==RULE_TK_STRING||LA82_0==RULE_KW_OPAREN||LA82_0==RULE_KW_OBRACK||(LA82_0>=RULE_KW_QUOTE && LA82_0<=RULE_TK_ID)||(LA82_0>=RULE_KW_SHARP && LA82_0<=RULE_TK_FLOAT)) ) {
                 alt82=1;
             }
             else {
@@ -19247,7 +19250,7 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
                     int alt81=2;
                     int LA81_0 = input.LA(1);
 
-                    if ( (LA81_0==RULE_TK_STRING||LA81_0==RULE_TK_ID||(LA81_0>=RULE_KW_SHARP && LA81_0<=RULE_TK_INT)||LA81_0==117) ) {
+                    if ( (LA81_0==RULE_TK_STRING||LA81_0==RULE_TK_ID||(LA81_0>=RULE_KW_SHARP && LA81_0<=RULE_TK_FLOAT)||LA81_0==118) ) {
                         alt81=1;
                     }
                     switch (alt81) {
@@ -19301,7 +19304,7 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
                     // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:7537:6: (otherlv_2= 'not' ( (lv_right_3_0= ruleJright_Atom ) ) )
                     // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:7537:8: otherlv_2= 'not' ( (lv_right_3_0= ruleJright_Atom ) )
                     {
-                    otherlv_2=(Token)match(input,117,FOLLOW_117_in_ruleJright_Molecule15945); if (state.failed) return current;
+                    otherlv_2=(Token)match(input,118,FOLLOW_118_in_ruleJright_Molecule15945); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                           	newLeafNode(otherlv_2, grammarAccess.getJright_MoleculeAccess().getNotKeyword_1_0());
@@ -19443,10 +19446,10 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
             int alt84=2;
             int LA84_0 = input.LA(1);
 
-            if ( (LA84_0==RULE_TK_STRING||LA84_0==RULE_TK_ID||(LA84_0>=RULE_KW_SHARP && LA84_0<=RULE_TK_INT)) ) {
+            if ( (LA84_0==RULE_TK_STRING||LA84_0==RULE_TK_ID||(LA84_0>=RULE_KW_SHARP && LA84_0<=RULE_TK_FLOAT)) ) {
                 alt84=1;
             }
-            else if ( (LA84_0==117) ) {
+            else if ( (LA84_0==118) ) {
                 alt84=2;
             }
             else {
@@ -19483,7 +19486,7 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
                     int alt83=2;
                     int LA83_0 = input.LA(1);
 
-                    if ( (LA83_0==RULE_TK_STRING||LA83_0==RULE_TK_ID||(LA83_0>=RULE_KW_SHARP && LA83_0<=RULE_TK_INT)||LA83_0==117) ) {
+                    if ( (LA83_0==RULE_TK_STRING||LA83_0==RULE_TK_ID||(LA83_0>=RULE_KW_SHARP && LA83_0<=RULE_TK_FLOAT)||LA83_0==118) ) {
                         alt83=1;
                     }
                     switch (alt83) {
@@ -19537,7 +19540,7 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
                     // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:7618:6: (otherlv_2= 'not' ( (lv_right2_3_0= ruleJright_Atom ) ) )
                     // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:7618:8: otherlv_2= 'not' ( (lv_right2_3_0= ruleJright_Atom ) )
                     {
-                    otherlv_2=(Token)match(input,117,FOLLOW_117_in_ruleJright_Atom16116); if (state.failed) return current;
+                    otherlv_2=(Token)match(input,118,FOLLOW_118_in_ruleJright_Atom16116); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                           	newLeafNode(otherlv_2, grammarAccess.getJright_AtomAccess().getNotKeyword_1_0());
@@ -19690,7 +19693,7 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
                     // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:7671:2: (otherlv_0= 'not' ( (lv_be_1_0= ruleBlockEnclosure ) ) )
                     // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:7671:4: otherlv_0= 'not' ( (lv_be_1_0= ruleBlockEnclosure ) )
                     {
-                    otherlv_0=(Token)match(input,117,FOLLOW_117_in_ruleJleft_Molecule16236); if (state.failed) return current;
+                    otherlv_0=(Token)match(input,118,FOLLOW_118_in_ruleJleft_Molecule16236); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                           	newLeafNode(otherlv_0, grammarAccess.getJleft_MoleculeAccess().getNotKeyword_0_0());
@@ -20053,625 +20056,7 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
             {
             // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:7810:1: ( ( ( ( (lv_a_0_0= ruleAtom ) ) ( (lv_be_1_0= ruleBlockEnclosure ) )* ) ( ( (lv_n_2_0= 'not' ) ) ( (lv_be_3_0= ruleBlockEnclosure ) ) ) ) | (this_Atom_4= ruleAtom (this_KW_DOT_5= RULE_KW_DOT ( (lv_bm4_6_0= ruleBlockMolecule ) ) )* ) )
             int alt90=2;
-            switch ( input.LA(1) ) {
-            case RULE_TK_ID:
-                {
-                switch ( input.LA(2) ) {
-                case EOF:
-                case RULE_TK_STRING:
-                case RULE_KW_AT:
-                case RULE_KW_COLON:
-                case RULE_KW_COLONSTAR:
-                case RULE_KW_ASSIGN:
-                case RULE_KW_2EQ:
-                case RULE_KW_MARROW:
-                case RULE_KW_MAPSTO:
-                case RULE_KW_MAPSTOSTAR:
-                case RULE_KW_BAR:
-                case RULE_KW_2COLON:
-                case RULE_KW_DOLLAR:
-                case RULE_KW_RARROW:
-                case RULE_KW_LARROW:
-                case RULE_KW_MAPSTAR:
-                case RULE_KW_VEE:
-                case RULE_KW_WEDGE:
-                case RULE_KW_EQ:
-                case RULE_KW_TILDEE:
-                case RULE_KW_HATE:
-                case RULE_KW_GE:
-                case RULE_KW_GT:
-                case RULE_KW_2GT:
-                case RULE_KW_LE:
-                case RULE_KW_LT:
-                case RULE_KW_2LT:
-                case RULE_KW_2DOT:
-                case RULE_KW_PLUS:
-                case RULE_KW_MINUS:
-                case RULE_KW_PLUSMINUS:
-                case RULE_KW_STAR:
-                case RULE_KW_SLASH:
-                case RULE_KW_BACKSLASH:
-                case RULE_KW_2STAR:
-                case RULE_KW_HAT:
-                case RULE_KW_DOT:
-                case RULE_KW_CPAREN:
-                case RULE_KW_CBRACK:
-                case RULE_TK_ID:
-                case RULE_KW_COMMA:
-                case RULE_KW_SHARP:
-                case RULE_KW_TILDE:
-                case RULE_TK_INT:
-                case RULE_TK_POSTDOC:
-                case RULE_KW_SEMICOLON:
-                case RULE_KW_CCURLY:
-                case 72:
-                case 73:
-                case 74:
-                case 76:
-                case 77:
-                case 78:
-                case 79:
-                case 81:
-                case 82:
-                case 84:
-                case 94:
-                case 95:
-                case 98:
-                case 99:
-                case 100:
-                case 101:
-                case 102:
-                case 103:
-                case 104:
-                case 105:
-                case 106:
-                case 107:
-                case 108:
-                case 109:
-                case 110:
-                case 111:
-                case 112:
-                case 113:
-                case 114:
-                case 115:
-                case 116:
-                    {
-                    alt90=2;
-                    }
-                    break;
-                case 117:
-                    {
-                    int LA90_7 = input.LA(3);
-
-                    if ( (LA90_7==RULE_TK_STRING||LA90_7==RULE_TK_ID||(LA90_7>=RULE_KW_SHARP && LA90_7<=RULE_TK_INT)||LA90_7==117) ) {
-                        alt90=2;
-                    }
-                    else if ( (LA90_7==RULE_KW_OPAREN||LA90_7==RULE_KW_OBRACK||LA90_7==RULE_KW_QUOTE||LA90_7==RULE_KW_OCURLY) ) {
-                        alt90=1;
-                    }
-                    else {
-                        if (state.backtracking>0) {state.failed=true; return current;}
-                        NoViableAltException nvae =
-                            new NoViableAltException("", 90, 7, input);
-
-                        throw nvae;
-                    }
-                    }
-                    break;
-                case RULE_KW_OPAREN:
-                case RULE_KW_OBRACK:
-                case RULE_KW_QUOTE:
-                case RULE_KW_OCURLY:
-                    {
-                    alt90=1;
-                    }
-                    break;
-                default:
-                    if (state.backtracking>0) {state.failed=true; return current;}
-                    NoViableAltException nvae =
-                        new NoViableAltException("", 90, 1, input);
-
-                    throw nvae;
-                }
-
-                }
-                break;
-            case RULE_KW_SHARP:
-                {
-                switch ( input.LA(2) ) {
-                case RULE_KW_OPAREN:
-                case RULE_KW_OBRACK:
-                case RULE_KW_QUOTE:
-                case RULE_KW_OCURLY:
-                    {
-                    alt90=1;
-                    }
-                    break;
-                case 117:
-                    {
-                    int LA90_7 = input.LA(3);
-
-                    if ( (LA90_7==RULE_TK_STRING||LA90_7==RULE_TK_ID||(LA90_7>=RULE_KW_SHARP && LA90_7<=RULE_TK_INT)||LA90_7==117) ) {
-                        alt90=2;
-                    }
-                    else if ( (LA90_7==RULE_KW_OPAREN||LA90_7==RULE_KW_OBRACK||LA90_7==RULE_KW_QUOTE||LA90_7==RULE_KW_OCURLY) ) {
-                        alt90=1;
-                    }
-                    else {
-                        if (state.backtracking>0) {state.failed=true; return current;}
-                        NoViableAltException nvae =
-                            new NoViableAltException("", 90, 7, input);
-
-                        throw nvae;
-                    }
-                    }
-                    break;
-                case EOF:
-                case RULE_TK_STRING:
-                case RULE_KW_AT:
-                case RULE_KW_COLON:
-                case RULE_KW_COLONSTAR:
-                case RULE_KW_ASSIGN:
-                case RULE_KW_2EQ:
-                case RULE_KW_MARROW:
-                case RULE_KW_MAPSTO:
-                case RULE_KW_MAPSTOSTAR:
-                case RULE_KW_BAR:
-                case RULE_KW_2COLON:
-                case RULE_KW_DOLLAR:
-                case RULE_KW_RARROW:
-                case RULE_KW_LARROW:
-                case RULE_KW_MAPSTAR:
-                case RULE_KW_VEE:
-                case RULE_KW_WEDGE:
-                case RULE_KW_EQ:
-                case RULE_KW_TILDEE:
-                case RULE_KW_HATE:
-                case RULE_KW_GE:
-                case RULE_KW_GT:
-                case RULE_KW_2GT:
-                case RULE_KW_LE:
-                case RULE_KW_LT:
-                case RULE_KW_2LT:
-                case RULE_KW_2DOT:
-                case RULE_KW_PLUS:
-                case RULE_KW_MINUS:
-                case RULE_KW_PLUSMINUS:
-                case RULE_KW_STAR:
-                case RULE_KW_SLASH:
-                case RULE_KW_BACKSLASH:
-                case RULE_KW_2STAR:
-                case RULE_KW_HAT:
-                case RULE_KW_DOT:
-                case RULE_KW_CPAREN:
-                case RULE_KW_CBRACK:
-                case RULE_TK_ID:
-                case RULE_KW_COMMA:
-                case RULE_KW_SHARP:
-                case RULE_KW_TILDE:
-                case RULE_TK_INT:
-                case RULE_TK_POSTDOC:
-                case RULE_KW_SEMICOLON:
-                case RULE_KW_CCURLY:
-                case 72:
-                case 73:
-                case 74:
-                case 76:
-                case 77:
-                case 78:
-                case 79:
-                case 81:
-                case 82:
-                case 84:
-                case 94:
-                case 95:
-                case 98:
-                case 99:
-                case 100:
-                case 101:
-                case 102:
-                case 103:
-                case 104:
-                case 105:
-                case 106:
-                case 107:
-                case 108:
-                case 109:
-                case 110:
-                case 111:
-                case 112:
-                case 113:
-                case 114:
-                case 115:
-                case 116:
-                    {
-                    alt90=2;
-                    }
-                    break;
-                default:
-                    if (state.backtracking>0) {state.failed=true; return current;}
-                    NoViableAltException nvae =
-                        new NoViableAltException("", 90, 2, input);
-
-                    throw nvae;
-                }
-
-                }
-                break;
-            case RULE_KW_TILDE:
-                {
-                switch ( input.LA(2) ) {
-                case EOF:
-                case RULE_TK_STRING:
-                case RULE_KW_AT:
-                case RULE_KW_COLON:
-                case RULE_KW_COLONSTAR:
-                case RULE_KW_ASSIGN:
-                case RULE_KW_2EQ:
-                case RULE_KW_MARROW:
-                case RULE_KW_MAPSTO:
-                case RULE_KW_MAPSTOSTAR:
-                case RULE_KW_BAR:
-                case RULE_KW_2COLON:
-                case RULE_KW_DOLLAR:
-                case RULE_KW_RARROW:
-                case RULE_KW_LARROW:
-                case RULE_KW_MAPSTAR:
-                case RULE_KW_VEE:
-                case RULE_KW_WEDGE:
-                case RULE_KW_EQ:
-                case RULE_KW_TILDEE:
-                case RULE_KW_HATE:
-                case RULE_KW_GE:
-                case RULE_KW_GT:
-                case RULE_KW_2GT:
-                case RULE_KW_LE:
-                case RULE_KW_LT:
-                case RULE_KW_2LT:
-                case RULE_KW_2DOT:
-                case RULE_KW_PLUS:
-                case RULE_KW_MINUS:
-                case RULE_KW_PLUSMINUS:
-                case RULE_KW_STAR:
-                case RULE_KW_SLASH:
-                case RULE_KW_BACKSLASH:
-                case RULE_KW_2STAR:
-                case RULE_KW_HAT:
-                case RULE_KW_DOT:
-                case RULE_KW_CPAREN:
-                case RULE_KW_CBRACK:
-                case RULE_TK_ID:
-                case RULE_KW_COMMA:
-                case RULE_KW_SHARP:
-                case RULE_KW_TILDE:
-                case RULE_TK_INT:
-                case RULE_TK_POSTDOC:
-                case RULE_KW_SEMICOLON:
-                case RULE_KW_CCURLY:
-                case 72:
-                case 73:
-                case 74:
-                case 76:
-                case 77:
-                case 78:
-                case 79:
-                case 81:
-                case 82:
-                case 84:
-                case 94:
-                case 95:
-                case 98:
-                case 99:
-                case 100:
-                case 101:
-                case 102:
-                case 103:
-                case 104:
-                case 105:
-                case 106:
-                case 107:
-                case 108:
-                case 109:
-                case 110:
-                case 111:
-                case 112:
-                case 113:
-                case 114:
-                case 115:
-                case 116:
-                    {
-                    alt90=2;
-                    }
-                    break;
-                case 117:
-                    {
-                    int LA90_7 = input.LA(3);
-
-                    if ( (LA90_7==RULE_TK_STRING||LA90_7==RULE_TK_ID||(LA90_7>=RULE_KW_SHARP && LA90_7<=RULE_TK_INT)||LA90_7==117) ) {
-                        alt90=2;
-                    }
-                    else if ( (LA90_7==RULE_KW_OPAREN||LA90_7==RULE_KW_OBRACK||LA90_7==RULE_KW_QUOTE||LA90_7==RULE_KW_OCURLY) ) {
-                        alt90=1;
-                    }
-                    else {
-                        if (state.backtracking>0) {state.failed=true; return current;}
-                        NoViableAltException nvae =
-                            new NoViableAltException("", 90, 7, input);
-
-                        throw nvae;
-                    }
-                    }
-                    break;
-                case RULE_KW_OPAREN:
-                case RULE_KW_OBRACK:
-                case RULE_KW_QUOTE:
-                case RULE_KW_OCURLY:
-                    {
-                    alt90=1;
-                    }
-                    break;
-                default:
-                    if (state.backtracking>0) {state.failed=true; return current;}
-                    NoViableAltException nvae =
-                        new NoViableAltException("", 90, 3, input);
-
-                    throw nvae;
-                }
-
-                }
-                break;
-            case RULE_TK_INT:
-                {
-                switch ( input.LA(2) ) {
-                case EOF:
-                case RULE_TK_STRING:
-                case RULE_KW_AT:
-                case RULE_KW_COLON:
-                case RULE_KW_COLONSTAR:
-                case RULE_KW_ASSIGN:
-                case RULE_KW_2EQ:
-                case RULE_KW_MARROW:
-                case RULE_KW_MAPSTO:
-                case RULE_KW_MAPSTOSTAR:
-                case RULE_KW_BAR:
-                case RULE_KW_2COLON:
-                case RULE_KW_DOLLAR:
-                case RULE_KW_RARROW:
-                case RULE_KW_LARROW:
-                case RULE_KW_MAPSTAR:
-                case RULE_KW_VEE:
-                case RULE_KW_WEDGE:
-                case RULE_KW_EQ:
-                case RULE_KW_TILDEE:
-                case RULE_KW_HATE:
-                case RULE_KW_GE:
-                case RULE_KW_GT:
-                case RULE_KW_2GT:
-                case RULE_KW_LE:
-                case RULE_KW_LT:
-                case RULE_KW_2LT:
-                case RULE_KW_2DOT:
-                case RULE_KW_PLUS:
-                case RULE_KW_MINUS:
-                case RULE_KW_PLUSMINUS:
-                case RULE_KW_STAR:
-                case RULE_KW_SLASH:
-                case RULE_KW_BACKSLASH:
-                case RULE_KW_2STAR:
-                case RULE_KW_HAT:
-                case RULE_KW_DOT:
-                case RULE_KW_CPAREN:
-                case RULE_KW_CBRACK:
-                case RULE_TK_ID:
-                case RULE_KW_COMMA:
-                case RULE_KW_SHARP:
-                case RULE_KW_TILDE:
-                case RULE_TK_INT:
-                case RULE_TK_POSTDOC:
-                case RULE_KW_SEMICOLON:
-                case RULE_KW_CCURLY:
-                case 72:
-                case 73:
-                case 74:
-                case 76:
-                case 77:
-                case 78:
-                case 79:
-                case 81:
-                case 82:
-                case 84:
-                case 94:
-                case 95:
-                case 98:
-                case 99:
-                case 100:
-                case 101:
-                case 102:
-                case 103:
-                case 104:
-                case 105:
-                case 106:
-                case 107:
-                case 108:
-                case 109:
-                case 110:
-                case 111:
-                case 112:
-                case 113:
-                case 114:
-                case 115:
-                case 116:
-                    {
-                    alt90=2;
-                    }
-                    break;
-                case 117:
-                    {
-                    int LA90_7 = input.LA(3);
-
-                    if ( (LA90_7==RULE_TK_STRING||LA90_7==RULE_TK_ID||(LA90_7>=RULE_KW_SHARP && LA90_7<=RULE_TK_INT)||LA90_7==117) ) {
-                        alt90=2;
-                    }
-                    else if ( (LA90_7==RULE_KW_OPAREN||LA90_7==RULE_KW_OBRACK||LA90_7==RULE_KW_QUOTE||LA90_7==RULE_KW_OCURLY) ) {
-                        alt90=1;
-                    }
-                    else {
-                        if (state.backtracking>0) {state.failed=true; return current;}
-                        NoViableAltException nvae =
-                            new NoViableAltException("", 90, 7, input);
-
-                        throw nvae;
-                    }
-                    }
-                    break;
-                case RULE_KW_OPAREN:
-                case RULE_KW_OBRACK:
-                case RULE_KW_QUOTE:
-                case RULE_KW_OCURLY:
-                    {
-                    alt90=1;
-                    }
-                    break;
-                default:
-                    if (state.backtracking>0) {state.failed=true; return current;}
-                    NoViableAltException nvae =
-                        new NoViableAltException("", 90, 4, input);
-
-                    throw nvae;
-                }
-
-                }
-                break;
-            case RULE_TK_STRING:
-                {
-                switch ( input.LA(2) ) {
-                case EOF:
-                case RULE_TK_STRING:
-                case RULE_KW_AT:
-                case RULE_KW_COLON:
-                case RULE_KW_COLONSTAR:
-                case RULE_KW_ASSIGN:
-                case RULE_KW_2EQ:
-                case RULE_KW_MARROW:
-                case RULE_KW_MAPSTO:
-                case RULE_KW_MAPSTOSTAR:
-                case RULE_KW_BAR:
-                case RULE_KW_2COLON:
-                case RULE_KW_DOLLAR:
-                case RULE_KW_RARROW:
-                case RULE_KW_LARROW:
-                case RULE_KW_MAPSTAR:
-                case RULE_KW_VEE:
-                case RULE_KW_WEDGE:
-                case RULE_KW_EQ:
-                case RULE_KW_TILDEE:
-                case RULE_KW_HATE:
-                case RULE_KW_GE:
-                case RULE_KW_GT:
-                case RULE_KW_2GT:
-                case RULE_KW_LE:
-                case RULE_KW_LT:
-                case RULE_KW_2LT:
-                case RULE_KW_2DOT:
-                case RULE_KW_PLUS:
-                case RULE_KW_MINUS:
-                case RULE_KW_PLUSMINUS:
-                case RULE_KW_STAR:
-                case RULE_KW_SLASH:
-                case RULE_KW_BACKSLASH:
-                case RULE_KW_2STAR:
-                case RULE_KW_HAT:
-                case RULE_KW_DOT:
-                case RULE_KW_CPAREN:
-                case RULE_KW_CBRACK:
-                case RULE_TK_ID:
-                case RULE_KW_COMMA:
-                case RULE_KW_SHARP:
-                case RULE_KW_TILDE:
-                case RULE_TK_INT:
-                case RULE_TK_POSTDOC:
-                case RULE_KW_SEMICOLON:
-                case RULE_KW_CCURLY:
-                case 72:
-                case 73:
-                case 74:
-                case 76:
-                case 77:
-                case 78:
-                case 79:
-                case 81:
-                case 82:
-                case 84:
-                case 94:
-                case 95:
-                case 98:
-                case 99:
-                case 100:
-                case 101:
-                case 102:
-                case 103:
-                case 104:
-                case 105:
-                case 106:
-                case 107:
-                case 108:
-                case 109:
-                case 110:
-                case 111:
-                case 112:
-                case 113:
-                case 114:
-                case 115:
-                case 116:
-                    {
-                    alt90=2;
-                    }
-                    break;
-                case 117:
-                    {
-                    int LA90_7 = input.LA(3);
-
-                    if ( (LA90_7==RULE_TK_STRING||LA90_7==RULE_TK_ID||(LA90_7>=RULE_KW_SHARP && LA90_7<=RULE_TK_INT)||LA90_7==117) ) {
-                        alt90=2;
-                    }
-                    else if ( (LA90_7==RULE_KW_OPAREN||LA90_7==RULE_KW_OBRACK||LA90_7==RULE_KW_QUOTE||LA90_7==RULE_KW_OCURLY) ) {
-                        alt90=1;
-                    }
-                    else {
-                        if (state.backtracking>0) {state.failed=true; return current;}
-                        NoViableAltException nvae =
-                            new NoViableAltException("", 90, 7, input);
-
-                        throw nvae;
-                    }
-                    }
-                    break;
-                case RULE_KW_OPAREN:
-                case RULE_KW_OBRACK:
-                case RULE_KW_QUOTE:
-                case RULE_KW_OCURLY:
-                    {
-                    alt90=1;
-                    }
-                    break;
-                default:
-                    if (state.backtracking>0) {state.failed=true; return current;}
-                    NoViableAltException nvae =
-                        new NoViableAltException("", 90, 5, input);
-
-                    throw nvae;
-                }
-
-                }
-                break;
-            default:
-                if (state.backtracking>0) {state.failed=true; return current;}
-                NoViableAltException nvae =
-                    new NoViableAltException("", 90, 0, input);
-
-                throw nvae;
-            }
-
+            alt90 = dfa90.predict(input);
             switch (alt90) {
                 case 1 :
                     // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:7810:2: ( ( ( (lv_a_0_0= ruleAtom ) ) ( (lv_be_1_0= ruleBlockEnclosure ) )* ) ( ( (lv_n_2_0= 'not' ) ) ( (lv_be_3_0= ruleBlockEnclosure ) ) ) )
@@ -20782,7 +20167,7 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
                     // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:7847:1: (lv_n_2_0= 'not' )
                     // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:7848:3: lv_n_2_0= 'not'
                     {
-                    lv_n_2_0=(Token)match(input,117,FOLLOW_117_in_ruleJleft_Atom16548); if (state.failed) return current;
+                    lv_n_2_0=(Token)match(input,118,FOLLOW_118_in_ruleJleft_Atom16548); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               newLeafNode(lv_n_2_0, grammarAccess.getJleft_AtomAccess().getNNotKeyword_0_1_0_0());
@@ -21041,6 +20426,9 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
                 alt91=1;
             }
             else if ( (LA91_0==RULE_TK_INT) && (synpred20_InternalEditor())) {
+                alt91=1;
+            }
+            else if ( (LA91_0==RULE_TK_FLOAT) && (synpred20_InternalEditor())) {
                 alt91=1;
             }
             else if ( (LA91_0==RULE_TK_STRING) && (synpred20_InternalEditor())) {
@@ -21382,7 +20770,7 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
             int alt94=2;
             int LA94_0 = input.LA(1);
 
-            if ( (LA94_0==EOF||(LA94_0>=RULE_TK_STRING && LA94_0<=RULE_KW_HAT)||(LA94_0>=RULE_KW_OPAREN && LA94_0<=RULE_TK_INT)||(LA94_0>=RULE_TK_POSTDOC && LA94_0<=RULE_KW_SEMICOLON)||LA94_0==RULE_KW_CCURLY||(LA94_0>=72 && LA94_0<=74)||(LA94_0>=76 && LA94_0<=79)||(LA94_0>=81 && LA94_0<=82)||LA94_0==84||(LA94_0>=98 && LA94_0<=106)||(LA94_0>=109 && LA94_0<=117)) ) {
+            if ( (LA94_0==EOF||(LA94_0>=RULE_TK_STRING && LA94_0<=RULE_KW_HAT)||(LA94_0>=RULE_KW_OPAREN && LA94_0<=RULE_TK_FLOAT)||(LA94_0>=RULE_TK_POSTDOC && LA94_0<=RULE_KW_SEMICOLON)||LA94_0==RULE_KW_CCURLY||(LA94_0>=73 && LA94_0<=75)||(LA94_0>=77 && LA94_0<=80)||(LA94_0>=82 && LA94_0<=83)||LA94_0==85||(LA94_0>=99 && LA94_0<=107)||(LA94_0>=110 && LA94_0<=118)) ) {
                 alt94=1;
             }
             else if ( (LA94_0==RULE_KW_OCURLY) ) {
@@ -21419,7 +20807,7 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
                     int alt93=2;
                     int LA93_0 = input.LA(1);
 
-                    if ( (LA93_0==RULE_TK_STRING||LA93_0==RULE_KW_OPAREN||LA93_0==RULE_KW_OBRACK||(LA93_0>=RULE_KW_QUOTE && LA93_0<=RULE_TK_ID)||(LA93_0>=RULE_KW_SHARP && LA93_0<=RULE_TK_INT)||LA93_0==117) ) {
+                    if ( (LA93_0==RULE_TK_STRING||LA93_0==RULE_KW_OPAREN||LA93_0==RULE_KW_OBRACK||(LA93_0>=RULE_KW_QUOTE && LA93_0<=RULE_TK_ID)||(LA93_0>=RULE_KW_SHARP && LA93_0<=RULE_TK_FLOAT)||LA93_0==118) ) {
                         alt93=1;
                     }
                     switch (alt93) {
@@ -21606,6 +20994,7 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
             case RULE_KW_SHARP:
             case RULE_KW_TILDE:
             case RULE_TK_INT:
+            case RULE_TK_FLOAT:
                 {
                 alt95=1;
                 }
@@ -22071,7 +21460,7 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
             int alt97=2;
             int LA97_0 = input.LA(1);
 
-            if ( ((LA97_0>=RULE_TK_STRING && LA97_0<=RULE_KW_AT)||(LA97_0>=RULE_KW_RARROW && LA97_0<=RULE_KW_HAT)||LA97_0==RULE_KW_OPAREN||LA97_0==RULE_KW_OBRACK||(LA97_0>=RULE_KW_QUOTE && LA97_0<=RULE_TK_ID)||(LA97_0>=RULE_KW_SHARP && LA97_0<=RULE_TK_INT)||LA97_0==RULE_KW_OCURLY||(LA97_0>=61 && LA97_0<=71)||LA97_0==75||(LA97_0>=79 && LA97_0<=80)||LA97_0==83||(LA97_0>=85 && LA97_0<=97)||(LA97_0>=101 && LA97_0<=102)||(LA97_0>=107 && LA97_0<=117)) ) {
+            if ( ((LA97_0>=RULE_TK_STRING && LA97_0<=RULE_KW_AT)||(LA97_0>=RULE_KW_RARROW && LA97_0<=RULE_KW_HAT)||LA97_0==RULE_KW_OPAREN||LA97_0==RULE_KW_OBRACK||(LA97_0>=RULE_KW_QUOTE && LA97_0<=RULE_TK_ID)||(LA97_0>=RULE_KW_SHARP && LA97_0<=RULE_TK_FLOAT)||LA97_0==RULE_KW_OCURLY||(LA97_0>=62 && LA97_0<=72)||LA97_0==76||(LA97_0>=80 && LA97_0<=81)||LA97_0==84||(LA97_0>=86 && LA97_0<=98)||(LA97_0>=102 && LA97_0<=103)||(LA97_0>=108 && LA97_0<=118)) ) {
                 alt97=1;
             }
             switch (alt97) {
@@ -22244,7 +21633,7 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
             int alt98=2;
             int LA98_0 = input.LA(1);
 
-            if ( ((LA98_0>=RULE_TK_STRING && LA98_0<=RULE_KW_AT)||(LA98_0>=RULE_KW_RARROW && LA98_0<=RULE_KW_HAT)||LA98_0==RULE_KW_OPAREN||LA98_0==RULE_KW_OBRACK||(LA98_0>=RULE_KW_QUOTE && LA98_0<=RULE_TK_ID)||(LA98_0>=RULE_KW_SHARP && LA98_0<=RULE_TK_INT)||LA98_0==RULE_KW_OCURLY||(LA98_0>=61 && LA98_0<=71)||LA98_0==75||(LA98_0>=79 && LA98_0<=80)||LA98_0==83||(LA98_0>=85 && LA98_0<=97)||(LA98_0>=101 && LA98_0<=102)||(LA98_0>=107 && LA98_0<=117)) ) {
+            if ( ((LA98_0>=RULE_TK_STRING && LA98_0<=RULE_KW_AT)||(LA98_0>=RULE_KW_RARROW && LA98_0<=RULE_KW_HAT)||LA98_0==RULE_KW_OPAREN||LA98_0==RULE_KW_OBRACK||(LA98_0>=RULE_KW_QUOTE && LA98_0<=RULE_TK_ID)||(LA98_0>=RULE_KW_SHARP && LA98_0<=RULE_TK_FLOAT)||LA98_0==RULE_KW_OCURLY||(LA98_0>=62 && LA98_0<=72)||LA98_0==76||(LA98_0>=80 && LA98_0<=81)||LA98_0==84||(LA98_0>=86 && LA98_0<=98)||(LA98_0>=102 && LA98_0<=103)||(LA98_0>=108 && LA98_0<=118)) ) {
                 alt98=1;
             }
             switch (alt98) {
@@ -22753,7 +22142,7 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
             if ( (LA101_0==RULE_TK_ID||(LA101_0>=RULE_KW_SHARP && LA101_0<=RULE_KW_TILDE)) ) {
                 alt101=1;
             }
-            else if ( (LA101_0==RULE_TK_STRING||LA101_0==RULE_TK_INT) ) {
+            else if ( (LA101_0==RULE_TK_STRING||(LA101_0>=RULE_TK_INT && LA101_0<=RULE_TK_FLOAT)) ) {
                 alt101=2;
             }
             else {
@@ -22941,7 +22330,7 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
             if ( (LA102_0==RULE_TK_ID||(LA102_0>=RULE_KW_SHARP && LA102_0<=RULE_KW_TILDE)) ) {
                 alt102=1;
             }
-            else if ( ((LA102_0>=RULE_KW_RARROW && LA102_0<=RULE_KW_HAT)||(LA102_0>=109 && LA102_0<=116)) ) {
+            else if ( ((LA102_0>=RULE_KW_RARROW && LA102_0<=RULE_KW_HAT)||(LA102_0>=110 && LA102_0<=117)) ) {
                 alt102=2;
             }
             else {
@@ -23323,67 +22712,230 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleLiteral"
-    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:8785:1: ruleLiteral returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (this_TK_INT_0= RULE_TK_INT | this_TK_STRING_1= RULE_TK_STRING ) ;
+    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:8785:1: ruleLiteral returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : ( ( ( ( ( RULE_TK_INT RULE_KW_DOT )? RULE_TK_FLOAT ) )=> ( (this_TK_INT_0= RULE_TK_INT this_KW_DOT_1= RULE_KW_DOT )? this_TK_FLOAT_2= RULE_TK_FLOAT ) ) | ( ( ( ( RULE_TK_INT RULE_KW_DOT ) )=> (this_TK_INT_3= RULE_TK_INT this_KW_DOT_4= RULE_KW_DOT ) )? this_TK_INT_5= RULE_TK_INT ) | this_TK_STRING_6= RULE_TK_STRING ) ;
     public final AntlrDatatypeRuleToken ruleLiteral() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
         Token this_TK_INT_0=null;
-        Token this_TK_STRING_1=null;
+        Token this_KW_DOT_1=null;
+        Token this_TK_FLOAT_2=null;
+        Token this_TK_INT_3=null;
+        Token this_KW_DOT_4=null;
+        Token this_TK_INT_5=null;
+        Token this_TK_STRING_6=null;
 
          enterRule(); 
         		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
             
         try {
-            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:8789:28: ( (this_TK_INT_0= RULE_TK_INT | this_TK_STRING_1= RULE_TK_STRING ) )
-            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:8790:1: (this_TK_INT_0= RULE_TK_INT | this_TK_STRING_1= RULE_TK_STRING )
+            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:8789:28: ( ( ( ( ( ( RULE_TK_INT RULE_KW_DOT )? RULE_TK_FLOAT ) )=> ( (this_TK_INT_0= RULE_TK_INT this_KW_DOT_1= RULE_KW_DOT )? this_TK_FLOAT_2= RULE_TK_FLOAT ) ) | ( ( ( ( RULE_TK_INT RULE_KW_DOT ) )=> (this_TK_INT_3= RULE_TK_INT this_KW_DOT_4= RULE_KW_DOT ) )? this_TK_INT_5= RULE_TK_INT ) | this_TK_STRING_6= RULE_TK_STRING ) )
+            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:8790:1: ( ( ( ( ( RULE_TK_INT RULE_KW_DOT )? RULE_TK_FLOAT ) )=> ( (this_TK_INT_0= RULE_TK_INT this_KW_DOT_1= RULE_KW_DOT )? this_TK_FLOAT_2= RULE_TK_FLOAT ) ) | ( ( ( ( RULE_TK_INT RULE_KW_DOT ) )=> (this_TK_INT_3= RULE_TK_INT this_KW_DOT_4= RULE_KW_DOT ) )? this_TK_INT_5= RULE_TK_INT ) | this_TK_STRING_6= RULE_TK_STRING )
             {
-            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:8790:1: (this_TK_INT_0= RULE_TK_INT | this_TK_STRING_1= RULE_TK_STRING )
-            int alt104=2;
-            int LA104_0 = input.LA(1);
+            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:8790:1: ( ( ( ( ( RULE_TK_INT RULE_KW_DOT )? RULE_TK_FLOAT ) )=> ( (this_TK_INT_0= RULE_TK_INT this_KW_DOT_1= RULE_KW_DOT )? this_TK_FLOAT_2= RULE_TK_FLOAT ) ) | ( ( ( ( RULE_TK_INT RULE_KW_DOT ) )=> (this_TK_INT_3= RULE_TK_INT this_KW_DOT_4= RULE_KW_DOT ) )? this_TK_INT_5= RULE_TK_INT ) | this_TK_STRING_6= RULE_TK_STRING )
+            int alt106=3;
+            int LA106_0 = input.LA(1);
 
-            if ( (LA104_0==RULE_TK_INT) ) {
-                alt104=1;
+            if ( (LA106_0==RULE_TK_INT) ) {
+                int LA106_1 = input.LA(2);
+
+                if ( (LA106_1==RULE_KW_DOT) ) {
+                    int LA106_4 = input.LA(3);
+
+                    if ( (synpred21_InternalEditor()) ) {
+                        alt106=1;
+                    }
+                    else if ( (true) ) {
+                        alt106=2;
+                    }
+                    else {
+                        if (state.backtracking>0) {state.failed=true; return current;}
+                        NoViableAltException nvae =
+                            new NoViableAltException("", 106, 4, input);
+
+                        throw nvae;
+                    }
+                }
+                else if ( (LA106_1==EOF||(LA106_1>=RULE_TK_STRING && LA106_1<=RULE_KW_HAT)||(LA106_1>=RULE_KW_OPAREN && LA106_1<=RULE_TK_FLOAT)||(LA106_1>=RULE_TK_POSTDOC && LA106_1<=RULE_KW_CCURLY)||(LA106_1>=62 && LA106_1<=118)) ) {
+                    alt106=2;
+                }
+                else {
+                    if (state.backtracking>0) {state.failed=true; return current;}
+                    NoViableAltException nvae =
+                        new NoViableAltException("", 106, 1, input);
+
+                    throw nvae;
+                }
             }
-            else if ( (LA104_0==RULE_TK_STRING) ) {
-                alt104=2;
+            else if ( (LA106_0==RULE_TK_FLOAT) && (synpred21_InternalEditor())) {
+                alt106=1;
+            }
+            else if ( (LA106_0==RULE_TK_STRING) ) {
+                alt106=3;
             }
             else {
                 if (state.backtracking>0) {state.failed=true; return current;}
                 NoViableAltException nvae =
-                    new NoViableAltException("", 104, 0, input);
+                    new NoViableAltException("", 106, 0, input);
 
                 throw nvae;
             }
-            switch (alt104) {
+            switch (alt106) {
                 case 1 :
-                    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:8790:6: this_TK_INT_0= RULE_TK_INT
+                    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:8790:2: ( ( ( ( RULE_TK_INT RULE_KW_DOT )? RULE_TK_FLOAT ) )=> ( (this_TK_INT_0= RULE_TK_INT this_KW_DOT_1= RULE_KW_DOT )? this_TK_FLOAT_2= RULE_TK_FLOAT ) )
                     {
-                    this_TK_INT_0=(Token)match(input,RULE_TK_INT,FOLLOW_RULE_TK_INT_in_ruleLiteral18586); if (state.failed) return current;
+                    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:8790:2: ( ( ( ( RULE_TK_INT RULE_KW_DOT )? RULE_TK_FLOAT ) )=> ( (this_TK_INT_0= RULE_TK_INT this_KW_DOT_1= RULE_KW_DOT )? this_TK_FLOAT_2= RULE_TK_FLOAT ) )
+                    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:8790:3: ( ( ( RULE_TK_INT RULE_KW_DOT )? RULE_TK_FLOAT ) )=> ( (this_TK_INT_0= RULE_TK_INT this_KW_DOT_1= RULE_KW_DOT )? this_TK_FLOAT_2= RULE_TK_FLOAT )
+                    {
+                    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:8790:50: ( (this_TK_INT_0= RULE_TK_INT this_KW_DOT_1= RULE_KW_DOT )? this_TK_FLOAT_2= RULE_TK_FLOAT )
+                    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:8790:51: (this_TK_INT_0= RULE_TK_INT this_KW_DOT_1= RULE_KW_DOT )? this_TK_FLOAT_2= RULE_TK_FLOAT
+                    {
+                    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:8790:51: (this_TK_INT_0= RULE_TK_INT this_KW_DOT_1= RULE_KW_DOT )?
+                    int alt104=2;
+                    int LA104_0 = input.LA(1);
+
+                    if ( (LA104_0==RULE_TK_INT) ) {
+                        alt104=1;
+                    }
+                    switch (alt104) {
+                        case 1 :
+                            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:8790:56: this_TK_INT_0= RULE_TK_INT this_KW_DOT_1= RULE_KW_DOT
+                            {
+                            this_TK_INT_0=(Token)match(input,RULE_TK_INT,FOLLOW_RULE_TK_INT_in_ruleLiteral18603); if (state.failed) return current;
+                            if ( state.backtracking==0 ) {
+
+                              		current.merge(this_TK_INT_0);
+                                  
+                            }
+                            if ( state.backtracking==0 ) {
+                               
+                                  newLeafNode(this_TK_INT_0, grammarAccess.getLiteralAccess().getTK_INTTerminalRuleCall_0_0_0_0()); 
+                                  
+                            }
+                            this_KW_DOT_1=(Token)match(input,RULE_KW_DOT,FOLLOW_RULE_KW_DOT_in_ruleLiteral18623); if (state.failed) return current;
+                            if ( state.backtracking==0 ) {
+
+                              		current.merge(this_KW_DOT_1);
+                                  
+                            }
+                            if ( state.backtracking==0 ) {
+                               
+                                  newLeafNode(this_KW_DOT_1, grammarAccess.getLiteralAccess().getKW_DOTTerminalRuleCall_0_0_0_1()); 
+                                  
+                            }
+
+                            }
+                            break;
+
+                    }
+
+                    this_TK_FLOAT_2=(Token)match(input,RULE_TK_FLOAT,FOLLOW_RULE_TK_FLOAT_in_ruleLiteral18645); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
-                      		current.merge(this_TK_INT_0);
+                      		current.merge(this_TK_FLOAT_2);
                           
                     }
                     if ( state.backtracking==0 ) {
                        
-                          newLeafNode(this_TK_INT_0, grammarAccess.getLiteralAccess().getTK_INTTerminalRuleCall_0()); 
+                          newLeafNode(this_TK_FLOAT_2, grammarAccess.getLiteralAccess().getTK_FLOATTerminalRuleCall_0_0_1()); 
                           
                     }
+
+                    }
+
+
+                    }
+
 
                     }
                     break;
                 case 2 :
-                    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:8798:10: this_TK_STRING_1= RULE_TK_STRING
+                    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:8812:6: ( ( ( ( RULE_TK_INT RULE_KW_DOT ) )=> (this_TK_INT_3= RULE_TK_INT this_KW_DOT_4= RULE_KW_DOT ) )? this_TK_INT_5= RULE_TK_INT )
                     {
-                    this_TK_STRING_1=(Token)match(input,RULE_TK_STRING,FOLLOW_RULE_TK_STRING_in_ruleLiteral18612); if (state.failed) return current;
+                    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:8812:6: ( ( ( ( RULE_TK_INT RULE_KW_DOT ) )=> (this_TK_INT_3= RULE_TK_INT this_KW_DOT_4= RULE_KW_DOT ) )? this_TK_INT_5= RULE_TK_INT )
+                    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:8812:7: ( ( ( RULE_TK_INT RULE_KW_DOT ) )=> (this_TK_INT_3= RULE_TK_INT this_KW_DOT_4= RULE_KW_DOT ) )? this_TK_INT_5= RULE_TK_INT
+                    {
+                    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:8812:7: ( ( ( RULE_TK_INT RULE_KW_DOT ) )=> (this_TK_INT_3= RULE_TK_INT this_KW_DOT_4= RULE_KW_DOT ) )?
+                    int alt105=2;
+                    int LA105_0 = input.LA(1);
+
+                    if ( (LA105_0==RULE_TK_INT) ) {
+                        int LA105_1 = input.LA(2);
+
+                        if ( (LA105_1==RULE_KW_DOT) ) {
+                            int LA105_2 = input.LA(3);
+
+                            if ( (synpred22_InternalEditor()) ) {
+                                alt105=1;
+                            }
+                        }
+                    }
+                    switch (alt105) {
+                        case 1 :
+                            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:8812:8: ( ( RULE_TK_INT RULE_KW_DOT ) )=> (this_TK_INT_3= RULE_TK_INT this_KW_DOT_4= RULE_KW_DOT )
+                            {
+                            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:8812:38: (this_TK_INT_3= RULE_TK_INT this_KW_DOT_4= RULE_KW_DOT )
+                            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:8812:43: this_TK_INT_3= RULE_TK_INT this_KW_DOT_4= RULE_KW_DOT
+                            {
+                            this_TK_INT_3=(Token)match(input,RULE_TK_INT,FOLLOW_RULE_TK_INT_in_ruleLiteral18685); if (state.failed) return current;
+                            if ( state.backtracking==0 ) {
+
+                              		current.merge(this_TK_INT_3);
+                                  
+                            }
+                            if ( state.backtracking==0 ) {
+                               
+                                  newLeafNode(this_TK_INT_3, grammarAccess.getLiteralAccess().getTK_INTTerminalRuleCall_1_0_0_0()); 
+                                  
+                            }
+                            this_KW_DOT_4=(Token)match(input,RULE_KW_DOT,FOLLOW_RULE_KW_DOT_in_ruleLiteral18705); if (state.failed) return current;
+                            if ( state.backtracking==0 ) {
+
+                              		current.merge(this_KW_DOT_4);
+                                  
+                            }
+                            if ( state.backtracking==0 ) {
+                               
+                                  newLeafNode(this_KW_DOT_4, grammarAccess.getLiteralAccess().getKW_DOTTerminalRuleCall_1_0_0_1()); 
+                                  
+                            }
+
+                            }
+
+
+                            }
+                            break;
+
+                    }
+
+                    this_TK_INT_5=(Token)match(input,RULE_TK_INT,FOLLOW_RULE_TK_INT_in_ruleLiteral18728); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
-                      		current.merge(this_TK_STRING_1);
+                      		current.merge(this_TK_INT_5);
                           
                     }
                     if ( state.backtracking==0 ) {
                        
-                          newLeafNode(this_TK_STRING_1, grammarAccess.getLiteralAccess().getTK_STRINGTerminalRuleCall_1()); 
+                          newLeafNode(this_TK_INT_5, grammarAccess.getLiteralAccess().getTK_INTTerminalRuleCall_1_1()); 
+                          
+                    }
+
+                    }
+
+
+                    }
+                    break;
+                case 3 :
+                    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:8834:10: this_TK_STRING_6= RULE_TK_STRING
+                    {
+                    this_TK_STRING_6=(Token)match(input,RULE_TK_STRING,FOLLOW_RULE_TK_STRING_in_ruleLiteral18755); if (state.failed) return current;
+                    if ( state.backtracking==0 ) {
+
+                      		current.merge(this_TK_STRING_6);
+                          
+                    }
+                    if ( state.backtracking==0 ) {
+                       
+                          newLeafNode(this_TK_STRING_6, grammarAccess.getLiteralAccess().getTK_STRINGTerminalRuleCall_2()); 
                           
                     }
 
@@ -23415,7 +22967,7 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleUnqualOp_ArrowTok"
-    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:8816:1: entryRuleUnqualOp_ArrowTok returns [EObject current=null] : iv_ruleUnqualOp_ArrowTok= ruleUnqualOp_ArrowTok EOF ;
+    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:8852:1: entryRuleUnqualOp_ArrowTok returns [EObject current=null] : iv_ruleUnqualOp_ArrowTok= ruleUnqualOp_ArrowTok EOF ;
     public final EObject entryRuleUnqualOp_ArrowTok() throws RecognitionException {
         EObject current = null;
 
@@ -23426,13 +22978,13 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
         		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
         	
         try {
-            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:8820:2: (iv_ruleUnqualOp_ArrowTok= ruleUnqualOp_ArrowTok EOF )
-            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:8821:2: iv_ruleUnqualOp_ArrowTok= ruleUnqualOp_ArrowTok EOF
+            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:8856:2: (iv_ruleUnqualOp_ArrowTok= ruleUnqualOp_ArrowTok EOF )
+            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:8857:2: iv_ruleUnqualOp_ArrowTok= ruleUnqualOp_ArrowTok EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getUnqualOp_ArrowTokRule()); 
             }
-            pushFollow(FOLLOW_ruleUnqualOp_ArrowTok_in_entryRuleUnqualOp_ArrowTok18667);
+            pushFollow(FOLLOW_ruleUnqualOp_ArrowTok_in_entryRuleUnqualOp_ArrowTok18810);
             iv_ruleUnqualOp_ArrowTok=ruleUnqualOp_ArrowTok();
 
             state._fsp--;
@@ -23440,7 +22992,7 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
             if ( state.backtracking==0 ) {
                current =iv_ruleUnqualOp_ArrowTok; 
             }
-            match(input,EOF,FOLLOW_EOF_in_entryRuleUnqualOp_ArrowTok18677); if (state.failed) return current;
+            match(input,EOF,FOLLOW_EOF_in_entryRuleUnqualOp_ArrowTok18820); if (state.failed) return current;
 
             }
 
@@ -23461,7 +23013,7 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleUnqualOp_ArrowTok"
-    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:8831:1: ruleUnqualOp_ArrowTok returns [EObject current=null] : ( ruleArrowTok () ) ;
+    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:8867:1: ruleUnqualOp_ArrowTok returns [EObject current=null] : ( ruleArrowTok () ) ;
     public final EObject ruleUnqualOp_ArrowTok() throws RecognitionException {
         EObject current = null;
 
@@ -23469,18 +23021,18 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
         		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
             
         try {
-            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:8835:28: ( ( ruleArrowTok () ) )
-            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:8836:1: ( ruleArrowTok () )
+            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:8871:28: ( ( ruleArrowTok () ) )
+            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:8872:1: ( ruleArrowTok () )
             {
-            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:8836:1: ( ruleArrowTok () )
-            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:8837:5: ruleArrowTok ()
+            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:8872:1: ( ruleArrowTok () )
+            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:8873:5: ruleArrowTok ()
             {
             if ( state.backtracking==0 ) {
                
                       newCompositeNode(grammarAccess.getUnqualOp_ArrowTokAccess().getArrowTokParserRuleCall_0()); 
                   
             }
-            pushFollow(FOLLOW_ruleArrowTok_in_ruleUnqualOp_ArrowTok18722);
+            pushFollow(FOLLOW_ruleArrowTok_in_ruleUnqualOp_ArrowTok18865);
             ruleArrowTok();
 
             state._fsp--;
@@ -23490,8 +23042,8 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
                       afterParserOrEnumRuleCall();
                   
             }
-            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:8844:1: ()
-            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:8845:5: 
+            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:8880:1: ()
+            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:8881:5: 
             {
             if ( state.backtracking==0 ) {
 
@@ -23529,7 +23081,7 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleUnqualOp_LatticeTok"
-    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:8861:1: entryRuleUnqualOp_LatticeTok returns [EObject current=null] : iv_ruleUnqualOp_LatticeTok= ruleUnqualOp_LatticeTok EOF ;
+    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:8897:1: entryRuleUnqualOp_LatticeTok returns [EObject current=null] : iv_ruleUnqualOp_LatticeTok= ruleUnqualOp_LatticeTok EOF ;
     public final EObject entryRuleUnqualOp_LatticeTok() throws RecognitionException {
         EObject current = null;
 
@@ -23540,13 +23092,13 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
         		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
         	
         try {
-            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:8865:2: (iv_ruleUnqualOp_LatticeTok= ruleUnqualOp_LatticeTok EOF )
-            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:8866:2: iv_ruleUnqualOp_LatticeTok= ruleUnqualOp_LatticeTok EOF
+            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:8901:2: (iv_ruleUnqualOp_LatticeTok= ruleUnqualOp_LatticeTok EOF )
+            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:8902:2: iv_ruleUnqualOp_LatticeTok= ruleUnqualOp_LatticeTok EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getUnqualOp_LatticeTokRule()); 
             }
-            pushFollow(FOLLOW_ruleUnqualOp_LatticeTok_in_entryRuleUnqualOp_LatticeTok18776);
+            pushFollow(FOLLOW_ruleUnqualOp_LatticeTok_in_entryRuleUnqualOp_LatticeTok18919);
             iv_ruleUnqualOp_LatticeTok=ruleUnqualOp_LatticeTok();
 
             state._fsp--;
@@ -23554,7 +23106,7 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
             if ( state.backtracking==0 ) {
                current =iv_ruleUnqualOp_LatticeTok; 
             }
-            match(input,EOF,FOLLOW_EOF_in_entryRuleUnqualOp_LatticeTok18786); if (state.failed) return current;
+            match(input,EOF,FOLLOW_EOF_in_entryRuleUnqualOp_LatticeTok18929); if (state.failed) return current;
 
             }
 
@@ -23575,7 +23127,7 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleUnqualOp_LatticeTok"
-    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:8876:1: ruleUnqualOp_LatticeTok returns [EObject current=null] : ( ruleLatticeTok () ) ;
+    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:8912:1: ruleUnqualOp_LatticeTok returns [EObject current=null] : ( ruleLatticeTok () ) ;
     public final EObject ruleUnqualOp_LatticeTok() throws RecognitionException {
         EObject current = null;
 
@@ -23583,18 +23135,18 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
         		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
             
         try {
-            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:8880:28: ( ( ruleLatticeTok () ) )
-            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:8881:1: ( ruleLatticeTok () )
+            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:8916:28: ( ( ruleLatticeTok () ) )
+            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:8917:1: ( ruleLatticeTok () )
             {
-            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:8881:1: ( ruleLatticeTok () )
-            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:8882:5: ruleLatticeTok ()
+            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:8917:1: ( ruleLatticeTok () )
+            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:8918:5: ruleLatticeTok ()
             {
             if ( state.backtracking==0 ) {
                
                       newCompositeNode(grammarAccess.getUnqualOp_LatticeTokAccess().getLatticeTokParserRuleCall_0()); 
                   
             }
-            pushFollow(FOLLOW_ruleLatticeTok_in_ruleUnqualOp_LatticeTok18831);
+            pushFollow(FOLLOW_ruleLatticeTok_in_ruleUnqualOp_LatticeTok18974);
             ruleLatticeTok();
 
             state._fsp--;
@@ -23604,8 +23156,8 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
                       afterParserOrEnumRuleCall();
                   
             }
-            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:8889:1: ()
-            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:8890:5: 
+            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:8925:1: ()
+            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:8926:5: 
             {
             if ( state.backtracking==0 ) {
 
@@ -23643,7 +23195,7 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleUnqualOp_RelationTok"
-    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:8906:1: entryRuleUnqualOp_RelationTok returns [EObject current=null] : iv_ruleUnqualOp_RelationTok= ruleUnqualOp_RelationTok EOF ;
+    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:8942:1: entryRuleUnqualOp_RelationTok returns [EObject current=null] : iv_ruleUnqualOp_RelationTok= ruleUnqualOp_RelationTok EOF ;
     public final EObject entryRuleUnqualOp_RelationTok() throws RecognitionException {
         EObject current = null;
 
@@ -23654,13 +23206,13 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
         		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
         	
         try {
-            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:8910:2: (iv_ruleUnqualOp_RelationTok= ruleUnqualOp_RelationTok EOF )
-            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:8911:2: iv_ruleUnqualOp_RelationTok= ruleUnqualOp_RelationTok EOF
+            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:8946:2: (iv_ruleUnqualOp_RelationTok= ruleUnqualOp_RelationTok EOF )
+            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:8947:2: iv_ruleUnqualOp_RelationTok= ruleUnqualOp_RelationTok EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getUnqualOp_RelationTokRule()); 
             }
-            pushFollow(FOLLOW_ruleUnqualOp_RelationTok_in_entryRuleUnqualOp_RelationTok18885);
+            pushFollow(FOLLOW_ruleUnqualOp_RelationTok_in_entryRuleUnqualOp_RelationTok19028);
             iv_ruleUnqualOp_RelationTok=ruleUnqualOp_RelationTok();
 
             state._fsp--;
@@ -23668,7 +23220,7 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
             if ( state.backtracking==0 ) {
                current =iv_ruleUnqualOp_RelationTok; 
             }
-            match(input,EOF,FOLLOW_EOF_in_entryRuleUnqualOp_RelationTok18895); if (state.failed) return current;
+            match(input,EOF,FOLLOW_EOF_in_entryRuleUnqualOp_RelationTok19038); if (state.failed) return current;
 
             }
 
@@ -23689,7 +23241,7 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleUnqualOp_RelationTok"
-    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:8921:1: ruleUnqualOp_RelationTok returns [EObject current=null] : ( ruleRelationTok () ) ;
+    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:8957:1: ruleUnqualOp_RelationTok returns [EObject current=null] : ( ruleRelationTok () ) ;
     public final EObject ruleUnqualOp_RelationTok() throws RecognitionException {
         EObject current = null;
 
@@ -23697,18 +23249,18 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
         		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
             
         try {
-            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:8925:28: ( ( ruleRelationTok () ) )
-            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:8926:1: ( ruleRelationTok () )
+            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:8961:28: ( ( ruleRelationTok () ) )
+            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:8962:1: ( ruleRelationTok () )
             {
-            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:8926:1: ( ruleRelationTok () )
-            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:8927:5: ruleRelationTok ()
+            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:8962:1: ( ruleRelationTok () )
+            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:8963:5: ruleRelationTok ()
             {
             if ( state.backtracking==0 ) {
                
                       newCompositeNode(grammarAccess.getUnqualOp_RelationTokAccess().getRelationTokParserRuleCall_0()); 
                   
             }
-            pushFollow(FOLLOW_ruleRelationTok_in_ruleUnqualOp_RelationTok18940);
+            pushFollow(FOLLOW_ruleRelationTok_in_ruleUnqualOp_RelationTok19083);
             ruleRelationTok();
 
             state._fsp--;
@@ -23718,8 +23270,8 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
                       afterParserOrEnumRuleCall();
                   
             }
-            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:8934:1: ()
-            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:8935:5: 
+            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:8970:1: ()
+            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:8971:5: 
             {
             if ( state.backtracking==0 ) {
 
@@ -23757,7 +23309,7 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleUnqualOp_SegTok"
-    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:8951:1: entryRuleUnqualOp_SegTok returns [EObject current=null] : iv_ruleUnqualOp_SegTok= ruleUnqualOp_SegTok EOF ;
+    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:8987:1: entryRuleUnqualOp_SegTok returns [EObject current=null] : iv_ruleUnqualOp_SegTok= ruleUnqualOp_SegTok EOF ;
     public final EObject entryRuleUnqualOp_SegTok() throws RecognitionException {
         EObject current = null;
 
@@ -23768,13 +23320,13 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
         		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
         	
         try {
-            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:8955:2: (iv_ruleUnqualOp_SegTok= ruleUnqualOp_SegTok EOF )
-            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:8956:2: iv_ruleUnqualOp_SegTok= ruleUnqualOp_SegTok EOF
+            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:8991:2: (iv_ruleUnqualOp_SegTok= ruleUnqualOp_SegTok EOF )
+            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:8992:2: iv_ruleUnqualOp_SegTok= ruleUnqualOp_SegTok EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getUnqualOp_SegTokRule()); 
             }
-            pushFollow(FOLLOW_ruleUnqualOp_SegTok_in_entryRuleUnqualOp_SegTok18994);
+            pushFollow(FOLLOW_ruleUnqualOp_SegTok_in_entryRuleUnqualOp_SegTok19137);
             iv_ruleUnqualOp_SegTok=ruleUnqualOp_SegTok();
 
             state._fsp--;
@@ -23782,7 +23334,7 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
             if ( state.backtracking==0 ) {
                current =iv_ruleUnqualOp_SegTok; 
             }
-            match(input,EOF,FOLLOW_EOF_in_entryRuleUnqualOp_SegTok19004); if (state.failed) return current;
+            match(input,EOF,FOLLOW_EOF_in_entryRuleUnqualOp_SegTok19147); if (state.failed) return current;
 
             }
 
@@ -23803,7 +23355,7 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleUnqualOp_SegTok"
-    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:8966:1: ruleUnqualOp_SegTok returns [EObject current=null] : ( ruleSegTok () ) ;
+    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9002:1: ruleUnqualOp_SegTok returns [EObject current=null] : ( ruleSegTok () ) ;
     public final EObject ruleUnqualOp_SegTok() throws RecognitionException {
         EObject current = null;
 
@@ -23811,18 +23363,18 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
         		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
             
         try {
-            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:8970:28: ( ( ruleSegTok () ) )
-            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:8971:1: ( ruleSegTok () )
+            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9006:28: ( ( ruleSegTok () ) )
+            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9007:1: ( ruleSegTok () )
             {
-            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:8971:1: ( ruleSegTok () )
-            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:8972:5: ruleSegTok ()
+            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9007:1: ( ruleSegTok () )
+            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9008:5: ruleSegTok ()
             {
             if ( state.backtracking==0 ) {
                
                       newCompositeNode(grammarAccess.getUnqualOp_SegTokAccess().getSegTokParserRuleCall_0()); 
                   
             }
-            pushFollow(FOLLOW_ruleSegTok_in_ruleUnqualOp_SegTok19049);
+            pushFollow(FOLLOW_ruleSegTok_in_ruleUnqualOp_SegTok19192);
             ruleSegTok();
 
             state._fsp--;
@@ -23832,8 +23384,8 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
                       afterParserOrEnumRuleCall();
                   
             }
-            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:8979:1: ()
-            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:8980:5: 
+            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9015:1: ()
+            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9016:5: 
             {
             if ( state.backtracking==0 ) {
 
@@ -23871,7 +23423,7 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleUnqualOp_PlusTok"
-    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:8996:1: entryRuleUnqualOp_PlusTok returns [EObject current=null] : iv_ruleUnqualOp_PlusTok= ruleUnqualOp_PlusTok EOF ;
+    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9032:1: entryRuleUnqualOp_PlusTok returns [EObject current=null] : iv_ruleUnqualOp_PlusTok= ruleUnqualOp_PlusTok EOF ;
     public final EObject entryRuleUnqualOp_PlusTok() throws RecognitionException {
         EObject current = null;
 
@@ -23882,13 +23434,13 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
         		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
         	
         try {
-            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9000:2: (iv_ruleUnqualOp_PlusTok= ruleUnqualOp_PlusTok EOF )
-            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9001:2: iv_ruleUnqualOp_PlusTok= ruleUnqualOp_PlusTok EOF
+            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9036:2: (iv_ruleUnqualOp_PlusTok= ruleUnqualOp_PlusTok EOF )
+            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9037:2: iv_ruleUnqualOp_PlusTok= ruleUnqualOp_PlusTok EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getUnqualOp_PlusTokRule()); 
             }
-            pushFollow(FOLLOW_ruleUnqualOp_PlusTok_in_entryRuleUnqualOp_PlusTok19103);
+            pushFollow(FOLLOW_ruleUnqualOp_PlusTok_in_entryRuleUnqualOp_PlusTok19246);
             iv_ruleUnqualOp_PlusTok=ruleUnqualOp_PlusTok();
 
             state._fsp--;
@@ -23896,7 +23448,7 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
             if ( state.backtracking==0 ) {
                current =iv_ruleUnqualOp_PlusTok; 
             }
-            match(input,EOF,FOLLOW_EOF_in_entryRuleUnqualOp_PlusTok19113); if (state.failed) return current;
+            match(input,EOF,FOLLOW_EOF_in_entryRuleUnqualOp_PlusTok19256); if (state.failed) return current;
 
             }
 
@@ -23917,7 +23469,7 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleUnqualOp_PlusTok"
-    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9011:1: ruleUnqualOp_PlusTok returns [EObject current=null] : ( rulePlusTok () ) ;
+    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9047:1: ruleUnqualOp_PlusTok returns [EObject current=null] : ( rulePlusTok () ) ;
     public final EObject ruleUnqualOp_PlusTok() throws RecognitionException {
         EObject current = null;
 
@@ -23925,18 +23477,18 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
         		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
             
         try {
-            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9015:28: ( ( rulePlusTok () ) )
-            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9016:1: ( rulePlusTok () )
+            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9051:28: ( ( rulePlusTok () ) )
+            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9052:1: ( rulePlusTok () )
             {
-            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9016:1: ( rulePlusTok () )
-            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9017:5: rulePlusTok ()
+            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9052:1: ( rulePlusTok () )
+            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9053:5: rulePlusTok ()
             {
             if ( state.backtracking==0 ) {
                
                       newCompositeNode(grammarAccess.getUnqualOp_PlusTokAccess().getPlusTokParserRuleCall_0()); 
                   
             }
-            pushFollow(FOLLOW_rulePlusTok_in_ruleUnqualOp_PlusTok19158);
+            pushFollow(FOLLOW_rulePlusTok_in_ruleUnqualOp_PlusTok19301);
             rulePlusTok();
 
             state._fsp--;
@@ -23946,8 +23498,8 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
                       afterParserOrEnumRuleCall();
                   
             }
-            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9024:1: ()
-            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9025:5: 
+            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9060:1: ()
+            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9061:5: 
             {
             if ( state.backtracking==0 ) {
 
@@ -23985,7 +23537,7 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleUnqualOp_QuotientTok"
-    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9041:1: entryRuleUnqualOp_QuotientTok returns [EObject current=null] : iv_ruleUnqualOp_QuotientTok= ruleUnqualOp_QuotientTok EOF ;
+    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9077:1: entryRuleUnqualOp_QuotientTok returns [EObject current=null] : iv_ruleUnqualOp_QuotientTok= ruleUnqualOp_QuotientTok EOF ;
     public final EObject entryRuleUnqualOp_QuotientTok() throws RecognitionException {
         EObject current = null;
 
@@ -23996,13 +23548,13 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
         		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
         	
         try {
-            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9045:2: (iv_ruleUnqualOp_QuotientTok= ruleUnqualOp_QuotientTok EOF )
-            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9046:2: iv_ruleUnqualOp_QuotientTok= ruleUnqualOp_QuotientTok EOF
+            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9081:2: (iv_ruleUnqualOp_QuotientTok= ruleUnqualOp_QuotientTok EOF )
+            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9082:2: iv_ruleUnqualOp_QuotientTok= ruleUnqualOp_QuotientTok EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getUnqualOp_QuotientTokRule()); 
             }
-            pushFollow(FOLLOW_ruleUnqualOp_QuotientTok_in_entryRuleUnqualOp_QuotientTok19212);
+            pushFollow(FOLLOW_ruleUnqualOp_QuotientTok_in_entryRuleUnqualOp_QuotientTok19355);
             iv_ruleUnqualOp_QuotientTok=ruleUnqualOp_QuotientTok();
 
             state._fsp--;
@@ -24010,7 +23562,7 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
             if ( state.backtracking==0 ) {
                current =iv_ruleUnqualOp_QuotientTok; 
             }
-            match(input,EOF,FOLLOW_EOF_in_entryRuleUnqualOp_QuotientTok19222); if (state.failed) return current;
+            match(input,EOF,FOLLOW_EOF_in_entryRuleUnqualOp_QuotientTok19365); if (state.failed) return current;
 
             }
 
@@ -24031,7 +23583,7 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleUnqualOp_QuotientTok"
-    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9056:1: ruleUnqualOp_QuotientTok returns [EObject current=null] : ( ruleQuotientTok () ) ;
+    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9092:1: ruleUnqualOp_QuotientTok returns [EObject current=null] : ( ruleQuotientTok () ) ;
     public final EObject ruleUnqualOp_QuotientTok() throws RecognitionException {
         EObject current = null;
 
@@ -24039,18 +23591,18 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
         		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
             
         try {
-            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9060:28: ( ( ruleQuotientTok () ) )
-            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9061:1: ( ruleQuotientTok () )
+            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9096:28: ( ( ruleQuotientTok () ) )
+            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9097:1: ( ruleQuotientTok () )
             {
-            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9061:1: ( ruleQuotientTok () )
-            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9062:5: ruleQuotientTok ()
+            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9097:1: ( ruleQuotientTok () )
+            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9098:5: ruleQuotientTok ()
             {
             if ( state.backtracking==0 ) {
                
                       newCompositeNode(grammarAccess.getUnqualOp_QuotientTokAccess().getQuotientTokParserRuleCall_0()); 
                   
             }
-            pushFollow(FOLLOW_ruleQuotientTok_in_ruleUnqualOp_QuotientTok19267);
+            pushFollow(FOLLOW_ruleQuotientTok_in_ruleUnqualOp_QuotientTok19410);
             ruleQuotientTok();
 
             state._fsp--;
@@ -24060,8 +23612,8 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
                       afterParserOrEnumRuleCall();
                   
             }
-            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9069:1: ()
-            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9070:5: 
+            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9105:1: ()
+            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9106:5: 
             {
             if ( state.backtracking==0 ) {
 
@@ -24099,7 +23651,7 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleUnqualOp_TimesTok"
-    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9086:1: entryRuleUnqualOp_TimesTok returns [EObject current=null] : iv_ruleUnqualOp_TimesTok= ruleUnqualOp_TimesTok EOF ;
+    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9122:1: entryRuleUnqualOp_TimesTok returns [EObject current=null] : iv_ruleUnqualOp_TimesTok= ruleUnqualOp_TimesTok EOF ;
     public final EObject entryRuleUnqualOp_TimesTok() throws RecognitionException {
         EObject current = null;
 
@@ -24110,13 +23662,13 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
         		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
         	
         try {
-            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9090:2: (iv_ruleUnqualOp_TimesTok= ruleUnqualOp_TimesTok EOF )
-            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9091:2: iv_ruleUnqualOp_TimesTok= ruleUnqualOp_TimesTok EOF
+            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9126:2: (iv_ruleUnqualOp_TimesTok= ruleUnqualOp_TimesTok EOF )
+            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9127:2: iv_ruleUnqualOp_TimesTok= ruleUnqualOp_TimesTok EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getUnqualOp_TimesTokRule()); 
             }
-            pushFollow(FOLLOW_ruleUnqualOp_TimesTok_in_entryRuleUnqualOp_TimesTok19321);
+            pushFollow(FOLLOW_ruleUnqualOp_TimesTok_in_entryRuleUnqualOp_TimesTok19464);
             iv_ruleUnqualOp_TimesTok=ruleUnqualOp_TimesTok();
 
             state._fsp--;
@@ -24124,7 +23676,7 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
             if ( state.backtracking==0 ) {
                current =iv_ruleUnqualOp_TimesTok; 
             }
-            match(input,EOF,FOLLOW_EOF_in_entryRuleUnqualOp_TimesTok19331); if (state.failed) return current;
+            match(input,EOF,FOLLOW_EOF_in_entryRuleUnqualOp_TimesTok19474); if (state.failed) return current;
 
             }
 
@@ -24145,7 +23697,7 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleUnqualOp_TimesTok"
-    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9101:1: ruleUnqualOp_TimesTok returns [EObject current=null] : ( ruleTimesTok () ) ;
+    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9137:1: ruleUnqualOp_TimesTok returns [EObject current=null] : ( ruleTimesTok () ) ;
     public final EObject ruleUnqualOp_TimesTok() throws RecognitionException {
         EObject current = null;
 
@@ -24153,18 +23705,18 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
         		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
             
         try {
-            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9105:28: ( ( ruleTimesTok () ) )
-            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9106:1: ( ruleTimesTok () )
+            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9141:28: ( ( ruleTimesTok () ) )
+            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9142:1: ( ruleTimesTok () )
             {
-            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9106:1: ( ruleTimesTok () )
-            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9107:5: ruleTimesTok ()
+            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9142:1: ( ruleTimesTok () )
+            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9143:5: ruleTimesTok ()
             {
             if ( state.backtracking==0 ) {
                
                       newCompositeNode(grammarAccess.getUnqualOp_TimesTokAccess().getTimesTokParserRuleCall_0()); 
                   
             }
-            pushFollow(FOLLOW_ruleTimesTok_in_ruleUnqualOp_TimesTok19376);
+            pushFollow(FOLLOW_ruleTimesTok_in_ruleUnqualOp_TimesTok19519);
             ruleTimesTok();
 
             state._fsp--;
@@ -24174,8 +23726,8 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
                       afterParserOrEnumRuleCall();
                   
             }
-            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9114:1: ()
-            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9115:5: 
+            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9150:1: ()
+            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9151:5: 
             {
             if ( state.backtracking==0 ) {
 
@@ -24213,7 +23765,7 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleUnqualOp_PowerTok"
-    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9131:1: entryRuleUnqualOp_PowerTok returns [EObject current=null] : iv_ruleUnqualOp_PowerTok= ruleUnqualOp_PowerTok EOF ;
+    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9167:1: entryRuleUnqualOp_PowerTok returns [EObject current=null] : iv_ruleUnqualOp_PowerTok= ruleUnqualOp_PowerTok EOF ;
     public final EObject entryRuleUnqualOp_PowerTok() throws RecognitionException {
         EObject current = null;
 
@@ -24224,13 +23776,13 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
         		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
         	
         try {
-            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9135:2: (iv_ruleUnqualOp_PowerTok= ruleUnqualOp_PowerTok EOF )
-            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9136:2: iv_ruleUnqualOp_PowerTok= ruleUnqualOp_PowerTok EOF
+            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9171:2: (iv_ruleUnqualOp_PowerTok= ruleUnqualOp_PowerTok EOF )
+            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9172:2: iv_ruleUnqualOp_PowerTok= ruleUnqualOp_PowerTok EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getUnqualOp_PowerTokRule()); 
             }
-            pushFollow(FOLLOW_ruleUnqualOp_PowerTok_in_entryRuleUnqualOp_PowerTok19430);
+            pushFollow(FOLLOW_ruleUnqualOp_PowerTok_in_entryRuleUnqualOp_PowerTok19573);
             iv_ruleUnqualOp_PowerTok=ruleUnqualOp_PowerTok();
 
             state._fsp--;
@@ -24238,7 +23790,7 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
             if ( state.backtracking==0 ) {
                current =iv_ruleUnqualOp_PowerTok; 
             }
-            match(input,EOF,FOLLOW_EOF_in_entryRuleUnqualOp_PowerTok19440); if (state.failed) return current;
+            match(input,EOF,FOLLOW_EOF_in_entryRuleUnqualOp_PowerTok19583); if (state.failed) return current;
 
             }
 
@@ -24259,7 +23811,7 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleUnqualOp_PowerTok"
-    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9146:1: ruleUnqualOp_PowerTok returns [EObject current=null] : ( rulePowerTok () ) ;
+    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9182:1: ruleUnqualOp_PowerTok returns [EObject current=null] : ( rulePowerTok () ) ;
     public final EObject ruleUnqualOp_PowerTok() throws RecognitionException {
         EObject current = null;
 
@@ -24267,18 +23819,18 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
         		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
             
         try {
-            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9150:28: ( ( rulePowerTok () ) )
-            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9151:1: ( rulePowerTok () )
+            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9186:28: ( ( rulePowerTok () ) )
+            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9187:1: ( rulePowerTok () )
             {
-            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9151:1: ( rulePowerTok () )
-            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9152:5: rulePowerTok ()
+            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9187:1: ( rulePowerTok () )
+            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9188:5: rulePowerTok ()
             {
             if ( state.backtracking==0 ) {
                
                       newCompositeNode(grammarAccess.getUnqualOp_PowerTokAccess().getPowerTokParserRuleCall_0()); 
                   
             }
-            pushFollow(FOLLOW_rulePowerTok_in_ruleUnqualOp_PowerTok19485);
+            pushFollow(FOLLOW_rulePowerTok_in_ruleUnqualOp_PowerTok19628);
             rulePowerTok();
 
             state._fsp--;
@@ -24288,8 +23840,8 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
                       afterParserOrEnumRuleCall();
                   
             }
-            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9159:1: ()
-            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9160:5: 
+            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9195:1: ()
+            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9196:5: 
             {
             if ( state.backtracking==0 ) {
 
@@ -24327,7 +23879,7 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleQualOp_ArrowTok"
-    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9176:1: entryRuleQualOp_ArrowTok returns [EObject current=null] : iv_ruleQualOp_ArrowTok= ruleQualOp_ArrowTok EOF ;
+    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9212:1: entryRuleQualOp_ArrowTok returns [EObject current=null] : iv_ruleQualOp_ArrowTok= ruleQualOp_ArrowTok EOF ;
     public final EObject entryRuleQualOp_ArrowTok() throws RecognitionException {
         EObject current = null;
 
@@ -24338,13 +23890,13 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
         		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
         	
         try {
-            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9180:2: (iv_ruleQualOp_ArrowTok= ruleQualOp_ArrowTok EOF )
-            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9181:2: iv_ruleQualOp_ArrowTok= ruleQualOp_ArrowTok EOF
+            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9216:2: (iv_ruleQualOp_ArrowTok= ruleQualOp_ArrowTok EOF )
+            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9217:2: iv_ruleQualOp_ArrowTok= ruleQualOp_ArrowTok EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getQualOp_ArrowTokRule()); 
             }
-            pushFollow(FOLLOW_ruleQualOp_ArrowTok_in_entryRuleQualOp_ArrowTok19539);
+            pushFollow(FOLLOW_ruleQualOp_ArrowTok_in_entryRuleQualOp_ArrowTok19682);
             iv_ruleQualOp_ArrowTok=ruleQualOp_ArrowTok();
 
             state._fsp--;
@@ -24352,7 +23904,7 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
             if ( state.backtracking==0 ) {
                current =iv_ruleQualOp_ArrowTok; 
             }
-            match(input,EOF,FOLLOW_EOF_in_entryRuleQualOp_ArrowTok19549); if (state.failed) return current;
+            match(input,EOF,FOLLOW_EOF_in_entryRuleQualOp_ArrowTok19692); if (state.failed) return current;
 
             }
 
@@ -24373,7 +23925,7 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleQualOp_ArrowTok"
-    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9191:1: ruleQualOp_ArrowTok returns [EObject current=null] : ( () ruleArrowTok ( ( ( RULE_KW_DOLLAR ( ( ruleOpQualTail ) ) ) )=> (this_KW_DOLLAR_2= RULE_KW_DOLLAR ( (lv_oqt_3_0= ruleOpQualTail ) ) ) )? ) ;
+    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9227:1: ruleQualOp_ArrowTok returns [EObject current=null] : ( () ruleArrowTok ( ( ( RULE_KW_DOLLAR ( ( ruleOpQualTail ) ) ) )=> (this_KW_DOLLAR_2= RULE_KW_DOLLAR ( (lv_oqt_3_0= ruleOpQualTail ) ) ) )? ) ;
     public final EObject ruleQualOp_ArrowTok() throws RecognitionException {
         EObject current = null;
 
@@ -24385,14 +23937,14 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
         		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
             
         try {
-            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9195:28: ( ( () ruleArrowTok ( ( ( RULE_KW_DOLLAR ( ( ruleOpQualTail ) ) ) )=> (this_KW_DOLLAR_2= RULE_KW_DOLLAR ( (lv_oqt_3_0= ruleOpQualTail ) ) ) )? ) )
-            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9196:1: ( () ruleArrowTok ( ( ( RULE_KW_DOLLAR ( ( ruleOpQualTail ) ) ) )=> (this_KW_DOLLAR_2= RULE_KW_DOLLAR ( (lv_oqt_3_0= ruleOpQualTail ) ) ) )? )
+            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9231:28: ( ( () ruleArrowTok ( ( ( RULE_KW_DOLLAR ( ( ruleOpQualTail ) ) ) )=> (this_KW_DOLLAR_2= RULE_KW_DOLLAR ( (lv_oqt_3_0= ruleOpQualTail ) ) ) )? ) )
+            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9232:1: ( () ruleArrowTok ( ( ( RULE_KW_DOLLAR ( ( ruleOpQualTail ) ) ) )=> (this_KW_DOLLAR_2= RULE_KW_DOLLAR ( (lv_oqt_3_0= ruleOpQualTail ) ) ) )? )
             {
-            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9196:1: ( () ruleArrowTok ( ( ( RULE_KW_DOLLAR ( ( ruleOpQualTail ) ) ) )=> (this_KW_DOLLAR_2= RULE_KW_DOLLAR ( (lv_oqt_3_0= ruleOpQualTail ) ) ) )? )
-            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9196:2: () ruleArrowTok ( ( ( RULE_KW_DOLLAR ( ( ruleOpQualTail ) ) ) )=> (this_KW_DOLLAR_2= RULE_KW_DOLLAR ( (lv_oqt_3_0= ruleOpQualTail ) ) ) )?
+            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9232:1: ( () ruleArrowTok ( ( ( RULE_KW_DOLLAR ( ( ruleOpQualTail ) ) ) )=> (this_KW_DOLLAR_2= RULE_KW_DOLLAR ( (lv_oqt_3_0= ruleOpQualTail ) ) ) )? )
+            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9232:2: () ruleArrowTok ( ( ( RULE_KW_DOLLAR ( ( ruleOpQualTail ) ) ) )=> (this_KW_DOLLAR_2= RULE_KW_DOLLAR ( (lv_oqt_3_0= ruleOpQualTail ) ) ) )?
             {
-            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9196:2: ()
-            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9197:5: 
+            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9232:2: ()
+            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9233:5: 
             {
             if ( state.backtracking==0 ) {
 
@@ -24409,7 +23961,7 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
                       newCompositeNode(grammarAccess.getQualOp_ArrowTokAccess().getArrowTokParserRuleCall_1()); 
                   
             }
-            pushFollow(FOLLOW_ruleArrowTok_in_ruleQualOp_ArrowTok19603);
+            pushFollow(FOLLOW_ruleArrowTok_in_ruleQualOp_ArrowTok19746);
             ruleArrowTok();
 
             state._fsp--;
@@ -24419,38 +23971,38 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
                       afterParserOrEnumRuleCall();
                   
             }
-            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9210:1: ( ( ( RULE_KW_DOLLAR ( ( ruleOpQualTail ) ) ) )=> (this_KW_DOLLAR_2= RULE_KW_DOLLAR ( (lv_oqt_3_0= ruleOpQualTail ) ) ) )?
-            int alt105=2;
-            int LA105_0 = input.LA(1);
+            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9246:1: ( ( ( RULE_KW_DOLLAR ( ( ruleOpQualTail ) ) ) )=> (this_KW_DOLLAR_2= RULE_KW_DOLLAR ( (lv_oqt_3_0= ruleOpQualTail ) ) ) )?
+            int alt107=2;
+            int LA107_0 = input.LA(1);
 
-            if ( (LA105_0==RULE_KW_DOLLAR) && (synpred21_InternalEditor())) {
-                alt105=1;
+            if ( (LA107_0==RULE_KW_DOLLAR) && (synpred23_InternalEditor())) {
+                alt107=1;
             }
-            switch (alt105) {
+            switch (alt107) {
                 case 1 :
-                    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9210:2: ( ( RULE_KW_DOLLAR ( ( ruleOpQualTail ) ) ) )=> (this_KW_DOLLAR_2= RULE_KW_DOLLAR ( (lv_oqt_3_0= ruleOpQualTail ) ) )
+                    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9246:2: ( ( RULE_KW_DOLLAR ( ( ruleOpQualTail ) ) ) )=> (this_KW_DOLLAR_2= RULE_KW_DOLLAR ( (lv_oqt_3_0= ruleOpQualTail ) ) )
                     {
-                    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9214:6: (this_KW_DOLLAR_2= RULE_KW_DOLLAR ( (lv_oqt_3_0= ruleOpQualTail ) ) )
-                    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9214:7: this_KW_DOLLAR_2= RULE_KW_DOLLAR ( (lv_oqt_3_0= ruleOpQualTail ) )
+                    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9250:6: (this_KW_DOLLAR_2= RULE_KW_DOLLAR ( (lv_oqt_3_0= ruleOpQualTail ) ) )
+                    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9250:7: this_KW_DOLLAR_2= RULE_KW_DOLLAR ( (lv_oqt_3_0= ruleOpQualTail ) )
                     {
-                    this_KW_DOLLAR_2=(Token)match(input,RULE_KW_DOLLAR,FOLLOW_RULE_KW_DOLLAR_in_ruleQualOp_ArrowTok19631); if (state.failed) return current;
+                    this_KW_DOLLAR_2=(Token)match(input,RULE_KW_DOLLAR,FOLLOW_RULE_KW_DOLLAR_in_ruleQualOp_ArrowTok19774); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
                        
                           newLeafNode(this_KW_DOLLAR_2, grammarAccess.getQualOp_ArrowTokAccess().getKW_DOLLARTerminalRuleCall_2_0_0()); 
                           
                     }
-                    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9218:1: ( (lv_oqt_3_0= ruleOpQualTail ) )
-                    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9219:1: (lv_oqt_3_0= ruleOpQualTail )
+                    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9254:1: ( (lv_oqt_3_0= ruleOpQualTail ) )
+                    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9255:1: (lv_oqt_3_0= ruleOpQualTail )
                     {
-                    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9219:1: (lv_oqt_3_0= ruleOpQualTail )
-                    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9220:3: lv_oqt_3_0= ruleOpQualTail
+                    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9255:1: (lv_oqt_3_0= ruleOpQualTail )
+                    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9256:3: lv_oqt_3_0= ruleOpQualTail
                     {
                     if ( state.backtracking==0 ) {
                        
                       	        newCompositeNode(grammarAccess.getQualOp_ArrowTokAccess().getOqtOpQualTailParserRuleCall_2_0_1_0()); 
                       	    
                     }
-                    pushFollow(FOLLOW_ruleOpQualTail_in_ruleQualOp_ArrowTok19651);
+                    pushFollow(FOLLOW_ruleOpQualTail_in_ruleQualOp_ArrowTok19794);
                     lv_oqt_3_0=ruleOpQualTail();
 
                     state._fsp--;
@@ -24509,7 +24061,7 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleQualOp_LatticeTok"
-    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9247:1: entryRuleQualOp_LatticeTok returns [EObject current=null] : iv_ruleQualOp_LatticeTok= ruleQualOp_LatticeTok EOF ;
+    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9283:1: entryRuleQualOp_LatticeTok returns [EObject current=null] : iv_ruleQualOp_LatticeTok= ruleQualOp_LatticeTok EOF ;
     public final EObject entryRuleQualOp_LatticeTok() throws RecognitionException {
         EObject current = null;
 
@@ -24520,13 +24072,13 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
         		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
         	
         try {
-            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9251:2: (iv_ruleQualOp_LatticeTok= ruleQualOp_LatticeTok EOF )
-            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9252:2: iv_ruleQualOp_LatticeTok= ruleQualOp_LatticeTok EOF
+            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9287:2: (iv_ruleQualOp_LatticeTok= ruleQualOp_LatticeTok EOF )
+            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9288:2: iv_ruleQualOp_LatticeTok= ruleQualOp_LatticeTok EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getQualOp_LatticeTokRule()); 
             }
-            pushFollow(FOLLOW_ruleQualOp_LatticeTok_in_entryRuleQualOp_LatticeTok19700);
+            pushFollow(FOLLOW_ruleQualOp_LatticeTok_in_entryRuleQualOp_LatticeTok19843);
             iv_ruleQualOp_LatticeTok=ruleQualOp_LatticeTok();
 
             state._fsp--;
@@ -24534,7 +24086,7 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
             if ( state.backtracking==0 ) {
                current =iv_ruleQualOp_LatticeTok; 
             }
-            match(input,EOF,FOLLOW_EOF_in_entryRuleQualOp_LatticeTok19710); if (state.failed) return current;
+            match(input,EOF,FOLLOW_EOF_in_entryRuleQualOp_LatticeTok19853); if (state.failed) return current;
 
             }
 
@@ -24555,7 +24107,7 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleQualOp_LatticeTok"
-    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9262:1: ruleQualOp_LatticeTok returns [EObject current=null] : ( () ruleLatticeTok ( ( ( RULE_KW_DOLLAR ( ( ruleOpQualTail ) ) ) )=> (this_KW_DOLLAR_2= RULE_KW_DOLLAR ( (lv_oqt_3_0= ruleOpQualTail ) ) ) )? ) ;
+    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9298:1: ruleQualOp_LatticeTok returns [EObject current=null] : ( () ruleLatticeTok ( ( ( RULE_KW_DOLLAR ( ( ruleOpQualTail ) ) ) )=> (this_KW_DOLLAR_2= RULE_KW_DOLLAR ( (lv_oqt_3_0= ruleOpQualTail ) ) ) )? ) ;
     public final EObject ruleQualOp_LatticeTok() throws RecognitionException {
         EObject current = null;
 
@@ -24567,14 +24119,14 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
         		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
             
         try {
-            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9266:28: ( ( () ruleLatticeTok ( ( ( RULE_KW_DOLLAR ( ( ruleOpQualTail ) ) ) )=> (this_KW_DOLLAR_2= RULE_KW_DOLLAR ( (lv_oqt_3_0= ruleOpQualTail ) ) ) )? ) )
-            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9267:1: ( () ruleLatticeTok ( ( ( RULE_KW_DOLLAR ( ( ruleOpQualTail ) ) ) )=> (this_KW_DOLLAR_2= RULE_KW_DOLLAR ( (lv_oqt_3_0= ruleOpQualTail ) ) ) )? )
+            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9302:28: ( ( () ruleLatticeTok ( ( ( RULE_KW_DOLLAR ( ( ruleOpQualTail ) ) ) )=> (this_KW_DOLLAR_2= RULE_KW_DOLLAR ( (lv_oqt_3_0= ruleOpQualTail ) ) ) )? ) )
+            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9303:1: ( () ruleLatticeTok ( ( ( RULE_KW_DOLLAR ( ( ruleOpQualTail ) ) ) )=> (this_KW_DOLLAR_2= RULE_KW_DOLLAR ( (lv_oqt_3_0= ruleOpQualTail ) ) ) )? )
             {
-            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9267:1: ( () ruleLatticeTok ( ( ( RULE_KW_DOLLAR ( ( ruleOpQualTail ) ) ) )=> (this_KW_DOLLAR_2= RULE_KW_DOLLAR ( (lv_oqt_3_0= ruleOpQualTail ) ) ) )? )
-            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9267:2: () ruleLatticeTok ( ( ( RULE_KW_DOLLAR ( ( ruleOpQualTail ) ) ) )=> (this_KW_DOLLAR_2= RULE_KW_DOLLAR ( (lv_oqt_3_0= ruleOpQualTail ) ) ) )?
+            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9303:1: ( () ruleLatticeTok ( ( ( RULE_KW_DOLLAR ( ( ruleOpQualTail ) ) ) )=> (this_KW_DOLLAR_2= RULE_KW_DOLLAR ( (lv_oqt_3_0= ruleOpQualTail ) ) ) )? )
+            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9303:2: () ruleLatticeTok ( ( ( RULE_KW_DOLLAR ( ( ruleOpQualTail ) ) ) )=> (this_KW_DOLLAR_2= RULE_KW_DOLLAR ( (lv_oqt_3_0= ruleOpQualTail ) ) ) )?
             {
-            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9267:2: ()
-            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9268:5: 
+            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9303:2: ()
+            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9304:5: 
             {
             if ( state.backtracking==0 ) {
 
@@ -24591,7 +24143,7 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
                       newCompositeNode(grammarAccess.getQualOp_LatticeTokAccess().getLatticeTokParserRuleCall_1()); 
                   
             }
-            pushFollow(FOLLOW_ruleLatticeTok_in_ruleQualOp_LatticeTok19764);
+            pushFollow(FOLLOW_ruleLatticeTok_in_ruleQualOp_LatticeTok19907);
             ruleLatticeTok();
 
             state._fsp--;
@@ -24601,38 +24153,38 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
                       afterParserOrEnumRuleCall();
                   
             }
-            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9281:1: ( ( ( RULE_KW_DOLLAR ( ( ruleOpQualTail ) ) ) )=> (this_KW_DOLLAR_2= RULE_KW_DOLLAR ( (lv_oqt_3_0= ruleOpQualTail ) ) ) )?
-            int alt106=2;
-            int LA106_0 = input.LA(1);
+            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9317:1: ( ( ( RULE_KW_DOLLAR ( ( ruleOpQualTail ) ) ) )=> (this_KW_DOLLAR_2= RULE_KW_DOLLAR ( (lv_oqt_3_0= ruleOpQualTail ) ) ) )?
+            int alt108=2;
+            int LA108_0 = input.LA(1);
 
-            if ( (LA106_0==RULE_KW_DOLLAR) && (synpred22_InternalEditor())) {
-                alt106=1;
+            if ( (LA108_0==RULE_KW_DOLLAR) && (synpred24_InternalEditor())) {
+                alt108=1;
             }
-            switch (alt106) {
+            switch (alt108) {
                 case 1 :
-                    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9281:2: ( ( RULE_KW_DOLLAR ( ( ruleOpQualTail ) ) ) )=> (this_KW_DOLLAR_2= RULE_KW_DOLLAR ( (lv_oqt_3_0= ruleOpQualTail ) ) )
+                    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9317:2: ( ( RULE_KW_DOLLAR ( ( ruleOpQualTail ) ) ) )=> (this_KW_DOLLAR_2= RULE_KW_DOLLAR ( (lv_oqt_3_0= ruleOpQualTail ) ) )
                     {
-                    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9285:6: (this_KW_DOLLAR_2= RULE_KW_DOLLAR ( (lv_oqt_3_0= ruleOpQualTail ) ) )
-                    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9285:7: this_KW_DOLLAR_2= RULE_KW_DOLLAR ( (lv_oqt_3_0= ruleOpQualTail ) )
+                    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9321:6: (this_KW_DOLLAR_2= RULE_KW_DOLLAR ( (lv_oqt_3_0= ruleOpQualTail ) ) )
+                    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9321:7: this_KW_DOLLAR_2= RULE_KW_DOLLAR ( (lv_oqt_3_0= ruleOpQualTail ) )
                     {
-                    this_KW_DOLLAR_2=(Token)match(input,RULE_KW_DOLLAR,FOLLOW_RULE_KW_DOLLAR_in_ruleQualOp_LatticeTok19792); if (state.failed) return current;
+                    this_KW_DOLLAR_2=(Token)match(input,RULE_KW_DOLLAR,FOLLOW_RULE_KW_DOLLAR_in_ruleQualOp_LatticeTok19935); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
                        
                           newLeafNode(this_KW_DOLLAR_2, grammarAccess.getQualOp_LatticeTokAccess().getKW_DOLLARTerminalRuleCall_2_0_0()); 
                           
                     }
-                    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9289:1: ( (lv_oqt_3_0= ruleOpQualTail ) )
-                    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9290:1: (lv_oqt_3_0= ruleOpQualTail )
+                    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9325:1: ( (lv_oqt_3_0= ruleOpQualTail ) )
+                    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9326:1: (lv_oqt_3_0= ruleOpQualTail )
                     {
-                    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9290:1: (lv_oqt_3_0= ruleOpQualTail )
-                    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9291:3: lv_oqt_3_0= ruleOpQualTail
+                    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9326:1: (lv_oqt_3_0= ruleOpQualTail )
+                    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9327:3: lv_oqt_3_0= ruleOpQualTail
                     {
                     if ( state.backtracking==0 ) {
                        
                       	        newCompositeNode(grammarAccess.getQualOp_LatticeTokAccess().getOqtOpQualTailParserRuleCall_2_0_1_0()); 
                       	    
                     }
-                    pushFollow(FOLLOW_ruleOpQualTail_in_ruleQualOp_LatticeTok19812);
+                    pushFollow(FOLLOW_ruleOpQualTail_in_ruleQualOp_LatticeTok19955);
                     lv_oqt_3_0=ruleOpQualTail();
 
                     state._fsp--;
@@ -24691,7 +24243,7 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleQualOp_RelationTok"
-    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9318:1: entryRuleQualOp_RelationTok returns [EObject current=null] : iv_ruleQualOp_RelationTok= ruleQualOp_RelationTok EOF ;
+    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9354:1: entryRuleQualOp_RelationTok returns [EObject current=null] : iv_ruleQualOp_RelationTok= ruleQualOp_RelationTok EOF ;
     public final EObject entryRuleQualOp_RelationTok() throws RecognitionException {
         EObject current = null;
 
@@ -24702,13 +24254,13 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
         		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
         	
         try {
-            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9322:2: (iv_ruleQualOp_RelationTok= ruleQualOp_RelationTok EOF )
-            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9323:2: iv_ruleQualOp_RelationTok= ruleQualOp_RelationTok EOF
+            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9358:2: (iv_ruleQualOp_RelationTok= ruleQualOp_RelationTok EOF )
+            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9359:2: iv_ruleQualOp_RelationTok= ruleQualOp_RelationTok EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getQualOp_RelationTokRule()); 
             }
-            pushFollow(FOLLOW_ruleQualOp_RelationTok_in_entryRuleQualOp_RelationTok19861);
+            pushFollow(FOLLOW_ruleQualOp_RelationTok_in_entryRuleQualOp_RelationTok20004);
             iv_ruleQualOp_RelationTok=ruleQualOp_RelationTok();
 
             state._fsp--;
@@ -24716,7 +24268,7 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
             if ( state.backtracking==0 ) {
                current =iv_ruleQualOp_RelationTok; 
             }
-            match(input,EOF,FOLLOW_EOF_in_entryRuleQualOp_RelationTok19871); if (state.failed) return current;
+            match(input,EOF,FOLLOW_EOF_in_entryRuleQualOp_RelationTok20014); if (state.failed) return current;
 
             }
 
@@ -24737,7 +24289,7 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleQualOp_RelationTok"
-    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9333:1: ruleQualOp_RelationTok returns [EObject current=null] : ( () ruleRelationTok ( ( (lv_op_2_0= RULE_KW_DOLLAR ) ) ( (lv_oqt_3_0= ruleOpQualTail ) ) )? ) ;
+    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9369:1: ruleQualOp_RelationTok returns [EObject current=null] : ( () ruleRelationTok ( ( (lv_op_2_0= RULE_KW_DOLLAR ) ) ( (lv_oqt_3_0= ruleOpQualTail ) ) )? ) ;
     public final EObject ruleQualOp_RelationTok() throws RecognitionException {
         EObject current = null;
 
@@ -24749,14 +24301,14 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
         		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
             
         try {
-            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9337:28: ( ( () ruleRelationTok ( ( (lv_op_2_0= RULE_KW_DOLLAR ) ) ( (lv_oqt_3_0= ruleOpQualTail ) ) )? ) )
-            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9338:1: ( () ruleRelationTok ( ( (lv_op_2_0= RULE_KW_DOLLAR ) ) ( (lv_oqt_3_0= ruleOpQualTail ) ) )? )
+            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9373:28: ( ( () ruleRelationTok ( ( (lv_op_2_0= RULE_KW_DOLLAR ) ) ( (lv_oqt_3_0= ruleOpQualTail ) ) )? ) )
+            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9374:1: ( () ruleRelationTok ( ( (lv_op_2_0= RULE_KW_DOLLAR ) ) ( (lv_oqt_3_0= ruleOpQualTail ) ) )? )
             {
-            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9338:1: ( () ruleRelationTok ( ( (lv_op_2_0= RULE_KW_DOLLAR ) ) ( (lv_oqt_3_0= ruleOpQualTail ) ) )? )
-            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9338:2: () ruleRelationTok ( ( (lv_op_2_0= RULE_KW_DOLLAR ) ) ( (lv_oqt_3_0= ruleOpQualTail ) ) )?
+            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9374:1: ( () ruleRelationTok ( ( (lv_op_2_0= RULE_KW_DOLLAR ) ) ( (lv_oqt_3_0= ruleOpQualTail ) ) )? )
+            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9374:2: () ruleRelationTok ( ( (lv_op_2_0= RULE_KW_DOLLAR ) ) ( (lv_oqt_3_0= ruleOpQualTail ) ) )?
             {
-            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9338:2: ()
-            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9339:5: 
+            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9374:2: ()
+            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9375:5: 
             {
             if ( state.backtracking==0 ) {
 
@@ -24773,7 +24325,7 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
                       newCompositeNode(grammarAccess.getQualOp_RelationTokAccess().getRelationTokParserRuleCall_1()); 
                   
             }
-            pushFollow(FOLLOW_ruleRelationTok_in_ruleQualOp_RelationTok19925);
+            pushFollow(FOLLOW_ruleRelationTok_in_ruleQualOp_RelationTok20068);
             ruleRelationTok();
 
             state._fsp--;
@@ -24783,24 +24335,24 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
                       afterParserOrEnumRuleCall();
                   
             }
-            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9352:1: ( ( (lv_op_2_0= RULE_KW_DOLLAR ) ) ( (lv_oqt_3_0= ruleOpQualTail ) ) )?
-            int alt107=2;
-            int LA107_0 = input.LA(1);
+            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9388:1: ( ( (lv_op_2_0= RULE_KW_DOLLAR ) ) ( (lv_oqt_3_0= ruleOpQualTail ) ) )?
+            int alt109=2;
+            int LA109_0 = input.LA(1);
 
-            if ( (LA107_0==RULE_KW_DOLLAR) ) {
-                alt107=1;
+            if ( (LA109_0==RULE_KW_DOLLAR) ) {
+                alt109=1;
             }
-            switch (alt107) {
+            switch (alt109) {
                 case 1 :
-                    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9352:2: ( (lv_op_2_0= RULE_KW_DOLLAR ) ) ( (lv_oqt_3_0= ruleOpQualTail ) )
+                    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9388:2: ( (lv_op_2_0= RULE_KW_DOLLAR ) ) ( (lv_oqt_3_0= ruleOpQualTail ) )
                     {
-                    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9352:2: ( (lv_op_2_0= RULE_KW_DOLLAR ) )
-                    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9353:1: (lv_op_2_0= RULE_KW_DOLLAR )
+                    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9388:2: ( (lv_op_2_0= RULE_KW_DOLLAR ) )
+                    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9389:1: (lv_op_2_0= RULE_KW_DOLLAR )
                     {
-                    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9353:1: (lv_op_2_0= RULE_KW_DOLLAR )
-                    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9354:3: lv_op_2_0= RULE_KW_DOLLAR
+                    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9389:1: (lv_op_2_0= RULE_KW_DOLLAR )
+                    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9390:3: lv_op_2_0= RULE_KW_DOLLAR
                     {
-                    lv_op_2_0=(Token)match(input,RULE_KW_DOLLAR,FOLLOW_RULE_KW_DOLLAR_in_ruleQualOp_RelationTok19942); if (state.failed) return current;
+                    lv_op_2_0=(Token)match(input,RULE_KW_DOLLAR,FOLLOW_RULE_KW_DOLLAR_in_ruleQualOp_RelationTok20085); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                       			newLeafNode(lv_op_2_0, grammarAccess.getQualOp_RelationTokAccess().getOpKW_DOLLARTerminalRuleCall_2_0_0()); 
@@ -24824,18 +24376,18 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9370:2: ( (lv_oqt_3_0= ruleOpQualTail ) )
-                    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9371:1: (lv_oqt_3_0= ruleOpQualTail )
+                    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9406:2: ( (lv_oqt_3_0= ruleOpQualTail ) )
+                    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9407:1: (lv_oqt_3_0= ruleOpQualTail )
                     {
-                    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9371:1: (lv_oqt_3_0= ruleOpQualTail )
-                    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9372:3: lv_oqt_3_0= ruleOpQualTail
+                    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9407:1: (lv_oqt_3_0= ruleOpQualTail )
+                    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9408:3: lv_oqt_3_0= ruleOpQualTail
                     {
                     if ( state.backtracking==0 ) {
                        
                       	        newCompositeNode(grammarAccess.getQualOp_RelationTokAccess().getOqtOpQualTailParserRuleCall_2_1_0()); 
                       	    
                     }
-                    pushFollow(FOLLOW_ruleOpQualTail_in_ruleQualOp_RelationTok19968);
+                    pushFollow(FOLLOW_ruleOpQualTail_in_ruleQualOp_RelationTok20111);
                     lv_oqt_3_0=ruleOpQualTail();
 
                     state._fsp--;
@@ -24891,7 +24443,7 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleQualOp_SegTok"
-    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9399:1: entryRuleQualOp_SegTok returns [EObject current=null] : iv_ruleQualOp_SegTok= ruleQualOp_SegTok EOF ;
+    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9435:1: entryRuleQualOp_SegTok returns [EObject current=null] : iv_ruleQualOp_SegTok= ruleQualOp_SegTok EOF ;
     public final EObject entryRuleQualOp_SegTok() throws RecognitionException {
         EObject current = null;
 
@@ -24902,13 +24454,13 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
         		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
         	
         try {
-            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9403:2: (iv_ruleQualOp_SegTok= ruleQualOp_SegTok EOF )
-            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9404:2: iv_ruleQualOp_SegTok= ruleQualOp_SegTok EOF
+            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9439:2: (iv_ruleQualOp_SegTok= ruleQualOp_SegTok EOF )
+            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9440:2: iv_ruleQualOp_SegTok= ruleQualOp_SegTok EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getQualOp_SegTokRule()); 
             }
-            pushFollow(FOLLOW_ruleQualOp_SegTok_in_entryRuleQualOp_SegTok20016);
+            pushFollow(FOLLOW_ruleQualOp_SegTok_in_entryRuleQualOp_SegTok20159);
             iv_ruleQualOp_SegTok=ruleQualOp_SegTok();
 
             state._fsp--;
@@ -24916,7 +24468,7 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
             if ( state.backtracking==0 ) {
                current =iv_ruleQualOp_SegTok; 
             }
-            match(input,EOF,FOLLOW_EOF_in_entryRuleQualOp_SegTok20026); if (state.failed) return current;
+            match(input,EOF,FOLLOW_EOF_in_entryRuleQualOp_SegTok20169); if (state.failed) return current;
 
             }
 
@@ -24937,7 +24489,7 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleQualOp_SegTok"
-    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9414:1: ruleQualOp_SegTok returns [EObject current=null] : ( () ruleSegTok (this_KW_DOLLAR_2= RULE_KW_DOLLAR ( (lv_oqt_3_0= ruleOpQualTail ) ) )? ) ;
+    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9450:1: ruleQualOp_SegTok returns [EObject current=null] : ( () ruleSegTok (this_KW_DOLLAR_2= RULE_KW_DOLLAR ( (lv_oqt_3_0= ruleOpQualTail ) ) )? ) ;
     public final EObject ruleQualOp_SegTok() throws RecognitionException {
         EObject current = null;
 
@@ -24949,14 +24501,14 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
         		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
             
         try {
-            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9418:28: ( ( () ruleSegTok (this_KW_DOLLAR_2= RULE_KW_DOLLAR ( (lv_oqt_3_0= ruleOpQualTail ) ) )? ) )
-            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9419:1: ( () ruleSegTok (this_KW_DOLLAR_2= RULE_KW_DOLLAR ( (lv_oqt_3_0= ruleOpQualTail ) ) )? )
+            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9454:28: ( ( () ruleSegTok (this_KW_DOLLAR_2= RULE_KW_DOLLAR ( (lv_oqt_3_0= ruleOpQualTail ) ) )? ) )
+            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9455:1: ( () ruleSegTok (this_KW_DOLLAR_2= RULE_KW_DOLLAR ( (lv_oqt_3_0= ruleOpQualTail ) ) )? )
             {
-            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9419:1: ( () ruleSegTok (this_KW_DOLLAR_2= RULE_KW_DOLLAR ( (lv_oqt_3_0= ruleOpQualTail ) ) )? )
-            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9419:2: () ruleSegTok (this_KW_DOLLAR_2= RULE_KW_DOLLAR ( (lv_oqt_3_0= ruleOpQualTail ) ) )?
+            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9455:1: ( () ruleSegTok (this_KW_DOLLAR_2= RULE_KW_DOLLAR ( (lv_oqt_3_0= ruleOpQualTail ) ) )? )
+            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9455:2: () ruleSegTok (this_KW_DOLLAR_2= RULE_KW_DOLLAR ( (lv_oqt_3_0= ruleOpQualTail ) ) )?
             {
-            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9419:2: ()
-            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9420:5: 
+            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9455:2: ()
+            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9456:5: 
             {
             if ( state.backtracking==0 ) {
 
@@ -24973,7 +24525,7 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
                       newCompositeNode(grammarAccess.getQualOp_SegTokAccess().getSegTokParserRuleCall_1()); 
                   
             }
-            pushFollow(FOLLOW_ruleSegTok_in_ruleQualOp_SegTok20080);
+            pushFollow(FOLLOW_ruleSegTok_in_ruleQualOp_SegTok20223);
             ruleSegTok();
 
             state._fsp--;
@@ -24983,35 +24535,35 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
                       afterParserOrEnumRuleCall();
                   
             }
-            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9433:1: (this_KW_DOLLAR_2= RULE_KW_DOLLAR ( (lv_oqt_3_0= ruleOpQualTail ) ) )?
-            int alt108=2;
-            int LA108_0 = input.LA(1);
+            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9469:1: (this_KW_DOLLAR_2= RULE_KW_DOLLAR ( (lv_oqt_3_0= ruleOpQualTail ) ) )?
+            int alt110=2;
+            int LA110_0 = input.LA(1);
 
-            if ( (LA108_0==RULE_KW_DOLLAR) ) {
-                alt108=1;
+            if ( (LA110_0==RULE_KW_DOLLAR) ) {
+                alt110=1;
             }
-            switch (alt108) {
+            switch (alt110) {
                 case 1 :
-                    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9433:2: this_KW_DOLLAR_2= RULE_KW_DOLLAR ( (lv_oqt_3_0= ruleOpQualTail ) )
+                    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9469:2: this_KW_DOLLAR_2= RULE_KW_DOLLAR ( (lv_oqt_3_0= ruleOpQualTail ) )
                     {
-                    this_KW_DOLLAR_2=(Token)match(input,RULE_KW_DOLLAR,FOLLOW_RULE_KW_DOLLAR_in_ruleQualOp_SegTok20091); if (state.failed) return current;
+                    this_KW_DOLLAR_2=(Token)match(input,RULE_KW_DOLLAR,FOLLOW_RULE_KW_DOLLAR_in_ruleQualOp_SegTok20234); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
                        
                           newLeafNode(this_KW_DOLLAR_2, grammarAccess.getQualOp_SegTokAccess().getKW_DOLLARTerminalRuleCall_2_0()); 
                           
                     }
-                    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9437:1: ( (lv_oqt_3_0= ruleOpQualTail ) )
-                    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9438:1: (lv_oqt_3_0= ruleOpQualTail )
+                    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9473:1: ( (lv_oqt_3_0= ruleOpQualTail ) )
+                    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9474:1: (lv_oqt_3_0= ruleOpQualTail )
                     {
-                    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9438:1: (lv_oqt_3_0= ruleOpQualTail )
-                    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9439:3: lv_oqt_3_0= ruleOpQualTail
+                    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9474:1: (lv_oqt_3_0= ruleOpQualTail )
+                    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9475:3: lv_oqt_3_0= ruleOpQualTail
                     {
                     if ( state.backtracking==0 ) {
                        
                       	        newCompositeNode(grammarAccess.getQualOp_SegTokAccess().getOqtOpQualTailParserRuleCall_2_1_0()); 
                       	    
                     }
-                    pushFollow(FOLLOW_ruleOpQualTail_in_ruleQualOp_SegTok20111);
+                    pushFollow(FOLLOW_ruleOpQualTail_in_ruleQualOp_SegTok20254);
                     lv_oqt_3_0=ruleOpQualTail();
 
                     state._fsp--;
@@ -25067,7 +24619,7 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleQualOp_PlusTok"
-    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9466:1: entryRuleQualOp_PlusTok returns [EObject current=null] : iv_ruleQualOp_PlusTok= ruleQualOp_PlusTok EOF ;
+    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9502:1: entryRuleQualOp_PlusTok returns [EObject current=null] : iv_ruleQualOp_PlusTok= ruleQualOp_PlusTok EOF ;
     public final EObject entryRuleQualOp_PlusTok() throws RecognitionException {
         EObject current = null;
 
@@ -25078,13 +24630,13 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
         		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
         	
         try {
-            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9470:2: (iv_ruleQualOp_PlusTok= ruleQualOp_PlusTok EOF )
-            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9471:2: iv_ruleQualOp_PlusTok= ruleQualOp_PlusTok EOF
+            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9506:2: (iv_ruleQualOp_PlusTok= ruleQualOp_PlusTok EOF )
+            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9507:2: iv_ruleQualOp_PlusTok= ruleQualOp_PlusTok EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getQualOp_PlusTokRule()); 
             }
-            pushFollow(FOLLOW_ruleQualOp_PlusTok_in_entryRuleQualOp_PlusTok20159);
+            pushFollow(FOLLOW_ruleQualOp_PlusTok_in_entryRuleQualOp_PlusTok20302);
             iv_ruleQualOp_PlusTok=ruleQualOp_PlusTok();
 
             state._fsp--;
@@ -25092,7 +24644,7 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
             if ( state.backtracking==0 ) {
                current =iv_ruleQualOp_PlusTok; 
             }
-            match(input,EOF,FOLLOW_EOF_in_entryRuleQualOp_PlusTok20169); if (state.failed) return current;
+            match(input,EOF,FOLLOW_EOF_in_entryRuleQualOp_PlusTok20312); if (state.failed) return current;
 
             }
 
@@ -25113,7 +24665,7 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleQualOp_PlusTok"
-    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9481:1: ruleQualOp_PlusTok returns [EObject current=null] : ( () rulePlusTok (this_KW_DOLLAR_2= RULE_KW_DOLLAR ( (lv_oqt_3_0= ruleOpQualTail ) ) )? ) ;
+    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9517:1: ruleQualOp_PlusTok returns [EObject current=null] : ( () rulePlusTok (this_KW_DOLLAR_2= RULE_KW_DOLLAR ( (lv_oqt_3_0= ruleOpQualTail ) ) )? ) ;
     public final EObject ruleQualOp_PlusTok() throws RecognitionException {
         EObject current = null;
 
@@ -25125,14 +24677,14 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
         		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
             
         try {
-            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9485:28: ( ( () rulePlusTok (this_KW_DOLLAR_2= RULE_KW_DOLLAR ( (lv_oqt_3_0= ruleOpQualTail ) ) )? ) )
-            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9486:1: ( () rulePlusTok (this_KW_DOLLAR_2= RULE_KW_DOLLAR ( (lv_oqt_3_0= ruleOpQualTail ) ) )? )
+            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9521:28: ( ( () rulePlusTok (this_KW_DOLLAR_2= RULE_KW_DOLLAR ( (lv_oqt_3_0= ruleOpQualTail ) ) )? ) )
+            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9522:1: ( () rulePlusTok (this_KW_DOLLAR_2= RULE_KW_DOLLAR ( (lv_oqt_3_0= ruleOpQualTail ) ) )? )
             {
-            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9486:1: ( () rulePlusTok (this_KW_DOLLAR_2= RULE_KW_DOLLAR ( (lv_oqt_3_0= ruleOpQualTail ) ) )? )
-            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9486:2: () rulePlusTok (this_KW_DOLLAR_2= RULE_KW_DOLLAR ( (lv_oqt_3_0= ruleOpQualTail ) ) )?
+            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9522:1: ( () rulePlusTok (this_KW_DOLLAR_2= RULE_KW_DOLLAR ( (lv_oqt_3_0= ruleOpQualTail ) ) )? )
+            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9522:2: () rulePlusTok (this_KW_DOLLAR_2= RULE_KW_DOLLAR ( (lv_oqt_3_0= ruleOpQualTail ) ) )?
             {
-            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9486:2: ()
-            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9487:5: 
+            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9522:2: ()
+            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9523:5: 
             {
             if ( state.backtracking==0 ) {
 
@@ -25149,7 +24701,7 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
                       newCompositeNode(grammarAccess.getQualOp_PlusTokAccess().getPlusTokParserRuleCall_1()); 
                   
             }
-            pushFollow(FOLLOW_rulePlusTok_in_ruleQualOp_PlusTok20223);
+            pushFollow(FOLLOW_rulePlusTok_in_ruleQualOp_PlusTok20366);
             rulePlusTok();
 
             state._fsp--;
@@ -25159,35 +24711,35 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
                       afterParserOrEnumRuleCall();
                   
             }
-            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9500:1: (this_KW_DOLLAR_2= RULE_KW_DOLLAR ( (lv_oqt_3_0= ruleOpQualTail ) ) )?
-            int alt109=2;
-            int LA109_0 = input.LA(1);
+            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9536:1: (this_KW_DOLLAR_2= RULE_KW_DOLLAR ( (lv_oqt_3_0= ruleOpQualTail ) ) )?
+            int alt111=2;
+            int LA111_0 = input.LA(1);
 
-            if ( (LA109_0==RULE_KW_DOLLAR) ) {
-                alt109=1;
+            if ( (LA111_0==RULE_KW_DOLLAR) ) {
+                alt111=1;
             }
-            switch (alt109) {
+            switch (alt111) {
                 case 1 :
-                    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9500:2: this_KW_DOLLAR_2= RULE_KW_DOLLAR ( (lv_oqt_3_0= ruleOpQualTail ) )
+                    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9536:2: this_KW_DOLLAR_2= RULE_KW_DOLLAR ( (lv_oqt_3_0= ruleOpQualTail ) )
                     {
-                    this_KW_DOLLAR_2=(Token)match(input,RULE_KW_DOLLAR,FOLLOW_RULE_KW_DOLLAR_in_ruleQualOp_PlusTok20234); if (state.failed) return current;
+                    this_KW_DOLLAR_2=(Token)match(input,RULE_KW_DOLLAR,FOLLOW_RULE_KW_DOLLAR_in_ruleQualOp_PlusTok20377); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
                        
                           newLeafNode(this_KW_DOLLAR_2, grammarAccess.getQualOp_PlusTokAccess().getKW_DOLLARTerminalRuleCall_2_0()); 
                           
                     }
-                    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9504:1: ( (lv_oqt_3_0= ruleOpQualTail ) )
-                    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9505:1: (lv_oqt_3_0= ruleOpQualTail )
+                    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9540:1: ( (lv_oqt_3_0= ruleOpQualTail ) )
+                    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9541:1: (lv_oqt_3_0= ruleOpQualTail )
                     {
-                    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9505:1: (lv_oqt_3_0= ruleOpQualTail )
-                    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9506:3: lv_oqt_3_0= ruleOpQualTail
+                    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9541:1: (lv_oqt_3_0= ruleOpQualTail )
+                    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9542:3: lv_oqt_3_0= ruleOpQualTail
                     {
                     if ( state.backtracking==0 ) {
                        
                       	        newCompositeNode(grammarAccess.getQualOp_PlusTokAccess().getOqtOpQualTailParserRuleCall_2_1_0()); 
                       	    
                     }
-                    pushFollow(FOLLOW_ruleOpQualTail_in_ruleQualOp_PlusTok20254);
+                    pushFollow(FOLLOW_ruleOpQualTail_in_ruleQualOp_PlusTok20397);
                     lv_oqt_3_0=ruleOpQualTail();
 
                     state._fsp--;
@@ -25243,7 +24795,7 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleQualOp_QuotientTok"
-    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9533:1: entryRuleQualOp_QuotientTok returns [EObject current=null] : iv_ruleQualOp_QuotientTok= ruleQualOp_QuotientTok EOF ;
+    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9569:1: entryRuleQualOp_QuotientTok returns [EObject current=null] : iv_ruleQualOp_QuotientTok= ruleQualOp_QuotientTok EOF ;
     public final EObject entryRuleQualOp_QuotientTok() throws RecognitionException {
         EObject current = null;
 
@@ -25254,13 +24806,13 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
         		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
         	
         try {
-            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9537:2: (iv_ruleQualOp_QuotientTok= ruleQualOp_QuotientTok EOF )
-            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9538:2: iv_ruleQualOp_QuotientTok= ruleQualOp_QuotientTok EOF
+            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9573:2: (iv_ruleQualOp_QuotientTok= ruleQualOp_QuotientTok EOF )
+            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9574:2: iv_ruleQualOp_QuotientTok= ruleQualOp_QuotientTok EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getQualOp_QuotientTokRule()); 
             }
-            pushFollow(FOLLOW_ruleQualOp_QuotientTok_in_entryRuleQualOp_QuotientTok20302);
+            pushFollow(FOLLOW_ruleQualOp_QuotientTok_in_entryRuleQualOp_QuotientTok20445);
             iv_ruleQualOp_QuotientTok=ruleQualOp_QuotientTok();
 
             state._fsp--;
@@ -25268,7 +24820,7 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
             if ( state.backtracking==0 ) {
                current =iv_ruleQualOp_QuotientTok; 
             }
-            match(input,EOF,FOLLOW_EOF_in_entryRuleQualOp_QuotientTok20312); if (state.failed) return current;
+            match(input,EOF,FOLLOW_EOF_in_entryRuleQualOp_QuotientTok20455); if (state.failed) return current;
 
             }
 
@@ -25289,7 +24841,7 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleQualOp_QuotientTok"
-    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9548:1: ruleQualOp_QuotientTok returns [EObject current=null] : ( () ruleQuotientTok (this_KW_DOLLAR_2= RULE_KW_DOLLAR ( (lv_oqt_3_0= ruleOpQualTail ) ) )? ) ;
+    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9584:1: ruleQualOp_QuotientTok returns [EObject current=null] : ( () ruleQuotientTok (this_KW_DOLLAR_2= RULE_KW_DOLLAR ( (lv_oqt_3_0= ruleOpQualTail ) ) )? ) ;
     public final EObject ruleQualOp_QuotientTok() throws RecognitionException {
         EObject current = null;
 
@@ -25301,14 +24853,14 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
         		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
             
         try {
-            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9552:28: ( ( () ruleQuotientTok (this_KW_DOLLAR_2= RULE_KW_DOLLAR ( (lv_oqt_3_0= ruleOpQualTail ) ) )? ) )
-            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9553:1: ( () ruleQuotientTok (this_KW_DOLLAR_2= RULE_KW_DOLLAR ( (lv_oqt_3_0= ruleOpQualTail ) ) )? )
+            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9588:28: ( ( () ruleQuotientTok (this_KW_DOLLAR_2= RULE_KW_DOLLAR ( (lv_oqt_3_0= ruleOpQualTail ) ) )? ) )
+            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9589:1: ( () ruleQuotientTok (this_KW_DOLLAR_2= RULE_KW_DOLLAR ( (lv_oqt_3_0= ruleOpQualTail ) ) )? )
             {
-            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9553:1: ( () ruleQuotientTok (this_KW_DOLLAR_2= RULE_KW_DOLLAR ( (lv_oqt_3_0= ruleOpQualTail ) ) )? )
-            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9553:2: () ruleQuotientTok (this_KW_DOLLAR_2= RULE_KW_DOLLAR ( (lv_oqt_3_0= ruleOpQualTail ) ) )?
+            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9589:1: ( () ruleQuotientTok (this_KW_DOLLAR_2= RULE_KW_DOLLAR ( (lv_oqt_3_0= ruleOpQualTail ) ) )? )
+            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9589:2: () ruleQuotientTok (this_KW_DOLLAR_2= RULE_KW_DOLLAR ( (lv_oqt_3_0= ruleOpQualTail ) ) )?
             {
-            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9553:2: ()
-            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9554:5: 
+            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9589:2: ()
+            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9590:5: 
             {
             if ( state.backtracking==0 ) {
 
@@ -25325,7 +24877,7 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
                       newCompositeNode(grammarAccess.getQualOp_QuotientTokAccess().getQuotientTokParserRuleCall_1()); 
                   
             }
-            pushFollow(FOLLOW_ruleQuotientTok_in_ruleQualOp_QuotientTok20366);
+            pushFollow(FOLLOW_ruleQuotientTok_in_ruleQualOp_QuotientTok20509);
             ruleQuotientTok();
 
             state._fsp--;
@@ -25335,35 +24887,35 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
                       afterParserOrEnumRuleCall();
                   
             }
-            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9567:1: (this_KW_DOLLAR_2= RULE_KW_DOLLAR ( (lv_oqt_3_0= ruleOpQualTail ) ) )?
-            int alt110=2;
-            int LA110_0 = input.LA(1);
+            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9603:1: (this_KW_DOLLAR_2= RULE_KW_DOLLAR ( (lv_oqt_3_0= ruleOpQualTail ) ) )?
+            int alt112=2;
+            int LA112_0 = input.LA(1);
 
-            if ( (LA110_0==RULE_KW_DOLLAR) ) {
-                alt110=1;
+            if ( (LA112_0==RULE_KW_DOLLAR) ) {
+                alt112=1;
             }
-            switch (alt110) {
+            switch (alt112) {
                 case 1 :
-                    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9567:2: this_KW_DOLLAR_2= RULE_KW_DOLLAR ( (lv_oqt_3_0= ruleOpQualTail ) )
+                    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9603:2: this_KW_DOLLAR_2= RULE_KW_DOLLAR ( (lv_oqt_3_0= ruleOpQualTail ) )
                     {
-                    this_KW_DOLLAR_2=(Token)match(input,RULE_KW_DOLLAR,FOLLOW_RULE_KW_DOLLAR_in_ruleQualOp_QuotientTok20377); if (state.failed) return current;
+                    this_KW_DOLLAR_2=(Token)match(input,RULE_KW_DOLLAR,FOLLOW_RULE_KW_DOLLAR_in_ruleQualOp_QuotientTok20520); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
                        
                           newLeafNode(this_KW_DOLLAR_2, grammarAccess.getQualOp_QuotientTokAccess().getKW_DOLLARTerminalRuleCall_2_0()); 
                           
                     }
-                    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9571:1: ( (lv_oqt_3_0= ruleOpQualTail ) )
-                    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9572:1: (lv_oqt_3_0= ruleOpQualTail )
+                    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9607:1: ( (lv_oqt_3_0= ruleOpQualTail ) )
+                    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9608:1: (lv_oqt_3_0= ruleOpQualTail )
                     {
-                    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9572:1: (lv_oqt_3_0= ruleOpQualTail )
-                    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9573:3: lv_oqt_3_0= ruleOpQualTail
+                    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9608:1: (lv_oqt_3_0= ruleOpQualTail )
+                    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9609:3: lv_oqt_3_0= ruleOpQualTail
                     {
                     if ( state.backtracking==0 ) {
                        
                       	        newCompositeNode(grammarAccess.getQualOp_QuotientTokAccess().getOqtOpQualTailParserRuleCall_2_1_0()); 
                       	    
                     }
-                    pushFollow(FOLLOW_ruleOpQualTail_in_ruleQualOp_QuotientTok20397);
+                    pushFollow(FOLLOW_ruleOpQualTail_in_ruleQualOp_QuotientTok20540);
                     lv_oqt_3_0=ruleOpQualTail();
 
                     state._fsp--;
@@ -25419,7 +24971,7 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleQualOp_TimesTok"
-    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9600:1: entryRuleQualOp_TimesTok returns [EObject current=null] : iv_ruleQualOp_TimesTok= ruleQualOp_TimesTok EOF ;
+    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9636:1: entryRuleQualOp_TimesTok returns [EObject current=null] : iv_ruleQualOp_TimesTok= ruleQualOp_TimesTok EOF ;
     public final EObject entryRuleQualOp_TimesTok() throws RecognitionException {
         EObject current = null;
 
@@ -25430,13 +24982,13 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
         		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
         	
         try {
-            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9604:2: (iv_ruleQualOp_TimesTok= ruleQualOp_TimesTok EOF )
-            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9605:2: iv_ruleQualOp_TimesTok= ruleQualOp_TimesTok EOF
+            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9640:2: (iv_ruleQualOp_TimesTok= ruleQualOp_TimesTok EOF )
+            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9641:2: iv_ruleQualOp_TimesTok= ruleQualOp_TimesTok EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getQualOp_TimesTokRule()); 
             }
-            pushFollow(FOLLOW_ruleQualOp_TimesTok_in_entryRuleQualOp_TimesTok20445);
+            pushFollow(FOLLOW_ruleQualOp_TimesTok_in_entryRuleQualOp_TimesTok20588);
             iv_ruleQualOp_TimesTok=ruleQualOp_TimesTok();
 
             state._fsp--;
@@ -25444,7 +24996,7 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
             if ( state.backtracking==0 ) {
                current =iv_ruleQualOp_TimesTok; 
             }
-            match(input,EOF,FOLLOW_EOF_in_entryRuleQualOp_TimesTok20455); if (state.failed) return current;
+            match(input,EOF,FOLLOW_EOF_in_entryRuleQualOp_TimesTok20598); if (state.failed) return current;
 
             }
 
@@ -25465,7 +25017,7 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleQualOp_TimesTok"
-    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9615:1: ruleQualOp_TimesTok returns [EObject current=null] : ( () ruleTimesTok (this_KW_DOLLAR_2= RULE_KW_DOLLAR ( (lv_oqt_3_0= ruleOpQualTail ) ) )? ) ;
+    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9651:1: ruleQualOp_TimesTok returns [EObject current=null] : ( () ruleTimesTok (this_KW_DOLLAR_2= RULE_KW_DOLLAR ( (lv_oqt_3_0= ruleOpQualTail ) ) )? ) ;
     public final EObject ruleQualOp_TimesTok() throws RecognitionException {
         EObject current = null;
 
@@ -25477,14 +25029,14 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
         		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
             
         try {
-            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9619:28: ( ( () ruleTimesTok (this_KW_DOLLAR_2= RULE_KW_DOLLAR ( (lv_oqt_3_0= ruleOpQualTail ) ) )? ) )
-            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9620:1: ( () ruleTimesTok (this_KW_DOLLAR_2= RULE_KW_DOLLAR ( (lv_oqt_3_0= ruleOpQualTail ) ) )? )
+            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9655:28: ( ( () ruleTimesTok (this_KW_DOLLAR_2= RULE_KW_DOLLAR ( (lv_oqt_3_0= ruleOpQualTail ) ) )? ) )
+            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9656:1: ( () ruleTimesTok (this_KW_DOLLAR_2= RULE_KW_DOLLAR ( (lv_oqt_3_0= ruleOpQualTail ) ) )? )
             {
-            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9620:1: ( () ruleTimesTok (this_KW_DOLLAR_2= RULE_KW_DOLLAR ( (lv_oqt_3_0= ruleOpQualTail ) ) )? )
-            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9620:2: () ruleTimesTok (this_KW_DOLLAR_2= RULE_KW_DOLLAR ( (lv_oqt_3_0= ruleOpQualTail ) ) )?
+            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9656:1: ( () ruleTimesTok (this_KW_DOLLAR_2= RULE_KW_DOLLAR ( (lv_oqt_3_0= ruleOpQualTail ) ) )? )
+            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9656:2: () ruleTimesTok (this_KW_DOLLAR_2= RULE_KW_DOLLAR ( (lv_oqt_3_0= ruleOpQualTail ) ) )?
             {
-            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9620:2: ()
-            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9621:5: 
+            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9656:2: ()
+            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9657:5: 
             {
             if ( state.backtracking==0 ) {
 
@@ -25501,7 +25053,7 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
                       newCompositeNode(grammarAccess.getQualOp_TimesTokAccess().getTimesTokParserRuleCall_1()); 
                   
             }
-            pushFollow(FOLLOW_ruleTimesTok_in_ruleQualOp_TimesTok20509);
+            pushFollow(FOLLOW_ruleTimesTok_in_ruleQualOp_TimesTok20652);
             ruleTimesTok();
 
             state._fsp--;
@@ -25511,35 +25063,35 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
                       afterParserOrEnumRuleCall();
                   
             }
-            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9634:1: (this_KW_DOLLAR_2= RULE_KW_DOLLAR ( (lv_oqt_3_0= ruleOpQualTail ) ) )?
-            int alt111=2;
-            int LA111_0 = input.LA(1);
+            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9670:1: (this_KW_DOLLAR_2= RULE_KW_DOLLAR ( (lv_oqt_3_0= ruleOpQualTail ) ) )?
+            int alt113=2;
+            int LA113_0 = input.LA(1);
 
-            if ( (LA111_0==RULE_KW_DOLLAR) ) {
-                alt111=1;
+            if ( (LA113_0==RULE_KW_DOLLAR) ) {
+                alt113=1;
             }
-            switch (alt111) {
+            switch (alt113) {
                 case 1 :
-                    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9634:2: this_KW_DOLLAR_2= RULE_KW_DOLLAR ( (lv_oqt_3_0= ruleOpQualTail ) )
+                    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9670:2: this_KW_DOLLAR_2= RULE_KW_DOLLAR ( (lv_oqt_3_0= ruleOpQualTail ) )
                     {
-                    this_KW_DOLLAR_2=(Token)match(input,RULE_KW_DOLLAR,FOLLOW_RULE_KW_DOLLAR_in_ruleQualOp_TimesTok20520); if (state.failed) return current;
+                    this_KW_DOLLAR_2=(Token)match(input,RULE_KW_DOLLAR,FOLLOW_RULE_KW_DOLLAR_in_ruleQualOp_TimesTok20663); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
                        
                           newLeafNode(this_KW_DOLLAR_2, grammarAccess.getQualOp_TimesTokAccess().getKW_DOLLARTerminalRuleCall_2_0()); 
                           
                     }
-                    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9638:1: ( (lv_oqt_3_0= ruleOpQualTail ) )
-                    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9639:1: (lv_oqt_3_0= ruleOpQualTail )
+                    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9674:1: ( (lv_oqt_3_0= ruleOpQualTail ) )
+                    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9675:1: (lv_oqt_3_0= ruleOpQualTail )
                     {
-                    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9639:1: (lv_oqt_3_0= ruleOpQualTail )
-                    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9640:3: lv_oqt_3_0= ruleOpQualTail
+                    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9675:1: (lv_oqt_3_0= ruleOpQualTail )
+                    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9676:3: lv_oqt_3_0= ruleOpQualTail
                     {
                     if ( state.backtracking==0 ) {
                        
                       	        newCompositeNode(grammarAccess.getQualOp_TimesTokAccess().getOqtOpQualTailParserRuleCall_2_1_0()); 
                       	    
                     }
-                    pushFollow(FOLLOW_ruleOpQualTail_in_ruleQualOp_TimesTok20540);
+                    pushFollow(FOLLOW_ruleOpQualTail_in_ruleQualOp_TimesTok20683);
                     lv_oqt_3_0=ruleOpQualTail();
 
                     state._fsp--;
@@ -25595,7 +25147,7 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleQualOp_PowerTok"
-    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9667:1: entryRuleQualOp_PowerTok returns [EObject current=null] : iv_ruleQualOp_PowerTok= ruleQualOp_PowerTok EOF ;
+    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9703:1: entryRuleQualOp_PowerTok returns [EObject current=null] : iv_ruleQualOp_PowerTok= ruleQualOp_PowerTok EOF ;
     public final EObject entryRuleQualOp_PowerTok() throws RecognitionException {
         EObject current = null;
 
@@ -25606,13 +25158,13 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
         		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
         	
         try {
-            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9671:2: (iv_ruleQualOp_PowerTok= ruleQualOp_PowerTok EOF )
-            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9672:2: iv_ruleQualOp_PowerTok= ruleQualOp_PowerTok EOF
+            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9707:2: (iv_ruleQualOp_PowerTok= ruleQualOp_PowerTok EOF )
+            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9708:2: iv_ruleQualOp_PowerTok= ruleQualOp_PowerTok EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getQualOp_PowerTokRule()); 
             }
-            pushFollow(FOLLOW_ruleQualOp_PowerTok_in_entryRuleQualOp_PowerTok20588);
+            pushFollow(FOLLOW_ruleQualOp_PowerTok_in_entryRuleQualOp_PowerTok20731);
             iv_ruleQualOp_PowerTok=ruleQualOp_PowerTok();
 
             state._fsp--;
@@ -25620,7 +25172,7 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
             if ( state.backtracking==0 ) {
                current =iv_ruleQualOp_PowerTok; 
             }
-            match(input,EOF,FOLLOW_EOF_in_entryRuleQualOp_PowerTok20598); if (state.failed) return current;
+            match(input,EOF,FOLLOW_EOF_in_entryRuleQualOp_PowerTok20741); if (state.failed) return current;
 
             }
 
@@ -25641,7 +25193,7 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleQualOp_PowerTok"
-    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9682:1: ruleQualOp_PowerTok returns [EObject current=null] : ( () rulePowerTok (this_KW_DOLLAR_2= RULE_KW_DOLLAR ( (lv_oqt_3_0= ruleOpQualTail ) ) )? ) ;
+    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9718:1: ruleQualOp_PowerTok returns [EObject current=null] : ( () rulePowerTok (this_KW_DOLLAR_2= RULE_KW_DOLLAR ( (lv_oqt_3_0= ruleOpQualTail ) ) )? ) ;
     public final EObject ruleQualOp_PowerTok() throws RecognitionException {
         EObject current = null;
 
@@ -25653,14 +25205,14 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
         		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
             
         try {
-            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9686:28: ( ( () rulePowerTok (this_KW_DOLLAR_2= RULE_KW_DOLLAR ( (lv_oqt_3_0= ruleOpQualTail ) ) )? ) )
-            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9687:1: ( () rulePowerTok (this_KW_DOLLAR_2= RULE_KW_DOLLAR ( (lv_oqt_3_0= ruleOpQualTail ) ) )? )
+            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9722:28: ( ( () rulePowerTok (this_KW_DOLLAR_2= RULE_KW_DOLLAR ( (lv_oqt_3_0= ruleOpQualTail ) ) )? ) )
+            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9723:1: ( () rulePowerTok (this_KW_DOLLAR_2= RULE_KW_DOLLAR ( (lv_oqt_3_0= ruleOpQualTail ) ) )? )
             {
-            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9687:1: ( () rulePowerTok (this_KW_DOLLAR_2= RULE_KW_DOLLAR ( (lv_oqt_3_0= ruleOpQualTail ) ) )? )
-            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9687:2: () rulePowerTok (this_KW_DOLLAR_2= RULE_KW_DOLLAR ( (lv_oqt_3_0= ruleOpQualTail ) ) )?
+            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9723:1: ( () rulePowerTok (this_KW_DOLLAR_2= RULE_KW_DOLLAR ( (lv_oqt_3_0= ruleOpQualTail ) ) )? )
+            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9723:2: () rulePowerTok (this_KW_DOLLAR_2= RULE_KW_DOLLAR ( (lv_oqt_3_0= ruleOpQualTail ) ) )?
             {
-            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9687:2: ()
-            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9688:5: 
+            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9723:2: ()
+            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9724:5: 
             {
             if ( state.backtracking==0 ) {
 
@@ -25677,7 +25229,7 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
                       newCompositeNode(grammarAccess.getQualOp_PowerTokAccess().getPowerTokParserRuleCall_1()); 
                   
             }
-            pushFollow(FOLLOW_rulePowerTok_in_ruleQualOp_PowerTok20652);
+            pushFollow(FOLLOW_rulePowerTok_in_ruleQualOp_PowerTok20795);
             rulePowerTok();
 
             state._fsp--;
@@ -25687,35 +25239,35 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
                       afterParserOrEnumRuleCall();
                   
             }
-            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9701:1: (this_KW_DOLLAR_2= RULE_KW_DOLLAR ( (lv_oqt_3_0= ruleOpQualTail ) ) )?
-            int alt112=2;
-            int LA112_0 = input.LA(1);
+            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9737:1: (this_KW_DOLLAR_2= RULE_KW_DOLLAR ( (lv_oqt_3_0= ruleOpQualTail ) ) )?
+            int alt114=2;
+            int LA114_0 = input.LA(1);
 
-            if ( (LA112_0==RULE_KW_DOLLAR) ) {
-                alt112=1;
+            if ( (LA114_0==RULE_KW_DOLLAR) ) {
+                alt114=1;
             }
-            switch (alt112) {
+            switch (alt114) {
                 case 1 :
-                    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9701:2: this_KW_DOLLAR_2= RULE_KW_DOLLAR ( (lv_oqt_3_0= ruleOpQualTail ) )
+                    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9737:2: this_KW_DOLLAR_2= RULE_KW_DOLLAR ( (lv_oqt_3_0= ruleOpQualTail ) )
                     {
-                    this_KW_DOLLAR_2=(Token)match(input,RULE_KW_DOLLAR,FOLLOW_RULE_KW_DOLLAR_in_ruleQualOp_PowerTok20663); if (state.failed) return current;
+                    this_KW_DOLLAR_2=(Token)match(input,RULE_KW_DOLLAR,FOLLOW_RULE_KW_DOLLAR_in_ruleQualOp_PowerTok20806); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
                        
                           newLeafNode(this_KW_DOLLAR_2, grammarAccess.getQualOp_PowerTokAccess().getKW_DOLLARTerminalRuleCall_2_0()); 
                           
                     }
-                    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9705:1: ( (lv_oqt_3_0= ruleOpQualTail ) )
-                    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9706:1: (lv_oqt_3_0= ruleOpQualTail )
+                    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9741:1: ( (lv_oqt_3_0= ruleOpQualTail ) )
+                    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9742:1: (lv_oqt_3_0= ruleOpQualTail )
                     {
-                    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9706:1: (lv_oqt_3_0= ruleOpQualTail )
-                    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9707:3: lv_oqt_3_0= ruleOpQualTail
+                    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9742:1: (lv_oqt_3_0= ruleOpQualTail )
+                    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9743:3: lv_oqt_3_0= ruleOpQualTail
                     {
                     if ( state.backtracking==0 ) {
                        
                       	        newCompositeNode(grammarAccess.getQualOp_PowerTokAccess().getOqtOpQualTailParserRuleCall_2_1_0()); 
                       	    
                     }
-                    pushFollow(FOLLOW_ruleOpQualTail_in_ruleQualOp_PowerTok20683);
+                    pushFollow(FOLLOW_ruleOpQualTail_in_ruleQualOp_PowerTok20826);
                     lv_oqt_3_0=ruleOpQualTail();
 
                     state._fsp--;
@@ -25771,7 +25323,7 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRulePreDocument"
-    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9734:1: entryRulePreDocument returns [String current=null] : iv_rulePreDocument= rulePreDocument EOF ;
+    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9770:1: entryRulePreDocument returns [String current=null] : iv_rulePreDocument= rulePreDocument EOF ;
     public final String entryRulePreDocument() throws RecognitionException {
         String current = null;
 
@@ -25782,13 +25334,13 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
         		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
         	
         try {
-            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9738:2: (iv_rulePreDocument= rulePreDocument EOF )
-            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9739:2: iv_rulePreDocument= rulePreDocument EOF
+            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9774:2: (iv_rulePreDocument= rulePreDocument EOF )
+            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9775:2: iv_rulePreDocument= rulePreDocument EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getPreDocumentRule()); 
             }
-            pushFollow(FOLLOW_rulePreDocument_in_entryRulePreDocument20732);
+            pushFollow(FOLLOW_rulePreDocument_in_entryRulePreDocument20875);
             iv_rulePreDocument=rulePreDocument();
 
             state._fsp--;
@@ -25796,7 +25348,7 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
             if ( state.backtracking==0 ) {
                current =iv_rulePreDocument.getText(); 
             }
-            match(input,EOF,FOLLOW_EOF_in_entryRulePreDocument20743); if (state.failed) return current;
+            match(input,EOF,FOLLOW_EOF_in_entryRulePreDocument20886); if (state.failed) return current;
 
             }
 
@@ -25817,7 +25369,7 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "rulePreDocument"
-    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9749:1: rulePreDocument returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (this_TK_PREDOC_0= RULE_TK_PREDOC )* ;
+    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9785:1: rulePreDocument returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (this_TK_PREDOC_0= RULE_TK_PREDOC )* ;
     public final AntlrDatatypeRuleToken rulePreDocument() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -25827,25 +25379,25 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
         		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
             
         try {
-            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9753:28: ( (this_TK_PREDOC_0= RULE_TK_PREDOC )* )
-            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9754:1: (this_TK_PREDOC_0= RULE_TK_PREDOC )*
+            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9789:28: ( (this_TK_PREDOC_0= RULE_TK_PREDOC )* )
+            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9790:1: (this_TK_PREDOC_0= RULE_TK_PREDOC )*
             {
-            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9754:1: (this_TK_PREDOC_0= RULE_TK_PREDOC )*
-            loop113:
+            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9790:1: (this_TK_PREDOC_0= RULE_TK_PREDOC )*
+            loop115:
             do {
-                int alt113=2;
-                int LA113_0 = input.LA(1);
+                int alt115=2;
+                int LA115_0 = input.LA(1);
 
-                if ( (LA113_0==RULE_TK_PREDOC) ) {
-                    alt113=1;
+                if ( (LA115_0==RULE_TK_PREDOC) ) {
+                    alt115=1;
                 }
 
 
-                switch (alt113) {
+                switch (alt115) {
             	case 1 :
-            	    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9754:6: this_TK_PREDOC_0= RULE_TK_PREDOC
+            	    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9790:6: this_TK_PREDOC_0= RULE_TK_PREDOC
             	    {
-            	    this_TK_PREDOC_0=(Token)match(input,RULE_TK_PREDOC,FOLLOW_RULE_TK_PREDOC_in_rulePreDocument20787); if (state.failed) return current;
+            	    this_TK_PREDOC_0=(Token)match(input,RULE_TK_PREDOC,FOLLOW_RULE_TK_PREDOC_in_rulePreDocument20930); if (state.failed) return current;
             	    if ( state.backtracking==0 ) {
 
             	      		current.merge(this_TK_PREDOC_0);
@@ -25861,7 +25413,7 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
             	    break;
 
             	default :
-            	    break loop113;
+            	    break loop115;
                 }
             } while (true);
 
@@ -25888,7 +25440,7 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRulePostDocument"
-    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9772:1: entryRulePostDocument returns [String current=null] : iv_rulePostDocument= rulePostDocument EOF ;
+    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9808:1: entryRulePostDocument returns [String current=null] : iv_rulePostDocument= rulePostDocument EOF ;
     public final String entryRulePostDocument() throws RecognitionException {
         String current = null;
 
@@ -25899,13 +25451,13 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
         		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
         	
         try {
-            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9776:2: (iv_rulePostDocument= rulePostDocument EOF )
-            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9777:2: iv_rulePostDocument= rulePostDocument EOF
+            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9812:2: (iv_rulePostDocument= rulePostDocument EOF )
+            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9813:2: iv_rulePostDocument= rulePostDocument EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getPostDocumentRule()); 
             }
-            pushFollow(FOLLOW_rulePostDocument_in_entryRulePostDocument20844);
+            pushFollow(FOLLOW_rulePostDocument_in_entryRulePostDocument20987);
             iv_rulePostDocument=rulePostDocument();
 
             state._fsp--;
@@ -25913,7 +25465,7 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
             if ( state.backtracking==0 ) {
                current =iv_rulePostDocument.getText(); 
             }
-            match(input,EOF,FOLLOW_EOF_in_entryRulePostDocument20855); if (state.failed) return current;
+            match(input,EOF,FOLLOW_EOF_in_entryRulePostDocument20998); if (state.failed) return current;
 
             }
 
@@ -25934,7 +25486,7 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "rulePostDocument"
-    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9787:1: rulePostDocument returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (this_TK_POSTDOC_0= RULE_TK_POSTDOC )* ;
+    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9823:1: rulePostDocument returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (this_TK_POSTDOC_0= RULE_TK_POSTDOC )* ;
     public final AntlrDatatypeRuleToken rulePostDocument() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -25944,25 +25496,25 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
         		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
             
         try {
-            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9791:28: ( (this_TK_POSTDOC_0= RULE_TK_POSTDOC )* )
-            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9792:1: (this_TK_POSTDOC_0= RULE_TK_POSTDOC )*
+            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9827:28: ( (this_TK_POSTDOC_0= RULE_TK_POSTDOC )* )
+            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9828:1: (this_TK_POSTDOC_0= RULE_TK_POSTDOC )*
             {
-            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9792:1: (this_TK_POSTDOC_0= RULE_TK_POSTDOC )*
-            loop114:
+            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9828:1: (this_TK_POSTDOC_0= RULE_TK_POSTDOC )*
+            loop116:
             do {
-                int alt114=2;
-                int LA114_0 = input.LA(1);
+                int alt116=2;
+                int LA116_0 = input.LA(1);
 
-                if ( (LA114_0==RULE_TK_POSTDOC) ) {
-                    alt114=1;
+                if ( (LA116_0==RULE_TK_POSTDOC) ) {
+                    alt116=1;
                 }
 
 
-                switch (alt114) {
+                switch (alt116) {
             	case 1 :
-            	    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9792:6: this_TK_POSTDOC_0= RULE_TK_POSTDOC
+            	    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9828:6: this_TK_POSTDOC_0= RULE_TK_POSTDOC
             	    {
-            	    this_TK_POSTDOC_0=(Token)match(input,RULE_TK_POSTDOC,FOLLOW_RULE_TK_POSTDOC_in_rulePostDocument20899); if (state.failed) return current;
+            	    this_TK_POSTDOC_0=(Token)match(input,RULE_TK_POSTDOC,FOLLOW_RULE_TK_POSTDOC_in_rulePostDocument21042); if (state.failed) return current;
             	    if ( state.backtracking==0 ) {
 
             	      		current.merge(this_TK_POSTDOC_0);
@@ -25978,7 +25530,7 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
             	    break;
 
             	default :
-            	    break loop114;
+            	    break loop116;
                 }
             } while (true);
 
@@ -26005,7 +25557,7 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleenlist1_CommaItem_Comma_AB"
-    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9810:1: entryRuleenlist1_CommaItem_Comma_AB returns [EObject current=null] : iv_ruleenlist1_CommaItem_Comma_AB= ruleenlist1_CommaItem_Comma_AB EOF ;
+    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9846:1: entryRuleenlist1_CommaItem_Comma_AB returns [EObject current=null] : iv_ruleenlist1_CommaItem_Comma_AB= ruleenlist1_CommaItem_Comma_AB EOF ;
     public final EObject entryRuleenlist1_CommaItem_Comma_AB() throws RecognitionException {
         EObject current = null;
 
@@ -26016,13 +25568,13 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
         		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
         	
         try {
-            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9814:2: (iv_ruleenlist1_CommaItem_Comma_AB= ruleenlist1_CommaItem_Comma_AB EOF )
-            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9815:2: iv_ruleenlist1_CommaItem_Comma_AB= ruleenlist1_CommaItem_Comma_AB EOF
+            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9850:2: (iv_ruleenlist1_CommaItem_Comma_AB= ruleenlist1_CommaItem_Comma_AB EOF )
+            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9851:2: iv_ruleenlist1_CommaItem_Comma_AB= ruleenlist1_CommaItem_Comma_AB EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getEnlist1_CommaItem_Comma_ABRule()); 
             }
-            pushFollow(FOLLOW_ruleenlist1_CommaItem_Comma_AB_in_entryRuleenlist1_CommaItem_Comma_AB20955);
+            pushFollow(FOLLOW_ruleenlist1_CommaItem_Comma_AB_in_entryRuleenlist1_CommaItem_Comma_AB21098);
             iv_ruleenlist1_CommaItem_Comma_AB=ruleenlist1_CommaItem_Comma_AB();
 
             state._fsp--;
@@ -26030,7 +25582,7 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
             if ( state.backtracking==0 ) {
                current =iv_ruleenlist1_CommaItem_Comma_AB; 
             }
-            match(input,EOF,FOLLOW_EOF_in_entryRuleenlist1_CommaItem_Comma_AB20965); if (state.failed) return current;
+            match(input,EOF,FOLLOW_EOF_in_entryRuleenlist1_CommaItem_Comma_AB21108); if (state.failed) return current;
 
             }
 
@@ -26051,7 +25603,7 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleenlist1_CommaItem_Comma_AB"
-    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9825:1: ruleenlist1_CommaItem_Comma_AB returns [EObject current=null] : this_enlister1_CommaItem_Comma_0= ruleenlister1_CommaItem_Comma ;
+    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9861:1: ruleenlist1_CommaItem_Comma_AB returns [EObject current=null] : this_enlister1_CommaItem_Comma_0= ruleenlister1_CommaItem_Comma ;
     public final EObject ruleenlist1_CommaItem_Comma_AB() throws RecognitionException {
         EObject current = null;
 
@@ -26062,15 +25614,15 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
         		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
             
         try {
-            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9829:28: (this_enlister1_CommaItem_Comma_0= ruleenlister1_CommaItem_Comma )
-            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9831:5: this_enlister1_CommaItem_Comma_0= ruleenlister1_CommaItem_Comma
+            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9865:28: (this_enlister1_CommaItem_Comma_0= ruleenlister1_CommaItem_Comma )
+            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9867:5: this_enlister1_CommaItem_Comma_0= ruleenlister1_CommaItem_Comma
             {
             if ( state.backtracking==0 ) {
                
                       newCompositeNode(grammarAccess.getEnlist1_CommaItem_Comma_ABAccess().getEnlister1_CommaItem_CommaParserRuleCall()); 
                   
             }
-            pushFollow(FOLLOW_ruleenlister1_CommaItem_Comma_in_ruleenlist1_CommaItem_Comma_AB21015);
+            pushFollow(FOLLOW_ruleenlister1_CommaItem_Comma_in_ruleenlist1_CommaItem_Comma_AB21158);
             this_enlister1_CommaItem_Comma_0=ruleenlister1_CommaItem_Comma();
 
             state._fsp--;
@@ -26104,7 +25656,7 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleenlist1_Infixed_Comma_AB"
-    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9850:1: entryRuleenlist1_Infixed_Comma_AB returns [EObject current=null] : iv_ruleenlist1_Infixed_Comma_AB= ruleenlist1_Infixed_Comma_AB EOF ;
+    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9886:1: entryRuleenlist1_Infixed_Comma_AB returns [EObject current=null] : iv_ruleenlist1_Infixed_Comma_AB= ruleenlist1_Infixed_Comma_AB EOF ;
     public final EObject entryRuleenlist1_Infixed_Comma_AB() throws RecognitionException {
         EObject current = null;
 
@@ -26115,13 +25667,13 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
         		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
         	
         try {
-            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9854:2: (iv_ruleenlist1_Infixed_Comma_AB= ruleenlist1_Infixed_Comma_AB EOF )
-            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9855:2: iv_ruleenlist1_Infixed_Comma_AB= ruleenlist1_Infixed_Comma_AB EOF
+            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9890:2: (iv_ruleenlist1_Infixed_Comma_AB= ruleenlist1_Infixed_Comma_AB EOF )
+            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9891:2: iv_ruleenlist1_Infixed_Comma_AB= ruleenlist1_Infixed_Comma_AB EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getEnlist1_Infixed_Comma_ABRule()); 
             }
-            pushFollow(FOLLOW_ruleenlist1_Infixed_Comma_AB_in_entryRuleenlist1_Infixed_Comma_AB21059);
+            pushFollow(FOLLOW_ruleenlist1_Infixed_Comma_AB_in_entryRuleenlist1_Infixed_Comma_AB21202);
             iv_ruleenlist1_Infixed_Comma_AB=ruleenlist1_Infixed_Comma_AB();
 
             state._fsp--;
@@ -26129,7 +25681,7 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
             if ( state.backtracking==0 ) {
                current =iv_ruleenlist1_Infixed_Comma_AB; 
             }
-            match(input,EOF,FOLLOW_EOF_in_entryRuleenlist1_Infixed_Comma_AB21069); if (state.failed) return current;
+            match(input,EOF,FOLLOW_EOF_in_entryRuleenlist1_Infixed_Comma_AB21212); if (state.failed) return current;
 
             }
 
@@ -26150,7 +25702,7 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleenlist1_Infixed_Comma_AB"
-    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9865:1: ruleenlist1_Infixed_Comma_AB returns [EObject current=null] : this_enlister1_Infixed_Comma_0= ruleenlister1_Infixed_Comma ;
+    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9901:1: ruleenlist1_Infixed_Comma_AB returns [EObject current=null] : this_enlister1_Infixed_Comma_0= ruleenlister1_Infixed_Comma ;
     public final EObject ruleenlist1_Infixed_Comma_AB() throws RecognitionException {
         EObject current = null;
 
@@ -26161,15 +25713,15 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
         		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
             
         try {
-            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9869:28: (this_enlister1_Infixed_Comma_0= ruleenlister1_Infixed_Comma )
-            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9871:5: this_enlister1_Infixed_Comma_0= ruleenlister1_Infixed_Comma
+            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9905:28: (this_enlister1_Infixed_Comma_0= ruleenlister1_Infixed_Comma )
+            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9907:5: this_enlister1_Infixed_Comma_0= ruleenlister1_Infixed_Comma
             {
             if ( state.backtracking==0 ) {
                
                       newCompositeNode(grammarAccess.getEnlist1_Infixed_Comma_ABAccess().getEnlister1_Infixed_CommaParserRuleCall()); 
                   
             }
-            pushFollow(FOLLOW_ruleenlister1_Infixed_Comma_in_ruleenlist1_Infixed_Comma_AB21119);
+            pushFollow(FOLLOW_ruleenlister1_Infixed_Comma_in_ruleenlist1_Infixed_Comma_AB21262);
             this_enlister1_Infixed_Comma_0=ruleenlister1_Infixed_Comma();
 
             state._fsp--;
@@ -26203,7 +25755,7 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleenlist1_InfixedExpr_Comma_AB"
-    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9890:1: entryRuleenlist1_InfixedExpr_Comma_AB returns [EObject current=null] : iv_ruleenlist1_InfixedExpr_Comma_AB= ruleenlist1_InfixedExpr_Comma_AB EOF ;
+    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9926:1: entryRuleenlist1_InfixedExpr_Comma_AB returns [EObject current=null] : iv_ruleenlist1_InfixedExpr_Comma_AB= ruleenlist1_InfixedExpr_Comma_AB EOF ;
     public final EObject entryRuleenlist1_InfixedExpr_Comma_AB() throws RecognitionException {
         EObject current = null;
 
@@ -26214,13 +25766,13 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
         		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
         	
         try {
-            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9894:2: (iv_ruleenlist1_InfixedExpr_Comma_AB= ruleenlist1_InfixedExpr_Comma_AB EOF )
-            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9895:2: iv_ruleenlist1_InfixedExpr_Comma_AB= ruleenlist1_InfixedExpr_Comma_AB EOF
+            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9930:2: (iv_ruleenlist1_InfixedExpr_Comma_AB= ruleenlist1_InfixedExpr_Comma_AB EOF )
+            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9931:2: iv_ruleenlist1_InfixedExpr_Comma_AB= ruleenlist1_InfixedExpr_Comma_AB EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getEnlist1_InfixedExpr_Comma_ABRule()); 
             }
-            pushFollow(FOLLOW_ruleenlist1_InfixedExpr_Comma_AB_in_entryRuleenlist1_InfixedExpr_Comma_AB21163);
+            pushFollow(FOLLOW_ruleenlist1_InfixedExpr_Comma_AB_in_entryRuleenlist1_InfixedExpr_Comma_AB21306);
             iv_ruleenlist1_InfixedExpr_Comma_AB=ruleenlist1_InfixedExpr_Comma_AB();
 
             state._fsp--;
@@ -26228,7 +25780,7 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
             if ( state.backtracking==0 ) {
                current =iv_ruleenlist1_InfixedExpr_Comma_AB; 
             }
-            match(input,EOF,FOLLOW_EOF_in_entryRuleenlist1_InfixedExpr_Comma_AB21173); if (state.failed) return current;
+            match(input,EOF,FOLLOW_EOF_in_entryRuleenlist1_InfixedExpr_Comma_AB21316); if (state.failed) return current;
 
             }
 
@@ -26249,7 +25801,7 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleenlist1_InfixedExpr_Comma_AB"
-    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9905:1: ruleenlist1_InfixedExpr_Comma_AB returns [EObject current=null] : this_enlister1_InfixedExpr_Comma_0= ruleenlister1_InfixedExpr_Comma ;
+    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9941:1: ruleenlist1_InfixedExpr_Comma_AB returns [EObject current=null] : this_enlister1_InfixedExpr_Comma_0= ruleenlister1_InfixedExpr_Comma ;
     public final EObject ruleenlist1_InfixedExpr_Comma_AB() throws RecognitionException {
         EObject current = null;
 
@@ -26260,15 +25812,15 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
         		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
             
         try {
-            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9909:28: (this_enlister1_InfixedExpr_Comma_0= ruleenlister1_InfixedExpr_Comma )
-            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9911:5: this_enlister1_InfixedExpr_Comma_0= ruleenlister1_InfixedExpr_Comma
+            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9945:28: (this_enlister1_InfixedExpr_Comma_0= ruleenlister1_InfixedExpr_Comma )
+            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9947:5: this_enlister1_InfixedExpr_Comma_0= ruleenlister1_InfixedExpr_Comma
             {
             if ( state.backtracking==0 ) {
                
                       newCompositeNode(grammarAccess.getEnlist1_InfixedExpr_Comma_ABAccess().getEnlister1_InfixedExpr_CommaParserRuleCall()); 
                   
             }
-            pushFollow(FOLLOW_ruleenlister1_InfixedExpr_Comma_in_ruleenlist1_InfixedExpr_Comma_AB21223);
+            pushFollow(FOLLOW_ruleenlister1_InfixedExpr_Comma_in_ruleenlist1_InfixedExpr_Comma_AB21366);
             this_enlister1_InfixedExpr_Comma_0=ruleenlister1_InfixedExpr_Comma();
 
             state._fsp--;
@@ -26302,7 +25854,7 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleenlister1_CommaItem_Comma"
-    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9930:1: entryRuleenlister1_CommaItem_Comma returns [EObject current=null] : iv_ruleenlister1_CommaItem_Comma= ruleenlister1_CommaItem_Comma EOF ;
+    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9966:1: entryRuleenlister1_CommaItem_Comma returns [EObject current=null] : iv_ruleenlister1_CommaItem_Comma= ruleenlister1_CommaItem_Comma EOF ;
     public final EObject entryRuleenlister1_CommaItem_Comma() throws RecognitionException {
         EObject current = null;
 
@@ -26313,13 +25865,13 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
         		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
         	
         try {
-            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9934:2: (iv_ruleenlister1_CommaItem_Comma= ruleenlister1_CommaItem_Comma EOF )
-            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9935:2: iv_ruleenlister1_CommaItem_Comma= ruleenlister1_CommaItem_Comma EOF
+            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9970:2: (iv_ruleenlister1_CommaItem_Comma= ruleenlister1_CommaItem_Comma EOF )
+            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9971:2: iv_ruleenlister1_CommaItem_Comma= ruleenlister1_CommaItem_Comma EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getEnlister1_CommaItem_CommaRule()); 
             }
-            pushFollow(FOLLOW_ruleenlister1_CommaItem_Comma_in_entryRuleenlister1_CommaItem_Comma21267);
+            pushFollow(FOLLOW_ruleenlister1_CommaItem_Comma_in_entryRuleenlister1_CommaItem_Comma21410);
             iv_ruleenlister1_CommaItem_Comma=ruleenlister1_CommaItem_Comma();
 
             state._fsp--;
@@ -26327,7 +25879,7 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
             if ( state.backtracking==0 ) {
                current =iv_ruleenlister1_CommaItem_Comma; 
             }
-            match(input,EOF,FOLLOW_EOF_in_entryRuleenlister1_CommaItem_Comma21277); if (state.failed) return current;
+            match(input,EOF,FOLLOW_EOF_in_entryRuleenlister1_CommaItem_Comma21420); if (state.failed) return current;
 
             }
 
@@ -26348,7 +25900,7 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleenlister1_CommaItem_Comma"
-    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9945:1: ruleenlister1_CommaItem_Comma returns [EObject current=null] : (this_CommaItem_0= ruleCommaItem (this_KW_COMMA_1= RULE_KW_COMMA ( (lv_ci_2_0= ruleCommaItem ) ) )* ) ;
+    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9981:1: ruleenlister1_CommaItem_Comma returns [EObject current=null] : (this_CommaItem_0= ruleCommaItem (this_KW_COMMA_1= RULE_KW_COMMA ( (lv_ci_2_0= ruleCommaItem ) ) )* ) ;
     public final EObject ruleenlister1_CommaItem_Comma() throws RecognitionException {
         EObject current = null;
 
@@ -26362,18 +25914,18 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
         		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
             
         try {
-            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9949:28: ( (this_CommaItem_0= ruleCommaItem (this_KW_COMMA_1= RULE_KW_COMMA ( (lv_ci_2_0= ruleCommaItem ) ) )* ) )
-            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9950:1: (this_CommaItem_0= ruleCommaItem (this_KW_COMMA_1= RULE_KW_COMMA ( (lv_ci_2_0= ruleCommaItem ) ) )* )
+            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9985:28: ( (this_CommaItem_0= ruleCommaItem (this_KW_COMMA_1= RULE_KW_COMMA ( (lv_ci_2_0= ruleCommaItem ) ) )* ) )
+            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9986:1: (this_CommaItem_0= ruleCommaItem (this_KW_COMMA_1= RULE_KW_COMMA ( (lv_ci_2_0= ruleCommaItem ) ) )* )
             {
-            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9950:1: (this_CommaItem_0= ruleCommaItem (this_KW_COMMA_1= RULE_KW_COMMA ( (lv_ci_2_0= ruleCommaItem ) ) )* )
-            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9951:5: this_CommaItem_0= ruleCommaItem (this_KW_COMMA_1= RULE_KW_COMMA ( (lv_ci_2_0= ruleCommaItem ) ) )*
+            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9986:1: (this_CommaItem_0= ruleCommaItem (this_KW_COMMA_1= RULE_KW_COMMA ( (lv_ci_2_0= ruleCommaItem ) ) )* )
+            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9987:5: this_CommaItem_0= ruleCommaItem (this_KW_COMMA_1= RULE_KW_COMMA ( (lv_ci_2_0= ruleCommaItem ) ) )*
             {
             if ( state.backtracking==0 ) {
                
                       newCompositeNode(grammarAccess.getEnlister1_CommaItem_CommaAccess().getCommaItemParserRuleCall_0()); 
                   
             }
-            pushFollow(FOLLOW_ruleCommaItem_in_ruleenlister1_CommaItem_Comma21328);
+            pushFollow(FOLLOW_ruleCommaItem_in_ruleenlister1_CommaItem_Comma21471);
             this_CommaItem_0=ruleCommaItem();
 
             state._fsp--;
@@ -26384,39 +25936,39 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
                       afterParserOrEnumRuleCall();
                   
             }
-            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9959:1: (this_KW_COMMA_1= RULE_KW_COMMA ( (lv_ci_2_0= ruleCommaItem ) ) )*
-            loop115:
+            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9995:1: (this_KW_COMMA_1= RULE_KW_COMMA ( (lv_ci_2_0= ruleCommaItem ) ) )*
+            loop117:
             do {
-                int alt115=2;
-                int LA115_0 = input.LA(1);
+                int alt117=2;
+                int LA117_0 = input.LA(1);
 
-                if ( (LA115_0==RULE_KW_COMMA) ) {
-                    alt115=1;
+                if ( (LA117_0==RULE_KW_COMMA) ) {
+                    alt117=1;
                 }
 
 
-                switch (alt115) {
+                switch (alt117) {
             	case 1 :
-            	    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9959:2: this_KW_COMMA_1= RULE_KW_COMMA ( (lv_ci_2_0= ruleCommaItem ) )
+            	    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9995:2: this_KW_COMMA_1= RULE_KW_COMMA ( (lv_ci_2_0= ruleCommaItem ) )
             	    {
-            	    this_KW_COMMA_1=(Token)match(input,RULE_KW_COMMA,FOLLOW_RULE_KW_COMMA_in_ruleenlister1_CommaItem_Comma21339); if (state.failed) return current;
+            	    this_KW_COMMA_1=(Token)match(input,RULE_KW_COMMA,FOLLOW_RULE_KW_COMMA_in_ruleenlister1_CommaItem_Comma21482); if (state.failed) return current;
             	    if ( state.backtracking==0 ) {
             	       
             	          newLeafNode(this_KW_COMMA_1, grammarAccess.getEnlister1_CommaItem_CommaAccess().getKW_COMMATerminalRuleCall_1_0()); 
             	          
             	    }
-            	    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9963:1: ( (lv_ci_2_0= ruleCommaItem ) )
-            	    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9964:1: (lv_ci_2_0= ruleCommaItem )
+            	    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9999:1: ( (lv_ci_2_0= ruleCommaItem ) )
+            	    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:10000:1: (lv_ci_2_0= ruleCommaItem )
             	    {
-            	    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9964:1: (lv_ci_2_0= ruleCommaItem )
-            	    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9965:3: lv_ci_2_0= ruleCommaItem
+            	    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:10000:1: (lv_ci_2_0= ruleCommaItem )
+            	    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:10001:3: lv_ci_2_0= ruleCommaItem
             	    {
             	    if ( state.backtracking==0 ) {
             	       
             	      	        newCompositeNode(grammarAccess.getEnlister1_CommaItem_CommaAccess().getCiCommaItemParserRuleCall_1_1_0()); 
             	      	    
             	    }
-            	    pushFollow(FOLLOW_ruleCommaItem_in_ruleenlister1_CommaItem_Comma21359);
+            	    pushFollow(FOLLOW_ruleCommaItem_in_ruleenlister1_CommaItem_Comma21502);
             	    lv_ci_2_0=ruleCommaItem();
 
             	    state._fsp--;
@@ -26431,352 +25983,6 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
             	             			"ci",
             	              		lv_ci_2_0, 
             	              		"CommaItem");
-            	      	        afterParserOrEnumRuleCall();
-            	      	    
-            	    }
-
-            	    }
-
-
-            	    }
-
-
-            	    }
-            	    break;
-
-            	default :
-            	    break loop115;
-                }
-            } while (true);
-
-
-            }
-
-
-            }
-
-            if ( state.backtracking==0 ) {
-               leaveRule(); 
-            }
-        }
-         
-            catch (RecognitionException re) { 
-                recover(input,re); 
-                appendSkippedTokens();
-            } 
-        finally {
-
-            	myHiddenTokenState.restore();
-
-        }
-        return current;
-    }
-    // $ANTLR end "ruleenlister1_CommaItem_Comma"
-
-
-    // $ANTLR start "entryRuleenlister1_Infixed_Comma"
-    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9992:1: entryRuleenlister1_Infixed_Comma returns [EObject current=null] : iv_ruleenlister1_Infixed_Comma= ruleenlister1_Infixed_Comma EOF ;
-    public final EObject entryRuleenlister1_Infixed_Comma() throws RecognitionException {
-        EObject current = null;
-
-        EObject iv_ruleenlister1_Infixed_Comma = null;
-
-
-         
-        		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
-        	
-        try {
-            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9996:2: (iv_ruleenlister1_Infixed_Comma= ruleenlister1_Infixed_Comma EOF )
-            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9997:2: iv_ruleenlister1_Infixed_Comma= ruleenlister1_Infixed_Comma EOF
-            {
-            if ( state.backtracking==0 ) {
-               newCompositeNode(grammarAccess.getEnlister1_Infixed_CommaRule()); 
-            }
-            pushFollow(FOLLOW_ruleenlister1_Infixed_Comma_in_entryRuleenlister1_Infixed_Comma21407);
-            iv_ruleenlister1_Infixed_Comma=ruleenlister1_Infixed_Comma();
-
-            state._fsp--;
-            if (state.failed) return current;
-            if ( state.backtracking==0 ) {
-               current =iv_ruleenlister1_Infixed_Comma; 
-            }
-            match(input,EOF,FOLLOW_EOF_in_entryRuleenlister1_Infixed_Comma21417); if (state.failed) return current;
-
-            }
-
-        }
-         
-            catch (RecognitionException re) { 
-                recover(input,re); 
-                appendSkippedTokens();
-            } 
-        finally {
-
-            	myHiddenTokenState.restore();
-
-        }
-        return current;
-    }
-    // $ANTLR end "entryRuleenlister1_Infixed_Comma"
-
-
-    // $ANTLR start "ruleenlister1_Infixed_Comma"
-    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:10007:1: ruleenlister1_Infixed_Comma returns [EObject current=null] : (this_Infixed_0= ruleInfixed (this_KW_COMMA_1= RULE_KW_COMMA ( (lv_i2_2_0= ruleInfixed ) ) )* ) ;
-    public final EObject ruleenlister1_Infixed_Comma() throws RecognitionException {
-        EObject current = null;
-
-        Token this_KW_COMMA_1=null;
-        EObject this_Infixed_0 = null;
-
-        EObject lv_i2_2_0 = null;
-
-
-         enterRule(); 
-        		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
-            
-        try {
-            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:10011:28: ( (this_Infixed_0= ruleInfixed (this_KW_COMMA_1= RULE_KW_COMMA ( (lv_i2_2_0= ruleInfixed ) ) )* ) )
-            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:10012:1: (this_Infixed_0= ruleInfixed (this_KW_COMMA_1= RULE_KW_COMMA ( (lv_i2_2_0= ruleInfixed ) ) )* )
-            {
-            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:10012:1: (this_Infixed_0= ruleInfixed (this_KW_COMMA_1= RULE_KW_COMMA ( (lv_i2_2_0= ruleInfixed ) ) )* )
-            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:10013:5: this_Infixed_0= ruleInfixed (this_KW_COMMA_1= RULE_KW_COMMA ( (lv_i2_2_0= ruleInfixed ) ) )*
-            {
-            if ( state.backtracking==0 ) {
-               
-                      newCompositeNode(grammarAccess.getEnlister1_Infixed_CommaAccess().getInfixedParserRuleCall_0()); 
-                  
-            }
-            pushFollow(FOLLOW_ruleInfixed_in_ruleenlister1_Infixed_Comma21468);
-            this_Infixed_0=ruleInfixed();
-
-            state._fsp--;
-            if (state.failed) return current;
-            if ( state.backtracking==0 ) {
-               
-                      current = this_Infixed_0; 
-                      afterParserOrEnumRuleCall();
-                  
-            }
-            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:10021:1: (this_KW_COMMA_1= RULE_KW_COMMA ( (lv_i2_2_0= ruleInfixed ) ) )*
-            loop116:
-            do {
-                int alt116=2;
-                int LA116_0 = input.LA(1);
-
-                if ( (LA116_0==RULE_KW_COMMA) ) {
-                    alt116=1;
-                }
-
-
-                switch (alt116) {
-            	case 1 :
-            	    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:10021:2: this_KW_COMMA_1= RULE_KW_COMMA ( (lv_i2_2_0= ruleInfixed ) )
-            	    {
-            	    this_KW_COMMA_1=(Token)match(input,RULE_KW_COMMA,FOLLOW_RULE_KW_COMMA_in_ruleenlister1_Infixed_Comma21479); if (state.failed) return current;
-            	    if ( state.backtracking==0 ) {
-            	       
-            	          newLeafNode(this_KW_COMMA_1, grammarAccess.getEnlister1_Infixed_CommaAccess().getKW_COMMATerminalRuleCall_1_0()); 
-            	          
-            	    }
-            	    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:10025:1: ( (lv_i2_2_0= ruleInfixed ) )
-            	    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:10026:1: (lv_i2_2_0= ruleInfixed )
-            	    {
-            	    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:10026:1: (lv_i2_2_0= ruleInfixed )
-            	    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:10027:3: lv_i2_2_0= ruleInfixed
-            	    {
-            	    if ( state.backtracking==0 ) {
-            	       
-            	      	        newCompositeNode(grammarAccess.getEnlister1_Infixed_CommaAccess().getI2InfixedParserRuleCall_1_1_0()); 
-            	      	    
-            	    }
-            	    pushFollow(FOLLOW_ruleInfixed_in_ruleenlister1_Infixed_Comma21499);
-            	    lv_i2_2_0=ruleInfixed();
-
-            	    state._fsp--;
-            	    if (state.failed) return current;
-            	    if ( state.backtracking==0 ) {
-
-            	      	        if (current==null) {
-            	      	            current = createModelElementForParent(grammarAccess.getEnlister1_Infixed_CommaRule());
-            	      	        }
-            	             		add(
-            	             			current, 
-            	             			"i2",
-            	              		lv_i2_2_0, 
-            	              		"Infixed");
-            	      	        afterParserOrEnumRuleCall();
-            	      	    
-            	    }
-
-            	    }
-
-
-            	    }
-
-
-            	    }
-            	    break;
-
-            	default :
-            	    break loop116;
-                }
-            } while (true);
-
-
-            }
-
-
-            }
-
-            if ( state.backtracking==0 ) {
-               leaveRule(); 
-            }
-        }
-         
-            catch (RecognitionException re) { 
-                recover(input,re); 
-                appendSkippedTokens();
-            } 
-        finally {
-
-            	myHiddenTokenState.restore();
-
-        }
-        return current;
-    }
-    // $ANTLR end "ruleenlister1_Infixed_Comma"
-
-
-    // $ANTLR start "entryRuleenlister1_InfixedExpr_Comma"
-    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:10054:1: entryRuleenlister1_InfixedExpr_Comma returns [EObject current=null] : iv_ruleenlister1_InfixedExpr_Comma= ruleenlister1_InfixedExpr_Comma EOF ;
-    public final EObject entryRuleenlister1_InfixedExpr_Comma() throws RecognitionException {
-        EObject current = null;
-
-        EObject iv_ruleenlister1_InfixedExpr_Comma = null;
-
-
-         
-        		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
-        	
-        try {
-            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:10058:2: (iv_ruleenlister1_InfixedExpr_Comma= ruleenlister1_InfixedExpr_Comma EOF )
-            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:10059:2: iv_ruleenlister1_InfixedExpr_Comma= ruleenlister1_InfixedExpr_Comma EOF
-            {
-            if ( state.backtracking==0 ) {
-               newCompositeNode(grammarAccess.getEnlister1_InfixedExpr_CommaRule()); 
-            }
-            pushFollow(FOLLOW_ruleenlister1_InfixedExpr_Comma_in_entryRuleenlister1_InfixedExpr_Comma21547);
-            iv_ruleenlister1_InfixedExpr_Comma=ruleenlister1_InfixedExpr_Comma();
-
-            state._fsp--;
-            if (state.failed) return current;
-            if ( state.backtracking==0 ) {
-               current =iv_ruleenlister1_InfixedExpr_Comma; 
-            }
-            match(input,EOF,FOLLOW_EOF_in_entryRuleenlister1_InfixedExpr_Comma21557); if (state.failed) return current;
-
-            }
-
-        }
-         
-            catch (RecognitionException re) { 
-                recover(input,re); 
-                appendSkippedTokens();
-            } 
-        finally {
-
-            	myHiddenTokenState.restore();
-
-        }
-        return current;
-    }
-    // $ANTLR end "entryRuleenlister1_InfixedExpr_Comma"
-
-
-    // $ANTLR start "ruleenlister1_InfixedExpr_Comma"
-    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:10069:1: ruleenlister1_InfixedExpr_Comma returns [EObject current=null] : (this_InfixedExpr_0= ruleInfixedExpr (this_KW_COMMA_1= RULE_KW_COMMA ( (lv_ie_2_0= ruleInfixedExpr ) ) )* ) ;
-    public final EObject ruleenlister1_InfixedExpr_Comma() throws RecognitionException {
-        EObject current = null;
-
-        Token this_KW_COMMA_1=null;
-        EObject this_InfixedExpr_0 = null;
-
-        EObject lv_ie_2_0 = null;
-
-
-         enterRule(); 
-        		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
-            
-        try {
-            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:10073:28: ( (this_InfixedExpr_0= ruleInfixedExpr (this_KW_COMMA_1= RULE_KW_COMMA ( (lv_ie_2_0= ruleInfixedExpr ) ) )* ) )
-            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:10074:1: (this_InfixedExpr_0= ruleInfixedExpr (this_KW_COMMA_1= RULE_KW_COMMA ( (lv_ie_2_0= ruleInfixedExpr ) ) )* )
-            {
-            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:10074:1: (this_InfixedExpr_0= ruleInfixedExpr (this_KW_COMMA_1= RULE_KW_COMMA ( (lv_ie_2_0= ruleInfixedExpr ) ) )* )
-            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:10075:5: this_InfixedExpr_0= ruleInfixedExpr (this_KW_COMMA_1= RULE_KW_COMMA ( (lv_ie_2_0= ruleInfixedExpr ) ) )*
-            {
-            if ( state.backtracking==0 ) {
-               
-                      newCompositeNode(grammarAccess.getEnlister1_InfixedExpr_CommaAccess().getInfixedExprParserRuleCall_0()); 
-                  
-            }
-            pushFollow(FOLLOW_ruleInfixedExpr_in_ruleenlister1_InfixedExpr_Comma21608);
-            this_InfixedExpr_0=ruleInfixedExpr();
-
-            state._fsp--;
-            if (state.failed) return current;
-            if ( state.backtracking==0 ) {
-               
-                      current = this_InfixedExpr_0; 
-                      afterParserOrEnumRuleCall();
-                  
-            }
-            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:10083:1: (this_KW_COMMA_1= RULE_KW_COMMA ( (lv_ie_2_0= ruleInfixedExpr ) ) )*
-            loop117:
-            do {
-                int alt117=2;
-                int LA117_0 = input.LA(1);
-
-                if ( (LA117_0==RULE_KW_COMMA) ) {
-                    alt117=1;
-                }
-
-
-                switch (alt117) {
-            	case 1 :
-            	    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:10083:2: this_KW_COMMA_1= RULE_KW_COMMA ( (lv_ie_2_0= ruleInfixedExpr ) )
-            	    {
-            	    this_KW_COMMA_1=(Token)match(input,RULE_KW_COMMA,FOLLOW_RULE_KW_COMMA_in_ruleenlister1_InfixedExpr_Comma21619); if (state.failed) return current;
-            	    if ( state.backtracking==0 ) {
-            	       
-            	          newLeafNode(this_KW_COMMA_1, grammarAccess.getEnlister1_InfixedExpr_CommaAccess().getKW_COMMATerminalRuleCall_1_0()); 
-            	          
-            	    }
-            	    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:10087:1: ( (lv_ie_2_0= ruleInfixedExpr ) )
-            	    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:10088:1: (lv_ie_2_0= ruleInfixedExpr )
-            	    {
-            	    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:10088:1: (lv_ie_2_0= ruleInfixedExpr )
-            	    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:10089:3: lv_ie_2_0= ruleInfixedExpr
-            	    {
-            	    if ( state.backtracking==0 ) {
-            	       
-            	      	        newCompositeNode(grammarAccess.getEnlister1_InfixedExpr_CommaAccess().getIeInfixedExprParserRuleCall_1_1_0()); 
-            	      	    
-            	    }
-            	    pushFollow(FOLLOW_ruleInfixedExpr_in_ruleenlister1_InfixedExpr_Comma21639);
-            	    lv_ie_2_0=ruleInfixedExpr();
-
-            	    state._fsp--;
-            	    if (state.failed) return current;
-            	    if ( state.backtracking==0 ) {
-
-            	      	        if (current==null) {
-            	      	            current = createModelElementForParent(grammarAccess.getEnlister1_InfixedExpr_CommaRule());
-            	      	        }
-            	             		add(
-            	             			current, 
-            	             			"ie",
-            	              		lv_ie_2_0, 
-            	              		"InfixedExpr");
             	      	        afterParserOrEnumRuleCall();
             	      	    
             	    }
@@ -26817,11 +26023,357 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
         }
         return current;
     }
+    // $ANTLR end "ruleenlister1_CommaItem_Comma"
+
+
+    // $ANTLR start "entryRuleenlister1_Infixed_Comma"
+    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:10028:1: entryRuleenlister1_Infixed_Comma returns [EObject current=null] : iv_ruleenlister1_Infixed_Comma= ruleenlister1_Infixed_Comma EOF ;
+    public final EObject entryRuleenlister1_Infixed_Comma() throws RecognitionException {
+        EObject current = null;
+
+        EObject iv_ruleenlister1_Infixed_Comma = null;
+
+
+         
+        		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+        	
+        try {
+            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:10032:2: (iv_ruleenlister1_Infixed_Comma= ruleenlister1_Infixed_Comma EOF )
+            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:10033:2: iv_ruleenlister1_Infixed_Comma= ruleenlister1_Infixed_Comma EOF
+            {
+            if ( state.backtracking==0 ) {
+               newCompositeNode(grammarAccess.getEnlister1_Infixed_CommaRule()); 
+            }
+            pushFollow(FOLLOW_ruleenlister1_Infixed_Comma_in_entryRuleenlister1_Infixed_Comma21550);
+            iv_ruleenlister1_Infixed_Comma=ruleenlister1_Infixed_Comma();
+
+            state._fsp--;
+            if (state.failed) return current;
+            if ( state.backtracking==0 ) {
+               current =iv_ruleenlister1_Infixed_Comma; 
+            }
+            match(input,EOF,FOLLOW_EOF_in_entryRuleenlister1_Infixed_Comma21560); if (state.failed) return current;
+
+            }
+
+        }
+         
+            catch (RecognitionException re) { 
+                recover(input,re); 
+                appendSkippedTokens();
+            } 
+        finally {
+
+            	myHiddenTokenState.restore();
+
+        }
+        return current;
+    }
+    // $ANTLR end "entryRuleenlister1_Infixed_Comma"
+
+
+    // $ANTLR start "ruleenlister1_Infixed_Comma"
+    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:10043:1: ruleenlister1_Infixed_Comma returns [EObject current=null] : (this_Infixed_0= ruleInfixed (this_KW_COMMA_1= RULE_KW_COMMA ( (lv_i2_2_0= ruleInfixed ) ) )* ) ;
+    public final EObject ruleenlister1_Infixed_Comma() throws RecognitionException {
+        EObject current = null;
+
+        Token this_KW_COMMA_1=null;
+        EObject this_Infixed_0 = null;
+
+        EObject lv_i2_2_0 = null;
+
+
+         enterRule(); 
+        		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+            
+        try {
+            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:10047:28: ( (this_Infixed_0= ruleInfixed (this_KW_COMMA_1= RULE_KW_COMMA ( (lv_i2_2_0= ruleInfixed ) ) )* ) )
+            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:10048:1: (this_Infixed_0= ruleInfixed (this_KW_COMMA_1= RULE_KW_COMMA ( (lv_i2_2_0= ruleInfixed ) ) )* )
+            {
+            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:10048:1: (this_Infixed_0= ruleInfixed (this_KW_COMMA_1= RULE_KW_COMMA ( (lv_i2_2_0= ruleInfixed ) ) )* )
+            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:10049:5: this_Infixed_0= ruleInfixed (this_KW_COMMA_1= RULE_KW_COMMA ( (lv_i2_2_0= ruleInfixed ) ) )*
+            {
+            if ( state.backtracking==0 ) {
+               
+                      newCompositeNode(grammarAccess.getEnlister1_Infixed_CommaAccess().getInfixedParserRuleCall_0()); 
+                  
+            }
+            pushFollow(FOLLOW_ruleInfixed_in_ruleenlister1_Infixed_Comma21611);
+            this_Infixed_0=ruleInfixed();
+
+            state._fsp--;
+            if (state.failed) return current;
+            if ( state.backtracking==0 ) {
+               
+                      current = this_Infixed_0; 
+                      afterParserOrEnumRuleCall();
+                  
+            }
+            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:10057:1: (this_KW_COMMA_1= RULE_KW_COMMA ( (lv_i2_2_0= ruleInfixed ) ) )*
+            loop118:
+            do {
+                int alt118=2;
+                int LA118_0 = input.LA(1);
+
+                if ( (LA118_0==RULE_KW_COMMA) ) {
+                    alt118=1;
+                }
+
+
+                switch (alt118) {
+            	case 1 :
+            	    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:10057:2: this_KW_COMMA_1= RULE_KW_COMMA ( (lv_i2_2_0= ruleInfixed ) )
+            	    {
+            	    this_KW_COMMA_1=(Token)match(input,RULE_KW_COMMA,FOLLOW_RULE_KW_COMMA_in_ruleenlister1_Infixed_Comma21622); if (state.failed) return current;
+            	    if ( state.backtracking==0 ) {
+            	       
+            	          newLeafNode(this_KW_COMMA_1, grammarAccess.getEnlister1_Infixed_CommaAccess().getKW_COMMATerminalRuleCall_1_0()); 
+            	          
+            	    }
+            	    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:10061:1: ( (lv_i2_2_0= ruleInfixed ) )
+            	    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:10062:1: (lv_i2_2_0= ruleInfixed )
+            	    {
+            	    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:10062:1: (lv_i2_2_0= ruleInfixed )
+            	    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:10063:3: lv_i2_2_0= ruleInfixed
+            	    {
+            	    if ( state.backtracking==0 ) {
+            	       
+            	      	        newCompositeNode(grammarAccess.getEnlister1_Infixed_CommaAccess().getI2InfixedParserRuleCall_1_1_0()); 
+            	      	    
+            	    }
+            	    pushFollow(FOLLOW_ruleInfixed_in_ruleenlister1_Infixed_Comma21642);
+            	    lv_i2_2_0=ruleInfixed();
+
+            	    state._fsp--;
+            	    if (state.failed) return current;
+            	    if ( state.backtracking==0 ) {
+
+            	      	        if (current==null) {
+            	      	            current = createModelElementForParent(grammarAccess.getEnlister1_Infixed_CommaRule());
+            	      	        }
+            	             		add(
+            	             			current, 
+            	             			"i2",
+            	              		lv_i2_2_0, 
+            	              		"Infixed");
+            	      	        afterParserOrEnumRuleCall();
+            	      	    
+            	    }
+
+            	    }
+
+
+            	    }
+
+
+            	    }
+            	    break;
+
+            	default :
+            	    break loop118;
+                }
+            } while (true);
+
+
+            }
+
+
+            }
+
+            if ( state.backtracking==0 ) {
+               leaveRule(); 
+            }
+        }
+         
+            catch (RecognitionException re) { 
+                recover(input,re); 
+                appendSkippedTokens();
+            } 
+        finally {
+
+            	myHiddenTokenState.restore();
+
+        }
+        return current;
+    }
+    // $ANTLR end "ruleenlister1_Infixed_Comma"
+
+
+    // $ANTLR start "entryRuleenlister1_InfixedExpr_Comma"
+    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:10090:1: entryRuleenlister1_InfixedExpr_Comma returns [EObject current=null] : iv_ruleenlister1_InfixedExpr_Comma= ruleenlister1_InfixedExpr_Comma EOF ;
+    public final EObject entryRuleenlister1_InfixedExpr_Comma() throws RecognitionException {
+        EObject current = null;
+
+        EObject iv_ruleenlister1_InfixedExpr_Comma = null;
+
+
+         
+        		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+        	
+        try {
+            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:10094:2: (iv_ruleenlister1_InfixedExpr_Comma= ruleenlister1_InfixedExpr_Comma EOF )
+            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:10095:2: iv_ruleenlister1_InfixedExpr_Comma= ruleenlister1_InfixedExpr_Comma EOF
+            {
+            if ( state.backtracking==0 ) {
+               newCompositeNode(grammarAccess.getEnlister1_InfixedExpr_CommaRule()); 
+            }
+            pushFollow(FOLLOW_ruleenlister1_InfixedExpr_Comma_in_entryRuleenlister1_InfixedExpr_Comma21690);
+            iv_ruleenlister1_InfixedExpr_Comma=ruleenlister1_InfixedExpr_Comma();
+
+            state._fsp--;
+            if (state.failed) return current;
+            if ( state.backtracking==0 ) {
+               current =iv_ruleenlister1_InfixedExpr_Comma; 
+            }
+            match(input,EOF,FOLLOW_EOF_in_entryRuleenlister1_InfixedExpr_Comma21700); if (state.failed) return current;
+
+            }
+
+        }
+         
+            catch (RecognitionException re) { 
+                recover(input,re); 
+                appendSkippedTokens();
+            } 
+        finally {
+
+            	myHiddenTokenState.restore();
+
+        }
+        return current;
+    }
+    // $ANTLR end "entryRuleenlister1_InfixedExpr_Comma"
+
+
+    // $ANTLR start "ruleenlister1_InfixedExpr_Comma"
+    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:10105:1: ruleenlister1_InfixedExpr_Comma returns [EObject current=null] : (this_InfixedExpr_0= ruleInfixedExpr (this_KW_COMMA_1= RULE_KW_COMMA ( (lv_ie_2_0= ruleInfixedExpr ) ) )* ) ;
+    public final EObject ruleenlister1_InfixedExpr_Comma() throws RecognitionException {
+        EObject current = null;
+
+        Token this_KW_COMMA_1=null;
+        EObject this_InfixedExpr_0 = null;
+
+        EObject lv_ie_2_0 = null;
+
+
+         enterRule(); 
+        		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+            
+        try {
+            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:10109:28: ( (this_InfixedExpr_0= ruleInfixedExpr (this_KW_COMMA_1= RULE_KW_COMMA ( (lv_ie_2_0= ruleInfixedExpr ) ) )* ) )
+            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:10110:1: (this_InfixedExpr_0= ruleInfixedExpr (this_KW_COMMA_1= RULE_KW_COMMA ( (lv_ie_2_0= ruleInfixedExpr ) ) )* )
+            {
+            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:10110:1: (this_InfixedExpr_0= ruleInfixedExpr (this_KW_COMMA_1= RULE_KW_COMMA ( (lv_ie_2_0= ruleInfixedExpr ) ) )* )
+            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:10111:5: this_InfixedExpr_0= ruleInfixedExpr (this_KW_COMMA_1= RULE_KW_COMMA ( (lv_ie_2_0= ruleInfixedExpr ) ) )*
+            {
+            if ( state.backtracking==0 ) {
+               
+                      newCompositeNode(grammarAccess.getEnlister1_InfixedExpr_CommaAccess().getInfixedExprParserRuleCall_0()); 
+                  
+            }
+            pushFollow(FOLLOW_ruleInfixedExpr_in_ruleenlister1_InfixedExpr_Comma21751);
+            this_InfixedExpr_0=ruleInfixedExpr();
+
+            state._fsp--;
+            if (state.failed) return current;
+            if ( state.backtracking==0 ) {
+               
+                      current = this_InfixedExpr_0; 
+                      afterParserOrEnumRuleCall();
+                  
+            }
+            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:10119:1: (this_KW_COMMA_1= RULE_KW_COMMA ( (lv_ie_2_0= ruleInfixedExpr ) ) )*
+            loop119:
+            do {
+                int alt119=2;
+                int LA119_0 = input.LA(1);
+
+                if ( (LA119_0==RULE_KW_COMMA) ) {
+                    alt119=1;
+                }
+
+
+                switch (alt119) {
+            	case 1 :
+            	    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:10119:2: this_KW_COMMA_1= RULE_KW_COMMA ( (lv_ie_2_0= ruleInfixedExpr ) )
+            	    {
+            	    this_KW_COMMA_1=(Token)match(input,RULE_KW_COMMA,FOLLOW_RULE_KW_COMMA_in_ruleenlister1_InfixedExpr_Comma21762); if (state.failed) return current;
+            	    if ( state.backtracking==0 ) {
+            	       
+            	          newLeafNode(this_KW_COMMA_1, grammarAccess.getEnlister1_InfixedExpr_CommaAccess().getKW_COMMATerminalRuleCall_1_0()); 
+            	          
+            	    }
+            	    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:10123:1: ( (lv_ie_2_0= ruleInfixedExpr ) )
+            	    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:10124:1: (lv_ie_2_0= ruleInfixedExpr )
+            	    {
+            	    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:10124:1: (lv_ie_2_0= ruleInfixedExpr )
+            	    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:10125:3: lv_ie_2_0= ruleInfixedExpr
+            	    {
+            	    if ( state.backtracking==0 ) {
+            	       
+            	      	        newCompositeNode(grammarAccess.getEnlister1_InfixedExpr_CommaAccess().getIeInfixedExprParserRuleCall_1_1_0()); 
+            	      	    
+            	    }
+            	    pushFollow(FOLLOW_ruleInfixedExpr_in_ruleenlister1_InfixedExpr_Comma21782);
+            	    lv_ie_2_0=ruleInfixedExpr();
+
+            	    state._fsp--;
+            	    if (state.failed) return current;
+            	    if ( state.backtracking==0 ) {
+
+            	      	        if (current==null) {
+            	      	            current = createModelElementForParent(grammarAccess.getEnlister1_InfixedExpr_CommaRule());
+            	      	        }
+            	             		add(
+            	             			current, 
+            	             			"ie",
+            	              		lv_ie_2_0, 
+            	              		"InfixedExpr");
+            	      	        afterParserOrEnumRuleCall();
+            	      	    
+            	    }
+
+            	    }
+
+
+            	    }
+
+
+            	    }
+            	    break;
+
+            	default :
+            	    break loop119;
+                }
+            } while (true);
+
+
+            }
+
+
+            }
+
+            if ( state.backtracking==0 ) {
+               leaveRule(); 
+            }
+        }
+         
+            catch (RecognitionException re) { 
+                recover(input,re); 
+                appendSkippedTokens();
+            } 
+        finally {
+
+            	myHiddenTokenState.restore();
+
+        }
+        return current;
+    }
     // $ANTLR end "ruleenlister1_InfixedExpr_Comma"
 
 
     // $ANTLR start "entryRuleenlist1a_Labeled_Semicolon_AB"
-    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:10116:1: entryRuleenlist1a_Labeled_Semicolon_AB returns [EObject current=null] : iv_ruleenlist1a_Labeled_Semicolon_AB= ruleenlist1a_Labeled_Semicolon_AB EOF ;
+    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:10152:1: entryRuleenlist1a_Labeled_Semicolon_AB returns [EObject current=null] : iv_ruleenlist1a_Labeled_Semicolon_AB= ruleenlist1a_Labeled_Semicolon_AB EOF ;
     public final EObject entryRuleenlist1a_Labeled_Semicolon_AB() throws RecognitionException {
         EObject current = null;
 
@@ -26832,13 +26384,13 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
         		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
         	
         try {
-            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:10120:2: (iv_ruleenlist1a_Labeled_Semicolon_AB= ruleenlist1a_Labeled_Semicolon_AB EOF )
-            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:10121:2: iv_ruleenlist1a_Labeled_Semicolon_AB= ruleenlist1a_Labeled_Semicolon_AB EOF
+            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:10156:2: (iv_ruleenlist1a_Labeled_Semicolon_AB= ruleenlist1a_Labeled_Semicolon_AB EOF )
+            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:10157:2: iv_ruleenlist1a_Labeled_Semicolon_AB= ruleenlist1a_Labeled_Semicolon_AB EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getEnlist1a_Labeled_Semicolon_ABRule()); 
             }
-            pushFollow(FOLLOW_ruleenlist1a_Labeled_Semicolon_AB_in_entryRuleenlist1a_Labeled_Semicolon_AB21687);
+            pushFollow(FOLLOW_ruleenlist1a_Labeled_Semicolon_AB_in_entryRuleenlist1a_Labeled_Semicolon_AB21830);
             iv_ruleenlist1a_Labeled_Semicolon_AB=ruleenlist1a_Labeled_Semicolon_AB();
 
             state._fsp--;
@@ -26846,7 +26398,7 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
             if ( state.backtracking==0 ) {
                current =iv_ruleenlist1a_Labeled_Semicolon_AB; 
             }
-            match(input,EOF,FOLLOW_EOF_in_entryRuleenlist1a_Labeled_Semicolon_AB21697); if (state.failed) return current;
+            match(input,EOF,FOLLOW_EOF_in_entryRuleenlist1a_Labeled_Semicolon_AB21840); if (state.failed) return current;
 
             }
 
@@ -26867,7 +26419,7 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleenlist1a_Labeled_Semicolon_AB"
-    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:10131:1: ruleenlist1a_Labeled_Semicolon_AB returns [EObject current=null] : this_enlister1a_Labeled_Semicolon_0= ruleenlister1a_Labeled_Semicolon ;
+    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:10167:1: ruleenlist1a_Labeled_Semicolon_AB returns [EObject current=null] : this_enlister1a_Labeled_Semicolon_0= ruleenlister1a_Labeled_Semicolon ;
     public final EObject ruleenlist1a_Labeled_Semicolon_AB() throws RecognitionException {
         EObject current = null;
 
@@ -26878,15 +26430,15 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
         		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
             
         try {
-            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:10135:28: (this_enlister1a_Labeled_Semicolon_0= ruleenlister1a_Labeled_Semicolon )
-            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:10137:5: this_enlister1a_Labeled_Semicolon_0= ruleenlister1a_Labeled_Semicolon
+            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:10171:28: (this_enlister1a_Labeled_Semicolon_0= ruleenlister1a_Labeled_Semicolon )
+            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:10173:5: this_enlister1a_Labeled_Semicolon_0= ruleenlister1a_Labeled_Semicolon
             {
             if ( state.backtracking==0 ) {
                
                       newCompositeNode(grammarAccess.getEnlist1a_Labeled_Semicolon_ABAccess().getEnlister1a_Labeled_SemicolonParserRuleCall()); 
                   
             }
-            pushFollow(FOLLOW_ruleenlister1a_Labeled_Semicolon_in_ruleenlist1a_Labeled_Semicolon_AB21747);
+            pushFollow(FOLLOW_ruleenlister1a_Labeled_Semicolon_in_ruleenlist1a_Labeled_Semicolon_AB21890);
             this_enlister1a_Labeled_Semicolon_0=ruleenlister1a_Labeled_Semicolon();
 
             state._fsp--;
@@ -26920,7 +26472,7 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleenlister1a_Labeled_Semicolon"
-    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:10156:1: entryRuleenlister1a_Labeled_Semicolon returns [EObject current=null] : iv_ruleenlister1a_Labeled_Semicolon= ruleenlister1a_Labeled_Semicolon EOF ;
+    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:10192:1: entryRuleenlister1a_Labeled_Semicolon returns [EObject current=null] : iv_ruleenlister1a_Labeled_Semicolon= ruleenlister1a_Labeled_Semicolon EOF ;
     public final EObject entryRuleenlister1a_Labeled_Semicolon() throws RecognitionException {
         EObject current = null;
 
@@ -26931,13 +26483,13 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
         		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
         	
         try {
-            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:10160:2: (iv_ruleenlister1a_Labeled_Semicolon= ruleenlister1a_Labeled_Semicolon EOF )
-            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:10161:2: iv_ruleenlister1a_Labeled_Semicolon= ruleenlister1a_Labeled_Semicolon EOF
+            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:10196:2: (iv_ruleenlister1a_Labeled_Semicolon= ruleenlister1a_Labeled_Semicolon EOF )
+            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:10197:2: iv_ruleenlister1a_Labeled_Semicolon= ruleenlister1a_Labeled_Semicolon EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getEnlister1a_Labeled_SemicolonRule()); 
             }
-            pushFollow(FOLLOW_ruleenlister1a_Labeled_Semicolon_in_entryRuleenlister1a_Labeled_Semicolon21791);
+            pushFollow(FOLLOW_ruleenlister1a_Labeled_Semicolon_in_entryRuleenlister1a_Labeled_Semicolon21934);
             iv_ruleenlister1a_Labeled_Semicolon=ruleenlister1a_Labeled_Semicolon();
 
             state._fsp--;
@@ -26945,7 +26497,7 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
             if ( state.backtracking==0 ) {
                current =iv_ruleenlister1a_Labeled_Semicolon; 
             }
-            match(input,EOF,FOLLOW_EOF_in_entryRuleenlister1a_Labeled_Semicolon21801); if (state.failed) return current;
+            match(input,EOF,FOLLOW_EOF_in_entryRuleenlister1a_Labeled_Semicolon21944); if (state.failed) return current;
 
             }
 
@@ -26966,7 +26518,7 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleenlister1a_Labeled_Semicolon"
-    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:10171:1: ruleenlister1a_Labeled_Semicolon returns [EObject current=null] : ( ( (lv_statemnts_0_0= ruleLabeled ) ) (this_KW_SEMICOLON_1= RULE_KW_SEMICOLON ( (lv_statemnts_2_0= ruleLabeled ) ) )* (this_KW_SEMICOLON_3= RULE_KW_SEMICOLON )? ) ;
+    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:10207:1: ruleenlister1a_Labeled_Semicolon returns [EObject current=null] : ( ( (lv_statemnts_0_0= ruleLabeled ) ) (this_KW_SEMICOLON_1= RULE_KW_SEMICOLON ( (lv_statemnts_2_0= ruleLabeled ) ) )* (this_KW_SEMICOLON_3= RULE_KW_SEMICOLON )? ) ;
     public final EObject ruleenlister1a_Labeled_Semicolon() throws RecognitionException {
         EObject current = null;
 
@@ -26981,24 +26533,24 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
         		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
             
         try {
-            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:10175:28: ( ( ( (lv_statemnts_0_0= ruleLabeled ) ) (this_KW_SEMICOLON_1= RULE_KW_SEMICOLON ( (lv_statemnts_2_0= ruleLabeled ) ) )* (this_KW_SEMICOLON_3= RULE_KW_SEMICOLON )? ) )
-            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:10176:1: ( ( (lv_statemnts_0_0= ruleLabeled ) ) (this_KW_SEMICOLON_1= RULE_KW_SEMICOLON ( (lv_statemnts_2_0= ruleLabeled ) ) )* (this_KW_SEMICOLON_3= RULE_KW_SEMICOLON )? )
+            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:10211:28: ( ( ( (lv_statemnts_0_0= ruleLabeled ) ) (this_KW_SEMICOLON_1= RULE_KW_SEMICOLON ( (lv_statemnts_2_0= ruleLabeled ) ) )* (this_KW_SEMICOLON_3= RULE_KW_SEMICOLON )? ) )
+            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:10212:1: ( ( (lv_statemnts_0_0= ruleLabeled ) ) (this_KW_SEMICOLON_1= RULE_KW_SEMICOLON ( (lv_statemnts_2_0= ruleLabeled ) ) )* (this_KW_SEMICOLON_3= RULE_KW_SEMICOLON )? )
             {
-            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:10176:1: ( ( (lv_statemnts_0_0= ruleLabeled ) ) (this_KW_SEMICOLON_1= RULE_KW_SEMICOLON ( (lv_statemnts_2_0= ruleLabeled ) ) )* (this_KW_SEMICOLON_3= RULE_KW_SEMICOLON )? )
-            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:10176:2: ( (lv_statemnts_0_0= ruleLabeled ) ) (this_KW_SEMICOLON_1= RULE_KW_SEMICOLON ( (lv_statemnts_2_0= ruleLabeled ) ) )* (this_KW_SEMICOLON_3= RULE_KW_SEMICOLON )?
+            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:10212:1: ( ( (lv_statemnts_0_0= ruleLabeled ) ) (this_KW_SEMICOLON_1= RULE_KW_SEMICOLON ( (lv_statemnts_2_0= ruleLabeled ) ) )* (this_KW_SEMICOLON_3= RULE_KW_SEMICOLON )? )
+            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:10212:2: ( (lv_statemnts_0_0= ruleLabeled ) ) (this_KW_SEMICOLON_1= RULE_KW_SEMICOLON ( (lv_statemnts_2_0= ruleLabeled ) ) )* (this_KW_SEMICOLON_3= RULE_KW_SEMICOLON )?
             {
-            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:10176:2: ( (lv_statemnts_0_0= ruleLabeled ) )
-            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:10177:1: (lv_statemnts_0_0= ruleLabeled )
+            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:10212:2: ( (lv_statemnts_0_0= ruleLabeled ) )
+            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:10213:1: (lv_statemnts_0_0= ruleLabeled )
             {
-            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:10177:1: (lv_statemnts_0_0= ruleLabeled )
-            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:10178:3: lv_statemnts_0_0= ruleLabeled
+            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:10213:1: (lv_statemnts_0_0= ruleLabeled )
+            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:10214:3: lv_statemnts_0_0= ruleLabeled
             {
             if ( state.backtracking==0 ) {
                
               	        newCompositeNode(grammarAccess.getEnlister1a_Labeled_SemicolonAccess().getStatemntsLabeledParserRuleCall_0_0()); 
               	    
             }
-            pushFollow(FOLLOW_ruleLabeled_in_ruleenlister1a_Labeled_Semicolon21851);
+            pushFollow(FOLLOW_ruleLabeled_in_ruleenlister1a_Labeled_Semicolon21994);
             lv_statemnts_0_0=ruleLabeled();
 
             state._fsp--;
@@ -27022,45 +26574,45 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:10194:2: (this_KW_SEMICOLON_1= RULE_KW_SEMICOLON ( (lv_statemnts_2_0= ruleLabeled ) ) )*
-            loop118:
+            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:10230:2: (this_KW_SEMICOLON_1= RULE_KW_SEMICOLON ( (lv_statemnts_2_0= ruleLabeled ) ) )*
+            loop120:
             do {
-                int alt118=2;
-                int LA118_0 = input.LA(1);
+                int alt120=2;
+                int LA120_0 = input.LA(1);
 
-                if ( (LA118_0==RULE_KW_SEMICOLON) ) {
-                    int LA118_1 = input.LA(2);
+                if ( (LA120_0==RULE_KW_SEMICOLON) ) {
+                    int LA120_1 = input.LA(2);
 
-                    if ( ((LA118_1>=RULE_TK_STRING && LA118_1<=RULE_KW_AT)||(LA118_1>=RULE_KW_RARROW && LA118_1<=RULE_KW_HAT)||LA118_1==RULE_KW_OPAREN||LA118_1==RULE_KW_OBRACK||(LA118_1>=RULE_KW_QUOTE && LA118_1<=RULE_TK_ID)||(LA118_1>=RULE_KW_SHARP && LA118_1<=RULE_TK_INT)||LA118_1==RULE_KW_OCURLY||(LA118_1>=61 && LA118_1<=71)||LA118_1==75||(LA118_1>=79 && LA118_1<=80)||LA118_1==83||(LA118_1>=85 && LA118_1<=97)||(LA118_1>=101 && LA118_1<=102)||(LA118_1>=107 && LA118_1<=117)) ) {
-                        alt118=1;
+                    if ( ((LA120_1>=RULE_TK_STRING && LA120_1<=RULE_KW_AT)||(LA120_1>=RULE_KW_RARROW && LA120_1<=RULE_KW_HAT)||LA120_1==RULE_KW_OPAREN||LA120_1==RULE_KW_OBRACK||(LA120_1>=RULE_KW_QUOTE && LA120_1<=RULE_TK_ID)||(LA120_1>=RULE_KW_SHARP && LA120_1<=RULE_TK_FLOAT)||LA120_1==RULE_KW_OCURLY||(LA120_1>=62 && LA120_1<=72)||LA120_1==76||(LA120_1>=80 && LA120_1<=81)||LA120_1==84||(LA120_1>=86 && LA120_1<=98)||(LA120_1>=102 && LA120_1<=103)||(LA120_1>=108 && LA120_1<=118)) ) {
+                        alt120=1;
                     }
 
 
                 }
 
 
-                switch (alt118) {
+                switch (alt120) {
             	case 1 :
-            	    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:10194:3: this_KW_SEMICOLON_1= RULE_KW_SEMICOLON ( (lv_statemnts_2_0= ruleLabeled ) )
+            	    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:10230:3: this_KW_SEMICOLON_1= RULE_KW_SEMICOLON ( (lv_statemnts_2_0= ruleLabeled ) )
             	    {
-            	    this_KW_SEMICOLON_1=(Token)match(input,RULE_KW_SEMICOLON,FOLLOW_RULE_KW_SEMICOLON_in_ruleenlister1a_Labeled_Semicolon21863); if (state.failed) return current;
+            	    this_KW_SEMICOLON_1=(Token)match(input,RULE_KW_SEMICOLON,FOLLOW_RULE_KW_SEMICOLON_in_ruleenlister1a_Labeled_Semicolon22006); if (state.failed) return current;
             	    if ( state.backtracking==0 ) {
             	       
             	          newLeafNode(this_KW_SEMICOLON_1, grammarAccess.getEnlister1a_Labeled_SemicolonAccess().getKW_SEMICOLONTerminalRuleCall_1_0()); 
             	          
             	    }
-            	    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:10198:1: ( (lv_statemnts_2_0= ruleLabeled ) )
-            	    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:10199:1: (lv_statemnts_2_0= ruleLabeled )
+            	    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:10234:1: ( (lv_statemnts_2_0= ruleLabeled ) )
+            	    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:10235:1: (lv_statemnts_2_0= ruleLabeled )
             	    {
-            	    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:10199:1: (lv_statemnts_2_0= ruleLabeled )
-            	    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:10200:3: lv_statemnts_2_0= ruleLabeled
+            	    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:10235:1: (lv_statemnts_2_0= ruleLabeled )
+            	    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:10236:3: lv_statemnts_2_0= ruleLabeled
             	    {
             	    if ( state.backtracking==0 ) {
             	       
             	      	        newCompositeNode(grammarAccess.getEnlister1a_Labeled_SemicolonAccess().getStatemntsLabeledParserRuleCall_1_1_0()); 
             	      	    
             	    }
-            	    pushFollow(FOLLOW_ruleLabeled_in_ruleenlister1a_Labeled_Semicolon21883);
+            	    pushFollow(FOLLOW_ruleLabeled_in_ruleenlister1a_Labeled_Semicolon22026);
             	    lv_statemnts_2_0=ruleLabeled();
 
             	    state._fsp--;
@@ -27089,22 +26641,22 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
             	    break;
 
             	default :
-            	    break loop118;
+            	    break loop120;
                 }
             } while (true);
 
-            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:10216:4: (this_KW_SEMICOLON_3= RULE_KW_SEMICOLON )?
-            int alt119=2;
-            int LA119_0 = input.LA(1);
+            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:10252:4: (this_KW_SEMICOLON_3= RULE_KW_SEMICOLON )?
+            int alt121=2;
+            int LA121_0 = input.LA(1);
 
-            if ( (LA119_0==RULE_KW_SEMICOLON) ) {
-                alt119=1;
+            if ( (LA121_0==RULE_KW_SEMICOLON) ) {
+                alt121=1;
             }
-            switch (alt119) {
+            switch (alt121) {
                 case 1 :
-                    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:10216:5: this_KW_SEMICOLON_3= RULE_KW_SEMICOLON
+                    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:10252:5: this_KW_SEMICOLON_3= RULE_KW_SEMICOLON
                     {
-                    this_KW_SEMICOLON_3=(Token)match(input,RULE_KW_SEMICOLON,FOLLOW_RULE_KW_SEMICOLON_in_ruleenlister1a_Labeled_Semicolon21897); if (state.failed) return current;
+                    this_KW_SEMICOLON_3=(Token)match(input,RULE_KW_SEMICOLON,FOLLOW_RULE_KW_SEMICOLON_in_ruleenlister1a_Labeled_Semicolon22040); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
                        
                           newLeafNode(this_KW_SEMICOLON_3, grammarAccess.getEnlister1a_Labeled_SemicolonAccess().getKW_SEMICOLONTerminalRuleCall_2()); 
@@ -27142,7 +26694,7 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleCurly_Labeled"
-    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:10231:1: entryRuleCurly_Labeled returns [EObject current=null] : iv_ruleCurly_Labeled= ruleCurly_Labeled EOF ;
+    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:10267:1: entryRuleCurly_Labeled returns [EObject current=null] : iv_ruleCurly_Labeled= ruleCurly_Labeled EOF ;
     public final EObject entryRuleCurly_Labeled() throws RecognitionException {
         EObject current = null;
 
@@ -27153,13 +26705,13 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
         		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
         	
         try {
-            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:10235:2: (iv_ruleCurly_Labeled= ruleCurly_Labeled EOF )
-            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:10236:2: iv_ruleCurly_Labeled= ruleCurly_Labeled EOF
+            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:10271:2: (iv_ruleCurly_Labeled= ruleCurly_Labeled EOF )
+            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:10272:2: iv_ruleCurly_Labeled= ruleCurly_Labeled EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getCurly_LabeledRule()); 
             }
-            pushFollow(FOLLOW_ruleCurly_Labeled_in_entryRuleCurly_Labeled21944);
+            pushFollow(FOLLOW_ruleCurly_Labeled_in_entryRuleCurly_Labeled22087);
             iv_ruleCurly_Labeled=ruleCurly_Labeled();
 
             state._fsp--;
@@ -27167,7 +26719,7 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
             if ( state.backtracking==0 ) {
                current =iv_ruleCurly_Labeled; 
             }
-            match(input,EOF,FOLLOW_EOF_in_entryRuleCurly_Labeled21954); if (state.failed) return current;
+            match(input,EOF,FOLLOW_EOF_in_entryRuleCurly_Labeled22097); if (state.failed) return current;
 
             }
 
@@ -27188,7 +26740,7 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleCurly_Labeled"
-    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:10246:1: ruleCurly_Labeled returns [EObject current=null] : (this_KW_OCURLY_0= RULE_KW_OCURLY this_CurlyContents_Labeled_1= ruleCurlyContents_Labeled this_KW_CCURLY_2= RULE_KW_CCURLY ) ;
+    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:10282:1: ruleCurly_Labeled returns [EObject current=null] : (this_KW_OCURLY_0= RULE_KW_OCURLY this_CurlyContents_Labeled_1= ruleCurlyContents_Labeled this_KW_CCURLY_2= RULE_KW_CCURLY ) ;
     public final EObject ruleCurly_Labeled() throws RecognitionException {
         EObject current = null;
 
@@ -27201,13 +26753,13 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
         		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
             
         try {
-            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:10250:28: ( (this_KW_OCURLY_0= RULE_KW_OCURLY this_CurlyContents_Labeled_1= ruleCurlyContents_Labeled this_KW_CCURLY_2= RULE_KW_CCURLY ) )
-            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:10251:1: (this_KW_OCURLY_0= RULE_KW_OCURLY this_CurlyContents_Labeled_1= ruleCurlyContents_Labeled this_KW_CCURLY_2= RULE_KW_CCURLY )
+            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:10286:28: ( (this_KW_OCURLY_0= RULE_KW_OCURLY this_CurlyContents_Labeled_1= ruleCurlyContents_Labeled this_KW_CCURLY_2= RULE_KW_CCURLY ) )
+            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:10287:1: (this_KW_OCURLY_0= RULE_KW_OCURLY this_CurlyContents_Labeled_1= ruleCurlyContents_Labeled this_KW_CCURLY_2= RULE_KW_CCURLY )
             {
-            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:10251:1: (this_KW_OCURLY_0= RULE_KW_OCURLY this_CurlyContents_Labeled_1= ruleCurlyContents_Labeled this_KW_CCURLY_2= RULE_KW_CCURLY )
-            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:10251:2: this_KW_OCURLY_0= RULE_KW_OCURLY this_CurlyContents_Labeled_1= ruleCurlyContents_Labeled this_KW_CCURLY_2= RULE_KW_CCURLY
+            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:10287:1: (this_KW_OCURLY_0= RULE_KW_OCURLY this_CurlyContents_Labeled_1= ruleCurlyContents_Labeled this_KW_CCURLY_2= RULE_KW_CCURLY )
+            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:10287:2: this_KW_OCURLY_0= RULE_KW_OCURLY this_CurlyContents_Labeled_1= ruleCurlyContents_Labeled this_KW_CCURLY_2= RULE_KW_CCURLY
             {
-            this_KW_OCURLY_0=(Token)match(input,RULE_KW_OCURLY,FOLLOW_RULE_KW_OCURLY_in_ruleCurly_Labeled21994); if (state.failed) return current;
+            this_KW_OCURLY_0=(Token)match(input,RULE_KW_OCURLY,FOLLOW_RULE_KW_OCURLY_in_ruleCurly_Labeled22137); if (state.failed) return current;
             if ( state.backtracking==0 ) {
                
                   newLeafNode(this_KW_OCURLY_0, grammarAccess.getCurly_LabeledAccess().getKW_OCURLYTerminalRuleCall_0()); 
@@ -27218,7 +26770,7 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
                       newCompositeNode(grammarAccess.getCurly_LabeledAccess().getCurlyContents_LabeledParserRuleCall_1()); 
                   
             }
-            pushFollow(FOLLOW_ruleCurlyContents_Labeled_in_ruleCurly_Labeled22015);
+            pushFollow(FOLLOW_ruleCurlyContents_Labeled_in_ruleCurly_Labeled22158);
             this_CurlyContents_Labeled_1=ruleCurlyContents_Labeled();
 
             state._fsp--;
@@ -27229,7 +26781,7 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
                       afterParserOrEnumRuleCall();
                   
             }
-            this_KW_CCURLY_2=(Token)match(input,RULE_KW_CCURLY,FOLLOW_RULE_KW_CCURLY_in_ruleCurly_Labeled22025); if (state.failed) return current;
+            this_KW_CCURLY_2=(Token)match(input,RULE_KW_CCURLY,FOLLOW_RULE_KW_CCURLY_in_ruleCurly_Labeled22168); if (state.failed) return current;
             if ( state.backtracking==0 ) {
                
                   newLeafNode(this_KW_CCURLY_2, grammarAccess.getCurly_LabeledAccess().getKW_CCURLYTerminalRuleCall_2()); 
@@ -27261,7 +26813,7 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleCurlyContents_Labeled"
-    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:10279:1: entryRuleCurlyContents_Labeled returns [EObject current=null] : iv_ruleCurlyContents_Labeled= ruleCurlyContents_Labeled EOF ;
+    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:10315:1: entryRuleCurlyContents_Labeled returns [EObject current=null] : iv_ruleCurlyContents_Labeled= ruleCurlyContents_Labeled EOF ;
     public final EObject entryRuleCurlyContents_Labeled() throws RecognitionException {
         EObject current = null;
 
@@ -27272,13 +26824,13 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
         		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
         	
         try {
-            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:10283:2: (iv_ruleCurlyContents_Labeled= ruleCurlyContents_Labeled EOF )
-            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:10284:2: iv_ruleCurlyContents_Labeled= ruleCurlyContents_Labeled EOF
+            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:10319:2: (iv_ruleCurlyContents_Labeled= ruleCurlyContents_Labeled EOF )
+            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:10320:2: iv_ruleCurlyContents_Labeled= ruleCurlyContents_Labeled EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getCurlyContents_LabeledRule()); 
             }
-            pushFollow(FOLLOW_ruleCurlyContents_Labeled_in_entryRuleCurlyContents_Labeled22070);
+            pushFollow(FOLLOW_ruleCurlyContents_Labeled_in_entryRuleCurlyContents_Labeled22213);
             iv_ruleCurlyContents_Labeled=ruleCurlyContents_Labeled();
 
             state._fsp--;
@@ -27286,7 +26838,7 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
             if ( state.backtracking==0 ) {
                current =iv_ruleCurlyContents_Labeled; 
             }
-            match(input,EOF,FOLLOW_EOF_in_entryRuleCurlyContents_Labeled22080); if (state.failed) return current;
+            match(input,EOF,FOLLOW_EOF_in_entryRuleCurlyContents_Labeled22223); if (state.failed) return current;
 
             }
 
@@ -27307,7 +26859,7 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleCurlyContents_Labeled"
-    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:10294:1: ruleCurlyContents_Labeled returns [EObject current=null] : this_CurlyContentsList_Labeled_0= ruleCurlyContentsList_Labeled ;
+    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:10330:1: ruleCurlyContents_Labeled returns [EObject current=null] : this_CurlyContentsList_Labeled_0= ruleCurlyContentsList_Labeled ;
     public final EObject ruleCurlyContents_Labeled() throws RecognitionException {
         EObject current = null;
 
@@ -27318,15 +26870,15 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
         		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
             
         try {
-            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:10298:28: (this_CurlyContentsList_Labeled_0= ruleCurlyContentsList_Labeled )
-            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:10300:5: this_CurlyContentsList_Labeled_0= ruleCurlyContentsList_Labeled
+            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:10334:28: (this_CurlyContentsList_Labeled_0= ruleCurlyContentsList_Labeled )
+            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:10336:5: this_CurlyContentsList_Labeled_0= ruleCurlyContentsList_Labeled
             {
             if ( state.backtracking==0 ) {
                
                       newCompositeNode(grammarAccess.getCurlyContents_LabeledAccess().getCurlyContentsList_LabeledParserRuleCall()); 
                   
             }
-            pushFollow(FOLLOW_ruleCurlyContentsList_Labeled_in_ruleCurlyContents_Labeled22130);
+            pushFollow(FOLLOW_ruleCurlyContentsList_Labeled_in_ruleCurlyContents_Labeled22273);
             this_CurlyContentsList_Labeled_0=ruleCurlyContentsList_Labeled();
 
             state._fsp--;
@@ -27360,7 +26912,7 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleCurlyContentsList_Labeled"
-    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:10319:1: entryRuleCurlyContentsList_Labeled returns [EObject current=null] : iv_ruleCurlyContentsList_Labeled= ruleCurlyContentsList_Labeled EOF ;
+    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:10355:1: entryRuleCurlyContentsList_Labeled returns [EObject current=null] : iv_ruleCurlyContentsList_Labeled= ruleCurlyContentsList_Labeled EOF ;
     public final EObject entryRuleCurlyContentsList_Labeled() throws RecognitionException {
         EObject current = null;
 
@@ -27371,13 +26923,13 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
         		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
         	
         try {
-            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:10323:2: (iv_ruleCurlyContentsList_Labeled= ruleCurlyContentsList_Labeled EOF )
-            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:10324:2: iv_ruleCurlyContentsList_Labeled= ruleCurlyContentsList_Labeled EOF
+            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:10359:2: (iv_ruleCurlyContentsList_Labeled= ruleCurlyContentsList_Labeled EOF )
+            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:10360:2: iv_ruleCurlyContentsList_Labeled= ruleCurlyContentsList_Labeled EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getCurlyContentsList_LabeledRule()); 
             }
-            pushFollow(FOLLOW_ruleCurlyContentsList_Labeled_in_entryRuleCurlyContentsList_Labeled22174);
+            pushFollow(FOLLOW_ruleCurlyContentsList_Labeled_in_entryRuleCurlyContentsList_Labeled22317);
             iv_ruleCurlyContentsList_Labeled=ruleCurlyContentsList_Labeled();
 
             state._fsp--;
@@ -27385,7 +26937,7 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
             if ( state.backtracking==0 ) {
                current =iv_ruleCurlyContentsList_Labeled; 
             }
-            match(input,EOF,FOLLOW_EOF_in_entryRuleCurlyContentsList_Labeled22184); if (state.failed) return current;
+            match(input,EOF,FOLLOW_EOF_in_entryRuleCurlyContentsList_Labeled22327); if (state.failed) return current;
 
             }
 
@@ -27406,7 +26958,7 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleCurlyContentsList_Labeled"
-    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:10334:1: ruleCurlyContentsList_Labeled returns [EObject current=null] : ( ( (lv_statemts_0_0= ruleCurlyContentB_Labeled ) ) (this_KW_SEMICOLON_1= RULE_KW_SEMICOLON ( (lv_statemts_2_0= ruleCurlyContentB_Labeled ) ) )* (this_KW_SEMICOLON_3= RULE_KW_SEMICOLON )? ) ;
+    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:10370:1: ruleCurlyContentsList_Labeled returns [EObject current=null] : ( ( (lv_statemts_0_0= ruleCurlyContentB_Labeled ) ) (this_KW_SEMICOLON_1= RULE_KW_SEMICOLON ( (lv_statemts_2_0= ruleCurlyContentB_Labeled ) ) )* (this_KW_SEMICOLON_3= RULE_KW_SEMICOLON )? ) ;
     public final EObject ruleCurlyContentsList_Labeled() throws RecognitionException {
         EObject current = null;
 
@@ -27421,24 +26973,24 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
         		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
             
         try {
-            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:10338:28: ( ( ( (lv_statemts_0_0= ruleCurlyContentB_Labeled ) ) (this_KW_SEMICOLON_1= RULE_KW_SEMICOLON ( (lv_statemts_2_0= ruleCurlyContentB_Labeled ) ) )* (this_KW_SEMICOLON_3= RULE_KW_SEMICOLON )? ) )
-            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:10339:1: ( ( (lv_statemts_0_0= ruleCurlyContentB_Labeled ) ) (this_KW_SEMICOLON_1= RULE_KW_SEMICOLON ( (lv_statemts_2_0= ruleCurlyContentB_Labeled ) ) )* (this_KW_SEMICOLON_3= RULE_KW_SEMICOLON )? )
+            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:10374:28: ( ( ( (lv_statemts_0_0= ruleCurlyContentB_Labeled ) ) (this_KW_SEMICOLON_1= RULE_KW_SEMICOLON ( (lv_statemts_2_0= ruleCurlyContentB_Labeled ) ) )* (this_KW_SEMICOLON_3= RULE_KW_SEMICOLON )? ) )
+            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:10375:1: ( ( (lv_statemts_0_0= ruleCurlyContentB_Labeled ) ) (this_KW_SEMICOLON_1= RULE_KW_SEMICOLON ( (lv_statemts_2_0= ruleCurlyContentB_Labeled ) ) )* (this_KW_SEMICOLON_3= RULE_KW_SEMICOLON )? )
             {
-            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:10339:1: ( ( (lv_statemts_0_0= ruleCurlyContentB_Labeled ) ) (this_KW_SEMICOLON_1= RULE_KW_SEMICOLON ( (lv_statemts_2_0= ruleCurlyContentB_Labeled ) ) )* (this_KW_SEMICOLON_3= RULE_KW_SEMICOLON )? )
-            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:10339:2: ( (lv_statemts_0_0= ruleCurlyContentB_Labeled ) ) (this_KW_SEMICOLON_1= RULE_KW_SEMICOLON ( (lv_statemts_2_0= ruleCurlyContentB_Labeled ) ) )* (this_KW_SEMICOLON_3= RULE_KW_SEMICOLON )?
+            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:10375:1: ( ( (lv_statemts_0_0= ruleCurlyContentB_Labeled ) ) (this_KW_SEMICOLON_1= RULE_KW_SEMICOLON ( (lv_statemts_2_0= ruleCurlyContentB_Labeled ) ) )* (this_KW_SEMICOLON_3= RULE_KW_SEMICOLON )? )
+            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:10375:2: ( (lv_statemts_0_0= ruleCurlyContentB_Labeled ) ) (this_KW_SEMICOLON_1= RULE_KW_SEMICOLON ( (lv_statemts_2_0= ruleCurlyContentB_Labeled ) ) )* (this_KW_SEMICOLON_3= RULE_KW_SEMICOLON )?
             {
-            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:10339:2: ( (lv_statemts_0_0= ruleCurlyContentB_Labeled ) )
-            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:10340:1: (lv_statemts_0_0= ruleCurlyContentB_Labeled )
+            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:10375:2: ( (lv_statemts_0_0= ruleCurlyContentB_Labeled ) )
+            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:10376:1: (lv_statemts_0_0= ruleCurlyContentB_Labeled )
             {
-            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:10340:1: (lv_statemts_0_0= ruleCurlyContentB_Labeled )
-            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:10341:3: lv_statemts_0_0= ruleCurlyContentB_Labeled
+            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:10376:1: (lv_statemts_0_0= ruleCurlyContentB_Labeled )
+            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:10377:3: lv_statemts_0_0= ruleCurlyContentB_Labeled
             {
             if ( state.backtracking==0 ) {
                
               	        newCompositeNode(grammarAccess.getCurlyContentsList_LabeledAccess().getStatemtsCurlyContentB_LabeledParserRuleCall_0_0()); 
               	    
             }
-            pushFollow(FOLLOW_ruleCurlyContentB_Labeled_in_ruleCurlyContentsList_Labeled22234);
+            pushFollow(FOLLOW_ruleCurlyContentB_Labeled_in_ruleCurlyContentsList_Labeled22377);
             lv_statemts_0_0=ruleCurlyContentB_Labeled();
 
             state._fsp--;
@@ -27462,45 +27014,45 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:10357:2: (this_KW_SEMICOLON_1= RULE_KW_SEMICOLON ( (lv_statemts_2_0= ruleCurlyContentB_Labeled ) ) )*
-            loop120:
+            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:10393:2: (this_KW_SEMICOLON_1= RULE_KW_SEMICOLON ( (lv_statemts_2_0= ruleCurlyContentB_Labeled ) ) )*
+            loop122:
             do {
-                int alt120=2;
-                int LA120_0 = input.LA(1);
+                int alt122=2;
+                int LA122_0 = input.LA(1);
 
-                if ( (LA120_0==RULE_KW_SEMICOLON) ) {
-                    int LA120_1 = input.LA(2);
+                if ( (LA122_0==RULE_KW_SEMICOLON) ) {
+                    int LA122_1 = input.LA(2);
 
-                    if ( ((LA120_1>=RULE_TK_STRING && LA120_1<=RULE_KW_AT)||(LA120_1>=RULE_KW_RARROW && LA120_1<=RULE_KW_HAT)||LA120_1==RULE_KW_OPAREN||LA120_1==RULE_KW_OBRACK||(LA120_1>=RULE_KW_QUOTE && LA120_1<=RULE_TK_ID)||(LA120_1>=RULE_KW_SHARP && LA120_1<=RULE_TK_PREDOC)||LA120_1==RULE_KW_OCURLY||(LA120_1>=61 && LA120_1<=71)||LA120_1==75||(LA120_1>=79 && LA120_1<=80)||LA120_1==83||(LA120_1>=85 && LA120_1<=97)||(LA120_1>=101 && LA120_1<=102)||(LA120_1>=107 && LA120_1<=117)) ) {
-                        alt120=1;
+                    if ( ((LA122_1>=RULE_TK_STRING && LA122_1<=RULE_KW_AT)||(LA122_1>=RULE_KW_RARROW && LA122_1<=RULE_KW_HAT)||LA122_1==RULE_KW_OPAREN||LA122_1==RULE_KW_OBRACK||(LA122_1>=RULE_KW_QUOTE && LA122_1<=RULE_TK_ID)||(LA122_1>=RULE_KW_SHARP && LA122_1<=RULE_TK_PREDOC)||LA122_1==RULE_KW_OCURLY||(LA122_1>=62 && LA122_1<=72)||LA122_1==76||(LA122_1>=80 && LA122_1<=81)||LA122_1==84||(LA122_1>=86 && LA122_1<=98)||(LA122_1>=102 && LA122_1<=103)||(LA122_1>=108 && LA122_1<=118)) ) {
+                        alt122=1;
                     }
 
 
                 }
 
 
-                switch (alt120) {
+                switch (alt122) {
             	case 1 :
-            	    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:10357:3: this_KW_SEMICOLON_1= RULE_KW_SEMICOLON ( (lv_statemts_2_0= ruleCurlyContentB_Labeled ) )
+            	    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:10393:3: this_KW_SEMICOLON_1= RULE_KW_SEMICOLON ( (lv_statemts_2_0= ruleCurlyContentB_Labeled ) )
             	    {
-            	    this_KW_SEMICOLON_1=(Token)match(input,RULE_KW_SEMICOLON,FOLLOW_RULE_KW_SEMICOLON_in_ruleCurlyContentsList_Labeled22246); if (state.failed) return current;
+            	    this_KW_SEMICOLON_1=(Token)match(input,RULE_KW_SEMICOLON,FOLLOW_RULE_KW_SEMICOLON_in_ruleCurlyContentsList_Labeled22389); if (state.failed) return current;
             	    if ( state.backtracking==0 ) {
             	       
             	          newLeafNode(this_KW_SEMICOLON_1, grammarAccess.getCurlyContentsList_LabeledAccess().getKW_SEMICOLONTerminalRuleCall_1_0()); 
             	          
             	    }
-            	    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:10361:1: ( (lv_statemts_2_0= ruleCurlyContentB_Labeled ) )
-            	    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:10362:1: (lv_statemts_2_0= ruleCurlyContentB_Labeled )
+            	    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:10397:1: ( (lv_statemts_2_0= ruleCurlyContentB_Labeled ) )
+            	    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:10398:1: (lv_statemts_2_0= ruleCurlyContentB_Labeled )
             	    {
-            	    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:10362:1: (lv_statemts_2_0= ruleCurlyContentB_Labeled )
-            	    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:10363:3: lv_statemts_2_0= ruleCurlyContentB_Labeled
+            	    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:10398:1: (lv_statemts_2_0= ruleCurlyContentB_Labeled )
+            	    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:10399:3: lv_statemts_2_0= ruleCurlyContentB_Labeled
             	    {
             	    if ( state.backtracking==0 ) {
             	       
             	      	        newCompositeNode(grammarAccess.getCurlyContentsList_LabeledAccess().getStatemtsCurlyContentB_LabeledParserRuleCall_1_1_0()); 
             	      	    
             	    }
-            	    pushFollow(FOLLOW_ruleCurlyContentB_Labeled_in_ruleCurlyContentsList_Labeled22266);
+            	    pushFollow(FOLLOW_ruleCurlyContentB_Labeled_in_ruleCurlyContentsList_Labeled22409);
             	    lv_statemts_2_0=ruleCurlyContentB_Labeled();
 
             	    state._fsp--;
@@ -27529,22 +27081,22 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
             	    break;
 
             	default :
-            	    break loop120;
+            	    break loop122;
                 }
             } while (true);
 
-            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:10379:4: (this_KW_SEMICOLON_3= RULE_KW_SEMICOLON )?
-            int alt121=2;
-            int LA121_0 = input.LA(1);
+            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:10415:4: (this_KW_SEMICOLON_3= RULE_KW_SEMICOLON )?
+            int alt123=2;
+            int LA123_0 = input.LA(1);
 
-            if ( (LA121_0==RULE_KW_SEMICOLON) ) {
-                alt121=1;
+            if ( (LA123_0==RULE_KW_SEMICOLON) ) {
+                alt123=1;
             }
-            switch (alt121) {
+            switch (alt123) {
                 case 1 :
-                    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:10379:5: this_KW_SEMICOLON_3= RULE_KW_SEMICOLON
+                    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:10415:5: this_KW_SEMICOLON_3= RULE_KW_SEMICOLON
                     {
-                    this_KW_SEMICOLON_3=(Token)match(input,RULE_KW_SEMICOLON,FOLLOW_RULE_KW_SEMICOLON_in_ruleCurlyContentsList_Labeled22280); if (state.failed) return current;
+                    this_KW_SEMICOLON_3=(Token)match(input,RULE_KW_SEMICOLON,FOLLOW_RULE_KW_SEMICOLON_in_ruleCurlyContentsList_Labeled22423); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
                        
                           newLeafNode(this_KW_SEMICOLON_3, grammarAccess.getCurlyContentsList_LabeledAccess().getKW_SEMICOLONTerminalRuleCall_2()); 
@@ -27582,7 +27134,7 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleCurlyContentB_Labeled"
-    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:10394:1: entryRuleCurlyContentB_Labeled returns [EObject current=null] : iv_ruleCurlyContentB_Labeled= ruleCurlyContentB_Labeled EOF ;
+    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:10430:1: entryRuleCurlyContentB_Labeled returns [EObject current=null] : iv_ruleCurlyContentB_Labeled= ruleCurlyContentB_Labeled EOF ;
     public final EObject entryRuleCurlyContentB_Labeled() throws RecognitionException {
         EObject current = null;
 
@@ -27593,13 +27145,13 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
         		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
         	
         try {
-            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:10398:2: (iv_ruleCurlyContentB_Labeled= ruleCurlyContentB_Labeled EOF )
-            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:10399:2: iv_ruleCurlyContentB_Labeled= ruleCurlyContentB_Labeled EOF
+            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:10434:2: (iv_ruleCurlyContentB_Labeled= ruleCurlyContentB_Labeled EOF )
+            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:10435:2: iv_ruleCurlyContentB_Labeled= ruleCurlyContentB_Labeled EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getCurlyContentB_LabeledRule()); 
             }
-            pushFollow(FOLLOW_ruleCurlyContentB_Labeled_in_entryRuleCurlyContentB_Labeled22327);
+            pushFollow(FOLLOW_ruleCurlyContentB_Labeled_in_entryRuleCurlyContentB_Labeled22470);
             iv_ruleCurlyContentB_Labeled=ruleCurlyContentB_Labeled();
 
             state._fsp--;
@@ -27607,7 +27159,7 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
             if ( state.backtracking==0 ) {
                current =iv_ruleCurlyContentB_Labeled; 
             }
-            match(input,EOF,FOLLOW_EOF_in_entryRuleCurlyContentB_Labeled22337); if (state.failed) return current;
+            match(input,EOF,FOLLOW_EOF_in_entryRuleCurlyContentB_Labeled22480); if (state.failed) return current;
 
             }
 
@@ -27628,7 +27180,7 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleCurlyContentB_Labeled"
-    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:10409:1: ruleCurlyContentB_Labeled returns [EObject current=null] : ( ( (lv_pred_0_0= rulePreDocument ) ) ( (lv_l_1_0= ruleLabeled ) ) ( (lv_pd_2_0= rulePostDocument ) ) ) ;
+    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:10445:1: ruleCurlyContentB_Labeled returns [EObject current=null] : ( ( (lv_pred_0_0= rulePreDocument ) ) ( (lv_l_1_0= ruleLabeled ) ) ( (lv_pd_2_0= rulePostDocument ) ) ) ;
     public final EObject ruleCurlyContentB_Labeled() throws RecognitionException {
         EObject current = null;
 
@@ -27643,24 +27195,24 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
         		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
             
         try {
-            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:10413:28: ( ( ( (lv_pred_0_0= rulePreDocument ) ) ( (lv_l_1_0= ruleLabeled ) ) ( (lv_pd_2_0= rulePostDocument ) ) ) )
-            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:10414:1: ( ( (lv_pred_0_0= rulePreDocument ) ) ( (lv_l_1_0= ruleLabeled ) ) ( (lv_pd_2_0= rulePostDocument ) ) )
+            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:10449:28: ( ( ( (lv_pred_0_0= rulePreDocument ) ) ( (lv_l_1_0= ruleLabeled ) ) ( (lv_pd_2_0= rulePostDocument ) ) ) )
+            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:10450:1: ( ( (lv_pred_0_0= rulePreDocument ) ) ( (lv_l_1_0= ruleLabeled ) ) ( (lv_pd_2_0= rulePostDocument ) ) )
             {
-            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:10414:1: ( ( (lv_pred_0_0= rulePreDocument ) ) ( (lv_l_1_0= ruleLabeled ) ) ( (lv_pd_2_0= rulePostDocument ) ) )
-            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:10414:2: ( (lv_pred_0_0= rulePreDocument ) ) ( (lv_l_1_0= ruleLabeled ) ) ( (lv_pd_2_0= rulePostDocument ) )
+            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:10450:1: ( ( (lv_pred_0_0= rulePreDocument ) ) ( (lv_l_1_0= ruleLabeled ) ) ( (lv_pd_2_0= rulePostDocument ) ) )
+            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:10450:2: ( (lv_pred_0_0= rulePreDocument ) ) ( (lv_l_1_0= ruleLabeled ) ) ( (lv_pd_2_0= rulePostDocument ) )
             {
-            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:10414:2: ( (lv_pred_0_0= rulePreDocument ) )
-            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:10415:1: (lv_pred_0_0= rulePreDocument )
+            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:10450:2: ( (lv_pred_0_0= rulePreDocument ) )
+            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:10451:1: (lv_pred_0_0= rulePreDocument )
             {
-            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:10415:1: (lv_pred_0_0= rulePreDocument )
-            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:10416:3: lv_pred_0_0= rulePreDocument
+            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:10451:1: (lv_pred_0_0= rulePreDocument )
+            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:10452:3: lv_pred_0_0= rulePreDocument
             {
             if ( state.backtracking==0 ) {
                
               	        newCompositeNode(grammarAccess.getCurlyContentB_LabeledAccess().getPredPreDocumentParserRuleCall_0_0()); 
               	    
             }
-            pushFollow(FOLLOW_rulePreDocument_in_ruleCurlyContentB_Labeled22387);
+            pushFollow(FOLLOW_rulePreDocument_in_ruleCurlyContentB_Labeled22530);
             lv_pred_0_0=rulePreDocument();
 
             state._fsp--;
@@ -27684,18 +27236,18 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:10432:2: ( (lv_l_1_0= ruleLabeled ) )
-            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:10433:1: (lv_l_1_0= ruleLabeled )
+            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:10468:2: ( (lv_l_1_0= ruleLabeled ) )
+            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:10469:1: (lv_l_1_0= ruleLabeled )
             {
-            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:10433:1: (lv_l_1_0= ruleLabeled )
-            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:10434:3: lv_l_1_0= ruleLabeled
+            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:10469:1: (lv_l_1_0= ruleLabeled )
+            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:10470:3: lv_l_1_0= ruleLabeled
             {
             if ( state.backtracking==0 ) {
                
               	        newCompositeNode(grammarAccess.getCurlyContentB_LabeledAccess().getLLabeledParserRuleCall_1_0()); 
               	    
             }
-            pushFollow(FOLLOW_ruleLabeled_in_ruleCurlyContentB_Labeled22408);
+            pushFollow(FOLLOW_ruleLabeled_in_ruleCurlyContentB_Labeled22551);
             lv_l_1_0=ruleLabeled();
 
             state._fsp--;
@@ -27719,18 +27271,18 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:10450:2: ( (lv_pd_2_0= rulePostDocument ) )
-            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:10451:1: (lv_pd_2_0= rulePostDocument )
+            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:10486:2: ( (lv_pd_2_0= rulePostDocument ) )
+            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:10487:1: (lv_pd_2_0= rulePostDocument )
             {
-            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:10451:1: (lv_pd_2_0= rulePostDocument )
-            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:10452:3: lv_pd_2_0= rulePostDocument
+            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:10487:1: (lv_pd_2_0= rulePostDocument )
+            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:10488:3: lv_pd_2_0= rulePostDocument
             {
             if ( state.backtracking==0 ) {
                
               	        newCompositeNode(grammarAccess.getCurlyContentB_LabeledAccess().getPdPostDocumentParserRuleCall_2_0()); 
               	    
             }
-            pushFollow(FOLLOW_rulePostDocument_in_ruleCurlyContentB_Labeled22429);
+            pushFollow(FOLLOW_rulePostDocument_in_ruleCurlyContentB_Labeled22572);
             lv_pd_2_0=rulePostDocument();
 
             state._fsp--;
@@ -27786,15 +27338,15 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
         // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:692:8: ( 'export' ( ( ruleSig ) )? ( ( ruleToPart ) ) )
         // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:692:10: 'export' ( ( ruleSig ) )? ( ( ruleToPart ) )
         {
-        match(input,71,FOLLOW_71_in_synpred1_InternalEditor1290); if (state.failed) return ;
+        match(input,72,FOLLOW_72_in_synpred1_InternalEditor1290); if (state.failed) return ;
         // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:693:1: ( ( ruleSig ) )?
-        int alt122=2;
-        int LA122_0 = input.LA(1);
+        int alt124=2;
+        int LA124_0 = input.LA(1);
 
-        if ( (LA122_0==RULE_TK_STRING||(LA122_0>=RULE_KW_RARROW && LA122_0<=RULE_KW_HAT)||LA122_0==RULE_KW_OPAREN||LA122_0==RULE_KW_OBRACK||(LA122_0>=RULE_KW_QUOTE && LA122_0<=RULE_TK_ID)||(LA122_0>=RULE_KW_SHARP && LA122_0<=RULE_TK_INT)||LA122_0==RULE_KW_OCURLY||(LA122_0>=107 && LA122_0<=117)) ) {
-            alt122=1;
+        if ( (LA124_0==RULE_TK_STRING||(LA124_0>=RULE_KW_RARROW && LA124_0<=RULE_KW_HAT)||LA124_0==RULE_KW_OPAREN||LA124_0==RULE_KW_OBRACK||(LA124_0>=RULE_KW_QUOTE && LA124_0<=RULE_TK_ID)||(LA124_0>=RULE_KW_SHARP && LA124_0<=RULE_TK_FLOAT)||LA124_0==RULE_KW_OCURLY||(LA124_0>=108 && LA124_0<=118)) ) {
+            alt124=1;
         }
-        switch (alt122) {
+        switch (alt124) {
             case 1 :
                 // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:694:1: ( ruleSig )
                 {
@@ -27848,15 +27400,15 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
         // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:742:8: ( 'export' ( ( ruleSig ) )? ( ( ruleFromPart ) ) )
         // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:742:10: 'export' ( ( ruleSig ) )? ( ( ruleFromPart ) )
         {
-        match(input,71,FOLLOW_71_in_synpred2_InternalEditor1383); if (state.failed) return ;
+        match(input,72,FOLLOW_72_in_synpred2_InternalEditor1383); if (state.failed) return ;
         // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:743:1: ( ( ruleSig ) )?
-        int alt123=2;
-        int LA123_0 = input.LA(1);
+        int alt125=2;
+        int LA125_0 = input.LA(1);
 
-        if ( (LA123_0==RULE_TK_STRING||(LA123_0>=RULE_KW_RARROW && LA123_0<=RULE_KW_HAT)||LA123_0==RULE_KW_OPAREN||LA123_0==RULE_KW_OBRACK||(LA123_0>=RULE_KW_QUOTE && LA123_0<=RULE_TK_ID)||(LA123_0>=RULE_KW_SHARP && LA123_0<=RULE_TK_INT)||LA123_0==RULE_KW_OCURLY||(LA123_0>=107 && LA123_0<=117)) ) {
-            alt123=1;
+        if ( (LA125_0==RULE_TK_STRING||(LA125_0>=RULE_KW_RARROW && LA125_0<=RULE_KW_HAT)||LA125_0==RULE_KW_OPAREN||LA125_0==RULE_KW_OBRACK||(LA125_0>=RULE_KW_QUOTE && LA125_0<=RULE_TK_ID)||(LA125_0>=RULE_KW_SHARP && LA125_0<=RULE_TK_FLOAT)||LA125_0==RULE_KW_OCURLY||(LA125_0>=108 && LA125_0<=118)) ) {
+            alt125=1;
         }
-        switch (alt123) {
+        switch (alt125) {
             case 1 :
                 // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:744:1: ( ruleSig )
                 {
@@ -27910,7 +27462,7 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
         // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:1149:3: ( 'where' ( ( ruleCommaItem ) ) )
         // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:1149:5: 'where' ( ( ruleCommaItem ) )
         {
-        match(input,74,FOLLOW_74_in_synpred3_InternalEditor2402); if (state.failed) return ;
+        match(input,75,FOLLOW_75_in_synpred3_InternalEditor2402); if (state.failed) return ;
         // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:1150:1: ( ( ruleCommaItem ) )
         // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:1151:1: ( ruleCommaItem )
         {
@@ -28160,13 +27712,13 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
         // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:2120:4: ( 'if' ruleCommaItem 'then' ( ( ruleBinding_AnyStatement ) ) )
         // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:2120:6: 'if' ruleCommaItem 'then' ( ( ruleBinding_AnyStatement ) )
         {
-        match(input,75,FOLLOW_75_in_synpred7_InternalEditor4426); if (state.failed) return ;
+        match(input,76,FOLLOW_76_in_synpred7_InternalEditor4426); if (state.failed) return ;
         pushFollow(FOLLOW_ruleCommaItem_in_synpred7_InternalEditor4430);
         ruleCommaItem();
 
         state._fsp--;
         if (state.failed) return ;
-        match(input,76,FOLLOW_76_in_synpred7_InternalEditor4432); if (state.failed) return ;
+        match(input,77,FOLLOW_77_in_synpred7_InternalEditor4432); if (state.failed) return ;
         // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:2122:1: ( ( ruleBinding_AnyStatement ) )
         // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:2123:1: ( ruleBinding_AnyStatement )
         {
@@ -28205,7 +27757,7 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
 
         state._fsp--;
         if (state.failed) return ;
-        match(input,79,FOLLOW_79_in_synpred9_InternalEditor4957); if (state.failed) return ;
+        match(input,80,FOLLOW_80_in_synpred9_InternalEditor4957); if (state.failed) return ;
         // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:2374:1: ( ( ruleBinding_AnyStatement ) )
         // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:2375:1: ( ruleBinding_AnyStatement )
         {
@@ -28250,7 +27802,7 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
         // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:3183:1: ( 'repeat' )
         // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:3184:2: 'repeat'
         {
-        match(input,79,FOLLOW_79_in_synpred11_InternalEditor6411); if (state.failed) return ;
+        match(input,80,FOLLOW_80_in_synpred11_InternalEditor6411); if (state.failed) return ;
 
         }
 
@@ -28362,13 +27914,13 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
         // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:5915:9: ( ( ruleE15 ) )? ( ( 'with' ) ) ( ( ruleDeclMolecule ) )
         {
         // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:5915:9: ( ( ruleE15 ) )?
-        int alt124=2;
-        int LA124_0 = input.LA(1);
+        int alt126=2;
+        int LA126_0 = input.LA(1);
 
-        if ( (LA124_0==RULE_TK_STRING||LA124_0==RULE_KW_OPAREN||LA124_0==RULE_KW_OBRACK||(LA124_0>=RULE_KW_QUOTE && LA124_0<=RULE_TK_ID)||(LA124_0>=RULE_KW_SHARP && LA124_0<=RULE_TK_INT)||LA124_0==117) ) {
-            alt124=1;
+        if ( (LA126_0==RULE_TK_STRING||LA126_0==RULE_KW_OPAREN||LA126_0==RULE_KW_OBRACK||(LA126_0>=RULE_KW_QUOTE && LA126_0<=RULE_TK_ID)||(LA126_0>=RULE_KW_SHARP && LA126_0<=RULE_TK_FLOAT)||LA126_0==118) ) {
+            alt126=1;
         }
-        switch (alt124) {
+        switch (alt126) {
             case 1 :
                 // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:5916:1: ( ruleE15 )
                 {
@@ -28395,7 +27947,7 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
         // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:5920:1: ( 'with' )
         // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:5921:2: 'with'
         {
-        match(input,107,FOLLOW_107_in_synpred15_InternalEditor11989); if (state.failed) return ;
+        match(input,108,FOLLOW_108_in_synpred15_InternalEditor11989); if (state.failed) return ;
 
         }
 
@@ -28436,13 +27988,13 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
         // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:5981:9: ( ( ruleE15 ) )? ( ( 'add' ) ) ( ( ruleDeclMolecule ) )
         {
         // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:5981:9: ( ( ruleE15 ) )?
-        int alt125=2;
-        int LA125_0 = input.LA(1);
+        int alt127=2;
+        int LA127_0 = input.LA(1);
 
-        if ( (LA125_0==RULE_TK_STRING||LA125_0==RULE_KW_OPAREN||LA125_0==RULE_KW_OBRACK||(LA125_0>=RULE_KW_QUOTE && LA125_0<=RULE_TK_ID)||(LA125_0>=RULE_KW_SHARP && LA125_0<=RULE_TK_INT)||LA125_0==117) ) {
-            alt125=1;
+        if ( (LA127_0==RULE_TK_STRING||LA127_0==RULE_KW_OPAREN||LA127_0==RULE_KW_OBRACK||(LA127_0>=RULE_KW_QUOTE && LA127_0<=RULE_TK_ID)||(LA127_0>=RULE_KW_SHARP && LA127_0<=RULE_TK_FLOAT)||LA127_0==118) ) {
+            alt127=1;
         }
-        switch (alt125) {
+        switch (alt127) {
             case 1 :
                 // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:5982:1: ( ruleE15 )
                 {
@@ -28469,7 +28021,7 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
         // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:5986:1: ( 'add' )
         // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:5987:2: 'add'
         {
-        match(input,108,FOLLOW_108_in_synpred16_InternalEditor12111); if (state.failed) return ;
+        match(input,109,FOLLOW_109_in_synpred16_InternalEditor12111); if (state.failed) return ;
 
         }
 
@@ -28532,7 +28084,7 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
         // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:6052:1: ( 'except' )
         // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:6053:2: 'except'
         {
-        match(input,94,FOLLOW_94_in_synpred17_InternalEditor12232); if (state.failed) return ;
+        match(input,95,FOLLOW_95_in_synpred17_InternalEditor12232); if (state.failed) return ;
 
         }
 
@@ -28595,7 +28147,7 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
         // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:6118:1: ( 'throw' )
         // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:6119:2: 'throw'
         {
-        match(input,95,FOLLOW_95_in_synpred18_InternalEditor12352); if (state.failed) return ;
+        match(input,96,FOLLOW_96_in_synpred18_InternalEditor12352); if (state.failed) return ;
 
         }
 
@@ -28653,17 +28205,17 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
         }
 
         // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:7698:2: ( ( ruleBlockEnclosure ) )*
-        loop126:
+        loop128:
         do {
-            int alt126=2;
-            int LA126_0 = input.LA(1);
+            int alt128=2;
+            int LA128_0 = input.LA(1);
 
-            if ( (LA126_0==RULE_KW_OPAREN||LA126_0==RULE_KW_OBRACK||LA126_0==RULE_KW_QUOTE||LA126_0==RULE_KW_OCURLY) ) {
-                alt126=1;
+            if ( (LA128_0==RULE_KW_OPAREN||LA128_0==RULE_KW_OBRACK||LA128_0==RULE_KW_QUOTE||LA128_0==RULE_KW_OCURLY) ) {
+                alt128=1;
             }
 
 
-            switch (alt126) {
+            switch (alt128) {
         	case 1 :
         	    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:7699:1: ( ruleBlockEnclosure )
         	    {
@@ -28683,7 +28235,7 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
         	    break;
 
         	default :
-        	    break loop126;
+        	    break loop128;
             }
         } while (true);
 
@@ -28712,30 +28264,32 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
 
     // $ANTLR start synpred21_InternalEditor
     public final void synpred21_InternalEditor_fragment() throws RecognitionException {   
-        // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9210:2: ( ( RULE_KW_DOLLAR ( ( ruleOpQualTail ) ) ) )
-        // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9210:3: ( RULE_KW_DOLLAR ( ( ruleOpQualTail ) ) )
+        // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:8790:3: ( ( ( RULE_TK_INT RULE_KW_DOT )? RULE_TK_FLOAT ) )
+        // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:8790:4: ( ( RULE_TK_INT RULE_KW_DOT )? RULE_TK_FLOAT )
         {
-        // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9210:3: ( RULE_KW_DOLLAR ( ( ruleOpQualTail ) ) )
-        // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9210:5: RULE_KW_DOLLAR ( ( ruleOpQualTail ) )
+        // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:8790:4: ( ( RULE_TK_INT RULE_KW_DOT )? RULE_TK_FLOAT )
+        // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:8790:5: ( RULE_TK_INT RULE_KW_DOT )? RULE_TK_FLOAT
         {
-        match(input,RULE_KW_DOLLAR,FOLLOW_RULE_KW_DOLLAR_in_synpred21_InternalEditor19615); if (state.failed) return ;
-        // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9210:19: ( ( ruleOpQualTail ) )
-        // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9211:1: ( ruleOpQualTail )
-        {
-        // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9211:1: ( ruleOpQualTail )
-        // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9212:1: ruleOpQualTail
-        {
-        pushFollow(FOLLOW_ruleOpQualTail_in_synpred21_InternalEditor19620);
-        ruleOpQualTail();
+        // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:8790:5: ( RULE_TK_INT RULE_KW_DOT )?
+        int alt129=2;
+        int LA129_0 = input.LA(1);
 
-        state._fsp--;
-        if (state.failed) return ;
+        if ( (LA129_0==RULE_TK_INT) ) {
+            alt129=1;
+        }
+        switch (alt129) {
+            case 1 :
+                // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:8790:7: RULE_TK_INT RULE_KW_DOT
+                {
+                match(input,RULE_TK_INT,FOLLOW_RULE_TK_INT_in_synpred21_InternalEditor18585); if (state.failed) return ;
+                match(input,RULE_KW_DOT,FOLLOW_RULE_KW_DOT_in_synpred21_InternalEditor18587); if (state.failed) return ;
+
+                }
+                break;
 
         }
 
-
-        }
-
+        match(input,RULE_TK_FLOAT,FOLLOW_RULE_TK_FLOAT_in_synpred21_InternalEditor18591); if (state.failed) return ;
 
         }
 
@@ -28746,20 +28300,38 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
 
     // $ANTLR start synpred22_InternalEditor
     public final void synpred22_InternalEditor_fragment() throws RecognitionException {   
-        // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9281:2: ( ( RULE_KW_DOLLAR ( ( ruleOpQualTail ) ) ) )
-        // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9281:3: ( RULE_KW_DOLLAR ( ( ruleOpQualTail ) ) )
+        // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:8812:8: ( ( RULE_TK_INT RULE_KW_DOT ) )
+        // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:8812:9: ( RULE_TK_INT RULE_KW_DOT )
         {
-        // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9281:3: ( RULE_KW_DOLLAR ( ( ruleOpQualTail ) ) )
-        // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9281:5: RULE_KW_DOLLAR ( ( ruleOpQualTail ) )
+        // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:8812:9: ( RULE_TK_INT RULE_KW_DOT )
+        // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:8812:11: RULE_TK_INT RULE_KW_DOT
         {
-        match(input,RULE_KW_DOLLAR,FOLLOW_RULE_KW_DOLLAR_in_synpred22_InternalEditor19776); if (state.failed) return ;
-        // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9281:19: ( ( ruleOpQualTail ) )
-        // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9282:1: ( ruleOpQualTail )
+        match(input,RULE_TK_INT,FOLLOW_RULE_TK_INT_in_synpred22_InternalEditor18672); if (state.failed) return ;
+        match(input,RULE_KW_DOT,FOLLOW_RULE_KW_DOT_in_synpred22_InternalEditor18674); if (state.failed) return ;
+
+        }
+
+
+        }
+    }
+    // $ANTLR end synpred22_InternalEditor
+
+    // $ANTLR start synpred23_InternalEditor
+    public final void synpred23_InternalEditor_fragment() throws RecognitionException {   
+        // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9246:2: ( ( RULE_KW_DOLLAR ( ( ruleOpQualTail ) ) ) )
+        // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9246:3: ( RULE_KW_DOLLAR ( ( ruleOpQualTail ) ) )
         {
-        // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9282:1: ( ruleOpQualTail )
-        // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9283:1: ruleOpQualTail
+        // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9246:3: ( RULE_KW_DOLLAR ( ( ruleOpQualTail ) ) )
+        // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9246:5: RULE_KW_DOLLAR ( ( ruleOpQualTail ) )
         {
-        pushFollow(FOLLOW_ruleOpQualTail_in_synpred22_InternalEditor19781);
+        match(input,RULE_KW_DOLLAR,FOLLOW_RULE_KW_DOLLAR_in_synpred23_InternalEditor19758); if (state.failed) return ;
+        // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9246:19: ( ( ruleOpQualTail ) )
+        // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9247:1: ( ruleOpQualTail )
+        {
+        // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9247:1: ( ruleOpQualTail )
+        // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9248:1: ruleOpQualTail
+        {
+        pushFollow(FOLLOW_ruleOpQualTail_in_synpred23_InternalEditor19763);
         ruleOpQualTail();
 
         state._fsp--;
@@ -28776,7 +28348,41 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
 
         }
     }
-    // $ANTLR end synpred22_InternalEditor
+    // $ANTLR end synpred23_InternalEditor
+
+    // $ANTLR start synpred24_InternalEditor
+    public final void synpred24_InternalEditor_fragment() throws RecognitionException {   
+        // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9317:2: ( ( RULE_KW_DOLLAR ( ( ruleOpQualTail ) ) ) )
+        // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9317:3: ( RULE_KW_DOLLAR ( ( ruleOpQualTail ) ) )
+        {
+        // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9317:3: ( RULE_KW_DOLLAR ( ( ruleOpQualTail ) ) )
+        // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9317:5: RULE_KW_DOLLAR ( ( ruleOpQualTail ) )
+        {
+        match(input,RULE_KW_DOLLAR,FOLLOW_RULE_KW_DOLLAR_in_synpred24_InternalEditor19919); if (state.failed) return ;
+        // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9317:19: ( ( ruleOpQualTail ) )
+        // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9318:1: ( ruleOpQualTail )
+        {
+        // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9318:1: ( ruleOpQualTail )
+        // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:9319:1: ruleOpQualTail
+        {
+        pushFollow(FOLLOW_ruleOpQualTail_in_synpred24_InternalEditor19924);
+        ruleOpQualTail();
+
+        state._fsp--;
+        if (state.failed) return ;
+
+        }
+
+
+        }
+
+
+        }
+
+
+        }
+    }
+    // $ANTLR end synpred24_InternalEditor
 
     // Delegated rules
 
@@ -28813,6 +28419,20 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
         int start = input.mark();
         try {
             synpred7_InternalEditor_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !state.failed;
+        input.rewind(start);
+        state.backtracking--;
+        state.failed=false;
+        return success;
+    }
+    public final boolean synpred24_InternalEditor() {
+        state.backtracking++;
+        int start = input.mark();
+        try {
+            synpred24_InternalEditor_fragment(); // can never throw exception
         } catch (RecognitionException re) {
             System.err.println("impossible: "+re);
         }
@@ -28911,6 +28531,20 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
         int start = input.mark();
         try {
             synpred11_InternalEditor_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !state.failed;
+        input.rewind(start);
+        state.backtracking--;
+        state.failed=false;
+        return success;
+    }
+    public final boolean synpred23_InternalEditor() {
+        state.backtracking++;
+        int start = input.mark();
+        try {
+            synpred23_InternalEditor_fragment(); // can never throw exception
         } catch (RecognitionException re) {
             System.err.println("impossible: "+re);
         }
@@ -29073,14 +28707,15 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
     protected DFA66 dfa66 = new DFA66(this);
     protected DFA70 dfa70 = new DFA70(this);
     protected DFA87 dfa87 = new DFA87(this);
+    protected DFA90 dfa90 = new DFA90(this);
     static final String DFA8_eotS =
         "\14\uffff";
     static final String DFA8_eofS =
         "\14\uffff";
     static final String DFA8_minS =
-        "\1\75\13\uffff";
+        "\1\76\13\uffff";
     static final String DFA8_maxS =
-        "\1\107\13\uffff";
+        "\1\110\13\uffff";
     static final String DFA8_acceptS =
         "\1\uffff\1\1\1\2\1\3\1\4\1\5\1\6\1\7\1\10\1\11\1\12\1\13";
     static final String DFA8_specialS =
@@ -29134,27 +28769,28 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
         }
     }
     static final String DFA20_eotS =
-        "\100\uffff";
+        "\101\uffff";
     static final String DFA20_eofS =
-        "\100\uffff";
+        "\101\uffff";
     static final String DFA20_minS =
-        "\1\4\53\0\24\uffff";
+        "\1\4\54\0\24\uffff";
     static final String DFA20_maxS =
-        "\1\165\53\0\24\uffff";
+        "\1\166\54\0\24\uffff";
     static final String DFA20_acceptS =
-        "\54\uffff\1\2\22\uffff\1\1";
+        "\55\uffff\1\2\22\uffff\1\1";
     static final String DFA20_specialS =
         "\1\uffff\1\0\1\1\1\2\1\3\1\4\1\5\1\6\1\7\1\10\1\11\1\12\1\13\1\14"+
         "\1\15\1\16\1\17\1\20\1\21\1\22\1\23\1\24\1\25\1\26\1\27\1\30\1\31"+
         "\1\32\1\33\1\34\1\35\1\36\1\37\1\40\1\41\1\42\1\43\1\44\1\45\1\46"+
-        "\1\47\1\50\1\51\1\52\24\uffff}>";
+        "\1\47\1\50\1\51\1\52\1\53\24\uffff}>";
     static final String[] DFA20_transitionS = {
-            "\1\45\13\uffff\1\1\1\2\1\3\1\4\1\5\1\6\1\7\1\10\1\11\1\12\1"+
+            "\1\46\13\uffff\1\1\1\2\1\3\1\4\1\5\1\6\1\7\1\10\1\11\1\12\1"+
             "\13\1\14\1\15\1\16\1\22\1\24\1\25\1\26\1\33\1\34\1\35\1\36\1"+
-            "\37\1\uffff\1\46\1\uffff\1\47\1\uffff\1\50\1\41\1\uffff\1\42"+
-            "\1\43\1\44\3\uffff\1\53\25\uffff\1\54\3\uffff\2\54\2\uffff\1"+
-            "\54\1\uffff\15\54\3\uffff\2\54\4\uffff\1\51\1\52\1\17\1\20\1"+
-            "\21\1\23\1\27\1\30\1\31\1\32\1\40",
+            "\37\1\uffff\1\47\1\uffff\1\50\1\uffff\1\51\1\41\1\uffff\1\42"+
+            "\1\43\1\44\1\45\3\uffff\1\54\25\uffff\1\55\3\uffff\2\55\2\uffff"+
+            "\1\55\1\uffff\15\55\3\uffff\2\55\4\uffff\1\52\1\53\1\17\1\20"+
+            "\1\21\1\23\1\27\1\30\1\31\1\32\1\40",
+            "\1\uffff",
             "\1\uffff",
             "\1\uffff",
             "\1\uffff",
@@ -29263,9 +28899,9 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
                         int index20_1 = input.index();
                         input.rewind();
                         s = -1;
-                        if ( (synpred4_InternalEditor()) ) {s = 63;}
+                        if ( (synpred4_InternalEditor()) ) {s = 64;}
 
-                        else if ( (true) ) {s = 44;}
+                        else if ( (true) ) {s = 45;}
 
                          
                         input.seek(index20_1);
@@ -29278,9 +28914,9 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
                         int index20_2 = input.index();
                         input.rewind();
                         s = -1;
-                        if ( (synpred4_InternalEditor()) ) {s = 63;}
+                        if ( (synpred4_InternalEditor()) ) {s = 64;}
 
-                        else if ( (true) ) {s = 44;}
+                        else if ( (true) ) {s = 45;}
 
                          
                         input.seek(index20_2);
@@ -29293,9 +28929,9 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
                         int index20_3 = input.index();
                         input.rewind();
                         s = -1;
-                        if ( (synpred4_InternalEditor()) ) {s = 63;}
+                        if ( (synpred4_InternalEditor()) ) {s = 64;}
 
-                        else if ( (true) ) {s = 44;}
+                        else if ( (true) ) {s = 45;}
 
                          
                         input.seek(index20_3);
@@ -29308,9 +28944,9 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
                         int index20_4 = input.index();
                         input.rewind();
                         s = -1;
-                        if ( (synpred4_InternalEditor()) ) {s = 63;}
+                        if ( (synpred4_InternalEditor()) ) {s = 64;}
 
-                        else if ( (true) ) {s = 44;}
+                        else if ( (true) ) {s = 45;}
 
                          
                         input.seek(index20_4);
@@ -29323,9 +28959,9 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
                         int index20_5 = input.index();
                         input.rewind();
                         s = -1;
-                        if ( (synpred4_InternalEditor()) ) {s = 63;}
+                        if ( (synpred4_InternalEditor()) ) {s = 64;}
 
-                        else if ( (true) ) {s = 44;}
+                        else if ( (true) ) {s = 45;}
 
                          
                         input.seek(index20_5);
@@ -29338,9 +28974,9 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
                         int index20_6 = input.index();
                         input.rewind();
                         s = -1;
-                        if ( (synpred4_InternalEditor()) ) {s = 63;}
+                        if ( (synpred4_InternalEditor()) ) {s = 64;}
 
-                        else if ( (true) ) {s = 44;}
+                        else if ( (true) ) {s = 45;}
 
                          
                         input.seek(index20_6);
@@ -29353,9 +28989,9 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
                         int index20_7 = input.index();
                         input.rewind();
                         s = -1;
-                        if ( (synpred4_InternalEditor()) ) {s = 63;}
+                        if ( (synpred4_InternalEditor()) ) {s = 64;}
 
-                        else if ( (true) ) {s = 44;}
+                        else if ( (true) ) {s = 45;}
 
                          
                         input.seek(index20_7);
@@ -29368,9 +29004,9 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
                         int index20_8 = input.index();
                         input.rewind();
                         s = -1;
-                        if ( (synpred4_InternalEditor()) ) {s = 63;}
+                        if ( (synpred4_InternalEditor()) ) {s = 64;}
 
-                        else if ( (true) ) {s = 44;}
+                        else if ( (true) ) {s = 45;}
 
                          
                         input.seek(index20_8);
@@ -29383,9 +29019,9 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
                         int index20_9 = input.index();
                         input.rewind();
                         s = -1;
-                        if ( (synpred4_InternalEditor()) ) {s = 63;}
+                        if ( (synpred4_InternalEditor()) ) {s = 64;}
 
-                        else if ( (true) ) {s = 44;}
+                        else if ( (true) ) {s = 45;}
 
                          
                         input.seek(index20_9);
@@ -29398,9 +29034,9 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
                         int index20_10 = input.index();
                         input.rewind();
                         s = -1;
-                        if ( (synpred4_InternalEditor()) ) {s = 63;}
+                        if ( (synpred4_InternalEditor()) ) {s = 64;}
 
-                        else if ( (true) ) {s = 44;}
+                        else if ( (true) ) {s = 45;}
 
                          
                         input.seek(index20_10);
@@ -29413,9 +29049,9 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
                         int index20_11 = input.index();
                         input.rewind();
                         s = -1;
-                        if ( (synpred4_InternalEditor()) ) {s = 63;}
+                        if ( (synpred4_InternalEditor()) ) {s = 64;}
 
-                        else if ( (true) ) {s = 44;}
+                        else if ( (true) ) {s = 45;}
 
                          
                         input.seek(index20_11);
@@ -29428,9 +29064,9 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
                         int index20_12 = input.index();
                         input.rewind();
                         s = -1;
-                        if ( (synpred4_InternalEditor()) ) {s = 63;}
+                        if ( (synpred4_InternalEditor()) ) {s = 64;}
 
-                        else if ( (true) ) {s = 44;}
+                        else if ( (true) ) {s = 45;}
 
                          
                         input.seek(index20_12);
@@ -29443,9 +29079,9 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
                         int index20_13 = input.index();
                         input.rewind();
                         s = -1;
-                        if ( (synpred4_InternalEditor()) ) {s = 63;}
+                        if ( (synpred4_InternalEditor()) ) {s = 64;}
 
-                        else if ( (true) ) {s = 44;}
+                        else if ( (true) ) {s = 45;}
 
                          
                         input.seek(index20_13);
@@ -29458,9 +29094,9 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
                         int index20_14 = input.index();
                         input.rewind();
                         s = -1;
-                        if ( (synpred4_InternalEditor()) ) {s = 63;}
+                        if ( (synpred4_InternalEditor()) ) {s = 64;}
 
-                        else if ( (true) ) {s = 44;}
+                        else if ( (true) ) {s = 45;}
 
                          
                         input.seek(index20_14);
@@ -29473,9 +29109,9 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
                         int index20_15 = input.index();
                         input.rewind();
                         s = -1;
-                        if ( (synpred4_InternalEditor()) ) {s = 63;}
+                        if ( (synpred4_InternalEditor()) ) {s = 64;}
 
-                        else if ( (true) ) {s = 44;}
+                        else if ( (true) ) {s = 45;}
 
                          
                         input.seek(index20_15);
@@ -29488,9 +29124,9 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
                         int index20_16 = input.index();
                         input.rewind();
                         s = -1;
-                        if ( (synpred4_InternalEditor()) ) {s = 63;}
+                        if ( (synpred4_InternalEditor()) ) {s = 64;}
 
-                        else if ( (true) ) {s = 44;}
+                        else if ( (true) ) {s = 45;}
 
                          
                         input.seek(index20_16);
@@ -29503,9 +29139,9 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
                         int index20_17 = input.index();
                         input.rewind();
                         s = -1;
-                        if ( (synpred4_InternalEditor()) ) {s = 63;}
+                        if ( (synpred4_InternalEditor()) ) {s = 64;}
 
-                        else if ( (true) ) {s = 44;}
+                        else if ( (true) ) {s = 45;}
 
                          
                         input.seek(index20_17);
@@ -29518,9 +29154,9 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
                         int index20_18 = input.index();
                         input.rewind();
                         s = -1;
-                        if ( (synpred4_InternalEditor()) ) {s = 63;}
+                        if ( (synpred4_InternalEditor()) ) {s = 64;}
 
-                        else if ( (true) ) {s = 44;}
+                        else if ( (true) ) {s = 45;}
 
                          
                         input.seek(index20_18);
@@ -29533,9 +29169,9 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
                         int index20_19 = input.index();
                         input.rewind();
                         s = -1;
-                        if ( (synpred4_InternalEditor()) ) {s = 63;}
+                        if ( (synpred4_InternalEditor()) ) {s = 64;}
 
-                        else if ( (true) ) {s = 44;}
+                        else if ( (true) ) {s = 45;}
 
                          
                         input.seek(index20_19);
@@ -29548,9 +29184,9 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
                         int index20_20 = input.index();
                         input.rewind();
                         s = -1;
-                        if ( (synpred4_InternalEditor()) ) {s = 63;}
+                        if ( (synpred4_InternalEditor()) ) {s = 64;}
 
-                        else if ( (true) ) {s = 44;}
+                        else if ( (true) ) {s = 45;}
 
                          
                         input.seek(index20_20);
@@ -29563,9 +29199,9 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
                         int index20_21 = input.index();
                         input.rewind();
                         s = -1;
-                        if ( (synpred4_InternalEditor()) ) {s = 63;}
+                        if ( (synpred4_InternalEditor()) ) {s = 64;}
 
-                        else if ( (true) ) {s = 44;}
+                        else if ( (true) ) {s = 45;}
 
                          
                         input.seek(index20_21);
@@ -29578,9 +29214,9 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
                         int index20_22 = input.index();
                         input.rewind();
                         s = -1;
-                        if ( (synpred4_InternalEditor()) ) {s = 63;}
+                        if ( (synpred4_InternalEditor()) ) {s = 64;}
 
-                        else if ( (true) ) {s = 44;}
+                        else if ( (true) ) {s = 45;}
 
                          
                         input.seek(index20_22);
@@ -29593,9 +29229,9 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
                         int index20_23 = input.index();
                         input.rewind();
                         s = -1;
-                        if ( (synpred4_InternalEditor()) ) {s = 63;}
+                        if ( (synpred4_InternalEditor()) ) {s = 64;}
 
-                        else if ( (true) ) {s = 44;}
+                        else if ( (true) ) {s = 45;}
 
                          
                         input.seek(index20_23);
@@ -29608,9 +29244,9 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
                         int index20_24 = input.index();
                         input.rewind();
                         s = -1;
-                        if ( (synpred4_InternalEditor()) ) {s = 63;}
+                        if ( (synpred4_InternalEditor()) ) {s = 64;}
 
-                        else if ( (true) ) {s = 44;}
+                        else if ( (true) ) {s = 45;}
 
                          
                         input.seek(index20_24);
@@ -29623,9 +29259,9 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
                         int index20_25 = input.index();
                         input.rewind();
                         s = -1;
-                        if ( (synpred4_InternalEditor()) ) {s = 63;}
+                        if ( (synpred4_InternalEditor()) ) {s = 64;}
 
-                        else if ( (true) ) {s = 44;}
+                        else if ( (true) ) {s = 45;}
 
                          
                         input.seek(index20_25);
@@ -29638,9 +29274,9 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
                         int index20_26 = input.index();
                         input.rewind();
                         s = -1;
-                        if ( (synpred4_InternalEditor()) ) {s = 63;}
+                        if ( (synpred4_InternalEditor()) ) {s = 64;}
 
-                        else if ( (true) ) {s = 44;}
+                        else if ( (true) ) {s = 45;}
 
                          
                         input.seek(index20_26);
@@ -29653,9 +29289,9 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
                         int index20_27 = input.index();
                         input.rewind();
                         s = -1;
-                        if ( (synpred4_InternalEditor()) ) {s = 63;}
+                        if ( (synpred4_InternalEditor()) ) {s = 64;}
 
-                        else if ( (true) ) {s = 44;}
+                        else if ( (true) ) {s = 45;}
 
                          
                         input.seek(index20_27);
@@ -29668,9 +29304,9 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
                         int index20_28 = input.index();
                         input.rewind();
                         s = -1;
-                        if ( (synpred4_InternalEditor()) ) {s = 63;}
+                        if ( (synpred4_InternalEditor()) ) {s = 64;}
 
-                        else if ( (true) ) {s = 44;}
+                        else if ( (true) ) {s = 45;}
 
                          
                         input.seek(index20_28);
@@ -29683,9 +29319,9 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
                         int index20_29 = input.index();
                         input.rewind();
                         s = -1;
-                        if ( (synpred4_InternalEditor()) ) {s = 63;}
+                        if ( (synpred4_InternalEditor()) ) {s = 64;}
 
-                        else if ( (true) ) {s = 44;}
+                        else if ( (true) ) {s = 45;}
 
                          
                         input.seek(index20_29);
@@ -29698,9 +29334,9 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
                         int index20_30 = input.index();
                         input.rewind();
                         s = -1;
-                        if ( (synpred4_InternalEditor()) ) {s = 63;}
+                        if ( (synpred4_InternalEditor()) ) {s = 64;}
 
-                        else if ( (true) ) {s = 44;}
+                        else if ( (true) ) {s = 45;}
 
                          
                         input.seek(index20_30);
@@ -29713,9 +29349,9 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
                         int index20_31 = input.index();
                         input.rewind();
                         s = -1;
-                        if ( (synpred4_InternalEditor()) ) {s = 63;}
+                        if ( (synpred4_InternalEditor()) ) {s = 64;}
 
-                        else if ( (true) ) {s = 44;}
+                        else if ( (true) ) {s = 45;}
 
                          
                         input.seek(index20_31);
@@ -29728,9 +29364,9 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
                         int index20_32 = input.index();
                         input.rewind();
                         s = -1;
-                        if ( (synpred4_InternalEditor()) ) {s = 63;}
+                        if ( (synpred4_InternalEditor()) ) {s = 64;}
 
-                        else if ( (true) ) {s = 44;}
+                        else if ( (true) ) {s = 45;}
 
                          
                         input.seek(index20_32);
@@ -29743,9 +29379,9 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
                         int index20_33 = input.index();
                         input.rewind();
                         s = -1;
-                        if ( (synpred4_InternalEditor()) ) {s = 63;}
+                        if ( (synpred4_InternalEditor()) ) {s = 64;}
 
-                        else if ( (true) ) {s = 44;}
+                        else if ( (true) ) {s = 45;}
 
                          
                         input.seek(index20_33);
@@ -29758,9 +29394,9 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
                         int index20_34 = input.index();
                         input.rewind();
                         s = -1;
-                        if ( (synpred4_InternalEditor()) ) {s = 63;}
+                        if ( (synpred4_InternalEditor()) ) {s = 64;}
 
-                        else if ( (true) ) {s = 44;}
+                        else if ( (true) ) {s = 45;}
 
                          
                         input.seek(index20_34);
@@ -29773,9 +29409,9 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
                         int index20_35 = input.index();
                         input.rewind();
                         s = -1;
-                        if ( (synpred4_InternalEditor()) ) {s = 63;}
+                        if ( (synpred4_InternalEditor()) ) {s = 64;}
 
-                        else if ( (true) ) {s = 44;}
+                        else if ( (true) ) {s = 45;}
 
                          
                         input.seek(index20_35);
@@ -29788,9 +29424,9 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
                         int index20_36 = input.index();
                         input.rewind();
                         s = -1;
-                        if ( (synpred4_InternalEditor()) ) {s = 63;}
+                        if ( (synpred4_InternalEditor()) ) {s = 64;}
 
-                        else if ( (true) ) {s = 44;}
+                        else if ( (true) ) {s = 45;}
 
                          
                         input.seek(index20_36);
@@ -29803,9 +29439,9 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
                         int index20_37 = input.index();
                         input.rewind();
                         s = -1;
-                        if ( (synpred4_InternalEditor()) ) {s = 63;}
+                        if ( (synpred4_InternalEditor()) ) {s = 64;}
 
-                        else if ( (true) ) {s = 44;}
+                        else if ( (true) ) {s = 45;}
 
                          
                         input.seek(index20_37);
@@ -29818,9 +29454,9 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
                         int index20_38 = input.index();
                         input.rewind();
                         s = -1;
-                        if ( (synpred4_InternalEditor()) ) {s = 63;}
+                        if ( (synpred4_InternalEditor()) ) {s = 64;}
 
-                        else if ( (true) ) {s = 44;}
+                        else if ( (true) ) {s = 45;}
 
                          
                         input.seek(index20_38);
@@ -29833,9 +29469,9 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
                         int index20_39 = input.index();
                         input.rewind();
                         s = -1;
-                        if ( (synpred4_InternalEditor()) ) {s = 63;}
+                        if ( (synpred4_InternalEditor()) ) {s = 64;}
 
-                        else if ( (true) ) {s = 44;}
+                        else if ( (true) ) {s = 45;}
 
                          
                         input.seek(index20_39);
@@ -29848,9 +29484,9 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
                         int index20_40 = input.index();
                         input.rewind();
                         s = -1;
-                        if ( (synpred4_InternalEditor()) ) {s = 63;}
+                        if ( (synpred4_InternalEditor()) ) {s = 64;}
 
-                        else if ( (true) ) {s = 44;}
+                        else if ( (true) ) {s = 45;}
 
                          
                         input.seek(index20_40);
@@ -29863,9 +29499,9 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
                         int index20_41 = input.index();
                         input.rewind();
                         s = -1;
-                        if ( (synpred4_InternalEditor()) ) {s = 63;}
+                        if ( (synpred4_InternalEditor()) ) {s = 64;}
 
-                        else if ( (true) ) {s = 44;}
+                        else if ( (true) ) {s = 45;}
 
                          
                         input.seek(index20_41);
@@ -29878,9 +29514,9 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
                         int index20_42 = input.index();
                         input.rewind();
                         s = -1;
-                        if ( (synpred4_InternalEditor()) ) {s = 63;}
+                        if ( (synpred4_InternalEditor()) ) {s = 64;}
 
-                        else if ( (true) ) {s = 44;}
+                        else if ( (true) ) {s = 45;}
 
                          
                         input.seek(index20_42);
@@ -29893,12 +29529,27 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
                         int index20_43 = input.index();
                         input.rewind();
                         s = -1;
-                        if ( (synpred4_InternalEditor()) ) {s = 63;}
+                        if ( (synpred4_InternalEditor()) ) {s = 64;}
 
-                        else if ( (true) ) {s = 44;}
+                        else if ( (true) ) {s = 45;}
 
                          
                         input.seek(index20_43);
+                        if ( s>=0 ) return s;
+                        break;
+                    case 43 : 
+                        int LA20_44 = input.LA(1);
+
+                         
+                        int index20_44 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( (synpred4_InternalEditor()) ) {s = 64;}
+
+                        else if ( (true) ) {s = 45;}
+
+                         
+                        input.seek(index20_44);
                         if ( s>=0 ) return s;
                         break;
             }
@@ -29910,27 +29561,28 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
         }
     }
     static final String DFA22_eotS =
-        "\100\uffff";
+        "\101\uffff";
     static final String DFA22_eofS =
-        "\100\uffff";
+        "\101\uffff";
     static final String DFA22_minS =
-        "\1\4\53\0\24\uffff";
+        "\1\4\54\0\24\uffff";
     static final String DFA22_maxS =
-        "\1\165\53\0\24\uffff";
+        "\1\166\54\0\24\uffff";
     static final String DFA22_acceptS =
-        "\54\uffff\1\2\22\uffff\1\1";
+        "\55\uffff\1\2\22\uffff\1\1";
     static final String DFA22_specialS =
         "\1\uffff\1\0\1\1\1\2\1\3\1\4\1\5\1\6\1\7\1\10\1\11\1\12\1\13\1\14"+
         "\1\15\1\16\1\17\1\20\1\21\1\22\1\23\1\24\1\25\1\26\1\27\1\30\1\31"+
         "\1\32\1\33\1\34\1\35\1\36\1\37\1\40\1\41\1\42\1\43\1\44\1\45\1\46"+
-        "\1\47\1\50\1\51\1\52\24\uffff}>";
+        "\1\47\1\50\1\51\1\52\1\53\24\uffff}>";
     static final String[] DFA22_transitionS = {
-            "\1\45\13\uffff\1\1\1\2\1\3\1\4\1\5\1\6\1\7\1\10\1\11\1\12\1"+
+            "\1\46\13\uffff\1\1\1\2\1\3\1\4\1\5\1\6\1\7\1\10\1\11\1\12\1"+
             "\13\1\14\1\15\1\16\1\22\1\24\1\25\1\26\1\33\1\34\1\35\1\36\1"+
-            "\37\1\uffff\1\46\1\uffff\1\47\1\uffff\1\50\1\41\1\uffff\1\42"+
-            "\1\43\1\44\3\uffff\1\53\25\uffff\1\54\3\uffff\2\54\2\uffff\1"+
-            "\54\1\uffff\15\54\3\uffff\2\54\4\uffff\1\51\1\52\1\17\1\20\1"+
-            "\21\1\23\1\27\1\30\1\31\1\32\1\40",
+            "\37\1\uffff\1\47\1\uffff\1\50\1\uffff\1\51\1\41\1\uffff\1\42"+
+            "\1\43\1\44\1\45\3\uffff\1\54\25\uffff\1\55\3\uffff\2\55\2\uffff"+
+            "\1\55\1\uffff\15\55\3\uffff\2\55\4\uffff\1\52\1\53\1\17\1\20"+
+            "\1\21\1\23\1\27\1\30\1\31\1\32\1\40",
+            "\1\uffff",
             "\1\uffff",
             "\1\uffff",
             "\1\uffff",
@@ -30039,9 +29691,9 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
                         int index22_1 = input.index();
                         input.rewind();
                         s = -1;
-                        if ( (synpred5_InternalEditor()) ) {s = 63;}
+                        if ( (synpred5_InternalEditor()) ) {s = 64;}
 
-                        else if ( (true) ) {s = 44;}
+                        else if ( (true) ) {s = 45;}
 
                          
                         input.seek(index22_1);
@@ -30054,9 +29706,9 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
                         int index22_2 = input.index();
                         input.rewind();
                         s = -1;
-                        if ( (synpred5_InternalEditor()) ) {s = 63;}
+                        if ( (synpred5_InternalEditor()) ) {s = 64;}
 
-                        else if ( (true) ) {s = 44;}
+                        else if ( (true) ) {s = 45;}
 
                          
                         input.seek(index22_2);
@@ -30069,9 +29721,9 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
                         int index22_3 = input.index();
                         input.rewind();
                         s = -1;
-                        if ( (synpred5_InternalEditor()) ) {s = 63;}
+                        if ( (synpred5_InternalEditor()) ) {s = 64;}
 
-                        else if ( (true) ) {s = 44;}
+                        else if ( (true) ) {s = 45;}
 
                          
                         input.seek(index22_3);
@@ -30084,9 +29736,9 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
                         int index22_4 = input.index();
                         input.rewind();
                         s = -1;
-                        if ( (synpred5_InternalEditor()) ) {s = 63;}
+                        if ( (synpred5_InternalEditor()) ) {s = 64;}
 
-                        else if ( (true) ) {s = 44;}
+                        else if ( (true) ) {s = 45;}
 
                          
                         input.seek(index22_4);
@@ -30099,9 +29751,9 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
                         int index22_5 = input.index();
                         input.rewind();
                         s = -1;
-                        if ( (synpred5_InternalEditor()) ) {s = 63;}
+                        if ( (synpred5_InternalEditor()) ) {s = 64;}
 
-                        else if ( (true) ) {s = 44;}
+                        else if ( (true) ) {s = 45;}
 
                          
                         input.seek(index22_5);
@@ -30114,9 +29766,9 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
                         int index22_6 = input.index();
                         input.rewind();
                         s = -1;
-                        if ( (synpred5_InternalEditor()) ) {s = 63;}
+                        if ( (synpred5_InternalEditor()) ) {s = 64;}
 
-                        else if ( (true) ) {s = 44;}
+                        else if ( (true) ) {s = 45;}
 
                          
                         input.seek(index22_6);
@@ -30129,9 +29781,9 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
                         int index22_7 = input.index();
                         input.rewind();
                         s = -1;
-                        if ( (synpred5_InternalEditor()) ) {s = 63;}
+                        if ( (synpred5_InternalEditor()) ) {s = 64;}
 
-                        else if ( (true) ) {s = 44;}
+                        else if ( (true) ) {s = 45;}
 
                          
                         input.seek(index22_7);
@@ -30144,9 +29796,9 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
                         int index22_8 = input.index();
                         input.rewind();
                         s = -1;
-                        if ( (synpred5_InternalEditor()) ) {s = 63;}
+                        if ( (synpred5_InternalEditor()) ) {s = 64;}
 
-                        else if ( (true) ) {s = 44;}
+                        else if ( (true) ) {s = 45;}
 
                          
                         input.seek(index22_8);
@@ -30159,9 +29811,9 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
                         int index22_9 = input.index();
                         input.rewind();
                         s = -1;
-                        if ( (synpred5_InternalEditor()) ) {s = 63;}
+                        if ( (synpred5_InternalEditor()) ) {s = 64;}
 
-                        else if ( (true) ) {s = 44;}
+                        else if ( (true) ) {s = 45;}
 
                          
                         input.seek(index22_9);
@@ -30174,9 +29826,9 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
                         int index22_10 = input.index();
                         input.rewind();
                         s = -1;
-                        if ( (synpred5_InternalEditor()) ) {s = 63;}
+                        if ( (synpred5_InternalEditor()) ) {s = 64;}
 
-                        else if ( (true) ) {s = 44;}
+                        else if ( (true) ) {s = 45;}
 
                          
                         input.seek(index22_10);
@@ -30189,9 +29841,9 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
                         int index22_11 = input.index();
                         input.rewind();
                         s = -1;
-                        if ( (synpred5_InternalEditor()) ) {s = 63;}
+                        if ( (synpred5_InternalEditor()) ) {s = 64;}
 
-                        else if ( (true) ) {s = 44;}
+                        else if ( (true) ) {s = 45;}
 
                          
                         input.seek(index22_11);
@@ -30204,9 +29856,9 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
                         int index22_12 = input.index();
                         input.rewind();
                         s = -1;
-                        if ( (synpred5_InternalEditor()) ) {s = 63;}
+                        if ( (synpred5_InternalEditor()) ) {s = 64;}
 
-                        else if ( (true) ) {s = 44;}
+                        else if ( (true) ) {s = 45;}
 
                          
                         input.seek(index22_12);
@@ -30219,9 +29871,9 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
                         int index22_13 = input.index();
                         input.rewind();
                         s = -1;
-                        if ( (synpred5_InternalEditor()) ) {s = 63;}
+                        if ( (synpred5_InternalEditor()) ) {s = 64;}
 
-                        else if ( (true) ) {s = 44;}
+                        else if ( (true) ) {s = 45;}
 
                          
                         input.seek(index22_13);
@@ -30234,9 +29886,9 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
                         int index22_14 = input.index();
                         input.rewind();
                         s = -1;
-                        if ( (synpred5_InternalEditor()) ) {s = 63;}
+                        if ( (synpred5_InternalEditor()) ) {s = 64;}
 
-                        else if ( (true) ) {s = 44;}
+                        else if ( (true) ) {s = 45;}
 
                          
                         input.seek(index22_14);
@@ -30249,9 +29901,9 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
                         int index22_15 = input.index();
                         input.rewind();
                         s = -1;
-                        if ( (synpred5_InternalEditor()) ) {s = 63;}
+                        if ( (synpred5_InternalEditor()) ) {s = 64;}
 
-                        else if ( (true) ) {s = 44;}
+                        else if ( (true) ) {s = 45;}
 
                          
                         input.seek(index22_15);
@@ -30264,9 +29916,9 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
                         int index22_16 = input.index();
                         input.rewind();
                         s = -1;
-                        if ( (synpred5_InternalEditor()) ) {s = 63;}
+                        if ( (synpred5_InternalEditor()) ) {s = 64;}
 
-                        else if ( (true) ) {s = 44;}
+                        else if ( (true) ) {s = 45;}
 
                          
                         input.seek(index22_16);
@@ -30279,9 +29931,9 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
                         int index22_17 = input.index();
                         input.rewind();
                         s = -1;
-                        if ( (synpred5_InternalEditor()) ) {s = 63;}
+                        if ( (synpred5_InternalEditor()) ) {s = 64;}
 
-                        else if ( (true) ) {s = 44;}
+                        else if ( (true) ) {s = 45;}
 
                          
                         input.seek(index22_17);
@@ -30294,9 +29946,9 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
                         int index22_18 = input.index();
                         input.rewind();
                         s = -1;
-                        if ( (synpred5_InternalEditor()) ) {s = 63;}
+                        if ( (synpred5_InternalEditor()) ) {s = 64;}
 
-                        else if ( (true) ) {s = 44;}
+                        else if ( (true) ) {s = 45;}
 
                          
                         input.seek(index22_18);
@@ -30309,9 +29961,9 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
                         int index22_19 = input.index();
                         input.rewind();
                         s = -1;
-                        if ( (synpred5_InternalEditor()) ) {s = 63;}
+                        if ( (synpred5_InternalEditor()) ) {s = 64;}
 
-                        else if ( (true) ) {s = 44;}
+                        else if ( (true) ) {s = 45;}
 
                          
                         input.seek(index22_19);
@@ -30324,9 +29976,9 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
                         int index22_20 = input.index();
                         input.rewind();
                         s = -1;
-                        if ( (synpred5_InternalEditor()) ) {s = 63;}
+                        if ( (synpred5_InternalEditor()) ) {s = 64;}
 
-                        else if ( (true) ) {s = 44;}
+                        else if ( (true) ) {s = 45;}
 
                          
                         input.seek(index22_20);
@@ -30339,9 +29991,9 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
                         int index22_21 = input.index();
                         input.rewind();
                         s = -1;
-                        if ( (synpred5_InternalEditor()) ) {s = 63;}
+                        if ( (synpred5_InternalEditor()) ) {s = 64;}
 
-                        else if ( (true) ) {s = 44;}
+                        else if ( (true) ) {s = 45;}
 
                          
                         input.seek(index22_21);
@@ -30354,9 +30006,9 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
                         int index22_22 = input.index();
                         input.rewind();
                         s = -1;
-                        if ( (synpred5_InternalEditor()) ) {s = 63;}
+                        if ( (synpred5_InternalEditor()) ) {s = 64;}
 
-                        else if ( (true) ) {s = 44;}
+                        else if ( (true) ) {s = 45;}
 
                          
                         input.seek(index22_22);
@@ -30369,9 +30021,9 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
                         int index22_23 = input.index();
                         input.rewind();
                         s = -1;
-                        if ( (synpred5_InternalEditor()) ) {s = 63;}
+                        if ( (synpred5_InternalEditor()) ) {s = 64;}
 
-                        else if ( (true) ) {s = 44;}
+                        else if ( (true) ) {s = 45;}
 
                          
                         input.seek(index22_23);
@@ -30384,9 +30036,9 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
                         int index22_24 = input.index();
                         input.rewind();
                         s = -1;
-                        if ( (synpred5_InternalEditor()) ) {s = 63;}
+                        if ( (synpred5_InternalEditor()) ) {s = 64;}
 
-                        else if ( (true) ) {s = 44;}
+                        else if ( (true) ) {s = 45;}
 
                          
                         input.seek(index22_24);
@@ -30399,9 +30051,9 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
                         int index22_25 = input.index();
                         input.rewind();
                         s = -1;
-                        if ( (synpred5_InternalEditor()) ) {s = 63;}
+                        if ( (synpred5_InternalEditor()) ) {s = 64;}
 
-                        else if ( (true) ) {s = 44;}
+                        else if ( (true) ) {s = 45;}
 
                          
                         input.seek(index22_25);
@@ -30414,9 +30066,9 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
                         int index22_26 = input.index();
                         input.rewind();
                         s = -1;
-                        if ( (synpred5_InternalEditor()) ) {s = 63;}
+                        if ( (synpred5_InternalEditor()) ) {s = 64;}
 
-                        else if ( (true) ) {s = 44;}
+                        else if ( (true) ) {s = 45;}
 
                          
                         input.seek(index22_26);
@@ -30429,9 +30081,9 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
                         int index22_27 = input.index();
                         input.rewind();
                         s = -1;
-                        if ( (synpred5_InternalEditor()) ) {s = 63;}
+                        if ( (synpred5_InternalEditor()) ) {s = 64;}
 
-                        else if ( (true) ) {s = 44;}
+                        else if ( (true) ) {s = 45;}
 
                          
                         input.seek(index22_27);
@@ -30444,9 +30096,9 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
                         int index22_28 = input.index();
                         input.rewind();
                         s = -1;
-                        if ( (synpred5_InternalEditor()) ) {s = 63;}
+                        if ( (synpred5_InternalEditor()) ) {s = 64;}
 
-                        else if ( (true) ) {s = 44;}
+                        else if ( (true) ) {s = 45;}
 
                          
                         input.seek(index22_28);
@@ -30459,9 +30111,9 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
                         int index22_29 = input.index();
                         input.rewind();
                         s = -1;
-                        if ( (synpred5_InternalEditor()) ) {s = 63;}
+                        if ( (synpred5_InternalEditor()) ) {s = 64;}
 
-                        else if ( (true) ) {s = 44;}
+                        else if ( (true) ) {s = 45;}
 
                          
                         input.seek(index22_29);
@@ -30474,9 +30126,9 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
                         int index22_30 = input.index();
                         input.rewind();
                         s = -1;
-                        if ( (synpred5_InternalEditor()) ) {s = 63;}
+                        if ( (synpred5_InternalEditor()) ) {s = 64;}
 
-                        else if ( (true) ) {s = 44;}
+                        else if ( (true) ) {s = 45;}
 
                          
                         input.seek(index22_30);
@@ -30489,9 +30141,9 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
                         int index22_31 = input.index();
                         input.rewind();
                         s = -1;
-                        if ( (synpred5_InternalEditor()) ) {s = 63;}
+                        if ( (synpred5_InternalEditor()) ) {s = 64;}
 
-                        else if ( (true) ) {s = 44;}
+                        else if ( (true) ) {s = 45;}
 
                          
                         input.seek(index22_31);
@@ -30504,9 +30156,9 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
                         int index22_32 = input.index();
                         input.rewind();
                         s = -1;
-                        if ( (synpred5_InternalEditor()) ) {s = 63;}
+                        if ( (synpred5_InternalEditor()) ) {s = 64;}
 
-                        else if ( (true) ) {s = 44;}
+                        else if ( (true) ) {s = 45;}
 
                          
                         input.seek(index22_32);
@@ -30519,9 +30171,9 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
                         int index22_33 = input.index();
                         input.rewind();
                         s = -1;
-                        if ( (synpred5_InternalEditor()) ) {s = 63;}
+                        if ( (synpred5_InternalEditor()) ) {s = 64;}
 
-                        else if ( (true) ) {s = 44;}
+                        else if ( (true) ) {s = 45;}
 
                          
                         input.seek(index22_33);
@@ -30534,9 +30186,9 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
                         int index22_34 = input.index();
                         input.rewind();
                         s = -1;
-                        if ( (synpred5_InternalEditor()) ) {s = 63;}
+                        if ( (synpred5_InternalEditor()) ) {s = 64;}
 
-                        else if ( (true) ) {s = 44;}
+                        else if ( (true) ) {s = 45;}
 
                          
                         input.seek(index22_34);
@@ -30549,9 +30201,9 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
                         int index22_35 = input.index();
                         input.rewind();
                         s = -1;
-                        if ( (synpred5_InternalEditor()) ) {s = 63;}
+                        if ( (synpred5_InternalEditor()) ) {s = 64;}
 
-                        else if ( (true) ) {s = 44;}
+                        else if ( (true) ) {s = 45;}
 
                          
                         input.seek(index22_35);
@@ -30564,9 +30216,9 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
                         int index22_36 = input.index();
                         input.rewind();
                         s = -1;
-                        if ( (synpred5_InternalEditor()) ) {s = 63;}
+                        if ( (synpred5_InternalEditor()) ) {s = 64;}
 
-                        else if ( (true) ) {s = 44;}
+                        else if ( (true) ) {s = 45;}
 
                          
                         input.seek(index22_36);
@@ -30579,9 +30231,9 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
                         int index22_37 = input.index();
                         input.rewind();
                         s = -1;
-                        if ( (synpred5_InternalEditor()) ) {s = 63;}
+                        if ( (synpred5_InternalEditor()) ) {s = 64;}
 
-                        else if ( (true) ) {s = 44;}
+                        else if ( (true) ) {s = 45;}
 
                          
                         input.seek(index22_37);
@@ -30594,9 +30246,9 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
                         int index22_38 = input.index();
                         input.rewind();
                         s = -1;
-                        if ( (synpred5_InternalEditor()) ) {s = 63;}
+                        if ( (synpred5_InternalEditor()) ) {s = 64;}
 
-                        else if ( (true) ) {s = 44;}
+                        else if ( (true) ) {s = 45;}
 
                          
                         input.seek(index22_38);
@@ -30609,9 +30261,9 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
                         int index22_39 = input.index();
                         input.rewind();
                         s = -1;
-                        if ( (synpred5_InternalEditor()) ) {s = 63;}
+                        if ( (synpred5_InternalEditor()) ) {s = 64;}
 
-                        else if ( (true) ) {s = 44;}
+                        else if ( (true) ) {s = 45;}
 
                          
                         input.seek(index22_39);
@@ -30624,9 +30276,9 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
                         int index22_40 = input.index();
                         input.rewind();
                         s = -1;
-                        if ( (synpred5_InternalEditor()) ) {s = 63;}
+                        if ( (synpred5_InternalEditor()) ) {s = 64;}
 
-                        else if ( (true) ) {s = 44;}
+                        else if ( (true) ) {s = 45;}
 
                          
                         input.seek(index22_40);
@@ -30639,9 +30291,9 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
                         int index22_41 = input.index();
                         input.rewind();
                         s = -1;
-                        if ( (synpred5_InternalEditor()) ) {s = 63;}
+                        if ( (synpred5_InternalEditor()) ) {s = 64;}
 
-                        else if ( (true) ) {s = 44;}
+                        else if ( (true) ) {s = 45;}
 
                          
                         input.seek(index22_41);
@@ -30654,9 +30306,9 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
                         int index22_42 = input.index();
                         input.rewind();
                         s = -1;
-                        if ( (synpred5_InternalEditor()) ) {s = 63;}
+                        if ( (synpred5_InternalEditor()) ) {s = 64;}
 
-                        else if ( (true) ) {s = 44;}
+                        else if ( (true) ) {s = 45;}
 
                          
                         input.seek(index22_42);
@@ -30669,12 +30321,27 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
                         int index22_43 = input.index();
                         input.rewind();
                         s = -1;
-                        if ( (synpred5_InternalEditor()) ) {s = 63;}
+                        if ( (synpred5_InternalEditor()) ) {s = 64;}
 
-                        else if ( (true) ) {s = 44;}
+                        else if ( (true) ) {s = 45;}
 
                          
                         input.seek(index22_43);
+                        if ( s>=0 ) return s;
+                        break;
+                    case 43 : 
+                        int LA22_44 = input.LA(1);
+
+                         
+                        int index22_44 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( (synpred5_InternalEditor()) ) {s = 64;}
+
+                        else if ( (true) ) {s = 45;}
+
+                         
+                        input.seek(index22_44);
                         if ( s>=0 ) return s;
                         break;
             }
@@ -30686,26 +30353,27 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
         }
     }
     static final String DFA24_eotS =
-        "\56\uffff";
+        "\57\uffff";
     static final String DFA24_eofS =
-        "\56\uffff";
+        "\57\uffff";
     static final String DFA24_minS =
-        "\1\4\53\0\2\uffff";
+        "\1\4\54\0\2\uffff";
     static final String DFA24_maxS =
-        "\1\165\53\0\2\uffff";
+        "\1\166\54\0\2\uffff";
     static final String DFA24_acceptS =
-        "\54\uffff\1\1\1\2";
+        "\55\uffff\1\1\1\2";
     static final String DFA24_specialS =
         "\1\uffff\1\0\1\1\1\2\1\3\1\4\1\5\1\6\1\7\1\10\1\11\1\12\1\13\1\14"+
         "\1\15\1\16\1\17\1\20\1\21\1\22\1\23\1\24\1\25\1\26\1\27\1\30\1\31"+
         "\1\32\1\33\1\34\1\35\1\36\1\37\1\40\1\41\1\42\1\43\1\44\1\45\1\46"+
-        "\1\47\1\50\1\51\1\52\2\uffff}>";
+        "\1\47\1\50\1\51\1\52\1\53\2\uffff}>";
     static final String[] DFA24_transitionS = {
-            "\1\45\13\uffff\1\1\1\2\1\3\1\4\1\5\1\6\1\7\1\10\1\11\1\12\1"+
+            "\1\46\13\uffff\1\1\1\2\1\3\1\4\1\5\1\6\1\7\1\10\1\11\1\12\1"+
             "\13\1\14\1\15\1\16\1\22\1\24\1\25\1\26\1\33\1\34\1\35\1\36\1"+
-            "\37\1\uffff\1\46\1\uffff\1\47\1\uffff\1\50\1\41\1\uffff\1\42"+
-            "\1\43\1\44\3\uffff\1\53\65\uffff\1\51\1\52\1\17\1\20\1\21\1"+
-            "\23\1\27\1\30\1\31\1\32\1\40",
+            "\37\1\uffff\1\47\1\uffff\1\50\1\uffff\1\51\1\41\1\uffff\1\42"+
+            "\1\43\1\44\1\45\3\uffff\1\54\65\uffff\1\52\1\53\1\17\1\20\1"+
+            "\21\1\23\1\27\1\30\1\31\1\32\1\40",
+            "\1\uffff",
             "\1\uffff",
             "\1\uffff",
             "\1\uffff",
@@ -30796,9 +30464,9 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
                         int index24_1 = input.index();
                         input.rewind();
                         s = -1;
-                        if ( (synpred6_InternalEditor()) ) {s = 44;}
+                        if ( (synpred6_InternalEditor()) ) {s = 45;}
 
-                        else if ( (true) ) {s = 45;}
+                        else if ( (true) ) {s = 46;}
 
                          
                         input.seek(index24_1);
@@ -30811,9 +30479,9 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
                         int index24_2 = input.index();
                         input.rewind();
                         s = -1;
-                        if ( (synpred6_InternalEditor()) ) {s = 44;}
+                        if ( (synpred6_InternalEditor()) ) {s = 45;}
 
-                        else if ( (true) ) {s = 45;}
+                        else if ( (true) ) {s = 46;}
 
                          
                         input.seek(index24_2);
@@ -30826,9 +30494,9 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
                         int index24_3 = input.index();
                         input.rewind();
                         s = -1;
-                        if ( (synpred6_InternalEditor()) ) {s = 44;}
+                        if ( (synpred6_InternalEditor()) ) {s = 45;}
 
-                        else if ( (true) ) {s = 45;}
+                        else if ( (true) ) {s = 46;}
 
                          
                         input.seek(index24_3);
@@ -30841,9 +30509,9 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
                         int index24_4 = input.index();
                         input.rewind();
                         s = -1;
-                        if ( (synpred6_InternalEditor()) ) {s = 44;}
+                        if ( (synpred6_InternalEditor()) ) {s = 45;}
 
-                        else if ( (true) ) {s = 45;}
+                        else if ( (true) ) {s = 46;}
 
                          
                         input.seek(index24_4);
@@ -30856,9 +30524,9 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
                         int index24_5 = input.index();
                         input.rewind();
                         s = -1;
-                        if ( (synpred6_InternalEditor()) ) {s = 44;}
+                        if ( (synpred6_InternalEditor()) ) {s = 45;}
 
-                        else if ( (true) ) {s = 45;}
+                        else if ( (true) ) {s = 46;}
 
                          
                         input.seek(index24_5);
@@ -30871,9 +30539,9 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
                         int index24_6 = input.index();
                         input.rewind();
                         s = -1;
-                        if ( (synpred6_InternalEditor()) ) {s = 44;}
+                        if ( (synpred6_InternalEditor()) ) {s = 45;}
 
-                        else if ( (true) ) {s = 45;}
+                        else if ( (true) ) {s = 46;}
 
                          
                         input.seek(index24_6);
@@ -30886,9 +30554,9 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
                         int index24_7 = input.index();
                         input.rewind();
                         s = -1;
-                        if ( (synpred6_InternalEditor()) ) {s = 44;}
+                        if ( (synpred6_InternalEditor()) ) {s = 45;}
 
-                        else if ( (true) ) {s = 45;}
+                        else if ( (true) ) {s = 46;}
 
                          
                         input.seek(index24_7);
@@ -30901,9 +30569,9 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
                         int index24_8 = input.index();
                         input.rewind();
                         s = -1;
-                        if ( (synpred6_InternalEditor()) ) {s = 44;}
+                        if ( (synpred6_InternalEditor()) ) {s = 45;}
 
-                        else if ( (true) ) {s = 45;}
+                        else if ( (true) ) {s = 46;}
 
                          
                         input.seek(index24_8);
@@ -30916,9 +30584,9 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
                         int index24_9 = input.index();
                         input.rewind();
                         s = -1;
-                        if ( (synpred6_InternalEditor()) ) {s = 44;}
+                        if ( (synpred6_InternalEditor()) ) {s = 45;}
 
-                        else if ( (true) ) {s = 45;}
+                        else if ( (true) ) {s = 46;}
 
                          
                         input.seek(index24_9);
@@ -30931,9 +30599,9 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
                         int index24_10 = input.index();
                         input.rewind();
                         s = -1;
-                        if ( (synpred6_InternalEditor()) ) {s = 44;}
+                        if ( (synpred6_InternalEditor()) ) {s = 45;}
 
-                        else if ( (true) ) {s = 45;}
+                        else if ( (true) ) {s = 46;}
 
                          
                         input.seek(index24_10);
@@ -30946,9 +30614,9 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
                         int index24_11 = input.index();
                         input.rewind();
                         s = -1;
-                        if ( (synpred6_InternalEditor()) ) {s = 44;}
+                        if ( (synpred6_InternalEditor()) ) {s = 45;}
 
-                        else if ( (true) ) {s = 45;}
+                        else if ( (true) ) {s = 46;}
 
                          
                         input.seek(index24_11);
@@ -30961,9 +30629,9 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
                         int index24_12 = input.index();
                         input.rewind();
                         s = -1;
-                        if ( (synpred6_InternalEditor()) ) {s = 44;}
+                        if ( (synpred6_InternalEditor()) ) {s = 45;}
 
-                        else if ( (true) ) {s = 45;}
+                        else if ( (true) ) {s = 46;}
 
                          
                         input.seek(index24_12);
@@ -30976,9 +30644,9 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
                         int index24_13 = input.index();
                         input.rewind();
                         s = -1;
-                        if ( (synpred6_InternalEditor()) ) {s = 44;}
+                        if ( (synpred6_InternalEditor()) ) {s = 45;}
 
-                        else if ( (true) ) {s = 45;}
+                        else if ( (true) ) {s = 46;}
 
                          
                         input.seek(index24_13);
@@ -30991,9 +30659,9 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
                         int index24_14 = input.index();
                         input.rewind();
                         s = -1;
-                        if ( (synpred6_InternalEditor()) ) {s = 44;}
+                        if ( (synpred6_InternalEditor()) ) {s = 45;}
 
-                        else if ( (true) ) {s = 45;}
+                        else if ( (true) ) {s = 46;}
 
                          
                         input.seek(index24_14);
@@ -31006,9 +30674,9 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
                         int index24_15 = input.index();
                         input.rewind();
                         s = -1;
-                        if ( (synpred6_InternalEditor()) ) {s = 44;}
+                        if ( (synpred6_InternalEditor()) ) {s = 45;}
 
-                        else if ( (true) ) {s = 45;}
+                        else if ( (true) ) {s = 46;}
 
                          
                         input.seek(index24_15);
@@ -31021,9 +30689,9 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
                         int index24_16 = input.index();
                         input.rewind();
                         s = -1;
-                        if ( (synpred6_InternalEditor()) ) {s = 44;}
+                        if ( (synpred6_InternalEditor()) ) {s = 45;}
 
-                        else if ( (true) ) {s = 45;}
+                        else if ( (true) ) {s = 46;}
 
                          
                         input.seek(index24_16);
@@ -31036,9 +30704,9 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
                         int index24_17 = input.index();
                         input.rewind();
                         s = -1;
-                        if ( (synpred6_InternalEditor()) ) {s = 44;}
+                        if ( (synpred6_InternalEditor()) ) {s = 45;}
 
-                        else if ( (true) ) {s = 45;}
+                        else if ( (true) ) {s = 46;}
 
                          
                         input.seek(index24_17);
@@ -31051,9 +30719,9 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
                         int index24_18 = input.index();
                         input.rewind();
                         s = -1;
-                        if ( (synpred6_InternalEditor()) ) {s = 44;}
+                        if ( (synpred6_InternalEditor()) ) {s = 45;}
 
-                        else if ( (true) ) {s = 45;}
+                        else if ( (true) ) {s = 46;}
 
                          
                         input.seek(index24_18);
@@ -31066,9 +30734,9 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
                         int index24_19 = input.index();
                         input.rewind();
                         s = -1;
-                        if ( (synpred6_InternalEditor()) ) {s = 44;}
+                        if ( (synpred6_InternalEditor()) ) {s = 45;}
 
-                        else if ( (true) ) {s = 45;}
+                        else if ( (true) ) {s = 46;}
 
                          
                         input.seek(index24_19);
@@ -31081,9 +30749,9 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
                         int index24_20 = input.index();
                         input.rewind();
                         s = -1;
-                        if ( (synpred6_InternalEditor()) ) {s = 44;}
+                        if ( (synpred6_InternalEditor()) ) {s = 45;}
 
-                        else if ( (true) ) {s = 45;}
+                        else if ( (true) ) {s = 46;}
 
                          
                         input.seek(index24_20);
@@ -31096,9 +30764,9 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
                         int index24_21 = input.index();
                         input.rewind();
                         s = -1;
-                        if ( (synpred6_InternalEditor()) ) {s = 44;}
+                        if ( (synpred6_InternalEditor()) ) {s = 45;}
 
-                        else if ( (true) ) {s = 45;}
+                        else if ( (true) ) {s = 46;}
 
                          
                         input.seek(index24_21);
@@ -31111,9 +30779,9 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
                         int index24_22 = input.index();
                         input.rewind();
                         s = -1;
-                        if ( (synpred6_InternalEditor()) ) {s = 44;}
+                        if ( (synpred6_InternalEditor()) ) {s = 45;}
 
-                        else if ( (true) ) {s = 45;}
+                        else if ( (true) ) {s = 46;}
 
                          
                         input.seek(index24_22);
@@ -31126,9 +30794,9 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
                         int index24_23 = input.index();
                         input.rewind();
                         s = -1;
-                        if ( (synpred6_InternalEditor()) ) {s = 44;}
+                        if ( (synpred6_InternalEditor()) ) {s = 45;}
 
-                        else if ( (true) ) {s = 45;}
+                        else if ( (true) ) {s = 46;}
 
                          
                         input.seek(index24_23);
@@ -31141,9 +30809,9 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
                         int index24_24 = input.index();
                         input.rewind();
                         s = -1;
-                        if ( (synpred6_InternalEditor()) ) {s = 44;}
+                        if ( (synpred6_InternalEditor()) ) {s = 45;}
 
-                        else if ( (true) ) {s = 45;}
+                        else if ( (true) ) {s = 46;}
 
                          
                         input.seek(index24_24);
@@ -31156,9 +30824,9 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
                         int index24_25 = input.index();
                         input.rewind();
                         s = -1;
-                        if ( (synpred6_InternalEditor()) ) {s = 44;}
+                        if ( (synpred6_InternalEditor()) ) {s = 45;}
 
-                        else if ( (true) ) {s = 45;}
+                        else if ( (true) ) {s = 46;}
 
                          
                         input.seek(index24_25);
@@ -31171,9 +30839,9 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
                         int index24_26 = input.index();
                         input.rewind();
                         s = -1;
-                        if ( (synpred6_InternalEditor()) ) {s = 44;}
+                        if ( (synpred6_InternalEditor()) ) {s = 45;}
 
-                        else if ( (true) ) {s = 45;}
+                        else if ( (true) ) {s = 46;}
 
                          
                         input.seek(index24_26);
@@ -31186,9 +30854,9 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
                         int index24_27 = input.index();
                         input.rewind();
                         s = -1;
-                        if ( (synpred6_InternalEditor()) ) {s = 44;}
+                        if ( (synpred6_InternalEditor()) ) {s = 45;}
 
-                        else if ( (true) ) {s = 45;}
+                        else if ( (true) ) {s = 46;}
 
                          
                         input.seek(index24_27);
@@ -31201,9 +30869,9 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
                         int index24_28 = input.index();
                         input.rewind();
                         s = -1;
-                        if ( (synpred6_InternalEditor()) ) {s = 44;}
+                        if ( (synpred6_InternalEditor()) ) {s = 45;}
 
-                        else if ( (true) ) {s = 45;}
+                        else if ( (true) ) {s = 46;}
 
                          
                         input.seek(index24_28);
@@ -31216,9 +30884,9 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
                         int index24_29 = input.index();
                         input.rewind();
                         s = -1;
-                        if ( (synpred6_InternalEditor()) ) {s = 44;}
+                        if ( (synpred6_InternalEditor()) ) {s = 45;}
 
-                        else if ( (true) ) {s = 45;}
+                        else if ( (true) ) {s = 46;}
 
                          
                         input.seek(index24_29);
@@ -31231,9 +30899,9 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
                         int index24_30 = input.index();
                         input.rewind();
                         s = -1;
-                        if ( (synpred6_InternalEditor()) ) {s = 44;}
+                        if ( (synpred6_InternalEditor()) ) {s = 45;}
 
-                        else if ( (true) ) {s = 45;}
+                        else if ( (true) ) {s = 46;}
 
                          
                         input.seek(index24_30);
@@ -31246,9 +30914,9 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
                         int index24_31 = input.index();
                         input.rewind();
                         s = -1;
-                        if ( (synpred6_InternalEditor()) ) {s = 44;}
+                        if ( (synpred6_InternalEditor()) ) {s = 45;}
 
-                        else if ( (true) ) {s = 45;}
+                        else if ( (true) ) {s = 46;}
 
                          
                         input.seek(index24_31);
@@ -31261,9 +30929,9 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
                         int index24_32 = input.index();
                         input.rewind();
                         s = -1;
-                        if ( (synpred6_InternalEditor()) ) {s = 44;}
+                        if ( (synpred6_InternalEditor()) ) {s = 45;}
 
-                        else if ( (true) ) {s = 45;}
+                        else if ( (true) ) {s = 46;}
 
                          
                         input.seek(index24_32);
@@ -31276,9 +30944,9 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
                         int index24_33 = input.index();
                         input.rewind();
                         s = -1;
-                        if ( (synpred6_InternalEditor()) ) {s = 44;}
+                        if ( (synpred6_InternalEditor()) ) {s = 45;}
 
-                        else if ( (true) ) {s = 45;}
+                        else if ( (true) ) {s = 46;}
 
                          
                         input.seek(index24_33);
@@ -31291,9 +30959,9 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
                         int index24_34 = input.index();
                         input.rewind();
                         s = -1;
-                        if ( (synpred6_InternalEditor()) ) {s = 44;}
+                        if ( (synpred6_InternalEditor()) ) {s = 45;}
 
-                        else if ( (true) ) {s = 45;}
+                        else if ( (true) ) {s = 46;}
 
                          
                         input.seek(index24_34);
@@ -31306,9 +30974,9 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
                         int index24_35 = input.index();
                         input.rewind();
                         s = -1;
-                        if ( (synpred6_InternalEditor()) ) {s = 44;}
+                        if ( (synpred6_InternalEditor()) ) {s = 45;}
 
-                        else if ( (true) ) {s = 45;}
+                        else if ( (true) ) {s = 46;}
 
                          
                         input.seek(index24_35);
@@ -31321,9 +30989,9 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
                         int index24_36 = input.index();
                         input.rewind();
                         s = -1;
-                        if ( (synpred6_InternalEditor()) ) {s = 44;}
+                        if ( (synpred6_InternalEditor()) ) {s = 45;}
 
-                        else if ( (true) ) {s = 45;}
+                        else if ( (true) ) {s = 46;}
 
                          
                         input.seek(index24_36);
@@ -31336,9 +31004,9 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
                         int index24_37 = input.index();
                         input.rewind();
                         s = -1;
-                        if ( (synpred6_InternalEditor()) ) {s = 44;}
+                        if ( (synpred6_InternalEditor()) ) {s = 45;}
 
-                        else if ( (true) ) {s = 45;}
+                        else if ( (true) ) {s = 46;}
 
                          
                         input.seek(index24_37);
@@ -31351,9 +31019,9 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
                         int index24_38 = input.index();
                         input.rewind();
                         s = -1;
-                        if ( (synpred6_InternalEditor()) ) {s = 44;}
+                        if ( (synpred6_InternalEditor()) ) {s = 45;}
 
-                        else if ( (true) ) {s = 45;}
+                        else if ( (true) ) {s = 46;}
 
                          
                         input.seek(index24_38);
@@ -31366,9 +31034,9 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
                         int index24_39 = input.index();
                         input.rewind();
                         s = -1;
-                        if ( (synpred6_InternalEditor()) ) {s = 44;}
+                        if ( (synpred6_InternalEditor()) ) {s = 45;}
 
-                        else if ( (true) ) {s = 45;}
+                        else if ( (true) ) {s = 46;}
 
                          
                         input.seek(index24_39);
@@ -31381,9 +31049,9 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
                         int index24_40 = input.index();
                         input.rewind();
                         s = -1;
-                        if ( (synpred6_InternalEditor()) ) {s = 44;}
+                        if ( (synpred6_InternalEditor()) ) {s = 45;}
 
-                        else if ( (true) ) {s = 45;}
+                        else if ( (true) ) {s = 46;}
 
                          
                         input.seek(index24_40);
@@ -31396,9 +31064,9 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
                         int index24_41 = input.index();
                         input.rewind();
                         s = -1;
-                        if ( (synpred6_InternalEditor()) ) {s = 44;}
+                        if ( (synpred6_InternalEditor()) ) {s = 45;}
 
-                        else if ( (true) ) {s = 45;}
+                        else if ( (true) ) {s = 46;}
 
                          
                         input.seek(index24_41);
@@ -31411,9 +31079,9 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
                         int index24_42 = input.index();
                         input.rewind();
                         s = -1;
-                        if ( (synpred6_InternalEditor()) ) {s = 44;}
+                        if ( (synpred6_InternalEditor()) ) {s = 45;}
 
-                        else if ( (true) ) {s = 45;}
+                        else if ( (true) ) {s = 46;}
 
                          
                         input.seek(index24_42);
@@ -31426,12 +31094,27 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
                         int index24_43 = input.index();
                         input.rewind();
                         s = -1;
-                        if ( (synpred6_InternalEditor()) ) {s = 44;}
+                        if ( (synpred6_InternalEditor()) ) {s = 45;}
 
-                        else if ( (true) ) {s = 45;}
+                        else if ( (true) ) {s = 46;}
 
                          
                         input.seek(index24_43);
+                        if ( s>=0 ) return s;
+                        break;
+                    case 43 : 
+                        int LA24_44 = input.LA(1);
+
+                         
+                        int index24_44 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( (synpred6_InternalEditor()) ) {s = 45;}
+
+                        else if ( (true) ) {s = 46;}
+
+                         
+                        input.seek(index24_44);
                         if ( s>=0 ) return s;
                         break;
             }
@@ -31443,22 +31126,23 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
         }
     }
     static final String DFA27_eotS =
-        "\100\uffff";
+        "\101\uffff";
     static final String DFA27_eofS =
-        "\100\uffff";
+        "\101\uffff";
     static final String DFA27_minS =
-        "\1\4\1\0\76\uffff";
+        "\1\4\1\0\77\uffff";
     static final String DFA27_maxS =
-        "\1\165\1\0\76\uffff";
+        "\1\166\1\0\77\uffff";
     static final String DFA27_acceptS =
-        "\2\uffff\1\2\74\uffff\1\1";
+        "\2\uffff\1\2\75\uffff\1\1";
     static final String DFA27_specialS =
-        "\1\uffff\1\0\76\uffff}>";
+        "\1\uffff\1\0\77\uffff}>";
     static final String[] DFA27_transitionS = {
             "\1\2\13\uffff\27\2\1\uffff\1\2\1\uffff\1\2\1\uffff\2\2\1\uffff"+
-            "\3\2\3\uffff\1\2\25\uffff\1\1\3\uffff\2\2\2\uffff\1\2\1\uffff"+
+            "\4\2\3\uffff\1\2\25\uffff\1\1\3\uffff\2\2\2\uffff\1\2\1\uffff"+
             "\15\2\3\uffff\2\2\4\uffff\13\2",
             "\1\uffff",
+            "",
             "",
             "",
             "",
@@ -31566,7 +31250,7 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
                         int index27_1 = input.index();
                         input.rewind();
                         s = -1;
-                        if ( (synpred7_InternalEditor()) ) {s = 63;}
+                        if ( (synpred7_InternalEditor()) ) {s = 64;}
 
                         else if ( (true) ) {s = 2;}
 
@@ -31583,23 +31267,24 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
         }
     }
     static final String DFA33_eotS =
-        "\100\uffff";
+        "\101\uffff";
     static final String DFA33_eofS =
-        "\100\uffff";
+        "\101\uffff";
     static final String DFA33_minS =
-        "\1\4\56\uffff\1\0\20\uffff";
+        "\1\4\57\uffff\1\0\20\uffff";
     static final String DFA33_maxS =
-        "\1\165\56\uffff\1\0\20\uffff";
+        "\1\166\57\uffff\1\0\20\uffff";
     static final String DFA33_acceptS =
-        "\1\uffff\1\1\52\uffff\1\2\2\3\1\uffff\1\5\1\6\1\7\1\10\1\11\1\12"+
+        "\1\uffff\1\1\53\uffff\1\2\2\3\1\uffff\1\5\1\6\1\7\1\10\1\11\1\12"+
         "\1\13\1\14\1\15\1\16\1\17\1\20\1\21\1\22\1\23\1\4";
     static final String DFA33_specialS =
-        "\1\0\56\uffff\1\1\20\uffff}>";
+        "\1\0\57\uffff\1\1\20\uffff}>";
     static final String[] DFA33_transitionS = {
             "\1\1\13\uffff\27\1\1\uffff\1\1\1\uffff\1\1\1\uffff\2\1\1\uffff"+
-            "\3\1\3\uffff\1\1\25\uffff\1\54\3\uffff\1\57\1\60\2\uffff\1\61"+
-            "\1\uffff\1\62\1\63\1\64\1\65\1\66\1\67\1\70\1\71\1\72\1\73\1"+
-            "\74\1\75\1\76\3\uffff\1\55\1\56\4\uffff\13\1",
+            "\4\1\3\uffff\1\1\25\uffff\1\55\3\uffff\1\60\1\61\2\uffff\1\62"+
+            "\1\uffff\1\63\1\64\1\65\1\66\1\67\1\70\1\71\1\72\1\73\1\74\1"+
+            "\75\1\76\1\77\3\uffff\1\56\1\57\4\uffff\13\1",
+            "",
             "",
             "",
             "",
@@ -31708,21 +31393,19 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
                         int index33_0 = input.index();
                         input.rewind();
                         s = -1;
-                        if ( (LA33_0==RULE_TK_STRING||(LA33_0>=RULE_KW_RARROW && LA33_0<=RULE_KW_HAT)||LA33_0==RULE_KW_OPAREN||LA33_0==RULE_KW_OBRACK||(LA33_0>=RULE_KW_QUOTE && LA33_0<=RULE_TK_ID)||(LA33_0>=RULE_KW_SHARP && LA33_0<=RULE_TK_INT)||LA33_0==RULE_KW_OCURLY||(LA33_0>=107 && LA33_0<=117)) ) {s = 1;}
+                        if ( (LA33_0==RULE_TK_STRING||(LA33_0>=RULE_KW_RARROW && LA33_0<=RULE_KW_HAT)||LA33_0==RULE_KW_OPAREN||LA33_0==RULE_KW_OBRACK||(LA33_0>=RULE_KW_QUOTE && LA33_0<=RULE_TK_ID)||(LA33_0>=RULE_KW_SHARP && LA33_0<=RULE_TK_FLOAT)||LA33_0==RULE_KW_OCURLY||(LA33_0>=108 && LA33_0<=118)) ) {s = 1;}
 
-                        else if ( (LA33_0==75) ) {s = 44;}
-
-                        else if ( (LA33_0==101) && (synpred9_InternalEditor())) {s = 45;}
+                        else if ( (LA33_0==76) ) {s = 45;}
 
                         else if ( (LA33_0==102) && (synpred9_InternalEditor())) {s = 46;}
 
-                        else if ( (LA33_0==79) ) {s = 47;}
+                        else if ( (LA33_0==103) && (synpred9_InternalEditor())) {s = 47;}
 
                         else if ( (LA33_0==80) ) {s = 48;}
 
-                        else if ( (LA33_0==83) ) {s = 49;}
+                        else if ( (LA33_0==81) ) {s = 49;}
 
-                        else if ( (LA33_0==85) ) {s = 50;}
+                        else if ( (LA33_0==84) ) {s = 50;}
 
                         else if ( (LA33_0==86) ) {s = 51;}
 
@@ -31748,23 +31431,25 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
 
                         else if ( (LA33_0==97) ) {s = 62;}
 
+                        else if ( (LA33_0==98) ) {s = 63;}
+
                          
                         input.seek(index33_0);
                         if ( s>=0 ) return s;
                         break;
                     case 1 : 
-                        int LA33_47 = input.LA(1);
+                        int LA33_48 = input.LA(1);
 
                          
-                        int index33_47 = input.index();
+                        int index33_48 = input.index();
                         input.rewind();
                         s = -1;
-                        if ( (synpred9_InternalEditor()) ) {s = 46;}
+                        if ( (synpred9_InternalEditor()) ) {s = 47;}
 
-                        else if ( (true) ) {s = 63;}
+                        else if ( (true) ) {s = 64;}
 
                          
-                        input.seek(index33_47);
+                        input.seek(index33_48);
                         if ( s>=0 ) return s;
                         break;
             }
@@ -31776,23 +31461,24 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
         }
     }
     static final String DFA39_eotS =
-        "\100\uffff";
+        "\101\uffff";
     static final String DFA39_eofS =
-        "\100\uffff";
+        "\101\uffff";
     static final String DFA39_minS =
-        "\1\4\56\uffff\1\0\20\uffff";
+        "\1\4\57\uffff\1\0\20\uffff";
     static final String DFA39_maxS =
-        "\1\165\56\uffff\1\0\20\uffff";
+        "\1\166\57\uffff\1\0\20\uffff";
     static final String DFA39_acceptS =
-        "\1\uffff\1\1\52\uffff\1\2\2\3\1\uffff\1\5\1\6\1\7\1\10\1\11\1\12"+
+        "\1\uffff\1\1\53\uffff\1\2\2\3\1\uffff\1\5\1\6\1\7\1\10\1\11\1\12"+
         "\1\13\1\14\1\15\1\16\1\17\1\20\1\21\1\22\1\23\1\4";
     static final String DFA39_specialS =
-        "\1\0\56\uffff\1\1\20\uffff}>";
+        "\1\0\57\uffff\1\1\20\uffff}>";
     static final String[] DFA39_transitionS = {
             "\1\1\13\uffff\27\1\1\uffff\1\1\1\uffff\1\1\1\uffff\2\1\1\uffff"+
-            "\3\1\3\uffff\1\1\25\uffff\1\54\3\uffff\1\57\1\60\2\uffff\1\61"+
-            "\1\uffff\1\62\1\63\1\64\1\65\1\66\1\67\1\70\1\71\1\72\1\73\1"+
-            "\74\1\75\1\76\3\uffff\1\55\1\56\4\uffff\13\1",
+            "\4\1\3\uffff\1\1\25\uffff\1\55\3\uffff\1\60\1\61\2\uffff\1\62"+
+            "\1\uffff\1\63\1\64\1\65\1\66\1\67\1\70\1\71\1\72\1\73\1\74\1"+
+            "\75\1\76\1\77\3\uffff\1\56\1\57\4\uffff\13\1",
+            "",
             "",
             "",
             "",
@@ -31901,21 +31587,19 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
                         int index39_0 = input.index();
                         input.rewind();
                         s = -1;
-                        if ( (LA39_0==RULE_TK_STRING||(LA39_0>=RULE_KW_RARROW && LA39_0<=RULE_KW_HAT)||LA39_0==RULE_KW_OPAREN||LA39_0==RULE_KW_OBRACK||(LA39_0>=RULE_KW_QUOTE && LA39_0<=RULE_TK_ID)||(LA39_0>=RULE_KW_SHARP && LA39_0<=RULE_TK_INT)||LA39_0==RULE_KW_OCURLY||(LA39_0>=107 && LA39_0<=117)) ) {s = 1;}
+                        if ( (LA39_0==RULE_TK_STRING||(LA39_0>=RULE_KW_RARROW && LA39_0<=RULE_KW_HAT)||LA39_0==RULE_KW_OPAREN||LA39_0==RULE_KW_OBRACK||(LA39_0>=RULE_KW_QUOTE && LA39_0<=RULE_TK_ID)||(LA39_0>=RULE_KW_SHARP && LA39_0<=RULE_TK_FLOAT)||LA39_0==RULE_KW_OCURLY||(LA39_0>=108 && LA39_0<=118)) ) {s = 1;}
 
-                        else if ( (LA39_0==75) ) {s = 44;}
-
-                        else if ( (LA39_0==101) && (synpred11_InternalEditor())) {s = 45;}
+                        else if ( (LA39_0==76) ) {s = 45;}
 
                         else if ( (LA39_0==102) && (synpred11_InternalEditor())) {s = 46;}
 
-                        else if ( (LA39_0==79) ) {s = 47;}
+                        else if ( (LA39_0==103) && (synpred11_InternalEditor())) {s = 47;}
 
                         else if ( (LA39_0==80) ) {s = 48;}
 
-                        else if ( (LA39_0==83) ) {s = 49;}
+                        else if ( (LA39_0==81) ) {s = 49;}
 
-                        else if ( (LA39_0==85) ) {s = 50;}
+                        else if ( (LA39_0==84) ) {s = 50;}
 
                         else if ( (LA39_0==86) ) {s = 51;}
 
@@ -31941,23 +31625,25 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
 
                         else if ( (LA39_0==97) ) {s = 62;}
 
+                        else if ( (LA39_0==98) ) {s = 63;}
+
                          
                         input.seek(index39_0);
                         if ( s>=0 ) return s;
                         break;
                     case 1 : 
-                        int LA39_47 = input.LA(1);
+                        int LA39_48 = input.LA(1);
 
                          
-                        int index39_47 = input.index();
+                        int index39_48 = input.index();
                         input.rewind();
                         s = -1;
-                        if ( (synpred11_InternalEditor()) ) {s = 46;}
+                        if ( (synpred11_InternalEditor()) ) {s = 47;}
 
-                        else if ( (true) ) {s = 63;}
+                        else if ( (true) ) {s = 64;}
 
                          
-                        input.seek(index39_47);
+                        input.seek(index39_48);
                         if ( s>=0 ) return s;
                         break;
             }
@@ -31969,20 +31655,21 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
         }
     }
     static final String DFA50_eotS =
-        "\15\uffff";
+        "\16\uffff";
     static final String DFA50_eofS =
-        "\15\uffff";
+        "\16\uffff";
     static final String DFA50_minS =
-        "\1\4\14\uffff";
+        "\1\4\15\uffff";
     static final String DFA50_maxS =
-        "\1\165\14\uffff";
+        "\1\166\15\uffff";
     static final String DFA50_acceptS =
-        "\1\uffff\1\1\13\2";
+        "\1\uffff\1\1\14\2";
     static final String DFA50_specialS =
-        "\1\0\14\uffff}>";
+        "\1\0\15\uffff}>";
     static final String[] DFA50_transitionS = {
-            "\1\7\13\uffff\27\1\1\uffff\1\10\1\uffff\1\11\1\uffff\1\12\1"+
-            "\3\1\uffff\1\4\1\5\1\6\71\uffff\1\13\1\14\10\1\1\2",
+            "\1\10\13\uffff\27\1\1\uffff\1\11\1\uffff\1\12\1\uffff\1\13\1"+
+            "\3\1\uffff\1\4\1\5\1\6\1\7\71\uffff\1\14\1\15\10\1\1\2",
+            "",
             "",
             "",
             "",
@@ -32040,9 +31727,9 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
                         int index50_0 = input.index();
                         input.rewind();
                         s = -1;
-                        if ( ((LA50_0>=RULE_KW_RARROW && LA50_0<=RULE_KW_HAT)||(LA50_0>=109 && LA50_0<=116)) ) {s = 1;}
+                        if ( ((LA50_0>=RULE_KW_RARROW && LA50_0<=RULE_KW_HAT)||(LA50_0>=110 && LA50_0<=117)) ) {s = 1;}
 
-                        else if ( (LA50_0==117) && (synpred12_InternalEditor())) {s = 2;}
+                        else if ( (LA50_0==118) && (synpred12_InternalEditor())) {s = 2;}
 
                         else if ( (LA50_0==RULE_TK_ID) && (synpred12_InternalEditor())) {s = 3;}
 
@@ -32052,17 +31739,19 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
 
                         else if ( (LA50_0==RULE_TK_INT) && (synpred12_InternalEditor())) {s = 6;}
 
-                        else if ( (LA50_0==RULE_TK_STRING) && (synpred12_InternalEditor())) {s = 7;}
+                        else if ( (LA50_0==RULE_TK_FLOAT) && (synpred12_InternalEditor())) {s = 7;}
 
-                        else if ( (LA50_0==RULE_KW_OPAREN) && (synpred12_InternalEditor())) {s = 8;}
+                        else if ( (LA50_0==RULE_TK_STRING) && (synpred12_InternalEditor())) {s = 8;}
 
-                        else if ( (LA50_0==RULE_KW_OBRACK) && (synpred12_InternalEditor())) {s = 9;}
+                        else if ( (LA50_0==RULE_KW_OPAREN) && (synpred12_InternalEditor())) {s = 9;}
 
-                        else if ( (LA50_0==RULE_KW_QUOTE) && (synpred12_InternalEditor())) {s = 10;}
+                        else if ( (LA50_0==RULE_KW_OBRACK) && (synpred12_InternalEditor())) {s = 10;}
 
-                        else if ( (LA50_0==107) && (synpred12_InternalEditor())) {s = 11;}
+                        else if ( (LA50_0==RULE_KW_QUOTE) && (synpred12_InternalEditor())) {s = 11;}
 
                         else if ( (LA50_0==108) && (synpred12_InternalEditor())) {s = 12;}
+
+                        else if ( (LA50_0==109) && (synpred12_InternalEditor())) {s = 13;}
 
                          
                         input.seek(index50_0);
@@ -32083,13 +31772,13 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
     static final String DFA66_minS =
         "\1\5\1\0\104\uffff";
     static final String DFA66_maxS =
-        "\1\164\1\0\104\uffff";
+        "\1\165\1\0\104\uffff";
     static final String DFA66_acceptS =
         "\2\uffff\1\2\102\uffff\1\1";
     static final String DFA66_specialS =
         "\1\uffff\1\0\104\uffff}>";
     static final String[] DFA66_transitionS = {
-            "\12\2\1\1\27\2\2\uffff\1\2\1\uffff\1\2\2\uffff\1\2\4\uffff\2"+
+            "\12\2\1\1\27\2\2\uffff\1\2\1\uffff\1\2\2\uffff\1\2\5\uffff\2"+
             "\2\1\uffff\1\2\21\uffff\3\2\1\uffff\4\2\1\uffff\2\2\1\uffff"+
             "\1\2\15\uffff\11\2\2\uffff\10\2",
             "\1\uffff",
@@ -32223,20 +31912,21 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
         }
     }
     static final String DFA70_eotS =
-        "\17\uffff";
+        "\20\uffff";
     static final String DFA70_eofS =
-        "\17\uffff";
+        "\20\uffff";
     static final String DFA70_minS =
-        "\1\4\11\0\5\uffff";
+        "\1\4\12\0\5\uffff";
     static final String DFA70_maxS =
-        "\1\165\11\0\5\uffff";
+        "\1\166\12\0\5\uffff";
     static final String DFA70_acceptS =
-        "\12\uffff\1\2\1\3\1\1\1\4\1\5";
+        "\13\uffff\1\2\1\3\1\1\1\4\1\5";
     static final String DFA70_specialS =
-        "\1\0\1\1\1\2\1\3\1\4\1\5\1\6\1\7\1\10\1\11\5\uffff}>";
+        "\1\0\1\1\1\2\1\3\1\4\1\5\1\6\1\7\1\10\1\11\1\12\5\uffff}>";
     static final String[] DFA70_transitionS = {
-            "\1\6\43\uffff\1\7\1\uffff\1\10\1\uffff\1\11\1\2\1\uffff\1\3"+
-            "\1\4\1\5\71\uffff\1\12\1\13\10\uffff\1\1",
+            "\1\7\43\uffff\1\10\1\uffff\1\11\1\uffff\1\12\1\2\1\uffff\1\3"+
+            "\1\4\1\5\1\6\71\uffff\1\13\1\14\10\uffff\1\1",
+            "\1\uffff",
             "\1\uffff",
             "\1\uffff",
             "\1\uffff",
@@ -32296,7 +31986,7 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
                         int index70_0 = input.index();
                         input.rewind();
                         s = -1;
-                        if ( (LA70_0==117) ) {s = 1;}
+                        if ( (LA70_0==118) ) {s = 1;}
 
                         else if ( (LA70_0==RULE_TK_ID) ) {s = 2;}
 
@@ -32306,17 +31996,19 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
 
                         else if ( (LA70_0==RULE_TK_INT) ) {s = 5;}
 
-                        else if ( (LA70_0==RULE_TK_STRING) ) {s = 6;}
+                        else if ( (LA70_0==RULE_TK_FLOAT) ) {s = 6;}
 
-                        else if ( (LA70_0==RULE_KW_OPAREN) ) {s = 7;}
+                        else if ( (LA70_0==RULE_TK_STRING) ) {s = 7;}
 
-                        else if ( (LA70_0==RULE_KW_OBRACK) ) {s = 8;}
+                        else if ( (LA70_0==RULE_KW_OPAREN) ) {s = 8;}
 
-                        else if ( (LA70_0==RULE_KW_QUOTE) ) {s = 9;}
+                        else if ( (LA70_0==RULE_KW_OBRACK) ) {s = 9;}
 
-                        else if ( (LA70_0==107) && (synpred15_InternalEditor())) {s = 10;}
+                        else if ( (LA70_0==RULE_KW_QUOTE) ) {s = 10;}
 
-                        else if ( (LA70_0==108) && (synpred16_InternalEditor())) {s = 11;}
+                        else if ( (LA70_0==108) && (synpred15_InternalEditor())) {s = 11;}
+
+                        else if ( (LA70_0==109) && (synpred16_InternalEditor())) {s = 12;}
 
                          
                         input.seek(index70_0);
@@ -32329,15 +32021,15 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
                         int index70_1 = input.index();
                         input.rewind();
                         s = -1;
-                        if ( (true) ) {s = 12;}
+                        if ( (true) ) {s = 13;}
 
-                        else if ( (synpred15_InternalEditor()) ) {s = 10;}
+                        else if ( (synpred15_InternalEditor()) ) {s = 11;}
 
-                        else if ( (synpred16_InternalEditor()) ) {s = 11;}
+                        else if ( (synpred16_InternalEditor()) ) {s = 12;}
 
-                        else if ( (synpred17_InternalEditor()) ) {s = 13;}
+                        else if ( (synpred17_InternalEditor()) ) {s = 14;}
 
-                        else if ( (synpred18_InternalEditor()) ) {s = 14;}
+                        else if ( (synpred18_InternalEditor()) ) {s = 15;}
 
                          
                         input.seek(index70_1);
@@ -32350,15 +32042,15 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
                         int index70_2 = input.index();
                         input.rewind();
                         s = -1;
-                        if ( (true) ) {s = 12;}
+                        if ( (true) ) {s = 13;}
 
-                        else if ( (synpred15_InternalEditor()) ) {s = 10;}
+                        else if ( (synpred15_InternalEditor()) ) {s = 11;}
 
-                        else if ( (synpred16_InternalEditor()) ) {s = 11;}
+                        else if ( (synpred16_InternalEditor()) ) {s = 12;}
 
-                        else if ( (synpred17_InternalEditor()) ) {s = 13;}
+                        else if ( (synpred17_InternalEditor()) ) {s = 14;}
 
-                        else if ( (synpred18_InternalEditor()) ) {s = 14;}
+                        else if ( (synpred18_InternalEditor()) ) {s = 15;}
 
                          
                         input.seek(index70_2);
@@ -32371,15 +32063,15 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
                         int index70_3 = input.index();
                         input.rewind();
                         s = -1;
-                        if ( (true) ) {s = 12;}
+                        if ( (true) ) {s = 13;}
 
-                        else if ( (synpred15_InternalEditor()) ) {s = 10;}
+                        else if ( (synpred15_InternalEditor()) ) {s = 11;}
 
-                        else if ( (synpred16_InternalEditor()) ) {s = 11;}
+                        else if ( (synpred16_InternalEditor()) ) {s = 12;}
 
-                        else if ( (synpred17_InternalEditor()) ) {s = 13;}
+                        else if ( (synpred17_InternalEditor()) ) {s = 14;}
 
-                        else if ( (synpred18_InternalEditor()) ) {s = 14;}
+                        else if ( (synpred18_InternalEditor()) ) {s = 15;}
 
                          
                         input.seek(index70_3);
@@ -32392,15 +32084,15 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
                         int index70_4 = input.index();
                         input.rewind();
                         s = -1;
-                        if ( (true) ) {s = 12;}
+                        if ( (true) ) {s = 13;}
 
-                        else if ( (synpred15_InternalEditor()) ) {s = 10;}
+                        else if ( (synpred15_InternalEditor()) ) {s = 11;}
 
-                        else if ( (synpred16_InternalEditor()) ) {s = 11;}
+                        else if ( (synpred16_InternalEditor()) ) {s = 12;}
 
-                        else if ( (synpred17_InternalEditor()) ) {s = 13;}
+                        else if ( (synpred17_InternalEditor()) ) {s = 14;}
 
-                        else if ( (synpred18_InternalEditor()) ) {s = 14;}
+                        else if ( (synpred18_InternalEditor()) ) {s = 15;}
 
                          
                         input.seek(index70_4);
@@ -32413,15 +32105,15 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
                         int index70_5 = input.index();
                         input.rewind();
                         s = -1;
-                        if ( (true) ) {s = 12;}
+                        if ( (true) ) {s = 13;}
 
-                        else if ( (synpred15_InternalEditor()) ) {s = 10;}
+                        else if ( (synpred15_InternalEditor()) ) {s = 11;}
 
-                        else if ( (synpred16_InternalEditor()) ) {s = 11;}
+                        else if ( (synpred16_InternalEditor()) ) {s = 12;}
 
-                        else if ( (synpred17_InternalEditor()) ) {s = 13;}
+                        else if ( (synpred17_InternalEditor()) ) {s = 14;}
 
-                        else if ( (synpred18_InternalEditor()) ) {s = 14;}
+                        else if ( (synpred18_InternalEditor()) ) {s = 15;}
 
                          
                         input.seek(index70_5);
@@ -32434,15 +32126,15 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
                         int index70_6 = input.index();
                         input.rewind();
                         s = -1;
-                        if ( (true) ) {s = 12;}
+                        if ( (true) ) {s = 13;}
 
-                        else if ( (synpred15_InternalEditor()) ) {s = 10;}
+                        else if ( (synpred15_InternalEditor()) ) {s = 11;}
 
-                        else if ( (synpred16_InternalEditor()) ) {s = 11;}
+                        else if ( (synpred16_InternalEditor()) ) {s = 12;}
 
-                        else if ( (synpred17_InternalEditor()) ) {s = 13;}
+                        else if ( (synpred17_InternalEditor()) ) {s = 14;}
 
-                        else if ( (synpred18_InternalEditor()) ) {s = 14;}
+                        else if ( (synpred18_InternalEditor()) ) {s = 15;}
 
                          
                         input.seek(index70_6);
@@ -32455,15 +32147,15 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
                         int index70_7 = input.index();
                         input.rewind();
                         s = -1;
-                        if ( (true) ) {s = 12;}
+                        if ( (true) ) {s = 13;}
 
-                        else if ( (synpred15_InternalEditor()) ) {s = 10;}
+                        else if ( (synpred15_InternalEditor()) ) {s = 11;}
 
-                        else if ( (synpred16_InternalEditor()) ) {s = 11;}
+                        else if ( (synpred16_InternalEditor()) ) {s = 12;}
 
-                        else if ( (synpred17_InternalEditor()) ) {s = 13;}
+                        else if ( (synpred17_InternalEditor()) ) {s = 14;}
 
-                        else if ( (synpred18_InternalEditor()) ) {s = 14;}
+                        else if ( (synpred18_InternalEditor()) ) {s = 15;}
 
                          
                         input.seek(index70_7);
@@ -32476,15 +32168,15 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
                         int index70_8 = input.index();
                         input.rewind();
                         s = -1;
-                        if ( (true) ) {s = 12;}
+                        if ( (true) ) {s = 13;}
 
-                        else if ( (synpred15_InternalEditor()) ) {s = 10;}
+                        else if ( (synpred15_InternalEditor()) ) {s = 11;}
 
-                        else if ( (synpred16_InternalEditor()) ) {s = 11;}
+                        else if ( (synpred16_InternalEditor()) ) {s = 12;}
 
-                        else if ( (synpred17_InternalEditor()) ) {s = 13;}
+                        else if ( (synpred17_InternalEditor()) ) {s = 14;}
 
-                        else if ( (synpred18_InternalEditor()) ) {s = 14;}
+                        else if ( (synpred18_InternalEditor()) ) {s = 15;}
 
                          
                         input.seek(index70_8);
@@ -32497,18 +32189,39 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
                         int index70_9 = input.index();
                         input.rewind();
                         s = -1;
-                        if ( (true) ) {s = 12;}
+                        if ( (true) ) {s = 13;}
 
-                        else if ( (synpred15_InternalEditor()) ) {s = 10;}
+                        else if ( (synpred15_InternalEditor()) ) {s = 11;}
 
-                        else if ( (synpred16_InternalEditor()) ) {s = 11;}
+                        else if ( (synpred16_InternalEditor()) ) {s = 12;}
 
-                        else if ( (synpred17_InternalEditor()) ) {s = 13;}
+                        else if ( (synpred17_InternalEditor()) ) {s = 14;}
 
-                        else if ( (synpred18_InternalEditor()) ) {s = 14;}
+                        else if ( (synpred18_InternalEditor()) ) {s = 15;}
 
                          
                         input.seek(index70_9);
+                        if ( s>=0 ) return s;
+                        break;
+                    case 10 : 
+                        int LA70_10 = input.LA(1);
+
+                         
+                        int index70_10 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( (true) ) {s = 13;}
+
+                        else if ( (synpred15_InternalEditor()) ) {s = 11;}
+
+                        else if ( (synpred16_InternalEditor()) ) {s = 12;}
+
+                        else if ( (synpred17_InternalEditor()) ) {s = 14;}
+
+                        else if ( (synpred18_InternalEditor()) ) {s = 15;}
+
+                         
+                        input.seek(index70_10);
                         if ( s>=0 ) return s;
                         break;
             }
@@ -32520,21 +32233,22 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
         }
     }
     static final String DFA87_eotS =
-        "\14\uffff";
+        "\15\uffff";
     static final String DFA87_eofS =
-        "\14\uffff";
+        "\15\uffff";
     static final String DFA87_minS =
-        "\1\4\1\uffff\10\0\2\uffff";
+        "\1\4\1\uffff\11\0\2\uffff";
     static final String DFA87_maxS =
-        "\1\165\1\uffff\10\0\2\uffff";
+        "\1\166\1\uffff\11\0\2\uffff";
     static final String DFA87_acceptS =
-        "\1\uffff\1\1\10\uffff\1\2\1\3";
+        "\1\uffff\1\1\11\uffff\1\2\1\3";
     static final String DFA87_specialS =
-        "\2\uffff\1\0\1\1\1\2\1\3\1\4\1\5\1\6\1\7\2\uffff}>";
+        "\2\uffff\1\0\1\1\1\2\1\3\1\4\1\5\1\6\1\7\1\10\2\uffff}>";
     static final String[] DFA87_transitionS = {
-            "\1\6\43\uffff\1\7\1\uffff\1\10\1\uffff\1\11\1\2\1\uffff\1\3"+
-            "\1\4\1\5\103\uffff\1\1",
+            "\1\7\43\uffff\1\10\1\uffff\1\11\1\uffff\1\12\1\2\1\uffff\1\3"+
+            "\1\4\1\5\1\6\103\uffff\1\1",
             "",
+            "\1\uffff",
             "\1\uffff",
             "\1\uffff",
             "\1\uffff",
@@ -32590,9 +32304,9 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
                         int index87_2 = input.index();
                         input.rewind();
                         s = -1;
-                        if ( (synpred19_InternalEditor()) ) {s = 10;}
+                        if ( (synpred19_InternalEditor()) ) {s = 11;}
 
-                        else if ( (true) ) {s = 11;}
+                        else if ( (true) ) {s = 12;}
 
                          
                         input.seek(index87_2);
@@ -32605,9 +32319,9 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
                         int index87_3 = input.index();
                         input.rewind();
                         s = -1;
-                        if ( (synpred19_InternalEditor()) ) {s = 10;}
+                        if ( (synpred19_InternalEditor()) ) {s = 11;}
 
-                        else if ( (true) ) {s = 11;}
+                        else if ( (true) ) {s = 12;}
 
                          
                         input.seek(index87_3);
@@ -32620,9 +32334,9 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
                         int index87_4 = input.index();
                         input.rewind();
                         s = -1;
-                        if ( (synpred19_InternalEditor()) ) {s = 10;}
+                        if ( (synpred19_InternalEditor()) ) {s = 11;}
 
-                        else if ( (true) ) {s = 11;}
+                        else if ( (true) ) {s = 12;}
 
                          
                         input.seek(index87_4);
@@ -32635,9 +32349,9 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
                         int index87_5 = input.index();
                         input.rewind();
                         s = -1;
-                        if ( (synpred19_InternalEditor()) ) {s = 10;}
+                        if ( (synpred19_InternalEditor()) ) {s = 11;}
 
-                        else if ( (true) ) {s = 11;}
+                        else if ( (true) ) {s = 12;}
 
                          
                         input.seek(index87_5);
@@ -32650,9 +32364,9 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
                         int index87_6 = input.index();
                         input.rewind();
                         s = -1;
-                        if ( (synpred19_InternalEditor()) ) {s = 10;}
+                        if ( (synpred19_InternalEditor()) ) {s = 11;}
 
-                        else if ( (true) ) {s = 11;}
+                        else if ( (true) ) {s = 12;}
 
                          
                         input.seek(index87_6);
@@ -32665,9 +32379,9 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
                         int index87_7 = input.index();
                         input.rewind();
                         s = -1;
-                        if ( (synpred19_InternalEditor()) ) {s = 10;}
+                        if ( (synpred19_InternalEditor()) ) {s = 11;}
 
-                        else if ( (true) ) {s = 11;}
+                        else if ( (true) ) {s = 12;}
 
                          
                         input.seek(index87_7);
@@ -32680,9 +32394,9 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
                         int index87_8 = input.index();
                         input.rewind();
                         s = -1;
-                        if ( (synpred19_InternalEditor()) ) {s = 10;}
+                        if ( (synpred19_InternalEditor()) ) {s = 11;}
 
-                        else if ( (true) ) {s = 11;}
+                        else if ( (true) ) {s = 12;}
 
                          
                         input.seek(index87_8);
@@ -32695,12 +32409,27 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
                         int index87_9 = input.index();
                         input.rewind();
                         s = -1;
-                        if ( (synpred19_InternalEditor()) ) {s = 10;}
+                        if ( (synpred19_InternalEditor()) ) {s = 11;}
 
-                        else if ( (true) ) {s = 11;}
+                        else if ( (true) ) {s = 12;}
 
                          
                         input.seek(index87_9);
+                        if ( s>=0 ) return s;
+                        break;
+                    case 8 : 
+                        int LA87_10 = input.LA(1);
+
+                         
+                        int index87_10 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( (synpred19_InternalEditor()) ) {s = 11;}
+
+                        else if ( (true) ) {s = 12;}
+
+                         
+                        input.seek(index87_10);
                         if ( s>=0 ) return s;
                         break;
             }
@@ -32711,12 +32440,91 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
             throw nvae;
         }
     }
+    static final String DFA90_eotS =
+        "\15\uffff";
+    static final String DFA90_eofS =
+        "\1\uffff\6\7\4\uffff\2\7";
+    static final String DFA90_minS =
+        "\7\4\1\uffff\1\4\1\uffff\3\4";
+    static final String DFA90_maxS =
+        "\1\62\6\166\1\uffff\1\166\1\uffff\1\66\2\166";
+    static final String DFA90_acceptS =
+        "\7\uffff\1\2\1\uffff\1\1\3\uffff";
+    static final String DFA90_specialS =
+        "\15\uffff}>";
+    static final String[] DFA90_transitionS = {
+            "\1\6\50\uffff\1\1\1\uffff\1\2\1\3\1\4\1\5",
+            "\44\7\1\11\1\7\1\11\1\7\1\11\6\7\1\uffff\2\7\1\11\1\7\21\uffff"+
+            "\3\7\1\uffff\4\7\1\uffff\2\7\1\uffff\1\7\11\uffff\2\7\2\uffff"+
+            "\23\7\1\10",
+            "\44\7\1\11\1\7\1\11\1\7\1\11\6\7\1\uffff\2\7\1\11\1\7\21\uffff"+
+            "\3\7\1\uffff\4\7\1\uffff\2\7\1\uffff\1\7\11\uffff\2\7\2\uffff"+
+            "\23\7\1\10",
+            "\44\7\1\11\1\7\1\11\1\7\1\11\6\7\1\uffff\2\7\1\11\1\7\21\uffff"+
+            "\3\7\1\uffff\4\7\1\uffff\2\7\1\uffff\1\7\11\uffff\2\7\2\uffff"+
+            "\23\7\1\10",
+            "\43\7\1\12\1\11\1\7\1\11\1\7\1\11\6\7\1\uffff\2\7\1\11\1\7"+
+            "\21\uffff\3\7\1\uffff\4\7\1\uffff\2\7\1\uffff\1\7\11\uffff\2"+
+            "\7\2\uffff\23\7\1\10",
+            "\44\7\1\11\1\7\1\11\1\7\1\11\6\7\1\uffff\2\7\1\11\1\7\21\uffff"+
+            "\3\7\1\uffff\4\7\1\uffff\2\7\1\uffff\1\7\11\uffff\2\7\2\uffff"+
+            "\23\7\1\10",
+            "\44\7\1\11\1\7\1\11\1\7\1\11\6\7\1\uffff\2\7\1\11\1\7\21\uffff"+
+            "\3\7\1\uffff\4\7\1\uffff\2\7\1\uffff\1\7\11\uffff\2\7\2\uffff"+
+            "\23\7\1\10",
+            "",
+            "\1\7\43\uffff\1\11\1\uffff\1\11\1\uffff\1\11\1\7\1\uffff\4"+
+            "\7\3\uffff\1\11\77\uffff\1\7",
+            "",
+            "\1\7\43\uffff\1\7\1\uffff\1\7\1\uffff\2\7\1\uffff\2\7\1\13"+
+            "\1\14\3\uffff\1\7",
+            "\44\7\1\11\1\7\1\11\1\7\1\11\6\7\1\uffff\2\7\1\11\1\7\21\uffff"+
+            "\3\7\1\uffff\4\7\1\uffff\2\7\1\uffff\1\7\11\uffff\2\7\2\uffff"+
+            "\23\7\1\10",
+            "\44\7\1\11\1\7\1\11\1\7\1\11\6\7\1\uffff\2\7\1\11\1\7\21\uffff"+
+            "\3\7\1\uffff\4\7\1\uffff\2\7\1\uffff\1\7\11\uffff\2\7\2\uffff"+
+            "\23\7\1\10"
+    };
+
+    static final short[] DFA90_eot = DFA.unpackEncodedString(DFA90_eotS);
+    static final short[] DFA90_eof = DFA.unpackEncodedString(DFA90_eofS);
+    static final char[] DFA90_min = DFA.unpackEncodedStringToUnsignedChars(DFA90_minS);
+    static final char[] DFA90_max = DFA.unpackEncodedStringToUnsignedChars(DFA90_maxS);
+    static final short[] DFA90_accept = DFA.unpackEncodedString(DFA90_acceptS);
+    static final short[] DFA90_special = DFA.unpackEncodedString(DFA90_specialS);
+    static final short[][] DFA90_transition;
+
+    static {
+        int numStates = DFA90_transitionS.length;
+        DFA90_transition = new short[numStates][];
+        for (int i=0; i<numStates; i++) {
+            DFA90_transition[i] = DFA.unpackEncodedString(DFA90_transitionS[i]);
+        }
+    }
+
+    class DFA90 extends DFA {
+
+        public DFA90(BaseRecognizer recognizer) {
+            this.recognizer = recognizer;
+            this.decisionNumber = 90;
+            this.eot = DFA90_eot;
+            this.eof = DFA90_eof;
+            this.min = DFA90_min;
+            this.max = DFA90_max;
+            this.accept = DFA90_accept;
+            this.special = DFA90_special;
+            this.transition = DFA90_transition;
+        }
+        public String getDescription() {
+            return "7810:1: ( ( ( ( (lv_a_0_0= ruleAtom ) ) ( (lv_be_1_0= ruleBlockEnclosure ) )* ) ( ( (lv_n_2_0= 'not' ) ) ( (lv_be_3_0= ruleBlockEnclosure ) ) ) ) | (this_Atom_4= ruleAtom (this_KW_DOT_5= RULE_KW_DOT ( (lv_bm4_6_0= ruleBlockMolecule ) ) )* ) )";
+        }
+    }
  
 
     public static final BitSet FOLLOW_ruleModel_in_entryRuleModel81 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleModel91 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_60_in_ruleModel133 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_RULE_TK_STRING_in_ruleModel150 = new BitSet(new long[]{0xF027B57FFFFF0030L,0x003FF863FFE988FFL});
+    public static final BitSet FOLLOW_61_in_ruleModel133 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_RULE_TK_STRING_in_ruleModel150 = new BitSet(new long[]{0xE04FB57FFFFF0030L,0x007FF0C7FFD311FFL});
     public static final BitSet FOLLOW_ruleCurlyContents_Labeled_in_ruleModel178 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleExpression_in_entryRuleExpression226 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleExpression236 = new BitSet(new long[]{0x0000000000000002L});
@@ -32725,58 +32533,58 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_EOF_in_entryRuleLabeled340 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleComma_in_ruleLabeled391 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleDeclaration_in_ruleLabeled418 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_KW_AT_in_ruleLabeled435 = new BitSet(new long[]{0x0003A00000000010L});
-    public static final BitSet FOLLOW_ruleAtom_in_ruleLabeled456 = new BitSet(new long[]{0xE027B57FFFFF0032L,0x003FF863FFE988FFL});
+    public static final BitSet FOLLOW_RULE_KW_AT_in_ruleLabeled435 = new BitSet(new long[]{0x0007A00000000010L});
+    public static final BitSet FOLLOW_ruleAtom_in_ruleLabeled456 = new BitSet(new long[]{0xC04FB57FFFFF0032L,0x007FF0C7FFD311FFL});
     public static final BitSet FOLLOW_ruleLabeled_in_ruleLabeled476 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleDeclaration_in_entryRuleDeclaration524 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleDeclaration534 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_61_in_ruleDeclaration585 = new BitSet(new long[]{0xE023B57FFFFF0010L,0x003FF800000000FFL});
+    public static final BitSet FOLLOW_62_in_ruleDeclaration585 = new BitSet(new long[]{0xC047B57FFFFF0010L,0x007FF000000001FFL});
     public static final BitSet FOLLOW_ruleMacroBody_in_ruleDeclaration606 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_62_in_ruleDeclaration635 = new BitSet(new long[]{0x0023B57FFFFF0010L,0x003FF80000000000L});
+    public static final BitSet FOLLOW_63_in_ruleDeclaration635 = new BitSet(new long[]{0x0047B57FFFFF0010L,0x007FF00000000000L});
     public static final BitSet FOLLOW_ruleSig_in_ruleDeclaration656 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_63_in_ruleDeclaration685 = new BitSet(new long[]{0x0023B57FFFFF0010L,0x003FF80000000000L});
+    public static final BitSet FOLLOW_64_in_ruleDeclaration685 = new BitSet(new long[]{0x0047B57FFFFF0010L,0x007FF00000000000L});
     public static final BitSet FOLLOW_ruleSig_in_ruleDeclaration706 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_64_in_ruleDeclaration735 = new BitSet(new long[]{0x0023B57FFFFF0010L,0x003FF80000000000L});
+    public static final BitSet FOLLOW_65_in_ruleDeclaration735 = new BitSet(new long[]{0x0047B57FFFFF0010L,0x007FF00000000000L});
     public static final BitSet FOLLOW_ruleSig_in_ruleDeclaration756 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_65_in_ruleDeclaration785 = new BitSet(new long[]{0x0023B57FFFFF0010L,0x003FF80000000000L});
+    public static final BitSet FOLLOW_66_in_ruleDeclaration785 = new BitSet(new long[]{0x0047B57FFFFF0010L,0x007FF00000000000L});
     public static final BitSet FOLLOW_ruleSig_in_ruleDeclaration806 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_66_in_ruleDeclaration835 = new BitSet(new long[]{0x0023B57FFFFF0010L,0x003FF80000000000L});
+    public static final BitSet FOLLOW_67_in_ruleDeclaration835 = new BitSet(new long[]{0x0047B57FFFFF0010L,0x007FF00000000000L});
     public static final BitSet FOLLOW_ruleSig_in_ruleDeclaration856 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_67_in_ruleDeclaration885 = new BitSet(new long[]{0x0023B57FFFFF0010L,0x003FF80000000000L});
+    public static final BitSet FOLLOW_68_in_ruleDeclaration885 = new BitSet(new long[]{0x0047B57FFFFF0010L,0x007FF00000000000L});
     public static final BitSet FOLLOW_ruleSig_in_ruleDeclaration906 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_68_in_ruleDeclaration935 = new BitSet(new long[]{0x0023B57FFFFF0010L,0x003FF80000000000L});
+    public static final BitSet FOLLOW_69_in_ruleDeclaration935 = new BitSet(new long[]{0x0047B57FFFFF0010L,0x007FF00000000000L});
     public static final BitSet FOLLOW_ruleSig_in_ruleDeclaration956 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_69_in_ruleDeclaration985 = new BitSet(new long[]{0x0023B57FFFFF0012L,0x003FF80000000200L});
-    public static final BitSet FOLLOW_ruleSig_in_ruleDeclaration1006 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000200L});
+    public static final BitSet FOLLOW_70_in_ruleDeclaration985 = new BitSet(new long[]{0x0047B57FFFFF0012L,0x007FF00000000400L});
+    public static final BitSet FOLLOW_ruleSig_in_ruleDeclaration1006 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000400L});
     public static final BitSet FOLLOW_ruleFromPart_in_ruleDeclaration1028 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_70_in_ruleDeclaration1058 = new BitSet(new long[]{0x0023B57FFFFF0012L,0x003FF80000000200L});
-    public static final BitSet FOLLOW_ruleSig_in_ruleDeclaration1079 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000200L});
+    public static final BitSet FOLLOW_71_in_ruleDeclaration1058 = new BitSet(new long[]{0x0047B57FFFFF0012L,0x007FF00000000400L});
+    public static final BitSet FOLLOW_ruleSig_in_ruleDeclaration1079 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000400L});
     public static final BitSet FOLLOW_ruleFromPart_in_ruleDeclaration1101 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleExportDecl_in_ruleDeclaration1140 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleExportDecl_in_entryRuleExportDecl1187 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleExportDecl1197 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_71_in_ruleExportDecl1248 = new BitSet(new long[]{0x0023B57FFFFF0012L,0x003FF80000000000L});
+    public static final BitSet FOLLOW_72_in_ruleExportDecl1248 = new BitSet(new long[]{0x0047B57FFFFF0012L,0x007FF00000000000L});
     public static final BitSet FOLLOW_ruleSig_in_ruleExportDecl1269 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_71_in_ruleExportDecl1319 = new BitSet(new long[]{0x0023B57FFFFF0010L,0x003FF80000000100L});
-    public static final BitSet FOLLOW_ruleSig_in_ruleExportDecl1340 = new BitSet(new long[]{0x0023B57FFFFF0010L,0x003FF80000000100L});
+    public static final BitSet FOLLOW_72_in_ruleExportDecl1319 = new BitSet(new long[]{0x0047B57FFFFF0010L,0x007FF00000000200L});
+    public static final BitSet FOLLOW_ruleSig_in_ruleExportDecl1340 = new BitSet(new long[]{0x0047B57FFFFF0010L,0x007FF00000000200L});
     public static final BitSet FOLLOW_ruleToPart_in_ruleExportDecl1362 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_71_in_ruleExportDecl1412 = new BitSet(new long[]{0x0023B57FFFFF0010L,0x003FF80000000200L});
-    public static final BitSet FOLLOW_ruleSig_in_ruleExportDecl1433 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000200L});
+    public static final BitSet FOLLOW_72_in_ruleExportDecl1412 = new BitSet(new long[]{0x0047B57FFFFF0010L,0x007FF00000000400L});
+    public static final BitSet FOLLOW_ruleSig_in_ruleExportDecl1433 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000400L});
     public static final BitSet FOLLOW_ruleFromPart_in_ruleExportDecl1455 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleToPart_in_entryRuleToPart1503 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleToPart1513 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_72_in_ruleToPart1554 = new BitSet(new long[]{0x0023B57FFFFF0010L,0x003FF80000000000L});
+    public static final BitSet FOLLOW_73_in_ruleToPart1554 = new BitSet(new long[]{0x0047B57FFFFF0010L,0x007FF00000000000L});
     public static final BitSet FOLLOW_ruleInfixed_in_ruleToPart1576 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleFromPart_in_entryRuleFromPart1621 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleFromPart1631 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_73_in_ruleFromPart1672 = new BitSet(new long[]{0x0023B57FFFFF0010L,0x003FF80000000000L});
+    public static final BitSet FOLLOW_74_in_ruleFromPart1672 = new BitSet(new long[]{0x0047B57FFFFF0010L,0x007FF00000000000L});
     public static final BitSet FOLLOW_ruleenlist1_Infixed_Comma_AB_in_ruleFromPart1694 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleMacroBody_in_entryRuleMacroBody1739 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleMacroBody1749 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleSig_in_ruleMacroBody1800 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleExportDecl_in_ruleMacroBody1827 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_70_in_ruleMacroBody1845 = new BitSet(new long[]{0x0023B57FFFFF0010L,0x003FF80000000000L});
-    public static final BitSet FOLLOW_ruleSig_in_ruleMacroBody1867 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000200L});
+    public static final BitSet FOLLOW_71_in_ruleMacroBody1845 = new BitSet(new long[]{0x0047B57FFFFF0010L,0x007FF00000000000L});
+    public static final BitSet FOLLOW_ruleSig_in_ruleMacroBody1867 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000400L});
     public static final BitSet FOLLOW_ruleFromPart_in_ruleMacroBody1887 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleSig_in_entryRuleSig1935 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleSig1945 = new BitSet(new long[]{0x0000000000000002L});
@@ -32784,18 +32592,18 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_ruleBlock_in_ruleSig2023 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleDeclPart_in_entryRuleDeclPart2068 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleDeclPart2078 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_KW_COLON_in_ruleDeclPart2119 = new BitSet(new long[]{0x0003B57FFFFF0010L,0x003FF80000000000L});
+    public static final BitSet FOLLOW_RULE_KW_COLON_in_ruleDeclPart2119 = new BitSet(new long[]{0x0007B57FFFFF0010L,0x007FF00000000000L});
     public static final BitSet FOLLOW_ruleType_in_ruleDeclPart2140 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_KW_COLONSTAR_in_ruleDeclPart2158 = new BitSet(new long[]{0x0003B57FFFFF0010L,0x003FF80000000000L});
+    public static final BitSet FOLLOW_RULE_KW_COLONSTAR_in_ruleDeclPart2158 = new BitSet(new long[]{0x0007B57FFFFF0010L,0x007FF00000000000L});
     public static final BitSet FOLLOW_ruleType_in_ruleDeclPart2179 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleComma_in_entryRuleComma2225 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleComma2235 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleenlist1_CommaItem_Comma_AB_in_ruleComma2285 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleCommaItem_in_entryRuleCommaItem2329 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleCommaItem2339 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleBinding_AnyStatement_in_ruleCommaItem2390 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000400L});
-    public static final BitSet FOLLOW_74_in_ruleCommaItem2421 = new BitSet(new long[]{0x0023B57FFFFF0010L,0x003FF863FFE98800L});
-    public static final BitSet FOLLOW_ruleCommaItem_in_ruleCommaItem2442 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000400L});
+    public static final BitSet FOLLOW_ruleBinding_AnyStatement_in_ruleCommaItem2390 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000800L});
+    public static final BitSet FOLLOW_75_in_ruleCommaItem2421 = new BitSet(new long[]{0x0047B57FFFFF0010L,0x007FF0C7FFD31000L});
+    public static final BitSet FOLLOW_ruleCommaItem_in_ruleCommaItem2442 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000800L});
     public static final BitSet FOLLOW_ruleDeclBinding_in_entryRuleDeclBinding2491 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleDeclBinding2501 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleBindingR_InfixedExprsDecl_AnyStatement_in_ruleDeclBinding2551 = new BitSet(new long[]{0x0000000000000002L});
@@ -32818,47 +32626,47 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_ruleBindingL_Infixed_AnyStatement_in_entryRuleBindingL_Infixed_AnyStatement3139 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleBindingL_Infixed_AnyStatement3149 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleInfixed_in_ruleBindingL_Infixed_AnyStatement3279 = new BitSet(new long[]{0x0000000000001F00L});
-    public static final BitSet FOLLOW_RULE_KW_ASSIGN_in_ruleBindingL_Infixed_AnyStatement3298 = new BitSet(new long[]{0x0023B57FFFFF0010L,0x003FF863FFE98800L});
-    public static final BitSet FOLLOW_RULE_KW_2EQ_in_ruleBindingL_Infixed_AnyStatement3318 = new BitSet(new long[]{0x0023B57FFFFF0010L,0x003FF863FFE98800L});
-    public static final BitSet FOLLOW_RULE_KW_MARROW_in_ruleBindingL_Infixed_AnyStatement3338 = new BitSet(new long[]{0x0023B57FFFFF0010L,0x003FF863FFE98800L});
-    public static final BitSet FOLLOW_RULE_KW_MAPSTO_in_ruleBindingL_Infixed_AnyStatement3358 = new BitSet(new long[]{0x0023B57FFFFF0010L,0x003FF863FFE98800L});
-    public static final BitSet FOLLOW_RULE_KW_MAPSTOSTAR_in_ruleBindingL_Infixed_AnyStatement3378 = new BitSet(new long[]{0x0023B57FFFFF0010L,0x003FF863FFE98800L});
+    public static final BitSet FOLLOW_RULE_KW_ASSIGN_in_ruleBindingL_Infixed_AnyStatement3298 = new BitSet(new long[]{0x0047B57FFFFF0010L,0x007FF0C7FFD31000L});
+    public static final BitSet FOLLOW_RULE_KW_2EQ_in_ruleBindingL_Infixed_AnyStatement3318 = new BitSet(new long[]{0x0047B57FFFFF0010L,0x007FF0C7FFD31000L});
+    public static final BitSet FOLLOW_RULE_KW_MARROW_in_ruleBindingL_Infixed_AnyStatement3338 = new BitSet(new long[]{0x0047B57FFFFF0010L,0x007FF0C7FFD31000L});
+    public static final BitSet FOLLOW_RULE_KW_MAPSTO_in_ruleBindingL_Infixed_AnyStatement3358 = new BitSet(new long[]{0x0047B57FFFFF0010L,0x007FF0C7FFD31000L});
+    public static final BitSet FOLLOW_RULE_KW_MAPSTOSTAR_in_ruleBindingL_Infixed_AnyStatement3378 = new BitSet(new long[]{0x0047B57FFFFF0010L,0x007FF0C7FFD31000L});
     public static final BitSet FOLLOW_ruleBindingL_Infixed_AnyStatement_in_ruleBindingL_Infixed_AnyStatement3407 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleAnyStatement_in_ruleBindingL_Infixed_AnyStatement3436 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleBindingL_Infixed_BalStatement_in_entryRuleBindingL_Infixed_BalStatement3482 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleBindingL_Infixed_BalStatement3492 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleInfixed_in_ruleBindingL_Infixed_BalStatement3622 = new BitSet(new long[]{0x0000000000001F00L});
-    public static final BitSet FOLLOW_RULE_KW_ASSIGN_in_ruleBindingL_Infixed_BalStatement3641 = new BitSet(new long[]{0x0023B57FFFFF0010L,0x003FF863FFE98800L});
-    public static final BitSet FOLLOW_RULE_KW_2EQ_in_ruleBindingL_Infixed_BalStatement3661 = new BitSet(new long[]{0x0023B57FFFFF0010L,0x003FF863FFE98800L});
-    public static final BitSet FOLLOW_RULE_KW_MARROW_in_ruleBindingL_Infixed_BalStatement3681 = new BitSet(new long[]{0x0023B57FFFFF0010L,0x003FF863FFE98800L});
-    public static final BitSet FOLLOW_RULE_KW_MAPSTO_in_ruleBindingL_Infixed_BalStatement3701 = new BitSet(new long[]{0x0023B57FFFFF0010L,0x003FF863FFE98800L});
-    public static final BitSet FOLLOW_RULE_KW_MAPSTOSTAR_in_ruleBindingL_Infixed_BalStatement3721 = new BitSet(new long[]{0x0023B57FFFFF0010L,0x003FF863FFE98800L});
+    public static final BitSet FOLLOW_RULE_KW_ASSIGN_in_ruleBindingL_Infixed_BalStatement3641 = new BitSet(new long[]{0x0047B57FFFFF0010L,0x007FF0C7FFD31000L});
+    public static final BitSet FOLLOW_RULE_KW_2EQ_in_ruleBindingL_Infixed_BalStatement3661 = new BitSet(new long[]{0x0047B57FFFFF0010L,0x007FF0C7FFD31000L});
+    public static final BitSet FOLLOW_RULE_KW_MARROW_in_ruleBindingL_Infixed_BalStatement3681 = new BitSet(new long[]{0x0047B57FFFFF0010L,0x007FF0C7FFD31000L});
+    public static final BitSet FOLLOW_RULE_KW_MAPSTO_in_ruleBindingL_Infixed_BalStatement3701 = new BitSet(new long[]{0x0047B57FFFFF0010L,0x007FF0C7FFD31000L});
+    public static final BitSet FOLLOW_RULE_KW_MAPSTOSTAR_in_ruleBindingL_Infixed_BalStatement3721 = new BitSet(new long[]{0x0047B57FFFFF0010L,0x007FF0C7FFD31000L});
     public static final BitSet FOLLOW_ruleBindingL_Infixed_BalStatement_in_ruleBindingL_Infixed_BalStatement3750 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleBalStatement_in_ruleBindingL_Infixed_BalStatement3779 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleBindingL_Infixed_Collection_in_entryRuleBindingL_Infixed_Collection3825 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleBindingL_Infixed_Collection3835 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleInfixed_in_ruleBindingL_Infixed_Collection3965 = new BitSet(new long[]{0x0000000000001F00L});
-    public static final BitSet FOLLOW_RULE_KW_ASSIGN_in_ruleBindingL_Infixed_Collection3984 = new BitSet(new long[]{0x0023B57FFFFF0010L,0x003FF80000000000L});
-    public static final BitSet FOLLOW_RULE_KW_2EQ_in_ruleBindingL_Infixed_Collection4004 = new BitSet(new long[]{0x0023B57FFFFF0010L,0x003FF80000000000L});
-    public static final BitSet FOLLOW_RULE_KW_MARROW_in_ruleBindingL_Infixed_Collection4024 = new BitSet(new long[]{0x0023B57FFFFF0010L,0x003FF80000000000L});
-    public static final BitSet FOLLOW_RULE_KW_MAPSTO_in_ruleBindingL_Infixed_Collection4044 = new BitSet(new long[]{0x0023B57FFFFF0010L,0x003FF80000000000L});
-    public static final BitSet FOLLOW_RULE_KW_MAPSTOSTAR_in_ruleBindingL_Infixed_Collection4064 = new BitSet(new long[]{0x0023B57FFFFF0010L,0x003FF80000000000L});
+    public static final BitSet FOLLOW_RULE_KW_ASSIGN_in_ruleBindingL_Infixed_Collection3984 = new BitSet(new long[]{0x0047B57FFFFF0010L,0x007FF00000000000L});
+    public static final BitSet FOLLOW_RULE_KW_2EQ_in_ruleBindingL_Infixed_Collection4004 = new BitSet(new long[]{0x0047B57FFFFF0010L,0x007FF00000000000L});
+    public static final BitSet FOLLOW_RULE_KW_MARROW_in_ruleBindingL_Infixed_Collection4024 = new BitSet(new long[]{0x0047B57FFFFF0010L,0x007FF00000000000L});
+    public static final BitSet FOLLOW_RULE_KW_MAPSTO_in_ruleBindingL_Infixed_Collection4044 = new BitSet(new long[]{0x0047B57FFFFF0010L,0x007FF00000000000L});
+    public static final BitSet FOLLOW_RULE_KW_MAPSTOSTAR_in_ruleBindingL_Infixed_Collection4064 = new BitSet(new long[]{0x0047B57FFFFF0010L,0x007FF00000000000L});
     public static final BitSet FOLLOW_ruleBindingL_Infixed_Collection_in_ruleBindingL_Infixed_Collection4093 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleCollection_in_ruleBindingL_Infixed_Collection4122 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleBindingR_InfixedExprsDecl_AnyStatement_in_entryRuleBindingR_InfixedExprsDecl_AnyStatement4168 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleBindingR_InfixedExprsDecl_AnyStatement4178 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleInfixedExprsDecl_in_ruleBindingR_InfixedExprsDecl_AnyStatement4229 = new BitSet(new long[]{0x0000000000001F02L});
-    public static final BitSet FOLLOW_RULE_KW_ASSIGN_in_ruleBindingR_InfixedExprsDecl_AnyStatement4241 = new BitSet(new long[]{0x0023B57FFFFF0010L,0x003FF863FFE98800L});
-    public static final BitSet FOLLOW_RULE_KW_2EQ_in_ruleBindingR_InfixedExprsDecl_AnyStatement4257 = new BitSet(new long[]{0x0023B57FFFFF0010L,0x003FF863FFE98800L});
-    public static final BitSet FOLLOW_RULE_KW_MARROW_in_ruleBindingR_InfixedExprsDecl_AnyStatement4273 = new BitSet(new long[]{0x0023B57FFFFF0010L,0x003FF863FFE98800L});
-    public static final BitSet FOLLOW_RULE_KW_MAPSTO_in_ruleBindingR_InfixedExprsDecl_AnyStatement4289 = new BitSet(new long[]{0x0023B57FFFFF0010L,0x003FF863FFE98800L});
-    public static final BitSet FOLLOW_RULE_KW_MAPSTOSTAR_in_ruleBindingR_InfixedExprsDecl_AnyStatement4305 = new BitSet(new long[]{0x0023B57FFFFF0010L,0x003FF863FFE98800L});
+    public static final BitSet FOLLOW_RULE_KW_ASSIGN_in_ruleBindingR_InfixedExprsDecl_AnyStatement4241 = new BitSet(new long[]{0x0047B57FFFFF0010L,0x007FF0C7FFD31000L});
+    public static final BitSet FOLLOW_RULE_KW_2EQ_in_ruleBindingR_InfixedExprsDecl_AnyStatement4257 = new BitSet(new long[]{0x0047B57FFFFF0010L,0x007FF0C7FFD31000L});
+    public static final BitSet FOLLOW_RULE_KW_MARROW_in_ruleBindingR_InfixedExprsDecl_AnyStatement4273 = new BitSet(new long[]{0x0047B57FFFFF0010L,0x007FF0C7FFD31000L});
+    public static final BitSet FOLLOW_RULE_KW_MAPSTO_in_ruleBindingR_InfixedExprsDecl_AnyStatement4289 = new BitSet(new long[]{0x0047B57FFFFF0010L,0x007FF0C7FFD31000L});
+    public static final BitSet FOLLOW_RULE_KW_MAPSTOSTAR_in_ruleBindingR_InfixedExprsDecl_AnyStatement4305 = new BitSet(new long[]{0x0047B57FFFFF0010L,0x007FF0C7FFD31000L});
     public static final BitSet FOLLOW_ruleBinding_AnyStatement_in_ruleBindingR_InfixedExprsDecl_AnyStatement4326 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleAnyStatement_in_entryRuleAnyStatement4374 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleAnyStatement4384 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_75_in_ruleAnyStatement4451 = new BitSet(new long[]{0x0023B57FFFFF0010L,0x003FF863FFE98800L});
-    public static final BitSet FOLLOW_ruleCommaItem_in_ruleAnyStatement4473 = new BitSet(new long[]{0x0000000000000000L,0x0000000000001000L});
-    public static final BitSet FOLLOW_76_in_ruleAnyStatement4484 = new BitSet(new long[]{0x0023B57FFFFF0010L,0x003FF863FFE98800L});
+    public static final BitSet FOLLOW_76_in_ruleAnyStatement4451 = new BitSet(new long[]{0x0047B57FFFFF0010L,0x007FF0C7FFD31000L});
+    public static final BitSet FOLLOW_ruleCommaItem_in_ruleAnyStatement4473 = new BitSet(new long[]{0x0000000000000000L,0x0000000000002000L});
+    public static final BitSet FOLLOW_77_in_ruleAnyStatement4484 = new BitSet(new long[]{0x0047B57FFFFF0010L,0x007FF0C7FFD31000L});
     public static final BitSet FOLLOW_ruleBinding_AnyStatement_in_ruleAnyStatement4505 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleFlow_AnyStatement_in_ruleAnyStatement4535 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleBalStatement_in_entryRuleBalStatement4580 = new BitSet(new long[]{0x0000000000000000L});
@@ -32866,161 +32674,161 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_ruleFlow_BalStatement_in_ruleBalStatement4640 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleFlow_AnyStatement_in_entryRuleFlow_AnyStatement4684 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleFlow_AnyStatement4694 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleCollection_in_ruleFlow_AnyStatement4745 = new BitSet(new long[]{0x0000000000000002L,0x0000000000002000L});
-    public static final BitSet FOLLOW_77_in_ruleFlow_AnyStatement4764 = new BitSet(new long[]{0x0023B57FFFFF0010L,0x003FF863FFE98800L});
+    public static final BitSet FOLLOW_ruleCollection_in_ruleFlow_AnyStatement4745 = new BitSet(new long[]{0x0000000000000002L,0x0000000000004000L});
+    public static final BitSet FOLLOW_78_in_ruleFlow_AnyStatement4764 = new BitSet(new long[]{0x0047B57FFFFF0010L,0x007FF0C7FFD31000L});
     public static final BitSet FOLLOW_ruleBinding_AnyStatement_in_ruleFlow_AnyStatement4798 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_75_in_ruleFlow_AnyStatement4826 = new BitSet(new long[]{0x0023B57FFFFF0010L,0x003FF863FFE98800L});
-    public static final BitSet FOLLOW_ruleCommaItem_in_ruleFlow_AnyStatement4860 = new BitSet(new long[]{0x0000000000000000L,0x0000000000001000L});
-    public static final BitSet FOLLOW_76_in_ruleFlow_AnyStatement4872 = new BitSet(new long[]{0x0023B57FFFFF0010L,0x003FF863FFE98800L});
-    public static final BitSet FOLLOW_ruleBinding_BalStatement_in_ruleFlow_AnyStatement4893 = new BitSet(new long[]{0x0000000000000000L,0x0000000000004000L});
-    public static final BitSet FOLLOW_78_in_ruleFlow_AnyStatement4913 = new BitSet(new long[]{0x0023B57FFFFF0010L,0x003FF863FFE98800L});
+    public static final BitSet FOLLOW_76_in_ruleFlow_AnyStatement4826 = new BitSet(new long[]{0x0047B57FFFFF0010L,0x007FF0C7FFD31000L});
+    public static final BitSet FOLLOW_ruleCommaItem_in_ruleFlow_AnyStatement4860 = new BitSet(new long[]{0x0000000000000000L,0x0000000000002000L});
+    public static final BitSet FOLLOW_77_in_ruleFlow_AnyStatement4872 = new BitSet(new long[]{0x0047B57FFFFF0010L,0x007FF0C7FFD31000L});
+    public static final BitSet FOLLOW_ruleBinding_BalStatement_in_ruleFlow_AnyStatement4893 = new BitSet(new long[]{0x0000000000000000L,0x0000000000008000L});
+    public static final BitSet FOLLOW_79_in_ruleFlow_AnyStatement4913 = new BitSet(new long[]{0x0047B57FFFFF0010L,0x007FF0C7FFD31000L});
     public static final BitSet FOLLOW_ruleBinding_AnyStatement_in_ruleFlow_AnyStatement4935 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleIterators_in_ruleFlow_AnyStatement4986 = new BitSet(new long[]{0x0000000000000000L,0x0000000000008000L});
-    public static final BitSet FOLLOW_79_in_ruleFlow_AnyStatement4997 = new BitSet(new long[]{0x0023B57FFFFF0010L,0x003FF863FFE98800L});
+    public static final BitSet FOLLOW_ruleIterators_in_ruleFlow_AnyStatement4986 = new BitSet(new long[]{0x0000000000000000L,0x0000000000010000L});
+    public static final BitSet FOLLOW_80_in_ruleFlow_AnyStatement4997 = new BitSet(new long[]{0x0047B57FFFFF0010L,0x007FF0C7FFD31000L});
     public static final BitSet FOLLOW_ruleBinding_AnyStatement_in_ruleFlow_AnyStatement5018 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_79_in_ruleFlow_AnyStatement5045 = new BitSet(new long[]{0x0023B57FFFFF0010L,0x003FF863FFE98800L});
+    public static final BitSet FOLLOW_80_in_ruleFlow_AnyStatement5045 = new BitSet(new long[]{0x0047B57FFFFF0010L,0x007FF0C7FFD31000L});
     public static final BitSet FOLLOW_ruleBinding_AnyStatement_in_ruleFlow_AnyStatement5079 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_80_in_ruleFlow_AnyStatement5105 = new BitSet(new long[]{0x0023B57FFFFF0010L,0x003FF863FFE98800L});
-    public static final BitSet FOLLOW_ruleBinding_AnyStatement_in_ruleFlow_AnyStatement5139 = new BitSet(new long[]{0x0000000000000000L,0x0000000000060000L});
-    public static final BitSet FOLLOW_81_in_ruleFlow_AnyStatement5152 = new BitSet(new long[]{0x0003B57FFFFF0010L,0x003FF81800000000L});
-    public static final BitSet FOLLOW_82_in_ruleFlow_AnyStatement5170 = new BitSet(new long[]{0x0003B57FFFFF0010L,0x003FF81800000000L});
-    public static final BitSet FOLLOW_ruleButExpr_in_ruleFlow_AnyStatement5192 = new BitSet(new long[]{0x0000000000000000L,0x0000001800000000L});
+    public static final BitSet FOLLOW_81_in_ruleFlow_AnyStatement5105 = new BitSet(new long[]{0x0047B57FFFFF0010L,0x007FF0C7FFD31000L});
+    public static final BitSet FOLLOW_ruleBinding_AnyStatement_in_ruleFlow_AnyStatement5139 = new BitSet(new long[]{0x0000000000000000L,0x00000000000C0000L});
+    public static final BitSet FOLLOW_82_in_ruleFlow_AnyStatement5152 = new BitSet(new long[]{0x0007B57FFFFF0010L,0x007FF03000000000L});
+    public static final BitSet FOLLOW_83_in_ruleFlow_AnyStatement5170 = new BitSet(new long[]{0x0007B57FFFFF0010L,0x007FF03000000000L});
+    public static final BitSet FOLLOW_ruleButExpr_in_ruleFlow_AnyStatement5192 = new BitSet(new long[]{0x0000000000000000L,0x0000003000000000L});
     public static final BitSet FOLLOW_ruleAlwaysPart_AnyStatement_in_ruleFlow_AnyStatement5213 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_83_in_ruleFlow_AnyStatement5239 = new BitSet(new long[]{0x0023B57FFFFF0010L,0x003FF863FFE98800L});
-    public static final BitSet FOLLOW_ruleBinding_AnyStatement_in_ruleFlow_AnyStatement5273 = new BitSet(new long[]{0x0000000000000000L,0x0000000000100000L});
-    public static final BitSet FOLLOW_84_in_ruleFlow_AnyStatement5285 = new BitSet(new long[]{0x0023B57FFFFF0010L,0x003FF80000000000L});
+    public static final BitSet FOLLOW_84_in_ruleFlow_AnyStatement5239 = new BitSet(new long[]{0x0047B57FFFFF0010L,0x007FF0C7FFD31000L});
+    public static final BitSet FOLLOW_ruleBinding_AnyStatement_in_ruleFlow_AnyStatement5273 = new BitSet(new long[]{0x0000000000000000L,0x0000000000200000L});
+    public static final BitSet FOLLOW_85_in_ruleFlow_AnyStatement5285 = new BitSet(new long[]{0x0047B57FFFFF0010L,0x007FF00000000000L});
     public static final BitSet FOLLOW_ruleCases_in_ruleFlow_AnyStatement5306 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_85_in_ruleFlow_AnyStatement5332 = new BitSet(new long[]{0x0023B57FFFFF0010L,0x003FF863FFE98800L});
+    public static final BitSet FOLLOW_86_in_ruleFlow_AnyStatement5332 = new BitSet(new long[]{0x0047B57FFFFF0010L,0x007FF0C7FFD31000L});
     public static final BitSet FOLLOW_ruleBinding_AnyStatement_in_ruleFlow_AnyStatement5366 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_86_in_ruleFlow_AnyStatement5392 = new BitSet(new long[]{0x0023B57FFFFF0010L,0x003FF863FFE98800L});
+    public static final BitSet FOLLOW_87_in_ruleFlow_AnyStatement5392 = new BitSet(new long[]{0x0047B57FFFFF0010L,0x007FF0C7FFD31000L});
     public static final BitSet FOLLOW_ruleBinding_AnyStatement_in_ruleFlow_AnyStatement5426 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_87_in_ruleFlow_AnyStatement5452 = new BitSet(new long[]{0x0023B57FFFFF0010L,0x003FF863FFE98800L});
+    public static final BitSet FOLLOW_88_in_ruleFlow_AnyStatement5452 = new BitSet(new long[]{0x0047B57FFFFF0010L,0x007FF0C7FFD31000L});
     public static final BitSet FOLLOW_ruleBinding_AnyStatement_in_ruleFlow_AnyStatement5486 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_88_in_ruleFlow_AnyStatement5512 = new BitSet(new long[]{0x0023B57FFFFF0010L,0x003FF863FFE98900L});
-    public static final BitSet FOLLOW_ruleGenBound_in_ruleFlow_AnyStatement5546 = new BitSet(new long[]{0x0023B57FFFFF0010L,0x003FF863FFE98800L});
+    public static final BitSet FOLLOW_89_in_ruleFlow_AnyStatement5512 = new BitSet(new long[]{0x0047B57FFFFF0010L,0x007FF0C7FFD31200L});
+    public static final BitSet FOLLOW_ruleGenBound_in_ruleFlow_AnyStatement5546 = new BitSet(new long[]{0x0047B57FFFFF0010L,0x007FF0C7FFD31000L});
     public static final BitSet FOLLOW_ruleBinding_AnyStatement_in_ruleFlow_AnyStatement5567 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_89_in_ruleFlow_AnyStatement5593 = new BitSet(new long[]{0x0023B57FFFFF0010L,0x003FF863FFE98800L});
+    public static final BitSet FOLLOW_90_in_ruleFlow_AnyStatement5593 = new BitSet(new long[]{0x0047B57FFFFF0010L,0x007FF0C7FFD31000L});
     public static final BitSet FOLLOW_ruleBinding_AnyStatement_in_ruleFlow_AnyStatement5627 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_90_in_ruleFlow_AnyStatement5653 = new BitSet(new long[]{0x0001A07FFFFF0002L,0x001FE00000000000L});
+    public static final BitSet FOLLOW_91_in_ruleFlow_AnyStatement5653 = new BitSet(new long[]{0x0001A07FFFFF0002L,0x003FC00000000000L});
     public static final BitSet FOLLOW_ruleName_in_ruleFlow_AnyStatement5687 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_91_in_ruleFlow_AnyStatement5714 = new BitSet(new long[]{0x0001A07FFFFF0002L,0x001FE00000000000L});
+    public static final BitSet FOLLOW_92_in_ruleFlow_AnyStatement5714 = new BitSet(new long[]{0x0001A07FFFFF0002L,0x003FC00000000000L});
     public static final BitSet FOLLOW_ruleName_in_ruleFlow_AnyStatement5748 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_92_in_ruleFlow_AnyStatement5775 = new BitSet(new long[]{0x0023B57FFFFF0012L,0x003FF80000000000L});
+    public static final BitSet FOLLOW_93_in_ruleFlow_AnyStatement5775 = new BitSet(new long[]{0x0047B57FFFFF0012L,0x007FF00000000000L});
     public static final BitSet FOLLOW_ruleCollection_in_ruleFlow_AnyStatement5809 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_93_in_ruleFlow_AnyStatement5836 = new BitSet(new long[]{0x0023B57FFFFF0010L,0x003FF863FFE98800L});
+    public static final BitSet FOLLOW_94_in_ruleFlow_AnyStatement5836 = new BitSet(new long[]{0x0047B57FFFFF0010L,0x007FF0C7FFD31000L});
     public static final BitSet FOLLOW_ruleBinding_AnyStatement_in_ruleFlow_AnyStatement5870 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_94_in_ruleFlow_AnyStatement5896 = new BitSet(new long[]{0x0023B57FFFFF0010L,0x003FF863FFE98800L});
+    public static final BitSet FOLLOW_95_in_ruleFlow_AnyStatement5896 = new BitSet(new long[]{0x0047B57FFFFF0010L,0x007FF0C7FFD31000L});
     public static final BitSet FOLLOW_ruleBinding_AnyStatement_in_ruleFlow_AnyStatement5930 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_95_in_ruleFlow_AnyStatement5956 = new BitSet(new long[]{0x0023B57FFFFF0010L,0x003FF863FFE98800L});
+    public static final BitSet FOLLOW_96_in_ruleFlow_AnyStatement5956 = new BitSet(new long[]{0x0047B57FFFFF0010L,0x007FF0C7FFD31000L});
     public static final BitSet FOLLOW_ruleBinding_AnyStatement_in_ruleFlow_AnyStatement5990 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_96_in_ruleFlow_AnyStatement6016 = new BitSet(new long[]{0x0001A00000000000L});
+    public static final BitSet FOLLOW_97_in_ruleFlow_AnyStatement6016 = new BitSet(new long[]{0x0001A00000000000L});
     public static final BitSet FOLLOW_ruleId_in_ruleFlow_AnyStatement6050 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_97_in_ruleFlow_AnyStatement6075 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_98_in_ruleFlow_AnyStatement6075 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleFlow_BalStatement_in_entryRuleFlow_BalStatement6134 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleFlow_BalStatement6144 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleCollection_in_ruleFlow_BalStatement6195 = new BitSet(new long[]{0x0000000000000002L,0x0000000000002000L});
-    public static final BitSet FOLLOW_77_in_ruleFlow_BalStatement6214 = new BitSet(new long[]{0x0023B57FFFFF0010L,0x003FF863FFE98800L});
+    public static final BitSet FOLLOW_ruleCollection_in_ruleFlow_BalStatement6195 = new BitSet(new long[]{0x0000000000000002L,0x0000000000004000L});
+    public static final BitSet FOLLOW_78_in_ruleFlow_BalStatement6214 = new BitSet(new long[]{0x0047B57FFFFF0010L,0x007FF0C7FFD31000L});
     public static final BitSet FOLLOW_ruleBinding_BalStatement_in_ruleFlow_BalStatement6248 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_75_in_ruleFlow_BalStatement6276 = new BitSet(new long[]{0x0023B57FFFFF0010L,0x003FF863FFE98800L});
-    public static final BitSet FOLLOW_ruleCommaItem_in_ruleFlow_BalStatement6310 = new BitSet(new long[]{0x0000000000000000L,0x0000000000001000L});
-    public static final BitSet FOLLOW_76_in_ruleFlow_BalStatement6322 = new BitSet(new long[]{0x0023B57FFFFF0010L,0x003FF863FFE98800L});
-    public static final BitSet FOLLOW_ruleBinding_BalStatement_in_ruleFlow_BalStatement6343 = new BitSet(new long[]{0x0000000000000000L,0x0000000000004000L});
-    public static final BitSet FOLLOW_78_in_ruleFlow_BalStatement6363 = new BitSet(new long[]{0x0023B57FFFFF0010L,0x003FF863FFE98800L});
+    public static final BitSet FOLLOW_76_in_ruleFlow_BalStatement6276 = new BitSet(new long[]{0x0047B57FFFFF0010L,0x007FF0C7FFD31000L});
+    public static final BitSet FOLLOW_ruleCommaItem_in_ruleFlow_BalStatement6310 = new BitSet(new long[]{0x0000000000000000L,0x0000000000002000L});
+    public static final BitSet FOLLOW_77_in_ruleFlow_BalStatement6322 = new BitSet(new long[]{0x0047B57FFFFF0010L,0x007FF0C7FFD31000L});
+    public static final BitSet FOLLOW_ruleBinding_BalStatement_in_ruleFlow_BalStatement6343 = new BitSet(new long[]{0x0000000000000000L,0x0000000000008000L});
+    public static final BitSet FOLLOW_79_in_ruleFlow_BalStatement6363 = new BitSet(new long[]{0x0047B57FFFFF0010L,0x007FF0C7FFD31000L});
     public static final BitSet FOLLOW_ruleBinding_BalStatement_in_ruleFlow_BalStatement6385 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleIterators_in_ruleFlow_BalStatement6446 = new BitSet(new long[]{0x0000000000000000L,0x0000000000008000L});
-    public static final BitSet FOLLOW_79_in_ruleFlow_BalStatement6463 = new BitSet(new long[]{0x0023B57FFFFF0010L,0x003FF863FFE98800L});
+    public static final BitSet FOLLOW_ruleIterators_in_ruleFlow_BalStatement6446 = new BitSet(new long[]{0x0000000000000000L,0x0000000000010000L});
+    public static final BitSet FOLLOW_80_in_ruleFlow_BalStatement6463 = new BitSet(new long[]{0x0047B57FFFFF0010L,0x007FF0C7FFD31000L});
     public static final BitSet FOLLOW_ruleBinding_BalStatement_in_ruleFlow_BalStatement6497 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_79_in_ruleFlow_BalStatement6524 = new BitSet(new long[]{0x0023B57FFFFF0010L,0x003FF863FFE98800L});
+    public static final BitSet FOLLOW_80_in_ruleFlow_BalStatement6524 = new BitSet(new long[]{0x0047B57FFFFF0010L,0x007FF0C7FFD31000L});
     public static final BitSet FOLLOW_ruleBinding_BalStatement_in_ruleFlow_BalStatement6558 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_80_in_ruleFlow_BalStatement6584 = new BitSet(new long[]{0x0023B57FFFFF0010L,0x003FF863FFE98800L});
-    public static final BitSet FOLLOW_ruleBinding_AnyStatement_in_ruleFlow_BalStatement6618 = new BitSet(new long[]{0x0000000000000000L,0x0000000000060000L});
-    public static final BitSet FOLLOW_81_in_ruleFlow_BalStatement6631 = new BitSet(new long[]{0x0003B57FFFFF0010L,0x003FF81800000000L});
-    public static final BitSet FOLLOW_82_in_ruleFlow_BalStatement6649 = new BitSet(new long[]{0x0003B57FFFFF0010L,0x003FF81800000000L});
-    public static final BitSet FOLLOW_ruleButExpr_in_ruleFlow_BalStatement6671 = new BitSet(new long[]{0x0000000000000000L,0x0000001800000000L});
+    public static final BitSet FOLLOW_81_in_ruleFlow_BalStatement6584 = new BitSet(new long[]{0x0047B57FFFFF0010L,0x007FF0C7FFD31000L});
+    public static final BitSet FOLLOW_ruleBinding_AnyStatement_in_ruleFlow_BalStatement6618 = new BitSet(new long[]{0x0000000000000000L,0x00000000000C0000L});
+    public static final BitSet FOLLOW_82_in_ruleFlow_BalStatement6631 = new BitSet(new long[]{0x0007B57FFFFF0010L,0x007FF03000000000L});
+    public static final BitSet FOLLOW_83_in_ruleFlow_BalStatement6649 = new BitSet(new long[]{0x0007B57FFFFF0010L,0x007FF03000000000L});
+    public static final BitSet FOLLOW_ruleButExpr_in_ruleFlow_BalStatement6671 = new BitSet(new long[]{0x0000000000000000L,0x0000003000000000L});
     public static final BitSet FOLLOW_ruleAlwaysPart_BalStatement_in_ruleFlow_BalStatement6692 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_83_in_ruleFlow_BalStatement6718 = new BitSet(new long[]{0x0023B57FFFFF0010L,0x003FF863FFE98800L});
-    public static final BitSet FOLLOW_ruleBinding_AnyStatement_in_ruleFlow_BalStatement6752 = new BitSet(new long[]{0x0000000000000000L,0x0000000000100000L});
-    public static final BitSet FOLLOW_84_in_ruleFlow_BalStatement6764 = new BitSet(new long[]{0x0023B57FFFFF0010L,0x003FF80000000000L});
+    public static final BitSet FOLLOW_84_in_ruleFlow_BalStatement6718 = new BitSet(new long[]{0x0047B57FFFFF0010L,0x007FF0C7FFD31000L});
+    public static final BitSet FOLLOW_ruleBinding_AnyStatement_in_ruleFlow_BalStatement6752 = new BitSet(new long[]{0x0000000000000000L,0x0000000000200000L});
+    public static final BitSet FOLLOW_85_in_ruleFlow_BalStatement6764 = new BitSet(new long[]{0x0047B57FFFFF0010L,0x007FF00000000000L});
     public static final BitSet FOLLOW_ruleCases_in_ruleFlow_BalStatement6785 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_85_in_ruleFlow_BalStatement6811 = new BitSet(new long[]{0x0023B57FFFFF0010L,0x003FF863FFE98800L});
+    public static final BitSet FOLLOW_86_in_ruleFlow_BalStatement6811 = new BitSet(new long[]{0x0047B57FFFFF0010L,0x007FF0C7FFD31000L});
     public static final BitSet FOLLOW_ruleBinding_BalStatement_in_ruleFlow_BalStatement6845 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_86_in_ruleFlow_BalStatement6871 = new BitSet(new long[]{0x0023B57FFFFF0010L,0x003FF863FFE98800L});
+    public static final BitSet FOLLOW_87_in_ruleFlow_BalStatement6871 = new BitSet(new long[]{0x0047B57FFFFF0010L,0x007FF0C7FFD31000L});
     public static final BitSet FOLLOW_ruleBinding_BalStatement_in_ruleFlow_BalStatement6905 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_87_in_ruleFlow_BalStatement6931 = new BitSet(new long[]{0x0023B57FFFFF0010L,0x003FF863FFE98800L});
+    public static final BitSet FOLLOW_88_in_ruleFlow_BalStatement6931 = new BitSet(new long[]{0x0047B57FFFFF0010L,0x007FF0C7FFD31000L});
     public static final BitSet FOLLOW_ruleBinding_BalStatement_in_ruleFlow_BalStatement6965 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_88_in_ruleFlow_BalStatement6991 = new BitSet(new long[]{0x0023B57FFFFF0010L,0x003FF863FFE98900L});
-    public static final BitSet FOLLOW_ruleGenBound_in_ruleFlow_BalStatement7025 = new BitSet(new long[]{0x0023B57FFFFF0010L,0x003FF863FFE98800L});
+    public static final BitSet FOLLOW_89_in_ruleFlow_BalStatement6991 = new BitSet(new long[]{0x0047B57FFFFF0010L,0x007FF0C7FFD31200L});
+    public static final BitSet FOLLOW_ruleGenBound_in_ruleFlow_BalStatement7025 = new BitSet(new long[]{0x0047B57FFFFF0010L,0x007FF0C7FFD31000L});
     public static final BitSet FOLLOW_ruleBinding_BalStatement_in_ruleFlow_BalStatement7046 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_89_in_ruleFlow_BalStatement7072 = new BitSet(new long[]{0x0023B57FFFFF0010L,0x003FF863FFE98800L});
+    public static final BitSet FOLLOW_90_in_ruleFlow_BalStatement7072 = new BitSet(new long[]{0x0047B57FFFFF0010L,0x007FF0C7FFD31000L});
     public static final BitSet FOLLOW_ruleBinding_BalStatement_in_ruleFlow_BalStatement7106 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_90_in_ruleFlow_BalStatement7132 = new BitSet(new long[]{0x0001A07FFFFF0002L,0x001FE00000000000L});
+    public static final BitSet FOLLOW_91_in_ruleFlow_BalStatement7132 = new BitSet(new long[]{0x0001A07FFFFF0002L,0x003FC00000000000L});
     public static final BitSet FOLLOW_ruleName_in_ruleFlow_BalStatement7166 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_91_in_ruleFlow_BalStatement7193 = new BitSet(new long[]{0x0001A07FFFFF0002L,0x001FE00000000000L});
+    public static final BitSet FOLLOW_92_in_ruleFlow_BalStatement7193 = new BitSet(new long[]{0x0001A07FFFFF0002L,0x003FC00000000000L});
     public static final BitSet FOLLOW_ruleName_in_ruleFlow_BalStatement7227 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_92_in_ruleFlow_BalStatement7254 = new BitSet(new long[]{0x0023B57FFFFF0012L,0x003FF80000000000L});
+    public static final BitSet FOLLOW_93_in_ruleFlow_BalStatement7254 = new BitSet(new long[]{0x0047B57FFFFF0012L,0x007FF00000000000L});
     public static final BitSet FOLLOW_ruleCollection_in_ruleFlow_BalStatement7288 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_93_in_ruleFlow_BalStatement7315 = new BitSet(new long[]{0x0023B57FFFFF0010L,0x003FF863FFE98800L});
+    public static final BitSet FOLLOW_94_in_ruleFlow_BalStatement7315 = new BitSet(new long[]{0x0047B57FFFFF0010L,0x007FF0C7FFD31000L});
     public static final BitSet FOLLOW_ruleBinding_BalStatement_in_ruleFlow_BalStatement7349 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_94_in_ruleFlow_BalStatement7375 = new BitSet(new long[]{0x0023B57FFFFF0010L,0x003FF863FFE98800L});
+    public static final BitSet FOLLOW_95_in_ruleFlow_BalStatement7375 = new BitSet(new long[]{0x0047B57FFFFF0010L,0x007FF0C7FFD31000L});
     public static final BitSet FOLLOW_ruleBinding_BalStatement_in_ruleFlow_BalStatement7409 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_95_in_ruleFlow_BalStatement7435 = new BitSet(new long[]{0x0023B57FFFFF0010L,0x003FF863FFE98800L});
+    public static final BitSet FOLLOW_96_in_ruleFlow_BalStatement7435 = new BitSet(new long[]{0x0047B57FFFFF0010L,0x007FF0C7FFD31000L});
     public static final BitSet FOLLOW_ruleBinding_BalStatement_in_ruleFlow_BalStatement7469 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_96_in_ruleFlow_BalStatement7495 = new BitSet(new long[]{0x0001A00000000000L});
+    public static final BitSet FOLLOW_97_in_ruleFlow_BalStatement7495 = new BitSet(new long[]{0x0001A00000000000L});
     public static final BitSet FOLLOW_ruleId_in_ruleFlow_BalStatement7529 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_97_in_ruleFlow_BalStatement7554 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_98_in_ruleFlow_BalStatement7554 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleGenBound_in_entryRuleGenBound7613 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleGenBound7623 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_72_in_ruleGenBound7674 = new BitSet(new long[]{0x0023B57FFFFF0010L,0x003FF863FFE98800L});
-    public static final BitSet FOLLOW_ruleCommaItem_in_ruleGenBound7695 = new BitSet(new long[]{0x0000000000000000L,0x0000000400000000L});
-    public static final BitSet FOLLOW_98_in_ruleGenBound7707 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_73_in_ruleGenBound7674 = new BitSet(new long[]{0x0047B57FFFFF0010L,0x007FF0C7FFD31000L});
+    public static final BitSet FOLLOW_ruleCommaItem_in_ruleGenBound7695 = new BitSet(new long[]{0x0000000000000000L,0x0000000800000000L});
+    public static final BitSet FOLLOW_99_in_ruleGenBound7707 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleButExpr_in_entryRuleButExpr7755 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleButExpr7765 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleDeclBinding_in_ruleButExpr7825 = new BitSet(new long[]{0x0000000000000000L,0x0000000000100000L});
-    public static final BitSet FOLLOW_84_in_ruleButExpr7837 = new BitSet(new long[]{0x0023B57FFFFF0010L,0x003FF80000000000L});
+    public static final BitSet FOLLOW_ruleDeclBinding_in_ruleButExpr7825 = new BitSet(new long[]{0x0000000000000000L,0x0000000000200000L});
+    public static final BitSet FOLLOW_85_in_ruleButExpr7837 = new BitSet(new long[]{0x0047B57FFFFF0010L,0x007FF00000000000L});
     public static final BitSet FOLLOW_ruleCases_in_ruleButExpr7858 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleCases_in_entryRuleCases7906 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleCases7916 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleBinding_Collection_in_ruleCases7966 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleAlwaysPart_AnyStatement_in_entryRuleAlwaysPart_AnyStatement8010 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleAlwaysPart_AnyStatement8020 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_99_in_ruleAlwaysPart_AnyStatement8072 = new BitSet(new long[]{0x0023B57FFFFF0010L,0x003FF863FFE98800L});
+    public static final BitSet FOLLOW_100_in_ruleAlwaysPart_AnyStatement8072 = new BitSet(new long[]{0x0047B57FFFFF0010L,0x007FF0C7FFD31000L});
     public static final BitSet FOLLOW_ruleBinding_AnyStatement_in_ruleAlwaysPart_AnyStatement8093 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_100_in_ruleAlwaysPart_AnyStatement8113 = new BitSet(new long[]{0x0023B57FFFFF0010L,0x003FF863FFE98800L});
+    public static final BitSet FOLLOW_101_in_ruleAlwaysPart_AnyStatement8113 = new BitSet(new long[]{0x0047B57FFFFF0010L,0x007FF0C7FFD31000L});
     public static final BitSet FOLLOW_ruleBinding_AnyStatement_in_ruleAlwaysPart_AnyStatement8134 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleAlwaysPart_BalStatement_in_entryRuleAlwaysPart_BalStatement8183 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleAlwaysPart_BalStatement8193 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_99_in_ruleAlwaysPart_BalStatement8245 = new BitSet(new long[]{0x0023B57FFFFF0010L,0x003FF863FFE98800L});
+    public static final BitSet FOLLOW_100_in_ruleAlwaysPart_BalStatement8245 = new BitSet(new long[]{0x0047B57FFFFF0010L,0x007FF0C7FFD31000L});
     public static final BitSet FOLLOW_ruleBinding_BalStatement_in_ruleAlwaysPart_BalStatement8266 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_100_in_ruleAlwaysPart_BalStatement8286 = new BitSet(new long[]{0x0023B57FFFFF0010L,0x003FF863FFE98800L});
+    public static final BitSet FOLLOW_101_in_ruleAlwaysPart_BalStatement8286 = new BitSet(new long[]{0x0047B57FFFFF0010L,0x007FF0C7FFD31000L});
     public static final BitSet FOLLOW_ruleBinding_BalStatement_in_ruleAlwaysPart_BalStatement8307 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleCollection_in_entryRuleCollection8356 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleCollection8366 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleInfixed_in_ruleCollection8417 = new BitSet(new long[]{0x0000000000000000L,0x0000006000000000L});
+    public static final BitSet FOLLOW_ruleInfixed_in_ruleCollection8417 = new BitSet(new long[]{0x0000000000000000L,0x000000C000000000L});
     public static final BitSet FOLLOW_ruleIterators_in_ruleCollection8437 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleIterators_in_entryRuleIterators8483 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleIterators8493 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleIterators1_in_ruleIterators8543 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleIterators1_in_entryRuleIterators18587 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleIterators18597 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleIterator_in_ruleIterators18656 = new BitSet(new long[]{0x0000000000000002L,0x0000006000000000L});
+    public static final BitSet FOLLOW_ruleIterator_in_ruleIterators18656 = new BitSet(new long[]{0x0000000000000002L,0x000000C000000000L});
     public static final BitSet FOLLOW_ruleIterator_in_entryRuleIterator8703 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleIterator8713 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_101_in_ruleIterator8755 = new BitSet(new long[]{0x8023B57FFFFF0010L,0x003FF80000000003L});
-    public static final BitSet FOLLOW_ruleForLhs_in_ruleIterator8777 = new BitSet(new long[]{0x0000000000000000L,0x0000000000100000L});
-    public static final BitSet FOLLOW_84_in_ruleIterator8788 = new BitSet(new long[]{0x0023B57FFFFF0010L,0x003FF80000000000L});
+    public static final BitSet FOLLOW_102_in_ruleIterator8755 = new BitSet(new long[]{0x0047B57FFFFF0010L,0x007FF00000000007L});
+    public static final BitSet FOLLOW_ruleForLhs_in_ruleIterator8777 = new BitSet(new long[]{0x0000000000000000L,0x0000000000200000L});
+    public static final BitSet FOLLOW_85_in_ruleIterator8788 = new BitSet(new long[]{0x0047B57FFFFF0010L,0x007FF00000000000L});
     public static final BitSet FOLLOW_ruleInfixed_in_ruleIterator8809 = new BitSet(new long[]{0x0000000000002002L});
     public static final BitSet FOLLOW_ruleSuchthatPart_in_ruleIterator8830 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_102_in_ruleIterator8851 = new BitSet(new long[]{0x0023B57FFFFF0010L,0x003FF80000000000L});
+    public static final BitSet FOLLOW_103_in_ruleIterator8851 = new BitSet(new long[]{0x0047B57FFFFF0010L,0x007FF00000000000L});
     public static final BitSet FOLLOW_ruleInfixed_in_ruleIterator8872 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleForLhs_in_entryRuleForLhs8919 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleForLhs8929 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_64_in_ruleForLhs8971 = new BitSet(new long[]{0x0023B57FFFFF0010L,0x003FF80000000000L});
-    public static final BitSet FOLLOW_63_in_ruleForLhs8989 = new BitSet(new long[]{0x0023B57FFFFF0010L,0x003FF80000000000L});
-    public static final BitSet FOLLOW_65_in_ruleForLhs9007 = new BitSet(new long[]{0x0023B57FFFFF0010L,0x003FF80000000000L});
+    public static final BitSet FOLLOW_65_in_ruleForLhs8971 = new BitSet(new long[]{0x0047B57FFFFF0010L,0x007FF00000000000L});
+    public static final BitSet FOLLOW_64_in_ruleForLhs8989 = new BitSet(new long[]{0x0047B57FFFFF0010L,0x007FF00000000000L});
+    public static final BitSet FOLLOW_66_in_ruleForLhs9007 = new BitSet(new long[]{0x0047B57FFFFF0010L,0x007FF00000000000L});
     public static final BitSet FOLLOW_ruleInfixed_in_ruleForLhs9031 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleSuchthatPart_in_entryRuleSuchthatPart9076 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleSuchthatPart9086 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_KW_BAR_in_ruleSuchthatPart9126 = new BitSet(new long[]{0x0023B57FFFFF0010L,0x003FF80000000000L});
+    public static final BitSet FOLLOW_RULE_KW_BAR_in_ruleSuchthatPart9126 = new BitSet(new long[]{0x0047B57FFFFF0010L,0x007FF00000000000L});
     public static final BitSet FOLLOW_ruleInfixed_in_ruleSuchthatPart9147 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleInfixed_in_entryRuleInfixed9192 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleInfixed9202 = new BitSet(new long[]{0x0000000000000002L});
@@ -33033,93 +32841,93 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_ruleE3_in_ruleInfixedExpr9443 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleE3_in_entryRuleE39489 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleE39499 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleE4_in_ruleE39550 = new BitSet(new long[]{0x0000000000180002L,0x0000018000000000L});
-    public static final BitSet FOLLOW_103_in_ruleE39579 = new BitSet(new long[]{0x0003B57FFFFF0010L,0x003FF80000000000L});
-    public static final BitSet FOLLOW_104_in_ruleE39608 = new BitSet(new long[]{0x0003B57FFFFF0010L,0x003FF80000000000L});
-    public static final BitSet FOLLOW_ruleLatticeTok_in_ruleE39640 = new BitSet(new long[]{0x0003B57FFFFF0010L,0x003FF80000000000L});
-    public static final BitSet FOLLOW_ruleE4_in_ruleE39664 = new BitSet(new long[]{0x0000000000180002L,0x0000018000000000L});
+    public static final BitSet FOLLOW_ruleE4_in_ruleE39550 = new BitSet(new long[]{0x0000000000180002L,0x0000030000000000L});
+    public static final BitSet FOLLOW_104_in_ruleE39579 = new BitSet(new long[]{0x0007B57FFFFF0010L,0x007FF00000000000L});
+    public static final BitSet FOLLOW_105_in_ruleE39608 = new BitSet(new long[]{0x0007B57FFFFF0010L,0x007FF00000000000L});
+    public static final BitSet FOLLOW_ruleLatticeTok_in_ruleE39640 = new BitSet(new long[]{0x0007B57FFFFF0010L,0x007FF00000000000L});
+    public static final BitSet FOLLOW_ruleE4_in_ruleE39664 = new BitSet(new long[]{0x0000000000180002L,0x0000030000000000L});
     public static final BitSet FOLLOW_ruleE4_in_entryRuleE49712 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleE49722 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleE5_in_ruleE49773 = new BitSet(new long[]{0x000000003FE00002L,0x0000E20000000000L});
-    public static final BitSet FOLLOW_105_in_ruleE49802 = new BitSet(new long[]{0x0003B57FFFFF0010L,0x003FF80000000000L});
-    public static final BitSet FOLLOW_ruleRelationTok_in_ruleE49834 = new BitSet(new long[]{0x0003B57FFFFF0010L,0x003FF80000000000L});
-    public static final BitSet FOLLOW_ruleE5_in_ruleE49858 = new BitSet(new long[]{0x000000003FE00002L,0x0000E20000000000L});
+    public static final BitSet FOLLOW_ruleE5_in_ruleE49773 = new BitSet(new long[]{0x000000003FE00002L,0x0001C40000000000L});
+    public static final BitSet FOLLOW_106_in_ruleE49802 = new BitSet(new long[]{0x0007B57FFFFF0010L,0x007FF00000000000L});
+    public static final BitSet FOLLOW_ruleRelationTok_in_ruleE49834 = new BitSet(new long[]{0x0007B57FFFFF0010L,0x007FF00000000000L});
+    public static final BitSet FOLLOW_ruleE5_in_ruleE49858 = new BitSet(new long[]{0x000000003FE00002L,0x0001C40000000000L});
     public static final BitSet FOLLOW_ruleE5_in_entryRuleE59906 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleE59916 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleE6_in_ruleE59967 = new BitSet(new long[]{0x0000000040000002L,0x0001000000000000L});
-    public static final BitSet FOLLOW_ruleSegTok_in_ruleE59997 = new BitSet(new long[]{0x0003B57FFFFF0010L,0x003FF80000000000L});
-    public static final BitSet FOLLOW_ruleE6_in_ruleE510018 = new BitSet(new long[]{0x0000000040000002L,0x0001000000000000L});
+    public static final BitSet FOLLOW_ruleE6_in_ruleE59967 = new BitSet(new long[]{0x0000000040000002L,0x0002000000000000L});
+    public static final BitSet FOLLOW_ruleSegTok_in_ruleE59997 = new BitSet(new long[]{0x0007B57FFFFF0010L,0x007FF00000000000L});
+    public static final BitSet FOLLOW_ruleE6_in_ruleE510018 = new BitSet(new long[]{0x0000000040000002L,0x0002000000000000L});
     public static final BitSet FOLLOW_ruleE6_in_entryRuleE610066 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleE610076 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleE7_in_ruleE610127 = new BitSet(new long[]{0x0000000380000002L});
-    public static final BitSet FOLLOW_rulePlusTok_in_ruleE610157 = new BitSet(new long[]{0x0003B57FFFFF0010L,0x003FF80000000000L});
+    public static final BitSet FOLLOW_rulePlusTok_in_ruleE610157 = new BitSet(new long[]{0x0007B57FFFFF0010L,0x007FF00000000000L});
     public static final BitSet FOLLOW_ruleE7_in_ruleE610178 = new BitSet(new long[]{0x0000000380000002L});
     public static final BitSet FOLLOW_ruleE7_in_entryRuleE710226 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleE710236 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleE8_in_ruleE710287 = new BitSet(new long[]{0x0000000000000002L,0x001E000000000000L});
-    public static final BitSet FOLLOW_ruleQuotientTok_in_ruleE710317 = new BitSet(new long[]{0x0003B57FFFFF0010L,0x003FF80000000000L});
-    public static final BitSet FOLLOW_ruleE8_in_ruleE710338 = new BitSet(new long[]{0x0000000000000002L,0x001E000000000000L});
+    public static final BitSet FOLLOW_ruleE8_in_ruleE710287 = new BitSet(new long[]{0x0000000000000002L,0x003C000000000000L});
+    public static final BitSet FOLLOW_ruleQuotientTok_in_ruleE710317 = new BitSet(new long[]{0x0007B57FFFFF0010L,0x007FF00000000000L});
+    public static final BitSet FOLLOW_ruleE8_in_ruleE710338 = new BitSet(new long[]{0x0000000000000002L,0x003C000000000000L});
     public static final BitSet FOLLOW_ruleE8_in_entryRuleE810386 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleE810396 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleE9_in_ruleE810447 = new BitSet(new long[]{0x0000001C00000002L});
-    public static final BitSet FOLLOW_ruleTimesTok_in_ruleE810477 = new BitSet(new long[]{0x0003B57FFFFF0010L,0x003FF80000000000L});
+    public static final BitSet FOLLOW_ruleTimesTok_in_ruleE810477 = new BitSet(new long[]{0x0007B57FFFFF0010L,0x007FF00000000000L});
     public static final BitSet FOLLOW_ruleE9_in_ruleE810498 = new BitSet(new long[]{0x0000001C00000002L});
     public static final BitSet FOLLOW_ruleE9_in_entryRuleE910546 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleE910556 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleE11_E12_in_ruleE910607 = new BitSet(new long[]{0x0000007FFFFF0002L,0x001FE00000000000L});
-    public static final BitSet FOLLOW_rulePowerTok_in_ruleE910637 = new BitSet(new long[]{0x0003B57FFFFF0010L,0x003FF80000000000L});
-    public static final BitSet FOLLOW_ruleE11_E12_in_ruleE910658 = new BitSet(new long[]{0x0000007FFFFF0002L,0x001FE00000000000L});
+    public static final BitSet FOLLOW_ruleE11_E12_in_ruleE910607 = new BitSet(new long[]{0x0000007FFFFF0002L,0x003FC00000000000L});
+    public static final BitSet FOLLOW_rulePowerTok_in_ruleE910637 = new BitSet(new long[]{0x0007B57FFFFF0010L,0x007FF00000000000L});
+    public static final BitSet FOLLOW_ruleE11_E12_in_ruleE910658 = new BitSet(new long[]{0x0000007FFFFF0002L,0x003FC00000000000L});
     public static final BitSet FOLLOW_ruleE11_E12_in_entryRuleE11_E1210706 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleE11_E1210716 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleE12_in_ruleE11_E1210767 = new BitSet(new long[]{0x0000000000004022L,0x0000040000000000L});
-    public static final BitSet FOLLOW_RULE_KW_2COLON_in_ruleE11_E1210794 = new BitSet(new long[]{0x0003B57FFFFF0010L,0x003FF80000000000L});
-    public static final BitSet FOLLOW_RULE_KW_AT_in_ruleE11_E1210822 = new BitSet(new long[]{0x0003B57FFFFF0010L,0x003FF80000000000L});
-    public static final BitSet FOLLOW_106_in_ruleE11_E1210851 = new BitSet(new long[]{0x0003B57FFFFF0010L,0x003FF80000000000L});
-    public static final BitSet FOLLOW_ruleE12_in_ruleE11_E1210886 = new BitSet(new long[]{0x0000000000004022L,0x0000040000000000L});
+    public static final BitSet FOLLOW_ruleE12_in_ruleE11_E1210767 = new BitSet(new long[]{0x0000000000004022L,0x0000080000000000L});
+    public static final BitSet FOLLOW_RULE_KW_2COLON_in_ruleE11_E1210794 = new BitSet(new long[]{0x0007B57FFFFF0010L,0x007FF00000000000L});
+    public static final BitSet FOLLOW_RULE_KW_AT_in_ruleE11_E1210822 = new BitSet(new long[]{0x0007B57FFFFF0010L,0x007FF00000000000L});
+    public static final BitSet FOLLOW_107_in_ruleE11_E1210851 = new BitSet(new long[]{0x0007B57FFFFF0010L,0x007FF00000000000L});
+    public static final BitSet FOLLOW_ruleE12_in_ruleE11_E1210886 = new BitSet(new long[]{0x0000000000004022L,0x0000080000000000L});
     public static final BitSet FOLLOW_ruleE11_Op_in_entryRuleE11_Op10934 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleE11_Op10944 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleOp_in_ruleE11_Op10995 = new BitSet(new long[]{0x0000000000004022L,0x0000040000000000L});
-    public static final BitSet FOLLOW_RULE_KW_2COLON_in_ruleE11_Op11022 = new BitSet(new long[]{0x0003B57FFFFF0010L,0x003FF80000000000L});
-    public static final BitSet FOLLOW_RULE_KW_AT_in_ruleE11_Op11050 = new BitSet(new long[]{0x0003B57FFFFF0010L,0x003FF80000000000L});
-    public static final BitSet FOLLOW_106_in_ruleE11_Op11079 = new BitSet(new long[]{0x0003B57FFFFF0010L,0x003FF80000000000L});
-    public static final BitSet FOLLOW_ruleE12_in_ruleE11_Op11114 = new BitSet(new long[]{0x0000000000004022L,0x0000040000000000L});
+    public static final BitSet FOLLOW_ruleOp_in_ruleE11_Op10995 = new BitSet(new long[]{0x0000000000004022L,0x0000080000000000L});
+    public static final BitSet FOLLOW_RULE_KW_2COLON_in_ruleE11_Op11022 = new BitSet(new long[]{0x0007B57FFFFF0010L,0x007FF00000000000L});
+    public static final BitSet FOLLOW_RULE_KW_AT_in_ruleE11_Op11050 = new BitSet(new long[]{0x0007B57FFFFF0010L,0x007FF00000000000L});
+    public static final BitSet FOLLOW_107_in_ruleE11_Op11079 = new BitSet(new long[]{0x0007B57FFFFF0010L,0x007FF00000000000L});
+    public static final BitSet FOLLOW_ruleE12_in_ruleE11_Op11114 = new BitSet(new long[]{0x0000000000004022L,0x0000080000000000L});
     public static final BitSet FOLLOW_ruleType_in_entryRuleType11162 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleType11172 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleE11_E12_in_ruleType11222 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleE12_in_entryRuleE1211266 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleE1211276 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleE13_in_ruleE1211327 = new BitSet(new long[]{0x0000000000070002L});
-    public static final BitSet FOLLOW_ruleArrowOp_in_ruleE1211357 = new BitSet(new long[]{0x0003B57FFFFF0010L,0x003FF80000000000L});
+    public static final BitSet FOLLOW_ruleArrowOp_in_ruleE1211357 = new BitSet(new long[]{0x0007B57FFFFF0010L,0x007FF00000000000L});
     public static final BitSet FOLLOW_ruleE13_in_ruleE1211378 = new BitSet(new long[]{0x0000000000070002L});
     public static final BitSet FOLLOW_ruleE13_in_entryRuleE1311426 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleE1311436 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleE14_in_ruleE1311487 = new BitSet(new long[]{0x0000000000008002L});
-    public static final BitSet FOLLOW_RULE_KW_DOLLAR_in_ruleE1311513 = new BitSet(new long[]{0x0003B50000000010L,0x0020000000000000L});
+    public static final BitSet FOLLOW_RULE_KW_DOLLAR_in_ruleE1311513 = new BitSet(new long[]{0x0007B50000000010L,0x0040000000000000L});
     public static final BitSet FOLLOW_ruleQualTail_in_ruleE1311539 = new BitSet(new long[]{0x0000000000008002L});
     public static final BitSet FOLLOW_ruleQualTail_in_entryRuleQualTail11587 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleQualTail11597 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleLeftJuxtaposed_in_ruleQualTail11648 = new BitSet(new long[]{0x0000000000008002L});
-    public static final BitSet FOLLOW_RULE_KW_DOLLAR_in_ruleQualTail11676 = new BitSet(new long[]{0x0003B50000000010L,0x0020000000000000L});
+    public static final BitSet FOLLOW_RULE_KW_DOLLAR_in_ruleQualTail11676 = new BitSet(new long[]{0x0007B50000000010L,0x0040000000000000L});
     public static final BitSet FOLLOW_ruleQualTail_in_ruleQualTail11696 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleOpQualTail_in_entryRuleOpQualTail11745 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleOpQualTail11755 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleMolecule_in_ruleOpQualTail11805 = new BitSet(new long[]{0x0000000000008002L});
-    public static final BitSet FOLLOW_RULE_KW_DOLLAR_in_ruleOpQualTail11827 = new BitSet(new long[]{0x0003B50000000010L});
+    public static final BitSet FOLLOW_RULE_KW_DOLLAR_in_ruleOpQualTail11827 = new BitSet(new long[]{0x0007B50000000010L});
     public static final BitSet FOLLOW_ruleOpQualTail_in_ruleOpQualTail11848 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleE14_in_entryRuleE1411896 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleE1411906 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleE15_in_ruleE1411956 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleE15_in_ruleE1412023 = new BitSet(new long[]{0x0000000000000000L,0x0000080000000000L});
-    public static final BitSet FOLLOW_107_in_ruleE1412042 = new BitSet(new long[]{0x0023B57FFFFF0010L,0x003FF80000000000L});
+    public static final BitSet FOLLOW_ruleE15_in_ruleE1412023 = new BitSet(new long[]{0x0000000000000000L,0x0000100000000000L});
+    public static final BitSet FOLLOW_108_in_ruleE1412042 = new BitSet(new long[]{0x0047B57FFFFF0010L,0x007FF00000000000L});
     public static final BitSet FOLLOW_ruleDeclMolecule_in_ruleE1412076 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleE15_in_ruleE1412145 = new BitSet(new long[]{0x0000000000000000L,0x0000100000000000L});
-    public static final BitSet FOLLOW_108_in_ruleE1412164 = new BitSet(new long[]{0x0023B57FFFFF0010L,0x003FF80000000000L});
+    public static final BitSet FOLLOW_ruleE15_in_ruleE1412145 = new BitSet(new long[]{0x0000000000000000L,0x0000200000000000L});
+    public static final BitSet FOLLOW_109_in_ruleE1412164 = new BitSet(new long[]{0x0047B57FFFFF0010L,0x007FF00000000000L});
     public static final BitSet FOLLOW_ruleDeclMolecule_in_ruleE1412198 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleE15_in_ruleE1412266 = new BitSet(new long[]{0x0000000000000000L,0x0000000040000000L});
-    public static final BitSet FOLLOW_94_in_ruleE1412284 = new BitSet(new long[]{0x0003B50000000010L,0x0020000000000000L});
+    public static final BitSet FOLLOW_ruleE15_in_ruleE1412266 = new BitSet(new long[]{0x0000000000000000L,0x0000000080000000L});
+    public static final BitSet FOLLOW_95_in_ruleE1412284 = new BitSet(new long[]{0x0007B50000000010L,0x0040000000000000L});
     public static final BitSet FOLLOW_ruleE15_in_ruleE1412318 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleE15_in_ruleE1412386 = new BitSet(new long[]{0x0000000000000000L,0x0000000080000000L});
-    public static final BitSet FOLLOW_95_in_ruleE1412404 = new BitSet(new long[]{0x0003B50000000010L,0x0020000000000000L});
+    public static final BitSet FOLLOW_ruleE15_in_ruleE1412386 = new BitSet(new long[]{0x0000000000000000L,0x0000000100000000L});
+    public static final BitSet FOLLOW_96_in_ruleE1412404 = new BitSet(new long[]{0x0007B50000000010L,0x0040000000000000L});
     public static final BitSet FOLLOW_ruleE15_in_ruleE1412438 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleE15_in_entryRuleE1512486 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleE1512496 = new BitSet(new long[]{0x0000000000000002L});
@@ -33188,13 +32996,13 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_RULE_KW_LE_in_ruleRelationTok14612 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_RULE_KW_LT_in_ruleRelationTok14638 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_RULE_KW_2LT_in_ruleRelationTok14664 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_109_in_ruleRelationTok14688 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_110_in_ruleRelationTok14707 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_111_in_ruleRelationTok14726 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_110_in_ruleRelationTok14688 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_111_in_ruleRelationTok14707 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_112_in_ruleRelationTok14726 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleSegTok_in_entryRuleSegTok14777 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleSegTok14788 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_RULE_KW_2DOT_in_ruleSegTok14832 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_112_in_ruleSegTok14856 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_113_in_ruleSegTok14856 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rulePlusTok_in_entryRulePlusTok14907 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRulePlusTok14918 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_RULE_KW_PLUS_in_rulePlusTok14962 = new BitSet(new long[]{0x0000000000000002L});
@@ -33202,10 +33010,10 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_RULE_KW_PLUSMINUS_in_rulePlusTok15014 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleQuotientTok_in_entryRuleQuotientTok15070 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleQuotientTok15081 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_113_in_ruleQuotientTok15123 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_114_in_ruleQuotientTok15142 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_115_in_ruleQuotientTok15161 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_116_in_ruleQuotientTok15180 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_114_in_ruleQuotientTok15123 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_115_in_ruleQuotientTok15142 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_116_in_ruleQuotientTok15161 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_117_in_ruleQuotientTok15180 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleTimesTok_in_entryRuleTimesTok15231 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleTimesTok15242 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_RULE_KW_STAR_in_ruleTimesTok15286 = new BitSet(new long[]{0x0000000000000002L});
@@ -33226,33 +33034,33 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_ruleJleft_Molecule_in_ruleLeftJuxtaposed15798 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleJright_Molecule_in_entryRuleJright_Molecule15842 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleJright_Molecule15852 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleJleft_Molecule_in_ruleJright_Molecule15904 = new BitSet(new long[]{0x0003A00000000012L,0x0020000000000000L});
+    public static final BitSet FOLLOW_ruleJleft_Molecule_in_ruleJright_Molecule15904 = new BitSet(new long[]{0x0007A00000000012L,0x0040000000000000L});
     public static final BitSet FOLLOW_ruleJright_Atom_in_ruleJright_Molecule15924 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_117_in_ruleJright_Molecule15945 = new BitSet(new long[]{0x0003A00000000010L,0x0020000000000000L});
+    public static final BitSet FOLLOW_118_in_ruleJright_Molecule15945 = new BitSet(new long[]{0x0007A00000000010L,0x0040000000000000L});
     public static final BitSet FOLLOW_ruleJright_Atom_in_ruleJright_Molecule15966 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleJright_Atom_in_entryRuleJright_Atom16013 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleJright_Atom16023 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleJleft_Atom_in_ruleJright_Atom16075 = new BitSet(new long[]{0x0003A00000000012L,0x0020000000000000L});
+    public static final BitSet FOLLOW_ruleJleft_Atom_in_ruleJright_Atom16075 = new BitSet(new long[]{0x0007A00000000012L,0x0040000000000000L});
     public static final BitSet FOLLOW_ruleJright_Atom_in_ruleJright_Atom16095 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_117_in_ruleJright_Atom16116 = new BitSet(new long[]{0x0003A00000000010L,0x0020000000000000L});
+    public static final BitSet FOLLOW_118_in_ruleJright_Atom16116 = new BitSet(new long[]{0x0007A00000000010L,0x0040000000000000L});
     public static final BitSet FOLLOW_ruleJright_Atom_in_ruleJright_Atom16137 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleJleft_Molecule_in_entryRuleJleft_Molecule16184 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleJleft_Molecule16194 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_117_in_ruleJleft_Molecule16236 = new BitSet(new long[]{0x0023B57FFFFF0010L,0x003FF80000000000L});
+    public static final BitSet FOLLOW_118_in_ruleJleft_Molecule16236 = new BitSet(new long[]{0x0047B57FFFFF0010L,0x007FF00000000000L});
     public static final BitSet FOLLOW_ruleBlockEnclosure_in_ruleJleft_Molecule16257 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleMolecule_in_ruleJleft_Molecule16311 = new BitSet(new long[]{0x0023B57FFFFF0012L,0x003FF80000000000L});
-    public static final BitSet FOLLOW_ruleBlockEnclosure_in_ruleJleft_Molecule16332 = new BitSet(new long[]{0x0023B57FFFFF0012L,0x003FF80000000000L});
+    public static final BitSet FOLLOW_ruleMolecule_in_ruleJleft_Molecule16311 = new BitSet(new long[]{0x0047B57FFFFF0012L,0x007FF00000000000L});
+    public static final BitSet FOLLOW_ruleBlockEnclosure_in_ruleJleft_Molecule16332 = new BitSet(new long[]{0x0047B57FFFFF0012L,0x007FF00000000000L});
     public static final BitSet FOLLOW_ruleMolecule_in_ruleJleft_Molecule16363 = new BitSet(new long[]{0x0000008000000002L});
-    public static final BitSet FOLLOW_RULE_KW_DOT_in_ruleJleft_Molecule16375 = new BitSet(new long[]{0x0023B57FFFFF0010L,0x003FF80000000000L});
+    public static final BitSet FOLLOW_RULE_KW_DOT_in_ruleJleft_Molecule16375 = new BitSet(new long[]{0x0047B57FFFFF0010L,0x007FF00000000000L});
     public static final BitSet FOLLOW_ruleBlockMolecule_in_ruleJleft_Molecule16395 = new BitSet(new long[]{0x0000008000000002L});
     public static final BitSet FOLLOW_ruleJleft_Atom_in_entryRuleJleft_Atom16444 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleJleft_Atom16454 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleAtom_in_ruleJleft_Atom16506 = new BitSet(new long[]{0x0023B57FFFFF0010L,0x003FF80000000000L});
-    public static final BitSet FOLLOW_ruleBlockEnclosure_in_ruleJleft_Atom16527 = new BitSet(new long[]{0x0023B57FFFFF0010L,0x003FF80000000000L});
-    public static final BitSet FOLLOW_117_in_ruleJleft_Atom16548 = new BitSet(new long[]{0x0023B57FFFFF0010L,0x003FF80000000000L});
+    public static final BitSet FOLLOW_ruleAtom_in_ruleJleft_Atom16506 = new BitSet(new long[]{0x0047B57FFFFF0010L,0x007FF00000000000L});
+    public static final BitSet FOLLOW_ruleBlockEnclosure_in_ruleJleft_Atom16527 = new BitSet(new long[]{0x0047B57FFFFF0010L,0x007FF00000000000L});
+    public static final BitSet FOLLOW_118_in_ruleJleft_Atom16548 = new BitSet(new long[]{0x0047B57FFFFF0010L,0x007FF00000000000L});
     public static final BitSet FOLLOW_ruleBlockEnclosure_in_ruleJleft_Atom16582 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleAtom_in_ruleJleft_Atom16613 = new BitSet(new long[]{0x0000008000000002L});
-    public static final BitSet FOLLOW_RULE_KW_DOT_in_ruleJleft_Atom16624 = new BitSet(new long[]{0x0023B57FFFFF0010L,0x003FF80000000000L});
+    public static final BitSet FOLLOW_RULE_KW_DOT_in_ruleJleft_Atom16624 = new BitSet(new long[]{0x0047B57FFFFF0010L,0x007FF00000000000L});
     public static final BitSet FOLLOW_ruleBlockMolecule_in_ruleJleft_Atom16644 = new BitSet(new long[]{0x0000008000000002L});
     public static final BitSet FOLLOW_ruleMolecule_in_entryRuleMolecule16693 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleMolecule16703 = new BitSet(new long[]{0x0000000000000002L});
@@ -33281,12 +33089,12 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_ruleCurly_Labeled_in_ruleBlock17491 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleParened_in_entryRuleParened17535 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleParened17545 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_KW_OPAREN_in_ruleParened17591 = new BitSet(new long[]{0xE027B77FFFFF0030L,0x003FF863FFE988FFL});
+    public static final BitSet FOLLOW_RULE_KW_OPAREN_in_ruleParened17591 = new BitSet(new long[]{0xC04FB77FFFFF0030L,0x007FF0C7FFD311FFL});
     public static final BitSet FOLLOW_ruleExpression_in_ruleParened17617 = new BitSet(new long[]{0x0000020000000000L});
     public static final BitSet FOLLOW_RULE_KW_CPAREN_in_ruleParened17629 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleBracketed_in_entryRuleBracketed17674 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleBracketed17684 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_KW_OBRACK_in_ruleBracketed17730 = new BitSet(new long[]{0xE027BD7FFFFF0030L,0x003FF863FFE988FFL});
+    public static final BitSet FOLLOW_RULE_KW_OBRACK_in_ruleBracketed17730 = new BitSet(new long[]{0xC04FBD7FFFFF0030L,0x007FF0C7FFD311FFL});
     public static final BitSet FOLLOW_ruleExpression_in_ruleBracketed17756 = new BitSet(new long[]{0x0000080000000000L});
     public static final BitSet FOLLOW_RULE_KW_CBRACK_in_ruleBracketed17768 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleQuotedIds_in_entryRuleQuotedIds17813 = new BitSet(new long[]{0x0000000000000000L});
@@ -33314,180 +33122,190 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_RULE_KW_TILDE_in_ruleId18477 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleLiteral_in_entryRuleLiteral18531 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleLiteral18542 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_TK_INT_in_ruleLiteral18586 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_TK_STRING_in_ruleLiteral18612 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleUnqualOp_ArrowTok_in_entryRuleUnqualOp_ArrowTok18667 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleUnqualOp_ArrowTok18677 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleArrowTok_in_ruleUnqualOp_ArrowTok18722 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleUnqualOp_LatticeTok_in_entryRuleUnqualOp_LatticeTok18776 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleUnqualOp_LatticeTok18786 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleLatticeTok_in_ruleUnqualOp_LatticeTok18831 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleUnqualOp_RelationTok_in_entryRuleUnqualOp_RelationTok18885 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleUnqualOp_RelationTok18895 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleRelationTok_in_ruleUnqualOp_RelationTok18940 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleUnqualOp_SegTok_in_entryRuleUnqualOp_SegTok18994 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleUnqualOp_SegTok19004 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleSegTok_in_ruleUnqualOp_SegTok19049 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleUnqualOp_PlusTok_in_entryRuleUnqualOp_PlusTok19103 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleUnqualOp_PlusTok19113 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rulePlusTok_in_ruleUnqualOp_PlusTok19158 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleUnqualOp_QuotientTok_in_entryRuleUnqualOp_QuotientTok19212 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleUnqualOp_QuotientTok19222 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleQuotientTok_in_ruleUnqualOp_QuotientTok19267 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleUnqualOp_TimesTok_in_entryRuleUnqualOp_TimesTok19321 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleUnqualOp_TimesTok19331 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleTimesTok_in_ruleUnqualOp_TimesTok19376 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleUnqualOp_PowerTok_in_entryRuleUnqualOp_PowerTok19430 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleUnqualOp_PowerTok19440 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rulePowerTok_in_ruleUnqualOp_PowerTok19485 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleQualOp_ArrowTok_in_entryRuleQualOp_ArrowTok19539 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleQualOp_ArrowTok19549 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleArrowTok_in_ruleQualOp_ArrowTok19603 = new BitSet(new long[]{0x0000000000008002L});
-    public static final BitSet FOLLOW_RULE_KW_DOLLAR_in_ruleQualOp_ArrowTok19631 = new BitSet(new long[]{0x0003B50000000010L});
-    public static final BitSet FOLLOW_ruleOpQualTail_in_ruleQualOp_ArrowTok19651 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleQualOp_LatticeTok_in_entryRuleQualOp_LatticeTok19700 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleQualOp_LatticeTok19710 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleLatticeTok_in_ruleQualOp_LatticeTok19764 = new BitSet(new long[]{0x0000000000008002L});
-    public static final BitSet FOLLOW_RULE_KW_DOLLAR_in_ruleQualOp_LatticeTok19792 = new BitSet(new long[]{0x0003B50000000010L});
-    public static final BitSet FOLLOW_ruleOpQualTail_in_ruleQualOp_LatticeTok19812 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleQualOp_RelationTok_in_entryRuleQualOp_RelationTok19861 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleQualOp_RelationTok19871 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleRelationTok_in_ruleQualOp_RelationTok19925 = new BitSet(new long[]{0x0000000000008002L});
-    public static final BitSet FOLLOW_RULE_KW_DOLLAR_in_ruleQualOp_RelationTok19942 = new BitSet(new long[]{0x0003B50000000010L});
-    public static final BitSet FOLLOW_ruleOpQualTail_in_ruleQualOp_RelationTok19968 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleQualOp_SegTok_in_entryRuleQualOp_SegTok20016 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleQualOp_SegTok20026 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleSegTok_in_ruleQualOp_SegTok20080 = new BitSet(new long[]{0x0000000000008002L});
-    public static final BitSet FOLLOW_RULE_KW_DOLLAR_in_ruleQualOp_SegTok20091 = new BitSet(new long[]{0x0003B50000000010L});
-    public static final BitSet FOLLOW_ruleOpQualTail_in_ruleQualOp_SegTok20111 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleQualOp_PlusTok_in_entryRuleQualOp_PlusTok20159 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleQualOp_PlusTok20169 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rulePlusTok_in_ruleQualOp_PlusTok20223 = new BitSet(new long[]{0x0000000000008002L});
-    public static final BitSet FOLLOW_RULE_KW_DOLLAR_in_ruleQualOp_PlusTok20234 = new BitSet(new long[]{0x0003B50000000010L});
-    public static final BitSet FOLLOW_ruleOpQualTail_in_ruleQualOp_PlusTok20254 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleQualOp_QuotientTok_in_entryRuleQualOp_QuotientTok20302 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleQualOp_QuotientTok20312 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleQuotientTok_in_ruleQualOp_QuotientTok20366 = new BitSet(new long[]{0x0000000000008002L});
-    public static final BitSet FOLLOW_RULE_KW_DOLLAR_in_ruleQualOp_QuotientTok20377 = new BitSet(new long[]{0x0003B50000000010L});
-    public static final BitSet FOLLOW_ruleOpQualTail_in_ruleQualOp_QuotientTok20397 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleQualOp_TimesTok_in_entryRuleQualOp_TimesTok20445 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleQualOp_TimesTok20455 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleTimesTok_in_ruleQualOp_TimesTok20509 = new BitSet(new long[]{0x0000000000008002L});
-    public static final BitSet FOLLOW_RULE_KW_DOLLAR_in_ruleQualOp_TimesTok20520 = new BitSet(new long[]{0x0003B50000000010L});
-    public static final BitSet FOLLOW_ruleOpQualTail_in_ruleQualOp_TimesTok20540 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleQualOp_PowerTok_in_entryRuleQualOp_PowerTok20588 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleQualOp_PowerTok20598 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rulePowerTok_in_ruleQualOp_PowerTok20652 = new BitSet(new long[]{0x0000000000008002L});
-    public static final BitSet FOLLOW_RULE_KW_DOLLAR_in_ruleQualOp_PowerTok20663 = new BitSet(new long[]{0x0003B50000000010L});
-    public static final BitSet FOLLOW_ruleOpQualTail_in_ruleQualOp_PowerTok20683 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rulePreDocument_in_entryRulePreDocument20732 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRulePreDocument20743 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_TK_PREDOC_in_rulePreDocument20787 = new BitSet(new long[]{0x0004000000000002L});
-    public static final BitSet FOLLOW_rulePostDocument_in_entryRulePostDocument20844 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRulePostDocument20855 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_TK_POSTDOC_in_rulePostDocument20899 = new BitSet(new long[]{0x0008000000000002L});
-    public static final BitSet FOLLOW_ruleenlist1_CommaItem_Comma_AB_in_entryRuleenlist1_CommaItem_Comma_AB20955 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleenlist1_CommaItem_Comma_AB20965 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleenlister1_CommaItem_Comma_in_ruleenlist1_CommaItem_Comma_AB21015 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleenlist1_Infixed_Comma_AB_in_entryRuleenlist1_Infixed_Comma_AB21059 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleenlist1_Infixed_Comma_AB21069 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleenlister1_Infixed_Comma_in_ruleenlist1_Infixed_Comma_AB21119 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleenlist1_InfixedExpr_Comma_AB_in_entryRuleenlist1_InfixedExpr_Comma_AB21163 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleenlist1_InfixedExpr_Comma_AB21173 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleenlister1_InfixedExpr_Comma_in_ruleenlist1_InfixedExpr_Comma_AB21223 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleenlister1_CommaItem_Comma_in_entryRuleenlister1_CommaItem_Comma21267 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleenlister1_CommaItem_Comma21277 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleCommaItem_in_ruleenlister1_CommaItem_Comma21328 = new BitSet(new long[]{0x0000400000000002L});
-    public static final BitSet FOLLOW_RULE_KW_COMMA_in_ruleenlister1_CommaItem_Comma21339 = new BitSet(new long[]{0x0023B57FFFFF0010L,0x003FF863FFE98800L});
-    public static final BitSet FOLLOW_ruleCommaItem_in_ruleenlister1_CommaItem_Comma21359 = new BitSet(new long[]{0x0000400000000002L});
-    public static final BitSet FOLLOW_ruleenlister1_Infixed_Comma_in_entryRuleenlister1_Infixed_Comma21407 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleenlister1_Infixed_Comma21417 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleInfixed_in_ruleenlister1_Infixed_Comma21468 = new BitSet(new long[]{0x0000400000000002L});
-    public static final BitSet FOLLOW_RULE_KW_COMMA_in_ruleenlister1_Infixed_Comma21479 = new BitSet(new long[]{0x0023B57FFFFF0010L,0x003FF80000000000L});
-    public static final BitSet FOLLOW_ruleInfixed_in_ruleenlister1_Infixed_Comma21499 = new BitSet(new long[]{0x0000400000000002L});
-    public static final BitSet FOLLOW_ruleenlister1_InfixedExpr_Comma_in_entryRuleenlister1_InfixedExpr_Comma21547 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleenlister1_InfixedExpr_Comma21557 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleInfixedExpr_in_ruleenlister1_InfixedExpr_Comma21608 = new BitSet(new long[]{0x0000400000000002L});
-    public static final BitSet FOLLOW_RULE_KW_COMMA_in_ruleenlister1_InfixedExpr_Comma21619 = new BitSet(new long[]{0x0003B57FFFFF0010L,0x003FF80000000000L});
-    public static final BitSet FOLLOW_ruleInfixedExpr_in_ruleenlister1_InfixedExpr_Comma21639 = new BitSet(new long[]{0x0000400000000002L});
-    public static final BitSet FOLLOW_ruleenlist1a_Labeled_Semicolon_AB_in_entryRuleenlist1a_Labeled_Semicolon_AB21687 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleenlist1a_Labeled_Semicolon_AB21697 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleenlister1a_Labeled_Semicolon_in_ruleenlist1a_Labeled_Semicolon_AB21747 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleenlister1a_Labeled_Semicolon_in_entryRuleenlister1a_Labeled_Semicolon21791 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleenlister1a_Labeled_Semicolon21801 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleLabeled_in_ruleenlister1a_Labeled_Semicolon21851 = new BitSet(new long[]{0x0010000000000002L});
-    public static final BitSet FOLLOW_RULE_KW_SEMICOLON_in_ruleenlister1a_Labeled_Semicolon21863 = new BitSet(new long[]{0xE027B57FFFFF0030L,0x003FF863FFE988FFL});
-    public static final BitSet FOLLOW_ruleLabeled_in_ruleenlister1a_Labeled_Semicolon21883 = new BitSet(new long[]{0x0010000000000002L});
-    public static final BitSet FOLLOW_RULE_KW_SEMICOLON_in_ruleenlister1a_Labeled_Semicolon21897 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleCurly_Labeled_in_entryRuleCurly_Labeled21944 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleCurly_Labeled21954 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_KW_OCURLY_in_ruleCurly_Labeled21994 = new BitSet(new long[]{0xE027B57FFFFF0030L,0x003FF863FFE988FFL});
-    public static final BitSet FOLLOW_ruleCurlyContents_Labeled_in_ruleCurly_Labeled22015 = new BitSet(new long[]{0x0040000000000000L});
-    public static final BitSet FOLLOW_RULE_KW_CCURLY_in_ruleCurly_Labeled22025 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleCurlyContents_Labeled_in_entryRuleCurlyContents_Labeled22070 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleCurlyContents_Labeled22080 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleCurlyContentsList_Labeled_in_ruleCurlyContents_Labeled22130 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleCurlyContentsList_Labeled_in_entryRuleCurlyContentsList_Labeled22174 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleCurlyContentsList_Labeled22184 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleCurlyContentB_Labeled_in_ruleCurlyContentsList_Labeled22234 = new BitSet(new long[]{0x0010000000000002L});
-    public static final BitSet FOLLOW_RULE_KW_SEMICOLON_in_ruleCurlyContentsList_Labeled22246 = new BitSet(new long[]{0xE027B57FFFFF0030L,0x003FF863FFE988FFL});
-    public static final BitSet FOLLOW_ruleCurlyContentB_Labeled_in_ruleCurlyContentsList_Labeled22266 = new BitSet(new long[]{0x0010000000000002L});
-    public static final BitSet FOLLOW_RULE_KW_SEMICOLON_in_ruleCurlyContentsList_Labeled22280 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleCurlyContentB_Labeled_in_entryRuleCurlyContentB_Labeled22327 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleCurlyContentB_Labeled22337 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rulePreDocument_in_ruleCurlyContentB_Labeled22387 = new BitSet(new long[]{0xE027B57FFFFF0030L,0x003FF863FFE988FFL});
-    public static final BitSet FOLLOW_ruleLabeled_in_ruleCurlyContentB_Labeled22408 = new BitSet(new long[]{0x0008000000000000L});
-    public static final BitSet FOLLOW_rulePostDocument_in_ruleCurlyContentB_Labeled22429 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_71_in_synpred1_InternalEditor1290 = new BitSet(new long[]{0x0023B57FFFFF0010L,0x003FF80000000100L});
-    public static final BitSet FOLLOW_ruleSig_in_synpred1_InternalEditor1297 = new BitSet(new long[]{0x0023B57FFFFF0010L,0x003FF80000000100L});
+    public static final BitSet FOLLOW_RULE_TK_INT_in_ruleLiteral18603 = new BitSet(new long[]{0x0000008000000000L});
+    public static final BitSet FOLLOW_RULE_KW_DOT_in_ruleLiteral18623 = new BitSet(new long[]{0x0004000000000000L});
+    public static final BitSet FOLLOW_RULE_TK_FLOAT_in_ruleLiteral18645 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_TK_INT_in_ruleLiteral18685 = new BitSet(new long[]{0x0000008000000000L});
+    public static final BitSet FOLLOW_RULE_KW_DOT_in_ruleLiteral18705 = new BitSet(new long[]{0x0002000000000000L});
+    public static final BitSet FOLLOW_RULE_TK_INT_in_ruleLiteral18728 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_TK_STRING_in_ruleLiteral18755 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleUnqualOp_ArrowTok_in_entryRuleUnqualOp_ArrowTok18810 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleUnqualOp_ArrowTok18820 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleArrowTok_in_ruleUnqualOp_ArrowTok18865 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleUnqualOp_LatticeTok_in_entryRuleUnqualOp_LatticeTok18919 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleUnqualOp_LatticeTok18929 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleLatticeTok_in_ruleUnqualOp_LatticeTok18974 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleUnqualOp_RelationTok_in_entryRuleUnqualOp_RelationTok19028 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleUnqualOp_RelationTok19038 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleRelationTok_in_ruleUnqualOp_RelationTok19083 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleUnqualOp_SegTok_in_entryRuleUnqualOp_SegTok19137 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleUnqualOp_SegTok19147 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleSegTok_in_ruleUnqualOp_SegTok19192 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleUnqualOp_PlusTok_in_entryRuleUnqualOp_PlusTok19246 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleUnqualOp_PlusTok19256 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rulePlusTok_in_ruleUnqualOp_PlusTok19301 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleUnqualOp_QuotientTok_in_entryRuleUnqualOp_QuotientTok19355 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleUnqualOp_QuotientTok19365 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleQuotientTok_in_ruleUnqualOp_QuotientTok19410 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleUnqualOp_TimesTok_in_entryRuleUnqualOp_TimesTok19464 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleUnqualOp_TimesTok19474 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleTimesTok_in_ruleUnqualOp_TimesTok19519 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleUnqualOp_PowerTok_in_entryRuleUnqualOp_PowerTok19573 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleUnqualOp_PowerTok19583 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rulePowerTok_in_ruleUnqualOp_PowerTok19628 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleQualOp_ArrowTok_in_entryRuleQualOp_ArrowTok19682 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleQualOp_ArrowTok19692 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleArrowTok_in_ruleQualOp_ArrowTok19746 = new BitSet(new long[]{0x0000000000008002L});
+    public static final BitSet FOLLOW_RULE_KW_DOLLAR_in_ruleQualOp_ArrowTok19774 = new BitSet(new long[]{0x0007B50000000010L});
+    public static final BitSet FOLLOW_ruleOpQualTail_in_ruleQualOp_ArrowTok19794 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleQualOp_LatticeTok_in_entryRuleQualOp_LatticeTok19843 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleQualOp_LatticeTok19853 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleLatticeTok_in_ruleQualOp_LatticeTok19907 = new BitSet(new long[]{0x0000000000008002L});
+    public static final BitSet FOLLOW_RULE_KW_DOLLAR_in_ruleQualOp_LatticeTok19935 = new BitSet(new long[]{0x0007B50000000010L});
+    public static final BitSet FOLLOW_ruleOpQualTail_in_ruleQualOp_LatticeTok19955 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleQualOp_RelationTok_in_entryRuleQualOp_RelationTok20004 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleQualOp_RelationTok20014 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleRelationTok_in_ruleQualOp_RelationTok20068 = new BitSet(new long[]{0x0000000000008002L});
+    public static final BitSet FOLLOW_RULE_KW_DOLLAR_in_ruleQualOp_RelationTok20085 = new BitSet(new long[]{0x0007B50000000010L});
+    public static final BitSet FOLLOW_ruleOpQualTail_in_ruleQualOp_RelationTok20111 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleQualOp_SegTok_in_entryRuleQualOp_SegTok20159 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleQualOp_SegTok20169 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleSegTok_in_ruleQualOp_SegTok20223 = new BitSet(new long[]{0x0000000000008002L});
+    public static final BitSet FOLLOW_RULE_KW_DOLLAR_in_ruleQualOp_SegTok20234 = new BitSet(new long[]{0x0007B50000000010L});
+    public static final BitSet FOLLOW_ruleOpQualTail_in_ruleQualOp_SegTok20254 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleQualOp_PlusTok_in_entryRuleQualOp_PlusTok20302 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleQualOp_PlusTok20312 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rulePlusTok_in_ruleQualOp_PlusTok20366 = new BitSet(new long[]{0x0000000000008002L});
+    public static final BitSet FOLLOW_RULE_KW_DOLLAR_in_ruleQualOp_PlusTok20377 = new BitSet(new long[]{0x0007B50000000010L});
+    public static final BitSet FOLLOW_ruleOpQualTail_in_ruleQualOp_PlusTok20397 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleQualOp_QuotientTok_in_entryRuleQualOp_QuotientTok20445 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleQualOp_QuotientTok20455 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleQuotientTok_in_ruleQualOp_QuotientTok20509 = new BitSet(new long[]{0x0000000000008002L});
+    public static final BitSet FOLLOW_RULE_KW_DOLLAR_in_ruleQualOp_QuotientTok20520 = new BitSet(new long[]{0x0007B50000000010L});
+    public static final BitSet FOLLOW_ruleOpQualTail_in_ruleQualOp_QuotientTok20540 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleQualOp_TimesTok_in_entryRuleQualOp_TimesTok20588 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleQualOp_TimesTok20598 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleTimesTok_in_ruleQualOp_TimesTok20652 = new BitSet(new long[]{0x0000000000008002L});
+    public static final BitSet FOLLOW_RULE_KW_DOLLAR_in_ruleQualOp_TimesTok20663 = new BitSet(new long[]{0x0007B50000000010L});
+    public static final BitSet FOLLOW_ruleOpQualTail_in_ruleQualOp_TimesTok20683 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleQualOp_PowerTok_in_entryRuleQualOp_PowerTok20731 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleQualOp_PowerTok20741 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rulePowerTok_in_ruleQualOp_PowerTok20795 = new BitSet(new long[]{0x0000000000008002L});
+    public static final BitSet FOLLOW_RULE_KW_DOLLAR_in_ruleQualOp_PowerTok20806 = new BitSet(new long[]{0x0007B50000000010L});
+    public static final BitSet FOLLOW_ruleOpQualTail_in_ruleQualOp_PowerTok20826 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rulePreDocument_in_entryRulePreDocument20875 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRulePreDocument20886 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_TK_PREDOC_in_rulePreDocument20930 = new BitSet(new long[]{0x0008000000000002L});
+    public static final BitSet FOLLOW_rulePostDocument_in_entryRulePostDocument20987 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRulePostDocument20998 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_TK_POSTDOC_in_rulePostDocument21042 = new BitSet(new long[]{0x0010000000000002L});
+    public static final BitSet FOLLOW_ruleenlist1_CommaItem_Comma_AB_in_entryRuleenlist1_CommaItem_Comma_AB21098 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleenlist1_CommaItem_Comma_AB21108 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleenlister1_CommaItem_Comma_in_ruleenlist1_CommaItem_Comma_AB21158 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleenlist1_Infixed_Comma_AB_in_entryRuleenlist1_Infixed_Comma_AB21202 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleenlist1_Infixed_Comma_AB21212 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleenlister1_Infixed_Comma_in_ruleenlist1_Infixed_Comma_AB21262 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleenlist1_InfixedExpr_Comma_AB_in_entryRuleenlist1_InfixedExpr_Comma_AB21306 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleenlist1_InfixedExpr_Comma_AB21316 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleenlister1_InfixedExpr_Comma_in_ruleenlist1_InfixedExpr_Comma_AB21366 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleenlister1_CommaItem_Comma_in_entryRuleenlister1_CommaItem_Comma21410 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleenlister1_CommaItem_Comma21420 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleCommaItem_in_ruleenlister1_CommaItem_Comma21471 = new BitSet(new long[]{0x0000400000000002L});
+    public static final BitSet FOLLOW_RULE_KW_COMMA_in_ruleenlister1_CommaItem_Comma21482 = new BitSet(new long[]{0x0047B57FFFFF0010L,0x007FF0C7FFD31000L});
+    public static final BitSet FOLLOW_ruleCommaItem_in_ruleenlister1_CommaItem_Comma21502 = new BitSet(new long[]{0x0000400000000002L});
+    public static final BitSet FOLLOW_ruleenlister1_Infixed_Comma_in_entryRuleenlister1_Infixed_Comma21550 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleenlister1_Infixed_Comma21560 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleInfixed_in_ruleenlister1_Infixed_Comma21611 = new BitSet(new long[]{0x0000400000000002L});
+    public static final BitSet FOLLOW_RULE_KW_COMMA_in_ruleenlister1_Infixed_Comma21622 = new BitSet(new long[]{0x0047B57FFFFF0010L,0x007FF00000000000L});
+    public static final BitSet FOLLOW_ruleInfixed_in_ruleenlister1_Infixed_Comma21642 = new BitSet(new long[]{0x0000400000000002L});
+    public static final BitSet FOLLOW_ruleenlister1_InfixedExpr_Comma_in_entryRuleenlister1_InfixedExpr_Comma21690 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleenlister1_InfixedExpr_Comma21700 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleInfixedExpr_in_ruleenlister1_InfixedExpr_Comma21751 = new BitSet(new long[]{0x0000400000000002L});
+    public static final BitSet FOLLOW_RULE_KW_COMMA_in_ruleenlister1_InfixedExpr_Comma21762 = new BitSet(new long[]{0x0007B57FFFFF0010L,0x007FF00000000000L});
+    public static final BitSet FOLLOW_ruleInfixedExpr_in_ruleenlister1_InfixedExpr_Comma21782 = new BitSet(new long[]{0x0000400000000002L});
+    public static final BitSet FOLLOW_ruleenlist1a_Labeled_Semicolon_AB_in_entryRuleenlist1a_Labeled_Semicolon_AB21830 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleenlist1a_Labeled_Semicolon_AB21840 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleenlister1a_Labeled_Semicolon_in_ruleenlist1a_Labeled_Semicolon_AB21890 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleenlister1a_Labeled_Semicolon_in_entryRuleenlister1a_Labeled_Semicolon21934 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleenlister1a_Labeled_Semicolon21944 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleLabeled_in_ruleenlister1a_Labeled_Semicolon21994 = new BitSet(new long[]{0x0020000000000002L});
+    public static final BitSet FOLLOW_RULE_KW_SEMICOLON_in_ruleenlister1a_Labeled_Semicolon22006 = new BitSet(new long[]{0xC04FB57FFFFF0030L,0x007FF0C7FFD311FFL});
+    public static final BitSet FOLLOW_ruleLabeled_in_ruleenlister1a_Labeled_Semicolon22026 = new BitSet(new long[]{0x0020000000000002L});
+    public static final BitSet FOLLOW_RULE_KW_SEMICOLON_in_ruleenlister1a_Labeled_Semicolon22040 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleCurly_Labeled_in_entryRuleCurly_Labeled22087 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleCurly_Labeled22097 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_KW_OCURLY_in_ruleCurly_Labeled22137 = new BitSet(new long[]{0xC04FB57FFFFF0030L,0x007FF0C7FFD311FFL});
+    public static final BitSet FOLLOW_ruleCurlyContents_Labeled_in_ruleCurly_Labeled22158 = new BitSet(new long[]{0x0080000000000000L});
+    public static final BitSet FOLLOW_RULE_KW_CCURLY_in_ruleCurly_Labeled22168 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleCurlyContents_Labeled_in_entryRuleCurlyContents_Labeled22213 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleCurlyContents_Labeled22223 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleCurlyContentsList_Labeled_in_ruleCurlyContents_Labeled22273 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleCurlyContentsList_Labeled_in_entryRuleCurlyContentsList_Labeled22317 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleCurlyContentsList_Labeled22327 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleCurlyContentB_Labeled_in_ruleCurlyContentsList_Labeled22377 = new BitSet(new long[]{0x0020000000000002L});
+    public static final BitSet FOLLOW_RULE_KW_SEMICOLON_in_ruleCurlyContentsList_Labeled22389 = new BitSet(new long[]{0xC04FB57FFFFF0030L,0x007FF0C7FFD311FFL});
+    public static final BitSet FOLLOW_ruleCurlyContentB_Labeled_in_ruleCurlyContentsList_Labeled22409 = new BitSet(new long[]{0x0020000000000002L});
+    public static final BitSet FOLLOW_RULE_KW_SEMICOLON_in_ruleCurlyContentsList_Labeled22423 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleCurlyContentB_Labeled_in_entryRuleCurlyContentB_Labeled22470 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleCurlyContentB_Labeled22480 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rulePreDocument_in_ruleCurlyContentB_Labeled22530 = new BitSet(new long[]{0xC04FB57FFFFF0030L,0x007FF0C7FFD311FFL});
+    public static final BitSet FOLLOW_ruleLabeled_in_ruleCurlyContentB_Labeled22551 = new BitSet(new long[]{0x0010000000000000L});
+    public static final BitSet FOLLOW_rulePostDocument_in_ruleCurlyContentB_Labeled22572 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_72_in_synpred1_InternalEditor1290 = new BitSet(new long[]{0x0047B57FFFFF0010L,0x007FF00000000200L});
+    public static final BitSet FOLLOW_ruleSig_in_synpred1_InternalEditor1297 = new BitSet(new long[]{0x0047B57FFFFF0010L,0x007FF00000000200L});
     public static final BitSet FOLLOW_ruleToPart_in_synpred1_InternalEditor1307 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_71_in_synpred2_InternalEditor1383 = new BitSet(new long[]{0x0023B57FFFFF0010L,0x003FF80000000200L});
-    public static final BitSet FOLLOW_ruleSig_in_synpred2_InternalEditor1390 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000200L});
+    public static final BitSet FOLLOW_72_in_synpred2_InternalEditor1383 = new BitSet(new long[]{0x0047B57FFFFF0010L,0x007FF00000000400L});
+    public static final BitSet FOLLOW_ruleSig_in_synpred2_InternalEditor1390 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000400L});
     public static final BitSet FOLLOW_ruleFromPart_in_synpred2_InternalEditor1400 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_74_in_synpred3_InternalEditor2402 = new BitSet(new long[]{0x0023B57FFFFF0010L,0x003FF863FFE98800L});
+    public static final BitSet FOLLOW_75_in_synpred3_InternalEditor2402 = new BitSet(new long[]{0x0047B57FFFFF0010L,0x007FF0C7FFD31000L});
     public static final BitSet FOLLOW_ruleCommaItem_in_synpred3_InternalEditor2409 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleInfixed_in_synpred4_InternalEditor3194 = new BitSet(new long[]{0x0000000000001F00L});
-    public static final BitSet FOLLOW_set_in_synpred4_InternalEditor3203 = new BitSet(new long[]{0x0023B57FFFFF0010L,0x003FF863FFE98800L});
+    public static final BitSet FOLLOW_set_in_synpred4_InternalEditor3203 = new BitSet(new long[]{0x0047B57FFFFF0010L,0x007FF0C7FFD31000L});
     public static final BitSet FOLLOW_ruleBindingL_Infixed_AnyStatement_in_synpred4_InternalEditor3258 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleInfixed_in_synpred5_InternalEditor3537 = new BitSet(new long[]{0x0000000000001F00L});
-    public static final BitSet FOLLOW_set_in_synpred5_InternalEditor3546 = new BitSet(new long[]{0x0023B57FFFFF0010L,0x003FF863FFE98800L});
+    public static final BitSet FOLLOW_set_in_synpred5_InternalEditor3546 = new BitSet(new long[]{0x0047B57FFFFF0010L,0x007FF0C7FFD31000L});
     public static final BitSet FOLLOW_ruleBindingL_Infixed_BalStatement_in_synpred5_InternalEditor3601 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleInfixed_in_synpred6_InternalEditor3880 = new BitSet(new long[]{0x0000000000001F00L});
-    public static final BitSet FOLLOW_set_in_synpred6_InternalEditor3889 = new BitSet(new long[]{0x0023B57FFFFF0010L,0x003FF80000000000L});
+    public static final BitSet FOLLOW_set_in_synpred6_InternalEditor3889 = new BitSet(new long[]{0x0047B57FFFFF0010L,0x007FF00000000000L});
     public static final BitSet FOLLOW_ruleBindingL_Infixed_Collection_in_synpred6_InternalEditor3944 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_75_in_synpred7_InternalEditor4426 = new BitSet(new long[]{0x0023B57FFFFF0010L,0x003FF863FFE98800L});
-    public static final BitSet FOLLOW_ruleCommaItem_in_synpred7_InternalEditor4430 = new BitSet(new long[]{0x0000000000000000L,0x0000000000001000L});
-    public static final BitSet FOLLOW_76_in_synpred7_InternalEditor4432 = new BitSet(new long[]{0x0023B57FFFFF0010L,0x003FF863FFE98800L});
+    public static final BitSet FOLLOW_76_in_synpred7_InternalEditor4426 = new BitSet(new long[]{0x0047B57FFFFF0010L,0x007FF0C7FFD31000L});
+    public static final BitSet FOLLOW_ruleCommaItem_in_synpred7_InternalEditor4430 = new BitSet(new long[]{0x0000000000000000L,0x0000000000002000L});
+    public static final BitSet FOLLOW_77_in_synpred7_InternalEditor4432 = new BitSet(new long[]{0x0047B57FFFFF0010L,0x007FF0C7FFD31000L});
     public static final BitSet FOLLOW_ruleBinding_AnyStatement_in_synpred7_InternalEditor4439 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleIterators_in_synpred9_InternalEditor4955 = new BitSet(new long[]{0x0000000000000000L,0x0000000000008000L});
-    public static final BitSet FOLLOW_79_in_synpred9_InternalEditor4957 = new BitSet(new long[]{0x0023B57FFFFF0010L,0x003FF863FFE98800L});
+    public static final BitSet FOLLOW_ruleIterators_in_synpred9_InternalEditor4955 = new BitSet(new long[]{0x0000000000000000L,0x0000000000010000L});
+    public static final BitSet FOLLOW_80_in_synpred9_InternalEditor4957 = new BitSet(new long[]{0x0047B57FFFFF0010L,0x007FF0C7FFD31000L});
     public static final BitSet FOLLOW_ruleBinding_AnyStatement_in_synpred9_InternalEditor4964 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleIterators_in_synpred11_InternalEditor6405 = new BitSet(new long[]{0x0000000000000000L,0x0000000000008000L});
-    public static final BitSet FOLLOW_79_in_synpred11_InternalEditor6411 = new BitSet(new long[]{0x0023B57FFFFF0010L,0x003FF863FFE98800L});
+    public static final BitSet FOLLOW_ruleIterators_in_synpred11_InternalEditor6405 = new BitSet(new long[]{0x0000000000000000L,0x0000000000010000L});
+    public static final BitSet FOLLOW_80_in_synpred11_InternalEditor6411 = new BitSet(new long[]{0x0047B57FFFFF0010L,0x007FF0C7FFD31000L});
     public static final BitSet FOLLOW_ruleBinding_BalStatement_in_synpred11_InternalEditor6424 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleE3_in_synpred12_InternalEditor9427 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_KW_DOLLAR_in_synpred13_InternalEditor11660 = new BitSet(new long[]{0x0003B50000000010L,0x0020000000000000L});
+    public static final BitSet FOLLOW_RULE_KW_DOLLAR_in_synpred13_InternalEditor11660 = new BitSet(new long[]{0x0007B50000000010L,0x0040000000000000L});
     public static final BitSet FOLLOW_ruleQualTail_in_synpred13_InternalEditor11665 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_KW_DOLLAR_in_synpred14_InternalEditor11818 = new BitSet(new long[]{0x0003B50000000010L});
+    public static final BitSet FOLLOW_RULE_KW_DOLLAR_in_synpred14_InternalEditor11818 = new BitSet(new long[]{0x0007B50000000010L});
     public static final BitSet FOLLOW_ruleOpQualTail_in_synpred14_InternalEditor11820 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleE15_in_synpred15_InternalEditor11978 = new BitSet(new long[]{0x0000000000000000L,0x0000080000000000L});
-    public static final BitSet FOLLOW_107_in_synpred15_InternalEditor11989 = new BitSet(new long[]{0x0023B57FFFFF0010L,0x003FF80000000000L});
+    public static final BitSet FOLLOW_ruleE15_in_synpred15_InternalEditor11978 = new BitSet(new long[]{0x0000000000000000L,0x0000100000000000L});
+    public static final BitSet FOLLOW_108_in_synpred15_InternalEditor11989 = new BitSet(new long[]{0x0047B57FFFFF0010L,0x007FF00000000000L});
     public static final BitSet FOLLOW_ruleDeclMolecule_in_synpred15_InternalEditor12002 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleE15_in_synpred16_InternalEditor12100 = new BitSet(new long[]{0x0000000000000000L,0x0000100000000000L});
-    public static final BitSet FOLLOW_108_in_synpred16_InternalEditor12111 = new BitSet(new long[]{0x0023B57FFFFF0010L,0x003FF80000000000L});
+    public static final BitSet FOLLOW_ruleE15_in_synpred16_InternalEditor12100 = new BitSet(new long[]{0x0000000000000000L,0x0000200000000000L});
+    public static final BitSet FOLLOW_109_in_synpred16_InternalEditor12111 = new BitSet(new long[]{0x0047B57FFFFF0010L,0x007FF00000000000L});
     public static final BitSet FOLLOW_ruleDeclMolecule_in_synpred16_InternalEditor12124 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleE15_in_synpred17_InternalEditor12222 = new BitSet(new long[]{0x0000000000000000L,0x0000000040000000L});
-    public static final BitSet FOLLOW_94_in_synpred17_InternalEditor12232 = new BitSet(new long[]{0x0003B50000000010L,0x0020000000000000L});
+    public static final BitSet FOLLOW_ruleE15_in_synpred17_InternalEditor12222 = new BitSet(new long[]{0x0000000000000000L,0x0000000080000000L});
+    public static final BitSet FOLLOW_95_in_synpred17_InternalEditor12232 = new BitSet(new long[]{0x0007B50000000010L,0x0040000000000000L});
     public static final BitSet FOLLOW_ruleE15_in_synpred17_InternalEditor12245 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleE15_in_synpred18_InternalEditor12342 = new BitSet(new long[]{0x0000000000000000L,0x0000000080000000L});
-    public static final BitSet FOLLOW_95_in_synpred18_InternalEditor12352 = new BitSet(new long[]{0x0003B50000000010L,0x0020000000000000L});
+    public static final BitSet FOLLOW_ruleE15_in_synpred18_InternalEditor12342 = new BitSet(new long[]{0x0000000000000000L,0x0000000100000000L});
+    public static final BitSet FOLLOW_96_in_synpred18_InternalEditor12352 = new BitSet(new long[]{0x0007B50000000010L,0x0040000000000000L});
     public static final BitSet FOLLOW_ruleE15_in_synpred18_InternalEditor12365 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleMolecule_in_synpred19_InternalEditor16280 = new BitSet(new long[]{0x0023B57FFFFF0012L,0x003FF80000000000L});
-    public static final BitSet FOLLOW_ruleBlockEnclosure_in_synpred19_InternalEditor16289 = new BitSet(new long[]{0x0023B57FFFFF0012L,0x003FF80000000000L});
+    public static final BitSet FOLLOW_ruleMolecule_in_synpred19_InternalEditor16280 = new BitSet(new long[]{0x0047B57FFFFF0012L,0x007FF00000000000L});
+    public static final BitSet FOLLOW_ruleBlockEnclosure_in_synpred19_InternalEditor16289 = new BitSet(new long[]{0x0047B57FFFFF0012L,0x007FF00000000000L});
     public static final BitSet FOLLOW_ruleAtom_in_synpred20_InternalEditor16744 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_KW_DOLLAR_in_synpred21_InternalEditor19615 = new BitSet(new long[]{0x0003B50000000010L});
-    public static final BitSet FOLLOW_ruleOpQualTail_in_synpred21_InternalEditor19620 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_KW_DOLLAR_in_synpred22_InternalEditor19776 = new BitSet(new long[]{0x0003B50000000010L});
-    public static final BitSet FOLLOW_ruleOpQualTail_in_synpred22_InternalEditor19781 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_TK_INT_in_synpred21_InternalEditor18585 = new BitSet(new long[]{0x0000008000000000L});
+    public static final BitSet FOLLOW_RULE_KW_DOT_in_synpred21_InternalEditor18587 = new BitSet(new long[]{0x0004000000000000L});
+    public static final BitSet FOLLOW_RULE_TK_FLOAT_in_synpred21_InternalEditor18591 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_TK_INT_in_synpred22_InternalEditor18672 = new BitSet(new long[]{0x0000008000000000L});
+    public static final BitSet FOLLOW_RULE_KW_DOT_in_synpred22_InternalEditor18674 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_KW_DOLLAR_in_synpred23_InternalEditor19758 = new BitSet(new long[]{0x0007B50000000010L});
+    public static final BitSet FOLLOW_ruleOpQualTail_in_synpred23_InternalEditor19763 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_KW_DOLLAR_in_synpred24_InternalEditor19919 = new BitSet(new long[]{0x0007B50000000010L});
+    public static final BitSet FOLLOW_ruleOpQualTail_in_synpred24_InternalEditor19924 = new BitSet(new long[]{0x0000000000000002L});
 
 }
