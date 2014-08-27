@@ -51,7 +51,8 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		// * 
 		// * known bugs
 		// * ----------
-		// * 1) import statement
+		// * 1) {....} block does insists on semicolon after it {....};
+		// * 2) this does not work: MiniList(S: BasicType): LinearAggregate(S) = add {
 		// * / / *
 		// * replaces Goal rule in Aldor grammar
 		// * 
@@ -5870,7 +5871,8 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 	// * 
 	// * known bugs
 	// * ----------
-	// * 1) import statement
+	// * 1) {....} block does insists on semicolon after it {....};
+	// * 2) this does not work: MiniList(S: BasicType): LinearAggregate(S) = add {
 	// * / / *
 	// * replaces Goal rule in Aldor grammar
 	// * 
