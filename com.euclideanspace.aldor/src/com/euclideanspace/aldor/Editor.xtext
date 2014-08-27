@@ -30,7 +30,8 @@ generate editor "http://www.euclideanspace.com/aldor/Editor"
  * 
  * known bugs
  * ----------
- * 1) import statement
+ * 1) {....} block does insists on semicolon after it {....};
+ * 2) this does not work: MiniList(S: BasicType): LinearAggregate(S) = add {
  */
 
 /*
@@ -393,7 +394,7 @@ Declaration hidden(WS,KW_NEWLINE):
 | {Declaration}'fix' si=Sig
 | {Declaration}'inline' si=Sig? fp=FromPart?
 | {Declaration}'import' si=Sig? fp=FromPart?
-| {Declaration}ed=ExportDecl
+| {Declaration} ed=ExportDecl
 ;
 
 ExportDecl hidden(WS,KW_NEWLINE):

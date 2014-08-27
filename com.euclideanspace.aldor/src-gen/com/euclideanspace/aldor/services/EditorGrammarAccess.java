@@ -4420,9 +4420,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		
 		/// *
 		// * 
-		// * / // op=KW_OPAREN e=Labeled? KW_CPAREN
-		//// op=KW_OPAREN e=E3? KW_CPAREN
-		//Parened hidden(WS, KW_NEWLINE):
+		// * / Parened hidden(WS, KW_NEWLINE):
 		//	op=KW_OPAREN e=Expression? KW_CPAREN;
 		public ParserRule getRule() { return rule; }
 
@@ -4454,7 +4452,6 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cEExpressionParserRuleCall_1_0 = (RuleCall)cEAssignment_1.eContents().get(0);
 		private final RuleCall cKW_CBRACKTerminalRuleCall_2 = (RuleCall)cGroup.eContents().get(2);
 		
-		//// op=KW_OBRACK e=E3? KW_CBRACK
 		//Bracketed hidden(WS, KW_NEWLINE):
 		//	op=KW_OBRACK e=Expression? KW_CBRACK;
 		public ParserRule getRule() { return rule; }
@@ -4489,21 +4486,15 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cKW_QUOTETerminalRuleCall_3 = (RuleCall)cGroup.eContents().get(3);
 		
 		//QuotedIds hidden(WS, KW_NEWLINE):
-		//	{QuotedIds} //KW_QUOTE KW_QUOTE
-		//	//| 
-		//	op=KW_QUOTE n=Names? KW_QUOTE;
+		//	{QuotedIds} op=KW_QUOTE n=Names? KW_QUOTE;
 		public ParserRule getRule() { return rule; }
 
-		//{QuotedIds} //KW_QUOTE KW_QUOTE
-		////| 
-		//op=KW_QUOTE n=Names? KW_QUOTE
+		//{QuotedIds} op=KW_QUOTE n=Names? KW_QUOTE
 		public Group getGroup() { return cGroup; }
 
 		//{QuotedIds}
 		public Action getQuotedIdsAction_0() { return cQuotedIdsAction_0; }
 
-		////KW_QUOTE KW_QUOTE
-		////| 
 		//op=KW_QUOTE
 		public Assignment getOpAssignment_1() { return cOpAssignment_1; }
 
@@ -7542,9 +7533,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 
 	/// *
 	// * 
-	// * / // op=KW_OPAREN e=Labeled? KW_CPAREN
-	//// op=KW_OPAREN e=E3? KW_CPAREN
-	//Parened hidden(WS, KW_NEWLINE):
+	// * / Parened hidden(WS, KW_NEWLINE):
 	//	op=KW_OPAREN e=Expression? KW_CPAREN;
 	public ParenedElements getParenedAccess() {
 		return (pParened != null) ? pParened : (pParened = new ParenedElements());
@@ -7554,7 +7543,6 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		return getParenedAccess().getRule();
 	}
 
-	//// op=KW_OBRACK e=E3? KW_CBRACK
 	//Bracketed hidden(WS, KW_NEWLINE):
 	//	op=KW_OBRACK e=Expression? KW_CBRACK;
 	public BracketedElements getBracketedAccess() {
@@ -7566,9 +7554,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//QuotedIds hidden(WS, KW_NEWLINE):
-	//	{QuotedIds} //KW_QUOTE KW_QUOTE
-	//	//| 
-	//	op=KW_QUOTE n=Names? KW_QUOTE;
+	//	{QuotedIds} op=KW_QUOTE n=Names? KW_QUOTE;
 	public QuotedIdsElements getQuotedIdsAccess() {
 		return (pQuotedIds != null) ? pQuotedIds : (pQuotedIds = new QuotedIdsElements());
 	}
