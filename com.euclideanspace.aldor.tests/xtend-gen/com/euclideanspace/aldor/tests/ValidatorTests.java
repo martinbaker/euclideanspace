@@ -189,11 +189,11 @@ public class ValidatorTests {
   public void testTry1() {
     try {
       StringConcatenation _builder = new StringConcatenation();
-      _builder.append("try a but b c");
+      _builder.append("try");
       Model _parse = this._parseHelper.parse(_builder);
       EClass _flow_AnyStatement = EditorPackage.eINSTANCE.getFlow_AnyStatement();
       this._validationTestHelper.assertError(_parse, _flow_AnyStatement, null, 
-        "statement must follow \'then\' keyword");
+        "statement must follow \'try\' keyword");
     } catch (Throwable _e) {
       throw Exceptions.sneakyThrow(_e);
     }
@@ -203,11 +203,53 @@ public class ValidatorTests {
   public void testTry2() {
     try {
       StringConcatenation _builder = new StringConcatenation();
+      _builder.append("try a");
+      Model _parse = this._parseHelper.parse(_builder);
+      EClass _flow_AnyStatement = EditorPackage.eINSTANCE.getFlow_AnyStatement();
+      this._validationTestHelper.assertError(_parse, _flow_AnyStatement, null, 
+        "\'but\' or \'catch\' expected after \'try\' keyword");
+    } catch (Throwable _e) {
+      throw Exceptions.sneakyThrow(_e);
+    }
+  }
+  
+  @Test
+  public void testTry3() {
+    try {
+      StringConcatenation _builder = new StringConcatenation();
+      _builder.append("try a but");
+      Model _parse = this._parseHelper.parse(_builder);
+      EClass _flow_AnyStatement = EditorPackage.eINSTANCE.getFlow_AnyStatement();
+      this._validationTestHelper.assertError(_parse, _flow_AnyStatement, null, 
+        "statement must follow \'but\' keyword");
+    } catch (Throwable _e) {
+      throw Exceptions.sneakyThrow(_e);
+    }
+  }
+  
+  @Test
+  public void testTry4() {
+    try {
+      StringConcatenation _builder = new StringConcatenation();
+      _builder.append("try a but b");
+      Model _parse = this._parseHelper.parse(_builder);
+      EClass _flow_AnyStatement = EditorPackage.eINSTANCE.getFlow_AnyStatement();
+      this._validationTestHelper.assertError(_parse, _flow_AnyStatement, null, 
+        "statement must follow \'but\' condition");
+    } catch (Throwable _e) {
+      throw Exceptions.sneakyThrow(_e);
+    }
+  }
+  
+  @Test
+  public void testTry5() {
+    try {
+      StringConcatenation _builder = new StringConcatenation();
       _builder.append("try a catch b c");
       Model _parse = this._parseHelper.parse(_builder);
       EClass _flow_AnyStatement = EditorPackage.eINSTANCE.getFlow_AnyStatement();
       this._validationTestHelper.assertError(_parse, _flow_AnyStatement, null, 
-        "statement must follow \'then\' keyword");
+        "statement must follow \'catch\' keyword");
     } catch (Throwable _e) {
       throw Exceptions.sneakyThrow(_e);
     }

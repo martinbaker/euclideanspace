@@ -103,13 +103,28 @@ class ValidatorTests {
 	}
 
 	@Test def void testTry1() {
-		'''try a but b c'''.parse.assertError(EditorPackage::eINSTANCE.flow_AnyStatement,null,
-		                                  "statement must follow 'then' keyword")
+		'''try'''.parse.assertError(EditorPackage::eINSTANCE.flow_AnyStatement,null,
+		                                  "statement must follow 'try' keyword")
 	}
 
 	@Test def void testTry2() {
+		'''try a'''.parse.assertError(EditorPackage::eINSTANCE.flow_AnyStatement,null,
+		                                  "'but' or 'catch' expected after 'try' keyword")
+	}
+
+	@Test def void testTry3() {
+		'''try a but'''.parse.assertError(EditorPackage::eINSTANCE.flow_AnyStatement,null,
+		                                  "statement must follow 'but' keyword")
+	}
+
+	@Test def void testTry4() {
+		'''try a but b'''.parse.assertError(EditorPackage::eINSTANCE.flow_AnyStatement,null,
+		                                  "statement must follow 'but' condition")
+	}
+
+	@Test def void testTry5() {
 		'''try a catch b c'''.parse.assertError(EditorPackage::eINSTANCE.flow_AnyStatement,null,
-		                                  "statement must follow 'then' keyword")
+		                                  "statement must follow 'catch' keyword")
 	}
 
 	@Test def void testSelect() {
