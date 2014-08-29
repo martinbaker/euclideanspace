@@ -20368,7 +20368,7 @@ rule__Enlister1a_Labeled_Semicolon__Group__2__Impl
 :
 (
 { before(grammarAccess.getEnlister1a_Labeled_SemicolonAccess().getKW_SEMICOLONTerminalRuleCall_2()); }
-(	RULE_KW_SEMICOLON)?
+(	RULE_KW_SEMICOLON)*
 { after(grammarAccess.getEnlister1a_Labeled_SemicolonAccess().getKW_SEMICOLONTerminalRuleCall_2()); }
 )
 
@@ -20402,9 +20402,16 @@ rule__Enlister1a_Labeled_Semicolon__Group_1__0__Impl
     }
 :
 (
+(
 { before(grammarAccess.getEnlister1a_Labeled_SemicolonAccess().getKW_SEMICOLONTerminalRuleCall_1_0()); }
-	RULE_KW_SEMICOLON
+(	RULE_KW_SEMICOLON)
 { after(grammarAccess.getEnlister1a_Labeled_SemicolonAccess().getKW_SEMICOLONTerminalRuleCall_1_0()); }
+)
+(
+{ before(grammarAccess.getEnlister1a_Labeled_SemicolonAccess().getKW_SEMICOLONTerminalRuleCall_1_0()); }
+(	RULE_KW_SEMICOLON)*
+{ after(grammarAccess.getEnlister1a_Labeled_SemicolonAccess().getKW_SEMICOLONTerminalRuleCall_1_0()); }
+)
 )
 
 ;

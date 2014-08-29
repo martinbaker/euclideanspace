@@ -1319,7 +1319,8 @@ enlister1_InfixedExpr_Comma hidden(WS,KW_NEWLINE):
 ;
 
 /* A list of (at least one) statement(s)
- * seperated by semicolons and optionally ending with a semicolon
+ * seperated by semicolons (one or more)  and optionally ending with
+ * a semicolon (zero or more)
  * 
  * AB_Sequence
  */ 
@@ -1328,12 +1329,16 @@ enlist1a_Labeled_Semicolon_AB hidden(WS,KW_NEWLINE):
 ;
 
 /* A list of (at least one) statement(s)
- * seperated by semicolons and optionally ending with a semicolon
+ * seperated by (one or more) semicolons and optionally ending with
+ * a semicolon (zero or more)
+ * 
+ * Aldor axl.z grammar defines this in a left recursive way so
+ * we have to change to non-recursive structure here.
  */ 
 enlister1a_Labeled_Semicolon hidden(WS,KW_NEWLINE):
   statemnts += Labeled
-  (KW_SEMICOLON statemnts += Labeled)*
-  KW_SEMICOLON?
+  (KW_SEMICOLON+ statemnts += Labeled)*
+  KW_SEMICOLON*
 ;
 
 /* Substituted Rules in Xtext:

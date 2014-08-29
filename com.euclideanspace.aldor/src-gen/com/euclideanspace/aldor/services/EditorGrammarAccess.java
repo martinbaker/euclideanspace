@@ -5448,12 +5448,15 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cKW_SEMICOLONTerminalRuleCall_2 = (RuleCall)cGroup.eContents().get(2);
 		
 		/// * A list of (at least one) statement(s)
-		// * seperated by semicolons and optionally ending with a semicolon
+		// * seperated by (one or more) semicolons and optionally ending with a semicolon (zero or more)
+		// * 
+		// * Aldor axl.z grammar defines this in a left recursive way so
+		// * we have to change its structure here.
 		// * / enlister1a_Labeled_Semicolon hidden(WS, KW_NEWLINE):
-		//	statemnts+=Labeled (KW_SEMICOLON statemnts+=Labeled)* KW_SEMICOLON?;
+		//	statemnts+=Labeled (KW_SEMICOLON+ statemnts+=Labeled)* KW_SEMICOLON*;
 		public ParserRule getRule() { return rule; }
 
-		//statemnts+=Labeled (KW_SEMICOLON statemnts+=Labeled)* KW_SEMICOLON?
+		//statemnts+=Labeled (KW_SEMICOLON+ statemnts+=Labeled)* KW_SEMICOLON*
 		public Group getGroup() { return cGroup; }
 
 		//statemnts+=Labeled
@@ -5462,10 +5465,10 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		//Labeled
 		public RuleCall getStatemntsLabeledParserRuleCall_0_0() { return cStatemntsLabeledParserRuleCall_0_0; }
 
-		//(KW_SEMICOLON statemnts+=Labeled)*
+		//(KW_SEMICOLON+ statemnts+=Labeled)*
 		public Group getGroup_1() { return cGroup_1; }
 
-		//KW_SEMICOLON
+		//KW_SEMICOLON+
 		public RuleCall getKW_SEMICOLONTerminalRuleCall_1_0() { return cKW_SEMICOLONTerminalRuleCall_1_0; }
 
 		//statemnts+=Labeled
@@ -5474,7 +5477,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		//Labeled
 		public RuleCall getStatemntsLabeledParserRuleCall_1_1_0() { return cStatemntsLabeledParserRuleCall_1_1_0; }
 
-		//KW_SEMICOLON?
+		//KW_SEMICOLON*
 		public RuleCall getKW_SEMICOLONTerminalRuleCall_2() { return cKW_SEMICOLONTerminalRuleCall_2; }
 	}
 
@@ -7963,9 +7966,12 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	/// * A list of (at least one) statement(s)
-	// * seperated by semicolons and optionally ending with a semicolon
+	// * seperated by (one or more) semicolons and optionally ending with a semicolon (zero or more)
+	// * 
+	// * Aldor axl.z grammar defines this in a left recursive way so
+	// * we have to change its structure here.
 	// * / enlister1a_Labeled_Semicolon hidden(WS, KW_NEWLINE):
-	//	statemnts+=Labeled (KW_SEMICOLON statemnts+=Labeled)* KW_SEMICOLON?;
+	//	statemnts+=Labeled (KW_SEMICOLON+ statemnts+=Labeled)* KW_SEMICOLON*;
 	public Enlister1a_Labeled_SemicolonElements getEnlister1a_Labeled_SemicolonAccess() {
 		return (pEnlister1a_Labeled_Semicolon != null) ? pEnlister1a_Labeled_Semicolon : (pEnlister1a_Labeled_Semicolon = new Enlister1a_Labeled_SemicolonElements());
 	}

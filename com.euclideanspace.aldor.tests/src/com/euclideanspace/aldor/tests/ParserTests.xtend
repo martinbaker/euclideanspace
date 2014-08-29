@@ -10,26 +10,102 @@ import org.eclipse.xtext.junit4.util.ParseHelper
 import org.eclipse.xtext.junit4.validation.ValidationTestHelper
 import org.junit.runner.RunWith
 
-
 @RunWith(typeof(XtextRunner))
 @InjectWith(typeof(EditorInjectorProvider))
 /**
  * @author Martin Baker
  * 
- * The following tests are designed to test the parser.
- * At the moment it tries a few sample programs from here:
- * http://www.aldor.org/docs/HTML/chap23.html
- * and checks that they compile without errors.
+ * This file contains parser tests. These are tests that check that
+ * correct code parses without error.
  * 
- * This is not how unit tests should be.
- * I need to split this up much more so that each test
- * tries only one aspect of the syntax.
- *
+ * Other files contain:
+ * Validation tests - These tests contain incorrect code which is
+ *                    checked to make sure of the generation of
+ *                    given errors or warnings.
+ * Model tests - These test that the appropriate model is generated
+ *               for given code. These tests will check things like
+ *               operator precedence and left/right associativity.
+ * Generation tests - These tests check that the correct code is
+ *                    generated from the model.
  */
-class test01 {
+class ParserTests {
 
     @Inject extension ParseHelper<Model>
     @Inject extension ValidationTestHelper
+
+/////// Atoms ////////////////
+
+	@Test def void testVariable1() {
+		'''a'''.parse.assertNoErrors
+	}
+
+	@Test def void testVariable2() {
+		'''ab'''.parse.assertNoErrors
+	}
+
+	@Test def void testVariable3() {
+		'''a1'''.parse.assertNoErrors
+	}
+
+	@Test def void testType() {
+		'''n:Integer'''.parse.assertNoErrors
+	}
+
+/////// Literals ////////////////
+
+	@Test def void testIntegerLiteral() {
+		'''3'''.parse.assertNoErrors
+	}
+
+	@Test def void testFloatLiteral1() {
+		'''3.4'''.parse.assertNoErrors
+	}
+
+	@Test def void testFloatLiteral2() {
+		'''3e4'''.parse.assertNoErrors
+	}
+
+	@Test def void testFloatLiteral3() {
+		'''3E-4'''.parse.assertNoErrors
+	}
+
+	@Test def void testFloatLiteral4() {
+		'''3.4e5'''.parse.assertNoErrors
+	}
+
+	@Test def void testStringLiteral1() {
+		'''"hello"'''.parse.assertNoErrors
+	}
+
+/////// Assignments ////////////////
+
+	@Test def void testAssign1() {
+		'''x:=never'''.parse.assertNoErrors
+	}
+
+	@Test def void testAssign2() {
+		'''x==never'''.parse.assertNoErrors
+	}
+
+	@Test def void testAssign3() {
+		'''x=={never}'''.parse.assertNoErrors
+	}
+
+	@Test def void testAssign4() {
+		'''x==(never)'''.parse.assertNoErrors
+	}
+
+	@Test def void testAssign5() {
+		'''f(): () ==never'''.parse.assertNoErrors
+	}
+
+/* The above tests test individual elements of code but not if they
+ * fit together in big chunks. The following tests are designed to
+ * try some complete programs.
+ * At the moment there are a few sample programs from here:
+ * http://www.aldor.org/docs/HTML/chap23.html
+ * and checks that they compile without errors.
+ */
 
 	@Test
 	def void testParse1() {

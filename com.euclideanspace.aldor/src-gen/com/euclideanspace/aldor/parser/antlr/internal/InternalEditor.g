@@ -10227,11 +10227,11 @@ ruleenlister1a_Labeled_Semicolon returns [EObject current=null]
 	    }
 
 )
-)(this_KW_SEMICOLON_1=RULE_KW_SEMICOLON
+)((this_KW_SEMICOLON_1=RULE_KW_SEMICOLON
     { 
     newLeafNode(this_KW_SEMICOLON_1, grammarAccess.getEnlister1a_Labeled_SemicolonAccess().getKW_SEMICOLONTerminalRuleCall_1_0()); 
     }
-(
+)+(
 (
 		{ 
 	        newCompositeNode(grammarAccess.getEnlister1a_Labeled_SemicolonAccess().getStatemntsLabeledParserRuleCall_1_1_0()); 
@@ -10253,7 +10253,7 @@ ruleenlister1a_Labeled_Semicolon returns [EObject current=null]
     { 
     newLeafNode(this_KW_SEMICOLON_3, grammarAccess.getEnlister1a_Labeled_SemicolonAccess().getKW_SEMICOLONTerminalRuleCall_2()); 
     }
-)?)
+)*)
 ;
 finally {
 	myHiddenTokenState.restore();

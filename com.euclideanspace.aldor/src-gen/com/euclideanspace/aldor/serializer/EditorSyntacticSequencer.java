@@ -26,7 +26,8 @@ public class EditorSyntacticSequencer extends AbstractSyntacticSequencer {
 	protected AbstractElementAlias match_Flow_BalStatement_ButKeyword_4_2_0_or_CatchKeyword_4_2_1;
 	protected AbstractElementAlias match_ForLhs___FluidKeyword_0_2_or_FreeKeyword_0_0_or_LocalKeyword_0_1__q;
 	protected AbstractElementAlias match_MacroBody_ImportKeyword_2_0_q;
-	protected AbstractElementAlias match_enlister1a_Labeled_Semicolon_KW_SEMICOLONTerminalRuleCall_2_q;
+	protected AbstractElementAlias match_enlister1a_Labeled_Semicolon_KW_SEMICOLONTerminalRuleCall_1_0_p;
+	protected AbstractElementAlias match_enlister1a_Labeled_Semicolon_KW_SEMICOLONTerminalRuleCall_2_a;
 	
 	@Inject
 	protected void init(IGrammarAccess access) {
@@ -39,7 +40,8 @@ public class EditorSyntacticSequencer extends AbstractSyntacticSequencer {
 		match_Flow_BalStatement_ButKeyword_4_2_0_or_CatchKeyword_4_2_1 = new AlternativeAlias(false, false, new TokenAlias(false, false, grammarAccess.getFlow_BalStatementAccess().getButKeyword_4_2_0()), new TokenAlias(false, false, grammarAccess.getFlow_BalStatementAccess().getCatchKeyword_4_2_1()));
 		match_ForLhs___FluidKeyword_0_2_or_FreeKeyword_0_0_or_LocalKeyword_0_1__q = new AlternativeAlias(false, true, new TokenAlias(false, false, grammarAccess.getForLhsAccess().getFluidKeyword_0_2()), new TokenAlias(false, false, grammarAccess.getForLhsAccess().getFreeKeyword_0_0()), new TokenAlias(false, false, grammarAccess.getForLhsAccess().getLocalKeyword_0_1()));
 		match_MacroBody_ImportKeyword_2_0_q = new TokenAlias(false, true, grammarAccess.getMacroBodyAccess().getImportKeyword_2_0());
-		match_enlister1a_Labeled_Semicolon_KW_SEMICOLONTerminalRuleCall_2_q = new TokenAlias(false, true, grammarAccess.getEnlister1a_Labeled_SemicolonAccess().getKW_SEMICOLONTerminalRuleCall_2());
+		match_enlister1a_Labeled_Semicolon_KW_SEMICOLONTerminalRuleCall_1_0_p = new TokenAlias(true, false, grammarAccess.getEnlister1a_Labeled_SemicolonAccess().getKW_SEMICOLONTerminalRuleCall_1_0());
+		match_enlister1a_Labeled_Semicolon_KW_SEMICOLONTerminalRuleCall_2_a = new TokenAlias(true, true, grammarAccess.getEnlister1a_Labeled_SemicolonAccess().getKW_SEMICOLONTerminalRuleCall_2());
 	}
 	
 	@Override
@@ -358,15 +360,17 @@ public class EditorSyntacticSequencer extends AbstractSyntacticSequencer {
 				emit_ForLhs___FluidKeyword_0_2_or_FreeKeyword_0_0_or_LocalKeyword_0_1__q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if(match_MacroBody_ImportKeyword_2_0_q.equals(syntax))
 				emit_MacroBody_ImportKeyword_2_0_q(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if(match_enlister1a_Labeled_Semicolon_KW_SEMICOLONTerminalRuleCall_2_q.equals(syntax))
-				emit_enlister1a_Labeled_Semicolon_KW_SEMICOLONTerminalRuleCall_2_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if(match_enlister1a_Labeled_Semicolon_KW_SEMICOLONTerminalRuleCall_1_0_p.equals(syntax))
+				emit_enlister1a_Labeled_Semicolon_KW_SEMICOLONTerminalRuleCall_1_0_p(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if(match_enlister1a_Labeled_Semicolon_KW_SEMICOLONTerminalRuleCall_2_a.equals(syntax))
+				emit_enlister1a_Labeled_Semicolon_KW_SEMICOLONTerminalRuleCall_2_a(semanticObject, getLastNavigableState(), syntaxNodes);
 			else acceptNodes(getLastNavigableState(), syntaxNodes);
 		}
 	}
 
 	/**
 	 * Syntax:
-	 *     KW_MARROW | KW_MAPSTO | KW_ASSIGN | KW_MAPSTOSTAR | KW_2EQ
+	 *     KW_2EQ | KW_MARROW | KW_MAPSTO | KW_ASSIGN | KW_MAPSTOSTAR
 	 */
 	protected void emit_BindingR_InfixedExprsDecl_AnyStatement_KW_2EQTerminalRuleCall_1_0_1_or_KW_ASSIGNTerminalRuleCall_1_0_0_or_KW_MAPSTOSTARTerminalRuleCall_1_0_4_or_KW_MAPSTOTerminalRuleCall_1_0_3_or_KW_MARROWTerminalRuleCall_1_0_2(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
@@ -382,7 +386,7 @@ public class EditorSyntacticSequencer extends AbstractSyntacticSequencer {
 	
 	/**
 	 * Syntax:
-	 *     KW_COLON | KW_COLONSTAR
+	 *     KW_COLONSTAR | KW_COLON
 	 */
 	protected void emit_DeclPart_KW_COLONSTARTerminalRuleCall_1_0_or_KW_COLONTerminalRuleCall_0_0(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
@@ -430,9 +434,17 @@ public class EditorSyntacticSequencer extends AbstractSyntacticSequencer {
 	
 	/**
 	 * Syntax:
-	 *     KW_SEMICOLON?
+	 *     KW_SEMICOLON+
 	 */
-	protected void emit_enlister1a_Labeled_Semicolon_KW_SEMICOLONTerminalRuleCall_2_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+	protected void emit_enlister1a_Labeled_Semicolon_KW_SEMICOLONTerminalRuleCall_1_0_p(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * Syntax:
+	 *     KW_SEMICOLON*
+	 */
+	protected void emit_enlister1a_Labeled_Semicolon_KW_SEMICOLONTerminalRuleCall_2_a(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
