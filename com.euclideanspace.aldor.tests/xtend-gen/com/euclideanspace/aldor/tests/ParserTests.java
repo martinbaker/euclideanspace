@@ -13,6 +13,24 @@ import org.eclipse.xtext.xbase.lib.Extension;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
+/**
+ * Copyright 2014 Martin John Baker
+ * 
+ * This file is part of EuclideanSpace.
+ * 
+ * EuclideanSpace is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU Affero General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ * 
+ * EuclideanSpace is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+ * GNU Affero General Public License for more details.
+ * 
+ * You should have received a copy of the GNU Affero General Public License
+ * along with EuclideanSpace. If not, see <http://www.gnu.org/licenses/>.
+ */
 @RunWith(XtextRunner.class)
 @InjectWith(EditorInjectorProvider.class)
 @SuppressWarnings("all")
@@ -51,6 +69,18 @@ public class ParserTests {
   
   @Test
   public void testVariable3() {
+    try {
+      StringConcatenation _builder = new StringConcatenation();
+      _builder.append("a_b");
+      Model _parse = this._parseHelper.parse(_builder);
+      this._validationTestHelper.assertNoErrors(_parse);
+    } catch (Throwable _e) {
+      throw Exceptions.sneakyThrow(_e);
+    }
+  }
+  
+  @Test
+  public void testVariable4() {
     try {
       StringConcatenation _builder = new StringConcatenation();
       _builder.append("a1");
@@ -146,6 +176,784 @@ public class ParserTests {
   }
   
   @Test
+  public void testParen() {
+    try {
+      StringConcatenation _builder = new StringConcatenation();
+      _builder.append("(a)");
+      Model _parse = this._parseHelper.parse(_builder);
+      this._validationTestHelper.assertNoErrors(_parse);
+    } catch (Throwable _e) {
+      throw Exceptions.sneakyThrow(_e);
+    }
+  }
+  
+  @Test
+  public void testBracket() {
+    try {
+      StringConcatenation _builder = new StringConcatenation();
+      _builder.append("[a]");
+      Model _parse = this._parseHelper.parse(_builder);
+      this._validationTestHelper.assertNoErrors(_parse);
+    } catch (Throwable _e) {
+      throw Exceptions.sneakyThrow(_e);
+    }
+  }
+  
+  @Test
+  public void testQuotedIds() {
+    try {
+      Model _parse = this._parseHelper.parse("\'a\'");
+      this._validationTestHelper.assertNoErrors(_parse);
+    } catch (Throwable _e) {
+      throw Exceptions.sneakyThrow(_e);
+    }
+  }
+  
+  @Test
+  public void testBlock1() {
+    try {
+      StringConcatenation _builder = new StringConcatenation();
+      _builder.append("{a}");
+      Model _parse = this._parseHelper.parse(_builder);
+      this._validationTestHelper.assertNoErrors(_parse);
+    } catch (Throwable _e) {
+      throw Exceptions.sneakyThrow(_e);
+    }
+  }
+  
+  @Test
+  public void testBlock2() {
+    try {
+      StringConcatenation _builder = new StringConcatenation();
+      _builder.append("{a;b}");
+      Model _parse = this._parseHelper.parse(_builder);
+      this._validationTestHelper.assertNoErrors(_parse);
+    } catch (Throwable _e) {
+      throw Exceptions.sneakyThrow(_e);
+    }
+  }
+  
+  @Test
+  public void testBlock3() {
+    try {
+      StringConcatenation _builder = new StringConcatenation();
+      _builder.append("{a;b;}");
+      Model _parse = this._parseHelper.parse(_builder);
+      this._validationTestHelper.assertNoErrors(_parse);
+    } catch (Throwable _e) {
+      throw Exceptions.sneakyThrow(_e);
+    }
+  }
+  
+  @Test
+  public void testPreComment1() {
+    try {
+      StringConcatenation _builder = new StringConcatenation();
+      _builder.append("++ pre comment");
+      _builder.newLine();
+      _builder.append("\t\t");
+      _builder.append("a");
+      Model _parse = this._parseHelper.parse(_builder);
+      this._validationTestHelper.assertNoErrors(_parse);
+    } catch (Throwable _e) {
+      throw Exceptions.sneakyThrow(_e);
+    }
+  }
+  
+  @Test
+  public void testPreComment2() {
+    try {
+      StringConcatenation _builder = new StringConcatenation();
+      _builder.append("{");
+      _builder.newLine();
+      _builder.append("\t\t   ");
+      _builder.append("++ pre comment");
+      _builder.newLine();
+      _builder.append("\t\t   ");
+      _builder.append("a");
+      _builder.newLine();
+      _builder.append("\t\t   ");
+      _builder.append("}");
+      Model _parse = this._parseHelper.parse(_builder);
+      this._validationTestHelper.assertNoErrors(_parse);
+    } catch (Throwable _e) {
+      throw Exceptions.sneakyThrow(_e);
+    }
+  }
+  
+  @Test
+  public void testPostComment1() {
+    try {
+      StringConcatenation _builder = new StringConcatenation();
+      _builder.append("a");
+      _builder.newLine();
+      _builder.append("\t\t");
+      _builder.append("-- post comment");
+      Model _parse = this._parseHelper.parse(_builder);
+      this._validationTestHelper.assertNoErrors(_parse);
+    } catch (Throwable _e) {
+      throw Exceptions.sneakyThrow(_e);
+    }
+  }
+  
+  @Test
+  public void testPostComment2() {
+    try {
+      StringConcatenation _builder = new StringConcatenation();
+      _builder.append("a;");
+      _builder.newLine();
+      _builder.append("\t\t");
+      _builder.append("-- post comment after semicolon");
+      Model _parse = this._parseHelper.parse(_builder);
+      this._validationTestHelper.assertNoErrors(_parse);
+    } catch (Throwable _e) {
+      throw Exceptions.sneakyThrow(_e);
+    }
+  }
+  
+  @Test
+  public void testPostComment3() {
+    try {
+      StringConcatenation _builder = new StringConcatenation();
+      _builder.append("{");
+      _builder.newLine();
+      _builder.append("\t\t   ");
+      _builder.append("a");
+      _builder.newLine();
+      _builder.append("\t\t   ");
+      _builder.append("-- post comment");
+      _builder.newLine();
+      _builder.append("\t\t   ");
+      _builder.append("}");
+      Model _parse = this._parseHelper.parse(_builder);
+      this._validationTestHelper.assertNoErrors(_parse);
+    } catch (Throwable _e) {
+      throw Exceptions.sneakyThrow(_e);
+    }
+  }
+  
+  @Test
+  public void testPostComment4() {
+    try {
+      StringConcatenation _builder = new StringConcatenation();
+      _builder.append("{");
+      _builder.newLine();
+      _builder.append("\t\t   ");
+      _builder.append("a;");
+      _builder.newLine();
+      _builder.append("\t\t   ");
+      _builder.append("-- post comment after semicolon");
+      _builder.newLine();
+      _builder.append("\t\t   ");
+      _builder.append("}");
+      Model _parse = this._parseHelper.parse(_builder);
+      this._validationTestHelper.assertNoErrors(_parse);
+    } catch (Throwable _e) {
+      throw Exceptions.sneakyThrow(_e);
+    }
+  }
+  
+  @Test
+  public void testImplies() {
+    try {
+      StringConcatenation _builder = new StringConcatenation();
+      _builder.append("a implies b");
+      Model _parse = this._parseHelper.parse(_builder);
+      this._validationTestHelper.assertNoErrors(_parse);
+    } catch (Throwable _e) {
+      throw Exceptions.sneakyThrow(_e);
+    }
+  }
+  
+  @Test
+  public void testIfThen1() {
+    try {
+      StringConcatenation _builder = new StringConcatenation();
+      _builder.append("if a then b");
+      Model _parse = this._parseHelper.parse(_builder);
+      this._validationTestHelper.assertNoErrors(_parse);
+    } catch (Throwable _e) {
+      throw Exceptions.sneakyThrow(_e);
+    }
+  }
+  
+  @Test
+  public void testIfThen2() {
+    try {
+      StringConcatenation _builder = new StringConcatenation();
+      _builder.append("if a then {b}");
+      Model _parse = this._parseHelper.parse(_builder);
+      this._validationTestHelper.assertNoErrors(_parse);
+    } catch (Throwable _e) {
+      throw Exceptions.sneakyThrow(_e);
+    }
+  }
+  
+  @Test
+  public void testIfThenElse1() {
+    try {
+      StringConcatenation _builder = new StringConcatenation();
+      _builder.append("if a then b else c");
+      Model _parse = this._parseHelper.parse(_builder);
+      this._validationTestHelper.assertNoErrors(_parse);
+    } catch (Throwable _e) {
+      throw Exceptions.sneakyThrow(_e);
+    }
+  }
+  
+  @Test
+  public void testIfThenElse2() {
+    try {
+      StringConcatenation _builder = new StringConcatenation();
+      _builder.append("if a then b else {c}");
+      Model _parse = this._parseHelper.parse(_builder);
+      this._validationTestHelper.assertNoErrors(_parse);
+    } catch (Throwable _e) {
+      throw Exceptions.sneakyThrow(_e);
+    }
+  }
+  
+  @Test
+  public void testIfThenElse3() {
+    try {
+      StringConcatenation _builder = new StringConcatenation();
+      _builder.append("if a then b else if c then d else e");
+      Model _parse = this._parseHelper.parse(_builder);
+      this._validationTestHelper.assertNoErrors(_parse);
+    } catch (Throwable _e) {
+      throw Exceptions.sneakyThrow(_e);
+    }
+  }
+  
+  @Test
+  public void testRepeat1() {
+    try {
+      StringConcatenation _builder = new StringConcatenation();
+      _builder.append("while a repeat b");
+      Model _parse = this._parseHelper.parse(_builder);
+      this._validationTestHelper.assertNoErrors(_parse);
+    } catch (Throwable _e) {
+      throw Exceptions.sneakyThrow(_e);
+    }
+  }
+  
+  @Test
+  public void testRepeat2() {
+    try {
+      StringConcatenation _builder = new StringConcatenation();
+      _builder.append("for a in b repeat c");
+      Model _parse = this._parseHelper.parse(_builder);
+      this._validationTestHelper.assertNoErrors(_parse);
+    } catch (Throwable _e) {
+      throw Exceptions.sneakyThrow(_e);
+    }
+  }
+  
+  @Test
+  public void testTry1() {
+    try {
+      StringConcatenation _builder = new StringConcatenation();
+      _builder.append("try a but b c");
+      Model _parse = this._parseHelper.parse(_builder);
+      this._validationTestHelper.assertNoErrors(_parse);
+    } catch (Throwable _e) {
+      throw Exceptions.sneakyThrow(_e);
+    }
+  }
+  
+  @Test
+  public void testTry2() {
+    try {
+      StringConcatenation _builder = new StringConcatenation();
+      _builder.append("try a catch b c");
+      Model _parse = this._parseHelper.parse(_builder);
+      this._validationTestHelper.assertNoErrors(_parse);
+    } catch (Throwable _e) {
+      throw Exceptions.sneakyThrow(_e);
+    }
+  }
+  
+  @Test
+  public void testSelect() {
+    try {
+      StringConcatenation _builder = new StringConcatenation();
+      _builder.append("select a in b");
+      Model _parse = this._parseHelper.parse(_builder);
+      this._validationTestHelper.assertNoErrors(_parse);
+    } catch (Throwable _e) {
+      throw Exceptions.sneakyThrow(_e);
+    }
+  }
+  
+  @Test
+  public void testDo() {
+    try {
+      StringConcatenation _builder = new StringConcatenation();
+      _builder.append("do a");
+      Model _parse = this._parseHelper.parse(_builder);
+      this._validationTestHelper.assertNoErrors(_parse);
+    } catch (Throwable _e) {
+      throw Exceptions.sneakyThrow(_e);
+    }
+  }
+  
+  @Test
+  public void testDelay() {
+    try {
+      StringConcatenation _builder = new StringConcatenation();
+      _builder.append("delay a");
+      Model _parse = this._parseHelper.parse(_builder);
+      this._validationTestHelper.assertNoErrors(_parse);
+    } catch (Throwable _e) {
+      throw Exceptions.sneakyThrow(_e);
+    }
+  }
+  
+  @Test
+  public void testReference() {
+    try {
+      StringConcatenation _builder = new StringConcatenation();
+      _builder.append("reference a");
+      Model _parse = this._parseHelper.parse(_builder);
+      this._validationTestHelper.assertNoErrors(_parse);
+    } catch (Throwable _e) {
+      throw Exceptions.sneakyThrow(_e);
+    }
+  }
+  
+  @Test
+  public void testGenerate() {
+    try {
+      StringConcatenation _builder = new StringConcatenation();
+      _builder.append("generate a b");
+      Model _parse = this._parseHelper.parse(_builder);
+      this._validationTestHelper.assertNoErrors(_parse);
+    } catch (Throwable _e) {
+      throw Exceptions.sneakyThrow(_e);
+    }
+  }
+  
+  @Test
+  public void testAssert() {
+    try {
+      StringConcatenation _builder = new StringConcatenation();
+      _builder.append("assert a");
+      Model _parse = this._parseHelper.parse(_builder);
+      this._validationTestHelper.assertNoErrors(_parse);
+    } catch (Throwable _e) {
+      throw Exceptions.sneakyThrow(_e);
+    }
+  }
+  
+  @Test
+  public void testIterate() {
+    try {
+      StringConcatenation _builder = new StringConcatenation();
+      _builder.append("iterate a");
+      Model _parse = this._parseHelper.parse(_builder);
+      this._validationTestHelper.assertNoErrors(_parse);
+    } catch (Throwable _e) {
+      throw Exceptions.sneakyThrow(_e);
+    }
+  }
+  
+  @Test
+  public void testBreak() {
+    try {
+      StringConcatenation _builder = new StringConcatenation();
+      _builder.append("break a");
+      Model _parse = this._parseHelper.parse(_builder);
+      this._validationTestHelper.assertNoErrors(_parse);
+    } catch (Throwable _e) {
+      throw Exceptions.sneakyThrow(_e);
+    }
+  }
+  
+  @Test
+  public void testReturn() {
+    try {
+      StringConcatenation _builder = new StringConcatenation();
+      _builder.append("return a");
+      Model _parse = this._parseHelper.parse(_builder);
+      this._validationTestHelper.assertNoErrors(_parse);
+    } catch (Throwable _e) {
+      throw Exceptions.sneakyThrow(_e);
+    }
+  }
+  
+  @Test
+  public void testYield() {
+    try {
+      StringConcatenation _builder = new StringConcatenation();
+      _builder.append("yield a");
+      Model _parse = this._parseHelper.parse(_builder);
+      this._validationTestHelper.assertNoErrors(_parse);
+    } catch (Throwable _e) {
+      throw Exceptions.sneakyThrow(_e);
+    }
+  }
+  
+  @Test
+  public void testExcept() {
+    try {
+      StringConcatenation _builder = new StringConcatenation();
+      _builder.append("except a");
+      Model _parse = this._parseHelper.parse(_builder);
+      this._validationTestHelper.assertNoErrors(_parse);
+    } catch (Throwable _e) {
+      throw Exceptions.sneakyThrow(_e);
+    }
+  }
+  
+  @Test
+  public void testThrow() {
+    try {
+      StringConcatenation _builder = new StringConcatenation();
+      _builder.append("throw a");
+      Model _parse = this._parseHelper.parse(_builder);
+      this._validationTestHelper.assertNoErrors(_parse);
+    } catch (Throwable _e) {
+      throw Exceptions.sneakyThrow(_e);
+    }
+  }
+  
+  @Test
+  public void testGoto() {
+    try {
+      StringConcatenation _builder = new StringConcatenation();
+      _builder.append("goto a");
+      Model _parse = this._parseHelper.parse(_builder);
+      this._validationTestHelper.assertNoErrors(_parse);
+    } catch (Throwable _e) {
+      throw Exceptions.sneakyThrow(_e);
+    }
+  }
+  
+  @Test
+  public void testNever() {
+    try {
+      StringConcatenation _builder = new StringConcatenation();
+      _builder.append("never");
+      Model _parse = this._parseHelper.parse(_builder);
+      this._validationTestHelper.assertNoErrors(_parse);
+    } catch (Throwable _e) {
+      throw Exceptions.sneakyThrow(_e);
+    }
+  }
+  
+  @Test
+  public void testprefixPlus1() {
+    try {
+      StringConcatenation _builder = new StringConcatenation();
+      _builder.append("+2");
+      Model _parse = this._parseHelper.parse(_builder);
+      this._validationTestHelper.assertNoErrors(_parse);
+    } catch (Throwable _e) {
+      throw Exceptions.sneakyThrow(_e);
+    }
+  }
+  
+  @Test
+  public void testprefixPlus2() {
+    try {
+      StringConcatenation _builder = new StringConcatenation();
+      _builder.append("+a");
+      Model _parse = this._parseHelper.parse(_builder);
+      this._validationTestHelper.assertNoErrors(_parse);
+    } catch (Throwable _e) {
+      throw Exceptions.sneakyThrow(_e);
+    }
+  }
+  
+  @Test
+  public void testprefixPlus3() {
+    try {
+      StringConcatenation _builder = new StringConcatenation();
+      _builder.append("+(a)");
+      Model _parse = this._parseHelper.parse(_builder);
+      this._validationTestHelper.assertNoErrors(_parse);
+    } catch (Throwable _e) {
+      throw Exceptions.sneakyThrow(_e);
+    }
+  }
+  
+  @Test
+  public void testprefixMinus() {
+    try {
+      StringConcatenation _builder = new StringConcatenation();
+      _builder.append("-2");
+      Model _parse = this._parseHelper.parse(_builder);
+      this._validationTestHelper.assertNoErrors(_parse);
+    } catch (Throwable _e) {
+      throw Exceptions.sneakyThrow(_e);
+    }
+  }
+  
+  @Test
+  public void testprefixNot() {
+    try {
+      StringConcatenation _builder = new StringConcatenation();
+      _builder.append("not a");
+      Model _parse = this._parseHelper.parse(_builder);
+      this._validationTestHelper.assertNoErrors(_parse);
+    } catch (Throwable _e) {
+      throw Exceptions.sneakyThrow(_e);
+    }
+  }
+  
+  @Test
+  public void testprefixTilde() {
+    try {
+      StringConcatenation _builder = new StringConcatenation();
+      _builder.append("~a");
+      Model _parse = this._parseHelper.parse(_builder);
+      this._validationTestHelper.assertNoErrors(_parse);
+    } catch (Throwable _e) {
+      throw Exceptions.sneakyThrow(_e);
+    }
+  }
+  
+  @Test
+  public void testInfixPlus() {
+    try {
+      StringConcatenation _builder = new StringConcatenation();
+      _builder.append("a+b");
+      Model _parse = this._parseHelper.parse(_builder);
+      this._validationTestHelper.assertNoErrors(_parse);
+    } catch (Throwable _e) {
+      throw Exceptions.sneakyThrow(_e);
+    }
+  }
+  
+  @Test
+  public void testInfixMinus() {
+    try {
+      StringConcatenation _builder = new StringConcatenation();
+      _builder.append("a-b");
+      Model _parse = this._parseHelper.parse(_builder);
+      this._validationTestHelper.assertNoErrors(_parse);
+    } catch (Throwable _e) {
+      throw Exceptions.sneakyThrow(_e);
+    }
+  }
+  
+  @Test
+  public void testInfixMult() {
+    try {
+      StringConcatenation _builder = new StringConcatenation();
+      _builder.append("a*b");
+      Model _parse = this._parseHelper.parse(_builder);
+      this._validationTestHelper.assertNoErrors(_parse);
+    } catch (Throwable _e) {
+      throw Exceptions.sneakyThrow(_e);
+    }
+  }
+  
+  @Test
+  public void testInfixDiv() {
+    try {
+      StringConcatenation _builder = new StringConcatenation();
+      _builder.append("a/b");
+      Model _parse = this._parseHelper.parse(_builder);
+      this._validationTestHelper.assertNoErrors(_parse);
+    } catch (Throwable _e) {
+      throw Exceptions.sneakyThrow(_e);
+    }
+  }
+  
+  @Test
+  public void testInfixHat() {
+    try {
+      StringConcatenation _builder = new StringConcatenation();
+      _builder.append("a/\\b");
+      Model _parse = this._parseHelper.parse(_builder);
+      this._validationTestHelper.assertNoErrors(_parse);
+    } catch (Throwable _e) {
+      throw Exceptions.sneakyThrow(_e);
+    }
+  }
+  
+  @Test
+  public void testInfixVee() {
+    try {
+      StringConcatenation _builder = new StringConcatenation();
+      _builder.append("a\\/b");
+      Model _parse = this._parseHelper.parse(_builder);
+      this._validationTestHelper.assertNoErrors(_parse);
+    } catch (Throwable _e) {
+      throw Exceptions.sneakyThrow(_e);
+    }
+  }
+  
+  @Test
+  public void testInfixAnd() {
+    try {
+      StringConcatenation _builder = new StringConcatenation();
+      _builder.append("a and b");
+      Model _parse = this._parseHelper.parse(_builder);
+      this._validationTestHelper.assertNoErrors(_parse);
+    } catch (Throwable _e) {
+      throw Exceptions.sneakyThrow(_e);
+    }
+  }
+  
+  @Test
+  public void testInfixOr() {
+    try {
+      StringConcatenation _builder = new StringConcatenation();
+      _builder.append("a or b");
+      Model _parse = this._parseHelper.parse(_builder);
+      this._validationTestHelper.assertNoErrors(_parse);
+    } catch (Throwable _e) {
+      throw Exceptions.sneakyThrow(_e);
+    }
+  }
+  
+  @Test
+  public void testInfixHas() {
+    try {
+      StringConcatenation _builder = new StringConcatenation();
+      _builder.append("a has b");
+      Model _parse = this._parseHelper.parse(_builder);
+      this._validationTestHelper.assertNoErrors(_parse);
+    } catch (Throwable _e) {
+      throw Exceptions.sneakyThrow(_e);
+    }
+  }
+  
+  @Test
+  public void testInfixSeg1() {
+    try {
+      StringConcatenation _builder = new StringConcatenation();
+      _builder.append("a..b");
+      Model _parse = this._parseHelper.parse(_builder);
+      this._validationTestHelper.assertNoErrors(_parse);
+    } catch (Throwable _e) {
+      throw Exceptions.sneakyThrow(_e);
+    }
+  }
+  
+  @Test
+  public void testInfixSeg2() {
+    try {
+      StringConcatenation _builder = new StringConcatenation();
+      _builder.append("a..2");
+      Model _parse = this._parseHelper.parse(_builder);
+      this._validationTestHelper.assertNoErrors(_parse);
+    } catch (Throwable _e) {
+      throw Exceptions.sneakyThrow(_e);
+    }
+  }
+  
+  @Test
+  public void testInfixPower1() {
+    try {
+      StringConcatenation _builder = new StringConcatenation();
+      _builder.append("a^b");
+      Model _parse = this._parseHelper.parse(_builder);
+      this._validationTestHelper.assertNoErrors(_parse);
+    } catch (Throwable _e) {
+      throw Exceptions.sneakyThrow(_e);
+    }
+  }
+  
+  @Test
+  public void testInfixPower2() {
+    try {
+      StringConcatenation _builder = new StringConcatenation();
+      _builder.append("a**2");
+      Model _parse = this._parseHelper.parse(_builder);
+      this._validationTestHelper.assertNoErrors(_parse);
+    } catch (Throwable _e) {
+      throw Exceptions.sneakyThrow(_e);
+    }
+  }
+  
+  @Test
+  public void testInfixType1() {
+    try {
+      StringConcatenation _builder = new StringConcatenation();
+      _builder.append("a::b");
+      Model _parse = this._parseHelper.parse(_builder);
+      this._validationTestHelper.assertNoErrors(_parse);
+    } catch (Throwable _e) {
+      throw Exceptions.sneakyThrow(_e);
+    }
+  }
+  
+  @Test
+  public void testInfixType2() {
+    try {
+      StringConcatenation _builder = new StringConcatenation();
+      _builder.append("a@b");
+      Model _parse = this._parseHelper.parse(_builder);
+      this._validationTestHelper.assertNoErrors(_parse);
+    } catch (Throwable _e) {
+      throw Exceptions.sneakyThrow(_e);
+    }
+  }
+  
+  @Test
+  public void testInfixType3() {
+    try {
+      StringConcatenation _builder = new StringConcatenation();
+      _builder.append("a pretend b");
+      Model _parse = this._parseHelper.parse(_builder);
+      this._validationTestHelper.assertNoErrors(_parse);
+    } catch (Throwable _e) {
+      throw Exceptions.sneakyThrow(_e);
+    }
+  }
+  
+  @Test
+  public void testInfixRightArrow() {
+    try {
+      StringConcatenation _builder = new StringConcatenation();
+      _builder.append("a->b");
+      Model _parse = this._parseHelper.parse(_builder);
+      this._validationTestHelper.assertNoErrors(_parse);
+    } catch (Throwable _e) {
+      throw Exceptions.sneakyThrow(_e);
+    }
+  }
+  
+  @Test
+  public void testInfixLeftArrow() {
+    try {
+      StringConcatenation _builder = new StringConcatenation();
+      _builder.append("a<-b");
+      Model _parse = this._parseHelper.parse(_builder);
+      this._validationTestHelper.assertNoErrors(_parse);
+    } catch (Throwable _e) {
+      throw Exceptions.sneakyThrow(_e);
+    }
+  }
+  
+  @Test
+  public void testInfixMapstar() {
+    try {
+      StringConcatenation _builder = new StringConcatenation();
+      _builder.append("a ->* b");
+      Model _parse = this._parseHelper.parse(_builder);
+      this._validationTestHelper.assertNoErrors(_parse);
+    } catch (Throwable _e) {
+      throw Exceptions.sneakyThrow(_e);
+    }
+  }
+  
+  @Test
+  public void testInfixDollar() {
+    try {
+      StringConcatenation _builder = new StringConcatenation();
+      _builder.append("a$b");
+      Model _parse = this._parseHelper.parse(_builder);
+      this._validationTestHelper.assertNoErrors(_parse);
+    } catch (Throwable _e) {
+      throw Exceptions.sneakyThrow(_e);
+    }
+  }
+  
+  @Test
   public void testAssign1() {
     try {
       StringConcatenation _builder = new StringConcatenation();
@@ -206,12 +1014,11 @@ public class ParserTests {
   }
   
   /**
-   * The above tests test individual elements of code but not if they
-   * fit together in big chunks. The following tests are designed to
-   * try some complete programs.
+   * The above tests test individual elements of code but it may
+   * miss problems caused when they are combined in various ways.
+   * The following tests are designed to try some complete programs.
    * At the moment there are a few sample programs from here:
    * http://www.aldor.org/docs/HTML/chap23.html
-   * and checks that they compile without errors.
    */
   @Test
   public void testParse1() {

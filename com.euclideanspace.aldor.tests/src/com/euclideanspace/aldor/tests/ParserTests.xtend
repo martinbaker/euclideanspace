@@ -10,10 +10,28 @@ import org.eclipse.xtext.junit4.util.ParseHelper
 import org.eclipse.xtext.junit4.validation.ValidationTestHelper
 import org.junit.runner.RunWith
 
+/* Copyright 2014 Martin John Baker
+ *
+ * This file is part of EuclideanSpace.
+ *
+ * EuclideanSpace is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU Affero General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * EuclideanSpace is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+ * GNU Affero General Public License for more details.
+ *
+ * You should have received a copy of the GNU Affero General Public License
+ * along with EuclideanSpace. If not, see <http://www.gnu.org/licenses/>.
+ */
+
 @RunWith(typeof(XtextRunner))
 @InjectWith(typeof(EditorInjectorProvider))
 /**
- * @author Martin Baker
+ * @author Martin John Baker
  * 
  * This file contains parser tests. These are tests that check that
  * correct code parses without error.
@@ -44,6 +62,10 @@ class ParserTests {
 	}
 
 	@Test def void testVariable3() {
+		'''a_b'''.parse.assertNoErrors
+	}
+
+	@Test def void testVariable4() {
 		'''a1'''.parse.assertNoErrors
 	}
 
@@ -77,6 +99,276 @@ class ParserTests {
 		'''"hello"'''.parse.assertNoErrors
 	}
 
+/////// Enclosures ////////////////
+
+	@Test def void testParen() {
+		'''(a)'''.parse.assertNoErrors
+	}
+
+	@Test def void testBracket() {
+		'''[a]'''.parse.assertNoErrors
+	}
+
+	@Test def void testQuotedIds() {
+		"'a'".parse.assertNoErrors
+	}
+
+/////// Blocks ////////////////
+
+	@Test def void testBlock1() {
+		'''{a}'''.parse.assertNoErrors
+	}
+
+	@Test def void testBlock2() {
+		'''{a;b}'''.parse.assertNoErrors
+	}
+
+	@Test def void testBlock3() {
+		'''{a;b;}'''.parse.assertNoErrors
+	}
+
+/////// Statements ////////////////
+
+	@Test def void testPreComment1() {
+		'''++ pre comment
+		a'''.parse.assertNoErrors
+	}
+
+	@Test def void testPreComment2() {
+		'''{
+		   ++ pre comment
+		   a
+		   }'''.parse.assertNoErrors
+	}
+
+	@Test def void testPostComment1() {
+		'''a
+		-- post comment'''.parse.assertNoErrors
+	}
+
+	@Test def void testPostComment2() {
+		'''a;
+		-- post comment after semicolon'''.parse.assertNoErrors
+	}
+
+	@Test def void testPostComment3() {
+		'''{
+		   a
+		   -- post comment
+		   }'''.parse.assertNoErrors
+	}
+
+	@Test def void testPostComment4() {
+		'''{
+		   a;
+		   -- post comment after semicolon
+		   }'''.parse.assertNoErrors
+	}
+
+	@Test def void testImplies() {
+		'''a implies b'''.parse.assertNoErrors
+	}
+
+	@Test def void testIfThen1() {
+		'''if a then b'''.parse.assertNoErrors
+	}
+
+	@Test def void testIfThen2() {
+		'''if a then {b}'''.parse.assertNoErrors
+	}
+
+	@Test def void testIfThenElse1() {
+		'''if a then b else c'''.parse.assertNoErrors
+	}
+
+	@Test def void testIfThenElse2() {
+		'''if a then b else {c}'''.parse.assertNoErrors
+	}
+
+	@Test def void testIfThenElse3() {
+		'''if a then b else if c then d else e'''.parse.assertNoErrors
+	}
+
+	@Test def void testRepeat1() {
+		'''while a repeat b'''.parse.assertNoErrors
+	}
+
+	@Test def void testRepeat2() {
+		'''for a in b repeat c'''.parse.assertNoErrors
+	}
+
+	@Test def void testTry1() {
+		'''try a but b c'''.parse.assertNoErrors
+	}
+
+	@Test def void testTry2() {
+		'''try a catch b c'''.parse.assertNoErrors
+	}
+
+	@Test def void testSelect() {
+		'''select a in b'''.parse.assertNoErrors
+	}
+
+	@Test def void testDo() {
+		'''do a'''.parse.assertNoErrors
+	}
+
+	@Test def void testDelay() {
+		'''delay a'''.parse.assertNoErrors
+	}
+
+	@Test def void testReference() {
+		'''reference a'''.parse.assertNoErrors
+	}
+
+	@Test def void testGenerate() {
+		'''generate a b'''.parse.assertNoErrors
+	}
+
+	@Test def void testAssert() {
+		'''assert a'''.parse.assertNoErrors
+	}
+
+	@Test def void testIterate() {
+		'''iterate a'''.parse.assertNoErrors
+	}
+
+	@Test def void testBreak() {
+		'''break a'''.parse.assertNoErrors
+	}
+
+	@Test def void testReturn() {
+		'''return a'''.parse.assertNoErrors
+	}
+
+	@Test def void testYield() {
+		'''yield a'''.parse.assertNoErrors
+	}
+
+	@Test def void testExcept() {
+		'''except a'''.parse.assertNoErrors
+	}
+
+	@Test def void testThrow() {
+		'''throw a'''.parse.assertNoErrors
+	}
+
+	@Test def void testGoto() {
+		'''goto a'''.parse.assertNoErrors
+	}
+
+	@Test def void testNever() {
+		'''never'''.parse.assertNoErrors
+	}
+
+/////// Prefix Operators ////////////////
+
+	@Test def void testprefixPlus1() {
+		'''+2'''.parse.assertNoErrors
+	}
+
+	@Test def void testprefixPlus2() {
+		'''+a'''.parse.assertNoErrors
+	}
+
+	@Test def void testprefixPlus3() {
+		'''+(a)'''.parse.assertNoErrors
+	}
+
+	@Test def void testprefixMinus() {
+		'''-2'''.parse.assertNoErrors
+	}
+
+	@Test def void testprefixNot() {
+		'''not a'''.parse.assertNoErrors
+	}
+
+	@Test def void testprefixTilde() {
+		'''~a'''.parse.assertNoErrors
+	}
+
+/////// infix Operators ////////////////
+
+	@Test def void testInfixPlus() {
+		'''a+b'''.parse.assertNoErrors
+	}
+
+	@Test def void testInfixMinus() {
+		'''a-b'''.parse.assertNoErrors
+	}
+
+	@Test def void testInfixMult() {
+		'''a*b'''.parse.assertNoErrors
+	}
+
+	@Test def void testInfixDiv() {
+		'''a/b'''.parse.assertNoErrors
+	}
+
+	@Test def void testInfixHat() {
+		'''a/\b'''.parse.assertNoErrors
+	}
+
+	@Test def void testInfixVee() {
+		'''a\/b'''.parse.assertNoErrors
+	}
+
+	@Test def void testInfixAnd() {
+		'''a and b'''.parse.assertNoErrors
+	}
+
+	@Test def void testInfixOr() {
+		'''a or b'''.parse.assertNoErrors
+	}
+
+	@Test def void testInfixHas() {
+		'''a has b'''.parse.assertNoErrors
+	}
+
+	@Test def void testInfixSeg1() {
+		'''a..b'''.parse.assertNoErrors
+	}
+
+	@Test def void testInfixSeg2() {
+		'''a..2'''.parse.assertNoErrors
+	}
+
+	@Test def void testInfixPower1() {
+		'''a^b'''.parse.assertNoErrors
+	}
+
+	@Test def void testInfixPower2() {
+		'''a**2'''.parse.assertNoErrors
+	}
+
+	@Test def void testInfixType1() {
+		'''a::b'''.parse.assertNoErrors
+	}
+
+	@Test def void testInfixType2() {
+		'''a@b'''.parse.assertNoErrors
+	}
+
+	@Test def void testInfixType3() {
+		'''a pretend b'''.parse.assertNoErrors
+	}
+
+	@Test def void testInfixRightArrow() {
+		'''a->b'''.parse.assertNoErrors
+	}
+
+	@Test def void testInfixLeftArrow() {
+		'''a<-b'''.parse.assertNoErrors
+	}
+
+	@Test def void testInfixMapstar() {
+		'''a ->* b'''.parse.assertNoErrors
+	}
+
+	@Test def void testInfixDollar() {
+		'''a$b'''.parse.assertNoErrors
+	}
+
 /////// Assignments ////////////////
 
 	@Test def void testAssign1() {
@@ -99,12 +391,11 @@ class ParserTests {
 		'''f(): () ==never'''.parse.assertNoErrors
 	}
 
-/* The above tests test individual elements of code but not if they
- * fit together in big chunks. The following tests are designed to
- * try some complete programs.
+/* The above tests test individual elements of code but it may
+ * miss problems caused when they are combined in various ways.
+ * The following tests are designed to try some complete programs.
  * At the moment there are a few sample programs from here:
  * http://www.aldor.org/docs/HTML/chap23.html
- * and checks that they compile without errors.
  */
 
 	@Test

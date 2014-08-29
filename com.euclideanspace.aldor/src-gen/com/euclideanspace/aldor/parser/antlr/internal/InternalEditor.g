@@ -10390,11 +10390,11 @@ ruleCurlyContentsList_Labeled returns [EObject current=null]
 	    }
 
 )
-)(this_KW_SEMICOLON_1=RULE_KW_SEMICOLON
+)((this_KW_SEMICOLON_1=RULE_KW_SEMICOLON
     { 
     newLeafNode(this_KW_SEMICOLON_1, grammarAccess.getCurlyContentsList_LabeledAccess().getKW_SEMICOLONTerminalRuleCall_1_0()); 
     }
-(
+)+(
 (
 		{ 
 	        newCompositeNode(grammarAccess.getCurlyContentsList_LabeledAccess().getStatemtsCurlyContentB_LabeledParserRuleCall_1_1_0()); 
@@ -10416,7 +10416,7 @@ ruleCurlyContentsList_Labeled returns [EObject current=null]
     { 
     newLeafNode(this_KW_SEMICOLON_3, grammarAccess.getCurlyContentsList_LabeledAccess().getKW_SEMICOLONTerminalRuleCall_2()); 
     }
-)?)
+)*)
 ;
 finally {
 	myHiddenTokenState.restore();

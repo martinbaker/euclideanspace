@@ -30,8 +30,9 @@ generate editor "http://www.euclideanspace.com/aldor/Editor"
  * 
  * known bugs
  * ----------
- * 1) {....} block does insists on semicolon after it {....};
+ * 1) {....} block insists on semicolon after block {....};
  * 2) this does not work: MiniList(S: BasicType): LinearAggregate(S) = add {
+ * 3) + or - as prefix operator
  */
 
 /*
@@ -1377,8 +1378,8 @@ CurlyContents_Labeled hidden(WS,KW_NEWLINE):
  */ 
 CurlyContentsList_Labeled hidden(WS,KW_NEWLINE):
 	statemts += CurlyContentB_Labeled
-	(KW_SEMICOLON statemts += CurlyContentB_Labeled)*
-	KW_SEMICOLON?
+	(KW_SEMICOLON+ statemts += CurlyContentB_Labeled)*
+	KW_SEMICOLON*
 ;
 
 /* CurlyContent1_Labeled

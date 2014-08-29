@@ -20620,7 +20620,7 @@ rule__CurlyContentsList_Labeled__Group__2__Impl
 :
 (
 { before(grammarAccess.getCurlyContentsList_LabeledAccess().getKW_SEMICOLONTerminalRuleCall_2()); }
-(	RULE_KW_SEMICOLON)?
+(	RULE_KW_SEMICOLON)*
 { after(grammarAccess.getCurlyContentsList_LabeledAccess().getKW_SEMICOLONTerminalRuleCall_2()); }
 )
 
@@ -20654,9 +20654,16 @@ rule__CurlyContentsList_Labeled__Group_1__0__Impl
     }
 :
 (
+(
 { before(grammarAccess.getCurlyContentsList_LabeledAccess().getKW_SEMICOLONTerminalRuleCall_1_0()); }
-	RULE_KW_SEMICOLON
+(	RULE_KW_SEMICOLON)
 { after(grammarAccess.getCurlyContentsList_LabeledAccess().getKW_SEMICOLONTerminalRuleCall_1_0()); }
+)
+(
+{ before(grammarAccess.getCurlyContentsList_LabeledAccess().getKW_SEMICOLONTerminalRuleCall_1_0()); }
+(	RULE_KW_SEMICOLON)*
+{ after(grammarAccess.getCurlyContentsList_LabeledAccess().getKW_SEMICOLONTerminalRuleCall_1_0()); }
+)
 )
 
 ;

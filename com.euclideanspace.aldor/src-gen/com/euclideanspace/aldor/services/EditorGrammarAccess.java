@@ -51,8 +51,9 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		// * 
 		// * known bugs
 		// * ----------
-		// * 1) {....} block does insists on semicolon after it {....};
+		// * 1) {....} block insists on semicolon after block {....};
 		// * 2) this does not work: MiniList(S: BasicType): LinearAggregate(S) = add {
+		// * 3) + or - as prefix operator
 		// * / / *
 		// * replaces Goal rule in Aldor grammar
 		// * 
@@ -5425,7 +5426,8 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cEnlister1a_Labeled_SemicolonParserRuleCall = (RuleCall)rule.eContents().get(1);
 		
 		/// * A list of (at least one) statement(s)
-		// * seperated by semicolons and optionally ending with a semicolon
+		// * seperated by semicolons (one or more)  and optionally ending with
+		// * a semicolon (zero or more)
 		// * 
 		// * AB_Sequence
 		// * / enlist1a_Labeled_Semicolon_AB hidden(WS, KW_NEWLINE):
@@ -5448,10 +5450,11 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cKW_SEMICOLONTerminalRuleCall_2 = (RuleCall)cGroup.eContents().get(2);
 		
 		/// * A list of (at least one) statement(s)
-		// * seperated by (one or more) semicolons and optionally ending with a semicolon (zero or more)
+		// * seperated by (one or more) semicolons and optionally ending with
+		// * a semicolon (zero or more)
 		// * 
 		// * Aldor axl.z grammar defines this in a left recursive way so
-		// * we have to change its structure here.
+		// * we have to change to non-recursive structure here.
 		// * / enlister1a_Labeled_Semicolon hidden(WS, KW_NEWLINE):
 		//	statemnts+=Labeled (KW_SEMICOLON+ statemnts+=Labeled)* KW_SEMICOLON*;
 		public ParserRule getRule() { return rule; }
@@ -5549,10 +5552,10 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		// * 
 		// * statements can have pre or post comments
 		// * / CurlyContentsList_Labeled hidden(WS, KW_NEWLINE):
-		//	statemts+=CurlyContentB_Labeled (KW_SEMICOLON statemts+=CurlyContentB_Labeled)* KW_SEMICOLON?;
+		//	statemts+=CurlyContentB_Labeled (KW_SEMICOLON+ statemts+=CurlyContentB_Labeled)* KW_SEMICOLON*;
 		public ParserRule getRule() { return rule; }
 
-		//statemts+=CurlyContentB_Labeled (KW_SEMICOLON statemts+=CurlyContentB_Labeled)* KW_SEMICOLON?
+		//statemts+=CurlyContentB_Labeled (KW_SEMICOLON+ statemts+=CurlyContentB_Labeled)* KW_SEMICOLON*
 		public Group getGroup() { return cGroup; }
 
 		//statemts+=CurlyContentB_Labeled
@@ -5561,10 +5564,10 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		//CurlyContentB_Labeled
 		public RuleCall getStatemtsCurlyContentB_LabeledParserRuleCall_0_0() { return cStatemtsCurlyContentB_LabeledParserRuleCall_0_0; }
 
-		//(KW_SEMICOLON statemts+=CurlyContentB_Labeled)*
+		//(KW_SEMICOLON+ statemts+=CurlyContentB_Labeled)*
 		public Group getGroup_1() { return cGroup_1; }
 
-		//KW_SEMICOLON
+		//KW_SEMICOLON+
 		public RuleCall getKW_SEMICOLONTerminalRuleCall_1_0() { return cKW_SEMICOLONTerminalRuleCall_1_0; }
 
 		//statemts+=CurlyContentB_Labeled
@@ -5573,7 +5576,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		//CurlyContentB_Labeled
 		public RuleCall getStatemtsCurlyContentB_LabeledParserRuleCall_1_1_0() { return cStatemtsCurlyContentB_LabeledParserRuleCall_1_1_0; }
 
-		//KW_SEMICOLON?
+		//KW_SEMICOLON*
 		public RuleCall getKW_SEMICOLONTerminalRuleCall_2() { return cKW_SEMICOLONTerminalRuleCall_2; }
 	}
 
@@ -5874,8 +5877,9 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 	// * 
 	// * known bugs
 	// * ----------
-	// * 1) {....} block does insists on semicolon after it {....};
+	// * 1) {....} block insists on semicolon after block {....};
 	// * 2) this does not work: MiniList(S: BasicType): LinearAggregate(S) = add {
+	// * 3) + or - as prefix operator
 	// * / / *
 	// * replaces Goal rule in Aldor grammar
 	// * 
@@ -7952,7 +7956,8 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	/// * A list of (at least one) statement(s)
-	// * seperated by semicolons and optionally ending with a semicolon
+	// * seperated by semicolons (one or more)  and optionally ending with
+	// * a semicolon (zero or more)
 	// * 
 	// * AB_Sequence
 	// * / enlist1a_Labeled_Semicolon_AB hidden(WS, KW_NEWLINE):
@@ -7966,10 +7971,11 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	/// * A list of (at least one) statement(s)
-	// * seperated by (one or more) semicolons and optionally ending with a semicolon (zero or more)
+	// * seperated by (one or more) semicolons and optionally ending with
+	// * a semicolon (zero or more)
 	// * 
 	// * Aldor axl.z grammar defines this in a left recursive way so
-	// * we have to change its structure here.
+	// * we have to change to non-recursive structure here.
 	// * / enlister1a_Labeled_Semicolon hidden(WS, KW_NEWLINE):
 	//	statemnts+=Labeled (KW_SEMICOLON+ statemnts+=Labeled)* KW_SEMICOLON*;
 	public Enlister1a_Labeled_SemicolonElements getEnlister1a_Labeled_SemicolonAccess() {
@@ -8021,7 +8027,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 	// * 
 	// * statements can have pre or post comments
 	// * / CurlyContentsList_Labeled hidden(WS, KW_NEWLINE):
-	//	statemts+=CurlyContentB_Labeled (KW_SEMICOLON statemts+=CurlyContentB_Labeled)* KW_SEMICOLON?;
+	//	statemts+=CurlyContentB_Labeled (KW_SEMICOLON+ statemts+=CurlyContentB_Labeled)* KW_SEMICOLON*;
 	public CurlyContentsList_LabeledElements getCurlyContentsList_LabeledAccess() {
 		return (pCurlyContentsList_Labeled != null) ? pCurlyContentsList_Labeled : (pCurlyContentsList_Labeled = new CurlyContentsList_LabeledElements());
 	}
