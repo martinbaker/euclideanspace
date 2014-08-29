@@ -245,7 +245,21 @@ public class ValidatorTests {
   public void testTry5() {
     try {
       StringConcatenation _builder = new StringConcatenation();
-      _builder.append("try a catch b c");
+      _builder.append("try a catch");
+      Model _parse = this._parseHelper.parse(_builder);
+      EClass _flow_AnyStatement = EditorPackage.eINSTANCE.getFlow_AnyStatement();
+      this._validationTestHelper.assertError(_parse, _flow_AnyStatement, null, 
+        "statement must follow \'catch\' keyword");
+    } catch (Throwable _e) {
+      throw Exceptions.sneakyThrow(_e);
+    }
+  }
+  
+  @Test
+  public void testTry6() {
+    try {
+      StringConcatenation _builder = new StringConcatenation();
+      _builder.append("try a catch b");
       Model _parse = this._parseHelper.parse(_builder);
       EClass _flow_AnyStatement = EditorPackage.eINSTANCE.getFlow_AnyStatement();
       this._validationTestHelper.assertError(_parse, _flow_AnyStatement, null, 

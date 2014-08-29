@@ -123,7 +123,12 @@ class ValidatorTests {
 	}
 
 	@Test def void testTry5() {
-		'''try a catch b c'''.parse.assertError(EditorPackage::eINSTANCE.flow_AnyStatement,null,
+		'''try a catch'''.parse.assertError(EditorPackage::eINSTANCE.flow_AnyStatement,null,
+		                                  "statement must follow 'catch' keyword")
+	}
+
+	@Test def void testTry6() {
+		'''try a catch b'''.parse.assertError(EditorPackage::eINSTANCE.flow_AnyStatement,null,
 		                                  "statement must follow 'catch' keyword")
 	}
 
