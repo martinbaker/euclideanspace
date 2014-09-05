@@ -590,6 +590,61 @@ public class EditorAdapterFactory extends AdapterFactoryImpl
         return createCurlyContentB_LabeledAdapter();
       }
       @Override
+      public Adapter caseDeclarationMacro(DeclarationMacro object)
+      {
+        return createDeclarationMacroAdapter();
+      }
+      @Override
+      public Adapter caseDeclarationExtend(DeclarationExtend object)
+      {
+        return createDeclarationExtendAdapter();
+      }
+      @Override
+      public Adapter caseDeclarationLocal(DeclarationLocal object)
+      {
+        return createDeclarationLocalAdapter();
+      }
+      @Override
+      public Adapter caseDeclarationFree(DeclarationFree object)
+      {
+        return createDeclarationFreeAdapter();
+      }
+      @Override
+      public Adapter caseDeclarationFluid(DeclarationFluid object)
+      {
+        return createDeclarationFluidAdapter();
+      }
+      @Override
+      public Adapter caseDeclarationDefault(DeclarationDefault object)
+      {
+        return createDeclarationDefaultAdapter();
+      }
+      @Override
+      public Adapter caseDeclarationDefine(DeclarationDefine object)
+      {
+        return createDeclarationDefineAdapter();
+      }
+      @Override
+      public Adapter caseDeclarationFix(DeclarationFix object)
+      {
+        return createDeclarationFixAdapter();
+      }
+      @Override
+      public Adapter caseDeclarationInline(DeclarationInline object)
+      {
+        return createDeclarationInlineAdapter();
+      }
+      @Override
+      public Adapter caseDeclarationImport(DeclarationImport object)
+      {
+        return createDeclarationImportAdapter();
+      }
+      @Override
+      public Adapter caseDeclarationExport(DeclarationExport object)
+      {
+        return createDeclarationExportAdapter();
+      }
+      @Override
       public Adapter caseE3(E3 object)
       {
         return createE3Adapter();
@@ -2247,6 +2302,171 @@ public class EditorAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createCurlyContentB_LabeledAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link com.euclideanspace.aldor.editor.DeclarationMacro <em>Declaration Macro</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see com.euclideanspace.aldor.editor.DeclarationMacro
+   * @generated
+   */
+  public Adapter createDeclarationMacroAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link com.euclideanspace.aldor.editor.DeclarationExtend <em>Declaration Extend</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see com.euclideanspace.aldor.editor.DeclarationExtend
+   * @generated
+   */
+  public Adapter createDeclarationExtendAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link com.euclideanspace.aldor.editor.DeclarationLocal <em>Declaration Local</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see com.euclideanspace.aldor.editor.DeclarationLocal
+   * @generated
+   */
+  public Adapter createDeclarationLocalAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link com.euclideanspace.aldor.editor.DeclarationFree <em>Declaration Free</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see com.euclideanspace.aldor.editor.DeclarationFree
+   * @generated
+   */
+  public Adapter createDeclarationFreeAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link com.euclideanspace.aldor.editor.DeclarationFluid <em>Declaration Fluid</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see com.euclideanspace.aldor.editor.DeclarationFluid
+   * @generated
+   */
+  public Adapter createDeclarationFluidAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link com.euclideanspace.aldor.editor.DeclarationDefault <em>Declaration Default</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see com.euclideanspace.aldor.editor.DeclarationDefault
+   * @generated
+   */
+  public Adapter createDeclarationDefaultAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link com.euclideanspace.aldor.editor.DeclarationDefine <em>Declaration Define</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see com.euclideanspace.aldor.editor.DeclarationDefine
+   * @generated
+   */
+  public Adapter createDeclarationDefineAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link com.euclideanspace.aldor.editor.DeclarationFix <em>Declaration Fix</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see com.euclideanspace.aldor.editor.DeclarationFix
+   * @generated
+   */
+  public Adapter createDeclarationFixAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link com.euclideanspace.aldor.editor.DeclarationInline <em>Declaration Inline</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see com.euclideanspace.aldor.editor.DeclarationInline
+   * @generated
+   */
+  public Adapter createDeclarationInlineAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link com.euclideanspace.aldor.editor.DeclarationImport <em>Declaration Import</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see com.euclideanspace.aldor.editor.DeclarationImport
+   * @generated
+   */
+  public Adapter createDeclarationImportAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link com.euclideanspace.aldor.editor.DeclarationExport <em>Declaration Export</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see com.euclideanspace.aldor.editor.DeclarationExport
+   * @generated
+   */
+  public Adapter createDeclarationExportAdapter()
   {
     return null;
   }

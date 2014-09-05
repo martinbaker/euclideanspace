@@ -238,10 +238,10 @@ public class EditorParser extends AbstractContentAssistParser {
 					put(grammarAccess.getJleft_MoleculeAccess().getGroup_2(), "rule__Jleft_Molecule__Group_2__0");
 					put(grammarAccess.getJleft_MoleculeAccess().getGroup_2_1(), "rule__Jleft_Molecule__Group_2_1__0");
 					put(grammarAccess.getJleft_AtomAccess().getGroup_0(), "rule__Jleft_Atom__Group_0__0");
-					put(grammarAccess.getJleft_AtomAccess().getGroup_0_0(), "rule__Jleft_Atom__Group_0_0__0");
-					put(grammarAccess.getJleft_AtomAccess().getGroup_0_1(), "rule__Jleft_Atom__Group_0_1__0");
 					put(grammarAccess.getJleft_AtomAccess().getGroup_1(), "rule__Jleft_Atom__Group_1__0");
-					put(grammarAccess.getJleft_AtomAccess().getGroup_1_1(), "rule__Jleft_Atom__Group_1_1__0");
+					put(grammarAccess.getJleft_AtomAccess().getGroup_1_0(), "rule__Jleft_Atom__Group_1_0__0");
+					put(grammarAccess.getJleft_AtomAccess().getGroup_2(), "rule__Jleft_Atom__Group_2__0");
+					put(grammarAccess.getJleft_AtomAccess().getGroup_2_1(), "rule__Jleft_Atom__Group_2_1__0");
 					put(grammarAccess.getDeclMoleculeAccess().getGroup_0(), "rule__DeclMolecule__Group_0__0");
 					put(grammarAccess.getParenedAccess().getGroup(), "rule__Parened__Group__0");
 					put(grammarAccess.getBracketedAccess().getGroup(), "rule__Bracketed__Group__0");
@@ -295,6 +295,9 @@ public class EditorParser extends AbstractContentAssistParser {
 					put(grammarAccess.getCurlyContentB_LabeledAccess().getGroup(), "rule__CurlyContentB_Labeled__Group__0");
 					put(grammarAccess.getModelAccess().getInsertAssignment_0_1(), "rule__Model__InsertAssignment_0_1");
 					put(grammarAccess.getModelAccess().getCcAssignment_1(), "rule__Model__CcAssignment_1");
+					put(grammarAccess.getLabeledAccess().getCAssignment_0(), "rule__Labeled__CAssignment_0");
+					put(grammarAccess.getLabeledAccess().getDAssignment_1(), "rule__Labeled__DAssignment_1");
+					put(grammarAccess.getLabeledAccess().getAAssignment_2_1(), "rule__Labeled__AAssignment_2_1");
 					put(grammarAccess.getLabeledAccess().getLabAssignment_2_2(), "rule__Labeled__LabAssignment_2_2");
 					put(grammarAccess.getDeclarationAccess().getMbAssignment_0_2(), "rule__Declaration__MbAssignment_0_2");
 					put(grammarAccess.getDeclarationAccess().getSiAssignment_1_2(), "rule__Declaration__SiAssignment_1_2");
@@ -338,6 +341,7 @@ public class EditorParser extends AbstractContentAssistParser {
 					put(grammarAccess.getFlow_AnyStatementAccess().getCiAssignment_1_1(), "rule__Flow_AnyStatement__CiAssignment_1_1");
 					put(grammarAccess.getFlow_AnyStatementAccess().getBbsAssignment_1_3(), "rule__Flow_AnyStatement__BbsAssignment_1_3");
 					put(grammarAccess.getFlow_AnyStatementAccess().getBasAssignment_1_5(), "rule__Flow_AnyStatement__BasAssignment_1_5");
+					put(grammarAccess.getFlow_AnyStatementAccess().getStAssignment_2_0_1(), "rule__Flow_AnyStatement__StAssignment_2_0_1");
 					put(grammarAccess.getFlow_AnyStatementAccess().getBas3Assignment_2_0_2(), "rule__Flow_AnyStatement__Bas3Assignment_2_0_2");
 					put(grammarAccess.getFlow_AnyStatementAccess().getStAssignment_3_0(), "rule__Flow_AnyStatement__StAssignment_3_0");
 					put(grammarAccess.getFlow_AnyStatementAccess().getBasAssignment_3_1(), "rule__Flow_AnyStatement__BasAssignment_3_1");
@@ -491,11 +495,11 @@ public class EditorParser extends AbstractContentAssistParser {
 					put(grammarAccess.getJleft_MoleculeAccess().getBeAssignment_1_0_1(), "rule__Jleft_Molecule__BeAssignment_1_0_1");
 					put(grammarAccess.getJleft_MoleculeAccess().getMAssignment_2_0(), "rule__Jleft_Molecule__MAssignment_2_0");
 					put(grammarAccess.getJleft_MoleculeAccess().getBmAssignment_2_1_1(), "rule__Jleft_Molecule__BmAssignment_2_1_1");
-					put(grammarAccess.getJleft_AtomAccess().getAAssignment_0_0_0(), "rule__Jleft_Atom__AAssignment_0_0_0");
-					put(grammarAccess.getJleft_AtomAccess().getBeAssignment_0_0_1(), "rule__Jleft_Atom__BeAssignment_0_0_1");
-					put(grammarAccess.getJleft_AtomAccess().getNAssignment_0_1_0(), "rule__Jleft_Atom__NAssignment_0_1_0");
-					put(grammarAccess.getJleft_AtomAccess().getBeAssignment_0_1_1(), "rule__Jleft_Atom__BeAssignment_0_1_1");
-					put(grammarAccess.getJleft_AtomAccess().getBm4Assignment_1_1_1(), "rule__Jleft_Atom__Bm4Assignment_1_1_1");
+					put(grammarAccess.getJleft_AtomAccess().getBeAssignment_0_1(), "rule__Jleft_Atom__BeAssignment_0_1");
+					put(grammarAccess.getJleft_AtomAccess().getAAssignment_1_0_0(), "rule__Jleft_Atom__AAssignment_1_0_0");
+					put(grammarAccess.getJleft_AtomAccess().getBeAssignment_1_0_1(), "rule__Jleft_Atom__BeAssignment_1_0_1");
+					put(grammarAccess.getJleft_AtomAccess().getAAssignment_2_0(), "rule__Jleft_Atom__AAssignment_2_0");
+					put(grammarAccess.getJleft_AtomAccess().getBm4Assignment_2_1_1(), "rule__Jleft_Atom__Bm4Assignment_2_1_1");
 					put(grammarAccess.getDeclMoleculeAccess().getAAssignment_0_1(), "rule__DeclMolecule__AAssignment_0_1");
 					put(grammarAccess.getDeclMoleculeAccess().getBAssignment_1(), "rule__DeclMolecule__BAssignment_1");
 					put(grammarAccess.getParenedAccess().getOpAssignment_0(), "rule__Parened__OpAssignment_0");

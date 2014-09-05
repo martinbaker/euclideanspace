@@ -167,6 +167,17 @@ public class EditorFactoryImpl extends EFactoryImpl implements EditorFactory
       case EditorPackage.CURLY_CONTENTS_LABELED: return createCurlyContents_Labeled();
       case EditorPackage.CURLY_CONTENTS_LIST_LABELED: return createCurlyContentsList_Labeled();
       case EditorPackage.CURLY_CONTENT_BLABELED: return createCurlyContentB_Labeled();
+      case EditorPackage.DECLARATION_MACRO: return createDeclarationMacro();
+      case EditorPackage.DECLARATION_EXTEND: return createDeclarationExtend();
+      case EditorPackage.DECLARATION_LOCAL: return createDeclarationLocal();
+      case EditorPackage.DECLARATION_FREE: return createDeclarationFree();
+      case EditorPackage.DECLARATION_FLUID: return createDeclarationFluid();
+      case EditorPackage.DECLARATION_DEFAULT: return createDeclarationDefault();
+      case EditorPackage.DECLARATION_DEFINE: return createDeclarationDefine();
+      case EditorPackage.DECLARATION_FIX: return createDeclarationFix();
+      case EditorPackage.DECLARATION_INLINE: return createDeclarationInline();
+      case EditorPackage.DECLARATION_IMPORT: return createDeclarationImport();
+      case EditorPackage.DECLARATION_EXPORT: return createDeclarationExport();
       case EditorPackage.E3: return createE3();
       case EditorPackage.E4: return createE4();
       case EditorPackage.E5: return createE5();
@@ -1322,6 +1333,127 @@ public class EditorFactoryImpl extends EFactoryImpl implements EditorFactory
   {
     CurlyContentB_LabeledImpl curlyContentB_Labeled = new CurlyContentB_LabeledImpl();
     return curlyContentB_Labeled;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public DeclarationMacro createDeclarationMacro()
+  {
+    DeclarationMacroImpl declarationMacro = new DeclarationMacroImpl();
+    return declarationMacro;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public DeclarationExtend createDeclarationExtend()
+  {
+    DeclarationExtendImpl declarationExtend = new DeclarationExtendImpl();
+    return declarationExtend;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public DeclarationLocal createDeclarationLocal()
+  {
+    DeclarationLocalImpl declarationLocal = new DeclarationLocalImpl();
+    return declarationLocal;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public DeclarationFree createDeclarationFree()
+  {
+    DeclarationFreeImpl declarationFree = new DeclarationFreeImpl();
+    return declarationFree;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public DeclarationFluid createDeclarationFluid()
+  {
+    DeclarationFluidImpl declarationFluid = new DeclarationFluidImpl();
+    return declarationFluid;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public DeclarationDefault createDeclarationDefault()
+  {
+    DeclarationDefaultImpl declarationDefault = new DeclarationDefaultImpl();
+    return declarationDefault;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public DeclarationDefine createDeclarationDefine()
+  {
+    DeclarationDefineImpl declarationDefine = new DeclarationDefineImpl();
+    return declarationDefine;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public DeclarationFix createDeclarationFix()
+  {
+    DeclarationFixImpl declarationFix = new DeclarationFixImpl();
+    return declarationFix;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public DeclarationInline createDeclarationInline()
+  {
+    DeclarationInlineImpl declarationInline = new DeclarationInlineImpl();
+    return declarationInline;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public DeclarationImport createDeclarationImport()
+  {
+    DeclarationImportImpl declarationImport = new DeclarationImportImpl();
+    return declarationImport;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public DeclarationExport createDeclarationExport()
+  {
+    DeclarationExportImpl declarationExport = new DeclarationExportImpl();
+    return declarationExport;
   }
 
   /**

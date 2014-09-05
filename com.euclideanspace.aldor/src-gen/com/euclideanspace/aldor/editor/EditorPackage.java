@@ -123,13 +123,49 @@ public interface EditorPackage extends EPackage
   int LABELED = 2;
 
   /**
+   * The feature id for the '<em><b>C</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LABELED__C = 0;
+
+  /**
+   * The feature id for the '<em><b>D</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LABELED__D = 1;
+
+  /**
+   * The feature id for the '<em><b>A</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LABELED__A = 2;
+
+  /**
+   * The feature id for the '<em><b>Lab</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LABELED__LAB = 3;
+
+  /**
    * The number of structural features of the '<em>Labeled</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int LABELED_FEATURE_COUNT = 0;
+  int LABELED_FEATURE_COUNT = 4;
 
   /**
    * The meta object id for the '{@link com.euclideanspace.aldor.editor.impl.DeclarationImpl <em>Declaration</em>}' class.
@@ -142,49 +178,13 @@ public interface EditorPackage extends EPackage
   int DECLARATION = 3;
 
   /**
-   * The feature id for the '<em><b>Mb</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int DECLARATION__MB = LABELED_FEATURE_COUNT + 0;
-
-  /**
-   * The feature id for the '<em><b>Si</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int DECLARATION__SI = LABELED_FEATURE_COUNT + 1;
-
-  /**
-   * The feature id for the '<em><b>Fp</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int DECLARATION__FP = LABELED_FEATURE_COUNT + 2;
-
-  /**
-   * The feature id for the '<em><b>Ed</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int DECLARATION__ED = LABELED_FEATURE_COUNT + 3;
-
-  /**
    * The number of structural features of the '<em>Declaration</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int DECLARATION_FEATURE_COUNT = LABELED_FEATURE_COUNT + 4;
+  int DECLARATION_FEATURE_COUNT = 0;
 
   /**
    * The meta object id for the '{@link com.euclideanspace.aldor.editor.impl.MacroBodyImpl <em>Macro Body</em>}' class.
@@ -362,7 +362,7 @@ public interface EditorPackage extends EPackage
    * @generated
    * @ordered
    */
-  int COMMA_FEATURE_COUNT = LABELED_FEATURE_COUNT + 0;
+  int COMMA_FEATURE_COUNT = 0;
 
   /**
    * The meta object id for the '{@link com.euclideanspace.aldor.editor.impl.AnyStatementImpl <em>Any Statement</em>}' class.
@@ -1940,7 +1940,7 @@ public interface EditorPackage extends EPackage
   int INFIXED__IFX = TO_PART_FEATURE_COUNT + 3;
 
   /**
-   * The feature id for the '<em><b>Dp</b></em>' containment reference list.
+   * The feature id for the '<em><b>Dp</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -2794,31 +2794,31 @@ public interface EditorPackage extends EPackage
   int JLEFT_ATOM__RIGHT2 = JRIGHT_ATOM__RIGHT2;
 
   /**
-   * The feature id for the '<em><b>A</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int JLEFT_ATOM__A = JRIGHT_ATOM_FEATURE_COUNT + 0;
-
-  /**
    * The feature id for the '<em><b>Be</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int JLEFT_ATOM__BE = JRIGHT_ATOM_FEATURE_COUNT + 1;
+  int JLEFT_ATOM__BE = JRIGHT_ATOM_FEATURE_COUNT + 0;
 
   /**
-   * The feature id for the '<em><b>N</b></em>' attribute.
+   * The feature id for the '<em><b>A</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int JLEFT_ATOM__N = JRIGHT_ATOM_FEATURE_COUNT + 2;
+  int JLEFT_ATOM__A = JRIGHT_ATOM_FEATURE_COUNT + 1;
+
+  /**
+   * The feature id for the '<em><b>Bm4</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int JLEFT_ATOM__BM4 = JRIGHT_ATOM_FEATURE_COUNT + 2;
 
   /**
    * The number of structural features of the '<em>Jleft Atom</em>' class.
@@ -3138,67 +3138,13 @@ public interface EditorPackage extends EPackage
   int ATOM = 72;
 
   /**
-   * The feature id for the '<em><b>Right2</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ATOM__RIGHT2 = LABELED_FEATURE_COUNT + 0;
-
-  /**
-   * The feature id for the '<em><b>A</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ATOM__A = LABELED_FEATURE_COUNT + 1;
-
-  /**
-   * The feature id for the '<em><b>Be</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ATOM__BE = LABELED_FEATURE_COUNT + 2;
-
-  /**
-   * The feature id for the '<em><b>N</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ATOM__N = LABELED_FEATURE_COUNT + 3;
-
-  /**
-   * The feature id for the '<em><b>Lab</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ATOM__LAB = LABELED_FEATURE_COUNT + 4;
-
-  /**
-   * The feature id for the '<em><b>Bm4</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ATOM__BM4 = LABELED_FEATURE_COUNT + 5;
-
-  /**
    * The feature id for the '<em><b>Iden</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int ATOM__IDEN = LABELED_FEATURE_COUNT + 6;
+  int ATOM__IDEN = MOLECULE_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>Lit</b></em>' attribute.
@@ -3207,7 +3153,7 @@ public interface EditorPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ATOM__LIT = LABELED_FEATURE_COUNT + 7;
+  int ATOM__LIT = MOLECULE_FEATURE_COUNT + 1;
 
   /**
    * The number of structural features of the '<em>Atom</em>' class.
@@ -3216,7 +3162,7 @@ public interface EditorPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ATOM_FEATURE_COUNT = LABELED_FEATURE_COUNT + 8;
+  int ATOM_FEATURE_COUNT = MOLECULE_FEATURE_COUNT + 2;
 
   /**
    * The meta object id for the '{@link com.euclideanspace.aldor.editor.impl.NameImpl <em>Name</em>}' class.
@@ -3931,6 +3877,332 @@ public interface EditorPackage extends EPackage
   int CURLY_CONTENT_BLABELED_FEATURE_COUNT = 3;
 
   /**
+   * The meta object id for the '{@link com.euclideanspace.aldor.editor.impl.DeclarationMacroImpl <em>Declaration Macro</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see com.euclideanspace.aldor.editor.impl.DeclarationMacroImpl
+   * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getDeclarationMacro()
+   * @generated
+   */
+  int DECLARATION_MACRO = 103;
+
+  /**
+   * The feature id for the '<em><b>Mb</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DECLARATION_MACRO__MB = DECLARATION_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>Declaration Macro</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DECLARATION_MACRO_FEATURE_COUNT = DECLARATION_FEATURE_COUNT + 1;
+
+  /**
+   * The meta object id for the '{@link com.euclideanspace.aldor.editor.impl.DeclarationExtendImpl <em>Declaration Extend</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see com.euclideanspace.aldor.editor.impl.DeclarationExtendImpl
+   * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getDeclarationExtend()
+   * @generated
+   */
+  int DECLARATION_EXTEND = 104;
+
+  /**
+   * The feature id for the '<em><b>Si</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DECLARATION_EXTEND__SI = DECLARATION_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>Declaration Extend</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DECLARATION_EXTEND_FEATURE_COUNT = DECLARATION_FEATURE_COUNT + 1;
+
+  /**
+   * The meta object id for the '{@link com.euclideanspace.aldor.editor.impl.DeclarationLocalImpl <em>Declaration Local</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see com.euclideanspace.aldor.editor.impl.DeclarationLocalImpl
+   * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getDeclarationLocal()
+   * @generated
+   */
+  int DECLARATION_LOCAL = 105;
+
+  /**
+   * The feature id for the '<em><b>Si</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DECLARATION_LOCAL__SI = DECLARATION_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>Declaration Local</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DECLARATION_LOCAL_FEATURE_COUNT = DECLARATION_FEATURE_COUNT + 1;
+
+  /**
+   * The meta object id for the '{@link com.euclideanspace.aldor.editor.impl.DeclarationFreeImpl <em>Declaration Free</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see com.euclideanspace.aldor.editor.impl.DeclarationFreeImpl
+   * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getDeclarationFree()
+   * @generated
+   */
+  int DECLARATION_FREE = 106;
+
+  /**
+   * The feature id for the '<em><b>Si</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DECLARATION_FREE__SI = DECLARATION_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>Declaration Free</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DECLARATION_FREE_FEATURE_COUNT = DECLARATION_FEATURE_COUNT + 1;
+
+  /**
+   * The meta object id for the '{@link com.euclideanspace.aldor.editor.impl.DeclarationFluidImpl <em>Declaration Fluid</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see com.euclideanspace.aldor.editor.impl.DeclarationFluidImpl
+   * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getDeclarationFluid()
+   * @generated
+   */
+  int DECLARATION_FLUID = 107;
+
+  /**
+   * The feature id for the '<em><b>Si</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DECLARATION_FLUID__SI = DECLARATION_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>Declaration Fluid</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DECLARATION_FLUID_FEATURE_COUNT = DECLARATION_FEATURE_COUNT + 1;
+
+  /**
+   * The meta object id for the '{@link com.euclideanspace.aldor.editor.impl.DeclarationDefaultImpl <em>Declaration Default</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see com.euclideanspace.aldor.editor.impl.DeclarationDefaultImpl
+   * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getDeclarationDefault()
+   * @generated
+   */
+  int DECLARATION_DEFAULT = 108;
+
+  /**
+   * The feature id for the '<em><b>Si</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DECLARATION_DEFAULT__SI = DECLARATION_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>Declaration Default</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DECLARATION_DEFAULT_FEATURE_COUNT = DECLARATION_FEATURE_COUNT + 1;
+
+  /**
+   * The meta object id for the '{@link com.euclideanspace.aldor.editor.impl.DeclarationDefineImpl <em>Declaration Define</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see com.euclideanspace.aldor.editor.impl.DeclarationDefineImpl
+   * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getDeclarationDefine()
+   * @generated
+   */
+  int DECLARATION_DEFINE = 109;
+
+  /**
+   * The feature id for the '<em><b>Si</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DECLARATION_DEFINE__SI = DECLARATION_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>Declaration Define</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DECLARATION_DEFINE_FEATURE_COUNT = DECLARATION_FEATURE_COUNT + 1;
+
+  /**
+   * The meta object id for the '{@link com.euclideanspace.aldor.editor.impl.DeclarationFixImpl <em>Declaration Fix</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see com.euclideanspace.aldor.editor.impl.DeclarationFixImpl
+   * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getDeclarationFix()
+   * @generated
+   */
+  int DECLARATION_FIX = 110;
+
+  /**
+   * The feature id for the '<em><b>Si</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DECLARATION_FIX__SI = DECLARATION_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>Declaration Fix</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DECLARATION_FIX_FEATURE_COUNT = DECLARATION_FEATURE_COUNT + 1;
+
+  /**
+   * The meta object id for the '{@link com.euclideanspace.aldor.editor.impl.DeclarationInlineImpl <em>Declaration Inline</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see com.euclideanspace.aldor.editor.impl.DeclarationInlineImpl
+   * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getDeclarationInline()
+   * @generated
+   */
+  int DECLARATION_INLINE = 111;
+
+  /**
+   * The feature id for the '<em><b>Si</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DECLARATION_INLINE__SI = DECLARATION_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Fp</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DECLARATION_INLINE__FP = DECLARATION_FEATURE_COUNT + 1;
+
+  /**
+   * The number of structural features of the '<em>Declaration Inline</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DECLARATION_INLINE_FEATURE_COUNT = DECLARATION_FEATURE_COUNT + 2;
+
+  /**
+   * The meta object id for the '{@link com.euclideanspace.aldor.editor.impl.DeclarationImportImpl <em>Declaration Import</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see com.euclideanspace.aldor.editor.impl.DeclarationImportImpl
+   * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getDeclarationImport()
+   * @generated
+   */
+  int DECLARATION_IMPORT = 112;
+
+  /**
+   * The feature id for the '<em><b>Si</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DECLARATION_IMPORT__SI = DECLARATION_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Fp</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DECLARATION_IMPORT__FP = DECLARATION_FEATURE_COUNT + 1;
+
+  /**
+   * The number of structural features of the '<em>Declaration Import</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DECLARATION_IMPORT_FEATURE_COUNT = DECLARATION_FEATURE_COUNT + 2;
+
+  /**
+   * The meta object id for the '{@link com.euclideanspace.aldor.editor.impl.DeclarationExportImpl <em>Declaration Export</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see com.euclideanspace.aldor.editor.impl.DeclarationExportImpl
+   * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getDeclarationExport()
+   * @generated
+   */
+  int DECLARATION_EXPORT = 113;
+
+  /**
+   * The feature id for the '<em><b>Ed</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DECLARATION_EXPORT__ED = DECLARATION_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>Declaration Export</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DECLARATION_EXPORT_FEATURE_COUNT = DECLARATION_FEATURE_COUNT + 1;
+
+  /**
    * The meta object id for the '{@link com.euclideanspace.aldor.editor.impl.E3Impl <em>E3</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -3938,7 +4210,7 @@ public interface EditorPackage extends EPackage
    * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getE3()
    * @generated
    */
-  int E3 = 103;
+  int E3 = 114;
 
   /**
    * The feature id for the '<em><b>Fp</b></em>' containment reference.
@@ -4020,7 +4292,7 @@ public interface EditorPackage extends EPackage
    * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getE4()
    * @generated
    */
-  int E4 = 104;
+  int E4 = 115;
 
   /**
    * The feature id for the '<em><b>Fp</b></em>' containment reference.
@@ -4102,7 +4374,7 @@ public interface EditorPackage extends EPackage
    * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getE5()
    * @generated
    */
-  int E5 = 105;
+  int E5 = 116;
 
   /**
    * The feature id for the '<em><b>Fp</b></em>' containment reference.
@@ -4184,7 +4456,7 @@ public interface EditorPackage extends EPackage
    * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getE6()
    * @generated
    */
-  int E6 = 106;
+  int E6 = 117;
 
   /**
    * The feature id for the '<em><b>Fp</b></em>' containment reference.
@@ -4266,7 +4538,7 @@ public interface EditorPackage extends EPackage
    * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getE7()
    * @generated
    */
-  int E7 = 107;
+  int E7 = 118;
 
   /**
    * The feature id for the '<em><b>Fp</b></em>' containment reference.
@@ -4348,7 +4620,7 @@ public interface EditorPackage extends EPackage
    * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getE8()
    * @generated
    */
-  int E8 = 108;
+  int E8 = 119;
 
   /**
    * The feature id for the '<em><b>Fp</b></em>' containment reference.
@@ -4430,7 +4702,7 @@ public interface EditorPackage extends EPackage
    * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getE9()
    * @generated
    */
-  int E9 = 109;
+  int E9 = 120;
 
   /**
    * The feature id for the '<em><b>Fp</b></em>' containment reference.
@@ -4512,7 +4784,7 @@ public interface EditorPackage extends EPackage
    * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getE11_E12()
    * @generated
    */
-  int E11_E12 = 110;
+  int E11_E12 = 121;
 
   /**
    * The feature id for the '<em><b>Fp</b></em>' containment reference.
@@ -4594,7 +4866,7 @@ public interface EditorPackage extends EPackage
    * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getE11_Op()
    * @generated
    */
-  int E11_OP = 111;
+  int E11_OP = 122;
 
   /**
    * The feature id for the '<em><b>Fp</b></em>' containment reference.
@@ -4676,7 +4948,7 @@ public interface EditorPackage extends EPackage
    * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getE12()
    * @generated
    */
-  int E12 = 112;
+  int E12 = 123;
 
   /**
    * The feature id for the '<em><b>Fp</b></em>' containment reference.
@@ -4758,7 +5030,7 @@ public interface EditorPackage extends EPackage
    * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getE13()
    * @generated
    */
-  int E13 = 113;
+  int E13 = 124;
 
   /**
    * The feature id for the '<em><b>Fp</b></em>' containment reference.
@@ -4840,7 +5112,7 @@ public interface EditorPackage extends EPackage
    * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getArrowTok()
    * @generated
    */
-  int ARROW_TOK = 114;
+  int ARROW_TOK = 125;
 
   /**
    * The number of structural features of the '<em>Arrow Tok</em>' class.
@@ -4859,7 +5131,7 @@ public interface EditorPackage extends EPackage
    * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getLatticeTok()
    * @generated
    */
-  int LATTICE_TOK = 115;
+  int LATTICE_TOK = 126;
 
   /**
    * The number of structural features of the '<em>Lattice Tok</em>' class.
@@ -4878,7 +5150,7 @@ public interface EditorPackage extends EPackage
    * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getRelationTok()
    * @generated
    */
-  int RELATION_TOK = 116;
+  int RELATION_TOK = 127;
 
   /**
    * The number of structural features of the '<em>Relation Tok</em>' class.
@@ -4897,7 +5169,7 @@ public interface EditorPackage extends EPackage
    * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getSegTok()
    * @generated
    */
-  int SEG_TOK = 117;
+  int SEG_TOK = 128;
 
   /**
    * The number of structural features of the '<em>Seg Tok</em>' class.
@@ -4916,7 +5188,7 @@ public interface EditorPackage extends EPackage
    * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getPlusTok()
    * @generated
    */
-  int PLUS_TOK = 118;
+  int PLUS_TOK = 129;
 
   /**
    * The number of structural features of the '<em>Plus Tok</em>' class.
@@ -4935,7 +5207,7 @@ public interface EditorPackage extends EPackage
    * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getQuotientTok()
    * @generated
    */
-  int QUOTIENT_TOK = 119;
+  int QUOTIENT_TOK = 130;
 
   /**
    * The number of structural features of the '<em>Quotient Tok</em>' class.
@@ -4954,7 +5226,7 @@ public interface EditorPackage extends EPackage
    * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getTimesTok()
    * @generated
    */
-  int TIMES_TOK = 120;
+  int TIMES_TOK = 131;
 
   /**
    * The number of structural features of the '<em>Times Tok</em>' class.
@@ -4973,7 +5245,7 @@ public interface EditorPackage extends EPackage
    * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getPowerTok()
    * @generated
    */
-  int POWER_TOK = 121;
+  int POWER_TOK = 132;
 
   /**
    * The number of structural features of the '<em>Power Tok</em>' class.
@@ -5038,6 +5310,50 @@ public interface EditorPackage extends EPackage
   EClass getLabeled();
 
   /**
+   * Returns the meta object for the containment reference '{@link com.euclideanspace.aldor.editor.Labeled#getC <em>C</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>C</em>'.
+   * @see com.euclideanspace.aldor.editor.Labeled#getC()
+   * @see #getLabeled()
+   * @generated
+   */
+  EReference getLabeled_C();
+
+  /**
+   * Returns the meta object for the containment reference '{@link com.euclideanspace.aldor.editor.Labeled#getD <em>D</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>D</em>'.
+   * @see com.euclideanspace.aldor.editor.Labeled#getD()
+   * @see #getLabeled()
+   * @generated
+   */
+  EReference getLabeled_D();
+
+  /**
+   * Returns the meta object for the containment reference '{@link com.euclideanspace.aldor.editor.Labeled#getA <em>A</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>A</em>'.
+   * @see com.euclideanspace.aldor.editor.Labeled#getA()
+   * @see #getLabeled()
+   * @generated
+   */
+  EReference getLabeled_A();
+
+  /**
+   * Returns the meta object for the containment reference '{@link com.euclideanspace.aldor.editor.Labeled#getLab <em>Lab</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Lab</em>'.
+   * @see com.euclideanspace.aldor.editor.Labeled#getLab()
+   * @see #getLabeled()
+   * @generated
+   */
+  EReference getLabeled_Lab();
+
+  /**
    * Returns the meta object for class '{@link com.euclideanspace.aldor.editor.Declaration <em>Declaration</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -5046,50 +5362,6 @@ public interface EditorPackage extends EPackage
    * @generated
    */
   EClass getDeclaration();
-
-  /**
-   * Returns the meta object for the containment reference '{@link com.euclideanspace.aldor.editor.Declaration#getMb <em>Mb</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Mb</em>'.
-   * @see com.euclideanspace.aldor.editor.Declaration#getMb()
-   * @see #getDeclaration()
-   * @generated
-   */
-  EReference getDeclaration_Mb();
-
-  /**
-   * Returns the meta object for the containment reference '{@link com.euclideanspace.aldor.editor.Declaration#getSi <em>Si</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Si</em>'.
-   * @see com.euclideanspace.aldor.editor.Declaration#getSi()
-   * @see #getDeclaration()
-   * @generated
-   */
-  EReference getDeclaration_Si();
-
-  /**
-   * Returns the meta object for the containment reference '{@link com.euclideanspace.aldor.editor.Declaration#getFp <em>Fp</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Fp</em>'.
-   * @see com.euclideanspace.aldor.editor.Declaration#getFp()
-   * @see #getDeclaration()
-   * @generated
-   */
-  EReference getDeclaration_Fp();
-
-  /**
-   * Returns the meta object for the containment reference '{@link com.euclideanspace.aldor.editor.Declaration#getEd <em>Ed</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Ed</em>'.
-   * @see com.euclideanspace.aldor.editor.Declaration#getEd()
-   * @see #getDeclaration()
-   * @generated
-   */
-  EReference getDeclaration_Ed();
 
   /**
    * Returns the meta object for class '{@link com.euclideanspace.aldor.editor.ExportDecl <em>Export Decl</em>}'.
@@ -6037,10 +6309,10 @@ public interface EditorPackage extends EPackage
   EReference getInfixed_Ifx();
 
   /**
-   * Returns the meta object for the containment reference list '{@link com.euclideanspace.aldor.editor.Infixed#getDp <em>Dp</em>}'.
+   * Returns the meta object for the containment reference '{@link com.euclideanspace.aldor.editor.Infixed#getDp <em>Dp</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Dp</em>'.
+   * @return the meta object for the containment reference '<em>Dp</em>'.
    * @see com.euclideanspace.aldor.editor.Infixed#getDp()
    * @see #getInfixed()
    * @generated
@@ -6453,17 +6725,6 @@ public interface EditorPackage extends EPackage
   EClass getJleft_Atom();
 
   /**
-   * Returns the meta object for the containment reference '{@link com.euclideanspace.aldor.editor.Jleft_Atom#getA <em>A</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>A</em>'.
-   * @see com.euclideanspace.aldor.editor.Jleft_Atom#getA()
-   * @see #getJleft_Atom()
-   * @generated
-   */
-  EReference getJleft_Atom_A();
-
-  /**
    * Returns the meta object for the containment reference list '{@link com.euclideanspace.aldor.editor.Jleft_Atom#getBe <em>Be</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -6475,15 +6736,26 @@ public interface EditorPackage extends EPackage
   EReference getJleft_Atom_Be();
 
   /**
-   * Returns the meta object for the attribute '{@link com.euclideanspace.aldor.editor.Jleft_Atom#getN <em>N</em>}'.
+   * Returns the meta object for the containment reference '{@link com.euclideanspace.aldor.editor.Jleft_Atom#getA <em>A</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>N</em>'.
-   * @see com.euclideanspace.aldor.editor.Jleft_Atom#getN()
+   * @return the meta object for the containment reference '<em>A</em>'.
+   * @see com.euclideanspace.aldor.editor.Jleft_Atom#getA()
    * @see #getJleft_Atom()
    * @generated
    */
-  EAttribute getJleft_Atom_N();
+  EReference getJleft_Atom_A();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link com.euclideanspace.aldor.editor.Jleft_Atom#getBm4 <em>Bm4</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Bm4</em>'.
+   * @see com.euclideanspace.aldor.editor.Jleft_Atom#getBm4()
+   * @see #getJleft_Atom()
+   * @generated
+   */
+  EReference getJleft_Atom_Bm4();
 
   /**
    * Returns the meta object for class '{@link com.euclideanspace.aldor.editor.Molecule <em>Molecule</em>}'.
@@ -6682,28 +6954,6 @@ public interface EditorPackage extends EPackage
    * @generated
    */
   EClass getAtom();
-
-  /**
-   * Returns the meta object for the containment reference '{@link com.euclideanspace.aldor.editor.Atom#getLab <em>Lab</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Lab</em>'.
-   * @see com.euclideanspace.aldor.editor.Atom#getLab()
-   * @see #getAtom()
-   * @generated
-   */
-  EReference getAtom_Lab();
-
-  /**
-   * Returns the meta object for the containment reference list '{@link com.euclideanspace.aldor.editor.Atom#getBm4 <em>Bm4</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Bm4</em>'.
-   * @see com.euclideanspace.aldor.editor.Atom#getBm4()
-   * @see #getAtom()
-   * @generated
-   */
-  EReference getAtom_Bm4();
 
   /**
    * Returns the meta object for the containment reference '{@link com.euclideanspace.aldor.editor.Atom#getIden <em>Iden</em>}'.
@@ -7213,6 +7463,259 @@ public interface EditorPackage extends EPackage
    * @generated
    */
   EAttribute getCurlyContentB_Labeled_Pd();
+
+  /**
+   * Returns the meta object for class '{@link com.euclideanspace.aldor.editor.DeclarationMacro <em>Declaration Macro</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Declaration Macro</em>'.
+   * @see com.euclideanspace.aldor.editor.DeclarationMacro
+   * @generated
+   */
+  EClass getDeclarationMacro();
+
+  /**
+   * Returns the meta object for the containment reference '{@link com.euclideanspace.aldor.editor.DeclarationMacro#getMb <em>Mb</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Mb</em>'.
+   * @see com.euclideanspace.aldor.editor.DeclarationMacro#getMb()
+   * @see #getDeclarationMacro()
+   * @generated
+   */
+  EReference getDeclarationMacro_Mb();
+
+  /**
+   * Returns the meta object for class '{@link com.euclideanspace.aldor.editor.DeclarationExtend <em>Declaration Extend</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Declaration Extend</em>'.
+   * @see com.euclideanspace.aldor.editor.DeclarationExtend
+   * @generated
+   */
+  EClass getDeclarationExtend();
+
+  /**
+   * Returns the meta object for the containment reference '{@link com.euclideanspace.aldor.editor.DeclarationExtend#getSi <em>Si</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Si</em>'.
+   * @see com.euclideanspace.aldor.editor.DeclarationExtend#getSi()
+   * @see #getDeclarationExtend()
+   * @generated
+   */
+  EReference getDeclarationExtend_Si();
+
+  /**
+   * Returns the meta object for class '{@link com.euclideanspace.aldor.editor.DeclarationLocal <em>Declaration Local</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Declaration Local</em>'.
+   * @see com.euclideanspace.aldor.editor.DeclarationLocal
+   * @generated
+   */
+  EClass getDeclarationLocal();
+
+  /**
+   * Returns the meta object for the containment reference '{@link com.euclideanspace.aldor.editor.DeclarationLocal#getSi <em>Si</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Si</em>'.
+   * @see com.euclideanspace.aldor.editor.DeclarationLocal#getSi()
+   * @see #getDeclarationLocal()
+   * @generated
+   */
+  EReference getDeclarationLocal_Si();
+
+  /**
+   * Returns the meta object for class '{@link com.euclideanspace.aldor.editor.DeclarationFree <em>Declaration Free</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Declaration Free</em>'.
+   * @see com.euclideanspace.aldor.editor.DeclarationFree
+   * @generated
+   */
+  EClass getDeclarationFree();
+
+  /**
+   * Returns the meta object for the containment reference '{@link com.euclideanspace.aldor.editor.DeclarationFree#getSi <em>Si</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Si</em>'.
+   * @see com.euclideanspace.aldor.editor.DeclarationFree#getSi()
+   * @see #getDeclarationFree()
+   * @generated
+   */
+  EReference getDeclarationFree_Si();
+
+  /**
+   * Returns the meta object for class '{@link com.euclideanspace.aldor.editor.DeclarationFluid <em>Declaration Fluid</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Declaration Fluid</em>'.
+   * @see com.euclideanspace.aldor.editor.DeclarationFluid
+   * @generated
+   */
+  EClass getDeclarationFluid();
+
+  /**
+   * Returns the meta object for the containment reference '{@link com.euclideanspace.aldor.editor.DeclarationFluid#getSi <em>Si</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Si</em>'.
+   * @see com.euclideanspace.aldor.editor.DeclarationFluid#getSi()
+   * @see #getDeclarationFluid()
+   * @generated
+   */
+  EReference getDeclarationFluid_Si();
+
+  /**
+   * Returns the meta object for class '{@link com.euclideanspace.aldor.editor.DeclarationDefault <em>Declaration Default</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Declaration Default</em>'.
+   * @see com.euclideanspace.aldor.editor.DeclarationDefault
+   * @generated
+   */
+  EClass getDeclarationDefault();
+
+  /**
+   * Returns the meta object for the containment reference '{@link com.euclideanspace.aldor.editor.DeclarationDefault#getSi <em>Si</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Si</em>'.
+   * @see com.euclideanspace.aldor.editor.DeclarationDefault#getSi()
+   * @see #getDeclarationDefault()
+   * @generated
+   */
+  EReference getDeclarationDefault_Si();
+
+  /**
+   * Returns the meta object for class '{@link com.euclideanspace.aldor.editor.DeclarationDefine <em>Declaration Define</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Declaration Define</em>'.
+   * @see com.euclideanspace.aldor.editor.DeclarationDefine
+   * @generated
+   */
+  EClass getDeclarationDefine();
+
+  /**
+   * Returns the meta object for the containment reference '{@link com.euclideanspace.aldor.editor.DeclarationDefine#getSi <em>Si</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Si</em>'.
+   * @see com.euclideanspace.aldor.editor.DeclarationDefine#getSi()
+   * @see #getDeclarationDefine()
+   * @generated
+   */
+  EReference getDeclarationDefine_Si();
+
+  /**
+   * Returns the meta object for class '{@link com.euclideanspace.aldor.editor.DeclarationFix <em>Declaration Fix</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Declaration Fix</em>'.
+   * @see com.euclideanspace.aldor.editor.DeclarationFix
+   * @generated
+   */
+  EClass getDeclarationFix();
+
+  /**
+   * Returns the meta object for the containment reference '{@link com.euclideanspace.aldor.editor.DeclarationFix#getSi <em>Si</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Si</em>'.
+   * @see com.euclideanspace.aldor.editor.DeclarationFix#getSi()
+   * @see #getDeclarationFix()
+   * @generated
+   */
+  EReference getDeclarationFix_Si();
+
+  /**
+   * Returns the meta object for class '{@link com.euclideanspace.aldor.editor.DeclarationInline <em>Declaration Inline</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Declaration Inline</em>'.
+   * @see com.euclideanspace.aldor.editor.DeclarationInline
+   * @generated
+   */
+  EClass getDeclarationInline();
+
+  /**
+   * Returns the meta object for the containment reference '{@link com.euclideanspace.aldor.editor.DeclarationInline#getSi <em>Si</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Si</em>'.
+   * @see com.euclideanspace.aldor.editor.DeclarationInline#getSi()
+   * @see #getDeclarationInline()
+   * @generated
+   */
+  EReference getDeclarationInline_Si();
+
+  /**
+   * Returns the meta object for the containment reference '{@link com.euclideanspace.aldor.editor.DeclarationInline#getFp <em>Fp</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Fp</em>'.
+   * @see com.euclideanspace.aldor.editor.DeclarationInline#getFp()
+   * @see #getDeclarationInline()
+   * @generated
+   */
+  EReference getDeclarationInline_Fp();
+
+  /**
+   * Returns the meta object for class '{@link com.euclideanspace.aldor.editor.DeclarationImport <em>Declaration Import</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Declaration Import</em>'.
+   * @see com.euclideanspace.aldor.editor.DeclarationImport
+   * @generated
+   */
+  EClass getDeclarationImport();
+
+  /**
+   * Returns the meta object for the containment reference '{@link com.euclideanspace.aldor.editor.DeclarationImport#getSi <em>Si</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Si</em>'.
+   * @see com.euclideanspace.aldor.editor.DeclarationImport#getSi()
+   * @see #getDeclarationImport()
+   * @generated
+   */
+  EReference getDeclarationImport_Si();
+
+  /**
+   * Returns the meta object for the containment reference '{@link com.euclideanspace.aldor.editor.DeclarationImport#getFp <em>Fp</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Fp</em>'.
+   * @see com.euclideanspace.aldor.editor.DeclarationImport#getFp()
+   * @see #getDeclarationImport()
+   * @generated
+   */
+  EReference getDeclarationImport_Fp();
+
+  /**
+   * Returns the meta object for class '{@link com.euclideanspace.aldor.editor.DeclarationExport <em>Declaration Export</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Declaration Export</em>'.
+   * @see com.euclideanspace.aldor.editor.DeclarationExport
+   * @generated
+   */
+  EClass getDeclarationExport();
+
+  /**
+   * Returns the meta object for the containment reference '{@link com.euclideanspace.aldor.editor.DeclarationExport#getEd <em>Ed</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Ed</em>'.
+   * @see com.euclideanspace.aldor.editor.DeclarationExport#getEd()
+   * @see #getDeclarationExport()
+   * @generated
+   */
+  EReference getDeclarationExport_Ed();
 
   /**
    * Returns the meta object for class '{@link com.euclideanspace.aldor.editor.E3 <em>E3</em>}'.
@@ -7837,6 +8340,38 @@ public interface EditorPackage extends EPackage
     EClass LABELED = eINSTANCE.getLabeled();
 
     /**
+     * The meta object literal for the '<em><b>C</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference LABELED__C = eINSTANCE.getLabeled_C();
+
+    /**
+     * The meta object literal for the '<em><b>D</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference LABELED__D = eINSTANCE.getLabeled_D();
+
+    /**
+     * The meta object literal for the '<em><b>A</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference LABELED__A = eINSTANCE.getLabeled_A();
+
+    /**
+     * The meta object literal for the '<em><b>Lab</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference LABELED__LAB = eINSTANCE.getLabeled_Lab();
+
+    /**
      * The meta object literal for the '{@link com.euclideanspace.aldor.editor.impl.DeclarationImpl <em>Declaration</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -7845,38 +8380,6 @@ public interface EditorPackage extends EPackage
      * @generated
      */
     EClass DECLARATION = eINSTANCE.getDeclaration();
-
-    /**
-     * The meta object literal for the '<em><b>Mb</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference DECLARATION__MB = eINSTANCE.getDeclaration_Mb();
-
-    /**
-     * The meta object literal for the '<em><b>Si</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference DECLARATION__SI = eINSTANCE.getDeclaration_Si();
-
-    /**
-     * The meta object literal for the '<em><b>Fp</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference DECLARATION__FP = eINSTANCE.getDeclaration_Fp();
-
-    /**
-     * The meta object literal for the '<em><b>Ed</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference DECLARATION__ED = eINSTANCE.getDeclaration_Ed();
 
     /**
      * The meta object literal for the '{@link com.euclideanspace.aldor.editor.impl.ExportDeclImpl <em>Export Decl</em>}' class.
@@ -8659,7 +9162,7 @@ public interface EditorPackage extends EPackage
     EReference INFIXED__IFX = eINSTANCE.getInfixed_Ifx();
 
     /**
-     * The meta object literal for the '<em><b>Dp</b></em>' containment reference list feature.
+     * The meta object literal for the '<em><b>Dp</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
@@ -9027,14 +9530,6 @@ public interface EditorPackage extends EPackage
     EClass JLEFT_ATOM = eINSTANCE.getJleft_Atom();
 
     /**
-     * The meta object literal for the '<em><b>A</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference JLEFT_ATOM__A = eINSTANCE.getJleft_Atom_A();
-
-    /**
      * The meta object literal for the '<em><b>Be</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -9043,12 +9538,20 @@ public interface EditorPackage extends EPackage
     EReference JLEFT_ATOM__BE = eINSTANCE.getJleft_Atom_Be();
 
     /**
-     * The meta object literal for the '<em><b>N</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>A</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute JLEFT_ATOM__N = eINSTANCE.getJleft_Atom_N();
+    EReference JLEFT_ATOM__A = eINSTANCE.getJleft_Atom_A();
+
+    /**
+     * The meta object literal for the '<em><b>Bm4</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference JLEFT_ATOM__BM4 = eINSTANCE.getJleft_Atom_Bm4();
 
     /**
      * The meta object literal for the '{@link com.euclideanspace.aldor.editor.impl.MoleculeImpl <em>Molecule</em>}' class.
@@ -9223,22 +9726,6 @@ public interface EditorPackage extends EPackage
      * @generated
      */
     EClass ATOM = eINSTANCE.getAtom();
-
-    /**
-     * The meta object literal for the '<em><b>Lab</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference ATOM__LAB = eINSTANCE.getAtom_Lab();
-
-    /**
-     * The meta object literal for the '<em><b>Bm4</b></em>' containment reference list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference ATOM__BM4 = eINSTANCE.getAtom_Bm4();
 
     /**
      * The meta object literal for the '<em><b>Iden</b></em>' containment reference feature.
@@ -9691,6 +10178,220 @@ public interface EditorPackage extends EPackage
      * @generated
      */
     EAttribute CURLY_CONTENT_BLABELED__PD = eINSTANCE.getCurlyContentB_Labeled_Pd();
+
+    /**
+     * The meta object literal for the '{@link com.euclideanspace.aldor.editor.impl.DeclarationMacroImpl <em>Declaration Macro</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see com.euclideanspace.aldor.editor.impl.DeclarationMacroImpl
+     * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getDeclarationMacro()
+     * @generated
+     */
+    EClass DECLARATION_MACRO = eINSTANCE.getDeclarationMacro();
+
+    /**
+     * The meta object literal for the '<em><b>Mb</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference DECLARATION_MACRO__MB = eINSTANCE.getDeclarationMacro_Mb();
+
+    /**
+     * The meta object literal for the '{@link com.euclideanspace.aldor.editor.impl.DeclarationExtendImpl <em>Declaration Extend</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see com.euclideanspace.aldor.editor.impl.DeclarationExtendImpl
+     * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getDeclarationExtend()
+     * @generated
+     */
+    EClass DECLARATION_EXTEND = eINSTANCE.getDeclarationExtend();
+
+    /**
+     * The meta object literal for the '<em><b>Si</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference DECLARATION_EXTEND__SI = eINSTANCE.getDeclarationExtend_Si();
+
+    /**
+     * The meta object literal for the '{@link com.euclideanspace.aldor.editor.impl.DeclarationLocalImpl <em>Declaration Local</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see com.euclideanspace.aldor.editor.impl.DeclarationLocalImpl
+     * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getDeclarationLocal()
+     * @generated
+     */
+    EClass DECLARATION_LOCAL = eINSTANCE.getDeclarationLocal();
+
+    /**
+     * The meta object literal for the '<em><b>Si</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference DECLARATION_LOCAL__SI = eINSTANCE.getDeclarationLocal_Si();
+
+    /**
+     * The meta object literal for the '{@link com.euclideanspace.aldor.editor.impl.DeclarationFreeImpl <em>Declaration Free</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see com.euclideanspace.aldor.editor.impl.DeclarationFreeImpl
+     * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getDeclarationFree()
+     * @generated
+     */
+    EClass DECLARATION_FREE = eINSTANCE.getDeclarationFree();
+
+    /**
+     * The meta object literal for the '<em><b>Si</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference DECLARATION_FREE__SI = eINSTANCE.getDeclarationFree_Si();
+
+    /**
+     * The meta object literal for the '{@link com.euclideanspace.aldor.editor.impl.DeclarationFluidImpl <em>Declaration Fluid</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see com.euclideanspace.aldor.editor.impl.DeclarationFluidImpl
+     * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getDeclarationFluid()
+     * @generated
+     */
+    EClass DECLARATION_FLUID = eINSTANCE.getDeclarationFluid();
+
+    /**
+     * The meta object literal for the '<em><b>Si</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference DECLARATION_FLUID__SI = eINSTANCE.getDeclarationFluid_Si();
+
+    /**
+     * The meta object literal for the '{@link com.euclideanspace.aldor.editor.impl.DeclarationDefaultImpl <em>Declaration Default</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see com.euclideanspace.aldor.editor.impl.DeclarationDefaultImpl
+     * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getDeclarationDefault()
+     * @generated
+     */
+    EClass DECLARATION_DEFAULT = eINSTANCE.getDeclarationDefault();
+
+    /**
+     * The meta object literal for the '<em><b>Si</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference DECLARATION_DEFAULT__SI = eINSTANCE.getDeclarationDefault_Si();
+
+    /**
+     * The meta object literal for the '{@link com.euclideanspace.aldor.editor.impl.DeclarationDefineImpl <em>Declaration Define</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see com.euclideanspace.aldor.editor.impl.DeclarationDefineImpl
+     * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getDeclarationDefine()
+     * @generated
+     */
+    EClass DECLARATION_DEFINE = eINSTANCE.getDeclarationDefine();
+
+    /**
+     * The meta object literal for the '<em><b>Si</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference DECLARATION_DEFINE__SI = eINSTANCE.getDeclarationDefine_Si();
+
+    /**
+     * The meta object literal for the '{@link com.euclideanspace.aldor.editor.impl.DeclarationFixImpl <em>Declaration Fix</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see com.euclideanspace.aldor.editor.impl.DeclarationFixImpl
+     * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getDeclarationFix()
+     * @generated
+     */
+    EClass DECLARATION_FIX = eINSTANCE.getDeclarationFix();
+
+    /**
+     * The meta object literal for the '<em><b>Si</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference DECLARATION_FIX__SI = eINSTANCE.getDeclarationFix_Si();
+
+    /**
+     * The meta object literal for the '{@link com.euclideanspace.aldor.editor.impl.DeclarationInlineImpl <em>Declaration Inline</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see com.euclideanspace.aldor.editor.impl.DeclarationInlineImpl
+     * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getDeclarationInline()
+     * @generated
+     */
+    EClass DECLARATION_INLINE = eINSTANCE.getDeclarationInline();
+
+    /**
+     * The meta object literal for the '<em><b>Si</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference DECLARATION_INLINE__SI = eINSTANCE.getDeclarationInline_Si();
+
+    /**
+     * The meta object literal for the '<em><b>Fp</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference DECLARATION_INLINE__FP = eINSTANCE.getDeclarationInline_Fp();
+
+    /**
+     * The meta object literal for the '{@link com.euclideanspace.aldor.editor.impl.DeclarationImportImpl <em>Declaration Import</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see com.euclideanspace.aldor.editor.impl.DeclarationImportImpl
+     * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getDeclarationImport()
+     * @generated
+     */
+    EClass DECLARATION_IMPORT = eINSTANCE.getDeclarationImport();
+
+    /**
+     * The meta object literal for the '<em><b>Si</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference DECLARATION_IMPORT__SI = eINSTANCE.getDeclarationImport_Si();
+
+    /**
+     * The meta object literal for the '<em><b>Fp</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference DECLARATION_IMPORT__FP = eINSTANCE.getDeclarationImport_Fp();
+
+    /**
+     * The meta object literal for the '{@link com.euclideanspace.aldor.editor.impl.DeclarationExportImpl <em>Declaration Export</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see com.euclideanspace.aldor.editor.impl.DeclarationExportImpl
+     * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getDeclarationExport()
+     * @generated
+     */
+    EClass DECLARATION_EXPORT = eINSTANCE.getDeclarationExport();
+
+    /**
+     * The meta object literal for the '<em><b>Ed</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference DECLARATION_EXPORT__ED = eINSTANCE.getDeclarationExport_Ed();
 
     /**
      * The meta object literal for the '{@link com.euclideanspace.aldor.editor.impl.E3Impl <em>E3</em>}' class.

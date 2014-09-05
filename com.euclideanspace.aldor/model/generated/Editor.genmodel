@@ -12,13 +12,13 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//Model/cc"/>
     </genClasses>
     <genClasses ecoreClass="Editor.ecore#//Expression"/>
-    <genClasses ecoreClass="Editor.ecore#//Labeled"/>
-    <genClasses ecoreClass="Editor.ecore#//Declaration">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//Declaration/mb"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//Declaration/si"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//Declaration/fp"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//Declaration/ed"/>
+    <genClasses ecoreClass="Editor.ecore#//Labeled">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//Labeled/c"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//Labeled/d"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//Labeled/a"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//Labeled/lab"/>
     </genClasses>
+    <genClasses ecoreClass="Editor.ecore#//Declaration"/>
     <genClasses ecoreClass="Editor.ecore#//ExportDecl">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//ExportDecl/s"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//ExportDecl/tp"/>
@@ -176,9 +176,9 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//Jleft_Molecule/bm"/>
     </genClasses>
     <genClasses ecoreClass="Editor.ecore#//Jleft_Atom">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//Jleft_Atom/a"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//Jleft_Atom/be"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Editor.ecore#//Jleft_Atom/n"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//Jleft_Atom/a"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//Jleft_Atom/bm4"/>
     </genClasses>
     <genClasses ecoreClass="Editor.ecore#//Molecule"/>
     <genClasses ecoreClass="Editor.ecore#//Enclosure">
@@ -205,8 +205,6 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Editor.ecore#//Names/subsequentNames"/>
     </genClasses>
     <genClasses ecoreClass="Editor.ecore#//Atom">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//Atom/lab"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//Atom/bm4"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//Atom/iden"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Editor.ecore#//Atom/lit"/>
     </genClasses>
@@ -269,6 +267,41 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Editor.ecore#//CurlyContentB_Labeled/pred"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//CurlyContentB_Labeled/l"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Editor.ecore#//CurlyContentB_Labeled/pd"/>
+    </genClasses>
+    <genClasses ecoreClass="Editor.ecore#//DeclarationMacro">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//DeclarationMacro/mb"/>
+    </genClasses>
+    <genClasses ecoreClass="Editor.ecore#//DeclarationExtend">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//DeclarationExtend/si"/>
+    </genClasses>
+    <genClasses ecoreClass="Editor.ecore#//DeclarationLocal">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//DeclarationLocal/si"/>
+    </genClasses>
+    <genClasses ecoreClass="Editor.ecore#//DeclarationFree">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//DeclarationFree/si"/>
+    </genClasses>
+    <genClasses ecoreClass="Editor.ecore#//DeclarationFluid">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//DeclarationFluid/si"/>
+    </genClasses>
+    <genClasses ecoreClass="Editor.ecore#//DeclarationDefault">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//DeclarationDefault/si"/>
+    </genClasses>
+    <genClasses ecoreClass="Editor.ecore#//DeclarationDefine">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//DeclarationDefine/si"/>
+    </genClasses>
+    <genClasses ecoreClass="Editor.ecore#//DeclarationFix">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//DeclarationFix/si"/>
+    </genClasses>
+    <genClasses ecoreClass="Editor.ecore#//DeclarationInline">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//DeclarationInline/si"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//DeclarationInline/fp"/>
+    </genClasses>
+    <genClasses ecoreClass="Editor.ecore#//DeclarationImport">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//DeclarationImport/si"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//DeclarationImport/fp"/>
+    </genClasses>
+    <genClasses ecoreClass="Editor.ecore#//DeclarationExport">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//DeclarationExport/ed"/>
     </genClasses>
     <genClasses ecoreClass="Editor.ecore#//E3">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//E3/left"/>

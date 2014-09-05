@@ -12,9 +12,9 @@ import org.eclipse.emf.common.util.EList;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link com.euclideanspace.aldor.editor.Jleft_Atom#getA <em>A</em>}</li>
  *   <li>{@link com.euclideanspace.aldor.editor.Jleft_Atom#getBe <em>Be</em>}</li>
- *   <li>{@link com.euclideanspace.aldor.editor.Jleft_Atom#getN <em>N</em>}</li>
+ *   <li>{@link com.euclideanspace.aldor.editor.Jleft_Atom#getA <em>A</em>}</li>
+ *   <li>{@link com.euclideanspace.aldor.editor.Jleft_Atom#getBm4 <em>Bm4</em>}</li>
  * </ul>
  * </p>
  *
@@ -24,6 +24,22 @@ import org.eclipse.emf.common.util.EList;
  */
 public interface Jleft_Atom extends Jright_Atom
 {
+  /**
+   * Returns the value of the '<em><b>Be</b></em>' containment reference list.
+   * The list contents are of type {@link com.euclideanspace.aldor.editor.BlockEnclosure}.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Be</em>' containment reference list isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Be</em>' containment reference list.
+   * @see com.euclideanspace.aldor.editor.EditorPackage#getJleft_Atom_Be()
+   * @model containment="true"
+   * @generated
+   */
+  EList<BlockEnclosure> getBe();
+
   /**
    * Returns the value of the '<em><b>A</b></em>' containment reference.
    * <!-- begin-user-doc -->
@@ -51,45 +67,19 @@ public interface Jleft_Atom extends Jright_Atom
   void setA(Atom value);
 
   /**
-   * Returns the value of the '<em><b>Be</b></em>' containment reference list.
-   * The list contents are of type {@link com.euclideanspace.aldor.editor.BlockEnclosure}.
+   * Returns the value of the '<em><b>Bm4</b></em>' containment reference list.
+   * The list contents are of type {@link com.euclideanspace.aldor.editor.BlockMolecule}.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Be</em>' containment reference list isn't clear,
+   * If the meaning of the '<em>Bm4</em>' containment reference list isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Be</em>' containment reference list.
-   * @see com.euclideanspace.aldor.editor.EditorPackage#getJleft_Atom_Be()
+   * @return the value of the '<em>Bm4</em>' containment reference list.
+   * @see com.euclideanspace.aldor.editor.EditorPackage#getJleft_Atom_Bm4()
    * @model containment="true"
    * @generated
    */
-  EList<BlockEnclosure> getBe();
-
-  /**
-   * Returns the value of the '<em><b>N</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>N</em>' attribute isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>N</em>' attribute.
-   * @see #setN(String)
-   * @see com.euclideanspace.aldor.editor.EditorPackage#getJleft_Atom_N()
-   * @model
-   * @generated
-   */
-  String getN();
-
-  /**
-   * Sets the value of the '{@link com.euclideanspace.aldor.editor.Jleft_Atom#getN <em>N</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>N</em>' attribute.
-   * @see #getN()
-   * @generated
-   */
-  void setN(String value);
+  EList<BlockMolecule> getBm4();
 
 } // Jleft_Atom

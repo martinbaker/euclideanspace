@@ -8,16 +8,15 @@
         containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Expression"/>
-  <eClassifiers xsi:type="ecore:EClass" name="Labeled"/>
-  <eClassifiers xsi:type="ecore:EClass" name="Declaration" eSuperTypes="#//Labeled">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="mb" eType="#//MacroBody"
+  <eClassifiers xsi:type="ecore:EClass" name="Labeled">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="c" eType="#//Comma" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="d" eType="#//Declaration"
         containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="si" eType="#//Sig" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="fp" eType="#//FromPart"
-        containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="ed" eType="#//ExportDecl"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="a" eType="#//Atom" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="lab" eType="#//Labeled"
         containment="true"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Declaration"/>
   <eClassifiers xsi:type="ecore:EClass" name="ExportDecl" eSuperTypes="#//MacroBody">
     <eStructuralFeatures xsi:type="ecore:EReference" name="s" eType="#//Sig" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="tp" eType="#//ToPart" containment="true"/>
@@ -30,7 +29,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Sig" eSuperTypes="#//MacroBody"/>
   <eClassifiers xsi:type="ecore:EClass" name="DeclPart"/>
-  <eClassifiers xsi:type="ecore:EClass" name="Comma" eSuperTypes="#//Labeled"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Comma"/>
   <eClassifiers xsi:type="ecore:EClass" name="CommaItem" eSuperTypes="#//AnyStatement #//enlister1_CommaItem_Comma">
     <eStructuralFeatures xsi:type="ecore:EReference" name="ci" upperBound="-1" eType="#//CommaItem"
         containment="true"/>
@@ -167,7 +166,7 @@
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="ifx" eType="#//InfixedExpr"
         containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="dp" upperBound="-1" eType="#//DeclPart"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="dp" eType="#//DeclPart"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="b" eType="#//Block" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="i2" upperBound="-1" eType="#//Infixed"
@@ -230,10 +229,11 @@
         containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Jleft_Atom" eSuperTypes="#//Jright_Atom">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="a" eType="#//Atom" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="be" upperBound="-1" eType="#//BlockEnclosure"
         containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="n" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="a" eType="#//Atom" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="bm4" upperBound="-1" eType="#//BlockMolecule"
+        containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Molecule"/>
   <eClassifiers xsi:type="ecore:EClass" name="Enclosure" eSuperTypes="#//Molecule #//BlockMolecule #//BlockEnclosure">
@@ -263,11 +263,7 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="subsequentNames" unique="false"
         upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Atom" eSuperTypes="#//Labeled #//Jleft_Atom #//Molecule #//BlockMolecule">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="lab" eType="#//Labeled"
-        containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="bm4" upperBound="-1" eType="#//BlockMolecule"
-        containment="true"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Atom" eSuperTypes="#//Molecule #//BlockMolecule">
     <eStructuralFeatures xsi:type="ecore:EReference" name="iden" eType="#//Id" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="lit" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
@@ -342,6 +338,45 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="pred" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="l" eType="#//Labeled" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="pd" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DeclarationMacro" eSuperTypes="#//Declaration">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="mb" eType="#//MacroBody"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DeclarationExtend" eSuperTypes="#//Declaration">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="si" eType="#//Sig" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DeclarationLocal" eSuperTypes="#//Declaration">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="si" eType="#//Sig" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DeclarationFree" eSuperTypes="#//Declaration">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="si" eType="#//Sig" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DeclarationFluid" eSuperTypes="#//Declaration">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="si" eType="#//Sig" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DeclarationDefault" eSuperTypes="#//Declaration">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="si" eType="#//Sig" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DeclarationDefine" eSuperTypes="#//Declaration">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="si" eType="#//Sig" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DeclarationFix" eSuperTypes="#//Declaration">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="si" eType="#//Sig" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DeclarationInline" eSuperTypes="#//Declaration">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="si" eType="#//Sig" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="fp" eType="#//FromPart"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DeclarationImport" eSuperTypes="#//Declaration">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="si" eType="#//Sig" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="fp" eType="#//FromPart"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DeclarationExport" eSuperTypes="#//Declaration">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ed" eType="#//ExportDecl"
+        containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="E3" eSuperTypes="#//Expr">
     <eStructuralFeatures xsi:type="ecore:EReference" name="left" eType="#//Expr" containment="true"/>

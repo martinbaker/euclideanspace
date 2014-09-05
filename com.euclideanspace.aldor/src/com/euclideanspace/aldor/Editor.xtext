@@ -377,25 +377,35 @@ Expression hidden(WS,KW_NEWLINE):
 ;
 
 /* An '.as' file is effectively a list of 'Labeled' 
- * separated by semicolons*/
+ * separated by semicolons
+ *
+ * Labeled can be an expression or a Declaration such
+ * as 'macro','extend','local','free','fluid','default'
+ * 'define','fix','inline','import' or 'export'.
+ */
 Labeled hidden(WS,KW_NEWLINE):
- Comma
-| Declaration
-| (KW_AT Atom lab=Labeled?)
+ c=Comma
+| d=Declaration
+| (KW_AT a=Atom lab=Labeled?)
 ;
 
+/*
+ * A Declaration starts with one of the following key
+ * words: 'macro','extend','local','free','fluid','default'
+ * 'define','fix','inline','import' or 'export'.
+ */
 Declaration hidden(WS,KW_NEWLINE):
- {Declaration}'macro' mb=MacroBody
-| {Declaration}'extend' si=Sig
-| {Declaration}'local' si=Sig
-| {Declaration}'free' si=Sig
-| {Declaration}'fluid' si=Sig
-| {Declaration}'default' si=Sig
-| {Declaration}'define' si=Sig
-| {Declaration}'fix' si=Sig
-| {Declaration}'inline' si=Sig? fp=FromPart?
-| {Declaration}'import' si=Sig? fp=FromPart?
-| {Declaration} ed=ExportDecl
+ {DeclarationMacro}'macro' mb=MacroBody
+| {DeclarationExtend}'extend' si=Sig
+| {DeclarationLocal}'local' si=Sig
+| {DeclarationFree}'free' si=Sig
+| {DeclarationFluid}'fluid' si=Sig
+| {DeclarationDefault}'default' si=Sig
+| {DeclarationDefine}'define' si=Sig
+| {DeclarationFix}'fix' si=Sig
+| {DeclarationInline}'inline' si=Sig? fp=FromPart?
+| {DeclarationImport}'import' si=Sig? fp=FromPart?
+| {DeclarationExport} ed=ExportDecl
 ;
 
 ExportDecl hidden(WS,KW_NEWLINE):
@@ -424,13 +434,14 @@ Sig hidden(WS,KW_NEWLINE):
 | Block
 ;
 
+/* declare type with ':' or ':*' */
 DeclPart hidden(WS,KW_NEWLINE):
  KW_COLON Type
 | KW_COLONSTAR Type
 ;
 
 /*
- * Commas
+ * CommaItem (',' CommaItem)*
  */
 Comma hidden(WS,KW_NEWLINE):
   enlist1_CommaItem_Comma_AB
@@ -595,10 +606,9 @@ Flow(XX) -> Flow_AnyStatement or Flow_BalStatement
 //;
 */
 Flow_AnyStatement hidden(WS,KW_NEWLINE):
-//	{Flow_AnyStatement}
  (c=Collection (st='implies' bas2=Binding_AnyStatement)?) // '.... for' or 'while ....'
 | (st='if' ci=CommaItem 'then' bbs=Binding_BalStatement =>'else' bas=Binding_AnyStatement)
-| =>(Iterators 'repeat' bas3=Binding_AnyStatement) // 'for .... in' or 'while ....'
+| =>(Iterators st='repeat' bas3=Binding_AnyStatement) // 'for .... in' or 'while ....'
 | (st='repeat' bas=Binding_AnyStatement)
 | (st='try' bas=Binding_AnyStatement ('but'|'catch') be2=ButExpr apa=AlwaysPart_AnyStatement)
 | (st='select' bas=Binding_AnyStatement 'in' ca=Cases)
@@ -678,30 +688,27 @@ AlwaysPart_BalStatement hidden(WS,KW_NEWLINE):
 ;
 
 /*
- * Iterators
+ * infixed optionally followed by Iterators
  * .... for .... in .... | ....
  * while ....
  */
 Collection hidden(WS,KW_NEWLINE):
- //Infixed i3=Iterators? // iterators allow for zero cases
- Infixed i3=Iterators
+ Infixed i3=Iterators // iterators allow for zero cases
 ;
 
+/* Zero or more iterators: for....in or while.... */
 Iterators hidden(WS,KW_NEWLINE):
  Iterators1
 ;
 
-/*
- * Decision can match input such as "'temp31'" using multiple alternatives: 1, 3
- */
+/* Zero or more iterators: for....in or while.... */
 Iterators1 hidden(WS,KW_NEWLINE):
 	{Iterators1}
-//	'temp27'
   itr += Iterator*
 ;
 
+/* Iterator: for....in or while.... */
 Iterator hidden(WS,KW_NEWLINE):
-//	'temp28'
 ('for' ForLhs 'in' i=Infixed sp=SuchthatPart?)
 | ('while' i=Infixed)
 ;
@@ -711,16 +718,18 @@ ForLhs hidden(WS,KW_NEWLINE):
 ;
 
 SuchthatPart hidden(WS,KW_NEWLINE):
-//	'temp30'
  KW_BAR Infixed
 ;
 
 /*
  * Infixed Expressions
+ * Either:
+ * an expression
+ * or a typed expression
+ * or a block (CurlyContents_Labeled inside curly brackets)
  */
 Infixed hidden(WS,KW_NEWLINE):
-//	'temp31'
- (ifx=InfixedExpr dp+=DeclPart*)
+ (ifx=InfixedExpr dp=DeclPart?)
  |
   b=Block
 ;
@@ -935,50 +944,28 @@ Application hidden(WS,KW_NEWLINE):
  RightJuxtaposed
 ;
 
+/*
+ * implements 'function application' as described above including juxtaposition
+ */
 RightJuxtaposed hidden(WS,KW_NEWLINE):
  Jright_Molecule
 ;
 
+/* Molecule followed by 0 or more BlockEnclosures (bracketed terms)
+ * or variants on that theme.
+ */
 LeftJuxtaposed hidden(WS,KW_NEWLINE):
  Jleft_Molecule
 ;
 
-/* Substituted Rules in Xtext: Jright(Molecule) and Jright(Atom)
- * Jright(H)
- * : Jleft(H)
- * | Jleft(H) Jright(Atom)
- * { $$ = parseMakeJuxtapose($1,$2); }
+/* 
+ * implements 'function application' as described above including juxtaposition
+ *
+ * substituted version of axl.z code:
+ * Jright(H) : Jleft(H) | Jleft(H) Jright(Atom)
  * | 'not' Jright(Atom)
- * { $$ = abNewNot(TPOS($1),TEST($2)); }
- * ;
- */
-/*
- * causes problems:
- * 
- * Even if we just defer to rule Molecule only
- * 
- *  ANTLR could not analyze this decision in rule
- * ruleBindingL_Infixed_AnyStatement; often this is because of
- * recursive rule references visible from the left edge of alternatives.
- * ANTLR will re-analyze the decision with a fixed lookahead of k=1.
- * Consider using "options {k=1;}" for that decision and possibly adding
- * a syntactic predicate.
- * error(10):  internal error: org.antlr.tool.Grammar.
- * createLookaheadDFA(Grammar.java:1279): could not even do k=1 for
- * decision 19; reason: timed out (>1000ms)
- * 
- * If first option is enabled;
- * Decision can match input such as "RULE_TK_STRING" using multiple
- * alternatives: 1, 2, 3, 4, 5
- * If second option is enabled:
- * Decision can match input such as "'not'" using multiple
- * alternatives
  */
 Jright_Molecule hidden(WS,KW_NEWLINE):
-	//Atom // parses OK
-//	Enclosure // Decision can match input such as "'start'" using multiple alternatives
-//	Molecule // Decision can match input such as "'start'" using multiple alternatives
-//	'temp56'
 	(Jleft_Molecule (right=Jright_Atom)?)
 	|
     ('not' right=Jright_Atom)
@@ -990,18 +977,19 @@ Jright_Atom hidden(WS,KW_NEWLINE):
 	('not' right2=Jright_Atom)
 ;
 
-/* Substituted Rules in Xtext:
- * Jleft(Molecule)
- * Jleft(Atom)
- * Jleft(H)
- * : H
- * | 'not' BlockEnclosure
- * { $$ = abNewNot(TPOS($1),TEST($2)); }
- * | Jleft(H) BlockEnclosure
- * { $$ = parseMakeJuxtapose($1,$2); }
- * | Jleft(H) KW_DOT BlockMolecule
- * { $$ = abNewPrefix(TPOS($2),$1,$3); }
- * ;
+/* Molecule followed by 0 or more BlockEnclosures (bracketed terms)
+ * or variants on that theme.
+ * 
+ * matches:
+ * - Molecule - no argument
+ * - 'not' BlockEnclosure - not has one argument
+ * - (*) BlockEnclosure
+ * - (*) '.' BlockMolecule
+ * 
+ * substituted version of axl.z code:
+ * Jleft(H) : H | 'not' BlockEnclosure
+ *              | Jleft(H) BlockEnclosure
+ *              | Jleft(H) KW_DOT BlockMolecule ;
  */
 Jleft_Molecule hidden(WS,KW_NEWLINE):
 ('not' be+=BlockEnclosure)
@@ -1009,20 +997,22 @@ Jleft_Molecule hidden(WS,KW_NEWLINE):
 | (m=Molecule (KW_DOT bm+=BlockMolecule)*)
 ;
 
-/*
- * not quite correct. We need to implement:
- * Jleft(H)
- * : H
- * | KW_Not BlockEnclosure
- * | Jleft(H) BlockEnclosure
- * | Jleft(H) KW_Dot BlockMolecule
-;
+/* 
+ * matches:
+ * - Atom - no argument
+ * - 'not' BlockEnclosure - not has one argument
+ * - (*) BlockEnclosure
+ * - (*) '.' BlockMolecule
+ * 
+ * substituted version of axl.z code:
+ * Jleft(H) : H | 'not' BlockEnclosure
+ *              | Jleft(H) BlockEnclosure
+ *              | Jleft(H) KW_DOT BlockMolecule ;
  */
 Jleft_Atom hidden(WS,KW_NEWLINE):
-(a=Atom be+=BlockEnclosure*)
-(n='not' be+=BlockEnclosure)
-//| =>(a=Atom be+=BlockEnclosure*)
-| (Atom (KW_DOT bm4+=BlockMolecule)*)
+('not' be+=BlockEnclosure)
+| =>(a=Atom be+=BlockEnclosure*)
+| (a=Atom (KW_DOT bm4+=BlockMolecule)*)
 ;
 
 /*
@@ -1033,6 +1023,7 @@ Molecule hidden(WS,KW_NEWLINE):
 | Enclosure
 ;
 
+/* expression in brackets parenthesis or quotes */
 Enclosure hidden(WS,KW_NEWLINE):
   Parened
   |
@@ -1041,6 +1032,9 @@ Enclosure hidden(WS,KW_NEWLINE):
   QuotedIds
 ;
 
+/*
+ * function application, block or infixed
+ */
 DeclMolecule hidden(WS,KW_NEWLINE):
 	{DeclMolecule}
  a=Application?
@@ -1060,34 +1054,36 @@ Enclosure
 | Block
 ;
 
+/* CurlyContents_Labeled inside curly brackets */
 Block hidden(WS,KW_NEWLINE):
 // Piled(Expression)|
   Curly_Labeled
 ;
 
-/*
- * 
- */
+/* expression in parenthesis */
 Parened hidden(WS,KW_NEWLINE):
  op=KW_OPAREN e=Expression? KW_CPAREN
 ;
 
+/* expression in brackets */
 Bracketed hidden(WS,KW_NEWLINE):
  op=KW_OBRACK e=Expression? KW_CBRACK
 ;
 
+/* names in quotes */
 QuotedIds hidden(WS,KW_NEWLINE):
 	{QuotedIds}
  op=KW_QUOTE n=Names? KW_QUOTE
 ;
 
+/* names seperated by commas */
 Names hidden(WS,KW_NEWLINE):
   firstName=TK_ID
   (KW_COMMA subsequentNames+=TK_ID)*
 ;
 
 /*
- * Terminals
+ * identifier or literal
  */
 Atom hidden(WS,KW_NEWLINE):
  iden=Id
@@ -1109,6 +1105,7 @@ Id hidden(WS,KW_NEWLINE):
 name=(TK_ID | KW_SHARP | KW_TILDE)
 ;
 
+/* string, integer or float literal */
 Literal hidden(WS,KW_NEWLINE):
   =>((TK_INT KW_DOT)? TK_FLOAT) // example 2.4e5 or 2e5
   |
@@ -1259,62 +1256,39 @@ PostDocument hidden(WS,KW_NEWLINE):
   TK_POSTDOC*
 ;
 
-/* Substituted Rules in Xtext:
-* enlist1(Infixed, KW_Comma, `AB_Comma)
-* enlist1(CommaItem, KW_Comma, `AB_Comma) enlist1_CommaItem_Comma_AB
-* enlist1(InfixedExpr, KW_Comma, `AB_Comma)
-* enlist1(Name, KW_Comma, `AB_Comma)
-* 
-*  E {sep E sep E}
-* 
-* enlist1(E,Sep,Tag)
-* : enlister1(E, Sep)
-* 
-* { $$ = abOneOrNewOfList(Tag, $1); listFree(AbSyn)($1); }
-* ;
+
+/* CommaItem (',' CommaItem)*
 */
 enlist1_CommaItem_Comma_AB hidden(WS,KW_NEWLINE):
   enlister1_CommaItem_Comma
 ;
 
+/* Infixed (',' Infixed)*
+*/
 enlist1_Infixed_Comma_AB hidden(WS,KW_NEWLINE):
   enlister1_Infixed_Comma
 ;
 
+/* InfixedExpr (',' InfixedExpr)*
+*/
 enlist1_InfixedExpr_Comma_AB hidden(WS,KW_NEWLINE):
   enlister1_InfixedExpr_Comma
 ;
 
-/* not used
- * E sep E {sep E}
- */
-//enlist2(E,Sep,Tag)
-//: enlister1(E, Sep) Sep E
-//{
-//$1 = listCons(AbSyn)($3, $1);
-//$$ = abOneOrNewOfList(Tag, $1);
-//listFree(AbSyn)($1);
-//}
-//;
-
-/* Substituted Rules in Xtext:
-* enlister1(E, Sep)
-* where E is E from enlist1 or enlist1a 
-* enlister1(E, Sep)<ablist>
-* : E
-* { $$ = listCons(AbSyn)($1, listNil(AbSyn) ); }
-* | enlister1(E, Sep) Sep E
-* { $$ = listCons(AbSyn)($3, $1); }
-* ;
+/* CommaItem (',' CommaItem)*
 */
 enlister1_CommaItem_Comma hidden(WS,KW_NEWLINE):
   CommaItem (KW_COMMA ci+=CommaItem)*
 ;
 
+/* Infixed (',' Infixed)*
+*/
 enlister1_Infixed_Comma hidden(WS,KW_NEWLINE):
   Infixed (KW_COMMA i2+=Infixed)*
 ;
 
+/* InfixedExpr (',' InfixedExpr)*
+*/
 enlister1_InfixedExpr_Comma hidden(WS,KW_NEWLINE):
   InfixedExpr (KW_COMMA ie+=InfixedExpr)*
 ;
@@ -1361,7 +1335,10 @@ KW_OCURLY CurlyContents_Labeled KW_CCURLY
 ;
 
 /* A list of (at least one) statement(s)
- * seperated by semicolons and optionally ending with a semicolon
+ * seperated by (one or more) semicolons and optionally ending with
+ * a semicolon (zero or more)
+ * 
+ * This is similar to enlister1a_Labeled_Semicolon;
  * 
  * statements can have pre or post comments
  * 
@@ -1372,21 +1349,24 @@ CurlyContents_Labeled hidden(WS,KW_NEWLINE):
 ;
 
 /* A list of (at least one) statement(s)
- * seperated by semicolons and optionally ending with a semicolon
+ * seperated by (one or more) semicolons and optionally ending with
+ * a semicolon (zero or more)
+ * 
+ * This is similar to enlister1a_Labeled_Semicolon
  * 
  * statements can have pre or post comments
  */ 
 CurlyContentsList_Labeled hidden(WS,KW_NEWLINE):
 	statemts += CurlyContentB_Labeled
+	//(statemts += CurlyContentB_Labeled?)
 	(KW_SEMICOLON+ statemts += CurlyContentB_Labeled)*
+	// need to change this line to:
+	//(KW_SEMICOLON* statemts += CurlyContentB_Labeled)*
+	// that is make semicolons optional but that causes non-LL(*) grammar
 	KW_SEMICOLON*
 ;
 
-/* CurlyContent1_Labeled
-* this rule is used by CurlyContentsList_Labeled
-*
-* Substituted Rules in Xtext:
-* CurlyContent1(E) E is form CurlyContentsList(E)
+/* List of 'Labeled' each one is terminated by semicolon
 * 
 * This rule is left recursive in the Aldor grammar so I have
 * to change it here.

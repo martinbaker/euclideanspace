@@ -92,14 +92,14 @@ public class InfixedImpl extends ToPartImpl implements Infixed
   protected InfixedExpr ifx;
 
   /**
-   * The cached value of the '{@link #getDp() <em>Dp</em>}' containment reference list.
+   * The cached value of the '{@link #getDp() <em>Dp</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getDp()
    * @generated
    * @ordered
    */
-  protected EList<DeclPart> dp;
+  protected DeclPart dp;
 
   /**
    * The cached value of the '{@link #getB() <em>B</em>}' containment reference.
@@ -339,13 +339,47 @@ public class InfixedImpl extends ToPartImpl implements Infixed
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<DeclPart> getDp()
+  public DeclPart getDp()
   {
-    if (dp == null)
-    {
-      dp = new EObjectContainmentEList<DeclPart>(DeclPart.class, this, EditorPackage.INFIXED__DP);
-    }
     return dp;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetDp(DeclPart newDp, NotificationChain msgs)
+  {
+    DeclPart oldDp = dp;
+    dp = newDp;
+    if (eNotificationRequired())
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, EditorPackage.INFIXED__DP, oldDp, newDp);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setDp(DeclPart newDp)
+  {
+    if (newDp != dp)
+    {
+      NotificationChain msgs = null;
+      if (dp != null)
+        msgs = ((InternalEObject)dp).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - EditorPackage.INFIXED__DP, null, msgs);
+      if (newDp != null)
+        msgs = ((InternalEObject)newDp).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - EditorPackage.INFIXED__DP, null, msgs);
+      msgs = basicSetDp(newDp, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, EditorPackage.INFIXED__DP, newDp, newDp));
   }
 
   /**
@@ -429,7 +463,7 @@ public class InfixedImpl extends ToPartImpl implements Infixed
       case EditorPackage.INFIXED__IFX:
         return basicSetIfx(null, msgs);
       case EditorPackage.INFIXED__DP:
-        return ((InternalEList<?>)getDp()).basicRemove(otherEnd, msgs);
+        return basicSetDp(null, msgs);
       case EditorPackage.INFIXED__B:
         return basicSetB(null, msgs);
       case EditorPackage.INFIXED__I2:
@@ -490,8 +524,7 @@ public class InfixedImpl extends ToPartImpl implements Infixed
         setIfx((InfixedExpr)newValue);
         return;
       case EditorPackage.INFIXED__DP:
-        getDp().clear();
-        getDp().addAll((Collection<? extends DeclPart>)newValue);
+        setDp((DeclPart)newValue);
         return;
       case EditorPackage.INFIXED__B:
         setB((Block)newValue);
@@ -527,7 +560,7 @@ public class InfixedImpl extends ToPartImpl implements Infixed
         setIfx((InfixedExpr)null);
         return;
       case EditorPackage.INFIXED__DP:
-        getDp().clear();
+        setDp((DeclPart)null);
         return;
       case EditorPackage.INFIXED__B:
         setB((Block)null);
@@ -558,7 +591,7 @@ public class InfixedImpl extends ToPartImpl implements Infixed
       case EditorPackage.INFIXED__IFX:
         return ifx != null;
       case EditorPackage.INFIXED__DP:
-        return dp != null && !dp.isEmpty();
+        return dp != null;
       case EditorPackage.INFIXED__B:
         return b != null;
       case EditorPackage.INFIXED__I2:

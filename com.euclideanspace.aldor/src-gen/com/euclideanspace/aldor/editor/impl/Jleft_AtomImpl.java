@@ -4,6 +4,7 @@ package com.euclideanspace.aldor.editor.impl;
 
 import com.euclideanspace.aldor.editor.Atom;
 import com.euclideanspace.aldor.editor.BlockEnclosure;
+import com.euclideanspace.aldor.editor.BlockMolecule;
 import com.euclideanspace.aldor.editor.EditorPackage;
 import com.euclideanspace.aldor.editor.Jleft_Atom;
 
@@ -29,9 +30,9 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link com.euclideanspace.aldor.editor.impl.Jleft_AtomImpl#getA <em>A</em>}</li>
  *   <li>{@link com.euclideanspace.aldor.editor.impl.Jleft_AtomImpl#getBe <em>Be</em>}</li>
- *   <li>{@link com.euclideanspace.aldor.editor.impl.Jleft_AtomImpl#getN <em>N</em>}</li>
+ *   <li>{@link com.euclideanspace.aldor.editor.impl.Jleft_AtomImpl#getA <em>A</em>}</li>
+ *   <li>{@link com.euclideanspace.aldor.editor.impl.Jleft_AtomImpl#getBm4 <em>Bm4</em>}</li>
  * </ul>
  * </p>
  *
@@ -39,16 +40,6 @@ import org.eclipse.emf.ecore.util.InternalEList;
  */
 public class Jleft_AtomImpl extends Jright_AtomImpl implements Jleft_Atom
 {
-  /**
-   * The cached value of the '{@link #getA() <em>A</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getA()
-   * @generated
-   * @ordered
-   */
-  protected Atom a;
-
   /**
    * The cached value of the '{@link #getBe() <em>Be</em>}' containment reference list.
    * <!-- begin-user-doc -->
@@ -60,24 +51,24 @@ public class Jleft_AtomImpl extends Jright_AtomImpl implements Jleft_Atom
   protected EList<BlockEnclosure> be;
 
   /**
-   * The default value of the '{@link #getN() <em>N</em>}' attribute.
+   * The cached value of the '{@link #getA() <em>A</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getN()
+   * @see #getA()
    * @generated
    * @ordered
    */
-  protected static final String N_EDEFAULT = null;
+  protected Atom a;
 
   /**
-   * The cached value of the '{@link #getN() <em>N</em>}' attribute.
+   * The cached value of the '{@link #getBm4() <em>Bm4</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getN()
+   * @see #getBm4()
    * @generated
    * @ordered
    */
-  protected String n = N_EDEFAULT;
+  protected EList<BlockMolecule> bm4;
 
   /**
    * <!-- begin-user-doc -->
@@ -98,6 +89,20 @@ public class Jleft_AtomImpl extends Jright_AtomImpl implements Jleft_Atom
   protected EClass eStaticClass()
   {
     return EditorPackage.Literals.JLEFT_ATOM;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EList<BlockEnclosure> getBe()
+  {
+    if (be == null)
+    {
+      be = new EObjectContainmentEList<BlockEnclosure>(BlockEnclosure.class, this, EditorPackage.JLEFT_ATOM__BE);
+    }
+    return be;
   }
 
   /**
@@ -153,36 +158,13 @@ public class Jleft_AtomImpl extends Jright_AtomImpl implements Jleft_Atom
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<BlockEnclosure> getBe()
+  public EList<BlockMolecule> getBm4()
   {
-    if (be == null)
+    if (bm4 == null)
     {
-      be = new EObjectContainmentEList<BlockEnclosure>(BlockEnclosure.class, this, EditorPackage.JLEFT_ATOM__BE);
+      bm4 = new EObjectContainmentEList<BlockMolecule>(BlockMolecule.class, this, EditorPackage.JLEFT_ATOM__BM4);
     }
-    return be;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public String getN()
-  {
-    return n;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setN(String newN)
-  {
-    String oldN = n;
-    n = newN;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, EditorPackage.JLEFT_ATOM__N, oldN, n));
+    return bm4;
   }
 
   /**
@@ -195,10 +177,12 @@ public class Jleft_AtomImpl extends Jright_AtomImpl implements Jleft_Atom
   {
     switch (featureID)
     {
-      case EditorPackage.JLEFT_ATOM__A:
-        return basicSetA(null, msgs);
       case EditorPackage.JLEFT_ATOM__BE:
         return ((InternalEList<?>)getBe()).basicRemove(otherEnd, msgs);
+      case EditorPackage.JLEFT_ATOM__A:
+        return basicSetA(null, msgs);
+      case EditorPackage.JLEFT_ATOM__BM4:
+        return ((InternalEList<?>)getBm4()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -213,12 +197,12 @@ public class Jleft_AtomImpl extends Jright_AtomImpl implements Jleft_Atom
   {
     switch (featureID)
     {
-      case EditorPackage.JLEFT_ATOM__A:
-        return getA();
       case EditorPackage.JLEFT_ATOM__BE:
         return getBe();
-      case EditorPackage.JLEFT_ATOM__N:
-        return getN();
+      case EditorPackage.JLEFT_ATOM__A:
+        return getA();
+      case EditorPackage.JLEFT_ATOM__BM4:
+        return getBm4();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -234,15 +218,16 @@ public class Jleft_AtomImpl extends Jright_AtomImpl implements Jleft_Atom
   {
     switch (featureID)
     {
-      case EditorPackage.JLEFT_ATOM__A:
-        setA((Atom)newValue);
-        return;
       case EditorPackage.JLEFT_ATOM__BE:
         getBe().clear();
         getBe().addAll((Collection<? extends BlockEnclosure>)newValue);
         return;
-      case EditorPackage.JLEFT_ATOM__N:
-        setN((String)newValue);
+      case EditorPackage.JLEFT_ATOM__A:
+        setA((Atom)newValue);
+        return;
+      case EditorPackage.JLEFT_ATOM__BM4:
+        getBm4().clear();
+        getBm4().addAll((Collection<? extends BlockMolecule>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -258,14 +243,14 @@ public class Jleft_AtomImpl extends Jright_AtomImpl implements Jleft_Atom
   {
     switch (featureID)
     {
-      case EditorPackage.JLEFT_ATOM__A:
-        setA((Atom)null);
-        return;
       case EditorPackage.JLEFT_ATOM__BE:
         getBe().clear();
         return;
-      case EditorPackage.JLEFT_ATOM__N:
-        setN(N_EDEFAULT);
+      case EditorPackage.JLEFT_ATOM__A:
+        setA((Atom)null);
+        return;
+      case EditorPackage.JLEFT_ATOM__BM4:
+        getBm4().clear();
         return;
     }
     super.eUnset(featureID);
@@ -281,31 +266,14 @@ public class Jleft_AtomImpl extends Jright_AtomImpl implements Jleft_Atom
   {
     switch (featureID)
     {
-      case EditorPackage.JLEFT_ATOM__A:
-        return a != null;
       case EditorPackage.JLEFT_ATOM__BE:
         return be != null && !be.isEmpty();
-      case EditorPackage.JLEFT_ATOM__N:
-        return N_EDEFAULT == null ? n != null : !N_EDEFAULT.equals(n);
+      case EditorPackage.JLEFT_ATOM__A:
+        return a != null;
+      case EditorPackage.JLEFT_ATOM__BM4:
+        return bm4 != null && !bm4.isEmpty();
     }
     return super.eIsSet(featureID);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public String toString()
-  {
-    if (eIsProxy()) return super.toString();
-
-    StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (n: ");
-    result.append(n);
-    result.append(')');
-    return result.toString();
   }
 
 } //Jleft_AtomImpl

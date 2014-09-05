@@ -2,7 +2,6 @@
  */
 package com.euclideanspace.aldor.editor;
 
-import org.eclipse.emf.common.util.EList;
 
 /**
  * <!-- begin-user-doc -->
@@ -12,8 +11,6 @@ import org.eclipse.emf.common.util.EList;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link com.euclideanspace.aldor.editor.Atom#getLab <em>Lab</em>}</li>
- *   <li>{@link com.euclideanspace.aldor.editor.Atom#getBm4 <em>Bm4</em>}</li>
  *   <li>{@link com.euclideanspace.aldor.editor.Atom#getIden <em>Iden</em>}</li>
  *   <li>{@link com.euclideanspace.aldor.editor.Atom#getLit <em>Lit</em>}</li>
  * </ul>
@@ -23,50 +20,8 @@ import org.eclipse.emf.common.util.EList;
  * @model
  * @generated
  */
-public interface Atom extends Labeled, Jleft_Atom, Molecule, BlockMolecule
+public interface Atom extends Molecule, BlockMolecule
 {
-  /**
-   * Returns the value of the '<em><b>Lab</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Lab</em>' containment reference isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Lab</em>' containment reference.
-   * @see #setLab(Labeled)
-   * @see com.euclideanspace.aldor.editor.EditorPackage#getAtom_Lab()
-   * @model containment="true"
-   * @generated
-   */
-  Labeled getLab();
-
-  /**
-   * Sets the value of the '{@link com.euclideanspace.aldor.editor.Atom#getLab <em>Lab</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Lab</em>' containment reference.
-   * @see #getLab()
-   * @generated
-   */
-  void setLab(Labeled value);
-
-  /**
-   * Returns the value of the '<em><b>Bm4</b></em>' containment reference list.
-   * The list contents are of type {@link com.euclideanspace.aldor.editor.BlockMolecule}.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Bm4</em>' containment reference list isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Bm4</em>' containment reference list.
-   * @see com.euclideanspace.aldor.editor.EditorPackage#getAtom_Bm4()
-   * @model containment="true"
-   * @generated
-   */
-  EList<BlockMolecule> getBm4();
-
   /**
    * Returns the value of the '<em><b>Iden</b></em>' containment reference.
    * <!-- begin-user-doc -->

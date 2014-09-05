@@ -34,6 +34,17 @@ import com.euclideanspace.aldor.editor.DeclBinding;
 import com.euclideanspace.aldor.editor.DeclMolecule;
 import com.euclideanspace.aldor.editor.DeclPart;
 import com.euclideanspace.aldor.editor.Declaration;
+import com.euclideanspace.aldor.editor.DeclarationDefault;
+import com.euclideanspace.aldor.editor.DeclarationDefine;
+import com.euclideanspace.aldor.editor.DeclarationExport;
+import com.euclideanspace.aldor.editor.DeclarationExtend;
+import com.euclideanspace.aldor.editor.DeclarationFix;
+import com.euclideanspace.aldor.editor.DeclarationFluid;
+import com.euclideanspace.aldor.editor.DeclarationFree;
+import com.euclideanspace.aldor.editor.DeclarationImport;
+import com.euclideanspace.aldor.editor.DeclarationInline;
+import com.euclideanspace.aldor.editor.DeclarationLocal;
+import com.euclideanspace.aldor.editor.DeclarationMacro;
 import com.euclideanspace.aldor.editor.E11_Op;
 import com.euclideanspace.aldor.editor.EditorFactory;
 import com.euclideanspace.aldor.editor.EditorPackage;
@@ -856,6 +867,83 @@ public class EditorPackageImpl extends EPackageImpl implements EditorPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  private EClass declarationMacroEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass declarationExtendEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass declarationLocalEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass declarationFreeEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass declarationFluidEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass declarationDefaultEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass declarationDefineEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass declarationFixEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass declarationInlineEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass declarationImportEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass declarationExportEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   private EClass e3EClass = null;
 
   /**
@@ -1102,49 +1190,49 @@ public class EditorPackageImpl extends EPackageImpl implements EditorPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  public EReference getLabeled_C()
+  {
+    return (EReference)labeledEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getLabeled_D()
+  {
+    return (EReference)labeledEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getLabeled_A()
+  {
+    return (EReference)labeledEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getLabeled_Lab()
+  {
+    return (EReference)labeledEClass.getEStructuralFeatures().get(3);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EClass getDeclaration()
   {
     return declarationEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getDeclaration_Mb()
-  {
-    return (EReference)declarationEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getDeclaration_Si()
-  {
-    return (EReference)declarationEClass.getEStructuralFeatures().get(1);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getDeclaration_Fp()
-  {
-    return (EReference)declarationEClass.getEStructuralFeatures().get(2);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getDeclaration_Ed()
-  {
-    return (EReference)declarationEClass.getEStructuralFeatures().get(3);
   }
 
   /**
@@ -2442,7 +2530,7 @@ public class EditorPackageImpl extends EPackageImpl implements EditorPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getJleft_Atom_A()
+  public EReference getJleft_Atom_Be()
   {
     return (EReference)jleft_AtomEClass.getEStructuralFeatures().get(0);
   }
@@ -2452,7 +2540,7 @@ public class EditorPackageImpl extends EPackageImpl implements EditorPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getJleft_Atom_Be()
+  public EReference getJleft_Atom_A()
   {
     return (EReference)jleft_AtomEClass.getEStructuralFeatures().get(1);
   }
@@ -2462,9 +2550,9 @@ public class EditorPackageImpl extends EPackageImpl implements EditorPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getJleft_Atom_N()
+  public EReference getJleft_Atom_Bm4()
   {
-    return (EAttribute)jleft_AtomEClass.getEStructuralFeatures().get(2);
+    return (EReference)jleft_AtomEClass.getEStructuralFeatures().get(2);
   }
 
   /**
@@ -2662,7 +2750,7 @@ public class EditorPackageImpl extends EPackageImpl implements EditorPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getAtom_Lab()
+  public EReference getAtom_Iden()
   {
     return (EReference)atomEClass.getEStructuralFeatures().get(0);
   }
@@ -2672,29 +2760,9 @@ public class EditorPackageImpl extends EPackageImpl implements EditorPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getAtom_Bm4()
-  {
-    return (EReference)atomEClass.getEStructuralFeatures().get(1);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getAtom_Iden()
-  {
-    return (EReference)atomEClass.getEStructuralFeatures().get(2);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public EAttribute getAtom_Lit()
   {
-    return (EAttribute)atomEClass.getEStructuralFeatures().get(3);
+    return (EAttribute)atomEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -3165,6 +3233,246 @@ public class EditorPackageImpl extends EPackageImpl implements EditorPackage
   public EAttribute getCurlyContentB_Labeled_Pd()
   {
     return (EAttribute)curlyContentB_LabeledEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getDeclarationMacro()
+  {
+    return declarationMacroEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getDeclarationMacro_Mb()
+  {
+    return (EReference)declarationMacroEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getDeclarationExtend()
+  {
+    return declarationExtendEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getDeclarationExtend_Si()
+  {
+    return (EReference)declarationExtendEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getDeclarationLocal()
+  {
+    return declarationLocalEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getDeclarationLocal_Si()
+  {
+    return (EReference)declarationLocalEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getDeclarationFree()
+  {
+    return declarationFreeEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getDeclarationFree_Si()
+  {
+    return (EReference)declarationFreeEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getDeclarationFluid()
+  {
+    return declarationFluidEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getDeclarationFluid_Si()
+  {
+    return (EReference)declarationFluidEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getDeclarationDefault()
+  {
+    return declarationDefaultEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getDeclarationDefault_Si()
+  {
+    return (EReference)declarationDefaultEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getDeclarationDefine()
+  {
+    return declarationDefineEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getDeclarationDefine_Si()
+  {
+    return (EReference)declarationDefineEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getDeclarationFix()
+  {
+    return declarationFixEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getDeclarationFix_Si()
+  {
+    return (EReference)declarationFixEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getDeclarationInline()
+  {
+    return declarationInlineEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getDeclarationInline_Si()
+  {
+    return (EReference)declarationInlineEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getDeclarationInline_Fp()
+  {
+    return (EReference)declarationInlineEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getDeclarationImport()
+  {
+    return declarationImportEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getDeclarationImport_Si()
+  {
+    return (EReference)declarationImportEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getDeclarationImport_Fp()
+  {
+    return (EReference)declarationImportEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getDeclarationExport()
+  {
+    return declarationExportEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getDeclarationExport_Ed()
+  {
+    return (EReference)declarationExportEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -3724,12 +4032,12 @@ public class EditorPackageImpl extends EPackageImpl implements EditorPackage
     expressionEClass = createEClass(EXPRESSION);
 
     labeledEClass = createEClass(LABELED);
+    createEReference(labeledEClass, LABELED__C);
+    createEReference(labeledEClass, LABELED__D);
+    createEReference(labeledEClass, LABELED__A);
+    createEReference(labeledEClass, LABELED__LAB);
 
     declarationEClass = createEClass(DECLARATION);
-    createEReference(declarationEClass, DECLARATION__MB);
-    createEReference(declarationEClass, DECLARATION__SI);
-    createEReference(declarationEClass, DECLARATION__FP);
-    createEReference(declarationEClass, DECLARATION__ED);
 
     exportDeclEClass = createEClass(EXPORT_DECL);
     createEReference(exportDeclEClass, EXPORT_DECL__S);
@@ -3917,9 +4225,9 @@ public class EditorPackageImpl extends EPackageImpl implements EditorPackage
     createEReference(jleft_MoleculeEClass, JLEFT_MOLECULE__BM);
 
     jleft_AtomEClass = createEClass(JLEFT_ATOM);
-    createEReference(jleft_AtomEClass, JLEFT_ATOM__A);
     createEReference(jleft_AtomEClass, JLEFT_ATOM__BE);
-    createEAttribute(jleft_AtomEClass, JLEFT_ATOM__N);
+    createEReference(jleft_AtomEClass, JLEFT_ATOM__A);
+    createEReference(jleft_AtomEClass, JLEFT_ATOM__BM4);
 
     moleculeEClass = createEClass(MOLECULE);
 
@@ -3950,8 +4258,6 @@ public class EditorPackageImpl extends EPackageImpl implements EditorPackage
     createEAttribute(namesEClass, NAMES__SUBSEQUENT_NAMES);
 
     atomEClass = createEClass(ATOM);
-    createEReference(atomEClass, ATOM__LAB);
-    createEReference(atomEClass, ATOM__BM4);
     createEReference(atomEClass, ATOM__IDEN);
     createEAttribute(atomEClass, ATOM__LIT);
 
@@ -4031,6 +4337,41 @@ public class EditorPackageImpl extends EPackageImpl implements EditorPackage
     createEAttribute(curlyContentB_LabeledEClass, CURLY_CONTENT_BLABELED__PRED);
     createEReference(curlyContentB_LabeledEClass, CURLY_CONTENT_BLABELED__L);
     createEAttribute(curlyContentB_LabeledEClass, CURLY_CONTENT_BLABELED__PD);
+
+    declarationMacroEClass = createEClass(DECLARATION_MACRO);
+    createEReference(declarationMacroEClass, DECLARATION_MACRO__MB);
+
+    declarationExtendEClass = createEClass(DECLARATION_EXTEND);
+    createEReference(declarationExtendEClass, DECLARATION_EXTEND__SI);
+
+    declarationLocalEClass = createEClass(DECLARATION_LOCAL);
+    createEReference(declarationLocalEClass, DECLARATION_LOCAL__SI);
+
+    declarationFreeEClass = createEClass(DECLARATION_FREE);
+    createEReference(declarationFreeEClass, DECLARATION_FREE__SI);
+
+    declarationFluidEClass = createEClass(DECLARATION_FLUID);
+    createEReference(declarationFluidEClass, DECLARATION_FLUID__SI);
+
+    declarationDefaultEClass = createEClass(DECLARATION_DEFAULT);
+    createEReference(declarationDefaultEClass, DECLARATION_DEFAULT__SI);
+
+    declarationDefineEClass = createEClass(DECLARATION_DEFINE);
+    createEReference(declarationDefineEClass, DECLARATION_DEFINE__SI);
+
+    declarationFixEClass = createEClass(DECLARATION_FIX);
+    createEReference(declarationFixEClass, DECLARATION_FIX__SI);
+
+    declarationInlineEClass = createEClass(DECLARATION_INLINE);
+    createEReference(declarationInlineEClass, DECLARATION_INLINE__SI);
+    createEReference(declarationInlineEClass, DECLARATION_INLINE__FP);
+
+    declarationImportEClass = createEClass(DECLARATION_IMPORT);
+    createEReference(declarationImportEClass, DECLARATION_IMPORT__SI);
+    createEReference(declarationImportEClass, DECLARATION_IMPORT__FP);
+
+    declarationExportEClass = createEClass(DECLARATION_EXPORT);
+    createEReference(declarationExportEClass, DECLARATION_EXPORT__ED);
 
     e3EClass = createEClass(E3);
     createEReference(e3EClass, E3__LEFT);
@@ -4133,10 +4474,8 @@ public class EditorPackageImpl extends EPackageImpl implements EditorPackage
     // Set bounds for type parameters
 
     // Add supertypes to classes
-    declarationEClass.getESuperTypes().add(this.getLabeled());
     exportDeclEClass.getESuperTypes().add(this.getMacroBody());
     sigEClass.getESuperTypes().add(this.getMacroBody());
-    commaEClass.getESuperTypes().add(this.getLabeled());
     commaItemEClass.getESuperTypes().add(this.getAnyStatement());
     commaItemEClass.getESuperTypes().add(this.getenlister1_CommaItem_Comma());
     declBindingEClass.getESuperTypes().add(this.getSig());
@@ -4181,8 +4520,6 @@ public class EditorPackageImpl extends EPackageImpl implements EditorPackage
     parenedEClass.getESuperTypes().add(this.getEnclosure());
     bracketedEClass.getESuperTypes().add(this.getEnclosure());
     quotedIdsEClass.getESuperTypes().add(this.getEnclosure());
-    atomEClass.getESuperTypes().add(this.getLabeled());
-    atomEClass.getESuperTypes().add(this.getJleft_Atom());
     atomEClass.getESuperTypes().add(this.getMolecule());
     atomEClass.getESuperTypes().add(this.getBlockMolecule());
     unqualOp_ArrowTokEClass.getESuperTypes().add(this.getNakedOp());
@@ -4212,6 +4549,17 @@ public class EditorPackageImpl extends EPackageImpl implements EditorPackage
     curly_LabeledEClass.getESuperTypes().add(this.getBlock());
     curlyContents_LabeledEClass.getESuperTypes().add(this.getCurly_Labeled());
     curlyContentsList_LabeledEClass.getESuperTypes().add(this.getCurlyContents_Labeled());
+    declarationMacroEClass.getESuperTypes().add(this.getDeclaration());
+    declarationExtendEClass.getESuperTypes().add(this.getDeclaration());
+    declarationLocalEClass.getESuperTypes().add(this.getDeclaration());
+    declarationFreeEClass.getESuperTypes().add(this.getDeclaration());
+    declarationFluidEClass.getESuperTypes().add(this.getDeclaration());
+    declarationDefaultEClass.getESuperTypes().add(this.getDeclaration());
+    declarationDefineEClass.getESuperTypes().add(this.getDeclaration());
+    declarationFixEClass.getESuperTypes().add(this.getDeclaration());
+    declarationInlineEClass.getESuperTypes().add(this.getDeclaration());
+    declarationImportEClass.getESuperTypes().add(this.getDeclaration());
+    declarationExportEClass.getESuperTypes().add(this.getDeclaration());
     e3EClass.getESuperTypes().add(this.getExpr());
     e4EClass.getESuperTypes().add(this.getExpr());
     e5EClass.getESuperTypes().add(this.getExpr());
@@ -4240,12 +4588,12 @@ public class EditorPackageImpl extends EPackageImpl implements EditorPackage
     initEClass(expressionEClass, Expression.class, "Expression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
     initEClass(labeledEClass, Labeled.class, "Labeled", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getLabeled_C(), this.getComma(), null, "c", null, 0, 1, Labeled.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getLabeled_D(), this.getDeclaration(), null, "d", null, 0, 1, Labeled.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getLabeled_A(), this.getAtom(), null, "a", null, 0, 1, Labeled.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getLabeled_Lab(), this.getLabeled(), null, "lab", null, 0, 1, Labeled.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(declarationEClass, Declaration.class, "Declaration", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getDeclaration_Mb(), this.getMacroBody(), null, "mb", null, 0, 1, Declaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getDeclaration_Si(), this.getSig(), null, "si", null, 0, 1, Declaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getDeclaration_Fp(), this.getFromPart(), null, "fp", null, 0, 1, Declaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getDeclaration_Ed(), this.getExportDecl(), null, "ed", null, 0, 1, Declaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(exportDeclEClass, ExportDecl.class, "ExportDecl", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getExportDecl_S(), this.getSig(), null, "s", null, 0, 1, ExportDecl.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -4369,7 +4717,7 @@ public class EditorPackageImpl extends EPackageImpl implements EditorPackage
     initEClass(infixedEClass, Infixed.class, "Infixed", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getInfixed_I3(), this.getIterators(), null, "i3", null, 0, 1, Infixed.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getInfixed_Ifx(), this.getInfixedExpr(), null, "ifx", null, 0, 1, Infixed.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getInfixed_Dp(), this.getDeclPart(), null, "dp", null, 0, -1, Infixed.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getInfixed_Dp(), this.getDeclPart(), null, "dp", null, 0, 1, Infixed.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getInfixed_B(), this.getBlock(), null, "b", null, 0, 1, Infixed.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getInfixed_I2(), this.getInfixed(), null, "i2", null, 0, -1, Infixed.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
@@ -4433,9 +4781,9 @@ public class EditorPackageImpl extends EPackageImpl implements EditorPackage
     initEReference(getJleft_Molecule_Bm(), this.getBlockMolecule(), null, "bm", null, 0, -1, Jleft_Molecule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(jleft_AtomEClass, Jleft_Atom.class, "Jleft_Atom", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getJleft_Atom_A(), this.getAtom(), null, "a", null, 0, 1, Jleft_Atom.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getJleft_Atom_Be(), this.getBlockEnclosure(), null, "be", null, 0, -1, Jleft_Atom.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getJleft_Atom_N(), ecorePackage.getEString(), "n", null, 0, 1, Jleft_Atom.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getJleft_Atom_A(), this.getAtom(), null, "a", null, 0, 1, Jleft_Atom.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getJleft_Atom_Bm4(), this.getBlockMolecule(), null, "bm4", null, 0, -1, Jleft_Atom.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(moleculeEClass, Molecule.class, "Molecule", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -4466,8 +4814,6 @@ public class EditorPackageImpl extends EPackageImpl implements EditorPackage
     initEAttribute(getNames_SubsequentNames(), ecorePackage.getEString(), "subsequentNames", null, 0, -1, Names.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(atomEClass, Atom.class, "Atom", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getAtom_Lab(), this.getLabeled(), null, "lab", null, 0, 1, Atom.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getAtom_Bm4(), this.getBlockMolecule(), null, "bm4", null, 0, -1, Atom.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getAtom_Iden(), this.getId(), null, "iden", null, 0, 1, Atom.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getAtom_Lit(), ecorePackage.getEString(), "lit", null, 0, 1, Atom.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
@@ -4547,6 +4893,41 @@ public class EditorPackageImpl extends EPackageImpl implements EditorPackage
     initEAttribute(getCurlyContentB_Labeled_Pred(), ecorePackage.getEString(), "pred", null, 0, 1, CurlyContentB_Labeled.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getCurlyContentB_Labeled_L(), this.getLabeled(), null, "l", null, 0, 1, CurlyContentB_Labeled.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getCurlyContentB_Labeled_Pd(), ecorePackage.getEString(), "pd", null, 0, 1, CurlyContentB_Labeled.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(declarationMacroEClass, DeclarationMacro.class, "DeclarationMacro", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getDeclarationMacro_Mb(), this.getMacroBody(), null, "mb", null, 0, 1, DeclarationMacro.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(declarationExtendEClass, DeclarationExtend.class, "DeclarationExtend", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getDeclarationExtend_Si(), this.getSig(), null, "si", null, 0, 1, DeclarationExtend.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(declarationLocalEClass, DeclarationLocal.class, "DeclarationLocal", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getDeclarationLocal_Si(), this.getSig(), null, "si", null, 0, 1, DeclarationLocal.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(declarationFreeEClass, DeclarationFree.class, "DeclarationFree", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getDeclarationFree_Si(), this.getSig(), null, "si", null, 0, 1, DeclarationFree.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(declarationFluidEClass, DeclarationFluid.class, "DeclarationFluid", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getDeclarationFluid_Si(), this.getSig(), null, "si", null, 0, 1, DeclarationFluid.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(declarationDefaultEClass, DeclarationDefault.class, "DeclarationDefault", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getDeclarationDefault_Si(), this.getSig(), null, "si", null, 0, 1, DeclarationDefault.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(declarationDefineEClass, DeclarationDefine.class, "DeclarationDefine", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getDeclarationDefine_Si(), this.getSig(), null, "si", null, 0, 1, DeclarationDefine.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(declarationFixEClass, DeclarationFix.class, "DeclarationFix", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getDeclarationFix_Si(), this.getSig(), null, "si", null, 0, 1, DeclarationFix.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(declarationInlineEClass, DeclarationInline.class, "DeclarationInline", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getDeclarationInline_Si(), this.getSig(), null, "si", null, 0, 1, DeclarationInline.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getDeclarationInline_Fp(), this.getFromPart(), null, "fp", null, 0, 1, DeclarationInline.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(declarationImportEClass, DeclarationImport.class, "DeclarationImport", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getDeclarationImport_Si(), this.getSig(), null, "si", null, 0, 1, DeclarationImport.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getDeclarationImport_Fp(), this.getFromPart(), null, "fp", null, 0, 1, DeclarationImport.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(declarationExportEClass, DeclarationExport.class, "DeclarationExport", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getDeclarationExport_Ed(), this.getExportDecl(), null, "ed", null, 0, 1, DeclarationExport.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(e3EClass, com.euclideanspace.aldor.editor.E3.class, "E3", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getE3_Left(), this.getExpr(), null, "left", null, 0, 1, com.euclideanspace.aldor.editor.E3.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

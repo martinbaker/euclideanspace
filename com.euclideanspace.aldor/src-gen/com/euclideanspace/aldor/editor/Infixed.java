@@ -79,20 +79,30 @@ public interface Infixed extends ToPart, Collection, ForLhs, SuchthatPart, enlis
   void setIfx(InfixedExpr value);
 
   /**
-   * Returns the value of the '<em><b>Dp</b></em>' containment reference list.
-   * The list contents are of type {@link com.euclideanspace.aldor.editor.DeclPart}.
+   * Returns the value of the '<em><b>Dp</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Dp</em>' containment reference list isn't clear,
+   * If the meaning of the '<em>Dp</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Dp</em>' containment reference list.
+   * @return the value of the '<em>Dp</em>' containment reference.
+   * @see #setDp(DeclPart)
    * @see com.euclideanspace.aldor.editor.EditorPackage#getInfixed_Dp()
    * @model containment="true"
    * @generated
    */
-  EList<DeclPart> getDp();
+  DeclPart getDp();
+
+  /**
+   * Sets the value of the '{@link com.euclideanspace.aldor.editor.Infixed#getDp <em>Dp</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Dp</em>' containment reference.
+   * @see #getDp()
+   * @generated
+   */
+  void setDp(DeclPart value);
 
   /**
    * Returns the value of the '<em><b>B</b></em>' containment reference.

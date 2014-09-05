@@ -97,7 +97,6 @@ public class EditorSwitch<T> extends Switch<T>
       {
         Declaration declaration = (Declaration)theEObject;
         T result = caseDeclaration(declaration);
-        if (result == null) result = caseLabeled(declaration);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -149,7 +148,6 @@ public class EditorSwitch<T> extends Switch<T>
       {
         Comma comma = (Comma)theEObject;
         T result = caseComma(comma);
-        if (result == null) result = caseLabeled(comma);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -161,7 +159,6 @@ public class EditorSwitch<T> extends Switch<T>
         if (result == null) result = caseenlister1_CommaItem_Comma(commaItem);
         if (result == null) result = caseenlist1_CommaItem_Comma_AB(commaItem);
         if (result == null) result = caseComma(commaItem);
-        if (result == null) result = caseLabeled(commaItem);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -206,7 +203,6 @@ public class EditorSwitch<T> extends Switch<T>
         if (result == null) result = caseenlister1_CommaItem_Comma(binding_AnyStatement);
         if (result == null) result = caseenlist1_CommaItem_Comma_AB(binding_AnyStatement);
         if (result == null) result = caseComma(binding_AnyStatement);
-        if (result == null) result = caseLabeled(binding_AnyStatement);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -235,7 +231,6 @@ public class EditorSwitch<T> extends Switch<T>
         if (result == null) result = caseenlister1_CommaItem_Comma(bindingL_Infixed_AnyStatement);
         if (result == null) result = caseenlist1_CommaItem_Comma_AB(bindingL_Infixed_AnyStatement);
         if (result == null) result = caseComma(bindingL_Infixed_AnyStatement);
-        if (result == null) result = caseLabeled(bindingL_Infixed_AnyStatement);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -717,11 +712,8 @@ public class EditorSwitch<T> extends Switch<T>
       {
         Atom atom = (Atom)theEObject;
         T result = caseAtom(atom);
-        if (result == null) result = caseLabeled(atom);
-        if (result == null) result = caseJleft_Atom(atom);
         if (result == null) result = caseMolecule(atom);
         if (result == null) result = caseBlockMolecule(atom);
-        if (result == null) result = caseJright_Atom(atom);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -872,7 +864,6 @@ public class EditorSwitch<T> extends Switch<T>
         enlist1_CommaItem_Comma_AB enlist1_CommaItem_Comma_AB = (enlist1_CommaItem_Comma_AB)theEObject;
         T result = caseenlist1_CommaItem_Comma_AB(enlist1_CommaItem_Comma_AB);
         if (result == null) result = caseComma(enlist1_CommaItem_Comma_AB);
-        if (result == null) result = caseLabeled(enlist1_CommaItem_Comma_AB);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -903,7 +894,6 @@ public class EditorSwitch<T> extends Switch<T>
         T result = caseenlister1_CommaItem_Comma(enlister1_CommaItem_Comma);
         if (result == null) result = caseenlist1_CommaItem_Comma_AB(enlister1_CommaItem_Comma);
         if (result == null) result = caseComma(enlister1_CommaItem_Comma);
-        if (result == null) result = caseLabeled(enlister1_CommaItem_Comma);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -990,6 +980,94 @@ public class EditorSwitch<T> extends Switch<T>
       {
         CurlyContentB_Labeled curlyContentB_Labeled = (CurlyContentB_Labeled)theEObject;
         T result = caseCurlyContentB_Labeled(curlyContentB_Labeled);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case EditorPackage.DECLARATION_MACRO:
+      {
+        DeclarationMacro declarationMacro = (DeclarationMacro)theEObject;
+        T result = caseDeclarationMacro(declarationMacro);
+        if (result == null) result = caseDeclaration(declarationMacro);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case EditorPackage.DECLARATION_EXTEND:
+      {
+        DeclarationExtend declarationExtend = (DeclarationExtend)theEObject;
+        T result = caseDeclarationExtend(declarationExtend);
+        if (result == null) result = caseDeclaration(declarationExtend);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case EditorPackage.DECLARATION_LOCAL:
+      {
+        DeclarationLocal declarationLocal = (DeclarationLocal)theEObject;
+        T result = caseDeclarationLocal(declarationLocal);
+        if (result == null) result = caseDeclaration(declarationLocal);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case EditorPackage.DECLARATION_FREE:
+      {
+        DeclarationFree declarationFree = (DeclarationFree)theEObject;
+        T result = caseDeclarationFree(declarationFree);
+        if (result == null) result = caseDeclaration(declarationFree);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case EditorPackage.DECLARATION_FLUID:
+      {
+        DeclarationFluid declarationFluid = (DeclarationFluid)theEObject;
+        T result = caseDeclarationFluid(declarationFluid);
+        if (result == null) result = caseDeclaration(declarationFluid);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case EditorPackage.DECLARATION_DEFAULT:
+      {
+        DeclarationDefault declarationDefault = (DeclarationDefault)theEObject;
+        T result = caseDeclarationDefault(declarationDefault);
+        if (result == null) result = caseDeclaration(declarationDefault);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case EditorPackage.DECLARATION_DEFINE:
+      {
+        DeclarationDefine declarationDefine = (DeclarationDefine)theEObject;
+        T result = caseDeclarationDefine(declarationDefine);
+        if (result == null) result = caseDeclaration(declarationDefine);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case EditorPackage.DECLARATION_FIX:
+      {
+        DeclarationFix declarationFix = (DeclarationFix)theEObject;
+        T result = caseDeclarationFix(declarationFix);
+        if (result == null) result = caseDeclaration(declarationFix);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case EditorPackage.DECLARATION_INLINE:
+      {
+        DeclarationInline declarationInline = (DeclarationInline)theEObject;
+        T result = caseDeclarationInline(declarationInline);
+        if (result == null) result = caseDeclaration(declarationInline);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case EditorPackage.DECLARATION_IMPORT:
+      {
+        DeclarationImport declarationImport = (DeclarationImport)theEObject;
+        T result = caseDeclarationImport(declarationImport);
+        if (result == null) result = caseDeclaration(declarationImport);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case EditorPackage.DECLARATION_EXPORT:
+      {
+        DeclarationExport declarationExport = (DeclarationExport)theEObject;
+        T result = caseDeclarationExport(declarationExport);
+        if (result == null) result = caseDeclaration(declarationExport);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -2922,6 +3000,182 @@ public class EditorSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseCurlyContentB_Labeled(CurlyContentB_Labeled object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Declaration Macro</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Declaration Macro</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseDeclarationMacro(DeclarationMacro object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Declaration Extend</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Declaration Extend</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseDeclarationExtend(DeclarationExtend object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Declaration Local</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Declaration Local</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseDeclarationLocal(DeclarationLocal object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Declaration Free</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Declaration Free</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseDeclarationFree(DeclarationFree object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Declaration Fluid</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Declaration Fluid</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseDeclarationFluid(DeclarationFluid object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Declaration Default</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Declaration Default</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseDeclarationDefault(DeclarationDefault object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Declaration Define</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Declaration Define</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseDeclarationDefine(DeclarationDefine object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Declaration Fix</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Declaration Fix</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseDeclarationFix(DeclarationFix object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Declaration Inline</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Declaration Inline</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseDeclarationInline(DeclarationInline object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Declaration Import</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Declaration Import</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseDeclarationImport(DeclarationImport object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Declaration Export</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Declaration Export</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseDeclarationExport(DeclarationExport object)
   {
     return null;
   }

@@ -950,6 +950,105 @@ public interface EditorFactory extends EFactory
   CurlyContentB_Labeled createCurlyContentB_Labeled();
 
   /**
+   * Returns a new object of class '<em>Declaration Macro</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Declaration Macro</em>'.
+   * @generated
+   */
+  DeclarationMacro createDeclarationMacro();
+
+  /**
+   * Returns a new object of class '<em>Declaration Extend</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Declaration Extend</em>'.
+   * @generated
+   */
+  DeclarationExtend createDeclarationExtend();
+
+  /**
+   * Returns a new object of class '<em>Declaration Local</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Declaration Local</em>'.
+   * @generated
+   */
+  DeclarationLocal createDeclarationLocal();
+
+  /**
+   * Returns a new object of class '<em>Declaration Free</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Declaration Free</em>'.
+   * @generated
+   */
+  DeclarationFree createDeclarationFree();
+
+  /**
+   * Returns a new object of class '<em>Declaration Fluid</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Declaration Fluid</em>'.
+   * @generated
+   */
+  DeclarationFluid createDeclarationFluid();
+
+  /**
+   * Returns a new object of class '<em>Declaration Default</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Declaration Default</em>'.
+   * @generated
+   */
+  DeclarationDefault createDeclarationDefault();
+
+  /**
+   * Returns a new object of class '<em>Declaration Define</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Declaration Define</em>'.
+   * @generated
+   */
+  DeclarationDefine createDeclarationDefine();
+
+  /**
+   * Returns a new object of class '<em>Declaration Fix</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Declaration Fix</em>'.
+   * @generated
+   */
+  DeclarationFix createDeclarationFix();
+
+  /**
+   * Returns a new object of class '<em>Declaration Inline</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Declaration Inline</em>'.
+   * @generated
+   */
+  DeclarationInline createDeclarationInline();
+
+  /**
+   * Returns a new object of class '<em>Declaration Import</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Declaration Import</em>'.
+   * @generated
+   */
+  DeclarationImport createDeclarationImport();
+
+  /**
+   * Returns a new object of class '<em>Declaration Export</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Declaration Export</em>'.
+   * @generated
+   */
+  DeclarationExport createDeclarationExport();
+
+  /**
    * Returns a new object of class '<em>E3</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

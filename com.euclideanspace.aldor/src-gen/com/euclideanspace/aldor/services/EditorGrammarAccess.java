@@ -117,36 +117,53 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 	public class LabeledElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Labeled");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
-		private final RuleCall cCommaParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
-		private final RuleCall cDeclarationParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
+		private final Assignment cCAssignment_0 = (Assignment)cAlternatives.eContents().get(0);
+		private final RuleCall cCCommaParserRuleCall_0_0 = (RuleCall)cCAssignment_0.eContents().get(0);
+		private final Assignment cDAssignment_1 = (Assignment)cAlternatives.eContents().get(1);
+		private final RuleCall cDDeclarationParserRuleCall_1_0 = (RuleCall)cDAssignment_1.eContents().get(0);
 		private final Group cGroup_2 = (Group)cAlternatives.eContents().get(2);
 		private final RuleCall cKW_ATTerminalRuleCall_2_0 = (RuleCall)cGroup_2.eContents().get(0);
-		private final RuleCall cAtomParserRuleCall_2_1 = (RuleCall)cGroup_2.eContents().get(1);
+		private final Assignment cAAssignment_2_1 = (Assignment)cGroup_2.eContents().get(1);
+		private final RuleCall cAAtomParserRuleCall_2_1_0 = (RuleCall)cAAssignment_2_1.eContents().get(0);
 		private final Assignment cLabAssignment_2_2 = (Assignment)cGroup_2.eContents().get(2);
 		private final RuleCall cLabLabeledParserRuleCall_2_2_0 = (RuleCall)cLabAssignment_2_2.eContents().get(0);
 		
 		/// * An '.as' file is effectively a list of 'Labeled' 
-		// * separated by semicolons* / Labeled hidden(WS, KW_NEWLINE):
-		//	Comma | Declaration | KW_AT Atom lab=Labeled?;
+		// * separated by semicolons
+		// *
+		// * Labeled can be an expression or a Declaration such
+		// * as 'macro','extend','local','free','fluid','default'
+		// * 'define','fix','inline','import' or 'export'.
+		// * / Labeled hidden(WS, KW_NEWLINE):
+		//	c=Comma | d=Declaration | KW_AT a=Atom lab=Labeled?;
 		public ParserRule getRule() { return rule; }
 
-		//Comma | Declaration | KW_AT Atom lab=Labeled?
+		//c=Comma | d=Declaration | KW_AT a=Atom lab=Labeled?
 		public Alternatives getAlternatives() { return cAlternatives; }
 
+		//c=Comma
+		public Assignment getCAssignment_0() { return cCAssignment_0; }
+
 		//Comma
-		public RuleCall getCommaParserRuleCall_0() { return cCommaParserRuleCall_0; }
+		public RuleCall getCCommaParserRuleCall_0_0() { return cCCommaParserRuleCall_0_0; }
+
+		//d=Declaration
+		public Assignment getDAssignment_1() { return cDAssignment_1; }
 
 		//Declaration
-		public RuleCall getDeclarationParserRuleCall_1() { return cDeclarationParserRuleCall_1; }
+		public RuleCall getDDeclarationParserRuleCall_1_0() { return cDDeclarationParserRuleCall_1_0; }
 
-		//KW_AT Atom lab=Labeled?
+		//KW_AT a=Atom lab=Labeled?
 		public Group getGroup_2() { return cGroup_2; }
 
 		//KW_AT
 		public RuleCall getKW_ATTerminalRuleCall_2_0() { return cKW_ATTerminalRuleCall_2_0; }
 
+		//a=Atom
+		public Assignment getAAssignment_2_1() { return cAAssignment_2_1; }
+
 		//Atom
-		public RuleCall getAtomParserRuleCall_2_1() { return cAtomParserRuleCall_2_1; }
+		public RuleCall getAAtomParserRuleCall_2_1_0() { return cAAtomParserRuleCall_2_1_0; }
 
 		//lab=Labeled?
 		public Assignment getLabAssignment_2_2() { return cLabAssignment_2_2; }
@@ -159,82 +176,86 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Declaration");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
 		private final Group cGroup_0 = (Group)cAlternatives.eContents().get(0);
-		private final Action cDeclarationAction_0_0 = (Action)cGroup_0.eContents().get(0);
+		private final Action cDeclarationMacroAction_0_0 = (Action)cGroup_0.eContents().get(0);
 		private final Keyword cMacroKeyword_0_1 = (Keyword)cGroup_0.eContents().get(1);
 		private final Assignment cMbAssignment_0_2 = (Assignment)cGroup_0.eContents().get(2);
 		private final RuleCall cMbMacroBodyParserRuleCall_0_2_0 = (RuleCall)cMbAssignment_0_2.eContents().get(0);
 		private final Group cGroup_1 = (Group)cAlternatives.eContents().get(1);
-		private final Action cDeclarationAction_1_0 = (Action)cGroup_1.eContents().get(0);
+		private final Action cDeclarationExtendAction_1_0 = (Action)cGroup_1.eContents().get(0);
 		private final Keyword cExtendKeyword_1_1 = (Keyword)cGroup_1.eContents().get(1);
 		private final Assignment cSiAssignment_1_2 = (Assignment)cGroup_1.eContents().get(2);
 		private final RuleCall cSiSigParserRuleCall_1_2_0 = (RuleCall)cSiAssignment_1_2.eContents().get(0);
 		private final Group cGroup_2 = (Group)cAlternatives.eContents().get(2);
-		private final Action cDeclarationAction_2_0 = (Action)cGroup_2.eContents().get(0);
+		private final Action cDeclarationLocalAction_2_0 = (Action)cGroup_2.eContents().get(0);
 		private final Keyword cLocalKeyword_2_1 = (Keyword)cGroup_2.eContents().get(1);
 		private final Assignment cSiAssignment_2_2 = (Assignment)cGroup_2.eContents().get(2);
 		private final RuleCall cSiSigParserRuleCall_2_2_0 = (RuleCall)cSiAssignment_2_2.eContents().get(0);
 		private final Group cGroup_3 = (Group)cAlternatives.eContents().get(3);
-		private final Action cDeclarationAction_3_0 = (Action)cGroup_3.eContents().get(0);
+		private final Action cDeclarationFreeAction_3_0 = (Action)cGroup_3.eContents().get(0);
 		private final Keyword cFreeKeyword_3_1 = (Keyword)cGroup_3.eContents().get(1);
 		private final Assignment cSiAssignment_3_2 = (Assignment)cGroup_3.eContents().get(2);
 		private final RuleCall cSiSigParserRuleCall_3_2_0 = (RuleCall)cSiAssignment_3_2.eContents().get(0);
 		private final Group cGroup_4 = (Group)cAlternatives.eContents().get(4);
-		private final Action cDeclarationAction_4_0 = (Action)cGroup_4.eContents().get(0);
+		private final Action cDeclarationFluidAction_4_0 = (Action)cGroup_4.eContents().get(0);
 		private final Keyword cFluidKeyword_4_1 = (Keyword)cGroup_4.eContents().get(1);
 		private final Assignment cSiAssignment_4_2 = (Assignment)cGroup_4.eContents().get(2);
 		private final RuleCall cSiSigParserRuleCall_4_2_0 = (RuleCall)cSiAssignment_4_2.eContents().get(0);
 		private final Group cGroup_5 = (Group)cAlternatives.eContents().get(5);
-		private final Action cDeclarationAction_5_0 = (Action)cGroup_5.eContents().get(0);
+		private final Action cDeclarationDefaultAction_5_0 = (Action)cGroup_5.eContents().get(0);
 		private final Keyword cDefaultKeyword_5_1 = (Keyword)cGroup_5.eContents().get(1);
 		private final Assignment cSiAssignment_5_2 = (Assignment)cGroup_5.eContents().get(2);
 		private final RuleCall cSiSigParserRuleCall_5_2_0 = (RuleCall)cSiAssignment_5_2.eContents().get(0);
 		private final Group cGroup_6 = (Group)cAlternatives.eContents().get(6);
-		private final Action cDeclarationAction_6_0 = (Action)cGroup_6.eContents().get(0);
+		private final Action cDeclarationDefineAction_6_0 = (Action)cGroup_6.eContents().get(0);
 		private final Keyword cDefineKeyword_6_1 = (Keyword)cGroup_6.eContents().get(1);
 		private final Assignment cSiAssignment_6_2 = (Assignment)cGroup_6.eContents().get(2);
 		private final RuleCall cSiSigParserRuleCall_6_2_0 = (RuleCall)cSiAssignment_6_2.eContents().get(0);
 		private final Group cGroup_7 = (Group)cAlternatives.eContents().get(7);
-		private final Action cDeclarationAction_7_0 = (Action)cGroup_7.eContents().get(0);
+		private final Action cDeclarationFixAction_7_0 = (Action)cGroup_7.eContents().get(0);
 		private final Keyword cFixKeyword_7_1 = (Keyword)cGroup_7.eContents().get(1);
 		private final Assignment cSiAssignment_7_2 = (Assignment)cGroup_7.eContents().get(2);
 		private final RuleCall cSiSigParserRuleCall_7_2_0 = (RuleCall)cSiAssignment_7_2.eContents().get(0);
 		private final Group cGroup_8 = (Group)cAlternatives.eContents().get(8);
-		private final Action cDeclarationAction_8_0 = (Action)cGroup_8.eContents().get(0);
+		private final Action cDeclarationInlineAction_8_0 = (Action)cGroup_8.eContents().get(0);
 		private final Keyword cInlineKeyword_8_1 = (Keyword)cGroup_8.eContents().get(1);
 		private final Assignment cSiAssignment_8_2 = (Assignment)cGroup_8.eContents().get(2);
 		private final RuleCall cSiSigParserRuleCall_8_2_0 = (RuleCall)cSiAssignment_8_2.eContents().get(0);
 		private final Assignment cFpAssignment_8_3 = (Assignment)cGroup_8.eContents().get(3);
 		private final RuleCall cFpFromPartParserRuleCall_8_3_0 = (RuleCall)cFpAssignment_8_3.eContents().get(0);
 		private final Group cGroup_9 = (Group)cAlternatives.eContents().get(9);
-		private final Action cDeclarationAction_9_0 = (Action)cGroup_9.eContents().get(0);
+		private final Action cDeclarationImportAction_9_0 = (Action)cGroup_9.eContents().get(0);
 		private final Keyword cImportKeyword_9_1 = (Keyword)cGroup_9.eContents().get(1);
 		private final Assignment cSiAssignment_9_2 = (Assignment)cGroup_9.eContents().get(2);
 		private final RuleCall cSiSigParserRuleCall_9_2_0 = (RuleCall)cSiAssignment_9_2.eContents().get(0);
 		private final Assignment cFpAssignment_9_3 = (Assignment)cGroup_9.eContents().get(3);
 		private final RuleCall cFpFromPartParserRuleCall_9_3_0 = (RuleCall)cFpAssignment_9_3.eContents().get(0);
 		private final Group cGroup_10 = (Group)cAlternatives.eContents().get(10);
-		private final Action cDeclarationAction_10_0 = (Action)cGroup_10.eContents().get(0);
+		private final Action cDeclarationExportAction_10_0 = (Action)cGroup_10.eContents().get(0);
 		private final Assignment cEdAssignment_10_1 = (Assignment)cGroup_10.eContents().get(1);
 		private final RuleCall cEdExportDeclParserRuleCall_10_1_0 = (RuleCall)cEdAssignment_10_1.eContents().get(0);
 		
-		//Declaration hidden(WS, KW_NEWLINE):
-		//	{Declaration} "macro" mb=MacroBody | {Declaration} "extend" si=Sig | {Declaration} "local" si=Sig | {Declaration}
-		//	"free" si=Sig | {Declaration} "fluid" si=Sig | {Declaration} "default" si=Sig | {Declaration} "define" si=Sig |
-		//	{Declaration} "fix" si=Sig | {Declaration} "inline" si=Sig? fp=FromPart? | {Declaration} "import" si=Sig? fp=FromPart?
-		//	| {Declaration} ed=ExportDecl;
+		/// *
+		// * A Declaration starts with one of the following key
+		// * words: 'macro','extend','local','free','fluid','default'
+		// * 'define','fix','inline','import' or 'export'.
+		// * / Declaration hidden(WS, KW_NEWLINE):
+		//	{DeclarationMacro} "macro" mb=MacroBody | {DeclarationExtend} "extend" si=Sig | {DeclarationLocal} "local" si=Sig |
+		//	{DeclarationFree} "free" si=Sig | {DeclarationFluid} "fluid" si=Sig | {DeclarationDefault} "default" si=Sig |
+		//	{DeclarationDefine} "define" si=Sig | {DeclarationFix} "fix" si=Sig | {DeclarationInline} "inline" si=Sig?
+		//	fp=FromPart? | {DeclarationImport} "import" si=Sig? fp=FromPart? | {DeclarationExport} ed=ExportDecl;
 		public ParserRule getRule() { return rule; }
 
-		//{Declaration} "macro" mb=MacroBody | {Declaration} "extend" si=Sig | {Declaration} "local" si=Sig | {Declaration} "free"
-		//si=Sig | {Declaration} "fluid" si=Sig | {Declaration} "default" si=Sig | {Declaration} "define" si=Sig | {Declaration}
-		//"fix" si=Sig | {Declaration} "inline" si=Sig? fp=FromPart? | {Declaration} "import" si=Sig? fp=FromPart? |
-		//{Declaration} ed=ExportDecl
+		//{DeclarationMacro} "macro" mb=MacroBody | {DeclarationExtend} "extend" si=Sig | {DeclarationLocal} "local" si=Sig |
+		//{DeclarationFree} "free" si=Sig | {DeclarationFluid} "fluid" si=Sig | {DeclarationDefault} "default" si=Sig |
+		//{DeclarationDefine} "define" si=Sig | {DeclarationFix} "fix" si=Sig | {DeclarationInline} "inline" si=Sig? fp=FromPart?
+		//| {DeclarationImport} "import" si=Sig? fp=FromPart? | {DeclarationExport} ed=ExportDecl
 		public Alternatives getAlternatives() { return cAlternatives; }
 
-		//{Declaration} "macro" mb=MacroBody
+		//{DeclarationMacro} "macro" mb=MacroBody
 		public Group getGroup_0() { return cGroup_0; }
 
-		//{Declaration}
-		public Action getDeclarationAction_0_0() { return cDeclarationAction_0_0; }
+		//{DeclarationMacro}
+		public Action getDeclarationMacroAction_0_0() { return cDeclarationMacroAction_0_0; }
 
 		//"macro"
 		public Keyword getMacroKeyword_0_1() { return cMacroKeyword_0_1; }
@@ -245,11 +266,11 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		//MacroBody
 		public RuleCall getMbMacroBodyParserRuleCall_0_2_0() { return cMbMacroBodyParserRuleCall_0_2_0; }
 
-		//{Declaration} "extend" si=Sig
+		//{DeclarationExtend} "extend" si=Sig
 		public Group getGroup_1() { return cGroup_1; }
 
-		//{Declaration}
-		public Action getDeclarationAction_1_0() { return cDeclarationAction_1_0; }
+		//{DeclarationExtend}
+		public Action getDeclarationExtendAction_1_0() { return cDeclarationExtendAction_1_0; }
 
 		//"extend"
 		public Keyword getExtendKeyword_1_1() { return cExtendKeyword_1_1; }
@@ -260,11 +281,11 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		//Sig
 		public RuleCall getSiSigParserRuleCall_1_2_0() { return cSiSigParserRuleCall_1_2_0; }
 
-		//{Declaration} "local" si=Sig
+		//{DeclarationLocal} "local" si=Sig
 		public Group getGroup_2() { return cGroup_2; }
 
-		//{Declaration}
-		public Action getDeclarationAction_2_0() { return cDeclarationAction_2_0; }
+		//{DeclarationLocal}
+		public Action getDeclarationLocalAction_2_0() { return cDeclarationLocalAction_2_0; }
 
 		//"local"
 		public Keyword getLocalKeyword_2_1() { return cLocalKeyword_2_1; }
@@ -275,11 +296,11 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		//Sig
 		public RuleCall getSiSigParserRuleCall_2_2_0() { return cSiSigParserRuleCall_2_2_0; }
 
-		//{Declaration} "free" si=Sig
+		//{DeclarationFree} "free" si=Sig
 		public Group getGroup_3() { return cGroup_3; }
 
-		//{Declaration}
-		public Action getDeclarationAction_3_0() { return cDeclarationAction_3_0; }
+		//{DeclarationFree}
+		public Action getDeclarationFreeAction_3_0() { return cDeclarationFreeAction_3_0; }
 
 		//"free"
 		public Keyword getFreeKeyword_3_1() { return cFreeKeyword_3_1; }
@@ -290,11 +311,11 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		//Sig
 		public RuleCall getSiSigParserRuleCall_3_2_0() { return cSiSigParserRuleCall_3_2_0; }
 
-		//{Declaration} "fluid" si=Sig
+		//{DeclarationFluid} "fluid" si=Sig
 		public Group getGroup_4() { return cGroup_4; }
 
-		//{Declaration}
-		public Action getDeclarationAction_4_0() { return cDeclarationAction_4_0; }
+		//{DeclarationFluid}
+		public Action getDeclarationFluidAction_4_0() { return cDeclarationFluidAction_4_0; }
 
 		//"fluid"
 		public Keyword getFluidKeyword_4_1() { return cFluidKeyword_4_1; }
@@ -305,11 +326,11 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		//Sig
 		public RuleCall getSiSigParserRuleCall_4_2_0() { return cSiSigParserRuleCall_4_2_0; }
 
-		//{Declaration} "default" si=Sig
+		//{DeclarationDefault} "default" si=Sig
 		public Group getGroup_5() { return cGroup_5; }
 
-		//{Declaration}
-		public Action getDeclarationAction_5_0() { return cDeclarationAction_5_0; }
+		//{DeclarationDefault}
+		public Action getDeclarationDefaultAction_5_0() { return cDeclarationDefaultAction_5_0; }
 
 		//"default"
 		public Keyword getDefaultKeyword_5_1() { return cDefaultKeyword_5_1; }
@@ -320,11 +341,11 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		//Sig
 		public RuleCall getSiSigParserRuleCall_5_2_0() { return cSiSigParserRuleCall_5_2_0; }
 
-		//{Declaration} "define" si=Sig
+		//{DeclarationDefine} "define" si=Sig
 		public Group getGroup_6() { return cGroup_6; }
 
-		//{Declaration}
-		public Action getDeclarationAction_6_0() { return cDeclarationAction_6_0; }
+		//{DeclarationDefine}
+		public Action getDeclarationDefineAction_6_0() { return cDeclarationDefineAction_6_0; }
 
 		//"define"
 		public Keyword getDefineKeyword_6_1() { return cDefineKeyword_6_1; }
@@ -335,11 +356,11 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		//Sig
 		public RuleCall getSiSigParserRuleCall_6_2_0() { return cSiSigParserRuleCall_6_2_0; }
 
-		//{Declaration} "fix" si=Sig
+		//{DeclarationFix} "fix" si=Sig
 		public Group getGroup_7() { return cGroup_7; }
 
-		//{Declaration}
-		public Action getDeclarationAction_7_0() { return cDeclarationAction_7_0; }
+		//{DeclarationFix}
+		public Action getDeclarationFixAction_7_0() { return cDeclarationFixAction_7_0; }
 
 		//"fix"
 		public Keyword getFixKeyword_7_1() { return cFixKeyword_7_1; }
@@ -350,11 +371,11 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		//Sig
 		public RuleCall getSiSigParserRuleCall_7_2_0() { return cSiSigParserRuleCall_7_2_0; }
 
-		//{Declaration} "inline" si=Sig? fp=FromPart?
+		//{DeclarationInline} "inline" si=Sig? fp=FromPart?
 		public Group getGroup_8() { return cGroup_8; }
 
-		//{Declaration}
-		public Action getDeclarationAction_8_0() { return cDeclarationAction_8_0; }
+		//{DeclarationInline}
+		public Action getDeclarationInlineAction_8_0() { return cDeclarationInlineAction_8_0; }
 
 		//"inline"
 		public Keyword getInlineKeyword_8_1() { return cInlineKeyword_8_1; }
@@ -371,11 +392,11 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		//FromPart
 		public RuleCall getFpFromPartParserRuleCall_8_3_0() { return cFpFromPartParserRuleCall_8_3_0; }
 
-		//{Declaration} "import" si=Sig? fp=FromPart?
+		//{DeclarationImport} "import" si=Sig? fp=FromPart?
 		public Group getGroup_9() { return cGroup_9; }
 
-		//{Declaration}
-		public Action getDeclarationAction_9_0() { return cDeclarationAction_9_0; }
+		//{DeclarationImport}
+		public Action getDeclarationImportAction_9_0() { return cDeclarationImportAction_9_0; }
 
 		//"import"
 		public Keyword getImportKeyword_9_1() { return cImportKeyword_9_1; }
@@ -392,11 +413,11 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		//FromPart
 		public RuleCall getFpFromPartParserRuleCall_9_3_0() { return cFpFromPartParserRuleCall_9_3_0; }
 
-		//{Declaration} ed=ExportDecl
+		//{DeclarationExport} ed=ExportDecl
 		public Group getGroup_10() { return cGroup_10; }
 
-		//{Declaration}
-		public Action getDeclarationAction_10_0() { return cDeclarationAction_10_0; }
+		//{DeclarationExport}
+		public Action getDeclarationExportAction_10_0() { return cDeclarationExportAction_10_0; }
 
 		//ed=ExportDecl
 		public Assignment getEdAssignment_10_1() { return cEdAssignment_10_1; }
@@ -603,7 +624,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cKW_COLONSTARTerminalRuleCall_1_0 = (RuleCall)cGroup_1.eContents().get(0);
 		private final RuleCall cTypeParserRuleCall_1_1 = (RuleCall)cGroup_1.eContents().get(1);
 		
-		//DeclPart hidden(WS, KW_NEWLINE):
+		/// * declare type with ':' or ':*' * / DeclPart hidden(WS, KW_NEWLINE):
 		//	KW_COLON Type | KW_COLONSTAR Type;
 		public ParserRule getRule() { return rule; }
 
@@ -634,7 +655,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cEnlist1_CommaItem_Comma_ABParserRuleCall = (RuleCall)rule.eContents().get(1);
 		
 		/// *
-		// * Commas
+		// * CommaItem (',' CommaItem)*
 		// * / Comma hidden(WS, KW_NEWLINE):
 		//	enlist1_CommaItem_Comma_AB;
 		public ParserRule getRule() { return rule; }
@@ -1161,7 +1182,8 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		private final Group cGroup_2 = (Group)cAlternatives.eContents().get(2);
 		private final Group cGroup_2_0 = (Group)cGroup_2.eContents().get(0);
 		private final RuleCall cIteratorsParserRuleCall_2_0_0 = (RuleCall)cGroup_2_0.eContents().get(0);
-		private final Keyword cRepeatKeyword_2_0_1 = (Keyword)cGroup_2_0.eContents().get(1);
+		private final Assignment cStAssignment_2_0_1 = (Assignment)cGroup_2_0.eContents().get(1);
+		private final Keyword cStRepeatKeyword_2_0_1_0 = (Keyword)cStAssignment_2_0_1.eContents().get(0);
 		private final Assignment cBas3Assignment_2_0_2 = (Assignment)cGroup_2_0.eContents().get(2);
 		private final RuleCall cBas3Binding_AnyStatementParserRuleCall_2_0_2_0 = (RuleCall)cBas3Assignment_2_0_2.eContents().get(0);
 		private final Group cGroup_3 = (Group)cAlternatives.eContents().get(3);
@@ -1300,10 +1322,9 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		////{ $$ = abNewNever(TPOS($1)); }
 		////;
 		// * / Flow_AnyStatement hidden(WS, KW_NEWLINE):
-		//	c=Collection (st="implies" bas2=Binding_AnyStatement)? //	{Flow_AnyStatement}
-		//	// '.... for' or 'while ....'
+		//	c=Collection (st="implies" bas2=Binding_AnyStatement)? // '.... for' or 'while ....'
 		//	| st="if" ci=CommaItem "then" bbs=Binding_BalStatement => "else" bas=Binding_AnyStatement | // 'for .... in' or 'while ....'
-		//	=> (Iterators "repeat" bas3=Binding_AnyStatement) | st="repeat" bas=Binding_AnyStatement | st="try"
+		//	=> (Iterators st="repeat" bas3=Binding_AnyStatement) | st="repeat" bas=Binding_AnyStatement | st="try"
 		//	bas=Binding_AnyStatement ("but" | "catch") be2=ButExpr apa=AlwaysPart_AnyStatement | st="select"
 		//	bas=Binding_AnyStatement "in" ca=Cases | st="do" bas=Binding_AnyStatement | st="delay" bas=Binding_AnyStatement |
 		//	st="reference" bas=Binding_AnyStatement | st="generate" gb=GenBound bas4=Binding_AnyStatement | st="assert"
@@ -1312,10 +1333,9 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		//	i2=Id | st="never";
 		public ParserRule getRule() { return rule; }
 
-		//c=Collection (st="implies" bas2=Binding_AnyStatement)? //	{Flow_AnyStatement}
-		//// '.... for' or 'while ....'
+		//c=Collection (st="implies" bas2=Binding_AnyStatement)? // '.... for' or 'while ....'
 		//| st="if" ci=CommaItem "then" bbs=Binding_BalStatement => "else" bas=Binding_AnyStatement | // 'for .... in' or 'while ....'
-		//=> (Iterators "repeat" bas3=Binding_AnyStatement) | st="repeat" bas=Binding_AnyStatement | st="try"
+		//=> (Iterators st="repeat" bas3=Binding_AnyStatement) | st="repeat" bas=Binding_AnyStatement | st="try"
 		//bas=Binding_AnyStatement ("but" | "catch") be2=ButExpr apa=AlwaysPart_AnyStatement | st="select"
 		//bas=Binding_AnyStatement "in" ca=Cases | st="do" bas=Binding_AnyStatement | st="delay" bas=Binding_AnyStatement |
 		//st="reference" bas=Binding_AnyStatement | st="generate" gb=GenBound bas4=Binding_AnyStatement | st="assert"
@@ -1382,17 +1402,20 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		public RuleCall getBasBinding_AnyStatementParserRuleCall_1_5_0() { return cBasBinding_AnyStatementParserRuleCall_1_5_0; }
 
 		//// 'for .... in' or 'while ....'
-		//=> (Iterators "repeat" bas3=Binding_AnyStatement)
+		//=> (Iterators st="repeat" bas3=Binding_AnyStatement)
 		public Group getGroup_2() { return cGroup_2; }
 
-		//Iterators "repeat" bas3=Binding_AnyStatement
+		//Iterators st="repeat" bas3=Binding_AnyStatement
 		public Group getGroup_2_0() { return cGroup_2_0; }
 
 		//Iterators
 		public RuleCall getIteratorsParserRuleCall_2_0_0() { return cIteratorsParserRuleCall_2_0_0; }
 
+		//st="repeat"
+		public Assignment getStAssignment_2_0_1() { return cStAssignment_2_0_1; }
+
 		//"repeat"
-		public Keyword getRepeatKeyword_2_0_1() { return cRepeatKeyword_2_0_1; }
+		public Keyword getStRepeatKeyword_2_0_1_0() { return cStRepeatKeyword_2_0_1_0; }
 
 		//bas3=Binding_AnyStatement
 		public Assignment getBas3Assignment_2_0_2() { return cBas3Assignment_2_0_2; }
@@ -2367,24 +2390,26 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cI3IteratorsParserRuleCall_1_0 = (RuleCall)cI3Assignment_1.eContents().get(0);
 		
 		/// *
-		// * Iterators
+		// * infixed optionally followed by Iterators
 		// * .... for .... in .... | ....
 		// * while ....
-		// * / Collection hidden(WS, KW_NEWLINE): //Infixed i3=Iterators? // iterators allow for zero cases
-		//	Infixed i3=Iterators;
+		// * / Collection hidden(WS, KW_NEWLINE):
+		//	Infixed i3= // iterators allow for zero cases
+		//	Iterators;
 		public ParserRule getRule() { return rule; }
 
-		////Infixed i3=Iterators? // iterators allow for zero cases
-		//Infixed i3=Iterators
+		//Infixed i3= // iterators allow for zero cases
+		//Iterators
 		public Group getGroup() { return cGroup; }
 
-		////Infixed i3=Iterators? // iterators allow for zero cases
 		//Infixed
 		public RuleCall getInfixedParserRuleCall_0() { return cInfixedParserRuleCall_0; }
 
-		//i3=Iterators
+		//i3= // iterators allow for zero cases
+		//Iterators
 		public Assignment getI3Assignment_1() { return cI3Assignment_1; }
 
+		//// iterators allow for zero cases
 		//Iterators
 		public RuleCall getI3IteratorsParserRuleCall_1_0() { return cI3IteratorsParserRuleCall_1_0; }
 	}
@@ -2393,7 +2418,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Iterators");
 		private final RuleCall cIterators1ParserRuleCall = (RuleCall)rule.eContents().get(1);
 		
-		//Iterators hidden(WS, KW_NEWLINE):
+		/// * Zero or more iterators: for....in or while.... * / Iterators hidden(WS, KW_NEWLINE):
 		//	Iterators1;
 		public ParserRule getRule() { return rule; }
 
@@ -2408,21 +2433,16 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cItrAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cItrIteratorParserRuleCall_1_0 = (RuleCall)cItrAssignment_1.eContents().get(0);
 		
-		/// *
-		// * Decision can match input such as "'temp31'" using multiple alternatives: 1, 3
-		// * / Iterators1 hidden(WS, KW_NEWLINE):
-		//	{Iterators1} //	'temp27'
-		//	itr+=Iterator*;
+		/// * Zero or more iterators: for....in or while.... * / Iterators1 hidden(WS, KW_NEWLINE):
+		//	{Iterators1} itr+=Iterator*;
 		public ParserRule getRule() { return rule; }
 
-		//{Iterators1} //	'temp27'
-		//itr+=Iterator*
+		//{Iterators1} itr+=Iterator*
 		public Group getGroup() { return cGroup; }
 
 		//{Iterators1}
 		public Action getIterators1Action_0() { return cIterators1Action_0; }
 
-		////	'temp27'
 		//itr+=Iterator*
 		public Assignment getItrAssignment_1() { return cItrAssignment_1; }
 
@@ -2446,13 +2466,11 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cIAssignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
 		private final RuleCall cIInfixedParserRuleCall_1_1_0 = (RuleCall)cIAssignment_1_1.eContents().get(0);
 		
-		//Iterator hidden(WS, KW_NEWLINE):
-		//	"for" ForLhs "in" i=Infixed sp=SuchthatPart? //	'temp28'
-		//	| "while" i=Infixed;
+		/// * Iterator: for....in or while.... * / Iterator hidden(WS, KW_NEWLINE):
+		//	"for" ForLhs "in" i=Infixed sp=SuchthatPart? | "while" i=Infixed;
 		public ParserRule getRule() { return rule; }
 
-		//"for" ForLhs "in" i=Infixed sp=SuchthatPart? //	'temp28'
-		//| "while" i=Infixed
+		//"for" ForLhs "in" i=Infixed sp=SuchthatPart? | "while" i=Infixed
 		public Alternatives getAlternatives() { return cAlternatives; }
 
 		//"for" ForLhs "in" i=Infixed sp=SuchthatPart?
@@ -2530,15 +2548,13 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cKW_BARTerminalRuleCall_0 = (RuleCall)cGroup.eContents().get(0);
 		private final RuleCall cInfixedParserRuleCall_1 = (RuleCall)cGroup.eContents().get(1);
 		
-		//SuchthatPart hidden(WS, KW_NEWLINE): //	'temp30'
+		//SuchthatPart hidden(WS, KW_NEWLINE):
 		//	KW_BAR Infixed;
 		public ParserRule getRule() { return rule; }
 
-		////	'temp30'
 		//KW_BAR Infixed
 		public Group getGroup() { return cGroup; }
 
-		////	'temp30'
 		//KW_BAR
 		public RuleCall getKW_BARTerminalRuleCall_0() { return cKW_BARTerminalRuleCall_0; }
 
@@ -2559,16 +2575,18 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		
 		/// *
 		// * Infixed Expressions
+		// * Either:
+		// * an expression
+		// * or a typed expression
+		// * or a block (CurlyContents_Labeled inside curly brackets)
 		// * / Infixed hidden(WS, KW_NEWLINE):
-		//	ifx=InfixedExpr dp+=DeclPart* //	'temp31'
-		//	| b=Block;
+		//	ifx=InfixedExpr dp=DeclPart? | b=Block;
 		public ParserRule getRule() { return rule; }
 
-		//ifx=InfixedExpr dp+=DeclPart* //	'temp31'
-		//| b=Block
+		//ifx=InfixedExpr dp=DeclPart? | b=Block
 		public Alternatives getAlternatives() { return cAlternatives; }
 
-		//ifx=InfixedExpr dp+=DeclPart*
+		//ifx=InfixedExpr dp=DeclPart?
 		public Group getGroup_0() { return cGroup_0; }
 
 		//ifx=InfixedExpr
@@ -2577,7 +2595,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		//InfixedExpr
 		public RuleCall getIfxInfixedExprParserRuleCall_0_0_0() { return cIfxInfixedExprParserRuleCall_0_0_0; }
 
-		//dp+=DeclPart*
+		//dp=DeclPart?
 		public Assignment getDpAssignment_0_1() { return cDpAssignment_0_1; }
 
 		//DeclPart
@@ -3985,40 +4003,11 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		// * | 'not' Jright(Atom)
 		// * { $$ = abNewNot(TPOS($1),TEST($2)); }
 		// * ;
-		// * / / *
-		// * causes problems:
-		// * 
-		// * Even if we just defer to rule Molecule only
-		// * 
-		// *  ANTLR could not analyze this decision in rule
-		// * ruleBindingL_Infixed_AnyStatement; often this is because of
-		// * recursive rule references visible from the left edge of alternatives.
-		// * ANTLR will re-analyze the decision with a fixed lookahead of k=1.
-		// * Consider using "options {k=1;}" for that decision and possibly adding
-		// * a syntactic predicate.
-		// * error(10):  internal error: org.antlr.tool.Grammar.
-		// * createLookaheadDFA(Grammar.java:1279): could not even do k=1 for
-		// * decision 19; reason: timed out (>1000ms)
-		// * 
-		// * If first option is enabled;
-		// * Decision can match input such as "RULE_TK_STRING" using multiple
-		// * alternatives: 1, 2, 3, 4, 5
-		// * If second option is enabled:
-		// * Decision can match input such as "'not'" using multiple
-		// * alternatives
 		// * / Jright_Molecule hidden(WS, KW_NEWLINE):
-		//	Jleft_Molecule right=Jright_Atom? //Atom // parses OK
-		//	//	Enclosure // Decision can match input such as "'start'" using multiple alternatives
-		//	//	Molecule // Decision can match input such as "'start'" using multiple alternatives
-		//	//	'temp56'
-		//	| "not" right=Jright_Atom;
+		//	Jleft_Molecule right=Jright_Atom? | "not" right=Jright_Atom;
 		public ParserRule getRule() { return rule; }
 
-		//Jleft_Molecule right=Jright_Atom? //Atom // parses OK
-		////	Enclosure // Decision can match input such as "'start'" using multiple alternatives
-		////	Molecule // Decision can match input such as "'start'" using multiple alternatives
-		////	'temp56'
-		//| "not" right=Jright_Atom
+		//Jleft_Molecule right=Jright_Atom? | "not" right=Jright_Atom
 		public Alternatives getAlternatives() { return cAlternatives; }
 
 		//Jleft_Molecule right=Jright_Atom?
@@ -4111,18 +4100,18 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cBmAssignment_2_1_1 = (Assignment)cGroup_2_1.eContents().get(1);
 		private final RuleCall cBmBlockMoleculeParserRuleCall_2_1_1_0 = (RuleCall)cBmAssignment_2_1_1.eContents().get(0);
 		
-		/// * Substituted Rules in Xtext:
-		// * Jleft(Molecule)
-		// * Jleft(Atom)
-		// * Jleft(H)
-		// * : H
-		// * | 'not' BlockEnclosure
-		// * { $$ = abNewNot(TPOS($1),TEST($2)); }
-		// * | Jleft(H) BlockEnclosure
-		// * { $$ = parseMakeJuxtapose($1,$2); }
-		// * | Jleft(H) KW_DOT BlockMolecule
-		// * { $$ = abNewPrefix(TPOS($2),$1,$3); }
-		// * ;
+		/// * 
+		// * implements 'function application' as described above including juxtaposition
+		// * matches:
+		// * - Molecule - no argument
+		// * - 'not' BlockEnclosure - not has one argument
+		// * - (*) BlockEnclosure
+		// * - (*) '.' BlockMolecule
+		// * 
+		// * that is substituted version of axl.z code:
+		// * Jleft(H) : H | 'not' BlockEnclosure
+		// *              | Jleft(H) BlockEnclosure
+		// *              | Jleft(H) KW_DOT BlockMolecule ;
 		// * / Jleft_Molecule hidden(WS, KW_NEWLINE):
 		//	"not" be+=BlockEnclosure | => (m=Molecule be+=BlockEnclosure*) | m=Molecule (KW_DOT bm+=BlockMolecule)*;
 		public ParserRule getRule() { return rule; }
@@ -4186,90 +4175,94 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Jleft_Atom");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
 		private final Group cGroup_0 = (Group)cAlternatives.eContents().get(0);
-		private final Group cGroup_0_0 = (Group)cGroup_0.eContents().get(0);
-		private final Assignment cAAssignment_0_0_0 = (Assignment)cGroup_0_0.eContents().get(0);
-		private final RuleCall cAAtomParserRuleCall_0_0_0_0 = (RuleCall)cAAssignment_0_0_0.eContents().get(0);
-		private final Assignment cBeAssignment_0_0_1 = (Assignment)cGroup_0_0.eContents().get(1);
-		private final RuleCall cBeBlockEnclosureParserRuleCall_0_0_1_0 = (RuleCall)cBeAssignment_0_0_1.eContents().get(0);
-		private final Group cGroup_0_1 = (Group)cGroup_0.eContents().get(1);
-		private final Assignment cNAssignment_0_1_0 = (Assignment)cGroup_0_1.eContents().get(0);
-		private final Keyword cNNotKeyword_0_1_0_0 = (Keyword)cNAssignment_0_1_0.eContents().get(0);
-		private final Assignment cBeAssignment_0_1_1 = (Assignment)cGroup_0_1.eContents().get(1);
-		private final RuleCall cBeBlockEnclosureParserRuleCall_0_1_1_0 = (RuleCall)cBeAssignment_0_1_1.eContents().get(0);
+		private final Keyword cNotKeyword_0_0 = (Keyword)cGroup_0.eContents().get(0);
+		private final Assignment cBeAssignment_0_1 = (Assignment)cGroup_0.eContents().get(1);
+		private final RuleCall cBeBlockEnclosureParserRuleCall_0_1_0 = (RuleCall)cBeAssignment_0_1.eContents().get(0);
 		private final Group cGroup_1 = (Group)cAlternatives.eContents().get(1);
-		private final RuleCall cAtomParserRuleCall_1_0 = (RuleCall)cGroup_1.eContents().get(0);
-		private final Group cGroup_1_1 = (Group)cGroup_1.eContents().get(1);
-		private final RuleCall cKW_DOTTerminalRuleCall_1_1_0 = (RuleCall)cGroup_1_1.eContents().get(0);
-		private final Assignment cBm4Assignment_1_1_1 = (Assignment)cGroup_1_1.eContents().get(1);
-		private final RuleCall cBm4BlockMoleculeParserRuleCall_1_1_1_0 = (RuleCall)cBm4Assignment_1_1_1.eContents().get(0);
+		private final Group cGroup_1_0 = (Group)cGroup_1.eContents().get(0);
+		private final Assignment cAAssignment_1_0_0 = (Assignment)cGroup_1_0.eContents().get(0);
+		private final RuleCall cAAtomParserRuleCall_1_0_0_0 = (RuleCall)cAAssignment_1_0_0.eContents().get(0);
+		private final Assignment cBeAssignment_1_0_1 = (Assignment)cGroup_1_0.eContents().get(1);
+		private final RuleCall cBeBlockEnclosureParserRuleCall_1_0_1_0 = (RuleCall)cBeAssignment_1_0_1.eContents().get(0);
+		private final Group cGroup_2 = (Group)cAlternatives.eContents().get(2);
+		private final Assignment cAAssignment_2_0 = (Assignment)cGroup_2.eContents().get(0);
+		private final RuleCall cAAtomParserRuleCall_2_0_0 = (RuleCall)cAAssignment_2_0.eContents().get(0);
+		private final Group cGroup_2_1 = (Group)cGroup_2.eContents().get(1);
+		private final RuleCall cKW_DOTTerminalRuleCall_2_1_0 = (RuleCall)cGroup_2_1.eContents().get(0);
+		private final Assignment cBm4Assignment_2_1_1 = (Assignment)cGroup_2_1.eContents().get(1);
+		private final RuleCall cBm4BlockMoleculeParserRuleCall_2_1_1_0 = (RuleCall)cBm4Assignment_2_1_1.eContents().get(0);
 		
-		/// *
-		// * not quite correct. We need to implement:
-		// * Jleft(H)
-		// * : H
-		// * | KW_Not BlockEnclosure
-		// * | Jleft(H) BlockEnclosure
-		// * | Jleft(H) KW_Dot BlockMolecule
-		//;
+		/// * 
+		// * implements 'function application' as described above including juxtaposition
+		// * matches:
+		// * - Atom - no argument
+		// * - 'not' BlockEnclosure - not has one argument
+		// * - (*) BlockEnclosure
+		// * - (*) '.' BlockMolecule
+		// * 
+		// * that is substituted version of axl.z code:
+		// * Jleft(H) : H | 'not' BlockEnclosure
+		// *              | Jleft(H) BlockEnclosure
+		// *              | Jleft(H) KW_DOT BlockMolecule ;
 		// * / Jleft_Atom hidden(WS, KW_NEWLINE):
-		//	(a=Atom be+=BlockEnclosure*) (n="not" be+=BlockEnclosure) //| =>(a=Atom be+=BlockEnclosure*)
-		//	| Atom (KW_DOT bm4+=BlockMolecule)*;
+		//	"not" be+=BlockEnclosure //(a=Atom be+=BlockEnclosure*)
+		//	| => (a=Atom be+=BlockEnclosure*) | a=Atom (KW_DOT bm4+=BlockMolecule)*;
 		public ParserRule getRule() { return rule; }
 
-		//(a=Atom be+=BlockEnclosure*) (n="not" be+=BlockEnclosure) //| =>(a=Atom be+=BlockEnclosure*)
-		//| Atom (KW_DOT bm4+=BlockMolecule)*
+		//"not" be+=BlockEnclosure //(a=Atom be+=BlockEnclosure*)
+		//| => (a=Atom be+=BlockEnclosure*) | a=Atom (KW_DOT bm4+=BlockMolecule)*
 		public Alternatives getAlternatives() { return cAlternatives; }
 
-		//(a=Atom be+=BlockEnclosure*) (n="not" be+=BlockEnclosure)
+		//"not" be+=BlockEnclosure
 		public Group getGroup_0() { return cGroup_0; }
 
-		//a=Atom be+=BlockEnclosure*
-		public Group getGroup_0_0() { return cGroup_0_0; }
-
-		//a=Atom
-		public Assignment getAAssignment_0_0_0() { return cAAssignment_0_0_0; }
-
-		//Atom
-		public RuleCall getAAtomParserRuleCall_0_0_0_0() { return cAAtomParserRuleCall_0_0_0_0; }
-
-		//be+=BlockEnclosure*
-		public Assignment getBeAssignment_0_0_1() { return cBeAssignment_0_0_1; }
-
-		//BlockEnclosure
-		public RuleCall getBeBlockEnclosureParserRuleCall_0_0_1_0() { return cBeBlockEnclosureParserRuleCall_0_0_1_0; }
-
-		//n="not" be+=BlockEnclosure
-		public Group getGroup_0_1() { return cGroup_0_1; }
-
-		//n="not"
-		public Assignment getNAssignment_0_1_0() { return cNAssignment_0_1_0; }
-
 		//"not"
-		public Keyword getNNotKeyword_0_1_0_0() { return cNNotKeyword_0_1_0_0; }
+		public Keyword getNotKeyword_0_0() { return cNotKeyword_0_0; }
 
 		//be+=BlockEnclosure
-		public Assignment getBeAssignment_0_1_1() { return cBeAssignment_0_1_1; }
+		public Assignment getBeAssignment_0_1() { return cBeAssignment_0_1; }
 
 		//BlockEnclosure
-		public RuleCall getBeBlockEnclosureParserRuleCall_0_1_1_0() { return cBeBlockEnclosureParserRuleCall_0_1_1_0; }
+		public RuleCall getBeBlockEnclosureParserRuleCall_0_1_0() { return cBeBlockEnclosureParserRuleCall_0_1_0; }
 
-		//Atom (KW_DOT bm4+=BlockMolecule)*
+		//=> (a=Atom be+=BlockEnclosure*)
 		public Group getGroup_1() { return cGroup_1; }
 
+		//a=Atom be+=BlockEnclosure*
+		public Group getGroup_1_0() { return cGroup_1_0; }
+
+		//a=Atom
+		public Assignment getAAssignment_1_0_0() { return cAAssignment_1_0_0; }
+
 		//Atom
-		public RuleCall getAtomParserRuleCall_1_0() { return cAtomParserRuleCall_1_0; }
+		public RuleCall getAAtomParserRuleCall_1_0_0_0() { return cAAtomParserRuleCall_1_0_0_0; }
+
+		//be+=BlockEnclosure*
+		public Assignment getBeAssignment_1_0_1() { return cBeAssignment_1_0_1; }
+
+		//BlockEnclosure
+		public RuleCall getBeBlockEnclosureParserRuleCall_1_0_1_0() { return cBeBlockEnclosureParserRuleCall_1_0_1_0; }
+
+		//a=Atom (KW_DOT bm4+=BlockMolecule)*
+		public Group getGroup_2() { return cGroup_2; }
+
+		//a=Atom
+		public Assignment getAAssignment_2_0() { return cAAssignment_2_0; }
+
+		//Atom
+		public RuleCall getAAtomParserRuleCall_2_0_0() { return cAAtomParserRuleCall_2_0_0; }
 
 		//(KW_DOT bm4+=BlockMolecule)*
-		public Group getGroup_1_1() { return cGroup_1_1; }
+		public Group getGroup_2_1() { return cGroup_2_1; }
 
 		//KW_DOT
-		public RuleCall getKW_DOTTerminalRuleCall_1_1_0() { return cKW_DOTTerminalRuleCall_1_1_0; }
+		public RuleCall getKW_DOTTerminalRuleCall_2_1_0() { return cKW_DOTTerminalRuleCall_2_1_0; }
 
 		//bm4+=BlockMolecule
-		public Assignment getBm4Assignment_1_1_1() { return cBm4Assignment_1_1_1; }
+		public Assignment getBm4Assignment_2_1_1() { return cBm4Assignment_2_1_1; }
 
 		//BlockMolecule
-		public RuleCall getBm4BlockMoleculeParserRuleCall_1_1_1_0() { return cBm4BlockMoleculeParserRuleCall_1_1_1_0; }
+		public RuleCall getBm4BlockMoleculeParserRuleCall_2_1_1_0() { return cBm4BlockMoleculeParserRuleCall_2_1_1_0; }
 	}
 
 	public class MoleculeElements extends AbstractParserRuleElementFinder {
@@ -4402,7 +4395,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Block");
 		private final RuleCall cCurly_LabeledParserRuleCall = (RuleCall)rule.eContents().get(1);
 		
-		//Block hidden(WS, KW_NEWLINE): // Piled(Expression)|
+		/// * CurlyContents_Labeled inside curly brackets * / Block hidden(WS, KW_NEWLINE): // Piled(Expression)|
 		//	Curly_Labeled;
 		public ParserRule getRule() { return rule; }
 
@@ -5261,19 +5254,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "enlist1_CommaItem_Comma_AB");
 		private final RuleCall cEnlister1_CommaItem_CommaParserRuleCall = (RuleCall)rule.eContents().get(1);
 		
-		/// * Substituted Rules in Xtext:
-		// * enlist1(Infixed, KW_Comma, `AB_Comma)
-		// * enlist1(CommaItem, KW_Comma, `AB_Comma) enlist1_CommaItem_Comma_AB
-		// * enlist1(InfixedExpr, KW_Comma, `AB_Comma)
-		// * enlist1(Name, KW_Comma, `AB_Comma)
-		// * 
-		// *  E {sep E sep E}
-		// * 
-		// * enlist1(E,Sep,Tag)
-		// * : enlister1(E, Sep)
-		// * 
-		// * { $$ = abOneOrNewOfList(Tag, $1); listFree(AbSyn)($1); }
-		// * ;
+		/// * CommaItem (',' CommaItem)*
 		// * / enlist1_CommaItem_Comma_AB hidden(WS, KW_NEWLINE):
 		//	enlister1_CommaItem_Comma;
 		public ParserRule getRule() { return rule; }
@@ -5286,7 +5267,8 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "enlist1_Infixed_Comma_AB");
 		private final RuleCall cEnlister1_Infixed_CommaParserRuleCall = (RuleCall)rule.eContents().get(1);
 		
-		//enlist1_Infixed_Comma_AB hidden(WS, KW_NEWLINE):
+		/// * Infixed (',' Infixed)*
+		// * / enlist1_Infixed_Comma_AB hidden(WS, KW_NEWLINE):
 		//	enlister1_Infixed_Comma;
 		public ParserRule getRule() { return rule; }
 
@@ -5298,7 +5280,8 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "enlist1_InfixedExpr_Comma_AB");
 		private final RuleCall cEnlister1_InfixedExpr_CommaParserRuleCall = (RuleCall)rule.eContents().get(1);
 		
-		//enlist1_InfixedExpr_Comma_AB hidden(WS, KW_NEWLINE):
+		/// * InfixedExpr (',' InfixedExpr)*
+		// * / enlist1_InfixedExpr_Comma_AB hidden(WS, KW_NEWLINE):
 		//	enlister1_InfixedExpr_Comma;
 		public ParserRule getRule() { return rule; }
 
@@ -5315,25 +5298,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cCiAssignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
 		private final RuleCall cCiCommaItemParserRuleCall_1_1_0 = (RuleCall)cCiAssignment_1_1.eContents().get(0);
 		
-		/// * not used
-		// * E sep E {sep E}
-		// * / //enlist2(E,Sep,Tag)
-		////: enlister1(E, Sep) Sep E
-		////{
-		////$1 = listCons(AbSyn)($3, $1);
-		////$$ = abOneOrNewOfList(Tag, $1);
-		////listFree(AbSyn)($1);
-		////}
-		////;
-		/// * Substituted Rules in Xtext:
-		// * enlister1(E, Sep)
-		// * where E is E from enlist1 or enlist1a 
-		// * enlister1(E, Sep)<ablist>
-		// * : E
-		// * { $$ = listCons(AbSyn)($1, listNil(AbSyn) ); }
-		// * | enlister1(E, Sep) Sep E
-		// * { $$ = listCons(AbSyn)($3, $1); }
-		// * ;
+		/// * CommaItem (',' CommaItem)*
 		// * / enlister1_CommaItem_Comma hidden(WS, KW_NEWLINE):
 		//	CommaItem (KW_COMMA ci+=CommaItem)*;
 		public ParserRule getRule() { return rule; }
@@ -5366,7 +5331,8 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cI2Assignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
 		private final RuleCall cI2InfixedParserRuleCall_1_1_0 = (RuleCall)cI2Assignment_1_1.eContents().get(0);
 		
-		//enlister1_Infixed_Comma hidden(WS, KW_NEWLINE):
+		/// * Infixed (',' Infixed)*
+		// * / enlister1_Infixed_Comma hidden(WS, KW_NEWLINE):
 		//	Infixed (KW_COMMA i2+=Infixed)*;
 		public ParserRule getRule() { return rule; }
 
@@ -5398,7 +5364,8 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cIeAssignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
 		private final RuleCall cIeInfixedExprParserRuleCall_1_1_0 = (RuleCall)cIeAssignment_1_1.eContents().get(0);
 		
-		//enlister1_InfixedExpr_Comma hidden(WS, KW_NEWLINE):
+		/// * InfixedExpr (',' InfixedExpr)*
+		// * / enlister1_InfixedExpr_Comma hidden(WS, KW_NEWLINE):
 		//	InfixedExpr (KW_COMMA ie+=InfixedExpr)*;
 		public ParserRule getRule() { return rule; }
 
@@ -5523,7 +5490,10 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cCurlyContentsList_LabeledParserRuleCall = (RuleCall)rule.eContents().get(1);
 		
 		/// * A list of (at least one) statement(s)
-		// * seperated by semicolons and optionally ending with a semicolon
+		// * seperated by (one or more) semicolons and optionally ending with
+		// * a semicolon (zero or more)
+		// * 
+		// * This is similar to enlister1a_Labeled_Semicolon;
 		// * 
 		// * statements can have pre or post comments
 		// * 
@@ -5548,14 +5518,25 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cKW_SEMICOLONTerminalRuleCall_2 = (RuleCall)cGroup.eContents().get(2);
 		
 		/// * A list of (at least one) statement(s)
-		// * seperated by semicolons and optionally ending with a semicolon
+		// * seperated by (one or more) semicolons and optionally ending with
+		// * a semicolon (zero or more)
+		// * 
+		// * This is similar to enlister1a_Labeled_Semicolon
 		// * 
 		// * statements can have pre or post comments
 		// * / CurlyContentsList_Labeled hidden(WS, KW_NEWLINE):
-		//	statemts+=CurlyContentB_Labeled (KW_SEMICOLON+ statemts+=CurlyContentB_Labeled)* KW_SEMICOLON*;
+		//	statemts+=CurlyContentB_Labeled //(statemts += CurlyContentB_Labeled?)
+		//	(KW_SEMICOLON+ statemts+=CurlyContentB_Labeled)* // need to change this line to:
+		//	//(KW_SEMICOLON* statemts += CurlyContentB_Labeled)*
+		//	// that is make semicolons optional but that causes non-LL(*) grammar
+		//	KW_SEMICOLON*;
 		public ParserRule getRule() { return rule; }
 
-		//statemts+=CurlyContentB_Labeled (KW_SEMICOLON+ statemts+=CurlyContentB_Labeled)* KW_SEMICOLON*
+		//statemts+=CurlyContentB_Labeled //(statemts += CurlyContentB_Labeled?)
+		//(KW_SEMICOLON+ statemts+=CurlyContentB_Labeled)* // need to change this line to:
+		////(KW_SEMICOLON* statemts += CurlyContentB_Labeled)*
+		//// that is make semicolons optional but that causes non-LL(*) grammar
+		//KW_SEMICOLON*
 		public Group getGroup() { return cGroup; }
 
 		//statemts+=CurlyContentB_Labeled
@@ -5576,6 +5557,9 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		//CurlyContentB_Labeled
 		public RuleCall getStatemtsCurlyContentB_LabeledParserRuleCall_1_1_0() { return cStatemtsCurlyContentB_LabeledParserRuleCall_1_1_0; }
 
+		//// need to change this line to:
+		////(KW_SEMICOLON* statemts += CurlyContentB_Labeled)*
+		//// that is make semicolons optional but that causes non-LL(*) grammar
 		//KW_SEMICOLON*
 		public RuleCall getKW_SEMICOLONTerminalRuleCall_2() { return cKW_SEMICOLONTerminalRuleCall_2; }
 	}
@@ -5590,11 +5574,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cPdAssignment_2 = (Assignment)cGroup.eContents().get(2);
 		private final RuleCall cPdPostDocumentParserRuleCall_2_0 = (RuleCall)cPdAssignment_2.eContents().get(0);
 		
-		/// * CurlyContent1_Labeled
-		// * this rule is used by CurlyContentsList_Labeled
-		// *
-		// * Substituted Rules in Xtext:
-		// * CurlyContent1(E) E is form CurlyContentsList(E)
+		/// * List of 'Labeled' each one is terminated by semicolon
 		// * 
 		// * This rule is left recursive in the Aldor grammar so I have
 		// * to change it here.
@@ -6438,8 +6418,13 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	/// * An '.as' file is effectively a list of 'Labeled' 
-	// * separated by semicolons* / Labeled hidden(WS, KW_NEWLINE):
-	//	Comma | Declaration | KW_AT Atom lab=Labeled?;
+	// * separated by semicolons
+	// *
+	// * Labeled can be an expression or a Declaration such
+	// * as 'macro','extend','local','free','fluid','default'
+	// * 'define','fix','inline','import' or 'export'.
+	// * / Labeled hidden(WS, KW_NEWLINE):
+	//	c=Comma | d=Declaration | KW_AT a=Atom lab=Labeled?;
 	public LabeledElements getLabeledAccess() {
 		return (pLabeled != null) ? pLabeled : (pLabeled = new LabeledElements());
 	}
@@ -6448,11 +6433,15 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		return getLabeledAccess().getRule();
 	}
 
-	//Declaration hidden(WS, KW_NEWLINE):
-	//	{Declaration} "macro" mb=MacroBody | {Declaration} "extend" si=Sig | {Declaration} "local" si=Sig | {Declaration}
-	//	"free" si=Sig | {Declaration} "fluid" si=Sig | {Declaration} "default" si=Sig | {Declaration} "define" si=Sig |
-	//	{Declaration} "fix" si=Sig | {Declaration} "inline" si=Sig? fp=FromPart? | {Declaration} "import" si=Sig? fp=FromPart?
-	//	| {Declaration} ed=ExportDecl;
+	/// *
+	// * A Declaration starts with one of the following key
+	// * words: 'macro','extend','local','free','fluid','default'
+	// * 'define','fix','inline','import' or 'export'.
+	// * / Declaration hidden(WS, KW_NEWLINE):
+	//	{DeclarationMacro} "macro" mb=MacroBody | {DeclarationExtend} "extend" si=Sig | {DeclarationLocal} "local" si=Sig |
+	//	{DeclarationFree} "free" si=Sig | {DeclarationFluid} "fluid" si=Sig | {DeclarationDefault} "default" si=Sig |
+	//	{DeclarationDefine} "define" si=Sig | {DeclarationFix} "fix" si=Sig | {DeclarationInline} "inline" si=Sig?
+	//	fp=FromPart? | {DeclarationImport} "import" si=Sig? fp=FromPart? | {DeclarationExport} ed=ExportDecl;
 	public DeclarationElements getDeclarationAccess() {
 		return (pDeclaration != null) ? pDeclaration : (pDeclaration = new DeclarationElements());
 	}
@@ -6511,7 +6500,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		return getSigAccess().getRule();
 	}
 
-	//DeclPart hidden(WS, KW_NEWLINE):
+	/// * declare type with ':' or ':*' * / DeclPart hidden(WS, KW_NEWLINE):
 	//	KW_COLON Type | KW_COLONSTAR Type;
 	public DeclPartElements getDeclPartAccess() {
 		return (pDeclPart != null) ? pDeclPart : (pDeclPart = new DeclPartElements());
@@ -6522,7 +6511,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	/// *
-	// * Commas
+	// * CommaItem (',' CommaItem)*
 	// * / Comma hidden(WS, KW_NEWLINE):
 	//	enlist1_CommaItem_Comma_AB;
 	public CommaElements getCommaAccess() {
@@ -6755,10 +6744,9 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 	////{ $$ = abNewNever(TPOS($1)); }
 	////;
 	// * / Flow_AnyStatement hidden(WS, KW_NEWLINE):
-	//	c=Collection (st="implies" bas2=Binding_AnyStatement)? //	{Flow_AnyStatement}
-	//	// '.... for' or 'while ....'
+	//	c=Collection (st="implies" bas2=Binding_AnyStatement)? // '.... for' or 'while ....'
 	//	| st="if" ci=CommaItem "then" bbs=Binding_BalStatement => "else" bas=Binding_AnyStatement | // 'for .... in' or 'while ....'
-	//	=> (Iterators "repeat" bas3=Binding_AnyStatement) | st="repeat" bas=Binding_AnyStatement | st="try"
+	//	=> (Iterators st="repeat" bas3=Binding_AnyStatement) | st="repeat" bas=Binding_AnyStatement | st="try"
 	//	bas=Binding_AnyStatement ("but" | "catch") be2=ButExpr apa=AlwaysPart_AnyStatement | st="select"
 	//	bas=Binding_AnyStatement "in" ca=Cases | st="do" bas=Binding_AnyStatement | st="delay" bas=Binding_AnyStatement |
 	//	st="reference" bas=Binding_AnyStatement | st="generate" gb=GenBound bas4=Binding_AnyStatement | st="assert"
@@ -6852,11 +6840,12 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	/// *
-	// * Iterators
+	// * infixed optionally followed by Iterators
 	// * .... for .... in .... | ....
 	// * while ....
-	// * / Collection hidden(WS, KW_NEWLINE): //Infixed i3=Iterators? // iterators allow for zero cases
-	//	Infixed i3=Iterators;
+	// * / Collection hidden(WS, KW_NEWLINE):
+	//	Infixed i3= // iterators allow for zero cases
+	//	Iterators;
 	public CollectionElements getCollectionAccess() {
 		return (pCollection != null) ? pCollection : (pCollection = new CollectionElements());
 	}
@@ -6865,7 +6854,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		return getCollectionAccess().getRule();
 	}
 
-	//Iterators hidden(WS, KW_NEWLINE):
+	/// * Zero or more iterators: for....in or while.... * / Iterators hidden(WS, KW_NEWLINE):
 	//	Iterators1;
 	public IteratorsElements getIteratorsAccess() {
 		return (pIterators != null) ? pIterators : (pIterators = new IteratorsElements());
@@ -6875,11 +6864,8 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		return getIteratorsAccess().getRule();
 	}
 
-	/// *
-	// * Decision can match input such as "'temp31'" using multiple alternatives: 1, 3
-	// * / Iterators1 hidden(WS, KW_NEWLINE):
-	//	{Iterators1} //	'temp27'
-	//	itr+=Iterator*;
+	/// * Zero or more iterators: for....in or while.... * / Iterators1 hidden(WS, KW_NEWLINE):
+	//	{Iterators1} itr+=Iterator*;
 	public Iterators1Elements getIterators1Access() {
 		return (pIterators1 != null) ? pIterators1 : (pIterators1 = new Iterators1Elements());
 	}
@@ -6888,9 +6874,8 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		return getIterators1Access().getRule();
 	}
 
-	//Iterator hidden(WS, KW_NEWLINE):
-	//	"for" ForLhs "in" i=Infixed sp=SuchthatPart? //	'temp28'
-	//	| "while" i=Infixed;
+	/// * Iterator: for....in or while.... * / Iterator hidden(WS, KW_NEWLINE):
+	//	"for" ForLhs "in" i=Infixed sp=SuchthatPart? | "while" i=Infixed;
 	public IteratorElements getIteratorAccess() {
 		return (pIterator != null) ? pIterator : (pIterator = new IteratorElements());
 	}
@@ -6909,7 +6894,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		return getForLhsAccess().getRule();
 	}
 
-	//SuchthatPart hidden(WS, KW_NEWLINE): //	'temp30'
+	//SuchthatPart hidden(WS, KW_NEWLINE):
 	//	KW_BAR Infixed;
 	public SuchthatPartElements getSuchthatPartAccess() {
 		return (pSuchthatPart != null) ? pSuchthatPart : (pSuchthatPart = new SuchthatPartElements());
@@ -6921,9 +6906,12 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 
 	/// *
 	// * Infixed Expressions
+	// * Either:
+	// * an expression
+	// * or a typed expression
+	// * or a block (CurlyContents_Labeled inside curly brackets)
 	// * / Infixed hidden(WS, KW_NEWLINE):
-	//	ifx=InfixedExpr dp+=DeclPart* //	'temp31'
-	//	| b=Block;
+	//	ifx=InfixedExpr dp=DeclPart? | b=Block;
 	public InfixedElements getInfixedAccess() {
 		return (pInfixed != null) ? pInfixed : (pInfixed = new InfixedElements());
 	}
@@ -7392,33 +7380,8 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 	// * | 'not' Jright(Atom)
 	// * { $$ = abNewNot(TPOS($1),TEST($2)); }
 	// * ;
-	// * / / *
-	// * causes problems:
-	// * 
-	// * Even if we just defer to rule Molecule only
-	// * 
-	// *  ANTLR could not analyze this decision in rule
-	// * ruleBindingL_Infixed_AnyStatement; often this is because of
-	// * recursive rule references visible from the left edge of alternatives.
-	// * ANTLR will re-analyze the decision with a fixed lookahead of k=1.
-	// * Consider using "options {k=1;}" for that decision and possibly adding
-	// * a syntactic predicate.
-	// * error(10):  internal error: org.antlr.tool.Grammar.
-	// * createLookaheadDFA(Grammar.java:1279): could not even do k=1 for
-	// * decision 19; reason: timed out (>1000ms)
-	// * 
-	// * If first option is enabled;
-	// * Decision can match input such as "RULE_TK_STRING" using multiple
-	// * alternatives: 1, 2, 3, 4, 5
-	// * If second option is enabled:
-	// * Decision can match input such as "'not'" using multiple
-	// * alternatives
 	// * / Jright_Molecule hidden(WS, KW_NEWLINE):
-	//	Jleft_Molecule right=Jright_Atom? //Atom // parses OK
-	//	//	Enclosure // Decision can match input such as "'start'" using multiple alternatives
-	//	//	Molecule // Decision can match input such as "'start'" using multiple alternatives
-	//	//	'temp56'
-	//	| "not" right=Jright_Atom;
+	//	Jleft_Molecule right=Jright_Atom? | "not" right=Jright_Atom;
 	public Jright_MoleculeElements getJright_MoleculeAccess() {
 		return (pJright_Molecule != null) ? pJright_Molecule : (pJright_Molecule = new Jright_MoleculeElements());
 	}
@@ -7437,18 +7400,18 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		return getJright_AtomAccess().getRule();
 	}
 
-	/// * Substituted Rules in Xtext:
-	// * Jleft(Molecule)
-	// * Jleft(Atom)
-	// * Jleft(H)
-	// * : H
-	// * | 'not' BlockEnclosure
-	// * { $$ = abNewNot(TPOS($1),TEST($2)); }
-	// * | Jleft(H) BlockEnclosure
-	// * { $$ = parseMakeJuxtapose($1,$2); }
-	// * | Jleft(H) KW_DOT BlockMolecule
-	// * { $$ = abNewPrefix(TPOS($2),$1,$3); }
-	// * ;
+	/// * 
+	// * implements 'function application' as described above including juxtaposition
+	// * matches:
+	// * - Molecule - no argument
+	// * - 'not' BlockEnclosure - not has one argument
+	// * - (*) BlockEnclosure
+	// * - (*) '.' BlockMolecule
+	// * 
+	// * that is substituted version of axl.z code:
+	// * Jleft(H) : H | 'not' BlockEnclosure
+	// *              | Jleft(H) BlockEnclosure
+	// *              | Jleft(H) KW_DOT BlockMolecule ;
 	// * / Jleft_Molecule hidden(WS, KW_NEWLINE):
 	//	"not" be+=BlockEnclosure | => (m=Molecule be+=BlockEnclosure*) | m=Molecule (KW_DOT bm+=BlockMolecule)*;
 	public Jleft_MoleculeElements getJleft_MoleculeAccess() {
@@ -7459,17 +7422,21 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		return getJleft_MoleculeAccess().getRule();
 	}
 
-	/// *
-	// * not quite correct. We need to implement:
-	// * Jleft(H)
-	// * : H
-	// * | KW_Not BlockEnclosure
-	// * | Jleft(H) BlockEnclosure
-	// * | Jleft(H) KW_Dot BlockMolecule
-	//;
+	/// * 
+	// * implements 'function application' as described above including juxtaposition
+	// * matches:
+	// * - Atom - no argument
+	// * - 'not' BlockEnclosure - not has one argument
+	// * - (*) BlockEnclosure
+	// * - (*) '.' BlockMolecule
+	// * 
+	// * that is substituted version of axl.z code:
+	// * Jleft(H) : H | 'not' BlockEnclosure
+	// *              | Jleft(H) BlockEnclosure
+	// *              | Jleft(H) KW_DOT BlockMolecule ;
 	// * / Jleft_Atom hidden(WS, KW_NEWLINE):
-	//	(a=Atom be+=BlockEnclosure*) (n="not" be+=BlockEnclosure) //| =>(a=Atom be+=BlockEnclosure*)
-	//	| Atom (KW_DOT bm4+=BlockMolecule)*;
+	//	"not" be+=BlockEnclosure //(a=Atom be+=BlockEnclosure*)
+	//	| => (a=Atom be+=BlockEnclosure*) | a=Atom (KW_DOT bm4+=BlockMolecule)*;
 	public Jleft_AtomElements getJleft_AtomAccess() {
 		return (pJleft_Atom != null) ? pJleft_Atom : (pJleft_Atom = new Jleft_AtomElements());
 	}
@@ -7530,7 +7497,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		return getBlockEnclosureAccess().getRule();
 	}
 
-	//Block hidden(WS, KW_NEWLINE): // Piled(Expression)|
+	/// * CurlyContents_Labeled inside curly brackets * / Block hidden(WS, KW_NEWLINE): // Piled(Expression)|
 	//	Curly_Labeled;
 	public BlockElements getBlockAccess() {
 		return (pBlock != null) ? pBlock : (pBlock = new BlockElements());
@@ -7863,19 +7830,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		return getPostDocumentAccess().getRule();
 	}
 
-	/// * Substituted Rules in Xtext:
-	// * enlist1(Infixed, KW_Comma, `AB_Comma)
-	// * enlist1(CommaItem, KW_Comma, `AB_Comma) enlist1_CommaItem_Comma_AB
-	// * enlist1(InfixedExpr, KW_Comma, `AB_Comma)
-	// * enlist1(Name, KW_Comma, `AB_Comma)
-	// * 
-	// *  E {sep E sep E}
-	// * 
-	// * enlist1(E,Sep,Tag)
-	// * : enlister1(E, Sep)
-	// * 
-	// * { $$ = abOneOrNewOfList(Tag, $1); listFree(AbSyn)($1); }
-	// * ;
+	/// * CommaItem (',' CommaItem)*
 	// * / enlist1_CommaItem_Comma_AB hidden(WS, KW_NEWLINE):
 	//	enlister1_CommaItem_Comma;
 	public Enlist1_CommaItem_Comma_ABElements getEnlist1_CommaItem_Comma_ABAccess() {
@@ -7886,7 +7841,8 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		return getEnlist1_CommaItem_Comma_ABAccess().getRule();
 	}
 
-	//enlist1_Infixed_Comma_AB hidden(WS, KW_NEWLINE):
+	/// * Infixed (',' Infixed)*
+	// * / enlist1_Infixed_Comma_AB hidden(WS, KW_NEWLINE):
 	//	enlister1_Infixed_Comma;
 	public Enlist1_Infixed_Comma_ABElements getEnlist1_Infixed_Comma_ABAccess() {
 		return (pEnlist1_Infixed_Comma_AB != null) ? pEnlist1_Infixed_Comma_AB : (pEnlist1_Infixed_Comma_AB = new Enlist1_Infixed_Comma_ABElements());
@@ -7896,7 +7852,8 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		return getEnlist1_Infixed_Comma_ABAccess().getRule();
 	}
 
-	//enlist1_InfixedExpr_Comma_AB hidden(WS, KW_NEWLINE):
+	/// * InfixedExpr (',' InfixedExpr)*
+	// * / enlist1_InfixedExpr_Comma_AB hidden(WS, KW_NEWLINE):
 	//	enlister1_InfixedExpr_Comma;
 	public Enlist1_InfixedExpr_Comma_ABElements getEnlist1_InfixedExpr_Comma_ABAccess() {
 		return (pEnlist1_InfixedExpr_Comma_AB != null) ? pEnlist1_InfixedExpr_Comma_AB : (pEnlist1_InfixedExpr_Comma_AB = new Enlist1_InfixedExpr_Comma_ABElements());
@@ -7906,25 +7863,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		return getEnlist1_InfixedExpr_Comma_ABAccess().getRule();
 	}
 
-	/// * not used
-	// * E sep E {sep E}
-	// * / //enlist2(E,Sep,Tag)
-	////: enlister1(E, Sep) Sep E
-	////{
-	////$1 = listCons(AbSyn)($3, $1);
-	////$$ = abOneOrNewOfList(Tag, $1);
-	////listFree(AbSyn)($1);
-	////}
-	////;
-	/// * Substituted Rules in Xtext:
-	// * enlister1(E, Sep)
-	// * where E is E from enlist1 or enlist1a 
-	// * enlister1(E, Sep)<ablist>
-	// * : E
-	// * { $$ = listCons(AbSyn)($1, listNil(AbSyn) ); }
-	// * | enlister1(E, Sep) Sep E
-	// * { $$ = listCons(AbSyn)($3, $1); }
-	// * ;
+	/// * CommaItem (',' CommaItem)*
 	// * / enlister1_CommaItem_Comma hidden(WS, KW_NEWLINE):
 	//	CommaItem (KW_COMMA ci+=CommaItem)*;
 	public Enlister1_CommaItem_CommaElements getEnlister1_CommaItem_CommaAccess() {
@@ -7935,7 +7874,8 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		return getEnlister1_CommaItem_CommaAccess().getRule();
 	}
 
-	//enlister1_Infixed_Comma hidden(WS, KW_NEWLINE):
+	/// * Infixed (',' Infixed)*
+	// * / enlister1_Infixed_Comma hidden(WS, KW_NEWLINE):
 	//	Infixed (KW_COMMA i2+=Infixed)*;
 	public Enlister1_Infixed_CommaElements getEnlister1_Infixed_CommaAccess() {
 		return (pEnlister1_Infixed_Comma != null) ? pEnlister1_Infixed_Comma : (pEnlister1_Infixed_Comma = new Enlister1_Infixed_CommaElements());
@@ -7945,7 +7885,8 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		return getEnlister1_Infixed_CommaAccess().getRule();
 	}
 
-	//enlister1_InfixedExpr_Comma hidden(WS, KW_NEWLINE):
+	/// * InfixedExpr (',' InfixedExpr)*
+	// * / enlister1_InfixedExpr_Comma hidden(WS, KW_NEWLINE):
 	//	InfixedExpr (KW_COMMA ie+=InfixedExpr)*;
 	public Enlister1_InfixedExpr_CommaElements getEnlister1_InfixedExpr_CommaAccess() {
 		return (pEnlister1_InfixedExpr_Comma != null) ? pEnlister1_InfixedExpr_Comma : (pEnlister1_InfixedExpr_Comma = new Enlister1_InfixedExpr_CommaElements());
@@ -8007,7 +7948,10 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	/// * A list of (at least one) statement(s)
-	// * seperated by semicolons and optionally ending with a semicolon
+	// * seperated by (one or more) semicolons and optionally ending with
+	// * a semicolon (zero or more)
+	// * 
+	// * This is similar to enlister1a_Labeled_Semicolon;
 	// * 
 	// * statements can have pre or post comments
 	// * 
@@ -8023,11 +7967,18 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	/// * A list of (at least one) statement(s)
-	// * seperated by semicolons and optionally ending with a semicolon
+	// * seperated by (one or more) semicolons and optionally ending with
+	// * a semicolon (zero or more)
+	// * 
+	// * This is similar to enlister1a_Labeled_Semicolon
 	// * 
 	// * statements can have pre or post comments
 	// * / CurlyContentsList_Labeled hidden(WS, KW_NEWLINE):
-	//	statemts+=CurlyContentB_Labeled (KW_SEMICOLON+ statemts+=CurlyContentB_Labeled)* KW_SEMICOLON*;
+	//	statemts+=CurlyContentB_Labeled //(statemts += CurlyContentB_Labeled?)
+	//	(KW_SEMICOLON+ statemts+=CurlyContentB_Labeled)* // need to change this line to:
+	//	//(KW_SEMICOLON* statemts += CurlyContentB_Labeled)*
+	//	// that is make semicolons optional but that causes non-LL(*) grammar
+	//	KW_SEMICOLON*;
 	public CurlyContentsList_LabeledElements getCurlyContentsList_LabeledAccess() {
 		return (pCurlyContentsList_Labeled != null) ? pCurlyContentsList_Labeled : (pCurlyContentsList_Labeled = new CurlyContentsList_LabeledElements());
 	}
@@ -8036,11 +7987,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		return getCurlyContentsList_LabeledAccess().getRule();
 	}
 
-	/// * CurlyContent1_Labeled
-	// * this rule is used by CurlyContentsList_Labeled
-	// *
-	// * Substituted Rules in Xtext:
-	// * CurlyContent1(E) E is form CurlyContentsList(E)
+	/// * List of 'Labeled' each one is terminated by semicolon
 	// * 
 	// * This rule is left recursive in the Aldor grammar so I have
 	// * to change it here.
