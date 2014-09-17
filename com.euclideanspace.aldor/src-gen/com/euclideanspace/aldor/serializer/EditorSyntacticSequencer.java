@@ -370,7 +370,7 @@ public class EditorSyntacticSequencer extends AbstractSyntacticSequencer {
 
 	/**
 	 * Syntax:
-	 *     KW_MARROW | KW_MAPSTOSTAR | KW_2EQ | KW_MAPSTO | KW_ASSIGN
+	 *     KW_MAPSTO | KW_ASSIGN | KW_MARROW | KW_2EQ | KW_MAPSTOSTAR
 	 */
 	protected void emit_BindingR_InfixedExprsDecl_AnyStatement_KW_2EQTerminalRuleCall_1_0_1_or_KW_ASSIGNTerminalRuleCall_1_0_0_or_KW_MAPSTOSTARTerminalRuleCall_1_0_4_or_KW_MAPSTOTerminalRuleCall_1_0_3_or_KW_MARROWTerminalRuleCall_1_0_2(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
@@ -394,7 +394,7 @@ public class EditorSyntacticSequencer extends AbstractSyntacticSequencer {
 	
 	/**
 	 * Syntax:
-	 *     KW_COLONSTAR | KW_COLON
+	 *     KW_COLON | KW_COLONSTAR
 	 */
 	protected void emit_DeclPart_KW_COLONSTARTerminalRuleCall_1_0_or_KW_COLONTerminalRuleCall_0_0(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);

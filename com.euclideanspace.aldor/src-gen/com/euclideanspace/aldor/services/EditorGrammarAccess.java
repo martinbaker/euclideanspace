@@ -3963,7 +3963,9 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "RightJuxtaposed");
 		private final RuleCall cJright_MoleculeParserRuleCall = (RuleCall)rule.eContents().get(1);
 		
-		//RightJuxtaposed hidden(WS, KW_NEWLINE):
+		/// *
+		// * implements 'function application' as described above including juxtaposition
+		// * / RightJuxtaposed hidden(WS, KW_NEWLINE):
 		//	Jright_Molecule;
 		public ParserRule getRule() { return rule; }
 
@@ -3975,7 +3977,9 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "LeftJuxtaposed");
 		private final RuleCall cJleft_MoleculeParserRuleCall = (RuleCall)rule.eContents().get(1);
 		
-		//LeftJuxtaposed hidden(WS, KW_NEWLINE):
+		/// * Molecule followed by 0 or more BlockEnclosures (bracketed terms)
+		// * or variants on that theme.
+		// * / LeftJuxtaposed hidden(WS, KW_NEWLINE):
 		//	Jleft_Molecule;
 		public ParserRule getRule() { return rule; }
 
@@ -3995,14 +3999,12 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cRightAssignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
 		private final RuleCall cRightJright_AtomParserRuleCall_1_1_0 = (RuleCall)cRightAssignment_1_1.eContents().get(0);
 		
-		/// * Substituted Rules in Xtext: Jright(Molecule) and Jright(Atom)
-		// * Jright(H)
-		// * : Jleft(H)
-		// * | Jleft(H) Jright(Atom)
-		// * { $$ = parseMakeJuxtapose($1,$2); }
+		/// * 
+		// * implements 'function application' as described above including juxtaposition
+		// *
+		// * substituted version of axl.z code:
+		// * Jright(H) : Jleft(H) | Jleft(H) Jright(Atom)
 		// * | 'not' Jright(Atom)
-		// * { $$ = abNewNot(TPOS($1),TEST($2)); }
-		// * ;
 		// * / Jright_Molecule hidden(WS, KW_NEWLINE):
 		//	Jleft_Molecule right=Jright_Atom? | "not" right=Jright_Atom;
 		public ParserRule getRule() { return rule; }
@@ -4100,15 +4102,16 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cBmAssignment_2_1_1 = (Assignment)cGroup_2_1.eContents().get(1);
 		private final RuleCall cBmBlockMoleculeParserRuleCall_2_1_1_0 = (RuleCall)cBmAssignment_2_1_1.eContents().get(0);
 		
-		/// * 
-		// * implements 'function application' as described above including juxtaposition
+		/// * Molecule followed by 0 or more BlockEnclosures (bracketed terms)
+		// * or variants on that theme.
+		// * 
 		// * matches:
 		// * - Molecule - no argument
 		// * - 'not' BlockEnclosure - not has one argument
 		// * - (*) BlockEnclosure
 		// * - (*) '.' BlockMolecule
 		// * 
-		// * that is substituted version of axl.z code:
+		// * substituted version of axl.z code:
 		// * Jleft(H) : H | 'not' BlockEnclosure
 		// *              | Jleft(H) BlockEnclosure
 		// *              | Jleft(H) KW_DOT BlockMolecule ;
@@ -4193,24 +4196,21 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cBm4BlockMoleculeParserRuleCall_2_1_1_0 = (RuleCall)cBm4Assignment_2_1_1.eContents().get(0);
 		
 		/// * 
-		// * implements 'function application' as described above including juxtaposition
 		// * matches:
 		// * - Atom - no argument
 		// * - 'not' BlockEnclosure - not has one argument
 		// * - (*) BlockEnclosure
 		// * - (*) '.' BlockMolecule
 		// * 
-		// * that is substituted version of axl.z code:
+		// * substituted version of axl.z code:
 		// * Jleft(H) : H | 'not' BlockEnclosure
 		// *              | Jleft(H) BlockEnclosure
 		// *              | Jleft(H) KW_DOT BlockMolecule ;
 		// * / Jleft_Atom hidden(WS, KW_NEWLINE):
-		//	"not" be+=BlockEnclosure //(a=Atom be+=BlockEnclosure*)
-		//	| => (a=Atom be+=BlockEnclosure*) | a=Atom (KW_DOT bm4+=BlockMolecule)*;
+		//	"not" be+=BlockEnclosure | => (a=Atom be+=BlockEnclosure*) | a=Atom (KW_DOT bm4+=BlockMolecule)*;
 		public ParserRule getRule() { return rule; }
 
-		//"not" be+=BlockEnclosure //(a=Atom be+=BlockEnclosure*)
-		//| => (a=Atom be+=BlockEnclosure*) | a=Atom (KW_DOT bm4+=BlockMolecule)*
+		//"not" be+=BlockEnclosure | => (a=Atom be+=BlockEnclosure*) | a=Atom (KW_DOT bm4+=BlockMolecule)*
 		public Alternatives getAlternatives() { return cAlternatives; }
 
 		//"not" be+=BlockEnclosure
@@ -4294,7 +4294,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cBracketedParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
 		private final RuleCall cQuotedIdsParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
 		
-		//Enclosure hidden(WS, KW_NEWLINE):
+		/// * expression in brackets parenthesis or quotes * / Enclosure hidden(WS, KW_NEWLINE):
 		//	Parened | Bracketed | QuotedIds;
 		public ParserRule getRule() { return rule; }
 
@@ -4321,7 +4321,9 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cBAssignment_1 = (Assignment)cAlternatives.eContents().get(1);
 		private final RuleCall cBBlockParserRuleCall_1_0 = (RuleCall)cBAssignment_1.eContents().get(0);
 		
-		//DeclMolecule hidden(WS, KW_NEWLINE):
+		/// *
+		// * function application, block or infixed
+		// * / DeclMolecule hidden(WS, KW_NEWLINE):
 		//	{DeclMolecule} a=Application? | b=Block;
 		public ParserRule getRule() { return rule; }
 
@@ -4413,9 +4415,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cEExpressionParserRuleCall_1_0 = (RuleCall)cEAssignment_1.eContents().get(0);
 		private final RuleCall cKW_CPARENTerminalRuleCall_2 = (RuleCall)cGroup.eContents().get(2);
 		
-		/// *
-		// * 
-		// * / Parened hidden(WS, KW_NEWLINE):
+		/// * expression in parenthesis * / Parened hidden(WS, KW_NEWLINE):
 		//	op=KW_OPAREN e=Expression? KW_CPAREN;
 		public ParserRule getRule() { return rule; }
 
@@ -4447,7 +4447,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cEExpressionParserRuleCall_1_0 = (RuleCall)cEAssignment_1.eContents().get(0);
 		private final RuleCall cKW_CBRACKTerminalRuleCall_2 = (RuleCall)cGroup.eContents().get(2);
 		
-		//Bracketed hidden(WS, KW_NEWLINE):
+		/// * expression in brackets * / Bracketed hidden(WS, KW_NEWLINE):
 		//	op=KW_OBRACK e=Expression? KW_CBRACK;
 		public ParserRule getRule() { return rule; }
 
@@ -4480,7 +4480,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cNNamesParserRuleCall_2_0 = (RuleCall)cNAssignment_2.eContents().get(0);
 		private final RuleCall cKW_QUOTETerminalRuleCall_3 = (RuleCall)cGroup.eContents().get(3);
 		
-		//QuotedIds hidden(WS, KW_NEWLINE):
+		/// * names in quotes * / QuotedIds hidden(WS, KW_NEWLINE):
 		//	{QuotedIds} op=KW_QUOTE n=Names? KW_QUOTE;
 		public ParserRule getRule() { return rule; }
 
@@ -4516,7 +4516,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cSubsequentNamesAssignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
 		private final RuleCall cSubsequentNamesTK_IDTerminalRuleCall_1_1_0 = (RuleCall)cSubsequentNamesAssignment_1_1.eContents().get(0);
 		
-		//Names hidden(WS, KW_NEWLINE):
+		/// * names seperated by commas * / Names hidden(WS, KW_NEWLINE):
 		//	firstName=TK_ID (KW_COMMA subsequentNames+=TK_ID)*;
 		public ParserRule getRule() { return rule; }
 
@@ -4551,7 +4551,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cLitLiteralParserRuleCall_1_0 = (RuleCall)cLitAssignment_1.eContents().get(0);
 		
 		/// *
-		// * Terminals
+		// * identifier or literal
 		// * / Atom hidden(WS, KW_NEWLINE):
 		//	iden=Id | lit=Literal;
 		public ParserRule getRule() { return rule; }
@@ -4656,7 +4656,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cTK_INTTerminalRuleCall_1_1 = (RuleCall)cGroup_1.eContents().get(1);
 		private final RuleCall cTK_STRINGTerminalRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
 		
-		//Literal hidden(WS, KW_NEWLINE): // example 2.4e5 or 2e5
+		/// * string, integer or float literal * / Literal hidden(WS, KW_NEWLINE): // example 2.4e5 or 2e5
 		//	=> ((TK_INT KW_DOT)? TK_FLOAT) // example 2.4 or 2
 		//	| => (TK_INT KW_DOT)? TK_INT | // example "abc"
 		//	TK_STRING;
@@ -7352,7 +7352,9 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		return getApplicationAccess().getRule();
 	}
 
-	//RightJuxtaposed hidden(WS, KW_NEWLINE):
+	/// *
+	// * implements 'function application' as described above including juxtaposition
+	// * / RightJuxtaposed hidden(WS, KW_NEWLINE):
 	//	Jright_Molecule;
 	public RightJuxtaposedElements getRightJuxtaposedAccess() {
 		return (pRightJuxtaposed != null) ? pRightJuxtaposed : (pRightJuxtaposed = new RightJuxtaposedElements());
@@ -7362,7 +7364,9 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		return getRightJuxtaposedAccess().getRule();
 	}
 
-	//LeftJuxtaposed hidden(WS, KW_NEWLINE):
+	/// * Molecule followed by 0 or more BlockEnclosures (bracketed terms)
+	// * or variants on that theme.
+	// * / LeftJuxtaposed hidden(WS, KW_NEWLINE):
 	//	Jleft_Molecule;
 	public LeftJuxtaposedElements getLeftJuxtaposedAccess() {
 		return (pLeftJuxtaposed != null) ? pLeftJuxtaposed : (pLeftJuxtaposed = new LeftJuxtaposedElements());
@@ -7372,14 +7376,12 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		return getLeftJuxtaposedAccess().getRule();
 	}
 
-	/// * Substituted Rules in Xtext: Jright(Molecule) and Jright(Atom)
-	// * Jright(H)
-	// * : Jleft(H)
-	// * | Jleft(H) Jright(Atom)
-	// * { $$ = parseMakeJuxtapose($1,$2); }
+	/// * 
+	// * implements 'function application' as described above including juxtaposition
+	// *
+	// * substituted version of axl.z code:
+	// * Jright(H) : Jleft(H) | Jleft(H) Jright(Atom)
 	// * | 'not' Jright(Atom)
-	// * { $$ = abNewNot(TPOS($1),TEST($2)); }
-	// * ;
 	// * / Jright_Molecule hidden(WS, KW_NEWLINE):
 	//	Jleft_Molecule right=Jright_Atom? | "not" right=Jright_Atom;
 	public Jright_MoleculeElements getJright_MoleculeAccess() {
@@ -7400,15 +7402,16 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		return getJright_AtomAccess().getRule();
 	}
 
-	/// * 
-	// * implements 'function application' as described above including juxtaposition
+	/// * Molecule followed by 0 or more BlockEnclosures (bracketed terms)
+	// * or variants on that theme.
+	// * 
 	// * matches:
 	// * - Molecule - no argument
 	// * - 'not' BlockEnclosure - not has one argument
 	// * - (*) BlockEnclosure
 	// * - (*) '.' BlockMolecule
 	// * 
-	// * that is substituted version of axl.z code:
+	// * substituted version of axl.z code:
 	// * Jleft(H) : H | 'not' BlockEnclosure
 	// *              | Jleft(H) BlockEnclosure
 	// *              | Jleft(H) KW_DOT BlockMolecule ;
@@ -7423,20 +7426,18 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	/// * 
-	// * implements 'function application' as described above including juxtaposition
 	// * matches:
 	// * - Atom - no argument
 	// * - 'not' BlockEnclosure - not has one argument
 	// * - (*) BlockEnclosure
 	// * - (*) '.' BlockMolecule
 	// * 
-	// * that is substituted version of axl.z code:
+	// * substituted version of axl.z code:
 	// * Jleft(H) : H | 'not' BlockEnclosure
 	// *              | Jleft(H) BlockEnclosure
 	// *              | Jleft(H) KW_DOT BlockMolecule ;
 	// * / Jleft_Atom hidden(WS, KW_NEWLINE):
-	//	"not" be+=BlockEnclosure //(a=Atom be+=BlockEnclosure*)
-	//	| => (a=Atom be+=BlockEnclosure*) | a=Atom (KW_DOT bm4+=BlockMolecule)*;
+	//	"not" be+=BlockEnclosure | => (a=Atom be+=BlockEnclosure*) | a=Atom (KW_DOT bm4+=BlockMolecule)*;
 	public Jleft_AtomElements getJleft_AtomAccess() {
 		return (pJleft_Atom != null) ? pJleft_Atom : (pJleft_Atom = new Jleft_AtomElements());
 	}
@@ -7457,7 +7458,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		return getMoleculeAccess().getRule();
 	}
 
-	//Enclosure hidden(WS, KW_NEWLINE):
+	/// * expression in brackets parenthesis or quotes * / Enclosure hidden(WS, KW_NEWLINE):
 	//	Parened | Bracketed | QuotedIds;
 	public EnclosureElements getEnclosureAccess() {
 		return (pEnclosure != null) ? pEnclosure : (pEnclosure = new EnclosureElements());
@@ -7467,7 +7468,9 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		return getEnclosureAccess().getRule();
 	}
 
-	//DeclMolecule hidden(WS, KW_NEWLINE):
+	/// *
+	// * function application, block or infixed
+	// * / DeclMolecule hidden(WS, KW_NEWLINE):
 	//	{DeclMolecule} a=Application? | b=Block;
 	public DeclMoleculeElements getDeclMoleculeAccess() {
 		return (pDeclMolecule != null) ? pDeclMolecule : (pDeclMolecule = new DeclMoleculeElements());
@@ -7507,9 +7510,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		return getBlockAccess().getRule();
 	}
 
-	/// *
-	// * 
-	// * / Parened hidden(WS, KW_NEWLINE):
+	/// * expression in parenthesis * / Parened hidden(WS, KW_NEWLINE):
 	//	op=KW_OPAREN e=Expression? KW_CPAREN;
 	public ParenedElements getParenedAccess() {
 		return (pParened != null) ? pParened : (pParened = new ParenedElements());
@@ -7519,7 +7520,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		return getParenedAccess().getRule();
 	}
 
-	//Bracketed hidden(WS, KW_NEWLINE):
+	/// * expression in brackets * / Bracketed hidden(WS, KW_NEWLINE):
 	//	op=KW_OBRACK e=Expression? KW_CBRACK;
 	public BracketedElements getBracketedAccess() {
 		return (pBracketed != null) ? pBracketed : (pBracketed = new BracketedElements());
@@ -7529,7 +7530,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		return getBracketedAccess().getRule();
 	}
 
-	//QuotedIds hidden(WS, KW_NEWLINE):
+	/// * names in quotes * / QuotedIds hidden(WS, KW_NEWLINE):
 	//	{QuotedIds} op=KW_QUOTE n=Names? KW_QUOTE;
 	public QuotedIdsElements getQuotedIdsAccess() {
 		return (pQuotedIds != null) ? pQuotedIds : (pQuotedIds = new QuotedIdsElements());
@@ -7539,7 +7540,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		return getQuotedIdsAccess().getRule();
 	}
 
-	//Names hidden(WS, KW_NEWLINE):
+	/// * names seperated by commas * / Names hidden(WS, KW_NEWLINE):
 	//	firstName=TK_ID (KW_COMMA subsequentNames+=TK_ID)*;
 	public NamesElements getNamesAccess() {
 		return (pNames != null) ? pNames : (pNames = new NamesElements());
@@ -7550,7 +7551,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	/// *
-	// * Terminals
+	// * identifier or literal
 	// * / Atom hidden(WS, KW_NEWLINE):
 	//	iden=Id | lit=Literal;
 	public AtomElements getAtomAccess() {
@@ -7584,7 +7585,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		return getIdAccess().getRule();
 	}
 
-	//Literal hidden(WS, KW_NEWLINE): // example 2.4e5 or 2e5
+	/// * string, integer or float literal * / Literal hidden(WS, KW_NEWLINE): // example 2.4e5 or 2e5
 	//	=> ((TK_INT KW_DOT)? TK_FLOAT) // example 2.4 or 2
 	//	| => (TK_INT KW_DOT)? TK_INT | // example "abc"
 	//	TK_STRING;

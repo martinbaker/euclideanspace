@@ -12,4 +12,28 @@ public class EditorUiModule extends com.euclideanspace.aldor.ui.AbstractEditorUi
 	public EditorUiModule(AbstractUIPlugin plugin) {
 		super(plugin);
 	}
+	
+/*	// contributed by org.eclipse.xtext.generator.parser.antlr.XtextAntlrGeneratorFragment
+	public void configureHighlightingLexer(com.google.inject.Binder binder) {
+		binder.bind(org.eclipse.xtext.parser.antlr.Lexer.class).annotatedWith(
+				com.google.inject.name.Names.named(
+						org.eclipse.xtext.ui.LexerUIBindings.HIGHLIGHTING)).to(
+								com.euclideanspace.aldor.CustomLexer.class);
+	}
+
+	// contributed by org.eclipse.xtext.generator.parser.antlr.XtextAntlrUiGeneratorFragment
+	public void configureContentAssistLexerProvider(com.google.inject.Binder binder) {
+		binder.bind(com.euclideanspace.aldor.ui.CustomUILexer.class)
+		  .toProvider(org.eclipse.xtext.parser.antlr.LexerProvider.create(
+				  com.euclideanspace.aldor.ui.CustomUILexer.class));
+	}
+
+	// contributed by org.eclipse.xtext.generator.parser.antlr.XtextAntlrUiGeneratorFragment
+	public void configureContentAssistLexer(com.google.inject.Binder binder) {
+		binder.bind(org.eclipse.xtext.ui.editor.contentassist.antlr.internal.Lexer.class)
+		   .annotatedWith(com.google.inject.name.Names.named(
+				   org.eclipse.xtext.ui.LexerUIBindings.CONTENT_ASSIST)).to(
+						   com.euclideanspace.aldor.ui.CustomUILexer.class);
+	}*/
+
 }
