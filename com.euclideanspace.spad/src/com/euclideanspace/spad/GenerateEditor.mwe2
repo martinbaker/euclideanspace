@@ -1,4 +1,4 @@
-module com.euclideanspace.aldor.GenerateEditor
+module com.euclideanspace.spad.GenerateEditor
 
 import org.eclipse.emf.mwe.utils.*
 import org.eclipse.xtext.generator.*
