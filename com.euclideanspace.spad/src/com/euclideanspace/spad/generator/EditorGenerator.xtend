@@ -539,7 +539,7 @@ class EditorGenerator implements IGenerator {
      * s8=BreakStatement
      * s9= IterateStatement
      * s10= ReturnStatement*/
-    def compile(Statement f) 
+    def CharSequence compile(Statement f) 
         '''«IF f.s1 != null» «compile(f.s1)»«ENDIF»«
         IF f.s3 != null»«compile(f.s3)»«ENDIF»«
         IF f.s4 != null»«compile(f.s4)»«ENDIF»«
@@ -616,7 +616,7 @@ class EditorGenerator implements IGenerator {
         ENDIF»'''
 
     /* Expr */
-    def compile(Expr f)
+    def CharSequence compile(Expr f)
         '''«IF f instanceof ConditionExpression»«compile(f as ConditionExpression)»«ENDIF»«
         IF f instanceof AndExpression»«compile(f as AndExpression)»«ENDIF»« 
         IF f instanceof OrExpression»«compile(f as OrExpression)»«ENDIF»«

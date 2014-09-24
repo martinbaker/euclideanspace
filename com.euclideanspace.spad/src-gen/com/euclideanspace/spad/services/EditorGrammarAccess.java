@@ -32,21 +32,21 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cATTerminalRuleCall_3 = (RuleCall)cGroup.eContents().get(3);
 		
 		/// * Copyright 2012 Martin John Baker
-		// * 
+		// *
 		// * This file is part of EuclideanSpace.
 		// *
-		// *  EuclideanSpace is free software: you can redistribute it and/or modify
-		// *  it under the terms of the GNU Affero General Public License as published by
-		// *  the Free Software Foundation, either version 3 of the License, or
-		// *  (at your option) any later version.
+		// * EuclideanSpace is free software: you can redistribute it and/or modify
+		// * it under the terms of the GNU Affero General Public License as published by
+		// * the Free Software Foundation, either version 3 of the License, or
+		// * (at your option) any later version.
 		// *
-		// *  EuclideanSpace is distributed in the hope that it will be useful,
-		// *  but WITHOUT ANY WARRANTY; without even the implied warranty of
-		// *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-		// *  GNU Affero General Public License for more details.
+		// * EuclideanSpace is distributed in the hope that it will be useful,
+		// * but WITHOUT ANY WARRANTY; without even the implied warranty of
+		// * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+		// * GNU Affero General Public License for more details.
 		// *
-		// *  You should have received a copy of the GNU Affero General Public License
-		// *  along with EuclideanSpace.  If not, see <http://www.gnu.org/licenses/>.
+		// * You should have received a copy of the GNU Affero General Public License
+		// * along with EuclideanSpace. If not, see <http://www.gnu.org/licenses/>.
 		// * / / * FriCAS parses SPAD using a type of parser known as a 'Pratt' parser.
 		// * In this type of parser each operator has different binding powers for
 		// * its left and right. The SPAD parser also has 'special handlers' for
@@ -54,10 +54,10 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		// * between expressions and statements, effectively everything is treated as
 		// * an expression so in this context, not only are "+" and "*" operators
 		// * but also other keywords such as "for" and "return".
-		// * 
+		// *
 		// * Here we are using a LL(*) recursive-descent parser generator and this
 		// * may not be able to exactly replicate the SPAD parser as described above
-		// * 
+		// *
 		// * I have taken this information from s-parser.boot in src/interp
 		// * so I suspect that it in valid only for the SPAD interpreter and not
 		// * the compiler however I am hoping that this will be a close enough
@@ -65,10 +65,10 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		// *
 		// * So I will use the LED Table to approximate infix operator precedence
 		// * and the NUD Table to approximate prefix operator precedence. So I
-		// * have ordered both these tables in 
-		// * 
+		// * have ordered both these tables in
+		// *
 		// * I have ordered the tables low (binds least tightly) to high (binds most tightly) as follows:
-		// * 
+		// *
 		// * LED Table - infix operators
 		// * ---------------------------
 		// * ";", 81, 82, ["parse_SemiColon"]
@@ -157,12 +157,12 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		// * "from"
 		// * "iterate"
 		// * "yield"
-		// * 
+		// *
 		// * * / / *
 		// * Parser starts here
 		// * CategoryDef,PackageDef and DomainDef must end with newline to ensure that
 		// * only an '@' at the start of a line will be taken as the end.
-		// * 
+		// *
 		// * On this line whitespace (WS) is not hidden so is explicitly included.
 		// * / Model:
 		//	")abbrev" WS (c=CategoryDef | p=PackageDef | d=DomainDef) AT;
@@ -1112,11 +1112,11 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		
 		/// *
 		// * The add section of domain or package may contain multiple lines
-		// * 
+		// *
 		// * Examples:
-		// *     if (r := recip leadingCoefficient M) case "failed" then {
-		// *                                error "Modulus cannot be made monic"
-		// *  }
+		// * if (r := recip leadingCoefficient M) case "failed" then {
+		// * error "Modulus cannot be made monic"
+		// * }
 		// * / AddStatements hidden(WS, SL_COMMENT):
 		//	VariableDeclarationAssign | FunctionDefinition | "if" t1= // expression has form 'x has y'
 		//	Expression "then" t13=FunctionDefinitionBlock | "else" t14=FunctionDefinitionBlock | "else" t15=AddStatements |
@@ -1224,8 +1224,8 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		// * a = b == statement
 		// * or, for multiple statements,
 		// * name(params) == {
-		// *     statement
-		// *     statement
+		// * statement
+		// * statement
 		// * }
 		// * some function definitions may be conditional like this:
 		// * if % has finiteAggregate then {
@@ -1624,7 +1624,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		// * name(params)
 		// * We allow a single parameter to be given without brackets:
 		// * name param
-		// * 
+		// *
 		// * We also allow some alternative forms to represent infix operators like:
 		// * a = b to represent _=(a,b)
 		// * or the following (this works but only for % we need it to work for every type)
@@ -1634,8 +1634,8 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		// * 0 or 1 can be used as a function signature as a short form of
 		// * _0() or _1()
 		// * / FunctionSignature hidden(WS, SL_COMMENT):
-		//	fnNam=ID LPAREN par2=VariableTyped? (COMMA par3+=VariableTyped)* RPAREN //  ) | (
-		//	//  	t4=ID // no parameters without brackets
+		//	fnNam=ID LPAREN par2=VariableTyped? (COMMA par3+=VariableTyped)* RPAREN // ) | (
+		//	// t4=ID // no parameters without brackets
 		//	// commented out as it causes recursive rule invocation
 		//	// with ruleAddStatements and ruleFunctionDefinitionBlock
 		//	// can't specify '0' or '1' explicitly as this would affect lex
@@ -1647,8 +1647,8 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		//	INT | b2=MINUS t6=ID | b4=TILDE t7=ID | b5="not" t8=ID | b6=HASH t8=ID;
 		public ParserRule getRule() { return rule; }
 
-		//fnNam=ID LPAREN par2=VariableTyped? (COMMA par3+=VariableTyped)* RPAREN //  ) | (
-		////  	t4=ID // no parameters without brackets
+		//fnNam=ID LPAREN par2=VariableTyped? (COMMA par3+=VariableTyped)* RPAREN // ) | (
+		//// t4=ID // no parameters without brackets
 		//// commented out as it causes recursive rule invocation
 		//// with ruleAddStatements and ruleFunctionDefinitionBlock
 		//// can't specify '0' or '1' explicitly as this would affect lex
@@ -1897,7 +1897,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		// * there are two forms:
 		// * name ==> body
 		// * and
-		// * name macro == body 	
+		// * name macro == body
 		// * / //MACRO val=ID NL;
 		//MacroDef:
 		//	macroname=ID MACROVALUE;
@@ -1996,11 +1996,11 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		// * A 'variable' can be simple like:
 		// * x:Float
 		// * or something more complicated like:
-		// * x:Record(newPt: Pt,type:  String)
+		// * x:Record(newPt: Pt,type: String)
 		// * or it can be a function like:
 		// * x:(Float,Integer) -> Float
 		// * or it can be conditional like:
-		// * if 
+		// * if
 		// * / VariableDeclarationBlock hidden(WS, SL_COMMENT):
 		//	vardecbr=LBRACE NL* //=>(i1=Import NL*)?
 		//	(vardecBlk+=VariableDeclaration (NL | SEMICOLON)+)* RBRACE;
@@ -2059,11 +2059,11 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		// * A 'variable' can be simple like:
 		// * x:Float
 		// * or something more complicated like:
-		// * x:Record(newPt: Pt,type:  String)
+		// * x:Record(newPt: Pt,type: String)
 		// * or it can be a function like:
 		// * x:(Float,Integer) -> Float
 		// * or it can be conditional like:
-		// * if 
+		// * if
 		// * / VariableDeclaration hidden(WS, SL_COMMENT):
 		//	("if" t1=Expression "then")? //Import?
 		//	// expression has form 'x has y'
@@ -2193,17 +2193,17 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		// * A 'variable' can be simple like:
 		// * x:Float
 		// * or something more complicated like:
-		// * x:Record(newPt: Pt,type:  String)
+		// * x:Record(newPt: Pt,type: String)
 		// * or it can be a function like:
 		// * x:(Float,Integer) -> Float
 		// * we can define multiple variables together:
 		// * i,j : Integer
 		// * / VariableTyped hidden(WS, SL_COMMENT):
-		//	(varName=ID | varNameSt=STRING) //    =>(COMMA t2+=ID)* // multiple declarations in same line
+		//	(varName=ID | varNameSt=STRING) // =>(COMMA t2+=ID)* // multiple declarations in same line
 		//	(COLON typ=TypeExpression1)?;
 		public ParserRule getRule() { return rule; }
 
-		//(varName=ID | varNameSt=STRING) //    =>(COMMA t2+=ID)* // multiple declarations in same line
+		//(varName=ID | varNameSt=STRING) // =>(COMMA t2+=ID)* // multiple declarations in same line
 		//(COLON typ=TypeExpression1)?
 		public Group getGroup() { return cGroup; }
 
@@ -2259,7 +2259,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		// * a := 3
 		// * a:Integer := 3
 		// * a := sin(x)
-		// * 
+		// *
 		// * There are two forms of multiple assignment:
 		// * a,b,c := 0@Integer
 		// * or:
@@ -2344,7 +2344,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cVarIDTerminalRuleCall_1_0 = (RuleCall)cVarAssignment_1.eContents().get(0);
 		
 		/// *
-		// * free variable 	allows us to declare a variable that is global 
+		// * free variable allows us to declare a variable that is global
 		// * / FreeVariable hidden(WS):
 		//	"free" var=ID;
 		public ParserRule getRule() { return rule; }
@@ -2370,7 +2370,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cVarIDTerminalRuleCall_1_0 = (RuleCall)cVarAssignment_1.eContents().get(0);
 		
 		/// *
-		// * allows us to declare a variable that is not global  
+		// * allows us to declare a variable that is not global
 		// * / LocalVariable hidden(WS):
 		//	"local" var=ID;
 		public ParserRule getRule() { return rule; }
@@ -2404,14 +2404,14 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		// * This is similar to Expression but known to be of type.
 		// * (Expression can also be of type) but if we know that
 		// * this is a type we can exclude some possibilities.
-		// * 
+		// *
 		// * A 'typeExpression' can be simple like:
 		// * Float
 		// * or something more complicated like:
-		// * Record(newPt: Pt,type:  String)
+		// * Record(newPt: Pt,type: String)
 		// * or it can be a function like:
 		// * (Float,Integer) -> Float
-		// * 
+		// *
 		// * first we check for a function like: Integer -> Integer
 		// * / TypeExpression1 returns TypeExpression hidden(WS):
 		//	=> (t2=TypeArguments ARROW t3=TypeResult) | TypePrimaryExpression1;
@@ -2519,7 +2519,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		// * we use a type parameter list for parameters of category, package or domains
 		// * Parameter list may be empty '()'.
 		// * in this case parameters may be just ID or they may be nameID:typeID
-		// * 
+		// *
 		// * examples are:
 		// * ()
 		// * (String)
@@ -3856,7 +3856,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		// * Float - an ID representation of a type
 		// * List(Float) - a type function call
 		// * List Float - a non-parenthesis form if only one parameter
-		// * 
+		// *
 		// * A type function is also known as a parameterised type or
 		// * functor (not necessarily a true
 		// * functor since it may not obey the axioms of a functor).
@@ -4172,14 +4172,14 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		/// * Since SPAD supports dependent types then numbers and strings can occur here.
 		// * Outstanding issues:
 		// * 1) Float literals are parsed as elt(Int,Int) so we need to recognise this
-		// *    and convert to float literal
+		// * and convert to float literal
 		// * 2) We need to be able to recognise exponent notation for floats
 		// * 3) Integers without '-' prefix can be converted to PI or NNI
 		// * 4) need to add hex or octal notation for integers (0xhhhh)
 		// * 5) String and Character literals need to have backslash "\" doubled to
-		// *    "\\" otherwise xtext will interpret backslash as an escape character.
+		// * "\\" otherwise xtext will interpret backslash as an escape character.
 		// * 6) values following immediately after string literal such as "abc"d should
-		// *    represent an implied concat: concat("abc",d)
+		// * represent an implied concat: concat("abc",d)
 		// * / TypeLiteral hidden(WS):
 		//	t1=INT | t22=STRING | // t3=FloatLiteral |
 		//	t34=CharacterLiteral | t35=BooleanLiteral;
@@ -4251,18 +4251,18 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		//	s1=Block | s3=StatementExpression | // 'if' can occur in an expression or in
 		//	// a statement so we use '=>' to choose
 		//	// expression if there is any ambiguity
-		//	s4=IfStatement | s4b=IfElseStatement | //    s4c=IfThenStatement |
-		//	s5=WhileStatement | s6=DoStatement | s7=ForStatement | s8=BreakStatement | s12=RepeatStatement | s9=IterateStatement | //    s11= ContinueStatement|
-		//	s10=ReturnStatement | //    s11= Import |
+		//	s4=IfStatement | s4b=IfElseStatement | // s4c=IfThenStatement |
+		//	s5=WhileStatement | s6=DoStatement | s7=ForStatement | s8=BreakStatement | s12=RepeatStatement | s9=IterateStatement | // s11= ContinueStatement|
+		//	s10=ReturnStatement | // s11= Import |
 		//	"error" e=Expression;
 		public ParserRule getRule() { return rule; }
 
 		//s1=Block | s3=StatementExpression | // 'if' can occur in an expression or in
 		//// a statement so we use '=>' to choose
 		//// expression if there is any ambiguity
-		//s4=IfStatement | s4b=IfElseStatement | //    s4c=IfThenStatement |
-		//s5=WhileStatement | s6=DoStatement | s7=ForStatement | s8=BreakStatement | s12=RepeatStatement | s9=IterateStatement | //    s11= ContinueStatement|
-		//s10=ReturnStatement | //    s11= Import |
+		//s4=IfStatement | s4b=IfElseStatement | // s4c=IfThenStatement |
+		//s5=WhileStatement | s6=DoStatement | s7=ForStatement | s8=BreakStatement | s12=RepeatStatement | s9=IterateStatement | // s11= ContinueStatement|
+		//s10=ReturnStatement | // s11= Import |
 		//"error" e=Expression
 		public Alternatives getAlternatives() { return cAlternatives; }
 
@@ -4293,7 +4293,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		//IfElseStatement
 		public RuleCall getS4bIfElseStatementParserRuleCall_3_0() { return cS4bIfElseStatementParserRuleCall_3_0; }
 
-		////    s4c=IfThenStatement |
+		//// s4c=IfThenStatement |
 		//s5=WhileStatement
 		public Assignment getS5Assignment_4() { return cS5Assignment_4; }
 
@@ -4330,18 +4330,18 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		//IterateStatement
 		public RuleCall getS9IterateStatementParserRuleCall_9_0() { return cS9IterateStatementParserRuleCall_9_0; }
 
-		////    s11= ContinueStatement|
+		//// s11= ContinueStatement|
 		//s10=ReturnStatement
 		public Assignment getS10Assignment_10() { return cS10Assignment_10; }
 
 		//ReturnStatement
 		public RuleCall getS10ReturnStatementParserRuleCall_10_0() { return cS10ReturnStatementParserRuleCall_10_0; }
 
-		////    s11= Import |
+		//// s11= Import |
 		//"error" e=Expression
 		public Group getGroup_11() { return cGroup_11; }
 
-		////    s11= Import |
+		//// s11= Import |
 		//"error"
 		public Keyword getErrorKeyword_11_0() { return cErrorKeyword_11_0; }
 
@@ -4421,19 +4421,19 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		
 		/// *
 		// * Gives a value or assigns a value to a variable or does conditional exit
-		// * 
+		// *
 		// * examples:
 		// * x
 		// * x:Int
 		// * x,y:INT -- multiple assignment
 		// * x:Int := 3
-		// * 
+		// *
 		// * x=y => 3
 		// * / StatementExpression hidden(WS, SL_COMMENT): //(ID COMMA)* // allow multiple assignment
 		//	t= // was Expression but changed so that 'if' statement
 		//	ConditionExpression // does not clash with if-then-else expression
-		//	//    (COLON t2=TypeExpression)?
-		//	//    (BECOMES t3=Expression (BECOMES t33+=Expression)*)?
+		//	// (COLON t2=TypeExpression)?
+		//	// (BECOMES t3=Expression (BECOMES t33+=Expression)*)?
 		//	(BECOMES t5=Block)? // breaks out of a block if predicate before '=>' is true then program
 		//	// control leaves the block.
 		//	// Put it here so that it can only occur at the top level of an expression.
@@ -4444,8 +4444,8 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		////(ID COMMA)* // allow multiple assignment
 		//t= // was Expression but changed so that 'if' statement
 		//ConditionExpression // does not clash with if-then-else expression
-		////    (COLON t2=TypeExpression)?
-		////    (BECOMES t3=Expression (BECOMES t33+=Expression)*)?
+		//// (COLON t2=TypeExpression)?
+		//// (BECOMES t3=Expression (BECOMES t33+=Expression)*)?
 		//(BECOMES t5=Block)? // breaks out of a block if predicate before '=>' is true then program
 		//// control leaves the block.
 		//// Put it here so that it can only occur at the top level of an expression.
@@ -4531,22 +4531,22 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		// * for i in list for i in 1.. repeat ...
 		// * for j in n..m repeat loopBody
 		// * for j in n..m | odd? j repeat
-		// * 
+		// *
 		// * To Do
 		// * -----
 		// * As a temporary measure we check for '..' as a suffix operator
 		// * here, but we should really put this into expression?
-		// * 
+		// *
 		// * We need to allow conditions using BAR '|'
 		// * / ForStatement hidden(WS, SL_COMMENT):
 		//	"for" (stname=ID "in" t1=Expression SEG? //(=> '..' t2=Expression)?
-		//	("by" by1=Expression)? //       (=> BAR t2=PredicateOr)? // condition
+		//	("by" by1=Expression)? // (=> BAR t2=PredicateOr)? // condition
 		//	("for" stname2+=ID "in" t2+=Expression SEG? ("by" by2+=Expression)?)* ("while" t2+=Expression)*) "repeat" NL? s1= //('is' s2=Statement)?
 		//	Statement;
 		public ParserRule getRule() { return rule; }
 
 		//"for" (stname=ID "in" t1=Expression SEG? //(=> '..' t2=Expression)?
-		//("by" by1=Expression)? //       (=> BAR t2=PredicateOr)? // condition
+		//("by" by1=Expression)? // (=> BAR t2=PredicateOr)? // condition
 		//("for" stname2+=ID "in" t2+=Expression SEG? ("by" by2+=Expression)?)* ("while" t2+=Expression)*) "repeat" NL? s1= //('is' s2=Statement)?
 		//Statement
 		public Group getGroup() { return cGroup; }
@@ -4555,7 +4555,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		public Keyword getForKeyword_0() { return cForKeyword_0; }
 
 		//stname=ID "in" t1=Expression SEG? //(=> '..' t2=Expression)?
-		//("by" by1=Expression)? //       (=> BAR t2=PredicateOr)? // condition
+		//("by" by1=Expression)? // (=> BAR t2=PredicateOr)? // condition
 		//("for" stname2+=ID "in" t2+=Expression SEG? ("by" by2+=Expression)?)* ("while" t2+=Expression)*
 		public Group getGroup_1() { return cGroup_1; }
 
@@ -4711,7 +4711,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cT2ExpressionParserRuleCall_4_0 = (RuleCall)cT2Assignment_4.eContents().get(0);
 		
 		/// *
-		// *  do loopBody while BoolExpr
+		// * do loopBody while BoolExpr
 		// * / DoStatement hidden(WS, SL_COMMENT):
 		//	stname="do" s1=Statement "while" NL? t2= / *PredicateOr* / Expression;
 		public ParserRule getRule() { return rule; }
@@ -4753,7 +4753,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cS1StatementParserRuleCall_1_0 = (RuleCall)cS1Assignment_1.eContents().get(0);
 		
 		/// *
-		// *  will repeat until we jump out. For instance by calling return.
+		// * will repeat until we jump out. For instance by calling return.
 		// * / RepeatStatement hidden(WS, SL_COMMENT):
 		//	stname="repeat" s1=Statement;
 		public ParserRule getRule() { return rule; }
@@ -4781,7 +4781,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		
 		/// *
 		// * iterate ...
-		// * skips over the remainder of a loop 
+		// * skips over the remainder of a loop
 		// * / IterateStatement hidden(WS, SL_COMMENT):
 		//	stname="iterate";
 		public ParserRule getRule() { return rule; }
@@ -4799,7 +4799,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cStnameBreakKeyword_0 = (Keyword)cStnameAssignment.eContents().get(0);
 		
 		/// *
-		// * break 	leave current loop 
+		// * break leave current loop
 		// * / BreakStatement hidden(WS, SL_COMMENT):
 		//	stname="break";
 		public ParserRule getRule() { return rule; }
@@ -4820,7 +4820,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cT2ExpressionParserRuleCall_1_0 = (RuleCall)cT2Assignment_1.eContents().get(0);
 		
 		/// *
-		// * return 	leave current function 
+		// * return leave current function
 		// * / ReturnStatement hidden(WS):
 		//	stname="return" t2=Expression;
 		public ParserRule getRule() { return rule; }
@@ -4874,7 +4874,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		/// *
 		// * import - use 'Import' instead
 		// * / //ImportStatement hidden(WS):
-		////	stname='import' t2=Expression
+		//// stname='import' t2=Expression
 		////;
 		/// * 'if' statement allows program flow to be switched
 		// * forms:
@@ -4888,31 +4888,31 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		// * note2:
 		// * since there is an explicit 'then' keyword there is no need to put
 		// * the condition in brackets
-		// * 	
+		// *
 		// * examples:
 		// * a:= if x >0 then x else -x
-		// * if R has Field then ... 	  	 
+		// * if R has Field then ...
 		// * if myUnion case mtType then ...
-		// * 
+		// *
 		// * we also need to allow a form like this:
 		// * if x >0 {
-		// *   then x
-		// *   else -x
+		// * then x
+		// * else -x
 		// * }
-		// * 
+		// *
 		// * also this form (this requires IfElseStatement rule):
 		// * if x >0 then {
-		// *   x
+		// * x
 		// * }
 		// * else {
-		// *   -x
+		// * -x
 		// * }
 		// * / IfStatement hidden(WS, SL_COMMENT):
-		//	"if" t2=Expression ("then" s1=Statement ("else" s2=Statement)? //  'if' t2=ConditionExpression
+		//	"if" t2=Expression ("then" s1=Statement ("else" s2=Statement)? // 'if' t2=ConditionExpression
 		//	| b?=LBRACE NL+ "then" s11=Statement NL* ("else" s12=Statement NL*)? RBRACE);
 		public ParserRule getRule() { return rule; }
 
-		//"if" t2=Expression ("then" s1=Statement ("else" s2=Statement)? //  'if' t2=ConditionExpression
+		//"if" t2=Expression ("then" s1=Statement ("else" s2=Statement)? // 'if' t2=ConditionExpression
 		//| b?=LBRACE NL+ "then" s11=Statement NL* ("else" s12=Statement NL*)? RBRACE)
 		public Group getGroup() { return cGroup; }
 
@@ -4925,7 +4925,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		//Expression
 		public RuleCall getT2ExpressionParserRuleCall_1_0() { return cT2ExpressionParserRuleCall_1_0; }
 
-		//"then" s1=Statement ("else" s2=Statement)? //  'if' t2=ConditionExpression
+		//"then" s1=Statement ("else" s2=Statement)? // 'if' t2=ConditionExpression
 		//| b?=LBRACE NL+ "then" s11=Statement NL* ("else" s12=Statement NL*)? RBRACE
 		public Alternatives getAlternatives_2() { return cAlternatives_2; }
 
@@ -5038,20 +5038,20 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		
 		/////////////// Expression syntax follows //////////////
 		/// * This is the top level for expressions
-		// * 
+		// *
 		// * This level handles special cases such as:
 		// * if x then y else z
 		// * (x,y) +-> z
-		// * 
-		// * We can consider expressions as elements of statements 
+		// *
+		// * We can consider expressions as elements of statements
 		// * expressions contain no newlines unless preceded by underscore
 		// * (which is handled by WS)
 		// * / Expression returns Expr hidden(WS, SL_COMMENT):
-		//	ifname="if" ifpred=Expression "then" thenexp=Expression "else" elseexp=Expression //  | LPAREN t24=ConditionExpression (COMMA t25+=ConditionExpression)+ RPAREN (COLON rightType2 =TypeExpression)? GIVES ConditionExpression
+		//	ifname="if" ifpred=Expression "then" thenexp=Expression "else" elseexp=Expression // | LPAREN t24=ConditionExpression (COMMA t25+=ConditionExpression)+ RPAREN (COLON rightType2 =TypeExpression)? GIVES ConditionExpression
 		//	| ExitExpression;
 		public ParserRule getRule() { return rule; }
 
-		//ifname="if" ifpred=Expression "then" thenexp=Expression "else" elseexp=Expression //  | LPAREN t24=ConditionExpression (COMMA t25+=ConditionExpression)+ RPAREN (COLON rightType2 =TypeExpression)? GIVES ConditionExpression
+		//ifname="if" ifpred=Expression "then" thenexp=Expression "else" elseexp=Expression // | LPAREN t24=ConditionExpression (COMMA t25+=ConditionExpression)+ RPAREN (COLON rightType2 =TypeExpression)? GIVES ConditionExpression
 		//| ExitExpression
 		public Alternatives getAlternatives() { return cAlternatives; }
 
@@ -5106,7 +5106,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cR2Assignment_1_4 = (Assignment)cGroup_1.eContents().get(4);
 		private final RuleCall cR2ConditionExpressionParserRuleCall_1_4_0 = (RuleCall)cR2Assignment_1_4.eContents().get(0);
 		
-		/// * 
+		/// *
 		// * condition '=>' expr1 ';' expr2
 		// * / ExitExpression returns Expr hidden(WS, SL_COMMENT):
 		//	ConditionExpression ({ExitExpression.left=current} op=EXIT right=ConditionExpression SEMICOLON
@@ -5158,7 +5158,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cRightAssignment_1_2 = (Assignment)cGroup_1.eContents().get(2);
 		private final RuleCall cRightOrExpressionParserRuleCall_1_2_0 = (RuleCall)cRightAssignment_1_2.eContents().get(0);
 		
-		/// * 
+		/// *
 		// * BAR "|" precedence: 108, 111
 		// * / ConditionExpression returns Expr hidden(WS, SL_COMMENT):
 		//	OrExpression ({ConditionExpression.left=current} op=BAR right=OrExpression)*;
@@ -5200,11 +5200,11 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cRightAssignment_1_2 = (Assignment)cGroup_1.eContents().get(2);
 		private final RuleCall cRightAndExpressionParserRuleCall_1_2_0 = (RuleCall)cRightAssignment_1_2.eContents().get(0);
 		
-		/// * 
+		/// *
 		// * COMMA"," precedence: 110, 111
 		// * / //CommaExpression returns Expr hidden(WS,SL_COMMENT):
-		////  ConditionalAndExpression
-		////  ({ConditionExpression.left=current} op=BAR right = ConditionalAndExpression )*
+		//// ConditionalAndExpression
+		//// ({ConditionExpression.left=current} op=BAR right = ConditionalAndExpression )*
 		////;
 		/// *
 		// * There is also another rule that looks for 'or' which is PredicateOr,
@@ -5298,11 +5298,11 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		
 		/// *
 		// * This has multiple uses such as inner product and logical or.
-		// * 
+		// *
 		// * "\/", BACKSLASHSLASH precedence: 200, 201
-		// * 
+		// *
 		// * the backslash is duplicated here because it is the escape character for
-		// * strings, it will not be duplicated when used. 
+		// * strings, it will not be duplicated when used.
 		// * / InnerProdExpression returns Expr hidden(WS, SL_COMMENT):
 		//	OuterProdExpression ({InnerProdExpression.left=current} op=BACKSLASHSLASH right=OuterProdExpression)*;
 		public ParserRule getRule() { return rule; }
@@ -5345,11 +5345,11 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		
 		/// *
 		// * This has multiple uses such as outer product and logical and.
-		// * 
+		// *
 		// * "/\", SLASHBACKSLASH precedence: 250, 251
-		// * 
+		// *
 		// * the backslash is duplicated here because it is the escape character for
-		// * strings, it will not be duplicated when used. 
+		// * strings, it will not be duplicated when used.
 		// * / OuterProdExpression returns Expr hidden(WS, SL_COMMENT):
 		//	HasExpression ({OuterProdExpression.left=current} op=SLASHBACKSLASH right=HasExpression)*;
 		public ParserRule getRule() { return rule; }
@@ -5393,7 +5393,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		/// * Predicate which returns true if preceding value is of a given type
 		// * example:
 		// * if R has Field then ..
-		// * 
+		// *
 		// * "has", precedence: 400, 400
 		// * / HasExpression returns Expr hidden(WS, SL_COMMENT):
 		//	CaseExpression ({HasExpression.left=current} op="has" rightType=TypeExpression1)*;
@@ -5435,10 +5435,10 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cRightAssignment_1_2 = (Assignment)cGroup_1.eContents().get(2);
 		private final RuleCall cRightEqualityExpressionParserRuleCall_1_2_0 = (RuleCall)cRightAssignment_1_2.eContents().get(0);
 		
-		/// * Select from Union values 
+		/// * Select from Union values
 		// * example:
-		// * if myUnion case mtType then ... 	
-		// * 
+		// * if myUnion case mtType then ...
+		// *
 		// * "case", precedence: 400, 400
 		// * / CaseExpression returns Expr hidden(WS, SL_COMMENT):
 		//	EqualityExpression ({CaseExpression.left=current} op="case" right=EqualityExpression)?;
@@ -5491,12 +5491,12 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cRightRelationalExpressionParserRuleCall_1_2_0 = (RuleCall)cRightAssignment_1_2.eContents().get(0);
 		
 		/// * used in list comprehension
-		// * 
+		// *
 		// * "in", precedence: 400, 400
 		// * / / *InExpression returns Expr hidden(WS,SL_COMMENT):
-		//  RelationalExpression
-		//  ( {CaseExpression.left=current} op='in' right = RelationalExpression)?
-		//;* / / * 
+		//RelationalExpression
+		//( {CaseExpression.left=current} op='in' right = RelationalExpression)?
+		//;* / / *
 		// * "~=", precedence: 400, 400
 		// * "^=", precedence: 400, 400
 		// * "=", precedence: 400, 400
@@ -5583,7 +5583,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cRightAssignment_1_2 = (Assignment)cGroup_1.eContents().get(2);
 		private final RuleCall cRightIsExpressionParserRuleCall_1_2_0 = (RuleCall)cRightAssignment_1_2.eContents().get(0);
 		
-		/// * 
+		/// *
 		// * ">=", precedence: 400, 400
 		// * "<=", precedence: 400, 400
 		// * ">>", precedence: 400, 400
@@ -5654,8 +5654,8 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cRightTypeAssignment_1_2 = (Assignment)cGroup_1.eContents().get(2);
 		private final RuleCall cRightTypeTypeExpression1ParserRuleCall_1_2_0 = (RuleCall)cRightTypeAssignment_1_2.eContents().get(0);
 		
-		/// * 
-		// * 
+		/// *
+		// *
 		// * "isnt", precedence: 400, 400
 		// * "is", precedence: 400, 400
 		// * / IsExpression returns Expr hidden(WS, SL_COMMENT):
@@ -5707,13 +5707,13 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cRightAssignment_1_2 = (Assignment)cGroup_1.eContents().get(2);
 		private final RuleCall cRightAdditiveExpressionParserRuleCall_1_2_0 = (RuleCall)cRightAssignment_1_2.eContents().get(0);
 		
-		/// * 
+		/// *
 		// * this is used to indicate a range:
 		// * 1..4 means the range from 1 to 4
 		// * 1.. means the range from 1 to infinity. This is used in cases where
 		// * no top bounds is necessary, when the end point is determined by other
 		// * means.
-		// * "..", "SEGMENT",  precedence: 401, 699, ["parse_Seg"]
+		// * "..", "SEGMENT", precedence: 401, 699, ["parse_Seg"]
 		// * / SegmentExpression returns Expr hidden(WS, SL_COMMENT):
 		//	AdditiveExpression ({SegmentExpression.left=current} op=SEG right=AdditiveExpression)*;
 		public ParserRule getRule() { return rule; }
@@ -5772,9 +5772,9 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		// * we include both '+' and '-' in the same case as this allows a
 		// * multiple sequence like:
 		// * a + b + c - d + e -f
-		// * 
-		// * "-",  precedence: 700, 701
-		// * "+",  precedence: 700, 701
+		// *
+		// * "-", precedence: 700, 701
+		// * "+", precedence: 700, 701
 		// * / AdditiveExpression returns Expr hidden(WS, SL_COMMENT):
 		//	ExquoExpression ({AdditiveExpression.left=current} (op=PLUS | op=MINUS | op=PLUSDOLAR te=ID | op=MINUSDOLAR te=ID)
 		//	right=ExquoExpression)*;
@@ -5857,8 +5857,8 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cRightAssignment_1_2 = (Assignment)cGroup_1.eContents().get(2);
 		private final RuleCall cRightDivisionExpressionParserRuleCall_1_2_0 = (RuleCall)cRightAssignment_1_2.eContents().get(0);
 		
-		/// * 
-		// * "exquo",  precedence: 800, 801
+		/// *
+		// * "exquo", precedence: 800, 801
 		// * / ExquoExpression returns Expr hidden(WS, SL_COMMENT):
 		//	DivisionExpression ({ExquoExpression.left=current} op="exquo" right=DivisionExpression)*;
 		public ParserRule getRule() { return rule; }
@@ -5907,7 +5907,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		
 		/// *
 		// * division expression
-		// * "/",  precedence: 800, 801
+		// * "/", precedence: 800, 801
 		// * / DivisionExpression returns Expr hidden(WS, SL_COMMENT):
 		//	QuoExpression ({DivisionExpression.left=current} (op=SLASH | op=DIVDOLAR te=ID) right=QuoExpression)*;
 		public ParserRule getRule() { return rule; }
@@ -5966,8 +5966,8 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cRightAssignment_1_2 = (Assignment)cGroup_1.eContents().get(2);
 		private final RuleCall cRightModExpressionParserRuleCall_1_2_0 = (RuleCall)cRightAssignment_1_2.eContents().get(0);
 		
-		/// * 
-		// *"quo",  precedence: 800, 801
+		/// *
+		// *"quo", precedence: 800, 801
 		// * / QuoExpression returns Expr hidden(WS, SL_COMMENT):
 		//	ModExpression ({QuoExpression.left=current} op="quo" right=ModExpression)*;
 		public ParserRule getRule() { return rule; }
@@ -6008,8 +6008,8 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cRightAssignment_1_2 = (Assignment)cGroup_1.eContents().get(2);
 		private final RuleCall cRightRemExpressionParserRuleCall_1_2_0 = (RuleCall)cRightAssignment_1_2.eContents().get(0);
 		
-		/// * 
-		// *"mod",  precedence: 800, 801
+		/// *
+		// *"mod", precedence: 800, 801
 		// * / ModExpression returns Expr hidden(WS, SL_COMMENT):
 		//	RemExpression ({ModExpression.left=current} op="mod" right=RemExpression)*;
 		public ParserRule getRule() { return rule; }
@@ -6050,7 +6050,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cRightAssignment_1_2 = (Assignment)cGroup_1.eContents().get(2);
 		private final RuleCall cRightMultiplicativeExpressionParserRuleCall_1_2_0 = (RuleCall)cRightAssignment_1_2.eContents().get(0);
 		
-		/// * 
+		/// *
 		// *"rem", precedence: 800, 801
 		// * / RemExpression returns Expr hidden(WS, SL_COMMENT):
 		//	MultiplicativeExpression ({RemExpression.left=current} op="rem" right=MultiplicativeExpression)*;
@@ -6101,7 +6101,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		/// *
 		// * multiplication expression
 		// * a * b * c
-		// * 
+		// *
 		// * "*", precedence: 800, 801
 		// * / MultiplicativeExpression returns Expr hidden(WS, SL_COMMENT):
 		//	ExponentExpression ({MultiplicativeExpression.left=current} (op=TIMES | op=TIMESDOLAR te=ID)
@@ -6165,7 +6165,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cRightAssignment_1_2 = (Assignment)cGroup_1.eContents().get(2);
 		private final RuleCall cRightMapDefinitionParserRuleCall_1_2_0 = (RuleCall)cRightAssignment_1_2.eContents().get(0);
 		
-		/// * 
+		/// *
 		// *
 		// * "^", precedence: 901, 900
 		// * "**", precedence: 901, 900
@@ -6221,8 +6221,8 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cParIDTerminalRuleCall_1_3_0 = (RuleCall)cParAssignment_1_3.eContents().get(0);
 		
 		/// * Map or Lambda expression
-		// * var +-> function 	
-		// * 
+		// * var +-> function
+		// *
 		// * +-> is an infix operator meaning 'maps-to'
 		// * It can be used to create a function literal (an anonymous function), so
 		// * instead of:
@@ -6231,21 +6231,21 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		// * x +-> if x >0 then x else -x
 		// * or:
 		// * (x,y) +-> if x >0 then y else -x
-		// * 
+		// *
 		// * fricas compatibility:
 		// * "+->", precedence: 995, 112
-		// * / MapDefinition returns Expr hidden(WS, SL_COMMENT): //  (PretendExpression | LPAREN PretendExpression (COMMA t25+=PretendExpression)+ RPAREN) (COLON rightType2 =TypeExpression)?
+		// * / MapDefinition returns Expr hidden(WS, SL_COMMENT): // (PretendExpression | LPAREN PretendExpression (COMMA t25+=PretendExpression)+ RPAREN) (COLON rightType2 =TypeExpression)?
 		//	AssignExpression ({MapDefinition.left=current} op=GIVES right=AssignExpression par=ID? // optional parameter which function
 		//)* // is applied to
 		//;
 		public ParserRule getRule() { return rule; }
 
-		////  (PretendExpression | LPAREN PretendExpression (COMMA t25+=PretendExpression)+ RPAREN) (COLON rightType2 =TypeExpression)?
+		//// (PretendExpression | LPAREN PretendExpression (COMMA t25+=PretendExpression)+ RPAREN) (COLON rightType2 =TypeExpression)?
 		//AssignExpression ({MapDefinition.left=current} op=GIVES right=AssignExpression par=ID? // optional parameter which function
 		//)* // is applied to
 		public Group getGroup() { return cGroup; }
 
-		////  (PretendExpression | LPAREN PretendExpression (COMMA t25+=PretendExpression)+ RPAREN) (COLON rightType2 =TypeExpression)?
+		//// (PretendExpression | LPAREN PretendExpression (COMMA t25+=PretendExpression)+ RPAREN) (COLON rightType2 =TypeExpression)?
 		//AssignExpression
 		public RuleCall getAssignExpressionParserRuleCall_0() { return cAssignExpressionParserRuleCall_0; }
 
@@ -6304,8 +6304,8 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		// * can also be an inner assign like this:
 		// * x := (y := z)
 		// * or just:
-		// *  x := y := z
-		// * 
+		// * x := y := z
+		// *
 		// * right is expression to allow forms like
 		// * x := if y<0 then -y else y
 		// * / AssignExpression returns Expr hidden(WS, SL_COMMENT):
@@ -6391,10 +6391,10 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		/// *
 		// * pretend Type: treat one type as another,
 		// * only works if they have the same internal structure.
-		// * 
+		// *
 		// * Not very safe and should be avoided, if possible, unfortunately
 		// * its not always possible to avoid.
-		// * 
+		// *
 		// * "pretend", precedence: 995, 996
 		// * / PretendExpression returns Expr hidden(WS, SL_COMMENT):
 		//	CoerceExpression ({PretendExpression.left=current} op="pretend" rightType=TypeExpression1)*;
@@ -6436,9 +6436,9 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cRightTypeAssignment_1_2 = (Assignment)cGroup_1.eContents().get(2);
 		private final RuleCall cRightTypeTypeExpression1ParserRuleCall_1_2_0 = (RuleCall)cRightTypeAssignment_1_2.eContents().get(0);
 		
-		/// * 
+		/// *
 		// * "::", precedence: 996, 997
-		// * 
+		// *
 		// * although '::' and '@' apparently have the same precidence we want
 		// * '@' to bind more tightly than '::'. As we can see in the following example:
 		// * "dictionary"@String :: OutputForm.
@@ -6482,7 +6482,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cRightTypeAssignment_1_2 = (Assignment)cGroup_1.eContents().get(2);
 		private final RuleCall cRightTypeTypeExpression1ParserRuleCall_1_2_0 = (RuleCall)cRightTypeAssignment_1_2.eContents().get(0);
 		
-		/// * 
+		/// *
 		// * "@", precedence: 996, 997
 		// * / HintTypeExpression returns Expr hidden(WS, SL_COMMENT):
 		//	EltExpression ({HintTypeExpression.left=current} op=AT rightType=TypeExpression1)?;
@@ -6527,19 +6527,19 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		/// * We treat these as part of the language
 		// * : indicates type
 		// * ! is part of name to indicate mutable
-		// * 
+		// *
 		// * ":", precedence: 996, 997
 		// * "!", precedence: 1002, 1001
 		// *
 		// * / / *BangExpression returns Expr hidden(WS,SL_COMMENT):
-		//  EqualityExpression
-		//  ({AndExpression.left=current} op=AMPERSAND right = EqualityExpression)*
-		//;* / / * 
-		// * "with",  precedence: 2000, 400, ["parse_InfixWith"]
+		//EqualityExpression
+		//({AndExpression.left=current} op=AMPERSAND right = EqualityExpression)*
+		//;* / / *
+		// * "with", precedence: 2000, 400, ["parse_InfixWith"]
 		// *
 		// * / / *WithExpression returns Expr hidden(WS,SL_COMMENT):
-		//  EqualityExpression
-		//  ({AndExpression.left=current} op='with' right = EqualityExpression)*
+		//EqualityExpression
+		//({AndExpression.left=current} op='with' right = EqualityExpression)*
 		//;* / / * Elt is Lisp terminology for the use of '.' to select parameters
 		// * the left expression is something that has selectable elements such as
 		// * a list, array, string, Record or union, the right element should be a
@@ -6585,7 +6585,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cRightTypeTypeExpression1ParserRuleCall_1_2_0 = (RuleCall)cRightTypeAssignment_1_2.eContents().get(0);
 		
 		//////////////// unary expressions ////////////////////
-		/// * 
+		/// *
 		// * '$'
 		// * / ExplicitTypeExpression returns Expr hidden(WS, SL_COMMENT):
 		//	UnaryExpression ({ExplicitTypeExpression.left=current} op=DOLAR rightType=TypeExpression1)?;
@@ -6720,15 +6720,15 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		
 		/// * UnaryExpression
 		// * unary prefixes:
-		// * "~" TILDE : precedence  260, 259, nil
-		// * ":" COLON : precedence  194, 195
-		// * "-" MINUS : precedence  701, 700
-		// * "#" HASH : precedence  999, 998
-		// * "'" : precedence  999, 999, ["parse_Data"]
+		// * "~" TILDE : precedence 260, 259, nil
+		// * ":" COLON : precedence 194, 195
+		// * "-" MINUS : precedence 701, 700
+		// * "#" HASH : precedence 999, 998
+		// * "'" : precedence 999, 999, ["parse_Data"]
 		// * unary suffixes
 		// * ".." : range can be unary suffix
 		// * / UnaryExpression returns Expr hidden(WS, SL_COMMENT):
-		//	PrimaryExpression //  ({UnaryExpression} uop=COLON expr=UnaryExpression) |
+		//	PrimaryExpression // ({UnaryExpression} uop=COLON expr=UnaryExpression) |
 		//	| {UnaryExpression} uop=TILDE expr=UnaryExpression | {UnaryExpression} uop=MINUS expr=UnaryExpression |
 		//	{UnaryExpression} uop=MINUSDOLAR te=ID expr=UnaryExpression | {UnaryExpression} uop=HASH expr=UnaryExpression |
 		//	{UnaryExpression} uop="not" expr=PrimaryExpression | {UnaryExpression} uop=SUMLIST expr=PrimaryExpression |
@@ -6738,7 +6738,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		//	e26+=TypeExpression1)?)* RPAREN | e11="Join" LPAREN e12=TypeExpression1 (COMMA e13+=TypeExpression1)* RPAREN;
 		public ParserRule getRule() { return rule; }
 
-		//PrimaryExpression //  ({UnaryExpression} uop=COLON expr=UnaryExpression) |
+		//PrimaryExpression // ({UnaryExpression} uop=COLON expr=UnaryExpression) |
 		//| {UnaryExpression} uop=TILDE expr=UnaryExpression | {UnaryExpression} uop=MINUS expr=UnaryExpression |
 		//{UnaryExpression} uop=MINUSDOLAR te=ID expr=UnaryExpression | {UnaryExpression} uop=HASH expr=UnaryExpression |
 		//{UnaryExpression} uop="not" expr=PrimaryExpression | {UnaryExpression} uop=SUMLIST expr=PrimaryExpression |
@@ -7049,17 +7049,17 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "PrimaryExpression");
 		private final RuleCall cPrimaryPrefixParserRuleCall = (RuleCall)rule.eContents().get(1);
 		
-		/// * 
+		/// *
 		// *
 		// * / / *UnaryExpressionHash returns Expr hidden(WS,SL_COMMENT):
-		////  HASH? PrimaryExpression
-		//  PrimaryExpression | ({UnaryExpressionHash} uop=HASH expr=UnaryExpressionHash)
-		//;* / / * 
+		//// HASH? PrimaryExpression
+		//PrimaryExpression | ({UnaryExpressionHash} uop=HASH expr=UnaryExpressionHash)
+		//;* / / *
 		// *
-		// * / PrimaryExpression returns Expr hidden(WS, SL_COMMENT): / * ( t2+=PrimarySuffix )*    * / PrimaryPrefix;
+		// * / PrimaryExpression returns Expr hidden(WS, SL_COMMENT): / * ( t2+=PrimarySuffix )* * / PrimaryPrefix;
 		public ParserRule getRule() { return rule; }
 
-		/// * ( t2+=PrimarySuffix )*    * / PrimaryPrefix
+		/// * ( t2+=PrimarySuffix )* * / PrimaryPrefix
 		public RuleCall getPrimaryPrefixParserRuleCall() { return cPrimaryPrefixParserRuleCall; }
 	}
 
@@ -7084,11 +7084,11 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cT7Assignment_2 = (Assignment)cAlternatives.eContents().get(2);
 		private final RuleCall cT7NameOrFunctionCallParserRuleCall_2_0 = (RuleCall)cT7Assignment_2.eContents().get(0);
 		
-		/// * 
+		/// *
 		// * Can contain an expression in parenthesis, this expression is
 		// * 'StatementExpression' which means that it can contain an
 		// * inner assignment.
-		// * 
+		// *
 		// * The comma option allows us to define a tuple
 		// * / PrimaryPrefix hidden(WS, SL_COMMENT):
 		//	Literal | LPAREN t4=Expression (COMMA t25+=Expression)* RPAREN => (COLON rightType3=TypeExpression1)? |
@@ -7195,23 +7195,23 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		// * known as a parameterised type or functor (not necessarily a true functor since
 		// * it may not obey the axioms of a functor)
 		// * if there is only one parameter then the parenthesis are optional
-		// * 
+		// *
 		// * function binds most tightly
 		// * / // allow multiple assignment
 		////=>(op=GIVES lambda = Expression 'xxx')?
 		//NameOrFunctionCall hidden(WS, SL_COMMENT):
-		//	"\'"? fnname=ID (=> lsp=DOLAR "Lisp")? / *t2=TypeExpression* / //    LPAREN t4=StatementExpression? (COMMA t5+=Expression)* RPAREN //(COLON rightType2 =TypeExpression)?
+		//	"\'"? fnname=ID (=> lsp=DOLAR "Lisp")? / *t2=TypeExpression* / // LPAREN t4=StatementExpression? (COMMA t5+=Expression)* RPAREN //(COLON rightType2 =TypeExpression)?
 		//	(LPAREN t4=Expression? (COMMA t5+=Expression)* //(COLON rightType2 =TypeExpression)?
 		//	RPAREN // optional curried function:
-		//	(LPAREN t14+=Statement? (COMMA t15+=Expression)* RPAREN)* //  option for parameters in parenthesis
+		//	(LPAREN t14+=Statement? (COMMA t15+=Expression)* RPAREN)* // option for parameters in parenthesis
 		//	// option of no parenthesis for single parameter
 		//	| => t6=PrimaryExpression)? => ((COMMA ID)* COLON rightType2=TypeExpression1)?;
 		public ParserRule getRule() { return rule; }
 
-		//"\'"? fnname=ID (=> lsp=DOLAR "Lisp")? / *t2=TypeExpression* / //    LPAREN t4=StatementExpression? (COMMA t5+=Expression)* RPAREN //(COLON rightType2 =TypeExpression)?
+		//"\'"? fnname=ID (=> lsp=DOLAR "Lisp")? / *t2=TypeExpression* / // LPAREN t4=StatementExpression? (COMMA t5+=Expression)* RPAREN //(COLON rightType2 =TypeExpression)?
 		//(LPAREN t4=Expression? (COMMA t5+=Expression)* //(COLON rightType2 =TypeExpression)?
 		//RPAREN // optional curried function:
-		//(LPAREN t14+=Statement? (COMMA t15+=Expression)* RPAREN)* //  option for parameters in parenthesis
+		//(LPAREN t14+=Statement? (COMMA t15+=Expression)* RPAREN)* // option for parameters in parenthesis
 		//// option of no parenthesis for single parameter
 		//| => t6=PrimaryExpression)? => ((COMMA ID)* COLON rightType2=TypeExpression1)?
 		public Group getGroup() { return cGroup; }
@@ -7237,21 +7237,21 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		//"Lisp"
 		public Keyword getLispKeyword_2_1() { return cLispKeyword_2_1; }
 
-		////    LPAREN t4=StatementExpression? (COMMA t5+=Expression)* RPAREN //(COLON rightType2 =TypeExpression)?
+		//// LPAREN t4=StatementExpression? (COMMA t5+=Expression)* RPAREN //(COLON rightType2 =TypeExpression)?
 		//(LPAREN t4=Expression? (COMMA t5+=Expression)* //(COLON rightType2 =TypeExpression)?
 		//RPAREN // optional curried function:
-		//(LPAREN t14+=Statement? (COMMA t15+=Expression)* RPAREN)* //  option for parameters in parenthesis
+		//(LPAREN t14+=Statement? (COMMA t15+=Expression)* RPAREN)* // option for parameters in parenthesis
 		//// option of no parenthesis for single parameter
 		//| => t6=PrimaryExpression)?
 		public Alternatives getAlternatives_3() { return cAlternatives_3; }
 
-		////    LPAREN t4=StatementExpression? (COMMA t5+=Expression)* RPAREN //(COLON rightType2 =TypeExpression)?
+		//// LPAREN t4=StatementExpression? (COMMA t5+=Expression)* RPAREN //(COLON rightType2 =TypeExpression)?
 		//LPAREN t4=Expression? (COMMA t5+=Expression)* //(COLON rightType2 =TypeExpression)?
 		//RPAREN // optional curried function:
 		//(LPAREN t14+=Statement? (COMMA t15+=Expression)* RPAREN)*
 		public Group getGroup_3_0() { return cGroup_3_0; }
 
-		////    LPAREN t4=StatementExpression? (COMMA t5+=Expression)* RPAREN //(COLON rightType2 =TypeExpression)?
+		//// LPAREN t4=StatementExpression? (COMMA t5+=Expression)* RPAREN //(COLON rightType2 =TypeExpression)?
 		//LPAREN
 		public RuleCall getLPARENTerminalRuleCall_3_0_0() { return cLPARENTerminalRuleCall_3_0_0; }
 
@@ -7356,24 +7356,24 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cCharacterLiteralParserRuleCall_3 = (RuleCall)cAlternatives.eContents().get(3);
 		private final RuleCall cBooleanLiteralParserRuleCall_4 = (RuleCall)cAlternatives.eContents().get(4);
 		
-		/// * Literals are actual values of a given type 
+		/// * Literals are actual values of a given type
 		// * Outstanding issues:
 		// * 1) Float literals are parsed as elt(Int,Int) so we need to recognise this
-		// *    and convert to float literal
+		// * and convert to float literal
 		// * 2) We need to be able to recognise exponent notation for floats
 		// * 3) Integers without '-' prefix can be converted to PI or NNI
 		// * 4) need to add hex or octal notation for integers (0xhhhh)
 		// * 5) String and Character literals need to have backslash "\" doubled to
-		// *    "\\" otherwise xtext will interpret backslash as an escape character.
+		// * "\\" otherwise xtext will interpret backslash as an escape character.
 		// * 6) values following immediately after string literal such as "abc"d should
-		// *    represent an implied concat: concat("abc",d)
+		// * represent an implied concat: concat("abc",d)
 		// * / Literal hidden(WS, SL_COMMENT):
-		//	value=INT //  | t3=FloatLiteral // conflicts with use of '.' for elt
+		//	value=INT // | t3=FloatLiteral // conflicts with use of '.' for elt
 		//	| t2=STRING (=> e1=NameOrFunctionCall => (t31+=STRING => e4+=NameOrFunctionCall?)*)? | ListLiteral | CharacterLiteral |
 		//	BooleanLiteral;
 		public ParserRule getRule() { return rule; }
 
-		//value=INT //  | t3=FloatLiteral // conflicts with use of '.' for elt
+		//value=INT // | t3=FloatLiteral // conflicts with use of '.' for elt
 		//| t2=STRING (=> e1=NameOrFunctionCall => (t31+=STRING => e4+=NameOrFunctionCall?)*)? | ListLiteral | CharacterLiteral |
 		//BooleanLiteral
 		public Alternatives getAlternatives() { return cAlternatives; }
@@ -7787,21 +7787,21 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 
 	
 	/// * Copyright 2012 Martin John Baker
-	// * 
+	// *
 	// * This file is part of EuclideanSpace.
 	// *
-	// *  EuclideanSpace is free software: you can redistribute it and/or modify
-	// *  it under the terms of the GNU Affero General Public License as published by
-	// *  the Free Software Foundation, either version 3 of the License, or
-	// *  (at your option) any later version.
+	// * EuclideanSpace is free software: you can redistribute it and/or modify
+	// * it under the terms of the GNU Affero General Public License as published by
+	// * the Free Software Foundation, either version 3 of the License, or
+	// * (at your option) any later version.
 	// *
-	// *  EuclideanSpace is distributed in the hope that it will be useful,
-	// *  but WITHOUT ANY WARRANTY; without even the implied warranty of
-	// *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-	// *  GNU Affero General Public License for more details.
+	// * EuclideanSpace is distributed in the hope that it will be useful,
+	// * but WITHOUT ANY WARRANTY; without even the implied warranty of
+	// * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+	// * GNU Affero General Public License for more details.
 	// *
-	// *  You should have received a copy of the GNU Affero General Public License
-	// *  along with EuclideanSpace.  If not, see <http://www.gnu.org/licenses/>.
+	// * You should have received a copy of the GNU Affero General Public License
+	// * along with EuclideanSpace. If not, see <http://www.gnu.org/licenses/>.
 	// * / / * FriCAS parses SPAD using a type of parser known as a 'Pratt' parser.
 	// * In this type of parser each operator has different binding powers for
 	// * its left and right. The SPAD parser also has 'special handlers' for
@@ -7809,10 +7809,10 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 	// * between expressions and statements, effectively everything is treated as
 	// * an expression so in this context, not only are "+" and "*" operators
 	// * but also other keywords such as "for" and "return".
-	// * 
+	// *
 	// * Here we are using a LL(*) recursive-descent parser generator and this
 	// * may not be able to exactly replicate the SPAD parser as described above
-	// * 
+	// *
 	// * I have taken this information from s-parser.boot in src/interp
 	// * so I suspect that it in valid only for the SPAD interpreter and not
 	// * the compiler however I am hoping that this will be a close enough
@@ -7820,10 +7820,10 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 	// *
 	// * So I will use the LED Table to approximate infix operator precedence
 	// * and the NUD Table to approximate prefix operator precedence. So I
-	// * have ordered both these tables in 
-	// * 
+	// * have ordered both these tables in
+	// *
 	// * I have ordered the tables low (binds least tightly) to high (binds most tightly) as follows:
-	// * 
+	// *
 	// * LED Table - infix operators
 	// * ---------------------------
 	// * ";", 81, 82, ["parse_SemiColon"]
@@ -7912,12 +7912,12 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 	// * "from"
 	// * "iterate"
 	// * "yield"
-	// * 
+	// *
 	// * * / / *
 	// * Parser starts here
 	// * CategoryDef,PackageDef and DomainDef must end with newline to ensure that
 	// * only an '@' at the start of a line will be taken as the end.
-	// * 
+	// *
 	// * On this line whitespace (WS) is not hidden so is explicitly included.
 	// * / Model:
 	//	")abbrev" WS (c=CategoryDef | p=PackageDef | d=DomainDef) AT;
@@ -7936,7 +7936,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 	// * IDs can also end with ? or ! where:
 	// * '?' indicates a function which returns a boolean value
 	// * '!' indicates a function which changes an existing domain value
-	// *     (in a mutable domain) * / terminal ID:
+	// * (in a mutable domain) * / terminal ID:
 	//	("a".."z" | "A".."Z" | "_" .) ("a".."z" | "A".."Z" | "_" . | "0".."9")* "!"? "?"?;
 	public TerminalRule getIDRule() {
 		return (tID != null) ? tID : (tID = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "ID"));
@@ -7988,7 +7988,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 
 	/// * '==>' is used in 'with' or 'add' parts so is not really a macro?
 	// * / //terminal MACRO:
-	////	'==>'
+	//// '==>'
 	////;
 	/// * string literals are enclosed in double quotes
 	// * / terminal STRING:
@@ -8460,11 +8460,11 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 
 	/// *
 	// * The add section of domain or package may contain multiple lines
-	// * 
+	// *
 	// * Examples:
-	// *     if (r := recip leadingCoefficient M) case "failed" then {
-	// *                                error "Modulus cannot be made monic"
-	// *  }
+	// * if (r := recip leadingCoefficient M) case "failed" then {
+	// * error "Modulus cannot be made monic"
+	// * }
 	// * / AddStatements hidden(WS, SL_COMMENT):
 	//	VariableDeclarationAssign | FunctionDefinition | "if" t1= // expression has form 'x has y'
 	//	Expression "then" t13=FunctionDefinitionBlock | "else" t14=FunctionDefinitionBlock | "else" t15=AddStatements |
@@ -8492,8 +8492,8 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 	// * a = b == statement
 	// * or, for multiple statements,
 	// * name(params) == {
-	// *     statement
-	// *     statement
+	// * statement
+	// * statement
 	// * }
 	// * some function definitions may be conditional like this:
 	// * if % has finiteAggregate then {
@@ -8532,7 +8532,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 	// * name(params)
 	// * We allow a single parameter to be given without brackets:
 	// * name param
-	// * 
+	// *
 	// * We also allow some alternative forms to represent infix operators like:
 	// * a = b to represent _=(a,b)
 	// * or the following (this works but only for % we need it to work for every type)
@@ -8542,8 +8542,8 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 	// * 0 or 1 can be used as a function signature as a short form of
 	// * _0() or _1()
 	// * / FunctionSignature hidden(WS, SL_COMMENT):
-	//	fnNam=ID LPAREN par2=VariableTyped? (COMMA par3+=VariableTyped)* RPAREN //  ) | (
-	//	//  	t4=ID // no parameters without brackets
+	//	fnNam=ID LPAREN par2=VariableTyped? (COMMA par3+=VariableTyped)* RPAREN // ) | (
+	//	// t4=ID // no parameters without brackets
 	//	// commented out as it causes recursive rule invocation
 	//	// with ruleAddStatements and ruleFunctionDefinitionBlock
 	//	// can't specify '0' or '1' explicitly as this would affect lex
@@ -8565,7 +8565,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 	// * there are two forms:
 	// * name ==> body
 	// * and
-	// * name macro == body 	
+	// * name macro == body
 	// * / //MACRO val=ID NL;
 	//MacroDef:
 	//	macroname=ID MACROVALUE;
@@ -8593,11 +8593,11 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 	// * A 'variable' can be simple like:
 	// * x:Float
 	// * or something more complicated like:
-	// * x:Record(newPt: Pt,type:  String)
+	// * x:Record(newPt: Pt,type: String)
 	// * or it can be a function like:
 	// * x:(Float,Integer) -> Float
 	// * or it can be conditional like:
-	// * if 
+	// * if
 	// * / VariableDeclarationBlock hidden(WS, SL_COMMENT):
 	//	vardecbr=LBRACE NL* //=>(i1=Import NL*)?
 	//	(vardecBlk+=VariableDeclaration (NL | SEMICOLON)+)* RBRACE;
@@ -8613,11 +8613,11 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 	// * A 'variable' can be simple like:
 	// * x:Float
 	// * or something more complicated like:
-	// * x:Record(newPt: Pt,type:  String)
+	// * x:Record(newPt: Pt,type: String)
 	// * or it can be a function like:
 	// * x:(Float,Integer) -> Float
 	// * or it can be conditional like:
-	// * if 
+	// * if
 	// * / VariableDeclaration hidden(WS, SL_COMMENT):
 	//	("if" t1=Expression "then")? //Import?
 	//	// expression has form 'x has y'
@@ -8650,13 +8650,13 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 	// * A 'variable' can be simple like:
 	// * x:Float
 	// * or something more complicated like:
-	// * x:Record(newPt: Pt,type:  String)
+	// * x:Record(newPt: Pt,type: String)
 	// * or it can be a function like:
 	// * x:(Float,Integer) -> Float
 	// * we can define multiple variables together:
 	// * i,j : Integer
 	// * / VariableTyped hidden(WS, SL_COMMENT):
-	//	(varName=ID | varNameSt=STRING) //    =>(COMMA t2+=ID)* // multiple declarations in same line
+	//	(varName=ID | varNameSt=STRING) // =>(COMMA t2+=ID)* // multiple declarations in same line
 	//	(COLON typ=TypeExpression1)?;
 	public VariableTypedElements getVariableTypedAccess() {
 		return (pVariableTyped != null) ? pVariableTyped : (pVariableTyped = new VariableTypedElements());
@@ -8671,7 +8671,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 	// * a := 3
 	// * a:Integer := 3
 	// * a := sin(x)
-	// * 
+	// *
 	// * There are two forms of multiple assignment:
 	// * a,b,c := 0@Integer
 	// * or:
@@ -8695,7 +8695,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	/// *
-	// * free variable 	allows us to declare a variable that is global 
+	// * free variable allows us to declare a variable that is global
 	// * / FreeVariable hidden(WS):
 	//	"free" var=ID;
 	public FreeVariableElements getFreeVariableAccess() {
@@ -8707,7 +8707,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	/// *
-	// * allows us to declare a variable that is not global  
+	// * allows us to declare a variable that is not global
 	// * / LocalVariable hidden(WS):
 	//	"local" var=ID;
 	public LocalVariableElements getLocalVariableAccess() {
@@ -8722,14 +8722,14 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 	// * This is similar to Expression but known to be of type.
 	// * (Expression can also be of type) but if we know that
 	// * this is a type we can exclude some possibilities.
-	// * 
+	// *
 	// * A 'typeExpression' can be simple like:
 	// * Float
 	// * or something more complicated like:
-	// * Record(newPt: Pt,type:  String)
+	// * Record(newPt: Pt,type: String)
 	// * or it can be a function like:
 	// * (Float,Integer) -> Float
-	// * 
+	// *
 	// * first we check for a function like: Integer -> Integer
 	// * / TypeExpression1 returns TypeExpression hidden(WS):
 	//	=> (t2=TypeArguments ARROW t3=TypeResult) | TypePrimaryExpression1;
@@ -8760,7 +8760,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 	// * we use a type parameter list for parameters of category, package or domains
 	// * Parameter list may be empty '()'.
 	// * in this case parameters may be just ID or they may be nameID:typeID
-	// * 
+	// *
 	// * examples are:
 	// * ()
 	// * (String)
@@ -8861,7 +8861,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 	// * Float - an ID representation of a type
 	// * List(Float) - a type function call
 	// * List Float - a non-parenthesis form if only one parameter
-	// * 
+	// *
 	// * A type function is also known as a parameterised type or
 	// * functor (not necessarily a true
 	// * functor since it may not obey the axioms of a functor).
@@ -8905,14 +8905,14 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 	/// * Since SPAD supports dependent types then numbers and strings can occur here.
 	// * Outstanding issues:
 	// * 1) Float literals are parsed as elt(Int,Int) so we need to recognise this
-	// *    and convert to float literal
+	// * and convert to float literal
 	// * 2) We need to be able to recognise exponent notation for floats
 	// * 3) Integers without '-' prefix can be converted to PI or NNI
 	// * 4) need to add hex or octal notation for integers (0xhhhh)
 	// * 5) String and Character literals need to have backslash "\" doubled to
-	// *    "\\" otherwise xtext will interpret backslash as an escape character.
+	// * "\\" otherwise xtext will interpret backslash as an escape character.
 	// * 6) values following immediately after string literal such as "abc"d should
-	// *    represent an implied concat: concat("abc",d)
+	// * represent an implied concat: concat("abc",d)
 	// * / TypeLiteral hidden(WS):
 	//	t1=INT | t22=STRING | // t3=FloatLiteral |
 	//	t34=CharacterLiteral | t35=BooleanLiteral;
@@ -8930,9 +8930,9 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 	//	s1=Block | s3=StatementExpression | // 'if' can occur in an expression or in
 	//	// a statement so we use '=>' to choose
 	//	// expression if there is any ambiguity
-	//	s4=IfStatement | s4b=IfElseStatement | //    s4c=IfThenStatement |
-	//	s5=WhileStatement | s6=DoStatement | s7=ForStatement | s8=BreakStatement | s12=RepeatStatement | s9=IterateStatement | //    s11= ContinueStatement|
-	//	s10=ReturnStatement | //    s11= Import |
+	//	s4=IfStatement | s4b=IfElseStatement | // s4c=IfThenStatement |
+	//	s5=WhileStatement | s6=DoStatement | s7=ForStatement | s8=BreakStatement | s12=RepeatStatement | s9=IterateStatement | // s11= ContinueStatement|
+	//	s10=ReturnStatement | // s11= Import |
 	//	"error" e=Expression;
 	public StatementElements getStatementAccess() {
 		return (pStatement != null) ? pStatement : (pStatement = new StatementElements());
@@ -8955,19 +8955,19 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 
 	/// *
 	// * Gives a value or assigns a value to a variable or does conditional exit
-	// * 
+	// *
 	// * examples:
 	// * x
 	// * x:Int
 	// * x,y:INT -- multiple assignment
 	// * x:Int := 3
-	// * 
+	// *
 	// * x=y => 3
 	// * / StatementExpression hidden(WS, SL_COMMENT): //(ID COMMA)* // allow multiple assignment
 	//	t= // was Expression but changed so that 'if' statement
 	//	ConditionExpression // does not clash with if-then-else expression
-	//	//    (COLON t2=TypeExpression)?
-	//	//    (BECOMES t3=Expression (BECOMES t33+=Expression)*)?
+	//	// (COLON t2=TypeExpression)?
+	//	// (BECOMES t3=Expression (BECOMES t33+=Expression)*)?
 	//	(BECOMES t5=Block)? // breaks out of a block if predicate before '=>' is true then program
 	//	// control leaves the block.
 	//	// Put it here so that it can only occur at the top level of an expression.
@@ -8989,16 +8989,16 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 	// * for i in list for i in 1.. repeat ...
 	// * for j in n..m repeat loopBody
 	// * for j in n..m | odd? j repeat
-	// * 
+	// *
 	// * To Do
 	// * -----
 	// * As a temporary measure we check for '..' as a suffix operator
 	// * here, but we should really put this into expression?
-	// * 
+	// *
 	// * We need to allow conditions using BAR '|'
 	// * / ForStatement hidden(WS, SL_COMMENT):
 	//	"for" (stname=ID "in" t1=Expression SEG? //(=> '..' t2=Expression)?
-	//	("by" by1=Expression)? //       (=> BAR t2=PredicateOr)? // condition
+	//	("by" by1=Expression)? // (=> BAR t2=PredicateOr)? // condition
 	//	("for" stname2+=ID "in" t2+=Expression SEG? ("by" by2+=Expression)?)* ("while" t2+=Expression)*) "repeat" NL? s1= //('is' s2=Statement)?
 	//	Statement;
 	public ForStatementElements getForStatementAccess() {
@@ -9022,7 +9022,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	/// *
-	// *  do loopBody while BoolExpr
+	// * do loopBody while BoolExpr
 	// * / DoStatement hidden(WS, SL_COMMENT):
 	//	stname="do" s1=Statement "while" NL? t2= / *PredicateOr* / Expression;
 	public DoStatementElements getDoStatementAccess() {
@@ -9034,7 +9034,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	/// *
-	// *  will repeat until we jump out. For instance by calling return.
+	// * will repeat until we jump out. For instance by calling return.
 	// * / RepeatStatement hidden(WS, SL_COMMENT):
 	//	stname="repeat" s1=Statement;
 	public RepeatStatementElements getRepeatStatementAccess() {
@@ -9047,7 +9047,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 
 	/// *
 	// * iterate ...
-	// * skips over the remainder of a loop 
+	// * skips over the remainder of a loop
 	// * / IterateStatement hidden(WS, SL_COMMENT):
 	//	stname="iterate";
 	public IterateStatementElements getIterateStatementAccess() {
@@ -9059,7 +9059,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	/// *
-	// * break 	leave current loop 
+	// * break leave current loop
 	// * / BreakStatement hidden(WS, SL_COMMENT):
 	//	stname="break";
 	public BreakStatementElements getBreakStatementAccess() {
@@ -9071,7 +9071,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	/// *
-	// * return 	leave current function 
+	// * return leave current function
 	// * / ReturnStatement hidden(WS):
 	//	stname="return" t2=Expression;
 	public ReturnStatementElements getReturnStatementAccess() {
@@ -9085,7 +9085,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 	/// *
 	// * import - use 'Import' instead
 	// * / //ImportStatement hidden(WS):
-	////	stname='import' t2=Expression
+	//// stname='import' t2=Expression
 	////;
 	/// * 'if' statement allows program flow to be switched
 	// * forms:
@@ -9099,27 +9099,27 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 	// * note2:
 	// * since there is an explicit 'then' keyword there is no need to put
 	// * the condition in brackets
-	// * 	
+	// *
 	// * examples:
 	// * a:= if x >0 then x else -x
-	// * if R has Field then ... 	  	 
+	// * if R has Field then ...
 	// * if myUnion case mtType then ...
-	// * 
+	// *
 	// * we also need to allow a form like this:
 	// * if x >0 {
-	// *   then x
-	// *   else -x
+	// * then x
+	// * else -x
 	// * }
-	// * 
+	// *
 	// * also this form (this requires IfElseStatement rule):
 	// * if x >0 then {
-	// *   x
+	// * x
 	// * }
 	// * else {
-	// *   -x
+	// * -x
 	// * }
 	// * / IfStatement hidden(WS, SL_COMMENT):
-	//	"if" t2=Expression ("then" s1=Statement ("else" s2=Statement)? //  'if' t2=ConditionExpression
+	//	"if" t2=Expression ("then" s1=Statement ("else" s2=Statement)? // 'if' t2=ConditionExpression
 	//	| b?=LBRACE NL+ "then" s11=Statement NL* ("else" s12=Statement NL*)? RBRACE);
 	public IfStatementElements getIfStatementAccess() {
 		return (pIfStatement != null) ? pIfStatement : (pIfStatement = new IfStatementElements());
@@ -9141,16 +9141,16 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 
 	/////////////// Expression syntax follows //////////////
 	/// * This is the top level for expressions
-	// * 
+	// *
 	// * This level handles special cases such as:
 	// * if x then y else z
 	// * (x,y) +-> z
-	// * 
-	// * We can consider expressions as elements of statements 
+	// *
+	// * We can consider expressions as elements of statements
 	// * expressions contain no newlines unless preceded by underscore
 	// * (which is handled by WS)
 	// * / Expression returns Expr hidden(WS, SL_COMMENT):
-	//	ifname="if" ifpred=Expression "then" thenexp=Expression "else" elseexp=Expression //  | LPAREN t24=ConditionExpression (COMMA t25+=ConditionExpression)+ RPAREN (COLON rightType2 =TypeExpression)? GIVES ConditionExpression
+	//	ifname="if" ifpred=Expression "then" thenexp=Expression "else" elseexp=Expression // | LPAREN t24=ConditionExpression (COMMA t25+=ConditionExpression)+ RPAREN (COLON rightType2 =TypeExpression)? GIVES ConditionExpression
 	//	| ExitExpression;
 	public ExpressionElements getExpressionAccess() {
 		return (pExpression != null) ? pExpression : (pExpression = new ExpressionElements());
@@ -9160,7 +9160,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		return getExpressionAccess().getRule();
 	}
 
-	/// * 
+	/// *
 	// * condition '=>' expr1 ';' expr2
 	// * / ExitExpression returns Expr hidden(WS, SL_COMMENT):
 	//	ConditionExpression ({ExitExpression.left=current} op=EXIT right=ConditionExpression SEMICOLON
@@ -9173,7 +9173,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		return getExitExpressionAccess().getRule();
 	}
 
-	/// * 
+	/// *
 	// * BAR "|" precedence: 108, 111
 	// * / ConditionExpression returns Expr hidden(WS, SL_COMMENT):
 	//	OrExpression ({ConditionExpression.left=current} op=BAR right=OrExpression)*;
@@ -9185,11 +9185,11 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		return getConditionExpressionAccess().getRule();
 	}
 
-	/// * 
+	/// *
 	// * COMMA"," precedence: 110, 111
 	// * / //CommaExpression returns Expr hidden(WS,SL_COMMENT):
-	////  ConditionalAndExpression
-	////  ({ConditionExpression.left=current} op=BAR right = ConditionalAndExpression )*
+	//// ConditionalAndExpression
+	//// ({ConditionExpression.left=current} op=BAR right = ConditionalAndExpression )*
 	////;
 	/// *
 	// * There is also another rule that looks for 'or' which is PredicateOr,
@@ -9223,11 +9223,11 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 
 	/// *
 	// * This has multiple uses such as inner product and logical or.
-	// * 
+	// *
 	// * "\/", BACKSLASHSLASH precedence: 200, 201
-	// * 
+	// *
 	// * the backslash is duplicated here because it is the escape character for
-	// * strings, it will not be duplicated when used. 
+	// * strings, it will not be duplicated when used.
 	// * / InnerProdExpression returns Expr hidden(WS, SL_COMMENT):
 	//	OuterProdExpression ({InnerProdExpression.left=current} op=BACKSLASHSLASH right=OuterProdExpression)*;
 	public InnerProdExpressionElements getInnerProdExpressionAccess() {
@@ -9240,11 +9240,11 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 
 	/// *
 	// * This has multiple uses such as outer product and logical and.
-	// * 
+	// *
 	// * "/\", SLASHBACKSLASH precedence: 250, 251
-	// * 
+	// *
 	// * the backslash is duplicated here because it is the escape character for
-	// * strings, it will not be duplicated when used. 
+	// * strings, it will not be duplicated when used.
 	// * / OuterProdExpression returns Expr hidden(WS, SL_COMMENT):
 	//	HasExpression ({OuterProdExpression.left=current} op=SLASHBACKSLASH right=HasExpression)*;
 	public OuterProdExpressionElements getOuterProdExpressionAccess() {
@@ -9258,7 +9258,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 	/// * Predicate which returns true if preceding value is of a given type
 	// * example:
 	// * if R has Field then ..
-	// * 
+	// *
 	// * "has", precedence: 400, 400
 	// * / HasExpression returns Expr hidden(WS, SL_COMMENT):
 	//	CaseExpression ({HasExpression.left=current} op="has" rightType=TypeExpression1)*;
@@ -9270,10 +9270,10 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		return getHasExpressionAccess().getRule();
 	}
 
-	/// * Select from Union values 
+	/// * Select from Union values
 	// * example:
-	// * if myUnion case mtType then ... 	
-	// * 
+	// * if myUnion case mtType then ...
+	// *
 	// * "case", precedence: 400, 400
 	// * / CaseExpression returns Expr hidden(WS, SL_COMMENT):
 	//	EqualityExpression ({CaseExpression.left=current} op="case" right=EqualityExpression)?;
@@ -9286,12 +9286,12 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	/// * used in list comprehension
-	// * 
+	// *
 	// * "in", precedence: 400, 400
 	// * / / *InExpression returns Expr hidden(WS,SL_COMMENT):
-	//  RelationalExpression
-	//  ( {CaseExpression.left=current} op='in' right = RelationalExpression)?
-	//;* / / * 
+	//RelationalExpression
+	//( {CaseExpression.left=current} op='in' right = RelationalExpression)?
+	//;* / / *
 	// * "~=", precedence: 400, 400
 	// * "^=", precedence: 400, 400
 	// * "=", precedence: 400, 400
@@ -9307,7 +9307,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		return getEqualityExpressionAccess().getRule();
 	}
 
-	/// * 
+	/// *
 	// * ">=", precedence: 400, 400
 	// * "<=", precedence: 400, 400
 	// * ">>", precedence: 400, 400
@@ -9324,8 +9324,8 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		return getRelationalExpressionAccess().getRule();
 	}
 
-	/// * 
-	// * 
+	/// *
+	// *
 	// * "isnt", precedence: 400, 400
 	// * "is", precedence: 400, 400
 	// * / IsExpression returns Expr hidden(WS, SL_COMMENT):
@@ -9338,13 +9338,13 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		return getIsExpressionAccess().getRule();
 	}
 
-	/// * 
+	/// *
 	// * this is used to indicate a range:
 	// * 1..4 means the range from 1 to 4
 	// * 1.. means the range from 1 to infinity. This is used in cases where
 	// * no top bounds is necessary, when the end point is determined by other
 	// * means.
-	// * "..", "SEGMENT",  precedence: 401, 699, ["parse_Seg"]
+	// * "..", "SEGMENT", precedence: 401, 699, ["parse_Seg"]
 	// * / SegmentExpression returns Expr hidden(WS, SL_COMMENT):
 	//	AdditiveExpression ({SegmentExpression.left=current} op=SEG right=AdditiveExpression)*;
 	public SegmentExpressionElements getSegmentExpressionAccess() {
@@ -9360,9 +9360,9 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 	// * we include both '+' and '-' in the same case as this allows a
 	// * multiple sequence like:
 	// * a + b + c - d + e -f
-	// * 
-	// * "-",  precedence: 700, 701
-	// * "+",  precedence: 700, 701
+	// *
+	// * "-", precedence: 700, 701
+	// * "+", precedence: 700, 701
 	// * / AdditiveExpression returns Expr hidden(WS, SL_COMMENT):
 	//	ExquoExpression ({AdditiveExpression.left=current} (op=PLUS | op=MINUS | op=PLUSDOLAR te=ID | op=MINUSDOLAR te=ID)
 	//	right=ExquoExpression)*;
@@ -9374,8 +9374,8 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		return getAdditiveExpressionAccess().getRule();
 	}
 
-	/// * 
-	// * "exquo",  precedence: 800, 801
+	/// *
+	// * "exquo", precedence: 800, 801
 	// * / ExquoExpression returns Expr hidden(WS, SL_COMMENT):
 	//	DivisionExpression ({ExquoExpression.left=current} op="exquo" right=DivisionExpression)*;
 	public ExquoExpressionElements getExquoExpressionAccess() {
@@ -9388,7 +9388,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 
 	/// *
 	// * division expression
-	// * "/",  precedence: 800, 801
+	// * "/", precedence: 800, 801
 	// * / DivisionExpression returns Expr hidden(WS, SL_COMMENT):
 	//	QuoExpression ({DivisionExpression.left=current} (op=SLASH | op=DIVDOLAR te=ID) right=QuoExpression)*;
 	public DivisionExpressionElements getDivisionExpressionAccess() {
@@ -9399,8 +9399,8 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		return getDivisionExpressionAccess().getRule();
 	}
 
-	/// * 
-	// *"quo",  precedence: 800, 801
+	/// *
+	// *"quo", precedence: 800, 801
 	// * / QuoExpression returns Expr hidden(WS, SL_COMMENT):
 	//	ModExpression ({QuoExpression.left=current} op="quo" right=ModExpression)*;
 	public QuoExpressionElements getQuoExpressionAccess() {
@@ -9411,8 +9411,8 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		return getQuoExpressionAccess().getRule();
 	}
 
-	/// * 
-	// *"mod",  precedence: 800, 801
+	/// *
+	// *"mod", precedence: 800, 801
 	// * / ModExpression returns Expr hidden(WS, SL_COMMENT):
 	//	RemExpression ({ModExpression.left=current} op="mod" right=RemExpression)*;
 	public ModExpressionElements getModExpressionAccess() {
@@ -9423,7 +9423,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		return getModExpressionAccess().getRule();
 	}
 
-	/// * 
+	/// *
 	// *"rem", precedence: 800, 801
 	// * / RemExpression returns Expr hidden(WS, SL_COMMENT):
 	//	MultiplicativeExpression ({RemExpression.left=current} op="rem" right=MultiplicativeExpression)*;
@@ -9438,7 +9438,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 	/// *
 	// * multiplication expression
 	// * a * b * c
-	// * 
+	// *
 	// * "*", precedence: 800, 801
 	// * / MultiplicativeExpression returns Expr hidden(WS, SL_COMMENT):
 	//	ExponentExpression ({MultiplicativeExpression.left=current} (op=TIMES | op=TIMESDOLAR te=ID)
@@ -9451,7 +9451,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		return getMultiplicativeExpressionAccess().getRule();
 	}
 
-	/// * 
+	/// *
 	// *
 	// * "^", precedence: 901, 900
 	// * "**", precedence: 901, 900
@@ -9466,8 +9466,8 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	/// * Map or Lambda expression
-	// * var +-> function 	
-	// * 
+	// * var +-> function
+	// *
 	// * +-> is an infix operator meaning 'maps-to'
 	// * It can be used to create a function literal (an anonymous function), so
 	// * instead of:
@@ -9476,10 +9476,10 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 	// * x +-> if x >0 then x else -x
 	// * or:
 	// * (x,y) +-> if x >0 then y else -x
-	// * 
+	// *
 	// * fricas compatibility:
 	// * "+->", precedence: 995, 112
-	// * / MapDefinition returns Expr hidden(WS, SL_COMMENT): //  (PretendExpression | LPAREN PretendExpression (COMMA t25+=PretendExpression)+ RPAREN) (COLON rightType2 =TypeExpression)?
+	// * / MapDefinition returns Expr hidden(WS, SL_COMMENT): // (PretendExpression | LPAREN PretendExpression (COMMA t25+=PretendExpression)+ RPAREN) (COLON rightType2 =TypeExpression)?
 	//	AssignExpression ({MapDefinition.left=current} op=GIVES right=AssignExpression par=ID? // optional parameter which function
 	//)* // is applied to
 	//;
@@ -9497,8 +9497,8 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 	// * can also be an inner assign like this:
 	// * x := (y := z)
 	// * or just:
-	// *  x := y := z
-	// * 
+	// * x := y := z
+	// *
 	// * right is expression to allow forms like
 	// * x := if y<0 then -y else y
 	// * / AssignExpression returns Expr hidden(WS, SL_COMMENT):
@@ -9515,10 +9515,10 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 	/// *
 	// * pretend Type: treat one type as another,
 	// * only works if they have the same internal structure.
-	// * 
+	// *
 	// * Not very safe and should be avoided, if possible, unfortunately
 	// * its not always possible to avoid.
-	// * 
+	// *
 	// * "pretend", precedence: 995, 996
 	// * / PretendExpression returns Expr hidden(WS, SL_COMMENT):
 	//	CoerceExpression ({PretendExpression.left=current} op="pretend" rightType=TypeExpression1)*;
@@ -9530,9 +9530,9 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		return getPretendExpressionAccess().getRule();
 	}
 
-	/// * 
+	/// *
 	// * "::", precedence: 996, 997
-	// * 
+	// *
 	// * although '::' and '@' apparently have the same precidence we want
 	// * '@' to bind more tightly than '::'. As we can see in the following example:
 	// * "dictionary"@String :: OutputForm.
@@ -9546,7 +9546,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		return getCoerceExpressionAccess().getRule();
 	}
 
-	/// * 
+	/// *
 	// * "@", precedence: 996, 997
 	// * / HintTypeExpression returns Expr hidden(WS, SL_COMMENT):
 	//	EltExpression ({HintTypeExpression.left=current} op=AT rightType=TypeExpression1)?;
@@ -9561,19 +9561,19 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 	/// * We treat these as part of the language
 	// * : indicates type
 	// * ! is part of name to indicate mutable
-	// * 
+	// *
 	// * ":", precedence: 996, 997
 	// * "!", precedence: 1002, 1001
 	// *
 	// * / / *BangExpression returns Expr hidden(WS,SL_COMMENT):
-	//  EqualityExpression
-	//  ({AndExpression.left=current} op=AMPERSAND right = EqualityExpression)*
-	//;* / / * 
-	// * "with",  precedence: 2000, 400, ["parse_InfixWith"]
+	//EqualityExpression
+	//({AndExpression.left=current} op=AMPERSAND right = EqualityExpression)*
+	//;* / / *
+	// * "with", precedence: 2000, 400, ["parse_InfixWith"]
 	// *
 	// * / / *WithExpression returns Expr hidden(WS,SL_COMMENT):
-	//  EqualityExpression
-	//  ({AndExpression.left=current} op='with' right = EqualityExpression)*
+	//EqualityExpression
+	//({AndExpression.left=current} op='with' right = EqualityExpression)*
 	//;* / / * Elt is Lisp terminology for the use of '.' to select parameters
 	// * the left expression is something that has selectable elements such as
 	// * a list, array, string, Record or union, the right element should be a
@@ -9589,7 +9589,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//////////////// unary expressions ////////////////////
-	/// * 
+	/// *
 	// * '$'
 	// * / ExplicitTypeExpression returns Expr hidden(WS, SL_COMMENT):
 	//	UnaryExpression ({ExplicitTypeExpression.left=current} op=DOLAR rightType=TypeExpression1)?;
@@ -9603,15 +9603,15 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 
 	/// * UnaryExpression
 	// * unary prefixes:
-	// * "~" TILDE : precedence  260, 259, nil
-	// * ":" COLON : precedence  194, 195
-	// * "-" MINUS : precedence  701, 700
-	// * "#" HASH : precedence  999, 998
-	// * "'" : precedence  999, 999, ["parse_Data"]
+	// * "~" TILDE : precedence 260, 259, nil
+	// * ":" COLON : precedence 194, 195
+	// * "-" MINUS : precedence 701, 700
+	// * "#" HASH : precedence 999, 998
+	// * "'" : precedence 999, 999, ["parse_Data"]
 	// * unary suffixes
 	// * ".." : range can be unary suffix
 	// * / UnaryExpression returns Expr hidden(WS, SL_COMMENT):
-	//	PrimaryExpression //  ({UnaryExpression} uop=COLON expr=UnaryExpression) |
+	//	PrimaryExpression // ({UnaryExpression} uop=COLON expr=UnaryExpression) |
 	//	| {UnaryExpression} uop=TILDE expr=UnaryExpression | {UnaryExpression} uop=MINUS expr=UnaryExpression |
 	//	{UnaryExpression} uop=MINUSDOLAR te=ID expr=UnaryExpression | {UnaryExpression} uop=HASH expr=UnaryExpression |
 	//	{UnaryExpression} uop="not" expr=PrimaryExpression | {UnaryExpression} uop=SUMLIST expr=PrimaryExpression |
@@ -9627,14 +9627,14 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		return getUnaryExpressionAccess().getRule();
 	}
 
-	/// * 
+	/// *
 	// *
 	// * / / *UnaryExpressionHash returns Expr hidden(WS,SL_COMMENT):
-	////  HASH? PrimaryExpression
-	//  PrimaryExpression | ({UnaryExpressionHash} uop=HASH expr=UnaryExpressionHash)
-	//;* / / * 
+	//// HASH? PrimaryExpression
+	//PrimaryExpression | ({UnaryExpressionHash} uop=HASH expr=UnaryExpressionHash)
+	//;* / / *
 	// *
-	// * / PrimaryExpression returns Expr hidden(WS, SL_COMMENT): / * ( t2+=PrimarySuffix )*    * / PrimaryPrefix;
+	// * / PrimaryExpression returns Expr hidden(WS, SL_COMMENT): / * ( t2+=PrimarySuffix )* * / PrimaryPrefix;
 	public PrimaryExpressionElements getPrimaryExpressionAccess() {
 		return (pPrimaryExpression != null) ? pPrimaryExpression : (pPrimaryExpression = new PrimaryExpressionElements());
 	}
@@ -9643,11 +9643,11 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		return getPrimaryExpressionAccess().getRule();
 	}
 
-	/// * 
+	/// *
 	// * Can contain an expression in parenthesis, this expression is
 	// * 'StatementExpression' which means that it can contain an
 	// * inner assignment.
-	// * 
+	// *
 	// * The comma option allows us to define a tuple
 	// * / PrimaryPrefix hidden(WS, SL_COMMENT):
 	//	Literal | LPAREN t4=Expression (COMMA t25+=Expression)* RPAREN => (COLON rightType3=TypeExpression1)? |
@@ -9664,15 +9664,15 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 	// * known as a parameterised type or functor (not necessarily a true functor since
 	// * it may not obey the axioms of a functor)
 	// * if there is only one parameter then the parenthesis are optional
-	// * 
+	// *
 	// * function binds most tightly
 	// * / // allow multiple assignment
 	////=>(op=GIVES lambda = Expression 'xxx')?
 	//NameOrFunctionCall hidden(WS, SL_COMMENT):
-	//	"\'"? fnname=ID (=> lsp=DOLAR "Lisp")? / *t2=TypeExpression* / //    LPAREN t4=StatementExpression? (COMMA t5+=Expression)* RPAREN //(COLON rightType2 =TypeExpression)?
+	//	"\'"? fnname=ID (=> lsp=DOLAR "Lisp")? / *t2=TypeExpression* / // LPAREN t4=StatementExpression? (COMMA t5+=Expression)* RPAREN //(COLON rightType2 =TypeExpression)?
 	//	(LPAREN t4=Expression? (COMMA t5+=Expression)* //(COLON rightType2 =TypeExpression)?
 	//	RPAREN // optional curried function:
-	//	(LPAREN t14+=Statement? (COMMA t15+=Expression)* RPAREN)* //  option for parameters in parenthesis
+	//	(LPAREN t14+=Statement? (COMMA t15+=Expression)* RPAREN)* // option for parameters in parenthesis
 	//	// option of no parenthesis for single parameter
 	//	| => t6=PrimaryExpression)? => ((COMMA ID)* COLON rightType2=TypeExpression1)?;
 	public NameOrFunctionCallElements getNameOrFunctionCallAccess() {
@@ -9683,19 +9683,19 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		return getNameOrFunctionCallAccess().getRule();
 	}
 
-	/// * Literals are actual values of a given type 
+	/// * Literals are actual values of a given type
 	// * Outstanding issues:
 	// * 1) Float literals are parsed as elt(Int,Int) so we need to recognise this
-	// *    and convert to float literal
+	// * and convert to float literal
 	// * 2) We need to be able to recognise exponent notation for floats
 	// * 3) Integers without '-' prefix can be converted to PI or NNI
 	// * 4) need to add hex or octal notation for integers (0xhhhh)
 	// * 5) String and Character literals need to have backslash "\" doubled to
-	// *    "\\" otherwise xtext will interpret backslash as an escape character.
+	// * "\\" otherwise xtext will interpret backslash as an escape character.
 	// * 6) values following immediately after string literal such as "abc"d should
-	// *    represent an implied concat: concat("abc",d)
+	// * represent an implied concat: concat("abc",d)
 	// * / Literal hidden(WS, SL_COMMENT):
-	//	value=INT //  | t3=FloatLiteral // conflicts with use of '.' for elt
+	//	value=INT // | t3=FloatLiteral // conflicts with use of '.' for elt
 	//	| t2=STRING (=> e1=NameOrFunctionCall => (t31+=STRING => e4+=NameOrFunctionCall?)*)? | ListLiteral | CharacterLiteral |
 	//	BooleanLiteral;
 	public LiteralElements getLiteralAccess() {

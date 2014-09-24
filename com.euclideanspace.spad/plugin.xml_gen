@@ -7,10 +7,9 @@
     <package 
        uri = "http://www.euclideanspace.com/spad/Editor" 
        class = "com.euclideanspace.spad.editor.EditorPackage"
-       genModel = "com/euclideanspace/spad/Editor.genmodel" /> 
+       genModel = "model/generated/Editor.genmodel" /> 
 	
   </extension>
-
 
 
 

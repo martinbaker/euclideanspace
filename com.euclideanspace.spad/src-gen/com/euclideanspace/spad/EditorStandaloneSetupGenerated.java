@@ -51,6 +51,5 @@ public class EditorStandaloneSetupGenerated implements ISetup {
 		
 
 
-
 	}
 }

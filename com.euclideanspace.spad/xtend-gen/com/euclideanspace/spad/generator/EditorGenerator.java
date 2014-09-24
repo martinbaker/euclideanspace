@@ -1919,7 +1919,7 @@ public class EditorGenerator implements IGenerator {
     {
       EList<Statement> _statemBl = f.getStatemBl();
       for(final Statement x : _statemBl) {
-        Object _compile = this.compile(x);
+        CharSequence _compile = this.compile(x);
         _builder.append(_compile, "        ");
         _builder.newLineIfNotEmpty();
         _builder.append("        ");
@@ -1962,7 +1962,7 @@ public class EditorGenerator implements IGenerator {
       if (_notEquals_2) {
         _builder.append("=>");
         Statement _t4_1 = f.getT4();
-        Object _compile_2 = this.compile(_t4_1);
+        CharSequence _compile_2 = this.compile(_t4_1);
         _builder.append(_compile_2, "");
       }
     }
@@ -1984,7 +1984,7 @@ public class EditorGenerator implements IGenerator {
     _builder.append(_compile, "");
     _builder.append("repeat ");
     Statement _s1 = f.getS1();
-    Object _compile_1 = this.compile(_s1);
+    CharSequence _compile_1 = this.compile(_s1);
     _builder.append(_compile_1, "");
     return _builder;
   }
@@ -2000,7 +2000,7 @@ public class EditorGenerator implements IGenerator {
     _builder.append(_compile, "");
     _builder.append("repeat ");
     Statement _s1 = f.getS1();
-    Object _compile_1 = this.compile(_s1);
+    CharSequence _compile_1 = this.compile(_s1);
     _builder.append(_compile_1, "");
     return _builder;
   }
@@ -2012,7 +2012,7 @@ public class EditorGenerator implements IGenerator {
     StringConcatenation _builder = new StringConcatenation();
     _builder.append("do ");
     Statement _s1 = f.getS1();
-    Object _compile = this.compile(_s1);
+    CharSequence _compile = this.compile(_s1);
     _builder.append(_compile, "");
     _builder.append("while ");
     Expr _t2 = f.getT2();
@@ -2100,7 +2100,7 @@ public class EditorGenerator implements IGenerator {
           boolean _notEquals_1 = (!Objects.equal(_s1, null));
           if (_notEquals_1) {
             Statement _s1_1 = f.getS1();
-            Object _compile_1 = this.compile(_s1_1);
+            CharSequence _compile_1 = this.compile(_s1_1);
             _builder.append(_compile_1, "");
           }
         }
@@ -2110,7 +2110,7 @@ public class EditorGenerator implements IGenerator {
           if (_notEquals_2) {
             _builder.append("else ");
             Statement _s2_1 = f.getS2();
-            Object _compile_2 = this.compile(_s2_1);
+            CharSequence _compile_2 = this.compile(_s2_1);
             _builder.append(_compile_2, "");
           }
         }
@@ -2119,7 +2119,7 @@ public class EditorGenerator implements IGenerator {
           boolean _notEquals_3 = (!Objects.equal(_s11, null));
           if (_notEquals_3) {
             Statement _s11_1 = f.getS11();
-            Object _compile_3 = this.compile(_s11_1);
+            CharSequence _compile_3 = this.compile(_s11_1);
             _builder.append(_compile_3, "");
           }
         }
@@ -2129,7 +2129,7 @@ public class EditorGenerator implements IGenerator {
           if (_notEquals_4) {
             _builder.append("else ");
             Statement _s12_1 = f.getS12();
-            Object _compile_4 = this.compile(_s12_1);
+            CharSequence _compile_4 = this.compile(_s12_1);
             _builder.append(_compile_4, "");
           }
         }
@@ -2341,7 +2341,7 @@ public class EditorGenerator implements IGenerator {
       if (_notEquals) {
         _builder.append("if ");
         Expr _ifpred_1 = f.getIfpred();
-        Object _compile_29 = this.compile(_ifpred_1);
+        CharSequence _compile_29 = this.compile(_ifpred_1);
         _builder.append(_compile_29, "");
         _builder.append(" ");
       }
@@ -2352,7 +2352,7 @@ public class EditorGenerator implements IGenerator {
       if (_notEquals_1) {
         _builder.append("then ");
         Expr _thenexp_1 = f.getThenexp();
-        Object _compile_30 = this.compile(_thenexp_1);
+        CharSequence _compile_30 = this.compile(_thenexp_1);
         _builder.append(_compile_30, "");
         _builder.append(" ");
       }
@@ -2363,7 +2363,7 @@ public class EditorGenerator implements IGenerator {
       if (_notEquals_2) {
         _builder.append("else ");
         Expr _elseexp_1 = f.getElseexp();
-        Object _compile_31 = this.compile(_elseexp_1);
+        CharSequence _compile_31 = this.compile(_elseexp_1);
         _builder.append(_compile_31, "");
         _builder.append(" ");
       }
@@ -2374,7 +2374,7 @@ public class EditorGenerator implements IGenerator {
   public CharSequence compile(final ConditionExpression f) {
     StringConcatenation _builder = new StringConcatenation();
     Expr _left = f.getLeft();
-    Object _compile = this.compile(_left);
+    CharSequence _compile = this.compile(_left);
     _builder.append(_compile, "");
     {
       Expr _right = f.getRight();
@@ -2383,7 +2383,7 @@ public class EditorGenerator implements IGenerator {
         String _op = f.getOp();
         _builder.append(_op, "");
         Expr _right_1 = f.getRight();
-        Object _compile_1 = this.compile(_right_1);
+        CharSequence _compile_1 = this.compile(_right_1);
         _builder.append(_compile_1, "");
       }
     }
@@ -2397,7 +2397,7 @@ public class EditorGenerator implements IGenerator {
       boolean _notEquals = (!Objects.equal(_left, null));
       if (_notEquals) {
         Expr _left_1 = f.getLeft();
-        Object _compile = this.compile(_left_1);
+        CharSequence _compile = this.compile(_left_1);
         _builder.append(_compile, "");
       }
     }
@@ -2407,7 +2407,7 @@ public class EditorGenerator implements IGenerator {
       if (_notEquals_1) {
         _builder.append("wedge");
         Expr _right_1 = f.getRight();
-        Object _compile_1 = this.compile(_right_1);
+        CharSequence _compile_1 = this.compile(_right_1);
         _builder.append(_compile_1, "");
       }
     }
@@ -2421,7 +2421,7 @@ public class EditorGenerator implements IGenerator {
       boolean _notEquals = (!Objects.equal(_left, null));
       if (_notEquals) {
         Expr _left_1 = f.getLeft();
-        Object _compile = this.compile(_left_1);
+        CharSequence _compile = this.compile(_left_1);
         _builder.append(_compile, "");
       }
     }
@@ -2431,7 +2431,7 @@ public class EditorGenerator implements IGenerator {
       if (_notEquals_1) {
         _builder.append("hat");
         Expr _right_1 = f.getRight();
-        Object _compile_1 = this.compile(_right_1);
+        CharSequence _compile_1 = this.compile(_right_1);
         _builder.append(_compile_1, "");
       }
     }
@@ -2445,7 +2445,7 @@ public class EditorGenerator implements IGenerator {
       boolean _notEquals = (!Objects.equal(_left, null));
       if (_notEquals) {
         Expr _left_1 = f.getLeft();
-        Object _compile = this.compile(_left_1);
+        CharSequence _compile = this.compile(_left_1);
         _builder.append(_compile, "");
       }
     }
@@ -2455,7 +2455,7 @@ public class EditorGenerator implements IGenerator {
       if (_notEquals_1) {
         _builder.append("&");
         Expr _right_1 = f.getRight();
-        Object _compile_1 = this.compile(_right_1);
+        CharSequence _compile_1 = this.compile(_right_1);
         _builder.append(_compile_1, "");
       }
     }
@@ -2472,7 +2472,7 @@ public class EditorGenerator implements IGenerator {
       boolean _notEquals = (!Objects.equal(_left, null));
       if (_notEquals) {
         Expr _left_1 = f.getLeft();
-        Object _compile = this.compile(_left_1);
+        CharSequence _compile = this.compile(_left_1);
         _builder.append(_compile, "");
       }
     }
@@ -2482,7 +2482,7 @@ public class EditorGenerator implements IGenerator {
       if (_notEquals_1) {
         _builder.append("=");
         Expr _right_1 = f.getRight();
-        Object _compile_1 = this.compile(_right_1);
+        CharSequence _compile_1 = this.compile(_right_1);
         _builder.append(_compile_1, "");
       }
     }
@@ -2496,7 +2496,7 @@ public class EditorGenerator implements IGenerator {
       boolean _notEquals = (!Objects.equal(_left, null));
       if (_notEquals) {
         Expr _left_1 = f.getLeft();
-        Object _compile = this.compile(_left_1);
+        CharSequence _compile = this.compile(_left_1);
         _builder.append(_compile, "");
       }
     }
@@ -2507,7 +2507,7 @@ public class EditorGenerator implements IGenerator {
         String _op = f.getOp();
         _builder.append(_op, "");
         Expr _right_1 = f.getRight();
-        Object _compile_1 = this.compile(_right_1);
+        CharSequence _compile_1 = this.compile(_right_1);
         _builder.append(_compile_1, "");
       }
     }
@@ -2524,7 +2524,7 @@ public class EditorGenerator implements IGenerator {
       boolean _notEquals = (!Objects.equal(_left, null));
       if (_notEquals) {
         Expr _left_1 = f.getLeft();
-        Object _compile = this.compile(_left_1);
+        CharSequence _compile = this.compile(_left_1);
         _builder.append(_compile, "");
       }
     }
@@ -2535,7 +2535,7 @@ public class EditorGenerator implements IGenerator {
         String _op = f.getOp();
         _builder.append(_op, "");
         Expr _right_1 = f.getRight();
-        Object _compile_1 = this.compile(_right_1);
+        CharSequence _compile_1 = this.compile(_right_1);
         _builder.append(_compile_1, "");
       }
     }
@@ -2549,7 +2549,7 @@ public class EditorGenerator implements IGenerator {
       boolean _notEquals = (!Objects.equal(_left, null));
       if (_notEquals) {
         Expr _left_1 = f.getLeft();
-        Object _compile = this.compile(_left_1);
+        CharSequence _compile = this.compile(_left_1);
         _builder.append(_compile, "");
       }
     }
@@ -2559,7 +2559,7 @@ public class EditorGenerator implements IGenerator {
       if (_notEquals_1) {
         _builder.append("|");
         Expr _right_1 = f.getRight();
-        Object _compile_1 = this.compile(_right_1);
+        CharSequence _compile_1 = this.compile(_right_1);
         _builder.append(_compile_1, "");
       }
     }
@@ -2573,7 +2573,7 @@ public class EditorGenerator implements IGenerator {
       boolean _notEquals = (!Objects.equal(_left, null));
       if (_notEquals) {
         Expr _left_1 = f.getLeft();
-        Object _compile = this.compile(_left_1);
+        CharSequence _compile = this.compile(_left_1);
         _builder.append(_compile, "");
       }
     }
@@ -2598,7 +2598,7 @@ public class EditorGenerator implements IGenerator {
       boolean _notEquals = (!Objects.equal(_left, null));
       if (_notEquals) {
         Expr _left_1 = f.getLeft();
-        Object _compile = this.compile(_left_1);
+        CharSequence _compile = this.compile(_left_1);
         _builder.append(_compile, "");
       }
     }
@@ -2610,7 +2610,7 @@ public class EditorGenerator implements IGenerator {
         _builder.append(_op, "");
         _builder.append(" ");
         Expr _right_1 = f.getRight();
-        Object _compile_1 = this.compile(_right_1);
+        CharSequence _compile_1 = this.compile(_right_1);
         _builder.append(_compile_1, "");
       }
     }
@@ -2624,7 +2624,7 @@ public class EditorGenerator implements IGenerator {
       boolean _notEquals = (!Objects.equal(_left, null));
       if (_notEquals) {
         Expr _left_1 = f.getLeft();
-        Object _compile = this.compile(_left_1);
+        CharSequence _compile = this.compile(_left_1);
         _builder.append(_compile, "");
       }
     }
@@ -2636,7 +2636,7 @@ public class EditorGenerator implements IGenerator {
         _builder.append(_op, "");
         _builder.append(" ");
         Expr _right_1 = f.getRight();
-        Object _compile_1 = this.compile(_right_1);
+        CharSequence _compile_1 = this.compile(_right_1);
         _builder.append(_compile_1, "");
       }
     }
@@ -2653,7 +2653,7 @@ public class EditorGenerator implements IGenerator {
       boolean _notEquals = (!Objects.equal(_left, null));
       if (_notEquals) {
         Expr _left_1 = f.getLeft();
-        Object _compile = this.compile(_left_1);
+        CharSequence _compile = this.compile(_left_1);
         _builder.append(_compile, "");
       }
     }
@@ -2664,7 +2664,7 @@ public class EditorGenerator implements IGenerator {
         String _op = f.getOp();
         _builder.append(_op, "");
         Expr _right_1 = f.getRight();
-        Object _compile_1 = this.compile(_right_1);
+        CharSequence _compile_1 = this.compile(_right_1);
         _builder.append(_compile_1, "");
       }
     }
@@ -2674,7 +2674,7 @@ public class EditorGenerator implements IGenerator {
   public CharSequence compile(final IsExpression f) {
     StringConcatenation _builder = new StringConcatenation();
     Expr _left = f.getLeft();
-    Object _compile = this.compile(_left);
+    CharSequence _compile = this.compile(_left);
     _builder.append(_compile, "");
     {
       TypeExpression _rightType = f.getRightType();
@@ -2697,7 +2697,7 @@ public class EditorGenerator implements IGenerator {
       boolean _notEquals = (!Objects.equal(_left, null));
       if (_notEquals) {
         Expr _left_1 = f.getLeft();
-        Object _compile = this.compile(_left_1);
+        CharSequence _compile = this.compile(_left_1);
         _builder.append(_compile, "");
       }
     }
@@ -2708,7 +2708,7 @@ public class EditorGenerator implements IGenerator {
         String _op = f.getOp();
         _builder.append(_op, "");
         Expr _right_1 = f.getRight();
-        Object _compile_1 = this.compile(_right_1);
+        CharSequence _compile_1 = this.compile(_right_1);
         _builder.append(_compile_1, "");
       }
     }
@@ -2722,7 +2722,7 @@ public class EditorGenerator implements IGenerator {
       boolean _notEquals = (!Objects.equal(_left, null));
       if (_notEquals) {
         Expr _left_1 = f.getLeft();
-        Object _compile = this.compile(_left_1);
+        CharSequence _compile = this.compile(_left_1);
         _builder.append(_compile, "");
       }
     }
@@ -2733,7 +2733,7 @@ public class EditorGenerator implements IGenerator {
         String _op = f.getOp();
         _builder.append(_op, "");
         Expr _right_1 = f.getRight();
-        Object _compile_1 = this.compile(_right_1);
+        CharSequence _compile_1 = this.compile(_right_1);
         _builder.append(_compile_1, "");
       }
     }
@@ -2747,7 +2747,7 @@ public class EditorGenerator implements IGenerator {
       boolean _notEquals = (!Objects.equal(_left, null));
       if (_notEquals) {
         Expr _left_1 = f.getLeft();
-        Object _compile = this.compile(_left_1);
+        CharSequence _compile = this.compile(_left_1);
         _builder.append(_compile, "");
       }
     }
@@ -2758,7 +2758,7 @@ public class EditorGenerator implements IGenerator {
         String _op = f.getOp();
         _builder.append(_op, "");
         Expr _right_1 = f.getRight();
-        Object _compile_1 = this.compile(_right_1);
+        CharSequence _compile_1 = this.compile(_right_1);
         _builder.append(_compile_1, "");
       }
     }
@@ -2772,7 +2772,7 @@ public class EditorGenerator implements IGenerator {
       boolean _notEquals = (!Objects.equal(_left, null));
       if (_notEquals) {
         Expr _left_1 = f.getLeft();
-        Object _compile = this.compile(_left_1);
+        CharSequence _compile = this.compile(_left_1);
         _builder.append(_compile, "");
       }
     }
@@ -2783,7 +2783,7 @@ public class EditorGenerator implements IGenerator {
         String _op = f.getOp();
         _builder.append(_op, "");
         Expr _right_1 = f.getRight();
-        Object _compile_1 = this.compile(_right_1);
+        CharSequence _compile_1 = this.compile(_right_1);
         _builder.append(_compile_1, "");
       }
     }
@@ -2797,7 +2797,7 @@ public class EditorGenerator implements IGenerator {
       boolean _notEquals = (!Objects.equal(_left, null));
       if (_notEquals) {
         Expr _left_1 = f.getLeft();
-        Object _compile = this.compile(_left_1);
+        CharSequence _compile = this.compile(_left_1);
         _builder.append(_compile, "");
       }
     }
@@ -2809,7 +2809,7 @@ public class EditorGenerator implements IGenerator {
         _builder.append(_op, "");
         _builder.append(" ");
         Expr _right_1 = f.getRight();
-        Object _compile_1 = this.compile(_right_1);
+        CharSequence _compile_1 = this.compile(_right_1);
         _builder.append(_compile_1, "");
       }
     }
@@ -2823,7 +2823,7 @@ public class EditorGenerator implements IGenerator {
       boolean _notEquals = (!Objects.equal(_left, null));
       if (_notEquals) {
         Expr _left_1 = f.getLeft();
-        Object _compile = this.compile(_left_1);
+        CharSequence _compile = this.compile(_left_1);
         _builder.append(_compile, "");
       }
     }
@@ -2835,7 +2835,7 @@ public class EditorGenerator implements IGenerator {
         _builder.append(_op, "");
         _builder.append(" ");
         Expr _right_1 = f.getRight();
-        Object _compile_1 = this.compile(_right_1);
+        CharSequence _compile_1 = this.compile(_right_1);
         _builder.append(_compile_1, "");
       }
     }
@@ -2849,7 +2849,7 @@ public class EditorGenerator implements IGenerator {
       boolean _notEquals = (!Objects.equal(_left, null));
       if (_notEquals) {
         Expr _left_1 = f.getLeft();
-        Object _compile = this.compile(_left_1);
+        CharSequence _compile = this.compile(_left_1);
         _builder.append(_compile, "");
       }
     }
@@ -2860,7 +2860,7 @@ public class EditorGenerator implements IGenerator {
         String _op = f.getOp();
         _builder.append(_op, "");
         Expr _right_1 = f.getRight();
-        Object _compile_1 = this.compile(_right_1);
+        CharSequence _compile_1 = this.compile(_right_1);
         _builder.append(_compile_1, "");
       }
     }
@@ -2874,7 +2874,7 @@ public class EditorGenerator implements IGenerator {
       boolean _notEquals = (!Objects.equal(_left, null));
       if (_notEquals) {
         Expr _left_1 = f.getLeft();
-        Object _compile = this.compile(_left_1);
+        CharSequence _compile = this.compile(_left_1);
         _builder.append(_compile, "");
       }
     }
@@ -2885,7 +2885,7 @@ public class EditorGenerator implements IGenerator {
         String _op = f.getOp();
         _builder.append(_op, "");
         Expr _right_1 = f.getRight();
-        Object _compile_1 = this.compile(_right_1);
+        CharSequence _compile_1 = this.compile(_right_1);
         _builder.append(_compile_1, "");
       }
     }
@@ -2899,7 +2899,7 @@ public class EditorGenerator implements IGenerator {
       boolean _notEquals = (!Objects.equal(_left, null));
       if (_notEquals) {
         Expr _left_1 = f.getLeft();
-        Object _compile = this.compile(_left_1);
+        CharSequence _compile = this.compile(_left_1);
         _builder.append(_compile, "");
       }
     }
@@ -2910,7 +2910,7 @@ public class EditorGenerator implements IGenerator {
         String _op = f.getOp();
         _builder.append(_op, "");
         Expr _right_1 = f.getRight();
-        Object _compile_1 = this.compile(_right_1);
+        CharSequence _compile_1 = this.compile(_right_1);
         _builder.append(_compile_1, "");
       }
     }
@@ -2924,7 +2924,7 @@ public class EditorGenerator implements IGenerator {
       boolean _notEquals = (!Objects.equal(_left, null));
       if (_notEquals) {
         Expr _left_1 = f.getLeft();
-        Object _compile = this.compile(_left_1);
+        CharSequence _compile = this.compile(_left_1);
         _builder.append(_compile, "");
       }
     }
@@ -2949,7 +2949,7 @@ public class EditorGenerator implements IGenerator {
       boolean _notEquals = (!Objects.equal(_left, null));
       if (_notEquals) {
         Expr _left_1 = f.getLeft();
-        Object _compile = this.compile(_left_1);
+        CharSequence _compile = this.compile(_left_1);
         _builder.append(_compile, "");
       }
     }
@@ -2974,7 +2974,7 @@ public class EditorGenerator implements IGenerator {
       boolean _notEquals = (!Objects.equal(_left, null));
       if (_notEquals) {
         Expr _left_1 = f.getLeft();
-        Object _compile = this.compile(_left_1);
+        CharSequence _compile = this.compile(_left_1);
         _builder.append(_compile, "");
       }
     }
@@ -3002,7 +3002,7 @@ public class EditorGenerator implements IGenerator {
       boolean _notEquals = (!Objects.equal(_left, null));
       if (_notEquals) {
         Expr _left_1 = f.getLeft();
-        Object _compile = this.compile(_left_1);
+        CharSequence _compile = this.compile(_left_1);
         _builder.append(_compile, "");
       }
     }
@@ -3013,7 +3013,7 @@ public class EditorGenerator implements IGenerator {
         String _op = f.getOp();
         _builder.append(_op, "");
         Expr _right_1 = f.getRight();
-        Object _compile_1 = this.compile(_right_1);
+        CharSequence _compile_1 = this.compile(_right_1);
         _builder.append(_compile_1, "");
       }
     }
@@ -3027,7 +3027,7 @@ public class EditorGenerator implements IGenerator {
       boolean _notEquals = (!Objects.equal(_left, null));
       if (_notEquals) {
         Expr _left_1 = f.getLeft();
-        Object _compile = this.compile(_left_1);
+        CharSequence _compile = this.compile(_left_1);
         _builder.append(_compile, "");
       }
     }
@@ -3054,7 +3054,7 @@ public class EditorGenerator implements IGenerator {
         String _uop = f.getUop();
         _builder.append(_uop, "");
         Expr _expr_1 = f.getExpr();
-        Object _compile = this.compile(_expr_1);
+        CharSequence _compile = this.compile(_expr_1);
         _builder.append(_compile, "");
       }
     }
@@ -3081,7 +3081,7 @@ public class EditorGenerator implements IGenerator {
       if (_notEquals) {
         _builder.append("(");
         Expr _t4_1 = f.getT4();
-        Object _compile_1 = this.compile(_t4_1);
+        CharSequence _compile_1 = this.compile(_t4_1);
         _builder.append(_compile_1, "");
         _builder.append(")");
       }
@@ -3130,13 +3130,13 @@ public class EditorGenerator implements IGenerator {
       if (_notEquals_2) {
         _builder.append("(");
         Expr _t4_1 = f.getT4();
-        Object _compile = this.compile(_t4_1);
+        CharSequence _compile = this.compile(_t4_1);
         _builder.append(_compile, "");
         {
           EList<Expr> _t5 = f.getT5();
           for(final Expr x : _t5) {
             _builder.append(",");
-            Object _compile_1 = this.compile(x);
+            CharSequence _compile_1 = this.compile(x);
             _builder.append(_compile_1, "");
           }
         }
@@ -3148,7 +3148,7 @@ public class EditorGenerator implements IGenerator {
       boolean _notEquals_3 = (!Objects.equal(_t6, null));
       if (_notEquals_3) {
         Expr _t6_1 = f.getT6();
-        Object _compile_2 = this.compile(_t6_1);
+        CharSequence _compile_2 = this.compile(_t6_1);
         _builder.append(_compile_2, "");
       }
     }
@@ -3250,7 +3250,7 @@ public class EditorGenerator implements IGenerator {
       boolean _notEquals = (!Objects.equal(_l2, null));
       if (_notEquals) {
         Expr _l2_1 = f.getL2();
-        Object _compile = this.compile(_l2_1);
+        CharSequence _compile = this.compile(_l2_1);
         _builder.append(_compile, "");
       }
     }
@@ -3258,7 +3258,7 @@ public class EditorGenerator implements IGenerator {
       EList<Expr> _t3 = f.getT3();
       for(final Expr x : _t3) {
         _builder.append(",");
-        Object _compile_1 = this.compile(x);
+        CharSequence _compile_1 = this.compile(x);
         _builder.append(_compile_1, "");
       }
     }
@@ -3266,7 +3266,7 @@ public class EditorGenerator implements IGenerator {
       EList<Expr> _t14 = f.getT14();
       for(final Expr x_1 : _t14) {
         _builder.append("for ");
-        Object _compile_2 = this.compile(x_1);
+        CharSequence _compile_2 = this.compile(x_1);
         _builder.append(_compile_2, "");
         _builder.append("in ");
       }
@@ -3274,7 +3274,7 @@ public class EditorGenerator implements IGenerator {
     {
       EList<Expr> _l5 = f.getL5();
       for(final Expr x_2 : _l5) {
-        Object _compile_3 = this.compile(x_2);
+        CharSequence _compile_3 = this.compile(x_2);
         _builder.append(_compile_3, "");
         _builder.append(" ");
       }
