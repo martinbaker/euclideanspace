@@ -11,7 +11,7 @@
             default="true"
             extensions="as"
             id="com.euclideanspace.aldor.Editor"
-            name="Editor Editor">
+            name="%editor.name">
         </editor>
     </extension>
     <extension
@@ -82,21 +82,21 @@
         <page
             class="com.euclideanspace.aldor.ui.EditorExecutableExtensionFactory:org.eclipse.xtext.ui.editor.preferences.LanguageRootPreferencePage"
             id="com.euclideanspace.aldor.Editor"
-            name="Editor">
+            name="%page.name">
             <keywordReference id="com.euclideanspace.aldor.ui.keyword_Editor"/>
         </page>
         <page
             category="com.euclideanspace.aldor.Editor"
             class="com.euclideanspace.aldor.ui.EditorExecutableExtensionFactory:org.eclipse.xtext.ui.editor.syntaxcoloring.SyntaxColoringPreferencePage"
             id="com.euclideanspace.aldor.Editor.coloring"
-            name="Syntax Coloring">
+            name="%page.name.0">
             <keywordReference id="com.euclideanspace.aldor.ui.keyword_Editor"/>
         </page>
         <page
             category="com.euclideanspace.aldor.Editor"
             class="com.euclideanspace.aldor.ui.EditorExecutableExtensionFactory:org.eclipse.xtext.ui.editor.templates.XtextTemplatePreferencePage"
             id="com.euclideanspace.aldor.Editor.templates"
-            name="Templates">
+            name="%page.name.1">
             <keywordReference id="com.euclideanspace.aldor.ui.keyword_Editor"/>
         </page>
     </extension>
@@ -105,7 +105,7 @@
         <page
             class="com.euclideanspace.aldor.ui.EditorExecutableExtensionFactory:org.eclipse.xtext.ui.editor.preferences.LanguageRootPreferencePage"
             id="com.euclideanspace.aldor.Editor"
-            name="Editor">
+            name="%page.name.2">
             <keywordReference id="com.euclideanspace.aldor.ui.keyword_Editor"/>
             <enabledWhen>
 	            <adapt type="org.eclipse.core.resources.IProject"/>
@@ -117,27 +117,27 @@
         point="org.eclipse.ui.keywords">
         <keyword
             id="com.euclideanspace.aldor.ui.keyword_Editor"
-            label="Editor"/>
+            label="%keyword.label"/>
     </extension>
     <extension
          point="org.eclipse.ui.commands">
       <command
-            description="Trigger expensive validation"
+            description="%command.description"
             id="com.euclideanspace.aldor.Editor.validate"
-            name="Validate">
+            name="%command.name">
       </command>
       <!-- copy qualified name -->
       <command
             id="org.eclipse.xtext.ui.editor.copyqualifiedname.EditorCopyQualifiedName"
             categoryId="org.eclipse.ui.category.edit"
-            description="Copy the qualified name for the selected element"
-            name="Copy Qualified Name">
+            description="%command.description.0"
+            name="%command.name.0">
       </command>
       <command
             id="org.eclipse.xtext.ui.editor.copyqualifiedname.OutlineCopyQualifiedName"
             categoryId="org.eclipse.ui.category.edit"
-            description="Copy the qualified name for the selected element"
-            name="Copy Qualified Name">
+            description="%command.description.1"
+            name="%command.name.1">
       </command>
     </extension>
     <extension point="org.eclipse.ui.menus">
@@ -146,7 +146,7 @@
              <command
                  commandId="com.euclideanspace.aldor.Editor.validate"
                  style="push"
-                 tooltip="Trigger expensive validation">
+                 tooltip="%command.tooltip">
             <visibleWhen checkEnabled="false">
                 <reference
                     definitionId="com.euclideanspace.aldor.Editor.Editor.opened">
@@ -157,7 +157,7 @@
          <!-- copy qualified name -->
          <menuContribution locationURI="popup:#TextEditorContext?after=copy">
          	<command commandId="org.eclipse.xtext.ui.editor.copyqualifiedname.EditorCopyQualifiedName" 
-         		style="push" tooltip="Copy Qualified Name">
+         		style="push" tooltip="%command.tooltip.0">
             	<visibleWhen checkEnabled="false">
                 	<reference definitionId="com.euclideanspace.aldor.Editor.Editor.opened" />
             	</visibleWhen>
@@ -165,7 +165,7 @@
          </menuContribution>
          <menuContribution locationURI="menu:edit?after=copy">
          	<command commandId="org.eclipse.xtext.ui.editor.copyqualifiedname.EditorCopyQualifiedName"
-            	style="push" tooltip="Copy Qualified Name">
+            	style="push" tooltip="%command.tooltip.1">
             	<visibleWhen checkEnabled="false">
                 	<reference definitionId="com.euclideanspace.aldor.Editor.Editor.opened" />
             	</visibleWhen>
@@ -173,7 +173,7 @@
          </menuContribution>
          <menuContribution locationURI="popup:org.eclipse.xtext.ui.outline?after=additions">
 			<command commandId="org.eclipse.xtext.ui.editor.copyqualifiedname.OutlineCopyQualifiedName" 
-				style="push" tooltip="Copy Qualified Name">
+				style="push" tooltip="%command.tooltip.2">
          		<visibleWhen checkEnabled="false">
 	            	<and>
 	            		<reference definitionId="com.euclideanspace.aldor.Editor.XtextEditor.opened" />
@@ -227,21 +227,21 @@
 	<!-- marker definitions for com.euclideanspace.aldor.Editor -->
 	<extension
 	        id="editor.check.fast"
-	        name="Editor Problem"
+	        name="%extension.name"
 	        point="org.eclipse.core.resources.markers">
 	    <super type="org.eclipse.xtext.ui.check.fast"/>
 	    <persistent value="true"/>
 	</extension>
 	<extension
 	        id="editor.check.normal"
-	        name="Editor Problem"
+	        name="%extension.name.0"
 	        point="org.eclipse.core.resources.markers">
 	    <super type="org.eclipse.xtext.ui.check.normal"/>
 	    <persistent value="true"/>
 	</extension>
 	<extension
 	        id="editor.check.expensive"
-	        name="Editor Problem"
+	        name="%extension.name.1"
 	        point="org.eclipse.core.resources.markers">
 	    <super type="org.eclipse.xtext.ui.check.expensive"/>
 	    <persistent value="true"/>
@@ -261,7 +261,7 @@
             category="com.euclideanspace.aldor.Editor"
             class="com.euclideanspace.aldor.ui.EditorExecutableExtensionFactory:org.eclipse.xtext.builder.preferences.BuilderPreferencePage"
             id="com.euclideanspace.aldor.Editor.compiler.preferencePage"
-            name="Compiler">
+            name="%page.name.3">
             <keywordReference id="com.euclideanspace.aldor.ui.keyword_Editor"/>
         </page>
     </extension>
@@ -271,7 +271,7 @@
             category="com.euclideanspace.aldor.Editor"
             class="com.euclideanspace.aldor.ui.EditorExecutableExtensionFactory:org.eclipse.xtext.builder.preferences.BuilderPreferencePage"
             id="com.euclideanspace.aldor.Editor.compiler.propertyPage"
-            name="Compiler">
+            name="%page.name.4">
             <keywordReference id="com.euclideanspace.aldor.ui.keyword_Editor"/>
             <enabledWhen>
 	            <adapt type="org.eclipse.core.resources.IProject"/>
@@ -296,9 +296,9 @@
 	<extension
 		point="org.eclipse.ui.commands">
 		<command
-			description="Open the quick outline."
+			description="%command.description.2"
 			id="org.eclipse.xtext.ui.editor.outline.QuickOutline"
-			name="Quick Outline">
+			name="%command.name.2">
 		</command>
 	</extension>
 	<extension point="org.eclipse.ui.menus">
@@ -306,7 +306,7 @@
 			locationURI="popup:#TextEditorContext?after=group.open">
 			<command commandId="org.eclipse.xtext.ui.editor.outline.QuickOutline"
 				style="push"
-				tooltip="Open Quick Outline">
+				tooltip="%command.tooltip.3">
 				<visibleWhen checkEnabled="false">
 					<reference definitionId="com.euclideanspace.aldor.Editor.Editor.opened"/>
 				</visibleWhen>
@@ -371,7 +371,7 @@
 	        category="com.euclideanspace.aldor.Editor"
 	        class="com.euclideanspace.aldor.ui.EditorExecutableExtensionFactory:org.eclipse.xtext.ui.refactoring.ui.RefactoringPreferencePage"
 	        id="com.euclideanspace.aldor.Editor.refactoring"
-	        name="Refactoring">
+	        name="%page.name.5">
 	        <keywordReference id="com.euclideanspace.aldor.ui.keyword_Editor"/>
 	    </page>
 	</extension>
@@ -385,7 +385,7 @@
   <extension point="org.eclipse.compare.contentMergeViewers">
     <viewer id="com.euclideanspace.aldor.Editor.compare.contentMergeViewers"
             class="com.euclideanspace.aldor.ui.EditorExecutableExtensionFactory:org.eclipse.xtext.ui.compare.InjectableViewerCreator"
-            extensions="as" label="Editor Compare">
+            extensions="as" label="%viewer.label">
      </viewer>
   </extension>
   <extension point="org.eclipse.ui.editors.documentProviders">

@@ -30,9 +30,9 @@ generate editor "http://www.euclideanspace.com/aldor/Editor"
  * 
  * known bugs
  * ----------
- * 1) {....} block insists on semicolon after block {....};
- * 2) this does not work: MiniList(S: BasicType): LinearAggregate(S) = add {
- * 3) + or - as prefix operator
+ * 1) customLexer: phantom semicolon after curly brackets is not yet conditional
+ * 2) ':' does not yet work properly. We want it to bind most tightly.
+ * 3) + or - as prefix operator.
  */
 
 /*
@@ -738,8 +738,8 @@ Infixed hidden(WS,KW_NEWLINE):
  * if we enable 'returns Expr' then 'E11_E12' replaces id in AST
  */
 InfixedExpr /*returns Expr*/ hidden(WS,KW_NEWLINE):
- E11_Op
-| =>E3
+ E11_Op // prefix operation
+| => E3 // infix operation
 ;
 
 /*
@@ -819,6 +819,8 @@ E11_E12 returns Expr hidden(WS,KW_NEWLINE):
 ;
 
 /*
+ * prefix operation
+ * 
  * This version of E11 is used at the top of the precedence stack in
  * 'InfixedExpr'
  */
@@ -851,11 +853,11 @@ OpQualTail hidden(WS,KW_NEWLINE):
 ;
 
 E14 hidden(WS,KW_NEWLINE):
- e15left=E15
-| => (e15left=E15? op='with' dm=DeclMolecule)
+ => (e15left=E15? op='with' dm=DeclMolecule)
 | => (e15left=E15? op='add' dm=DeclMolecule)
 | => (e15left=E15 op='except' e15right=E15)
 | => (e15left=E15 op='throw' e15right=E15)
+| e15left=E15
 ;
 
 E15 hidden(WS,KW_NEWLINE):
@@ -1034,6 +1036,7 @@ Enclosure hidden(WS,KW_NEWLINE):
 
 /*
  * function application, block or infixed
+ * follows 'add' or 'with'
  */
 DeclMolecule hidden(WS,KW_NEWLINE):
 	{DeclMolecule}
@@ -1041,7 +1044,9 @@ DeclMolecule hidden(WS,KW_NEWLINE):
 | b=Block
 ;
 
-/* atom, enclosure: (....),[....],"...." or block {....} */
+/* atom, enclosure: (....),[....],"...." or block {....}
+ * Used by Jleft_Molecule and Jleft_Atom
+ */
 BlockMolecule hidden(WS,KW_NEWLINE):
  Atom
 | Enclosure

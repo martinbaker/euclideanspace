@@ -1157,11 +1157,11 @@ public class EditorSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	 * Constraint:
 	 *     (
 	 *         (
-	 *             e15left=E15 | 
 	 *             (e15left=E15? op='with' dm=DeclMolecule) | 
 	 *             (e15left=E15? op='add' dm=DeclMolecule) | 
 	 *             (e15left=E15 op='except' e15right=E15) | 
-	 *             (e15left=E15 op='throw' e15right=E15)
+	 *             (e15left=E15 op='throw' e15right=E15) | 
+	 *             e15left=E15
 	 *         ) 
 	 *         ie+=InfixedExpr* 
 	 *         dp+=DeclPart* 
@@ -1648,11 +1648,11 @@ public class EditorSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	/**
 	 * Constraint:
 	 *     (
-	 *         e15left=E15 | 
 	 *         (e15left=E15? op='with' dm=DeclMolecule) | 
 	 *         (e15left=E15? op='add' dm=DeclMolecule) | 
 	 *         (e15left=E15 op='except' e15right=E15) | 
-	 *         (e15left=E15 op='throw' e15right=E15)
+	 *         (e15left=E15 op='throw' e15right=E15) | 
+	 *         e15left=E15
 	 *     )
 	 */
 	protected void sequence_E14(EObject context, E14 semanticObject) {
@@ -1664,11 +1664,11 @@ public class EditorSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	 * Constraint:
 	 *     (
 	 *         (
-	 *             e15left=E15 | 
 	 *             (e15left=E15? op='with' dm=DeclMolecule) | 
 	 *             (e15left=E15? op='add' dm=DeclMolecule) | 
 	 *             (e15left=E15 op='except' e15right=E15) | 
-	 *             (e15left=E15 op='throw' e15right=E15)
+	 *             (e15left=E15 op='throw' e15right=E15) | 
+	 *             e15left=E15
 	 *         ) 
 	 *         ie+=InfixedExpr* 
 	 *         dp+=DeclPart*
@@ -1683,11 +1683,11 @@ public class EditorSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	 * Constraint:
 	 *     (
 	 *         (
-	 *             e15left=E15 | 
 	 *             (e15left=E15? op='with' dm=DeclMolecule) | 
 	 *             (e15left=E15? op='add' dm=DeclMolecule) | 
 	 *             (e15left=E15 op='except' e15right=E15) | 
-	 *             (e15left=E15 op='throw' e15right=E15)
+	 *             (e15left=E15 op='throw' e15right=E15) | 
+	 *             e15left=E15
 	 *         ) 
 	 *         ie+=InfixedExpr*
 	 *     )

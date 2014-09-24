@@ -16060,30 +16060,30 @@ public class InternalEditorParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__E14__Alternatives"
-    // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:5535:1: rule__E14__Alternatives : ( ( ( rule__E14__E15leftAssignment_0 ) ) | ( ( rule__E14__Group_1__0 ) ) | ( ( rule__E14__Group_2__0 ) ) | ( ( rule__E14__Group_3__0 ) ) | ( ( rule__E14__Group_4__0 ) ) );
+    // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:5535:1: rule__E14__Alternatives : ( ( ( rule__E14__Group_0__0 ) ) | ( ( rule__E14__Group_1__0 ) ) | ( ( rule__E14__Group_2__0 ) ) | ( ( rule__E14__Group_3__0 ) ) | ( ( rule__E14__E15leftAssignment_4 ) ) );
     public final void rule__E14__Alternatives() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:5539:1: ( ( ( rule__E14__E15leftAssignment_0 ) ) | ( ( rule__E14__Group_1__0 ) ) | ( ( rule__E14__Group_2__0 ) ) | ( ( rule__E14__Group_3__0 ) ) | ( ( rule__E14__Group_4__0 ) ) )
+            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:5539:1: ( ( ( rule__E14__Group_0__0 ) ) | ( ( rule__E14__Group_1__0 ) ) | ( ( rule__E14__Group_2__0 ) ) | ( ( rule__E14__Group_3__0 ) ) | ( ( rule__E14__E15leftAssignment_4 ) ) )
             int alt31=5;
             alt31 = dfa31.predict(input);
             switch (alt31) {
                 case 1 :
-                    // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:5540:1: ( ( rule__E14__E15leftAssignment_0 ) )
+                    // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:5540:1: ( ( rule__E14__Group_0__0 ) )
                     {
-                    // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:5540:1: ( ( rule__E14__E15leftAssignment_0 ) )
-                    // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:5541:1: ( rule__E14__E15leftAssignment_0 )
+                    // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:5540:1: ( ( rule__E14__Group_0__0 ) )
+                    // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:5541:1: ( rule__E14__Group_0__0 )
                     {
                     if ( state.backtracking==0 ) {
-                       before(grammarAccess.getE14Access().getE15leftAssignment_0()); 
+                       before(grammarAccess.getE14Access().getGroup_0()); 
                     }
-                    // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:5542:1: ( rule__E14__E15leftAssignment_0 )
-                    // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:5542:2: rule__E14__E15leftAssignment_0
+                    // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:5542:1: ( rule__E14__Group_0__0 )
+                    // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:5542:2: rule__E14__Group_0__0
                     {
-                    pushFollow(FOLLOW_rule__E14__E15leftAssignment_0_in_rule__E14__Alternatives11146);
-                    rule__E14__E15leftAssignment_0();
+                    pushFollow(FOLLOW_rule__E14__Group_0__0_in_rule__E14__Alternatives11146);
+                    rule__E14__Group_0__0();
 
                     state._fsp--;
                     if (state.failed) return ;
@@ -16091,7 +16091,7 @@ public class InternalEditorParser extends AbstractInternalContentAssistParser {
                     }
 
                     if ( state.backtracking==0 ) {
-                       after(grammarAccess.getE14Access().getE15leftAssignment_0()); 
+                       after(grammarAccess.getE14Access().getGroup_0()); 
                     }
 
                     }
@@ -16187,19 +16187,19 @@ public class InternalEditorParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 5 :
-                    // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:5564:6: ( ( rule__E14__Group_4__0 ) )
+                    // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:5564:6: ( ( rule__E14__E15leftAssignment_4 ) )
                     {
-                    // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:5564:6: ( ( rule__E14__Group_4__0 ) )
-                    // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:5565:1: ( rule__E14__Group_4__0 )
+                    // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:5564:6: ( ( rule__E14__E15leftAssignment_4 ) )
+                    // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:5565:1: ( rule__E14__E15leftAssignment_4 )
                     {
                     if ( state.backtracking==0 ) {
-                       before(grammarAccess.getE14Access().getGroup_4()); 
+                       before(grammarAccess.getE14Access().getE15leftAssignment_4()); 
                     }
-                    // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:5566:1: ( rule__E14__Group_4__0 )
-                    // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:5566:2: rule__E14__Group_4__0
+                    // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:5566:1: ( rule__E14__E15leftAssignment_4 )
+                    // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:5566:2: rule__E14__E15leftAssignment_4
                     {
-                    pushFollow(FOLLOW_rule__E14__Group_4__0_in_rule__E14__Alternatives11218);
-                    rule__E14__Group_4__0();
+                    pushFollow(FOLLOW_rule__E14__E15leftAssignment_4_in_rule__E14__Alternatives11218);
+                    rule__E14__E15leftAssignment_4();
 
                     state._fsp--;
                     if (state.failed) return ;
@@ -16207,7 +16207,7 @@ public class InternalEditorParser extends AbstractInternalContentAssistParser {
                     }
 
                     if ( state.backtracking==0 ) {
-                       after(grammarAccess.getE14Access().getGroup_4()); 
+                       after(grammarAccess.getE14Access().getE15leftAssignment_4()); 
                     }
 
                     }
@@ -44670,17 +44670,374 @@ public class InternalEditorParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__OpQualTail__Group_1_0__1__Impl"
 
 
+    // $ANTLR start "rule__E14__Group_0__0"
+    // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:15447:1: rule__E14__Group_0__0 : rule__E14__Group_0__0__Impl ;
+    public final void rule__E14__Group_0__0() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:15451:1: ( rule__E14__Group_0__0__Impl )
+            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:15452:2: rule__E14__Group_0__0__Impl
+            {
+            pushFollow(FOLLOW_rule__E14__Group_0__0__Impl_in_rule__E14__Group_0__031022);
+            rule__E14__Group_0__0__Impl();
+
+            state._fsp--;
+            if (state.failed) return ;
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__E14__Group_0__0"
+
+
+    // $ANTLR start "rule__E14__Group_0__0__Impl"
+    // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:15458:1: rule__E14__Group_0__0__Impl : ( ( rule__E14__Group_0_0__0 ) ) ;
+    public final void rule__E14__Group_0__0__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:15462:1: ( ( ( rule__E14__Group_0_0__0 ) ) )
+            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:15463:1: ( ( rule__E14__Group_0_0__0 ) )
+            {
+            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:15463:1: ( ( rule__E14__Group_0_0__0 ) )
+            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:15464:1: ( rule__E14__Group_0_0__0 )
+            {
+            if ( state.backtracking==0 ) {
+               before(grammarAccess.getE14Access().getGroup_0_0()); 
+            }
+            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:15465:1: ( rule__E14__Group_0_0__0 )
+            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:15465:2: rule__E14__Group_0_0__0
+            {
+            pushFollow(FOLLOW_rule__E14__Group_0_0__0_in_rule__E14__Group_0__0__Impl31049);
+            rule__E14__Group_0_0__0();
+
+            state._fsp--;
+            if (state.failed) return ;
+
+            }
+
+            if ( state.backtracking==0 ) {
+               after(grammarAccess.getE14Access().getGroup_0_0()); 
+            }
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__E14__Group_0__0__Impl"
+
+
+    // $ANTLR start "rule__E14__Group_0_0__0"
+    // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:15477:1: rule__E14__Group_0_0__0 : rule__E14__Group_0_0__0__Impl rule__E14__Group_0_0__1 ;
+    public final void rule__E14__Group_0_0__0() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:15481:1: ( rule__E14__Group_0_0__0__Impl rule__E14__Group_0_0__1 )
+            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:15482:2: rule__E14__Group_0_0__0__Impl rule__E14__Group_0_0__1
+            {
+            pushFollow(FOLLOW_rule__E14__Group_0_0__0__Impl_in_rule__E14__Group_0_0__031081);
+            rule__E14__Group_0_0__0__Impl();
+
+            state._fsp--;
+            if (state.failed) return ;
+            pushFollow(FOLLOW_rule__E14__Group_0_0__1_in_rule__E14__Group_0_0__031084);
+            rule__E14__Group_0_0__1();
+
+            state._fsp--;
+            if (state.failed) return ;
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__E14__Group_0_0__0"
+
+
+    // $ANTLR start "rule__E14__Group_0_0__0__Impl"
+    // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:15489:1: rule__E14__Group_0_0__0__Impl : ( ( rule__E14__E15leftAssignment_0_0_0 )? ) ;
+    public final void rule__E14__Group_0_0__0__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:15493:1: ( ( ( rule__E14__E15leftAssignment_0_0_0 )? ) )
+            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:15494:1: ( ( rule__E14__E15leftAssignment_0_0_0 )? )
+            {
+            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:15494:1: ( ( rule__E14__E15leftAssignment_0_0_0 )? )
+            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:15495:1: ( rule__E14__E15leftAssignment_0_0_0 )?
+            {
+            if ( state.backtracking==0 ) {
+               before(grammarAccess.getE14Access().getE15leftAssignment_0_0_0()); 
+            }
+            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:15496:1: ( rule__E14__E15leftAssignment_0_0_0 )?
+            int alt97=2;
+            int LA97_0 = input.LA(1);
+
+            if ( ((LA97_0>=RULE_TK_ID && LA97_0<=RULE_TK_STRING)||LA97_0==RULE_KW_QUOTE||(LA97_0>=RULE_TK_FLOAT && LA97_0<=RULE_TK_INT)||(LA97_0>=RULE_KW_OPAREN && LA97_0<=RULE_KW_OBRACK)||LA97_0==98) ) {
+                alt97=1;
+            }
+            switch (alt97) {
+                case 1 :
+                    // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:15496:2: rule__E14__E15leftAssignment_0_0_0
+                    {
+                    pushFollow(FOLLOW_rule__E14__E15leftAssignment_0_0_0_in_rule__E14__Group_0_0__0__Impl31111);
+                    rule__E14__E15leftAssignment_0_0_0();
+
+                    state._fsp--;
+                    if (state.failed) return ;
+
+                    }
+                    break;
+
+            }
+
+            if ( state.backtracking==0 ) {
+               after(grammarAccess.getE14Access().getE15leftAssignment_0_0_0()); 
+            }
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__E14__Group_0_0__0__Impl"
+
+
+    // $ANTLR start "rule__E14__Group_0_0__1"
+    // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:15506:1: rule__E14__Group_0_0__1 : rule__E14__Group_0_0__1__Impl rule__E14__Group_0_0__2 ;
+    public final void rule__E14__Group_0_0__1() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:15510:1: ( rule__E14__Group_0_0__1__Impl rule__E14__Group_0_0__2 )
+            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:15511:2: rule__E14__Group_0_0__1__Impl rule__E14__Group_0_0__2
+            {
+            pushFollow(FOLLOW_rule__E14__Group_0_0__1__Impl_in_rule__E14__Group_0_0__131142);
+            rule__E14__Group_0_0__1__Impl();
+
+            state._fsp--;
+            if (state.failed) return ;
+            pushFollow(FOLLOW_rule__E14__Group_0_0__2_in_rule__E14__Group_0_0__131145);
+            rule__E14__Group_0_0__2();
+
+            state._fsp--;
+            if (state.failed) return ;
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__E14__Group_0_0__1"
+
+
+    // $ANTLR start "rule__E14__Group_0_0__1__Impl"
+    // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:15518:1: rule__E14__Group_0_0__1__Impl : ( ( rule__E14__OpAssignment_0_0_1 ) ) ;
+    public final void rule__E14__Group_0_0__1__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:15522:1: ( ( ( rule__E14__OpAssignment_0_0_1 ) ) )
+            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:15523:1: ( ( rule__E14__OpAssignment_0_0_1 ) )
+            {
+            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:15523:1: ( ( rule__E14__OpAssignment_0_0_1 ) )
+            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:15524:1: ( rule__E14__OpAssignment_0_0_1 )
+            {
+            if ( state.backtracking==0 ) {
+               before(grammarAccess.getE14Access().getOpAssignment_0_0_1()); 
+            }
+            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:15525:1: ( rule__E14__OpAssignment_0_0_1 )
+            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:15525:2: rule__E14__OpAssignment_0_0_1
+            {
+            pushFollow(FOLLOW_rule__E14__OpAssignment_0_0_1_in_rule__E14__Group_0_0__1__Impl31172);
+            rule__E14__OpAssignment_0_0_1();
+
+            state._fsp--;
+            if (state.failed) return ;
+
+            }
+
+            if ( state.backtracking==0 ) {
+               after(grammarAccess.getE14Access().getOpAssignment_0_0_1()); 
+            }
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__E14__Group_0_0__1__Impl"
+
+
+    // $ANTLR start "rule__E14__Group_0_0__2"
+    // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:15535:1: rule__E14__Group_0_0__2 : rule__E14__Group_0_0__2__Impl ;
+    public final void rule__E14__Group_0_0__2() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:15539:1: ( rule__E14__Group_0_0__2__Impl )
+            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:15540:2: rule__E14__Group_0_0__2__Impl
+            {
+            pushFollow(FOLLOW_rule__E14__Group_0_0__2__Impl_in_rule__E14__Group_0_0__231202);
+            rule__E14__Group_0_0__2__Impl();
+
+            state._fsp--;
+            if (state.failed) return ;
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__E14__Group_0_0__2"
+
+
+    // $ANTLR start "rule__E14__Group_0_0__2__Impl"
+    // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:15546:1: rule__E14__Group_0_0__2__Impl : ( ( rule__E14__DmAssignment_0_0_2 ) ) ;
+    public final void rule__E14__Group_0_0__2__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:15550:1: ( ( ( rule__E14__DmAssignment_0_0_2 ) ) )
+            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:15551:1: ( ( rule__E14__DmAssignment_0_0_2 ) )
+            {
+            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:15551:1: ( ( rule__E14__DmAssignment_0_0_2 ) )
+            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:15552:1: ( rule__E14__DmAssignment_0_0_2 )
+            {
+            if ( state.backtracking==0 ) {
+               before(grammarAccess.getE14Access().getDmAssignment_0_0_2()); 
+            }
+            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:15553:1: ( rule__E14__DmAssignment_0_0_2 )
+            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:15553:2: rule__E14__DmAssignment_0_0_2
+            {
+            pushFollow(FOLLOW_rule__E14__DmAssignment_0_0_2_in_rule__E14__Group_0_0__2__Impl31229);
+            rule__E14__DmAssignment_0_0_2();
+
+            state._fsp--;
+            if (state.failed) return ;
+
+            }
+
+            if ( state.backtracking==0 ) {
+               after(grammarAccess.getE14Access().getDmAssignment_0_0_2()); 
+            }
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__E14__Group_0_0__2__Impl"
+
+
     // $ANTLR start "rule__E14__Group_1__0"
-    // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:15447:1: rule__E14__Group_1__0 : rule__E14__Group_1__0__Impl ;
+    // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:15569:1: rule__E14__Group_1__0 : rule__E14__Group_1__0__Impl ;
     public final void rule__E14__Group_1__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:15451:1: ( rule__E14__Group_1__0__Impl )
-            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:15452:2: rule__E14__Group_1__0__Impl
+            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:15573:1: ( rule__E14__Group_1__0__Impl )
+            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:15574:2: rule__E14__Group_1__0__Impl
             {
-            pushFollow(FOLLOW_rule__E14__Group_1__0__Impl_in_rule__E14__Group_1__031022);
+            pushFollow(FOLLOW_rule__E14__Group_1__0__Impl_in_rule__E14__Group_1__031265);
             rule__E14__Group_1__0__Impl();
 
             state._fsp--;
@@ -44704,25 +45061,25 @@ public class InternalEditorParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__E14__Group_1__0__Impl"
-    // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:15458:1: rule__E14__Group_1__0__Impl : ( ( rule__E14__Group_1_0__0 ) ) ;
+    // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:15580:1: rule__E14__Group_1__0__Impl : ( ( rule__E14__Group_1_0__0 ) ) ;
     public final void rule__E14__Group_1__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:15462:1: ( ( ( rule__E14__Group_1_0__0 ) ) )
-            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:15463:1: ( ( rule__E14__Group_1_0__0 ) )
+            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:15584:1: ( ( ( rule__E14__Group_1_0__0 ) ) )
+            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:15585:1: ( ( rule__E14__Group_1_0__0 ) )
             {
-            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:15463:1: ( ( rule__E14__Group_1_0__0 ) )
-            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:15464:1: ( rule__E14__Group_1_0__0 )
+            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:15585:1: ( ( rule__E14__Group_1_0__0 ) )
+            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:15586:1: ( rule__E14__Group_1_0__0 )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getE14Access().getGroup_1_0()); 
             }
-            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:15465:1: ( rule__E14__Group_1_0__0 )
-            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:15465:2: rule__E14__Group_1_0__0
+            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:15587:1: ( rule__E14__Group_1_0__0 )
+            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:15587:2: rule__E14__Group_1_0__0
             {
-            pushFollow(FOLLOW_rule__E14__Group_1_0__0_in_rule__E14__Group_1__0__Impl31049);
+            pushFollow(FOLLOW_rule__E14__Group_1_0__0_in_rule__E14__Group_1__0__Impl31292);
             rule__E14__Group_1_0__0();
 
             state._fsp--;
@@ -44755,21 +45112,21 @@ public class InternalEditorParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__E14__Group_1_0__0"
-    // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:15477:1: rule__E14__Group_1_0__0 : rule__E14__Group_1_0__0__Impl rule__E14__Group_1_0__1 ;
+    // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:15599:1: rule__E14__Group_1_0__0 : rule__E14__Group_1_0__0__Impl rule__E14__Group_1_0__1 ;
     public final void rule__E14__Group_1_0__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:15481:1: ( rule__E14__Group_1_0__0__Impl rule__E14__Group_1_0__1 )
-            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:15482:2: rule__E14__Group_1_0__0__Impl rule__E14__Group_1_0__1
+            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:15603:1: ( rule__E14__Group_1_0__0__Impl rule__E14__Group_1_0__1 )
+            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:15604:2: rule__E14__Group_1_0__0__Impl rule__E14__Group_1_0__1
             {
-            pushFollow(FOLLOW_rule__E14__Group_1_0__0__Impl_in_rule__E14__Group_1_0__031081);
+            pushFollow(FOLLOW_rule__E14__Group_1_0__0__Impl_in_rule__E14__Group_1_0__031324);
             rule__E14__Group_1_0__0__Impl();
 
             state._fsp--;
             if (state.failed) return ;
-            pushFollow(FOLLOW_rule__E14__Group_1_0__1_in_rule__E14__Group_1_0__031084);
+            pushFollow(FOLLOW_rule__E14__Group_1_0__1_in_rule__E14__Group_1_0__031327);
             rule__E14__Group_1_0__1();
 
             state._fsp--;
@@ -44793,33 +45150,33 @@ public class InternalEditorParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__E14__Group_1_0__0__Impl"
-    // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:15489:1: rule__E14__Group_1_0__0__Impl : ( ( rule__E14__E15leftAssignment_1_0_0 )? ) ;
+    // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:15611:1: rule__E14__Group_1_0__0__Impl : ( ( rule__E14__E15leftAssignment_1_0_0 )? ) ;
     public final void rule__E14__Group_1_0__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:15493:1: ( ( ( rule__E14__E15leftAssignment_1_0_0 )? ) )
-            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:15494:1: ( ( rule__E14__E15leftAssignment_1_0_0 )? )
+            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:15615:1: ( ( ( rule__E14__E15leftAssignment_1_0_0 )? ) )
+            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:15616:1: ( ( rule__E14__E15leftAssignment_1_0_0 )? )
             {
-            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:15494:1: ( ( rule__E14__E15leftAssignment_1_0_0 )? )
-            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:15495:1: ( rule__E14__E15leftAssignment_1_0_0 )?
+            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:15616:1: ( ( rule__E14__E15leftAssignment_1_0_0 )? )
+            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:15617:1: ( rule__E14__E15leftAssignment_1_0_0 )?
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getE14Access().getE15leftAssignment_1_0_0()); 
             }
-            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:15496:1: ( rule__E14__E15leftAssignment_1_0_0 )?
-            int alt97=2;
-            int LA97_0 = input.LA(1);
+            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:15618:1: ( rule__E14__E15leftAssignment_1_0_0 )?
+            int alt98=2;
+            int LA98_0 = input.LA(1);
 
-            if ( ((LA97_0>=RULE_TK_ID && LA97_0<=RULE_TK_STRING)||LA97_0==RULE_KW_QUOTE||(LA97_0>=RULE_TK_FLOAT && LA97_0<=RULE_TK_INT)||(LA97_0>=RULE_KW_OPAREN && LA97_0<=RULE_KW_OBRACK)||LA97_0==98) ) {
-                alt97=1;
+            if ( ((LA98_0>=RULE_TK_ID && LA98_0<=RULE_TK_STRING)||LA98_0==RULE_KW_QUOTE||(LA98_0>=RULE_TK_FLOAT && LA98_0<=RULE_TK_INT)||(LA98_0>=RULE_KW_OPAREN && LA98_0<=RULE_KW_OBRACK)||LA98_0==98) ) {
+                alt98=1;
             }
-            switch (alt97) {
+            switch (alt98) {
                 case 1 :
-                    // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:15496:2: rule__E14__E15leftAssignment_1_0_0
+                    // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:15618:2: rule__E14__E15leftAssignment_1_0_0
                     {
-                    pushFollow(FOLLOW_rule__E14__E15leftAssignment_1_0_0_in_rule__E14__Group_1_0__0__Impl31111);
+                    pushFollow(FOLLOW_rule__E14__E15leftAssignment_1_0_0_in_rule__E14__Group_1_0__0__Impl31354);
                     rule__E14__E15leftAssignment_1_0_0();
 
                     state._fsp--;
@@ -44855,21 +45212,21 @@ public class InternalEditorParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__E14__Group_1_0__1"
-    // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:15506:1: rule__E14__Group_1_0__1 : rule__E14__Group_1_0__1__Impl rule__E14__Group_1_0__2 ;
+    // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:15628:1: rule__E14__Group_1_0__1 : rule__E14__Group_1_0__1__Impl rule__E14__Group_1_0__2 ;
     public final void rule__E14__Group_1_0__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:15510:1: ( rule__E14__Group_1_0__1__Impl rule__E14__Group_1_0__2 )
-            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:15511:2: rule__E14__Group_1_0__1__Impl rule__E14__Group_1_0__2
+            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:15632:1: ( rule__E14__Group_1_0__1__Impl rule__E14__Group_1_0__2 )
+            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:15633:2: rule__E14__Group_1_0__1__Impl rule__E14__Group_1_0__2
             {
-            pushFollow(FOLLOW_rule__E14__Group_1_0__1__Impl_in_rule__E14__Group_1_0__131142);
+            pushFollow(FOLLOW_rule__E14__Group_1_0__1__Impl_in_rule__E14__Group_1_0__131385);
             rule__E14__Group_1_0__1__Impl();
 
             state._fsp--;
             if (state.failed) return ;
-            pushFollow(FOLLOW_rule__E14__Group_1_0__2_in_rule__E14__Group_1_0__131145);
+            pushFollow(FOLLOW_rule__E14__Group_1_0__2_in_rule__E14__Group_1_0__131388);
             rule__E14__Group_1_0__2();
 
             state._fsp--;
@@ -44893,25 +45250,25 @@ public class InternalEditorParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__E14__Group_1_0__1__Impl"
-    // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:15518:1: rule__E14__Group_1_0__1__Impl : ( ( rule__E14__OpAssignment_1_0_1 ) ) ;
+    // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:15640:1: rule__E14__Group_1_0__1__Impl : ( ( rule__E14__OpAssignment_1_0_1 ) ) ;
     public final void rule__E14__Group_1_0__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:15522:1: ( ( ( rule__E14__OpAssignment_1_0_1 ) ) )
-            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:15523:1: ( ( rule__E14__OpAssignment_1_0_1 ) )
+            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:15644:1: ( ( ( rule__E14__OpAssignment_1_0_1 ) ) )
+            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:15645:1: ( ( rule__E14__OpAssignment_1_0_1 ) )
             {
-            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:15523:1: ( ( rule__E14__OpAssignment_1_0_1 ) )
-            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:15524:1: ( rule__E14__OpAssignment_1_0_1 )
+            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:15645:1: ( ( rule__E14__OpAssignment_1_0_1 ) )
+            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:15646:1: ( rule__E14__OpAssignment_1_0_1 )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getE14Access().getOpAssignment_1_0_1()); 
             }
-            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:15525:1: ( rule__E14__OpAssignment_1_0_1 )
-            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:15525:2: rule__E14__OpAssignment_1_0_1
+            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:15647:1: ( rule__E14__OpAssignment_1_0_1 )
+            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:15647:2: rule__E14__OpAssignment_1_0_1
             {
-            pushFollow(FOLLOW_rule__E14__OpAssignment_1_0_1_in_rule__E14__Group_1_0__1__Impl31172);
+            pushFollow(FOLLOW_rule__E14__OpAssignment_1_0_1_in_rule__E14__Group_1_0__1__Impl31415);
             rule__E14__OpAssignment_1_0_1();
 
             state._fsp--;
@@ -44944,16 +45301,16 @@ public class InternalEditorParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__E14__Group_1_0__2"
-    // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:15535:1: rule__E14__Group_1_0__2 : rule__E14__Group_1_0__2__Impl ;
+    // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:15657:1: rule__E14__Group_1_0__2 : rule__E14__Group_1_0__2__Impl ;
     public final void rule__E14__Group_1_0__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:15539:1: ( rule__E14__Group_1_0__2__Impl )
-            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:15540:2: rule__E14__Group_1_0__2__Impl
+            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:15661:1: ( rule__E14__Group_1_0__2__Impl )
+            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:15662:2: rule__E14__Group_1_0__2__Impl
             {
-            pushFollow(FOLLOW_rule__E14__Group_1_0__2__Impl_in_rule__E14__Group_1_0__231202);
+            pushFollow(FOLLOW_rule__E14__Group_1_0__2__Impl_in_rule__E14__Group_1_0__231445);
             rule__E14__Group_1_0__2__Impl();
 
             state._fsp--;
@@ -44977,25 +45334,25 @@ public class InternalEditorParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__E14__Group_1_0__2__Impl"
-    // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:15546:1: rule__E14__Group_1_0__2__Impl : ( ( rule__E14__DmAssignment_1_0_2 ) ) ;
+    // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:15668:1: rule__E14__Group_1_0__2__Impl : ( ( rule__E14__DmAssignment_1_0_2 ) ) ;
     public final void rule__E14__Group_1_0__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:15550:1: ( ( ( rule__E14__DmAssignment_1_0_2 ) ) )
-            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:15551:1: ( ( rule__E14__DmAssignment_1_0_2 ) )
+            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:15672:1: ( ( ( rule__E14__DmAssignment_1_0_2 ) ) )
+            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:15673:1: ( ( rule__E14__DmAssignment_1_0_2 ) )
             {
-            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:15551:1: ( ( rule__E14__DmAssignment_1_0_2 ) )
-            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:15552:1: ( rule__E14__DmAssignment_1_0_2 )
+            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:15673:1: ( ( rule__E14__DmAssignment_1_0_2 ) )
+            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:15674:1: ( rule__E14__DmAssignment_1_0_2 )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getE14Access().getDmAssignment_1_0_2()); 
             }
-            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:15553:1: ( rule__E14__DmAssignment_1_0_2 )
-            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:15553:2: rule__E14__DmAssignment_1_0_2
+            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:15675:1: ( rule__E14__DmAssignment_1_0_2 )
+            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:15675:2: rule__E14__DmAssignment_1_0_2
             {
-            pushFollow(FOLLOW_rule__E14__DmAssignment_1_0_2_in_rule__E14__Group_1_0__2__Impl31229);
+            pushFollow(FOLLOW_rule__E14__DmAssignment_1_0_2_in_rule__E14__Group_1_0__2__Impl31472);
             rule__E14__DmAssignment_1_0_2();
 
             state._fsp--;
@@ -45028,16 +45385,16 @@ public class InternalEditorParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__E14__Group_2__0"
-    // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:15569:1: rule__E14__Group_2__0 : rule__E14__Group_2__0__Impl ;
+    // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:15691:1: rule__E14__Group_2__0 : rule__E14__Group_2__0__Impl ;
     public final void rule__E14__Group_2__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:15573:1: ( rule__E14__Group_2__0__Impl )
-            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:15574:2: rule__E14__Group_2__0__Impl
+            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:15695:1: ( rule__E14__Group_2__0__Impl )
+            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:15696:2: rule__E14__Group_2__0__Impl
             {
-            pushFollow(FOLLOW_rule__E14__Group_2__0__Impl_in_rule__E14__Group_2__031265);
+            pushFollow(FOLLOW_rule__E14__Group_2__0__Impl_in_rule__E14__Group_2__031508);
             rule__E14__Group_2__0__Impl();
 
             state._fsp--;
@@ -45061,25 +45418,25 @@ public class InternalEditorParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__E14__Group_2__0__Impl"
-    // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:15580:1: rule__E14__Group_2__0__Impl : ( ( rule__E14__Group_2_0__0 ) ) ;
+    // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:15702:1: rule__E14__Group_2__0__Impl : ( ( rule__E14__Group_2_0__0 ) ) ;
     public final void rule__E14__Group_2__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:15584:1: ( ( ( rule__E14__Group_2_0__0 ) ) )
-            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:15585:1: ( ( rule__E14__Group_2_0__0 ) )
+            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:15706:1: ( ( ( rule__E14__Group_2_0__0 ) ) )
+            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:15707:1: ( ( rule__E14__Group_2_0__0 ) )
             {
-            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:15585:1: ( ( rule__E14__Group_2_0__0 ) )
-            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:15586:1: ( rule__E14__Group_2_0__0 )
+            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:15707:1: ( ( rule__E14__Group_2_0__0 ) )
+            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:15708:1: ( rule__E14__Group_2_0__0 )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getE14Access().getGroup_2_0()); 
             }
-            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:15587:1: ( rule__E14__Group_2_0__0 )
-            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:15587:2: rule__E14__Group_2_0__0
+            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:15709:1: ( rule__E14__Group_2_0__0 )
+            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:15709:2: rule__E14__Group_2_0__0
             {
-            pushFollow(FOLLOW_rule__E14__Group_2_0__0_in_rule__E14__Group_2__0__Impl31292);
+            pushFollow(FOLLOW_rule__E14__Group_2_0__0_in_rule__E14__Group_2__0__Impl31535);
             rule__E14__Group_2_0__0();
 
             state._fsp--;
@@ -45112,21 +45469,21 @@ public class InternalEditorParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__E14__Group_2_0__0"
-    // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:15599:1: rule__E14__Group_2_0__0 : rule__E14__Group_2_0__0__Impl rule__E14__Group_2_0__1 ;
+    // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:15721:1: rule__E14__Group_2_0__0 : rule__E14__Group_2_0__0__Impl rule__E14__Group_2_0__1 ;
     public final void rule__E14__Group_2_0__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:15603:1: ( rule__E14__Group_2_0__0__Impl rule__E14__Group_2_0__1 )
-            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:15604:2: rule__E14__Group_2_0__0__Impl rule__E14__Group_2_0__1
+            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:15725:1: ( rule__E14__Group_2_0__0__Impl rule__E14__Group_2_0__1 )
+            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:15726:2: rule__E14__Group_2_0__0__Impl rule__E14__Group_2_0__1
             {
-            pushFollow(FOLLOW_rule__E14__Group_2_0__0__Impl_in_rule__E14__Group_2_0__031324);
+            pushFollow(FOLLOW_rule__E14__Group_2_0__0__Impl_in_rule__E14__Group_2_0__031567);
             rule__E14__Group_2_0__0__Impl();
 
             state._fsp--;
             if (state.failed) return ;
-            pushFollow(FOLLOW_rule__E14__Group_2_0__1_in_rule__E14__Group_2_0__031327);
+            pushFollow(FOLLOW_rule__E14__Group_2_0__1_in_rule__E14__Group_2_0__031570);
             rule__E14__Group_2_0__1();
 
             state._fsp--;
@@ -45150,40 +45507,29 @@ public class InternalEditorParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__E14__Group_2_0__0__Impl"
-    // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:15611:1: rule__E14__Group_2_0__0__Impl : ( ( rule__E14__E15leftAssignment_2_0_0 )? ) ;
+    // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:15733:1: rule__E14__Group_2_0__0__Impl : ( ( rule__E14__E15leftAssignment_2_0_0 ) ) ;
     public final void rule__E14__Group_2_0__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:15615:1: ( ( ( rule__E14__E15leftAssignment_2_0_0 )? ) )
-            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:15616:1: ( ( rule__E14__E15leftAssignment_2_0_0 )? )
+            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:15737:1: ( ( ( rule__E14__E15leftAssignment_2_0_0 ) ) )
+            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:15738:1: ( ( rule__E14__E15leftAssignment_2_0_0 ) )
             {
-            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:15616:1: ( ( rule__E14__E15leftAssignment_2_0_0 )? )
-            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:15617:1: ( rule__E14__E15leftAssignment_2_0_0 )?
+            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:15738:1: ( ( rule__E14__E15leftAssignment_2_0_0 ) )
+            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:15739:1: ( rule__E14__E15leftAssignment_2_0_0 )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getE14Access().getE15leftAssignment_2_0_0()); 
             }
-            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:15618:1: ( rule__E14__E15leftAssignment_2_0_0 )?
-            int alt98=2;
-            int LA98_0 = input.LA(1);
+            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:15740:1: ( rule__E14__E15leftAssignment_2_0_0 )
+            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:15740:2: rule__E14__E15leftAssignment_2_0_0
+            {
+            pushFollow(FOLLOW_rule__E14__E15leftAssignment_2_0_0_in_rule__E14__Group_2_0__0__Impl31597);
+            rule__E14__E15leftAssignment_2_0_0();
 
-            if ( ((LA98_0>=RULE_TK_ID && LA98_0<=RULE_TK_STRING)||LA98_0==RULE_KW_QUOTE||(LA98_0>=RULE_TK_FLOAT && LA98_0<=RULE_TK_INT)||(LA98_0>=RULE_KW_OPAREN && LA98_0<=RULE_KW_OBRACK)||LA98_0==98) ) {
-                alt98=1;
-            }
-            switch (alt98) {
-                case 1 :
-                    // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:15618:2: rule__E14__E15leftAssignment_2_0_0
-                    {
-                    pushFollow(FOLLOW_rule__E14__E15leftAssignment_2_0_0_in_rule__E14__Group_2_0__0__Impl31354);
-                    rule__E14__E15leftAssignment_2_0_0();
-
-                    state._fsp--;
-                    if (state.failed) return ;
-
-                    }
-                    break;
+            state._fsp--;
+            if (state.failed) return ;
 
             }
 
@@ -45212,21 +45558,21 @@ public class InternalEditorParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__E14__Group_2_0__1"
-    // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:15628:1: rule__E14__Group_2_0__1 : rule__E14__Group_2_0__1__Impl rule__E14__Group_2_0__2 ;
+    // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:15750:1: rule__E14__Group_2_0__1 : rule__E14__Group_2_0__1__Impl rule__E14__Group_2_0__2 ;
     public final void rule__E14__Group_2_0__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:15632:1: ( rule__E14__Group_2_0__1__Impl rule__E14__Group_2_0__2 )
-            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:15633:2: rule__E14__Group_2_0__1__Impl rule__E14__Group_2_0__2
+            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:15754:1: ( rule__E14__Group_2_0__1__Impl rule__E14__Group_2_0__2 )
+            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:15755:2: rule__E14__Group_2_0__1__Impl rule__E14__Group_2_0__2
             {
-            pushFollow(FOLLOW_rule__E14__Group_2_0__1__Impl_in_rule__E14__Group_2_0__131385);
+            pushFollow(FOLLOW_rule__E14__Group_2_0__1__Impl_in_rule__E14__Group_2_0__131627);
             rule__E14__Group_2_0__1__Impl();
 
             state._fsp--;
             if (state.failed) return ;
-            pushFollow(FOLLOW_rule__E14__Group_2_0__2_in_rule__E14__Group_2_0__131388);
+            pushFollow(FOLLOW_rule__E14__Group_2_0__2_in_rule__E14__Group_2_0__131630);
             rule__E14__Group_2_0__2();
 
             state._fsp--;
@@ -45250,25 +45596,25 @@ public class InternalEditorParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__E14__Group_2_0__1__Impl"
-    // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:15640:1: rule__E14__Group_2_0__1__Impl : ( ( rule__E14__OpAssignment_2_0_1 ) ) ;
+    // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:15762:1: rule__E14__Group_2_0__1__Impl : ( ( rule__E14__OpAssignment_2_0_1 ) ) ;
     public final void rule__E14__Group_2_0__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:15644:1: ( ( ( rule__E14__OpAssignment_2_0_1 ) ) )
-            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:15645:1: ( ( rule__E14__OpAssignment_2_0_1 ) )
+            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:15766:1: ( ( ( rule__E14__OpAssignment_2_0_1 ) ) )
+            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:15767:1: ( ( rule__E14__OpAssignment_2_0_1 ) )
             {
-            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:15645:1: ( ( rule__E14__OpAssignment_2_0_1 ) )
-            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:15646:1: ( rule__E14__OpAssignment_2_0_1 )
+            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:15767:1: ( ( rule__E14__OpAssignment_2_0_1 ) )
+            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:15768:1: ( rule__E14__OpAssignment_2_0_1 )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getE14Access().getOpAssignment_2_0_1()); 
             }
-            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:15647:1: ( rule__E14__OpAssignment_2_0_1 )
-            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:15647:2: rule__E14__OpAssignment_2_0_1
+            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:15769:1: ( rule__E14__OpAssignment_2_0_1 )
+            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:15769:2: rule__E14__OpAssignment_2_0_1
             {
-            pushFollow(FOLLOW_rule__E14__OpAssignment_2_0_1_in_rule__E14__Group_2_0__1__Impl31415);
+            pushFollow(FOLLOW_rule__E14__OpAssignment_2_0_1_in_rule__E14__Group_2_0__1__Impl31657);
             rule__E14__OpAssignment_2_0_1();
 
             state._fsp--;
@@ -45301,16 +45647,16 @@ public class InternalEditorParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__E14__Group_2_0__2"
-    // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:15657:1: rule__E14__Group_2_0__2 : rule__E14__Group_2_0__2__Impl ;
+    // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:15779:1: rule__E14__Group_2_0__2 : rule__E14__Group_2_0__2__Impl ;
     public final void rule__E14__Group_2_0__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:15661:1: ( rule__E14__Group_2_0__2__Impl )
-            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:15662:2: rule__E14__Group_2_0__2__Impl
+            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:15783:1: ( rule__E14__Group_2_0__2__Impl )
+            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:15784:2: rule__E14__Group_2_0__2__Impl
             {
-            pushFollow(FOLLOW_rule__E14__Group_2_0__2__Impl_in_rule__E14__Group_2_0__231445);
+            pushFollow(FOLLOW_rule__E14__Group_2_0__2__Impl_in_rule__E14__Group_2_0__231687);
             rule__E14__Group_2_0__2__Impl();
 
             state._fsp--;
@@ -45334,26 +45680,26 @@ public class InternalEditorParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__E14__Group_2_0__2__Impl"
-    // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:15668:1: rule__E14__Group_2_0__2__Impl : ( ( rule__E14__DmAssignment_2_0_2 ) ) ;
+    // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:15790:1: rule__E14__Group_2_0__2__Impl : ( ( rule__E14__E15rightAssignment_2_0_2 ) ) ;
     public final void rule__E14__Group_2_0__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:15672:1: ( ( ( rule__E14__DmAssignment_2_0_2 ) ) )
-            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:15673:1: ( ( rule__E14__DmAssignment_2_0_2 ) )
+            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:15794:1: ( ( ( rule__E14__E15rightAssignment_2_0_2 ) ) )
+            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:15795:1: ( ( rule__E14__E15rightAssignment_2_0_2 ) )
             {
-            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:15673:1: ( ( rule__E14__DmAssignment_2_0_2 ) )
-            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:15674:1: ( rule__E14__DmAssignment_2_0_2 )
+            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:15795:1: ( ( rule__E14__E15rightAssignment_2_0_2 ) )
+            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:15796:1: ( rule__E14__E15rightAssignment_2_0_2 )
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getE14Access().getDmAssignment_2_0_2()); 
+               before(grammarAccess.getE14Access().getE15rightAssignment_2_0_2()); 
             }
-            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:15675:1: ( rule__E14__DmAssignment_2_0_2 )
-            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:15675:2: rule__E14__DmAssignment_2_0_2
+            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:15797:1: ( rule__E14__E15rightAssignment_2_0_2 )
+            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:15797:2: rule__E14__E15rightAssignment_2_0_2
             {
-            pushFollow(FOLLOW_rule__E14__DmAssignment_2_0_2_in_rule__E14__Group_2_0__2__Impl31472);
-            rule__E14__DmAssignment_2_0_2();
+            pushFollow(FOLLOW_rule__E14__E15rightAssignment_2_0_2_in_rule__E14__Group_2_0__2__Impl31714);
+            rule__E14__E15rightAssignment_2_0_2();
 
             state._fsp--;
             if (state.failed) return ;
@@ -45361,7 +45707,7 @@ public class InternalEditorParser extends AbstractInternalContentAssistParser {
             }
 
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getE14Access().getDmAssignment_2_0_2()); 
+               after(grammarAccess.getE14Access().getE15rightAssignment_2_0_2()); 
             }
 
             }
@@ -45385,16 +45731,16 @@ public class InternalEditorParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__E14__Group_3__0"
-    // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:15691:1: rule__E14__Group_3__0 : rule__E14__Group_3__0__Impl ;
+    // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:15813:1: rule__E14__Group_3__0 : rule__E14__Group_3__0__Impl ;
     public final void rule__E14__Group_3__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:15695:1: ( rule__E14__Group_3__0__Impl )
-            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:15696:2: rule__E14__Group_3__0__Impl
+            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:15817:1: ( rule__E14__Group_3__0__Impl )
+            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:15818:2: rule__E14__Group_3__0__Impl
             {
-            pushFollow(FOLLOW_rule__E14__Group_3__0__Impl_in_rule__E14__Group_3__031508);
+            pushFollow(FOLLOW_rule__E14__Group_3__0__Impl_in_rule__E14__Group_3__031750);
             rule__E14__Group_3__0__Impl();
 
             state._fsp--;
@@ -45418,25 +45764,25 @@ public class InternalEditorParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__E14__Group_3__0__Impl"
-    // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:15702:1: rule__E14__Group_3__0__Impl : ( ( rule__E14__Group_3_0__0 ) ) ;
+    // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:15824:1: rule__E14__Group_3__0__Impl : ( ( rule__E14__Group_3_0__0 ) ) ;
     public final void rule__E14__Group_3__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:15706:1: ( ( ( rule__E14__Group_3_0__0 ) ) )
-            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:15707:1: ( ( rule__E14__Group_3_0__0 ) )
+            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:15828:1: ( ( ( rule__E14__Group_3_0__0 ) ) )
+            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:15829:1: ( ( rule__E14__Group_3_0__0 ) )
             {
-            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:15707:1: ( ( rule__E14__Group_3_0__0 ) )
-            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:15708:1: ( rule__E14__Group_3_0__0 )
+            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:15829:1: ( ( rule__E14__Group_3_0__0 ) )
+            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:15830:1: ( rule__E14__Group_3_0__0 )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getE14Access().getGroup_3_0()); 
             }
-            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:15709:1: ( rule__E14__Group_3_0__0 )
-            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:15709:2: rule__E14__Group_3_0__0
+            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:15831:1: ( rule__E14__Group_3_0__0 )
+            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:15831:2: rule__E14__Group_3_0__0
             {
-            pushFollow(FOLLOW_rule__E14__Group_3_0__0_in_rule__E14__Group_3__0__Impl31535);
+            pushFollow(FOLLOW_rule__E14__Group_3_0__0_in_rule__E14__Group_3__0__Impl31777);
             rule__E14__Group_3_0__0();
 
             state._fsp--;
@@ -45469,21 +45815,21 @@ public class InternalEditorParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__E14__Group_3_0__0"
-    // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:15721:1: rule__E14__Group_3_0__0 : rule__E14__Group_3_0__0__Impl rule__E14__Group_3_0__1 ;
+    // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:15843:1: rule__E14__Group_3_0__0 : rule__E14__Group_3_0__0__Impl rule__E14__Group_3_0__1 ;
     public final void rule__E14__Group_3_0__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:15725:1: ( rule__E14__Group_3_0__0__Impl rule__E14__Group_3_0__1 )
-            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:15726:2: rule__E14__Group_3_0__0__Impl rule__E14__Group_3_0__1
+            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:15847:1: ( rule__E14__Group_3_0__0__Impl rule__E14__Group_3_0__1 )
+            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:15848:2: rule__E14__Group_3_0__0__Impl rule__E14__Group_3_0__1
             {
-            pushFollow(FOLLOW_rule__E14__Group_3_0__0__Impl_in_rule__E14__Group_3_0__031567);
+            pushFollow(FOLLOW_rule__E14__Group_3_0__0__Impl_in_rule__E14__Group_3_0__031809);
             rule__E14__Group_3_0__0__Impl();
 
             state._fsp--;
             if (state.failed) return ;
-            pushFollow(FOLLOW_rule__E14__Group_3_0__1_in_rule__E14__Group_3_0__031570);
+            pushFollow(FOLLOW_rule__E14__Group_3_0__1_in_rule__E14__Group_3_0__031812);
             rule__E14__Group_3_0__1();
 
             state._fsp--;
@@ -45507,25 +45853,25 @@ public class InternalEditorParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__E14__Group_3_0__0__Impl"
-    // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:15733:1: rule__E14__Group_3_0__0__Impl : ( ( rule__E14__E15leftAssignment_3_0_0 ) ) ;
+    // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:15855:1: rule__E14__Group_3_0__0__Impl : ( ( rule__E14__E15leftAssignment_3_0_0 ) ) ;
     public final void rule__E14__Group_3_0__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:15737:1: ( ( ( rule__E14__E15leftAssignment_3_0_0 ) ) )
-            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:15738:1: ( ( rule__E14__E15leftAssignment_3_0_0 ) )
+            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:15859:1: ( ( ( rule__E14__E15leftAssignment_3_0_0 ) ) )
+            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:15860:1: ( ( rule__E14__E15leftAssignment_3_0_0 ) )
             {
-            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:15738:1: ( ( rule__E14__E15leftAssignment_3_0_0 ) )
-            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:15739:1: ( rule__E14__E15leftAssignment_3_0_0 )
+            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:15860:1: ( ( rule__E14__E15leftAssignment_3_0_0 ) )
+            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:15861:1: ( rule__E14__E15leftAssignment_3_0_0 )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getE14Access().getE15leftAssignment_3_0_0()); 
             }
-            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:15740:1: ( rule__E14__E15leftAssignment_3_0_0 )
-            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:15740:2: rule__E14__E15leftAssignment_3_0_0
+            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:15862:1: ( rule__E14__E15leftAssignment_3_0_0 )
+            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:15862:2: rule__E14__E15leftAssignment_3_0_0
             {
-            pushFollow(FOLLOW_rule__E14__E15leftAssignment_3_0_0_in_rule__E14__Group_3_0__0__Impl31597);
+            pushFollow(FOLLOW_rule__E14__E15leftAssignment_3_0_0_in_rule__E14__Group_3_0__0__Impl31839);
             rule__E14__E15leftAssignment_3_0_0();
 
             state._fsp--;
@@ -45558,21 +45904,21 @@ public class InternalEditorParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__E14__Group_3_0__1"
-    // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:15750:1: rule__E14__Group_3_0__1 : rule__E14__Group_3_0__1__Impl rule__E14__Group_3_0__2 ;
+    // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:15872:1: rule__E14__Group_3_0__1 : rule__E14__Group_3_0__1__Impl rule__E14__Group_3_0__2 ;
     public final void rule__E14__Group_3_0__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:15754:1: ( rule__E14__Group_3_0__1__Impl rule__E14__Group_3_0__2 )
-            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:15755:2: rule__E14__Group_3_0__1__Impl rule__E14__Group_3_0__2
+            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:15876:1: ( rule__E14__Group_3_0__1__Impl rule__E14__Group_3_0__2 )
+            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:15877:2: rule__E14__Group_3_0__1__Impl rule__E14__Group_3_0__2
             {
-            pushFollow(FOLLOW_rule__E14__Group_3_0__1__Impl_in_rule__E14__Group_3_0__131627);
+            pushFollow(FOLLOW_rule__E14__Group_3_0__1__Impl_in_rule__E14__Group_3_0__131869);
             rule__E14__Group_3_0__1__Impl();
 
             state._fsp--;
             if (state.failed) return ;
-            pushFollow(FOLLOW_rule__E14__Group_3_0__2_in_rule__E14__Group_3_0__131630);
+            pushFollow(FOLLOW_rule__E14__Group_3_0__2_in_rule__E14__Group_3_0__131872);
             rule__E14__Group_3_0__2();
 
             state._fsp--;
@@ -45596,25 +45942,25 @@ public class InternalEditorParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__E14__Group_3_0__1__Impl"
-    // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:15762:1: rule__E14__Group_3_0__1__Impl : ( ( rule__E14__OpAssignment_3_0_1 ) ) ;
+    // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:15884:1: rule__E14__Group_3_0__1__Impl : ( ( rule__E14__OpAssignment_3_0_1 ) ) ;
     public final void rule__E14__Group_3_0__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:15766:1: ( ( ( rule__E14__OpAssignment_3_0_1 ) ) )
-            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:15767:1: ( ( rule__E14__OpAssignment_3_0_1 ) )
+            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:15888:1: ( ( ( rule__E14__OpAssignment_3_0_1 ) ) )
+            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:15889:1: ( ( rule__E14__OpAssignment_3_0_1 ) )
             {
-            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:15767:1: ( ( rule__E14__OpAssignment_3_0_1 ) )
-            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:15768:1: ( rule__E14__OpAssignment_3_0_1 )
+            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:15889:1: ( ( rule__E14__OpAssignment_3_0_1 ) )
+            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:15890:1: ( rule__E14__OpAssignment_3_0_1 )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getE14Access().getOpAssignment_3_0_1()); 
             }
-            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:15769:1: ( rule__E14__OpAssignment_3_0_1 )
-            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:15769:2: rule__E14__OpAssignment_3_0_1
+            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:15891:1: ( rule__E14__OpAssignment_3_0_1 )
+            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:15891:2: rule__E14__OpAssignment_3_0_1
             {
-            pushFollow(FOLLOW_rule__E14__OpAssignment_3_0_1_in_rule__E14__Group_3_0__1__Impl31657);
+            pushFollow(FOLLOW_rule__E14__OpAssignment_3_0_1_in_rule__E14__Group_3_0__1__Impl31899);
             rule__E14__OpAssignment_3_0_1();
 
             state._fsp--;
@@ -45647,16 +45993,16 @@ public class InternalEditorParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__E14__Group_3_0__2"
-    // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:15779:1: rule__E14__Group_3_0__2 : rule__E14__Group_3_0__2__Impl ;
+    // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:15901:1: rule__E14__Group_3_0__2 : rule__E14__Group_3_0__2__Impl ;
     public final void rule__E14__Group_3_0__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:15783:1: ( rule__E14__Group_3_0__2__Impl )
-            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:15784:2: rule__E14__Group_3_0__2__Impl
+            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:15905:1: ( rule__E14__Group_3_0__2__Impl )
+            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:15906:2: rule__E14__Group_3_0__2__Impl
             {
-            pushFollow(FOLLOW_rule__E14__Group_3_0__2__Impl_in_rule__E14__Group_3_0__231687);
+            pushFollow(FOLLOW_rule__E14__Group_3_0__2__Impl_in_rule__E14__Group_3_0__231929);
             rule__E14__Group_3_0__2__Impl();
 
             state._fsp--;
@@ -45680,25 +46026,25 @@ public class InternalEditorParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__E14__Group_3_0__2__Impl"
-    // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:15790:1: rule__E14__Group_3_0__2__Impl : ( ( rule__E14__E15rightAssignment_3_0_2 ) ) ;
+    // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:15912:1: rule__E14__Group_3_0__2__Impl : ( ( rule__E14__E15rightAssignment_3_0_2 ) ) ;
     public final void rule__E14__Group_3_0__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:15794:1: ( ( ( rule__E14__E15rightAssignment_3_0_2 ) ) )
-            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:15795:1: ( ( rule__E14__E15rightAssignment_3_0_2 ) )
+            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:15916:1: ( ( ( rule__E14__E15rightAssignment_3_0_2 ) ) )
+            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:15917:1: ( ( rule__E14__E15rightAssignment_3_0_2 ) )
             {
-            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:15795:1: ( ( rule__E14__E15rightAssignment_3_0_2 ) )
-            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:15796:1: ( rule__E14__E15rightAssignment_3_0_2 )
+            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:15917:1: ( ( rule__E14__E15rightAssignment_3_0_2 ) )
+            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:15918:1: ( rule__E14__E15rightAssignment_3_0_2 )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getE14Access().getE15rightAssignment_3_0_2()); 
             }
-            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:15797:1: ( rule__E14__E15rightAssignment_3_0_2 )
-            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:15797:2: rule__E14__E15rightAssignment_3_0_2
+            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:15919:1: ( rule__E14__E15rightAssignment_3_0_2 )
+            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:15919:2: rule__E14__E15rightAssignment_3_0_2
             {
-            pushFollow(FOLLOW_rule__E14__E15rightAssignment_3_0_2_in_rule__E14__Group_3_0__2__Impl31714);
+            pushFollow(FOLLOW_rule__E14__E15rightAssignment_3_0_2_in_rule__E14__Group_3_0__2__Impl31956);
             rule__E14__E15rightAssignment_3_0_2();
 
             state._fsp--;
@@ -45728,352 +46074,6 @@ public class InternalEditorParser extends AbstractInternalContentAssistParser {
         return ;
     }
     // $ANTLR end "rule__E14__Group_3_0__2__Impl"
-
-
-    // $ANTLR start "rule__E14__Group_4__0"
-    // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:15813:1: rule__E14__Group_4__0 : rule__E14__Group_4__0__Impl ;
-    public final void rule__E14__Group_4__0() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-            
-        try {
-            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:15817:1: ( rule__E14__Group_4__0__Impl )
-            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:15818:2: rule__E14__Group_4__0__Impl
-            {
-            pushFollow(FOLLOW_rule__E14__Group_4__0__Impl_in_rule__E14__Group_4__031750);
-            rule__E14__Group_4__0__Impl();
-
-            state._fsp--;
-            if (state.failed) return ;
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__E14__Group_4__0"
-
-
-    // $ANTLR start "rule__E14__Group_4__0__Impl"
-    // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:15824:1: rule__E14__Group_4__0__Impl : ( ( rule__E14__Group_4_0__0 ) ) ;
-    public final void rule__E14__Group_4__0__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-            
-        try {
-            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:15828:1: ( ( ( rule__E14__Group_4_0__0 ) ) )
-            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:15829:1: ( ( rule__E14__Group_4_0__0 ) )
-            {
-            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:15829:1: ( ( rule__E14__Group_4_0__0 ) )
-            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:15830:1: ( rule__E14__Group_4_0__0 )
-            {
-            if ( state.backtracking==0 ) {
-               before(grammarAccess.getE14Access().getGroup_4_0()); 
-            }
-            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:15831:1: ( rule__E14__Group_4_0__0 )
-            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:15831:2: rule__E14__Group_4_0__0
-            {
-            pushFollow(FOLLOW_rule__E14__Group_4_0__0_in_rule__E14__Group_4__0__Impl31777);
-            rule__E14__Group_4_0__0();
-
-            state._fsp--;
-            if (state.failed) return ;
-
-            }
-
-            if ( state.backtracking==0 ) {
-               after(grammarAccess.getE14Access().getGroup_4_0()); 
-            }
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__E14__Group_4__0__Impl"
-
-
-    // $ANTLR start "rule__E14__Group_4_0__0"
-    // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:15843:1: rule__E14__Group_4_0__0 : rule__E14__Group_4_0__0__Impl rule__E14__Group_4_0__1 ;
-    public final void rule__E14__Group_4_0__0() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-            
-        try {
-            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:15847:1: ( rule__E14__Group_4_0__0__Impl rule__E14__Group_4_0__1 )
-            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:15848:2: rule__E14__Group_4_0__0__Impl rule__E14__Group_4_0__1
-            {
-            pushFollow(FOLLOW_rule__E14__Group_4_0__0__Impl_in_rule__E14__Group_4_0__031809);
-            rule__E14__Group_4_0__0__Impl();
-
-            state._fsp--;
-            if (state.failed) return ;
-            pushFollow(FOLLOW_rule__E14__Group_4_0__1_in_rule__E14__Group_4_0__031812);
-            rule__E14__Group_4_0__1();
-
-            state._fsp--;
-            if (state.failed) return ;
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__E14__Group_4_0__0"
-
-
-    // $ANTLR start "rule__E14__Group_4_0__0__Impl"
-    // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:15855:1: rule__E14__Group_4_0__0__Impl : ( ( rule__E14__E15leftAssignment_4_0_0 ) ) ;
-    public final void rule__E14__Group_4_0__0__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-            
-        try {
-            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:15859:1: ( ( ( rule__E14__E15leftAssignment_4_0_0 ) ) )
-            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:15860:1: ( ( rule__E14__E15leftAssignment_4_0_0 ) )
-            {
-            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:15860:1: ( ( rule__E14__E15leftAssignment_4_0_0 ) )
-            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:15861:1: ( rule__E14__E15leftAssignment_4_0_0 )
-            {
-            if ( state.backtracking==0 ) {
-               before(grammarAccess.getE14Access().getE15leftAssignment_4_0_0()); 
-            }
-            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:15862:1: ( rule__E14__E15leftAssignment_4_0_0 )
-            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:15862:2: rule__E14__E15leftAssignment_4_0_0
-            {
-            pushFollow(FOLLOW_rule__E14__E15leftAssignment_4_0_0_in_rule__E14__Group_4_0__0__Impl31839);
-            rule__E14__E15leftAssignment_4_0_0();
-
-            state._fsp--;
-            if (state.failed) return ;
-
-            }
-
-            if ( state.backtracking==0 ) {
-               after(grammarAccess.getE14Access().getE15leftAssignment_4_0_0()); 
-            }
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__E14__Group_4_0__0__Impl"
-
-
-    // $ANTLR start "rule__E14__Group_4_0__1"
-    // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:15872:1: rule__E14__Group_4_0__1 : rule__E14__Group_4_0__1__Impl rule__E14__Group_4_0__2 ;
-    public final void rule__E14__Group_4_0__1() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-            
-        try {
-            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:15876:1: ( rule__E14__Group_4_0__1__Impl rule__E14__Group_4_0__2 )
-            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:15877:2: rule__E14__Group_4_0__1__Impl rule__E14__Group_4_0__2
-            {
-            pushFollow(FOLLOW_rule__E14__Group_4_0__1__Impl_in_rule__E14__Group_4_0__131869);
-            rule__E14__Group_4_0__1__Impl();
-
-            state._fsp--;
-            if (state.failed) return ;
-            pushFollow(FOLLOW_rule__E14__Group_4_0__2_in_rule__E14__Group_4_0__131872);
-            rule__E14__Group_4_0__2();
-
-            state._fsp--;
-            if (state.failed) return ;
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__E14__Group_4_0__1"
-
-
-    // $ANTLR start "rule__E14__Group_4_0__1__Impl"
-    // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:15884:1: rule__E14__Group_4_0__1__Impl : ( ( rule__E14__OpAssignment_4_0_1 ) ) ;
-    public final void rule__E14__Group_4_0__1__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-            
-        try {
-            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:15888:1: ( ( ( rule__E14__OpAssignment_4_0_1 ) ) )
-            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:15889:1: ( ( rule__E14__OpAssignment_4_0_1 ) )
-            {
-            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:15889:1: ( ( rule__E14__OpAssignment_4_0_1 ) )
-            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:15890:1: ( rule__E14__OpAssignment_4_0_1 )
-            {
-            if ( state.backtracking==0 ) {
-               before(grammarAccess.getE14Access().getOpAssignment_4_0_1()); 
-            }
-            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:15891:1: ( rule__E14__OpAssignment_4_0_1 )
-            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:15891:2: rule__E14__OpAssignment_4_0_1
-            {
-            pushFollow(FOLLOW_rule__E14__OpAssignment_4_0_1_in_rule__E14__Group_4_0__1__Impl31899);
-            rule__E14__OpAssignment_4_0_1();
-
-            state._fsp--;
-            if (state.failed) return ;
-
-            }
-
-            if ( state.backtracking==0 ) {
-               after(grammarAccess.getE14Access().getOpAssignment_4_0_1()); 
-            }
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__E14__Group_4_0__1__Impl"
-
-
-    // $ANTLR start "rule__E14__Group_4_0__2"
-    // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:15901:1: rule__E14__Group_4_0__2 : rule__E14__Group_4_0__2__Impl ;
-    public final void rule__E14__Group_4_0__2() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-            
-        try {
-            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:15905:1: ( rule__E14__Group_4_0__2__Impl )
-            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:15906:2: rule__E14__Group_4_0__2__Impl
-            {
-            pushFollow(FOLLOW_rule__E14__Group_4_0__2__Impl_in_rule__E14__Group_4_0__231929);
-            rule__E14__Group_4_0__2__Impl();
-
-            state._fsp--;
-            if (state.failed) return ;
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__E14__Group_4_0__2"
-
-
-    // $ANTLR start "rule__E14__Group_4_0__2__Impl"
-    // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:15912:1: rule__E14__Group_4_0__2__Impl : ( ( rule__E14__E15rightAssignment_4_0_2 ) ) ;
-    public final void rule__E14__Group_4_0__2__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-            
-        try {
-            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:15916:1: ( ( ( rule__E14__E15rightAssignment_4_0_2 ) ) )
-            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:15917:1: ( ( rule__E14__E15rightAssignment_4_0_2 ) )
-            {
-            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:15917:1: ( ( rule__E14__E15rightAssignment_4_0_2 ) )
-            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:15918:1: ( rule__E14__E15rightAssignment_4_0_2 )
-            {
-            if ( state.backtracking==0 ) {
-               before(grammarAccess.getE14Access().getE15rightAssignment_4_0_2()); 
-            }
-            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:15919:1: ( rule__E14__E15rightAssignment_4_0_2 )
-            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:15919:2: rule__E14__E15rightAssignment_4_0_2
-            {
-            pushFollow(FOLLOW_rule__E14__E15rightAssignment_4_0_2_in_rule__E14__Group_4_0__2__Impl31956);
-            rule__E14__E15rightAssignment_4_0_2();
-
-            state._fsp--;
-            if (state.failed) return ;
-
-            }
-
-            if ( state.backtracking==0 ) {
-               after(grammarAccess.getE14Access().getE15rightAssignment_4_0_2()); 
-            }
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__E14__Group_4_0__2__Impl"
 
 
     // $ANTLR start "rule__Op__Group_0__0"
@@ -67437,9 +67437,9 @@ public class InternalEditorParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__OpQualTail__NamAssignment_0"
 
 
-    // $ANTLR start "rule__E14__E15leftAssignment_0"
-    // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:23680:1: rule__E14__E15leftAssignment_0 : ( ruleE15 ) ;
-    public final void rule__E14__E15leftAssignment_0() throws RecognitionException {
+    // $ANTLR start "rule__E14__E15leftAssignment_0_0_0"
+    // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:23680:1: rule__E14__E15leftAssignment_0_0_0 : ( ruleE15 ) ;
+    public final void rule__E14__E15leftAssignment_0_0_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
@@ -67451,15 +67451,15 @@ public class InternalEditorParser extends AbstractInternalContentAssistParser {
             // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:23686:1: ruleE15
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getE14Access().getE15leftE15ParserRuleCall_0_0()); 
+               before(grammarAccess.getE14Access().getE15leftE15ParserRuleCall_0_0_0_0()); 
             }
-            pushFollow(FOLLOW_ruleE15_in_rule__E14__E15leftAssignment_047369);
+            pushFollow(FOLLOW_ruleE15_in_rule__E14__E15leftAssignment_0_0_047369);
             ruleE15();
 
             state._fsp--;
             if (state.failed) return ;
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getE14Access().getE15leftE15ParserRuleCall_0_0()); 
+               after(grammarAccess.getE14Access().getE15leftE15ParserRuleCall_0_0_0_0()); 
             }
 
             }
@@ -67479,26 +67479,124 @@ public class InternalEditorParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__E14__E15leftAssignment_0"
+    // $ANTLR end "rule__E14__E15leftAssignment_0_0_0"
+
+
+    // $ANTLR start "rule__E14__OpAssignment_0_0_1"
+    // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:23695:1: rule__E14__OpAssignment_0_0_1 : ( ( 'with' ) ) ;
+    public final void rule__E14__OpAssignment_0_0_1() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:23699:1: ( ( ( 'with' ) ) )
+            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:23700:1: ( ( 'with' ) )
+            {
+            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:23700:1: ( ( 'with' ) )
+            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:23701:1: ( 'with' )
+            {
+            if ( state.backtracking==0 ) {
+               before(grammarAccess.getE14Access().getOpWithKeyword_0_0_1_0()); 
+            }
+            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:23702:1: ( 'with' )
+            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:23703:1: 'with'
+            {
+            if ( state.backtracking==0 ) {
+               before(grammarAccess.getE14Access().getOpWithKeyword_0_0_1_0()); 
+            }
+            match(input,117,FOLLOW_117_in_rule__E14__OpAssignment_0_0_147405); if (state.failed) return ;
+            if ( state.backtracking==0 ) {
+               after(grammarAccess.getE14Access().getOpWithKeyword_0_0_1_0()); 
+            }
+
+            }
+
+            if ( state.backtracking==0 ) {
+               after(grammarAccess.getE14Access().getOpWithKeyword_0_0_1_0()); 
+            }
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__E14__OpAssignment_0_0_1"
+
+
+    // $ANTLR start "rule__E14__DmAssignment_0_0_2"
+    // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:23718:1: rule__E14__DmAssignment_0_0_2 : ( ruleDeclMolecule ) ;
+    public final void rule__E14__DmAssignment_0_0_2() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:23722:1: ( ( ruleDeclMolecule ) )
+            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:23723:1: ( ruleDeclMolecule )
+            {
+            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:23723:1: ( ruleDeclMolecule )
+            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:23724:1: ruleDeclMolecule
+            {
+            if ( state.backtracking==0 ) {
+               before(grammarAccess.getE14Access().getDmDeclMoleculeParserRuleCall_0_0_2_0()); 
+            }
+            pushFollow(FOLLOW_ruleDeclMolecule_in_rule__E14__DmAssignment_0_0_247444);
+            ruleDeclMolecule();
+
+            state._fsp--;
+            if (state.failed) return ;
+            if ( state.backtracking==0 ) {
+               after(grammarAccess.getE14Access().getDmDeclMoleculeParserRuleCall_0_0_2_0()); 
+            }
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__E14__DmAssignment_0_0_2"
 
 
     // $ANTLR start "rule__E14__E15leftAssignment_1_0_0"
-    // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:23695:1: rule__E14__E15leftAssignment_1_0_0 : ( ruleE15 ) ;
+    // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:23733:1: rule__E14__E15leftAssignment_1_0_0 : ( ruleE15 ) ;
     public final void rule__E14__E15leftAssignment_1_0_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:23699:1: ( ( ruleE15 ) )
-            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:23700:1: ( ruleE15 )
+            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:23737:1: ( ( ruleE15 ) )
+            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:23738:1: ( ruleE15 )
             {
-            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:23700:1: ( ruleE15 )
-            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:23701:1: ruleE15
+            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:23738:1: ( ruleE15 )
+            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:23739:1: ruleE15
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getE14Access().getE15leftE15ParserRuleCall_1_0_0_0()); 
             }
-            pushFollow(FOLLOW_ruleE15_in_rule__E14__E15leftAssignment_1_0_047400);
+            pushFollow(FOLLOW_ruleE15_in_rule__E14__E15leftAssignment_1_0_047475);
             ruleE15();
 
             state._fsp--;
@@ -67528,36 +67626,36 @@ public class InternalEditorParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__E14__OpAssignment_1_0_1"
-    // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:23710:1: rule__E14__OpAssignment_1_0_1 : ( ( 'with' ) ) ;
+    // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:23748:1: rule__E14__OpAssignment_1_0_1 : ( ( 'add' ) ) ;
     public final void rule__E14__OpAssignment_1_0_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:23714:1: ( ( ( 'with' ) ) )
-            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:23715:1: ( ( 'with' ) )
+            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:23752:1: ( ( ( 'add' ) ) )
+            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:23753:1: ( ( 'add' ) )
             {
-            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:23715:1: ( ( 'with' ) )
-            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:23716:1: ( 'with' )
+            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:23753:1: ( ( 'add' ) )
+            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:23754:1: ( 'add' )
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getE14Access().getOpWithKeyword_1_0_1_0()); 
+               before(grammarAccess.getE14Access().getOpAddKeyword_1_0_1_0()); 
             }
-            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:23717:1: ( 'with' )
-            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:23718:1: 'with'
+            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:23755:1: ( 'add' )
+            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:23756:1: 'add'
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getE14Access().getOpWithKeyword_1_0_1_0()); 
+               before(grammarAccess.getE14Access().getOpAddKeyword_1_0_1_0()); 
             }
-            match(input,117,FOLLOW_117_in_rule__E14__OpAssignment_1_0_147436); if (state.failed) return ;
+            match(input,118,FOLLOW_118_in_rule__E14__OpAssignment_1_0_147511); if (state.failed) return ;
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getE14Access().getOpWithKeyword_1_0_1_0()); 
+               after(grammarAccess.getE14Access().getOpAddKeyword_1_0_1_0()); 
             }
 
             }
 
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getE14Access().getOpWithKeyword_1_0_1_0()); 
+               after(grammarAccess.getE14Access().getOpAddKeyword_1_0_1_0()); 
             }
 
             }
@@ -67581,22 +67679,22 @@ public class InternalEditorParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__E14__DmAssignment_1_0_2"
-    // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:23733:1: rule__E14__DmAssignment_1_0_2 : ( ruleDeclMolecule ) ;
+    // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:23771:1: rule__E14__DmAssignment_1_0_2 : ( ruleDeclMolecule ) ;
     public final void rule__E14__DmAssignment_1_0_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:23737:1: ( ( ruleDeclMolecule ) )
-            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:23738:1: ( ruleDeclMolecule )
+            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:23775:1: ( ( ruleDeclMolecule ) )
+            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:23776:1: ( ruleDeclMolecule )
             {
-            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:23738:1: ( ruleDeclMolecule )
-            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:23739:1: ruleDeclMolecule
+            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:23776:1: ( ruleDeclMolecule )
+            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:23777:1: ruleDeclMolecule
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getE14Access().getDmDeclMoleculeParserRuleCall_1_0_2_0()); 
             }
-            pushFollow(FOLLOW_ruleDeclMolecule_in_rule__E14__DmAssignment_1_0_247475);
+            pushFollow(FOLLOW_ruleDeclMolecule_in_rule__E14__DmAssignment_1_0_247550);
             ruleDeclMolecule();
 
             state._fsp--;
@@ -67626,22 +67724,22 @@ public class InternalEditorParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__E14__E15leftAssignment_2_0_0"
-    // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:23748:1: rule__E14__E15leftAssignment_2_0_0 : ( ruleE15 ) ;
+    // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:23786:1: rule__E14__E15leftAssignment_2_0_0 : ( ruleE15 ) ;
     public final void rule__E14__E15leftAssignment_2_0_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:23752:1: ( ( ruleE15 ) )
-            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:23753:1: ( ruleE15 )
+            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:23790:1: ( ( ruleE15 ) )
+            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:23791:1: ( ruleE15 )
             {
-            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:23753:1: ( ruleE15 )
-            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:23754:1: ruleE15
+            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:23791:1: ( ruleE15 )
+            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:23792:1: ruleE15
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getE14Access().getE15leftE15ParserRuleCall_2_0_0_0()); 
             }
-            pushFollow(FOLLOW_ruleE15_in_rule__E14__E15leftAssignment_2_0_047506);
+            pushFollow(FOLLOW_ruleE15_in_rule__E14__E15leftAssignment_2_0_047581);
             ruleE15();
 
             state._fsp--;
@@ -67671,36 +67769,36 @@ public class InternalEditorParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__E14__OpAssignment_2_0_1"
-    // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:23763:1: rule__E14__OpAssignment_2_0_1 : ( ( 'add' ) ) ;
+    // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:23801:1: rule__E14__OpAssignment_2_0_1 : ( ( 'except' ) ) ;
     public final void rule__E14__OpAssignment_2_0_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:23767:1: ( ( ( 'add' ) ) )
-            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:23768:1: ( ( 'add' ) )
+            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:23805:1: ( ( ( 'except' ) ) )
+            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:23806:1: ( ( 'except' ) )
             {
-            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:23768:1: ( ( 'add' ) )
-            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:23769:1: ( 'add' )
+            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:23806:1: ( ( 'except' ) )
+            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:23807:1: ( 'except' )
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getE14Access().getOpAddKeyword_2_0_1_0()); 
+               before(grammarAccess.getE14Access().getOpExceptKeyword_2_0_1_0()); 
             }
-            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:23770:1: ( 'add' )
-            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:23771:1: 'add'
+            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:23808:1: ( 'except' )
+            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:23809:1: 'except'
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getE14Access().getOpAddKeyword_2_0_1_0()); 
+               before(grammarAccess.getE14Access().getOpExceptKeyword_2_0_1_0()); 
             }
-            match(input,118,FOLLOW_118_in_rule__E14__OpAssignment_2_0_147542); if (state.failed) return ;
+            match(input,112,FOLLOW_112_in_rule__E14__OpAssignment_2_0_147617); if (state.failed) return ;
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getE14Access().getOpAddKeyword_2_0_1_0()); 
+               after(grammarAccess.getE14Access().getOpExceptKeyword_2_0_1_0()); 
             }
 
             }
 
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getE14Access().getOpAddKeyword_2_0_1_0()); 
+               after(grammarAccess.getE14Access().getOpExceptKeyword_2_0_1_0()); 
             }
 
             }
@@ -67723,29 +67821,29 @@ public class InternalEditorParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__E14__OpAssignment_2_0_1"
 
 
-    // $ANTLR start "rule__E14__DmAssignment_2_0_2"
-    // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:23786:1: rule__E14__DmAssignment_2_0_2 : ( ruleDeclMolecule ) ;
-    public final void rule__E14__DmAssignment_2_0_2() throws RecognitionException {
+    // $ANTLR start "rule__E14__E15rightAssignment_2_0_2"
+    // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:23824:1: rule__E14__E15rightAssignment_2_0_2 : ( ruleE15 ) ;
+    public final void rule__E14__E15rightAssignment_2_0_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:23790:1: ( ( ruleDeclMolecule ) )
-            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:23791:1: ( ruleDeclMolecule )
+            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:23828:1: ( ( ruleE15 ) )
+            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:23829:1: ( ruleE15 )
             {
-            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:23791:1: ( ruleDeclMolecule )
-            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:23792:1: ruleDeclMolecule
+            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:23829:1: ( ruleE15 )
+            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:23830:1: ruleE15
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getE14Access().getDmDeclMoleculeParserRuleCall_2_0_2_0()); 
+               before(grammarAccess.getE14Access().getE15rightE15ParserRuleCall_2_0_2_0()); 
             }
-            pushFollow(FOLLOW_ruleDeclMolecule_in_rule__E14__DmAssignment_2_0_247581);
-            ruleDeclMolecule();
+            pushFollow(FOLLOW_ruleE15_in_rule__E14__E15rightAssignment_2_0_247656);
+            ruleE15();
 
             state._fsp--;
             if (state.failed) return ;
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getE14Access().getDmDeclMoleculeParserRuleCall_2_0_2_0()); 
+               after(grammarAccess.getE14Access().getE15rightE15ParserRuleCall_2_0_2_0()); 
             }
 
             }
@@ -67765,26 +67863,26 @@ public class InternalEditorParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__E14__DmAssignment_2_0_2"
+    // $ANTLR end "rule__E14__E15rightAssignment_2_0_2"
 
 
     // $ANTLR start "rule__E14__E15leftAssignment_3_0_0"
-    // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:23801:1: rule__E14__E15leftAssignment_3_0_0 : ( ruleE15 ) ;
+    // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:23839:1: rule__E14__E15leftAssignment_3_0_0 : ( ruleE15 ) ;
     public final void rule__E14__E15leftAssignment_3_0_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:23805:1: ( ( ruleE15 ) )
-            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:23806:1: ( ruleE15 )
+            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:23843:1: ( ( ruleE15 ) )
+            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:23844:1: ( ruleE15 )
             {
-            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:23806:1: ( ruleE15 )
-            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:23807:1: ruleE15
+            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:23844:1: ( ruleE15 )
+            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:23845:1: ruleE15
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getE14Access().getE15leftE15ParserRuleCall_3_0_0_0()); 
             }
-            pushFollow(FOLLOW_ruleE15_in_rule__E14__E15leftAssignment_3_0_047612);
+            pushFollow(FOLLOW_ruleE15_in_rule__E14__E15leftAssignment_3_0_047687);
             ruleE15();
 
             state._fsp--;
@@ -67814,36 +67912,36 @@ public class InternalEditorParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__E14__OpAssignment_3_0_1"
-    // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:23816:1: rule__E14__OpAssignment_3_0_1 : ( ( 'except' ) ) ;
+    // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:23854:1: rule__E14__OpAssignment_3_0_1 : ( ( 'throw' ) ) ;
     public final void rule__E14__OpAssignment_3_0_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:23820:1: ( ( ( 'except' ) ) )
-            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:23821:1: ( ( 'except' ) )
+            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:23858:1: ( ( ( 'throw' ) ) )
+            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:23859:1: ( ( 'throw' ) )
             {
-            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:23821:1: ( ( 'except' ) )
-            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:23822:1: ( 'except' )
+            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:23859:1: ( ( 'throw' ) )
+            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:23860:1: ( 'throw' )
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getE14Access().getOpExceptKeyword_3_0_1_0()); 
+               before(grammarAccess.getE14Access().getOpThrowKeyword_3_0_1_0()); 
             }
-            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:23823:1: ( 'except' )
-            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:23824:1: 'except'
+            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:23861:1: ( 'throw' )
+            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:23862:1: 'throw'
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getE14Access().getOpExceptKeyword_3_0_1_0()); 
+               before(grammarAccess.getE14Access().getOpThrowKeyword_3_0_1_0()); 
             }
-            match(input,112,FOLLOW_112_in_rule__E14__OpAssignment_3_0_147648); if (state.failed) return ;
+            match(input,113,FOLLOW_113_in_rule__E14__OpAssignment_3_0_147723); if (state.failed) return ;
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getE14Access().getOpExceptKeyword_3_0_1_0()); 
+               after(grammarAccess.getE14Access().getOpThrowKeyword_3_0_1_0()); 
             }
 
             }
 
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getE14Access().getOpExceptKeyword_3_0_1_0()); 
+               after(grammarAccess.getE14Access().getOpThrowKeyword_3_0_1_0()); 
             }
 
             }
@@ -67867,22 +67965,22 @@ public class InternalEditorParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__E14__E15rightAssignment_3_0_2"
-    // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:23839:1: rule__E14__E15rightAssignment_3_0_2 : ( ruleE15 ) ;
+    // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:23877:1: rule__E14__E15rightAssignment_3_0_2 : ( ruleE15 ) ;
     public final void rule__E14__E15rightAssignment_3_0_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:23843:1: ( ( ruleE15 ) )
-            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:23844:1: ( ruleE15 )
+            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:23881:1: ( ( ruleE15 ) )
+            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:23882:1: ( ruleE15 )
             {
-            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:23844:1: ( ruleE15 )
-            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:23845:1: ruleE15
+            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:23882:1: ( ruleE15 )
+            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:23883:1: ruleE15
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getE14Access().getE15rightE15ParserRuleCall_3_0_2_0()); 
             }
-            pushFollow(FOLLOW_ruleE15_in_rule__E14__E15rightAssignment_3_0_247687);
+            pushFollow(FOLLOW_ruleE15_in_rule__E14__E15rightAssignment_3_0_247762);
             ruleE15();
 
             state._fsp--;
@@ -67911,107 +68009,9 @@ public class InternalEditorParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__E14__E15rightAssignment_3_0_2"
 
 
-    // $ANTLR start "rule__E14__E15leftAssignment_4_0_0"
-    // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:23854:1: rule__E14__E15leftAssignment_4_0_0 : ( ruleE15 ) ;
-    public final void rule__E14__E15leftAssignment_4_0_0() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-            
-        try {
-            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:23858:1: ( ( ruleE15 ) )
-            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:23859:1: ( ruleE15 )
-            {
-            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:23859:1: ( ruleE15 )
-            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:23860:1: ruleE15
-            {
-            if ( state.backtracking==0 ) {
-               before(grammarAccess.getE14Access().getE15leftE15ParserRuleCall_4_0_0_0()); 
-            }
-            pushFollow(FOLLOW_ruleE15_in_rule__E14__E15leftAssignment_4_0_047718);
-            ruleE15();
-
-            state._fsp--;
-            if (state.failed) return ;
-            if ( state.backtracking==0 ) {
-               after(grammarAccess.getE14Access().getE15leftE15ParserRuleCall_4_0_0_0()); 
-            }
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__E14__E15leftAssignment_4_0_0"
-
-
-    // $ANTLR start "rule__E14__OpAssignment_4_0_1"
-    // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:23869:1: rule__E14__OpAssignment_4_0_1 : ( ( 'throw' ) ) ;
-    public final void rule__E14__OpAssignment_4_0_1() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-            
-        try {
-            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:23873:1: ( ( ( 'throw' ) ) )
-            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:23874:1: ( ( 'throw' ) )
-            {
-            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:23874:1: ( ( 'throw' ) )
-            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:23875:1: ( 'throw' )
-            {
-            if ( state.backtracking==0 ) {
-               before(grammarAccess.getE14Access().getOpThrowKeyword_4_0_1_0()); 
-            }
-            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:23876:1: ( 'throw' )
-            // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:23877:1: 'throw'
-            {
-            if ( state.backtracking==0 ) {
-               before(grammarAccess.getE14Access().getOpThrowKeyword_4_0_1_0()); 
-            }
-            match(input,113,FOLLOW_113_in_rule__E14__OpAssignment_4_0_147754); if (state.failed) return ;
-            if ( state.backtracking==0 ) {
-               after(grammarAccess.getE14Access().getOpThrowKeyword_4_0_1_0()); 
-            }
-
-            }
-
-            if ( state.backtracking==0 ) {
-               after(grammarAccess.getE14Access().getOpThrowKeyword_4_0_1_0()); 
-            }
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__E14__OpAssignment_4_0_1"
-
-
-    // $ANTLR start "rule__E14__E15rightAssignment_4_0_2"
-    // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:23892:1: rule__E14__E15rightAssignment_4_0_2 : ( ruleE15 ) ;
-    public final void rule__E14__E15rightAssignment_4_0_2() throws RecognitionException {
+    // $ANTLR start "rule__E14__E15leftAssignment_4"
+    // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:23892:1: rule__E14__E15leftAssignment_4 : ( ruleE15 ) ;
+    public final void rule__E14__E15leftAssignment_4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
@@ -68023,15 +68023,15 @@ public class InternalEditorParser extends AbstractInternalContentAssistParser {
             // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:23898:1: ruleE15
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getE14Access().getE15rightE15ParserRuleCall_4_0_2_0()); 
+               before(grammarAccess.getE14Access().getE15leftE15ParserRuleCall_4_0()); 
             }
-            pushFollow(FOLLOW_ruleE15_in_rule__E14__E15rightAssignment_4_0_247793);
+            pushFollow(FOLLOW_ruleE15_in_rule__E14__E15leftAssignment_447793);
             ruleE15();
 
             state._fsp--;
             if (state.failed) return ;
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getE14Access().getE15rightE15ParserRuleCall_4_0_2_0()); 
+               after(grammarAccess.getE14Access().getE15leftE15ParserRuleCall_4_0()); 
             }
 
             }
@@ -68051,7 +68051,7 @@ public class InternalEditorParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__E14__E15rightAssignment_4_0_2"
+    // $ANTLR end "rule__E14__E15leftAssignment_4"
 
 
     // $ANTLR start "rule__Op__AopAssignment_0_1"
@@ -70857,20 +70857,20 @@ public class InternalEditorParser extends AbstractInternalContentAssistParser {
 
     // $ANTLR start synpred93_InternalEditor
     public final void synpred93_InternalEditor_fragment() throws RecognitionException {   
-        // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:5540:1: ( ( ( rule__E14__E15leftAssignment_0 ) ) )
-        // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:5540:1: ( ( rule__E14__E15leftAssignment_0 ) )
+        // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:5540:1: ( ( ( rule__E14__Group_0__0 ) ) )
+        // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:5540:1: ( ( rule__E14__Group_0__0 ) )
         {
-        // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:5540:1: ( ( rule__E14__E15leftAssignment_0 ) )
-        // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:5541:1: ( rule__E14__E15leftAssignment_0 )
+        // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:5540:1: ( ( rule__E14__Group_0__0 ) )
+        // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:5541:1: ( rule__E14__Group_0__0 )
         {
         if ( state.backtracking==0 ) {
-           before(grammarAccess.getE14Access().getE15leftAssignment_0()); 
+           before(grammarAccess.getE14Access().getGroup_0()); 
         }
-        // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:5542:1: ( rule__E14__E15leftAssignment_0 )
-        // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:5542:2: rule__E14__E15leftAssignment_0
+        // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:5542:1: ( rule__E14__Group_0__0 )
+        // ../com.euclideanspace.aldor.ui/src-gen/com/euclideanspace/aldor/ui/contentassist/antlr/internal/InternalEditor.g:5542:2: rule__E14__Group_0__0
         {
-        pushFollow(FOLLOW_rule__E14__E15leftAssignment_0_in_synpred93_InternalEditor11146);
-        rule__E14__E15leftAssignment_0();
+        pushFollow(FOLLOW_rule__E14__Group_0__0_in_synpred93_InternalEditor11146);
+        rule__E14__Group_0__0();
 
         state._fsp--;
         if (state.failed) return ;
@@ -74242,7 +74242,7 @@ public class InternalEditorParser extends AbstractInternalContentAssistParser {
     static final String DFA31_maxS =
         "\1\166\12\0\5\uffff";
     static final String DFA31_acceptS =
-        "\13\uffff\1\2\1\3\1\1\1\4\1\5";
+        "\13\uffff\1\1\1\2\1\3\1\4\1\5";
     static final String DFA31_specialS =
         "\1\uffff\1\0\1\1\1\2\1\3\1\4\1\5\1\6\1\7\1\10\1\11\5\uffff}>";
     static final String[] DFA31_transitionS = {
@@ -74295,7 +74295,7 @@ public class InternalEditorParser extends AbstractInternalContentAssistParser {
             this.transition = DFA31_transition;
         }
         public String getDescription() {
-            return "5535:1: rule__E14__Alternatives : ( ( ( rule__E14__E15leftAssignment_0 ) ) | ( ( rule__E14__Group_1__0 ) ) | ( ( rule__E14__Group_2__0 ) ) | ( ( rule__E14__Group_3__0 ) ) | ( ( rule__E14__Group_4__0 ) ) );";
+            return "5535:1: rule__E14__Alternatives : ( ( ( rule__E14__Group_0__0 ) ) | ( ( rule__E14__Group_1__0 ) ) | ( ( rule__E14__Group_2__0 ) ) | ( ( rule__E14__Group_3__0 ) ) | ( ( rule__E14__E15leftAssignment_4 ) ) );";
         }
         public int specialStateTransition(int s, IntStream _input) throws NoViableAltException {
             TokenStream input = (TokenStream)_input;
@@ -74308,11 +74308,11 @@ public class InternalEditorParser extends AbstractInternalContentAssistParser {
                         int index31_1 = input.index();
                         input.rewind();
                         s = -1;
-                        if ( (synpred93_InternalEditor()) ) {s = 13;}
+                        if ( (synpred93_InternalEditor()) ) {s = 11;}
 
-                        else if ( (synpred94_InternalEditor()) ) {s = 11;}
+                        else if ( (synpred94_InternalEditor()) ) {s = 12;}
 
-                        else if ( (synpred95_InternalEditor()) ) {s = 12;}
+                        else if ( (synpred95_InternalEditor()) ) {s = 13;}
 
                         else if ( (synpred96_InternalEditor()) ) {s = 14;}
 
@@ -74329,11 +74329,11 @@ public class InternalEditorParser extends AbstractInternalContentAssistParser {
                         int index31_2 = input.index();
                         input.rewind();
                         s = -1;
-                        if ( (synpred93_InternalEditor()) ) {s = 13;}
+                        if ( (synpred93_InternalEditor()) ) {s = 11;}
 
-                        else if ( (synpred94_InternalEditor()) ) {s = 11;}
+                        else if ( (synpred94_InternalEditor()) ) {s = 12;}
 
-                        else if ( (synpred95_InternalEditor()) ) {s = 12;}
+                        else if ( (synpred95_InternalEditor()) ) {s = 13;}
 
                         else if ( (synpred96_InternalEditor()) ) {s = 14;}
 
@@ -74350,11 +74350,11 @@ public class InternalEditorParser extends AbstractInternalContentAssistParser {
                         int index31_3 = input.index();
                         input.rewind();
                         s = -1;
-                        if ( (synpred93_InternalEditor()) ) {s = 13;}
+                        if ( (synpred93_InternalEditor()) ) {s = 11;}
 
-                        else if ( (synpred94_InternalEditor()) ) {s = 11;}
+                        else if ( (synpred94_InternalEditor()) ) {s = 12;}
 
-                        else if ( (synpred95_InternalEditor()) ) {s = 12;}
+                        else if ( (synpred95_InternalEditor()) ) {s = 13;}
 
                         else if ( (synpred96_InternalEditor()) ) {s = 14;}
 
@@ -74371,11 +74371,11 @@ public class InternalEditorParser extends AbstractInternalContentAssistParser {
                         int index31_4 = input.index();
                         input.rewind();
                         s = -1;
-                        if ( (synpred93_InternalEditor()) ) {s = 13;}
+                        if ( (synpred93_InternalEditor()) ) {s = 11;}
 
-                        else if ( (synpred94_InternalEditor()) ) {s = 11;}
+                        else if ( (synpred94_InternalEditor()) ) {s = 12;}
 
-                        else if ( (synpred95_InternalEditor()) ) {s = 12;}
+                        else if ( (synpred95_InternalEditor()) ) {s = 13;}
 
                         else if ( (synpred96_InternalEditor()) ) {s = 14;}
 
@@ -74392,11 +74392,11 @@ public class InternalEditorParser extends AbstractInternalContentAssistParser {
                         int index31_5 = input.index();
                         input.rewind();
                         s = -1;
-                        if ( (synpred93_InternalEditor()) ) {s = 13;}
+                        if ( (synpred93_InternalEditor()) ) {s = 11;}
 
-                        else if ( (synpred94_InternalEditor()) ) {s = 11;}
+                        else if ( (synpred94_InternalEditor()) ) {s = 12;}
 
-                        else if ( (synpred95_InternalEditor()) ) {s = 12;}
+                        else if ( (synpred95_InternalEditor()) ) {s = 13;}
 
                         else if ( (synpred96_InternalEditor()) ) {s = 14;}
 
@@ -74413,11 +74413,11 @@ public class InternalEditorParser extends AbstractInternalContentAssistParser {
                         int index31_6 = input.index();
                         input.rewind();
                         s = -1;
-                        if ( (synpred93_InternalEditor()) ) {s = 13;}
+                        if ( (synpred93_InternalEditor()) ) {s = 11;}
 
-                        else if ( (synpred94_InternalEditor()) ) {s = 11;}
+                        else if ( (synpred94_InternalEditor()) ) {s = 12;}
 
-                        else if ( (synpred95_InternalEditor()) ) {s = 12;}
+                        else if ( (synpred95_InternalEditor()) ) {s = 13;}
 
                         else if ( (synpred96_InternalEditor()) ) {s = 14;}
 
@@ -74434,11 +74434,11 @@ public class InternalEditorParser extends AbstractInternalContentAssistParser {
                         int index31_7 = input.index();
                         input.rewind();
                         s = -1;
-                        if ( (synpred93_InternalEditor()) ) {s = 13;}
+                        if ( (synpred93_InternalEditor()) ) {s = 11;}
 
-                        else if ( (synpred94_InternalEditor()) ) {s = 11;}
+                        else if ( (synpred94_InternalEditor()) ) {s = 12;}
 
-                        else if ( (synpred95_InternalEditor()) ) {s = 12;}
+                        else if ( (synpred95_InternalEditor()) ) {s = 13;}
 
                         else if ( (synpred96_InternalEditor()) ) {s = 14;}
 
@@ -74455,11 +74455,11 @@ public class InternalEditorParser extends AbstractInternalContentAssistParser {
                         int index31_8 = input.index();
                         input.rewind();
                         s = -1;
-                        if ( (synpred93_InternalEditor()) ) {s = 13;}
+                        if ( (synpred93_InternalEditor()) ) {s = 11;}
 
-                        else if ( (synpred94_InternalEditor()) ) {s = 11;}
+                        else if ( (synpred94_InternalEditor()) ) {s = 12;}
 
-                        else if ( (synpred95_InternalEditor()) ) {s = 12;}
+                        else if ( (synpred95_InternalEditor()) ) {s = 13;}
 
                         else if ( (synpred96_InternalEditor()) ) {s = 14;}
 
@@ -74476,11 +74476,11 @@ public class InternalEditorParser extends AbstractInternalContentAssistParser {
                         int index31_9 = input.index();
                         input.rewind();
                         s = -1;
-                        if ( (synpred93_InternalEditor()) ) {s = 13;}
+                        if ( (synpred93_InternalEditor()) ) {s = 11;}
 
-                        else if ( (synpred94_InternalEditor()) ) {s = 11;}
+                        else if ( (synpred94_InternalEditor()) ) {s = 12;}
 
-                        else if ( (synpred95_InternalEditor()) ) {s = 12;}
+                        else if ( (synpred95_InternalEditor()) ) {s = 13;}
 
                         else if ( (synpred96_InternalEditor()) ) {s = 14;}
 
@@ -74497,11 +74497,11 @@ public class InternalEditorParser extends AbstractInternalContentAssistParser {
                         int index31_10 = input.index();
                         input.rewind();
                         s = -1;
-                        if ( (synpred93_InternalEditor()) ) {s = 13;}
+                        if ( (synpred93_InternalEditor()) ) {s = 11;}
 
-                        else if ( (synpred94_InternalEditor()) ) {s = 11;}
+                        else if ( (synpred94_InternalEditor()) ) {s = 12;}
 
-                        else if ( (synpred95_InternalEditor()) ) {s = 12;}
+                        else if ( (synpred95_InternalEditor()) ) {s = 13;}
 
                         else if ( (synpred96_InternalEditor()) ) {s = 14;}
 
@@ -74738,7 +74738,7 @@ public class InternalEditorParser extends AbstractInternalContentAssistParser {
     static final String DFA45_acceptS =
         "\1\uffff\1\1\6\uffff\1\2\1\3";
     static final String DFA45_specialS =
-        "\2\uffff\1\5\1\1\1\3\1\0\1\2\1\4\2\uffff}>";
+        "\2\uffff\1\2\1\5\1\0\1\3\1\4\1\1\2\uffff}>";
     static final String[] DFA45_transitionS = {
             "\1\2\1\3\1\4\1\7\12\uffff\1\6\1\5\60\uffff\1\1",
             "",
@@ -74789,51 +74789,6 @@ public class InternalEditorParser extends AbstractInternalContentAssistParser {
         	int _s = s;
             switch ( s ) {
                     case 0 : 
-                        int LA45_5 = input.LA(1);
-
-                         
-                        int index45_5 = input.index();
-                        input.rewind();
-                        s = -1;
-                        if ( (synpred139_InternalEditor()) ) {s = 8;}
-
-                        else if ( (true) ) {s = 9;}
-
-                         
-                        input.seek(index45_5);
-                        if ( s>=0 ) return s;
-                        break;
-                    case 1 : 
-                        int LA45_3 = input.LA(1);
-
-                         
-                        int index45_3 = input.index();
-                        input.rewind();
-                        s = -1;
-                        if ( (synpred139_InternalEditor()) ) {s = 8;}
-
-                        else if ( (true) ) {s = 9;}
-
-                         
-                        input.seek(index45_3);
-                        if ( s>=0 ) return s;
-                        break;
-                    case 2 : 
-                        int LA45_6 = input.LA(1);
-
-                         
-                        int index45_6 = input.index();
-                        input.rewind();
-                        s = -1;
-                        if ( (synpred139_InternalEditor()) ) {s = 8;}
-
-                        else if ( (true) ) {s = 9;}
-
-                         
-                        input.seek(index45_6);
-                        if ( s>=0 ) return s;
-                        break;
-                    case 3 : 
                         int LA45_4 = input.LA(1);
 
                          
@@ -74848,7 +74803,7 @@ public class InternalEditorParser extends AbstractInternalContentAssistParser {
                         input.seek(index45_4);
                         if ( s>=0 ) return s;
                         break;
-                    case 4 : 
+                    case 1 : 
                         int LA45_7 = input.LA(1);
 
                          
@@ -74863,7 +74818,7 @@ public class InternalEditorParser extends AbstractInternalContentAssistParser {
                         input.seek(index45_7);
                         if ( s>=0 ) return s;
                         break;
-                    case 5 : 
+                    case 2 : 
                         int LA45_2 = input.LA(1);
 
                          
@@ -74876,6 +74831,51 @@ public class InternalEditorParser extends AbstractInternalContentAssistParser {
 
                          
                         input.seek(index45_2);
+                        if ( s>=0 ) return s;
+                        break;
+                    case 3 : 
+                        int LA45_5 = input.LA(1);
+
+                         
+                        int index45_5 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( (synpred139_InternalEditor()) ) {s = 8;}
+
+                        else if ( (true) ) {s = 9;}
+
+                         
+                        input.seek(index45_5);
+                        if ( s>=0 ) return s;
+                        break;
+                    case 4 : 
+                        int LA45_6 = input.LA(1);
+
+                         
+                        int index45_6 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( (synpred139_InternalEditor()) ) {s = 8;}
+
+                        else if ( (true) ) {s = 9;}
+
+                         
+                        input.seek(index45_6);
+                        if ( s>=0 ) return s;
+                        break;
+                    case 5 : 
+                        int LA45_3 = input.LA(1);
+
+                         
+                        int index45_3 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( (synpred139_InternalEditor()) ) {s = 8;}
+
+                        else if ( (true) ) {s = 9;}
+
+                         
+                        input.seek(index45_3);
                         if ( s>=0 ) return s;
                         break;
             }
@@ -75638,11 +75638,11 @@ public class InternalEditorParser extends AbstractInternalContentAssistParser {
     public static final BitSet FOLLOW_rule__E11_Op__OpAssignment_1_1_0_in_rule__E11_Op__Alternatives_1_111077 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__E11_Op__OpAssignment_1_1_1_in_rule__E11_Op__Alternatives_1_111095 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__E11_Op__OpAssignment_1_1_2_in_rule__E11_Op__Alternatives_1_111113 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__E14__E15leftAssignment_0_in_rule__E14__Alternatives11146 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__E14__Group_0__0_in_rule__E14__Alternatives11146 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__E14__Group_1__0_in_rule__E14__Alternatives11164 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__E14__Group_2__0_in_rule__E14__Alternatives11182 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__E14__Group_3__0_in_rule__E14__Alternatives11200 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__E14__Group_4__0_in_rule__E14__Alternatives11218 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__E14__E15leftAssignment_4_in_rule__E14__Alternatives11218 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__Op__Group_0__0_in_rule__Op__Alternatives11251 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__Op__Group_1__0_in_rule__Op__Alternatives11269 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__Op__Group_2__0_in_rule__Op__Alternatives11287 = new BitSet(new long[]{0x0000000000000002L});
@@ -76456,46 +76456,46 @@ public class InternalEditorParser extends AbstractInternalContentAssistParser {
     public static final BitSet FOLLOW_RULE_KW_DOLLAR_in_rule__OpQualTail__Group_1_0__0__Impl30933 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__OpQualTail__Group_1_0__1__Impl_in_rule__OpQualTail__Group_1_0__130962 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleOpQualTail_in_rule__OpQualTail__Group_1_0__1__Impl30989 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__E14__Group_1__0__Impl_in_rule__E14__Group_1__031022 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__E14__Group_1_0__0_in_rule__E14__Group_1__0__Impl31049 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__E14__Group_1_0__0__Impl_in_rule__E14__Group_1_0__031081 = new BitSet(new long[]{0x00C3403C00000000L,0x0020000400000000L});
-    public static final BitSet FOLLOW_rule__E14__Group_1_0__1_in_rule__E14__Group_1_0__031084 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__E14__E15leftAssignment_1_0_0_in_rule__E14__Group_1_0__0__Impl31111 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__E14__Group_1_0__1__Impl_in_rule__E14__Group_1_0__131142 = new BitSet(new long[]{0x00CB403FFFFFF800L,0x0060000400001FE0L});
-    public static final BitSet FOLLOW_rule__E14__Group_1_0__2_in_rule__E14__Group_1_0__131145 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__E14__OpAssignment_1_0_1_in_rule__E14__Group_1_0__1__Impl31172 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__E14__Group_1_0__2__Impl_in_rule__E14__Group_1_0__231202 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__E14__DmAssignment_1_0_2_in_rule__E14__Group_1_0__2__Impl31229 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__E14__Group_2__0__Impl_in_rule__E14__Group_2__031265 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__E14__Group_2_0__0_in_rule__E14__Group_2__0__Impl31292 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__E14__Group_2_0__0__Impl_in_rule__E14__Group_2_0__031324 = new BitSet(new long[]{0x00C3403C00000000L,0x0040000400000000L});
-    public static final BitSet FOLLOW_rule__E14__Group_2_0__1_in_rule__E14__Group_2_0__031327 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__E14__E15leftAssignment_2_0_0_in_rule__E14__Group_2_0__0__Impl31354 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__E14__Group_2_0__1__Impl_in_rule__E14__Group_2_0__131385 = new BitSet(new long[]{0x00CB403FFFFFF800L,0x0060000400001FE0L});
-    public static final BitSet FOLLOW_rule__E14__Group_2_0__2_in_rule__E14__Group_2_0__131388 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__E14__OpAssignment_2_0_1_in_rule__E14__Group_2_0__1__Impl31415 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__E14__Group_2_0__2__Impl_in_rule__E14__Group_2_0__231445 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__E14__DmAssignment_2_0_2_in_rule__E14__Group_2_0__2__Impl31472 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__E14__Group_3__0__Impl_in_rule__E14__Group_3__031508 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__E14__Group_3_0__0_in_rule__E14__Group_3__0__Impl31535 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__E14__Group_3_0__0__Impl_in_rule__E14__Group_3_0__031567 = new BitSet(new long[]{0x0000000000000000L,0x0001000000000000L});
-    public static final BitSet FOLLOW_rule__E14__Group_3_0__1_in_rule__E14__Group_3_0__031570 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__E14__E15leftAssignment_3_0_0_in_rule__E14__Group_3_0__0__Impl31597 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__E14__Group_3_0__1__Impl_in_rule__E14__Group_3_0__131627 = new BitSet(new long[]{0x00C3403C00000000L,0x0000000400000000L});
-    public static final BitSet FOLLOW_rule__E14__Group_3_0__2_in_rule__E14__Group_3_0__131630 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__E14__OpAssignment_3_0_1_in_rule__E14__Group_3_0__1__Impl31657 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__E14__Group_3_0__2__Impl_in_rule__E14__Group_3_0__231687 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__E14__E15rightAssignment_3_0_2_in_rule__E14__Group_3_0__2__Impl31714 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__E14__Group_4__0__Impl_in_rule__E14__Group_4__031750 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__E14__Group_4_0__0_in_rule__E14__Group_4__0__Impl31777 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__E14__Group_4_0__0__Impl_in_rule__E14__Group_4_0__031809 = new BitSet(new long[]{0x0000000000000000L,0x0002000000000000L});
-    public static final BitSet FOLLOW_rule__E14__Group_4_0__1_in_rule__E14__Group_4_0__031812 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__E14__E15leftAssignment_4_0_0_in_rule__E14__Group_4_0__0__Impl31839 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__E14__Group_4_0__1__Impl_in_rule__E14__Group_4_0__131869 = new BitSet(new long[]{0x00C3403C00000000L,0x0000000400000000L});
-    public static final BitSet FOLLOW_rule__E14__Group_4_0__2_in_rule__E14__Group_4_0__131872 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__E14__OpAssignment_4_0_1_in_rule__E14__Group_4_0__1__Impl31899 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__E14__Group_4_0__2__Impl_in_rule__E14__Group_4_0__231929 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__E14__E15rightAssignment_4_0_2_in_rule__E14__Group_4_0__2__Impl31956 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__E14__Group_0__0__Impl_in_rule__E14__Group_0__031022 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__E14__Group_0_0__0_in_rule__E14__Group_0__0__Impl31049 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__E14__Group_0_0__0__Impl_in_rule__E14__Group_0_0__031081 = new BitSet(new long[]{0x00C3403C00000000L,0x0020000400000000L});
+    public static final BitSet FOLLOW_rule__E14__Group_0_0__1_in_rule__E14__Group_0_0__031084 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__E14__E15leftAssignment_0_0_0_in_rule__E14__Group_0_0__0__Impl31111 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__E14__Group_0_0__1__Impl_in_rule__E14__Group_0_0__131142 = new BitSet(new long[]{0x00CB403FFFFFF800L,0x0060000400001FE0L});
+    public static final BitSet FOLLOW_rule__E14__Group_0_0__2_in_rule__E14__Group_0_0__131145 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__E14__OpAssignment_0_0_1_in_rule__E14__Group_0_0__1__Impl31172 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__E14__Group_0_0__2__Impl_in_rule__E14__Group_0_0__231202 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__E14__DmAssignment_0_0_2_in_rule__E14__Group_0_0__2__Impl31229 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__E14__Group_1__0__Impl_in_rule__E14__Group_1__031265 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__E14__Group_1_0__0_in_rule__E14__Group_1__0__Impl31292 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__E14__Group_1_0__0__Impl_in_rule__E14__Group_1_0__031324 = new BitSet(new long[]{0x00C3403C00000000L,0x0040000400000000L});
+    public static final BitSet FOLLOW_rule__E14__Group_1_0__1_in_rule__E14__Group_1_0__031327 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__E14__E15leftAssignment_1_0_0_in_rule__E14__Group_1_0__0__Impl31354 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__E14__Group_1_0__1__Impl_in_rule__E14__Group_1_0__131385 = new BitSet(new long[]{0x00CB403FFFFFF800L,0x0060000400001FE0L});
+    public static final BitSet FOLLOW_rule__E14__Group_1_0__2_in_rule__E14__Group_1_0__131388 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__E14__OpAssignment_1_0_1_in_rule__E14__Group_1_0__1__Impl31415 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__E14__Group_1_0__2__Impl_in_rule__E14__Group_1_0__231445 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__E14__DmAssignment_1_0_2_in_rule__E14__Group_1_0__2__Impl31472 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__E14__Group_2__0__Impl_in_rule__E14__Group_2__031508 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__E14__Group_2_0__0_in_rule__E14__Group_2__0__Impl31535 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__E14__Group_2_0__0__Impl_in_rule__E14__Group_2_0__031567 = new BitSet(new long[]{0x0000000000000000L,0x0001000000000000L});
+    public static final BitSet FOLLOW_rule__E14__Group_2_0__1_in_rule__E14__Group_2_0__031570 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__E14__E15leftAssignment_2_0_0_in_rule__E14__Group_2_0__0__Impl31597 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__E14__Group_2_0__1__Impl_in_rule__E14__Group_2_0__131627 = new BitSet(new long[]{0x00C3403C00000000L,0x0000000400000000L});
+    public static final BitSet FOLLOW_rule__E14__Group_2_0__2_in_rule__E14__Group_2_0__131630 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__E14__OpAssignment_2_0_1_in_rule__E14__Group_2_0__1__Impl31657 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__E14__Group_2_0__2__Impl_in_rule__E14__Group_2_0__231687 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__E14__E15rightAssignment_2_0_2_in_rule__E14__Group_2_0__2__Impl31714 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__E14__Group_3__0__Impl_in_rule__E14__Group_3__031750 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__E14__Group_3_0__0_in_rule__E14__Group_3__0__Impl31777 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__E14__Group_3_0__0__Impl_in_rule__E14__Group_3_0__031809 = new BitSet(new long[]{0x0000000000000000L,0x0002000000000000L});
+    public static final BitSet FOLLOW_rule__E14__Group_3_0__1_in_rule__E14__Group_3_0__031812 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__E14__E15leftAssignment_3_0_0_in_rule__E14__Group_3_0__0__Impl31839 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__E14__Group_3_0__1__Impl_in_rule__E14__Group_3_0__131869 = new BitSet(new long[]{0x00C3403C00000000L,0x0000000400000000L});
+    public static final BitSet FOLLOW_rule__E14__Group_3_0__2_in_rule__E14__Group_3_0__131872 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__E14__OpAssignment_3_0_1_in_rule__E14__Group_3_0__1__Impl31899 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__E14__Group_3_0__2__Impl_in_rule__E14__Group_3_0__231929 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__E14__E15rightAssignment_3_0_2_in_rule__E14__Group_3_0__2__Impl31956 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__Op__Group_0__0__Impl_in_rule__Op__Group_0__031992 = new BitSet(new long[]{0x0000000000003800L});
     public static final BitSet FOLLOW_rule__Op__Group_0__1_in_rule__Op__Group_0__031995 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__Op__Group_0__1__Impl_in_rule__Op__Group_0__132053 = new BitSet(new long[]{0x0000000000000002L});
@@ -77038,19 +77038,19 @@ public class InternalEditorParser extends AbstractInternalContentAssistParser {
     public static final BitSet FOLLOW_ruleQualTail_in_rule__E13__RightAssignment_1_247276 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleQualTail_in_rule__QualTail__QtAssignment_1_0_147307 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleMolecule_in_rule__OpQualTail__NamAssignment_047338 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleE15_in_rule__E14__E15leftAssignment_047369 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleE15_in_rule__E14__E15leftAssignment_1_0_047400 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_117_in_rule__E14__OpAssignment_1_0_147436 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleDeclMolecule_in_rule__E14__DmAssignment_1_0_247475 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleE15_in_rule__E14__E15leftAssignment_2_0_047506 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_118_in_rule__E14__OpAssignment_2_0_147542 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleDeclMolecule_in_rule__E14__DmAssignment_2_0_247581 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleE15_in_rule__E14__E15leftAssignment_3_0_047612 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_112_in_rule__E14__OpAssignment_3_0_147648 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleE15_in_rule__E14__E15rightAssignment_3_0_247687 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleE15_in_rule__E14__E15leftAssignment_4_0_047718 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_113_in_rule__E14__OpAssignment_4_0_147754 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleE15_in_rule__E14__E15rightAssignment_4_0_247793 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleE15_in_rule__E14__E15leftAssignment_0_0_047369 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_117_in_rule__E14__OpAssignment_0_0_147405 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleDeclMolecule_in_rule__E14__DmAssignment_0_0_247444 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleE15_in_rule__E14__E15leftAssignment_1_0_047475 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_118_in_rule__E14__OpAssignment_1_0_147511 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleDeclMolecule_in_rule__E14__DmAssignment_1_0_247550 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleE15_in_rule__E14__E15leftAssignment_2_0_047581 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_112_in_rule__E14__OpAssignment_2_0_147617 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleE15_in_rule__E14__E15rightAssignment_2_0_247656 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleE15_in_rule__E14__E15leftAssignment_3_0_047687 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_113_in_rule__E14__OpAssignment_3_0_147723 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleE15_in_rule__E14__E15rightAssignment_3_0_247762 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleE15_in_rule__E14__E15leftAssignment_447793 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleArrowOp_in_rule__Op__AopAssignment_0_147824 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleLatticeOp_in_rule__Op__AopAssignment_1_147855 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleRelationOp_in_rule__Op__AopAssignment_2_147886 = new BitSet(new long[]{0x0000000000000002L});
@@ -77117,7 +77117,7 @@ public class InternalEditorParser extends AbstractInternalContentAssistParser {
     public static final BitSet FOLLOW_rule__Flow_AnyStatement__Group_3__0_in_synpred44_InternalEditor9784 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__Flow_BalStatement__Group_2__0_in_synpred62_InternalEditor10178 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__Flow_BalStatement__Group_3__0_in_synpred63_InternalEditor10196 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__E14__E15leftAssignment_0_in_synpred93_InternalEditor11146 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__E14__Group_0__0_in_synpred93_InternalEditor11146 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__E14__Group_1__0_in_synpred94_InternalEditor11164 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__E14__Group_2__0_in_synpred95_InternalEditor11182 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__E14__Group_3__0_in_synpred96_InternalEditor11200 = new BitSet(new long[]{0x0000000000000002L});

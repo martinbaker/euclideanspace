@@ -5936,26 +5936,7 @@ ruleE14 returns [EObject current=null]
 		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
     }
     @after { leaveRule(); }:
-((
-(
-		{ 
-	        newCompositeNode(grammarAccess.getE14Access().getE15leftE15ParserRuleCall_0_0()); 
-	    }
-		lv_e15left_0_0=ruleE15		{
-	        if ($current==null) {
-	            $current = createModelElementForParent(grammarAccess.getE14Rule());
-	        }
-       		set(
-       			$current, 
-       			"e15left",
-        		lv_e15left_0_0, 
-        		"E15");
-	        afterParserOrEnumRuleCall();
-	    }
-
-)
-)
-    |((((
+(((((
 (
 ruleE15
 )
@@ -5972,16 +5953,16 @@ ruleDeclMolecule
 )))=>((
 (
 		{ 
-	        newCompositeNode(grammarAccess.getE14Access().getE15leftE15ParserRuleCall_1_0_0_0()); 
+	        newCompositeNode(grammarAccess.getE14Access().getE15leftE15ParserRuleCall_0_0_0_0()); 
 	    }
-		lv_e15left_1_0=ruleE15		{
+		lv_e15left_0_0=ruleE15		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getE14Rule());
 	        }
        		set(
        			$current, 
        			"e15left",
-        		lv_e15left_1_0, 
+        		lv_e15left_0_0, 
         		"E15");
 	        afterParserOrEnumRuleCall();
 	    }
@@ -5989,32 +5970,32 @@ ruleDeclMolecule
 )
 )?(
 (
-		lv_op_2_0=	'with' 
+		lv_op_1_0=	'with' 
     {
-        newLeafNode(lv_op_2_0, grammarAccess.getE14Access().getOpWithKeyword_1_0_1_0());
+        newLeafNode(lv_op_1_0, grammarAccess.getE14Access().getOpWithKeyword_0_0_1_0());
     }
  
 	    {
 	        if ($current==null) {
 	            $current = createModelElement(grammarAccess.getE14Rule());
 	        }
-       		setWithLastConsumed($current, "op", lv_op_2_0, "with");
+       		setWithLastConsumed($current, "op", lv_op_1_0, "with");
 	    }
 
 )
 )(
 (
 		{ 
-	        newCompositeNode(grammarAccess.getE14Access().getDmDeclMoleculeParserRuleCall_1_0_2_0()); 
+	        newCompositeNode(grammarAccess.getE14Access().getDmDeclMoleculeParserRuleCall_0_0_2_0()); 
 	    }
-		lv_dm_3_0=ruleDeclMolecule		{
+		lv_dm_2_0=ruleDeclMolecule		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getE14Rule());
 	        }
        		set(
        			$current, 
        			"dm",
-        		lv_dm_3_0, 
+        		lv_dm_2_0, 
         		"DeclMolecule");
 	        afterParserOrEnumRuleCall();
 	    }
@@ -6038,16 +6019,16 @@ ruleDeclMolecule
 )))=>((
 (
 		{ 
-	        newCompositeNode(grammarAccess.getE14Access().getE15leftE15ParserRuleCall_2_0_0_0()); 
+	        newCompositeNode(grammarAccess.getE14Access().getE15leftE15ParserRuleCall_1_0_0_0()); 
 	    }
-		lv_e15left_4_0=ruleE15		{
+		lv_e15left_3_0=ruleE15		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getE14Rule());
 	        }
        		set(
        			$current, 
        			"e15left",
-        		lv_e15left_4_0, 
+        		lv_e15left_3_0, 
         		"E15");
 	        afterParserOrEnumRuleCall();
 	    }
@@ -6055,32 +6036,32 @@ ruleDeclMolecule
 )
 )?(
 (
-		lv_op_5_0=	'add' 
+		lv_op_4_0=	'add' 
     {
-        newLeafNode(lv_op_5_0, grammarAccess.getE14Access().getOpAddKeyword_2_0_1_0());
+        newLeafNode(lv_op_4_0, grammarAccess.getE14Access().getOpAddKeyword_1_0_1_0());
     }
  
 	    {
 	        if ($current==null) {
 	            $current = createModelElement(grammarAccess.getE14Rule());
 	        }
-       		setWithLastConsumed($current, "op", lv_op_5_0, "add");
+       		setWithLastConsumed($current, "op", lv_op_4_0, "add");
 	    }
 
 )
 )(
 (
 		{ 
-	        newCompositeNode(grammarAccess.getE14Access().getDmDeclMoleculeParserRuleCall_2_0_2_0()); 
+	        newCompositeNode(grammarAccess.getE14Access().getDmDeclMoleculeParserRuleCall_1_0_2_0()); 
 	    }
-		lv_dm_6_0=ruleDeclMolecule		{
+		lv_dm_5_0=ruleDeclMolecule		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getE14Rule());
 	        }
        		set(
        			$current, 
        			"dm",
-        		lv_dm_6_0, 
+        		lv_dm_5_0, 
         		"DeclMolecule");
 	        afterParserOrEnumRuleCall();
 	    }
@@ -6104,16 +6085,16 @@ ruleE15
 )))=>((
 (
 		{ 
-	        newCompositeNode(grammarAccess.getE14Access().getE15leftE15ParserRuleCall_3_0_0_0()); 
+	        newCompositeNode(grammarAccess.getE14Access().getE15leftE15ParserRuleCall_2_0_0_0()); 
 	    }
-		lv_e15left_7_0=ruleE15		{
+		lv_e15left_6_0=ruleE15		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getE14Rule());
 	        }
        		set(
        			$current, 
        			"e15left",
-        		lv_e15left_7_0, 
+        		lv_e15left_6_0, 
         		"E15");
 	        afterParserOrEnumRuleCall();
 	    }
@@ -6121,32 +6102,32 @@ ruleE15
 )
 )(
 (
-		lv_op_8_0=	'except' 
+		lv_op_7_0=	'except' 
     {
-        newLeafNode(lv_op_8_0, grammarAccess.getE14Access().getOpExceptKeyword_3_0_1_0());
+        newLeafNode(lv_op_7_0, grammarAccess.getE14Access().getOpExceptKeyword_2_0_1_0());
     }
  
 	    {
 	        if ($current==null) {
 	            $current = createModelElement(grammarAccess.getE14Rule());
 	        }
-       		setWithLastConsumed($current, "op", lv_op_8_0, "except");
+       		setWithLastConsumed($current, "op", lv_op_7_0, "except");
 	    }
 
 )
 )(
 (
 		{ 
-	        newCompositeNode(grammarAccess.getE14Access().getE15rightE15ParserRuleCall_3_0_2_0()); 
+	        newCompositeNode(grammarAccess.getE14Access().getE15rightE15ParserRuleCall_2_0_2_0()); 
 	    }
-		lv_e15right_9_0=ruleE15		{
+		lv_e15right_8_0=ruleE15		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getE14Rule());
 	        }
        		set(
        			$current, 
        			"e15right",
-        		lv_e15right_9_0, 
+        		lv_e15right_8_0, 
         		"E15");
 	        afterParserOrEnumRuleCall();
 	    }
@@ -6170,16 +6151,16 @@ ruleE15
 )))=>((
 (
 		{ 
-	        newCompositeNode(grammarAccess.getE14Access().getE15leftE15ParserRuleCall_4_0_0_0()); 
+	        newCompositeNode(grammarAccess.getE14Access().getE15leftE15ParserRuleCall_3_0_0_0()); 
 	    }
-		lv_e15left_10_0=ruleE15		{
+		lv_e15left_9_0=ruleE15		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getE14Rule());
 	        }
        		set(
        			$current, 
        			"e15left",
-        		lv_e15left_10_0, 
+        		lv_e15left_9_0, 
         		"E15");
 	        afterParserOrEnumRuleCall();
 	    }
@@ -6187,38 +6168,57 @@ ruleE15
 )
 )(
 (
-		lv_op_11_0=	'throw' 
+		lv_op_10_0=	'throw' 
     {
-        newLeafNode(lv_op_11_0, grammarAccess.getE14Access().getOpThrowKeyword_4_0_1_0());
+        newLeafNode(lv_op_10_0, grammarAccess.getE14Access().getOpThrowKeyword_3_0_1_0());
     }
  
 	    {
 	        if ($current==null) {
 	            $current = createModelElement(grammarAccess.getE14Rule());
 	        }
-       		setWithLastConsumed($current, "op", lv_op_11_0, "throw");
+       		setWithLastConsumed($current, "op", lv_op_10_0, "throw");
 	    }
 
 )
 )(
 (
 		{ 
-	        newCompositeNode(grammarAccess.getE14Access().getE15rightE15ParserRuleCall_4_0_2_0()); 
+	        newCompositeNode(grammarAccess.getE14Access().getE15rightE15ParserRuleCall_3_0_2_0()); 
 	    }
-		lv_e15right_12_0=ruleE15		{
+		lv_e15right_11_0=ruleE15		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getE14Rule());
 	        }
        		set(
        			$current, 
        			"e15right",
-        		lv_e15right_12_0, 
+        		lv_e15right_11_0, 
         		"E15");
 	        afterParserOrEnumRuleCall();
 	    }
 
 )
-))))
+)))
+    |(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getE14Access().getE15leftE15ParserRuleCall_4_0()); 
+	    }
+		lv_e15left_12_0=ruleE15		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getE14Rule());
+	        }
+       		set(
+       			$current, 
+       			"e15left",
+        		lv_e15left_12_0, 
+        		"E15");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+))
 ;
 finally {
 	myHiddenTokenState.restore();

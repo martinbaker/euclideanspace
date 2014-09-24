@@ -51,9 +51,9 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		// * 
 		// * known bugs
 		// * ----------
-		// * 1) {....} block insists on semicolon after block {....};
-		// * 2) this does not work: MiniList(S: BasicType): LinearAggregate(S) = add {
-		// * 3) + or - as prefix operator
+		// * 1) customLexer: phantom semicolon after curly brackets is not yet conditional
+		// * 2) ':' does not yet work properly. We want it to bind most tightly.
+		// * 3) + or - as prefix operator.
 		// * / / *
 		// * replaces Goal rule in Aldor grammar
 		// * 
@@ -2616,16 +2616,21 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		
 		/// *
 		// * if we enable 'returns Expr' then 'E11_E12' replaces id in AST
-		// * / / *returns Expr* / InfixedExpr hidden(WS, KW_NEWLINE):
-		//	E11_Op | => E3;
+		// * / / *returns Expr* / InfixedExpr hidden(WS, KW_NEWLINE): // prefix operation
+		//	E11_Op | // infix operation
+		//	=> E3;
 		public ParserRule getRule() { return rule; }
 
-		//E11_Op | => E3
+		//// prefix operation
+		//E11_Op | // infix operation
+		//=> E3
 		public Alternatives getAlternatives() { return cAlternatives; }
 
+		//// prefix operation
 		//E11_Op
 		public RuleCall getE11_OpParserRuleCall_0() { return cE11_OpParserRuleCall_0; }
 
+		//// infix operation
 		//=> E3
 		public RuleCall getE3ParserRuleCall_1() { return cE3ParserRuleCall_1; }
 	}
@@ -3043,6 +3048,8 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cRightE12ParserRuleCall_1_2_0 = (RuleCall)cRightAssignment_1_2.eContents().get(0);
 		
 		/// *
+		// * prefix operation
+		// * 
 		// * This version of E11 is used at the top of the precedence stack in
 		// * 'InfixedExpr'
 		// * / E11_Op returns Expr hidden(WS, KW_NEWLINE):
@@ -3259,14 +3266,20 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 	public class E14Elements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "E14");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
-		private final Assignment cE15leftAssignment_0 = (Assignment)cAlternatives.eContents().get(0);
-		private final RuleCall cE15leftE15ParserRuleCall_0_0 = (RuleCall)cE15leftAssignment_0.eContents().get(0);
+		private final Group cGroup_0 = (Group)cAlternatives.eContents().get(0);
+		private final Group cGroup_0_0 = (Group)cGroup_0.eContents().get(0);
+		private final Assignment cE15leftAssignment_0_0_0 = (Assignment)cGroup_0_0.eContents().get(0);
+		private final RuleCall cE15leftE15ParserRuleCall_0_0_0_0 = (RuleCall)cE15leftAssignment_0_0_0.eContents().get(0);
+		private final Assignment cOpAssignment_0_0_1 = (Assignment)cGroup_0_0.eContents().get(1);
+		private final Keyword cOpWithKeyword_0_0_1_0 = (Keyword)cOpAssignment_0_0_1.eContents().get(0);
+		private final Assignment cDmAssignment_0_0_2 = (Assignment)cGroup_0_0.eContents().get(2);
+		private final RuleCall cDmDeclMoleculeParserRuleCall_0_0_2_0 = (RuleCall)cDmAssignment_0_0_2.eContents().get(0);
 		private final Group cGroup_1 = (Group)cAlternatives.eContents().get(1);
 		private final Group cGroup_1_0 = (Group)cGroup_1.eContents().get(0);
 		private final Assignment cE15leftAssignment_1_0_0 = (Assignment)cGroup_1_0.eContents().get(0);
 		private final RuleCall cE15leftE15ParserRuleCall_1_0_0_0 = (RuleCall)cE15leftAssignment_1_0_0.eContents().get(0);
 		private final Assignment cOpAssignment_1_0_1 = (Assignment)cGroup_1_0.eContents().get(1);
-		private final Keyword cOpWithKeyword_1_0_1_0 = (Keyword)cOpAssignment_1_0_1.eContents().get(0);
+		private final Keyword cOpAddKeyword_1_0_1_0 = (Keyword)cOpAssignment_1_0_1.eContents().get(0);
 		private final Assignment cDmAssignment_1_0_2 = (Assignment)cGroup_1_0.eContents().get(2);
 		private final RuleCall cDmDeclMoleculeParserRuleCall_1_0_2_0 = (RuleCall)cDmAssignment_1_0_2.eContents().get(0);
 		private final Group cGroup_2 = (Group)cAlternatives.eContents().get(2);
@@ -3274,45 +3287,57 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cE15leftAssignment_2_0_0 = (Assignment)cGroup_2_0.eContents().get(0);
 		private final RuleCall cE15leftE15ParserRuleCall_2_0_0_0 = (RuleCall)cE15leftAssignment_2_0_0.eContents().get(0);
 		private final Assignment cOpAssignment_2_0_1 = (Assignment)cGroup_2_0.eContents().get(1);
-		private final Keyword cOpAddKeyword_2_0_1_0 = (Keyword)cOpAssignment_2_0_1.eContents().get(0);
-		private final Assignment cDmAssignment_2_0_2 = (Assignment)cGroup_2_0.eContents().get(2);
-		private final RuleCall cDmDeclMoleculeParserRuleCall_2_0_2_0 = (RuleCall)cDmAssignment_2_0_2.eContents().get(0);
+		private final Keyword cOpExceptKeyword_2_0_1_0 = (Keyword)cOpAssignment_2_0_1.eContents().get(0);
+		private final Assignment cE15rightAssignment_2_0_2 = (Assignment)cGroup_2_0.eContents().get(2);
+		private final RuleCall cE15rightE15ParserRuleCall_2_0_2_0 = (RuleCall)cE15rightAssignment_2_0_2.eContents().get(0);
 		private final Group cGroup_3 = (Group)cAlternatives.eContents().get(3);
 		private final Group cGroup_3_0 = (Group)cGroup_3.eContents().get(0);
 		private final Assignment cE15leftAssignment_3_0_0 = (Assignment)cGroup_3_0.eContents().get(0);
 		private final RuleCall cE15leftE15ParserRuleCall_3_0_0_0 = (RuleCall)cE15leftAssignment_3_0_0.eContents().get(0);
 		private final Assignment cOpAssignment_3_0_1 = (Assignment)cGroup_3_0.eContents().get(1);
-		private final Keyword cOpExceptKeyword_3_0_1_0 = (Keyword)cOpAssignment_3_0_1.eContents().get(0);
+		private final Keyword cOpThrowKeyword_3_0_1_0 = (Keyword)cOpAssignment_3_0_1.eContents().get(0);
 		private final Assignment cE15rightAssignment_3_0_2 = (Assignment)cGroup_3_0.eContents().get(2);
 		private final RuleCall cE15rightE15ParserRuleCall_3_0_2_0 = (RuleCall)cE15rightAssignment_3_0_2.eContents().get(0);
-		private final Group cGroup_4 = (Group)cAlternatives.eContents().get(4);
-		private final Group cGroup_4_0 = (Group)cGroup_4.eContents().get(0);
-		private final Assignment cE15leftAssignment_4_0_0 = (Assignment)cGroup_4_0.eContents().get(0);
-		private final RuleCall cE15leftE15ParserRuleCall_4_0_0_0 = (RuleCall)cE15leftAssignment_4_0_0.eContents().get(0);
-		private final Assignment cOpAssignment_4_0_1 = (Assignment)cGroup_4_0.eContents().get(1);
-		private final Keyword cOpThrowKeyword_4_0_1_0 = (Keyword)cOpAssignment_4_0_1.eContents().get(0);
-		private final Assignment cE15rightAssignment_4_0_2 = (Assignment)cGroup_4_0.eContents().get(2);
-		private final RuleCall cE15rightE15ParserRuleCall_4_0_2_0 = (RuleCall)cE15rightAssignment_4_0_2.eContents().get(0);
+		private final Assignment cE15leftAssignment_4 = (Assignment)cAlternatives.eContents().get(4);
+		private final RuleCall cE15leftE15ParserRuleCall_4_0 = (RuleCall)cE15leftAssignment_4.eContents().get(0);
 		
 		//E14 hidden(WS, KW_NEWLINE):
-		//	e15left=E15 | => (e15left=E15? op="with" dm=DeclMolecule) | => (e15left=E15? op="add" dm=DeclMolecule) | =>
-		//	(e15left=E15 op="except" e15right=E15) | => (e15left=E15 op="throw" e15right=E15);
+		//	=> (e15left=E15? op="with" dm=DeclMolecule) | => (e15left=E15? op="add" dm=DeclMolecule) | => (e15left=E15 op="except"
+		//	e15right=E15) | => (e15left=E15 op="throw" e15right=E15) | e15left=E15;
 		public ParserRule getRule() { return rule; }
 
-		//e15left=E15 | => (e15left=E15? op="with" dm=DeclMolecule) | => (e15left=E15? op="add" dm=DeclMolecule) | => (e15left=E15
-		//op="except" e15right=E15) | => (e15left=E15 op="throw" e15right=E15)
+		//=> (e15left=E15? op="with" dm=DeclMolecule) | => (e15left=E15? op="add" dm=DeclMolecule) | => (e15left=E15 op="except"
+		//e15right=E15) | => (e15left=E15 op="throw" e15right=E15) | e15left=E15
 		public Alternatives getAlternatives() { return cAlternatives; }
 
-		//e15left=E15
-		public Assignment getE15leftAssignment_0() { return cE15leftAssignment_0; }
-
-		//E15
-		public RuleCall getE15leftE15ParserRuleCall_0_0() { return cE15leftE15ParserRuleCall_0_0; }
-
 		//=> (e15left=E15? op="with" dm=DeclMolecule)
-		public Group getGroup_1() { return cGroup_1; }
+		public Group getGroup_0() { return cGroup_0; }
 
 		//e15left=E15? op="with" dm=DeclMolecule
+		public Group getGroup_0_0() { return cGroup_0_0; }
+
+		//e15left=E15?
+		public Assignment getE15leftAssignment_0_0_0() { return cE15leftAssignment_0_0_0; }
+
+		//E15
+		public RuleCall getE15leftE15ParserRuleCall_0_0_0_0() { return cE15leftE15ParserRuleCall_0_0_0_0; }
+
+		//op="with"
+		public Assignment getOpAssignment_0_0_1() { return cOpAssignment_0_0_1; }
+
+		//"with"
+		public Keyword getOpWithKeyword_0_0_1_0() { return cOpWithKeyword_0_0_1_0; }
+
+		//dm=DeclMolecule
+		public Assignment getDmAssignment_0_0_2() { return cDmAssignment_0_0_2; }
+
+		//DeclMolecule
+		public RuleCall getDmDeclMoleculeParserRuleCall_0_0_2_0() { return cDmDeclMoleculeParserRuleCall_0_0_2_0; }
+
+		//=> (e15left=E15? op="add" dm=DeclMolecule)
+		public Group getGroup_1() { return cGroup_1; }
+
+		//e15left=E15? op="add" dm=DeclMolecule
 		public Group getGroup_1_0() { return cGroup_1_0; }
 
 		//e15left=E15?
@@ -3321,11 +3346,11 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		//E15
 		public RuleCall getE15leftE15ParserRuleCall_1_0_0_0() { return cE15leftE15ParserRuleCall_1_0_0_0; }
 
-		//op="with"
+		//op="add"
 		public Assignment getOpAssignment_1_0_1() { return cOpAssignment_1_0_1; }
 
-		//"with"
-		public Keyword getOpWithKeyword_1_0_1_0() { return cOpWithKeyword_1_0_1_0; }
+		//"add"
+		public Keyword getOpAddKeyword_1_0_1_0() { return cOpAddKeyword_1_0_1_0; }
 
 		//dm=DeclMolecule
 		public Assignment getDmAssignment_1_0_2() { return cDmAssignment_1_0_2; }
@@ -3333,34 +3358,34 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		//DeclMolecule
 		public RuleCall getDmDeclMoleculeParserRuleCall_1_0_2_0() { return cDmDeclMoleculeParserRuleCall_1_0_2_0; }
 
-		//=> (e15left=E15? op="add" dm=DeclMolecule)
+		//=> (e15left=E15 op="except" e15right=E15)
 		public Group getGroup_2() { return cGroup_2; }
 
-		//e15left=E15? op="add" dm=DeclMolecule
+		//e15left=E15 op="except" e15right=E15
 		public Group getGroup_2_0() { return cGroup_2_0; }
 
-		//e15left=E15?
+		//e15left=E15
 		public Assignment getE15leftAssignment_2_0_0() { return cE15leftAssignment_2_0_0; }
 
 		//E15
 		public RuleCall getE15leftE15ParserRuleCall_2_0_0_0() { return cE15leftE15ParserRuleCall_2_0_0_0; }
 
-		//op="add"
+		//op="except"
 		public Assignment getOpAssignment_2_0_1() { return cOpAssignment_2_0_1; }
 
-		//"add"
-		public Keyword getOpAddKeyword_2_0_1_0() { return cOpAddKeyword_2_0_1_0; }
+		//"except"
+		public Keyword getOpExceptKeyword_2_0_1_0() { return cOpExceptKeyword_2_0_1_0; }
 
-		//dm=DeclMolecule
-		public Assignment getDmAssignment_2_0_2() { return cDmAssignment_2_0_2; }
+		//e15right=E15
+		public Assignment getE15rightAssignment_2_0_2() { return cE15rightAssignment_2_0_2; }
 
-		//DeclMolecule
-		public RuleCall getDmDeclMoleculeParserRuleCall_2_0_2_0() { return cDmDeclMoleculeParserRuleCall_2_0_2_0; }
+		//E15
+		public RuleCall getE15rightE15ParserRuleCall_2_0_2_0() { return cE15rightE15ParserRuleCall_2_0_2_0; }
 
-		//=> (e15left=E15 op="except" e15right=E15)
+		//=> (e15left=E15 op="throw" e15right=E15)
 		public Group getGroup_3() { return cGroup_3; }
 
-		//e15left=E15 op="except" e15right=E15
+		//e15left=E15 op="throw" e15right=E15
 		public Group getGroup_3_0() { return cGroup_3_0; }
 
 		//e15left=E15
@@ -3369,11 +3394,11 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		//E15
 		public RuleCall getE15leftE15ParserRuleCall_3_0_0_0() { return cE15leftE15ParserRuleCall_3_0_0_0; }
 
-		//op="except"
+		//op="throw"
 		public Assignment getOpAssignment_3_0_1() { return cOpAssignment_3_0_1; }
 
-		//"except"
-		public Keyword getOpExceptKeyword_3_0_1_0() { return cOpExceptKeyword_3_0_1_0; }
+		//"throw"
+		public Keyword getOpThrowKeyword_3_0_1_0() { return cOpThrowKeyword_3_0_1_0; }
 
 		//e15right=E15
 		public Assignment getE15rightAssignment_3_0_2() { return cE15rightAssignment_3_0_2; }
@@ -3381,29 +3406,11 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		//E15
 		public RuleCall getE15rightE15ParserRuleCall_3_0_2_0() { return cE15rightE15ParserRuleCall_3_0_2_0; }
 
-		//=> (e15left=E15 op="throw" e15right=E15)
-		public Group getGroup_4() { return cGroup_4; }
-
-		//e15left=E15 op="throw" e15right=E15
-		public Group getGroup_4_0() { return cGroup_4_0; }
-
 		//e15left=E15
-		public Assignment getE15leftAssignment_4_0_0() { return cE15leftAssignment_4_0_0; }
+		public Assignment getE15leftAssignment_4() { return cE15leftAssignment_4; }
 
 		//E15
-		public RuleCall getE15leftE15ParserRuleCall_4_0_0_0() { return cE15leftE15ParserRuleCall_4_0_0_0; }
-
-		//op="throw"
-		public Assignment getOpAssignment_4_0_1() { return cOpAssignment_4_0_1; }
-
-		//"throw"
-		public Keyword getOpThrowKeyword_4_0_1_0() { return cOpThrowKeyword_4_0_1_0; }
-
-		//e15right=E15
-		public Assignment getE15rightAssignment_4_0_2() { return cE15rightAssignment_4_0_2; }
-
-		//E15
-		public RuleCall getE15rightE15ParserRuleCall_4_0_2_0() { return cE15rightE15ParserRuleCall_4_0_2_0; }
+		public RuleCall getE15leftE15ParserRuleCall_4_0() { return cE15leftE15ParserRuleCall_4_0; }
 	}
 
 	public class E15Elements extends AbstractParserRuleElementFinder {
@@ -4323,6 +4330,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		
 		/// *
 		// * function application, block or infixed
+		// * follows 'add' or 'with'
 		// * / DeclMolecule hidden(WS, KW_NEWLINE):
 		//	{DeclMolecule} a=Application? | b=Block;
 		public ParserRule getRule() { return rule; }
@@ -4356,7 +4364,9 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cEnclosureParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
 		private final RuleCall cBlockParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
 		
-		/// * atom, enclosure: (....),[....],"...." or block {....} * / BlockMolecule hidden(WS, KW_NEWLINE):
+		/// * atom, enclosure: (....),[....],"...." or block {....}
+		// * Used by Jleft_Molecule and Jleft_Atom
+		// * / BlockMolecule hidden(WS, KW_NEWLINE):
 		//	Atom | Enclosure | Block;
 		public ParserRule getRule() { return rule; }
 
@@ -5857,9 +5867,9 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 	// * 
 	// * known bugs
 	// * ----------
-	// * 1) {....} block insists on semicolon after block {....};
-	// * 2) this does not work: MiniList(S: BasicType): LinearAggregate(S) = add {
-	// * 3) + or - as prefix operator
+	// * 1) customLexer: phantom semicolon after curly brackets is not yet conditional
+	// * 2) ':' does not yet work properly. We want it to bind most tightly.
+	// * 3) + or - as prefix operator.
 	// * / / *
 	// * replaces Goal rule in Aldor grammar
 	// * 
@@ -6922,8 +6932,9 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 
 	/// *
 	// * if we enable 'returns Expr' then 'E11_E12' replaces id in AST
-	// * / / *returns Expr* / InfixedExpr hidden(WS, KW_NEWLINE):
-	//	E11_Op | => E3;
+	// * / / *returns Expr* / InfixedExpr hidden(WS, KW_NEWLINE): // prefix operation
+	//	E11_Op | // infix operation
+	//	=> E3;
 	public InfixedExprElements getInfixedExprAccess() {
 		return (pInfixedExpr != null) ? pInfixedExpr : (pInfixedExpr = new InfixedExprElements());
 	}
@@ -7049,6 +7060,8 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	/// *
+	// * prefix operation
+	// * 
 	// * This version of E11 is used at the top of the precedence stack in
 	// * 'InfixedExpr'
 	// * / E11_Op returns Expr hidden(WS, KW_NEWLINE):
@@ -7115,8 +7128,8 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//E14 hidden(WS, KW_NEWLINE):
-	//	e15left=E15 | => (e15left=E15? op="with" dm=DeclMolecule) | => (e15left=E15? op="add" dm=DeclMolecule) | =>
-	//	(e15left=E15 op="except" e15right=E15) | => (e15left=E15 op="throw" e15right=E15);
+	//	=> (e15left=E15? op="with" dm=DeclMolecule) | => (e15left=E15? op="add" dm=DeclMolecule) | => (e15left=E15 op="except"
+	//	e15right=E15) | => (e15left=E15 op="throw" e15right=E15) | e15left=E15;
 	public E14Elements getE14Access() {
 		return (pE14 != null) ? pE14 : (pE14 = new E14Elements());
 	}
@@ -7470,6 +7483,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 
 	/// *
 	// * function application, block or infixed
+	// * follows 'add' or 'with'
 	// * / DeclMolecule hidden(WS, KW_NEWLINE):
 	//	{DeclMolecule} a=Application? | b=Block;
 	public DeclMoleculeElements getDeclMoleculeAccess() {
@@ -7480,7 +7494,9 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		return getDeclMoleculeAccess().getRule();
 	}
 
-	/// * atom, enclosure: (....),[....],"...." or block {....} * / BlockMolecule hidden(WS, KW_NEWLINE):
+	/// * atom, enclosure: (....),[....],"...." or block {....}
+	// * Used by Jleft_Molecule and Jleft_Atom
+	// * / BlockMolecule hidden(WS, KW_NEWLINE):
 	//	Atom | Enclosure | Block;
 	public BlockMoleculeElements getBlockMoleculeAccess() {
 		return (pBlockMolecule != null) ? pBlockMolecule : (pBlockMolecule = new BlockMoleculeElements());

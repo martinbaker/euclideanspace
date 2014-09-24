@@ -14988,95 +14988,54 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleE14"
-    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:5934:1: ruleE14 returns [EObject current=null] : ( ( (lv_e15left_0_0= ruleE15 ) ) | ( ( ( ( ( ruleE15 ) )? ( ( 'with' ) ) ( ( ruleDeclMolecule ) ) ) )=> ( ( (lv_e15left_1_0= ruleE15 ) )? ( (lv_op_2_0= 'with' ) ) ( (lv_dm_3_0= ruleDeclMolecule ) ) ) ) | ( ( ( ( ( ruleE15 ) )? ( ( 'add' ) ) ( ( ruleDeclMolecule ) ) ) )=> ( ( (lv_e15left_4_0= ruleE15 ) )? ( (lv_op_5_0= 'add' ) ) ( (lv_dm_6_0= ruleDeclMolecule ) ) ) ) | ( ( ( ( ( ruleE15 ) ) ( ( 'except' ) ) ( ( ruleE15 ) ) ) )=> ( ( (lv_e15left_7_0= ruleE15 ) ) ( (lv_op_8_0= 'except' ) ) ( (lv_e15right_9_0= ruleE15 ) ) ) ) | ( ( ( ( ( ruleE15 ) ) ( ( 'throw' ) ) ( ( ruleE15 ) ) ) )=> ( ( (lv_e15left_10_0= ruleE15 ) ) ( (lv_op_11_0= 'throw' ) ) ( (lv_e15right_12_0= ruleE15 ) ) ) ) ) ;
+    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:5934:1: ruleE14 returns [EObject current=null] : ( ( ( ( ( ( ruleE15 ) )? ( ( 'with' ) ) ( ( ruleDeclMolecule ) ) ) )=> ( ( (lv_e15left_0_0= ruleE15 ) )? ( (lv_op_1_0= 'with' ) ) ( (lv_dm_2_0= ruleDeclMolecule ) ) ) ) | ( ( ( ( ( ruleE15 ) )? ( ( 'add' ) ) ( ( ruleDeclMolecule ) ) ) )=> ( ( (lv_e15left_3_0= ruleE15 ) )? ( (lv_op_4_0= 'add' ) ) ( (lv_dm_5_0= ruleDeclMolecule ) ) ) ) | ( ( ( ( ( ruleE15 ) ) ( ( 'except' ) ) ( ( ruleE15 ) ) ) )=> ( ( (lv_e15left_6_0= ruleE15 ) ) ( (lv_op_7_0= 'except' ) ) ( (lv_e15right_8_0= ruleE15 ) ) ) ) | ( ( ( ( ( ruleE15 ) ) ( ( 'throw' ) ) ( ( ruleE15 ) ) ) )=> ( ( (lv_e15left_9_0= ruleE15 ) ) ( (lv_op_10_0= 'throw' ) ) ( (lv_e15right_11_0= ruleE15 ) ) ) ) | ( (lv_e15left_12_0= ruleE15 ) ) ) ;
     public final EObject ruleE14() throws RecognitionException {
         EObject current = null;
 
-        Token lv_op_2_0=null;
-        Token lv_op_5_0=null;
-        Token lv_op_8_0=null;
-        Token lv_op_11_0=null;
+        Token lv_op_1_0=null;
+        Token lv_op_4_0=null;
+        Token lv_op_7_0=null;
+        Token lv_op_10_0=null;
         EObject lv_e15left_0_0 = null;
 
-        EObject lv_e15left_1_0 = null;
+        EObject lv_dm_2_0 = null;
 
-        EObject lv_dm_3_0 = null;
+        EObject lv_e15left_3_0 = null;
 
-        EObject lv_e15left_4_0 = null;
+        EObject lv_dm_5_0 = null;
 
-        EObject lv_dm_6_0 = null;
+        EObject lv_e15left_6_0 = null;
 
-        EObject lv_e15left_7_0 = null;
+        EObject lv_e15right_8_0 = null;
 
-        EObject lv_e15right_9_0 = null;
+        EObject lv_e15left_9_0 = null;
 
-        EObject lv_e15left_10_0 = null;
+        EObject lv_e15right_11_0 = null;
 
-        EObject lv_e15right_12_0 = null;
+        EObject lv_e15left_12_0 = null;
 
 
          enterRule(); 
         		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
             
         try {
-            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:5938:28: ( ( ( (lv_e15left_0_0= ruleE15 ) ) | ( ( ( ( ( ruleE15 ) )? ( ( 'with' ) ) ( ( ruleDeclMolecule ) ) ) )=> ( ( (lv_e15left_1_0= ruleE15 ) )? ( (lv_op_2_0= 'with' ) ) ( (lv_dm_3_0= ruleDeclMolecule ) ) ) ) | ( ( ( ( ( ruleE15 ) )? ( ( 'add' ) ) ( ( ruleDeclMolecule ) ) ) )=> ( ( (lv_e15left_4_0= ruleE15 ) )? ( (lv_op_5_0= 'add' ) ) ( (lv_dm_6_0= ruleDeclMolecule ) ) ) ) | ( ( ( ( ( ruleE15 ) ) ( ( 'except' ) ) ( ( ruleE15 ) ) ) )=> ( ( (lv_e15left_7_0= ruleE15 ) ) ( (lv_op_8_0= 'except' ) ) ( (lv_e15right_9_0= ruleE15 ) ) ) ) | ( ( ( ( ( ruleE15 ) ) ( ( 'throw' ) ) ( ( ruleE15 ) ) ) )=> ( ( (lv_e15left_10_0= ruleE15 ) ) ( (lv_op_11_0= 'throw' ) ) ( (lv_e15right_12_0= ruleE15 ) ) ) ) ) )
-            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:5939:1: ( ( (lv_e15left_0_0= ruleE15 ) ) | ( ( ( ( ( ruleE15 ) )? ( ( 'with' ) ) ( ( ruleDeclMolecule ) ) ) )=> ( ( (lv_e15left_1_0= ruleE15 ) )? ( (lv_op_2_0= 'with' ) ) ( (lv_dm_3_0= ruleDeclMolecule ) ) ) ) | ( ( ( ( ( ruleE15 ) )? ( ( 'add' ) ) ( ( ruleDeclMolecule ) ) ) )=> ( ( (lv_e15left_4_0= ruleE15 ) )? ( (lv_op_5_0= 'add' ) ) ( (lv_dm_6_0= ruleDeclMolecule ) ) ) ) | ( ( ( ( ( ruleE15 ) ) ( ( 'except' ) ) ( ( ruleE15 ) ) ) )=> ( ( (lv_e15left_7_0= ruleE15 ) ) ( (lv_op_8_0= 'except' ) ) ( (lv_e15right_9_0= ruleE15 ) ) ) ) | ( ( ( ( ( ruleE15 ) ) ( ( 'throw' ) ) ( ( ruleE15 ) ) ) )=> ( ( (lv_e15left_10_0= ruleE15 ) ) ( (lv_op_11_0= 'throw' ) ) ( (lv_e15right_12_0= ruleE15 ) ) ) ) )
+            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:5938:28: ( ( ( ( ( ( ( ruleE15 ) )? ( ( 'with' ) ) ( ( ruleDeclMolecule ) ) ) )=> ( ( (lv_e15left_0_0= ruleE15 ) )? ( (lv_op_1_0= 'with' ) ) ( (lv_dm_2_0= ruleDeclMolecule ) ) ) ) | ( ( ( ( ( ruleE15 ) )? ( ( 'add' ) ) ( ( ruleDeclMolecule ) ) ) )=> ( ( (lv_e15left_3_0= ruleE15 ) )? ( (lv_op_4_0= 'add' ) ) ( (lv_dm_5_0= ruleDeclMolecule ) ) ) ) | ( ( ( ( ( ruleE15 ) ) ( ( 'except' ) ) ( ( ruleE15 ) ) ) )=> ( ( (lv_e15left_6_0= ruleE15 ) ) ( (lv_op_7_0= 'except' ) ) ( (lv_e15right_8_0= ruleE15 ) ) ) ) | ( ( ( ( ( ruleE15 ) ) ( ( 'throw' ) ) ( ( ruleE15 ) ) ) )=> ( ( (lv_e15left_9_0= ruleE15 ) ) ( (lv_op_10_0= 'throw' ) ) ( (lv_e15right_11_0= ruleE15 ) ) ) ) | ( (lv_e15left_12_0= ruleE15 ) ) ) )
+            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:5939:1: ( ( ( ( ( ( ruleE15 ) )? ( ( 'with' ) ) ( ( ruleDeclMolecule ) ) ) )=> ( ( (lv_e15left_0_0= ruleE15 ) )? ( (lv_op_1_0= 'with' ) ) ( (lv_dm_2_0= ruleDeclMolecule ) ) ) ) | ( ( ( ( ( ruleE15 ) )? ( ( 'add' ) ) ( ( ruleDeclMolecule ) ) ) )=> ( ( (lv_e15left_3_0= ruleE15 ) )? ( (lv_op_4_0= 'add' ) ) ( (lv_dm_5_0= ruleDeclMolecule ) ) ) ) | ( ( ( ( ( ruleE15 ) ) ( ( 'except' ) ) ( ( ruleE15 ) ) ) )=> ( ( (lv_e15left_6_0= ruleE15 ) ) ( (lv_op_7_0= 'except' ) ) ( (lv_e15right_8_0= ruleE15 ) ) ) ) | ( ( ( ( ( ruleE15 ) ) ( ( 'throw' ) ) ( ( ruleE15 ) ) ) )=> ( ( (lv_e15left_9_0= ruleE15 ) ) ( (lv_op_10_0= 'throw' ) ) ( (lv_e15right_11_0= ruleE15 ) ) ) ) | ( (lv_e15left_12_0= ruleE15 ) ) )
             {
-            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:5939:1: ( ( (lv_e15left_0_0= ruleE15 ) ) | ( ( ( ( ( ruleE15 ) )? ( ( 'with' ) ) ( ( ruleDeclMolecule ) ) ) )=> ( ( (lv_e15left_1_0= ruleE15 ) )? ( (lv_op_2_0= 'with' ) ) ( (lv_dm_3_0= ruleDeclMolecule ) ) ) ) | ( ( ( ( ( ruleE15 ) )? ( ( 'add' ) ) ( ( ruleDeclMolecule ) ) ) )=> ( ( (lv_e15left_4_0= ruleE15 ) )? ( (lv_op_5_0= 'add' ) ) ( (lv_dm_6_0= ruleDeclMolecule ) ) ) ) | ( ( ( ( ( ruleE15 ) ) ( ( 'except' ) ) ( ( ruleE15 ) ) ) )=> ( ( (lv_e15left_7_0= ruleE15 ) ) ( (lv_op_8_0= 'except' ) ) ( (lv_e15right_9_0= ruleE15 ) ) ) ) | ( ( ( ( ( ruleE15 ) ) ( ( 'throw' ) ) ( ( ruleE15 ) ) ) )=> ( ( (lv_e15left_10_0= ruleE15 ) ) ( (lv_op_11_0= 'throw' ) ) ( (lv_e15right_12_0= ruleE15 ) ) ) ) )
+            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:5939:1: ( ( ( ( ( ( ruleE15 ) )? ( ( 'with' ) ) ( ( ruleDeclMolecule ) ) ) )=> ( ( (lv_e15left_0_0= ruleE15 ) )? ( (lv_op_1_0= 'with' ) ) ( (lv_dm_2_0= ruleDeclMolecule ) ) ) ) | ( ( ( ( ( ruleE15 ) )? ( ( 'add' ) ) ( ( ruleDeclMolecule ) ) ) )=> ( ( (lv_e15left_3_0= ruleE15 ) )? ( (lv_op_4_0= 'add' ) ) ( (lv_dm_5_0= ruleDeclMolecule ) ) ) ) | ( ( ( ( ( ruleE15 ) ) ( ( 'except' ) ) ( ( ruleE15 ) ) ) )=> ( ( (lv_e15left_6_0= ruleE15 ) ) ( (lv_op_7_0= 'except' ) ) ( (lv_e15right_8_0= ruleE15 ) ) ) ) | ( ( ( ( ( ruleE15 ) ) ( ( 'throw' ) ) ( ( ruleE15 ) ) ) )=> ( ( (lv_e15left_9_0= ruleE15 ) ) ( (lv_op_10_0= 'throw' ) ) ( (lv_e15right_11_0= ruleE15 ) ) ) ) | ( (lv_e15left_12_0= ruleE15 ) ) )
             int alt70=5;
             alt70 = dfa70.predict(input);
             switch (alt70) {
                 case 1 :
-                    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:5939:2: ( (lv_e15left_0_0= ruleE15 ) )
+                    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:5939:2: ( ( ( ( ( ruleE15 ) )? ( ( 'with' ) ) ( ( ruleDeclMolecule ) ) ) )=> ( ( (lv_e15left_0_0= ruleE15 ) )? ( (lv_op_1_0= 'with' ) ) ( (lv_dm_2_0= ruleDeclMolecule ) ) ) )
                     {
-                    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:5939:2: ( (lv_e15left_0_0= ruleE15 ) )
-                    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:5940:1: (lv_e15left_0_0= ruleE15 )
+                    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:5939:2: ( ( ( ( ( ruleE15 ) )? ( ( 'with' ) ) ( ( ruleDeclMolecule ) ) ) )=> ( ( (lv_e15left_0_0= ruleE15 ) )? ( (lv_op_1_0= 'with' ) ) ( (lv_dm_2_0= ruleDeclMolecule ) ) ) )
+                    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:5939:3: ( ( ( ( ruleE15 ) )? ( ( 'with' ) ) ( ( ruleDeclMolecule ) ) ) )=> ( ( (lv_e15left_0_0= ruleE15 ) )? ( (lv_op_1_0= 'with' ) ) ( (lv_dm_2_0= ruleDeclMolecule ) ) )
                     {
-                    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:5940:1: (lv_e15left_0_0= ruleE15 )
-                    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:5941:3: lv_e15left_0_0= ruleE15
+                    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:5953:6: ( ( (lv_e15left_0_0= ruleE15 ) )? ( (lv_op_1_0= 'with' ) ) ( (lv_dm_2_0= ruleDeclMolecule ) ) )
+                    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:5953:7: ( (lv_e15left_0_0= ruleE15 ) )? ( (lv_op_1_0= 'with' ) ) ( (lv_dm_2_0= ruleDeclMolecule ) )
                     {
-                    if ( state.backtracking==0 ) {
-                       
-                      	        newCompositeNode(grammarAccess.getE14Access().getE15leftE15ParserRuleCall_0_0()); 
-                      	    
-                    }
-                    pushFollow(FOLLOW_ruleE15_in_ruleE1411985);
-                    lv_e15left_0_0=ruleE15();
-
-                    state._fsp--;
-                    if (state.failed) return current;
-                    if ( state.backtracking==0 ) {
-
-                      	        if (current==null) {
-                      	            current = createModelElementForParent(grammarAccess.getE14Rule());
-                      	        }
-                             		set(
-                             			current, 
-                             			"e15left",
-                              		lv_e15left_0_0, 
-                              		"E15");
-                      	        afterParserOrEnumRuleCall();
-                      	    
-                    }
-
-                    }
-
-
-                    }
-
-
-                    }
-                    break;
-                case 2 :
-                    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:5958:6: ( ( ( ( ( ruleE15 ) )? ( ( 'with' ) ) ( ( ruleDeclMolecule ) ) ) )=> ( ( (lv_e15left_1_0= ruleE15 ) )? ( (lv_op_2_0= 'with' ) ) ( (lv_dm_3_0= ruleDeclMolecule ) ) ) )
-                    {
-                    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:5958:6: ( ( ( ( ( ruleE15 ) )? ( ( 'with' ) ) ( ( ruleDeclMolecule ) ) ) )=> ( ( (lv_e15left_1_0= ruleE15 ) )? ( (lv_op_2_0= 'with' ) ) ( (lv_dm_3_0= ruleDeclMolecule ) ) ) )
-                    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:5958:7: ( ( ( ( ruleE15 ) )? ( ( 'with' ) ) ( ( ruleDeclMolecule ) ) ) )=> ( ( (lv_e15left_1_0= ruleE15 ) )? ( (lv_op_2_0= 'with' ) ) ( (lv_dm_3_0= ruleDeclMolecule ) ) )
-                    {
-                    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:5972:6: ( ( (lv_e15left_1_0= ruleE15 ) )? ( (lv_op_2_0= 'with' ) ) ( (lv_dm_3_0= ruleDeclMolecule ) ) )
-                    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:5972:7: ( (lv_e15left_1_0= ruleE15 ) )? ( (lv_op_2_0= 'with' ) ) ( (lv_dm_3_0= ruleDeclMolecule ) )
-                    {
-                    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:5972:7: ( (lv_e15left_1_0= ruleE15 ) )?
+                    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:5953:7: ( (lv_e15left_0_0= ruleE15 ) )?
                     int alt68=2;
                     int LA68_0 = input.LA(1);
 
@@ -15085,18 +15044,18 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
                     }
                     switch (alt68) {
                         case 1 :
-                            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:5973:1: (lv_e15left_1_0= ruleE15 )
+                            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:5954:1: (lv_e15left_0_0= ruleE15 )
                             {
-                            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:5973:1: (lv_e15left_1_0= ruleE15 )
-                            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:5974:3: lv_e15left_1_0= ruleE15
+                            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:5954:1: (lv_e15left_0_0= ruleE15 )
+                            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:5955:3: lv_e15left_0_0= ruleE15
                             {
                             if ( state.backtracking==0 ) {
                                
-                              	        newCompositeNode(grammarAccess.getE14Access().getE15leftE15ParserRuleCall_1_0_0_0()); 
+                              	        newCompositeNode(grammarAccess.getE14Access().getE15leftE15ParserRuleCall_0_0_0_0()); 
                               	    
                             }
-                            pushFollow(FOLLOW_ruleE15_in_ruleE1412052);
-                            lv_e15left_1_0=ruleE15();
+                            pushFollow(FOLLOW_ruleE15_in_ruleE1412025);
+                            lv_e15left_0_0=ruleE15();
 
                             state._fsp--;
                             if (state.failed) return current;
@@ -15108,7 +15067,7 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
                                      		set(
                                      			current, 
                                      			"e15left",
-                                      		lv_e15left_1_0, 
+                                      		lv_e15left_0_0, 
                                       		"E15");
                               	        afterParserOrEnumRuleCall();
                               	    
@@ -15122,16 +15081,16 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:5990:3: ( (lv_op_2_0= 'with' ) )
-                    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:5991:1: (lv_op_2_0= 'with' )
+                    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:5971:3: ( (lv_op_1_0= 'with' ) )
+                    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:5972:1: (lv_op_1_0= 'with' )
                     {
-                    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:5991:1: (lv_op_2_0= 'with' )
-                    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:5992:3: lv_op_2_0= 'with'
+                    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:5972:1: (lv_op_1_0= 'with' )
+                    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:5973:3: lv_op_1_0= 'with'
                     {
-                    lv_op_2_0=(Token)match(input,108,FOLLOW_108_in_ruleE1412071); if (state.failed) return current;
+                    lv_op_1_0=(Token)match(input,108,FOLLOW_108_in_ruleE1412044); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
-                              newLeafNode(lv_op_2_0, grammarAccess.getE14Access().getOpWithKeyword_1_0_1_0());
+                              newLeafNode(lv_op_1_0, grammarAccess.getE14Access().getOpWithKeyword_0_0_1_0());
                           
                     }
                     if ( state.backtracking==0 ) {
@@ -15139,7 +15098,7 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
                       	        if (current==null) {
                       	            current = createModelElement(grammarAccess.getE14Rule());
                       	        }
-                             		setWithLastConsumed(current, "op", lv_op_2_0, "with");
+                             		setWithLastConsumed(current, "op", lv_op_1_0, "with");
                       	    
                     }
 
@@ -15148,19 +15107,19 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:6005:2: ( (lv_dm_3_0= ruleDeclMolecule ) )
-                    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:6006:1: (lv_dm_3_0= ruleDeclMolecule )
+                    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:5986:2: ( (lv_dm_2_0= ruleDeclMolecule ) )
+                    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:5987:1: (lv_dm_2_0= ruleDeclMolecule )
                     {
-                    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:6006:1: (lv_dm_3_0= ruleDeclMolecule )
-                    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:6007:3: lv_dm_3_0= ruleDeclMolecule
+                    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:5987:1: (lv_dm_2_0= ruleDeclMolecule )
+                    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:5988:3: lv_dm_2_0= ruleDeclMolecule
                     {
                     if ( state.backtracking==0 ) {
                        
-                      	        newCompositeNode(grammarAccess.getE14Access().getDmDeclMoleculeParserRuleCall_1_0_2_0()); 
+                      	        newCompositeNode(grammarAccess.getE14Access().getDmDeclMoleculeParserRuleCall_0_0_2_0()); 
                       	    
                     }
-                    pushFollow(FOLLOW_ruleDeclMolecule_in_ruleE1412105);
-                    lv_dm_3_0=ruleDeclMolecule();
+                    pushFollow(FOLLOW_ruleDeclMolecule_in_ruleE1412078);
+                    lv_dm_2_0=ruleDeclMolecule();
 
                     state._fsp--;
                     if (state.failed) return current;
@@ -15172,7 +15131,132 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
                              		set(
                              			current, 
                              			"dm",
-                              		lv_dm_3_0, 
+                              		lv_dm_2_0, 
+                              		"DeclMolecule");
+                      	        afterParserOrEnumRuleCall();
+                      	    
+                    }
+
+                    }
+
+
+                    }
+
+
+                    }
+
+
+                    }
+
+
+                    }
+                    break;
+                case 2 :
+                    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:6005:6: ( ( ( ( ( ruleE15 ) )? ( ( 'add' ) ) ( ( ruleDeclMolecule ) ) ) )=> ( ( (lv_e15left_3_0= ruleE15 ) )? ( (lv_op_4_0= 'add' ) ) ( (lv_dm_5_0= ruleDeclMolecule ) ) ) )
+                    {
+                    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:6005:6: ( ( ( ( ( ruleE15 ) )? ( ( 'add' ) ) ( ( ruleDeclMolecule ) ) ) )=> ( ( (lv_e15left_3_0= ruleE15 ) )? ( (lv_op_4_0= 'add' ) ) ( (lv_dm_5_0= ruleDeclMolecule ) ) ) )
+                    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:6005:7: ( ( ( ( ruleE15 ) )? ( ( 'add' ) ) ( ( ruleDeclMolecule ) ) ) )=> ( ( (lv_e15left_3_0= ruleE15 ) )? ( (lv_op_4_0= 'add' ) ) ( (lv_dm_5_0= ruleDeclMolecule ) ) )
+                    {
+                    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:6019:6: ( ( (lv_e15left_3_0= ruleE15 ) )? ( (lv_op_4_0= 'add' ) ) ( (lv_dm_5_0= ruleDeclMolecule ) ) )
+                    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:6019:7: ( (lv_e15left_3_0= ruleE15 ) )? ( (lv_op_4_0= 'add' ) ) ( (lv_dm_5_0= ruleDeclMolecule ) )
+                    {
+                    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:6019:7: ( (lv_e15left_3_0= ruleE15 ) )?
+                    int alt69=2;
+                    int LA69_0 = input.LA(1);
+
+                    if ( (LA69_0==RULE_TK_STRING||LA69_0==RULE_KW_OPAREN||LA69_0==RULE_KW_OBRACK||(LA69_0>=RULE_KW_QUOTE && LA69_0<=RULE_TK_ID)||(LA69_0>=RULE_KW_SHARP && LA69_0<=RULE_TK_FLOAT)||LA69_0==118) ) {
+                        alt69=1;
+                    }
+                    switch (alt69) {
+                        case 1 :
+                            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:6020:1: (lv_e15left_3_0= ruleE15 )
+                            {
+                            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:6020:1: (lv_e15left_3_0= ruleE15 )
+                            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:6021:3: lv_e15left_3_0= ruleE15
+                            {
+                            if ( state.backtracking==0 ) {
+                               
+                              	        newCompositeNode(grammarAccess.getE14Access().getE15leftE15ParserRuleCall_1_0_0_0()); 
+                              	    
+                            }
+                            pushFollow(FOLLOW_ruleE15_in_ruleE1412147);
+                            lv_e15left_3_0=ruleE15();
+
+                            state._fsp--;
+                            if (state.failed) return current;
+                            if ( state.backtracking==0 ) {
+
+                              	        if (current==null) {
+                              	            current = createModelElementForParent(grammarAccess.getE14Rule());
+                              	        }
+                                     		set(
+                                     			current, 
+                                     			"e15left",
+                                      		lv_e15left_3_0, 
+                                      		"E15");
+                              	        afterParserOrEnumRuleCall();
+                              	    
+                            }
+
+                            }
+
+
+                            }
+                            break;
+
+                    }
+
+                    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:6037:3: ( (lv_op_4_0= 'add' ) )
+                    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:6038:1: (lv_op_4_0= 'add' )
+                    {
+                    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:6038:1: (lv_op_4_0= 'add' )
+                    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:6039:3: lv_op_4_0= 'add'
+                    {
+                    lv_op_4_0=(Token)match(input,109,FOLLOW_109_in_ruleE1412166); if (state.failed) return current;
+                    if ( state.backtracking==0 ) {
+
+                              newLeafNode(lv_op_4_0, grammarAccess.getE14Access().getOpAddKeyword_1_0_1_0());
+                          
+                    }
+                    if ( state.backtracking==0 ) {
+
+                      	        if (current==null) {
+                      	            current = createModelElement(grammarAccess.getE14Rule());
+                      	        }
+                             		setWithLastConsumed(current, "op", lv_op_4_0, "add");
+                      	    
+                    }
+
+                    }
+
+
+                    }
+
+                    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:6052:2: ( (lv_dm_5_0= ruleDeclMolecule ) )
+                    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:6053:1: (lv_dm_5_0= ruleDeclMolecule )
+                    {
+                    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:6053:1: (lv_dm_5_0= ruleDeclMolecule )
+                    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:6054:3: lv_dm_5_0= ruleDeclMolecule
+                    {
+                    if ( state.backtracking==0 ) {
+                       
+                      	        newCompositeNode(grammarAccess.getE14Access().getDmDeclMoleculeParserRuleCall_1_0_2_0()); 
+                      	    
+                    }
+                    pushFollow(FOLLOW_ruleDeclMolecule_in_ruleE1412200);
+                    lv_dm_5_0=ruleDeclMolecule();
+
+                    state._fsp--;
+                    if (state.failed) return current;
+                    if ( state.backtracking==0 ) {
+
+                      	        if (current==null) {
+                      	            current = createModelElementForParent(grammarAccess.getE14Rule());
+                      	        }
+                             		set(
+                             			current, 
+                             			"dm",
+                              		lv_dm_5_0, 
                               		"DeclMolecule");
                       	        afterParserOrEnumRuleCall();
                       	    
@@ -15193,99 +15277,27 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:6024:6: ( ( ( ( ( ruleE15 ) )? ( ( 'add' ) ) ( ( ruleDeclMolecule ) ) ) )=> ( ( (lv_e15left_4_0= ruleE15 ) )? ( (lv_op_5_0= 'add' ) ) ( (lv_dm_6_0= ruleDeclMolecule ) ) ) )
+                    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:6071:6: ( ( ( ( ( ruleE15 ) ) ( ( 'except' ) ) ( ( ruleE15 ) ) ) )=> ( ( (lv_e15left_6_0= ruleE15 ) ) ( (lv_op_7_0= 'except' ) ) ( (lv_e15right_8_0= ruleE15 ) ) ) )
                     {
-                    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:6024:6: ( ( ( ( ( ruleE15 ) )? ( ( 'add' ) ) ( ( ruleDeclMolecule ) ) ) )=> ( ( (lv_e15left_4_0= ruleE15 ) )? ( (lv_op_5_0= 'add' ) ) ( (lv_dm_6_0= ruleDeclMolecule ) ) ) )
-                    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:6024:7: ( ( ( ( ruleE15 ) )? ( ( 'add' ) ) ( ( ruleDeclMolecule ) ) ) )=> ( ( (lv_e15left_4_0= ruleE15 ) )? ( (lv_op_5_0= 'add' ) ) ( (lv_dm_6_0= ruleDeclMolecule ) ) )
+                    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:6071:6: ( ( ( ( ( ruleE15 ) ) ( ( 'except' ) ) ( ( ruleE15 ) ) ) )=> ( ( (lv_e15left_6_0= ruleE15 ) ) ( (lv_op_7_0= 'except' ) ) ( (lv_e15right_8_0= ruleE15 ) ) ) )
+                    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:6071:7: ( ( ( ( ruleE15 ) ) ( ( 'except' ) ) ( ( ruleE15 ) ) ) )=> ( ( (lv_e15left_6_0= ruleE15 ) ) ( (lv_op_7_0= 'except' ) ) ( (lv_e15right_8_0= ruleE15 ) ) )
                     {
-                    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:6038:6: ( ( (lv_e15left_4_0= ruleE15 ) )? ( (lv_op_5_0= 'add' ) ) ( (lv_dm_6_0= ruleDeclMolecule ) ) )
-                    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:6038:7: ( (lv_e15left_4_0= ruleE15 ) )? ( (lv_op_5_0= 'add' ) ) ( (lv_dm_6_0= ruleDeclMolecule ) )
+                    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:6085:6: ( ( (lv_e15left_6_0= ruleE15 ) ) ( (lv_op_7_0= 'except' ) ) ( (lv_e15right_8_0= ruleE15 ) ) )
+                    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:6085:7: ( (lv_e15left_6_0= ruleE15 ) ) ( (lv_op_7_0= 'except' ) ) ( (lv_e15right_8_0= ruleE15 ) )
                     {
-                    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:6038:7: ( (lv_e15left_4_0= ruleE15 ) )?
-                    int alt69=2;
-                    int LA69_0 = input.LA(1);
-
-                    if ( (LA69_0==RULE_TK_STRING||LA69_0==RULE_KW_OPAREN||LA69_0==RULE_KW_OBRACK||(LA69_0>=RULE_KW_QUOTE && LA69_0<=RULE_TK_ID)||(LA69_0>=RULE_KW_SHARP && LA69_0<=RULE_TK_FLOAT)||LA69_0==118) ) {
-                        alt69=1;
-                    }
-                    switch (alt69) {
-                        case 1 :
-                            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:6039:1: (lv_e15left_4_0= ruleE15 )
-                            {
-                            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:6039:1: (lv_e15left_4_0= ruleE15 )
-                            // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:6040:3: lv_e15left_4_0= ruleE15
-                            {
-                            if ( state.backtracking==0 ) {
-                               
-                              	        newCompositeNode(grammarAccess.getE14Access().getE15leftE15ParserRuleCall_2_0_0_0()); 
-                              	    
-                            }
-                            pushFollow(FOLLOW_ruleE15_in_ruleE1412174);
-                            lv_e15left_4_0=ruleE15();
-
-                            state._fsp--;
-                            if (state.failed) return current;
-                            if ( state.backtracking==0 ) {
-
-                              	        if (current==null) {
-                              	            current = createModelElementForParent(grammarAccess.getE14Rule());
-                              	        }
-                                     		set(
-                                     			current, 
-                                     			"e15left",
-                                      		lv_e15left_4_0, 
-                                      		"E15");
-                              	        afterParserOrEnumRuleCall();
-                              	    
-                            }
-
-                            }
-
-
-                            }
-                            break;
-
-                    }
-
-                    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:6056:3: ( (lv_op_5_0= 'add' ) )
-                    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:6057:1: (lv_op_5_0= 'add' )
+                    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:6085:7: ( (lv_e15left_6_0= ruleE15 ) )
+                    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:6086:1: (lv_e15left_6_0= ruleE15 )
                     {
-                    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:6057:1: (lv_op_5_0= 'add' )
-                    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:6058:3: lv_op_5_0= 'add'
-                    {
-                    lv_op_5_0=(Token)match(input,109,FOLLOW_109_in_ruleE1412193); if (state.failed) return current;
-                    if ( state.backtracking==0 ) {
-
-                              newLeafNode(lv_op_5_0, grammarAccess.getE14Access().getOpAddKeyword_2_0_1_0());
-                          
-                    }
-                    if ( state.backtracking==0 ) {
-
-                      	        if (current==null) {
-                      	            current = createModelElement(grammarAccess.getE14Rule());
-                      	        }
-                             		setWithLastConsumed(current, "op", lv_op_5_0, "add");
-                      	    
-                    }
-
-                    }
-
-
-                    }
-
-                    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:6071:2: ( (lv_dm_6_0= ruleDeclMolecule ) )
-                    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:6072:1: (lv_dm_6_0= ruleDeclMolecule )
-                    {
-                    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:6072:1: (lv_dm_6_0= ruleDeclMolecule )
-                    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:6073:3: lv_dm_6_0= ruleDeclMolecule
+                    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:6086:1: (lv_e15left_6_0= ruleE15 )
+                    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:6087:3: lv_e15left_6_0= ruleE15
                     {
                     if ( state.backtracking==0 ) {
                        
-                      	        newCompositeNode(grammarAccess.getE14Access().getDmDeclMoleculeParserRuleCall_2_0_2_0()); 
+                      	        newCompositeNode(grammarAccess.getE14Access().getE15leftE15ParserRuleCall_2_0_0_0()); 
                       	    
                     }
-                    pushFollow(FOLLOW_ruleDeclMolecule_in_ruleE1412227);
-                    lv_dm_6_0=ruleDeclMolecule();
+                    pushFollow(FOLLOW_ruleE15_in_ruleE1412268);
+                    lv_e15left_6_0=ruleE15();
 
                     state._fsp--;
                     if (state.failed) return current;
@@ -15296,9 +15308,70 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
                       	        }
                              		set(
                              			current, 
-                             			"dm",
-                              		lv_dm_6_0, 
-                              		"DeclMolecule");
+                             			"e15left",
+                              		lv_e15left_6_0, 
+                              		"E15");
+                      	        afterParserOrEnumRuleCall();
+                      	    
+                    }
+
+                    }
+
+
+                    }
+
+                    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:6103:2: ( (lv_op_7_0= 'except' ) )
+                    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:6104:1: (lv_op_7_0= 'except' )
+                    {
+                    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:6104:1: (lv_op_7_0= 'except' )
+                    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:6105:3: lv_op_7_0= 'except'
+                    {
+                    lv_op_7_0=(Token)match(input,95,FOLLOW_95_in_ruleE1412286); if (state.failed) return current;
+                    if ( state.backtracking==0 ) {
+
+                              newLeafNode(lv_op_7_0, grammarAccess.getE14Access().getOpExceptKeyword_2_0_1_0());
+                          
+                    }
+                    if ( state.backtracking==0 ) {
+
+                      	        if (current==null) {
+                      	            current = createModelElement(grammarAccess.getE14Rule());
+                      	        }
+                             		setWithLastConsumed(current, "op", lv_op_7_0, "except");
+                      	    
+                    }
+
+                    }
+
+
+                    }
+
+                    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:6118:2: ( (lv_e15right_8_0= ruleE15 ) )
+                    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:6119:1: (lv_e15right_8_0= ruleE15 )
+                    {
+                    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:6119:1: (lv_e15right_8_0= ruleE15 )
+                    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:6120:3: lv_e15right_8_0= ruleE15
+                    {
+                    if ( state.backtracking==0 ) {
+                       
+                      	        newCompositeNode(grammarAccess.getE14Access().getE15rightE15ParserRuleCall_2_0_2_0()); 
+                      	    
+                    }
+                    pushFollow(FOLLOW_ruleE15_in_ruleE1412320);
+                    lv_e15right_8_0=ruleE15();
+
+                    state._fsp--;
+                    if (state.failed) return current;
+                    if ( state.backtracking==0 ) {
+
+                      	        if (current==null) {
+                      	            current = createModelElementForParent(grammarAccess.getE14Rule());
+                      	        }
+                             		set(
+                             			current, 
+                             			"e15right",
+                              		lv_e15right_8_0, 
+                              		"E15");
                       	        afterParserOrEnumRuleCall();
                       	    
                     }
@@ -15318,27 +15391,27 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 4 :
-                    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:6090:6: ( ( ( ( ( ruleE15 ) ) ( ( 'except' ) ) ( ( ruleE15 ) ) ) )=> ( ( (lv_e15left_7_0= ruleE15 ) ) ( (lv_op_8_0= 'except' ) ) ( (lv_e15right_9_0= ruleE15 ) ) ) )
+                    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:6137:6: ( ( ( ( ( ruleE15 ) ) ( ( 'throw' ) ) ( ( ruleE15 ) ) ) )=> ( ( (lv_e15left_9_0= ruleE15 ) ) ( (lv_op_10_0= 'throw' ) ) ( (lv_e15right_11_0= ruleE15 ) ) ) )
                     {
-                    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:6090:6: ( ( ( ( ( ruleE15 ) ) ( ( 'except' ) ) ( ( ruleE15 ) ) ) )=> ( ( (lv_e15left_7_0= ruleE15 ) ) ( (lv_op_8_0= 'except' ) ) ( (lv_e15right_9_0= ruleE15 ) ) ) )
-                    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:6090:7: ( ( ( ( ruleE15 ) ) ( ( 'except' ) ) ( ( ruleE15 ) ) ) )=> ( ( (lv_e15left_7_0= ruleE15 ) ) ( (lv_op_8_0= 'except' ) ) ( (lv_e15right_9_0= ruleE15 ) ) )
+                    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:6137:6: ( ( ( ( ( ruleE15 ) ) ( ( 'throw' ) ) ( ( ruleE15 ) ) ) )=> ( ( (lv_e15left_9_0= ruleE15 ) ) ( (lv_op_10_0= 'throw' ) ) ( (lv_e15right_11_0= ruleE15 ) ) ) )
+                    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:6137:7: ( ( ( ( ruleE15 ) ) ( ( 'throw' ) ) ( ( ruleE15 ) ) ) )=> ( ( (lv_e15left_9_0= ruleE15 ) ) ( (lv_op_10_0= 'throw' ) ) ( (lv_e15right_11_0= ruleE15 ) ) )
                     {
-                    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:6104:6: ( ( (lv_e15left_7_0= ruleE15 ) ) ( (lv_op_8_0= 'except' ) ) ( (lv_e15right_9_0= ruleE15 ) ) )
-                    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:6104:7: ( (lv_e15left_7_0= ruleE15 ) ) ( (lv_op_8_0= 'except' ) ) ( (lv_e15right_9_0= ruleE15 ) )
+                    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:6151:6: ( ( (lv_e15left_9_0= ruleE15 ) ) ( (lv_op_10_0= 'throw' ) ) ( (lv_e15right_11_0= ruleE15 ) ) )
+                    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:6151:7: ( (lv_e15left_9_0= ruleE15 ) ) ( (lv_op_10_0= 'throw' ) ) ( (lv_e15right_11_0= ruleE15 ) )
                     {
-                    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:6104:7: ( (lv_e15left_7_0= ruleE15 ) )
-                    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:6105:1: (lv_e15left_7_0= ruleE15 )
+                    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:6151:7: ( (lv_e15left_9_0= ruleE15 ) )
+                    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:6152:1: (lv_e15left_9_0= ruleE15 )
                     {
-                    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:6105:1: (lv_e15left_7_0= ruleE15 )
-                    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:6106:3: lv_e15left_7_0= ruleE15
+                    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:6152:1: (lv_e15left_9_0= ruleE15 )
+                    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:6153:3: lv_e15left_9_0= ruleE15
                     {
                     if ( state.backtracking==0 ) {
                        
                       	        newCompositeNode(grammarAccess.getE14Access().getE15leftE15ParserRuleCall_3_0_0_0()); 
                       	    
                     }
-                    pushFollow(FOLLOW_ruleE15_in_ruleE1412295);
-                    lv_e15left_7_0=ruleE15();
+                    pushFollow(FOLLOW_ruleE15_in_ruleE1412388);
+                    lv_e15left_9_0=ruleE15();
 
                     state._fsp--;
                     if (state.failed) return current;
@@ -15350,7 +15423,7 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
                              		set(
                              			current, 
                              			"e15left",
-                              		lv_e15left_7_0, 
+                              		lv_e15left_9_0, 
                               		"E15");
                       	        afterParserOrEnumRuleCall();
                       	    
@@ -15361,16 +15434,16 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:6122:2: ( (lv_op_8_0= 'except' ) )
-                    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:6123:1: (lv_op_8_0= 'except' )
+                    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:6169:2: ( (lv_op_10_0= 'throw' ) )
+                    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:6170:1: (lv_op_10_0= 'throw' )
                     {
-                    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:6123:1: (lv_op_8_0= 'except' )
-                    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:6124:3: lv_op_8_0= 'except'
+                    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:6170:1: (lv_op_10_0= 'throw' )
+                    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:6171:3: lv_op_10_0= 'throw'
                     {
-                    lv_op_8_0=(Token)match(input,95,FOLLOW_95_in_ruleE1412313); if (state.failed) return current;
+                    lv_op_10_0=(Token)match(input,96,FOLLOW_96_in_ruleE1412406); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
-                              newLeafNode(lv_op_8_0, grammarAccess.getE14Access().getOpExceptKeyword_3_0_1_0());
+                              newLeafNode(lv_op_10_0, grammarAccess.getE14Access().getOpThrowKeyword_3_0_1_0());
                           
                     }
                     if ( state.backtracking==0 ) {
@@ -15378,7 +15451,7 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
                       	        if (current==null) {
                       	            current = createModelElement(grammarAccess.getE14Rule());
                       	        }
-                             		setWithLastConsumed(current, "op", lv_op_8_0, "except");
+                             		setWithLastConsumed(current, "op", lv_op_10_0, "throw");
                       	    
                     }
 
@@ -15387,19 +15460,19 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:6137:2: ( (lv_e15right_9_0= ruleE15 ) )
-                    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:6138:1: (lv_e15right_9_0= ruleE15 )
+                    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:6184:2: ( (lv_e15right_11_0= ruleE15 ) )
+                    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:6185:1: (lv_e15right_11_0= ruleE15 )
                     {
-                    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:6138:1: (lv_e15right_9_0= ruleE15 )
-                    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:6139:3: lv_e15right_9_0= ruleE15
+                    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:6185:1: (lv_e15right_11_0= ruleE15 )
+                    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:6186:3: lv_e15right_11_0= ruleE15
                     {
                     if ( state.backtracking==0 ) {
                        
                       	        newCompositeNode(grammarAccess.getE14Access().getE15rightE15ParserRuleCall_3_0_2_0()); 
                       	    
                     }
-                    pushFollow(FOLLOW_ruleE15_in_ruleE1412347);
-                    lv_e15right_9_0=ruleE15();
+                    pushFollow(FOLLOW_ruleE15_in_ruleE1412440);
+                    lv_e15right_11_0=ruleE15();
 
                     state._fsp--;
                     if (state.failed) return current;
@@ -15411,7 +15484,7 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
                              		set(
                              			current, 
                              			"e15right",
-                              		lv_e15right_9_0, 
+                              		lv_e15right_11_0, 
                               		"E15");
                       	        afterParserOrEnumRuleCall();
                       	    
@@ -15432,27 +15505,21 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 5 :
-                    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:6156:6: ( ( ( ( ( ruleE15 ) ) ( ( 'throw' ) ) ( ( ruleE15 ) ) ) )=> ( ( (lv_e15left_10_0= ruleE15 ) ) ( (lv_op_11_0= 'throw' ) ) ( (lv_e15right_12_0= ruleE15 ) ) ) )
+                    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:6203:6: ( (lv_e15left_12_0= ruleE15 ) )
                     {
-                    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:6156:6: ( ( ( ( ( ruleE15 ) ) ( ( 'throw' ) ) ( ( ruleE15 ) ) ) )=> ( ( (lv_e15left_10_0= ruleE15 ) ) ( (lv_op_11_0= 'throw' ) ) ( (lv_e15right_12_0= ruleE15 ) ) ) )
-                    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:6156:7: ( ( ( ( ruleE15 ) ) ( ( 'throw' ) ) ( ( ruleE15 ) ) ) )=> ( ( (lv_e15left_10_0= ruleE15 ) ) ( (lv_op_11_0= 'throw' ) ) ( (lv_e15right_12_0= ruleE15 ) ) )
+                    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:6203:6: ( (lv_e15left_12_0= ruleE15 ) )
+                    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:6204:1: (lv_e15left_12_0= ruleE15 )
                     {
-                    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:6170:6: ( ( (lv_e15left_10_0= ruleE15 ) ) ( (lv_op_11_0= 'throw' ) ) ( (lv_e15right_12_0= ruleE15 ) ) )
-                    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:6170:7: ( (lv_e15left_10_0= ruleE15 ) ) ( (lv_op_11_0= 'throw' ) ) ( (lv_e15right_12_0= ruleE15 ) )
-                    {
-                    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:6170:7: ( (lv_e15left_10_0= ruleE15 ) )
-                    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:6171:1: (lv_e15left_10_0= ruleE15 )
-                    {
-                    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:6171:1: (lv_e15left_10_0= ruleE15 )
-                    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:6172:3: lv_e15left_10_0= ruleE15
+                    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:6204:1: (lv_e15left_12_0= ruleE15 )
+                    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:6205:3: lv_e15left_12_0= ruleE15
                     {
                     if ( state.backtracking==0 ) {
                        
-                      	        newCompositeNode(grammarAccess.getE14Access().getE15leftE15ParserRuleCall_4_0_0_0()); 
+                      	        newCompositeNode(grammarAccess.getE14Access().getE15leftE15ParserRuleCall_4_0()); 
                       	    
                     }
-                    pushFollow(FOLLOW_ruleE15_in_ruleE1412415);
-                    lv_e15left_10_0=ruleE15();
+                    pushFollow(FOLLOW_ruleE15_in_ruleE1412469);
+                    lv_e15left_12_0=ruleE15();
 
                     state._fsp--;
                     if (state.failed) return current;
@@ -15464,78 +15531,11 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
                              		set(
                              			current, 
                              			"e15left",
-                              		lv_e15left_10_0, 
+                              		lv_e15left_12_0, 
                               		"E15");
                       	        afterParserOrEnumRuleCall();
                       	    
                     }
-
-                    }
-
-
-                    }
-
-                    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:6188:2: ( (lv_op_11_0= 'throw' ) )
-                    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:6189:1: (lv_op_11_0= 'throw' )
-                    {
-                    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:6189:1: (lv_op_11_0= 'throw' )
-                    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:6190:3: lv_op_11_0= 'throw'
-                    {
-                    lv_op_11_0=(Token)match(input,96,FOLLOW_96_in_ruleE1412433); if (state.failed) return current;
-                    if ( state.backtracking==0 ) {
-
-                              newLeafNode(lv_op_11_0, grammarAccess.getE14Access().getOpThrowKeyword_4_0_1_0());
-                          
-                    }
-                    if ( state.backtracking==0 ) {
-
-                      	        if (current==null) {
-                      	            current = createModelElement(grammarAccess.getE14Rule());
-                      	        }
-                             		setWithLastConsumed(current, "op", lv_op_11_0, "throw");
-                      	    
-                    }
-
-                    }
-
-
-                    }
-
-                    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:6203:2: ( (lv_e15right_12_0= ruleE15 ) )
-                    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:6204:1: (lv_e15right_12_0= ruleE15 )
-                    {
-                    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:6204:1: (lv_e15right_12_0= ruleE15 )
-                    // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:6205:3: lv_e15right_12_0= ruleE15
-                    {
-                    if ( state.backtracking==0 ) {
-                       
-                      	        newCompositeNode(grammarAccess.getE14Access().getE15rightE15ParserRuleCall_4_0_2_0()); 
-                      	    
-                    }
-                    pushFollow(FOLLOW_ruleE15_in_ruleE1412467);
-                    lv_e15right_12_0=ruleE15();
-
-                    state._fsp--;
-                    if (state.failed) return current;
-                    if ( state.backtracking==0 ) {
-
-                      	        if (current==null) {
-                      	            current = createModelElementForParent(grammarAccess.getE14Rule());
-                      	        }
-                             		set(
-                             			current, 
-                             			"e15right",
-                              		lv_e15right_12_0, 
-                              		"E15");
-                      	        afterParserOrEnumRuleCall();
-                      	    
-                    }
-
-                    }
-
-
-                    }
-
 
                     }
 
@@ -28058,13 +28058,13 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
 
     // $ANTLR start synpred15_InternalEditor
     public final void synpred15_InternalEditor_fragment() throws RecognitionException {   
-        // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:5958:7: ( ( ( ( ruleE15 ) )? ( ( 'with' ) ) ( ( ruleDeclMolecule ) ) ) )
-        // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:5958:8: ( ( ( ruleE15 ) )? ( ( 'with' ) ) ( ( ruleDeclMolecule ) ) )
+        // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:5939:3: ( ( ( ( ruleE15 ) )? ( ( 'with' ) ) ( ( ruleDeclMolecule ) ) ) )
+        // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:5939:4: ( ( ( ruleE15 ) )? ( ( 'with' ) ) ( ( ruleDeclMolecule ) ) )
         {
-        // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:5958:8: ( ( ( ruleE15 ) )? ( ( 'with' ) ) ( ( ruleDeclMolecule ) ) )
-        // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:5958:9: ( ( ruleE15 ) )? ( ( 'with' ) ) ( ( ruleDeclMolecule ) )
+        // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:5939:4: ( ( ( ruleE15 ) )? ( ( 'with' ) ) ( ( ruleDeclMolecule ) ) )
+        // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:5939:5: ( ( ruleE15 ) )? ( ( 'with' ) ) ( ( ruleDeclMolecule ) )
         {
-        // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:5958:9: ( ( ruleE15 ) )?
+        // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:5939:5: ( ( ruleE15 ) )?
         int alt128=2;
         int LA128_0 = input.LA(1);
 
@@ -28073,12 +28073,12 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
         }
         switch (alt128) {
             case 1 :
-                // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:5959:1: ( ruleE15 )
+                // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:5940:1: ( ruleE15 )
                 {
-                // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:5959:1: ( ruleE15 )
-                // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:5960:1: ruleE15
+                // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:5940:1: ( ruleE15 )
+                // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:5941:1: ruleE15
                 {
-                pushFollow(FOLLOW_ruleE15_in_synpred15_InternalEditor12007);
+                pushFollow(FOLLOW_ruleE15_in_synpred15_InternalEditor11980);
                 ruleE15();
 
                 state._fsp--;
@@ -28092,26 +28092,26 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
 
         }
 
-        // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:5962:3: ( ( 'with' ) )
-        // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:5963:1: ( 'with' )
+        // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:5943:3: ( ( 'with' ) )
+        // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:5944:1: ( 'with' )
         {
-        // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:5963:1: ( 'with' )
-        // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:5964:2: 'with'
+        // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:5944:1: ( 'with' )
+        // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:5945:2: 'with'
         {
-        match(input,108,FOLLOW_108_in_synpred15_InternalEditor12018); if (state.failed) return ;
+        match(input,108,FOLLOW_108_in_synpred15_InternalEditor11991); if (state.failed) return ;
 
         }
 
 
         }
 
-        // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:5968:2: ( ( ruleDeclMolecule ) )
-        // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:5969:1: ( ruleDeclMolecule )
+        // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:5949:2: ( ( ruleDeclMolecule ) )
+        // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:5950:1: ( ruleDeclMolecule )
         {
-        // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:5969:1: ( ruleDeclMolecule )
-        // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:5970:1: ruleDeclMolecule
+        // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:5950:1: ( ruleDeclMolecule )
+        // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:5951:1: ruleDeclMolecule
         {
-        pushFollow(FOLLOW_ruleDeclMolecule_in_synpred15_InternalEditor12031);
+        pushFollow(FOLLOW_ruleDeclMolecule_in_synpred15_InternalEditor12004);
         ruleDeclMolecule();
 
         state._fsp--;
@@ -28132,13 +28132,13 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
 
     // $ANTLR start synpred16_InternalEditor
     public final void synpred16_InternalEditor_fragment() throws RecognitionException {   
-        // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:6024:7: ( ( ( ( ruleE15 ) )? ( ( 'add' ) ) ( ( ruleDeclMolecule ) ) ) )
-        // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:6024:8: ( ( ( ruleE15 ) )? ( ( 'add' ) ) ( ( ruleDeclMolecule ) ) )
+        // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:6005:7: ( ( ( ( ruleE15 ) )? ( ( 'add' ) ) ( ( ruleDeclMolecule ) ) ) )
+        // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:6005:8: ( ( ( ruleE15 ) )? ( ( 'add' ) ) ( ( ruleDeclMolecule ) ) )
         {
-        // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:6024:8: ( ( ( ruleE15 ) )? ( ( 'add' ) ) ( ( ruleDeclMolecule ) ) )
-        // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:6024:9: ( ( ruleE15 ) )? ( ( 'add' ) ) ( ( ruleDeclMolecule ) )
+        // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:6005:8: ( ( ( ruleE15 ) )? ( ( 'add' ) ) ( ( ruleDeclMolecule ) ) )
+        // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:6005:9: ( ( ruleE15 ) )? ( ( 'add' ) ) ( ( ruleDeclMolecule ) )
         {
-        // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:6024:9: ( ( ruleE15 ) )?
+        // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:6005:9: ( ( ruleE15 ) )?
         int alt129=2;
         int LA129_0 = input.LA(1);
 
@@ -28147,12 +28147,12 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
         }
         switch (alt129) {
             case 1 :
-                // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:6025:1: ( ruleE15 )
+                // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:6006:1: ( ruleE15 )
                 {
-                // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:6025:1: ( ruleE15 )
-                // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:6026:1: ruleE15
+                // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:6006:1: ( ruleE15 )
+                // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:6007:1: ruleE15
                 {
-                pushFollow(FOLLOW_ruleE15_in_synpred16_InternalEditor12129);
+                pushFollow(FOLLOW_ruleE15_in_synpred16_InternalEditor12102);
                 ruleE15();
 
                 state._fsp--;
@@ -28166,26 +28166,26 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
 
         }
 
-        // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:6028:3: ( ( 'add' ) )
-        // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:6029:1: ( 'add' )
+        // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:6009:3: ( ( 'add' ) )
+        // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:6010:1: ( 'add' )
         {
-        // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:6029:1: ( 'add' )
-        // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:6030:2: 'add'
+        // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:6010:1: ( 'add' )
+        // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:6011:2: 'add'
         {
-        match(input,109,FOLLOW_109_in_synpred16_InternalEditor12140); if (state.failed) return ;
+        match(input,109,FOLLOW_109_in_synpred16_InternalEditor12113); if (state.failed) return ;
 
         }
 
 
         }
 
-        // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:6034:2: ( ( ruleDeclMolecule ) )
-        // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:6035:1: ( ruleDeclMolecule )
+        // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:6015:2: ( ( ruleDeclMolecule ) )
+        // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:6016:1: ( ruleDeclMolecule )
         {
-        // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:6035:1: ( ruleDeclMolecule )
-        // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:6036:1: ruleDeclMolecule
+        // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:6016:1: ( ruleDeclMolecule )
+        // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:6017:1: ruleDeclMolecule
         {
-        pushFollow(FOLLOW_ruleDeclMolecule_in_synpred16_InternalEditor12153);
+        pushFollow(FOLLOW_ruleDeclMolecule_in_synpred16_InternalEditor12126);
         ruleDeclMolecule();
 
         state._fsp--;
@@ -28206,19 +28206,19 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
 
     // $ANTLR start synpred17_InternalEditor
     public final void synpred17_InternalEditor_fragment() throws RecognitionException {   
-        // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:6090:7: ( ( ( ( ruleE15 ) ) ( ( 'except' ) ) ( ( ruleE15 ) ) ) )
-        // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:6090:8: ( ( ( ruleE15 ) ) ( ( 'except' ) ) ( ( ruleE15 ) ) )
+        // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:6071:7: ( ( ( ( ruleE15 ) ) ( ( 'except' ) ) ( ( ruleE15 ) ) ) )
+        // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:6071:8: ( ( ( ruleE15 ) ) ( ( 'except' ) ) ( ( ruleE15 ) ) )
         {
-        // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:6090:8: ( ( ( ruleE15 ) ) ( ( 'except' ) ) ( ( ruleE15 ) ) )
-        // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:6090:9: ( ( ruleE15 ) ) ( ( 'except' ) ) ( ( ruleE15 ) )
+        // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:6071:8: ( ( ( ruleE15 ) ) ( ( 'except' ) ) ( ( ruleE15 ) ) )
+        // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:6071:9: ( ( ruleE15 ) ) ( ( 'except' ) ) ( ( ruleE15 ) )
         {
-        // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:6090:9: ( ( ruleE15 ) )
-        // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:6091:1: ( ruleE15 )
+        // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:6071:9: ( ( ruleE15 ) )
+        // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:6072:1: ( ruleE15 )
         {
-        // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:6091:1: ( ruleE15 )
-        // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:6092:1: ruleE15
+        // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:6072:1: ( ruleE15 )
+        // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:6073:1: ruleE15
         {
-        pushFollow(FOLLOW_ruleE15_in_synpred17_InternalEditor12251);
+        pushFollow(FOLLOW_ruleE15_in_synpred17_InternalEditor12224);
         ruleE15();
 
         state._fsp--;
@@ -28229,26 +28229,26 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
 
         }
 
-        // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:6094:2: ( ( 'except' ) )
-        // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:6095:1: ( 'except' )
+        // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:6075:2: ( ( 'except' ) )
+        // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:6076:1: ( 'except' )
         {
-        // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:6095:1: ( 'except' )
-        // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:6096:2: 'except'
+        // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:6076:1: ( 'except' )
+        // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:6077:2: 'except'
         {
-        match(input,95,FOLLOW_95_in_synpred17_InternalEditor12261); if (state.failed) return ;
+        match(input,95,FOLLOW_95_in_synpred17_InternalEditor12234); if (state.failed) return ;
 
         }
 
 
         }
 
-        // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:6100:2: ( ( ruleE15 ) )
-        // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:6101:1: ( ruleE15 )
+        // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:6081:2: ( ( ruleE15 ) )
+        // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:6082:1: ( ruleE15 )
         {
-        // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:6101:1: ( ruleE15 )
-        // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:6102:1: ruleE15
+        // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:6082:1: ( ruleE15 )
+        // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:6083:1: ruleE15
         {
-        pushFollow(FOLLOW_ruleE15_in_synpred17_InternalEditor12274);
+        pushFollow(FOLLOW_ruleE15_in_synpred17_InternalEditor12247);
         ruleE15();
 
         state._fsp--;
@@ -28269,19 +28269,19 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
 
     // $ANTLR start synpred18_InternalEditor
     public final void synpred18_InternalEditor_fragment() throws RecognitionException {   
-        // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:6156:7: ( ( ( ( ruleE15 ) ) ( ( 'throw' ) ) ( ( ruleE15 ) ) ) )
-        // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:6156:8: ( ( ( ruleE15 ) ) ( ( 'throw' ) ) ( ( ruleE15 ) ) )
+        // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:6137:7: ( ( ( ( ruleE15 ) ) ( ( 'throw' ) ) ( ( ruleE15 ) ) ) )
+        // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:6137:8: ( ( ( ruleE15 ) ) ( ( 'throw' ) ) ( ( ruleE15 ) ) )
         {
-        // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:6156:8: ( ( ( ruleE15 ) ) ( ( 'throw' ) ) ( ( ruleE15 ) ) )
-        // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:6156:9: ( ( ruleE15 ) ) ( ( 'throw' ) ) ( ( ruleE15 ) )
+        // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:6137:8: ( ( ( ruleE15 ) ) ( ( 'throw' ) ) ( ( ruleE15 ) ) )
+        // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:6137:9: ( ( ruleE15 ) ) ( ( 'throw' ) ) ( ( ruleE15 ) )
         {
-        // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:6156:9: ( ( ruleE15 ) )
-        // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:6157:1: ( ruleE15 )
+        // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:6137:9: ( ( ruleE15 ) )
+        // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:6138:1: ( ruleE15 )
         {
-        // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:6157:1: ( ruleE15 )
-        // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:6158:1: ruleE15
+        // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:6138:1: ( ruleE15 )
+        // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:6139:1: ruleE15
         {
-        pushFollow(FOLLOW_ruleE15_in_synpred18_InternalEditor12371);
+        pushFollow(FOLLOW_ruleE15_in_synpred18_InternalEditor12344);
         ruleE15();
 
         state._fsp--;
@@ -28292,26 +28292,26 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
 
         }
 
-        // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:6160:2: ( ( 'throw' ) )
-        // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:6161:1: ( 'throw' )
+        // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:6141:2: ( ( 'throw' ) )
+        // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:6142:1: ( 'throw' )
         {
-        // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:6161:1: ( 'throw' )
-        // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:6162:2: 'throw'
+        // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:6142:1: ( 'throw' )
+        // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:6143:2: 'throw'
         {
-        match(input,96,FOLLOW_96_in_synpred18_InternalEditor12381); if (state.failed) return ;
+        match(input,96,FOLLOW_96_in_synpred18_InternalEditor12354); if (state.failed) return ;
 
         }
 
 
         }
 
-        // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:6166:2: ( ( ruleE15 ) )
-        // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:6167:1: ( ruleE15 )
+        // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:6147:2: ( ( ruleE15 ) )
+        // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:6148:1: ( ruleE15 )
         {
-        // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:6167:1: ( ruleE15 )
-        // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:6168:1: ruleE15
+        // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:6148:1: ( ruleE15 )
+        // ../com.euclideanspace.aldor/src-gen/com/euclideanspace/aldor/parser/antlr/internal/InternalEditor.g:6149:1: ruleE15
         {
-        pushFollow(FOLLOW_ruleE15_in_synpred18_InternalEditor12394);
+        pushFollow(FOLLOW_ruleE15_in_synpred18_InternalEditor12367);
         ruleE15();
 
         state._fsp--;
@@ -32155,7 +32155,7 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
     static final String DFA70_maxS =
         "\1\166\12\0\5\uffff";
     static final String DFA70_acceptS =
-        "\13\uffff\1\2\1\3\1\1\1\4\1\5";
+        "\13\uffff\1\1\1\2\1\3\1\4\1\5";
     static final String DFA70_specialS =
         "\1\0\1\1\1\2\1\3\1\4\1\5\1\6\1\7\1\10\1\11\1\12\5\uffff}>";
     static final String[] DFA70_transitionS = {
@@ -32208,7 +32208,7 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
             this.transition = DFA70_transition;
         }
         public String getDescription() {
-            return "5939:1: ( ( (lv_e15left_0_0= ruleE15 ) ) | ( ( ( ( ( ruleE15 ) )? ( ( 'with' ) ) ( ( ruleDeclMolecule ) ) ) )=> ( ( (lv_e15left_1_0= ruleE15 ) )? ( (lv_op_2_0= 'with' ) ) ( (lv_dm_3_0= ruleDeclMolecule ) ) ) ) | ( ( ( ( ( ruleE15 ) )? ( ( 'add' ) ) ( ( ruleDeclMolecule ) ) ) )=> ( ( (lv_e15left_4_0= ruleE15 ) )? ( (lv_op_5_0= 'add' ) ) ( (lv_dm_6_0= ruleDeclMolecule ) ) ) ) | ( ( ( ( ( ruleE15 ) ) ( ( 'except' ) ) ( ( ruleE15 ) ) ) )=> ( ( (lv_e15left_7_0= ruleE15 ) ) ( (lv_op_8_0= 'except' ) ) ( (lv_e15right_9_0= ruleE15 ) ) ) ) | ( ( ( ( ( ruleE15 ) ) ( ( 'throw' ) ) ( ( ruleE15 ) ) ) )=> ( ( (lv_e15left_10_0= ruleE15 ) ) ( (lv_op_11_0= 'throw' ) ) ( (lv_e15right_12_0= ruleE15 ) ) ) ) )";
+            return "5939:1: ( ( ( ( ( ( ruleE15 ) )? ( ( 'with' ) ) ( ( ruleDeclMolecule ) ) ) )=> ( ( (lv_e15left_0_0= ruleE15 ) )? ( (lv_op_1_0= 'with' ) ) ( (lv_dm_2_0= ruleDeclMolecule ) ) ) ) | ( ( ( ( ( ruleE15 ) )? ( ( 'add' ) ) ( ( ruleDeclMolecule ) ) ) )=> ( ( (lv_e15left_3_0= ruleE15 ) )? ( (lv_op_4_0= 'add' ) ) ( (lv_dm_5_0= ruleDeclMolecule ) ) ) ) | ( ( ( ( ( ruleE15 ) ) ( ( 'except' ) ) ( ( ruleE15 ) ) ) )=> ( ( (lv_e15left_6_0= ruleE15 ) ) ( (lv_op_7_0= 'except' ) ) ( (lv_e15right_8_0= ruleE15 ) ) ) ) | ( ( ( ( ( ruleE15 ) ) ( ( 'throw' ) ) ( ( ruleE15 ) ) ) )=> ( ( (lv_e15left_9_0= ruleE15 ) ) ( (lv_op_10_0= 'throw' ) ) ( (lv_e15right_11_0= ruleE15 ) ) ) ) | ( (lv_e15left_12_0= ruleE15 ) ) )";
         }
         public int specialStateTransition(int s, IntStream _input) throws NoViableAltException {
             TokenStream input = (TokenStream)_input;
@@ -32256,15 +32256,15 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
                         int index70_1 = input.index();
                         input.rewind();
                         s = -1;
-                        if ( (true) ) {s = 13;}
-
-                        else if ( (synpred15_InternalEditor()) ) {s = 11;}
+                        if ( (synpred15_InternalEditor()) ) {s = 11;}
 
                         else if ( (synpred16_InternalEditor()) ) {s = 12;}
 
-                        else if ( (synpred17_InternalEditor()) ) {s = 14;}
+                        else if ( (synpred17_InternalEditor()) ) {s = 13;}
 
-                        else if ( (synpred18_InternalEditor()) ) {s = 15;}
+                        else if ( (synpred18_InternalEditor()) ) {s = 14;}
+
+                        else if ( (true) ) {s = 15;}
 
                          
                         input.seek(index70_1);
@@ -32277,15 +32277,15 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
                         int index70_2 = input.index();
                         input.rewind();
                         s = -1;
-                        if ( (true) ) {s = 13;}
-
-                        else if ( (synpred15_InternalEditor()) ) {s = 11;}
+                        if ( (synpred15_InternalEditor()) ) {s = 11;}
 
                         else if ( (synpred16_InternalEditor()) ) {s = 12;}
 
-                        else if ( (synpred17_InternalEditor()) ) {s = 14;}
+                        else if ( (synpred17_InternalEditor()) ) {s = 13;}
 
-                        else if ( (synpred18_InternalEditor()) ) {s = 15;}
+                        else if ( (synpred18_InternalEditor()) ) {s = 14;}
+
+                        else if ( (true) ) {s = 15;}
 
                          
                         input.seek(index70_2);
@@ -32298,15 +32298,15 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
                         int index70_3 = input.index();
                         input.rewind();
                         s = -1;
-                        if ( (true) ) {s = 13;}
-
-                        else if ( (synpred15_InternalEditor()) ) {s = 11;}
+                        if ( (synpred15_InternalEditor()) ) {s = 11;}
 
                         else if ( (synpred16_InternalEditor()) ) {s = 12;}
 
-                        else if ( (synpred17_InternalEditor()) ) {s = 14;}
+                        else if ( (synpred17_InternalEditor()) ) {s = 13;}
 
-                        else if ( (synpred18_InternalEditor()) ) {s = 15;}
+                        else if ( (synpred18_InternalEditor()) ) {s = 14;}
+
+                        else if ( (true) ) {s = 15;}
 
                          
                         input.seek(index70_3);
@@ -32319,15 +32319,15 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
                         int index70_4 = input.index();
                         input.rewind();
                         s = -1;
-                        if ( (true) ) {s = 13;}
-
-                        else if ( (synpred15_InternalEditor()) ) {s = 11;}
+                        if ( (synpred15_InternalEditor()) ) {s = 11;}
 
                         else if ( (synpred16_InternalEditor()) ) {s = 12;}
 
-                        else if ( (synpred17_InternalEditor()) ) {s = 14;}
+                        else if ( (synpred17_InternalEditor()) ) {s = 13;}
 
-                        else if ( (synpred18_InternalEditor()) ) {s = 15;}
+                        else if ( (synpred18_InternalEditor()) ) {s = 14;}
+
+                        else if ( (true) ) {s = 15;}
 
                          
                         input.seek(index70_4);
@@ -32340,15 +32340,15 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
                         int index70_5 = input.index();
                         input.rewind();
                         s = -1;
-                        if ( (true) ) {s = 13;}
-
-                        else if ( (synpred15_InternalEditor()) ) {s = 11;}
+                        if ( (synpred15_InternalEditor()) ) {s = 11;}
 
                         else if ( (synpred16_InternalEditor()) ) {s = 12;}
 
-                        else if ( (synpred17_InternalEditor()) ) {s = 14;}
+                        else if ( (synpred17_InternalEditor()) ) {s = 13;}
 
-                        else if ( (synpred18_InternalEditor()) ) {s = 15;}
+                        else if ( (synpred18_InternalEditor()) ) {s = 14;}
+
+                        else if ( (true) ) {s = 15;}
 
                          
                         input.seek(index70_5);
@@ -32361,15 +32361,15 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
                         int index70_6 = input.index();
                         input.rewind();
                         s = -1;
-                        if ( (true) ) {s = 13;}
-
-                        else if ( (synpred15_InternalEditor()) ) {s = 11;}
+                        if ( (synpred15_InternalEditor()) ) {s = 11;}
 
                         else if ( (synpred16_InternalEditor()) ) {s = 12;}
 
-                        else if ( (synpred17_InternalEditor()) ) {s = 14;}
+                        else if ( (synpred17_InternalEditor()) ) {s = 13;}
 
-                        else if ( (synpred18_InternalEditor()) ) {s = 15;}
+                        else if ( (synpred18_InternalEditor()) ) {s = 14;}
+
+                        else if ( (true) ) {s = 15;}
 
                          
                         input.seek(index70_6);
@@ -32382,15 +32382,15 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
                         int index70_7 = input.index();
                         input.rewind();
                         s = -1;
-                        if ( (true) ) {s = 13;}
-
-                        else if ( (synpred15_InternalEditor()) ) {s = 11;}
+                        if ( (synpred15_InternalEditor()) ) {s = 11;}
 
                         else if ( (synpred16_InternalEditor()) ) {s = 12;}
 
-                        else if ( (synpred17_InternalEditor()) ) {s = 14;}
+                        else if ( (synpred17_InternalEditor()) ) {s = 13;}
 
-                        else if ( (synpred18_InternalEditor()) ) {s = 15;}
+                        else if ( (synpred18_InternalEditor()) ) {s = 14;}
+
+                        else if ( (true) ) {s = 15;}
 
                          
                         input.seek(index70_7);
@@ -32403,15 +32403,15 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
                         int index70_8 = input.index();
                         input.rewind();
                         s = -1;
-                        if ( (true) ) {s = 13;}
-
-                        else if ( (synpred15_InternalEditor()) ) {s = 11;}
+                        if ( (synpred15_InternalEditor()) ) {s = 11;}
 
                         else if ( (synpred16_InternalEditor()) ) {s = 12;}
 
-                        else if ( (synpred17_InternalEditor()) ) {s = 14;}
+                        else if ( (synpred17_InternalEditor()) ) {s = 13;}
 
-                        else if ( (synpred18_InternalEditor()) ) {s = 15;}
+                        else if ( (synpred18_InternalEditor()) ) {s = 14;}
+
+                        else if ( (true) ) {s = 15;}
 
                          
                         input.seek(index70_8);
@@ -32424,15 +32424,15 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
                         int index70_9 = input.index();
                         input.rewind();
                         s = -1;
-                        if ( (true) ) {s = 13;}
-
-                        else if ( (synpred15_InternalEditor()) ) {s = 11;}
+                        if ( (synpred15_InternalEditor()) ) {s = 11;}
 
                         else if ( (synpred16_InternalEditor()) ) {s = 12;}
 
-                        else if ( (synpred17_InternalEditor()) ) {s = 14;}
+                        else if ( (synpred17_InternalEditor()) ) {s = 13;}
 
-                        else if ( (synpred18_InternalEditor()) ) {s = 15;}
+                        else if ( (synpred18_InternalEditor()) ) {s = 14;}
+
+                        else if ( (true) ) {s = 15;}
 
                          
                         input.seek(index70_9);
@@ -32445,15 +32445,15 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
                         int index70_10 = input.index();
                         input.rewind();
                         s = -1;
-                        if ( (true) ) {s = 13;}
-
-                        else if ( (synpred15_InternalEditor()) ) {s = 11;}
+                        if ( (synpred15_InternalEditor()) ) {s = 11;}
 
                         else if ( (synpred16_InternalEditor()) ) {s = 12;}
 
-                        else if ( (synpred17_InternalEditor()) ) {s = 14;}
+                        else if ( (synpred17_InternalEditor()) ) {s = 13;}
 
-                        else if ( (synpred18_InternalEditor()) ) {s = 15;}
+                        else if ( (synpred18_InternalEditor()) ) {s = 14;}
+
+                        else if ( (true) ) {s = 15;}
 
                          
                         input.seek(index70_10);
@@ -32686,7 +32686,7 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
     static final String DFA90_acceptS =
         "\1\uffff\1\1\6\uffff\1\2\1\3";
     static final String DFA90_specialS =
-        "\2\uffff\1\4\1\5\1\2\1\3\1\1\1\0\2\uffff}>";
+        "\2\uffff\1\5\1\0\1\4\1\1\1\2\1\3\2\uffff}>";
     static final String[] DFA90_transitionS = {
             "\1\7\50\uffff\1\2\1\uffff\1\3\1\4\1\5\1\6\103\uffff\1\1",
             "",
@@ -32737,10 +32737,10 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
         	int _s = s;
             switch ( s ) {
                     case 0 : 
-                        int LA90_7 = input.LA(1);
+                        int LA90_3 = input.LA(1);
 
                          
-                        int index90_7 = input.index();
+                        int index90_3 = input.index();
                         input.rewind();
                         s = -1;
                         if ( (synpred20_InternalEditor()) ) {s = 8;}
@@ -32748,40 +32748,10 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
                         else if ( (true) ) {s = 9;}
 
                          
-                        input.seek(index90_7);
+                        input.seek(index90_3);
                         if ( s>=0 ) return s;
                         break;
                     case 1 : 
-                        int LA90_6 = input.LA(1);
-
-                         
-                        int index90_6 = input.index();
-                        input.rewind();
-                        s = -1;
-                        if ( (synpred20_InternalEditor()) ) {s = 8;}
-
-                        else if ( (true) ) {s = 9;}
-
-                         
-                        input.seek(index90_6);
-                        if ( s>=0 ) return s;
-                        break;
-                    case 2 : 
-                        int LA90_4 = input.LA(1);
-
-                         
-                        int index90_4 = input.index();
-                        input.rewind();
-                        s = -1;
-                        if ( (synpred20_InternalEditor()) ) {s = 8;}
-
-                        else if ( (true) ) {s = 9;}
-
-                         
-                        input.seek(index90_4);
-                        if ( s>=0 ) return s;
-                        break;
-                    case 3 : 
                         int LA90_5 = input.LA(1);
 
                          
@@ -32796,7 +32766,52 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
                         input.seek(index90_5);
                         if ( s>=0 ) return s;
                         break;
+                    case 2 : 
+                        int LA90_6 = input.LA(1);
+
+                         
+                        int index90_6 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( (synpred20_InternalEditor()) ) {s = 8;}
+
+                        else if ( (true) ) {s = 9;}
+
+                         
+                        input.seek(index90_6);
+                        if ( s>=0 ) return s;
+                        break;
+                    case 3 : 
+                        int LA90_7 = input.LA(1);
+
+                         
+                        int index90_7 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( (synpred20_InternalEditor()) ) {s = 8;}
+
+                        else if ( (true) ) {s = 9;}
+
+                         
+                        input.seek(index90_7);
+                        if ( s>=0 ) return s;
+                        break;
                     case 4 : 
+                        int LA90_4 = input.LA(1);
+
+                         
+                        int index90_4 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( (synpred20_InternalEditor()) ) {s = 8;}
+
+                        else if ( (true) ) {s = 9;}
+
+                         
+                        input.seek(index90_4);
+                        if ( s>=0 ) return s;
+                        break;
+                    case 5 : 
                         int LA90_2 = input.LA(1);
 
                          
@@ -32809,21 +32824,6 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
 
                          
                         input.seek(index90_2);
-                        if ( s>=0 ) return s;
-                        break;
-                    case 5 : 
-                        int LA90_3 = input.LA(1);
-
-                         
-                        int index90_3 = input.index();
-                        input.rewind();
-                        s = -1;
-                        if ( (synpred20_InternalEditor()) ) {s = 8;}
-
-                        else if ( (true) ) {s = 9;}
-
-                         
-                        input.seek(index90_3);
                         if ( s>=0 ) return s;
                         break;
             }
@@ -33339,19 +33339,19 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_ruleOpQualTail_in_ruleOpQualTail11877 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleE14_in_entryRuleE1411925 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleE1411935 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleE15_in_ruleE1411985 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleE15_in_ruleE1412052 = new BitSet(new long[]{0x0000000000000000L,0x0000100000000000L});
-    public static final BitSet FOLLOW_108_in_ruleE1412071 = new BitSet(new long[]{0x0047B57FFFFF0010L,0x007FF00000000000L});
-    public static final BitSet FOLLOW_ruleDeclMolecule_in_ruleE1412105 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleE15_in_ruleE1412174 = new BitSet(new long[]{0x0000000000000000L,0x0000200000000000L});
-    public static final BitSet FOLLOW_109_in_ruleE1412193 = new BitSet(new long[]{0x0047B57FFFFF0010L,0x007FF00000000000L});
-    public static final BitSet FOLLOW_ruleDeclMolecule_in_ruleE1412227 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleE15_in_ruleE1412295 = new BitSet(new long[]{0x0000000000000000L,0x0000000080000000L});
-    public static final BitSet FOLLOW_95_in_ruleE1412313 = new BitSet(new long[]{0x0007B50000000010L,0x0040000000000000L});
-    public static final BitSet FOLLOW_ruleE15_in_ruleE1412347 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleE15_in_ruleE1412415 = new BitSet(new long[]{0x0000000000000000L,0x0000000100000000L});
-    public static final BitSet FOLLOW_96_in_ruleE1412433 = new BitSet(new long[]{0x0007B50000000010L,0x0040000000000000L});
-    public static final BitSet FOLLOW_ruleE15_in_ruleE1412467 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleE15_in_ruleE1412025 = new BitSet(new long[]{0x0000000000000000L,0x0000100000000000L});
+    public static final BitSet FOLLOW_108_in_ruleE1412044 = new BitSet(new long[]{0x0047B57FFFFF0010L,0x007FF00000000000L});
+    public static final BitSet FOLLOW_ruleDeclMolecule_in_ruleE1412078 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleE15_in_ruleE1412147 = new BitSet(new long[]{0x0000000000000000L,0x0000200000000000L});
+    public static final BitSet FOLLOW_109_in_ruleE1412166 = new BitSet(new long[]{0x0047B57FFFFF0010L,0x007FF00000000000L});
+    public static final BitSet FOLLOW_ruleDeclMolecule_in_ruleE1412200 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleE15_in_ruleE1412268 = new BitSet(new long[]{0x0000000000000000L,0x0000000080000000L});
+    public static final BitSet FOLLOW_95_in_ruleE1412286 = new BitSet(new long[]{0x0007B50000000010L,0x0040000000000000L});
+    public static final BitSet FOLLOW_ruleE15_in_ruleE1412320 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleE15_in_ruleE1412388 = new BitSet(new long[]{0x0000000000000000L,0x0000000100000000L});
+    public static final BitSet FOLLOW_96_in_ruleE1412406 = new BitSet(new long[]{0x0007B50000000010L,0x0040000000000000L});
+    public static final BitSet FOLLOW_ruleE15_in_ruleE1412440 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleE15_in_ruleE1412469 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleE15_in_entryRuleE1512515 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleE1512525 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleApplication_in_ruleE1512575 = new BitSet(new long[]{0x0000000000000002L});
@@ -33706,18 +33706,18 @@ public class InternalEditorParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_ruleQualTail_in_synpred13_InternalEditor11694 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_RULE_KW_DOLLAR_in_synpred14_InternalEditor11847 = new BitSet(new long[]{0x0007B50000000010L});
     public static final BitSet FOLLOW_ruleOpQualTail_in_synpred14_InternalEditor11849 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleE15_in_synpred15_InternalEditor12007 = new BitSet(new long[]{0x0000000000000000L,0x0000100000000000L});
-    public static final BitSet FOLLOW_108_in_synpred15_InternalEditor12018 = new BitSet(new long[]{0x0047B57FFFFF0010L,0x007FF00000000000L});
-    public static final BitSet FOLLOW_ruleDeclMolecule_in_synpred15_InternalEditor12031 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleE15_in_synpred16_InternalEditor12129 = new BitSet(new long[]{0x0000000000000000L,0x0000200000000000L});
-    public static final BitSet FOLLOW_109_in_synpred16_InternalEditor12140 = new BitSet(new long[]{0x0047B57FFFFF0010L,0x007FF00000000000L});
-    public static final BitSet FOLLOW_ruleDeclMolecule_in_synpred16_InternalEditor12153 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleE15_in_synpred17_InternalEditor12251 = new BitSet(new long[]{0x0000000000000000L,0x0000000080000000L});
-    public static final BitSet FOLLOW_95_in_synpred17_InternalEditor12261 = new BitSet(new long[]{0x0007B50000000010L,0x0040000000000000L});
-    public static final BitSet FOLLOW_ruleE15_in_synpred17_InternalEditor12274 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleE15_in_synpred18_InternalEditor12371 = new BitSet(new long[]{0x0000000000000000L,0x0000000100000000L});
-    public static final BitSet FOLLOW_96_in_synpred18_InternalEditor12381 = new BitSet(new long[]{0x0007B50000000010L,0x0040000000000000L});
-    public static final BitSet FOLLOW_ruleE15_in_synpred18_InternalEditor12394 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleE15_in_synpred15_InternalEditor11980 = new BitSet(new long[]{0x0000000000000000L,0x0000100000000000L});
+    public static final BitSet FOLLOW_108_in_synpred15_InternalEditor11991 = new BitSet(new long[]{0x0047B57FFFFF0010L,0x007FF00000000000L});
+    public static final BitSet FOLLOW_ruleDeclMolecule_in_synpred15_InternalEditor12004 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleE15_in_synpred16_InternalEditor12102 = new BitSet(new long[]{0x0000000000000000L,0x0000200000000000L});
+    public static final BitSet FOLLOW_109_in_synpred16_InternalEditor12113 = new BitSet(new long[]{0x0047B57FFFFF0010L,0x007FF00000000000L});
+    public static final BitSet FOLLOW_ruleDeclMolecule_in_synpred16_InternalEditor12126 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleE15_in_synpred17_InternalEditor12224 = new BitSet(new long[]{0x0000000000000000L,0x0000000080000000L});
+    public static final BitSet FOLLOW_95_in_synpred17_InternalEditor12234 = new BitSet(new long[]{0x0007B50000000010L,0x0040000000000000L});
+    public static final BitSet FOLLOW_ruleE15_in_synpred17_InternalEditor12247 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleE15_in_synpred18_InternalEditor12344 = new BitSet(new long[]{0x0000000000000000L,0x0000000100000000L});
+    public static final BitSet FOLLOW_96_in_synpred18_InternalEditor12354 = new BitSet(new long[]{0x0007B50000000010L,0x0040000000000000L});
+    public static final BitSet FOLLOW_ruleE15_in_synpred18_InternalEditor12367 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleMolecule_in_synpred19_InternalEditor16309 = new BitSet(new long[]{0x0047B57FFFFF0012L,0x007FF00000000000L});
     public static final BitSet FOLLOW_ruleBlockEnclosure_in_synpred19_InternalEditor16318 = new BitSet(new long[]{0x0047B57FFFFF0012L,0x007FF00000000000L});
     public static final BitSet FOLLOW_ruleAtom_in_synpred20_InternalEditor16569 = new BitSet(new long[]{0x0047B57FFFFF0012L,0x007FF00000000000L});
