@@ -5,9 +5,9 @@ The aim is to expand this to a full IDE for these systems.
 For more information about this project see: http://www.euclideanspace.com/prog/es/
 
 For information about how to install the code see: http://www.euclideanspace.com/prog/es/install/
-or follow the following:
+or do the following:
 
-* Click on project above and click the 'site.p2.zip' button.
+* Click on 'release' tab at the top of this page and click the 'site.p2.zip' button.
 * This brings up a dialog window, click on the 'Save File' button.
 * Locate the file (in you downloads directory or wherever it was downloaded) and extract the contents into 'site.p2' directory.
 * Start Eclipse
