@@ -370,7 +370,7 @@ public class EditorSyntacticSequencer extends AbstractSyntacticSequencer {
 
 	/**
 	 * Syntax:
-	 *     KW_MARROW | KW_MAPSTOSTAR | KW_ASSIGN | KW_2EQ | KW_MAPSTO
+	 *     KW_MARROW | KW_MAPSTOSTAR | KW_2EQ | KW_MAPSTO | KW_ASSIGN
 	 */
 	protected void emit_BindingR_InfixedExprsDecl_AnyStatement_KW_2EQTerminalRuleCall_1_0_1_or_KW_ASSIGNTerminalRuleCall_1_0_0_or_KW_MAPSTOSTARTerminalRuleCall_1_0_4_or_KW_MAPSTOTerminalRuleCall_1_0_3_or_KW_MARROWTerminalRuleCall_1_0_2(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
@@ -410,7 +410,7 @@ public class EditorSyntacticSequencer extends AbstractSyntacticSequencer {
 	
 	/**
 	 * Syntax:
-	 *     'catch' | 'but'
+	 *     'but' | 'catch'
 	 */
 	protected void emit_Flow_BalStatement_ButKeyword_4_2_0_or_CatchKeyword_4_2_1(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
@@ -418,7 +418,7 @@ public class EditorSyntacticSequencer extends AbstractSyntacticSequencer {
 	
 	/**
 	 * Syntax:
-	 *     ('fluid' | 'free' | 'local')?
+	 *     ('local' | 'free' | 'fluid')?
 	 */
 	protected void emit_ForLhs___FluidKeyword_0_2_or_FreeKeyword_0_0_or_LocalKeyword_0_1__q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);

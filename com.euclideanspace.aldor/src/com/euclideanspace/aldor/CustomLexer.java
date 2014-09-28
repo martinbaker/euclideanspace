@@ -1,5 +1,23 @@
 package com.euclideanspace.aldor;
 
+/* Copyright 2014 Martin John Baker
+*
+* This file is part of EuclideanSpace.
+*
+* EuclideanSpace is free software: you can redistribute it and/or modify
+* it under the terms of the GNU Affero General Public License as published by
+* the Free Software Foundation, either version 3 of the License, or
+* (at your option) any later version.
+*
+* EuclideanSpace is distributed in the hope that it will be useful,
+* but WITHOUT ANY WARRANTY; without even the implied warranty of
+* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+* GNU Affero General Public License for more details.
+*
+* You should have received a copy of the GNU Affero General Public License
+* along with EuclideanSpace. If not, see <http://www.gnu.org/licenses/>.
+*/
+
 import java.util.Deque;
 
 import org.antlr.runtime.CharStream;
@@ -177,14 +195,25 @@ public class CustomLexer extends com.euclideanspace.aldor.parser.antlr.internal.
 			{-1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0}, // KW_BackTab
 			{-1, 0,0, 0, 0, 0, 0, 0, 0, 0, 170, 0}, // KW_Juxtapose
 			{-1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0}, // TK_LIMIT
-			// additional entries not in original Aldor table
+			// The remainder of this table has additional entries not
+            // in original Aldor version of the table
 			{T__61, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}, // #include
 			{RULE_ANY_OTHER, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}, // %
 			{RULE_KW_IMPLIES, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}, // =>
 			{RULE_ANY_OTHER, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}, // ?
 			};
 
-	  Deque<Token> tokens = new java.util.ArrayDeque<Token>();
+	/*
+	 * This queue allows additional tokens to be triggered when 
+	 * nextToken() is called.
+	 */
+	Deque<Token> tokens = new java.util.ArrayDeque<Token>();
+	
+	/*
+	 * This holds a pending semicolon which will be emitted only
+	 * if isFollower(t) is false.
+	 */
+	Token pendingToken = null;
 
   public CustomLexer() {
     super();
@@ -220,8 +249,22 @@ public class CustomLexer extends com.euclideanspace.aldor.parser.antlr.internal.
       int tt = firstToken.getType();
       if (tt == RULE_KW_CCURLY) {
       	  //System.out.println("CustomLexer - nextToken() "+ts +" type="+firstToken.getType());
-    	  Token semicolonToken = new CommonToken(input,RULE_KW_SEMICOLON, state.channel, state.tokenStartCharIndex, getCharIndex()-1);
-    	  emit(semicolonToken);
+    	  pendingToken = new CommonToken(input,RULE_KW_SEMICOLON, state.channel, state.tokenStartCharIndex, getCharIndex()-1);    	  
+      } else if (pendingToken != null) {
+    	  if (isWsOrComment(firstToken)) {
+    		  // we can't yet tell if semicolon can be inserted so leave it there and keep going.
+    		  return firstToken;
+    	  }
+    	  if (isFollower(firstToken)) {
+    		  // firstToken can't follow semicolon so don't insert semicolon before it.
+        	  pendingToken = null; // get rid of pending semicolon
+        	  return firstToken;
+    	  }
+    	  // can follow semicolon so do insert semicolon before firstToken
+    	  emit(firstToken);
+    	  Token holder = pendingToken;
+    	  pendingToken = null; // null it, so we don't try to insert it again
+    	  return holder;
       }
       return firstToken;
   }
@@ -237,7 +280,7 @@ public class CustomLexer extends com.euclideanspace.aldor.parser.antlr.internal.
 			  return false;
 		  }
 	  }
-	  System.out.println("CustomLexer - isComment can't find token "+t.getType() +":"+t.getText());
+	  System.out.println("CustomLexer - isComment: can't find token "+t.getType() +":"+t.getText());
 	  return false;
   }
 
@@ -252,7 +295,7 @@ public class CustomLexer extends com.euclideanspace.aldor.parser.antlr.internal.
 			  return false;
 		  }
 	  }
-	  System.out.println("CustomLexer - isComment can't find token "+t.getType() +":"+t.getText());
+	  System.out.println("CustomLexer.isOpener: can't find token "+t.getType() +":"+t.getText());
 	  return false;
   }
 
@@ -267,7 +310,7 @@ public class CustomLexer extends com.euclideanspace.aldor.parser.antlr.internal.
 			  return false;
 		  }
 	  }
-	  System.out.println("CustomLexer - isComment can't find token "+t.getType() +":"+t.getText());
+	  System.out.println("CustomLexer.isCloser: can't find token "+t.getType() +":"+t.getText());
 	  return false;
   }
 
@@ -282,7 +325,7 @@ public class CustomLexer extends com.euclideanspace.aldor.parser.antlr.internal.
 			  return false;
 		  }
 	  }
-	  System.out.println("CustomLexer - isComment can't find token "+t.getType() +":"+t.getText());
+	  System.out.println("CustomLexer.isFollower: can't find token "+t.getType() +":"+t.getText());
 	  return false;
   }
   
