@@ -9,7 +9,7 @@ or do the following:
 
 * Click on 'release' tab at the top of this page and click the 'site.p2.zip' button.
 * This brings up a dialog window, click on the 'Save File' button.
-* Locate the file (in you downloads directory or wherever it was downloaded) and extract the contents into 'site.p2' directory.
+* Locate the file on your local computer (in you downloads directory or wherever it was downloaded) and extract the contents into 'site.p2' directory.
 * Start Eclipse
 * Click on the Help->Install New Software menu.
 * This brings up a new dialog window. At the top to the right of the 'Work with' line, click on the 'add' button.
