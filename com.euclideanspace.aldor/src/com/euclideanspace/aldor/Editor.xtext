@@ -30,7 +30,7 @@ generate editor "http://www.euclideanspace.com/aldor/Editor"
  * 
  * known bugs
  * ----------
- * 1) customLexer: phantom semicolon after curly brackets is not yet conditional
+ * 1) a(c:d,e:f):b() = add {a} fails to parse '=' and 'add' are both infix so cannot be adjacent
  * 2) ':' does not yet work properly. We want it to bind most tightly.
  * 3) + or - as prefix operator.
  */
@@ -1299,7 +1299,7 @@ enlister1_InfixedExpr_Comma hidden(WS,KW_NEWLINE):
 ;
 
 /* A list of (at least one) statement(s)
- * seperated by semicolons (one or more)  and optionally ending with
+ * separated by semicolons (one or more)  and optionally ending with
  * a semicolon (zero or more)
  * 
  * AB_Sequence
@@ -1309,7 +1309,7 @@ enlist1a_Labeled_Semicolon_AB hidden(WS,KW_NEWLINE):
 ;
 
 /* A list of (at least one) statement(s)
- * seperated by (one or more) semicolons and optionally ending with
+ * separated by (one or more) semicolons and optionally ending with
  * a semicolon (zero or more)
  * 
  * Aldor axl.z grammar defines this in a left recursive way so

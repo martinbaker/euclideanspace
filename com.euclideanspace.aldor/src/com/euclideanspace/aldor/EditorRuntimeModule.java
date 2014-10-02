@@ -21,9 +21,7 @@ public class EditorRuntimeModule extends com.euclideanspace.aldor.AbstractEditor
 	 * - provideInternalEditorLexer()
 	 * - configureRuntimeLexer(binder)
 	 * 
-	 * So here we override these.
-     * I can't change the return type of provideInternalEditorLexer() in an override so instead
-     * I have added a new method: provideInternalCustomEditorLexer().
+	 * So here we override two of these and replace the other.
 	 */
 	@Override
 	public Class<? extends org.eclipse.xtext.parser.antlr.Lexer> bindLexer() {

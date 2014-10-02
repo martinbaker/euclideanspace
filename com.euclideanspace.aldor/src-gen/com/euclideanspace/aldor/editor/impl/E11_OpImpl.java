@@ -5,7 +5,6 @@ package com.euclideanspace.aldor.editor.impl;
 import com.euclideanspace.aldor.editor.E11_Op;
 import com.euclideanspace.aldor.editor.EditorPackage;
 import com.euclideanspace.aldor.editor.Expr;
-import com.euclideanspace.aldor.editor.Op;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
@@ -40,7 +39,7 @@ public class E11_OpImpl extends ExprImpl implements E11_Op
    * @generated
    * @ordered
    */
-  protected Op left;
+  protected Expr left;
 
   /**
    * The default value of the '{@link #getOp() <em>Op</em>}' attribute.
@@ -98,7 +97,7 @@ public class E11_OpImpl extends ExprImpl implements E11_Op
    * <!-- end-user-doc -->
    * @generated
    */
-  public Op getLeft()
+  public Expr getLeft()
   {
     return left;
   }
@@ -108,9 +107,9 @@ public class E11_OpImpl extends ExprImpl implements E11_Op
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetLeft(Op newLeft, NotificationChain msgs)
+  public NotificationChain basicSetLeft(Expr newLeft, NotificationChain msgs)
   {
-    Op oldLeft = left;
+    Expr oldLeft = left;
     left = newLeft;
     if (eNotificationRequired())
     {
@@ -125,7 +124,7 @@ public class E11_OpImpl extends ExprImpl implements E11_Op
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setLeft(Op newLeft)
+  public void setLeft(Expr newLeft)
   {
     if (newLeft != left)
     {
@@ -261,7 +260,7 @@ public class E11_OpImpl extends ExprImpl implements E11_Op
     switch (featureID)
     {
       case EditorPackage.E11_OP__LEFT:
-        setLeft((Op)newValue);
+        setLeft((Expr)newValue);
         return;
       case EditorPackage.E11_OP__OP:
         setOp((String)newValue);
@@ -284,7 +283,7 @@ public class E11_OpImpl extends ExprImpl implements E11_Op
     switch (featureID)
     {
       case EditorPackage.E11_OP__LEFT:
-        setLeft((Op)null);
+        setLeft((Expr)null);
         return;
       case EditorPackage.E11_OP__OP:
         setOp(OP_EDEFAULT);

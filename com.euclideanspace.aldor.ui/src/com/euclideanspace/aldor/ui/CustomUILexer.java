@@ -1,6 +1,9 @@
 package com.euclideanspace.aldor.ui;
 
+import java.util.Deque;
+
 import org.antlr.runtime.CharStream;
+import org.antlr.runtime.CommonToken;
 import org.antlr.runtime.RecognizerSharedState;
 import org.antlr.runtime.Token;
 
@@ -22,12 +25,39 @@ public class CustomUILexer extends com.euclideanspace.aldor.ui.contentassist.ant
   public CustomUILexer(CharStream input, RecognizerSharedState state) {
     super(input,state);
   }
+  
+	/*
+	 * This queue allows additional tokens to be triggered when 
+	 * nextToken() is called.
+	 */
+	Deque<Token> tokens = new java.util.ArrayDeque<Token>();
+
+	CommonToken pendingToken = null;
 
 //  private final Map<Token, String> tokenErrorMap = new HashMap<Token, String>();
-  
+  @Override
+  public void emit(Token token) {
+      state.token = token;
+      tokens.addLast(token);
+  }
+
   @Override
   public Token nextToken() {
-	return super.nextToken();
+      super.nextToken();
+  	  //System.out.println("CustomLexer - nextToken");
+      if (tokens.isEmpty())
+          return Token.EOF_TOKEN;
+      Token firstToken = tokens.removeFirst();
+      int tt = firstToken.getType();
+      if (tt == RULE_KW_CCURLY) {
+    	  pendingToken = new CommonToken(RULE_KW_SEMICOLON,""); // empty string to avoid overlapping tokens
+    	  pendingToken.setLine(firstToken.getLine());
+    	  pendingToken.setCharPositionInLine(firstToken.getCharPositionInLine()+1);
+    	  pendingToken.setStartIndex(state.tokenStartCharIndex);
+    	  pendingToken.setStopIndex(state.tokenStartCharIndex);
+    	  emit(pendingToken);
+      }
+      return firstToken;
   }
 
 //  public String getErrorMessage(Token t) {

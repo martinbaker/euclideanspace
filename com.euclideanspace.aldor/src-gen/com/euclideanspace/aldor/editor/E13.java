@@ -32,12 +32,12 @@ public interface E13 extends Expr
    * </p>
    * <!-- end-user-doc -->
    * @return the value of the '<em>Left</em>' containment reference.
-   * @see #setLeft(E14)
+   * @see #setLeft(Expr)
    * @see com.euclideanspace.aldor.editor.EditorPackage#getE13_Left()
    * @model containment="true"
    * @generated
    */
-  E14 getLeft();
+  Expr getLeft();
 
   /**
    * Sets the value of the '{@link com.euclideanspace.aldor.editor.E13#getLeft <em>Left</em>}' containment reference.
@@ -47,7 +47,7 @@ public interface E13 extends Expr
    * @see #getLeft()
    * @generated
    */
-  void setLeft(E14 value);
+  void setLeft(Expr value);
 
   /**
    * Returns the value of the '<em><b>Op</b></em>' attribute.

@@ -12,8 +12,22 @@ public class EditorUiModule extends com.euclideanspace.aldor.ui.AbstractEditorUi
 	public EditorUiModule(AbstractUIPlugin plugin) {
 		super(plugin);
 	}
-	
-/*	// contributed by org.eclipse.xtext.generator.parser.antlr.XtextAntlrGeneratorFragment
+
+	/*
+	 * I want to customise the lexer.
+	 * I have created CustomLexer.java to extend
+     * com.euclideanspace.aldor.parser.antlr.internal.InternalEditorLexer.java
+     * and here in the UI code I have created CustomUILexer which extends
+     * com.euclideanspace.aldor.ui.contentassist.antlr.internal.InternalEditorLexer
+	 *
+	 * AbstractEditorUiModule seems to contain 3 methods that involve the lexer:
+	 * - configureHighlightingLexer
+	 * - configureContentAssistLexerProvider
+	 * - configureContentAssistLexer
+	 * 
+	 * So here we override these.
+	 */
+	@Override
 	public void configureHighlightingLexer(com.google.inject.Binder binder) {
 		binder.bind(org.eclipse.xtext.parser.antlr.Lexer.class).annotatedWith(
 				com.google.inject.name.Names.named(
@@ -21,19 +35,19 @@ public class EditorUiModule extends com.euclideanspace.aldor.ui.AbstractEditorUi
 								com.euclideanspace.aldor.CustomLexer.class);
 	}
 
-	// contributed by org.eclipse.xtext.generator.parser.antlr.XtextAntlrUiGeneratorFragment
+	@Override
 	public void configureContentAssistLexerProvider(com.google.inject.Binder binder) {
 		binder.bind(com.euclideanspace.aldor.ui.CustomUILexer.class)
 		  .toProvider(org.eclipse.xtext.parser.antlr.LexerProvider.create(
 				  com.euclideanspace.aldor.ui.CustomUILexer.class));
 	}
 
-	// contributed by org.eclipse.xtext.generator.parser.antlr.XtextAntlrUiGeneratorFragment
+	@Override
 	public void configureContentAssistLexer(com.google.inject.Binder binder) {
 		binder.bind(org.eclipse.xtext.ui.editor.contentassist.antlr.internal.Lexer.class)
 		   .annotatedWith(com.google.inject.name.Names.named(
 				   org.eclipse.xtext.ui.LexerUIBindings.CONTENT_ASSIST)).to(
 						   com.euclideanspace.aldor.ui.CustomUILexer.class);
-	}*/
+	}
 
 }

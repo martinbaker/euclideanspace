@@ -3,8 +3,8 @@
 package com.euclideanspace.aldor.editor.impl;
 
 import com.euclideanspace.aldor.editor.E13;
-import com.euclideanspace.aldor.editor.E14;
 import com.euclideanspace.aldor.editor.EditorPackage;
+import com.euclideanspace.aldor.editor.Expr;
 import com.euclideanspace.aldor.editor.QualTail;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -40,7 +40,7 @@ public class E13Impl extends ExprImpl implements E13
    * @generated
    * @ordered
    */
-  protected E14 left;
+  protected Expr left;
 
   /**
    * The default value of the '{@link #getOp() <em>Op</em>}' attribute.
@@ -98,7 +98,7 @@ public class E13Impl extends ExprImpl implements E13
    * <!-- end-user-doc -->
    * @generated
    */
-  public E14 getLeft()
+  public Expr getLeft()
   {
     return left;
   }
@@ -108,9 +108,9 @@ public class E13Impl extends ExprImpl implements E13
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetLeft(E14 newLeft, NotificationChain msgs)
+  public NotificationChain basicSetLeft(Expr newLeft, NotificationChain msgs)
   {
-    E14 oldLeft = left;
+    Expr oldLeft = left;
     left = newLeft;
     if (eNotificationRequired())
     {
@@ -125,7 +125,7 @@ public class E13Impl extends ExprImpl implements E13
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setLeft(E14 newLeft)
+  public void setLeft(Expr newLeft)
   {
     if (newLeft != left)
     {
@@ -261,7 +261,7 @@ public class E13Impl extends ExprImpl implements E13
     switch (featureID)
     {
       case EditorPackage.E13__LEFT:
-        setLeft((E14)newValue);
+        setLeft((Expr)newValue);
         return;
       case EditorPackage.E13__OP:
         setOp((String)newValue);
@@ -284,7 +284,7 @@ public class E13Impl extends ExprImpl implements E13
     switch (featureID)
     {
       case EditorPackage.E13__LEFT:
-        setLeft((E14)null);
+        setLeft((Expr)null);
         return;
       case EditorPackage.E13__OP:
         setOp(OP_EDEFAULT);

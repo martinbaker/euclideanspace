@@ -32,12 +32,12 @@ public interface E11_Op extends Expr
    * </p>
    * <!-- end-user-doc -->
    * @return the value of the '<em>Left</em>' containment reference.
-   * @see #setLeft(Op)
+   * @see #setLeft(Expr)
    * @see com.euclideanspace.aldor.editor.EditorPackage#getE11_Op_Left()
    * @model containment="true"
    * @generated
    */
-  Op getLeft();
+  Expr getLeft();
 
   /**
    * Sets the value of the '{@link com.euclideanspace.aldor.editor.E11_Op#getLeft <em>Left</em>}' containment reference.
@@ -47,7 +47,7 @@ public interface E11_Op extends Expr
    * @see #getLeft()
    * @generated
    */
-  void setLeft(Op value);
+  void setLeft(Expr value);
 
   /**
    * Returns the value of the '<em><b>Op</b></em>' attribute.

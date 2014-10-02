@@ -51,7 +51,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		// * 
 		// * known bugs
 		// * ----------
-		// * 1) customLexer: phantom semicolon after curly brackets is not yet conditional
+		// * 1) a(c:d,e:f):b() = add {a} fails to parse '=' and 'add' are both infix so cannot be adjacent
 		// * 2) ':' does not yet work properly. We want it to bind most tightly.
 		// * 3) + or - as prefix operator.
 		// * / / *
@@ -5403,7 +5403,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cEnlister1a_Labeled_SemicolonParserRuleCall = (RuleCall)rule.eContents().get(1);
 		
 		/// * A list of (at least one) statement(s)
-		// * seperated by semicolons (one or more)  and optionally ending with
+		// * separated by semicolons (one or more)  and optionally ending with
 		// * a semicolon (zero or more)
 		// * 
 		// * AB_Sequence
@@ -5427,7 +5427,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cKW_SEMICOLONTerminalRuleCall_2 = (RuleCall)cGroup.eContents().get(2);
 		
 		/// * A list of (at least one) statement(s)
-		// * seperated by (one or more) semicolons and optionally ending with
+		// * separated by (one or more) semicolons and optionally ending with
 		// * a semicolon (zero or more)
 		// * 
 		// * Aldor axl.z grammar defines this in a left recursive way so
@@ -5630,194 +5630,376 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	
-	private ModelElements pModel;
-	private TerminalRule tTK_ID;
-	private TerminalRule tWS;
-	private TerminalRule tKW_NEWLINE;
-	private TerminalRule tTK_PREDOC;
-	private TerminalRule tTK_POSTDOC;
-	private TerminalRule tTK_STRING;
-	private TerminalRule tTK_INT;
-	private TerminalRule tTK_FLOAT;
-	private TerminalRule tKW_QUOTE;
-	private TerminalRule tKW_OPAREN;
-	private TerminalRule tKW_CPAREN;
-	private TerminalRule tKW_OCURLY;
-	private TerminalRule tKW_CCURLY;
-	private TerminalRule tKW_OBRACK;
-	private TerminalRule tKW_CBRACK;
-	private TerminalRule tKW_2LT;
-	private TerminalRule tKW_2GT;
-	private TerminalRule tKW_MARROW;
-	private TerminalRule tKW_BAR;
-	private TerminalRule tKW_DOT;
-	private TerminalRule tKW_2COLON;
-	private TerminalRule tKW_COLONSTAR;
-	private TerminalRule tKW_COLON;
-	private TerminalRule tKW_AT;
-	private TerminalRule tKW_COMMA;
-	private TerminalRule tKW_SEMICOLON;
-	private TerminalRule tKW_2STAR;
-	private TerminalRule tKW_STAR;
-	private TerminalRule tKW_PLUS;
-	private TerminalRule tKW_MINUS;
-	private TerminalRule tKW_PLUSMINUS;
-	private TerminalRule tKW_LT;
-	private TerminalRule tKW_GT;
-	private TerminalRule tKW_LE;
-	private TerminalRule tKW_GE;
-	private TerminalRule tKW_EQ;
-	private TerminalRule tKW_TILDEE;
-	private TerminalRule tKW_HATE;
-	private TerminalRule tKW_TILDE;
-	private TerminalRule tKW_HAT;
-	private TerminalRule tKW_2DOT;
-	private TerminalRule tKW_SHARP;
-	private TerminalRule tKW_AMPERSAND;
-	private TerminalRule tKW_DOLLAR;
-	private TerminalRule tKW_SLASH;
-	private TerminalRule tKW_BACKSLASH;
-	private TerminalRule tKW_WEDGE;
-	private TerminalRule tKW_VEE;
-	private TerminalRule tKW_IMPLIES;
-	private TerminalRule tKW_ASSIGN;
-	private TerminalRule tKW_2EQ;
-	private TerminalRule tKW_RARROW;
-	private TerminalRule tKW_LARROW;
-	private TerminalRule tKW_MAPSTO;
-	private TerminalRule tKW_MAPSTOSTAR;
-	private TerminalRule tKW_MAPSTAR;
-	private TerminalRule tANY_OTHER;
-	private ErrorElements pError;
-	private ExpressionElements pExpression;
-	private LabeledElements pLabeled;
-	private DeclarationElements pDeclaration;
-	private ExportDeclElements pExportDecl;
-	private ToPartElements pToPart;
-	private FromPartElements pFromPart;
-	private MacroBodyElements pMacroBody;
-	private SigElements pSig;
-	private DeclPartElements pDeclPart;
-	private CommaElements pComma;
-	private CommaItemElements pCommaItem;
-	private DeclBindingElements pDeclBinding;
-	private InfixedExprsDeclElements pInfixedExprsDecl;
-	private InfixedExprsElements pInfixedExprs;
-	private Binding_AnyStatementElements pBinding_AnyStatement;
-	private Binding_BalStatementElements pBinding_BalStatement;
-	private Binding_CollectionElements pBinding_Collection;
-	private BindingL_Infixed_AnyStatementElements pBindingL_Infixed_AnyStatement;
-	private BindingL_Infixed_BalStatementElements pBindingL_Infixed_BalStatement;
-	private BindingL_Infixed_CollectionElements pBindingL_Infixed_Collection;
-	private BindingR_InfixedExprsDecl_AnyStatementElements pBindingR_InfixedExprsDecl_AnyStatement;
-	private AnyStatementElements pAnyStatement;
-	private BalStatementElements pBalStatement;
-	private Flow_AnyStatementElements pFlow_AnyStatement;
-	private Flow_BalStatementElements pFlow_BalStatement;
-	private GenBoundElements pGenBound;
-	private ButExprElements pButExpr;
-	private CasesElements pCases;
-	private AlwaysPart_AnyStatementElements pAlwaysPart_AnyStatement;
-	private AlwaysPart_BalStatementElements pAlwaysPart_BalStatement;
-	private CollectionElements pCollection;
-	private IteratorsElements pIterators;
-	private Iterators1Elements pIterators1;
-	private IteratorElements pIterator;
-	private ForLhsElements pForLhs;
-	private SuchthatPartElements pSuchthatPart;
-	private InfixedElements pInfixed;
-	private InfixedExprElements pInfixedExpr;
-	private E3Elements pE3;
-	private E4Elements pE4;
-	private E5Elements pE5;
-	private E6Elements pE6;
-	private E7Elements pE7;
-	private E8Elements pE8;
-	private E9Elements pE9;
-	private E11_E12Elements pE11_E12;
-	private E11_OpElements pE11_Op;
-	private TypeElements pType;
-	private E12Elements pE12;
-	private E13Elements pE13;
-	private QualTailElements pQualTail;
-	private OpQualTailElements pOpQualTail;
-	private E14Elements pE14;
-	private E15Elements pE15;
-	private OpElements pOp;
-	private NakedOpElements pNakedOp;
-	private ArrowOpElements pArrowOp;
-	private LatticeOpElements pLatticeOp;
-	private RelationOpElements pRelationOp;
-	private SegOpElements pSegOp;
-	private PlusOpElements pPlusOp;
-	private QuotientOpElements pQuotientOp;
-	private TimesOpElements pTimesOp;
-	private PowerOpElements pPowerOp;
-	private ArrowTokElements pArrowTok;
-	private LatticeTokElements pLatticeTok;
-	private RelationTokElements pRelationTok;
-	private SegTokElements pSegTok;
-	private PlusTokElements pPlusTok;
-	private QuotientTokElements pQuotientTok;
-	private TimesTokElements pTimesTok;
-	private PowerTokElements pPowerTok;
-	private ApplicationElements pApplication;
-	private RightJuxtaposedElements pRightJuxtaposed;
-	private LeftJuxtaposedElements pLeftJuxtaposed;
-	private Jright_MoleculeElements pJright_Molecule;
-	private Jright_AtomElements pJright_Atom;
-	private Jleft_MoleculeElements pJleft_Molecule;
-	private Jleft_AtomElements pJleft_Atom;
-	private MoleculeElements pMolecule;
-	private EnclosureElements pEnclosure;
-	private DeclMoleculeElements pDeclMolecule;
-	private BlockMoleculeElements pBlockMolecule;
-	private BlockEnclosureElements pBlockEnclosure;
-	private BlockElements pBlock;
-	private ParenedElements pParened;
-	private BracketedElements pBracketed;
-	private QuotedIdsElements pQuotedIds;
-	private NamesElements pNames;
-	private AtomElements pAtom;
-	private NameElements pName;
-	private IdElements pId;
-	private LiteralElements pLiteral;
-	private UnqualOp_ArrowTokElements pUnqualOp_ArrowTok;
-	private UnqualOp_LatticeTokElements pUnqualOp_LatticeTok;
-	private UnqualOp_RelationTokElements pUnqualOp_RelationTok;
-	private UnqualOp_SegTokElements pUnqualOp_SegTok;
-	private UnqualOp_PlusTokElements pUnqualOp_PlusTok;
-	private UnqualOp_QuotientTokElements pUnqualOp_QuotientTok;
-	private UnqualOp_TimesTokElements pUnqualOp_TimesTok;
-	private UnqualOp_PowerTokElements pUnqualOp_PowerTok;
-	private QualOp_ArrowTokElements pQualOp_ArrowTok;
-	private QualOp_LatticeTokElements pQualOp_LatticeTok;
-	private QualOp_RelationTokElements pQualOp_RelationTok;
-	private QualOp_SegTokElements pQualOp_SegTok;
-	private QualOp_PlusTokElements pQualOp_PlusTok;
-	private QualOp_QuotientTokElements pQualOp_QuotientTok;
-	private QualOp_TimesTokElements pQualOp_TimesTok;
-	private QualOp_PowerTokElements pQualOp_PowerTok;
-	private PreDocumentElements pPreDocument;
-	private PostDocumentElements pPostDocument;
-	private Enlist1_CommaItem_Comma_ABElements pEnlist1_CommaItem_Comma_AB;
-	private Enlist1_Infixed_Comma_ABElements pEnlist1_Infixed_Comma_AB;
-	private Enlist1_InfixedExpr_Comma_ABElements pEnlist1_InfixedExpr_Comma_AB;
-	private Enlister1_CommaItem_CommaElements pEnlister1_CommaItem_Comma;
-	private Enlister1_Infixed_CommaElements pEnlister1_Infixed_Comma;
-	private Enlister1_InfixedExpr_CommaElements pEnlister1_InfixedExpr_Comma;
-	private Enlist1a_Labeled_Semicolon_ABElements pEnlist1a_Labeled_Semicolon_AB;
-	private Enlister1a_Labeled_SemicolonElements pEnlister1a_Labeled_Semicolon;
-	private Curly_LabeledElements pCurly_Labeled;
-	private CurlyContents_LabeledElements pCurlyContents_Labeled;
-	private CurlyContentsList_LabeledElements pCurlyContentsList_Labeled;
-	private CurlyContentB_LabeledElements pCurlyContentB_Labeled;
+	private final ModelElements pModel;
+	private final TerminalRule tTK_ID;
+	private final TerminalRule tWS;
+	private final TerminalRule tKW_NEWLINE;
+	private final TerminalRule tTK_PREDOC;
+	private final TerminalRule tTK_POSTDOC;
+	private final TerminalRule tTK_STRING;
+	private final TerminalRule tTK_INT;
+	private final TerminalRule tTK_FLOAT;
+	private final TerminalRule tKW_QUOTE;
+	private final TerminalRule tKW_OPAREN;
+	private final TerminalRule tKW_CPAREN;
+	private final TerminalRule tKW_OCURLY;
+	private final TerminalRule tKW_CCURLY;
+	private final TerminalRule tKW_OBRACK;
+	private final TerminalRule tKW_CBRACK;
+	private final TerminalRule tKW_2LT;
+	private final TerminalRule tKW_2GT;
+	private final TerminalRule tKW_MARROW;
+	private final TerminalRule tKW_BAR;
+	private final TerminalRule tKW_DOT;
+	private final TerminalRule tKW_2COLON;
+	private final TerminalRule tKW_COLONSTAR;
+	private final TerminalRule tKW_COLON;
+	private final TerminalRule tKW_AT;
+	private final TerminalRule tKW_COMMA;
+	private final TerminalRule tKW_SEMICOLON;
+	private final TerminalRule tKW_2STAR;
+	private final TerminalRule tKW_STAR;
+	private final TerminalRule tKW_PLUS;
+	private final TerminalRule tKW_MINUS;
+	private final TerminalRule tKW_PLUSMINUS;
+	private final TerminalRule tKW_LT;
+	private final TerminalRule tKW_GT;
+	private final TerminalRule tKW_LE;
+	private final TerminalRule tKW_GE;
+	private final TerminalRule tKW_EQ;
+	private final TerminalRule tKW_TILDEE;
+	private final TerminalRule tKW_HATE;
+	private final TerminalRule tKW_TILDE;
+	private final TerminalRule tKW_HAT;
+	private final TerminalRule tKW_2DOT;
+	private final TerminalRule tKW_SHARP;
+	private final TerminalRule tKW_AMPERSAND;
+	private final TerminalRule tKW_DOLLAR;
+	private final TerminalRule tKW_SLASH;
+	private final TerminalRule tKW_BACKSLASH;
+	private final TerminalRule tKW_WEDGE;
+	private final TerminalRule tKW_VEE;
+	private final TerminalRule tKW_IMPLIES;
+	private final TerminalRule tKW_ASSIGN;
+	private final TerminalRule tKW_2EQ;
+	private final TerminalRule tKW_RARROW;
+	private final TerminalRule tKW_LARROW;
+	private final TerminalRule tKW_MAPSTO;
+	private final TerminalRule tKW_MAPSTOSTAR;
+	private final TerminalRule tKW_MAPSTAR;
+	private final TerminalRule tANY_OTHER;
+	private final ErrorElements pError;
+	private final ExpressionElements pExpression;
+	private final LabeledElements pLabeled;
+	private final DeclarationElements pDeclaration;
+	private final ExportDeclElements pExportDecl;
+	private final ToPartElements pToPart;
+	private final FromPartElements pFromPart;
+	private final MacroBodyElements pMacroBody;
+	private final SigElements pSig;
+	private final DeclPartElements pDeclPart;
+	private final CommaElements pComma;
+	private final CommaItemElements pCommaItem;
+	private final DeclBindingElements pDeclBinding;
+	private final InfixedExprsDeclElements pInfixedExprsDecl;
+	private final InfixedExprsElements pInfixedExprs;
+	private final Binding_AnyStatementElements pBinding_AnyStatement;
+	private final Binding_BalStatementElements pBinding_BalStatement;
+	private final Binding_CollectionElements pBinding_Collection;
+	private final BindingL_Infixed_AnyStatementElements pBindingL_Infixed_AnyStatement;
+	private final BindingL_Infixed_BalStatementElements pBindingL_Infixed_BalStatement;
+	private final BindingL_Infixed_CollectionElements pBindingL_Infixed_Collection;
+	private final BindingR_InfixedExprsDecl_AnyStatementElements pBindingR_InfixedExprsDecl_AnyStatement;
+	private final AnyStatementElements pAnyStatement;
+	private final BalStatementElements pBalStatement;
+	private final Flow_AnyStatementElements pFlow_AnyStatement;
+	private final Flow_BalStatementElements pFlow_BalStatement;
+	private final GenBoundElements pGenBound;
+	private final ButExprElements pButExpr;
+	private final CasesElements pCases;
+	private final AlwaysPart_AnyStatementElements pAlwaysPart_AnyStatement;
+	private final AlwaysPart_BalStatementElements pAlwaysPart_BalStatement;
+	private final CollectionElements pCollection;
+	private final IteratorsElements pIterators;
+	private final Iterators1Elements pIterators1;
+	private final IteratorElements pIterator;
+	private final ForLhsElements pForLhs;
+	private final SuchthatPartElements pSuchthatPart;
+	private final InfixedElements pInfixed;
+	private final InfixedExprElements pInfixedExpr;
+	private final E3Elements pE3;
+	private final E4Elements pE4;
+	private final E5Elements pE5;
+	private final E6Elements pE6;
+	private final E7Elements pE7;
+	private final E8Elements pE8;
+	private final E9Elements pE9;
+	private final E11_E12Elements pE11_E12;
+	private final E11_OpElements pE11_Op;
+	private final TypeElements pType;
+	private final E12Elements pE12;
+	private final E13Elements pE13;
+	private final QualTailElements pQualTail;
+	private final OpQualTailElements pOpQualTail;
+	private final E14Elements pE14;
+	private final E15Elements pE15;
+	private final OpElements pOp;
+	private final NakedOpElements pNakedOp;
+	private final ArrowOpElements pArrowOp;
+	private final LatticeOpElements pLatticeOp;
+	private final RelationOpElements pRelationOp;
+	private final SegOpElements pSegOp;
+	private final PlusOpElements pPlusOp;
+	private final QuotientOpElements pQuotientOp;
+	private final TimesOpElements pTimesOp;
+	private final PowerOpElements pPowerOp;
+	private final ArrowTokElements pArrowTok;
+	private final LatticeTokElements pLatticeTok;
+	private final RelationTokElements pRelationTok;
+	private final SegTokElements pSegTok;
+	private final PlusTokElements pPlusTok;
+	private final QuotientTokElements pQuotientTok;
+	private final TimesTokElements pTimesTok;
+	private final PowerTokElements pPowerTok;
+	private final ApplicationElements pApplication;
+	private final RightJuxtaposedElements pRightJuxtaposed;
+	private final LeftJuxtaposedElements pLeftJuxtaposed;
+	private final Jright_MoleculeElements pJright_Molecule;
+	private final Jright_AtomElements pJright_Atom;
+	private final Jleft_MoleculeElements pJleft_Molecule;
+	private final Jleft_AtomElements pJleft_Atom;
+	private final MoleculeElements pMolecule;
+	private final EnclosureElements pEnclosure;
+	private final DeclMoleculeElements pDeclMolecule;
+	private final BlockMoleculeElements pBlockMolecule;
+	private final BlockEnclosureElements pBlockEnclosure;
+	private final BlockElements pBlock;
+	private final ParenedElements pParened;
+	private final BracketedElements pBracketed;
+	private final QuotedIdsElements pQuotedIds;
+	private final NamesElements pNames;
+	private final AtomElements pAtom;
+	private final NameElements pName;
+	private final IdElements pId;
+	private final LiteralElements pLiteral;
+	private final UnqualOp_ArrowTokElements pUnqualOp_ArrowTok;
+	private final UnqualOp_LatticeTokElements pUnqualOp_LatticeTok;
+	private final UnqualOp_RelationTokElements pUnqualOp_RelationTok;
+	private final UnqualOp_SegTokElements pUnqualOp_SegTok;
+	private final UnqualOp_PlusTokElements pUnqualOp_PlusTok;
+	private final UnqualOp_QuotientTokElements pUnqualOp_QuotientTok;
+	private final UnqualOp_TimesTokElements pUnqualOp_TimesTok;
+	private final UnqualOp_PowerTokElements pUnqualOp_PowerTok;
+	private final QualOp_ArrowTokElements pQualOp_ArrowTok;
+	private final QualOp_LatticeTokElements pQualOp_LatticeTok;
+	private final QualOp_RelationTokElements pQualOp_RelationTok;
+	private final QualOp_SegTokElements pQualOp_SegTok;
+	private final QualOp_PlusTokElements pQualOp_PlusTok;
+	private final QualOp_QuotientTokElements pQualOp_QuotientTok;
+	private final QualOp_TimesTokElements pQualOp_TimesTok;
+	private final QualOp_PowerTokElements pQualOp_PowerTok;
+	private final PreDocumentElements pPreDocument;
+	private final PostDocumentElements pPostDocument;
+	private final Enlist1_CommaItem_Comma_ABElements pEnlist1_CommaItem_Comma_AB;
+	private final Enlist1_Infixed_Comma_ABElements pEnlist1_Infixed_Comma_AB;
+	private final Enlist1_InfixedExpr_Comma_ABElements pEnlist1_InfixedExpr_Comma_AB;
+	private final Enlister1_CommaItem_CommaElements pEnlister1_CommaItem_Comma;
+	private final Enlister1_Infixed_CommaElements pEnlister1_Infixed_Comma;
+	private final Enlister1_InfixedExpr_CommaElements pEnlister1_InfixedExpr_Comma;
+	private final Enlist1a_Labeled_Semicolon_ABElements pEnlist1a_Labeled_Semicolon_AB;
+	private final Enlister1a_Labeled_SemicolonElements pEnlister1a_Labeled_Semicolon;
+	private final Curly_LabeledElements pCurly_Labeled;
+	private final CurlyContents_LabeledElements pCurlyContents_Labeled;
+	private final CurlyContentsList_LabeledElements pCurlyContentsList_Labeled;
+	private final CurlyContentB_LabeledElements pCurlyContentB_Labeled;
 	
 	private final Grammar grammar;
 
 	@Inject
 	public EditorGrammarAccess(GrammarProvider grammarProvider) {
 		this.grammar = internalFindGrammar(grammarProvider);
+		this.pModel = new ModelElements();
+		this.tTK_ID = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "TK_ID");
+		this.tWS = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "WS");
+		this.tKW_NEWLINE = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "KW_NEWLINE");
+		this.tTK_PREDOC = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "TK_PREDOC");
+		this.tTK_POSTDOC = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "TK_POSTDOC");
+		this.tTK_STRING = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "TK_STRING");
+		this.tTK_INT = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "TK_INT");
+		this.tTK_FLOAT = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "TK_FLOAT");
+		this.tKW_QUOTE = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "KW_QUOTE");
+		this.tKW_OPAREN = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "KW_OPAREN");
+		this.tKW_CPAREN = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "KW_CPAREN");
+		this.tKW_OCURLY = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "KW_OCURLY");
+		this.tKW_CCURLY = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "KW_CCURLY");
+		this.tKW_OBRACK = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "KW_OBRACK");
+		this.tKW_CBRACK = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "KW_CBRACK");
+		this.tKW_2LT = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "KW_2LT");
+		this.tKW_2GT = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "KW_2GT");
+		this.tKW_MARROW = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "KW_MARROW");
+		this.tKW_BAR = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "KW_BAR");
+		this.tKW_DOT = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "KW_DOT");
+		this.tKW_2COLON = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "KW_2COLON");
+		this.tKW_COLONSTAR = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "KW_COLONSTAR");
+		this.tKW_COLON = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "KW_COLON");
+		this.tKW_AT = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "KW_AT");
+		this.tKW_COMMA = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "KW_COMMA");
+		this.tKW_SEMICOLON = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "KW_SEMICOLON");
+		this.tKW_2STAR = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "KW_2STAR");
+		this.tKW_STAR = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "KW_STAR");
+		this.tKW_PLUS = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "KW_PLUS");
+		this.tKW_MINUS = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "KW_MINUS");
+		this.tKW_PLUSMINUS = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "KW_PLUSMINUS");
+		this.tKW_LT = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "KW_LT");
+		this.tKW_GT = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "KW_GT");
+		this.tKW_LE = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "KW_LE");
+		this.tKW_GE = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "KW_GE");
+		this.tKW_EQ = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "KW_EQ");
+		this.tKW_TILDEE = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "KW_TILDEE");
+		this.tKW_HATE = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "KW_HATE");
+		this.tKW_TILDE = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "KW_TILDE");
+		this.tKW_HAT = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "KW_HAT");
+		this.tKW_2DOT = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "KW_2DOT");
+		this.tKW_SHARP = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "KW_SHARP");
+		this.tKW_AMPERSAND = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "KW_AMPERSAND");
+		this.tKW_DOLLAR = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "KW_DOLLAR");
+		this.tKW_SLASH = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "KW_SLASH");
+		this.tKW_BACKSLASH = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "KW_BACKSLASH");
+		this.tKW_WEDGE = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "KW_WEDGE");
+		this.tKW_VEE = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "KW_VEE");
+		this.tKW_IMPLIES = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "KW_IMPLIES");
+		this.tKW_ASSIGN = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "KW_ASSIGN");
+		this.tKW_2EQ = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "KW_2EQ");
+		this.tKW_RARROW = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "KW_RARROW");
+		this.tKW_LARROW = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "KW_LARROW");
+		this.tKW_MAPSTO = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "KW_MAPSTO");
+		this.tKW_MAPSTOSTAR = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "KW_MAPSTOSTAR");
+		this.tKW_MAPSTAR = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "KW_MAPSTAR");
+		this.tANY_OTHER = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "ANY_OTHER");
+		this.pError = new ErrorElements();
+		this.pExpression = new ExpressionElements();
+		this.pLabeled = new LabeledElements();
+		this.pDeclaration = new DeclarationElements();
+		this.pExportDecl = new ExportDeclElements();
+		this.pToPart = new ToPartElements();
+		this.pFromPart = new FromPartElements();
+		this.pMacroBody = new MacroBodyElements();
+		this.pSig = new SigElements();
+		this.pDeclPart = new DeclPartElements();
+		this.pComma = new CommaElements();
+		this.pCommaItem = new CommaItemElements();
+		this.pDeclBinding = new DeclBindingElements();
+		this.pInfixedExprsDecl = new InfixedExprsDeclElements();
+		this.pInfixedExprs = new InfixedExprsElements();
+		this.pBinding_AnyStatement = new Binding_AnyStatementElements();
+		this.pBinding_BalStatement = new Binding_BalStatementElements();
+		this.pBinding_Collection = new Binding_CollectionElements();
+		this.pBindingL_Infixed_AnyStatement = new BindingL_Infixed_AnyStatementElements();
+		this.pBindingL_Infixed_BalStatement = new BindingL_Infixed_BalStatementElements();
+		this.pBindingL_Infixed_Collection = new BindingL_Infixed_CollectionElements();
+		this.pBindingR_InfixedExprsDecl_AnyStatement = new BindingR_InfixedExprsDecl_AnyStatementElements();
+		this.pAnyStatement = new AnyStatementElements();
+		this.pBalStatement = new BalStatementElements();
+		this.pFlow_AnyStatement = new Flow_AnyStatementElements();
+		this.pFlow_BalStatement = new Flow_BalStatementElements();
+		this.pGenBound = new GenBoundElements();
+		this.pButExpr = new ButExprElements();
+		this.pCases = new CasesElements();
+		this.pAlwaysPart_AnyStatement = new AlwaysPart_AnyStatementElements();
+		this.pAlwaysPart_BalStatement = new AlwaysPart_BalStatementElements();
+		this.pCollection = new CollectionElements();
+		this.pIterators = new IteratorsElements();
+		this.pIterators1 = new Iterators1Elements();
+		this.pIterator = new IteratorElements();
+		this.pForLhs = new ForLhsElements();
+		this.pSuchthatPart = new SuchthatPartElements();
+		this.pInfixed = new InfixedElements();
+		this.pInfixedExpr = new InfixedExprElements();
+		this.pE3 = new E3Elements();
+		this.pE4 = new E4Elements();
+		this.pE5 = new E5Elements();
+		this.pE6 = new E6Elements();
+		this.pE7 = new E7Elements();
+		this.pE8 = new E8Elements();
+		this.pE9 = new E9Elements();
+		this.pE11_E12 = new E11_E12Elements();
+		this.pE11_Op = new E11_OpElements();
+		this.pType = new TypeElements();
+		this.pE12 = new E12Elements();
+		this.pE13 = new E13Elements();
+		this.pQualTail = new QualTailElements();
+		this.pOpQualTail = new OpQualTailElements();
+		this.pE14 = new E14Elements();
+		this.pE15 = new E15Elements();
+		this.pOp = new OpElements();
+		this.pNakedOp = new NakedOpElements();
+		this.pArrowOp = new ArrowOpElements();
+		this.pLatticeOp = new LatticeOpElements();
+		this.pRelationOp = new RelationOpElements();
+		this.pSegOp = new SegOpElements();
+		this.pPlusOp = new PlusOpElements();
+		this.pQuotientOp = new QuotientOpElements();
+		this.pTimesOp = new TimesOpElements();
+		this.pPowerOp = new PowerOpElements();
+		this.pArrowTok = new ArrowTokElements();
+		this.pLatticeTok = new LatticeTokElements();
+		this.pRelationTok = new RelationTokElements();
+		this.pSegTok = new SegTokElements();
+		this.pPlusTok = new PlusTokElements();
+		this.pQuotientTok = new QuotientTokElements();
+		this.pTimesTok = new TimesTokElements();
+		this.pPowerTok = new PowerTokElements();
+		this.pApplication = new ApplicationElements();
+		this.pRightJuxtaposed = new RightJuxtaposedElements();
+		this.pLeftJuxtaposed = new LeftJuxtaposedElements();
+		this.pJright_Molecule = new Jright_MoleculeElements();
+		this.pJright_Atom = new Jright_AtomElements();
+		this.pJleft_Molecule = new Jleft_MoleculeElements();
+		this.pJleft_Atom = new Jleft_AtomElements();
+		this.pMolecule = new MoleculeElements();
+		this.pEnclosure = new EnclosureElements();
+		this.pDeclMolecule = new DeclMoleculeElements();
+		this.pBlockMolecule = new BlockMoleculeElements();
+		this.pBlockEnclosure = new BlockEnclosureElements();
+		this.pBlock = new BlockElements();
+		this.pParened = new ParenedElements();
+		this.pBracketed = new BracketedElements();
+		this.pQuotedIds = new QuotedIdsElements();
+		this.pNames = new NamesElements();
+		this.pAtom = new AtomElements();
+		this.pName = new NameElements();
+		this.pId = new IdElements();
+		this.pLiteral = new LiteralElements();
+		this.pUnqualOp_ArrowTok = new UnqualOp_ArrowTokElements();
+		this.pUnqualOp_LatticeTok = new UnqualOp_LatticeTokElements();
+		this.pUnqualOp_RelationTok = new UnqualOp_RelationTokElements();
+		this.pUnqualOp_SegTok = new UnqualOp_SegTokElements();
+		this.pUnqualOp_PlusTok = new UnqualOp_PlusTokElements();
+		this.pUnqualOp_QuotientTok = new UnqualOp_QuotientTokElements();
+		this.pUnqualOp_TimesTok = new UnqualOp_TimesTokElements();
+		this.pUnqualOp_PowerTok = new UnqualOp_PowerTokElements();
+		this.pQualOp_ArrowTok = new QualOp_ArrowTokElements();
+		this.pQualOp_LatticeTok = new QualOp_LatticeTokElements();
+		this.pQualOp_RelationTok = new QualOp_RelationTokElements();
+		this.pQualOp_SegTok = new QualOp_SegTokElements();
+		this.pQualOp_PlusTok = new QualOp_PlusTokElements();
+		this.pQualOp_QuotientTok = new QualOp_QuotientTokElements();
+		this.pQualOp_TimesTok = new QualOp_TimesTokElements();
+		this.pQualOp_PowerTok = new QualOp_PowerTokElements();
+		this.pPreDocument = new PreDocumentElements();
+		this.pPostDocument = new PostDocumentElements();
+		this.pEnlist1_CommaItem_Comma_AB = new Enlist1_CommaItem_Comma_ABElements();
+		this.pEnlist1_Infixed_Comma_AB = new Enlist1_Infixed_Comma_ABElements();
+		this.pEnlist1_InfixedExpr_Comma_AB = new Enlist1_InfixedExpr_Comma_ABElements();
+		this.pEnlister1_CommaItem_Comma = new Enlister1_CommaItem_CommaElements();
+		this.pEnlister1_Infixed_Comma = new Enlister1_Infixed_CommaElements();
+		this.pEnlister1_InfixedExpr_Comma = new Enlister1_InfixedExpr_CommaElements();
+		this.pEnlist1a_Labeled_Semicolon_AB = new Enlist1a_Labeled_Semicolon_ABElements();
+		this.pEnlister1a_Labeled_Semicolon = new Enlister1a_Labeled_SemicolonElements();
+		this.pCurly_Labeled = new Curly_LabeledElements();
+		this.pCurlyContents_Labeled = new CurlyContents_LabeledElements();
+		this.pCurlyContentsList_Labeled = new CurlyContentsList_LabeledElements();
+		this.pCurlyContentB_Labeled = new CurlyContentB_LabeledElements();
 	}
 	
 	protected Grammar internalFindGrammar(GrammarProvider grammarProvider) {
@@ -5867,7 +6049,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 	// * 
 	// * known bugs
 	// * ----------
-	// * 1) customLexer: phantom semicolon after curly brackets is not yet conditional
+	// * 1) a(c:d,e:f):b() = add {a} fails to parse '=' and 'add' are both infix so cannot be adjacent
 	// * 2) ':' does not yet work properly. We want it to bind most tightly.
 	// * 3) + or - as prefix operator.
 	// * / / *
@@ -5880,7 +6062,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 	// * / Model hidden(WS, KW_NEWLINE):
 	//	("#include" insert+=TK_STRING)* cc=CurlyContents_Labeled;
 	public ModelElements getModelAccess() {
-		return (pModel != null) ? pModel : (pModel = new ModelElements());
+		return pModel;
 	}
 	
 	public ParserRule getModelRule() {
@@ -5898,7 +6080,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 	// * / terminal TK_ID:
 	//	("a".."z" | "A".."Z" | "_" .) ("a".."z" | "A".."Z" | "_" . | "0".."9")* "!"? "?"?;
 	public TerminalRule getTK_IDRule() {
-		return (tTK_ID != null) ? tTK_ID : (tTK_ID = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "TK_ID"));
+		return tTK_ID;
 	} 
 
 	/// * whitespace on single line overrides default whitespace
@@ -5911,7 +6093,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 	// * / terminal WS:
 	//	(" " | "\t")+;
 	public TerminalRule getWSRule() {
-		return (tWS != null) ? tWS : (tWS = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "WS"));
+		return tWS;
 	} 
 
 	/// * at least one newline or carriage return character.
@@ -5923,7 +6105,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 	// * / terminal KW_NEWLINE:
 	//	"\r" | "\n";
 	public TerminalRule getKW_NEWLINERule() {
-		return (tKW_NEWLINE != null) ? tKW_NEWLINE : (tKW_NEWLINE = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "KW_NEWLINE"));
+		return tKW_NEWLINE;
 	} 
 
 	/// * overwriting TK_COMMENTS we do not want Java syntax (//) but Aldor/spad syntax (--)
@@ -5939,14 +6121,14 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 	//terminal TK_PREDOC:
 	//	"--" !("\n" | "\r")*;
 	public TerminalRule getTK_PREDOCRule() {
-		return (tTK_PREDOC != null) ? tTK_PREDOC : (tTK_PREDOC = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "TK_PREDOC"));
+		return tTK_PREDOC;
 	} 
 
 	////('\r'|'\n')?;
 	//terminal TK_POSTDOC:
 	//	"++" !("\n" | "\r")*;
 	public TerminalRule getTK_POSTDOCRule() {
-		return (tTK_POSTDOC != null) ? tTK_POSTDOC : (tTK_POSTDOC = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "TK_POSTDOC"));
+		return tTK_POSTDOC;
 	} 
 
 	/// * string literals are enclosed in double quotes
@@ -5954,7 +6136,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 	// * / terminal TK_STRING:
 	//	"\"" !"\""* "\"";
 	public TerminalRule getTK_STRINGRule() {
-		return (tTK_STRING != null) ? tTK_STRING : (tTK_STRING = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "TK_STRING"));
+		return tTK_STRING;
 	} 
 
 	/// *
@@ -5964,7 +6146,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 	// * / terminal TK_INT returns ecore::EInt:
 	//	"0".."9"+;
 	public TerminalRule getTK_INTRule() {
-		return (tTK_INT != null) ? tTK_INT : (tTK_INT = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "TK_INT"));
+		return tTK_INT;
 	} 
 
 	/// *
@@ -5976,7 +6158,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 	// * / terminal TK_FLOAT:
 	//	TK_INT ("e" | "E") ("+" | "-")? TK_INT;
 	public TerminalRule getTK_FLOATRule() {
-		return (tTK_FLOAT != null) ? tTK_FLOAT : (tTK_FLOAT = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "TK_FLOAT"));
+		return tTK_FLOAT;
 	} 
 
 	/// * grouping
@@ -5994,7 +6176,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 	// * / terminal KW_QUOTE:
 	//	"\'";
 	public TerminalRule getKW_QUOTERule() {
-		return (tKW_QUOTE != null) ? tKW_QUOTE : (tKW_QUOTE = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "KW_QUOTE"));
+		return tKW_QUOTE;
 	} 
 
 	/// * (
@@ -6002,7 +6184,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 	// * / terminal KW_OPAREN:
 	//	"(";
 	public TerminalRule getKW_OPARENRule() {
-		return (tKW_OPAREN != null) ? tKW_OPAREN : (tKW_OPAREN = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "KW_OPAREN"));
+		return tKW_OPAREN;
 	} 
 
 	/// * )
@@ -6010,7 +6192,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 	// * / terminal KW_CPAREN:
 	//	")";
 	public TerminalRule getKW_CPARENRule() {
-		return (tKW_CPAREN != null) ? tKW_CPAREN : (tKW_CPAREN = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "KW_CPAREN"));
+		return tKW_CPAREN;
 	} 
 
 	/// * {
@@ -6018,7 +6200,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 	// * / terminal KW_OCURLY:
 	//	"{";
 	public TerminalRule getKW_OCURLYRule() {
-		return (tKW_OCURLY != null) ? tKW_OCURLY : (tKW_OCURLY = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "KW_OCURLY"));
+		return tKW_OCURLY;
 	} 
 
 	/// * }
@@ -6026,7 +6208,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 	// * / terminal KW_CCURLY:
 	//	"}";
 	public TerminalRule getKW_CCURLYRule() {
-		return (tKW_CCURLY != null) ? tKW_CCURLY : (tKW_CCURLY = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "KW_CCURLY"));
+		return tKW_CCURLY;
 	} 
 
 	/// * [
@@ -6034,7 +6216,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 	// * / terminal KW_OBRACK:
 	//	"[";
 	public TerminalRule getKW_OBRACKRule() {
-		return (tKW_OBRACK != null) ? tKW_OBRACK : (tKW_OBRACK = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "KW_OBRACK"));
+		return tKW_OBRACK;
 	} 
 
 	/// * ]
@@ -6042,7 +6224,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 	// * / terminal KW_CBRACK:
 	//	"]";
 	public TerminalRule getKW_CBRACKRule() {
-		return (tKW_CBRACK != null) ? tKW_CBRACK : (tKW_CBRACK = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "KW_CBRACK"));
+		return tKW_CBRACK;
 	} 
 
 	/// *
@@ -6064,7 +6246,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 	// * / terminal KW_2LT:
 	//	"<<";
 	public TerminalRule getKW_2LTRule() {
-		return (tKW_2LT != null) ? tKW_2LT : (tKW_2LT = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "KW_2LT"));
+		return tKW_2LT;
 	} 
 
 	/// * >>
@@ -6072,7 +6254,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 	// * / terminal KW_2GT:
 	//	">>";
 	public TerminalRule getKW_2GTRule() {
-		return (tKW_2GT != null) ? tKW_2GT : (tKW_2GT = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "KW_2GT"));
+		return tKW_2GT;
 	} 
 
 	/// *terminal QUOTE "'";
@@ -6082,7 +6264,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 	// * / terminal KW_MARROW:
 	//	"==>";
 	public TerminalRule getKW_MARROWRule() {
-		return (tKW_MARROW != null) ? tKW_MARROW : (tKW_MARROW = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "KW_MARROW"));
+		return tKW_MARROW;
 	} 
 
 	/// * |
@@ -6090,7 +6272,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 	// * / terminal KW_BAR:
 	//	"|";
 	public TerminalRule getKW_BARRule() {
-		return (tKW_BAR != null) ? tKW_BAR : (tKW_BAR = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "KW_BAR"));
+		return tKW_BAR;
 	} 
 
 	/// * .
@@ -6098,7 +6280,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 	// * / terminal KW_DOT:
 	//	".";
 	public TerminalRule getKW_DOTRule() {
-		return (tKW_DOT != null) ? tKW_DOT : (tKW_DOT = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "KW_DOT"));
+		return tKW_DOT;
 	} 
 
 	/// * :: 2Colon or coerce
@@ -6106,7 +6288,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 	// * / terminal KW_2COLON:
 	//	"::";
 	public TerminalRule getKW_2COLONRule() {
-		return (tKW_2COLON != null) ? tKW_2COLON : (tKW_2COLON = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "KW_2COLON"));
+		return tKW_2COLON;
 	} 
 
 	/// * :*
@@ -6114,7 +6296,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 	// * / terminal KW_COLONSTAR:
 	//	":*";
 	public TerminalRule getKW_COLONSTARRule() {
-		return (tKW_COLONSTAR != null) ? tKW_COLONSTAR : (tKW_COLONSTAR = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "KW_COLONSTAR"));
+		return tKW_COLONSTAR;
 	} 
 
 	/// * :
@@ -6122,7 +6304,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 	// * / terminal KW_COLON:
 	//	":";
 	public TerminalRule getKW_COLONRule() {
-		return (tKW_COLON != null) ? tKW_COLON : (tKW_COLON = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "KW_COLON"));
+		return tKW_COLON;
 	} 
 
 	/// * @
@@ -6130,7 +6312,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 	// * / terminal KW_AT:
 	//	"@";
 	public TerminalRule getKW_ATRule() {
-		return (tKW_AT != null) ? tKW_AT : (tKW_AT = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "KW_AT"));
+		return tKW_AT;
 	} 
 
 	/// * , 
@@ -6138,7 +6320,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 	// * / terminal KW_COMMA:
 	//	",";
 	public TerminalRule getKW_COMMARule() {
-		return (tKW_COMMA != null) ? tKW_COMMA : (tKW_COMMA = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "KW_COMMA"));
+		return tKW_COMMA;
 	} 
 
 	/// * ;
@@ -6146,7 +6328,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 	// * / terminal KW_SEMICOLON:
 	//	";";
 	public TerminalRule getKW_SEMICOLONRule() {
-		return (tKW_SEMICOLON != null) ? tKW_SEMICOLON : (tKW_SEMICOLON = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "KW_SEMICOLON"));
+		return tKW_SEMICOLON;
 	} 
 
 	/// * ** 2star or power
@@ -6154,7 +6336,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 	// * / terminal KW_2STAR:
 	//	"**";
 	public TerminalRule getKW_2STARRule() {
-		return (tKW_2STAR != null) ? tKW_2STAR : (tKW_2STAR = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "KW_2STAR"));
+		return tKW_2STAR;
 	} 
 
 	/// * * times or star
@@ -6162,7 +6344,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 	// * / terminal KW_STAR:
 	//	"*";
 	public TerminalRule getKW_STARRule() {
-		return (tKW_STAR != null) ? tKW_STAR : (tKW_STAR = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "KW_STAR"));
+		return tKW_STAR;
 	} 
 
 	/// * + plus
@@ -6170,7 +6352,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 	// * / terminal KW_PLUS:
 	//	"+";
 	public TerminalRule getKW_PLUSRule() {
-		return (tKW_PLUS != null) ? tKW_PLUS : (tKW_PLUS = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "KW_PLUS"));
+		return tKW_PLUS;
 	} 
 
 	/// * -
@@ -6178,7 +6360,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 	// * / terminal KW_MINUS:
 	//	"-";
 	public TerminalRule getKW_MINUSRule() {
-		return (tKW_MINUS != null) ? tKW_MINUS : (tKW_MINUS = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "KW_MINUS"));
+		return tKW_MINUS;
 	} 
 
 	/// * +-
@@ -6186,7 +6368,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 	// * / terminal KW_PLUSMINUS:
 	//	"+-";
 	public TerminalRule getKW_PLUSMINUSRule() {
-		return (tKW_PLUSMINUS != null) ? tKW_PLUSMINUS : (tKW_PLUSMINUS = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "KW_PLUSMINUS"));
+		return tKW_PLUSMINUS;
 	} 
 
 	/// * <
@@ -6197,25 +6379,25 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 	// * / terminal KW_LT:
 	//	"<";
 	public TerminalRule getKW_LTRule() {
-		return (tKW_LT != null) ? tKW_LT : (tKW_LT = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "KW_LT"));
+		return tKW_LT;
 	} 
 
 	/// * > * / terminal KW_GT:
 	//	">";
 	public TerminalRule getKW_GTRule() {
-		return (tKW_GT != null) ? tKW_GT : (tKW_GT = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "KW_GT"));
+		return tKW_GT;
 	} 
 
 	/// * <= * / terminal KW_LE:
 	//	"<=";
 	public TerminalRule getKW_LERule() {
-		return (tKW_LE != null) ? tKW_LE : (tKW_LE = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "KW_LE"));
+		return tKW_LE;
 	} 
 
 	/// * >= * / terminal KW_GE:
 	//	">=";
 	public TerminalRule getKW_GERule() {
-		return (tKW_GE != null) ? tKW_GE : (tKW_GE = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "KW_GE"));
+		return tKW_GE;
 	} 
 
 	/// * = equal
@@ -6223,7 +6405,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 	// * / terminal KW_EQ:
 	//	"=";
 	public TerminalRule getKW_EQRule() {
-		return (tKW_EQ != null) ? tKW_EQ : (tKW_EQ = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "KW_EQ"));
+		return tKW_EQ;
 	} 
 
 	/// * ~= not-equal or tilde-equal
@@ -6231,7 +6413,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 	// * / terminal KW_TILDEE:
 	//	"~=";
 	public TerminalRule getKW_TILDEERule() {
-		return (tKW_TILDEE != null) ? tKW_TILDEE : (tKW_TILDEE = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "KW_TILDEE"));
+		return tKW_TILDEE;
 	} 
 
 	/// * ^= hat-equal
@@ -6239,7 +6421,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 	// * / terminal KW_HATE:
 	//	"^=";
 	public TerminalRule getKW_HATERule() {
-		return (tKW_HATE != null) ? tKW_HATE : (tKW_HATE = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "KW_HATE"));
+		return tKW_HATE;
 	} 
 
 	/// * ~
@@ -6247,7 +6429,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 	// * / terminal KW_TILDE:
 	//	"~";
 	public TerminalRule getKW_TILDERule() {
-		return (tKW_TILDE != null) ? tKW_TILDE : (tKW_TILDE = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "KW_TILDE"));
+		return tKW_TILDE;
 	} 
 
 	/// * ^ hat or carat
@@ -6255,7 +6437,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 	// * / terminal KW_HAT:
 	//	"^";
 	public TerminalRule getKW_HATRule() {
-		return (tKW_HAT != null) ? tKW_HAT : (tKW_HAT = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "KW_HAT"));
+		return tKW_HAT;
 	} 
 
 	/// * .. 2Dot or seg
@@ -6264,7 +6446,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 	// * / terminal KW_2DOT:
 	//	"..";
 	public TerminalRule getKW_2DOTRule() {
-		return (tKW_2DOT != null) ? tKW_2DOT : (tKW_2DOT = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "KW_2DOT"));
+		return tKW_2DOT;
 	} 
 
 	/// * # Hash or Sharp
@@ -6272,7 +6454,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 	// * / terminal KW_SHARP:
 	//	"#";
 	public TerminalRule getKW_SHARPRule() {
-		return (tKW_SHARP != null) ? tKW_SHARP : (tKW_SHARP = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "KW_SHARP"));
+		return tKW_SHARP;
 	} 
 
 	/// * &
@@ -6280,7 +6462,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 	// * / terminal KW_AMPERSAND:
 	//	"&";
 	public TerminalRule getKW_AMPERSANDRule() {
-		return (tKW_AMPERSAND != null) ? tKW_AMPERSAND : (tKW_AMPERSAND = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "KW_AMPERSAND"));
+		return tKW_AMPERSAND;
 	} 
 
 	/// * $
@@ -6288,7 +6470,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 	// * / terminal KW_DOLLAR:
 	//	"$";
 	public TerminalRule getKW_DOLLARRule() {
-		return (tKW_DOLLAR != null) ? tKW_DOLLAR : (tKW_DOLLAR = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "KW_DOLLAR"));
+		return tKW_DOLLAR;
 	} 
 
 	/// * /
@@ -6296,7 +6478,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 	// * / terminal KW_SLASH:
 	//	"/";
 	public TerminalRule getKW_SLASHRule() {
-		return (tKW_SLASH != null) ? tKW_SLASH : (tKW_SLASH = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "KW_SLASH"));
+		return tKW_SLASH;
 	} 
 
 	/// *
@@ -6304,7 +6486,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 	// * / terminal KW_BACKSLASH:
 	//	"\\";
 	public TerminalRule getKW_BACKSLASHRule() {
-		return (tKW_BACKSLASH != null) ? tKW_BACKSLASH : (tKW_BACKSLASH = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "KW_BACKSLASH"));
+		return tKW_BACKSLASH;
 	} 
 
 	////terminal SLASHSLASH: '//';
@@ -6315,7 +6497,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 	// * / terminal KW_WEDGE:
 	//	"/\\";
 	public TerminalRule getKW_WEDGERule() {
-		return (tKW_WEDGE != null) ? tKW_WEDGE : (tKW_WEDGE = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "KW_WEDGE"));
+		return tKW_WEDGE;
 	} 
 
 	/// * \\/ BACKSLASH-SLASH or vee
@@ -6324,7 +6506,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 	// * / terminal KW_VEE:
 	//	"\\/";
 	public TerminalRule getKW_VEERule() {
-		return (tKW_VEE != null) ? tKW_VEE : (tKW_VEE = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "KW_VEE"));
+		return tKW_VEE;
 	} 
 
 	/// * *$ multiply with specific type* / //terminal TIMESDOLAR: '*$';
@@ -6337,7 +6519,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 	// * / terminal KW_IMPLIES:
 	//	"=>";
 	public TerminalRule getKW_IMPLIESRule() {
-		return (tKW_IMPLIES != null) ? tKW_IMPLIES : (tKW_IMPLIES = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "KW_IMPLIES"));
+		return tKW_IMPLIES;
 	} 
 
 	/// * := Assign or Becomes
@@ -6345,7 +6527,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 	// * / terminal KW_ASSIGN:
 	//	":=";
 	public TerminalRule getKW_ASSIGNRule() {
-		return (tKW_ASSIGN != null) ? tKW_ASSIGN : (tKW_ASSIGN = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "KW_ASSIGN"));
+		return tKW_ASSIGN;
 	} 
 
 	/// * == 2eq or def
@@ -6353,7 +6535,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 	// * / terminal KW_2EQ:
 	//	"==";
 	public TerminalRule getKW_2EQRule() {
-		return (tKW_2EQ != null) ? tKW_2EQ : (tKW_2EQ = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "KW_2EQ"));
+		return tKW_2EQ;
 	} 
 
 	/// * -> right-arrow
@@ -6361,13 +6543,13 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 	// * / terminal KW_RARROW:
 	//	"->";
 	public TerminalRule getKW_RARROWRule() {
-		return (tKW_RARROW != null) ? tKW_RARROW : (tKW_RARROW = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "KW_RARROW"));
+		return tKW_RARROW;
 	} 
 
 	//terminal KW_LARROW:
 	//	"<-";
 	public TerminalRule getKW_LARROWRule() {
-		return (tKW_LARROW != null) ? tKW_LARROW : (tKW_LARROW = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "KW_LARROW"));
+		return tKW_LARROW;
 	} 
 
 	/// * +-> gives or maps-to
@@ -6375,7 +6557,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 	// * / terminal KW_MAPSTO:
 	//	"+->";
 	public TerminalRule getKW_MAPSTORule() {
-		return (tKW_MAPSTO != null) ? tKW_MAPSTO : (tKW_MAPSTO = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "KW_MAPSTO"));
+		return tKW_MAPSTO;
 	} 
 
 	/// * +->*
@@ -6383,7 +6565,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 	// * / terminal KW_MAPSTOSTAR:
 	//	"+->*";
 	public TerminalRule getKW_MAPSTOSTARRule() {
-		return (tKW_MAPSTOSTAR != null) ? tKW_MAPSTOSTAR : (tKW_MAPSTOSTAR = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "KW_MAPSTOSTAR"));
+		return tKW_MAPSTOSTAR;
 	} 
 
 	/// * ->* gives or maps-to
@@ -6391,7 +6573,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 	// * / terminal KW_MAPSTAR:
 	//	"->*";
 	public TerminalRule getKW_MAPSTARRule() {
-		return (tKW_MAPSTAR != null) ? tKW_MAPSTAR : (tKW_MAPSTAR = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "KW_MAPSTAR"));
+		return tKW_MAPSTAR;
 	} 
 
 	/// * % represents an instance of this type * / //terminal PERCENT: '%';
@@ -6401,7 +6583,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 	//terminal ANY_OTHER:
 	//	.;
 	public TerminalRule getANY_OTHERRule() {
-		return (tANY_OTHER != null) ? tANY_OTHER : (tANY_OTHER = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "ANY_OTHER"));
+		return tANY_OTHER;
 	} 
 
 	//////////// end of lexer rules ///////////////
@@ -6410,7 +6592,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 	// * / error hidden(WS, KW_NEWLINE):
 	//	"error";
 	public ErrorElements getErrorAccess() {
-		return (pError != null) ? pError : (pError = new ErrorElements());
+		return pError;
 	}
 	
 	public ParserRule getErrorRule() {
@@ -6420,7 +6602,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 	//Expression hidden(WS, KW_NEWLINE):
 	//	enlist1a_Labeled_Semicolon_AB;
 	public ExpressionElements getExpressionAccess() {
-		return (pExpression != null) ? pExpression : (pExpression = new ExpressionElements());
+		return pExpression;
 	}
 	
 	public ParserRule getExpressionRule() {
@@ -6436,7 +6618,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 	// * / Labeled hidden(WS, KW_NEWLINE):
 	//	c=Comma | d=Declaration | KW_AT a=Atom lab=Labeled?;
 	public LabeledElements getLabeledAccess() {
-		return (pLabeled != null) ? pLabeled : (pLabeled = new LabeledElements());
+		return pLabeled;
 	}
 	
 	public ParserRule getLabeledRule() {
@@ -6453,7 +6635,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 	//	{DeclarationDefine} "define" si=Sig | {DeclarationFix} "fix" si=Sig | {DeclarationInline} "inline" si=Sig?
 	//	fp=FromPart? | {DeclarationImport} "import" si=Sig? fp=FromPart? | {DeclarationExport} ed=ExportDecl;
 	public DeclarationElements getDeclarationAccess() {
-		return (pDeclaration != null) ? pDeclaration : (pDeclaration = new DeclarationElements());
+		return pDeclaration;
 	}
 	
 	public ParserRule getDeclarationRule() {
@@ -6463,7 +6645,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 	//ExportDecl hidden(WS, KW_NEWLINE):
 	//	{ExportDecl} "export" s=Sig? | => ("export" s=Sig? tp=ToPart) | => ("export" s=Sig? fp=FromPart);
 	public ExportDeclElements getExportDeclAccess() {
-		return (pExportDecl != null) ? pExportDecl : (pExportDecl = new ExportDeclElements());
+		return pExportDecl;
 	}
 	
 	public ParserRule getExportDeclRule() {
@@ -6473,7 +6655,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 	//ToPart hidden(WS, KW_NEWLINE):
 	//	"to" Infixed;
 	public ToPartElements getToPartAccess() {
-		return (pToPart != null) ? pToPart : (pToPart = new ToPartElements());
+		return pToPart;
 	}
 	
 	public ParserRule getToPartRule() {
@@ -6483,7 +6665,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 	//FromPart hidden(WS, KW_NEWLINE):
 	//	"from" enlist1_Infixed_Comma_AB;
 	public FromPartElements getFromPartAccess() {
-		return (pFromPart != null) ? pFromPart : (pFromPart = new FromPartElements());
+		return pFromPart;
 	}
 	
 	public ParserRule getFromPartRule() {
@@ -6493,7 +6675,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 	//MacroBody hidden(WS, KW_NEWLINE):
 	//	Sig | ExportDecl | "import" Sig fp=FromPart?;
 	public MacroBodyElements getMacroBodyAccess() {
-		return (pMacroBody != null) ? pMacroBody : (pMacroBody = new MacroBodyElements());
+		return pMacroBody;
 	}
 	
 	public ParserRule getMacroBodyRule() {
@@ -6503,7 +6685,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 	//Sig hidden(WS, KW_NEWLINE):
 	//	DeclBinding | Block;
 	public SigElements getSigAccess() {
-		return (pSig != null) ? pSig : (pSig = new SigElements());
+		return pSig;
 	}
 	
 	public ParserRule getSigRule() {
@@ -6513,7 +6695,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 	/// * declare type with ':' or ':*' * / DeclPart hidden(WS, KW_NEWLINE):
 	//	KW_COLON Type | KW_COLONSTAR Type;
 	public DeclPartElements getDeclPartAccess() {
-		return (pDeclPart != null) ? pDeclPart : (pDeclPart = new DeclPartElements());
+		return pDeclPart;
 	}
 	
 	public ParserRule getDeclPartRule() {
@@ -6525,7 +6707,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 	// * / Comma hidden(WS, KW_NEWLINE):
 	//	enlist1_CommaItem_Comma_AB;
 	public CommaElements getCommaAccess() {
-		return (pComma != null) ? pComma : (pComma = new CommaElements());
+		return pComma;
 	}
 	
 	public ParserRule getCommaRule() {
@@ -6535,7 +6717,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 	//CommaItem hidden(WS, KW_NEWLINE):
 	//	Binding_AnyStatement => ("where" ci+=CommaItem)*;
 	public CommaItemElements getCommaItemAccess() {
-		return (pCommaItem != null) ? pCommaItem : (pCommaItem = new CommaItemElements());
+		return pCommaItem;
 	}
 	
 	public ParserRule getCommaItemRule() {
@@ -6547,7 +6729,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 	// * / DeclBinding hidden(WS, KW_NEWLINE):
 	//	BindingR_InfixedExprsDecl_AnyStatement;
 	public DeclBindingElements getDeclBindingAccess() {
-		return (pDeclBinding != null) ? pDeclBinding : (pDeclBinding = new DeclBindingElements());
+		return pDeclBinding;
 	}
 	
 	public ParserRule getDeclBindingRule() {
@@ -6557,7 +6739,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 	//InfixedExprsDecl hidden(WS, KW_NEWLINE):
 	//	InfixedExprs dp+=DeclPart*;
 	public InfixedExprsDeclElements getInfixedExprsDeclAccess() {
-		return (pInfixedExprsDecl != null) ? pInfixedExprsDecl : (pInfixedExprsDecl = new InfixedExprsDeclElements());
+		return pInfixedExprsDecl;
 	}
 	
 	public ParserRule getInfixedExprsDeclRule() {
@@ -6567,7 +6749,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 	//InfixedExprs hidden(WS, KW_NEWLINE):
 	//	enlist1_InfixedExpr_Comma_AB;
 	public InfixedExprsElements getInfixedExprsAccess() {
-		return (pInfixedExprs != null) ? pInfixedExprs : (pInfixedExprs = new InfixedExprsElements());
+		return pInfixedExprs;
 	}
 	
 	public ParserRule getInfixedExprsRule() {
@@ -6589,7 +6771,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 	// * / Binding_AnyStatement hidden(WS, KW_NEWLINE):
 	//	BindingL_Infixed_AnyStatement;
 	public Binding_AnyStatementElements getBinding_AnyStatementAccess() {
-		return (pBinding_AnyStatement != null) ? pBinding_AnyStatement : (pBinding_AnyStatement = new Binding_AnyStatementElements());
+		return pBinding_AnyStatement;
 	}
 	
 	public ParserRule getBinding_AnyStatementRule() {
@@ -6599,7 +6781,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 	//Binding_BalStatement hidden(WS, KW_NEWLINE):
 	//	BindingL_Infixed_BalStatement;
 	public Binding_BalStatementElements getBinding_BalStatementAccess() {
-		return (pBinding_BalStatement != null) ? pBinding_BalStatement : (pBinding_BalStatement = new Binding_BalStatementElements());
+		return pBinding_BalStatement;
 	}
 	
 	public ParserRule getBinding_BalStatementRule() {
@@ -6609,7 +6791,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 	//Binding_Collection hidden(WS, KW_NEWLINE):
 	//	BindingL_Infixed_Collection;
 	public Binding_CollectionElements getBinding_CollectionAccess() {
-		return (pBinding_Collection != null) ? pBinding_Collection : (pBinding_Collection = new Binding_CollectionElements());
+		return pBinding_Collection;
 	}
 	
 	public ParserRule getBinding_CollectionRule() {
@@ -6621,7 +6803,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 	//	=> (lft=Infixed op=(KW_ASSIGN | KW_2EQ | KW_MARROW | KW_MAPSTO | KW_MAPSTOSTAR) bia=BindingL_Infixed_AnyStatement) |
 	//	bas9=AnyStatement;
 	public BindingL_Infixed_AnyStatementElements getBindingL_Infixed_AnyStatementAccess() {
-		return (pBindingL_Infixed_AnyStatement != null) ? pBindingL_Infixed_AnyStatement : (pBindingL_Infixed_AnyStatement = new BindingL_Infixed_AnyStatementElements());
+		return pBindingL_Infixed_AnyStatement;
 	}
 	
 	public ParserRule getBindingL_Infixed_AnyStatementRule() {
@@ -6632,7 +6814,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 	//	=> (lft=Infixed op=(KW_ASSIGN | KW_2EQ | KW_MARROW | KW_MAPSTO | KW_MAPSTOSTAR) bia=BindingL_Infixed_BalStatement) |
 	//	bas9=BalStatement;
 	public BindingL_Infixed_BalStatementElements getBindingL_Infixed_BalStatementAccess() {
-		return (pBindingL_Infixed_BalStatement != null) ? pBindingL_Infixed_BalStatement : (pBindingL_Infixed_BalStatement = new BindingL_Infixed_BalStatementElements());
+		return pBindingL_Infixed_BalStatement;
 	}
 	
 	public ParserRule getBindingL_Infixed_BalStatementRule() {
@@ -6643,7 +6825,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 	//	=> (lft=Infixed op=(KW_ASSIGN | KW_2EQ | KW_MARROW | KW_MAPSTO | KW_MAPSTOSTAR) bia=BindingL_Infixed_Collection) |
 	//	bas9=Collection;
 	public BindingL_Infixed_CollectionElements getBindingL_Infixed_CollectionAccess() {
-		return (pBindingL_Infixed_Collection != null) ? pBindingL_Infixed_Collection : (pBindingL_Infixed_Collection = new BindingL_Infixed_CollectionElements());
+		return pBindingL_Infixed_Collection;
 	}
 	
 	public ParserRule getBindingL_Infixed_CollectionRule() {
@@ -6676,7 +6858,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 	//BindingR_InfixedExprsDecl_AnyStatement hidden(WS, KW_NEWLINE):
 	//	InfixedExprsDecl ((KW_ASSIGN | KW_2EQ | KW_MARROW | KW_MAPSTO | KW_MAPSTOSTAR) bas=Binding_AnyStatement)?;
 	public BindingR_InfixedExprsDecl_AnyStatementElements getBindingR_InfixedExprsDecl_AnyStatementAccess() {
-		return (pBindingR_InfixedExprsDecl_AnyStatement != null) ? pBindingR_InfixedExprsDecl_AnyStatement : (pBindingR_InfixedExprsDecl_AnyStatement = new BindingR_InfixedExprsDecl_AnyStatementElements());
+		return pBindingR_InfixedExprsDecl_AnyStatement;
 	}
 	
 	public ParserRule getBindingR_InfixedExprsDecl_AnyStatementRule() {
@@ -6690,7 +6872,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 	// * / AnyStatement hidden(WS, KW_NEWLINE):
 	//	=> ("if" CommaItem "then" bas=Binding_AnyStatement) | Flow_AnyStatement;
 	public AnyStatementElements getAnyStatementAccess() {
-		return (pAnyStatement != null) ? pAnyStatement : (pAnyStatement = new AnyStatementElements());
+		return pAnyStatement;
 	}
 	
 	public ParserRule getAnyStatementRule() {
@@ -6701,7 +6883,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 	// * / BalStatement hidden(WS, KW_NEWLINE):
 	//	Flow_BalStatement;
 	public BalStatementElements getBalStatementAccess() {
-		return (pBalStatement != null) ? pBalStatement : (pBalStatement = new BalStatementElements());
+		return pBalStatement;
 	}
 	
 	public ParserRule getBalStatementRule() {
@@ -6764,7 +6946,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 	//	bas=Binding_AnyStatement | st="except" bas=Binding_AnyStatement | st="throw" bas=Binding_AnyStatement | st="goto"
 	//	i2=Id | st="never";
 	public Flow_AnyStatementElements getFlow_AnyStatementAccess() {
-		return (pFlow_AnyStatement != null) ? pFlow_AnyStatement : (pFlow_AnyStatement = new Flow_AnyStatementElements());
+		return pFlow_AnyStatement;
 	}
 	
 	public ParserRule getFlow_AnyStatementRule() {
@@ -6782,7 +6964,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 	//	bbs5=Binding_BalStatement | st2="except" bbs5=Binding_BalStatement | st2="throw" bbs5=Binding_BalStatement |
 	//	st2="goto" i3=Id | st2="never";
 	public Flow_BalStatementElements getFlow_BalStatementAccess() {
-		return (pFlow_BalStatement != null) ? pFlow_BalStatement : (pFlow_BalStatement = new Flow_BalStatementElements());
+		return pFlow_BalStatement;
 	}
 	
 	public ParserRule getFlow_BalStatementRule() {
@@ -6792,7 +6974,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 	//GenBound hidden(WS, KW_NEWLINE):
 	//	{GenBound} ("to" ci=CommaItem "of")?;
 	public GenBoundElements getGenBoundAccess() {
-		return (pGenBound != null) ? pGenBound : (pGenBound = new GenBoundElements());
+		return pGenBound;
 	}
 	
 	public ParserRule getGenBoundRule() {
@@ -6802,7 +6984,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 	//ButExpr hidden(WS, KW_NEWLINE):
 	//	{ButExpr} (db=DeclBinding "in" ca=Cases)?;
 	public ButExprElements getButExprAccess() {
-		return (pButExpr != null) ? pButExpr : (pButExpr = new ButExprElements());
+		return pButExpr;
 	}
 	
 	public ParserRule getButExprRule() {
@@ -6812,7 +6994,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 	//Cases hidden(WS, KW_NEWLINE):
 	//	Binding_Collection;
 	public CasesElements getCasesAccess() {
-		return (pCases != null) ? pCases : (pCases = new CasesElements());
+		return pCases;
 	}
 	
 	public ParserRule getCasesRule() {
@@ -6832,7 +7014,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 	// * / AlwaysPart_AnyStatement hidden(WS, KW_NEWLINE):
 	//	{AlwaysPart_AnyStatement} ("always" bas7=Binding_AnyStatement | "finally" bas7=Binding_AnyStatement)?;
 	public AlwaysPart_AnyStatementElements getAlwaysPart_AnyStatementAccess() {
-		return (pAlwaysPart_AnyStatement != null) ? pAlwaysPart_AnyStatement : (pAlwaysPart_AnyStatement = new AlwaysPart_AnyStatementElements());
+		return pAlwaysPart_AnyStatement;
 	}
 	
 	public ParserRule getAlwaysPart_AnyStatementRule() {
@@ -6842,7 +7024,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 	//AlwaysPart_BalStatement hidden(WS, KW_NEWLINE):
 	//	{AlwaysPart_BalStatement} ("always" bas7=Binding_BalStatement | "finally" bas7=Binding_BalStatement)?;
 	public AlwaysPart_BalStatementElements getAlwaysPart_BalStatementAccess() {
-		return (pAlwaysPart_BalStatement != null) ? pAlwaysPart_BalStatement : (pAlwaysPart_BalStatement = new AlwaysPart_BalStatementElements());
+		return pAlwaysPart_BalStatement;
 	}
 	
 	public ParserRule getAlwaysPart_BalStatementRule() {
@@ -6857,7 +7039,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 	//	Infixed i3= // iterators allow for zero cases
 	//	Iterators;
 	public CollectionElements getCollectionAccess() {
-		return (pCollection != null) ? pCollection : (pCollection = new CollectionElements());
+		return pCollection;
 	}
 	
 	public ParserRule getCollectionRule() {
@@ -6867,7 +7049,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 	/// * Zero or more iterators: for....in or while.... * / Iterators hidden(WS, KW_NEWLINE):
 	//	Iterators1;
 	public IteratorsElements getIteratorsAccess() {
-		return (pIterators != null) ? pIterators : (pIterators = new IteratorsElements());
+		return pIterators;
 	}
 	
 	public ParserRule getIteratorsRule() {
@@ -6877,7 +7059,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 	/// * Zero or more iterators: for....in or while.... * / Iterators1 hidden(WS, KW_NEWLINE):
 	//	{Iterators1} itr+=Iterator*;
 	public Iterators1Elements getIterators1Access() {
-		return (pIterators1 != null) ? pIterators1 : (pIterators1 = new Iterators1Elements());
+		return pIterators1;
 	}
 	
 	public ParserRule getIterators1Rule() {
@@ -6887,7 +7069,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 	/// * Iterator: for....in or while.... * / Iterator hidden(WS, KW_NEWLINE):
 	//	"for" ForLhs "in" i=Infixed sp=SuchthatPart? | "while" i=Infixed;
 	public IteratorElements getIteratorAccess() {
-		return (pIterator != null) ? pIterator : (pIterator = new IteratorElements());
+		return pIterator;
 	}
 	
 	public ParserRule getIteratorRule() {
@@ -6897,7 +7079,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 	//ForLhs hidden(WS, KW_NEWLINE):
 	//	("free" | "local" | "fluid")? Infixed;
 	public ForLhsElements getForLhsAccess() {
-		return (pForLhs != null) ? pForLhs : (pForLhs = new ForLhsElements());
+		return pForLhs;
 	}
 	
 	public ParserRule getForLhsRule() {
@@ -6907,7 +7089,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 	//SuchthatPart hidden(WS, KW_NEWLINE):
 	//	KW_BAR Infixed;
 	public SuchthatPartElements getSuchthatPartAccess() {
-		return (pSuchthatPart != null) ? pSuchthatPart : (pSuchthatPart = new SuchthatPartElements());
+		return pSuchthatPart;
 	}
 	
 	public ParserRule getSuchthatPartRule() {
@@ -6923,7 +7105,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 	// * / Infixed hidden(WS, KW_NEWLINE):
 	//	ifx=InfixedExpr dp=DeclPart? | b=Block;
 	public InfixedElements getInfixedAccess() {
-		return (pInfixed != null) ? pInfixed : (pInfixed = new InfixedElements());
+		return pInfixed;
 	}
 	
 	public ParserRule getInfixedRule() {
@@ -6936,7 +7118,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 	//	E11_Op | // infix operation
 	//	=> E3;
 	public InfixedExprElements getInfixedExprAccess() {
-		return (pInfixedExpr != null) ? pInfixedExpr : (pInfixedExpr = new InfixedExprElements());
+		return pInfixedExpr;
 	}
 	
 	public ParserRule getInfixedExprRule() {
@@ -6949,7 +7131,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 	// * / E3 returns Expr hidden(WS, KW_NEWLINE):
 	//	E4 ({E3.left=current} op=("and" / *QualOp_LatticeTok* / | "or" | LatticeTok) right=E4)*;
 	public E3Elements getE3Access() {
-		return (pE3 != null) ? pE3 : (pE3 = new E3Elements());
+		return pE3;
 	}
 	
 	public ParserRule getE3Rule() {
@@ -6965,7 +7147,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 	//E4 returns Expr hidden(WS, KW_NEWLINE):
 	//	E5 ({E4.left=current} op=("has" / *RelationOp* / | RelationTok) right=E5)*;
 	public E4Elements getE4Access() {
-		return (pE4 != null) ? pE4 : (pE4 = new E4Elements());
+		return pE4;
 	}
 	
 	public ParserRule getE4Rule() {
@@ -6982,7 +7164,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 	//E5 returns Expr hidden(WS, KW_NEWLINE):
 	//	E6 ({E5.left=current} op=SegTok / *SegOp* / right=E6)*;
 	public E5Elements getE5Access() {
-		return (pE5 != null) ? pE5 : (pE5 = new E5Elements());
+		return pE5;
 	}
 	
 	public ParserRule getE5Rule() {
@@ -6998,7 +7180,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 	//E6 returns Expr hidden(WS, KW_NEWLINE):
 	//	E7 ({E6.left=current} op=PlusTok / *PlusOp* / right=E7)*;
 	public E6Elements getE6Access() {
-		return (pE6 != null) ? pE6 : (pE6 = new E6Elements());
+		return pE6;
 	}
 	
 	public ParserRule getE6Rule() {
@@ -7012,7 +7194,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 	// * / E7 returns Expr hidden(WS, KW_NEWLINE):
 	//	E8 ({E7.left=current} op=QuotientTok / *QuotientOp* / right=E8)*;
 	public E7Elements getE7Access() {
-		return (pE7 != null) ? pE7 : (pE7 = new E7Elements());
+		return pE7;
 	}
 	
 	public ParserRule getE7Rule() {
@@ -7026,7 +7208,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 	// * / E8 returns Expr hidden(WS, KW_NEWLINE):
 	//	E9 ({E8.left=current} op=TimesTok / *TimesOp* / right=E9)*;
 	public E8Elements getE8Access() {
-		return (pE8 != null) ? pE8 : (pE8 = new E8Elements());
+		return pE8;
 	}
 	
 	public ParserRule getE8Rule() {
@@ -7040,7 +7222,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 	// * / E9 returns Expr hidden(WS, KW_NEWLINE):
 	//	E11_E12 ({E9.left=current} op=PowerTok / *PowerOp* / right=E11_E12)*;
 	public E9Elements getE9Access() {
-		return (pE9 != null) ? pE9 : (pE9 = new E9Elements());
+		return pE9;
 	}
 	
 	public ParserRule getE9Rule() {
@@ -7052,7 +7234,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 	// * / E11_E12 returns Expr hidden(WS, KW_NEWLINE):
 	//	E12 ({E11_E12.left=current} (op=KW_2COLON | op=KW_AT | op="pretend") right=E12)*;
 	public E11_E12Elements getE11_E12Access() {
-		return (pE11_E12 != null) ? pE11_E12 : (pE11_E12 = new E11_E12Elements());
+		return pE11_E12;
 	}
 	
 	public ParserRule getE11_E12Rule() {
@@ -7067,7 +7249,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 	// * / E11_Op returns Expr hidden(WS, KW_NEWLINE):
 	//	Op ({E11_Op.left=current} (op=KW_2COLON | op=KW_AT | op="pretend") right=E12)*;
 	public E11_OpElements getE11_OpAccess() {
-		return (pE11_Op != null) ? pE11_Op : (pE11_Op = new E11_OpElements());
+		return pE11_Op;
 	}
 	
 	public ParserRule getE11_OpRule() {
@@ -7080,7 +7262,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 	// * / Type hidden(WS, KW_NEWLINE):
 	//	E11_E12;
 	public TypeElements getTypeAccess() {
-		return (pType != null) ? pType : (pType = new TypeElements());
+		return pType;
 	}
 	
 	public ParserRule getTypeRule() {
@@ -7090,7 +7272,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 	//E12 returns Expr hidden(WS, KW_NEWLINE):
 	//	E13 ({E12.left=current} op=ArrowOp right=E13)*;
 	public E12Elements getE12Access() {
-		return (pE12 != null) ? pE12 : (pE12 = new E12Elements());
+		return pE12;
 	}
 	
 	public ParserRule getE12Rule() {
@@ -7100,7 +7282,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 	//E13 returns Expr hidden(WS, KW_NEWLINE):
 	//	E14 ({E13.left=current} op=KW_DOLLAR right=QualTail)*;
 	public E13Elements getE13Access() {
-		return (pE13 != null) ? pE13 : (pE13 = new E13Elements());
+		return pE13;
 	}
 	
 	public ParserRule getE13Rule() {
@@ -7110,7 +7292,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 	//QualTail hidden(WS, KW_NEWLINE):
 	//	LeftJuxtaposed => (KW_DOLLAR qt=QualTail)?;
 	public QualTailElements getQualTailAccess() {
-		return (pQualTail != null) ? pQualTail : (pQualTail = new QualTailElements());
+		return pQualTail;
 	}
 	
 	public ParserRule getQualTailRule() {
@@ -7120,7 +7302,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 	//OpQualTail hidden(WS, KW_NEWLINE):
 	//	nam=Molecule => (KW_DOLLAR OpQualTail)?;
 	public OpQualTailElements getOpQualTailAccess() {
-		return (pOpQualTail != null) ? pOpQualTail : (pOpQualTail = new OpQualTailElements());
+		return pOpQualTail;
 	}
 	
 	public ParserRule getOpQualTailRule() {
@@ -7131,7 +7313,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 	//	=> (e15left=E15? op="with" dm=DeclMolecule) | => (e15left=E15? op="add" dm=DeclMolecule) | => (e15left=E15 op="except"
 	//	e15right=E15) | => (e15left=E15 op="throw" e15right=E15) | e15left=E15;
 	public E14Elements getE14Access() {
-		return (pE14 != null) ? pE14 : (pE14 = new E14Elements());
+		return pE14;
 	}
 	
 	public ParserRule getE14Rule() {
@@ -7141,7 +7323,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 	//E15 hidden(WS, KW_NEWLINE):
 	//	Application;
 	public E15Elements getE15Access() {
-		return (pE15 != null) ? pE15 : (pE15 = new E15Elements());
+		return pE15;
 	}
 	
 	public ParserRule getE15Rule() {
@@ -7154,7 +7336,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 	//	{Op} aop=ArrowOp | {Op} aop=LatticeOp | {Op} aop=RelationOp | {Op} aop=SegOp | {Op} aop=PlusOp | {Op} aop=QuotientOp |
 	//	{Op} aop=TimesOp | {Op} aop=PowerOp;
 	public OpElements getOpAccess() {
-		return (pOp != null) ? pOp : (pOp = new OpElements());
+		return pOp;
 	}
 	
 	public ParserRule getOpRule() {
@@ -7165,7 +7347,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 	//	UnqualOp_ArrowTok | UnqualOp_LatticeTok | UnqualOp_RelationTok | UnqualOp_SegTok | UnqualOp_PlusTok |
 	//	UnqualOp_QuotientTok | UnqualOp_TimesTok | UnqualOp_PowerTok;
 	public NakedOpElements getNakedOpAccess() {
-		return (pNakedOp != null) ? pNakedOp : (pNakedOp = new NakedOpElements());
+		return pNakedOp;
 	}
 	
 	public ParserRule getNakedOpRule() {
@@ -7175,7 +7357,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 	//ArrowOp hidden(WS, KW_NEWLINE):
 	//	QualOp_ArrowTok;
 	public ArrowOpElements getArrowOpAccess() {
-		return (pArrowOp != null) ? pArrowOp : (pArrowOp = new ArrowOpElements());
+		return pArrowOp;
 	}
 	
 	public ParserRule getArrowOpRule() {
@@ -7185,7 +7367,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 	//LatticeOp hidden(WS, KW_NEWLINE):
 	//	QualOp_LatticeTok;
 	public LatticeOpElements getLatticeOpAccess() {
-		return (pLatticeOp != null) ? pLatticeOp : (pLatticeOp = new LatticeOpElements());
+		return pLatticeOp;
 	}
 	
 	public ParserRule getLatticeOpRule() {
@@ -7195,7 +7377,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 	//RelationOp hidden(WS, KW_NEWLINE):
 	//	QualOp_RelationTok;
 	public RelationOpElements getRelationOpAccess() {
-		return (pRelationOp != null) ? pRelationOp : (pRelationOp = new RelationOpElements());
+		return pRelationOp;
 	}
 	
 	public ParserRule getRelationOpRule() {
@@ -7205,7 +7387,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 	//SegOp hidden(WS, KW_NEWLINE):
 	//	QualOp_SegTok;
 	public SegOpElements getSegOpAccess() {
-		return (pSegOp != null) ? pSegOp : (pSegOp = new SegOpElements());
+		return pSegOp;
 	}
 	
 	public ParserRule getSegOpRule() {
@@ -7215,7 +7397,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 	//PlusOp hidden(WS, KW_NEWLINE):
 	//	QualOp_PlusTok;
 	public PlusOpElements getPlusOpAccess() {
-		return (pPlusOp != null) ? pPlusOp : (pPlusOp = new PlusOpElements());
+		return pPlusOp;
 	}
 	
 	public ParserRule getPlusOpRule() {
@@ -7225,7 +7407,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 	//QuotientOp hidden(WS, KW_NEWLINE):
 	//	QualOp_QuotientTok;
 	public QuotientOpElements getQuotientOpAccess() {
-		return (pQuotientOp != null) ? pQuotientOp : (pQuotientOp = new QuotientOpElements());
+		return pQuotientOp;
 	}
 	
 	public ParserRule getQuotientOpRule() {
@@ -7235,7 +7417,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 	//TimesOp hidden(WS, KW_NEWLINE):
 	//	QualOp_TimesTok;
 	public TimesOpElements getTimesOpAccess() {
-		return (pTimesOp != null) ? pTimesOp : (pTimesOp = new TimesOpElements());
+		return pTimesOp;
 	}
 	
 	public ParserRule getTimesOpRule() {
@@ -7245,7 +7427,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 	//PowerOp hidden(WS, KW_NEWLINE):
 	//	QualOp_PowerTok;
 	public PowerOpElements getPowerOpAccess() {
-		return (pPowerOp != null) ? pPowerOp : (pPowerOp = new PowerOpElements());
+		return pPowerOp;
 	}
 	
 	public ParserRule getPowerOpRule() {
@@ -7255,7 +7437,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 	/// * in Aldor grammar this is ArrowTok<tok> * / ArrowTok hidden(WS, KW_NEWLINE):
 	//	KW_RARROW | KW_LARROW | KW_MAPSTAR;
 	public ArrowTokElements getArrowTokAccess() {
-		return (pArrowTok != null) ? pArrowTok : (pArrowTok = new ArrowTokElements());
+		return pArrowTok;
 	}
 	
 	public ParserRule getArrowTokRule() {
@@ -7265,7 +7447,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 	/// * in Aldor grammar this is LatticeTok<tok> * / LatticeTok hidden(WS, KW_NEWLINE):
 	//	KW_VEE | KW_WEDGE;
 	public LatticeTokElements getLatticeTokAccess() {
-		return (pLatticeTok != null) ? pLatticeTok : (pLatticeTok = new LatticeTokElements());
+		return pLatticeTok;
 	}
 	
 	public ParserRule getLatticeTokRule() {
@@ -7275,7 +7457,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 	/// * in Aldor grammar this is RelationTok<tok> * / RelationTok hidden(WS, KW_NEWLINE):
 	//	KW_EQ | KW_TILDEE | KW_HATE | KW_GE | KW_GT | KW_2GT | KW_LE | KW_LT | KW_2LT | "is" | "isnt" | "case";
 	public RelationTokElements getRelationTokAccess() {
-		return (pRelationTok != null) ? pRelationTok : (pRelationTok = new RelationTokElements());
+		return pRelationTok;
 	}
 	
 	public ParserRule getRelationTokRule() {
@@ -7285,7 +7467,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 	/// * in Aldor grammar this is SegTok<tok> * / SegTok hidden(WS, KW_NEWLINE):
 	//	KW_2DOT | "by";
 	public SegTokElements getSegTokAccess() {
-		return (pSegTok != null) ? pSegTok : (pSegTok = new SegTokElements());
+		return pSegTok;
 	}
 	
 	public ParserRule getSegTokRule() {
@@ -7295,7 +7477,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 	/// * in Aldor grammar this is PlusTok<tok> * / PlusTok hidden(WS, KW_NEWLINE):
 	//	KW_PLUS | KW_MINUS | KW_PLUSMINUS;
 	public PlusTokElements getPlusTokAccess() {
-		return (pPlusTok != null) ? pPlusTok : (pPlusTok = new PlusTokElements());
+		return pPlusTok;
 	}
 	
 	public ParserRule getPlusTokRule() {
@@ -7305,7 +7487,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 	/// * in Aldor grammar this is QuotientTok<tok> * / QuotientTok hidden(WS, KW_NEWLINE):
 	//	"mod" | "quo" | "rem" | "exquo";
 	public QuotientTokElements getQuotientTokAccess() {
-		return (pQuotientTok != null) ? pQuotientTok : (pQuotientTok = new QuotientTokElements());
+		return pQuotientTok;
 	}
 	
 	public ParserRule getQuotientTokRule() {
@@ -7315,7 +7497,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 	/// * in Aldor grammar this is TimesTok<tok> * / TimesTok hidden(WS, KW_NEWLINE):
 	//	KW_STAR | KW_SLASH | KW_BACKSLASH;
 	public TimesTokElements getTimesTokAccess() {
-		return (pTimesTok != null) ? pTimesTok : (pTimesTok = new TimesTokElements());
+		return pTimesTok;
 	}
 	
 	public ParserRule getTimesTokRule() {
@@ -7325,7 +7507,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 	/// * in Aldor grammar this is PowerTok<tok> * / PowerTok hidden(WS, KW_NEWLINE):
 	//	KW_2STAR | KW_HAT;
 	public PowerTokElements getPowerTokAccess() {
-		return (pPowerTok != null) ? pPowerTok : (pPowerTok = new PowerTokElements());
+		return pPowerTok;
 	}
 	
 	public ParserRule getPowerTokRule() {
@@ -7358,7 +7540,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 	// * / Application hidden(WS, KW_NEWLINE):
 	//	RightJuxtaposed;
 	public ApplicationElements getApplicationAccess() {
-		return (pApplication != null) ? pApplication : (pApplication = new ApplicationElements());
+		return pApplication;
 	}
 	
 	public ParserRule getApplicationRule() {
@@ -7370,7 +7552,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 	// * / RightJuxtaposed hidden(WS, KW_NEWLINE):
 	//	Jright_Molecule;
 	public RightJuxtaposedElements getRightJuxtaposedAccess() {
-		return (pRightJuxtaposed != null) ? pRightJuxtaposed : (pRightJuxtaposed = new RightJuxtaposedElements());
+		return pRightJuxtaposed;
 	}
 	
 	public ParserRule getRightJuxtaposedRule() {
@@ -7382,7 +7564,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 	// * / LeftJuxtaposed hidden(WS, KW_NEWLINE):
 	//	Jleft_Molecule;
 	public LeftJuxtaposedElements getLeftJuxtaposedAccess() {
-		return (pLeftJuxtaposed != null) ? pLeftJuxtaposed : (pLeftJuxtaposed = new LeftJuxtaposedElements());
+		return pLeftJuxtaposed;
 	}
 	
 	public ParserRule getLeftJuxtaposedRule() {
@@ -7398,7 +7580,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 	// * / Jright_Molecule hidden(WS, KW_NEWLINE):
 	//	Jleft_Molecule right=Jright_Atom? | "not" right=Jright_Atom;
 	public Jright_MoleculeElements getJright_MoleculeAccess() {
-		return (pJright_Molecule != null) ? pJright_Molecule : (pJright_Molecule = new Jright_MoleculeElements());
+		return pJright_Molecule;
 	}
 	
 	public ParserRule getJright_MoleculeRule() {
@@ -7408,7 +7590,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 	//Jright_Atom hidden(WS, KW_NEWLINE):
 	//	Jleft_Atom right2=Jright_Atom? | "not" right2=Jright_Atom;
 	public Jright_AtomElements getJright_AtomAccess() {
-		return (pJright_Atom != null) ? pJright_Atom : (pJright_Atom = new Jright_AtomElements());
+		return pJright_Atom;
 	}
 	
 	public ParserRule getJright_AtomRule() {
@@ -7431,7 +7613,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 	// * / Jleft_Molecule hidden(WS, KW_NEWLINE):
 	//	"not" be+=BlockEnclosure | => (m=Molecule be+=BlockEnclosure*) | m=Molecule (KW_DOT bm+=BlockMolecule)*;
 	public Jleft_MoleculeElements getJleft_MoleculeAccess() {
-		return (pJleft_Molecule != null) ? pJleft_Molecule : (pJleft_Molecule = new Jleft_MoleculeElements());
+		return pJleft_Molecule;
 	}
 	
 	public ParserRule getJleft_MoleculeRule() {
@@ -7452,7 +7634,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 	// * / Jleft_Atom hidden(WS, KW_NEWLINE):
 	//	"not" be+=BlockEnclosure | => (a=Atom be+=BlockEnclosure*) | a=Atom (KW_DOT bm4+=BlockMolecule)*;
 	public Jleft_AtomElements getJleft_AtomAccess() {
-		return (pJleft_Atom != null) ? pJleft_Atom : (pJleft_Atom = new Jleft_AtomElements());
+		return pJleft_Atom;
 	}
 	
 	public ParserRule getJleft_AtomRule() {
@@ -7464,7 +7646,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 	// * / Molecule hidden(WS, KW_NEWLINE):
 	//	Atom | Enclosure;
 	public MoleculeElements getMoleculeAccess() {
-		return (pMolecule != null) ? pMolecule : (pMolecule = new MoleculeElements());
+		return pMolecule;
 	}
 	
 	public ParserRule getMoleculeRule() {
@@ -7474,7 +7656,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 	/// * expression in brackets parenthesis or quotes * / Enclosure hidden(WS, KW_NEWLINE):
 	//	Parened | Bracketed | QuotedIds;
 	public EnclosureElements getEnclosureAccess() {
-		return (pEnclosure != null) ? pEnclosure : (pEnclosure = new EnclosureElements());
+		return pEnclosure;
 	}
 	
 	public ParserRule getEnclosureRule() {
@@ -7487,7 +7669,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 	// * / DeclMolecule hidden(WS, KW_NEWLINE):
 	//	{DeclMolecule} a=Application? | b=Block;
 	public DeclMoleculeElements getDeclMoleculeAccess() {
-		return (pDeclMolecule != null) ? pDeclMolecule : (pDeclMolecule = new DeclMoleculeElements());
+		return pDeclMolecule;
 	}
 	
 	public ParserRule getDeclMoleculeRule() {
@@ -7499,7 +7681,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 	// * / BlockMolecule hidden(WS, KW_NEWLINE):
 	//	Atom | Enclosure | Block;
 	public BlockMoleculeElements getBlockMoleculeAccess() {
-		return (pBlockMolecule != null) ? pBlockMolecule : (pBlockMolecule = new BlockMoleculeElements());
+		return pBlockMolecule;
 	}
 	
 	public ParserRule getBlockMoleculeRule() {
@@ -7509,7 +7691,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 	/// * enclosure: (....),[....],"...." or block {....} * / BlockEnclosure hidden(WS, KW_NEWLINE):
 	//	Enclosure | Block;
 	public BlockEnclosureElements getBlockEnclosureAccess() {
-		return (pBlockEnclosure != null) ? pBlockEnclosure : (pBlockEnclosure = new BlockEnclosureElements());
+		return pBlockEnclosure;
 	}
 	
 	public ParserRule getBlockEnclosureRule() {
@@ -7519,7 +7701,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 	/// * CurlyContents_Labeled inside curly brackets * / Block hidden(WS, KW_NEWLINE): // Piled(Expression)|
 	//	Curly_Labeled;
 	public BlockElements getBlockAccess() {
-		return (pBlock != null) ? pBlock : (pBlock = new BlockElements());
+		return pBlock;
 	}
 	
 	public ParserRule getBlockRule() {
@@ -7529,7 +7711,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 	/// * expression in parenthesis * / Parened hidden(WS, KW_NEWLINE):
 	//	op=KW_OPAREN e=Expression? KW_CPAREN;
 	public ParenedElements getParenedAccess() {
-		return (pParened != null) ? pParened : (pParened = new ParenedElements());
+		return pParened;
 	}
 	
 	public ParserRule getParenedRule() {
@@ -7539,7 +7721,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 	/// * expression in brackets * / Bracketed hidden(WS, KW_NEWLINE):
 	//	op=KW_OBRACK e=Expression? KW_CBRACK;
 	public BracketedElements getBracketedAccess() {
-		return (pBracketed != null) ? pBracketed : (pBracketed = new BracketedElements());
+		return pBracketed;
 	}
 	
 	public ParserRule getBracketedRule() {
@@ -7549,7 +7731,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 	/// * names in quotes * / QuotedIds hidden(WS, KW_NEWLINE):
 	//	{QuotedIds} op=KW_QUOTE n=Names? KW_QUOTE;
 	public QuotedIdsElements getQuotedIdsAccess() {
-		return (pQuotedIds != null) ? pQuotedIds : (pQuotedIds = new QuotedIdsElements());
+		return pQuotedIds;
 	}
 	
 	public ParserRule getQuotedIdsRule() {
@@ -7559,7 +7741,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 	/// * names seperated by commas * / Names hidden(WS, KW_NEWLINE):
 	//	firstName=TK_ID (KW_COMMA subsequentNames+=TK_ID)*;
 	public NamesElements getNamesAccess() {
-		return (pNames != null) ? pNames : (pNames = new NamesElements());
+		return pNames;
 	}
 	
 	public ParserRule getNamesRule() {
@@ -7571,7 +7753,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 	// * / Atom hidden(WS, KW_NEWLINE):
 	//	iden=Id | lit=Literal;
 	public AtomElements getAtomAccess() {
-		return (pAtom != null) ? pAtom : (pAtom = new AtomElements());
+		return pAtom;
 	}
 	
 	public ParserRule getAtomRule() {
@@ -7581,7 +7763,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 	/// * called from Flow_AnyStatement and Flow_BalStatement * / Name hidden(WS, KW_NEWLINE):
 	//	{Name} name=Id | no=NakedOp;
 	public NameElements getNameAccess() {
-		return (pName != null) ? pName : (pName = new NameElements());
+		return pName;
 	}
 	
 	public ParserRule getNameRule() {
@@ -7594,7 +7776,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 	// * / Id hidden(WS, KW_NEWLINE):
 	//	name=(TK_ID | KW_SHARP | KW_TILDE);
 	public IdElements getIdAccess() {
-		return (pId != null) ? pId : (pId = new IdElements());
+		return pId;
 	}
 	
 	public ParserRule getIdRule() {
@@ -7606,7 +7788,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 	//	| => (TK_INT KW_DOT)? TK_INT | // example "abc"
 	//	TK_STRING;
 	public LiteralElements getLiteralAccess() {
-		return (pLiteral != null) ? pLiteral : (pLiteral = new LiteralElements());
+		return pLiteral;
 	}
 	
 	public ParserRule getLiteralRule() {
@@ -7631,7 +7813,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 	// * / UnqualOp_ArrowTok hidden(WS, KW_NEWLINE):
 	//	ArrowTok {ArrowTok};
 	public UnqualOp_ArrowTokElements getUnqualOp_ArrowTokAccess() {
-		return (pUnqualOp_ArrowTok != null) ? pUnqualOp_ArrowTok : (pUnqualOp_ArrowTok = new UnqualOp_ArrowTokElements());
+		return pUnqualOp_ArrowTok;
 	}
 	
 	public ParserRule getUnqualOp_ArrowTokRule() {
@@ -7641,7 +7823,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 	//UnqualOp_LatticeTok hidden(WS, KW_NEWLINE):
 	//	LatticeTok {LatticeTok};
 	public UnqualOp_LatticeTokElements getUnqualOp_LatticeTokAccess() {
-		return (pUnqualOp_LatticeTok != null) ? pUnqualOp_LatticeTok : (pUnqualOp_LatticeTok = new UnqualOp_LatticeTokElements());
+		return pUnqualOp_LatticeTok;
 	}
 	
 	public ParserRule getUnqualOp_LatticeTokRule() {
@@ -7651,7 +7833,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 	//UnqualOp_RelationTok hidden(WS, KW_NEWLINE):
 	//	RelationTok {RelationTok};
 	public UnqualOp_RelationTokElements getUnqualOp_RelationTokAccess() {
-		return (pUnqualOp_RelationTok != null) ? pUnqualOp_RelationTok : (pUnqualOp_RelationTok = new UnqualOp_RelationTokElements());
+		return pUnqualOp_RelationTok;
 	}
 	
 	public ParserRule getUnqualOp_RelationTokRule() {
@@ -7661,7 +7843,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 	//UnqualOp_SegTok hidden(WS, KW_NEWLINE):
 	//	SegTok {SegTok};
 	public UnqualOp_SegTokElements getUnqualOp_SegTokAccess() {
-		return (pUnqualOp_SegTok != null) ? pUnqualOp_SegTok : (pUnqualOp_SegTok = new UnqualOp_SegTokElements());
+		return pUnqualOp_SegTok;
 	}
 	
 	public ParserRule getUnqualOp_SegTokRule() {
@@ -7671,7 +7853,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 	//UnqualOp_PlusTok hidden(WS, KW_NEWLINE):
 	//	PlusTok {PlusTok};
 	public UnqualOp_PlusTokElements getUnqualOp_PlusTokAccess() {
-		return (pUnqualOp_PlusTok != null) ? pUnqualOp_PlusTok : (pUnqualOp_PlusTok = new UnqualOp_PlusTokElements());
+		return pUnqualOp_PlusTok;
 	}
 	
 	public ParserRule getUnqualOp_PlusTokRule() {
@@ -7681,7 +7863,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 	//UnqualOp_QuotientTok hidden(WS, KW_NEWLINE):
 	//	QuotientTok {QuotientTok};
 	public UnqualOp_QuotientTokElements getUnqualOp_QuotientTokAccess() {
-		return (pUnqualOp_QuotientTok != null) ? pUnqualOp_QuotientTok : (pUnqualOp_QuotientTok = new UnqualOp_QuotientTokElements());
+		return pUnqualOp_QuotientTok;
 	}
 	
 	public ParserRule getUnqualOp_QuotientTokRule() {
@@ -7691,7 +7873,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 	//UnqualOp_TimesTok hidden(WS, KW_NEWLINE):
 	//	TimesTok {TimesTok};
 	public UnqualOp_TimesTokElements getUnqualOp_TimesTokAccess() {
-		return (pUnqualOp_TimesTok != null) ? pUnqualOp_TimesTok : (pUnqualOp_TimesTok = new UnqualOp_TimesTokElements());
+		return pUnqualOp_TimesTok;
 	}
 	
 	public ParserRule getUnqualOp_TimesTokRule() {
@@ -7701,7 +7883,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 	//UnqualOp_PowerTok hidden(WS, KW_NEWLINE):
 	//	PowerTok {PowerTok};
 	public UnqualOp_PowerTokElements getUnqualOp_PowerTokAccess() {
-		return (pUnqualOp_PowerTok != null) ? pUnqualOp_PowerTok : (pUnqualOp_PowerTok = new UnqualOp_PowerTokElements());
+		return pUnqualOp_PowerTok;
 	}
 	
 	public ParserRule getUnqualOp_PowerTokRule() {
@@ -7726,7 +7908,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 	// * / QualOp_ArrowTok hidden(WS, KW_NEWLINE):
 	//	{QualOp_ArrowTok} ArrowTok => (KW_DOLLAR oqt=OpQualTail)?;
 	public QualOp_ArrowTokElements getQualOp_ArrowTokAccess() {
-		return (pQualOp_ArrowTok != null) ? pQualOp_ArrowTok : (pQualOp_ArrowTok = new QualOp_ArrowTokElements());
+		return pQualOp_ArrowTok;
 	}
 	
 	public ParserRule getQualOp_ArrowTokRule() {
@@ -7736,7 +7918,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 	//QualOp_LatticeTok hidden(WS, KW_NEWLINE):
 	//	{QualOp_LatticeTok} LatticeTok => (KW_DOLLAR oqt=OpQualTail)?;
 	public QualOp_LatticeTokElements getQualOp_LatticeTokAccess() {
-		return (pQualOp_LatticeTok != null) ? pQualOp_LatticeTok : (pQualOp_LatticeTok = new QualOp_LatticeTokElements());
+		return pQualOp_LatticeTok;
 	}
 	
 	public ParserRule getQualOp_LatticeTokRule() {
@@ -7754,7 +7936,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 	// * / QualOp_RelationTok hidden(WS, KW_NEWLINE): //	'temp99'
 	//	{QualOp_RelationTok} RelationTok (op+=KW_DOLLAR oqt=OpQualTail)?;
 	public QualOp_RelationTokElements getQualOp_RelationTokAccess() {
-		return (pQualOp_RelationTok != null) ? pQualOp_RelationTok : (pQualOp_RelationTok = new QualOp_RelationTokElements());
+		return pQualOp_RelationTok;
 	}
 	
 	public ParserRule getQualOp_RelationTokRule() {
@@ -7764,7 +7946,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 	//QualOp_SegTok hidden(WS, KW_NEWLINE):
 	//	{QualOp_SegTok} SegTok (KW_DOLLAR oqt=OpQualTail)?;
 	public QualOp_SegTokElements getQualOp_SegTokAccess() {
-		return (pQualOp_SegTok != null) ? pQualOp_SegTok : (pQualOp_SegTok = new QualOp_SegTokElements());
+		return pQualOp_SegTok;
 	}
 	
 	public ParserRule getQualOp_SegTokRule() {
@@ -7774,7 +7956,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 	//QualOp_PlusTok hidden(WS, KW_NEWLINE):
 	//	{QualOp_PlusTok} PlusTok (KW_DOLLAR oqt=OpQualTail)?;
 	public QualOp_PlusTokElements getQualOp_PlusTokAccess() {
-		return (pQualOp_PlusTok != null) ? pQualOp_PlusTok : (pQualOp_PlusTok = new QualOp_PlusTokElements());
+		return pQualOp_PlusTok;
 	}
 	
 	public ParserRule getQualOp_PlusTokRule() {
@@ -7784,7 +7966,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 	//QualOp_QuotientTok hidden(WS, KW_NEWLINE):
 	//	{QualOp_QuotientTok} QuotientTok (KW_DOLLAR oqt=OpQualTail)?;
 	public QualOp_QuotientTokElements getQualOp_QuotientTokAccess() {
-		return (pQualOp_QuotientTok != null) ? pQualOp_QuotientTok : (pQualOp_QuotientTok = new QualOp_QuotientTokElements());
+		return pQualOp_QuotientTok;
 	}
 	
 	public ParserRule getQualOp_QuotientTokRule() {
@@ -7794,7 +7976,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 	//QualOp_TimesTok hidden(WS, KW_NEWLINE):
 	//	{QualOp_TimesTok} TimesTok (KW_DOLLAR oqt=OpQualTail)?;
 	public QualOp_TimesTokElements getQualOp_TimesTokAccess() {
-		return (pQualOp_TimesTok != null) ? pQualOp_TimesTok : (pQualOp_TimesTok = new QualOp_TimesTokElements());
+		return pQualOp_TimesTok;
 	}
 	
 	public ParserRule getQualOp_TimesTokRule() {
@@ -7804,7 +7986,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 	//QualOp_PowerTok hidden(WS, KW_NEWLINE):
 	//	{QualOp_PowerTok} PowerTok (KW_DOLLAR oqt=OpQualTail)?;
 	public QualOp_PowerTokElements getQualOp_PowerTokAccess() {
-		return (pQualOp_PowerTok != null) ? pQualOp_PowerTok : (pQualOp_PowerTok = new QualOp_PowerTokElements());
+		return pQualOp_PowerTok;
 	}
 	
 	public ParserRule getQualOp_PowerTokRule() {
@@ -7830,7 +8012,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 	/// * list of lines starting with -- * / PreDocument hidden(WS, KW_NEWLINE):
 	//	TK_PREDOC*;
 	public PreDocumentElements getPreDocumentAccess() {
-		return (pPreDocument != null) ? pPreDocument : (pPreDocument = new PreDocumentElements());
+		return pPreDocument;
 	}
 	
 	public ParserRule getPreDocumentRule() {
@@ -7840,7 +8022,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 	/// * list of lines starting with ++ * / PostDocument hidden(WS, KW_NEWLINE):
 	//	TK_POSTDOC*;
 	public PostDocumentElements getPostDocumentAccess() {
-		return (pPostDocument != null) ? pPostDocument : (pPostDocument = new PostDocumentElements());
+		return pPostDocument;
 	}
 	
 	public ParserRule getPostDocumentRule() {
@@ -7851,7 +8033,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 	// * / enlist1_CommaItem_Comma_AB hidden(WS, KW_NEWLINE):
 	//	enlister1_CommaItem_Comma;
 	public Enlist1_CommaItem_Comma_ABElements getEnlist1_CommaItem_Comma_ABAccess() {
-		return (pEnlist1_CommaItem_Comma_AB != null) ? pEnlist1_CommaItem_Comma_AB : (pEnlist1_CommaItem_Comma_AB = new Enlist1_CommaItem_Comma_ABElements());
+		return pEnlist1_CommaItem_Comma_AB;
 	}
 	
 	public ParserRule getEnlist1_CommaItem_Comma_ABRule() {
@@ -7862,7 +8044,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 	// * / enlist1_Infixed_Comma_AB hidden(WS, KW_NEWLINE):
 	//	enlister1_Infixed_Comma;
 	public Enlist1_Infixed_Comma_ABElements getEnlist1_Infixed_Comma_ABAccess() {
-		return (pEnlist1_Infixed_Comma_AB != null) ? pEnlist1_Infixed_Comma_AB : (pEnlist1_Infixed_Comma_AB = new Enlist1_Infixed_Comma_ABElements());
+		return pEnlist1_Infixed_Comma_AB;
 	}
 	
 	public ParserRule getEnlist1_Infixed_Comma_ABRule() {
@@ -7873,7 +8055,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 	// * / enlist1_InfixedExpr_Comma_AB hidden(WS, KW_NEWLINE):
 	//	enlister1_InfixedExpr_Comma;
 	public Enlist1_InfixedExpr_Comma_ABElements getEnlist1_InfixedExpr_Comma_ABAccess() {
-		return (pEnlist1_InfixedExpr_Comma_AB != null) ? pEnlist1_InfixedExpr_Comma_AB : (pEnlist1_InfixedExpr_Comma_AB = new Enlist1_InfixedExpr_Comma_ABElements());
+		return pEnlist1_InfixedExpr_Comma_AB;
 	}
 	
 	public ParserRule getEnlist1_InfixedExpr_Comma_ABRule() {
@@ -7884,7 +8066,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 	// * / enlister1_CommaItem_Comma hidden(WS, KW_NEWLINE):
 	//	CommaItem (KW_COMMA ci+=CommaItem)*;
 	public Enlister1_CommaItem_CommaElements getEnlister1_CommaItem_CommaAccess() {
-		return (pEnlister1_CommaItem_Comma != null) ? pEnlister1_CommaItem_Comma : (pEnlister1_CommaItem_Comma = new Enlister1_CommaItem_CommaElements());
+		return pEnlister1_CommaItem_Comma;
 	}
 	
 	public ParserRule getEnlister1_CommaItem_CommaRule() {
@@ -7895,7 +8077,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 	// * / enlister1_Infixed_Comma hidden(WS, KW_NEWLINE):
 	//	Infixed (KW_COMMA i2+=Infixed)*;
 	public Enlister1_Infixed_CommaElements getEnlister1_Infixed_CommaAccess() {
-		return (pEnlister1_Infixed_Comma != null) ? pEnlister1_Infixed_Comma : (pEnlister1_Infixed_Comma = new Enlister1_Infixed_CommaElements());
+		return pEnlister1_Infixed_Comma;
 	}
 	
 	public ParserRule getEnlister1_Infixed_CommaRule() {
@@ -7906,7 +8088,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 	// * / enlister1_InfixedExpr_Comma hidden(WS, KW_NEWLINE):
 	//	InfixedExpr (KW_COMMA ie+=InfixedExpr)*;
 	public Enlister1_InfixedExpr_CommaElements getEnlister1_InfixedExpr_CommaAccess() {
-		return (pEnlister1_InfixedExpr_Comma != null) ? pEnlister1_InfixedExpr_Comma : (pEnlister1_InfixedExpr_Comma = new Enlister1_InfixedExpr_CommaElements());
+		return pEnlister1_InfixedExpr_Comma;
 	}
 	
 	public ParserRule getEnlister1_InfixedExpr_CommaRule() {
@@ -7914,14 +8096,14 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	/// * A list of (at least one) statement(s)
-	// * seperated by semicolons (one or more)  and optionally ending with
+	// * separated by semicolons (one or more)  and optionally ending with
 	// * a semicolon (zero or more)
 	// * 
 	// * AB_Sequence
 	// * / enlist1a_Labeled_Semicolon_AB hidden(WS, KW_NEWLINE):
 	//	enlister1a_Labeled_Semicolon;
 	public Enlist1a_Labeled_Semicolon_ABElements getEnlist1a_Labeled_Semicolon_ABAccess() {
-		return (pEnlist1a_Labeled_Semicolon_AB != null) ? pEnlist1a_Labeled_Semicolon_AB : (pEnlist1a_Labeled_Semicolon_AB = new Enlist1a_Labeled_Semicolon_ABElements());
+		return pEnlist1a_Labeled_Semicolon_AB;
 	}
 	
 	public ParserRule getEnlist1a_Labeled_Semicolon_ABRule() {
@@ -7929,7 +8111,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	/// * A list of (at least one) statement(s)
-	// * seperated by (one or more) semicolons and optionally ending with
+	// * separated by (one or more) semicolons and optionally ending with
 	// * a semicolon (zero or more)
 	// * 
 	// * Aldor axl.z grammar defines this in a left recursive way so
@@ -7937,7 +8119,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 	// * / enlister1a_Labeled_Semicolon hidden(WS, KW_NEWLINE):
 	//	statemnts+=Labeled (KW_SEMICOLON+ statemnts+=Labeled)* KW_SEMICOLON*;
 	public Enlister1a_Labeled_SemicolonElements getEnlister1a_Labeled_SemicolonAccess() {
-		return (pEnlister1a_Labeled_Semicolon != null) ? pEnlister1a_Labeled_Semicolon : (pEnlister1a_Labeled_Semicolon = new Enlister1a_Labeled_SemicolonElements());
+		return pEnlister1a_Labeled_Semicolon;
 	}
 	
 	public ParserRule getEnlister1a_Labeled_SemicolonRule() {
@@ -7957,7 +8139,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 	// * / Curly_Labeled hidden(WS, KW_NEWLINE):
 	//	KW_OCURLY CurlyContents_Labeled KW_CCURLY;
 	public Curly_LabeledElements getCurly_LabeledAccess() {
-		return (pCurly_Labeled != null) ? pCurly_Labeled : (pCurly_Labeled = new Curly_LabeledElements());
+		return pCurly_Labeled;
 	}
 	
 	public ParserRule getCurly_LabeledRule() {
@@ -7976,7 +8158,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 	// * / CurlyContents_Labeled hidden(WS, KW_NEWLINE):
 	//	CurlyContentsList_Labeled;
 	public CurlyContents_LabeledElements getCurlyContents_LabeledAccess() {
-		return (pCurlyContents_Labeled != null) ? pCurlyContents_Labeled : (pCurlyContents_Labeled = new CurlyContents_LabeledElements());
+		return pCurlyContents_Labeled;
 	}
 	
 	public ParserRule getCurlyContents_LabeledRule() {
@@ -7997,7 +8179,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 	//	// that is make semicolons optional but that causes non-LL(*) grammar
 	//	KW_SEMICOLON*;
 	public CurlyContentsList_LabeledElements getCurlyContentsList_LabeledAccess() {
-		return (pCurlyContentsList_Labeled != null) ? pCurlyContentsList_Labeled : (pCurlyContentsList_Labeled = new CurlyContentsList_LabeledElements());
+		return pCurlyContentsList_Labeled;
 	}
 	
 	public ParserRule getCurlyContentsList_LabeledRule() {
@@ -8026,7 +8208,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 	// * / CurlyContentB_Labeled hidden(WS, KW_NEWLINE):
 	//	pred=PreDocument l=Labeled pd=PostDocument;
 	public CurlyContentB_LabeledElements getCurlyContentB_LabeledAccess() {
-		return (pCurlyContentB_Labeled != null) ? pCurlyContentB_Labeled : (pCurlyContentB_Labeled = new CurlyContentB_LabeledElements());
+		return pCurlyContentB_Labeled;
 	}
 	
 	public ParserRule getCurlyContentB_LabeledRule() {

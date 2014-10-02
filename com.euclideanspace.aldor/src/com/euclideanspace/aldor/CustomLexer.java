@@ -48,7 +48,7 @@ public class CustomLexer extends com.euclideanspace.aldor.parser.antlr.internal.
 	/*
 	* [A] TokenTag tag
 	* [B] Symbol sym
-	* [C] String str
+	* removed -> [C] String str 
 	* [D] Byte hasString i.e. use val.str (vs val.sym)
 	* [E] Byte isComment i.e. ++ --
 	* [F] Byte isOpener i.e. ( [ { etc
@@ -213,7 +213,9 @@ public class CustomLexer extends com.euclideanspace.aldor.parser.antlr.internal.
 	 * This holds a pending semicolon which will be emitted only
 	 * if isFollower(t) is false.
 	 */
-	Token pendingToken = null;
+	CommonToken pendingToken = null;
+	
+	boolean pendingIsWS = false;
 
   public CustomLexer() {
     super();
@@ -248,11 +250,24 @@ public class CustomLexer extends com.euclideanspace.aldor.parser.antlr.internal.
       Token firstToken = tokens.removeFirst();
       int tt = firstToken.getType();
       if (tt == RULE_KW_CCURLY) {
+    	  pendingToken = new CommonToken(RULE_KW_SEMICOLON,""); // empty string to avoid overlapping tokens
+    	  pendingToken.setLine(firstToken.getLine());
+    	  pendingToken.setCharPositionInLine(firstToken.getCharPositionInLine()+1);
+    	  pendingToken.setStartIndex(state.tokenStartCharIndex);
+    	  pendingToken.setStopIndex(state.tokenStartCharIndex);
+    	  emit(pendingToken);
+      }
+/*    	 
       	  //System.out.println("CustomLexer - nextToken() "+ts +" type="+firstToken.getType());
-    	  pendingToken = new CommonToken(input,RULE_KW_SEMICOLON, state.channel, state.tokenStartCharIndex, getCharIndex()-1);    	  
+    	  pendingToken = new CommonToken(firstToken); // clone first token
+    	  pendingToken.setType(RULE_KW_SEMICOLON);
+          pendingIsWS = false;
       } else if (pendingToken != null) {
     	  if (isWsOrComment(firstToken)) {
+    		  pendingIsWS = true;
     		  // we can't yet tell if semicolon can be inserted so leave it there and keep going.
+        	  pendingToken = new CommonToken(firstToken); // clone first token
+        	  pendingToken.setType(RULE_KW_SEMICOLON);
     		  return firstToken;
     	  }
     	  if (isFollower(firstToken)) {
@@ -261,11 +276,11 @@ public class CustomLexer extends com.euclideanspace.aldor.parser.antlr.internal.
         	  return firstToken;
     	  }
     	  // can follow semicolon so do insert semicolon before firstToken
-    	  emit(firstToken);
+    	  if (!pendingIsWS) emit(firstToken);
     	  Token holder = pendingToken;
     	  pendingToken = null; // null it, so we don't try to insert it again
     	  return holder;
-      }
+      }*/
       return firstToken;
   }
 

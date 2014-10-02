@@ -103,7 +103,7 @@ Workflow {
     
     		// content assist API
     		fragment = contentAssist.ContentAssistFragment auto-inject {}
-
+    
     		// The antlr parser generator fragment.
     		fragment = parser.antlr.XtextAntlrGeneratorFragment {
     			antlrParam = "-Xconversiontimeout" antlrParam = "10000"
