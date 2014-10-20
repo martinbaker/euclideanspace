@@ -50,11 +50,18 @@ public class CustomUILexer extends com.euclideanspace.aldor.ui.contentassist.ant
       Token firstToken = tokens.removeFirst();
       int tt = firstToken.getType();
       if (tt == RULE_KW_CCURLY) {
-    	  pendingToken = new CommonToken(RULE_KW_SEMICOLON,""); // empty string to avoid overlapping tokens
-    	  pendingToken.setLine(firstToken.getLine());
-    	  pendingToken.setCharPositionInLine(firstToken.getCharPositionInLine()+1);
-    	  pendingToken.setStartIndex(state.tokenStartCharIndex);
-    	  pendingToken.setStopIndex(state.tokenStartCharIndex);
+//    	  pendingToken = new CommonToken(RULE_KW_SEMICOLON,""); // empty string to avoid overlapping tokens
+    	  pendingToken = new CommonToken(RULE_KW_SEMICOLON,null); // null string to avoid overlapping tokens
+    	  pendingToken.setChannel(org.antlr.runtime.Token.HIDDEN_CHANNEL); // ignored by parser, not what we want
+//     	  pendingToken.setLine(firstToken.getLine());
+//    	  pendingToken.setCharPositionInLine(firstToken.getCharPositionInLine()+1);
+    	  pendingToken.setStartIndex(state.tokenStartCharIndex-1);
+    	  pendingToken.setStopIndex(state.tokenStartCharIndex-1);
+    	  pendingToken.setLine(-1);
+    	  pendingToken.setCharPositionInLine(-1);
+// if I set start or stop index to -1 then editor cannot be created
+//    	  pendingToken.setStartIndex(-1);
+//    	  pendingToken.setStopIndex(-1);
     	  emit(pendingToken);
       }
       return firstToken;

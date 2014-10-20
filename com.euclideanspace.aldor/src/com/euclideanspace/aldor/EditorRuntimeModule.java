@@ -6,6 +6,8 @@
  */
 package com.euclideanspace.aldor;
 
+import org.eclipse.xtext.nodemodel.impl.NodeModelBuilder;
+
 /**
  * Use this class to register components to be used at runtime / without the Equinox extension registry.
  */
@@ -64,4 +66,17 @@ public class EditorRuntimeModule extends com.euclideanspace.aldor.AbstractEditor
 	//public Class<? extends org.eclipse.xtext.parser.IParser> bindIParser() {
 	//	return com.euclideanspace.aldor.parser.antlr.EditorParser.class;
 	//}
+	
+	/*
+	 * We need to customise the node model builder so that inserted nodes do not
+	 * point back into text.
+	 */
+	public Class<? extends NodeModelBuilder> bindNodeModelBuilder() {
+      return CustomNodeModelBuilder.class;
+    }
+
+	public Class<? extends org.eclipse.xtext.parser.IAstFactory> bindIAstFactory() {
+		return CustomDefaultEcoreElementFactory.class;
+	}
+
 }
