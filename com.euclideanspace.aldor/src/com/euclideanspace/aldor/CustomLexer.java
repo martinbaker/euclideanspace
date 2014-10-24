@@ -213,7 +213,7 @@ public class CustomLexer extends com.euclideanspace.aldor.parser.antlr.internal.
 	 * This holds a pending semicolon which will be emitted only
 	 * if isFollower(t) is false.
 	 */
-	CommonToken pendingToken = null;
+	PhantomToken pendingToken = null;
 	
 	boolean pendingIsWS = false;
 
@@ -233,6 +233,12 @@ public class CustomLexer extends com.euclideanspace.aldor.parser.antlr.internal.
   public void emit(Token token) {
       state.token = token;
       tokens.addLast(token);
+//	  EditorFileWriter.out("CustomLexer.emit"+
+//	  " tex="+token.getText()+
+//      " index="+token.getTokenIndex()+
+//	  " pos="+token.getCharPositionInLine()+
+//      " line="+token.getLine()+
+//      " channel="+token.getChannel());
   } 
 
   /*
@@ -243,26 +249,26 @@ public class CustomLexer extends com.euclideanspace.aldor.parser.antlr.internal.
    */
   @Override
   public Token nextToken() {
-      super.nextToken();
+      super.nextToken(); // reads a token from input and set state then emits it
   	  //System.out.println("CustomLexer - nextToken");
       if (tokens.isEmpty())
           return Token.EOF_TOKEN;
       Token firstToken = tokens.removeFirst();
+	  //int startCharIndex = state.tokenStartCharIndex; // char index not stored in token
+	  int startCharPositionInLine = firstToken.getCharPositionInLine();
+	  int tokenStartLine = firstToken.getLine();
       int tt = firstToken.getType();
       if (tt == RULE_KW_CCURLY) {
-//    	  pendingToken = new CommonToken(RULE_KW_SEMICOLON,""); // empty string to avoid overlapping tokens
-    	  pendingToken = new CommonToken(RULE_KW_SEMICOLON,null); // null string to avoid overlapping tokens
-//    	  pendingToken.setChannel(org.antlr.runtime.Token.HIDDEN_CHANNEL); // ignored by parser, not what we want
-//     	  pendingToken.setLine(firstToken.getLine());
-//    	  pendingToken.setCharPositionInLine(firstToken.getCharPositionInLine()+1);
-    	  pendingToken.setStartIndex(state.tokenStartCharIndex-1);
-    	  pendingToken.setStopIndex(state.tokenStartCharIndex-1);
-    	  pendingToken.setLine(-1);
-    	  pendingToken.setCharPositionInLine(-1);
-// if I set start or stop index to -1 then editor cannot be created
-//    	  pendingToken.setStartIndex(-1);
-//    	  pendingToken.setStopIndex(-1);
+    	  pendingToken = new PhantomToken(RULE_KW_SEMICOLON); // PhantomToken extends DefaultToken and
+    	                                                      // represents a token not linked to any
+    	                                                      // text in the text editor.
     	  emit(pendingToken);
+//    	  EditorFileWriter.out("CustomLexer.nextToken"+
+//    	  " index="+state.tokenStartCharIndex+
+//    	  " pos="+state.tokenStartCharPositionInLine+
+//          " pos was="+startCharPositionInLine+
+//    	  " line="+state.tokenStartLine+
+//          " line was="+tokenStartLine);
       }
 /*    	 
       	  //System.out.println("CustomLexer - nextToken() "+ts +" type="+firstToken.getType());
