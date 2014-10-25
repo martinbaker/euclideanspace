@@ -50,7 +50,6 @@ public class EditorParser extends AbstractContentAssistParser {
 					put(grammarAccess.getBindingL_Infixed_CollectionAccess().getAlternatives(), "rule__BindingL_Infixed_Collection__Alternatives");
 					put(grammarAccess.getBindingL_Infixed_CollectionAccess().getOpAlternatives_0_0_1_0(), "rule__BindingL_Infixed_Collection__OpAlternatives_0_0_1_0");
 					put(grammarAccess.getBindingR_InfixedExprsDecl_AnyStatementAccess().getAlternatives_1_0(), "rule__BindingR_InfixedExprsDecl_AnyStatement__Alternatives_1_0");
-					put(grammarAccess.getAnyStatementAccess().getAlternatives(), "rule__AnyStatement__Alternatives");
 					put(grammarAccess.getFlow_AnyStatementAccess().getAlternatives(), "rule__Flow_AnyStatement__Alternatives");
 					put(grammarAccess.getFlow_AnyStatementAccess().getAlternatives_4_2(), "rule__Flow_AnyStatement__Alternatives_4_2");
 					put(grammarAccess.getFlow_BalStatementAccess().getAlternatives(), "rule__Flow_BalStatement__Alternatives");
@@ -63,6 +62,7 @@ public class EditorParser extends AbstractContentAssistParser {
 					put(grammarAccess.getInfixedExprAccess().getAlternatives(), "rule__InfixedExpr__Alternatives");
 					put(grammarAccess.getE3Access().getOpAlternatives_1_1_0(), "rule__E3__OpAlternatives_1_1_0");
 					put(grammarAccess.getE4Access().getOpAlternatives_1_1_0(), "rule__E4__OpAlternatives_1_1_0");
+					put(grammarAccess.getE6Access().getAlternatives(), "rule__E6__Alternatives");
 					put(grammarAccess.getE11_E12Access().getAlternatives_1_1(), "rule__E11_E12__Alternatives_1_1");
 					put(grammarAccess.getE11_OpAccess().getAlternatives_1_1(), "rule__E11_Op__Alternatives_1_1");
 					put(grammarAccess.getE14Access().getAlternatives(), "rule__E14__Alternatives");
@@ -125,11 +125,10 @@ public class EditorParser extends AbstractContentAssistParser {
 					put(grammarAccess.getBindingL_Infixed_CollectionAccess().getGroup_0_0(), "rule__BindingL_Infixed_Collection__Group_0_0__0");
 					put(grammarAccess.getBindingR_InfixedExprsDecl_AnyStatementAccess().getGroup(), "rule__BindingR_InfixedExprsDecl_AnyStatement__Group__0");
 					put(grammarAccess.getBindingR_InfixedExprsDecl_AnyStatementAccess().getGroup_1(), "rule__BindingR_InfixedExprsDecl_AnyStatement__Group_1__0");
-					put(grammarAccess.getAnyStatementAccess().getGroup_0(), "rule__AnyStatement__Group_0__0");
-					put(grammarAccess.getAnyStatementAccess().getGroup_0_0(), "rule__AnyStatement__Group_0_0__0");
 					put(grammarAccess.getFlow_AnyStatementAccess().getGroup_0(), "rule__Flow_AnyStatement__Group_0__0");
 					put(grammarAccess.getFlow_AnyStatementAccess().getGroup_0_1(), "rule__Flow_AnyStatement__Group_0_1__0");
 					put(grammarAccess.getFlow_AnyStatementAccess().getGroup_1(), "rule__Flow_AnyStatement__Group_1__0");
+					put(grammarAccess.getFlow_AnyStatementAccess().getGroup_1_4(), "rule__Flow_AnyStatement__Group_1_4__0");
 					put(grammarAccess.getFlow_AnyStatementAccess().getGroup_2(), "rule__Flow_AnyStatement__Group_2__0");
 					put(grammarAccess.getFlow_AnyStatementAccess().getGroup_2_0(), "rule__Flow_AnyStatement__Group_2_0__0");
 					put(grammarAccess.getFlow_AnyStatementAccess().getGroup_3(), "rule__Flow_AnyStatement__Group_3__0");
@@ -150,6 +149,7 @@ public class EditorParser extends AbstractContentAssistParser {
 					put(grammarAccess.getFlow_BalStatementAccess().getGroup_0(), "rule__Flow_BalStatement__Group_0__0");
 					put(grammarAccess.getFlow_BalStatementAccess().getGroup_0_1(), "rule__Flow_BalStatement__Group_0_1__0");
 					put(grammarAccess.getFlow_BalStatementAccess().getGroup_1(), "rule__Flow_BalStatement__Group_1__0");
+					put(grammarAccess.getFlow_BalStatementAccess().getGroup_1_4(), "rule__Flow_BalStatement__Group_1_4__0");
 					put(grammarAccess.getFlow_BalStatementAccess().getGroup_2(), "rule__Flow_BalStatement__Group_2__0");
 					put(grammarAccess.getFlow_BalStatementAccess().getGroup_2_0(), "rule__Flow_BalStatement__Group_2_0__0");
 					put(grammarAccess.getFlow_BalStatementAccess().getGroup_3(), "rule__Flow_BalStatement__Group_3__0");
@@ -190,7 +190,8 @@ public class EditorParser extends AbstractContentAssistParser {
 					put(grammarAccess.getE4Access().getGroup_1(), "rule__E4__Group_1__0");
 					put(grammarAccess.getE5Access().getGroup(), "rule__E5__Group__0");
 					put(grammarAccess.getE5Access().getGroup_1(), "rule__E5__Group_1__0");
-					put(grammarAccess.getE6Access().getGroup(), "rule__E6__Group__0");
+					put(grammarAccess.getE6Access().getGroup_0(), "rule__E6__Group_0__0");
+					put(grammarAccess.getE6Access().getGroup_0_1(), "rule__E6__Group_0_1__0");
 					put(grammarAccess.getE6Access().getGroup_1(), "rule__E6__Group_1__0");
 					put(grammarAccess.getE7Access().getGroup(), "rule__E7__Group__0");
 					put(grammarAccess.getE7Access().getGroup_1(), "rule__E7__Group_1__0");
@@ -333,14 +334,13 @@ public class EditorParser extends AbstractContentAssistParser {
 					put(grammarAccess.getBindingL_Infixed_CollectionAccess().getBiaAssignment_0_0_2(), "rule__BindingL_Infixed_Collection__BiaAssignment_0_0_2");
 					put(grammarAccess.getBindingL_Infixed_CollectionAccess().getBas9Assignment_1(), "rule__BindingL_Infixed_Collection__Bas9Assignment_1");
 					put(grammarAccess.getBindingR_InfixedExprsDecl_AnyStatementAccess().getBasAssignment_1_1(), "rule__BindingR_InfixedExprsDecl_AnyStatement__BasAssignment_1_1");
-					put(grammarAccess.getAnyStatementAccess().getBasAssignment_0_0_3(), "rule__AnyStatement__BasAssignment_0_0_3");
 					put(grammarAccess.getFlow_AnyStatementAccess().getCAssignment_0_0(), "rule__Flow_AnyStatement__CAssignment_0_0");
 					put(grammarAccess.getFlow_AnyStatementAccess().getStAssignment_0_1_0(), "rule__Flow_AnyStatement__StAssignment_0_1_0");
 					put(grammarAccess.getFlow_AnyStatementAccess().getBas2Assignment_0_1_1(), "rule__Flow_AnyStatement__Bas2Assignment_0_1_1");
 					put(grammarAccess.getFlow_AnyStatementAccess().getStAssignment_1_0(), "rule__Flow_AnyStatement__StAssignment_1_0");
 					put(grammarAccess.getFlow_AnyStatementAccess().getCiAssignment_1_1(), "rule__Flow_AnyStatement__CiAssignment_1_1");
 					put(grammarAccess.getFlow_AnyStatementAccess().getBbsAssignment_1_3(), "rule__Flow_AnyStatement__BbsAssignment_1_3");
-					put(grammarAccess.getFlow_AnyStatementAccess().getBasAssignment_1_5(), "rule__Flow_AnyStatement__BasAssignment_1_5");
+					put(grammarAccess.getFlow_AnyStatementAccess().getBasAssignment_1_4_1(), "rule__Flow_AnyStatement__BasAssignment_1_4_1");
 					put(grammarAccess.getFlow_AnyStatementAccess().getStAssignment_2_0_1(), "rule__Flow_AnyStatement__StAssignment_2_0_1");
 					put(grammarAccess.getFlow_AnyStatementAccess().getBas3Assignment_2_0_2(), "rule__Flow_AnyStatement__Bas3Assignment_2_0_2");
 					put(grammarAccess.getFlow_AnyStatementAccess().getStAssignment_3_0(), "rule__Flow_AnyStatement__StAssignment_3_0");
@@ -384,7 +384,7 @@ public class EditorParser extends AbstractContentAssistParser {
 					put(grammarAccess.getFlow_BalStatementAccess().getSt2Assignment_1_0(), "rule__Flow_BalStatement__St2Assignment_1_0");
 					put(grammarAccess.getFlow_BalStatementAccess().getCi2Assignment_1_1(), "rule__Flow_BalStatement__Ci2Assignment_1_1");
 					put(grammarAccess.getFlow_BalStatementAccess().getBbs4Assignment_1_3(), "rule__Flow_BalStatement__Bbs4Assignment_1_3");
-					put(grammarAccess.getFlow_BalStatementAccess().getBbs4Assignment_1_5(), "rule__Flow_BalStatement__Bbs4Assignment_1_5");
+					put(grammarAccess.getFlow_BalStatementAccess().getBbs4Assignment_1_4_1(), "rule__Flow_BalStatement__Bbs4Assignment_1_4_1");
 					put(grammarAccess.getFlow_BalStatementAccess().getSt2Assignment_2_0_1(), "rule__Flow_BalStatement__St2Assignment_2_0_1");
 					put(grammarAccess.getFlow_BalStatementAccess().getBbs3Assignment_2_0_2(), "rule__Flow_BalStatement__Bbs3Assignment_2_0_2");
 					put(grammarAccess.getFlow_BalStatementAccess().getSt2Assignment_3_0(), "rule__Flow_BalStatement__St2Assignment_3_0");
@@ -443,8 +443,10 @@ public class EditorParser extends AbstractContentAssistParser {
 					put(grammarAccess.getE4Access().getRightAssignment_1_2(), "rule__E4__RightAssignment_1_2");
 					put(grammarAccess.getE5Access().getOpAssignment_1_1(), "rule__E5__OpAssignment_1_1");
 					put(grammarAccess.getE5Access().getRightAssignment_1_2(), "rule__E5__RightAssignment_1_2");
-					put(grammarAccess.getE6Access().getOpAssignment_1_1(), "rule__E6__OpAssignment_1_1");
-					put(grammarAccess.getE6Access().getRightAssignment_1_2(), "rule__E6__RightAssignment_1_2");
+					put(grammarAccess.getE6Access().getOpAssignment_0_1_1(), "rule__E6__OpAssignment_0_1_1");
+					put(grammarAccess.getE6Access().getRightAssignment_0_1_2(), "rule__E6__RightAssignment_0_1_2");
+					put(grammarAccess.getE6Access().getOp6Assignment_1_0(), "rule__E6__Op6Assignment_1_0");
+					put(grammarAccess.getE6Access().getRightAssignment_1_1(), "rule__E6__RightAssignment_1_1");
 					put(grammarAccess.getE7Access().getOpAssignment_1_1(), "rule__E7__OpAssignment_1_1");
 					put(grammarAccess.getE7Access().getRightAssignment_1_2(), "rule__E7__RightAssignment_1_2");
 					put(grammarAccess.getE8Access().getOpAssignment_1_1(), "rule__E8__OpAssignment_1_1");

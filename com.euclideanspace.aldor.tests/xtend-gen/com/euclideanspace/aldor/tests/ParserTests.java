@@ -249,7 +249,7 @@ public class ParserTests {
   public void testPreComment1() {
     try {
       StringConcatenation _builder = new StringConcatenation();
-      _builder.append("++ pre comment");
+      _builder.append("+++ pre comment");
       _builder.newLine();
       _builder.append("\t\t");
       _builder.append("a");
@@ -267,7 +267,7 @@ public class ParserTests {
       _builder.append("{");
       _builder.newLine();
       _builder.append("\t\t   ");
-      _builder.append("++ pre comment");
+      _builder.append("+++ pre comment");
       _builder.newLine();
       _builder.append("\t\t   ");
       _builder.append("a");
@@ -288,7 +288,7 @@ public class ParserTests {
       _builder.append("a");
       _builder.newLine();
       _builder.append("\t\t");
-      _builder.append("-- post comment");
+      _builder.append("++ post comment");
       Model _parse = this._parseHelper.parse(_builder);
       this._validationTestHelper.assertNoErrors(_parse);
     } catch (Throwable _e) {
@@ -303,7 +303,7 @@ public class ParserTests {
       _builder.append("a;");
       _builder.newLine();
       _builder.append("\t\t");
-      _builder.append("-- post comment after semicolon");
+      _builder.append("++ post comment after semicolon");
       Model _parse = this._parseHelper.parse(_builder);
       this._validationTestHelper.assertNoErrors(_parse);
     } catch (Throwable _e) {
@@ -321,7 +321,7 @@ public class ParserTests {
       _builder.append("a");
       _builder.newLine();
       _builder.append("\t\t   ");
-      _builder.append("-- post comment");
+      _builder.append("++ post comment");
       _builder.newLine();
       _builder.append("\t\t   ");
       _builder.append("}");
@@ -342,7 +342,7 @@ public class ParserTests {
       _builder.append("a;");
       _builder.newLine();
       _builder.append("\t\t   ");
-      _builder.append("-- post comment after semicolon");
+      _builder.append("++ post comment after semicolon");
       _builder.newLine();
       _builder.append("\t\t   ");
       _builder.append("}");
@@ -401,8 +401,40 @@ public class ParserTests {
     }
   }
   
+  /**
+   * make sure semicolon is not inserted before 'then'
+   * (CustomLexer inserts ';' after '}' if allowed)
+   */
   @Test
   public void testIfThenElse2() {
+    try {
+      StringConcatenation _builder = new StringConcatenation();
+      _builder.append("if {a} then b else c");
+      Model _parse = this._parseHelper.parse(_builder);
+      this._validationTestHelper.assertNoErrors(_parse);
+    } catch (Throwable _e) {
+      throw Exceptions.sneakyThrow(_e);
+    }
+  }
+  
+  /**
+   * make sure semicolon is not inserted before 'else'
+   * (CustomLexer inserts ';' after '}' if allowed)
+   */
+  @Test
+  public void testIfThenElse3() {
+    try {
+      StringConcatenation _builder = new StringConcatenation();
+      _builder.append("if a then {b} else c");
+      Model _parse = this._parseHelper.parse(_builder);
+      this._validationTestHelper.assertNoErrors(_parse);
+    } catch (Throwable _e) {
+      throw Exceptions.sneakyThrow(_e);
+    }
+  }
+  
+  @Test
+  public void testIfThenElse4() {
     try {
       StringConcatenation _builder = new StringConcatenation();
       _builder.append("if a then b else {c}");
@@ -414,7 +446,7 @@ public class ParserTests {
   }
   
   @Test
-  public void testIfThenElse3() {
+  public void testIfThenElse5() {
     try {
       StringConcatenation _builder = new StringConcatenation();
       _builder.append("if a then b else if c then d else e");
@@ -453,7 +485,7 @@ public class ParserTests {
   public void testTry1() {
     try {
       StringConcatenation _builder = new StringConcatenation();
-      _builder.append("try a but b c");
+      _builder.append("try a but b in c d");
       Model _parse = this._parseHelper.parse(_builder);
       this._validationTestHelper.assertNoErrors(_parse);
     } catch (Throwable _e) {
@@ -465,7 +497,7 @@ public class ParserTests {
   public void testTry2() {
     try {
       StringConcatenation _builder = new StringConcatenation();
-      _builder.append("try a catch b c");
+      _builder.append("try a catch b in c d");
       Model _parse = this._parseHelper.parse(_builder);
       this._validationTestHelper.assertNoErrors(_parse);
     } catch (Throwable _e) {

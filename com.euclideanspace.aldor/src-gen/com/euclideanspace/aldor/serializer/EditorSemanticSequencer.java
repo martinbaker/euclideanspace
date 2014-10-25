@@ -37,6 +37,7 @@ import com.euclideanspace.aldor.editor.E8;
 import com.euclideanspace.aldor.editor.E9;
 import com.euclideanspace.aldor.editor.EditorPackage;
 import com.euclideanspace.aldor.editor.ExportDecl;
+import com.euclideanspace.aldor.editor.Expr;
 import com.euclideanspace.aldor.editor.Flow_AnyStatement;
 import com.euclideanspace.aldor.editor.Flow_BalStatement;
 import com.euclideanspace.aldor.editor.GenBound;
@@ -123,11 +124,7 @@ public class EditorSemanticSequencer extends AbstractDelegatingSemanticSequencer
 				}
 				else break;
 			case EditorPackage.BINDING_LINFIXED_ANY_STATEMENT:
-				if(context == grammarAccess.getAnyStatementRule()) {
-					sequence_AnyStatement_BindingL_Infixed_AnyStatement_CommaItem(context, (BindingL_Infixed_AnyStatement) semanticObject); 
-					return; 
-				}
-				else if(context == grammarAccess.getBindingL_Infixed_AnyStatementRule() ||
+				if(context == grammarAccess.getBindingL_Infixed_AnyStatementRule() ||
 				   context == grammarAccess.getBinding_AnyStatementRule()) {
 					sequence_BindingL_Infixed_AnyStatement(context, (BindingL_Infixed_AnyStatement) semanticObject); 
 					return; 
@@ -283,7 +280,7 @@ public class EditorSemanticSequencer extends AbstractDelegatingSemanticSequencer
 				   context == grammarAccess.getE5Rule() ||
 				   context == grammarAccess.getE5Access().getE5LeftAction_1_0() ||
 				   context == grammarAccess.getE6Rule() ||
-				   context == grammarAccess.getE6Access().getE6LeftAction_1_0() ||
+				   context == grammarAccess.getE6Access().getE6LeftAction_0_1_0() ||
 				   context == grammarAccess.getE7Rule() ||
 				   context == grammarAccess.getE7Access().getE7LeftAction_1_0() ||
 				   context == grammarAccess.getE8Rule() ||
@@ -351,7 +348,7 @@ public class EditorSemanticSequencer extends AbstractDelegatingSemanticSequencer
 				   context == grammarAccess.getE5Rule() ||
 				   context == grammarAccess.getE5Access().getE5LeftAction_1_0() ||
 				   context == grammarAccess.getE6Rule() ||
-				   context == grammarAccess.getE6Access().getE6LeftAction_1_0() ||
+				   context == grammarAccess.getE6Access().getE6LeftAction_0_1_0() ||
 				   context == grammarAccess.getE7Rule() ||
 				   context == grammarAccess.getE7Access().getE7LeftAction_1_0() ||
 				   context == grammarAccess.getE8Rule() ||
@@ -396,7 +393,7 @@ public class EditorSemanticSequencer extends AbstractDelegatingSemanticSequencer
 				   context == grammarAccess.getE5Rule() ||
 				   context == grammarAccess.getE5Access().getE5LeftAction_1_0() ||
 				   context == grammarAccess.getE6Rule() ||
-				   context == grammarAccess.getE6Access().getE6LeftAction_1_0() ||
+				   context == grammarAccess.getE6Access().getE6LeftAction_0_1_0() ||
 				   context == grammarAccess.getE7Rule() ||
 				   context == grammarAccess.getE7Access().getE7LeftAction_1_0() ||
 				   context == grammarAccess.getE8Rule() ||
@@ -442,7 +439,7 @@ public class EditorSemanticSequencer extends AbstractDelegatingSemanticSequencer
 				   context == grammarAccess.getE5Rule() ||
 				   context == grammarAccess.getE5Access().getE5LeftAction_1_0() ||
 				   context == grammarAccess.getE6Rule() ||
-				   context == grammarAccess.getE6Access().getE6LeftAction_1_0() ||
+				   context == grammarAccess.getE6Access().getE6LeftAction_0_1_0() ||
 				   context == grammarAccess.getE7Rule() ||
 				   context == grammarAccess.getE7Access().getE7LeftAction_1_0() ||
 				   context == grammarAccess.getE8Rule() ||
@@ -561,9 +558,12 @@ public class EditorSemanticSequencer extends AbstractDelegatingSemanticSequencer
 				   context == grammarAccess.getE5Rule() ||
 				   context == grammarAccess.getE5Access().getE5LeftAction_1_0() ||
 				   context == grammarAccess.getE6Rule() ||
-				   context == grammarAccess.getE6Access().getE6LeftAction_1_0() ||
 				   context == grammarAccess.getInfixedExprRule()) {
 					sequence_E6(context, (E6) semanticObject); 
+					return; 
+				}
+				else if(context == grammarAccess.getE6Access().getE6LeftAction_0_1_0()) {
+					sequence_E6_E6_0_1_0(context, (E6) semanticObject); 
 					return; 
 				}
 				else if(context == grammarAccess.getInfixedExprsDeclRule()) {
@@ -592,7 +592,7 @@ public class EditorSemanticSequencer extends AbstractDelegatingSemanticSequencer
 				   context == grammarAccess.getE5Rule() ||
 				   context == grammarAccess.getE5Access().getE5LeftAction_1_0() ||
 				   context == grammarAccess.getE6Rule() ||
-				   context == grammarAccess.getE6Access().getE6LeftAction_1_0() ||
+				   context == grammarAccess.getE6Access().getE6LeftAction_0_1_0() ||
 				   context == grammarAccess.getE7Rule() ||
 				   context == grammarAccess.getE7Access().getE7LeftAction_1_0() ||
 				   context == grammarAccess.getInfixedExprRule()) {
@@ -625,7 +625,7 @@ public class EditorSemanticSequencer extends AbstractDelegatingSemanticSequencer
 				   context == grammarAccess.getE5Rule() ||
 				   context == grammarAccess.getE5Access().getE5LeftAction_1_0() ||
 				   context == grammarAccess.getE6Rule() ||
-				   context == grammarAccess.getE6Access().getE6LeftAction_1_0() ||
+				   context == grammarAccess.getE6Access().getE6LeftAction_0_1_0() ||
 				   context == grammarAccess.getE7Rule() ||
 				   context == grammarAccess.getE7Access().getE7LeftAction_1_0() ||
 				   context == grammarAccess.getE8Rule() ||
@@ -660,7 +660,7 @@ public class EditorSemanticSequencer extends AbstractDelegatingSemanticSequencer
 				   context == grammarAccess.getE5Rule() ||
 				   context == grammarAccess.getE5Access().getE5LeftAction_1_0() ||
 				   context == grammarAccess.getE6Rule() ||
-				   context == grammarAccess.getE6Access().getE6LeftAction_1_0() ||
+				   context == grammarAccess.getE6Access().getE6LeftAction_0_1_0() ||
 				   context == grammarAccess.getE7Rule() ||
 				   context == grammarAccess.getE7Access().getE7LeftAction_1_0() ||
 				   context == grammarAccess.getE8Rule() ||
@@ -686,6 +686,12 @@ public class EditorSemanticSequencer extends AbstractDelegatingSemanticSequencer
 				if(context == grammarAccess.getExportDeclRule() ||
 				   context == grammarAccess.getMacroBodyRule()) {
 					sequence_ExportDecl(context, (ExportDecl) semanticObject); 
+					return; 
+				}
+				else break;
+			case EditorPackage.EXPR:
+				if(context == grammarAccess.getE6Access().getE6LeftAction_1_2()) {
+					sequence_E6_E6_1_2(context, (Expr) semanticObject); 
 					return; 
 				}
 				else break;
@@ -1017,19 +1023,6 @@ public class EditorSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	
 	/**
 	 * Constraint:
-	 *     (
-	 *         ((lft=Infixed (op=KW_ASSIGN | op=KW_2EQ | op=KW_MARROW | op=KW_MAPSTO | op=KW_MAPSTOSTAR) bia=BindingL_Infixed_AnyStatement) | bas9=AnyStatement) 
-	 *         ci+=CommaItem* 
-	 *         bas=Binding_AnyStatement
-	 *     )
-	 */
-	protected void sequence_AnyStatement_BindingL_Infixed_AnyStatement_CommaItem(EObject context, BindingL_Infixed_AnyStatement semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * Constraint:
 	 *     (iden=Id | lit=Literal)
 	 */
 	protected void sequence_Atom(EObject context, Atom semanticObject) {
@@ -1223,14 +1216,7 @@ public class EditorSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	
 	/**
 	 * Constraint:
-	 *     (
-	 *         left=E6_E6_1_0 
-	 *         op=PlusTok 
-	 *         right=E7 
-	 *         ie+=InfixedExpr* 
-	 *         dp+=DeclPart* 
-	 *         bas=Binding_AnyStatement?
-	 *     )
+	 *     (((left=E6_E6_0_1_0 op=PlusTok right=E7) | left=E6_E6_1_2) ie+=InfixedExpr* dp+=DeclPart* bas=Binding_AnyStatement?)
 	 */
 	protected void sequence_BindingR_InfixedExprsDecl_AnyStatement_E6_InfixedExprsDecl_enlister1_InfixedExpr_Comma(EObject context, E6 semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -1780,7 +1766,7 @@ public class EditorSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	
 	/**
 	 * Constraint:
-	 *     (left=E6_E6_1_0 op=PlusTok right=E7)
+	 *     ((left=E6_E6_0_1_0 op=PlusTok right=E7) | left=E6_E6_1_2)
 	 */
 	protected void sequence_E6(EObject context, E6 semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -1789,7 +1775,25 @@ public class EditorSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	
 	/**
 	 * Constraint:
-	 *     (left=E6_E6_1_0 op=PlusTok right=E7 ie+=InfixedExpr* dp+=DeclPart*)
+	 *     (left=E6_E6_0_1_0 op=PlusTok right=E7)
+	 */
+	protected void sequence_E6_E6_0_1_0(EObject context, E6 semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (op6+=PlusTok right=E7)
+	 */
+	protected void sequence_E6_E6_1_2(EObject context, Expr semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (((left=E6_E6_0_1_0 op=PlusTok right=E7) | left=E6_E6_1_2) ie+=InfixedExpr* dp+=DeclPart*)
 	 */
 	protected void sequence_E6_InfixedExprsDecl_enlister1_InfixedExpr_Comma(EObject context, E6 semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -1798,7 +1802,7 @@ public class EditorSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	
 	/**
 	 * Constraint:
-	 *     (left=E6_E6_1_0 op=PlusTok right=E7 ie+=InfixedExpr*)
+	 *     (((left=E6_E6_0_1_0 op=PlusTok right=E7) | left=E6_E6_1_2) ie+=InfixedExpr*)
 	 */
 	protected void sequence_E6_enlister1_InfixedExpr_Comma(EObject context, E6 semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -1899,7 +1903,7 @@ public class EditorSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	 * Constraint:
 	 *     (
 	 *         (c=Collection (st='implies' bas2=Binding_AnyStatement)?) | 
-	 *         (st='if' ci=CommaItem bbs=Binding_BalStatement bas=Binding_AnyStatement) | 
+	 *         (st='if' ci=CommaItem bbs=Binding_BalStatement bas=Binding_AnyStatement?) | 
 	 *         (st='repeat' bas=Binding_AnyStatement) | 
 	 *         (st='try' bas=Binding_AnyStatement be2=ButExpr apa=AlwaysPart_AnyStatement) | 
 	 *         (st='select' bas=Binding_AnyStatement ca=Cases) | 
@@ -1936,7 +1940,7 @@ public class EditorSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	 * Constraint:
 	 *     (
 	 *         (c2=Collection (st2='implies' bbs3=Binding_BalStatement)?) | 
-	 *         (st2='if' ci2=CommaItem bbs4+=Binding_BalStatement bbs4+=Binding_BalStatement) | 
+	 *         (st2='if' ci2=CommaItem bbs4+=Binding_BalStatement bbs4+=Binding_BalStatement?) | 
 	 *         (st2='repeat' bbs5=Binding_BalStatement) | 
 	 *         (st2='try' bbs2=Binding_AnyStatement be=ButExpr apb=AlwaysPart_BalStatement) | 
 	 *         (st2='select' bbs2=Binding_AnyStatement ca2=Cases) | 

@@ -365,32 +365,42 @@ public interface EditorPackage extends EPackage
   int COMMA_FEATURE_COUNT = 0;
 
   /**
-   * The meta object id for the '{@link com.euclideanspace.aldor.editor.impl.AnyStatementImpl <em>Any Statement</em>}' class.
+   * The meta object id for the '{@link com.euclideanspace.aldor.editor.impl.enlist1_CommaItem_Comma_ABImpl <em>enlist1 Comma Item Comma AB</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see com.euclideanspace.aldor.editor.impl.AnyStatementImpl
-   * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getAnyStatement()
+   * @see com.euclideanspace.aldor.editor.impl.enlist1_CommaItem_Comma_ABImpl
+   * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getenlist1_CommaItem_Comma_AB()
    * @generated
    */
-  int ANY_STATEMENT = 22;
+  int ENLIST1_COMMA_ITEM_COMMA_AB = 91;
 
   /**
-   * The feature id for the '<em><b>Bas</b></em>' containment reference.
+   * The number of structural features of the '<em>enlist1 Comma Item Comma AB</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int ANY_STATEMENT__BAS = 0;
+  int ENLIST1_COMMA_ITEM_COMMA_AB_FEATURE_COUNT = COMMA_FEATURE_COUNT + 0;
 
   /**
-   * The number of structural features of the '<em>Any Statement</em>' class.
+   * The meta object id for the '{@link com.euclideanspace.aldor.editor.impl.enlister1_CommaItem_CommaImpl <em>enlister1 Comma Item Comma</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see com.euclideanspace.aldor.editor.impl.enlister1_CommaItem_CommaImpl
+   * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getenlister1_CommaItem_Comma()
+   * @generated
+   */
+  int ENLISTER1_COMMA_ITEM_COMMA = 94;
+
+  /**
+   * The number of structural features of the '<em>enlister1 Comma Item Comma</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int ANY_STATEMENT_FEATURE_COUNT = 1;
+  int ENLISTER1_COMMA_ITEM_COMMA_FEATURE_COUNT = ENLIST1_COMMA_ITEM_COMMA_AB_FEATURE_COUNT + 0;
 
   /**
    * The meta object id for the '{@link com.euclideanspace.aldor.editor.impl.CommaItemImpl <em>Comma Item</em>}' class.
@@ -403,22 +413,13 @@ public interface EditorPackage extends EPackage
   int COMMA_ITEM = 11;
 
   /**
-   * The feature id for the '<em><b>Bas</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int COMMA_ITEM__BAS = ANY_STATEMENT__BAS;
-
-  /**
    * The feature id for the '<em><b>Ci</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int COMMA_ITEM__CI = ANY_STATEMENT_FEATURE_COUNT + 0;
+  int COMMA_ITEM__CI = ENLISTER1_COMMA_ITEM_COMMA_FEATURE_COUNT + 0;
 
   /**
    * The number of structural features of the '<em>Comma Item</em>' class.
@@ -427,7 +428,7 @@ public interface EditorPackage extends EPackage
    * @generated
    * @ordered
    */
-  int COMMA_ITEM_FEATURE_COUNT = ANY_STATEMENT_FEATURE_COUNT + 1;
+  int COMMA_ITEM_FEATURE_COUNT = ENLISTER1_COMMA_ITEM_COMMA_FEATURE_COUNT + 1;
 
   /**
    * The meta object id for the '{@link com.euclideanspace.aldor.editor.impl.DeclBindingImpl <em>Decl Binding</em>}' class.
@@ -579,15 +580,6 @@ public interface EditorPackage extends EPackage
   int BINDING_ANY_STATEMENT = 15;
 
   /**
-   * The feature id for the '<em><b>Bas</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int BINDING_ANY_STATEMENT__BAS = COMMA_ITEM__BAS;
-
-  /**
    * The feature id for the '<em><b>Ci</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -671,15 +663,6 @@ public interface EditorPackage extends EPackage
    * @generated
    */
   int BINDING_LINFIXED_ANY_STATEMENT = 18;
-
-  /**
-   * The feature id for the '<em><b>Bas</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int BINDING_LINFIXED_ANY_STATEMENT__BAS = BINDING_ANY_STATEMENT__BAS;
 
   /**
    * The feature id for the '<em><b>Ci</b></em>' containment reference list.
@@ -846,6 +829,25 @@ public interface EditorPackage extends EPackage
   int BINDING_LINFIXED_COLLECTION_FEATURE_COUNT = BINDING_COLLECTION_FEATURE_COUNT + 4;
 
   /**
+   * The meta object id for the '{@link com.euclideanspace.aldor.editor.impl.AnyStatementImpl <em>Any Statement</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see com.euclideanspace.aldor.editor.impl.AnyStatementImpl
+   * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getAnyStatement()
+   * @generated
+   */
+  int ANY_STATEMENT = 22;
+
+  /**
+   * The number of structural features of the '<em>Any Statement</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ANY_STATEMENT_FEATURE_COUNT = 0;
+
+  /**
    * The meta object id for the '{@link com.euclideanspace.aldor.editor.impl.BalStatementImpl <em>Bal Statement</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -873,15 +875,6 @@ public interface EditorPackage extends EPackage
    * @generated
    */
   int FLOW_ANY_STATEMENT = 24;
-
-  /**
-   * The feature id for the '<em><b>Bas</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int FLOW_ANY_STATEMENT__BAS = ANY_STATEMENT__BAS;
 
   /**
    * The feature id for the '<em><b>C</b></em>' containment reference.
@@ -929,13 +922,22 @@ public interface EditorPackage extends EPackage
   int FLOW_ANY_STATEMENT__BBS = ANY_STATEMENT_FEATURE_COUNT + 4;
 
   /**
+   * The feature id for the '<em><b>Bas</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FLOW_ANY_STATEMENT__BAS = ANY_STATEMENT_FEATURE_COUNT + 5;
+
+  /**
    * The feature id for the '<em><b>Be2</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int FLOW_ANY_STATEMENT__BE2 = ANY_STATEMENT_FEATURE_COUNT + 5;
+  int FLOW_ANY_STATEMENT__BE2 = ANY_STATEMENT_FEATURE_COUNT + 6;
 
   /**
    * The feature id for the '<em><b>Apa</b></em>' containment reference.
@@ -944,7 +946,7 @@ public interface EditorPackage extends EPackage
    * @generated
    * @ordered
    */
-  int FLOW_ANY_STATEMENT__APA = ANY_STATEMENT_FEATURE_COUNT + 6;
+  int FLOW_ANY_STATEMENT__APA = ANY_STATEMENT_FEATURE_COUNT + 7;
 
   /**
    * The feature id for the '<em><b>Ca</b></em>' containment reference.
@@ -953,7 +955,7 @@ public interface EditorPackage extends EPackage
    * @generated
    * @ordered
    */
-  int FLOW_ANY_STATEMENT__CA = ANY_STATEMENT_FEATURE_COUNT + 7;
+  int FLOW_ANY_STATEMENT__CA = ANY_STATEMENT_FEATURE_COUNT + 8;
 
   /**
    * The feature id for the '<em><b>Gb</b></em>' containment reference.
@@ -962,7 +964,7 @@ public interface EditorPackage extends EPackage
    * @generated
    * @ordered
    */
-  int FLOW_ANY_STATEMENT__GB = ANY_STATEMENT_FEATURE_COUNT + 8;
+  int FLOW_ANY_STATEMENT__GB = ANY_STATEMENT_FEATURE_COUNT + 9;
 
   /**
    * The feature id for the '<em><b>Bas4</b></em>' containment reference.
@@ -971,7 +973,7 @@ public interface EditorPackage extends EPackage
    * @generated
    * @ordered
    */
-  int FLOW_ANY_STATEMENT__BAS4 = ANY_STATEMENT_FEATURE_COUNT + 9;
+  int FLOW_ANY_STATEMENT__BAS4 = ANY_STATEMENT_FEATURE_COUNT + 10;
 
   /**
    * The feature id for the '<em><b>N</b></em>' containment reference.
@@ -980,7 +982,7 @@ public interface EditorPackage extends EPackage
    * @generated
    * @ordered
    */
-  int FLOW_ANY_STATEMENT__N = ANY_STATEMENT_FEATURE_COUNT + 10;
+  int FLOW_ANY_STATEMENT__N = ANY_STATEMENT_FEATURE_COUNT + 11;
 
   /**
    * The feature id for the '<em><b>I2</b></em>' containment reference.
@@ -989,7 +991,7 @@ public interface EditorPackage extends EPackage
    * @generated
    * @ordered
    */
-  int FLOW_ANY_STATEMENT__I2 = ANY_STATEMENT_FEATURE_COUNT + 11;
+  int FLOW_ANY_STATEMENT__I2 = ANY_STATEMENT_FEATURE_COUNT + 12;
 
   /**
    * The number of structural features of the '<em>Flow Any Statement</em>' class.
@@ -998,7 +1000,7 @@ public interface EditorPackage extends EPackage
    * @generated
    * @ordered
    */
-  int FLOW_ANY_STATEMENT_FEATURE_COUNT = ANY_STATEMENT_FEATURE_COUNT + 12;
+  int FLOW_ANY_STATEMENT_FEATURE_COUNT = ANY_STATEMENT_FEATURE_COUNT + 13;
 
   /**
    * The meta object id for the '{@link com.euclideanspace.aldor.editor.impl.Flow_BalStatementImpl <em>Flow Bal Statement</em>}' class.
@@ -1287,15 +1289,6 @@ public interface EditorPackage extends EPackage
   int ITERATORS = 32;
 
   /**
-   * The feature id for the '<em><b>Bas</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ITERATORS__BAS = FLOW_ANY_STATEMENT__BAS;
-
-  /**
    * The feature id for the '<em><b>C</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1339,6 +1332,15 @@ public interface EditorPackage extends EPackage
    * @ordered
    */
   int ITERATORS__BBS = FLOW_ANY_STATEMENT__BBS;
+
+  /**
+   * The feature id for the '<em><b>Bas</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ITERATORS__BAS = FLOW_ANY_STATEMENT__BAS;
 
   /**
    * The feature id for the '<em><b>Be2</b></em>' containment reference.
@@ -1549,15 +1551,6 @@ public interface EditorPackage extends EPackage
   int ITERATORS1 = 33;
 
   /**
-   * The feature id for the '<em><b>Bas</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ITERATORS1__BAS = ITERATORS__BAS;
-
-  /**
    * The feature id for the '<em><b>C</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1601,6 +1594,15 @@ public interface EditorPackage extends EPackage
    * @ordered
    */
   int ITERATORS1__BBS = ITERATORS__BBS;
+
+  /**
+   * The feature id for the '<em><b>Bas</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ITERATORS1__BAS = ITERATORS__BAS;
 
   /**
    * The feature id for the '<em><b>Be2</b></em>' containment reference.
@@ -2169,13 +2171,31 @@ public interface EditorPackage extends EPackage
   int EXPR__IE = INFIXED_EXPR__IE;
 
   /**
+   * The feature id for the '<em><b>Op6</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EXPR__OP6 = INFIXED_EXPR_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Right</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EXPR__RIGHT = INFIXED_EXPR_FEATURE_COUNT + 1;
+
+  /**
    * The number of structural features of the '<em>Expr</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int EXPR_FEATURE_COUNT = INFIXED_EXPR_FEATURE_COUNT + 0;
+  int EXPR_FEATURE_COUNT = INFIXED_EXPR_FEATURE_COUNT + 2;
 
   /**
    * The meta object id for the '{@link com.euclideanspace.aldor.editor.impl.TypeImpl <em>Type</em>}' class.
@@ -2290,6 +2310,24 @@ public interface EditorPackage extends EPackage
   int E14__IE = EXPR__IE;
 
   /**
+   * The feature id for the '<em><b>Op6</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int E14__OP6 = EXPR__OP6;
+
+  /**
+   * The feature id for the '<em><b>Right</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int E14__RIGHT = EXPR__RIGHT;
+
+  /**
    * The feature id for the '<em><b>E1 5left</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -2398,6 +2436,24 @@ public interface EditorPackage extends EPackage
    * @ordered
    */
   int OP__IE = EXPR__IE;
+
+  /**
+   * The feature id for the '<em><b>Op6</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int OP__OP6 = EXPR__OP6;
+
+  /**
+   * The feature id for the '<em><b>Right</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int OP__RIGHT = EXPR__RIGHT;
 
   /**
    * The feature id for the '<em><b>Aop</b></em>' containment reference.
@@ -3615,25 +3671,6 @@ public interface EditorPackage extends EPackage
   int QUAL_OP_POWER_TOK_FEATURE_COUNT = POWER_OP_FEATURE_COUNT + 1;
 
   /**
-   * The meta object id for the '{@link com.euclideanspace.aldor.editor.impl.enlist1_CommaItem_Comma_ABImpl <em>enlist1 Comma Item Comma AB</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see com.euclideanspace.aldor.editor.impl.enlist1_CommaItem_Comma_ABImpl
-   * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getenlist1_CommaItem_Comma_AB()
-   * @generated
-   */
-  int ENLIST1_COMMA_ITEM_COMMA_AB = 91;
-
-  /**
-   * The number of structural features of the '<em>enlist1 Comma Item Comma AB</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ENLIST1_COMMA_ITEM_COMMA_AB_FEATURE_COUNT = COMMA_FEATURE_COUNT + 0;
-
-  /**
    * The meta object id for the '{@link com.euclideanspace.aldor.editor.impl.enlist1_Infixed_Comma_ABImpl <em>enlist1 Infixed Comma AB</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -3651,25 +3688,6 @@ public interface EditorPackage extends EPackage
    * @ordered
    */
   int ENLIST1_INFIXED_COMMA_AB_FEATURE_COUNT = FROM_PART_FEATURE_COUNT + 0;
-
-  /**
-   * The meta object id for the '{@link com.euclideanspace.aldor.editor.impl.enlister1_CommaItem_CommaImpl <em>enlister1 Comma Item Comma</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see com.euclideanspace.aldor.editor.impl.enlister1_CommaItem_CommaImpl
-   * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getenlister1_CommaItem_Comma()
-   * @generated
-   */
-  int ENLISTER1_COMMA_ITEM_COMMA = 94;
-
-  /**
-   * The number of structural features of the '<em>enlister1 Comma Item Comma</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ENLISTER1_COMMA_ITEM_COMMA_FEATURE_COUNT = ENLIST1_COMMA_ITEM_COMMA_AB_FEATURE_COUNT + 0;
 
   /**
    * The meta object id for the '{@link com.euclideanspace.aldor.editor.impl.enlister1_Infixed_CommaImpl <em>enlister1 Infixed Comma</em>}' class.
@@ -4249,6 +4267,24 @@ public interface EditorPackage extends EPackage
   int E3__IE = EXPR__IE;
 
   /**
+   * The feature id for the '<em><b>Op6</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int E3__OP6 = EXPR__OP6;
+
+  /**
+   * The feature id for the '<em><b>Right</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int E3__RIGHT = EXPR__RIGHT;
+
+  /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -4267,22 +4303,13 @@ public interface EditorPackage extends EPackage
   int E3__OP = EXPR_FEATURE_COUNT + 1;
 
   /**
-   * The feature id for the '<em><b>Right</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int E3__RIGHT = EXPR_FEATURE_COUNT + 2;
-
-  /**
    * The number of structural features of the '<em>E3</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int E3_FEATURE_COUNT = EXPR_FEATURE_COUNT + 3;
+  int E3_FEATURE_COUNT = EXPR_FEATURE_COUNT + 2;
 
   /**
    * The meta object id for the '{@link com.euclideanspace.aldor.editor.impl.E4Impl <em>E4</em>}' class.
@@ -4331,6 +4358,24 @@ public interface EditorPackage extends EPackage
   int E4__IE = EXPR__IE;
 
   /**
+   * The feature id for the '<em><b>Op6</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int E4__OP6 = EXPR__OP6;
+
+  /**
+   * The feature id for the '<em><b>Right</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int E4__RIGHT = EXPR__RIGHT;
+
+  /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -4349,22 +4394,13 @@ public interface EditorPackage extends EPackage
   int E4__OP = EXPR_FEATURE_COUNT + 1;
 
   /**
-   * The feature id for the '<em><b>Right</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int E4__RIGHT = EXPR_FEATURE_COUNT + 2;
-
-  /**
    * The number of structural features of the '<em>E4</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int E4_FEATURE_COUNT = EXPR_FEATURE_COUNT + 3;
+  int E4_FEATURE_COUNT = EXPR_FEATURE_COUNT + 2;
 
   /**
    * The meta object id for the '{@link com.euclideanspace.aldor.editor.impl.E5Impl <em>E5</em>}' class.
@@ -4413,6 +4449,24 @@ public interface EditorPackage extends EPackage
   int E5__IE = EXPR__IE;
 
   /**
+   * The feature id for the '<em><b>Op6</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int E5__OP6 = EXPR__OP6;
+
+  /**
+   * The feature id for the '<em><b>Right</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int E5__RIGHT = EXPR__RIGHT;
+
+  /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -4431,22 +4485,13 @@ public interface EditorPackage extends EPackage
   int E5__OP = EXPR_FEATURE_COUNT + 1;
 
   /**
-   * The feature id for the '<em><b>Right</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int E5__RIGHT = EXPR_FEATURE_COUNT + 2;
-
-  /**
    * The number of structural features of the '<em>E5</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int E5_FEATURE_COUNT = EXPR_FEATURE_COUNT + 3;
+  int E5_FEATURE_COUNT = EXPR_FEATURE_COUNT + 2;
 
   /**
    * The meta object id for the '{@link com.euclideanspace.aldor.editor.impl.E6Impl <em>E6</em>}' class.
@@ -4495,6 +4540,24 @@ public interface EditorPackage extends EPackage
   int E6__IE = EXPR__IE;
 
   /**
+   * The feature id for the '<em><b>Op6</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int E6__OP6 = EXPR__OP6;
+
+  /**
+   * The feature id for the '<em><b>Right</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int E6__RIGHT = EXPR__RIGHT;
+
+  /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -4513,22 +4576,13 @@ public interface EditorPackage extends EPackage
   int E6__OP = EXPR_FEATURE_COUNT + 1;
 
   /**
-   * The feature id for the '<em><b>Right</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int E6__RIGHT = EXPR_FEATURE_COUNT + 2;
-
-  /**
    * The number of structural features of the '<em>E6</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int E6_FEATURE_COUNT = EXPR_FEATURE_COUNT + 3;
+  int E6_FEATURE_COUNT = EXPR_FEATURE_COUNT + 2;
 
   /**
    * The meta object id for the '{@link com.euclideanspace.aldor.editor.impl.E7Impl <em>E7</em>}' class.
@@ -4577,6 +4631,24 @@ public interface EditorPackage extends EPackage
   int E7__IE = EXPR__IE;
 
   /**
+   * The feature id for the '<em><b>Op6</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int E7__OP6 = EXPR__OP6;
+
+  /**
+   * The feature id for the '<em><b>Right</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int E7__RIGHT = EXPR__RIGHT;
+
+  /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -4595,22 +4667,13 @@ public interface EditorPackage extends EPackage
   int E7__OP = EXPR_FEATURE_COUNT + 1;
 
   /**
-   * The feature id for the '<em><b>Right</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int E7__RIGHT = EXPR_FEATURE_COUNT + 2;
-
-  /**
    * The number of structural features of the '<em>E7</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int E7_FEATURE_COUNT = EXPR_FEATURE_COUNT + 3;
+  int E7_FEATURE_COUNT = EXPR_FEATURE_COUNT + 2;
 
   /**
    * The meta object id for the '{@link com.euclideanspace.aldor.editor.impl.E8Impl <em>E8</em>}' class.
@@ -4659,6 +4722,24 @@ public interface EditorPackage extends EPackage
   int E8__IE = EXPR__IE;
 
   /**
+   * The feature id for the '<em><b>Op6</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int E8__OP6 = EXPR__OP6;
+
+  /**
+   * The feature id for the '<em><b>Right</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int E8__RIGHT = EXPR__RIGHT;
+
+  /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -4677,22 +4758,13 @@ public interface EditorPackage extends EPackage
   int E8__OP = EXPR_FEATURE_COUNT + 1;
 
   /**
-   * The feature id for the '<em><b>Right</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int E8__RIGHT = EXPR_FEATURE_COUNT + 2;
-
-  /**
    * The number of structural features of the '<em>E8</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int E8_FEATURE_COUNT = EXPR_FEATURE_COUNT + 3;
+  int E8_FEATURE_COUNT = EXPR_FEATURE_COUNT + 2;
 
   /**
    * The meta object id for the '{@link com.euclideanspace.aldor.editor.impl.E9Impl <em>E9</em>}' class.
@@ -4741,6 +4813,24 @@ public interface EditorPackage extends EPackage
   int E9__IE = EXPR__IE;
 
   /**
+   * The feature id for the '<em><b>Op6</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int E9__OP6 = EXPR__OP6;
+
+  /**
+   * The feature id for the '<em><b>Right</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int E9__RIGHT = EXPR__RIGHT;
+
+  /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -4759,22 +4849,13 @@ public interface EditorPackage extends EPackage
   int E9__OP = EXPR_FEATURE_COUNT + 1;
 
   /**
-   * The feature id for the '<em><b>Right</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int E9__RIGHT = EXPR_FEATURE_COUNT + 2;
-
-  /**
    * The number of structural features of the '<em>E9</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int E9_FEATURE_COUNT = EXPR_FEATURE_COUNT + 3;
+  int E9_FEATURE_COUNT = EXPR_FEATURE_COUNT + 2;
 
   /**
    * The meta object id for the '{@link com.euclideanspace.aldor.editor.impl.E11_E12Impl <em>E11 E12</em>}' class.
@@ -4823,6 +4904,24 @@ public interface EditorPackage extends EPackage
   int E11_E12__IE = EXPR__IE;
 
   /**
+   * The feature id for the '<em><b>Op6</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int E11_E12__OP6 = EXPR__OP6;
+
+  /**
+   * The feature id for the '<em><b>Right</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int E11_E12__RIGHT = EXPR__RIGHT;
+
+  /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -4841,22 +4940,13 @@ public interface EditorPackage extends EPackage
   int E11_E12__OP = EXPR_FEATURE_COUNT + 1;
 
   /**
-   * The feature id for the '<em><b>Right</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int E11_E12__RIGHT = EXPR_FEATURE_COUNT + 2;
-
-  /**
    * The number of structural features of the '<em>E11 E12</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int E11_E12_FEATURE_COUNT = EXPR_FEATURE_COUNT + 3;
+  int E11_E12_FEATURE_COUNT = EXPR_FEATURE_COUNT + 2;
 
   /**
    * The meta object id for the '{@link com.euclideanspace.aldor.editor.impl.E11_OpImpl <em>E11 Op</em>}' class.
@@ -4905,6 +4995,24 @@ public interface EditorPackage extends EPackage
   int E11_OP__IE = EXPR__IE;
 
   /**
+   * The feature id for the '<em><b>Op6</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int E11_OP__OP6 = EXPR__OP6;
+
+  /**
+   * The feature id for the '<em><b>Right</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int E11_OP__RIGHT = EXPR__RIGHT;
+
+  /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -4923,22 +5031,13 @@ public interface EditorPackage extends EPackage
   int E11_OP__OP = EXPR_FEATURE_COUNT + 1;
 
   /**
-   * The feature id for the '<em><b>Right</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int E11_OP__RIGHT = EXPR_FEATURE_COUNT + 2;
-
-  /**
    * The number of structural features of the '<em>E11 Op</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int E11_OP_FEATURE_COUNT = EXPR_FEATURE_COUNT + 3;
+  int E11_OP_FEATURE_COUNT = EXPR_FEATURE_COUNT + 2;
 
   /**
    * The meta object id for the '{@link com.euclideanspace.aldor.editor.impl.E12Impl <em>E12</em>}' class.
@@ -4987,6 +5086,24 @@ public interface EditorPackage extends EPackage
   int E12__IE = EXPR__IE;
 
   /**
+   * The feature id for the '<em><b>Op6</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int E12__OP6 = EXPR__OP6;
+
+  /**
+   * The feature id for the '<em><b>Right</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int E12__RIGHT = EXPR__RIGHT;
+
+  /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -5005,22 +5122,13 @@ public interface EditorPackage extends EPackage
   int E12__OP = EXPR_FEATURE_COUNT + 1;
 
   /**
-   * The feature id for the '<em><b>Right</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int E12__RIGHT = EXPR_FEATURE_COUNT + 2;
-
-  /**
    * The number of structural features of the '<em>E12</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int E12_FEATURE_COUNT = EXPR_FEATURE_COUNT + 3;
+  int E12_FEATURE_COUNT = EXPR_FEATURE_COUNT + 2;
 
   /**
    * The meta object id for the '{@link com.euclideanspace.aldor.editor.impl.E13Impl <em>E13</em>}' class.
@@ -5069,6 +5177,24 @@ public interface EditorPackage extends EPackage
   int E13__IE = EXPR__IE;
 
   /**
+   * The feature id for the '<em><b>Op6</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int E13__OP6 = EXPR__OP6;
+
+  /**
+   * The feature id for the '<em><b>Right</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int E13__RIGHT = EXPR__RIGHT;
+
+  /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -5087,22 +5213,13 @@ public interface EditorPackage extends EPackage
   int E13__OP = EXPR_FEATURE_COUNT + 1;
 
   /**
-   * The feature id for the '<em><b>Right</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int E13__RIGHT = EXPR_FEATURE_COUNT + 2;
-
-  /**
    * The number of structural features of the '<em>E13</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int E13_FEATURE_COUNT = EXPR_FEATURE_COUNT + 3;
+  int E13_FEATURE_COUNT = EXPR_FEATURE_COUNT + 2;
 
   /**
    * The meta object id for the '{@link com.euclideanspace.aldor.editor.impl.ArrowTokImpl <em>Arrow Tok</em>}' class.
@@ -5752,17 +5869,6 @@ public interface EditorPackage extends EPackage
   EClass getAnyStatement();
 
   /**
-   * Returns the meta object for the containment reference '{@link com.euclideanspace.aldor.editor.AnyStatement#getBas <em>Bas</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Bas</em>'.
-   * @see com.euclideanspace.aldor.editor.AnyStatement#getBas()
-   * @see #getAnyStatement()
-   * @generated
-   */
-  EReference getAnyStatement_Bas();
-
-  /**
    * Returns the meta object for class '{@link com.euclideanspace.aldor.editor.BalStatement <em>Bal Statement</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -5836,6 +5942,17 @@ public interface EditorPackage extends EPackage
    * @generated
    */
   EReference getFlow_AnyStatement_Bbs();
+
+  /**
+   * Returns the meta object for the containment reference '{@link com.euclideanspace.aldor.editor.Flow_AnyStatement#getBas <em>Bas</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Bas</em>'.
+   * @see com.euclideanspace.aldor.editor.Flow_AnyStatement#getBas()
+   * @see #getFlow_AnyStatement()
+   * @generated
+   */
+  EReference getFlow_AnyStatement_Bas();
 
   /**
    * Returns the meta object for the containment reference '{@link com.euclideanspace.aldor.editor.Flow_AnyStatement#getBe2 <em>Be2</em>}'.
@@ -6371,6 +6488,28 @@ public interface EditorPackage extends EPackage
    * @generated
    */
   EClass getExpr();
+
+  /**
+   * Returns the meta object for the attribute list '{@link com.euclideanspace.aldor.editor.Expr#getOp6 <em>Op6</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute list '<em>Op6</em>'.
+   * @see com.euclideanspace.aldor.editor.Expr#getOp6()
+   * @see #getExpr()
+   * @generated
+   */
+  EAttribute getExpr_Op6();
+
+  /**
+   * Returns the meta object for the containment reference '{@link com.euclideanspace.aldor.editor.Expr#getRight <em>Right</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Right</em>'.
+   * @see com.euclideanspace.aldor.editor.Expr#getRight()
+   * @see #getExpr()
+   * @generated
+   */
+  EReference getExpr_Right();
 
   /**
    * Returns the meta object for class '{@link com.euclideanspace.aldor.editor.Type <em>Type</em>}'.
@@ -7750,17 +7889,6 @@ public interface EditorPackage extends EPackage
   EAttribute getE3_Op();
 
   /**
-   * Returns the meta object for the containment reference '{@link com.euclideanspace.aldor.editor.E3#getRight <em>Right</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Right</em>'.
-   * @see com.euclideanspace.aldor.editor.E3#getRight()
-   * @see #getE3()
-   * @generated
-   */
-  EReference getE3_Right();
-
-  /**
    * Returns the meta object for class '{@link com.euclideanspace.aldor.editor.E4 <em>E4</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -7791,17 +7919,6 @@ public interface EditorPackage extends EPackage
    * @generated
    */
   EAttribute getE4_Op();
-
-  /**
-   * Returns the meta object for the containment reference '{@link com.euclideanspace.aldor.editor.E4#getRight <em>Right</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Right</em>'.
-   * @see com.euclideanspace.aldor.editor.E4#getRight()
-   * @see #getE4()
-   * @generated
-   */
-  EReference getE4_Right();
 
   /**
    * Returns the meta object for class '{@link com.euclideanspace.aldor.editor.E5 <em>E5</em>}'.
@@ -7836,17 +7953,6 @@ public interface EditorPackage extends EPackage
   EAttribute getE5_Op();
 
   /**
-   * Returns the meta object for the containment reference '{@link com.euclideanspace.aldor.editor.E5#getRight <em>Right</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Right</em>'.
-   * @see com.euclideanspace.aldor.editor.E5#getRight()
-   * @see #getE5()
-   * @generated
-   */
-  EReference getE5_Right();
-
-  /**
    * Returns the meta object for class '{@link com.euclideanspace.aldor.editor.E6 <em>E6</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -7877,17 +7983,6 @@ public interface EditorPackage extends EPackage
    * @generated
    */
   EAttribute getE6_Op();
-
-  /**
-   * Returns the meta object for the containment reference '{@link com.euclideanspace.aldor.editor.E6#getRight <em>Right</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Right</em>'.
-   * @see com.euclideanspace.aldor.editor.E6#getRight()
-   * @see #getE6()
-   * @generated
-   */
-  EReference getE6_Right();
 
   /**
    * Returns the meta object for class '{@link com.euclideanspace.aldor.editor.E7 <em>E7</em>}'.
@@ -7922,17 +8017,6 @@ public interface EditorPackage extends EPackage
   EAttribute getE7_Op();
 
   /**
-   * Returns the meta object for the containment reference '{@link com.euclideanspace.aldor.editor.E7#getRight <em>Right</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Right</em>'.
-   * @see com.euclideanspace.aldor.editor.E7#getRight()
-   * @see #getE7()
-   * @generated
-   */
-  EReference getE7_Right();
-
-  /**
    * Returns the meta object for class '{@link com.euclideanspace.aldor.editor.E8 <em>E8</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -7963,17 +8047,6 @@ public interface EditorPackage extends EPackage
    * @generated
    */
   EAttribute getE8_Op();
-
-  /**
-   * Returns the meta object for the containment reference '{@link com.euclideanspace.aldor.editor.E8#getRight <em>Right</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Right</em>'.
-   * @see com.euclideanspace.aldor.editor.E8#getRight()
-   * @see #getE8()
-   * @generated
-   */
-  EReference getE8_Right();
 
   /**
    * Returns the meta object for class '{@link com.euclideanspace.aldor.editor.E9 <em>E9</em>}'.
@@ -8008,17 +8081,6 @@ public interface EditorPackage extends EPackage
   EAttribute getE9_Op();
 
   /**
-   * Returns the meta object for the containment reference '{@link com.euclideanspace.aldor.editor.E9#getRight <em>Right</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Right</em>'.
-   * @see com.euclideanspace.aldor.editor.E9#getRight()
-   * @see #getE9()
-   * @generated
-   */
-  EReference getE9_Right();
-
-  /**
    * Returns the meta object for class '{@link com.euclideanspace.aldor.editor.E11_E12 <em>E11 E12</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -8049,17 +8111,6 @@ public interface EditorPackage extends EPackage
    * @generated
    */
   EAttribute getE11_E12_Op();
-
-  /**
-   * Returns the meta object for the containment reference '{@link com.euclideanspace.aldor.editor.E11_E12#getRight <em>Right</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Right</em>'.
-   * @see com.euclideanspace.aldor.editor.E11_E12#getRight()
-   * @see #getE11_E12()
-   * @generated
-   */
-  EReference getE11_E12_Right();
 
   /**
    * Returns the meta object for class '{@link com.euclideanspace.aldor.editor.E11_Op <em>E11 Op</em>}'.
@@ -8094,17 +8145,6 @@ public interface EditorPackage extends EPackage
   EAttribute getE11_Op_Op();
 
   /**
-   * Returns the meta object for the containment reference '{@link com.euclideanspace.aldor.editor.E11_Op#getRight <em>Right</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Right</em>'.
-   * @see com.euclideanspace.aldor.editor.E11_Op#getRight()
-   * @see #getE11_Op()
-   * @generated
-   */
-  EReference getE11_Op_Right();
-
-  /**
    * Returns the meta object for class '{@link com.euclideanspace.aldor.editor.E12 <em>E12</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -8137,17 +8177,6 @@ public interface EditorPackage extends EPackage
   EReference getE12_Op();
 
   /**
-   * Returns the meta object for the containment reference '{@link com.euclideanspace.aldor.editor.E12#getRight <em>Right</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Right</em>'.
-   * @see com.euclideanspace.aldor.editor.E12#getRight()
-   * @see #getE12()
-   * @generated
-   */
-  EReference getE12_Right();
-
-  /**
    * Returns the meta object for class '{@link com.euclideanspace.aldor.editor.E13 <em>E13</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -8178,17 +8207,6 @@ public interface EditorPackage extends EPackage
    * @generated
    */
   EAttribute getE13_Op();
-
-  /**
-   * Returns the meta object for the containment reference '{@link com.euclideanspace.aldor.editor.E13#getRight <em>Right</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Right</em>'.
-   * @see com.euclideanspace.aldor.editor.E13#getRight()
-   * @see #getE13()
-   * @generated
-   */
-  EReference getE13_Right();
 
   /**
    * Returns the meta object for class '{@link com.euclideanspace.aldor.editor.ArrowTok <em>Arrow Tok</em>}'.
@@ -8716,14 +8734,6 @@ public interface EditorPackage extends EPackage
     EClass ANY_STATEMENT = eINSTANCE.getAnyStatement();
 
     /**
-     * The meta object literal for the '<em><b>Bas</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference ANY_STATEMENT__BAS = eINSTANCE.getAnyStatement_Bas();
-
-    /**
      * The meta object literal for the '{@link com.euclideanspace.aldor.editor.impl.BalStatementImpl <em>Bal Statement</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -8782,6 +8792,14 @@ public interface EditorPackage extends EPackage
      * @generated
      */
     EReference FLOW_ANY_STATEMENT__BBS = eINSTANCE.getFlow_AnyStatement_Bbs();
+
+    /**
+     * The meta object literal for the '<em><b>Bas</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference FLOW_ANY_STATEMENT__BAS = eINSTANCE.getFlow_AnyStatement_Bas();
 
     /**
      * The meta object literal for the '<em><b>Be2</b></em>' containment reference feature.
@@ -9212,6 +9230,22 @@ public interface EditorPackage extends EPackage
      * @generated
      */
     EClass EXPR = eINSTANCE.getExpr();
+
+    /**
+     * The meta object literal for the '<em><b>Op6</b></em>' attribute list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute EXPR__OP6 = eINSTANCE.getExpr_Op6();
+
+    /**
+     * The meta object literal for the '<em><b>Right</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference EXPR__RIGHT = eINSTANCE.getExpr_Right();
 
     /**
      * The meta object literal for the '{@link com.euclideanspace.aldor.editor.impl.TypeImpl <em>Type</em>}' class.
@@ -10420,14 +10454,6 @@ public interface EditorPackage extends EPackage
     EAttribute E3__OP = eINSTANCE.getE3_Op();
 
     /**
-     * The meta object literal for the '<em><b>Right</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference E3__RIGHT = eINSTANCE.getE3_Right();
-
-    /**
      * The meta object literal for the '{@link com.euclideanspace.aldor.editor.impl.E4Impl <em>E4</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -10452,14 +10478,6 @@ public interface EditorPackage extends EPackage
      * @generated
      */
     EAttribute E4__OP = eINSTANCE.getE4_Op();
-
-    /**
-     * The meta object literal for the '<em><b>Right</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference E4__RIGHT = eINSTANCE.getE4_Right();
 
     /**
      * The meta object literal for the '{@link com.euclideanspace.aldor.editor.impl.E5Impl <em>E5</em>}' class.
@@ -10488,14 +10506,6 @@ public interface EditorPackage extends EPackage
     EAttribute E5__OP = eINSTANCE.getE5_Op();
 
     /**
-     * The meta object literal for the '<em><b>Right</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference E5__RIGHT = eINSTANCE.getE5_Right();
-
-    /**
      * The meta object literal for the '{@link com.euclideanspace.aldor.editor.impl.E6Impl <em>E6</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -10520,14 +10530,6 @@ public interface EditorPackage extends EPackage
      * @generated
      */
     EAttribute E6__OP = eINSTANCE.getE6_Op();
-
-    /**
-     * The meta object literal for the '<em><b>Right</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference E6__RIGHT = eINSTANCE.getE6_Right();
 
     /**
      * The meta object literal for the '{@link com.euclideanspace.aldor.editor.impl.E7Impl <em>E7</em>}' class.
@@ -10556,14 +10558,6 @@ public interface EditorPackage extends EPackage
     EAttribute E7__OP = eINSTANCE.getE7_Op();
 
     /**
-     * The meta object literal for the '<em><b>Right</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference E7__RIGHT = eINSTANCE.getE7_Right();
-
-    /**
      * The meta object literal for the '{@link com.euclideanspace.aldor.editor.impl.E8Impl <em>E8</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -10588,14 +10582,6 @@ public interface EditorPackage extends EPackage
      * @generated
      */
     EAttribute E8__OP = eINSTANCE.getE8_Op();
-
-    /**
-     * The meta object literal for the '<em><b>Right</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference E8__RIGHT = eINSTANCE.getE8_Right();
 
     /**
      * The meta object literal for the '{@link com.euclideanspace.aldor.editor.impl.E9Impl <em>E9</em>}' class.
@@ -10624,14 +10610,6 @@ public interface EditorPackage extends EPackage
     EAttribute E9__OP = eINSTANCE.getE9_Op();
 
     /**
-     * The meta object literal for the '<em><b>Right</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference E9__RIGHT = eINSTANCE.getE9_Right();
-
-    /**
      * The meta object literal for the '{@link com.euclideanspace.aldor.editor.impl.E11_E12Impl <em>E11 E12</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -10656,14 +10634,6 @@ public interface EditorPackage extends EPackage
      * @generated
      */
     EAttribute E11_E12__OP = eINSTANCE.getE11_E12_Op();
-
-    /**
-     * The meta object literal for the '<em><b>Right</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference E11_E12__RIGHT = eINSTANCE.getE11_E12_Right();
 
     /**
      * The meta object literal for the '{@link com.euclideanspace.aldor.editor.impl.E11_OpImpl <em>E11 Op</em>}' class.
@@ -10692,14 +10662,6 @@ public interface EditorPackage extends EPackage
     EAttribute E11_OP__OP = eINSTANCE.getE11_Op_Op();
 
     /**
-     * The meta object literal for the '<em><b>Right</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference E11_OP__RIGHT = eINSTANCE.getE11_Op_Right();
-
-    /**
      * The meta object literal for the '{@link com.euclideanspace.aldor.editor.impl.E12Impl <em>E12</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -10726,14 +10688,6 @@ public interface EditorPackage extends EPackage
     EReference E12__OP = eINSTANCE.getE12_Op();
 
     /**
-     * The meta object literal for the '<em><b>Right</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference E12__RIGHT = eINSTANCE.getE12_Right();
-
-    /**
      * The meta object literal for the '{@link com.euclideanspace.aldor.editor.impl.E13Impl <em>E13</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -10758,14 +10712,6 @@ public interface EditorPackage extends EPackage
      * @generated
      */
     EAttribute E13__OP = eINSTANCE.getE13_Op();
-
-    /**
-     * The meta object literal for the '<em><b>Right</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference E13__RIGHT = eINSTANCE.getE13_Right();
 
     /**
      * The meta object literal for the '{@link com.euclideanspace.aldor.editor.impl.ArrowTokImpl <em>Arrow Tok</em>}' class.

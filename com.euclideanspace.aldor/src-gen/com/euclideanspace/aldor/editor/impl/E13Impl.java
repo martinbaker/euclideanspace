@@ -5,7 +5,6 @@ package com.euclideanspace.aldor.editor.impl;
 import com.euclideanspace.aldor.editor.E13;
 import com.euclideanspace.aldor.editor.EditorPackage;
 import com.euclideanspace.aldor.editor.Expr;
-import com.euclideanspace.aldor.editor.QualTail;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
@@ -24,7 +23,6 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * <ul>
  *   <li>{@link com.euclideanspace.aldor.editor.impl.E13Impl#getLeft <em>Left</em>}</li>
  *   <li>{@link com.euclideanspace.aldor.editor.impl.E13Impl#getOp <em>Op</em>}</li>
- *   <li>{@link com.euclideanspace.aldor.editor.impl.E13Impl#getRight <em>Right</em>}</li>
  * </ul>
  * </p>
  *
@@ -61,16 +59,6 @@ public class E13Impl extends ExprImpl implements E13
    * @ordered
    */
   protected String op = OP_EDEFAULT;
-
-  /**
-   * The cached value of the '{@link #getRight() <em>Right</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getRight()
-   * @generated
-   * @ordered
-   */
-  protected QualTail right;
 
   /**
    * <!-- begin-user-doc -->
@@ -169,54 +157,6 @@ public class E13Impl extends ExprImpl implements E13
    * <!-- end-user-doc -->
    * @generated
    */
-  public QualTail getRight()
-  {
-    return right;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public NotificationChain basicSetRight(QualTail newRight, NotificationChain msgs)
-  {
-    QualTail oldRight = right;
-    right = newRight;
-    if (eNotificationRequired())
-    {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, EditorPackage.E13__RIGHT, oldRight, newRight);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setRight(QualTail newRight)
-  {
-    if (newRight != right)
-    {
-      NotificationChain msgs = null;
-      if (right != null)
-        msgs = ((InternalEObject)right).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - EditorPackage.E13__RIGHT, null, msgs);
-      if (newRight != null)
-        msgs = ((InternalEObject)newRight).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - EditorPackage.E13__RIGHT, null, msgs);
-      msgs = basicSetRight(newRight, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, EditorPackage.E13__RIGHT, newRight, newRight));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
@@ -224,8 +164,6 @@ public class E13Impl extends ExprImpl implements E13
     {
       case EditorPackage.E13__LEFT:
         return basicSetLeft(null, msgs);
-      case EditorPackage.E13__RIGHT:
-        return basicSetRight(null, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -244,8 +182,6 @@ public class E13Impl extends ExprImpl implements E13
         return getLeft();
       case EditorPackage.E13__OP:
         return getOp();
-      case EditorPackage.E13__RIGHT:
-        return getRight();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -265,9 +201,6 @@ public class E13Impl extends ExprImpl implements E13
         return;
       case EditorPackage.E13__OP:
         setOp((String)newValue);
-        return;
-      case EditorPackage.E13__RIGHT:
-        setRight((QualTail)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -289,9 +222,6 @@ public class E13Impl extends ExprImpl implements E13
       case EditorPackage.E13__OP:
         setOp(OP_EDEFAULT);
         return;
-      case EditorPackage.E13__RIGHT:
-        setRight((QualTail)null);
-        return;
     }
     super.eUnset(featureID);
   }
@@ -310,8 +240,6 @@ public class E13Impl extends ExprImpl implements E13
         return left != null;
       case EditorPackage.E13__OP:
         return OP_EDEFAULT == null ? op != null : !OP_EDEFAULT.equals(op);
-      case EditorPackage.E13__RIGHT:
-        return right != null;
     }
     return super.eIsSet(featureID);
   }

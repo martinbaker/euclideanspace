@@ -16,6 +16,7 @@ package com.euclideanspace.aldor.editor;
  *   <li>{@link com.euclideanspace.aldor.editor.Flow_AnyStatement#getBas2 <em>Bas2</em>}</li>
  *   <li>{@link com.euclideanspace.aldor.editor.Flow_AnyStatement#getCi <em>Ci</em>}</li>
  *   <li>{@link com.euclideanspace.aldor.editor.Flow_AnyStatement#getBbs <em>Bbs</em>}</li>
+ *   <li>{@link com.euclideanspace.aldor.editor.Flow_AnyStatement#getBas <em>Bas</em>}</li>
  *   <li>{@link com.euclideanspace.aldor.editor.Flow_AnyStatement#getBe2 <em>Be2</em>}</li>
  *   <li>{@link com.euclideanspace.aldor.editor.Flow_AnyStatement#getApa <em>Apa</em>}</li>
  *   <li>{@link com.euclideanspace.aldor.editor.Flow_AnyStatement#getCa <em>Ca</em>}</li>
@@ -161,6 +162,32 @@ public interface Flow_AnyStatement extends AnyStatement
    * @generated
    */
   void setBbs(Binding_BalStatement value);
+
+  /**
+   * Returns the value of the '<em><b>Bas</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Bas</em>' containment reference isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Bas</em>' containment reference.
+   * @see #setBas(Binding_AnyStatement)
+   * @see com.euclideanspace.aldor.editor.EditorPackage#getFlow_AnyStatement_Bas()
+   * @model containment="true"
+   * @generated
+   */
+  Binding_AnyStatement getBas();
+
+  /**
+   * Sets the value of the '{@link com.euclideanspace.aldor.editor.Flow_AnyStatement#getBas <em>Bas</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Bas</em>' containment reference.
+   * @see #getBas()
+   * @generated
+   */
+  void setBas(Binding_AnyStatement value);
 
   /**
    * Returns the value of the '<em><b>Be2</b></em>' containment reference.

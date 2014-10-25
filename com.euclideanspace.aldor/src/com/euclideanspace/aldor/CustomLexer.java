@@ -88,12 +88,12 @@ public class CustomLexer extends com.euclideanspace.aldor.parser.antlr.internal.
    */
   @Override
   public Token nextToken() {
-      super.nextToken(); // reads a token from input and set state then emits it
-  	  //System.out.println("CustomLexer - nextToken");
-      if (tokens.isEmpty())
-          return Token.EOF_TOKEN;
-      Token firstToken = tokens.removeFirst();
-      int tt = firstToken.getType();
+    super.nextToken(); // reads a token from input and set state then emits it
+    //System.out.println("CustomLexer - nextToken");
+    if (tokens.isEmpty()) return Token.EOF_TOKEN;
+    Token firstToken = tokens.removeFirst();
+    int tt = firstToken.getType();
+    try {
       if (tt == RULE_KW_CCURLY) {
     	  int pos = 1;
     	  // 'input' is input to lexer we want output from lexer (token stream)
@@ -106,6 +106,8 @@ public class CustomLexer extends com.euclideanspace.aldor.parser.antlr.internal.
         	  ch=input.LA(pos);
     	  }
     	  if (
+    		(ch == -1) ||
+    		(ch == CharStream.EOF) ||
     		isFollower("and",pos) ||
     		isFollower("always",pos) ||
     	    isFollower("but",pos) ||
@@ -145,8 +147,10 @@ public class CustomLexer extends com.euclideanspace.aldor.parser.antlr.internal.
 //    	  " line="+state.tokenStartLine+
 //          " line was="+tokenStartLine);
       }
-      
-      return firstToken;
+	} catch(Exception e) {
+      System.out.println("CustomLexer.nextToken error="+e);
+	}
+    return firstToken;
   }
 
   /*

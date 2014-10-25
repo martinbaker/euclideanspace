@@ -155,7 +155,6 @@ public class EditorSwitch<T> extends Switch<T>
       {
         CommaItem commaItem = (CommaItem)theEObject;
         T result = caseCommaItem(commaItem);
-        if (result == null) result = caseAnyStatement(commaItem);
         if (result == null) result = caseenlister1_CommaItem_Comma(commaItem);
         if (result == null) result = caseenlist1_CommaItem_Comma_AB(commaItem);
         if (result == null) result = caseComma(commaItem);
@@ -199,7 +198,6 @@ public class EditorSwitch<T> extends Switch<T>
         Binding_AnyStatement binding_AnyStatement = (Binding_AnyStatement)theEObject;
         T result = caseBinding_AnyStatement(binding_AnyStatement);
         if (result == null) result = caseCommaItem(binding_AnyStatement);
-        if (result == null) result = caseAnyStatement(binding_AnyStatement);
         if (result == null) result = caseenlister1_CommaItem_Comma(binding_AnyStatement);
         if (result == null) result = caseenlist1_CommaItem_Comma_AB(binding_AnyStatement);
         if (result == null) result = caseComma(binding_AnyStatement);
@@ -227,7 +225,6 @@ public class EditorSwitch<T> extends Switch<T>
         T result = caseBindingL_Infixed_AnyStatement(bindingL_Infixed_AnyStatement);
         if (result == null) result = caseBinding_AnyStatement(bindingL_Infixed_AnyStatement);
         if (result == null) result = caseCommaItem(bindingL_Infixed_AnyStatement);
-        if (result == null) result = caseAnyStatement(bindingL_Infixed_AnyStatement);
         if (result == null) result = caseenlister1_CommaItem_Comma(bindingL_Infixed_AnyStatement);
         if (result == null) result = caseenlist1_CommaItem_Comma_AB(bindingL_Infixed_AnyStatement);
         if (result == null) result = caseComma(bindingL_Infixed_AnyStatement);

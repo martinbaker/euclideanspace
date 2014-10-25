@@ -66,7 +66,7 @@ import com.euclideanspace.aldor.services.EditorGrammarAccess;
 // Entry rule entryRuleModel
 entryRuleModel returns [EObject current=null] 
 	@init { 
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 	}
 	:
 	{ newCompositeNode(grammarAccess.getModelRule()); }
@@ -81,7 +81,7 @@ finally {
 // Rule Model
 ruleModel returns [EObject current=null] 
     @init { enterRule(); 
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
     }
     @after { leaveRule(); }:
 ((	otherlv_0='#include' 
@@ -139,7 +139,7 @@ finally {
 // Entry rule entryRuleExpression
 entryRuleExpression returns [EObject current=null] 
 	@init { 
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 	}
 	:
 	{ newCompositeNode(grammarAccess.getExpressionRule()); }
@@ -154,7 +154,7 @@ finally {
 // Rule Expression
 ruleExpression returns [EObject current=null] 
     @init { enterRule(); 
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
     }
     @after { leaveRule(); }:
 
@@ -179,7 +179,7 @@ finally {
 // Entry rule entryRuleLabeled
 entryRuleLabeled returns [EObject current=null] 
 	@init { 
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 	}
 	:
 	{ newCompositeNode(grammarAccess.getLabeledRule()); }
@@ -194,7 +194,7 @@ finally {
 // Rule Labeled
 ruleLabeled returns [EObject current=null] 
     @init { enterRule(); 
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
     }
     @after { leaveRule(); }:
 ((
@@ -288,7 +288,7 @@ finally {
 // Entry rule entryRuleDeclaration
 entryRuleDeclaration returns [EObject current=null] 
 	@init { 
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 	}
 	:
 	{ newCompositeNode(grammarAccess.getDeclarationRule()); }
@@ -303,7 +303,7 @@ finally {
 // Rule Declaration
 ruleDeclaration returns [EObject current=null] 
     @init { enterRule(); 
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
     }
     @after { leaveRule(); }:
 (((
@@ -669,7 +669,7 @@ finally {
 // Entry rule entryRuleExportDecl
 entryRuleExportDecl returns [EObject current=null] 
 	@init { 
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 	}
 	:
 	{ newCompositeNode(grammarAccess.getExportDeclRule()); }
@@ -684,7 +684,7 @@ finally {
 // Rule ExportDecl
 ruleExportDecl returns [EObject current=null] 
     @init { enterRule(); 
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
     }
     @after { leaveRule(); }:
 (((
@@ -828,7 +828,7 @@ finally {
 // Entry rule entryRuleToPart
 entryRuleToPart returns [EObject current=null] 
 	@init { 
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 	}
 	:
 	{ newCompositeNode(grammarAccess.getToPartRule()); }
@@ -843,7 +843,7 @@ finally {
 // Rule ToPart
 ruleToPart returns [EObject current=null] 
     @init { enterRule(); 
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
     }
     @after { leaveRule(); }:
 (	otherlv_0='to' 
@@ -872,7 +872,7 @@ finally {
 // Entry rule entryRuleFromPart
 entryRuleFromPart returns [EObject current=null] 
 	@init { 
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 	}
 	:
 	{ newCompositeNode(grammarAccess.getFromPartRule()); }
@@ -887,7 +887,7 @@ finally {
 // Rule FromPart
 ruleFromPart returns [EObject current=null] 
     @init { enterRule(); 
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
     }
     @after { leaveRule(); }:
 (	otherlv_0='from' 
@@ -916,7 +916,7 @@ finally {
 // Entry rule entryRuleMacroBody
 entryRuleMacroBody returns [EObject current=null] 
 	@init { 
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 	}
 	:
 	{ newCompositeNode(grammarAccess.getMacroBodyRule()); }
@@ -931,7 +931,7 @@ finally {
 // Rule MacroBody
 ruleMacroBody returns [EObject current=null] 
     @init { enterRule(); 
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
     }
     @after { leaveRule(); }:
 (
@@ -998,7 +998,7 @@ finally {
 // Entry rule entryRuleSig
 entryRuleSig returns [EObject current=null] 
 	@init { 
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 	}
 	:
 	{ newCompositeNode(grammarAccess.getSigRule()); }
@@ -1013,7 +1013,7 @@ finally {
 // Rule Sig
 ruleSig returns [EObject current=null] 
     @init { enterRule(); 
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
     }
     @after { leaveRule(); }:
 (
@@ -1048,7 +1048,7 @@ finally {
 // Entry rule entryRuleDeclPart
 entryRuleDeclPart returns [EObject current=null] 
 	@init { 
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 	}
 	:
 	{ newCompositeNode(grammarAccess.getDeclPartRule()); }
@@ -1063,7 +1063,7 @@ finally {
 // Rule DeclPart
 ruleDeclPart returns [EObject current=null] 
     @init { enterRule(); 
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
     }
     @after { leaveRule(); }:
 ((this_KW_COLON_0=RULE_KW_COLON
@@ -1106,7 +1106,7 @@ finally {
 // Entry rule entryRuleComma
 entryRuleComma returns [EObject current=null] 
 	@init { 
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 	}
 	:
 	{ newCompositeNode(grammarAccess.getCommaRule()); }
@@ -1121,7 +1121,7 @@ finally {
 // Rule Comma
 ruleComma returns [EObject current=null] 
     @init { enterRule(); 
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
     }
     @after { leaveRule(); }:
 
@@ -1146,7 +1146,7 @@ finally {
 // Entry rule entryRuleCommaItem
 entryRuleCommaItem returns [EObject current=null] 
 	@init { 
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 	}
 	:
 	{ newCompositeNode(grammarAccess.getCommaItemRule()); }
@@ -1161,7 +1161,7 @@ finally {
 // Rule CommaItem
 ruleCommaItem returns [EObject current=null] 
     @init { enterRule(); 
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
     }
     @after { leaveRule(); }:
 (
@@ -1213,7 +1213,7 @@ finally {
 // Entry rule entryRuleDeclBinding
 entryRuleDeclBinding returns [EObject current=null] 
 	@init { 
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 	}
 	:
 	{ newCompositeNode(grammarAccess.getDeclBindingRule()); }
@@ -1228,7 +1228,7 @@ finally {
 // Rule DeclBinding
 ruleDeclBinding returns [EObject current=null] 
     @init { enterRule(); 
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
     }
     @after { leaveRule(); }:
 
@@ -1253,7 +1253,7 @@ finally {
 // Entry rule entryRuleInfixedExprsDecl
 entryRuleInfixedExprsDecl returns [EObject current=null] 
 	@init { 
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 	}
 	:
 	{ newCompositeNode(grammarAccess.getInfixedExprsDeclRule()); }
@@ -1268,7 +1268,7 @@ finally {
 // Rule InfixedExprsDecl
 ruleInfixedExprsDecl returns [EObject current=null] 
     @init { enterRule(); 
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
     }
     @after { leaveRule(); }:
 (
@@ -1311,7 +1311,7 @@ finally {
 // Entry rule entryRuleInfixedExprs
 entryRuleInfixedExprs returns [EObject current=null] 
 	@init { 
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 	}
 	:
 	{ newCompositeNode(grammarAccess.getInfixedExprsRule()); }
@@ -1326,7 +1326,7 @@ finally {
 // Rule InfixedExprs
 ruleInfixedExprs returns [EObject current=null] 
     @init { enterRule(); 
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
     }
     @after { leaveRule(); }:
 
@@ -1351,7 +1351,7 @@ finally {
 // Entry rule entryRuleBinding_AnyStatement
 entryRuleBinding_AnyStatement returns [EObject current=null] 
 	@init { 
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 	}
 	:
 	{ newCompositeNode(grammarAccess.getBinding_AnyStatementRule()); }
@@ -1366,7 +1366,7 @@ finally {
 // Rule Binding_AnyStatement
 ruleBinding_AnyStatement returns [EObject current=null] 
     @init { enterRule(); 
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
     }
     @after { leaveRule(); }:
 
@@ -1391,7 +1391,7 @@ finally {
 // Entry rule entryRuleBinding_BalStatement
 entryRuleBinding_BalStatement returns [EObject current=null] 
 	@init { 
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 	}
 	:
 	{ newCompositeNode(grammarAccess.getBinding_BalStatementRule()); }
@@ -1406,7 +1406,7 @@ finally {
 // Rule Binding_BalStatement
 ruleBinding_BalStatement returns [EObject current=null] 
     @init { enterRule(); 
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
     }
     @after { leaveRule(); }:
 
@@ -1431,7 +1431,7 @@ finally {
 // Entry rule entryRuleBinding_Collection
 entryRuleBinding_Collection returns [EObject current=null] 
 	@init { 
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 	}
 	:
 	{ newCompositeNode(grammarAccess.getBinding_CollectionRule()); }
@@ -1446,7 +1446,7 @@ finally {
 // Rule Binding_Collection
 ruleBinding_Collection returns [EObject current=null] 
     @init { enterRule(); 
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
     }
     @after { leaveRule(); }:
 
@@ -1471,7 +1471,7 @@ finally {
 // Entry rule entryRuleBindingL_Infixed_AnyStatement
 entryRuleBindingL_Infixed_AnyStatement returns [EObject current=null] 
 	@init { 
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 	}
 	:
 	{ newCompositeNode(grammarAccess.getBindingL_Infixed_AnyStatementRule()); }
@@ -1486,7 +1486,7 @@ finally {
 // Rule BindingL_Infixed_AnyStatement
 ruleBindingL_Infixed_AnyStatement returns [EObject current=null] 
     @init { enterRule(); 
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
     }
     @after { leaveRule(); }:
 (((((
@@ -1662,7 +1662,7 @@ finally {
 // Entry rule entryRuleBindingL_Infixed_BalStatement
 entryRuleBindingL_Infixed_BalStatement returns [EObject current=null] 
 	@init { 
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 	}
 	:
 	{ newCompositeNode(grammarAccess.getBindingL_Infixed_BalStatementRule()); }
@@ -1677,7 +1677,7 @@ finally {
 // Rule BindingL_Infixed_BalStatement
 ruleBindingL_Infixed_BalStatement returns [EObject current=null] 
     @init { enterRule(); 
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
     }
     @after { leaveRule(); }:
 (((((
@@ -1853,7 +1853,7 @@ finally {
 // Entry rule entryRuleBindingL_Infixed_Collection
 entryRuleBindingL_Infixed_Collection returns [EObject current=null] 
 	@init { 
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 	}
 	:
 	{ newCompositeNode(grammarAccess.getBindingL_Infixed_CollectionRule()); }
@@ -1868,7 +1868,7 @@ finally {
 // Rule BindingL_Infixed_Collection
 ruleBindingL_Infixed_Collection returns [EObject current=null] 
     @init { enterRule(); 
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
     }
     @after { leaveRule(); }:
 (((((
@@ -2044,7 +2044,7 @@ finally {
 // Entry rule entryRuleBindingR_InfixedExprsDecl_AnyStatement
 entryRuleBindingR_InfixedExprsDecl_AnyStatement returns [EObject current=null] 
 	@init { 
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 	}
 	:
 	{ newCompositeNode(grammarAccess.getBindingR_InfixedExprsDecl_AnyStatementRule()); }
@@ -2059,7 +2059,7 @@ finally {
 // Rule BindingR_InfixedExprsDecl_AnyStatement
 ruleBindingR_InfixedExprsDecl_AnyStatement returns [EObject current=null] 
     @init { enterRule(); 
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
     }
     @after { leaveRule(); }:
 (
@@ -2126,7 +2126,7 @@ finally {
 // Entry rule entryRuleAnyStatement
 entryRuleAnyStatement returns [EObject current=null] 
 	@init { 
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 	}
 	:
 	{ newCompositeNode(grammarAccess.getAnyStatementRule()); }
@@ -2141,61 +2141,19 @@ finally {
 // Rule AnyStatement
 ruleAnyStatement returns [EObject current=null] 
     @init { enterRule(); 
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
     }
     @after { leaveRule(); }:
-((((	'if' 
-	ruleCommaItem	'then' 
-(
-(
-ruleBinding_AnyStatement
-)
-)))=>(	otherlv_0='if' 
-    {
-    	newLeafNode(otherlv_0, grammarAccess.getAnyStatementAccess().getIfKeyword_0_0_0());
-    }
 
     { 
-        newCompositeNode(grammarAccess.getAnyStatementAccess().getCommaItemParserRuleCall_0_0_1()); 
+        newCompositeNode(grammarAccess.getAnyStatementAccess().getFlow_AnyStatementParserRuleCall()); 
     }
-    this_CommaItem_1=ruleCommaItem
+    this_Flow_AnyStatement_0=ruleFlow_AnyStatement
     { 
-        $current = $this_CommaItem_1.current; 
+        $current = $this_Flow_AnyStatement_0.current; 
         afterParserOrEnumRuleCall();
     }
-	otherlv_2='then' 
-    {
-    	newLeafNode(otherlv_2, grammarAccess.getAnyStatementAccess().getThenKeyword_0_0_2());
-    }
-(
-(
-		{ 
-	        newCompositeNode(grammarAccess.getAnyStatementAccess().getBasBinding_AnyStatementParserRuleCall_0_0_3_0()); 
-	    }
-		lv_bas_3_0=ruleBinding_AnyStatement		{
-	        if ($current==null) {
-	            $current = createModelElementForParent(grammarAccess.getAnyStatementRule());
-	        }
-       		set(
-       			$current, 
-       			"bas",
-        		lv_bas_3_0, 
-        		"Binding_AnyStatement");
-	        afterParserOrEnumRuleCall();
-	    }
 
-)
-)))
-    |
-    { 
-        newCompositeNode(grammarAccess.getAnyStatementAccess().getFlow_AnyStatementParserRuleCall_1()); 
-    }
-    this_Flow_AnyStatement_4=ruleFlow_AnyStatement
-    { 
-        $current = $this_Flow_AnyStatement_4.current; 
-        afterParserOrEnumRuleCall();
-    }
-)
 ;
 finally {
 	myHiddenTokenState.restore();
@@ -2208,7 +2166,7 @@ finally {
 // Entry rule entryRuleBalStatement
 entryRuleBalStatement returns [EObject current=null] 
 	@init { 
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 	}
 	:
 	{ newCompositeNode(grammarAccess.getBalStatementRule()); }
@@ -2223,7 +2181,7 @@ finally {
 // Rule BalStatement
 ruleBalStatement returns [EObject current=null] 
     @init { enterRule(); 
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
     }
     @after { leaveRule(); }:
 
@@ -2248,7 +2206,7 @@ finally {
 // Entry rule entryRuleFlow_AnyStatement
 entryRuleFlow_AnyStatement returns [EObject current=null] 
 	@init { 
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 	}
 	:
 	{ newCompositeNode(grammarAccess.getFlow_AnyStatementRule()); }
@@ -2263,7 +2221,7 @@ finally {
 // Rule Flow_AnyStatement
 ruleFlow_AnyStatement returns [EObject current=null] 
     @init { enterRule(); 
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
     }
     @after { leaveRule(); }:
 (((
@@ -2373,15 +2331,15 @@ ruleFlow_AnyStatement returns [EObject current=null]
 	    }
 
 )
-)((	'else' 
+)(((	'else' 
 )=>	otherlv_7='else' 
     {
-    	newLeafNode(otherlv_7, grammarAccess.getFlow_AnyStatementAccess().getElseKeyword_1_4());
+    	newLeafNode(otherlv_7, grammarAccess.getFlow_AnyStatementAccess().getElseKeyword_1_4_0());
     }
 )(
 (
 		{ 
-	        newCompositeNode(grammarAccess.getFlow_AnyStatementAccess().getBasBinding_AnyStatementParserRuleCall_1_5_0()); 
+	        newCompositeNode(grammarAccess.getFlow_AnyStatementAccess().getBasBinding_AnyStatementParserRuleCall_1_4_1_0()); 
 	    }
 		lv_bas_8_0=ruleBinding_AnyStatement		{
 	        if ($current==null) {
@@ -2396,7 +2354,7 @@ ruleFlow_AnyStatement returns [EObject current=null]
 	    }
 
 )
-))
+))?)
     |(((	ruleIterators(
 (
 	'repeat' 
@@ -3073,7 +3031,7 @@ finally {
 // Entry rule entryRuleFlow_BalStatement
 entryRuleFlow_BalStatement returns [EObject current=null] 
 	@init { 
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 	}
 	:
 	{ newCompositeNode(grammarAccess.getFlow_BalStatementRule()); }
@@ -3088,7 +3046,7 @@ finally {
 // Rule Flow_BalStatement
 ruleFlow_BalStatement returns [EObject current=null] 
     @init { enterRule(); 
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
     }
     @after { leaveRule(); }:
 (((
@@ -3198,15 +3156,15 @@ ruleFlow_BalStatement returns [EObject current=null]
 	    }
 
 )
-)((	'else' 
+)(((	'else' 
 )=>	otherlv_7='else' 
     {
-    	newLeafNode(otherlv_7, grammarAccess.getFlow_BalStatementAccess().getElseKeyword_1_4());
+    	newLeafNode(otherlv_7, grammarAccess.getFlow_BalStatementAccess().getElseKeyword_1_4_0());
     }
 )(
 (
 		{ 
-	        newCompositeNode(grammarAccess.getFlow_BalStatementAccess().getBbs4Binding_BalStatementParserRuleCall_1_5_0()); 
+	        newCompositeNode(grammarAccess.getFlow_BalStatementAccess().getBbs4Binding_BalStatementParserRuleCall_1_4_1_0()); 
 	    }
 		lv_bbs4_8_0=ruleBinding_BalStatement		{
 	        if ($current==null) {
@@ -3221,7 +3179,7 @@ ruleFlow_BalStatement returns [EObject current=null]
 	    }
 
 )
-))
+))?)
     |(((	ruleIterators(
 (
 	'repeat' 
@@ -3898,7 +3856,7 @@ finally {
 // Entry rule entryRuleGenBound
 entryRuleGenBound returns [EObject current=null] 
 	@init { 
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 	}
 	:
 	{ newCompositeNode(grammarAccess.getGenBoundRule()); }
@@ -3913,7 +3871,7 @@ finally {
 // Rule GenBound
 ruleGenBound returns [EObject current=null] 
     @init { enterRule(); 
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
     }
     @after { leaveRule(); }:
 ((
@@ -3961,7 +3919,7 @@ finally {
 // Entry rule entryRuleButExpr
 entryRuleButExpr returns [EObject current=null] 
 	@init { 
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 	}
 	:
 	{ newCompositeNode(grammarAccess.getButExprRule()); }
@@ -3976,7 +3934,7 @@ finally {
 // Rule ButExpr
 ruleButExpr returns [EObject current=null] 
     @init { enterRule(); 
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
     }
     @after { leaveRule(); }:
 ((
@@ -4038,7 +3996,7 @@ finally {
 // Entry rule entryRuleCases
 entryRuleCases returns [EObject current=null] 
 	@init { 
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 	}
 	:
 	{ newCompositeNode(grammarAccess.getCasesRule()); }
@@ -4053,7 +4011,7 @@ finally {
 // Rule Cases
 ruleCases returns [EObject current=null] 
     @init { enterRule(); 
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
     }
     @after { leaveRule(); }:
 
@@ -4078,7 +4036,7 @@ finally {
 // Entry rule entryRuleAlwaysPart_AnyStatement
 entryRuleAlwaysPart_AnyStatement returns [EObject current=null] 
 	@init { 
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 	}
 	:
 	{ newCompositeNode(grammarAccess.getAlwaysPart_AnyStatementRule()); }
@@ -4093,7 +4051,7 @@ finally {
 // Rule AlwaysPart_AnyStatement
 ruleAlwaysPart_AnyStatement returns [EObject current=null] 
     @init { enterRule(); 
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
     }
     @after { leaveRule(); }:
 ((
@@ -4160,7 +4118,7 @@ finally {
 // Entry rule entryRuleAlwaysPart_BalStatement
 entryRuleAlwaysPart_BalStatement returns [EObject current=null] 
 	@init { 
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 	}
 	:
 	{ newCompositeNode(grammarAccess.getAlwaysPart_BalStatementRule()); }
@@ -4175,7 +4133,7 @@ finally {
 // Rule AlwaysPart_BalStatement
 ruleAlwaysPart_BalStatement returns [EObject current=null] 
     @init { enterRule(); 
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
     }
     @after { leaveRule(); }:
 ((
@@ -4242,7 +4200,7 @@ finally {
 // Entry rule entryRuleCollection
 entryRuleCollection returns [EObject current=null] 
 	@init { 
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 	}
 	:
 	{ newCompositeNode(grammarAccess.getCollectionRule()); }
@@ -4257,7 +4215,7 @@ finally {
 // Rule Collection
 ruleCollection returns [EObject current=null] 
     @init { enterRule(); 
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
     }
     @after { leaveRule(); }:
 (
@@ -4300,7 +4258,7 @@ finally {
 // Entry rule entryRuleIterators
 entryRuleIterators returns [EObject current=null] 
 	@init { 
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 	}
 	:
 	{ newCompositeNode(grammarAccess.getIteratorsRule()); }
@@ -4315,7 +4273,7 @@ finally {
 // Rule Iterators
 ruleIterators returns [EObject current=null] 
     @init { enterRule(); 
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
     }
     @after { leaveRule(); }:
 
@@ -4340,7 +4298,7 @@ finally {
 // Entry rule entryRuleIterators1
 entryRuleIterators1 returns [EObject current=null] 
 	@init { 
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 	}
 	:
 	{ newCompositeNode(grammarAccess.getIterators1Rule()); }
@@ -4355,7 +4313,7 @@ finally {
 // Rule Iterators1
 ruleIterators1 returns [EObject current=null] 
     @init { enterRule(); 
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
     }
     @after { leaveRule(); }:
 ((
@@ -4395,7 +4353,7 @@ finally {
 // Entry rule entryRuleIterator
 entryRuleIterator returns [EObject current=null] 
 	@init { 
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 	}
 	:
 	{ newCompositeNode(grammarAccess.getIteratorRule()); }
@@ -4410,7 +4368,7 @@ finally {
 // Rule Iterator
 ruleIterator returns [EObject current=null] 
     @init { enterRule(); 
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
     }
     @after { leaveRule(); }:
 ((	otherlv_0='for' 
@@ -4502,7 +4460,7 @@ finally {
 // Entry rule entryRuleForLhs
 entryRuleForLhs returns [EObject current=null] 
 	@init { 
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 	}
 	:
 	{ newCompositeNode(grammarAccess.getForLhsRule()); }
@@ -4517,7 +4475,7 @@ finally {
 // Rule ForLhs
 ruleForLhs returns [EObject current=null] 
     @init { enterRule(); 
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
     }
     @after { leaveRule(); }:
 ((	otherlv_0='free' 
@@ -4556,7 +4514,7 @@ finally {
 // Entry rule entryRuleSuchthatPart
 entryRuleSuchthatPart returns [EObject current=null] 
 	@init { 
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 	}
 	:
 	{ newCompositeNode(grammarAccess.getSuchthatPartRule()); }
@@ -4571,7 +4529,7 @@ finally {
 // Rule SuchthatPart
 ruleSuchthatPart returns [EObject current=null] 
     @init { enterRule(); 
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
     }
     @after { leaveRule(); }:
 (this_KW_BAR_0=RULE_KW_BAR
@@ -4600,7 +4558,7 @@ finally {
 // Entry rule entryRuleInfixed
 entryRuleInfixed returns [EObject current=null] 
 	@init { 
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 	}
 	:
 	{ newCompositeNode(grammarAccess.getInfixedRule()); }
@@ -4615,7 +4573,7 @@ finally {
 // Rule Infixed
 ruleInfixed returns [EObject current=null] 
     @init { enterRule(); 
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
     }
     @after { leaveRule(); }:
 (((
@@ -4686,7 +4644,7 @@ finally {
 // Entry rule entryRuleInfixedExpr
 entryRuleInfixedExpr returns [EObject current=null] 
 	@init { 
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 	}
 	:
 	{ newCompositeNode(grammarAccess.getInfixedExprRule()); }
@@ -4701,7 +4659,7 @@ finally {
 // Rule InfixedExpr
 ruleInfixedExpr returns [EObject current=null] 
     @init { enterRule(); 
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
     }
     @after { leaveRule(); }:
 (
@@ -4736,7 +4694,7 @@ finally {
 // Entry rule entryRuleE3
 entryRuleE3 returns [EObject current=null] 
 	@init { 
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 	}
 	:
 	{ newCompositeNode(grammarAccess.getE3Rule()); }
@@ -4751,7 +4709,7 @@ finally {
 // Rule E3
 ruleE3 returns [EObject current=null] 
     @init { enterRule(); 
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
     }
     @after { leaveRule(); }:
 (
@@ -4845,7 +4803,7 @@ finally {
 // Entry rule entryRuleE4
 entryRuleE4 returns [EObject current=null] 
 	@init { 
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 	}
 	:
 	{ newCompositeNode(grammarAccess.getE4Rule()); }
@@ -4860,7 +4818,7 @@ finally {
 // Rule E4
 ruleE4 returns [EObject current=null] 
     @init { enterRule(); 
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
     }
     @after { leaveRule(); }:
 (
@@ -4942,7 +4900,7 @@ finally {
 // Entry rule entryRuleE5
 entryRuleE5 returns [EObject current=null] 
 	@init { 
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 	}
 	:
 	{ newCompositeNode(grammarAccess.getE5Rule()); }
@@ -4957,7 +4915,7 @@ finally {
 // Rule E5
 ruleE5 returns [EObject current=null] 
     @init { enterRule(); 
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
     }
     @after { leaveRule(); }:
 (
@@ -5024,7 +4982,7 @@ finally {
 // Entry rule entryRuleE6
 entryRuleE6 returns [EObject current=null] 
 	@init { 
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 	}
 	:
 	{ newCompositeNode(grammarAccess.getE6Rule()); }
@@ -5039,12 +4997,12 @@ finally {
 // Rule E6
 ruleE6 returns [EObject current=null] 
     @init { enterRule(); 
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
     }
     @after { leaveRule(); }:
-(
+((
     { 
-        newCompositeNode(grammarAccess.getE6Access().getE7ParserRuleCall_0()); 
+        newCompositeNode(grammarAccess.getE6Access().getE7ParserRuleCall_0_0()); 
     }
     this_E7_0=ruleE7
     { 
@@ -5054,13 +5012,13 @@ ruleE6 returns [EObject current=null]
 ((
     {
         $current = forceCreateModelElementAndSet(
-            grammarAccess.getE6Access().getE6LeftAction_1_0(),
+            grammarAccess.getE6Access().getE6LeftAction_0_1_0(),
             $current);
     }
 )(
 (
 		{ 
-	        newCompositeNode(grammarAccess.getE6Access().getOpPlusTokParserRuleCall_1_1_0()); 
+	        newCompositeNode(grammarAccess.getE6Access().getOpPlusTokParserRuleCall_0_1_1_0()); 
 	    }
 		lv_op_2_0=rulePlusTok		{
 	        if ($current==null) {
@@ -5078,7 +5036,7 @@ ruleE6 returns [EObject current=null]
 )(
 (
 		{ 
-	        newCompositeNode(grammarAccess.getE6Access().getRightE7ParserRuleCall_1_2_0()); 
+	        newCompositeNode(grammarAccess.getE6Access().getRightE7ParserRuleCall_0_1_2_0()); 
 	    }
 		lv_right_3_0=ruleE7		{
 	        if ($current==null) {
@@ -5094,6 +5052,49 @@ ruleE6 returns [EObject current=null]
 
 )
 ))*)
+    |((
+(
+		{ 
+	        newCompositeNode(grammarAccess.getE6Access().getOp6PlusTokParserRuleCall_1_0_0()); 
+	    }
+		lv_op6_4_0=rulePlusTok		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getE6Rule());
+	        }
+       		add(
+       			$current, 
+       			"op6",
+        		lv_op6_4_0, 
+        		"PlusTok");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+)(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getE6Access().getRightE7ParserRuleCall_1_1_0()); 
+	    }
+		lv_right_5_0=ruleE7		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getE6Rule());
+	        }
+       		set(
+       			$current, 
+       			"right",
+        		lv_right_5_0, 
+        		"E7");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+)(
+    {
+        $current = forceCreateModelElementAndSet(
+            grammarAccess.getE6Access().getE6LeftAction_1_2(),
+            $current);
+    }
+)))
 ;
 finally {
 	myHiddenTokenState.restore();
@@ -5106,7 +5107,7 @@ finally {
 // Entry rule entryRuleE7
 entryRuleE7 returns [EObject current=null] 
 	@init { 
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 	}
 	:
 	{ newCompositeNode(grammarAccess.getE7Rule()); }
@@ -5121,7 +5122,7 @@ finally {
 // Rule E7
 ruleE7 returns [EObject current=null] 
     @init { enterRule(); 
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
     }
     @after { leaveRule(); }:
 (
@@ -5188,7 +5189,7 @@ finally {
 // Entry rule entryRuleE8
 entryRuleE8 returns [EObject current=null] 
 	@init { 
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 	}
 	:
 	{ newCompositeNode(grammarAccess.getE8Rule()); }
@@ -5203,7 +5204,7 @@ finally {
 // Rule E8
 ruleE8 returns [EObject current=null] 
     @init { enterRule(); 
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
     }
     @after { leaveRule(); }:
 (
@@ -5270,7 +5271,7 @@ finally {
 // Entry rule entryRuleE9
 entryRuleE9 returns [EObject current=null] 
 	@init { 
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 	}
 	:
 	{ newCompositeNode(grammarAccess.getE9Rule()); }
@@ -5285,7 +5286,7 @@ finally {
 // Rule E9
 ruleE9 returns [EObject current=null] 
     @init { enterRule(); 
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
     }
     @after { leaveRule(); }:
 (
@@ -5352,7 +5353,7 @@ finally {
 // Entry rule entryRuleE11_E12
 entryRuleE11_E12 returns [EObject current=null] 
 	@init { 
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 	}
 	:
 	{ newCompositeNode(grammarAccess.getE11_E12Rule()); }
@@ -5367,7 +5368,7 @@ finally {
 // Rule E11_E12
 ruleE11_E12 returns [EObject current=null] 
     @init { enterRule(); 
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
     }
     @after { leaveRule(); }:
 (
@@ -5469,7 +5470,7 @@ finally {
 // Entry rule entryRuleE11_Op
 entryRuleE11_Op returns [EObject current=null] 
 	@init { 
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 	}
 	:
 	{ newCompositeNode(grammarAccess.getE11_OpRule()); }
@@ -5484,7 +5485,7 @@ finally {
 // Rule E11_Op
 ruleE11_Op returns [EObject current=null] 
     @init { enterRule(); 
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
     }
     @after { leaveRule(); }:
 (
@@ -5586,7 +5587,7 @@ finally {
 // Entry rule entryRuleType
 entryRuleType returns [EObject current=null] 
 	@init { 
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 	}
 	:
 	{ newCompositeNode(grammarAccess.getTypeRule()); }
@@ -5601,7 +5602,7 @@ finally {
 // Rule Type
 ruleType returns [EObject current=null] 
     @init { enterRule(); 
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
     }
     @after { leaveRule(); }:
 
@@ -5626,7 +5627,7 @@ finally {
 // Entry rule entryRuleE12
 entryRuleE12 returns [EObject current=null] 
 	@init { 
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 	}
 	:
 	{ newCompositeNode(grammarAccess.getE12Rule()); }
@@ -5641,7 +5642,7 @@ finally {
 // Rule E12
 ruleE12 returns [EObject current=null] 
     @init { enterRule(); 
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
     }
     @after { leaveRule(); }:
 (
@@ -5708,7 +5709,7 @@ finally {
 // Entry rule entryRuleE13
 entryRuleE13 returns [EObject current=null] 
 	@init { 
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 	}
 	:
 	{ newCompositeNode(grammarAccess.getE13Rule()); }
@@ -5723,7 +5724,7 @@ finally {
 // Rule E13
 ruleE13 returns [EObject current=null] 
     @init { enterRule(); 
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
     }
     @after { leaveRule(); }:
 (
@@ -5790,7 +5791,7 @@ finally {
 // Entry rule entryRuleQualTail
 entryRuleQualTail returns [EObject current=null] 
 	@init { 
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 	}
 	:
 	{ newCompositeNode(grammarAccess.getQualTailRule()); }
@@ -5805,7 +5806,7 @@ finally {
 // Rule QualTail
 ruleQualTail returns [EObject current=null] 
     @init { enterRule(); 
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
     }
     @after { leaveRule(); }:
 (
@@ -5856,7 +5857,7 @@ finally {
 // Entry rule entryRuleOpQualTail
 entryRuleOpQualTail returns [EObject current=null] 
 	@init { 
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 	}
 	:
 	{ newCompositeNode(grammarAccess.getOpQualTailRule()); }
@@ -5871,7 +5872,7 @@ finally {
 // Rule OpQualTail
 ruleOpQualTail returns [EObject current=null] 
     @init { enterRule(); 
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
     }
     @after { leaveRule(); }:
 ((
@@ -5918,7 +5919,7 @@ finally {
 // Entry rule entryRuleE14
 entryRuleE14 returns [EObject current=null] 
 	@init { 
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 	}
 	:
 	{ newCompositeNode(grammarAccess.getE14Rule()); }
@@ -5933,7 +5934,7 @@ finally {
 // Rule E14
 ruleE14 returns [EObject current=null] 
     @init { enterRule(); 
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
     }
     @after { leaveRule(); }:
 (((((
@@ -6231,7 +6232,7 @@ finally {
 // Entry rule entryRuleE15
 entryRuleE15 returns [EObject current=null] 
 	@init { 
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 	}
 	:
 	{ newCompositeNode(grammarAccess.getE15Rule()); }
@@ -6246,7 +6247,7 @@ finally {
 // Rule E15
 ruleE15 returns [EObject current=null] 
     @init { enterRule(); 
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
     }
     @after { leaveRule(); }:
 
@@ -6271,7 +6272,7 @@ finally {
 // Entry rule entryRuleOp
 entryRuleOp returns [EObject current=null] 
 	@init { 
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 	}
 	:
 	{ newCompositeNode(grammarAccess.getOpRule()); }
@@ -6286,7 +6287,7 @@ finally {
 // Rule Op
 ruleOp returns [EObject current=null] 
     @init { enterRule(); 
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
     }
     @after { leaveRule(); }:
 (((
@@ -6501,7 +6502,7 @@ finally {
 // Entry rule entryRuleNakedOp
 entryRuleNakedOp returns [EObject current=null] 
 	@init { 
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 	}
 	:
 	{ newCompositeNode(grammarAccess.getNakedOpRule()); }
@@ -6516,7 +6517,7 @@ finally {
 // Rule NakedOp
 ruleNakedOp returns [EObject current=null] 
     @init { enterRule(); 
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
     }
     @after { leaveRule(); }:
 (
@@ -6611,7 +6612,7 @@ finally {
 // Entry rule entryRuleArrowOp
 entryRuleArrowOp returns [EObject current=null] 
 	@init { 
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 	}
 	:
 	{ newCompositeNode(grammarAccess.getArrowOpRule()); }
@@ -6626,7 +6627,7 @@ finally {
 // Rule ArrowOp
 ruleArrowOp returns [EObject current=null] 
     @init { enterRule(); 
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
     }
     @after { leaveRule(); }:
 
@@ -6651,7 +6652,7 @@ finally {
 // Entry rule entryRuleLatticeOp
 entryRuleLatticeOp returns [EObject current=null] 
 	@init { 
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 	}
 	:
 	{ newCompositeNode(grammarAccess.getLatticeOpRule()); }
@@ -6666,7 +6667,7 @@ finally {
 // Rule LatticeOp
 ruleLatticeOp returns [EObject current=null] 
     @init { enterRule(); 
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
     }
     @after { leaveRule(); }:
 
@@ -6691,7 +6692,7 @@ finally {
 // Entry rule entryRuleRelationOp
 entryRuleRelationOp returns [EObject current=null] 
 	@init { 
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 	}
 	:
 	{ newCompositeNode(grammarAccess.getRelationOpRule()); }
@@ -6706,7 +6707,7 @@ finally {
 // Rule RelationOp
 ruleRelationOp returns [EObject current=null] 
     @init { enterRule(); 
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
     }
     @after { leaveRule(); }:
 
@@ -6731,7 +6732,7 @@ finally {
 // Entry rule entryRuleSegOp
 entryRuleSegOp returns [EObject current=null] 
 	@init { 
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 	}
 	:
 	{ newCompositeNode(grammarAccess.getSegOpRule()); }
@@ -6746,7 +6747,7 @@ finally {
 // Rule SegOp
 ruleSegOp returns [EObject current=null] 
     @init { enterRule(); 
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
     }
     @after { leaveRule(); }:
 
@@ -6771,7 +6772,7 @@ finally {
 // Entry rule entryRulePlusOp
 entryRulePlusOp returns [EObject current=null] 
 	@init { 
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 	}
 	:
 	{ newCompositeNode(grammarAccess.getPlusOpRule()); }
@@ -6786,7 +6787,7 @@ finally {
 // Rule PlusOp
 rulePlusOp returns [EObject current=null] 
     @init { enterRule(); 
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
     }
     @after { leaveRule(); }:
 
@@ -6811,7 +6812,7 @@ finally {
 // Entry rule entryRuleQuotientOp
 entryRuleQuotientOp returns [EObject current=null] 
 	@init { 
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 	}
 	:
 	{ newCompositeNode(grammarAccess.getQuotientOpRule()); }
@@ -6826,7 +6827,7 @@ finally {
 // Rule QuotientOp
 ruleQuotientOp returns [EObject current=null] 
     @init { enterRule(); 
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
     }
     @after { leaveRule(); }:
 
@@ -6851,7 +6852,7 @@ finally {
 // Entry rule entryRuleTimesOp
 entryRuleTimesOp returns [EObject current=null] 
 	@init { 
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 	}
 	:
 	{ newCompositeNode(grammarAccess.getTimesOpRule()); }
@@ -6866,7 +6867,7 @@ finally {
 // Rule TimesOp
 ruleTimesOp returns [EObject current=null] 
     @init { enterRule(); 
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
     }
     @after { leaveRule(); }:
 
@@ -6891,7 +6892,7 @@ finally {
 // Entry rule entryRulePowerOp
 entryRulePowerOp returns [EObject current=null] 
 	@init { 
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 	}
 	:
 	{ newCompositeNode(grammarAccess.getPowerOpRule()); }
@@ -6906,7 +6907,7 @@ finally {
 // Rule PowerOp
 rulePowerOp returns [EObject current=null] 
     @init { enterRule(); 
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
     }
     @after { leaveRule(); }:
 
@@ -6931,7 +6932,7 @@ finally {
 // Entry rule entryRuleArrowTok
 entryRuleArrowTok returns [String current=null] 
 	@init { 
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 	}
 	:
 	{ newCompositeNode(grammarAccess.getArrowTokRule()); } 
@@ -6946,7 +6947,7 @@ finally {
 // Rule ArrowTok
 ruleArrowTok returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] 
     @init { enterRule(); 
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
     }
     @after { leaveRule(); }:
 (    this_KW_RARROW_0=RULE_KW_RARROW    {
@@ -6985,7 +6986,7 @@ finally {
 // Entry rule entryRuleLatticeTok
 entryRuleLatticeTok returns [String current=null] 
 	@init { 
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 	}
 	:
 	{ newCompositeNode(grammarAccess.getLatticeTokRule()); } 
@@ -7000,7 +7001,7 @@ finally {
 // Rule LatticeTok
 ruleLatticeTok returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] 
     @init { enterRule(); 
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
     }
     @after { leaveRule(); }:
 (    this_KW_VEE_0=RULE_KW_VEE    {
@@ -7031,7 +7032,7 @@ finally {
 // Entry rule entryRuleRelationTok
 entryRuleRelationTok returns [String current=null] 
 	@init { 
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 	}
 	:
 	{ newCompositeNode(grammarAccess.getRelationTokRule()); } 
@@ -7046,7 +7047,7 @@ finally {
 // Rule RelationTok
 ruleRelationTok returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] 
     @init { enterRule(); 
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
     }
     @after { leaveRule(); }:
 (    this_KW_EQ_0=RULE_KW_EQ    {
@@ -7154,7 +7155,7 @@ finally {
 // Entry rule entryRuleSegTok
 entryRuleSegTok returns [String current=null] 
 	@init { 
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 	}
 	:
 	{ newCompositeNode(grammarAccess.getSegTokRule()); } 
@@ -7169,7 +7170,7 @@ finally {
 // Rule SegTok
 ruleSegTok returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] 
     @init { enterRule(); 
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
     }
     @after { leaveRule(); }:
 (    this_KW_2DOT_0=RULE_KW_2DOT    {
@@ -7199,7 +7200,7 @@ finally {
 // Entry rule entryRulePlusTok
 entryRulePlusTok returns [String current=null] 
 	@init { 
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 	}
 	:
 	{ newCompositeNode(grammarAccess.getPlusTokRule()); } 
@@ -7214,7 +7215,7 @@ finally {
 // Rule PlusTok
 rulePlusTok returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] 
     @init { enterRule(); 
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
     }
     @after { leaveRule(); }:
 (    this_KW_PLUS_0=RULE_KW_PLUS    {
@@ -7253,7 +7254,7 @@ finally {
 // Entry rule entryRuleQuotientTok
 entryRuleQuotientTok returns [String current=null] 
 	@init { 
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 	}
 	:
 	{ newCompositeNode(grammarAccess.getQuotientTokRule()); } 
@@ -7268,7 +7269,7 @@ finally {
 // Rule QuotientTok
 ruleQuotientTok returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] 
     @init { enterRule(); 
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
     }
     @after { leaveRule(); }:
 (
@@ -7311,7 +7312,7 @@ finally {
 // Entry rule entryRuleTimesTok
 entryRuleTimesTok returns [String current=null] 
 	@init { 
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 	}
 	:
 	{ newCompositeNode(grammarAccess.getTimesTokRule()); } 
@@ -7326,7 +7327,7 @@ finally {
 // Rule TimesTok
 ruleTimesTok returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] 
     @init { enterRule(); 
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
     }
     @after { leaveRule(); }:
 (    this_KW_STAR_0=RULE_KW_STAR    {
@@ -7365,7 +7366,7 @@ finally {
 // Entry rule entryRulePowerTok
 entryRulePowerTok returns [String current=null] 
 	@init { 
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 	}
 	:
 	{ newCompositeNode(grammarAccess.getPowerTokRule()); } 
@@ -7380,7 +7381,7 @@ finally {
 // Rule PowerTok
 rulePowerTok returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] 
     @init { enterRule(); 
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
     }
     @after { leaveRule(); }:
 (    this_KW_2STAR_0=RULE_KW_2STAR    {
@@ -7411,7 +7412,7 @@ finally {
 // Entry rule entryRuleApplication
 entryRuleApplication returns [EObject current=null] 
 	@init { 
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 	}
 	:
 	{ newCompositeNode(grammarAccess.getApplicationRule()); }
@@ -7426,7 +7427,7 @@ finally {
 // Rule Application
 ruleApplication returns [EObject current=null] 
     @init { enterRule(); 
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
     }
     @after { leaveRule(); }:
 
@@ -7451,7 +7452,7 @@ finally {
 // Entry rule entryRuleRightJuxtaposed
 entryRuleRightJuxtaposed returns [EObject current=null] 
 	@init { 
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 	}
 	:
 	{ newCompositeNode(grammarAccess.getRightJuxtaposedRule()); }
@@ -7466,7 +7467,7 @@ finally {
 // Rule RightJuxtaposed
 ruleRightJuxtaposed returns [EObject current=null] 
     @init { enterRule(); 
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
     }
     @after { leaveRule(); }:
 
@@ -7491,7 +7492,7 @@ finally {
 // Entry rule entryRuleLeftJuxtaposed
 entryRuleLeftJuxtaposed returns [EObject current=null] 
 	@init { 
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 	}
 	:
 	{ newCompositeNode(grammarAccess.getLeftJuxtaposedRule()); }
@@ -7506,7 +7507,7 @@ finally {
 // Rule LeftJuxtaposed
 ruleLeftJuxtaposed returns [EObject current=null] 
     @init { enterRule(); 
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
     }
     @after { leaveRule(); }:
 
@@ -7531,7 +7532,7 @@ finally {
 // Entry rule entryRuleJright_Molecule
 entryRuleJright_Molecule returns [EObject current=null] 
 	@init { 
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 	}
 	:
 	{ newCompositeNode(grammarAccess.getJright_MoleculeRule()); }
@@ -7546,7 +7547,7 @@ finally {
 // Rule Jright_Molecule
 ruleJright_Molecule returns [EObject current=null] 
     @init { enterRule(); 
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
     }
     @after { leaveRule(); }:
 ((
@@ -7612,7 +7613,7 @@ finally {
 // Entry rule entryRuleJright_Atom
 entryRuleJright_Atom returns [EObject current=null] 
 	@init { 
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 	}
 	:
 	{ newCompositeNode(grammarAccess.getJright_AtomRule()); }
@@ -7627,7 +7628,7 @@ finally {
 // Rule Jright_Atom
 ruleJright_Atom returns [EObject current=null] 
     @init { enterRule(); 
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
     }
     @after { leaveRule(); }:
 ((
@@ -7693,7 +7694,7 @@ finally {
 // Entry rule entryRuleJleft_Molecule
 entryRuleJleft_Molecule returns [EObject current=null] 
 	@init { 
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 	}
 	:
 	{ newCompositeNode(grammarAccess.getJleft_MoleculeRule()); }
@@ -7708,7 +7709,7 @@ finally {
 // Rule Jleft_Molecule
 ruleJleft_Molecule returns [EObject current=null] 
     @init { enterRule(); 
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
     }
     @after { leaveRule(); }:
 ((	otherlv_0='not' 
@@ -7832,7 +7833,7 @@ finally {
 // Entry rule entryRuleJleft_Atom
 entryRuleJleft_Atom returns [EObject current=null] 
 	@init { 
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 	}
 	:
 	{ newCompositeNode(grammarAccess.getJleft_AtomRule()); }
@@ -7847,7 +7848,7 @@ finally {
 // Rule Jleft_Atom
 ruleJleft_Atom returns [EObject current=null] 
     @init { enterRule(); 
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
     }
     @after { leaveRule(); }:
 ((	otherlv_0='not' 
@@ -7971,7 +7972,7 @@ finally {
 // Entry rule entryRuleMolecule
 entryRuleMolecule returns [EObject current=null] 
 	@init { 
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 	}
 	:
 	{ newCompositeNode(grammarAccess.getMoleculeRule()); }
@@ -7986,7 +7987,7 @@ finally {
 // Rule Molecule
 ruleMolecule returns [EObject current=null] 
     @init { enterRule(); 
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
     }
     @after { leaveRule(); }:
 (((	ruleAtom)=>
@@ -8021,7 +8022,7 @@ finally {
 // Entry rule entryRuleEnclosure
 entryRuleEnclosure returns [EObject current=null] 
 	@init { 
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 	}
 	:
 	{ newCompositeNode(grammarAccess.getEnclosureRule()); }
@@ -8036,7 +8037,7 @@ finally {
 // Rule Enclosure
 ruleEnclosure returns [EObject current=null] 
     @init { enterRule(); 
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
     }
     @after { leaveRule(); }:
 (
@@ -8081,7 +8082,7 @@ finally {
 // Entry rule entryRuleDeclMolecule
 entryRuleDeclMolecule returns [EObject current=null] 
 	@init { 
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 	}
 	:
 	{ newCompositeNode(grammarAccess.getDeclMoleculeRule()); }
@@ -8096,7 +8097,7 @@ finally {
 // Rule DeclMolecule
 ruleDeclMolecule returns [EObject current=null] 
     @init { enterRule(); 
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
     }
     @after { leaveRule(); }:
 (((
@@ -8155,7 +8156,7 @@ finally {
 // Entry rule entryRuleBlockMolecule
 entryRuleBlockMolecule returns [EObject current=null] 
 	@init { 
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 	}
 	:
 	{ newCompositeNode(grammarAccess.getBlockMoleculeRule()); }
@@ -8170,7 +8171,7 @@ finally {
 // Rule BlockMolecule
 ruleBlockMolecule returns [EObject current=null] 
     @init { enterRule(); 
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
     }
     @after { leaveRule(); }:
 (
@@ -8215,7 +8216,7 @@ finally {
 // Entry rule entryRuleBlockEnclosure
 entryRuleBlockEnclosure returns [EObject current=null] 
 	@init { 
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 	}
 	:
 	{ newCompositeNode(grammarAccess.getBlockEnclosureRule()); }
@@ -8230,7 +8231,7 @@ finally {
 // Rule BlockEnclosure
 ruleBlockEnclosure returns [EObject current=null] 
     @init { enterRule(); 
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
     }
     @after { leaveRule(); }:
 (
@@ -8265,7 +8266,7 @@ finally {
 // Entry rule entryRuleBlock
 entryRuleBlock returns [EObject current=null] 
 	@init { 
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 	}
 	:
 	{ newCompositeNode(grammarAccess.getBlockRule()); }
@@ -8280,7 +8281,7 @@ finally {
 // Rule Block
 ruleBlock returns [EObject current=null] 
     @init { enterRule(); 
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
     }
     @after { leaveRule(); }:
 
@@ -8305,7 +8306,7 @@ finally {
 // Entry rule entryRuleParened
 entryRuleParened returns [EObject current=null] 
 	@init { 
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 	}
 	:
 	{ newCompositeNode(grammarAccess.getParenedRule()); }
@@ -8320,7 +8321,7 @@ finally {
 // Rule Parened
 ruleParened returns [EObject current=null] 
     @init { enterRule(); 
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
     }
     @after { leaveRule(); }:
 ((
@@ -8376,7 +8377,7 @@ finally {
 // Entry rule entryRuleBracketed
 entryRuleBracketed returns [EObject current=null] 
 	@init { 
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 	}
 	:
 	{ newCompositeNode(grammarAccess.getBracketedRule()); }
@@ -8391,7 +8392,7 @@ finally {
 // Rule Bracketed
 ruleBracketed returns [EObject current=null] 
     @init { enterRule(); 
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
     }
     @after { leaveRule(); }:
 ((
@@ -8447,7 +8448,7 @@ finally {
 // Entry rule entryRuleQuotedIds
 entryRuleQuotedIds returns [EObject current=null] 
 	@init { 
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 	}
 	:
 	{ newCompositeNode(grammarAccess.getQuotedIdsRule()); }
@@ -8462,7 +8463,7 @@ finally {
 // Rule QuotedIds
 ruleQuotedIds returns [EObject current=null] 
     @init { enterRule(); 
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
     }
     @after { leaveRule(); }:
 ((
@@ -8524,7 +8525,7 @@ finally {
 // Entry rule entryRuleNames
 entryRuleNames returns [EObject current=null] 
 	@init { 
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 	}
 	:
 	{ newCompositeNode(grammarAccess.getNamesRule()); }
@@ -8539,7 +8540,7 @@ finally {
 // Rule Names
 ruleNames returns [EObject current=null] 
     @init { enterRule(); 
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
     }
     @after { leaveRule(); }:
 ((
@@ -8595,7 +8596,7 @@ finally {
 // Entry rule entryRuleAtom
 entryRuleAtom returns [EObject current=null] 
 	@init { 
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 	}
 	:
 	{ newCompositeNode(grammarAccess.getAtomRule()); }
@@ -8610,7 +8611,7 @@ finally {
 // Rule Atom
 ruleAtom returns [EObject current=null] 
     @init { enterRule(); 
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
     }
     @after { leaveRule(); }:
 ((
@@ -8663,7 +8664,7 @@ finally {
 // Entry rule entryRuleName
 entryRuleName returns [EObject current=null] 
 	@init { 
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 	}
 	:
 	{ newCompositeNode(grammarAccess.getNameRule()); }
@@ -8678,7 +8679,7 @@ finally {
 // Rule Name
 ruleName returns [EObject current=null] 
     @init { enterRule(); 
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
     }
     @after { leaveRule(); }:
 (((
@@ -8737,7 +8738,7 @@ finally {
 // Entry rule entryRuleId
 entryRuleId returns [EObject current=null] 
 	@init { 
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 	}
 	:
 	{ newCompositeNode(grammarAccess.getIdRule()); }
@@ -8752,7 +8753,7 @@ finally {
 // Rule Id
 ruleId returns [EObject current=null] 
     @init { enterRule(); 
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
     }
     @after { leaveRule(); }:
 (
@@ -8819,7 +8820,7 @@ finally {
 // Entry rule entryRuleLiteral
 entryRuleLiteral returns [String current=null] 
 	@init { 
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 	}
 	:
 	{ newCompositeNode(grammarAccess.getLiteralRule()); } 
@@ -8834,7 +8835,7 @@ finally {
 // Rule Literal
 ruleLiteral returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] 
     @init { enterRule(); 
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
     }
     @after { leaveRule(); }:
 ((((( RULE_TK_INT RULE_KW_DOT)? RULE_TK_FLOAT))=>((    this_TK_INT_0=RULE_TK_INT    {
@@ -8901,7 +8902,7 @@ finally {
 // Entry rule entryRuleUnqualOp_ArrowTok
 entryRuleUnqualOp_ArrowTok returns [EObject current=null] 
 	@init { 
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 	}
 	:
 	{ newCompositeNode(grammarAccess.getUnqualOp_ArrowTokRule()); }
@@ -8916,7 +8917,7 @@ finally {
 // Rule UnqualOp_ArrowTok
 ruleUnqualOp_ArrowTok returns [EObject current=null] 
     @init { enterRule(); 
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
     }
     @after { leaveRule(); }:
 (
@@ -8946,7 +8947,7 @@ finally {
 // Entry rule entryRuleUnqualOp_LatticeTok
 entryRuleUnqualOp_LatticeTok returns [EObject current=null] 
 	@init { 
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 	}
 	:
 	{ newCompositeNode(grammarAccess.getUnqualOp_LatticeTokRule()); }
@@ -8961,7 +8962,7 @@ finally {
 // Rule UnqualOp_LatticeTok
 ruleUnqualOp_LatticeTok returns [EObject current=null] 
     @init { enterRule(); 
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
     }
     @after { leaveRule(); }:
 (
@@ -8991,7 +8992,7 @@ finally {
 // Entry rule entryRuleUnqualOp_RelationTok
 entryRuleUnqualOp_RelationTok returns [EObject current=null] 
 	@init { 
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 	}
 	:
 	{ newCompositeNode(grammarAccess.getUnqualOp_RelationTokRule()); }
@@ -9006,7 +9007,7 @@ finally {
 // Rule UnqualOp_RelationTok
 ruleUnqualOp_RelationTok returns [EObject current=null] 
     @init { enterRule(); 
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
     }
     @after { leaveRule(); }:
 (
@@ -9036,7 +9037,7 @@ finally {
 // Entry rule entryRuleUnqualOp_SegTok
 entryRuleUnqualOp_SegTok returns [EObject current=null] 
 	@init { 
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 	}
 	:
 	{ newCompositeNode(grammarAccess.getUnqualOp_SegTokRule()); }
@@ -9051,7 +9052,7 @@ finally {
 // Rule UnqualOp_SegTok
 ruleUnqualOp_SegTok returns [EObject current=null] 
     @init { enterRule(); 
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
     }
     @after { leaveRule(); }:
 (
@@ -9081,7 +9082,7 @@ finally {
 // Entry rule entryRuleUnqualOp_PlusTok
 entryRuleUnqualOp_PlusTok returns [EObject current=null] 
 	@init { 
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 	}
 	:
 	{ newCompositeNode(grammarAccess.getUnqualOp_PlusTokRule()); }
@@ -9096,7 +9097,7 @@ finally {
 // Rule UnqualOp_PlusTok
 ruleUnqualOp_PlusTok returns [EObject current=null] 
     @init { enterRule(); 
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
     }
     @after { leaveRule(); }:
 (
@@ -9126,7 +9127,7 @@ finally {
 // Entry rule entryRuleUnqualOp_QuotientTok
 entryRuleUnqualOp_QuotientTok returns [EObject current=null] 
 	@init { 
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 	}
 	:
 	{ newCompositeNode(grammarAccess.getUnqualOp_QuotientTokRule()); }
@@ -9141,7 +9142,7 @@ finally {
 // Rule UnqualOp_QuotientTok
 ruleUnqualOp_QuotientTok returns [EObject current=null] 
     @init { enterRule(); 
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
     }
     @after { leaveRule(); }:
 (
@@ -9171,7 +9172,7 @@ finally {
 // Entry rule entryRuleUnqualOp_TimesTok
 entryRuleUnqualOp_TimesTok returns [EObject current=null] 
 	@init { 
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 	}
 	:
 	{ newCompositeNode(grammarAccess.getUnqualOp_TimesTokRule()); }
@@ -9186,7 +9187,7 @@ finally {
 // Rule UnqualOp_TimesTok
 ruleUnqualOp_TimesTok returns [EObject current=null] 
     @init { enterRule(); 
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
     }
     @after { leaveRule(); }:
 (
@@ -9216,7 +9217,7 @@ finally {
 // Entry rule entryRuleUnqualOp_PowerTok
 entryRuleUnqualOp_PowerTok returns [EObject current=null] 
 	@init { 
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 	}
 	:
 	{ newCompositeNode(grammarAccess.getUnqualOp_PowerTokRule()); }
@@ -9231,7 +9232,7 @@ finally {
 // Rule UnqualOp_PowerTok
 ruleUnqualOp_PowerTok returns [EObject current=null] 
     @init { enterRule(); 
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
     }
     @after { leaveRule(); }:
 (
@@ -9261,7 +9262,7 @@ finally {
 // Entry rule entryRuleQualOp_ArrowTok
 entryRuleQualOp_ArrowTok returns [EObject current=null] 
 	@init { 
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 	}
 	:
 	{ newCompositeNode(grammarAccess.getQualOp_ArrowTokRule()); }
@@ -9276,7 +9277,7 @@ finally {
 // Rule QualOp_ArrowTok
 ruleQualOp_ArrowTok returns [EObject current=null] 
     @init { enterRule(); 
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
     }
     @after { leaveRule(); }:
 ((
@@ -9332,7 +9333,7 @@ finally {
 // Entry rule entryRuleQualOp_LatticeTok
 entryRuleQualOp_LatticeTok returns [EObject current=null] 
 	@init { 
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 	}
 	:
 	{ newCompositeNode(grammarAccess.getQualOp_LatticeTokRule()); }
@@ -9347,7 +9348,7 @@ finally {
 // Rule QualOp_LatticeTok
 ruleQualOp_LatticeTok returns [EObject current=null] 
     @init { enterRule(); 
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
     }
     @after { leaveRule(); }:
 ((
@@ -9403,7 +9404,7 @@ finally {
 // Entry rule entryRuleQualOp_RelationTok
 entryRuleQualOp_RelationTok returns [EObject current=null] 
 	@init { 
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 	}
 	:
 	{ newCompositeNode(grammarAccess.getQualOp_RelationTokRule()); }
@@ -9418,7 +9419,7 @@ finally {
 // Rule QualOp_RelationTok
 ruleQualOp_RelationTok returns [EObject current=null] 
     @init { enterRule(); 
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
     }
     @after { leaveRule(); }:
 ((
@@ -9484,7 +9485,7 @@ finally {
 // Entry rule entryRuleQualOp_SegTok
 entryRuleQualOp_SegTok returns [EObject current=null] 
 	@init { 
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 	}
 	:
 	{ newCompositeNode(grammarAccess.getQualOp_SegTokRule()); }
@@ -9499,7 +9500,7 @@ finally {
 // Rule QualOp_SegTok
 ruleQualOp_SegTok returns [EObject current=null] 
     @init { enterRule(); 
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
     }
     @after { leaveRule(); }:
 ((
@@ -9551,7 +9552,7 @@ finally {
 // Entry rule entryRuleQualOp_PlusTok
 entryRuleQualOp_PlusTok returns [EObject current=null] 
 	@init { 
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 	}
 	:
 	{ newCompositeNode(grammarAccess.getQualOp_PlusTokRule()); }
@@ -9566,7 +9567,7 @@ finally {
 // Rule QualOp_PlusTok
 ruleQualOp_PlusTok returns [EObject current=null] 
     @init { enterRule(); 
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
     }
     @after { leaveRule(); }:
 ((
@@ -9618,7 +9619,7 @@ finally {
 // Entry rule entryRuleQualOp_QuotientTok
 entryRuleQualOp_QuotientTok returns [EObject current=null] 
 	@init { 
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 	}
 	:
 	{ newCompositeNode(grammarAccess.getQualOp_QuotientTokRule()); }
@@ -9633,7 +9634,7 @@ finally {
 // Rule QualOp_QuotientTok
 ruleQualOp_QuotientTok returns [EObject current=null] 
     @init { enterRule(); 
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
     }
     @after { leaveRule(); }:
 ((
@@ -9685,7 +9686,7 @@ finally {
 // Entry rule entryRuleQualOp_TimesTok
 entryRuleQualOp_TimesTok returns [EObject current=null] 
 	@init { 
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 	}
 	:
 	{ newCompositeNode(grammarAccess.getQualOp_TimesTokRule()); }
@@ -9700,7 +9701,7 @@ finally {
 // Rule QualOp_TimesTok
 ruleQualOp_TimesTok returns [EObject current=null] 
     @init { enterRule(); 
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
     }
     @after { leaveRule(); }:
 ((
@@ -9752,7 +9753,7 @@ finally {
 // Entry rule entryRuleQualOp_PowerTok
 entryRuleQualOp_PowerTok returns [EObject current=null] 
 	@init { 
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 	}
 	:
 	{ newCompositeNode(grammarAccess.getQualOp_PowerTokRule()); }
@@ -9767,7 +9768,7 @@ finally {
 // Rule QualOp_PowerTok
 ruleQualOp_PowerTok returns [EObject current=null] 
     @init { enterRule(); 
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
     }
     @after { leaveRule(); }:
 ((
@@ -9819,7 +9820,7 @@ finally {
 // Entry rule entryRulePreDocument
 entryRulePreDocument returns [String current=null] 
 	@init { 
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 	}
 	:
 	{ newCompositeNode(grammarAccess.getPreDocumentRule()); } 
@@ -9834,7 +9835,7 @@ finally {
 // Rule PreDocument
 rulePreDocument returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] 
     @init { enterRule(); 
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
     }
     @after { leaveRule(); }:
 (    this_TK_PREDOC_0=RULE_TK_PREDOC    {
@@ -9857,7 +9858,7 @@ finally {
 // Entry rule entryRulePostDocument
 entryRulePostDocument returns [String current=null] 
 	@init { 
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 	}
 	:
 	{ newCompositeNode(grammarAccess.getPostDocumentRule()); } 
@@ -9872,7 +9873,7 @@ finally {
 // Rule PostDocument
 rulePostDocument returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] 
     @init { enterRule(); 
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
     }
     @after { leaveRule(); }:
 (    this_TK_POSTDOC_0=RULE_TK_POSTDOC    {
@@ -9895,7 +9896,7 @@ finally {
 // Entry rule entryRuleenlist1_CommaItem_Comma_AB
 entryRuleenlist1_CommaItem_Comma_AB returns [EObject current=null] 
 	@init { 
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 	}
 	:
 	{ newCompositeNode(grammarAccess.getEnlist1_CommaItem_Comma_ABRule()); }
@@ -9910,7 +9911,7 @@ finally {
 // Rule enlist1_CommaItem_Comma_AB
 ruleenlist1_CommaItem_Comma_AB returns [EObject current=null] 
     @init { enterRule(); 
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
     }
     @after { leaveRule(); }:
 
@@ -9935,7 +9936,7 @@ finally {
 // Entry rule entryRuleenlist1_Infixed_Comma_AB
 entryRuleenlist1_Infixed_Comma_AB returns [EObject current=null] 
 	@init { 
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 	}
 	:
 	{ newCompositeNode(grammarAccess.getEnlist1_Infixed_Comma_ABRule()); }
@@ -9950,7 +9951,7 @@ finally {
 // Rule enlist1_Infixed_Comma_AB
 ruleenlist1_Infixed_Comma_AB returns [EObject current=null] 
     @init { enterRule(); 
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
     }
     @after { leaveRule(); }:
 
@@ -9975,7 +9976,7 @@ finally {
 // Entry rule entryRuleenlist1_InfixedExpr_Comma_AB
 entryRuleenlist1_InfixedExpr_Comma_AB returns [EObject current=null] 
 	@init { 
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 	}
 	:
 	{ newCompositeNode(grammarAccess.getEnlist1_InfixedExpr_Comma_ABRule()); }
@@ -9990,7 +9991,7 @@ finally {
 // Rule enlist1_InfixedExpr_Comma_AB
 ruleenlist1_InfixedExpr_Comma_AB returns [EObject current=null] 
     @init { enterRule(); 
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
     }
     @after { leaveRule(); }:
 
@@ -10015,7 +10016,7 @@ finally {
 // Entry rule entryRuleenlister1_CommaItem_Comma
 entryRuleenlister1_CommaItem_Comma returns [EObject current=null] 
 	@init { 
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 	}
 	:
 	{ newCompositeNode(grammarAccess.getEnlister1_CommaItem_CommaRule()); }
@@ -10030,7 +10031,7 @@ finally {
 // Rule enlister1_CommaItem_Comma
 ruleenlister1_CommaItem_Comma returns [EObject current=null] 
     @init { enterRule(); 
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
     }
     @after { leaveRule(); }:
 (
@@ -10077,7 +10078,7 @@ finally {
 // Entry rule entryRuleenlister1_Infixed_Comma
 entryRuleenlister1_Infixed_Comma returns [EObject current=null] 
 	@init { 
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 	}
 	:
 	{ newCompositeNode(grammarAccess.getEnlister1_Infixed_CommaRule()); }
@@ -10092,7 +10093,7 @@ finally {
 // Rule enlister1_Infixed_Comma
 ruleenlister1_Infixed_Comma returns [EObject current=null] 
     @init { enterRule(); 
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
     }
     @after { leaveRule(); }:
 (
@@ -10139,7 +10140,7 @@ finally {
 // Entry rule entryRuleenlister1_InfixedExpr_Comma
 entryRuleenlister1_InfixedExpr_Comma returns [EObject current=null] 
 	@init { 
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 	}
 	:
 	{ newCompositeNode(grammarAccess.getEnlister1_InfixedExpr_CommaRule()); }
@@ -10154,7 +10155,7 @@ finally {
 // Rule enlister1_InfixedExpr_Comma
 ruleenlister1_InfixedExpr_Comma returns [EObject current=null] 
     @init { enterRule(); 
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
     }
     @after { leaveRule(); }:
 (
@@ -10201,7 +10202,7 @@ finally {
 // Entry rule entryRuleenlist1a_Labeled_Semicolon_AB
 entryRuleenlist1a_Labeled_Semicolon_AB returns [EObject current=null] 
 	@init { 
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 	}
 	:
 	{ newCompositeNode(grammarAccess.getEnlist1a_Labeled_Semicolon_ABRule()); }
@@ -10216,7 +10217,7 @@ finally {
 // Rule enlist1a_Labeled_Semicolon_AB
 ruleenlist1a_Labeled_Semicolon_AB returns [EObject current=null] 
     @init { enterRule(); 
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
     }
     @after { leaveRule(); }:
 
@@ -10241,7 +10242,7 @@ finally {
 // Entry rule entryRuleenlister1a_Labeled_Semicolon
 entryRuleenlister1a_Labeled_Semicolon returns [EObject current=null] 
 	@init { 
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 	}
 	:
 	{ newCompositeNode(grammarAccess.getEnlister1a_Labeled_SemicolonRule()); }
@@ -10256,7 +10257,7 @@ finally {
 // Rule enlister1a_Labeled_Semicolon
 ruleenlister1a_Labeled_Semicolon returns [EObject current=null] 
     @init { enterRule(); 
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
     }
     @after { leaveRule(); }:
 ((
@@ -10316,7 +10317,7 @@ finally {
 // Entry rule entryRuleCurly_Labeled
 entryRuleCurly_Labeled returns [EObject current=null] 
 	@init { 
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 	}
 	:
 	{ newCompositeNode(grammarAccess.getCurly_LabeledRule()); }
@@ -10331,7 +10332,7 @@ finally {
 // Rule Curly_Labeled
 ruleCurly_Labeled returns [EObject current=null] 
     @init { enterRule(); 
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
     }
     @after { leaveRule(); }:
 (this_KW_OCURLY_0=RULE_KW_OCURLY
@@ -10364,7 +10365,7 @@ finally {
 // Entry rule entryRuleCurlyContents_Labeled
 entryRuleCurlyContents_Labeled returns [EObject current=null] 
 	@init { 
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 	}
 	:
 	{ newCompositeNode(grammarAccess.getCurlyContents_LabeledRule()); }
@@ -10379,7 +10380,7 @@ finally {
 // Rule CurlyContents_Labeled
 ruleCurlyContents_Labeled returns [EObject current=null] 
     @init { enterRule(); 
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
     }
     @after { leaveRule(); }:
 
@@ -10404,7 +10405,7 @@ finally {
 // Entry rule entryRuleCurlyContentsList_Labeled
 entryRuleCurlyContentsList_Labeled returns [EObject current=null] 
 	@init { 
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 	}
 	:
 	{ newCompositeNode(grammarAccess.getCurlyContentsList_LabeledRule()); }
@@ -10419,7 +10420,7 @@ finally {
 // Rule CurlyContentsList_Labeled
 ruleCurlyContentsList_Labeled returns [EObject current=null] 
     @init { enterRule(); 
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
     }
     @after { leaveRule(); }:
 ((
@@ -10479,7 +10480,7 @@ finally {
 // Entry rule entryRuleCurlyContentB_Labeled
 entryRuleCurlyContentB_Labeled returns [EObject current=null] 
 	@init { 
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 	}
 	:
 	{ newCompositeNode(grammarAccess.getCurlyContentB_LabeledRule()); }
@@ -10494,7 +10495,7 @@ finally {
 // Rule CurlyContentB_Labeled
 ruleCurlyContentB_Labeled returns [EObject current=null] 
     @init { enterRule(); 
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
     }
     @after { leaveRule(); }:
 ((
@@ -10567,7 +10568,9 @@ RULE_WS : (' '|'\t')+;
 
 RULE_KW_NEWLINE : ('\r'|'\n');
 
-RULE_TK_PREDOC : '--' ~(('\n'|'\r'))*;
+RULE_TK_COMMENT : '--' ~(('\n'|'\r'))*;
+
+RULE_TK_PREDOC : '+++' ~(('\n'|'\r'))*;
 
 RULE_TK_POSTDOC : '++' ~(('\n'|'\r'))*;
 

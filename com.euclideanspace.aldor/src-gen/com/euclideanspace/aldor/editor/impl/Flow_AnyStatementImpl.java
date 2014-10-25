@@ -35,6 +35,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *   <li>{@link com.euclideanspace.aldor.editor.impl.Flow_AnyStatementImpl#getBas2 <em>Bas2</em>}</li>
  *   <li>{@link com.euclideanspace.aldor.editor.impl.Flow_AnyStatementImpl#getCi <em>Ci</em>}</li>
  *   <li>{@link com.euclideanspace.aldor.editor.impl.Flow_AnyStatementImpl#getBbs <em>Bbs</em>}</li>
+ *   <li>{@link com.euclideanspace.aldor.editor.impl.Flow_AnyStatementImpl#getBas <em>Bas</em>}</li>
  *   <li>{@link com.euclideanspace.aldor.editor.impl.Flow_AnyStatementImpl#getBe2 <em>Be2</em>}</li>
  *   <li>{@link com.euclideanspace.aldor.editor.impl.Flow_AnyStatementImpl#getApa <em>Apa</em>}</li>
  *   <li>{@link com.euclideanspace.aldor.editor.impl.Flow_AnyStatementImpl#getCa <em>Ca</em>}</li>
@@ -108,6 +109,16 @@ public class Flow_AnyStatementImpl extends AnyStatementImpl implements Flow_AnyS
    * @ordered
    */
   protected Binding_BalStatement bbs;
+
+  /**
+   * The cached value of the '{@link #getBas() <em>Bas</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getBas()
+   * @generated
+   * @ordered
+   */
+  protected Binding_AnyStatement bas;
 
   /**
    * The cached value of the '{@link #getBe2() <em>Be2</em>}' containment reference.
@@ -413,6 +424,54 @@ public class Flow_AnyStatementImpl extends AnyStatementImpl implements Flow_AnyS
     }
     else if (eNotificationRequired())
       eNotify(new ENotificationImpl(this, Notification.SET, EditorPackage.FLOW_ANY_STATEMENT__BBS, newBbs, newBbs));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Binding_AnyStatement getBas()
+  {
+    return bas;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetBas(Binding_AnyStatement newBas, NotificationChain msgs)
+  {
+    Binding_AnyStatement oldBas = bas;
+    bas = newBas;
+    if (eNotificationRequired())
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, EditorPackage.FLOW_ANY_STATEMENT__BAS, oldBas, newBas);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setBas(Binding_AnyStatement newBas)
+  {
+    if (newBas != bas)
+    {
+      NotificationChain msgs = null;
+      if (bas != null)
+        msgs = ((InternalEObject)bas).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - EditorPackage.FLOW_ANY_STATEMENT__BAS, null, msgs);
+      if (newBas != null)
+        msgs = ((InternalEObject)newBas).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - EditorPackage.FLOW_ANY_STATEMENT__BAS, null, msgs);
+      msgs = basicSetBas(newBas, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, EditorPackage.FLOW_ANY_STATEMENT__BAS, newBas, newBas));
   }
 
   /**
@@ -769,6 +828,8 @@ public class Flow_AnyStatementImpl extends AnyStatementImpl implements Flow_AnyS
         return basicSetCi(null, msgs);
       case EditorPackage.FLOW_ANY_STATEMENT__BBS:
         return basicSetBbs(null, msgs);
+      case EditorPackage.FLOW_ANY_STATEMENT__BAS:
+        return basicSetBas(null, msgs);
       case EditorPackage.FLOW_ANY_STATEMENT__BE2:
         return basicSetBe2(null, msgs);
       case EditorPackage.FLOW_ANY_STATEMENT__APA:
@@ -807,6 +868,8 @@ public class Flow_AnyStatementImpl extends AnyStatementImpl implements Flow_AnyS
         return getCi();
       case EditorPackage.FLOW_ANY_STATEMENT__BBS:
         return getBbs();
+      case EditorPackage.FLOW_ANY_STATEMENT__BAS:
+        return getBas();
       case EditorPackage.FLOW_ANY_STATEMENT__BE2:
         return getBe2();
       case EditorPackage.FLOW_ANY_STATEMENT__APA:
@@ -849,6 +912,9 @@ public class Flow_AnyStatementImpl extends AnyStatementImpl implements Flow_AnyS
         return;
       case EditorPackage.FLOW_ANY_STATEMENT__BBS:
         setBbs((Binding_BalStatement)newValue);
+        return;
+      case EditorPackage.FLOW_ANY_STATEMENT__BAS:
+        setBas((Binding_AnyStatement)newValue);
         return;
       case EditorPackage.FLOW_ANY_STATEMENT__BE2:
         setBe2((ButExpr)newValue);
@@ -900,6 +966,9 @@ public class Flow_AnyStatementImpl extends AnyStatementImpl implements Flow_AnyS
       case EditorPackage.FLOW_ANY_STATEMENT__BBS:
         setBbs((Binding_BalStatement)null);
         return;
+      case EditorPackage.FLOW_ANY_STATEMENT__BAS:
+        setBas((Binding_AnyStatement)null);
+        return;
       case EditorPackage.FLOW_ANY_STATEMENT__BE2:
         setBe2((ButExpr)null);
         return;
@@ -945,6 +1014,8 @@ public class Flow_AnyStatementImpl extends AnyStatementImpl implements Flow_AnyS
         return ci != null;
       case EditorPackage.FLOW_ANY_STATEMENT__BBS:
         return bbs != null;
+      case EditorPackage.FLOW_ANY_STATEMENT__BAS:
+        return bas != null;
       case EditorPackage.FLOW_ANY_STATEMENT__BE2:
         return be2 != null;
       case EditorPackage.FLOW_ANY_STATEMENT__APA:

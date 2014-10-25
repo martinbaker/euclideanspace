@@ -30,7 +30,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *
  * @generated
  */
-public class CommaItemImpl extends AnyStatementImpl implements CommaItem
+public class CommaItemImpl extends enlister1_CommaItem_CommaImpl implements CommaItem
 {
   /**
    * The cached value of the '{@link #getCi() <em>Ci</em>}' containment reference list.

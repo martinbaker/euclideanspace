@@ -30,7 +30,7 @@
   <eClassifiers xsi:type="ecore:EClass" name="Sig" eSuperTypes="#//MacroBody"/>
   <eClassifiers xsi:type="ecore:EClass" name="DeclPart"/>
   <eClassifiers xsi:type="ecore:EClass" name="Comma"/>
-  <eClassifiers xsi:type="ecore:EClass" name="CommaItem" eSuperTypes="#//AnyStatement #//enlister1_CommaItem_Comma">
+  <eClassifiers xsi:type="ecore:EClass" name="CommaItem" eSuperTypes="#//enlister1_CommaItem_Comma">
     <eStructuralFeatures xsi:type="ecore:EReference" name="ci" upperBound="-1" eType="#//CommaItem"
         containment="true"/>
   </eClassifiers>
@@ -75,10 +75,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="BindingR_InfixedExprsDecl_AnyStatement"
       eSuperTypes="#//DeclBinding"/>
-  <eClassifiers xsi:type="ecore:EClass" name="AnyStatement">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="bas" eType="#//Binding_AnyStatement"
-        containment="true"/>
-  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AnyStatement"/>
   <eClassifiers xsi:type="ecore:EClass" name="BalStatement"/>
   <eClassifiers xsi:type="ecore:EClass" name="Flow_AnyStatement" eSuperTypes="#//AnyStatement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="c" eType="#//Collection"
@@ -89,6 +86,8 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="ci" eType="#//CommaItem"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="bbs" eType="#//Binding_BalStatement"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="bas" eType="#//Binding_AnyStatement"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="be2" eType="#//ButExpr"
         containment="true"/>
@@ -176,7 +175,12 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="ie" upperBound="-1" eType="#//InfixedExpr"
         containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Expr" eSuperTypes="#//InfixedExpr #//Type"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Expr" eSuperTypes="#//InfixedExpr #//Type">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="op6" unique="false" upperBound="-1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="right" eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EObject"
+        containment="true"/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Type" eSuperTypes="#//DeclPart"/>
   <eClassifiers xsi:type="ecore:EClass" name="QualTail"/>
   <eClassifiers xsi:type="ecore:EClass" name="OpQualTail">
@@ -381,69 +385,47 @@
   <eClassifiers xsi:type="ecore:EClass" name="E3" eSuperTypes="#//Expr">
     <eStructuralFeatures xsi:type="ecore:EReference" name="left" eType="#//Expr" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="op" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="right" eType="#//Expr"
-        containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="E4" eSuperTypes="#//Expr">
     <eStructuralFeatures xsi:type="ecore:EReference" name="left" eType="#//Expr" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="op" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="right" eType="#//Expr"
-        containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="E5" eSuperTypes="#//Expr">
     <eStructuralFeatures xsi:type="ecore:EReference" name="left" eType="#//Expr" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="op" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="right" eType="#//Expr"
-        containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="E6" eSuperTypes="#//Expr">
     <eStructuralFeatures xsi:type="ecore:EReference" name="left" eType="#//Expr" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="op" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="right" eType="#//Expr"
-        containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="E7" eSuperTypes="#//Expr">
     <eStructuralFeatures xsi:type="ecore:EReference" name="left" eType="#//Expr" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="op" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="right" eType="#//Expr"
-        containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="E8" eSuperTypes="#//Expr">
     <eStructuralFeatures xsi:type="ecore:EReference" name="left" eType="#//Expr" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="op" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="right" eType="#//Expr"
-        containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="E9" eSuperTypes="#//Expr">
     <eStructuralFeatures xsi:type="ecore:EReference" name="left" eType="#//Expr" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="op" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="right" eType="#//Expr"
-        containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="E11_E12" eSuperTypes="#//Expr">
     <eStructuralFeatures xsi:type="ecore:EReference" name="left" eType="#//Expr" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="op" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="right" eType="#//Expr"
-        containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="E11_Op" eSuperTypes="#//Expr">
     <eStructuralFeatures xsi:type="ecore:EReference" name="left" eType="#//Expr" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="op" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="right" eType="#//Expr"
-        containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="E12" eSuperTypes="#//Expr">
     <eStructuralFeatures xsi:type="ecore:EReference" name="left" eType="#//Expr" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="op" eType="#//ArrowOp"
         containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="right" eType="#//Expr"
-        containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="E13" eSuperTypes="#//Expr">
     <eStructuralFeatures xsi:type="ecore:EReference" name="left" eType="#//Expr" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="op" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="right" eType="#//QualTail"
-        containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ArrowTok" eSuperTypes="#//UnqualOp_ArrowTok"/>
   <eClassifiers xsi:type="ecore:EClass" name="LatticeTok" eSuperTypes="#//UnqualOp_LatticeTok"/>

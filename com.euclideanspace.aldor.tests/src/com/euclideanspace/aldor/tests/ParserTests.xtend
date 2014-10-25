@@ -130,38 +130,38 @@ class ParserTests {
 /////// Statements ////////////////
 
 	@Test def void testPreComment1() {
-		'''++ pre comment
+		'''+++ pre comment
 		a'''.parse.assertNoErrors
 	}
 
 	@Test def void testPreComment2() {
 		'''{
-		   ++ pre comment
+		   +++ pre comment
 		   a
 		   }'''.parse.assertNoErrors
 	}
 
 	@Test def void testPostComment1() {
 		'''a
-		-- post comment'''.parse.assertNoErrors
+		++ post comment'''.parse.assertNoErrors
 	}
 
 	@Test def void testPostComment2() {
 		'''a;
-		-- post comment after semicolon'''.parse.assertNoErrors
+		++ post comment after semicolon'''.parse.assertNoErrors
 	}
 
 	@Test def void testPostComment3() {
 		'''{
 		   a
-		   -- post comment
+		   ++ post comment
 		   }'''.parse.assertNoErrors
 	}
 
 	@Test def void testPostComment4() {
 		'''{
 		   a;
-		   -- post comment after semicolon
+		   ++ post comment after semicolon
 		   }'''.parse.assertNoErrors
 	}
 
@@ -181,11 +181,27 @@ class ParserTests {
 		'''if a then b else c'''.parse.assertNoErrors
 	}
 
+    /**
+     * make sure semicolon is not inserted before 'then'
+     * (CustomLexer inserts ';' after '}' if allowed)
+     */
 	@Test def void testIfThenElse2() {
+		'''if {a} then b else c'''.parse.assertNoErrors
+	}
+
+    /**
+     * make sure semicolon is not inserted before 'else'
+     * (CustomLexer inserts ';' after '}' if allowed)
+     */
+	@Test def void testIfThenElse3() {
+		'''if a then {b} else c'''.parse.assertNoErrors
+	}
+
+	@Test def void testIfThenElse4() {
 		'''if a then b else {c}'''.parse.assertNoErrors
 	}
 
-	@Test def void testIfThenElse3() {
+	@Test def void testIfThenElse5() {
 		'''if a then b else if c then d else e'''.parse.assertNoErrors
 	}
 
@@ -198,11 +214,11 @@ class ParserTests {
 	}
 
 	@Test def void testTry1() {
-		'''try a but b c'''.parse.assertNoErrors
+		'''try a but b in c d'''.parse.assertNoErrors
 	}
 
 	@Test def void testTry2() {
-		'''try a catch b c'''.parse.assertNoErrors
+		'''try a catch b in c d'''.parse.assertNoErrors
 	}
 
 	@Test def void testSelect() {

@@ -20,7 +20,7 @@ import org.eclipse.emf.common.util.EList;
  * @model
  * @generated
  */
-public interface CommaItem extends AnyStatement, enlister1_CommaItem_Comma
+public interface CommaItem extends enlister1_CommaItem_Comma
 {
   /**
    * Returns the value of the '<em><b>Ci</b></em>' containment reference list.

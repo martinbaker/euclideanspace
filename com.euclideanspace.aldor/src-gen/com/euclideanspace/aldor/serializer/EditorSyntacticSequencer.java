@@ -102,7 +102,7 @@ public class EditorSyntacticSequencer extends AbstractSyntacticSequencer {
 	}
 	
 	/**
-	 * ArrowTok hidden(WS,KW_NEWLINE): KW_RARROW | KW_LARROW | KW_MAPSTAR ;
+	 * ArrowTok hidden(WS,KW_NEWLINE,TK_COMMENT): KW_RARROW | KW_LARROW | KW_MAPSTAR ;
 	 */
 	protected String getArrowTokToken(EObject semanticObject, RuleCall ruleCall, INode node) {
 		if (node != null)
@@ -273,7 +273,7 @@ public class EditorSyntacticSequencer extends AbstractSyntacticSequencer {
 	}
 	
 	/**
-	 * LatticeTok hidden(WS,KW_NEWLINE): KW_VEE | KW_WEDGE ;
+	 * LatticeTok hidden(WS,KW_NEWLINE,TK_COMMENT): KW_VEE | KW_WEDGE ;
 	 */
 	protected String getLatticeTokToken(EObject semanticObject, RuleCall ruleCall, INode node) {
 		if (node != null)
@@ -282,7 +282,7 @@ public class EditorSyntacticSequencer extends AbstractSyntacticSequencer {
 	}
 	
 	/**
-	 * PlusTok hidden(WS,KW_NEWLINE): KW_PLUS | KW_MINUS | KW_PLUSMINUS ;
+	 * PlusTok hidden(WS,KW_NEWLINE,TK_COMMENT): KW_PLUS | KW_MINUS | KW_PLUSMINUS ;
 	 */
 	protected String getPlusTokToken(EObject semanticObject, RuleCall ruleCall, INode node) {
 		if (node != null)
@@ -291,7 +291,7 @@ public class EditorSyntacticSequencer extends AbstractSyntacticSequencer {
 	}
 	
 	/**
-	 * PowerTok hidden(WS,KW_NEWLINE): KW_2STAR | KW_HAT ;
+	 * PowerTok hidden(WS,KW_NEWLINE,TK_COMMENT): KW_2STAR | KW_HAT ;
 	 */
 	protected String getPowerTokToken(EObject semanticObject, RuleCall ruleCall, INode node) {
 		if (node != null)
@@ -300,7 +300,7 @@ public class EditorSyntacticSequencer extends AbstractSyntacticSequencer {
 	}
 	
 	/**
-	 * QuotientTok hidden(WS,KW_NEWLINE):'mod' | 'quo' | 'rem' | 'exquo' ;
+	 * QuotientTok hidden(WS,KW_NEWLINE,TK_COMMENT):'mod' | 'quo' | 'rem' | 'exquo' ;
 	 */
 	protected String getQuotientTokToken(EObject semanticObject, RuleCall ruleCall, INode node) {
 		if (node != null)
@@ -309,7 +309,7 @@ public class EditorSyntacticSequencer extends AbstractSyntacticSequencer {
 	}
 	
 	/**
-	 * RelationTok hidden(WS,KW_NEWLINE):KW_EQ | KW_TILDEE | KW_HATE |
+	 * RelationTok hidden(WS,KW_NEWLINE,TK_COMMENT):KW_EQ | KW_TILDEE | KW_HATE |
 	 * KW_GE | KW_GT | KW_2GT |
 	 * KW_LE | KW_LT | KW_2LT |
 	 * 'is' | 'isnt' | 'case' ;
@@ -321,7 +321,7 @@ public class EditorSyntacticSequencer extends AbstractSyntacticSequencer {
 	}
 	
 	/**
-	 * SegTok hidden(WS,KW_NEWLINE): KW_2DOT | 'by' ;
+	 * SegTok hidden(WS,KW_NEWLINE,TK_COMMENT): KW_2DOT | 'by' ;
 	 */
 	protected String getSegTokToken(EObject semanticObject, RuleCall ruleCall, INode node) {
 		if (node != null)
@@ -330,7 +330,7 @@ public class EditorSyntacticSequencer extends AbstractSyntacticSequencer {
 	}
 	
 	/**
-	 * TimesTok hidden(WS,KW_NEWLINE): KW_STAR | KW_SLASH | KW_BACKSLASH ;
+	 * TimesTok hidden(WS,KW_NEWLINE,TK_COMMENT): KW_STAR | KW_SLASH | KW_BACKSLASH ;
 	 */
 	protected String getTimesTokToken(EObject semanticObject, RuleCall ruleCall, INode node) {
 		if (node != null)

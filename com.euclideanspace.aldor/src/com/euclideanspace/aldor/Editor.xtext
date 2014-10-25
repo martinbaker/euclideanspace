@@ -23,7 +23,9 @@ generate editor "http://www.euclideanspace.com/aldor/Editor"
  */
 
 /*
- *
+ * This is based on Aldor parser here:
+ * https://github.com/pippijn/aldor/blob/master/aldor/aldor/src/axl.z
+ * 
  * Here we are using a LL(*) recursive-descent parser generator and this
  * may not be able to exactly replicate axl.z which is a
  * LALR(1) conflict-free grammar for Aldor.
@@ -43,7 +45,7 @@ generate editor "http://www.euclideanspace.com/aldor/Editor"
  * support here.
  * 
  */
-Model hidden(WS,KW_NEWLINE):
+Model hidden(WS,KW_NEWLINE,TK_COMMENT):
   ('#include' insert+=TK_STRING)*
   cc=CurlyContents_Labeled
 ;
@@ -87,14 +89,15 @@ terminal KW_NEWLINE: ('\r'|'\n') ;
     {TK_POSTDOC, 0,"TK_POSTDOC", 1, 1, 0, 0, 0, 0, 1, 0, 170, 0},
     {TK_COMMENT, 0,"TK_COMMENT", 1, 1, 0, 0, 0, 0, 1, 0, 170, 0},
  */
-//terminal TK_COMMENT :
-//  ('--'|'++') !('\n'|'\r')* ;//('\r'|'\n')?;
+
+terminal TK_COMMENT :
+  ('--') !('\n'|'\r')* ;
 
 terminal TK_PREDOC :
-  ('--') !('\n'|'\r')* ;//('\r'|'\n')?;
+  ('+++') !('\n'|'\r')* ;
 
 terminal TK_POSTDOC :
-  ('++') !('\n'|'\r')* ;//('\r'|'\n')?;
+  ('++') !('\n'|'\r')* ;
   
 
 /* string literals are enclosed in double quotes
@@ -368,11 +371,11 @@ terminal ANY_OTHER: .;
 /* error seems to be defined externally in Aldor grammar
  * so I have added this rule so it will compile
  */
-error hidden(WS,KW_NEWLINE):
+error hidden(WS,KW_NEWLINE,TK_COMMENT):
 	'error'
 ;
 
-Expression hidden(WS,KW_NEWLINE):
+Expression hidden(WS,KW_NEWLINE,TK_COMMENT):
   enlist1a_Labeled_Semicolon_AB
 ;
 
@@ -383,7 +386,7 @@ Expression hidden(WS,KW_NEWLINE):
  * as 'macro','extend','local','free','fluid','default'
  * 'define','fix','inline','import' or 'export'.
  */
-Labeled hidden(WS,KW_NEWLINE):
+Labeled hidden(WS,KW_NEWLINE,TK_COMMENT):
  c=Comma
 | d=Declaration
 | (KW_AT a=Atom lab=Labeled?)
@@ -394,7 +397,7 @@ Labeled hidden(WS,KW_NEWLINE):
  * words: 'macro','extend','local','free','fluid','default'
  * 'define','fix','inline','import' or 'export'.
  */
-Declaration hidden(WS,KW_NEWLINE):
+Declaration hidden(WS,KW_NEWLINE,TK_COMMENT):
  {DeclarationMacro}'macro' mb=MacroBody
 | {DeclarationExtend}'extend' si=Sig
 | {DeclarationLocal}'local' si=Sig
@@ -408,34 +411,34 @@ Declaration hidden(WS,KW_NEWLINE):
 | {DeclarationExport} ed=ExportDecl
 ;
 
-ExportDecl hidden(WS,KW_NEWLINE):
+ExportDecl hidden(WS,KW_NEWLINE,TK_COMMENT):
 	{ExportDecl}
 'export' s=Sig?
 | =>('export' s=Sig? tp=ToPart)
 | =>('export' s=Sig? fp=FromPart)
 ;
 
-ToPart hidden(WS,KW_NEWLINE):
+ToPart hidden(WS,KW_NEWLINE,TK_COMMENT):
  'to' Infixed
 ;
 
-FromPart hidden(WS,KW_NEWLINE):
+FromPart hidden(WS,KW_NEWLINE,TK_COMMENT):
  'from' enlist1_Infixed_Comma_AB
 ;
 
-MacroBody hidden(WS,KW_NEWLINE):
+MacroBody hidden(WS,KW_NEWLINE,TK_COMMENT):
 Sig
 | ExportDecl
 | 'import' Sig fp=FromPart?
 ;
 
-Sig hidden(WS,KW_NEWLINE):
+Sig hidden(WS,KW_NEWLINE,TK_COMMENT):
  DeclBinding
 | Block
 ;
 
 /* declare type with ':' or ':*' */
-DeclPart hidden(WS,KW_NEWLINE):
+DeclPart hidden(WS,KW_NEWLINE,TK_COMMENT):
  KW_COLON Type
 | KW_COLONSTAR Type
 ;
@@ -443,26 +446,26 @@ DeclPart hidden(WS,KW_NEWLINE):
 /*
  * CommaItem (',' CommaItem)*
  */
-Comma hidden(WS,KW_NEWLINE):
+Comma hidden(WS,KW_NEWLINE,TK_COMMENT):
   enlist1_CommaItem_Comma_AB
 ;
 
-CommaItem hidden(WS,KW_NEWLINE):
+CommaItem hidden(WS,KW_NEWLINE,TK_COMMENT):
  Binding_AnyStatement =>('where' ci+=CommaItem)*
 ;
 
 /*
  * DeclBinding
  */
-DeclBinding hidden(WS,KW_NEWLINE):
+DeclBinding hidden(WS,KW_NEWLINE,TK_COMMENT):
   BindingR_InfixedExprsDecl_AnyStatement
 ;
 
-InfixedExprsDecl hidden(WS,KW_NEWLINE):
+InfixedExprsDecl hidden(WS,KW_NEWLINE,TK_COMMENT):
  InfixedExprs dp+=DeclPart*
 ;
 
-InfixedExprs hidden(WS,KW_NEWLINE):
+InfixedExprs hidden(WS,KW_NEWLINE,TK_COMMENT):
  enlist1_InfixedExpr_Comma_AB
 ;
 
@@ -479,34 +482,34 @@ InfixedExprs hidden(WS,KW_NEWLINE):
  * : BindingL(Infixed,E)
  * ;
  */
-Binding_AnyStatement hidden(WS,KW_NEWLINE):
+Binding_AnyStatement hidden(WS,KW_NEWLINE,TK_COMMENT):
   BindingL_Infixed_AnyStatement
 ;
 
-Binding_BalStatement hidden(WS,KW_NEWLINE):
+Binding_BalStatement hidden(WS,KW_NEWLINE,TK_COMMENT):
   BindingL_Infixed_BalStatement
 ;
 
-Binding_Collection hidden(WS,KW_NEWLINE):
+Binding_Collection hidden(WS,KW_NEWLINE,TK_COMMENT):
   BindingL_Infixed_Collection
 ;
 
  /* This rule allows any statement or new: Assign, Define or Lambda 
   */
-BindingL_Infixed_AnyStatement hidden(WS,KW_NEWLINE):
+BindingL_Infixed_AnyStatement hidden(WS,KW_NEWLINE,TK_COMMENT):
  =>(lft=Infixed
       op=(KW_ASSIGN|KW_2EQ|KW_MARROW|KW_MAPSTO|KW_MAPSTOSTAR) bia=BindingL_Infixed_AnyStatement)
  |
  bas9=AnyStatement
 ;
 
-BindingL_Infixed_BalStatement hidden(WS,KW_NEWLINE):
+BindingL_Infixed_BalStatement hidden(WS,KW_NEWLINE,TK_COMMENT):
  =>(lft=Infixed op=(KW_ASSIGN|KW_2EQ|KW_MARROW|KW_MAPSTO|KW_MAPSTOSTAR) bia=BindingL_Infixed_BalStatement)
  |
  bas9=BalStatement
 ;
 
-BindingL_Infixed_Collection hidden(WS,KW_NEWLINE):
+BindingL_Infixed_Collection hidden(WS,KW_NEWLINE,TK_COMMENT):
  =>(lft=Infixed op=(KW_ASSIGN|KW_2EQ|KW_MARROW|KW_MAPSTO|KW_MAPSTOSTAR) bia=BindingL_Infixed_Collection)
  |
  bas9=Collection
@@ -528,7 +531,7 @@ BindingL_Infixed_Collection hidden(WS,KW_NEWLINE):
  * { $$ = abNewPLambda(APOS($1),$1,abZip,$3); }
  * ;
  */
-//BindingR_InfixedExprsDecl_AnyStatement hidden(WS,KW_NEWLINE):
+//BindingR_InfixedExprsDecl_AnyStatement hidden(WS,KW_NEWLINE,TK_COMMENT):
 // InfixedExprsDecl
 //| => (InfixedExprsDecl 'assign' bas=Binding_AnyStatement)
 //| => (InfixedExprsDecl KW_2EQ bas=Binding_AnyStatement)
@@ -536,7 +539,7 @@ BindingL_Infixed_Collection hidden(WS,KW_NEWLINE):
 //| => (InfixedExprsDecl KW_MAPSTO bas=Binding_AnyStatement)
 //| => (InfixedExprsDecl KW_MAPSTOSTAR bas=Binding_AnyStatement)
 //;
-BindingR_InfixedExprsDecl_AnyStatement hidden(WS,KW_NEWLINE):
+BindingR_InfixedExprsDecl_AnyStatement hidden(WS,KW_NEWLINE,TK_COMMENT):
  InfixedExprsDecl (
    (KW_ASSIGN|KW_2EQ|KW_MARROW|KW_MAPSTO|KW_MAPSTOSTAR)
      bas=Binding_AnyStatement)?
@@ -546,16 +549,19 @@ BindingR_InfixedExprsDecl_AnyStatement hidden(WS,KW_NEWLINE):
  * Statements
  *
  * It is easier to spot conflicts when explicitly handling dangling else.
+ * 
+ * 'else' is only contained in Flow_* rule which has its own 'if'. So
+ * this rule stops else working
  */
-AnyStatement hidden(WS,KW_NEWLINE):
- =>('if' CommaItem 'then' bas=Binding_AnyStatement)
-  |
+AnyStatement hidden(WS,KW_NEWLINE,TK_COMMENT):
+ //=>('if' CommaItem 'then' bas=Binding_AnyStatement)
+ // |
   Flow_AnyStatement
 ;
 
 /* 
  */
-BalStatement hidden(WS,KW_NEWLINE):
+BalStatement hidden(WS,KW_NEWLINE,TK_COMMENT):
  Flow_BalStatement
 ;
 
@@ -605,9 +611,9 @@ Flow(XX) -> Flow_AnyStatement or Flow_BalStatement
 //{ $$ = abNewNever(TPOS($1)); }
 //;
 */
-Flow_AnyStatement hidden(WS,KW_NEWLINE):
+Flow_AnyStatement hidden(WS,KW_NEWLINE,TK_COMMENT):
  (c=Collection (st='implies' bas2=Binding_AnyStatement)?) // '.... for' or 'while ....'
-| (st='if' ci=CommaItem 'then' bbs=Binding_BalStatement =>'else' bas=Binding_AnyStatement)
+| (st='if' ci=CommaItem 'then' bbs=Binding_BalStatement (=>'else' bas=Binding_AnyStatement)?)
 | =>(Iterators st='repeat' bas3=Binding_AnyStatement) // 'for .... in' or 'while ....'
 | (st='repeat' bas=Binding_AnyStatement)
 | (st='try' bas=Binding_AnyStatement ('but'|'catch') be2=ButExpr apa=AlwaysPart_AnyStatement)
@@ -628,9 +634,9 @@ Flow_AnyStatement hidden(WS,KW_NEWLINE):
 ;
 
 /*  */
-Flow_BalStatement hidden(WS,KW_NEWLINE):
+Flow_BalStatement hidden(WS,KW_NEWLINE,TK_COMMENT):
 	(c2=Collection (st2='implies' bbs3=Binding_BalStatement)?) // '.... for' or 'while ....'
-| (st2='if' ci2=CommaItem 'then' bbs4+=Binding_BalStatement =>'else' bbs4+=Binding_BalStatement)
+| (st2='if' ci2=CommaItem 'then' bbs4+=Binding_BalStatement (=>'else' bbs4+=Binding_BalStatement)?)
 | => (Iterators st2='repeat' bbs3=Binding_BalStatement) // 'for .... in' or 'while ....'
 | (st2='repeat' bbs5=Binding_BalStatement)
 | (st2='try' bbs2=Binding_AnyStatement ('but'|'catch') be=ButExpr apb=AlwaysPart_BalStatement)
@@ -650,17 +656,17 @@ Flow_BalStatement hidden(WS,KW_NEWLINE):
 | (st2='never')
 ;
 
-GenBound hidden(WS,KW_NEWLINE):
+GenBound hidden(WS,KW_NEWLINE,TK_COMMENT):
 	{GenBound}
   ('to' ci=CommaItem 'of')?
 ;
 
-ButExpr hidden(WS,KW_NEWLINE):
+ButExpr hidden(WS,KW_NEWLINE,TK_COMMENT):
 	{ButExpr}
   (db=DeclBinding 'in' ca=Cases)?
 ;
 
-Cases hidden(WS,KW_NEWLINE):
+Cases hidden(WS,KW_NEWLINE,TK_COMMENT):
  Binding_Collection
 ;
 
@@ -675,13 +681,13 @@ Cases hidden(WS,KW_NEWLINE):
 * | Nothing
 //;
 */
-AlwaysPart_AnyStatement hidden(WS,KW_NEWLINE):
+AlwaysPart_AnyStatement hidden(WS,KW_NEWLINE,TK_COMMENT):
 	{AlwaysPart_AnyStatement}
  ('always' bas7=Binding_AnyStatement
 | 'finally' bas7=Binding_AnyStatement)?
 ;
 
-AlwaysPart_BalStatement hidden(WS,KW_NEWLINE):
+AlwaysPart_BalStatement hidden(WS,KW_NEWLINE,TK_COMMENT):
 	{AlwaysPart_BalStatement}
 ( 'always' bas7=Binding_BalStatement
 | 'finally' bas7=Binding_BalStatement)?
@@ -692,32 +698,32 @@ AlwaysPart_BalStatement hidden(WS,KW_NEWLINE):
  * .... for .... in .... | ....
  * while ....
  */
-Collection hidden(WS,KW_NEWLINE):
+Collection hidden(WS,KW_NEWLINE,TK_COMMENT):
  Infixed i3=Iterators // iterators allow for zero cases
 ;
 
 /* Zero or more iterators: for....in or while.... */
-Iterators hidden(WS,KW_NEWLINE):
+Iterators hidden(WS,KW_NEWLINE,TK_COMMENT):
  Iterators1
 ;
 
 /* Zero or more iterators: for....in or while.... */
-Iterators1 hidden(WS,KW_NEWLINE):
+Iterators1 hidden(WS,KW_NEWLINE,TK_COMMENT):
 	{Iterators1}
   itr += Iterator*
 ;
 
 /* Iterator: for....in or while.... */
-Iterator hidden(WS,KW_NEWLINE):
+Iterator hidden(WS,KW_NEWLINE,TK_COMMENT):
 ('for' ForLhs 'in' i=Infixed sp=SuchthatPart?)
 | ('while' i=Infixed)
 ;
 
-ForLhs hidden(WS,KW_NEWLINE):
+ForLhs hidden(WS,KW_NEWLINE,TK_COMMENT):
   ('free'|'local'|'fluid')? Infixed
 ;
 
-SuchthatPart hidden(WS,KW_NEWLINE):
+SuchthatPart hidden(WS,KW_NEWLINE,TK_COMMENT):
  KW_BAR Infixed
 ;
 
@@ -728,7 +734,7 @@ SuchthatPart hidden(WS,KW_NEWLINE):
  * or a typed expression
  * or a block (CurlyContents_Labeled inside curly brackets)
  */
-Infixed hidden(WS,KW_NEWLINE):
+Infixed hidden(WS,KW_NEWLINE,TK_COMMENT):
  (ifx=InfixedExpr dp=DeclPart?)
  |
   b=Block
@@ -737,7 +743,7 @@ Infixed hidden(WS,KW_NEWLINE):
 /*
  * if we enable 'returns Expr' then 'E11_E12' replaces id in AST
  */
-InfixedExpr /*returns Expr*/ hidden(WS,KW_NEWLINE):
+InfixedExpr /*returns Expr*/ hidden(WS,KW_NEWLINE,TK_COMMENT):
  E11_Op // prefix operation
 | => E3 // infix operation
 ;
@@ -746,7 +752,7 @@ InfixedExpr /*returns Expr*/ hidden(WS,KW_NEWLINE):
  * 'and','or' logic operators
  * need to allow a 'qualified op', that is an operation followed by '$' and a type
  */
-E3 returns Expr hidden(WS,KW_NEWLINE):
+E3 returns Expr hidden(WS,KW_NEWLINE,TK_COMMENT):
   E4 ({E3.left=current} op=('and'|'or'|LatticeTok /*QualOp_LatticeTok*/) right=E4)*
 ;
 
@@ -756,7 +762,7 @@ E3 returns Expr hidden(WS,KW_NEWLINE):
  * 
  * need to allow a 'qualified op', that is an operation followed by '$' and a type
  */
-E4 returns Expr hidden(WS,KW_NEWLINE):
+E4 returns Expr hidden(WS,KW_NEWLINE,TK_COMMENT):
  (E5 ({E4.left=current}op=('has'|RelationTok /*RelationOp*/) right=E5)*)
 //| (RelationOp {E4.left=current} right+=E5)
 ;
@@ -767,7 +773,7 @@ E4 returns Expr hidden(WS,KW_NEWLINE):
  * 
  * need to allow a 'qualified op', that is an operation followed by '$' and a type
  */
-E5 returns Expr hidden(WS,KW_NEWLINE):
+E5 returns Expr hidden(WS,KW_NEWLINE,TK_COMMENT):
 //=>
   (E6 ({E5.left=current}op=SegTok /*SegOp*/ right=E6)*)
 //| (left=E6 {E5.left=current} op5+=SegOp)
@@ -779,9 +785,9 @@ E5 returns Expr hidden(WS,KW_NEWLINE):
  * 
  * need to allow a 'qualified op', that is an operation followed by '$' and a type
  */
-E6 returns Expr hidden(WS,KW_NEWLINE):
+E6 returns Expr hidden(WS,KW_NEWLINE,TK_COMMENT):
  (E7 ({E6.left=current}op=PlusTok /*PlusOp*/ right=E7)*)
-//| (op6+=PlusOp right=E7)
+ | (op6+=PlusTok right=E7 {E6.left=current})
 ;
 
 /*
@@ -789,7 +795,7 @@ E6 returns Expr hidden(WS,KW_NEWLINE):
  * 
  * need to allow a 'qualified op', that is an operation followed by '$' and a type
  */
-E7 returns Expr hidden(WS,KW_NEWLINE):
+E7 returns Expr hidden(WS,KW_NEWLINE,TK_COMMENT):
  E8 ({E7.left=current}op=QuotientTok /*QuotientOp*/ right=E8)*
 ;
 
@@ -798,7 +804,7 @@ E7 returns Expr hidden(WS,KW_NEWLINE):
  * 
  * need to allow a 'qualified op', that is an operation followed by '$' and a type
  */
-E8 returns Expr hidden(WS,KW_NEWLINE):
+E8 returns Expr hidden(WS,KW_NEWLINE,TK_COMMENT):
  E9 ({E8.left=current}op=TimesTok /*TimesOp*/ right=E9)*
 ;
 
@@ -807,14 +813,14 @@ E8 returns Expr hidden(WS,KW_NEWLINE):
  * 
  * need to allow a 'qualified op', that is an operation followed by '$' and a type
  */
-E9 returns Expr hidden(WS,KW_NEWLINE):
+E9 returns Expr hidden(WS,KW_NEWLINE,TK_COMMENT):
  E11_E12 ({E9.left=current}op=PowerTok /*PowerOp*/ right=E11_E12)*
 ;
  
 /*
  * This version of E11 is used in the middle of the precedence stack
  */
-E11_E12 returns Expr hidden(WS,KW_NEWLINE):
+E11_E12 returns Expr hidden(WS,KW_NEWLINE,TK_COMMENT):
 	(E12 ({E11_E12.left=current}(op=KW_2COLON|op=KW_AT|op='pretend') right=E12)*)
 ;
 
@@ -824,7 +830,7 @@ E11_E12 returns Expr hidden(WS,KW_NEWLINE):
  * This version of E11 is used at the top of the precedence stack in
  * 'InfixedExpr'
  */
-E11_Op returns Expr hidden(WS,KW_NEWLINE):
+E11_Op returns Expr hidden(WS,KW_NEWLINE,TK_COMMENT):
 	(Op ({E11_Op.left=current}(op=KW_2COLON|op=KW_AT|op='pretend') right=E12)*)
 ;
 
@@ -832,27 +838,27 @@ E11_Op returns Expr hidden(WS,KW_NEWLINE):
  * use this rule when we know it is a type.
  * That is in 'DeclPart' where it follows '$'
  */
-Type hidden(WS,KW_NEWLINE):
+Type hidden(WS,KW_NEWLINE,TK_COMMENT):
 	E11_E12
 ;
 
-E12 returns Expr hidden(WS,KW_NEWLINE):
+E12 returns Expr hidden(WS,KW_NEWLINE,TK_COMMENT):
   (E13 ({E12.left=current}op=ArrowOp right=E13)*)
 ;
 
-E13 returns Expr hidden(WS,KW_NEWLINE):
+E13 returns Expr hidden(WS,KW_NEWLINE,TK_COMMENT):
   (E14 ({E13.left=current}op=KW_DOLLAR right=QualTail)*)
 ;
 
-QualTail hidden(WS,KW_NEWLINE):
+QualTail hidden(WS,KW_NEWLINE,TK_COMMENT):
  LeftJuxtaposed =>(KW_DOLLAR qt=QualTail)?
 ;
 
-OpQualTail hidden(WS,KW_NEWLINE):
+OpQualTail hidden(WS,KW_NEWLINE,TK_COMMENT):
  nam=Molecule => (KW_DOLLAR OpQualTail)?
 ;
 
-E14 hidden(WS,KW_NEWLINE):
+E14 hidden(WS,KW_NEWLINE,TK_COMMENT):
  => (e15left=E15? op='with' dm=DeclMolecule)
 | => (e15left=E15? op='add' dm=DeclMolecule)
 | => (e15left=E15 op='except' e15right=E15)
@@ -860,14 +866,14 @@ E14 hidden(WS,KW_NEWLINE):
 | e15left=E15
 ;
 
-E15 hidden(WS,KW_NEWLINE):
+E15 hidden(WS,KW_NEWLINE,TK_COMMENT):
   Application
 ;
 
 /*
  * Infixed Operations
  */
-Op hidden(WS,KW_NEWLINE):
+Op hidden(WS,KW_NEWLINE,TK_COMMENT):
  {Op}aop=ArrowOp
 | {Op}aop=LatticeOp
 | {Op}aop=RelationOp
@@ -878,7 +884,7 @@ Op hidden(WS,KW_NEWLINE):
 | {Op}aop=PowerOp
 ;
 
-NakedOp hidden(WS,KW_NEWLINE):
+NakedOp hidden(WS,KW_NEWLINE,TK_COMMENT):
  UnqualOp_ArrowTok
 | UnqualOp_LatticeTok
 | UnqualOp_RelationTok
@@ -889,34 +895,34 @@ NakedOp hidden(WS,KW_NEWLINE):
 | UnqualOp_PowerTok
 ;
 
-ArrowOp hidden(WS,KW_NEWLINE): QualOp_ArrowTok;
-LatticeOp hidden(WS,KW_NEWLINE): QualOp_LatticeTok;
-RelationOp hidden(WS,KW_NEWLINE): QualOp_RelationTok;
-SegOp hidden(WS,KW_NEWLINE): QualOp_SegTok;
-PlusOp hidden(WS,KW_NEWLINE): QualOp_PlusTok;
-QuotientOp hidden(WS,KW_NEWLINE): QualOp_QuotientTok;
-TimesOp hidden(WS,KW_NEWLINE): QualOp_TimesTok;
-PowerOp hidden(WS,KW_NEWLINE): QualOp_PowerTok;
+ArrowOp hidden(WS,KW_NEWLINE,TK_COMMENT): QualOp_ArrowTok;
+LatticeOp hidden(WS,KW_NEWLINE,TK_COMMENT): QualOp_LatticeTok;
+RelationOp hidden(WS,KW_NEWLINE,TK_COMMENT): QualOp_RelationTok;
+SegOp hidden(WS,KW_NEWLINE,TK_COMMENT): QualOp_SegTok;
+PlusOp hidden(WS,KW_NEWLINE,TK_COMMENT): QualOp_PlusTok;
+QuotientOp hidden(WS,KW_NEWLINE,TK_COMMENT): QualOp_QuotientTok;
+TimesOp hidden(WS,KW_NEWLINE,TK_COMMENT): QualOp_TimesTok;
+PowerOp hidden(WS,KW_NEWLINE,TK_COMMENT): QualOp_PowerTok;
 
 /* in Aldor grammar this is ArrowTok<tok> */
-ArrowTok hidden(WS,KW_NEWLINE): KW_RARROW | KW_LARROW | KW_MAPSTAR ;
+ArrowTok hidden(WS,KW_NEWLINE,TK_COMMENT): KW_RARROW | KW_LARROW | KW_MAPSTAR ;
 /* in Aldor grammar this is LatticeTok<tok> */
-LatticeTok hidden(WS,KW_NEWLINE): KW_VEE | KW_WEDGE ;
+LatticeTok hidden(WS,KW_NEWLINE,TK_COMMENT): KW_VEE | KW_WEDGE ;
 /* in Aldor grammar this is RelationTok<tok> */
-RelationTok hidden(WS,KW_NEWLINE):KW_EQ | KW_TILDEE | KW_HATE |
+RelationTok hidden(WS,KW_NEWLINE,TK_COMMENT):KW_EQ | KW_TILDEE | KW_HATE |
 KW_GE | KW_GT | KW_2GT |
 KW_LE | KW_LT | KW_2LT |
 'is' | 'isnt' | 'case' ;
 /* in Aldor grammar this is SegTok<tok> */
-SegTok hidden(WS,KW_NEWLINE): KW_2DOT | 'by' ;
+SegTok hidden(WS,KW_NEWLINE,TK_COMMENT): KW_2DOT | 'by' ;
 /* in Aldor grammar this is PlusTok<tok> */
-PlusTok hidden(WS,KW_NEWLINE): KW_PLUS | KW_MINUS | KW_PLUSMINUS ;
+PlusTok hidden(WS,KW_NEWLINE,TK_COMMENT): KW_PLUS | KW_MINUS | KW_PLUSMINUS ;
 /* in Aldor grammar this is QuotientTok<tok> */
-QuotientTok hidden(WS,KW_NEWLINE):'mod' | 'quo' | 'rem' | 'exquo' ;
+QuotientTok hidden(WS,KW_NEWLINE,TK_COMMENT):'mod' | 'quo' | 'rem' | 'exquo' ;
 /* in Aldor grammar this is TimesTok<tok> */
-TimesTok hidden(WS,KW_NEWLINE): KW_STAR | KW_SLASH | KW_BACKSLASH ;
+TimesTok hidden(WS,KW_NEWLINE,TK_COMMENT): KW_STAR | KW_SLASH | KW_BACKSLASH ;
 /* in Aldor grammar this is PowerTok<tok> */
-PowerTok hidden(WS,KW_NEWLINE): KW_2STAR | KW_HAT ;
+PowerTok hidden(WS,KW_NEWLINE,TK_COMMENT): KW_2STAR | KW_HAT ;
 
 /*
  * Function Application
@@ -942,21 +948,21 @@ PowerTok hidden(WS,KW_NEWLINE): KW_2STAR | KW_HAT ;
  *  f(a)(b)(c)   -- is equivalent to (((f(a))(b))(c))
  *
  */
-Application hidden(WS,KW_NEWLINE):
+Application hidden(WS,KW_NEWLINE,TK_COMMENT):
  RightJuxtaposed
 ;
 
 /*
  * implements 'function application' as described above including juxtaposition
  */
-RightJuxtaposed hidden(WS,KW_NEWLINE):
+RightJuxtaposed hidden(WS,KW_NEWLINE,TK_COMMENT):
  Jright_Molecule
 ;
 
 /* Molecule followed by 0 or more BlockEnclosures (bracketed terms)
  * or variants on that theme.
  */
-LeftJuxtaposed hidden(WS,KW_NEWLINE):
+LeftJuxtaposed hidden(WS,KW_NEWLINE,TK_COMMENT):
  Jleft_Molecule
 ;
 
@@ -967,13 +973,13 @@ LeftJuxtaposed hidden(WS,KW_NEWLINE):
  * Jright(H) : Jleft(H) | Jleft(H) Jright(Atom)
  * | 'not' Jright(Atom)
  */
-Jright_Molecule hidden(WS,KW_NEWLINE):
+Jright_Molecule hidden(WS,KW_NEWLINE,TK_COMMENT):
 	(Jleft_Molecule (right=Jright_Atom)?)
 	|
     ('not' right=Jright_Atom)
 ;
 
-Jright_Atom hidden(WS,KW_NEWLINE):
+Jright_Atom hidden(WS,KW_NEWLINE,TK_COMMENT):
 	(Jleft_Atom (right2=Jright_Atom)?)
 	|
 	('not' right2=Jright_Atom)
@@ -993,7 +999,7 @@ Jright_Atom hidden(WS,KW_NEWLINE):
  *              | Jleft(H) BlockEnclosure
  *              | Jleft(H) KW_DOT BlockMolecule ;
  */
-Jleft_Molecule hidden(WS,KW_NEWLINE):
+Jleft_Molecule hidden(WS,KW_NEWLINE,TK_COMMENT):
 ('not' be+=BlockEnclosure)
 | =>(m=Molecule be+=BlockEnclosure*)
 | (m=Molecule (KW_DOT bm+=BlockMolecule)*)
@@ -1011,7 +1017,7 @@ Jleft_Molecule hidden(WS,KW_NEWLINE):
  *              | Jleft(H) BlockEnclosure
  *              | Jleft(H) KW_DOT BlockMolecule ;
  */
-Jleft_Atom hidden(WS,KW_NEWLINE):
+Jleft_Atom hidden(WS,KW_NEWLINE,TK_COMMENT):
 ('not' be+=BlockEnclosure)
 | =>(a=Atom be+=BlockEnclosure*)
 | (a=Atom (KW_DOT bm4+=BlockMolecule)*)
@@ -1020,13 +1026,13 @@ Jleft_Atom hidden(WS,KW_NEWLINE):
 /*
  * Indivisible Expressions
  */
-Molecule hidden(WS,KW_NEWLINE):
+Molecule hidden(WS,KW_NEWLINE,TK_COMMENT):
 =>Atom
 | Enclosure
 ;
 
 /* expression in brackets parenthesis or quotes */
-Enclosure hidden(WS,KW_NEWLINE):
+Enclosure hidden(WS,KW_NEWLINE,TK_COMMENT):
   Parened
   |
   Bracketed
@@ -1038,7 +1044,7 @@ Enclosure hidden(WS,KW_NEWLINE):
  * function application, block or infixed
  * follows 'add' or 'with'
  */
-DeclMolecule hidden(WS,KW_NEWLINE):
+DeclMolecule hidden(WS,KW_NEWLINE,TK_COMMENT):
 	{DeclMolecule}
  a=Application?
 | b=Block
@@ -1047,42 +1053,42 @@ DeclMolecule hidden(WS,KW_NEWLINE):
 /* atom, enclosure: (....),[....],"...." or block {....}
  * Used by Jleft_Molecule and Jleft_Atom
  */
-BlockMolecule hidden(WS,KW_NEWLINE):
+BlockMolecule hidden(WS,KW_NEWLINE,TK_COMMENT):
  Atom
 | Enclosure
 | Block
 ;
 
 /* enclosure: (....),[....],"...." or block {....} */
-BlockEnclosure hidden(WS,KW_NEWLINE):
+BlockEnclosure hidden(WS,KW_NEWLINE,TK_COMMENT):
 Enclosure
 | Block
 ;
 
 /* CurlyContents_Labeled inside curly brackets */
-Block hidden(WS,KW_NEWLINE):
+Block hidden(WS,KW_NEWLINE,TK_COMMENT):
 // Piled(Expression)|
   Curly_Labeled
 ;
 
 /* expression in parenthesis */
-Parened hidden(WS,KW_NEWLINE):
+Parened hidden(WS,KW_NEWLINE,TK_COMMENT):
  op=KW_OPAREN e=Expression? KW_CPAREN
 ;
 
 /* expression in brackets */
-Bracketed hidden(WS,KW_NEWLINE):
+Bracketed hidden(WS,KW_NEWLINE,TK_COMMENT):
  op=KW_OBRACK e=Expression? KW_CBRACK
 ;
 
 /* names in quotes */
-QuotedIds hidden(WS,KW_NEWLINE):
+QuotedIds hidden(WS,KW_NEWLINE,TK_COMMENT):
 	{QuotedIds}
  op=KW_QUOTE n=Names? KW_QUOTE
 ;
 
 /* names seperated by commas */
-Names hidden(WS,KW_NEWLINE):
+Names hidden(WS,KW_NEWLINE,TK_COMMENT):
   firstName=TK_ID
   (KW_COMMA subsequentNames+=TK_ID)*
 ;
@@ -1090,13 +1096,13 @@ Names hidden(WS,KW_NEWLINE):
 /*
  * identifier or literal
  */
-Atom hidden(WS,KW_NEWLINE):
+Atom hidden(WS,KW_NEWLINE,TK_COMMENT):
  iden=Id
 | lit=Literal
 ;
 
 /* called from Flow_AnyStatement and Flow_BalStatement */
-Name hidden(WS,KW_NEWLINE):
+Name hidden(WS,KW_NEWLINE,TK_COMMENT):
 	{Name}
 name=Id
 | no=NakedOp
@@ -1106,12 +1112,12 @@ name=Id
  * in Aldor file absyn.c: Abstract syntax construction and
  * manipulation.
  */
-Id hidden(WS,KW_NEWLINE):
+Id hidden(WS,KW_NEWLINE,TK_COMMENT):
 name=(TK_ID | KW_SHARP | KW_TILDE)
 ;
 
 /* string, integer or float literal */
-Literal hidden(WS,KW_NEWLINE):
+Literal hidden(WS,KW_NEWLINE,TK_COMMENT):
   =>((TK_INT KW_DOT)? TK_FLOAT) // example 2.4e5 or 2e5
   |
   (=>(TK_INT KW_DOT)? TK_INT) // example 2.4 or 2
@@ -1137,28 +1143,28 @@ Literal hidden(WS,KW_NEWLINE):
  * { $$ = abNewOfToken(AB_Id, $1); }
  * ;
  */
-UnqualOp_ArrowTok hidden(WS,KW_NEWLINE):
+UnqualOp_ArrowTok hidden(WS,KW_NEWLINE,TK_COMMENT):
 ArrowTok{ ArrowTok }
 ;
-UnqualOp_LatticeTok hidden(WS,KW_NEWLINE):
+UnqualOp_LatticeTok hidden(WS,KW_NEWLINE,TK_COMMENT):
 LatticeTok{ LatticeTok }
 ;
-UnqualOp_RelationTok hidden(WS,KW_NEWLINE):
+UnqualOp_RelationTok hidden(WS,KW_NEWLINE,TK_COMMENT):
 RelationTok{ RelationTok }
 ;
-UnqualOp_SegTok hidden(WS,KW_NEWLINE):
+UnqualOp_SegTok hidden(WS,KW_NEWLINE,TK_COMMENT):
 SegTok{ SegTok }
 ;
-UnqualOp_PlusTok hidden(WS,KW_NEWLINE):
+UnqualOp_PlusTok hidden(WS,KW_NEWLINE,TK_COMMENT):
 PlusTok{ PlusTok }
 ;
-UnqualOp_QuotientTok hidden(WS,KW_NEWLINE):
+UnqualOp_QuotientTok hidden(WS,KW_NEWLINE,TK_COMMENT):
 QuotientTok{ QuotientTok }
 ;
-UnqualOp_TimesTok hidden(WS,KW_NEWLINE):
+UnqualOp_TimesTok hidden(WS,KW_NEWLINE,TK_COMMENT):
 TimesTok{ TimesTok }
 ;
-UnqualOp_PowerTok hidden(WS,KW_NEWLINE):
+UnqualOp_PowerTok hidden(WS,KW_NEWLINE,TK_COMMENT):
 PowerTok{ PowerTok }
 ;
 
@@ -1179,12 +1185,12 @@ PowerTok{ PowerTok }
  * ;
  */
 
-QualOp_ArrowTok hidden(WS,KW_NEWLINE):
+QualOp_ArrowTok hidden(WS,KW_NEWLINE,TK_COMMENT):
 	{QualOp_ArrowTok}
 ArrowTok =>(KW_DOLLAR oqt=OpQualTail)?
 ;
 
-QualOp_LatticeTok hidden(WS,KW_NEWLINE):
+QualOp_LatticeTok hidden(WS,KW_NEWLINE,TK_COMMENT):
 	{QualOp_LatticeTok}
 LatticeTok =>(KW_DOLLAR oqt=OpQualTail)?
 ;
@@ -1198,33 +1204,33 @@ LatticeTok =>(KW_DOLLAR oqt=OpQualTail)?
 * KW_LE | KW_LT | KW_2LT |
 * 'is' | 'isnt' | 'case' ;
  */
-QualOp_RelationTok hidden(WS,KW_NEWLINE):
+QualOp_RelationTok hidden(WS,KW_NEWLINE,TK_COMMENT):
 //	'temp99'
 {QualOp_RelationTok}
 RelationTok (op+=KW_DOLLAR oqt=OpQualTail)?
 ;
 
-QualOp_SegTok hidden(WS,KW_NEWLINE):
+QualOp_SegTok hidden(WS,KW_NEWLINE,TK_COMMENT):
 	{QualOp_SegTok}
 SegTok (KW_DOLLAR oqt=OpQualTail)?
 ;
 
-QualOp_PlusTok hidden(WS,KW_NEWLINE):
+QualOp_PlusTok hidden(WS,KW_NEWLINE,TK_COMMENT):
 	{QualOp_PlusTok}
 PlusTok (KW_DOLLAR oqt=OpQualTail)?
 ;
 
-QualOp_QuotientTok hidden(WS,KW_NEWLINE):
+QualOp_QuotientTok hidden(WS,KW_NEWLINE,TK_COMMENT):
 	{QualOp_QuotientTok}
 QuotientTok (KW_DOLLAR oqt=OpQualTail)?
 ;
 
-QualOp_TimesTok hidden(WS,KW_NEWLINE):
+QualOp_TimesTok hidden(WS,KW_NEWLINE,TK_COMMENT):
 	{QualOp_TimesTok}
 TimesTok (KW_DOLLAR oqt=OpQualTail)?
 ;
 
-QualOp_PowerTok hidden(WS,KW_NEWLINE):
+QualOp_PowerTok hidden(WS,KW_NEWLINE,TK_COMMENT):
 	{QualOp_PowerTok}
 PowerTok (KW_DOLLAR oqt=OpQualTail)?
 ;
@@ -1243,58 +1249,58 @@ PowerTok (KW_DOLLAR oqt=OpQualTail)?
 //}
 //;
 
-//PreDocument hidden(WS,KW_NEWLINE):
+//PreDocument hidden(WS,KW_NEWLINE,TK_COMMENT):
 //  PreDocumentList
 //;
 
-//PostDocument hidden(WS,KW_NEWLINE):
+//PostDocument hidden(WS,KW_NEWLINE,TK_COMMENT):
 //  PostDocumentList
 //;
 
 /* list of lines starting with -- */
-PreDocument hidden(WS,KW_NEWLINE):
+PreDocument hidden(WS,KW_NEWLINE,TK_COMMENT):
   TK_PREDOC*
 ;
 
 /* list of lines starting with ++ */
-PostDocument hidden(WS,KW_NEWLINE):
+PostDocument hidden(WS,KW_NEWLINE,TK_COMMENT):
   TK_POSTDOC*
 ;
 
 
 /* CommaItem (',' CommaItem)*
 */
-enlist1_CommaItem_Comma_AB hidden(WS,KW_NEWLINE):
+enlist1_CommaItem_Comma_AB hidden(WS,KW_NEWLINE,TK_COMMENT):
   enlister1_CommaItem_Comma
 ;
 
 /* Infixed (',' Infixed)*
 */
-enlist1_Infixed_Comma_AB hidden(WS,KW_NEWLINE):
+enlist1_Infixed_Comma_AB hidden(WS,KW_NEWLINE,TK_COMMENT):
   enlister1_Infixed_Comma
 ;
 
 /* InfixedExpr (',' InfixedExpr)*
 */
-enlist1_InfixedExpr_Comma_AB hidden(WS,KW_NEWLINE):
+enlist1_InfixedExpr_Comma_AB hidden(WS,KW_NEWLINE,TK_COMMENT):
   enlister1_InfixedExpr_Comma
 ;
 
 /* CommaItem (',' CommaItem)*
 */
-enlister1_CommaItem_Comma hidden(WS,KW_NEWLINE):
+enlister1_CommaItem_Comma hidden(WS,KW_NEWLINE,TK_COMMENT):
   CommaItem (KW_COMMA ci+=CommaItem)*
 ;
 
 /* Infixed (',' Infixed)*
 */
-enlister1_Infixed_Comma hidden(WS,KW_NEWLINE):
+enlister1_Infixed_Comma hidden(WS,KW_NEWLINE,TK_COMMENT):
   Infixed (KW_COMMA i2+=Infixed)*
 ;
 
 /* InfixedExpr (',' InfixedExpr)*
 */
-enlister1_InfixedExpr_Comma hidden(WS,KW_NEWLINE):
+enlister1_InfixedExpr_Comma hidden(WS,KW_NEWLINE,TK_COMMENT):
   InfixedExpr (KW_COMMA ie+=InfixedExpr)*
 ;
 
@@ -1304,7 +1310,7 @@ enlister1_InfixedExpr_Comma hidden(WS,KW_NEWLINE):
  * 
  * AB_Sequence
  */ 
-enlist1a_Labeled_Semicolon_AB hidden(WS,KW_NEWLINE):
+enlist1a_Labeled_Semicolon_AB hidden(WS,KW_NEWLINE,TK_COMMENT):
   enlister1a_Labeled_Semicolon
 ;
 
@@ -1315,7 +1321,7 @@ enlist1a_Labeled_Semicolon_AB hidden(WS,KW_NEWLINE):
  * Aldor axl.z grammar defines this in a left recursive way so
  * we have to change to non-recursive structure here.
  */ 
-enlister1a_Labeled_Semicolon hidden(WS,KW_NEWLINE):
+enlister1a_Labeled_Semicolon hidden(WS,KW_NEWLINE,TK_COMMENT):
   statemnts += Labeled
   (KW_SEMICOLON+ statemnts += Labeled)*
   KW_SEMICOLON*
@@ -1335,7 +1341,7 @@ enlister1a_Labeled_Semicolon hidden(WS,KW_NEWLINE):
 * Curly(Labeled)
 * 
 */
-Curly_Labeled hidden(WS,KW_NEWLINE):
+Curly_Labeled hidden(WS,KW_NEWLINE,TK_COMMENT):
 KW_OCURLY CurlyContents_Labeled KW_CCURLY
 ;
 
@@ -1349,7 +1355,7 @@ KW_OCURLY CurlyContents_Labeled KW_CCURLY
  * 
  * called by Curly_Labeled and Model
  */ 
-CurlyContents_Labeled hidden(WS,KW_NEWLINE):
+CurlyContents_Labeled hidden(WS,KW_NEWLINE,TK_COMMENT):
   CurlyContentsList_Labeled
 ;
 
@@ -1361,7 +1367,7 @@ CurlyContents_Labeled hidden(WS,KW_NEWLINE):
  * 
  * statements can have pre or post comments
  */ 
-CurlyContentsList_Labeled hidden(WS,KW_NEWLINE):
+CurlyContentsList_Labeled hidden(WS,KW_NEWLINE,TK_COMMENT):
 	statemts += CurlyContentB_Labeled
 	//(statemts += CurlyContentB_Labeled?)
 	(KW_SEMICOLON+ statemts += CurlyContentB_Labeled)*
@@ -1395,6 +1401,6 @@ CurlyContentsList_Labeled hidden(WS,KW_NEWLINE):
 * or CurlyContentsList(E)
 * 
 */
-CurlyContentB_Labeled hidden(WS,KW_NEWLINE):
+CurlyContentB_Labeled hidden(WS,KW_NEWLINE,TK_COMMENT):
 pred=PreDocument l=Labeled pd=PostDocument
 ;

@@ -60,7 +60,7 @@ import com.euclideanspace.aldor.services.EditorGrammarAccess;
 // Entry rule entryRuleModel
 entryRuleModel 
 @init {
-	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 }
 :
 { before(grammarAccess.getModelRule()); }
@@ -75,7 +75,7 @@ finally {
 // Rule Model
 ruleModel
     @init {
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 		int stackSize = keepStackSize();
     }
 	:
@@ -98,7 +98,7 @@ finally {
 // Entry rule entryRuleExpression
 entryRuleExpression 
 @init {
-	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 }
 :
 { before(grammarAccess.getExpressionRule()); }
@@ -113,7 +113,7 @@ finally {
 // Rule Expression
 ruleExpression
     @init {
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 		int stackSize = keepStackSize();
     }
 	:
@@ -134,7 +134,7 @@ finally {
 // Entry rule entryRuleLabeled
 entryRuleLabeled 
 @init {
-	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 }
 :
 { before(grammarAccess.getLabeledRule()); }
@@ -149,7 +149,7 @@ finally {
 // Rule Labeled
 ruleLabeled
     @init {
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 		int stackSize = keepStackSize();
     }
 	:
@@ -170,7 +170,7 @@ finally {
 // Entry rule entryRuleDeclaration
 entryRuleDeclaration 
 @init {
-	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 }
 :
 { before(grammarAccess.getDeclarationRule()); }
@@ -185,7 +185,7 @@ finally {
 // Rule Declaration
 ruleDeclaration
     @init {
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 		int stackSize = keepStackSize();
     }
 	:
@@ -206,7 +206,7 @@ finally {
 // Entry rule entryRuleExportDecl
 entryRuleExportDecl 
 @init {
-	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 }
 :
 { before(grammarAccess.getExportDeclRule()); }
@@ -221,7 +221,7 @@ finally {
 // Rule ExportDecl
 ruleExportDecl
     @init {
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 		int stackSize = keepStackSize();
     }
 	:
@@ -242,7 +242,7 @@ finally {
 // Entry rule entryRuleToPart
 entryRuleToPart 
 @init {
-	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 }
 :
 { before(grammarAccess.getToPartRule()); }
@@ -257,7 +257,7 @@ finally {
 // Rule ToPart
 ruleToPart
     @init {
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 		int stackSize = keepStackSize();
     }
 	:
@@ -278,7 +278,7 @@ finally {
 // Entry rule entryRuleFromPart
 entryRuleFromPart 
 @init {
-	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 }
 :
 { before(grammarAccess.getFromPartRule()); }
@@ -293,7 +293,7 @@ finally {
 // Rule FromPart
 ruleFromPart
     @init {
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 		int stackSize = keepStackSize();
     }
 	:
@@ -314,7 +314,7 @@ finally {
 // Entry rule entryRuleMacroBody
 entryRuleMacroBody 
 @init {
-	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 }
 :
 { before(grammarAccess.getMacroBodyRule()); }
@@ -329,7 +329,7 @@ finally {
 // Rule MacroBody
 ruleMacroBody
     @init {
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 		int stackSize = keepStackSize();
     }
 	:
@@ -350,7 +350,7 @@ finally {
 // Entry rule entryRuleSig
 entryRuleSig 
 @init {
-	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 }
 :
 { before(grammarAccess.getSigRule()); }
@@ -365,7 +365,7 @@ finally {
 // Rule Sig
 ruleSig
     @init {
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 		int stackSize = keepStackSize();
     }
 	:
@@ -386,7 +386,7 @@ finally {
 // Entry rule entryRuleDeclPart
 entryRuleDeclPart 
 @init {
-	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 }
 :
 { before(grammarAccess.getDeclPartRule()); }
@@ -401,7 +401,7 @@ finally {
 // Rule DeclPart
 ruleDeclPart
     @init {
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 		int stackSize = keepStackSize();
     }
 	:
@@ -422,7 +422,7 @@ finally {
 // Entry rule entryRuleComma
 entryRuleComma 
 @init {
-	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 }
 :
 { before(grammarAccess.getCommaRule()); }
@@ -437,7 +437,7 @@ finally {
 // Rule Comma
 ruleComma
     @init {
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 		int stackSize = keepStackSize();
     }
 	:
@@ -458,7 +458,7 @@ finally {
 // Entry rule entryRuleCommaItem
 entryRuleCommaItem 
 @init {
-	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 }
 :
 { before(grammarAccess.getCommaItemRule()); }
@@ -473,7 +473,7 @@ finally {
 // Rule CommaItem
 ruleCommaItem
     @init {
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 		int stackSize = keepStackSize();
     }
 	:
@@ -494,7 +494,7 @@ finally {
 // Entry rule entryRuleDeclBinding
 entryRuleDeclBinding 
 @init {
-	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 }
 :
 { before(grammarAccess.getDeclBindingRule()); }
@@ -509,7 +509,7 @@ finally {
 // Rule DeclBinding
 ruleDeclBinding
     @init {
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 		int stackSize = keepStackSize();
     }
 	:
@@ -530,7 +530,7 @@ finally {
 // Entry rule entryRuleInfixedExprsDecl
 entryRuleInfixedExprsDecl 
 @init {
-	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 }
 :
 { before(grammarAccess.getInfixedExprsDeclRule()); }
@@ -545,7 +545,7 @@ finally {
 // Rule InfixedExprsDecl
 ruleInfixedExprsDecl
     @init {
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 		int stackSize = keepStackSize();
     }
 	:
@@ -566,7 +566,7 @@ finally {
 // Entry rule entryRuleInfixedExprs
 entryRuleInfixedExprs 
 @init {
-	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 }
 :
 { before(grammarAccess.getInfixedExprsRule()); }
@@ -581,7 +581,7 @@ finally {
 // Rule InfixedExprs
 ruleInfixedExprs
     @init {
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 		int stackSize = keepStackSize();
     }
 	:
@@ -602,7 +602,7 @@ finally {
 // Entry rule entryRuleBinding_AnyStatement
 entryRuleBinding_AnyStatement 
 @init {
-	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 }
 :
 { before(grammarAccess.getBinding_AnyStatementRule()); }
@@ -617,7 +617,7 @@ finally {
 // Rule Binding_AnyStatement
 ruleBinding_AnyStatement
     @init {
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 		int stackSize = keepStackSize();
     }
 	:
@@ -638,7 +638,7 @@ finally {
 // Entry rule entryRuleBinding_BalStatement
 entryRuleBinding_BalStatement 
 @init {
-	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 }
 :
 { before(grammarAccess.getBinding_BalStatementRule()); }
@@ -653,7 +653,7 @@ finally {
 // Rule Binding_BalStatement
 ruleBinding_BalStatement
     @init {
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 		int stackSize = keepStackSize();
     }
 	:
@@ -674,7 +674,7 @@ finally {
 // Entry rule entryRuleBinding_Collection
 entryRuleBinding_Collection 
 @init {
-	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 }
 :
 { before(grammarAccess.getBinding_CollectionRule()); }
@@ -689,7 +689,7 @@ finally {
 // Rule Binding_Collection
 ruleBinding_Collection
     @init {
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 		int stackSize = keepStackSize();
     }
 	:
@@ -710,7 +710,7 @@ finally {
 // Entry rule entryRuleBindingL_Infixed_AnyStatement
 entryRuleBindingL_Infixed_AnyStatement 
 @init {
-	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 }
 :
 { before(grammarAccess.getBindingL_Infixed_AnyStatementRule()); }
@@ -725,7 +725,7 @@ finally {
 // Rule BindingL_Infixed_AnyStatement
 ruleBindingL_Infixed_AnyStatement
     @init {
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 		int stackSize = keepStackSize();
     }
 	:
@@ -746,7 +746,7 @@ finally {
 // Entry rule entryRuleBindingL_Infixed_BalStatement
 entryRuleBindingL_Infixed_BalStatement 
 @init {
-	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 }
 :
 { before(grammarAccess.getBindingL_Infixed_BalStatementRule()); }
@@ -761,7 +761,7 @@ finally {
 // Rule BindingL_Infixed_BalStatement
 ruleBindingL_Infixed_BalStatement
     @init {
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 		int stackSize = keepStackSize();
     }
 	:
@@ -782,7 +782,7 @@ finally {
 // Entry rule entryRuleBindingL_Infixed_Collection
 entryRuleBindingL_Infixed_Collection 
 @init {
-	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 }
 :
 { before(grammarAccess.getBindingL_Infixed_CollectionRule()); }
@@ -797,7 +797,7 @@ finally {
 // Rule BindingL_Infixed_Collection
 ruleBindingL_Infixed_Collection
     @init {
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 		int stackSize = keepStackSize();
     }
 	:
@@ -818,7 +818,7 @@ finally {
 // Entry rule entryRuleBindingR_InfixedExprsDecl_AnyStatement
 entryRuleBindingR_InfixedExprsDecl_AnyStatement 
 @init {
-	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 }
 :
 { before(grammarAccess.getBindingR_InfixedExprsDecl_AnyStatementRule()); }
@@ -833,7 +833,7 @@ finally {
 // Rule BindingR_InfixedExprsDecl_AnyStatement
 ruleBindingR_InfixedExprsDecl_AnyStatement
     @init {
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 		int stackSize = keepStackSize();
     }
 	:
@@ -854,7 +854,7 @@ finally {
 // Entry rule entryRuleAnyStatement
 entryRuleAnyStatement 
 @init {
-	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 }
 :
 { before(grammarAccess.getAnyStatementRule()); }
@@ -869,14 +869,14 @@ finally {
 // Rule AnyStatement
 ruleAnyStatement
     @init {
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 		int stackSize = keepStackSize();
     }
 	:
 (
-{ before(grammarAccess.getAnyStatementAccess().getAlternatives()); }
-(rule__AnyStatement__Alternatives)
-{ after(grammarAccess.getAnyStatementAccess().getAlternatives()); }
+{ before(grammarAccess.getAnyStatementAccess().getFlow_AnyStatementParserRuleCall()); }
+	ruleFlow_AnyStatement
+{ after(grammarAccess.getAnyStatementAccess().getFlow_AnyStatementParserRuleCall()); }
 )
 
 ;
@@ -890,7 +890,7 @@ finally {
 // Entry rule entryRuleBalStatement
 entryRuleBalStatement 
 @init {
-	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 }
 :
 { before(grammarAccess.getBalStatementRule()); }
@@ -905,7 +905,7 @@ finally {
 // Rule BalStatement
 ruleBalStatement
     @init {
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 		int stackSize = keepStackSize();
     }
 	:
@@ -926,7 +926,7 @@ finally {
 // Entry rule entryRuleFlow_AnyStatement
 entryRuleFlow_AnyStatement 
 @init {
-	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 }
 :
 { before(grammarAccess.getFlow_AnyStatementRule()); }
@@ -941,7 +941,7 @@ finally {
 // Rule Flow_AnyStatement
 ruleFlow_AnyStatement
     @init {
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 		int stackSize = keepStackSize();
     }
 	:
@@ -962,7 +962,7 @@ finally {
 // Entry rule entryRuleFlow_BalStatement
 entryRuleFlow_BalStatement 
 @init {
-	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 }
 :
 { before(grammarAccess.getFlow_BalStatementRule()); }
@@ -977,7 +977,7 @@ finally {
 // Rule Flow_BalStatement
 ruleFlow_BalStatement
     @init {
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 		int stackSize = keepStackSize();
     }
 	:
@@ -998,7 +998,7 @@ finally {
 // Entry rule entryRuleGenBound
 entryRuleGenBound 
 @init {
-	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 }
 :
 { before(grammarAccess.getGenBoundRule()); }
@@ -1013,7 +1013,7 @@ finally {
 // Rule GenBound
 ruleGenBound
     @init {
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 		int stackSize = keepStackSize();
     }
 	:
@@ -1034,7 +1034,7 @@ finally {
 // Entry rule entryRuleButExpr
 entryRuleButExpr 
 @init {
-	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 }
 :
 { before(grammarAccess.getButExprRule()); }
@@ -1049,7 +1049,7 @@ finally {
 // Rule ButExpr
 ruleButExpr
     @init {
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 		int stackSize = keepStackSize();
     }
 	:
@@ -1070,7 +1070,7 @@ finally {
 // Entry rule entryRuleCases
 entryRuleCases 
 @init {
-	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 }
 :
 { before(grammarAccess.getCasesRule()); }
@@ -1085,7 +1085,7 @@ finally {
 // Rule Cases
 ruleCases
     @init {
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 		int stackSize = keepStackSize();
     }
 	:
@@ -1106,7 +1106,7 @@ finally {
 // Entry rule entryRuleAlwaysPart_AnyStatement
 entryRuleAlwaysPart_AnyStatement 
 @init {
-	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 }
 :
 { before(grammarAccess.getAlwaysPart_AnyStatementRule()); }
@@ -1121,7 +1121,7 @@ finally {
 // Rule AlwaysPart_AnyStatement
 ruleAlwaysPart_AnyStatement
     @init {
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 		int stackSize = keepStackSize();
     }
 	:
@@ -1142,7 +1142,7 @@ finally {
 // Entry rule entryRuleAlwaysPart_BalStatement
 entryRuleAlwaysPart_BalStatement 
 @init {
-	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 }
 :
 { before(grammarAccess.getAlwaysPart_BalStatementRule()); }
@@ -1157,7 +1157,7 @@ finally {
 // Rule AlwaysPart_BalStatement
 ruleAlwaysPart_BalStatement
     @init {
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 		int stackSize = keepStackSize();
     }
 	:
@@ -1178,7 +1178,7 @@ finally {
 // Entry rule entryRuleCollection
 entryRuleCollection 
 @init {
-	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 }
 :
 { before(grammarAccess.getCollectionRule()); }
@@ -1193,7 +1193,7 @@ finally {
 // Rule Collection
 ruleCollection
     @init {
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 		int stackSize = keepStackSize();
     }
 	:
@@ -1214,7 +1214,7 @@ finally {
 // Entry rule entryRuleIterators
 entryRuleIterators 
 @init {
-	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 }
 :
 { before(grammarAccess.getIteratorsRule()); }
@@ -1229,7 +1229,7 @@ finally {
 // Rule Iterators
 ruleIterators
     @init {
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 		int stackSize = keepStackSize();
     }
 	:
@@ -1250,7 +1250,7 @@ finally {
 // Entry rule entryRuleIterators1
 entryRuleIterators1 
 @init {
-	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 }
 :
 { before(grammarAccess.getIterators1Rule()); }
@@ -1265,7 +1265,7 @@ finally {
 // Rule Iterators1
 ruleIterators1
     @init {
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 		int stackSize = keepStackSize();
     }
 	:
@@ -1286,7 +1286,7 @@ finally {
 // Entry rule entryRuleIterator
 entryRuleIterator 
 @init {
-	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 }
 :
 { before(grammarAccess.getIteratorRule()); }
@@ -1301,7 +1301,7 @@ finally {
 // Rule Iterator
 ruleIterator
     @init {
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 		int stackSize = keepStackSize();
     }
 	:
@@ -1322,7 +1322,7 @@ finally {
 // Entry rule entryRuleForLhs
 entryRuleForLhs 
 @init {
-	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 }
 :
 { before(grammarAccess.getForLhsRule()); }
@@ -1337,7 +1337,7 @@ finally {
 // Rule ForLhs
 ruleForLhs
     @init {
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 		int stackSize = keepStackSize();
     }
 	:
@@ -1358,7 +1358,7 @@ finally {
 // Entry rule entryRuleSuchthatPart
 entryRuleSuchthatPart 
 @init {
-	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 }
 :
 { before(grammarAccess.getSuchthatPartRule()); }
@@ -1373,7 +1373,7 @@ finally {
 // Rule SuchthatPart
 ruleSuchthatPart
     @init {
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 		int stackSize = keepStackSize();
     }
 	:
@@ -1394,7 +1394,7 @@ finally {
 // Entry rule entryRuleInfixed
 entryRuleInfixed 
 @init {
-	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 }
 :
 { before(grammarAccess.getInfixedRule()); }
@@ -1409,7 +1409,7 @@ finally {
 // Rule Infixed
 ruleInfixed
     @init {
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 		int stackSize = keepStackSize();
     }
 	:
@@ -1430,7 +1430,7 @@ finally {
 // Entry rule entryRuleInfixedExpr
 entryRuleInfixedExpr 
 @init {
-	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 }
 :
 { before(grammarAccess.getInfixedExprRule()); }
@@ -1445,7 +1445,7 @@ finally {
 // Rule InfixedExpr
 ruleInfixedExpr
     @init {
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 		int stackSize = keepStackSize();
     }
 	:
@@ -1466,7 +1466,7 @@ finally {
 // Entry rule entryRuleE3
 entryRuleE3 
 @init {
-	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 }
 :
 { before(grammarAccess.getE3Rule()); }
@@ -1481,7 +1481,7 @@ finally {
 // Rule E3
 ruleE3
     @init {
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 		int stackSize = keepStackSize();
     }
 	:
@@ -1502,7 +1502,7 @@ finally {
 // Entry rule entryRuleE4
 entryRuleE4 
 @init {
-	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 }
 :
 { before(grammarAccess.getE4Rule()); }
@@ -1517,7 +1517,7 @@ finally {
 // Rule E4
 ruleE4
     @init {
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 		int stackSize = keepStackSize();
     }
 	:
@@ -1538,7 +1538,7 @@ finally {
 // Entry rule entryRuleE5
 entryRuleE5 
 @init {
-	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 }
 :
 { before(grammarAccess.getE5Rule()); }
@@ -1553,7 +1553,7 @@ finally {
 // Rule E5
 ruleE5
     @init {
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 		int stackSize = keepStackSize();
     }
 	:
@@ -1574,7 +1574,7 @@ finally {
 // Entry rule entryRuleE6
 entryRuleE6 
 @init {
-	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 }
 :
 { before(grammarAccess.getE6Rule()); }
@@ -1589,14 +1589,14 @@ finally {
 // Rule E6
 ruleE6
     @init {
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 		int stackSize = keepStackSize();
     }
 	:
 (
-{ before(grammarAccess.getE6Access().getGroup()); }
-(rule__E6__Group__0)
-{ after(grammarAccess.getE6Access().getGroup()); }
+{ before(grammarAccess.getE6Access().getAlternatives()); }
+(rule__E6__Alternatives)
+{ after(grammarAccess.getE6Access().getAlternatives()); }
 )
 
 ;
@@ -1610,7 +1610,7 @@ finally {
 // Entry rule entryRuleE7
 entryRuleE7 
 @init {
-	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 }
 :
 { before(grammarAccess.getE7Rule()); }
@@ -1625,7 +1625,7 @@ finally {
 // Rule E7
 ruleE7
     @init {
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 		int stackSize = keepStackSize();
     }
 	:
@@ -1646,7 +1646,7 @@ finally {
 // Entry rule entryRuleE8
 entryRuleE8 
 @init {
-	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 }
 :
 { before(grammarAccess.getE8Rule()); }
@@ -1661,7 +1661,7 @@ finally {
 // Rule E8
 ruleE8
     @init {
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 		int stackSize = keepStackSize();
     }
 	:
@@ -1682,7 +1682,7 @@ finally {
 // Entry rule entryRuleE9
 entryRuleE9 
 @init {
-	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 }
 :
 { before(grammarAccess.getE9Rule()); }
@@ -1697,7 +1697,7 @@ finally {
 // Rule E9
 ruleE9
     @init {
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 		int stackSize = keepStackSize();
     }
 	:
@@ -1718,7 +1718,7 @@ finally {
 // Entry rule entryRuleE11_E12
 entryRuleE11_E12 
 @init {
-	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 }
 :
 { before(grammarAccess.getE11_E12Rule()); }
@@ -1733,7 +1733,7 @@ finally {
 // Rule E11_E12
 ruleE11_E12
     @init {
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 		int stackSize = keepStackSize();
     }
 	:
@@ -1754,7 +1754,7 @@ finally {
 // Entry rule entryRuleE11_Op
 entryRuleE11_Op 
 @init {
-	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 }
 :
 { before(grammarAccess.getE11_OpRule()); }
@@ -1769,7 +1769,7 @@ finally {
 // Rule E11_Op
 ruleE11_Op
     @init {
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 		int stackSize = keepStackSize();
     }
 	:
@@ -1790,7 +1790,7 @@ finally {
 // Entry rule entryRuleType
 entryRuleType 
 @init {
-	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 }
 :
 { before(grammarAccess.getTypeRule()); }
@@ -1805,7 +1805,7 @@ finally {
 // Rule Type
 ruleType
     @init {
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 		int stackSize = keepStackSize();
     }
 	:
@@ -1826,7 +1826,7 @@ finally {
 // Entry rule entryRuleE12
 entryRuleE12 
 @init {
-	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 }
 :
 { before(grammarAccess.getE12Rule()); }
@@ -1841,7 +1841,7 @@ finally {
 // Rule E12
 ruleE12
     @init {
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 		int stackSize = keepStackSize();
     }
 	:
@@ -1862,7 +1862,7 @@ finally {
 // Entry rule entryRuleE13
 entryRuleE13 
 @init {
-	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 }
 :
 { before(grammarAccess.getE13Rule()); }
@@ -1877,7 +1877,7 @@ finally {
 // Rule E13
 ruleE13
     @init {
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 		int stackSize = keepStackSize();
     }
 	:
@@ -1898,7 +1898,7 @@ finally {
 // Entry rule entryRuleQualTail
 entryRuleQualTail 
 @init {
-	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 }
 :
 { before(grammarAccess.getQualTailRule()); }
@@ -1913,7 +1913,7 @@ finally {
 // Rule QualTail
 ruleQualTail
     @init {
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 		int stackSize = keepStackSize();
     }
 	:
@@ -1934,7 +1934,7 @@ finally {
 // Entry rule entryRuleOpQualTail
 entryRuleOpQualTail 
 @init {
-	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 }
 :
 { before(grammarAccess.getOpQualTailRule()); }
@@ -1949,7 +1949,7 @@ finally {
 // Rule OpQualTail
 ruleOpQualTail
     @init {
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 		int stackSize = keepStackSize();
     }
 	:
@@ -1970,7 +1970,7 @@ finally {
 // Entry rule entryRuleE14
 entryRuleE14 
 @init {
-	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 }
 :
 { before(grammarAccess.getE14Rule()); }
@@ -1985,7 +1985,7 @@ finally {
 // Rule E14
 ruleE14
     @init {
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 		int stackSize = keepStackSize();
     }
 	:
@@ -2006,7 +2006,7 @@ finally {
 // Entry rule entryRuleE15
 entryRuleE15 
 @init {
-	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 }
 :
 { before(grammarAccess.getE15Rule()); }
@@ -2021,7 +2021,7 @@ finally {
 // Rule E15
 ruleE15
     @init {
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 		int stackSize = keepStackSize();
     }
 	:
@@ -2042,7 +2042,7 @@ finally {
 // Entry rule entryRuleOp
 entryRuleOp 
 @init {
-	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 }
 :
 { before(grammarAccess.getOpRule()); }
@@ -2057,7 +2057,7 @@ finally {
 // Rule Op
 ruleOp
     @init {
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 		int stackSize = keepStackSize();
     }
 	:
@@ -2078,7 +2078,7 @@ finally {
 // Entry rule entryRuleNakedOp
 entryRuleNakedOp 
 @init {
-	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 }
 :
 { before(grammarAccess.getNakedOpRule()); }
@@ -2093,7 +2093,7 @@ finally {
 // Rule NakedOp
 ruleNakedOp
     @init {
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 		int stackSize = keepStackSize();
     }
 	:
@@ -2114,7 +2114,7 @@ finally {
 // Entry rule entryRuleArrowOp
 entryRuleArrowOp 
 @init {
-	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 }
 :
 { before(grammarAccess.getArrowOpRule()); }
@@ -2129,7 +2129,7 @@ finally {
 // Rule ArrowOp
 ruleArrowOp
     @init {
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 		int stackSize = keepStackSize();
     }
 	:
@@ -2150,7 +2150,7 @@ finally {
 // Entry rule entryRuleLatticeOp
 entryRuleLatticeOp 
 @init {
-	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 }
 :
 { before(grammarAccess.getLatticeOpRule()); }
@@ -2165,7 +2165,7 @@ finally {
 // Rule LatticeOp
 ruleLatticeOp
     @init {
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 		int stackSize = keepStackSize();
     }
 	:
@@ -2186,7 +2186,7 @@ finally {
 // Entry rule entryRuleRelationOp
 entryRuleRelationOp 
 @init {
-	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 }
 :
 { before(grammarAccess.getRelationOpRule()); }
@@ -2201,7 +2201,7 @@ finally {
 // Rule RelationOp
 ruleRelationOp
     @init {
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 		int stackSize = keepStackSize();
     }
 	:
@@ -2222,7 +2222,7 @@ finally {
 // Entry rule entryRuleSegOp
 entryRuleSegOp 
 @init {
-	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 }
 :
 { before(grammarAccess.getSegOpRule()); }
@@ -2237,7 +2237,7 @@ finally {
 // Rule SegOp
 ruleSegOp
     @init {
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 		int stackSize = keepStackSize();
     }
 	:
@@ -2258,7 +2258,7 @@ finally {
 // Entry rule entryRulePlusOp
 entryRulePlusOp 
 @init {
-	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 }
 :
 { before(grammarAccess.getPlusOpRule()); }
@@ -2273,7 +2273,7 @@ finally {
 // Rule PlusOp
 rulePlusOp
     @init {
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 		int stackSize = keepStackSize();
     }
 	:
@@ -2294,7 +2294,7 @@ finally {
 // Entry rule entryRuleQuotientOp
 entryRuleQuotientOp 
 @init {
-	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 }
 :
 { before(grammarAccess.getQuotientOpRule()); }
@@ -2309,7 +2309,7 @@ finally {
 // Rule QuotientOp
 ruleQuotientOp
     @init {
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 		int stackSize = keepStackSize();
     }
 	:
@@ -2330,7 +2330,7 @@ finally {
 // Entry rule entryRuleTimesOp
 entryRuleTimesOp 
 @init {
-	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 }
 :
 { before(grammarAccess.getTimesOpRule()); }
@@ -2345,7 +2345,7 @@ finally {
 // Rule TimesOp
 ruleTimesOp
     @init {
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 		int stackSize = keepStackSize();
     }
 	:
@@ -2366,7 +2366,7 @@ finally {
 // Entry rule entryRulePowerOp
 entryRulePowerOp 
 @init {
-	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 }
 :
 { before(grammarAccess.getPowerOpRule()); }
@@ -2381,7 +2381,7 @@ finally {
 // Rule PowerOp
 rulePowerOp
     @init {
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 		int stackSize = keepStackSize();
     }
 	:
@@ -2402,7 +2402,7 @@ finally {
 // Entry rule entryRuleArrowTok
 entryRuleArrowTok 
 @init {
-	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 }
 :
 { before(grammarAccess.getArrowTokRule()); }
@@ -2417,7 +2417,7 @@ finally {
 // Rule ArrowTok
 ruleArrowTok
     @init {
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 		int stackSize = keepStackSize();
     }
 	:
@@ -2438,7 +2438,7 @@ finally {
 // Entry rule entryRuleLatticeTok
 entryRuleLatticeTok 
 @init {
-	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 }
 :
 { before(grammarAccess.getLatticeTokRule()); }
@@ -2453,7 +2453,7 @@ finally {
 // Rule LatticeTok
 ruleLatticeTok
     @init {
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 		int stackSize = keepStackSize();
     }
 	:
@@ -2474,7 +2474,7 @@ finally {
 // Entry rule entryRuleRelationTok
 entryRuleRelationTok 
 @init {
-	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 }
 :
 { before(grammarAccess.getRelationTokRule()); }
@@ -2489,7 +2489,7 @@ finally {
 // Rule RelationTok
 ruleRelationTok
     @init {
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 		int stackSize = keepStackSize();
     }
 	:
@@ -2510,7 +2510,7 @@ finally {
 // Entry rule entryRuleSegTok
 entryRuleSegTok 
 @init {
-	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 }
 :
 { before(grammarAccess.getSegTokRule()); }
@@ -2525,7 +2525,7 @@ finally {
 // Rule SegTok
 ruleSegTok
     @init {
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 		int stackSize = keepStackSize();
     }
 	:
@@ -2546,7 +2546,7 @@ finally {
 // Entry rule entryRulePlusTok
 entryRulePlusTok 
 @init {
-	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 }
 :
 { before(grammarAccess.getPlusTokRule()); }
@@ -2561,7 +2561,7 @@ finally {
 // Rule PlusTok
 rulePlusTok
     @init {
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 		int stackSize = keepStackSize();
     }
 	:
@@ -2582,7 +2582,7 @@ finally {
 // Entry rule entryRuleQuotientTok
 entryRuleQuotientTok 
 @init {
-	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 }
 :
 { before(grammarAccess.getQuotientTokRule()); }
@@ -2597,7 +2597,7 @@ finally {
 // Rule QuotientTok
 ruleQuotientTok
     @init {
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 		int stackSize = keepStackSize();
     }
 	:
@@ -2618,7 +2618,7 @@ finally {
 // Entry rule entryRuleTimesTok
 entryRuleTimesTok 
 @init {
-	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 }
 :
 { before(grammarAccess.getTimesTokRule()); }
@@ -2633,7 +2633,7 @@ finally {
 // Rule TimesTok
 ruleTimesTok
     @init {
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 		int stackSize = keepStackSize();
     }
 	:
@@ -2654,7 +2654,7 @@ finally {
 // Entry rule entryRulePowerTok
 entryRulePowerTok 
 @init {
-	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 }
 :
 { before(grammarAccess.getPowerTokRule()); }
@@ -2669,7 +2669,7 @@ finally {
 // Rule PowerTok
 rulePowerTok
     @init {
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 		int stackSize = keepStackSize();
     }
 	:
@@ -2690,7 +2690,7 @@ finally {
 // Entry rule entryRuleApplication
 entryRuleApplication 
 @init {
-	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 }
 :
 { before(grammarAccess.getApplicationRule()); }
@@ -2705,7 +2705,7 @@ finally {
 // Rule Application
 ruleApplication
     @init {
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 		int stackSize = keepStackSize();
     }
 	:
@@ -2726,7 +2726,7 @@ finally {
 // Entry rule entryRuleRightJuxtaposed
 entryRuleRightJuxtaposed 
 @init {
-	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 }
 :
 { before(grammarAccess.getRightJuxtaposedRule()); }
@@ -2741,7 +2741,7 @@ finally {
 // Rule RightJuxtaposed
 ruleRightJuxtaposed
     @init {
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 		int stackSize = keepStackSize();
     }
 	:
@@ -2762,7 +2762,7 @@ finally {
 // Entry rule entryRuleLeftJuxtaposed
 entryRuleLeftJuxtaposed 
 @init {
-	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 }
 :
 { before(grammarAccess.getLeftJuxtaposedRule()); }
@@ -2777,7 +2777,7 @@ finally {
 // Rule LeftJuxtaposed
 ruleLeftJuxtaposed
     @init {
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 		int stackSize = keepStackSize();
     }
 	:
@@ -2798,7 +2798,7 @@ finally {
 // Entry rule entryRuleJright_Molecule
 entryRuleJright_Molecule 
 @init {
-	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 }
 :
 { before(grammarAccess.getJright_MoleculeRule()); }
@@ -2813,7 +2813,7 @@ finally {
 // Rule Jright_Molecule
 ruleJright_Molecule
     @init {
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 		int stackSize = keepStackSize();
     }
 	:
@@ -2834,7 +2834,7 @@ finally {
 // Entry rule entryRuleJright_Atom
 entryRuleJright_Atom 
 @init {
-	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 }
 :
 { before(grammarAccess.getJright_AtomRule()); }
@@ -2849,7 +2849,7 @@ finally {
 // Rule Jright_Atom
 ruleJright_Atom
     @init {
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 		int stackSize = keepStackSize();
     }
 	:
@@ -2870,7 +2870,7 @@ finally {
 // Entry rule entryRuleJleft_Molecule
 entryRuleJleft_Molecule 
 @init {
-	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 }
 :
 { before(grammarAccess.getJleft_MoleculeRule()); }
@@ -2885,7 +2885,7 @@ finally {
 // Rule Jleft_Molecule
 ruleJleft_Molecule
     @init {
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 		int stackSize = keepStackSize();
     }
 	:
@@ -2906,7 +2906,7 @@ finally {
 // Entry rule entryRuleJleft_Atom
 entryRuleJleft_Atom 
 @init {
-	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 }
 :
 { before(grammarAccess.getJleft_AtomRule()); }
@@ -2921,7 +2921,7 @@ finally {
 // Rule Jleft_Atom
 ruleJleft_Atom
     @init {
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 		int stackSize = keepStackSize();
     }
 	:
@@ -2942,7 +2942,7 @@ finally {
 // Entry rule entryRuleMolecule
 entryRuleMolecule 
 @init {
-	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 }
 :
 { before(grammarAccess.getMoleculeRule()); }
@@ -2957,7 +2957,7 @@ finally {
 // Rule Molecule
 ruleMolecule
     @init {
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 		int stackSize = keepStackSize();
     }
 	:
@@ -2978,7 +2978,7 @@ finally {
 // Entry rule entryRuleEnclosure
 entryRuleEnclosure 
 @init {
-	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 }
 :
 { before(grammarAccess.getEnclosureRule()); }
@@ -2993,7 +2993,7 @@ finally {
 // Rule Enclosure
 ruleEnclosure
     @init {
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 		int stackSize = keepStackSize();
     }
 	:
@@ -3014,7 +3014,7 @@ finally {
 // Entry rule entryRuleDeclMolecule
 entryRuleDeclMolecule 
 @init {
-	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 }
 :
 { before(grammarAccess.getDeclMoleculeRule()); }
@@ -3029,7 +3029,7 @@ finally {
 // Rule DeclMolecule
 ruleDeclMolecule
     @init {
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 		int stackSize = keepStackSize();
     }
 	:
@@ -3050,7 +3050,7 @@ finally {
 // Entry rule entryRuleBlockMolecule
 entryRuleBlockMolecule 
 @init {
-	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 }
 :
 { before(grammarAccess.getBlockMoleculeRule()); }
@@ -3065,7 +3065,7 @@ finally {
 // Rule BlockMolecule
 ruleBlockMolecule
     @init {
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 		int stackSize = keepStackSize();
     }
 	:
@@ -3086,7 +3086,7 @@ finally {
 // Entry rule entryRuleBlockEnclosure
 entryRuleBlockEnclosure 
 @init {
-	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 }
 :
 { before(grammarAccess.getBlockEnclosureRule()); }
@@ -3101,7 +3101,7 @@ finally {
 // Rule BlockEnclosure
 ruleBlockEnclosure
     @init {
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 		int stackSize = keepStackSize();
     }
 	:
@@ -3122,7 +3122,7 @@ finally {
 // Entry rule entryRuleBlock
 entryRuleBlock 
 @init {
-	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 }
 :
 { before(grammarAccess.getBlockRule()); }
@@ -3137,7 +3137,7 @@ finally {
 // Rule Block
 ruleBlock
     @init {
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 		int stackSize = keepStackSize();
     }
 	:
@@ -3158,7 +3158,7 @@ finally {
 // Entry rule entryRuleParened
 entryRuleParened 
 @init {
-	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 }
 :
 { before(grammarAccess.getParenedRule()); }
@@ -3173,7 +3173,7 @@ finally {
 // Rule Parened
 ruleParened
     @init {
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 		int stackSize = keepStackSize();
     }
 	:
@@ -3194,7 +3194,7 @@ finally {
 // Entry rule entryRuleBracketed
 entryRuleBracketed 
 @init {
-	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 }
 :
 { before(grammarAccess.getBracketedRule()); }
@@ -3209,7 +3209,7 @@ finally {
 // Rule Bracketed
 ruleBracketed
     @init {
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 		int stackSize = keepStackSize();
     }
 	:
@@ -3230,7 +3230,7 @@ finally {
 // Entry rule entryRuleQuotedIds
 entryRuleQuotedIds 
 @init {
-	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 }
 :
 { before(grammarAccess.getQuotedIdsRule()); }
@@ -3245,7 +3245,7 @@ finally {
 // Rule QuotedIds
 ruleQuotedIds
     @init {
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 		int stackSize = keepStackSize();
     }
 	:
@@ -3266,7 +3266,7 @@ finally {
 // Entry rule entryRuleNames
 entryRuleNames 
 @init {
-	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 }
 :
 { before(grammarAccess.getNamesRule()); }
@@ -3281,7 +3281,7 @@ finally {
 // Rule Names
 ruleNames
     @init {
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 		int stackSize = keepStackSize();
     }
 	:
@@ -3302,7 +3302,7 @@ finally {
 // Entry rule entryRuleAtom
 entryRuleAtom 
 @init {
-	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 }
 :
 { before(grammarAccess.getAtomRule()); }
@@ -3317,7 +3317,7 @@ finally {
 // Rule Atom
 ruleAtom
     @init {
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 		int stackSize = keepStackSize();
     }
 	:
@@ -3338,7 +3338,7 @@ finally {
 // Entry rule entryRuleName
 entryRuleName 
 @init {
-	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 }
 :
 { before(grammarAccess.getNameRule()); }
@@ -3353,7 +3353,7 @@ finally {
 // Rule Name
 ruleName
     @init {
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 		int stackSize = keepStackSize();
     }
 	:
@@ -3374,7 +3374,7 @@ finally {
 // Entry rule entryRuleId
 entryRuleId 
 @init {
-	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 }
 :
 { before(grammarAccess.getIdRule()); }
@@ -3389,7 +3389,7 @@ finally {
 // Rule Id
 ruleId
     @init {
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 		int stackSize = keepStackSize();
     }
 	:
@@ -3410,7 +3410,7 @@ finally {
 // Entry rule entryRuleLiteral
 entryRuleLiteral 
 @init {
-	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 }
 :
 { before(grammarAccess.getLiteralRule()); }
@@ -3425,7 +3425,7 @@ finally {
 // Rule Literal
 ruleLiteral
     @init {
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 		int stackSize = keepStackSize();
     }
 	:
@@ -3446,7 +3446,7 @@ finally {
 // Entry rule entryRuleUnqualOp_ArrowTok
 entryRuleUnqualOp_ArrowTok 
 @init {
-	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 }
 :
 { before(grammarAccess.getUnqualOp_ArrowTokRule()); }
@@ -3461,7 +3461,7 @@ finally {
 // Rule UnqualOp_ArrowTok
 ruleUnqualOp_ArrowTok
     @init {
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 		int stackSize = keepStackSize();
     }
 	:
@@ -3482,7 +3482,7 @@ finally {
 // Entry rule entryRuleUnqualOp_LatticeTok
 entryRuleUnqualOp_LatticeTok 
 @init {
-	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 }
 :
 { before(grammarAccess.getUnqualOp_LatticeTokRule()); }
@@ -3497,7 +3497,7 @@ finally {
 // Rule UnqualOp_LatticeTok
 ruleUnqualOp_LatticeTok
     @init {
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 		int stackSize = keepStackSize();
     }
 	:
@@ -3518,7 +3518,7 @@ finally {
 // Entry rule entryRuleUnqualOp_RelationTok
 entryRuleUnqualOp_RelationTok 
 @init {
-	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 }
 :
 { before(grammarAccess.getUnqualOp_RelationTokRule()); }
@@ -3533,7 +3533,7 @@ finally {
 // Rule UnqualOp_RelationTok
 ruleUnqualOp_RelationTok
     @init {
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 		int stackSize = keepStackSize();
     }
 	:
@@ -3554,7 +3554,7 @@ finally {
 // Entry rule entryRuleUnqualOp_SegTok
 entryRuleUnqualOp_SegTok 
 @init {
-	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 }
 :
 { before(grammarAccess.getUnqualOp_SegTokRule()); }
@@ -3569,7 +3569,7 @@ finally {
 // Rule UnqualOp_SegTok
 ruleUnqualOp_SegTok
     @init {
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 		int stackSize = keepStackSize();
     }
 	:
@@ -3590,7 +3590,7 @@ finally {
 // Entry rule entryRuleUnqualOp_PlusTok
 entryRuleUnqualOp_PlusTok 
 @init {
-	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 }
 :
 { before(grammarAccess.getUnqualOp_PlusTokRule()); }
@@ -3605,7 +3605,7 @@ finally {
 // Rule UnqualOp_PlusTok
 ruleUnqualOp_PlusTok
     @init {
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 		int stackSize = keepStackSize();
     }
 	:
@@ -3626,7 +3626,7 @@ finally {
 // Entry rule entryRuleUnqualOp_QuotientTok
 entryRuleUnqualOp_QuotientTok 
 @init {
-	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 }
 :
 { before(grammarAccess.getUnqualOp_QuotientTokRule()); }
@@ -3641,7 +3641,7 @@ finally {
 // Rule UnqualOp_QuotientTok
 ruleUnqualOp_QuotientTok
     @init {
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 		int stackSize = keepStackSize();
     }
 	:
@@ -3662,7 +3662,7 @@ finally {
 // Entry rule entryRuleUnqualOp_TimesTok
 entryRuleUnqualOp_TimesTok 
 @init {
-	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 }
 :
 { before(grammarAccess.getUnqualOp_TimesTokRule()); }
@@ -3677,7 +3677,7 @@ finally {
 // Rule UnqualOp_TimesTok
 ruleUnqualOp_TimesTok
     @init {
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 		int stackSize = keepStackSize();
     }
 	:
@@ -3698,7 +3698,7 @@ finally {
 // Entry rule entryRuleUnqualOp_PowerTok
 entryRuleUnqualOp_PowerTok 
 @init {
-	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 }
 :
 { before(grammarAccess.getUnqualOp_PowerTokRule()); }
@@ -3713,7 +3713,7 @@ finally {
 // Rule UnqualOp_PowerTok
 ruleUnqualOp_PowerTok
     @init {
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 		int stackSize = keepStackSize();
     }
 	:
@@ -3734,7 +3734,7 @@ finally {
 // Entry rule entryRuleQualOp_ArrowTok
 entryRuleQualOp_ArrowTok 
 @init {
-	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 }
 :
 { before(grammarAccess.getQualOp_ArrowTokRule()); }
@@ -3749,7 +3749,7 @@ finally {
 // Rule QualOp_ArrowTok
 ruleQualOp_ArrowTok
     @init {
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 		int stackSize = keepStackSize();
     }
 	:
@@ -3770,7 +3770,7 @@ finally {
 // Entry rule entryRuleQualOp_LatticeTok
 entryRuleQualOp_LatticeTok 
 @init {
-	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 }
 :
 { before(grammarAccess.getQualOp_LatticeTokRule()); }
@@ -3785,7 +3785,7 @@ finally {
 // Rule QualOp_LatticeTok
 ruleQualOp_LatticeTok
     @init {
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 		int stackSize = keepStackSize();
     }
 	:
@@ -3806,7 +3806,7 @@ finally {
 // Entry rule entryRuleQualOp_RelationTok
 entryRuleQualOp_RelationTok 
 @init {
-	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 }
 :
 { before(grammarAccess.getQualOp_RelationTokRule()); }
@@ -3821,7 +3821,7 @@ finally {
 // Rule QualOp_RelationTok
 ruleQualOp_RelationTok
     @init {
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 		int stackSize = keepStackSize();
     }
 	:
@@ -3842,7 +3842,7 @@ finally {
 // Entry rule entryRuleQualOp_SegTok
 entryRuleQualOp_SegTok 
 @init {
-	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 }
 :
 { before(grammarAccess.getQualOp_SegTokRule()); }
@@ -3857,7 +3857,7 @@ finally {
 // Rule QualOp_SegTok
 ruleQualOp_SegTok
     @init {
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 		int stackSize = keepStackSize();
     }
 	:
@@ -3878,7 +3878,7 @@ finally {
 // Entry rule entryRuleQualOp_PlusTok
 entryRuleQualOp_PlusTok 
 @init {
-	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 }
 :
 { before(grammarAccess.getQualOp_PlusTokRule()); }
@@ -3893,7 +3893,7 @@ finally {
 // Rule QualOp_PlusTok
 ruleQualOp_PlusTok
     @init {
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 		int stackSize = keepStackSize();
     }
 	:
@@ -3914,7 +3914,7 @@ finally {
 // Entry rule entryRuleQualOp_QuotientTok
 entryRuleQualOp_QuotientTok 
 @init {
-	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 }
 :
 { before(grammarAccess.getQualOp_QuotientTokRule()); }
@@ -3929,7 +3929,7 @@ finally {
 // Rule QualOp_QuotientTok
 ruleQualOp_QuotientTok
     @init {
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 		int stackSize = keepStackSize();
     }
 	:
@@ -3950,7 +3950,7 @@ finally {
 // Entry rule entryRuleQualOp_TimesTok
 entryRuleQualOp_TimesTok 
 @init {
-	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 }
 :
 { before(grammarAccess.getQualOp_TimesTokRule()); }
@@ -3965,7 +3965,7 @@ finally {
 // Rule QualOp_TimesTok
 ruleQualOp_TimesTok
     @init {
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 		int stackSize = keepStackSize();
     }
 	:
@@ -3986,7 +3986,7 @@ finally {
 // Entry rule entryRuleQualOp_PowerTok
 entryRuleQualOp_PowerTok 
 @init {
-	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 }
 :
 { before(grammarAccess.getQualOp_PowerTokRule()); }
@@ -4001,7 +4001,7 @@ finally {
 // Rule QualOp_PowerTok
 ruleQualOp_PowerTok
     @init {
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 		int stackSize = keepStackSize();
     }
 	:
@@ -4022,7 +4022,7 @@ finally {
 // Entry rule entryRulePreDocument
 entryRulePreDocument 
 @init {
-	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 }
 :
 { before(grammarAccess.getPreDocumentRule()); }
@@ -4037,7 +4037,7 @@ finally {
 // Rule PreDocument
 rulePreDocument
     @init {
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 		int stackSize = keepStackSize();
     }
 	:
@@ -4058,7 +4058,7 @@ finally {
 // Entry rule entryRulePostDocument
 entryRulePostDocument 
 @init {
-	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 }
 :
 { before(grammarAccess.getPostDocumentRule()); }
@@ -4073,7 +4073,7 @@ finally {
 // Rule PostDocument
 rulePostDocument
     @init {
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 		int stackSize = keepStackSize();
     }
 	:
@@ -4094,7 +4094,7 @@ finally {
 // Entry rule entryRuleenlist1_CommaItem_Comma_AB
 entryRuleenlist1_CommaItem_Comma_AB 
 @init {
-	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 }
 :
 { before(grammarAccess.getEnlist1_CommaItem_Comma_ABRule()); }
@@ -4109,7 +4109,7 @@ finally {
 // Rule enlist1_CommaItem_Comma_AB
 ruleenlist1_CommaItem_Comma_AB
     @init {
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 		int stackSize = keepStackSize();
     }
 	:
@@ -4130,7 +4130,7 @@ finally {
 // Entry rule entryRuleenlist1_Infixed_Comma_AB
 entryRuleenlist1_Infixed_Comma_AB 
 @init {
-	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 }
 :
 { before(grammarAccess.getEnlist1_Infixed_Comma_ABRule()); }
@@ -4145,7 +4145,7 @@ finally {
 // Rule enlist1_Infixed_Comma_AB
 ruleenlist1_Infixed_Comma_AB
     @init {
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 		int stackSize = keepStackSize();
     }
 	:
@@ -4166,7 +4166,7 @@ finally {
 // Entry rule entryRuleenlist1_InfixedExpr_Comma_AB
 entryRuleenlist1_InfixedExpr_Comma_AB 
 @init {
-	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 }
 :
 { before(grammarAccess.getEnlist1_InfixedExpr_Comma_ABRule()); }
@@ -4181,7 +4181,7 @@ finally {
 // Rule enlist1_InfixedExpr_Comma_AB
 ruleenlist1_InfixedExpr_Comma_AB
     @init {
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 		int stackSize = keepStackSize();
     }
 	:
@@ -4202,7 +4202,7 @@ finally {
 // Entry rule entryRuleenlister1_CommaItem_Comma
 entryRuleenlister1_CommaItem_Comma 
 @init {
-	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 }
 :
 { before(grammarAccess.getEnlister1_CommaItem_CommaRule()); }
@@ -4217,7 +4217,7 @@ finally {
 // Rule enlister1_CommaItem_Comma
 ruleenlister1_CommaItem_Comma
     @init {
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 		int stackSize = keepStackSize();
     }
 	:
@@ -4238,7 +4238,7 @@ finally {
 // Entry rule entryRuleenlister1_Infixed_Comma
 entryRuleenlister1_Infixed_Comma 
 @init {
-	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 }
 :
 { before(grammarAccess.getEnlister1_Infixed_CommaRule()); }
@@ -4253,7 +4253,7 @@ finally {
 // Rule enlister1_Infixed_Comma
 ruleenlister1_Infixed_Comma
     @init {
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 		int stackSize = keepStackSize();
     }
 	:
@@ -4274,7 +4274,7 @@ finally {
 // Entry rule entryRuleenlister1_InfixedExpr_Comma
 entryRuleenlister1_InfixedExpr_Comma 
 @init {
-	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 }
 :
 { before(grammarAccess.getEnlister1_InfixedExpr_CommaRule()); }
@@ -4289,7 +4289,7 @@ finally {
 // Rule enlister1_InfixedExpr_Comma
 ruleenlister1_InfixedExpr_Comma
     @init {
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 		int stackSize = keepStackSize();
     }
 	:
@@ -4310,7 +4310,7 @@ finally {
 // Entry rule entryRuleenlist1a_Labeled_Semicolon_AB
 entryRuleenlist1a_Labeled_Semicolon_AB 
 @init {
-	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 }
 :
 { before(grammarAccess.getEnlist1a_Labeled_Semicolon_ABRule()); }
@@ -4325,7 +4325,7 @@ finally {
 // Rule enlist1a_Labeled_Semicolon_AB
 ruleenlist1a_Labeled_Semicolon_AB
     @init {
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 		int stackSize = keepStackSize();
     }
 	:
@@ -4346,7 +4346,7 @@ finally {
 // Entry rule entryRuleenlister1a_Labeled_Semicolon
 entryRuleenlister1a_Labeled_Semicolon 
 @init {
-	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 }
 :
 { before(grammarAccess.getEnlister1a_Labeled_SemicolonRule()); }
@@ -4361,7 +4361,7 @@ finally {
 // Rule enlister1a_Labeled_Semicolon
 ruleenlister1a_Labeled_Semicolon
     @init {
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 		int stackSize = keepStackSize();
     }
 	:
@@ -4382,7 +4382,7 @@ finally {
 // Entry rule entryRuleCurly_Labeled
 entryRuleCurly_Labeled 
 @init {
-	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 }
 :
 { before(grammarAccess.getCurly_LabeledRule()); }
@@ -4397,7 +4397,7 @@ finally {
 // Rule Curly_Labeled
 ruleCurly_Labeled
     @init {
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 		int stackSize = keepStackSize();
     }
 	:
@@ -4418,7 +4418,7 @@ finally {
 // Entry rule entryRuleCurlyContents_Labeled
 entryRuleCurlyContents_Labeled 
 @init {
-	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 }
 :
 { before(grammarAccess.getCurlyContents_LabeledRule()); }
@@ -4433,7 +4433,7 @@ finally {
 // Rule CurlyContents_Labeled
 ruleCurlyContents_Labeled
     @init {
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 		int stackSize = keepStackSize();
     }
 	:
@@ -4454,7 +4454,7 @@ finally {
 // Entry rule entryRuleCurlyContentsList_Labeled
 entryRuleCurlyContentsList_Labeled 
 @init {
-	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 }
 :
 { before(grammarAccess.getCurlyContentsList_LabeledRule()); }
@@ -4469,7 +4469,7 @@ finally {
 // Rule CurlyContentsList_Labeled
 ruleCurlyContentsList_Labeled
     @init {
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 		int stackSize = keepStackSize();
     }
 	:
@@ -4490,7 +4490,7 @@ finally {
 // Entry rule entryRuleCurlyContentB_Labeled
 entryRuleCurlyContentB_Labeled 
 @init {
-	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 }
 :
 { before(grammarAccess.getCurlyContentB_LabeledRule()); }
@@ -4505,7 +4505,7 @@ finally {
 // Rule CurlyContentB_Labeled
 ruleCurlyContentB_Labeled
     @init {
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE");
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_KW_NEWLINE", "RULE_TK_COMMENT");
 		int stackSize = keepStackSize();
     }
 	:
@@ -4947,28 +4947,6 @@ rule__BindingR_InfixedExprsDecl_AnyStatement__Alternatives_1_0
 { before(grammarAccess.getBindingR_InfixedExprsDecl_AnyStatementAccess().getKW_MAPSTOSTARTerminalRuleCall_1_0_4()); }
 	RULE_KW_MAPSTOSTAR
 { after(grammarAccess.getBindingR_InfixedExprsDecl_AnyStatementAccess().getKW_MAPSTOSTARTerminalRuleCall_1_0_4()); }
-)
-
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-rule__AnyStatement__Alternatives
-    @init {
-		int stackSize = keepStackSize();
-    }
-:
-(
-{ before(grammarAccess.getAnyStatementAccess().getGroup_0()); }
-(rule__AnyStatement__Group_0__0)
-{ after(grammarAccess.getAnyStatementAccess().getGroup_0()); }
-)
-
-    |(
-{ before(grammarAccess.getAnyStatementAccess().getFlow_AnyStatementParserRuleCall_1()); }
-	ruleFlow_AnyStatement
-{ after(grammarAccess.getAnyStatementAccess().getFlow_AnyStatementParserRuleCall_1()); }
 )
 
 ;
@@ -5469,6 +5447,28 @@ rule__E4__OpAlternatives_1_1_0
 { before(grammarAccess.getE4Access().getOpRelationTokParserRuleCall_1_1_0_1()); }
 	ruleRelationTok
 { after(grammarAccess.getE4Access().getOpRelationTokParserRuleCall_1_1_0_1()); }
+)
+
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__E6__Alternatives
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+(
+{ before(grammarAccess.getE6Access().getGroup_0()); }
+(rule__E6__Group_0__0)
+{ after(grammarAccess.getE6Access().getGroup_0()); }
+)
+
+    |(
+{ before(grammarAccess.getE6Access().getGroup_1()); }
+(rule__E6__Group_1__0)
+{ after(grammarAccess.getE6Access().getGroup_1()); }
 )
 
 ;
@@ -8984,163 +8984,6 @@ finally {
 
 
 
-rule__AnyStatement__Group_0__0
-    @init {
-		int stackSize = keepStackSize();
-    }
-:
-	rule__AnyStatement__Group_0__0__Impl
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-rule__AnyStatement__Group_0__0__Impl
-    @init {
-		int stackSize = keepStackSize();
-    }
-:
-(
-{ before(grammarAccess.getAnyStatementAccess().getGroup_0_0()); }
-(rule__AnyStatement__Group_0_0__0)
-{ after(grammarAccess.getAnyStatementAccess().getGroup_0_0()); }
-)
-
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-
-
-
-rule__AnyStatement__Group_0_0__0
-    @init {
-		int stackSize = keepStackSize();
-    }
-:
-	rule__AnyStatement__Group_0_0__0__Impl
-	rule__AnyStatement__Group_0_0__1
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-rule__AnyStatement__Group_0_0__0__Impl
-    @init {
-		int stackSize = keepStackSize();
-    }
-:
-(
-{ before(grammarAccess.getAnyStatementAccess().getIfKeyword_0_0_0()); }
-
-	'if' 
-
-{ after(grammarAccess.getAnyStatementAccess().getIfKeyword_0_0_0()); }
-)
-
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-
-rule__AnyStatement__Group_0_0__1
-    @init {
-		int stackSize = keepStackSize();
-    }
-:
-	rule__AnyStatement__Group_0_0__1__Impl
-	rule__AnyStatement__Group_0_0__2
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-rule__AnyStatement__Group_0_0__1__Impl
-    @init {
-		int stackSize = keepStackSize();
-    }
-:
-(
-{ before(grammarAccess.getAnyStatementAccess().getCommaItemParserRuleCall_0_0_1()); }
-	ruleCommaItem
-{ after(grammarAccess.getAnyStatementAccess().getCommaItemParserRuleCall_0_0_1()); }
-)
-
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-
-rule__AnyStatement__Group_0_0__2
-    @init {
-		int stackSize = keepStackSize();
-    }
-:
-	rule__AnyStatement__Group_0_0__2__Impl
-	rule__AnyStatement__Group_0_0__3
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-rule__AnyStatement__Group_0_0__2__Impl
-    @init {
-		int stackSize = keepStackSize();
-    }
-:
-(
-{ before(grammarAccess.getAnyStatementAccess().getThenKeyword_0_0_2()); }
-
-	'then' 
-
-{ after(grammarAccess.getAnyStatementAccess().getThenKeyword_0_0_2()); }
-)
-
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-
-rule__AnyStatement__Group_0_0__3
-    @init {
-		int stackSize = keepStackSize();
-    }
-:
-	rule__AnyStatement__Group_0_0__3__Impl
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-rule__AnyStatement__Group_0_0__3__Impl
-    @init {
-		int stackSize = keepStackSize();
-    }
-:
-(
-{ before(grammarAccess.getAnyStatementAccess().getBasAssignment_0_0_3()); }
-(rule__AnyStatement__BasAssignment_0_0_3)
-{ after(grammarAccess.getAnyStatementAccess().getBasAssignment_0_0_3()); }
-)
-
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-
-
-
-
-
-
-
-
-
 rule__Flow_AnyStatement__Group_0__0
     @init {
 		int stackSize = keepStackSize();
@@ -9387,7 +9230,6 @@ rule__Flow_AnyStatement__Group_1__4
     }
 :
 	rule__Flow_AnyStatement__Group_1__4__Impl
-	rule__Flow_AnyStatement__Group_1__5
 ;
 finally {
 	restoreStackSize(stackSize);
@@ -9399,11 +9241,50 @@ rule__Flow_AnyStatement__Group_1__4__Impl
     }
 :
 (
-{ before(grammarAccess.getFlow_AnyStatementAccess().getElseKeyword_1_4()); }
+{ before(grammarAccess.getFlow_AnyStatementAccess().getGroup_1_4()); }
+(rule__Flow_AnyStatement__Group_1_4__0)?
+{ after(grammarAccess.getFlow_AnyStatementAccess().getGroup_1_4()); }
+)
+
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+rule__Flow_AnyStatement__Group_1_4__0
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+	rule__Flow_AnyStatement__Group_1_4__0__Impl
+	rule__Flow_AnyStatement__Group_1_4__1
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__Flow_AnyStatement__Group_1_4__0__Impl
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+(
+{ before(grammarAccess.getFlow_AnyStatementAccess().getElseKeyword_1_4_0()); }
 (
 	'else' 
 )
-{ after(grammarAccess.getFlow_AnyStatementAccess().getElseKeyword_1_4()); }
+{ after(grammarAccess.getFlow_AnyStatementAccess().getElseKeyword_1_4_0()); }
 )
 
 ;
@@ -9412,40 +9293,32 @@ finally {
 }
 
 
-rule__Flow_AnyStatement__Group_1__5
+rule__Flow_AnyStatement__Group_1_4__1
     @init {
 		int stackSize = keepStackSize();
     }
 :
-	rule__Flow_AnyStatement__Group_1__5__Impl
+	rule__Flow_AnyStatement__Group_1_4__1__Impl
 ;
 finally {
 	restoreStackSize(stackSize);
 }
 
-rule__Flow_AnyStatement__Group_1__5__Impl
+rule__Flow_AnyStatement__Group_1_4__1__Impl
     @init {
 		int stackSize = keepStackSize();
     }
 :
 (
-{ before(grammarAccess.getFlow_AnyStatementAccess().getBasAssignment_1_5()); }
-(rule__Flow_AnyStatement__BasAssignment_1_5)
-{ after(grammarAccess.getFlow_AnyStatementAccess().getBasAssignment_1_5()); }
+{ before(grammarAccess.getFlow_AnyStatementAccess().getBasAssignment_1_4_1()); }
+(rule__Flow_AnyStatement__BasAssignment_1_4_1)
+{ after(grammarAccess.getFlow_AnyStatementAccess().getBasAssignment_1_4_1()); }
 )
 
 ;
 finally {
 	restoreStackSize(stackSize);
 }
-
-
-
-
-
-
-
-
 
 
 
@@ -10923,7 +10796,6 @@ rule__Flow_BalStatement__Group_1__4
     }
 :
 	rule__Flow_BalStatement__Group_1__4__Impl
-	rule__Flow_BalStatement__Group_1__5
 ;
 finally {
 	restoreStackSize(stackSize);
@@ -10935,11 +10807,50 @@ rule__Flow_BalStatement__Group_1__4__Impl
     }
 :
 (
-{ before(grammarAccess.getFlow_BalStatementAccess().getElseKeyword_1_4()); }
+{ before(grammarAccess.getFlow_BalStatementAccess().getGroup_1_4()); }
+(rule__Flow_BalStatement__Group_1_4__0)?
+{ after(grammarAccess.getFlow_BalStatementAccess().getGroup_1_4()); }
+)
+
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+rule__Flow_BalStatement__Group_1_4__0
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+	rule__Flow_BalStatement__Group_1_4__0__Impl
+	rule__Flow_BalStatement__Group_1_4__1
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__Flow_BalStatement__Group_1_4__0__Impl
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+(
+{ before(grammarAccess.getFlow_BalStatementAccess().getElseKeyword_1_4_0()); }
 (
 	'else' 
 )
-{ after(grammarAccess.getFlow_BalStatementAccess().getElseKeyword_1_4()); }
+{ after(grammarAccess.getFlow_BalStatementAccess().getElseKeyword_1_4_0()); }
 )
 
 ;
@@ -10948,40 +10859,32 @@ finally {
 }
 
 
-rule__Flow_BalStatement__Group_1__5
+rule__Flow_BalStatement__Group_1_4__1
     @init {
 		int stackSize = keepStackSize();
     }
 :
-	rule__Flow_BalStatement__Group_1__5__Impl
+	rule__Flow_BalStatement__Group_1_4__1__Impl
 ;
 finally {
 	restoreStackSize(stackSize);
 }
 
-rule__Flow_BalStatement__Group_1__5__Impl
+rule__Flow_BalStatement__Group_1_4__1__Impl
     @init {
 		int stackSize = keepStackSize();
     }
 :
 (
-{ before(grammarAccess.getFlow_BalStatementAccess().getBbs4Assignment_1_5()); }
-(rule__Flow_BalStatement__Bbs4Assignment_1_5)
-{ after(grammarAccess.getFlow_BalStatementAccess().getBbs4Assignment_1_5()); }
+{ before(grammarAccess.getFlow_BalStatementAccess().getBbs4Assignment_1_4_1()); }
+(rule__Flow_BalStatement__Bbs4Assignment_1_4_1)
+{ after(grammarAccess.getFlow_BalStatementAccess().getBbs4Assignment_1_4_1()); }
 )
 
 ;
 finally {
 	restoreStackSize(stackSize);
 }
-
-
-
-
-
-
-
-
 
 
 
@@ -13900,27 +13803,27 @@ finally {
 
 
 
-rule__E6__Group__0
+rule__E6__Group_0__0
     @init {
 		int stackSize = keepStackSize();
     }
 :
-	rule__E6__Group__0__Impl
-	rule__E6__Group__1
+	rule__E6__Group_0__0__Impl
+	rule__E6__Group_0__1
 ;
 finally {
 	restoreStackSize(stackSize);
 }
 
-rule__E6__Group__0__Impl
+rule__E6__Group_0__0__Impl
     @init {
 		int stackSize = keepStackSize();
     }
 :
 (
-{ before(grammarAccess.getE6Access().getE7ParserRuleCall_0()); }
+{ before(grammarAccess.getE6Access().getE7ParserRuleCall_0_0()); }
 	ruleE7
-{ after(grammarAccess.getE6Access().getE7ParserRuleCall_0()); }
+{ after(grammarAccess.getE6Access().getE7ParserRuleCall_0_0()); }
 )
 
 ;
@@ -13929,32 +13832,126 @@ finally {
 }
 
 
-rule__E6__Group__1
+rule__E6__Group_0__1
     @init {
 		int stackSize = keepStackSize();
     }
 :
-	rule__E6__Group__1__Impl
+	rule__E6__Group_0__1__Impl
 ;
 finally {
 	restoreStackSize(stackSize);
 }
 
-rule__E6__Group__1__Impl
+rule__E6__Group_0__1__Impl
     @init {
 		int stackSize = keepStackSize();
     }
 :
 (
-{ before(grammarAccess.getE6Access().getGroup_1()); }
-(rule__E6__Group_1__0)*
-{ after(grammarAccess.getE6Access().getGroup_1()); }
+{ before(grammarAccess.getE6Access().getGroup_0_1()); }
+(rule__E6__Group_0_1__0)*
+{ after(grammarAccess.getE6Access().getGroup_0_1()); }
 )
 
 ;
 finally {
 	restoreStackSize(stackSize);
 }
+
+
+
+
+
+
+rule__E6__Group_0_1__0
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+	rule__E6__Group_0_1__0__Impl
+	rule__E6__Group_0_1__1
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__E6__Group_0_1__0__Impl
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+(
+{ before(grammarAccess.getE6Access().getE6LeftAction_0_1_0()); }
+(
+
+)
+{ after(grammarAccess.getE6Access().getE6LeftAction_0_1_0()); }
+)
+
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+
+rule__E6__Group_0_1__1
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+	rule__E6__Group_0_1__1__Impl
+	rule__E6__Group_0_1__2
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__E6__Group_0_1__1__Impl
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+(
+{ before(grammarAccess.getE6Access().getOpAssignment_0_1_1()); }
+(rule__E6__OpAssignment_0_1_1)
+{ after(grammarAccess.getE6Access().getOpAssignment_0_1_1()); }
+)
+
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+
+rule__E6__Group_0_1__2
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+	rule__E6__Group_0_1__2__Impl
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__E6__Group_0_1__2__Impl
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+(
+{ before(grammarAccess.getE6Access().getRightAssignment_0_1_2()); }
+(rule__E6__RightAssignment_0_1_2)
+{ after(grammarAccess.getE6Access().getRightAssignment_0_1_2()); }
+)
+
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+
 
 
 
@@ -13979,11 +13976,9 @@ rule__E6__Group_1__0__Impl
     }
 :
 (
-{ before(grammarAccess.getE6Access().getE6LeftAction_1_0()); }
-(
-
-)
-{ after(grammarAccess.getE6Access().getE6LeftAction_1_0()); }
+{ before(grammarAccess.getE6Access().getOp6Assignment_1_0()); }
+(rule__E6__Op6Assignment_1_0)
+{ after(grammarAccess.getE6Access().getOp6Assignment_1_0()); }
 )
 
 ;
@@ -14010,9 +14005,9 @@ rule__E6__Group_1__1__Impl
     }
 :
 (
-{ before(grammarAccess.getE6Access().getOpAssignment_1_1()); }
-(rule__E6__OpAssignment_1_1)
-{ after(grammarAccess.getE6Access().getOpAssignment_1_1()); }
+{ before(grammarAccess.getE6Access().getRightAssignment_1_1()); }
+(rule__E6__RightAssignment_1_1)
+{ after(grammarAccess.getE6Access().getRightAssignment_1_1()); }
 )
 
 ;
@@ -14038,9 +14033,11 @@ rule__E6__Group_1__2__Impl
     }
 :
 (
-{ before(grammarAccess.getE6Access().getRightAssignment_1_2()); }
-(rule__E6__RightAssignment_1_2)
-{ after(grammarAccess.getE6Access().getRightAssignment_1_2()); }
+{ before(grammarAccess.getE6Access().getE6LeftAction_1_2()); }
+(
+
+)
+{ after(grammarAccess.getE6Access().getE6LeftAction_1_2()); }
 )
 
 ;
@@ -21375,21 +21372,6 @@ finally {
 	restoreStackSize(stackSize);
 }
 
-rule__AnyStatement__BasAssignment_0_0_3
-    @init {
-		int stackSize = keepStackSize();
-    }
-:
-(
-{ before(grammarAccess.getAnyStatementAccess().getBasBinding_AnyStatementParserRuleCall_0_0_3_0()); }
-	ruleBinding_AnyStatement{ after(grammarAccess.getAnyStatementAccess().getBasBinding_AnyStatementParserRuleCall_0_0_3_0()); }
-)
-
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
 rule__Flow_AnyStatement__CAssignment_0_0
     @init {
 		int stackSize = keepStackSize();
@@ -21496,14 +21478,14 @@ finally {
 	restoreStackSize(stackSize);
 }
 
-rule__Flow_AnyStatement__BasAssignment_1_5
+rule__Flow_AnyStatement__BasAssignment_1_4_1
     @init {
 		int stackSize = keepStackSize();
     }
 :
 (
-{ before(grammarAccess.getFlow_AnyStatementAccess().getBasBinding_AnyStatementParserRuleCall_1_5_0()); }
-	ruleBinding_AnyStatement{ after(grammarAccess.getFlow_AnyStatementAccess().getBasBinding_AnyStatementParserRuleCall_1_5_0()); }
+{ before(grammarAccess.getFlow_AnyStatementAccess().getBasBinding_AnyStatementParserRuleCall_1_4_1_0()); }
+	ruleBinding_AnyStatement{ after(grammarAccess.getFlow_AnyStatementAccess().getBasBinding_AnyStatementParserRuleCall_1_4_1_0()); }
 )
 
 ;
@@ -22308,14 +22290,14 @@ finally {
 	restoreStackSize(stackSize);
 }
 
-rule__Flow_BalStatement__Bbs4Assignment_1_5
+rule__Flow_BalStatement__Bbs4Assignment_1_4_1
     @init {
 		int stackSize = keepStackSize();
     }
 :
 (
-{ before(grammarAccess.getFlow_BalStatementAccess().getBbs4Binding_BalStatementParserRuleCall_1_5_0()); }
-	ruleBinding_BalStatement{ after(grammarAccess.getFlow_BalStatementAccess().getBbs4Binding_BalStatementParserRuleCall_1_5_0()); }
+{ before(grammarAccess.getFlow_BalStatementAccess().getBbs4Binding_BalStatementParserRuleCall_1_4_1_0()); }
+	ruleBinding_BalStatement{ after(grammarAccess.getFlow_BalStatementAccess().getBbs4Binding_BalStatementParserRuleCall_1_4_1_0()); }
 )
 
 ;
@@ -23331,14 +23313,14 @@ finally {
 	restoreStackSize(stackSize);
 }
 
-rule__E6__OpAssignment_1_1
+rule__E6__OpAssignment_0_1_1
     @init {
 		int stackSize = keepStackSize();
     }
 :
 (
-{ before(grammarAccess.getE6Access().getOpPlusTokParserRuleCall_1_1_0()); }
-	rulePlusTok{ after(grammarAccess.getE6Access().getOpPlusTokParserRuleCall_1_1_0()); }
+{ before(grammarAccess.getE6Access().getOpPlusTokParserRuleCall_0_1_1_0()); }
+	rulePlusTok{ after(grammarAccess.getE6Access().getOpPlusTokParserRuleCall_0_1_1_0()); }
 )
 
 ;
@@ -23346,14 +23328,44 @@ finally {
 	restoreStackSize(stackSize);
 }
 
-rule__E6__RightAssignment_1_2
+rule__E6__RightAssignment_0_1_2
     @init {
 		int stackSize = keepStackSize();
     }
 :
 (
-{ before(grammarAccess.getE6Access().getRightE7ParserRuleCall_1_2_0()); }
-	ruleE7{ after(grammarAccess.getE6Access().getRightE7ParserRuleCall_1_2_0()); }
+{ before(grammarAccess.getE6Access().getRightE7ParserRuleCall_0_1_2_0()); }
+	ruleE7{ after(grammarAccess.getE6Access().getRightE7ParserRuleCall_0_1_2_0()); }
+)
+
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__E6__Op6Assignment_1_0
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+(
+{ before(grammarAccess.getE6Access().getOp6PlusTokParserRuleCall_1_0_0()); }
+	rulePlusTok{ after(grammarAccess.getE6Access().getOp6PlusTokParserRuleCall_1_0_0()); }
+)
+
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__E6__RightAssignment_1_1
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+(
+{ before(grammarAccess.getE6Access().getRightE7ParserRuleCall_1_1_0()); }
+	ruleE7{ after(grammarAccess.getE6Access().getRightE7ParserRuleCall_1_1_0()); }
 )
 
 ;
@@ -24752,7 +24764,9 @@ RULE_WS : (' '|'\t')+;
 
 RULE_KW_NEWLINE : ('\r'|'\n');
 
-RULE_TK_PREDOC : '--' ~(('\n'|'\r'))*;
+RULE_TK_COMMENT : '--' ~(('\n'|'\r'))*;
+
+RULE_TK_PREDOC : '+++' ~(('\n'|'\r'))*;
 
 RULE_TK_POSTDOC : '++' ~(('\n'|'\r'))*;
 
