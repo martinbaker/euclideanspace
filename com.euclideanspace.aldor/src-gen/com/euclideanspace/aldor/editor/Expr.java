@@ -2,8 +2,6 @@
  */
 package com.euclideanspace.aldor.editor;
 
-import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -14,7 +12,7 @@ import org.eclipse.emf.ecore.EObject;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link com.euclideanspace.aldor.editor.Expr#getOp6 <em>Op6</em>}</li>
+ *   <li>{@link com.euclideanspace.aldor.editor.Expr#getOp <em>Op</em>}</li>
  *   <li>{@link com.euclideanspace.aldor.editor.Expr#getRight <em>Right</em>}</li>
  * </ul>
  * </p>
@@ -26,20 +24,30 @@ import org.eclipse.emf.ecore.EObject;
 public interface Expr extends InfixedExpr, Type
 {
   /**
-   * Returns the value of the '<em><b>Op6</b></em>' attribute list.
-   * The list contents are of type {@link java.lang.String}.
+   * Returns the value of the '<em><b>Op</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Op6</em>' attribute list isn't clear,
+   * If the meaning of the '<em>Op</em>' attribute isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Op6</em>' attribute list.
-   * @see com.euclideanspace.aldor.editor.EditorPackage#getExpr_Op6()
-   * @model unique="false"
+   * @return the value of the '<em>Op</em>' attribute.
+   * @see #setOp(String)
+   * @see com.euclideanspace.aldor.editor.EditorPackage#getExpr_Op()
+   * @model
    * @generated
    */
-  EList<String> getOp6();
+  String getOp();
+
+  /**
+   * Sets the value of the '{@link com.euclideanspace.aldor.editor.Expr#getOp <em>Op</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Op</em>' attribute.
+   * @see #getOp()
+   * @generated
+   */
+  void setOp(String value);
 
   /**
    * Returns the value of the '<em><b>Right</b></em>' containment reference.

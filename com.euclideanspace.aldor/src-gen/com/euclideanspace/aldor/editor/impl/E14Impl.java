@@ -23,7 +23,6 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * <ul>
  *   <li>{@link com.euclideanspace.aldor.editor.impl.E14Impl#getE15left <em>E1 5left</em>}</li>
- *   <li>{@link com.euclideanspace.aldor.editor.impl.E14Impl#getOp <em>Op</em>}</li>
  *   <li>{@link com.euclideanspace.aldor.editor.impl.E14Impl#getDm <em>Dm</em>}</li>
  *   <li>{@link com.euclideanspace.aldor.editor.impl.E14Impl#getE15right <em>E1 5right</em>}</li>
  * </ul>
@@ -42,26 +41,6 @@ public class E14Impl extends ExprImpl implements E14
    * @ordered
    */
   protected E15 e15left;
-
-  /**
-   * The default value of the '{@link #getOp() <em>Op</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getOp()
-   * @generated
-   * @ordered
-   */
-  protected static final String OP_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getOp() <em>Op</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getOp()
-   * @generated
-   * @ordered
-   */
-  protected String op = OP_EDEFAULT;
 
   /**
    * The cached value of the '{@link #getDm() <em>Dm</em>}' containment reference.
@@ -150,29 +129,6 @@ public class E14Impl extends ExprImpl implements E14
     }
     else if (eNotificationRequired())
       eNotify(new ENotificationImpl(this, Notification.SET, EditorPackage.E14__E15LEFT, newE15left, newE15left));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public String getOp()
-  {
-    return op;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setOp(String newOp)
-  {
-    String oldOp = op;
-    op = newOp;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, EditorPackage.E14__OP, oldOp, op));
   }
 
   /**
@@ -303,8 +259,6 @@ public class E14Impl extends ExprImpl implements E14
     {
       case EditorPackage.E14__E15LEFT:
         return getE15left();
-      case EditorPackage.E14__OP:
-        return getOp();
       case EditorPackage.E14__DM:
         return getDm();
       case EditorPackage.E14__E15RIGHT:
@@ -325,9 +279,6 @@ public class E14Impl extends ExprImpl implements E14
     {
       case EditorPackage.E14__E15LEFT:
         setE15left((E15)newValue);
-        return;
-      case EditorPackage.E14__OP:
-        setOp((String)newValue);
         return;
       case EditorPackage.E14__DM:
         setDm((DeclMolecule)newValue);
@@ -352,9 +303,6 @@ public class E14Impl extends ExprImpl implements E14
       case EditorPackage.E14__E15LEFT:
         setE15left((E15)null);
         return;
-      case EditorPackage.E14__OP:
-        setOp(OP_EDEFAULT);
-        return;
       case EditorPackage.E14__DM:
         setDm((DeclMolecule)null);
         return;
@@ -377,31 +325,12 @@ public class E14Impl extends ExprImpl implements E14
     {
       case EditorPackage.E14__E15LEFT:
         return e15left != null;
-      case EditorPackage.E14__OP:
-        return OP_EDEFAULT == null ? op != null : !OP_EDEFAULT.equals(op);
       case EditorPackage.E14__DM:
         return dm != null;
       case EditorPackage.E14__E15RIGHT:
         return e15right != null;
     }
     return super.eIsSet(featureID);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public String toString()
-  {
-    if (eIsProxy()) return super.toString();
-
-    StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (op: ");
-    result.append(op);
-    result.append(')');
-    return result.toString();
   }
 
 } //E14Impl

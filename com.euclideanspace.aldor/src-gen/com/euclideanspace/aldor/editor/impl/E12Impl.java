@@ -2,7 +2,6 @@
  */
 package com.euclideanspace.aldor.editor.impl;
 
-import com.euclideanspace.aldor.editor.ArrowOp;
 import com.euclideanspace.aldor.editor.E12;
 import com.euclideanspace.aldor.editor.EditorPackage;
 import com.euclideanspace.aldor.editor.Expr;
@@ -23,7 +22,6 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * <ul>
  *   <li>{@link com.euclideanspace.aldor.editor.impl.E12Impl#getLeft <em>Left</em>}</li>
- *   <li>{@link com.euclideanspace.aldor.editor.impl.E12Impl#getOp <em>Op</em>}</li>
  * </ul>
  * </p>
  *
@@ -40,16 +38,6 @@ public class E12Impl extends ExprImpl implements E12
    * @ordered
    */
   protected Expr left;
-
-  /**
-   * The cached value of the '{@link #getOp() <em>Op</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getOp()
-   * @generated
-   * @ordered
-   */
-  protected ArrowOp op;
 
   /**
    * <!-- begin-user-doc -->
@@ -125,54 +113,6 @@ public class E12Impl extends ExprImpl implements E12
    * <!-- end-user-doc -->
    * @generated
    */
-  public ArrowOp getOp()
-  {
-    return op;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public NotificationChain basicSetOp(ArrowOp newOp, NotificationChain msgs)
-  {
-    ArrowOp oldOp = op;
-    op = newOp;
-    if (eNotificationRequired())
-    {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, EditorPackage.E12__OP, oldOp, newOp);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setOp(ArrowOp newOp)
-  {
-    if (newOp != op)
-    {
-      NotificationChain msgs = null;
-      if (op != null)
-        msgs = ((InternalEObject)op).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - EditorPackage.E12__OP, null, msgs);
-      if (newOp != null)
-        msgs = ((InternalEObject)newOp).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - EditorPackage.E12__OP, null, msgs);
-      msgs = basicSetOp(newOp, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, EditorPackage.E12__OP, newOp, newOp));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
@@ -180,8 +120,6 @@ public class E12Impl extends ExprImpl implements E12
     {
       case EditorPackage.E12__LEFT:
         return basicSetLeft(null, msgs);
-      case EditorPackage.E12__OP:
-        return basicSetOp(null, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -198,8 +136,6 @@ public class E12Impl extends ExprImpl implements E12
     {
       case EditorPackage.E12__LEFT:
         return getLeft();
-      case EditorPackage.E12__OP:
-        return getOp();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -216,9 +152,6 @@ public class E12Impl extends ExprImpl implements E12
     {
       case EditorPackage.E12__LEFT:
         setLeft((Expr)newValue);
-        return;
-      case EditorPackage.E12__OP:
-        setOp((ArrowOp)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -237,9 +170,6 @@ public class E12Impl extends ExprImpl implements E12
       case EditorPackage.E12__LEFT:
         setLeft((Expr)null);
         return;
-      case EditorPackage.E12__OP:
-        setOp((ArrowOp)null);
-        return;
     }
     super.eUnset(featureID);
   }
@@ -256,8 +186,6 @@ public class E12Impl extends ExprImpl implements E12
     {
       case EditorPackage.E12__LEFT:
         return left != null;
-      case EditorPackage.E12__OP:
-        return op != null;
     }
     return super.eIsSet(featureID);
   }

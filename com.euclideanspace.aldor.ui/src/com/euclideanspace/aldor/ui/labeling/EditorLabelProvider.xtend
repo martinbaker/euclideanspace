@@ -287,8 +287,11 @@ class EditorLabelProvider extends org.eclipse.xtext.ui.label.DefaultEObjectLabel
 	}
 
 	def String text(Iterators1 ele) {
-//		if (ele.itr!=null) return "Iterators1 :"+ele.itr;
-		return "Iterators1";
+		var int subnodes=0;
+		if (ele.itr!=null) {
+			ele.itr.size();
+		}
+		return "Iterators1 num="+subnodes;
 	}
 
 	def String text(Iterator ele) {
@@ -304,7 +307,7 @@ class EditorLabelProvider extends org.eclipse.xtext.ui.label.DefaultEObjectLabel
 	}
 
 	def String text(Infixed ele) {
-		if (ele.dp!=null) return "Infixed:typed expression";
+		if (ele.dp!=null) return "Infixed:typed (a:b)";
 		if (ele.ifx!=null) return "Infixed:expression";
 		return "Infixed:block";
 	}

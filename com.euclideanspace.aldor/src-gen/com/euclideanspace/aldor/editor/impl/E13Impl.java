@@ -22,7 +22,6 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * <ul>
  *   <li>{@link com.euclideanspace.aldor.editor.impl.E13Impl#getLeft <em>Left</em>}</li>
- *   <li>{@link com.euclideanspace.aldor.editor.impl.E13Impl#getOp <em>Op</em>}</li>
  * </ul>
  * </p>
  *
@@ -39,26 +38,6 @@ public class E13Impl extends ExprImpl implements E13
    * @ordered
    */
   protected Expr left;
-
-  /**
-   * The default value of the '{@link #getOp() <em>Op</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getOp()
-   * @generated
-   * @ordered
-   */
-  protected static final String OP_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getOp() <em>Op</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getOp()
-   * @generated
-   * @ordered
-   */
-  protected String op = OP_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
@@ -134,29 +113,6 @@ public class E13Impl extends ExprImpl implements E13
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getOp()
-  {
-    return op;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setOp(String newOp)
-  {
-    String oldOp = op;
-    op = newOp;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, EditorPackage.E13__OP, oldOp, op));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
@@ -180,8 +136,6 @@ public class E13Impl extends ExprImpl implements E13
     {
       case EditorPackage.E13__LEFT:
         return getLeft();
-      case EditorPackage.E13__OP:
-        return getOp();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -198,9 +152,6 @@ public class E13Impl extends ExprImpl implements E13
     {
       case EditorPackage.E13__LEFT:
         setLeft((Expr)newValue);
-        return;
-      case EditorPackage.E13__OP:
-        setOp((String)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -219,9 +170,6 @@ public class E13Impl extends ExprImpl implements E13
       case EditorPackage.E13__LEFT:
         setLeft((Expr)null);
         return;
-      case EditorPackage.E13__OP:
-        setOp(OP_EDEFAULT);
-        return;
     }
     super.eUnset(featureID);
   }
@@ -238,27 +186,8 @@ public class E13Impl extends ExprImpl implements E13
     {
       case EditorPackage.E13__LEFT:
         return left != null;
-      case EditorPackage.E13__OP:
-        return OP_EDEFAULT == null ? op != null : !OP_EDEFAULT.equals(op);
     }
     return super.eIsSet(featureID);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public String toString()
-  {
-    if (eIsProxy()) return super.toString();
-
-    StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (op: ");
-    result.append(op);
-    result.append(')');
-    return result.toString();
   }
 
 } //E13Impl

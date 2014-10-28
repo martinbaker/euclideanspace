@@ -34,7 +34,7 @@ generate editor "http://www.euclideanspace.com/aldor/Editor"
  * ----------
  * 1) a(c:d,e:f):b() = add {a} fails to parse '=' and 'add' are both infix so cannot be adjacent
  * 2) ':' does not yet work properly. We want it to bind most tightly.
- * 3) + or - as prefix operator.
+ * 3) need to support qualified operations ex: +$a
  */
 
 /*
@@ -764,7 +764,7 @@ E3 returns Expr hidden(WS,KW_NEWLINE,TK_COMMENT):
  */
 E4 returns Expr hidden(WS,KW_NEWLINE,TK_COMMENT):
  (E5 ({E4.left=current}op=('has'|RelationTok /*RelationOp*/) right=E5)*)
-//| (RelationOp {E4.left=current} right+=E5)
+ | (op=RelationTok right=E5 {E4.left=current})
 ;
 
 /* segment operators: '..' and 'by'
@@ -787,7 +787,7 @@ E5 returns Expr hidden(WS,KW_NEWLINE,TK_COMMENT):
  */
 E6 returns Expr hidden(WS,KW_NEWLINE,TK_COMMENT):
  (E7 ({E6.left=current}op=PlusTok /*PlusOp*/ right=E7)*)
- | (op6+=PlusTok right=E7 {E6.left=current})
+ | (op=PlusTok right=E7 {E6.left=current})
 ;
 
 /*
@@ -826,6 +826,9 @@ E11_E12 returns Expr hidden(WS,KW_NEWLINE,TK_COMMENT):
 
 /*
  * prefix operation
+ * examples:
+ * +
+ * + :: type
  * 
  * This version of E11 is used at the top of the precedence stack in
  * 'InfixedExpr'
@@ -843,7 +846,7 @@ Type hidden(WS,KW_NEWLINE,TK_COMMENT):
 ;
 
 E12 returns Expr hidden(WS,KW_NEWLINE,TK_COMMENT):
-  (E13 ({E12.left=current}op=ArrowOp right=E13)*)
+  (E13 ({E12.left=current}op=ArrowTok right=E13)*)
 ;
 
 E13 returns Expr hidden(WS,KW_NEWLINE,TK_COMMENT):
@@ -1257,7 +1260,7 @@ PowerTok (KW_DOLLAR oqt=OpQualTail)?
 //  PostDocumentList
 //;
 
-/* list of lines starting with -- */
+/* list of lines starting with +++ */
 PreDocument hidden(WS,KW_NEWLINE,TK_COMMENT):
   TK_PREDOC*
 ;
@@ -1323,8 +1326,8 @@ enlist1a_Labeled_Semicolon_AB hidden(WS,KW_NEWLINE,TK_COMMENT):
  */ 
 enlister1a_Labeled_Semicolon hidden(WS,KW_NEWLINE,TK_COMMENT):
   statemnts += Labeled
-  (KW_SEMICOLON+ statemnts += Labeled)*
-  KW_SEMICOLON*
+  ((KW_SEMICOLON /* => PostDocument?*/)+ statemnts += Labeled)*
+  (KW_SEMICOLON => PostDocument?)*
 ;
 
 /* Substituted Rules in Xtext:
@@ -1370,11 +1373,11 @@ CurlyContents_Labeled hidden(WS,KW_NEWLINE,TK_COMMENT):
 CurlyContentsList_Labeled hidden(WS,KW_NEWLINE,TK_COMMENT):
 	statemts += CurlyContentB_Labeled
 	//(statemts += CurlyContentB_Labeled?)
-	(KW_SEMICOLON+ statemts += CurlyContentB_Labeled)*
+	((KW_SEMICOLON /* => PostDocument?*/)+ statemts += CurlyContentB_Labeled)*
 	// need to change this line to:
 	//(KW_SEMICOLON* statemts += CurlyContentB_Labeled)*
 	// that is make semicolons optional but that causes non-LL(*) grammar
-	KW_SEMICOLON*
+	(KW_SEMICOLON => PostDocument?)*
 ;
 
 /* List of 'Labeled' each one is terminated by semicolon

@@ -12,7 +12,6 @@ package com.euclideanspace.aldor.editor;
  * The following features are supported:
  * <ul>
  *   <li>{@link com.euclideanspace.aldor.editor.E14#getE15left <em>E1 5left</em>}</li>
- *   <li>{@link com.euclideanspace.aldor.editor.E14#getOp <em>Op</em>}</li>
  *   <li>{@link com.euclideanspace.aldor.editor.E14#getDm <em>Dm</em>}</li>
  *   <li>{@link com.euclideanspace.aldor.editor.E14#getE15right <em>E1 5right</em>}</li>
  * </ul>
@@ -49,32 +48,6 @@ public interface E14 extends Expr
    * @generated
    */
   void setE15left(E15 value);
-
-  /**
-   * Returns the value of the '<em><b>Op</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Op</em>' attribute isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Op</em>' attribute.
-   * @see #setOp(String)
-   * @see com.euclideanspace.aldor.editor.EditorPackage#getE14_Op()
-   * @model
-   * @generated
-   */
-  String getOp();
-
-  /**
-   * Sets the value of the '{@link com.euclideanspace.aldor.editor.E14#getOp <em>Op</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Op</em>' attribute.
-   * @see #getOp()
-   * @generated
-   */
-  void setOp(String value);
 
   /**
    * Returns the value of the '<em><b>Dm</b></em>' containment reference.

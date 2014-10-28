@@ -99,6 +99,33 @@ class ParserTests {
 		'''"hello"'''.parse.assertNoErrors
 	}
 
+/////// Type Declarations ////////////////
+// Some type declarations using ':' provided by Ralf Hemmecke
+
+	@Test def void testTypeDec1() {
+		'''a: T := b'''.parse.assertNoErrors
+	}
+
+	@Test def void testTypeDec2() {
+		'''foo(): T == b'''.parse.assertNoErrors
+	}
+
+	@Test def void testTypeDec3() {
+		'''foo(a: S): T == b'''.parse.assertNoErrors
+	}
+
+	@Test def void testTypeDec4() {
+		'''for x:T in b repeat c'''.parse.assertNoErrors
+	}
+
+	@Test def void testTypeDec5() {
+		'''Record(a: A, b: B)'''.parse.assertNoErrors
+	}
+
+	@Test def void testTypeDec6() {
+		'''Union(a: A, b: B)'''.parse.assertNoErrors
+	}
+
 /////// Enclosures ////////////////
 
 	@Test def void testParen() {
@@ -129,11 +156,17 @@ class ParserTests {
 
 /////// Statements ////////////////
 
+/**
+ * pre comment
+ */
 	@Test def void testPreComment1() {
 		'''+++ pre comment
 		a'''.parse.assertNoErrors
 	}
 
+/**
+ * pre comment in block
+ */
 	@Test def void testPreComment2() {
 		'''{
 		   +++ pre comment
@@ -141,16 +174,25 @@ class ParserTests {
 		   }'''.parse.assertNoErrors
 	}
 
+/**
+ * post comment without semicolon
+ */
 	@Test def void testPostComment1() {
 		'''a
 		++ post comment'''.parse.assertNoErrors
 	}
 
+/**
+ * post comment after semicolon
+ */
 	@Test def void testPostComment2() {
 		'''a;
 		++ post comment after semicolon'''.parse.assertNoErrors
 	}
 
+/**
+ * post comment in block
+ */
 	@Test def void testPostComment3() {
 		'''{
 		   a
@@ -158,6 +200,9 @@ class ParserTests {
 		   }'''.parse.assertNoErrors
 	}
 
+/**
+ * post comment after semicolon in block
+ */
 	@Test def void testPostComment4() {
 		'''{
 		   a;

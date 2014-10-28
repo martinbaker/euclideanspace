@@ -12,7 +12,6 @@ package com.euclideanspace.aldor.editor;
  * The following features are supported:
  * <ul>
  *   <li>{@link com.euclideanspace.aldor.editor.E13#getLeft <em>Left</em>}</li>
- *   <li>{@link com.euclideanspace.aldor.editor.E13#getOp <em>Op</em>}</li>
  * </ul>
  * </p>
  *
@@ -47,31 +46,5 @@ public interface E13 extends Expr
    * @generated
    */
   void setLeft(Expr value);
-
-  /**
-   * Returns the value of the '<em><b>Op</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Op</em>' attribute isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Op</em>' attribute.
-   * @see #setOp(String)
-   * @see com.euclideanspace.aldor.editor.EditorPackage#getE13_Op()
-   * @model
-   * @generated
-   */
-  String getOp();
-
-  /**
-   * Sets the value of the '{@link com.euclideanspace.aldor.editor.E13#getOp <em>Op</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Op</em>' attribute.
-   * @see #getOp()
-   * @generated
-   */
-  void setOp(String value);
 
 } // E13

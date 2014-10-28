@@ -276,7 +276,7 @@ public class EditorSemanticSequencer extends AbstractDelegatingSemanticSequencer
 				   context == grammarAccess.getE3Rule() ||
 				   context == grammarAccess.getE3Access().getE3LeftAction_1_0() ||
 				   context == grammarAccess.getE4Rule() ||
-				   context == grammarAccess.getE4Access().getE4LeftAction_1_0() ||
+				   context == grammarAccess.getE4Access().getE4LeftAction_0_1_0() ||
 				   context == grammarAccess.getE5Rule() ||
 				   context == grammarAccess.getE5Access().getE5LeftAction_1_0() ||
 				   context == grammarAccess.getE6Rule() ||
@@ -344,7 +344,7 @@ public class EditorSemanticSequencer extends AbstractDelegatingSemanticSequencer
 				   context == grammarAccess.getE3Rule() ||
 				   context == grammarAccess.getE3Access().getE3LeftAction_1_0() ||
 				   context == grammarAccess.getE4Rule() ||
-				   context == grammarAccess.getE4Access().getE4LeftAction_1_0() ||
+				   context == grammarAccess.getE4Access().getE4LeftAction_0_1_0() ||
 				   context == grammarAccess.getE5Rule() ||
 				   context == grammarAccess.getE5Access().getE5LeftAction_1_0() ||
 				   context == grammarAccess.getE6Rule() ||
@@ -389,7 +389,7 @@ public class EditorSemanticSequencer extends AbstractDelegatingSemanticSequencer
 				   context == grammarAccess.getE3Rule() ||
 				   context == grammarAccess.getE3Access().getE3LeftAction_1_0() ||
 				   context == grammarAccess.getE4Rule() ||
-				   context == grammarAccess.getE4Access().getE4LeftAction_1_0() ||
+				   context == grammarAccess.getE4Access().getE4LeftAction_0_1_0() ||
 				   context == grammarAccess.getE5Rule() ||
 				   context == grammarAccess.getE5Access().getE5LeftAction_1_0() ||
 				   context == grammarAccess.getE6Rule() ||
@@ -435,7 +435,7 @@ public class EditorSemanticSequencer extends AbstractDelegatingSemanticSequencer
 				   context == grammarAccess.getE3Rule() ||
 				   context == grammarAccess.getE3Access().getE3LeftAction_1_0() ||
 				   context == grammarAccess.getE4Rule() ||
-				   context == grammarAccess.getE4Access().getE4LeftAction_1_0() ||
+				   context == grammarAccess.getE4Access().getE4LeftAction_0_1_0() ||
 				   context == grammarAccess.getE5Rule() ||
 				   context == grammarAccess.getE5Access().getE5LeftAction_1_0() ||
 				   context == grammarAccess.getE6Rule() ||
@@ -498,9 +498,12 @@ public class EditorSemanticSequencer extends AbstractDelegatingSemanticSequencer
 				else if(context == grammarAccess.getE3Rule() ||
 				   context == grammarAccess.getE3Access().getE3LeftAction_1_0() ||
 				   context == grammarAccess.getE4Rule() ||
-				   context == grammarAccess.getE4Access().getE4LeftAction_1_0() ||
 				   context == grammarAccess.getInfixedExprRule()) {
 					sequence_E4(context, (E4) semanticObject); 
+					return; 
+				}
+				else if(context == grammarAccess.getE4Access().getE4LeftAction_0_1_0()) {
+					sequence_E4_E4_0_1_0(context, (E4) semanticObject); 
 					return; 
 				}
 				else if(context == grammarAccess.getInfixedExprsDeclRule()) {
@@ -525,7 +528,7 @@ public class EditorSemanticSequencer extends AbstractDelegatingSemanticSequencer
 				else if(context == grammarAccess.getE3Rule() ||
 				   context == grammarAccess.getE3Access().getE3LeftAction_1_0() ||
 				   context == grammarAccess.getE4Rule() ||
-				   context == grammarAccess.getE4Access().getE4LeftAction_1_0() ||
+				   context == grammarAccess.getE4Access().getE4LeftAction_0_1_0() ||
 				   context == grammarAccess.getE5Rule() ||
 				   context == grammarAccess.getE5Access().getE5LeftAction_1_0() ||
 				   context == grammarAccess.getInfixedExprRule()) {
@@ -554,7 +557,7 @@ public class EditorSemanticSequencer extends AbstractDelegatingSemanticSequencer
 				else if(context == grammarAccess.getE3Rule() ||
 				   context == grammarAccess.getE3Access().getE3LeftAction_1_0() ||
 				   context == grammarAccess.getE4Rule() ||
-				   context == grammarAccess.getE4Access().getE4LeftAction_1_0() ||
+				   context == grammarAccess.getE4Access().getE4LeftAction_0_1_0() ||
 				   context == grammarAccess.getE5Rule() ||
 				   context == grammarAccess.getE5Access().getE5LeftAction_1_0() ||
 				   context == grammarAccess.getE6Rule() ||
@@ -588,7 +591,7 @@ public class EditorSemanticSequencer extends AbstractDelegatingSemanticSequencer
 				else if(context == grammarAccess.getE3Rule() ||
 				   context == grammarAccess.getE3Access().getE3LeftAction_1_0() ||
 				   context == grammarAccess.getE4Rule() ||
-				   context == grammarAccess.getE4Access().getE4LeftAction_1_0() ||
+				   context == grammarAccess.getE4Access().getE4LeftAction_0_1_0() ||
 				   context == grammarAccess.getE5Rule() ||
 				   context == grammarAccess.getE5Access().getE5LeftAction_1_0() ||
 				   context == grammarAccess.getE6Rule() ||
@@ -621,7 +624,7 @@ public class EditorSemanticSequencer extends AbstractDelegatingSemanticSequencer
 				else if(context == grammarAccess.getE3Rule() ||
 				   context == grammarAccess.getE3Access().getE3LeftAction_1_0() ||
 				   context == grammarAccess.getE4Rule() ||
-				   context == grammarAccess.getE4Access().getE4LeftAction_1_0() ||
+				   context == grammarAccess.getE4Access().getE4LeftAction_0_1_0() ||
 				   context == grammarAccess.getE5Rule() ||
 				   context == grammarAccess.getE5Access().getE5LeftAction_1_0() ||
 				   context == grammarAccess.getE6Rule() ||
@@ -656,7 +659,7 @@ public class EditorSemanticSequencer extends AbstractDelegatingSemanticSequencer
 				else if(context == grammarAccess.getE3Rule() ||
 				   context == grammarAccess.getE3Access().getE3LeftAction_1_0() ||
 				   context == grammarAccess.getE4Rule() ||
-				   context == grammarAccess.getE4Access().getE4LeftAction_1_0() ||
+				   context == grammarAccess.getE4Access().getE4LeftAction_0_1_0() ||
 				   context == grammarAccess.getE5Rule() ||
 				   context == grammarAccess.getE5Access().getE5LeftAction_1_0() ||
 				   context == grammarAccess.getE6Rule() ||
@@ -690,7 +693,11 @@ public class EditorSemanticSequencer extends AbstractDelegatingSemanticSequencer
 				}
 				else break;
 			case EditorPackage.EXPR:
-				if(context == grammarAccess.getE6Access().getE6LeftAction_1_2()) {
+				if(context == grammarAccess.getE4Access().getE4LeftAction_1_2()) {
+					sequence_E4_E4_1_2(context, (Expr) semanticObject); 
+					return; 
+				}
+				else if(context == grammarAccess.getE6Access().getE6LeftAction_1_2()) {
 					sequence_E6_E6_1_2(context, (Expr) semanticObject); 
 					return; 
 				}
@@ -1118,7 +1125,7 @@ public class EditorSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	 * Constraint:
 	 *     (
 	 *         left=E12_E12_1_0 
-	 *         op=ArrowOp 
+	 *         op=ArrowTok 
 	 *         right=E13 
 	 *         ie+=InfixedExpr* 
 	 *         dp+=DeclPart* 
@@ -1184,14 +1191,7 @@ public class EditorSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	
 	/**
 	 * Constraint:
-	 *     (
-	 *         left=E4_E4_1_0 
-	 *         (op='has' | op=RelationTok) 
-	 *         right=E5 
-	 *         ie+=InfixedExpr* 
-	 *         dp+=DeclPart* 
-	 *         bas=Binding_AnyStatement?
-	 *     )
+	 *     (((left=E4_E4_0_1_0 (op='has' | op=RelationTok) right=E5) | left=E4_E4_1_2) ie+=InfixedExpr* dp+=DeclPart* bas=Binding_AnyStatement?)
 	 */
 	protected void sequence_BindingR_InfixedExprsDecl_AnyStatement_E4_InfixedExprsDecl_enlister1_InfixedExpr_Comma(EObject context, E4 semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -1579,7 +1579,7 @@ public class EditorSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	
 	/**
 	 * Constraint:
-	 *     (left=E12_E12_1_0 op=ArrowOp right=E13)
+	 *     (left=E12_E12_1_0 op=ArrowTok right=E13)
 	 */
 	protected void sequence_E12(EObject context, E12 semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -1588,7 +1588,7 @@ public class EditorSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	
 	/**
 	 * Constraint:
-	 *     (left=E12_E12_1_0 op=ArrowOp right=E13 ie+=InfixedExpr* dp+=DeclPart*)
+	 *     (left=E12_E12_1_0 op=ArrowTok right=E13 ie+=InfixedExpr* dp+=DeclPart*)
 	 */
 	protected void sequence_E12_InfixedExprsDecl_enlister1_InfixedExpr_Comma(EObject context, E12 semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -1597,7 +1597,7 @@ public class EditorSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	
 	/**
 	 * Constraint:
-	 *     (left=E12_E12_1_0 op=ArrowOp right=E13 ie+=InfixedExpr*)
+	 *     (left=E12_E12_1_0 op=ArrowTok right=E13 ie+=InfixedExpr*)
 	 */
 	protected void sequence_E12_enlister1_InfixedExpr_Comma(EObject context, E12 semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -1712,7 +1712,7 @@ public class EditorSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	
 	/**
 	 * Constraint:
-	 *     (left=E4_E4_1_0 (op='has' | op=RelationTok) right=E5)
+	 *     ((left=E4_E4_0_1_0 (op='has' | op=RelationTok) right=E5) | left=E4_E4_1_2)
 	 */
 	protected void sequence_E4(EObject context, E4 semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -1721,7 +1721,25 @@ public class EditorSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	
 	/**
 	 * Constraint:
-	 *     (left=E4_E4_1_0 (op='has' | op=RelationTok) right=E5 ie+=InfixedExpr* dp+=DeclPart*)
+	 *     (left=E4_E4_0_1_0 (op='has' | op=RelationTok) right=E5)
+	 */
+	protected void sequence_E4_E4_0_1_0(EObject context, E4 semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (op=RelationTok right=E5)
+	 */
+	protected void sequence_E4_E4_1_2(EObject context, Expr semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (((left=E4_E4_0_1_0 (op='has' | op=RelationTok) right=E5) | left=E4_E4_1_2) ie+=InfixedExpr* dp+=DeclPart*)
 	 */
 	protected void sequence_E4_InfixedExprsDecl_enlister1_InfixedExpr_Comma(EObject context, E4 semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -1730,7 +1748,7 @@ public class EditorSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	
 	/**
 	 * Constraint:
-	 *     (left=E4_E4_1_0 (op='has' | op=RelationTok) right=E5 ie+=InfixedExpr*)
+	 *     (((left=E4_E4_0_1_0 (op='has' | op=RelationTok) right=E5) | left=E4_E4_1_2) ie+=InfixedExpr*)
 	 */
 	protected void sequence_E4_enlister1_InfixedExpr_Comma(EObject context, E4 semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -1784,7 +1802,7 @@ public class EditorSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	
 	/**
 	 * Constraint:
-	 *     (op6+=PlusTok right=E7)
+	 *     (op=PlusTok right=E7)
 	 */
 	protected void sequence_E6_E6_1_2(EObject context, Expr semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

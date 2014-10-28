@@ -12,7 +12,6 @@ package com.euclideanspace.aldor.editor;
  * The following features are supported:
  * <ul>
  *   <li>{@link com.euclideanspace.aldor.editor.E12#getLeft <em>Left</em>}</li>
- *   <li>{@link com.euclideanspace.aldor.editor.E12#getOp <em>Op</em>}</li>
  * </ul>
  * </p>
  *
@@ -47,31 +46,5 @@ public interface E12 extends Expr
    * @generated
    */
   void setLeft(Expr value);
-
-  /**
-   * Returns the value of the '<em><b>Op</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Op</em>' containment reference isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Op</em>' containment reference.
-   * @see #setOp(ArrowOp)
-   * @see com.euclideanspace.aldor.editor.EditorPackage#getE12_Op()
-   * @model containment="true"
-   * @generated
-   */
-  ArrowOp getOp();
-
-  /**
-   * Sets the value of the '{@link com.euclideanspace.aldor.editor.E12#getOp <em>Op</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Op</em>' containment reference.
-   * @see #getOp()
-   * @generated
-   */
-  void setOp(ArrowOp value);
 
 } // E12

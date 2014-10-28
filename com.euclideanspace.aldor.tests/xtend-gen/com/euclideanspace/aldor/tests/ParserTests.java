@@ -176,6 +176,78 @@ public class ParserTests {
   }
   
   @Test
+  public void testTypeDec1() {
+    try {
+      StringConcatenation _builder = new StringConcatenation();
+      _builder.append("a: T := b");
+      Model _parse = this._parseHelper.parse(_builder);
+      this._validationTestHelper.assertNoErrors(_parse);
+    } catch (Throwable _e) {
+      throw Exceptions.sneakyThrow(_e);
+    }
+  }
+  
+  @Test
+  public void testTypeDec2() {
+    try {
+      StringConcatenation _builder = new StringConcatenation();
+      _builder.append("foo(): T == b");
+      Model _parse = this._parseHelper.parse(_builder);
+      this._validationTestHelper.assertNoErrors(_parse);
+    } catch (Throwable _e) {
+      throw Exceptions.sneakyThrow(_e);
+    }
+  }
+  
+  @Test
+  public void testTypeDec3() {
+    try {
+      StringConcatenation _builder = new StringConcatenation();
+      _builder.append("foo(a: S): T == b");
+      Model _parse = this._parseHelper.parse(_builder);
+      this._validationTestHelper.assertNoErrors(_parse);
+    } catch (Throwable _e) {
+      throw Exceptions.sneakyThrow(_e);
+    }
+  }
+  
+  @Test
+  public void testTypeDec4() {
+    try {
+      StringConcatenation _builder = new StringConcatenation();
+      _builder.append("for x:T in b repeat c");
+      Model _parse = this._parseHelper.parse(_builder);
+      this._validationTestHelper.assertNoErrors(_parse);
+    } catch (Throwable _e) {
+      throw Exceptions.sneakyThrow(_e);
+    }
+  }
+  
+  @Test
+  public void testTypeDec5() {
+    try {
+      StringConcatenation _builder = new StringConcatenation();
+      _builder.append("Record(a: A, b: B)");
+      Model _parse = this._parseHelper.parse(_builder);
+      this._validationTestHelper.assertNoErrors(_parse);
+    } catch (Throwable _e) {
+      throw Exceptions.sneakyThrow(_e);
+    }
+  }
+  
+  @Test
+  public void testTypeDec6() {
+    try {
+      StringConcatenation _builder = new StringConcatenation();
+      _builder.append("Union(a: A, b: B)");
+      Model _parse = this._parseHelper.parse(_builder);
+      this._validationTestHelper.assertNoErrors(_parse);
+    } catch (Throwable _e) {
+      throw Exceptions.sneakyThrow(_e);
+    }
+  }
+  
+  @Test
   public void testParen() {
     try {
       StringConcatenation _builder = new StringConcatenation();
@@ -245,6 +317,9 @@ public class ParserTests {
     }
   }
   
+  /**
+   * pre comment
+   */
   @Test
   public void testPreComment1() {
     try {
@@ -260,6 +335,9 @@ public class ParserTests {
     }
   }
   
+  /**
+   * pre comment in block
+   */
   @Test
   public void testPreComment2() {
     try {
@@ -281,6 +359,9 @@ public class ParserTests {
     }
   }
   
+  /**
+   * post comment without semicolon
+   */
   @Test
   public void testPostComment1() {
     try {
@@ -296,6 +377,9 @@ public class ParserTests {
     }
   }
   
+  /**
+   * post comment after semicolon
+   */
   @Test
   public void testPostComment2() {
     try {
@@ -311,6 +395,9 @@ public class ParserTests {
     }
   }
   
+  /**
+   * post comment in block
+   */
   @Test
   public void testPostComment3() {
     try {
@@ -332,6 +419,9 @@ public class ParserTests {
     }
   }
   
+  /**
+   * post comment after semicolon in block
+   */
   @Test
   public void testPostComment4() {
     try {

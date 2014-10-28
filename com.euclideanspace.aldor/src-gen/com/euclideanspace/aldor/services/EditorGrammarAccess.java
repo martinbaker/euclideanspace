@@ -2676,56 +2676,83 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 
 	public class E4Elements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "E4");
-		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final RuleCall cE5ParserRuleCall_0 = (RuleCall)cGroup.eContents().get(0);
-		private final Group cGroup_1 = (Group)cGroup.eContents().get(1);
-		private final Action cE4LeftAction_1_0 = (Action)cGroup_1.eContents().get(0);
-		private final Assignment cOpAssignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
-		private final Alternatives cOpAlternatives_1_1_0 = (Alternatives)cOpAssignment_1_1.eContents().get(0);
-		private final Keyword cOpHasKeyword_1_1_0_0 = (Keyword)cOpAlternatives_1_1_0.eContents().get(0);
-		private final RuleCall cOpRelationTokParserRuleCall_1_1_0_1 = (RuleCall)cOpAlternatives_1_1_0.eContents().get(1);
-		private final Assignment cRightAssignment_1_2 = (Assignment)cGroup_1.eContents().get(2);
-		private final RuleCall cRightE5ParserRuleCall_1_2_0 = (RuleCall)cRightAssignment_1_2.eContents().get(0);
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final Group cGroup_0 = (Group)cAlternatives.eContents().get(0);
+		private final RuleCall cE5ParserRuleCall_0_0 = (RuleCall)cGroup_0.eContents().get(0);
+		private final Group cGroup_0_1 = (Group)cGroup_0.eContents().get(1);
+		private final Action cE4LeftAction_0_1_0 = (Action)cGroup_0_1.eContents().get(0);
+		private final Assignment cOpAssignment_0_1_1 = (Assignment)cGroup_0_1.eContents().get(1);
+		private final Alternatives cOpAlternatives_0_1_1_0 = (Alternatives)cOpAssignment_0_1_1.eContents().get(0);
+		private final Keyword cOpHasKeyword_0_1_1_0_0 = (Keyword)cOpAlternatives_0_1_1_0.eContents().get(0);
+		private final RuleCall cOpRelationTokParserRuleCall_0_1_1_0_1 = (RuleCall)cOpAlternatives_0_1_1_0.eContents().get(1);
+		private final Assignment cRightAssignment_0_1_2 = (Assignment)cGroup_0_1.eContents().get(2);
+		private final RuleCall cRightE5ParserRuleCall_0_1_2_0 = (RuleCall)cRightAssignment_0_1_2.eContents().get(0);
+		private final Group cGroup_1 = (Group)cAlternatives.eContents().get(1);
+		private final Assignment cOpAssignment_1_0 = (Assignment)cGroup_1.eContents().get(0);
+		private final RuleCall cOpRelationTokParserRuleCall_1_0_0 = (RuleCall)cOpAssignment_1_0.eContents().get(0);
+		private final Assignment cRightAssignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
+		private final RuleCall cRightE5ParserRuleCall_1_1_0 = (RuleCall)cRightAssignment_1_1.eContents().get(0);
+		private final Action cE4LeftAction_1_2 = (Action)cGroup_1.eContents().get(2);
 		
 		/// * relation operators
 		// * in YACC version this rule also includes relation operators as prefix
 		// * but for Antlr we need to move prefix operators somewhere else
 		// * 
 		// * need to allow a 'qualified op', that is an operation followed by '$' and a type
-		// * / //| (RelationOp {E4.left=current} right+=E5)
-		//E4 returns Expr hidden(WS, KW_NEWLINE, TK_COMMENT):
-		//	E5 ({E4.left=current} op=("has" / *RelationOp* / | RelationTok) right=E5)*;
+		// * / E4 returns Expr hidden(WS, KW_NEWLINE, TK_COMMENT):
+		//	E5 ({E4.left=current} op=("has" / *RelationOp* / | RelationTok) right=E5)* | op=RelationTok right=E5 {E4.left=current};
 		public ParserRule getRule() { return rule; }
 
+		//E5 ({E4.left=current} op=("has" / *RelationOp* / | RelationTok) right=E5)* | op=RelationTok right=E5 {E4.left=current}
+		public Alternatives getAlternatives() { return cAlternatives; }
+
 		//E5 ({E4.left=current} op=("has" / *RelationOp* / | RelationTok) right=E5)*
-		public Group getGroup() { return cGroup; }
+		public Group getGroup_0() { return cGroup_0; }
 
 		//E5
-		public RuleCall getE5ParserRuleCall_0() { return cE5ParserRuleCall_0; }
+		public RuleCall getE5ParserRuleCall_0_0() { return cE5ParserRuleCall_0_0; }
 
 		//({E4.left=current} op=("has" / *RelationOp* / | RelationTok) right=E5)*
-		public Group getGroup_1() { return cGroup_1; }
+		public Group getGroup_0_1() { return cGroup_0_1; }
 
 		//{E4.left=current}
-		public Action getE4LeftAction_1_0() { return cE4LeftAction_1_0; }
+		public Action getE4LeftAction_0_1_0() { return cE4LeftAction_0_1_0; }
 
 		//op=("has" / *RelationOp* / | RelationTok)
-		public Assignment getOpAssignment_1_1() { return cOpAssignment_1_1; }
+		public Assignment getOpAssignment_0_1_1() { return cOpAssignment_0_1_1; }
 
 		//"has" / *RelationOp* / | RelationTok
-		public Alternatives getOpAlternatives_1_1_0() { return cOpAlternatives_1_1_0; }
+		public Alternatives getOpAlternatives_0_1_1_0() { return cOpAlternatives_0_1_1_0; }
 
 		//"has"
-		public Keyword getOpHasKeyword_1_1_0_0() { return cOpHasKeyword_1_1_0_0; }
+		public Keyword getOpHasKeyword_0_1_1_0_0() { return cOpHasKeyword_0_1_1_0_0; }
 
 		//RelationTok
-		public RuleCall getOpRelationTokParserRuleCall_1_1_0_1() { return cOpRelationTokParserRuleCall_1_1_0_1; }
+		public RuleCall getOpRelationTokParserRuleCall_0_1_1_0_1() { return cOpRelationTokParserRuleCall_0_1_1_0_1; }
 
 		//right=E5
-		public Assignment getRightAssignment_1_2() { return cRightAssignment_1_2; }
+		public Assignment getRightAssignment_0_1_2() { return cRightAssignment_0_1_2; }
 
 		//E5
-		public RuleCall getRightE5ParserRuleCall_1_2_0() { return cRightE5ParserRuleCall_1_2_0; }
+		public RuleCall getRightE5ParserRuleCall_0_1_2_0() { return cRightE5ParserRuleCall_0_1_2_0; }
+
+		//op=RelationTok right=E5 {E4.left=current}
+		public Group getGroup_1() { return cGroup_1; }
+
+		//op=RelationTok
+		public Assignment getOpAssignment_1_0() { return cOpAssignment_1_0; }
+
+		//RelationTok
+		public RuleCall getOpRelationTokParserRuleCall_1_0_0() { return cOpRelationTokParserRuleCall_1_0_0; }
+
+		//right=E5
+		public Assignment getRightAssignment_1_1() { return cRightAssignment_1_1; }
+
+		//E5
+		public RuleCall getRightE5ParserRuleCall_1_1_0() { return cRightE5ParserRuleCall_1_1_0; }
+
+		//{E4.left=current}
+		public Action getE4LeftAction_1_2() { return cE4LeftAction_1_2; }
 	}
 
 	public class E5Elements extends AbstractParserRuleElementFinder {
@@ -2787,8 +2814,8 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cRightAssignment_0_1_2 = (Assignment)cGroup_0_1.eContents().get(2);
 		private final RuleCall cRightE7ParserRuleCall_0_1_2_0 = (RuleCall)cRightAssignment_0_1_2.eContents().get(0);
 		private final Group cGroup_1 = (Group)cAlternatives.eContents().get(1);
-		private final Assignment cOp6Assignment_1_0 = (Assignment)cGroup_1.eContents().get(0);
-		private final RuleCall cOp6PlusTokParserRuleCall_1_0_0 = (RuleCall)cOp6Assignment_1_0.eContents().get(0);
+		private final Assignment cOpAssignment_1_0 = (Assignment)cGroup_1.eContents().get(0);
+		private final RuleCall cOpPlusTokParserRuleCall_1_0_0 = (RuleCall)cOpAssignment_1_0.eContents().get(0);
 		private final Assignment cRightAssignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
 		private final RuleCall cRightE7ParserRuleCall_1_1_0 = (RuleCall)cRightAssignment_1_1.eContents().get(0);
 		private final Action cE6LeftAction_1_2 = (Action)cGroup_1.eContents().get(2);
@@ -2799,10 +2826,10 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		// * 
 		// * need to allow a 'qualified op', that is an operation followed by '$' and a type
 		// * / E6 returns Expr hidden(WS, KW_NEWLINE, TK_COMMENT):
-		//	E7 ({E6.left=current} op=PlusTok / *PlusOp* / right=E7)* | op6+=PlusTok right=E7 {E6.left=current};
+		//	E7 ({E6.left=current} op=PlusTok / *PlusOp* / right=E7)* | op=PlusTok right=E7 {E6.left=current};
 		public ParserRule getRule() { return rule; }
 
-		//E7 ({E6.left=current} op=PlusTok / *PlusOp* / right=E7)* | op6+=PlusTok right=E7 {E6.left=current}
+		//E7 ({E6.left=current} op=PlusTok / *PlusOp* / right=E7)* | op=PlusTok right=E7 {E6.left=current}
 		public Alternatives getAlternatives() { return cAlternatives; }
 
 		//E7 ({E6.left=current} op=PlusTok / *PlusOp* / right=E7)*
@@ -2829,14 +2856,14 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		//E7
 		public RuleCall getRightE7ParserRuleCall_0_1_2_0() { return cRightE7ParserRuleCall_0_1_2_0; }
 
-		//op6+=PlusTok right=E7 {E6.left=current}
+		//op=PlusTok right=E7 {E6.left=current}
 		public Group getGroup_1() { return cGroup_1; }
 
-		//op6+=PlusTok
-		public Assignment getOp6Assignment_1_0() { return cOp6Assignment_1_0; }
+		//op=PlusTok
+		public Assignment getOpAssignment_1_0() { return cOpAssignment_1_0; }
 
 		//PlusTok
-		public RuleCall getOp6PlusTokParserRuleCall_1_0_0() { return cOp6PlusTokParserRuleCall_1_0_0; }
+		public RuleCall getOpPlusTokParserRuleCall_1_0_0() { return cOpPlusTokParserRuleCall_1_0_0; }
 
 		//right=E7
 		public Assignment getRightAssignment_1_1() { return cRightAssignment_1_1; }
@@ -3129,31 +3156,31 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		private final Group cGroup_1 = (Group)cGroup.eContents().get(1);
 		private final Action cE12LeftAction_1_0 = (Action)cGroup_1.eContents().get(0);
 		private final Assignment cOpAssignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
-		private final RuleCall cOpArrowOpParserRuleCall_1_1_0 = (RuleCall)cOpAssignment_1_1.eContents().get(0);
+		private final RuleCall cOpArrowTokParserRuleCall_1_1_0 = (RuleCall)cOpAssignment_1_1.eContents().get(0);
 		private final Assignment cRightAssignment_1_2 = (Assignment)cGroup_1.eContents().get(2);
 		private final RuleCall cRightE13ParserRuleCall_1_2_0 = (RuleCall)cRightAssignment_1_2.eContents().get(0);
 		
 		//E12 returns Expr hidden(WS, KW_NEWLINE, TK_COMMENT):
-		//	E13 ({E12.left=current} op=ArrowOp right=E13)*;
+		//	E13 ({E12.left=current} op=ArrowTok right=E13)*;
 		public ParserRule getRule() { return rule; }
 
-		//E13 ({E12.left=current} op=ArrowOp right=E13)*
+		//E13 ({E12.left=current} op=ArrowTok right=E13)*
 		public Group getGroup() { return cGroup; }
 
 		//E13
 		public RuleCall getE13ParserRuleCall_0() { return cE13ParserRuleCall_0; }
 
-		//({E12.left=current} op=ArrowOp right=E13)*
+		//({E12.left=current} op=ArrowTok right=E13)*
 		public Group getGroup_1() { return cGroup_1; }
 
 		//{E12.left=current}
 		public Action getE12LeftAction_1_0() { return cE12LeftAction_1_0; }
 
-		//op=ArrowOp
+		//op=ArrowTok
 		public Assignment getOpAssignment_1_1() { return cOpAssignment_1_1; }
 
-		//ArrowOp
-		public RuleCall getOpArrowOpParserRuleCall_1_1_0() { return cOpArrowOpParserRuleCall_1_1_0; }
+		//ArrowTok
+		public RuleCall getOpArrowTokParserRuleCall_1_1_0() { return cOpArrowTokParserRuleCall_1_1_0; }
 
 		//right=E13
 		public Assignment getRightAssignment_1_2() { return cRightAssignment_1_2; }
@@ -5251,7 +5278,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		////PostDocument hidden(WS,KW_NEWLINE,TK_COMMENT):
 		////  PostDocumentList
 		////;
-		/// * list of lines starting with -- * / PreDocument hidden(WS, KW_NEWLINE, TK_COMMENT):
+		/// * list of lines starting with +++ * / PreDocument hidden(WS, KW_NEWLINE, TK_COMMENT):
 		//	TK_PREDOC*;
 		public ParserRule getRule() { return rule; }
 
@@ -5435,7 +5462,9 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cKW_SEMICOLONTerminalRuleCall_1_0 = (RuleCall)cGroup_1.eContents().get(0);
 		private final Assignment cStatemntsAssignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
 		private final RuleCall cStatemntsLabeledParserRuleCall_1_1_0 = (RuleCall)cStatemntsAssignment_1_1.eContents().get(0);
-		private final RuleCall cKW_SEMICOLONTerminalRuleCall_2 = (RuleCall)cGroup.eContents().get(2);
+		private final Group cGroup_2 = (Group)cGroup.eContents().get(2);
+		private final RuleCall cKW_SEMICOLONTerminalRuleCall_2_0 = (RuleCall)cGroup_2.eContents().get(0);
+		private final RuleCall cPostDocumentParserRuleCall_2_1 = (RuleCall)cGroup_2.eContents().get(1);
 		
 		/// * A list of (at least one) statement(s)
 		// * separated by (one or more) semicolons and optionally ending with
@@ -5444,10 +5473,10 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		// * Aldor axl.z grammar defines this in a left recursive way so
 		// * we have to change to non-recursive structure here.
 		// * / enlister1a_Labeled_Semicolon hidden(WS, KW_NEWLINE, TK_COMMENT):
-		//	statemnts+=Labeled (KW_SEMICOLON+ statemnts+=Labeled)* KW_SEMICOLON*;
+		//	statemnts+=Labeled (KW_SEMICOLON+ / * => PostDocument?* / statemnts+=Labeled)* (KW_SEMICOLON => PostDocument?)*;
 		public ParserRule getRule() { return rule; }
 
-		//statemnts+=Labeled (KW_SEMICOLON+ statemnts+=Labeled)* KW_SEMICOLON*
+		//statemnts+=Labeled (KW_SEMICOLON+ / * => PostDocument?* / statemnts+=Labeled)* (KW_SEMICOLON => PostDocument?)*
 		public Group getGroup() { return cGroup; }
 
 		//statemnts+=Labeled
@@ -5456,7 +5485,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		//Labeled
 		public RuleCall getStatemntsLabeledParserRuleCall_0_0() { return cStatemntsLabeledParserRuleCall_0_0; }
 
-		//(KW_SEMICOLON+ statemnts+=Labeled)*
+		//(KW_SEMICOLON+ / * => PostDocument?* / statemnts+=Labeled)*
 		public Group getGroup_1() { return cGroup_1; }
 
 		//KW_SEMICOLON+
@@ -5468,8 +5497,14 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		//Labeled
 		public RuleCall getStatemntsLabeledParserRuleCall_1_1_0() { return cStatemntsLabeledParserRuleCall_1_1_0; }
 
-		//KW_SEMICOLON*
-		public RuleCall getKW_SEMICOLONTerminalRuleCall_2() { return cKW_SEMICOLONTerminalRuleCall_2; }
+		//(KW_SEMICOLON => PostDocument?)*
+		public Group getGroup_2() { return cGroup_2; }
+
+		//KW_SEMICOLON
+		public RuleCall getKW_SEMICOLONTerminalRuleCall_2_0() { return cKW_SEMICOLONTerminalRuleCall_2_0; }
+
+		//=> PostDocument?
+		public RuleCall getPostDocumentParserRuleCall_2_1() { return cPostDocumentParserRuleCall_2_1; }
 	}
 
 	public class Curly_LabeledElements extends AbstractParserRuleElementFinder {
@@ -5536,7 +5571,9 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cKW_SEMICOLONTerminalRuleCall_1_0 = (RuleCall)cGroup_1.eContents().get(0);
 		private final Assignment cStatemtsAssignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
 		private final RuleCall cStatemtsCurlyContentB_LabeledParserRuleCall_1_1_0 = (RuleCall)cStatemtsAssignment_1_1.eContents().get(0);
-		private final RuleCall cKW_SEMICOLONTerminalRuleCall_2 = (RuleCall)cGroup.eContents().get(2);
+		private final Group cGroup_2 = (Group)cGroup.eContents().get(2);
+		private final RuleCall cKW_SEMICOLONTerminalRuleCall_2_0 = (RuleCall)cGroup_2.eContents().get(0);
+		private final RuleCall cPostDocumentParserRuleCall_2_1 = (RuleCall)cGroup_2.eContents().get(1);
 		
 		/// * A list of (at least one) statement(s)
 		// * seperated by (one or more) semicolons and optionally ending with
@@ -5547,17 +5584,17 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		// * statements can have pre or post comments
 		// * / CurlyContentsList_Labeled hidden(WS, KW_NEWLINE, TK_COMMENT):
 		//	statemts+=CurlyContentB_Labeled //(statemts += CurlyContentB_Labeled?)
-		//	(KW_SEMICOLON+ statemts+=CurlyContentB_Labeled)* // need to change this line to:
+		//	(KW_SEMICOLON+ / * => PostDocument?* / statemts+=CurlyContentB_Labeled)* // need to change this line to:
 		//	//(KW_SEMICOLON* statemts += CurlyContentB_Labeled)*
 		//	// that is make semicolons optional but that causes non-LL(*) grammar
-		//	KW_SEMICOLON*;
+		//	(KW_SEMICOLON => PostDocument?)*;
 		public ParserRule getRule() { return rule; }
 
 		//statemts+=CurlyContentB_Labeled //(statemts += CurlyContentB_Labeled?)
-		//(KW_SEMICOLON+ statemts+=CurlyContentB_Labeled)* // need to change this line to:
+		//(KW_SEMICOLON+ / * => PostDocument?* / statemts+=CurlyContentB_Labeled)* // need to change this line to:
 		////(KW_SEMICOLON* statemts += CurlyContentB_Labeled)*
 		//// that is make semicolons optional but that causes non-LL(*) grammar
-		//KW_SEMICOLON*
+		//(KW_SEMICOLON => PostDocument?)*
 		public Group getGroup() { return cGroup; }
 
 		//statemts+=CurlyContentB_Labeled
@@ -5566,7 +5603,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		//CurlyContentB_Labeled
 		public RuleCall getStatemtsCurlyContentB_LabeledParserRuleCall_0_0() { return cStatemtsCurlyContentB_LabeledParserRuleCall_0_0; }
 
-		//(KW_SEMICOLON+ statemts+=CurlyContentB_Labeled)*
+		//(KW_SEMICOLON+ / * => PostDocument?* / statemts+=CurlyContentB_Labeled)*
 		public Group getGroup_1() { return cGroup_1; }
 
 		//KW_SEMICOLON+
@@ -5578,11 +5615,14 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		//CurlyContentB_Labeled
 		public RuleCall getStatemtsCurlyContentB_LabeledParserRuleCall_1_1_0() { return cStatemtsCurlyContentB_LabeledParserRuleCall_1_1_0; }
 
-		//// need to change this line to:
-		////(KW_SEMICOLON* statemts += CurlyContentB_Labeled)*
-		//// that is make semicolons optional but that causes non-LL(*) grammar
-		//KW_SEMICOLON*
-		public RuleCall getKW_SEMICOLONTerminalRuleCall_2() { return cKW_SEMICOLONTerminalRuleCall_2; }
+		//(KW_SEMICOLON => PostDocument?)*
+		public Group getGroup_2() { return cGroup_2; }
+
+		//KW_SEMICOLON
+		public RuleCall getKW_SEMICOLONTerminalRuleCall_2_0() { return cKW_SEMICOLONTerminalRuleCall_2_0; }
+
+		//=> PostDocument?
+		public RuleCall getPostDocumentParserRuleCall_2_1() { return cPostDocumentParserRuleCall_2_1; }
 	}
 
 	public class CurlyContentB_LabeledElements extends AbstractParserRuleElementFinder {
@@ -7164,9 +7204,8 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 	// * but for Antlr we need to move prefix operators somewhere else
 	// * 
 	// * need to allow a 'qualified op', that is an operation followed by '$' and a type
-	// * / //| (RelationOp {E4.left=current} right+=E5)
-	//E4 returns Expr hidden(WS, KW_NEWLINE, TK_COMMENT):
-	//	E5 ({E4.left=current} op=("has" / *RelationOp* / | RelationTok) right=E5)*;
+	// * / E4 returns Expr hidden(WS, KW_NEWLINE, TK_COMMENT):
+	//	E5 ({E4.left=current} op=("has" / *RelationOp* / | RelationTok) right=E5)* | op=RelationTok right=E5 {E4.left=current};
 	public E4Elements getE4Access() {
 		return pE4;
 	}
@@ -7198,7 +7237,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 	// * 
 	// * need to allow a 'qualified op', that is an operation followed by '$' and a type
 	// * / E6 returns Expr hidden(WS, KW_NEWLINE, TK_COMMENT):
-	//	E7 ({E6.left=current} op=PlusTok / *PlusOp* / right=E7)* | op6+=PlusTok right=E7 {E6.left=current};
+	//	E7 ({E6.left=current} op=PlusTok / *PlusOp* / right=E7)* | op=PlusTok right=E7 {E6.left=current};
 	public E6Elements getE6Access() {
 		return pE6;
 	}
@@ -7290,7 +7329,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//E12 returns Expr hidden(WS, KW_NEWLINE, TK_COMMENT):
-	//	E13 ({E12.left=current} op=ArrowOp right=E13)*;
+	//	E13 ({E12.left=current} op=ArrowTok right=E13)*;
 	public E12Elements getE12Access() {
 		return pE12;
 	}
@@ -8029,7 +8068,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 	////PostDocument hidden(WS,KW_NEWLINE,TK_COMMENT):
 	////  PostDocumentList
 	////;
-	/// * list of lines starting with -- * / PreDocument hidden(WS, KW_NEWLINE, TK_COMMENT):
+	/// * list of lines starting with +++ * / PreDocument hidden(WS, KW_NEWLINE, TK_COMMENT):
 	//	TK_PREDOC*;
 	public PreDocumentElements getPreDocumentAccess() {
 		return pPreDocument;
@@ -8137,7 +8176,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 	// * Aldor axl.z grammar defines this in a left recursive way so
 	// * we have to change to non-recursive structure here.
 	// * / enlister1a_Labeled_Semicolon hidden(WS, KW_NEWLINE, TK_COMMENT):
-	//	statemnts+=Labeled (KW_SEMICOLON+ statemnts+=Labeled)* KW_SEMICOLON*;
+	//	statemnts+=Labeled (KW_SEMICOLON+ / * => PostDocument?* / statemnts+=Labeled)* (KW_SEMICOLON => PostDocument?)*;
 	public Enlister1a_Labeled_SemicolonElements getEnlister1a_Labeled_SemicolonAccess() {
 		return pEnlister1a_Labeled_Semicolon;
 	}
@@ -8194,10 +8233,10 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 	// * statements can have pre or post comments
 	// * / CurlyContentsList_Labeled hidden(WS, KW_NEWLINE, TK_COMMENT):
 	//	statemts+=CurlyContentB_Labeled //(statemts += CurlyContentB_Labeled?)
-	//	(KW_SEMICOLON+ statemts+=CurlyContentB_Labeled)* // need to change this line to:
+	//	(KW_SEMICOLON+ / * => PostDocument?* / statemts+=CurlyContentB_Labeled)* // need to change this line to:
 	//	//(KW_SEMICOLON* statemts += CurlyContentB_Labeled)*
 	//	// that is make semicolons optional but that causes non-LL(*) grammar
-	//	KW_SEMICOLON*;
+	//	(KW_SEMICOLON => PostDocument?)*;
 	public CurlyContentsList_LabeledElements getCurlyContentsList_LabeledAccess() {
 		return pCurlyContentsList_Labeled;
 	}

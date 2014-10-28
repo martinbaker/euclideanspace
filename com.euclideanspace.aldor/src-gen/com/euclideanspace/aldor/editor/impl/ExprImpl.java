@@ -5,20 +5,14 @@ package com.euclideanspace.aldor.editor.impl;
 import com.euclideanspace.aldor.editor.EditorPackage;
 import com.euclideanspace.aldor.editor.Expr;
 
-import java.util.Collection;
-
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
-import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
-import org.eclipse.emf.ecore.util.EDataTypeEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -27,7 +21,7 @@ import org.eclipse.emf.ecore.util.EDataTypeEList;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link com.euclideanspace.aldor.editor.impl.ExprImpl#getOp6 <em>Op6</em>}</li>
+ *   <li>{@link com.euclideanspace.aldor.editor.impl.ExprImpl#getOp <em>Op</em>}</li>
  *   <li>{@link com.euclideanspace.aldor.editor.impl.ExprImpl#getRight <em>Right</em>}</li>
  * </ul>
  * </p>
@@ -37,14 +31,24 @@ import org.eclipse.emf.ecore.util.EDataTypeEList;
 public class ExprImpl extends InfixedExprImpl implements Expr
 {
   /**
-   * The cached value of the '{@link #getOp6() <em>Op6</em>}' attribute list.
+   * The default value of the '{@link #getOp() <em>Op</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getOp6()
+   * @see #getOp()
    * @generated
    * @ordered
    */
-  protected EList<String> op6;
+  protected static final String OP_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getOp() <em>Op</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getOp()
+   * @generated
+   * @ordered
+   */
+  protected String op = OP_EDEFAULT;
 
   /**
    * The cached value of the '{@link #getRight() <em>Right</em>}' containment reference.
@@ -82,13 +86,22 @@ public class ExprImpl extends InfixedExprImpl implements Expr
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<String> getOp6()
+  public String getOp()
   {
-    if (op6 == null)
-    {
-      op6 = new EDataTypeEList<String>(String.class, this, EditorPackage.EXPR__OP6);
-    }
-    return op6;
+    return op;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setOp(String newOp)
+  {
+    String oldOp = op;
+    op = newOp;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, EditorPackage.EXPR__OP, oldOp, op));
   }
 
   /**
@@ -165,8 +178,8 @@ public class ExprImpl extends InfixedExprImpl implements Expr
   {
     switch (featureID)
     {
-      case EditorPackage.EXPR__OP6:
-        return getOp6();
+      case EditorPackage.EXPR__OP:
+        return getOp();
       case EditorPackage.EXPR__RIGHT:
         return getRight();
     }
@@ -178,15 +191,13 @@ public class ExprImpl extends InfixedExprImpl implements Expr
    * <!-- end-user-doc -->
    * @generated
    */
-  @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue)
   {
     switch (featureID)
     {
-      case EditorPackage.EXPR__OP6:
-        getOp6().clear();
-        getOp6().addAll((Collection<? extends String>)newValue);
+      case EditorPackage.EXPR__OP:
+        setOp((String)newValue);
         return;
       case EditorPackage.EXPR__RIGHT:
         setRight((EObject)newValue);
@@ -205,8 +216,8 @@ public class ExprImpl extends InfixedExprImpl implements Expr
   {
     switch (featureID)
     {
-      case EditorPackage.EXPR__OP6:
-        getOp6().clear();
+      case EditorPackage.EXPR__OP:
+        setOp(OP_EDEFAULT);
         return;
       case EditorPackage.EXPR__RIGHT:
         setRight((EObject)null);
@@ -225,8 +236,8 @@ public class ExprImpl extends InfixedExprImpl implements Expr
   {
     switch (featureID)
     {
-      case EditorPackage.EXPR__OP6:
-        return op6 != null && !op6.isEmpty();
+      case EditorPackage.EXPR__OP:
+        return OP_EDEFAULT == null ? op != null : !OP_EDEFAULT.equals(op);
       case EditorPackage.EXPR__RIGHT:
         return right != null;
     }
@@ -244,8 +255,8 @@ public class ExprImpl extends InfixedExprImpl implements Expr
     if (eIsProxy()) return super.toString();
 
     StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (op6: ");
-    result.append(op6);
+    result.append(" (op: ");
+    result.append(op);
     result.append(')');
     return result.toString();
   }
