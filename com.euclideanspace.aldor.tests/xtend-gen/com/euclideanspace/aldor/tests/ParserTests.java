@@ -247,6 +247,32 @@ public class ParserTests {
     }
   }
   
+  /**
+   * This test from Peter Broadbery Shows that ':' has
+   * a lower precedence than '+'
+   * I'm (Martin) not sure if this is an intended feature of Aldor
+   * or just a artifact of how it was built?
+   * 
+   * In SPAD ':' binds more tightly. Waldek says:In old Spad ':' acted
+   * somewhat like 'pretend' only performing
+   * even less checking.  For such use more tight binding of other
+   * operators make sense.
+   */
+  @Test
+  public void testTypeDec7() {
+    try {
+      StringConcatenation _builder = new StringConcatenation();
+      _builder.append("default a, b: String;");
+      _builder.newLine();
+      _builder.append("           ");
+      _builder.append("a+b: MachineInteger == # a;");
+      Model _parse = this._parseHelper.parse(_builder);
+      this._validationTestHelper.assertNoErrors(_parse);
+    } catch (Throwable _e) {
+      throw Exceptions.sneakyThrow(_e);
+    }
+  }
+  
   @Test
   public void testParen() {
     try {

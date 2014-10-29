@@ -1157,8 +1157,10 @@ public class EditorSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	 * Constraint:
 	 *     (
 	 *         (
-	 *             (e15left=E15? op='with' dm=DeclMolecule) | 
-	 *             (e15left=E15? op='add' dm=DeclMolecule) | 
+	 *             (e15left=E15 op='with' dm=DeclMolecule) | 
+	 *             (op='with' dm=DeclMolecule) | 
+	 *             (e15left=E15 op='add' dm=DeclMolecule) | 
+	 *             (op='add' dm=DeclMolecule) | 
 	 *             (e15left=E15 op='except' e15right=E15) | 
 	 *             (e15left=E15 op='throw' e15right=E15) | 
 	 *             e15left=E15
@@ -1634,8 +1636,10 @@ public class EditorSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	/**
 	 * Constraint:
 	 *     (
-	 *         (e15left=E15? op='with' dm=DeclMolecule) | 
-	 *         (e15left=E15? op='add' dm=DeclMolecule) | 
+	 *         (e15left=E15 op='with' dm=DeclMolecule) | 
+	 *         (op='with' dm=DeclMolecule) | 
+	 *         (e15left=E15 op='add' dm=DeclMolecule) | 
+	 *         (op='add' dm=DeclMolecule) | 
 	 *         (e15left=E15 op='except' e15right=E15) | 
 	 *         (e15left=E15 op='throw' e15right=E15) | 
 	 *         e15left=E15
@@ -1650,8 +1654,10 @@ public class EditorSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	 * Constraint:
 	 *     (
 	 *         (
-	 *             (e15left=E15? op='with' dm=DeclMolecule) | 
-	 *             (e15left=E15? op='add' dm=DeclMolecule) | 
+	 *             (e15left=E15 op='with' dm=DeclMolecule) | 
+	 *             (op='with' dm=DeclMolecule) | 
+	 *             (e15left=E15 op='add' dm=DeclMolecule) | 
+	 *             (op='add' dm=DeclMolecule) | 
 	 *             (e15left=E15 op='except' e15right=E15) | 
 	 *             (e15left=E15 op='throw' e15right=E15) | 
 	 *             e15left=E15
@@ -1669,8 +1675,10 @@ public class EditorSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	 * Constraint:
 	 *     (
 	 *         (
-	 *             (e15left=E15? op='with' dm=DeclMolecule) | 
-	 *             (e15left=E15? op='add' dm=DeclMolecule) | 
+	 *             (e15left=E15 op='with' dm=DeclMolecule) | 
+	 *             (op='with' dm=DeclMolecule) | 
+	 *             (e15left=E15 op='add' dm=DeclMolecule) | 
+	 *             (op='add' dm=DeclMolecule) | 
 	 *             (e15left=E15 op='except' e15right=E15) | 
 	 *             (e15left=E15 op='throw' e15right=E15) | 
 	 *             e15left=E15

@@ -126,6 +126,20 @@ class ParserTests {
 		'''Union(a: A, b: B)'''.parse.assertNoErrors
 	}
 
+    /** This test from Peter Broadbery Shows that ':' has
+     * a lower precedence than '+' 
+     * I'm (Martin) not sure if this is an intended feature of Aldor
+     * or just a artifact of how it was built?
+     *
+     * In SPAD ':' binds more tightly. Waldek says:In old Spad ':' acted
+     * somewhat like 'pretend' only performing
+     * even less checking.  For such use more tight binding of other
+     * operators make sense.*/
+	@Test def void testTypeDec7() {
+		'''default a, b: String;
+           a+b: MachineInteger == # a;'''.parse.assertNoErrors
+	}
+
 /////// Enclosures ////////////////
 
 	@Test def void testParen() {

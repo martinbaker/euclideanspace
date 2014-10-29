@@ -461,6 +461,8 @@ DeclBinding hidden(WS,KW_NEWLINE,TK_COMMENT):
   BindingR_InfixedExprsDecl_AnyStatement
 ;
 
+/* allows a type declaration such as
+ * a:Integer := 0*/
 InfixedExprsDecl hidden(WS,KW_NEWLINE,TK_COMMENT):
  InfixedExprs dp+=DeclPart*
 ;
@@ -818,7 +820,9 @@ E9 returns Expr hidden(WS,KW_NEWLINE,TK_COMMENT):
 ;
  
 /*
- * This version of E11 is used in the middle of the precedence stack
+ * This version of E11 is used:
+ * - in the middle of the precedence stack
+ * - and it is called from rule: 'Type'
  */
 E11_E12 returns Expr hidden(WS,KW_NEWLINE,TK_COMMENT):
 	(E12 ({E11_E12.left=current}(op=KW_2COLON|op=KW_AT|op='pretend') right=E12)*)
@@ -862,8 +866,10 @@ OpQualTail hidden(WS,KW_NEWLINE,TK_COMMENT):
 ;
 
 E14 hidden(WS,KW_NEWLINE,TK_COMMENT):
- => (e15left=E15? op='with' dm=DeclMolecule)
-| => (e15left=E15? op='add' dm=DeclMolecule)
+ =>(e15left=E15 op='with' dm=DeclMolecule)
+| (op='with' dm=DeclMolecule)
+| =>(e15left=E15 op='add' dm=DeclMolecule)
+| (op='add' dm=DeclMolecule)
 | => (e15left=E15 op='except' e15right=E15)
 | => (e15left=E15 op='throw' e15right=E15)
 | e15left=E15
