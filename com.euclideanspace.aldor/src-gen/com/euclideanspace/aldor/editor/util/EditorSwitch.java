@@ -600,11 +600,7 @@ public class EditorSwitch<T> extends Switch<T>
         Jleft_Molecule jleft_Molecule = (Jleft_Molecule)theEObject;
         T result = caseJleft_Molecule(jleft_Molecule);
         if (result == null) result = caseLeftJuxtaposed(jleft_Molecule);
-        if (result == null) result = caseJright_Molecule(jleft_Molecule);
         if (result == null) result = caseQualTail(jleft_Molecule);
-        if (result == null) result = caseRightJuxtaposed(jleft_Molecule);
-        if (result == null) result = caseApplication(jleft_Molecule);
-        if (result == null) result = caseE15(jleft_Molecule);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -612,7 +608,6 @@ public class EditorSwitch<T> extends Switch<T>
       {
         Jleft_Atom jleft_Atom = (Jleft_Atom)theEObject;
         T result = caseJleft_Atom(jleft_Atom);
-        if (result == null) result = caseJright_Atom(jleft_Atom);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -718,13 +713,6 @@ public class EditorSwitch<T> extends Switch<T>
       {
         Name name = (Name)theEObject;
         T result = caseName(name);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case EditorPackage.ID:
-      {
-        Id id = (Id)theEObject;
-        T result = caseId(id);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -2533,22 +2521,6 @@ public class EditorSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseName(Name object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Id</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Id</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseId(Id object)
   {
     return null;
   }

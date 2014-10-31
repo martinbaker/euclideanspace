@@ -466,6 +466,69 @@ class ParserTests {
 		'''f(): () ==never'''.parse.assertNoErrors
 	}
 
+/////// Function Application ////////////////
+
+	@Test def void testFunctionApplication1() {
+		'''a()'''.parse.assertNoErrors
+	}
+
+	@Test def void testFunctionApplication2() {
+		'''a(b)'''.parse.assertNoErrors
+	}
+
+	@Test def void testFunctionApplication3() {
+		'''a(b,c)'''.parse.assertNoErrors
+	}
+
+	@Test def void testFunctionApplication4() {
+		'''a(b)(c)'''.parse.assertNoErrors
+	}
+
+	@Test def void testFunctionApplication5() {
+		'''a[b]'''.parse.assertNoErrors
+	}
+
+    /** juxtaposition associate left */
+	@Test def void testFunctionApplication6() {
+		'''a b'''.parse.assertNoErrors
+	}
+
+    /** juxtaposition associate left [should equal a (b c)]*/
+	@Test def void testFunctionApplication7() {
+		'''a b c'''.parse.assertNoErrors
+	}
+
+    /** juxtaposition associate right*/
+	@Test def void testFunctionApplication8() {
+		'''a.b'''.parse.assertNoErrors
+	}
+
+    /** juxtaposition associate right [should equal (a.b).c]*/
+	@Test def void testFunctionApplication9() {
+		'''a.b.c'''.parse.assertNoErrors
+	}
+
+    /** juxtaposition mixed*/
+	@Test def void testFunctionApplication10() {
+		'''a.b c'''.parse.assertNoErrors
+	}
+
+    /** juxtaposition mixed*/
+	@Test def void testFunctionApplication11() {
+		'''a b.c'''.parse.assertNoErrors
+	}
+	
+	/** juxtaposition not */
+	@Test def void testFunctionApplication12() {
+		'''not b'''.parse.assertNoErrors
+	}
+	
+/////// Domain ////////////////
+
+	@Test def void testDomain1() {
+		'''%'''.parse.assertNoErrors
+	}
+
 /* The above tests test individual elements of code but it may
  * miss problems caused when they are combined in various ways.
  * The following tests are designed to try some complete programs.
@@ -522,7 +585,7 @@ print << "factorial 10 = " << factorial 10 << newline
 	def void testParse4() {
 		'''#include "aldor"
 
-MiniList(S: BasicType): LinearAggregate(S) = add {
+MiniList(S: BasicType): LinearAggregate(S) == add {
         Rep == Union(nil: Pointer, rec: Record(first: S, rest: %));
 
         import from Rep, SingleInteger;

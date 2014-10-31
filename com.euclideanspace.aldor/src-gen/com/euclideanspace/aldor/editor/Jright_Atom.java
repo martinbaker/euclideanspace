@@ -12,6 +12,7 @@ import org.eclipse.emf.ecore.EObject;
  * <p>
  * The following features are supported:
  * <ul>
+ *   <li>{@link com.euclideanspace.aldor.editor.Jright_Atom#getLeft2 <em>Left2</em>}</li>
  *   <li>{@link com.euclideanspace.aldor.editor.Jright_Atom#getRight2 <em>Right2</em>}</li>
  * </ul>
  * </p>
@@ -22,6 +23,32 @@ import org.eclipse.emf.ecore.EObject;
  */
 public interface Jright_Atom extends EObject
 {
+  /**
+   * Returns the value of the '<em><b>Left2</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Left2</em>' containment reference isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Left2</em>' containment reference.
+   * @see #setLeft2(Jleft_Atom)
+   * @see com.euclideanspace.aldor.editor.EditorPackage#getJright_Atom_Left2()
+   * @model containment="true"
+   * @generated
+   */
+  Jleft_Atom getLeft2();
+
+  /**
+   * Sets the value of the '{@link com.euclideanspace.aldor.editor.Jright_Atom#getLeft2 <em>Left2</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Left2</em>' containment reference.
+   * @see #getLeft2()
+   * @generated
+   */
+  void setLeft2(Jleft_Atom value);
+
   /**
    * Returns the value of the '<em><b>Right2</b></em>' containment reference.
    * <!-- begin-user-doc -->

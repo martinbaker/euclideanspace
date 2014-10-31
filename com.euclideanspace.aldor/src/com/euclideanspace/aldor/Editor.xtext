@@ -55,12 +55,13 @@ Model hidden(WS,KW_NEWLINE,TK_COMMENT):
 /* ID consists of alpha (upper or lower case) followed by alphanumeric
  * any other character can stand in for alpha if prefixed by '_'
  * for instance a multiply function is often named '_*'
+ * For Aldor % is also considered an ID, it means this representation.
  * IDs can also end with ? or ! where:
  * '?' indicates a function which returns a boolean value
  * '!' indicates a function which changes an existing domain value
  * (in a mutable domain)
  */
-terminal TK_ID : ('a'..'z'|'A'..'Z'|('_'.)) ('a'..'z'|'A'..'Z'|('_'.)|'0'..'9')*'!'?'?'?;
+terminal TK_ID : ('%'|'a'..'z'|'A'..'Z'|('_'.)) ('a'..'z'|'A'..'Z'|('_'.)|'0'..'9')*'!'?'?'?;
 
 /* whitespace on single line overrides default whitespace
  * does not include newline unless it follows underscore.
@@ -893,6 +894,20 @@ Op hidden(WS,KW_NEWLINE,TK_COMMENT):
 | {Op}aop=PowerOp
 ;
 
+/*
+ * unary or binary operation symbols:
+ * KW_RARROW | KW_LARROW | KW_MAPSTAR |
+ * KW_VEE | KW_WEDGE |
+ * KW_EQ | KW_TILDEE | KW_HATE |
+ * KW_GE | KW_GT | KW_2GT |
+ * KW_LE | KW_LT | KW_2LT |
+ * 'is' | 'isnt' | 'case' |
+ * KW_2DOT | 'by' |
+ * KW_PLUS | KW_MINUS | KW_PLUSMINUS |
+ * 'mod' | 'quo' | 'rem' | 'exquo' |
+ * KW_STAR | KW_SLASH | KW_BACKSLASH |
+ * KW_2STAR | KW_HAT
+ */
 NakedOp hidden(WS,KW_NEWLINE,TK_COMMENT):
  UnqualOp_ArrowTok
 | UnqualOp_LatticeTok
@@ -978,23 +993,40 @@ LeftJuxtaposed hidden(WS,KW_NEWLINE,TK_COMMENT):
 /* 
  * implements 'function application' as described above including juxtaposition
  *
+ * Examples of possible matches for this rule:
+ * a b
+ * a b c [right associative: should equal a.(b.c)]
+ * a.b.c [left associative: should equal (a.b).c]
+ * a b.c [combinations of left and right associative]
+ * a.b c
+ * not(a)
+ * [also matched by Jright_Molecule:]
+ * a
+ * 1
+ * 1.2
+ * "txt"
+ * a(b)
+ * a(b)(c)
+ * a.b
+ * a[b]
+ * 
  * substituted version of axl.z code:
  * Jright(H) : Jleft(H) | Jleft(H) Jright(Atom)
  * | 'not' Jright(Atom)
  */
 Jright_Molecule hidden(WS,KW_NEWLINE,TK_COMMENT):
-	(Jleft_Molecule (right=Jright_Atom)?)
-	|
-    ('not' right=Jright_Atom)
+	(left3=Jleft_Molecule (right3=Jright_Atom)?)
+	| ('not' right3=Jright_Atom)
 ;
 
 Jright_Atom hidden(WS,KW_NEWLINE,TK_COMMENT):
-	(Jleft_Atom (right2=Jright_Atom)?)
+	(left2=Jleft_Atom (right2=Jright_Atom)?)
 	|
 	('not' right2=Jright_Atom)
 ;
 
-/* Molecule followed by 0 or more BlockEnclosures (bracketed terms)
+/* Jleft_Molecule
+ * Molecule (Atom|Enclosure) followed by 0 or more BlockEnclosures (bracketed terms)
  * or variants on that theme.
  * 
  * matches:
@@ -1002,6 +1034,23 @@ Jright_Atom hidden(WS,KW_NEWLINE,TK_COMMENT):
  * - 'not' BlockEnclosure - not has one argument
  * - (*) BlockEnclosure
  * - (*) '.' BlockMolecule
+ *
+ * Examples of possible matches for this rule:
+ * a
+ * 1
+ * 1.2
+ * "txt"
+ * a(b)
+ * a.b
+ * a.b.c [should equal (a.b).c]
+ * a().b
+ * a(b)(c)
+ * a.b c
+ * a[b]
+ * not(a)
+ * 
+ * Examples of non-matches for this rule:
+ * a b <- This is matched by Jright_Molecule before calling this rule
  * 
  * substituted version of axl.z code:
  * Jleft(H) : H | 'not' BlockEnclosure
@@ -1010,8 +1059,14 @@ Jright_Atom hidden(WS,KW_NEWLINE,TK_COMMENT):
  */
 Jleft_Molecule hidden(WS,KW_NEWLINE,TK_COMMENT):
 ('not' be+=BlockEnclosure)
-| =>(m=Molecule be+=BlockEnclosure*)
-| (m=Molecule (KW_DOT bm+=BlockMolecule)*)
+// molecule can be float which can mask following
+//| =>(m=Molecule be+=BlockEnclosure*)
+//| (m=Molecule (KW_DOT bm+=BlockMolecule)*)
+// so change to:
+// TODO change back or make permanent
+| (m=Id be+=BlockEnclosure+ (KW_DOT bm+=BlockMolecule)*)
+| (m=Id ( KW_DOT bm+=BlockMolecule)+)
+| m2=Molecule
 ;
 
 /* 
@@ -1028,12 +1083,27 @@ Jleft_Molecule hidden(WS,KW_NEWLINE,TK_COMMENT):
  */
 Jleft_Atom hidden(WS,KW_NEWLINE,TK_COMMENT):
 ('not' be+=BlockEnclosure)
-| =>(a=Atom be+=BlockEnclosure*)
-| (a=Atom (KW_DOT bm4+=BlockMolecule)*)
+// atom can be float which can mask following
+// | (a=Atom (KW_DOT bm4+=BlockMolecule)*)
+//| =>(a=Atom be+=BlockEnclosure*) // BlockEnclosure does not include 'atom'
+                                // so this is conventional function call with parenthesis
+// so change to:
+// TODO change back or make permanent
+| (a=Id (KW_DOT bm4+=BlockMolecule)*)
+| (=>a=Id be+=BlockEnclosure*)
 ;
 
 /*
  * Indivisible Expressions
+ * 
+ * Examples:
+ * a
+ * 10
+ * "abc"
+ * (a)
+ * [a]
+ * "a,b" <- currently QuotedIds not distinguished from ordinary string
+ * TODO need to investigate what are QuotedIds used for?
  */
 Molecule hidden(WS,KW_NEWLINE,TK_COMMENT):
 =>Atom
@@ -1096,7 +1166,7 @@ QuotedIds hidden(WS,KW_NEWLINE,TK_COMMENT):
  op=KW_QUOTE n=Names? KW_QUOTE
 ;
 
-/* names seperated by commas */
+/* names separated by commas */
 Names hidden(WS,KW_NEWLINE,TK_COMMENT):
   firstName=TK_ID
   (KW_COMMA subsequentNames+=TK_ID)*
@@ -1104,13 +1174,28 @@ Names hidden(WS,KW_NEWLINE,TK_COMMENT):
 
 /*
  * identifier or literal
+ * alphanumeric identifier or string, integer or float literal
+ * 
+ * Examples:
+ * a
+ * 10
+ * "abc"
  */
 Atom hidden(WS,KW_NEWLINE,TK_COMMENT):
  iden=Id
 | lit=Literal
 ;
 
-/* called from Flow_AnyStatement and Flow_BalStatement */
+/* 
+ * Id or unary or binary operation symbols.
+ * 
+ * Examples:
+ * a
+ * <
+ * is
+ * 
+ * called from Flow_AnyStatement and Flow_BalStatement
+ */
 Name hidden(WS,KW_NEWLINE,TK_COMMENT):
 	{Name}
 name=Id
@@ -1122,7 +1207,7 @@ name=Id
  * manipulation.
  */
 Id hidden(WS,KW_NEWLINE,TK_COMMENT):
-name=(TK_ID | KW_SHARP | KW_TILDE)
+ (TK_ID | KW_SHARP | KW_TILDE)
 ;
 
 /* string, integer or float literal */
@@ -1346,12 +1431,13 @@ enlister1a_Labeled_Semicolon hidden(WS,KW_NEWLINE,TK_COMMENT):
 //{ $$ = abOneOrNewOfList(AB_Sequence,$2); listFree(AbSyn)($2); }
 //;
 
-/* Substituted Rules in Xtext:
-* Curly(Labeled)
-* 
+/* Curly(Labeled)
+* Curly brackets containing a list of (at least one) statement(s)
+* seperated by (one or more) semicolons and optionally ending with
+* a semicolon (zero or more)
 */
 Curly_Labeled hidden(WS,KW_NEWLINE,TK_COMMENT):
-KW_OCURLY CurlyContents_Labeled KW_CCURLY
+  KW_OCURLY CurlyContents_Labeled KW_CCURLY
 ;
 
 /* A list of (at least one) statement(s)

@@ -4,13 +4,10 @@ package com.euclideanspace.aldor.editor.impl;
 
 import com.euclideanspace.aldor.editor.Atom;
 import com.euclideanspace.aldor.editor.EditorPackage;
-import com.euclideanspace.aldor.editor.Id;
 
 import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
@@ -31,14 +28,24 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 public class AtomImpl extends MoleculeImpl implements Atom
 {
   /**
-   * The cached value of the '{@link #getIden() <em>Iden</em>}' containment reference.
+   * The default value of the '{@link #getIden() <em>Iden</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getIden()
    * @generated
    * @ordered
    */
-  protected Id iden;
+  protected static final String IDEN_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getIden() <em>Iden</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getIden()
+   * @generated
+   * @ordered
+   */
+  protected String iden = IDEN_EDEFAULT;
 
   /**
    * The default value of the '{@link #getLit() <em>Lit</em>}' attribute.
@@ -86,7 +93,7 @@ public class AtomImpl extends MoleculeImpl implements Atom
    * <!-- end-user-doc -->
    * @generated
    */
-  public Id getIden()
+  public String getIden()
   {
     return iden;
   }
@@ -96,37 +103,12 @@ public class AtomImpl extends MoleculeImpl implements Atom
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetIden(Id newIden, NotificationChain msgs)
+  public void setIden(String newIden)
   {
-    Id oldIden = iden;
+    String oldIden = iden;
     iden = newIden;
     if (eNotificationRequired())
-    {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, EditorPackage.ATOM__IDEN, oldIden, newIden);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setIden(Id newIden)
-  {
-    if (newIden != iden)
-    {
-      NotificationChain msgs = null;
-      if (iden != null)
-        msgs = ((InternalEObject)iden).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - EditorPackage.ATOM__IDEN, null, msgs);
-      if (newIden != null)
-        msgs = ((InternalEObject)newIden).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - EditorPackage.ATOM__IDEN, null, msgs);
-      msgs = basicSetIden(newIden, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, EditorPackage.ATOM__IDEN, newIden, newIden));
+      eNotify(new ENotificationImpl(this, Notification.SET, EditorPackage.ATOM__IDEN, oldIden, iden));
   }
 
   /**
@@ -158,22 +140,6 @@ public class AtomImpl extends MoleculeImpl implements Atom
    * @generated
    */
   @Override
-  public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
-  {
-    switch (featureID)
-    {
-      case EditorPackage.ATOM__IDEN:
-        return basicSetIden(null, msgs);
-    }
-    return super.eInverseRemove(otherEnd, featureID, msgs);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType)
   {
     switch (featureID)
@@ -197,7 +163,7 @@ public class AtomImpl extends MoleculeImpl implements Atom
     switch (featureID)
     {
       case EditorPackage.ATOM__IDEN:
-        setIden((Id)newValue);
+        setIden((String)newValue);
         return;
       case EditorPackage.ATOM__LIT:
         setLit((String)newValue);
@@ -217,7 +183,7 @@ public class AtomImpl extends MoleculeImpl implements Atom
     switch (featureID)
     {
       case EditorPackage.ATOM__IDEN:
-        setIden((Id)null);
+        setIden(IDEN_EDEFAULT);
         return;
       case EditorPackage.ATOM__LIT:
         setLit(LIT_EDEFAULT);
@@ -237,7 +203,7 @@ public class AtomImpl extends MoleculeImpl implements Atom
     switch (featureID)
     {
       case EditorPackage.ATOM__IDEN:
-        return iden != null;
+        return IDEN_EDEFAULT == null ? iden != null : !IDEN_EDEFAULT.equals(iden);
       case EditorPackage.ATOM__LIT:
         return LIT_EDEFAULT == null ? lit != null : !LIT_EDEFAULT.equals(lit);
     }
@@ -255,7 +221,9 @@ public class AtomImpl extends MoleculeImpl implements Atom
     if (eIsProxy()) return super.toString();
 
     StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (lit: ");
+    result.append(" (iden: ");
+    result.append(iden);
+    result.append(", lit: ");
     result.append(lit);
     result.append(')');
     return result.toString();

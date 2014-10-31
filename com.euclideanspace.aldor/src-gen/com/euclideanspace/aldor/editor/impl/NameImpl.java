@@ -3,7 +3,6 @@
 package com.euclideanspace.aldor.editor.impl;
 
 import com.euclideanspace.aldor.editor.EditorPackage;
-import com.euclideanspace.aldor.editor.Id;
 import com.euclideanspace.aldor.editor.NakedOp;
 import com.euclideanspace.aldor.editor.Name;
 
@@ -33,14 +32,24 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 public class NameImpl extends MinimalEObjectImpl.Container implements Name
 {
   /**
-   * The cached value of the '{@link #getName() <em>Name</em>}' containment reference.
+   * The default value of the '{@link #getName() <em>Name</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getName()
    * @generated
    * @ordered
    */
-  protected Id name;
+  protected static final String NAME_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getName()
+   * @generated
+   * @ordered
+   */
+  protected String name = NAME_EDEFAULT;
 
   /**
    * The cached value of the '{@link #getNo() <em>No</em>}' containment reference.
@@ -78,7 +87,7 @@ public class NameImpl extends MinimalEObjectImpl.Container implements Name
    * <!-- end-user-doc -->
    * @generated
    */
-  public Id getName()
+  public String getName()
   {
     return name;
   }
@@ -88,37 +97,12 @@ public class NameImpl extends MinimalEObjectImpl.Container implements Name
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetName(Id newName, NotificationChain msgs)
+  public void setName(String newName)
   {
-    Id oldName = name;
+    String oldName = name;
     name = newName;
     if (eNotificationRequired())
-    {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, EditorPackage.NAME__NAME, oldName, newName);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setName(Id newName)
-  {
-    if (newName != name)
-    {
-      NotificationChain msgs = null;
-      if (name != null)
-        msgs = ((InternalEObject)name).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - EditorPackage.NAME__NAME, null, msgs);
-      if (newName != null)
-        msgs = ((InternalEObject)newName).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - EditorPackage.NAME__NAME, null, msgs);
-      msgs = basicSetName(newName, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, EditorPackage.NAME__NAME, newName, newName));
+      eNotify(new ENotificationImpl(this, Notification.SET, EditorPackage.NAME__NAME, oldName, name));
   }
 
   /**
@@ -179,8 +163,6 @@ public class NameImpl extends MinimalEObjectImpl.Container implements Name
   {
     switch (featureID)
     {
-      case EditorPackage.NAME__NAME:
-        return basicSetName(null, msgs);
       case EditorPackage.NAME__NO:
         return basicSetNo(null, msgs);
     }
@@ -216,7 +198,7 @@ public class NameImpl extends MinimalEObjectImpl.Container implements Name
     switch (featureID)
     {
       case EditorPackage.NAME__NAME:
-        setName((Id)newValue);
+        setName((String)newValue);
         return;
       case EditorPackage.NAME__NO:
         setNo((NakedOp)newValue);
@@ -236,7 +218,7 @@ public class NameImpl extends MinimalEObjectImpl.Container implements Name
     switch (featureID)
     {
       case EditorPackage.NAME__NAME:
-        setName((Id)null);
+        setName(NAME_EDEFAULT);
         return;
       case EditorPackage.NAME__NO:
         setNo((NakedOp)null);
@@ -256,11 +238,28 @@ public class NameImpl extends MinimalEObjectImpl.Container implements Name
     switch (featureID)
     {
       case EditorPackage.NAME__NAME:
-        return name != null;
+        return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
       case EditorPackage.NAME__NO:
         return no != null;
     }
     return super.eIsSet(featureID);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String toString()
+  {
+    if (eIsProxy()) return super.toString();
+
+    StringBuffer result = new StringBuffer(super.toString());
+    result.append(" (name: ");
+    result.append(name);
+    result.append(')');
+    return result.toString();
   }
 
 } //NameImpl

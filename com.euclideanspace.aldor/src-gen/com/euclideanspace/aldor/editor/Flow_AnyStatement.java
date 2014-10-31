@@ -346,29 +346,29 @@ public interface Flow_AnyStatement extends AnyStatement
   void setN(Name value);
 
   /**
-   * Returns the value of the '<em><b>I2</b></em>' containment reference.
+   * Returns the value of the '<em><b>I2</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>I2</em>' containment reference isn't clear,
+   * If the meaning of the '<em>I2</em>' attribute isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>I2</em>' containment reference.
-   * @see #setI2(Id)
+   * @return the value of the '<em>I2</em>' attribute.
+   * @see #setI2(String)
    * @see com.euclideanspace.aldor.editor.EditorPackage#getFlow_AnyStatement_I2()
-   * @model containment="true"
+   * @model
    * @generated
    */
-  Id getI2();
+  String getI2();
 
   /**
-   * Sets the value of the '{@link com.euclideanspace.aldor.editor.Flow_AnyStatement#getI2 <em>I2</em>}' containment reference.
+   * Sets the value of the '{@link com.euclideanspace.aldor.editor.Flow_AnyStatement#getI2 <em>I2</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>I2</em>' containment reference.
+   * @param value the new value of the '<em>I2</em>' attribute.
    * @see #getI2()
    * @generated
    */
-  void setI2(Id value);
+  void setI2(String value);
 
 } // Flow_AnyStatement

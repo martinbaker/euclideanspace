@@ -13,7 +13,6 @@ import com.euclideanspace.aldor.editor.CommaItem;
 import com.euclideanspace.aldor.editor.EditorPackage;
 import com.euclideanspace.aldor.editor.Flow_BalStatement;
 import com.euclideanspace.aldor.editor.GenBound;
-import com.euclideanspace.aldor.editor.Id;
 import com.euclideanspace.aldor.editor.Iterators;
 import com.euclideanspace.aldor.editor.Name;
 
@@ -189,14 +188,24 @@ public class IteratorsImpl extends Flow_AnyStatementImpl implements Iterators
   protected Name n2;
 
   /**
-   * The cached value of the '{@link #getI3() <em>I3</em>}' containment reference.
+   * The default value of the '{@link #getI3() <em>I3</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getI3()
    * @generated
    * @ordered
    */
-  protected Id i3;
+  protected static final String I3_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getI3() <em>I3</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getI3()
+   * @generated
+   * @ordered
+   */
+  protected String i3 = I3_EDEFAULT;
 
   /**
    * The cached value of the '{@link #getBas3() <em>Bas3</em>}' containment reference.
@@ -751,7 +760,7 @@ public class IteratorsImpl extends Flow_AnyStatementImpl implements Iterators
    * <!-- end-user-doc -->
    * @generated
    */
-  public Id getI3()
+  public String getI3()
   {
     return i3;
   }
@@ -761,37 +770,12 @@ public class IteratorsImpl extends Flow_AnyStatementImpl implements Iterators
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetI3(Id newI3, NotificationChain msgs)
+  public void setI3(String newI3)
   {
-    Id oldI3 = i3;
+    String oldI3 = i3;
     i3 = newI3;
     if (eNotificationRequired())
-    {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, EditorPackage.ITERATORS__I3, oldI3, newI3);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setI3(Id newI3)
-  {
-    if (newI3 != i3)
-    {
-      NotificationChain msgs = null;
-      if (i3 != null)
-        msgs = ((InternalEObject)i3).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - EditorPackage.ITERATORS__I3, null, msgs);
-      if (newI3 != null)
-        msgs = ((InternalEObject)newI3).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - EditorPackage.ITERATORS__I3, null, msgs);
-      msgs = basicSetI3(newI3, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, EditorPackage.ITERATORS__I3, newI3, newI3));
+      eNotify(new ENotificationImpl(this, Notification.SET, EditorPackage.ITERATORS__I3, oldI3, i3));
   }
 
   /**
@@ -874,8 +858,6 @@ public class IteratorsImpl extends Flow_AnyStatementImpl implements Iterators
         return basicSetGb2(null, msgs);
       case EditorPackage.ITERATORS__N2:
         return basicSetN2(null, msgs);
-      case EditorPackage.ITERATORS__I3:
-        return basicSetI3(null, msgs);
       case EditorPackage.ITERATORS__BAS3:
         return basicSetBas3(null, msgs);
     }
@@ -973,7 +955,7 @@ public class IteratorsImpl extends Flow_AnyStatementImpl implements Iterators
         setN2((Name)newValue);
         return;
       case EditorPackage.ITERATORS__I3:
-        setI3((Id)newValue);
+        setI3((String)newValue);
         return;
       case EditorPackage.ITERATORS__BAS3:
         setBas3((Binding_AnyStatement)newValue);
@@ -1029,7 +1011,7 @@ public class IteratorsImpl extends Flow_AnyStatementImpl implements Iterators
         setN2((Name)null);
         return;
       case EditorPackage.ITERATORS__I3:
-        setI3((Id)null);
+        setI3(I3_EDEFAULT);
         return;
       case EditorPackage.ITERATORS__BAS3:
         setBas3((Binding_AnyStatement)null);
@@ -1073,7 +1055,7 @@ public class IteratorsImpl extends Flow_AnyStatementImpl implements Iterators
       case EditorPackage.ITERATORS__N2:
         return n2 != null;
       case EditorPackage.ITERATORS__I3:
-        return i3 != null;
+        return I3_EDEFAULT == null ? i3 != null : !I3_EDEFAULT.equals(i3);
       case EditorPackage.ITERATORS__BAS3:
         return bas3 != null;
     }
@@ -1169,6 +1151,8 @@ public class IteratorsImpl extends Flow_AnyStatementImpl implements Iterators
     StringBuffer result = new StringBuffer(super.toString());
     result.append(" (st2: ");
     result.append(st2);
+    result.append(", i3: ");
+    result.append(i3);
     result.append(')');
     return result.toString();
   }

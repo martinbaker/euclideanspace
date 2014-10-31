@@ -41,7 +41,6 @@ import com.euclideanspace.aldor.editor.Expr;
 import com.euclideanspace.aldor.editor.Flow_AnyStatement;
 import com.euclideanspace.aldor.editor.Flow_BalStatement;
 import com.euclideanspace.aldor.editor.GenBound;
-import com.euclideanspace.aldor.editor.Id;
 import com.euclideanspace.aldor.editor.Infixed;
 import com.euclideanspace.aldor.editor.Iterator;
 import com.euclideanspace.aldor.editor.Iterators1;
@@ -722,12 +721,6 @@ public class EditorSemanticSequencer extends AbstractDelegatingSemanticSequencer
 					return; 
 				}
 				else break;
-			case EditorPackage.ID:
-				if(context == grammarAccess.getIdRule()) {
-					sequence_Id(context, (Id) semanticObject); 
-					return; 
-				}
-				else break;
 			case EditorPackage.INFIXED:
 				if(context == grammarAccess.getCollectionRule()) {
 					sequence_Collection_Infixed(context, (Infixed) semanticObject); 
@@ -779,22 +772,11 @@ public class EditorSemanticSequencer extends AbstractDelegatingSemanticSequencer
 					sequence_Jleft_Atom(context, (Jleft_Atom) semanticObject); 
 					return; 
 				}
-				else if(context == grammarAccess.getJright_AtomRule()) {
-					sequence_Jleft_Atom_Jright_Atom(context, (Jleft_Atom) semanticObject); 
-					return; 
-				}
 				else break;
 			case EditorPackage.JLEFT_MOLECULE:
 				if(context == grammarAccess.getJleft_MoleculeRule() ||
 				   context == grammarAccess.getLeftJuxtaposedRule()) {
 					sequence_Jleft_Molecule(context, (Jleft_Molecule) semanticObject); 
-					return; 
-				}
-				else if(context == grammarAccess.getApplicationRule() ||
-				   context == grammarAccess.getE15Rule() ||
-				   context == grammarAccess.getJright_MoleculeRule() ||
-				   context == grammarAccess.getRightJuxtaposedRule()) {
-					sequence_Jleft_Molecule_Jright_Molecule(context, (Jleft_Molecule) semanticObject); 
 					return; 
 				}
 				else if(context == grammarAccess.getQualTailRule()) {
@@ -2010,15 +1992,6 @@ public class EditorSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	
 	/**
 	 * Constraint:
-	 *     (name=TK_ID | name=KW_SHARP | name=KW_TILDE)
-	 */
-	protected void sequence_Id(EObject context, Id semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * Constraint:
 	 *     (
 	 *         (
 	 *             aop=ArrowOp | 
@@ -2093,7 +2066,7 @@ public class EditorSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	
 	/**
 	 * Constraint:
-	 *     (be+=BlockEnclosure | (a=Atom be+=BlockEnclosure*) | (a=Atom bm4+=BlockMolecule*))
+	 *     (be+=BlockEnclosure | (a=Id bm4+=BlockMolecule*) | (a=Id be+=BlockEnclosure*))
 	 */
 	protected void sequence_Jleft_Atom(EObject context, Jleft_Atom semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -2102,16 +2075,7 @@ public class EditorSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	
 	/**
 	 * Constraint:
-	 *     ((be+=BlockEnclosure | (a=Atom be+=BlockEnclosure*) | (a=Atom bm4+=BlockMolecule*)) right2=Jright_Atom?)
-	 */
-	protected void sequence_Jleft_Atom_Jright_Atom(EObject context, Jleft_Atom semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * Constraint:
-	 *     (be+=BlockEnclosure | (m=Molecule be+=BlockEnclosure*) | (m=Molecule bm+=BlockMolecule*))
+	 *     (be+=BlockEnclosure | (m=Id be+=BlockEnclosure+ bm+=BlockMolecule*) | (m=Id bm+=BlockMolecule+) | m2=Molecule)
 	 */
 	protected void sequence_Jleft_Molecule(EObject context, Jleft_Molecule semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -2120,16 +2084,7 @@ public class EditorSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	
 	/**
 	 * Constraint:
-	 *     ((be+=BlockEnclosure | (m=Molecule be+=BlockEnclosure*) | (m=Molecule bm+=BlockMolecule*)) right=Jright_Atom?)
-	 */
-	protected void sequence_Jleft_Molecule_Jright_Molecule(EObject context, Jleft_Molecule semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * Constraint:
-	 *     ((be+=BlockEnclosure | (m=Molecule be+=BlockEnclosure*) | (m=Molecule bm+=BlockMolecule*)) qt=QualTail?)
+	 *     ((be+=BlockEnclosure | (m=Id be+=BlockEnclosure+ bm+=BlockMolecule*) | (m=Id bm+=BlockMolecule+) | m2=Molecule) qt=QualTail?)
 	 */
 	protected void sequence_Jleft_Molecule_QualTail(EObject context, Jleft_Molecule semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -2138,33 +2093,19 @@ public class EditorSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	
 	/**
 	 * Constraint:
-	 *     right2=Jright_Atom
+	 *     ((left2=Jleft_Atom right2=Jright_Atom?) | right2=Jright_Atom)
 	 */
 	protected void sequence_Jright_Atom(EObject context, Jright_Atom semanticObject) {
-		if(errorAcceptor != null) {
-			if(transientValues.isValueTransient(semanticObject, EditorPackage.Literals.JRIGHT_ATOM__RIGHT2) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, EditorPackage.Literals.JRIGHT_ATOM__RIGHT2));
-		}
-		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
-		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getJright_AtomAccess().getRight2Jright_AtomParserRuleCall_1_1_0(), semanticObject.getRight2());
-		feeder.finish();
+		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
 	/**
 	 * Constraint:
-	 *     right=Jright_Atom
+	 *     ((left3=Jleft_Molecule right3=Jright_Atom?) | right3=Jright_Atom)
 	 */
 	protected void sequence_Jright_Molecule(EObject context, Jright_Molecule semanticObject) {
-		if(errorAcceptor != null) {
-			if(transientValues.isValueTransient(semanticObject, EditorPackage.Literals.JRIGHT_MOLECULE__RIGHT) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, EditorPackage.Literals.JRIGHT_MOLECULE__RIGHT));
-		}
-		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
-		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getJright_MoleculeAccess().getRightJright_AtomParserRuleCall_1_1_0(), semanticObject.getRight());
-		feeder.finish();
+		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	

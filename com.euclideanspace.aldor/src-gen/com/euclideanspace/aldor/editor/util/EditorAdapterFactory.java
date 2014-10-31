@@ -445,11 +445,6 @@ public class EditorAdapterFactory extends AdapterFactoryImpl
         return createNameAdapter();
       }
       @Override
-      public Adapter caseId(Id object)
-      {
-        return createIdAdapter();
-      }
-      @Override
       public Adapter caseUnqualOp_ArrowTok(UnqualOp_ArrowTok object)
       {
         return createUnqualOp_ArrowTokAdapter();
@@ -1867,21 +1862,6 @@ public class EditorAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createNameAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link com.euclideanspace.aldor.editor.Id <em>Id</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see com.euclideanspace.aldor.editor.Id
-   * @generated
-   */
-  public Adapter createIdAdapter()
   {
     return null;
   }

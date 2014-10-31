@@ -689,15 +689,6 @@ public interface EditorFactory extends EFactory
   Name createName();
 
   /**
-   * Returns a new object of class '<em>Id</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Id</em>'.
-   * @generated
-   */
-  Id createId();
-
-  /**
    * Returns a new object of class '<em>Unqual Op Arrow Tok</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

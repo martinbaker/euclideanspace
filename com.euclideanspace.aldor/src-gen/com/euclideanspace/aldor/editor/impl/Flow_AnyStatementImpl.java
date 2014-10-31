@@ -12,7 +12,6 @@ import com.euclideanspace.aldor.editor.CommaItem;
 import com.euclideanspace.aldor.editor.EditorPackage;
 import com.euclideanspace.aldor.editor.Flow_AnyStatement;
 import com.euclideanspace.aldor.editor.GenBound;
-import com.euclideanspace.aldor.editor.Id;
 import com.euclideanspace.aldor.editor.Name;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -181,14 +180,24 @@ public class Flow_AnyStatementImpl extends AnyStatementImpl implements Flow_AnyS
   protected Name n;
 
   /**
-   * The cached value of the '{@link #getI2() <em>I2</em>}' containment reference.
+   * The default value of the '{@link #getI2() <em>I2</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getI2()
    * @generated
    * @ordered
    */
-  protected Id i2;
+  protected static final String I2_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getI2() <em>I2</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getI2()
+   * @generated
+   * @ordered
+   */
+  protected String i2 = I2_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
@@ -767,7 +776,7 @@ public class Flow_AnyStatementImpl extends AnyStatementImpl implements Flow_AnyS
    * <!-- end-user-doc -->
    * @generated
    */
-  public Id getI2()
+  public String getI2()
   {
     return i2;
   }
@@ -777,37 +786,12 @@ public class Flow_AnyStatementImpl extends AnyStatementImpl implements Flow_AnyS
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetI2(Id newI2, NotificationChain msgs)
+  public void setI2(String newI2)
   {
-    Id oldI2 = i2;
+    String oldI2 = i2;
     i2 = newI2;
     if (eNotificationRequired())
-    {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, EditorPackage.FLOW_ANY_STATEMENT__I2, oldI2, newI2);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setI2(Id newI2)
-  {
-    if (newI2 != i2)
-    {
-      NotificationChain msgs = null;
-      if (i2 != null)
-        msgs = ((InternalEObject)i2).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - EditorPackage.FLOW_ANY_STATEMENT__I2, null, msgs);
-      if (newI2 != null)
-        msgs = ((InternalEObject)newI2).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - EditorPackage.FLOW_ANY_STATEMENT__I2, null, msgs);
-      msgs = basicSetI2(newI2, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, EditorPackage.FLOW_ANY_STATEMENT__I2, newI2, newI2));
+      eNotify(new ENotificationImpl(this, Notification.SET, EditorPackage.FLOW_ANY_STATEMENT__I2, oldI2, i2));
   }
 
   /**
@@ -842,8 +826,6 @@ public class Flow_AnyStatementImpl extends AnyStatementImpl implements Flow_AnyS
         return basicSetBas4(null, msgs);
       case EditorPackage.FLOW_ANY_STATEMENT__N:
         return basicSetN(null, msgs);
-      case EditorPackage.FLOW_ANY_STATEMENT__I2:
-        return basicSetI2(null, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -935,7 +917,7 @@ public class Flow_AnyStatementImpl extends AnyStatementImpl implements Flow_AnyS
         setN((Name)newValue);
         return;
       case EditorPackage.FLOW_ANY_STATEMENT__I2:
-        setI2((Id)newValue);
+        setI2((String)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -988,7 +970,7 @@ public class Flow_AnyStatementImpl extends AnyStatementImpl implements Flow_AnyS
         setN((Name)null);
         return;
       case EditorPackage.FLOW_ANY_STATEMENT__I2:
-        setI2((Id)null);
+        setI2(I2_EDEFAULT);
         return;
     }
     super.eUnset(featureID);
@@ -1029,7 +1011,7 @@ public class Flow_AnyStatementImpl extends AnyStatementImpl implements Flow_AnyS
       case EditorPackage.FLOW_ANY_STATEMENT__N:
         return n != null;
       case EditorPackage.FLOW_ANY_STATEMENT__I2:
-        return i2 != null;
+        return I2_EDEFAULT == null ? i2 != null : !I2_EDEFAULT.equals(i2);
     }
     return super.eIsSet(featureID);
   }
@@ -1047,6 +1029,8 @@ public class Flow_AnyStatementImpl extends AnyStatementImpl implements Flow_AnyS
     StringBuffer result = new StringBuffer(super.toString());
     result.append(" (st: ");
     result.append(st);
+    result.append(", i2: ");
+    result.append(i2);
     result.append(')');
     return result.toString();
   }

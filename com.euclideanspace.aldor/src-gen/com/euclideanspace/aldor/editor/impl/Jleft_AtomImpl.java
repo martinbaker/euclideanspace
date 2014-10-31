@@ -2,7 +2,6 @@
  */
 package com.euclideanspace.aldor.editor.impl;
 
-import com.euclideanspace.aldor.editor.Atom;
 import com.euclideanspace.aldor.editor.BlockEnclosure;
 import com.euclideanspace.aldor.editor.BlockMolecule;
 import com.euclideanspace.aldor.editor.EditorPackage;
@@ -19,6 +18,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
@@ -38,7 +38,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *
  * @generated
  */
-public class Jleft_AtomImpl extends Jright_AtomImpl implements Jleft_Atom
+public class Jleft_AtomImpl extends MinimalEObjectImpl.Container implements Jleft_Atom
 {
   /**
    * The cached value of the '{@link #getBe() <em>Be</em>}' containment reference list.
@@ -51,14 +51,24 @@ public class Jleft_AtomImpl extends Jright_AtomImpl implements Jleft_Atom
   protected EList<BlockEnclosure> be;
 
   /**
-   * The cached value of the '{@link #getA() <em>A</em>}' containment reference.
+   * The default value of the '{@link #getA() <em>A</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getA()
    * @generated
    * @ordered
    */
-  protected Atom a;
+  protected static final String A_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getA() <em>A</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getA()
+   * @generated
+   * @ordered
+   */
+  protected String a = A_EDEFAULT;
 
   /**
    * The cached value of the '{@link #getBm4() <em>Bm4</em>}' containment reference list.
@@ -110,7 +120,7 @@ public class Jleft_AtomImpl extends Jright_AtomImpl implements Jleft_Atom
    * <!-- end-user-doc -->
    * @generated
    */
-  public Atom getA()
+  public String getA()
   {
     return a;
   }
@@ -120,37 +130,12 @@ public class Jleft_AtomImpl extends Jright_AtomImpl implements Jleft_Atom
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetA(Atom newA, NotificationChain msgs)
+  public void setA(String newA)
   {
-    Atom oldA = a;
+    String oldA = a;
     a = newA;
     if (eNotificationRequired())
-    {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, EditorPackage.JLEFT_ATOM__A, oldA, newA);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setA(Atom newA)
-  {
-    if (newA != a)
-    {
-      NotificationChain msgs = null;
-      if (a != null)
-        msgs = ((InternalEObject)a).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - EditorPackage.JLEFT_ATOM__A, null, msgs);
-      if (newA != null)
-        msgs = ((InternalEObject)newA).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - EditorPackage.JLEFT_ATOM__A, null, msgs);
-      msgs = basicSetA(newA, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, EditorPackage.JLEFT_ATOM__A, newA, newA));
+      eNotify(new ENotificationImpl(this, Notification.SET, EditorPackage.JLEFT_ATOM__A, oldA, a));
   }
 
   /**
@@ -179,8 +164,6 @@ public class Jleft_AtomImpl extends Jright_AtomImpl implements Jleft_Atom
     {
       case EditorPackage.JLEFT_ATOM__BE:
         return ((InternalEList<?>)getBe()).basicRemove(otherEnd, msgs);
-      case EditorPackage.JLEFT_ATOM__A:
-        return basicSetA(null, msgs);
       case EditorPackage.JLEFT_ATOM__BM4:
         return ((InternalEList<?>)getBm4()).basicRemove(otherEnd, msgs);
     }
@@ -223,7 +206,7 @@ public class Jleft_AtomImpl extends Jright_AtomImpl implements Jleft_Atom
         getBe().addAll((Collection<? extends BlockEnclosure>)newValue);
         return;
       case EditorPackage.JLEFT_ATOM__A:
-        setA((Atom)newValue);
+        setA((String)newValue);
         return;
       case EditorPackage.JLEFT_ATOM__BM4:
         getBm4().clear();
@@ -247,7 +230,7 @@ public class Jleft_AtomImpl extends Jright_AtomImpl implements Jleft_Atom
         getBe().clear();
         return;
       case EditorPackage.JLEFT_ATOM__A:
-        setA((Atom)null);
+        setA(A_EDEFAULT);
         return;
       case EditorPackage.JLEFT_ATOM__BM4:
         getBm4().clear();
@@ -269,11 +252,28 @@ public class Jleft_AtomImpl extends Jright_AtomImpl implements Jleft_Atom
       case EditorPackage.JLEFT_ATOM__BE:
         return be != null && !be.isEmpty();
       case EditorPackage.JLEFT_ATOM__A:
-        return a != null;
+        return A_EDEFAULT == null ? a != null : !A_EDEFAULT.equals(a);
       case EditorPackage.JLEFT_ATOM__BM4:
         return bm4 != null && !bm4.isEmpty();
     }
     return super.eIsSet(featureID);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String toString()
+  {
+    if (eIsProxy()) return super.toString();
+
+    StringBuffer result = new StringBuffer(super.toString());
+    result.append(" (a: ");
+    result.append(a);
+    result.append(')');
+    return result.toString();
   }
 
 } //Jleft_AtomImpl

@@ -138,7 +138,6 @@ public class EditorFactoryImpl extends EFactoryImpl implements EditorFactory
       case EditorPackage.NAMES: return createNames();
       case EditorPackage.ATOM: return createAtom();
       case EditorPackage.NAME: return createName();
-      case EditorPackage.ID: return createId();
       case EditorPackage.UNQUAL_OP_ARROW_TOK: return createUnqualOp_ArrowTok();
       case EditorPackage.UNQUAL_OP_LATTICE_TOK: return createUnqualOp_LatticeTok();
       case EditorPackage.UNQUAL_OP_RELATION_TOK: return createUnqualOp_RelationTok();
@@ -1014,17 +1013,6 @@ public class EditorFactoryImpl extends EFactoryImpl implements EditorFactory
   {
     NameImpl name = new NameImpl();
     return name;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public Id createId()
-  {
-    IdImpl id = new IdImpl();
-    return id;
   }
 
   /**

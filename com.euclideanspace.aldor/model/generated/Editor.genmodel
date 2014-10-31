@@ -78,7 +78,7 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//Flow_AnyStatement/gb"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//Flow_AnyStatement/bas4"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//Flow_AnyStatement/n"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//Flow_AnyStatement/i2"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Editor.ecore#//Flow_AnyStatement/i2"/>
     </genClasses>
     <genClasses ecoreClass="Editor.ecore#//Flow_BalStatement">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//Flow_BalStatement/c2"/>
@@ -93,7 +93,7 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//Flow_BalStatement/ca2"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//Flow_BalStatement/gb2"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//Flow_BalStatement/n2"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//Flow_BalStatement/i3"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Editor.ecore#//Flow_BalStatement/i3"/>
     </genClasses>
     <genClasses ecoreClass="Editor.ecore#//GenBound">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//GenBound/ci"/>
@@ -166,19 +166,22 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//LeftJuxtaposed/qt"/>
     </genClasses>
     <genClasses ecoreClass="Editor.ecore#//Jright_Molecule">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//Jright_Molecule/right"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//Jright_Molecule/left3"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//Jright_Molecule/right3"/>
     </genClasses>
     <genClasses ecoreClass="Editor.ecore#//Jright_Atom">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//Jright_Atom/left2"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//Jright_Atom/right2"/>
     </genClasses>
     <genClasses ecoreClass="Editor.ecore#//Jleft_Molecule">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//Jleft_Molecule/be"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//Jleft_Molecule/m"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Editor.ecore#//Jleft_Molecule/m"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//Jleft_Molecule/bm"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//Jleft_Molecule/m2"/>
     </genClasses>
     <genClasses ecoreClass="Editor.ecore#//Jleft_Atom">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//Jleft_Atom/be"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//Jleft_Atom/a"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Editor.ecore#//Jleft_Atom/a"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//Jleft_Atom/bm4"/>
     </genClasses>
     <genClasses ecoreClass="Editor.ecore#//Molecule"/>
@@ -206,15 +209,12 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Editor.ecore#//Names/subsequentNames"/>
     </genClasses>
     <genClasses ecoreClass="Editor.ecore#//Atom">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//Atom/iden"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Editor.ecore#//Atom/iden"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Editor.ecore#//Atom/lit"/>
     </genClasses>
     <genClasses ecoreClass="Editor.ecore#//Name">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//Name/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Editor.ecore#//Name/name"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//Name/no"/>
-    </genClasses>
-    <genClasses ecoreClass="Editor.ecore#//Id">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Editor.ecore#//Id/name"/>
     </genClasses>
     <genClasses ecoreClass="Editor.ecore#//UnqualOp_ArrowTok"/>
     <genClasses ecoreClass="Editor.ecore#//UnqualOp_LatticeTok"/>

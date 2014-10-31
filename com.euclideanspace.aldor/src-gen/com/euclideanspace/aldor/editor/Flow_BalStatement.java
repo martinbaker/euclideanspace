@@ -337,29 +337,29 @@ public interface Flow_BalStatement extends BalStatement
   void setN2(Name value);
 
   /**
-   * Returns the value of the '<em><b>I3</b></em>' containment reference.
+   * Returns the value of the '<em><b>I3</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>I3</em>' containment reference isn't clear,
+   * If the meaning of the '<em>I3</em>' attribute isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>I3</em>' containment reference.
-   * @see #setI3(Id)
+   * @return the value of the '<em>I3</em>' attribute.
+   * @see #setI3(String)
    * @see com.euclideanspace.aldor.editor.EditorPackage#getFlow_BalStatement_I3()
-   * @model containment="true"
+   * @model
    * @generated
    */
-  Id getI3();
+  String getI3();
 
   /**
-   * Sets the value of the '{@link com.euclideanspace.aldor.editor.Flow_BalStatement#getI3 <em>I3</em>}' containment reference.
+   * Sets the value of the '{@link com.euclideanspace.aldor.editor.Flow_BalStatement#getI3 <em>I3</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>I3</em>' containment reference.
+   * @param value the new value of the '<em>I3</em>' attribute.
    * @see #getI3()
    * @generated
    */
-  void setI3(Id value);
+  void setI3(String value);
 
 } // Flow_BalStatement

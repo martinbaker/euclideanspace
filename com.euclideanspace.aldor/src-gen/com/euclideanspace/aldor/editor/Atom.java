@@ -23,30 +23,30 @@ package com.euclideanspace.aldor.editor;
 public interface Atom extends Molecule, BlockMolecule
 {
   /**
-   * Returns the value of the '<em><b>Iden</b></em>' containment reference.
+   * Returns the value of the '<em><b>Iden</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Iden</em>' containment reference isn't clear,
+   * If the meaning of the '<em>Iden</em>' attribute isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Iden</em>' containment reference.
-   * @see #setIden(Id)
+   * @return the value of the '<em>Iden</em>' attribute.
+   * @see #setIden(String)
    * @see com.euclideanspace.aldor.editor.EditorPackage#getAtom_Iden()
-   * @model containment="true"
+   * @model
    * @generated
    */
-  Id getIden();
+  String getIden();
 
   /**
-   * Sets the value of the '{@link com.euclideanspace.aldor.editor.Atom#getIden <em>Iden</em>}' containment reference.
+   * Sets the value of the '{@link com.euclideanspace.aldor.editor.Atom#getIden <em>Iden</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Iden</em>' containment reference.
+   * @param value the new value of the '<em>Iden</em>' attribute.
    * @see #getIden()
    * @generated
    */
-  void setIden(Id value);
+  void setIden(String value);
 
   /**
    * Returns the value of the '<em><b>Lit</b></em>' attribute.

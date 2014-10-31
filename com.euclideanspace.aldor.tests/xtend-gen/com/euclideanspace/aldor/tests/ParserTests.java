@@ -1161,6 +1161,183 @@ public class ParserTests {
     }
   }
   
+  @Test
+  public void testFunctionApplication1() {
+    try {
+      StringConcatenation _builder = new StringConcatenation();
+      _builder.append("a()");
+      Model _parse = this._parseHelper.parse(_builder);
+      this._validationTestHelper.assertNoErrors(_parse);
+    } catch (Throwable _e) {
+      throw Exceptions.sneakyThrow(_e);
+    }
+  }
+  
+  @Test
+  public void testFunctionApplication2() {
+    try {
+      StringConcatenation _builder = new StringConcatenation();
+      _builder.append("a(b)");
+      Model _parse = this._parseHelper.parse(_builder);
+      this._validationTestHelper.assertNoErrors(_parse);
+    } catch (Throwable _e) {
+      throw Exceptions.sneakyThrow(_e);
+    }
+  }
+  
+  @Test
+  public void testFunctionApplication3() {
+    try {
+      StringConcatenation _builder = new StringConcatenation();
+      _builder.append("a(b,c)");
+      Model _parse = this._parseHelper.parse(_builder);
+      this._validationTestHelper.assertNoErrors(_parse);
+    } catch (Throwable _e) {
+      throw Exceptions.sneakyThrow(_e);
+    }
+  }
+  
+  @Test
+  public void testFunctionApplication4() {
+    try {
+      StringConcatenation _builder = new StringConcatenation();
+      _builder.append("a(b)(c)");
+      Model _parse = this._parseHelper.parse(_builder);
+      this._validationTestHelper.assertNoErrors(_parse);
+    } catch (Throwable _e) {
+      throw Exceptions.sneakyThrow(_e);
+    }
+  }
+  
+  @Test
+  public void testFunctionApplication5() {
+    try {
+      StringConcatenation _builder = new StringConcatenation();
+      _builder.append("a[b]");
+      Model _parse = this._parseHelper.parse(_builder);
+      this._validationTestHelper.assertNoErrors(_parse);
+    } catch (Throwable _e) {
+      throw Exceptions.sneakyThrow(_e);
+    }
+  }
+  
+  /**
+   * juxtaposition associate left
+   */
+  @Test
+  public void testFunctionApplication6() {
+    try {
+      StringConcatenation _builder = new StringConcatenation();
+      _builder.append("a b");
+      Model _parse = this._parseHelper.parse(_builder);
+      this._validationTestHelper.assertNoErrors(_parse);
+    } catch (Throwable _e) {
+      throw Exceptions.sneakyThrow(_e);
+    }
+  }
+  
+  /**
+   * juxtaposition associate left [should equal a (b c)]
+   */
+  @Test
+  public void testFunctionApplication7() {
+    try {
+      StringConcatenation _builder = new StringConcatenation();
+      _builder.append("a b c");
+      Model _parse = this._parseHelper.parse(_builder);
+      this._validationTestHelper.assertNoErrors(_parse);
+    } catch (Throwable _e) {
+      throw Exceptions.sneakyThrow(_e);
+    }
+  }
+  
+  /**
+   * juxtaposition associate right
+   */
+  @Test
+  public void testFunctionApplication8() {
+    try {
+      StringConcatenation _builder = new StringConcatenation();
+      _builder.append("a.b");
+      Model _parse = this._parseHelper.parse(_builder);
+      this._validationTestHelper.assertNoErrors(_parse);
+    } catch (Throwable _e) {
+      throw Exceptions.sneakyThrow(_e);
+    }
+  }
+  
+  /**
+   * juxtaposition associate right [should equal (a.b).c]
+   */
+  @Test
+  public void testFunctionApplication9() {
+    try {
+      StringConcatenation _builder = new StringConcatenation();
+      _builder.append("a.b.c");
+      Model _parse = this._parseHelper.parse(_builder);
+      this._validationTestHelper.assertNoErrors(_parse);
+    } catch (Throwable _e) {
+      throw Exceptions.sneakyThrow(_e);
+    }
+  }
+  
+  /**
+   * juxtaposition mixed
+   */
+  @Test
+  public void testFunctionApplication10() {
+    try {
+      StringConcatenation _builder = new StringConcatenation();
+      _builder.append("a.b c");
+      Model _parse = this._parseHelper.parse(_builder);
+      this._validationTestHelper.assertNoErrors(_parse);
+    } catch (Throwable _e) {
+      throw Exceptions.sneakyThrow(_e);
+    }
+  }
+  
+  /**
+   * juxtaposition mixed
+   */
+  @Test
+  public void testFunctionApplication11() {
+    try {
+      StringConcatenation _builder = new StringConcatenation();
+      _builder.append("a b.c");
+      Model _parse = this._parseHelper.parse(_builder);
+      this._validationTestHelper.assertNoErrors(_parse);
+    } catch (Throwable _e) {
+      throw Exceptions.sneakyThrow(_e);
+    }
+  }
+  
+  /**
+   * juxtaposition not
+   */
+  @Test
+  public void testFunctionApplication12() {
+    try {
+      StringConcatenation _builder = new StringConcatenation();
+      _builder.append("not b");
+      Model _parse = this._parseHelper.parse(_builder);
+      this._validationTestHelper.assertNoErrors(_parse);
+    } catch (Throwable _e) {
+      throw Exceptions.sneakyThrow(_e);
+    }
+  }
+  
+  @Test
+  public void testDomain1() {
+    try {
+      StringConcatenation _builder = new StringConcatenation();
+      _builder.append("%");
+      Model _parse = this._parseHelper.parse(_builder);
+      this._validationTestHelper.assertNoErrors(_parse);
+    } catch (Throwable _e) {
+      throw Exceptions.sneakyThrow(_e);
+    }
+  }
+  
   /**
    * The above tests test individual elements of code but it may
    * miss problems caused when they are combined in various ways.
@@ -1274,7 +1451,7 @@ public class ParserTests {
       _builder.append("#include \"aldor\"");
       _builder.newLine();
       _builder.newLine();
-      _builder.append("MiniList(S: BasicType): LinearAggregate(S) = add {");
+      _builder.append("MiniList(S: BasicType): LinearAggregate(S) == add {");
       _builder.newLine();
       _builder.append("        ");
       _builder.append("Rep == Union(nil: Pointer, rec: Record(first: S, rest: %));");

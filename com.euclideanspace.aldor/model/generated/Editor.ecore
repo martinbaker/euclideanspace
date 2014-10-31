@@ -99,7 +99,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="bas4" eType="#//Binding_AnyStatement"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="n" eType="#//Name" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="i2" eType="#//Id" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="i2" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Flow_BalStatement" eSuperTypes="#//BalStatement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="c2" eType="#//Collection"
@@ -123,7 +123,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="gb2" eType="#//GenBound"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="n2" eType="#//Name" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="i3" eType="#//Id" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="i3" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="GenBound">
     <eStructuralFeatures xsi:type="ecore:EReference" name="ci" eType="#//CommaItem"
@@ -215,25 +215,30 @@
         containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Jright_Molecule" eSuperTypes="#//RightJuxtaposed">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="right" eType="#//Jright_Atom"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="left3" eType="#//Jleft_Molecule"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="right3" eType="#//Jright_Atom"
         containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Jright_Atom">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="left2" eType="#//Jleft_Atom"
+        containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="right2" eType="#//Jright_Atom"
         containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Jleft_Molecule" eSuperTypes="#//LeftJuxtaposed #//Jright_Molecule">
+  <eClassifiers xsi:type="ecore:EClass" name="Jleft_Molecule" eSuperTypes="#//LeftJuxtaposed">
     <eStructuralFeatures xsi:type="ecore:EReference" name="be" upperBound="-1" eType="#//BlockEnclosure"
         containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="m" eType="#//Molecule"
-        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="m" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="bm" upperBound="-1" eType="#//BlockMolecule"
         containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="m2" eType="#//Molecule"
+        containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Jleft_Atom" eSuperTypes="#//Jright_Atom">
+  <eClassifiers xsi:type="ecore:EClass" name="Jleft_Atom">
     <eStructuralFeatures xsi:type="ecore:EReference" name="be" upperBound="-1" eType="#//BlockEnclosure"
         containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="a" eType="#//Atom" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="a" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="bm4" upperBound="-1" eType="#//BlockMolecule"
         containment="true"/>
   </eClassifiers>
@@ -266,16 +271,13 @@
         upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Atom" eSuperTypes="#//Molecule #//BlockMolecule">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="iden" eType="#//Id" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="iden" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="lit" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Name">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="name" eType="#//Id" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="no" eType="#//NakedOp"
         containment="true"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Id">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="UnqualOp_ArrowTok" eSuperTypes="#//NakedOp"/>
   <eClassifiers xsi:type="ecore:EClass" name="UnqualOp_LatticeTok" eSuperTypes="#//NakedOp"/>

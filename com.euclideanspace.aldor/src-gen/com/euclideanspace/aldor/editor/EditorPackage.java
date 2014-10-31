@@ -372,7 +372,7 @@ public interface EditorPackage extends EPackage
    * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getenlist1_CommaItem_Comma_AB()
    * @generated
    */
-  int ENLIST1_COMMA_ITEM_COMMA_AB = 91;
+  int ENLIST1_COMMA_ITEM_COMMA_AB = 90;
 
   /**
    * The number of structural features of the '<em>enlist1 Comma Item Comma AB</em>' class.
@@ -391,7 +391,7 @@ public interface EditorPackage extends EPackage
    * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getenlister1_CommaItem_Comma()
    * @generated
    */
-  int ENLISTER1_COMMA_ITEM_COMMA = 94;
+  int ENLISTER1_COMMA_ITEM_COMMA = 93;
 
   /**
    * The number of structural features of the '<em>enlister1 Comma Item Comma</em>' class.
@@ -985,7 +985,7 @@ public interface EditorPackage extends EPackage
   int FLOW_ANY_STATEMENT__N = ANY_STATEMENT_FEATURE_COUNT + 11;
 
   /**
-   * The feature id for the '<em><b>I2</b></em>' containment reference.
+   * The feature id for the '<em><b>I2</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -1121,7 +1121,7 @@ public interface EditorPackage extends EPackage
   int FLOW_BAL_STATEMENT__N2 = BAL_STATEMENT_FEATURE_COUNT + 11;
 
   /**
-   * The feature id for the '<em><b>I3</b></em>' containment reference.
+   * The feature id for the '<em><b>I3</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -1397,7 +1397,7 @@ public interface EditorPackage extends EPackage
   int ITERATORS__N = FLOW_ANY_STATEMENT__N;
 
   /**
-   * The feature id for the '<em><b>I2</b></em>' containment reference.
+   * The feature id for the '<em><b>I2</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -1514,7 +1514,7 @@ public interface EditorPackage extends EPackage
   int ITERATORS__N2 = FLOW_ANY_STATEMENT_FEATURE_COUNT + 11;
 
   /**
-   * The feature id for the '<em><b>I3</b></em>' containment reference.
+   * The feature id for the '<em><b>I3</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -1659,7 +1659,7 @@ public interface EditorPackage extends EPackage
   int ITERATORS1__N = ITERATORS__N;
 
   /**
-   * The feature id for the '<em><b>I2</b></em>' containment reference.
+   * The feature id for the '<em><b>I2</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -1776,7 +1776,7 @@ public interface EditorPackage extends EPackage
   int ITERATORS1__N2 = ITERATORS__N2;
 
   /**
-   * The feature id for the '<em><b>I3</b></em>' containment reference.
+   * The feature id for the '<em><b>I3</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -1985,7 +1985,7 @@ public interface EditorPackage extends EPackage
    * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getenlist1_InfixedExpr_Comma_AB()
    * @generated
    */
-  int ENLIST1_INFIXED_EXPR_COMMA_AB = 93;
+  int ENLIST1_INFIXED_EXPR_COMMA_AB = 92;
 
   /**
    * The feature id for the '<em><b>Fp</b></em>' containment reference.
@@ -2031,7 +2031,7 @@ public interface EditorPackage extends EPackage
    * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getenlister1_InfixedExpr_Comma()
    * @generated
    */
-  int ENLISTER1_INFIXED_EXPR_COMMA = 96;
+  int ENLISTER1_INFIXED_EXPR_COMMA = 95;
 
   /**
    * The feature id for the '<em><b>Fp</b></em>' containment reference.
@@ -2712,13 +2712,22 @@ public interface EditorPackage extends EPackage
   int JRIGHT_MOLECULE = 58;
 
   /**
-   * The feature id for the '<em><b>Right</b></em>' containment reference.
+   * The feature id for the '<em><b>Left3</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int JRIGHT_MOLECULE__RIGHT = RIGHT_JUXTAPOSED_FEATURE_COUNT + 0;
+  int JRIGHT_MOLECULE__LEFT3 = RIGHT_JUXTAPOSED_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Right3</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int JRIGHT_MOLECULE__RIGHT3 = RIGHT_JUXTAPOSED_FEATURE_COUNT + 1;
 
   /**
    * The number of structural features of the '<em>Jright Molecule</em>' class.
@@ -2727,7 +2736,7 @@ public interface EditorPackage extends EPackage
    * @generated
    * @ordered
    */
-  int JRIGHT_MOLECULE_FEATURE_COUNT = RIGHT_JUXTAPOSED_FEATURE_COUNT + 1;
+  int JRIGHT_MOLECULE_FEATURE_COUNT = RIGHT_JUXTAPOSED_FEATURE_COUNT + 2;
 
   /**
    * The meta object id for the '{@link com.euclideanspace.aldor.editor.impl.Jright_AtomImpl <em>Jright Atom</em>}' class.
@@ -2740,13 +2749,22 @@ public interface EditorPackage extends EPackage
   int JRIGHT_ATOM = 59;
 
   /**
+   * The feature id for the '<em><b>Left2</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int JRIGHT_ATOM__LEFT2 = 0;
+
+  /**
    * The feature id for the '<em><b>Right2</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int JRIGHT_ATOM__RIGHT2 = 0;
+  int JRIGHT_ATOM__RIGHT2 = 1;
 
   /**
    * The number of structural features of the '<em>Jright Atom</em>' class.
@@ -2755,7 +2773,7 @@ public interface EditorPackage extends EPackage
    * @generated
    * @ordered
    */
-  int JRIGHT_ATOM_FEATURE_COUNT = 1;
+  int JRIGHT_ATOM_FEATURE_COUNT = 2;
 
   /**
    * The meta object id for the '{@link com.euclideanspace.aldor.editor.impl.Jleft_MoleculeImpl <em>Jleft Molecule</em>}' class.
@@ -2777,31 +2795,22 @@ public interface EditorPackage extends EPackage
   int JLEFT_MOLECULE__QT = LEFT_JUXTAPOSED__QT;
 
   /**
-   * The feature id for the '<em><b>Right</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int JLEFT_MOLECULE__RIGHT = LEFT_JUXTAPOSED_FEATURE_COUNT + 0;
-
-  /**
    * The feature id for the '<em><b>Be</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int JLEFT_MOLECULE__BE = LEFT_JUXTAPOSED_FEATURE_COUNT + 1;
+  int JLEFT_MOLECULE__BE = LEFT_JUXTAPOSED_FEATURE_COUNT + 0;
 
   /**
-   * The feature id for the '<em><b>M</b></em>' containment reference.
+   * The feature id for the '<em><b>M</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int JLEFT_MOLECULE__M = LEFT_JUXTAPOSED_FEATURE_COUNT + 2;
+  int JLEFT_MOLECULE__M = LEFT_JUXTAPOSED_FEATURE_COUNT + 1;
 
   /**
    * The feature id for the '<em><b>Bm</b></em>' containment reference list.
@@ -2810,7 +2819,16 @@ public interface EditorPackage extends EPackage
    * @generated
    * @ordered
    */
-  int JLEFT_MOLECULE__BM = LEFT_JUXTAPOSED_FEATURE_COUNT + 3;
+  int JLEFT_MOLECULE__BM = LEFT_JUXTAPOSED_FEATURE_COUNT + 2;
+
+  /**
+   * The feature id for the '<em><b>M2</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int JLEFT_MOLECULE__M2 = LEFT_JUXTAPOSED_FEATURE_COUNT + 3;
 
   /**
    * The number of structural features of the '<em>Jleft Molecule</em>' class.
@@ -2832,31 +2850,22 @@ public interface EditorPackage extends EPackage
   int JLEFT_ATOM = 61;
 
   /**
-   * The feature id for the '<em><b>Right2</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int JLEFT_ATOM__RIGHT2 = JRIGHT_ATOM__RIGHT2;
-
-  /**
    * The feature id for the '<em><b>Be</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int JLEFT_ATOM__BE = JRIGHT_ATOM_FEATURE_COUNT + 0;
+  int JLEFT_ATOM__BE = 0;
 
   /**
-   * The feature id for the '<em><b>A</b></em>' containment reference.
+   * The feature id for the '<em><b>A</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int JLEFT_ATOM__A = JRIGHT_ATOM_FEATURE_COUNT + 1;
+  int JLEFT_ATOM__A = 1;
 
   /**
    * The feature id for the '<em><b>Bm4</b></em>' containment reference list.
@@ -2865,7 +2874,7 @@ public interface EditorPackage extends EPackage
    * @generated
    * @ordered
    */
-  int JLEFT_ATOM__BM4 = JRIGHT_ATOM_FEATURE_COUNT + 2;
+  int JLEFT_ATOM__BM4 = 2;
 
   /**
    * The number of structural features of the '<em>Jleft Atom</em>' class.
@@ -2874,7 +2883,7 @@ public interface EditorPackage extends EPackage
    * @generated
    * @ordered
    */
-  int JLEFT_ATOM_FEATURE_COUNT = JRIGHT_ATOM_FEATURE_COUNT + 3;
+  int JLEFT_ATOM_FEATURE_COUNT = 3;
 
   /**
    * The meta object id for the '{@link com.euclideanspace.aldor.editor.impl.MoleculeImpl <em>Molecule</em>}' class.
@@ -3185,7 +3194,7 @@ public interface EditorPackage extends EPackage
   int ATOM = 72;
 
   /**
-   * The feature id for the '<em><b>Iden</b></em>' containment reference.
+   * The feature id for the '<em><b>Iden</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -3222,7 +3231,7 @@ public interface EditorPackage extends EPackage
   int NAME = 73;
 
   /**
-   * The feature id for the '<em><b>Name</b></em>' containment reference.
+   * The feature id for the '<em><b>Name</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -3249,34 +3258,6 @@ public interface EditorPackage extends EPackage
   int NAME_FEATURE_COUNT = 2;
 
   /**
-   * The meta object id for the '{@link com.euclideanspace.aldor.editor.impl.IdImpl <em>Id</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see com.euclideanspace.aldor.editor.impl.IdImpl
-   * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getId()
-   * @generated
-   */
-  int ID = 74;
-
-  /**
-   * The feature id for the '<em><b>Name</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ID__NAME = 0;
-
-  /**
-   * The number of structural features of the '<em>Id</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ID_FEATURE_COUNT = 1;
-
-  /**
    * The meta object id for the '{@link com.euclideanspace.aldor.editor.impl.UnqualOp_ArrowTokImpl <em>Unqual Op Arrow Tok</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -3284,7 +3265,7 @@ public interface EditorPackage extends EPackage
    * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getUnqualOp_ArrowTok()
    * @generated
    */
-  int UNQUAL_OP_ARROW_TOK = 75;
+  int UNQUAL_OP_ARROW_TOK = 74;
 
   /**
    * The number of structural features of the '<em>Unqual Op Arrow Tok</em>' class.
@@ -3303,7 +3284,7 @@ public interface EditorPackage extends EPackage
    * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getUnqualOp_LatticeTok()
    * @generated
    */
-  int UNQUAL_OP_LATTICE_TOK = 76;
+  int UNQUAL_OP_LATTICE_TOK = 75;
 
   /**
    * The number of structural features of the '<em>Unqual Op Lattice Tok</em>' class.
@@ -3322,7 +3303,7 @@ public interface EditorPackage extends EPackage
    * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getUnqualOp_RelationTok()
    * @generated
    */
-  int UNQUAL_OP_RELATION_TOK = 77;
+  int UNQUAL_OP_RELATION_TOK = 76;
 
   /**
    * The number of structural features of the '<em>Unqual Op Relation Tok</em>' class.
@@ -3341,7 +3322,7 @@ public interface EditorPackage extends EPackage
    * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getUnqualOp_SegTok()
    * @generated
    */
-  int UNQUAL_OP_SEG_TOK = 78;
+  int UNQUAL_OP_SEG_TOK = 77;
 
   /**
    * The number of structural features of the '<em>Unqual Op Seg Tok</em>' class.
@@ -3360,7 +3341,7 @@ public interface EditorPackage extends EPackage
    * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getUnqualOp_PlusTok()
    * @generated
    */
-  int UNQUAL_OP_PLUS_TOK = 79;
+  int UNQUAL_OP_PLUS_TOK = 78;
 
   /**
    * The number of structural features of the '<em>Unqual Op Plus Tok</em>' class.
@@ -3379,7 +3360,7 @@ public interface EditorPackage extends EPackage
    * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getUnqualOp_QuotientTok()
    * @generated
    */
-  int UNQUAL_OP_QUOTIENT_TOK = 80;
+  int UNQUAL_OP_QUOTIENT_TOK = 79;
 
   /**
    * The number of structural features of the '<em>Unqual Op Quotient Tok</em>' class.
@@ -3398,7 +3379,7 @@ public interface EditorPackage extends EPackage
    * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getUnqualOp_TimesTok()
    * @generated
    */
-  int UNQUAL_OP_TIMES_TOK = 81;
+  int UNQUAL_OP_TIMES_TOK = 80;
 
   /**
    * The number of structural features of the '<em>Unqual Op Times Tok</em>' class.
@@ -3417,7 +3398,7 @@ public interface EditorPackage extends EPackage
    * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getUnqualOp_PowerTok()
    * @generated
    */
-  int UNQUAL_OP_POWER_TOK = 82;
+  int UNQUAL_OP_POWER_TOK = 81;
 
   /**
    * The number of structural features of the '<em>Unqual Op Power Tok</em>' class.
@@ -3436,7 +3417,7 @@ public interface EditorPackage extends EPackage
    * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getQualOp_ArrowTok()
    * @generated
    */
-  int QUAL_OP_ARROW_TOK = 83;
+  int QUAL_OP_ARROW_TOK = 82;
 
   /**
    * The feature id for the '<em><b>Oqt</b></em>' containment reference.
@@ -3464,7 +3445,7 @@ public interface EditorPackage extends EPackage
    * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getQualOp_LatticeTok()
    * @generated
    */
-  int QUAL_OP_LATTICE_TOK = 84;
+  int QUAL_OP_LATTICE_TOK = 83;
 
   /**
    * The feature id for the '<em><b>Oqt</b></em>' containment reference.
@@ -3492,7 +3473,7 @@ public interface EditorPackage extends EPackage
    * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getQualOp_RelationTok()
    * @generated
    */
-  int QUAL_OP_RELATION_TOK = 85;
+  int QUAL_OP_RELATION_TOK = 84;
 
   /**
    * The feature id for the '<em><b>Op</b></em>' attribute list.
@@ -3529,7 +3510,7 @@ public interface EditorPackage extends EPackage
    * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getQualOp_SegTok()
    * @generated
    */
-  int QUAL_OP_SEG_TOK = 86;
+  int QUAL_OP_SEG_TOK = 85;
 
   /**
    * The feature id for the '<em><b>Oqt</b></em>' containment reference.
@@ -3557,7 +3538,7 @@ public interface EditorPackage extends EPackage
    * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getQualOp_PlusTok()
    * @generated
    */
-  int QUAL_OP_PLUS_TOK = 87;
+  int QUAL_OP_PLUS_TOK = 86;
 
   /**
    * The feature id for the '<em><b>Oqt</b></em>' containment reference.
@@ -3585,7 +3566,7 @@ public interface EditorPackage extends EPackage
    * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getQualOp_QuotientTok()
    * @generated
    */
-  int QUAL_OP_QUOTIENT_TOK = 88;
+  int QUAL_OP_QUOTIENT_TOK = 87;
 
   /**
    * The feature id for the '<em><b>Oqt</b></em>' containment reference.
@@ -3613,7 +3594,7 @@ public interface EditorPackage extends EPackage
    * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getQualOp_TimesTok()
    * @generated
    */
-  int QUAL_OP_TIMES_TOK = 89;
+  int QUAL_OP_TIMES_TOK = 88;
 
   /**
    * The feature id for the '<em><b>Oqt</b></em>' containment reference.
@@ -3641,7 +3622,7 @@ public interface EditorPackage extends EPackage
    * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getQualOp_PowerTok()
    * @generated
    */
-  int QUAL_OP_POWER_TOK = 90;
+  int QUAL_OP_POWER_TOK = 89;
 
   /**
    * The feature id for the '<em><b>Oqt</b></em>' containment reference.
@@ -3669,7 +3650,7 @@ public interface EditorPackage extends EPackage
    * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getenlist1_Infixed_Comma_AB()
    * @generated
    */
-  int ENLIST1_INFIXED_COMMA_AB = 92;
+  int ENLIST1_INFIXED_COMMA_AB = 91;
 
   /**
    * The number of structural features of the '<em>enlist1 Infixed Comma AB</em>' class.
@@ -3688,7 +3669,7 @@ public interface EditorPackage extends EPackage
    * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getenlister1_Infixed_Comma()
    * @generated
    */
-  int ENLISTER1_INFIXED_COMMA = 95;
+  int ENLISTER1_INFIXED_COMMA = 94;
 
   /**
    * The number of structural features of the '<em>enlister1 Infixed Comma</em>' class.
@@ -3707,7 +3688,7 @@ public interface EditorPackage extends EPackage
    * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getenlist1a_Labeled_Semicolon_AB()
    * @generated
    */
-  int ENLIST1A_LABELED_SEMICOLON_AB = 97;
+  int ENLIST1A_LABELED_SEMICOLON_AB = 96;
 
   /**
    * The number of structural features of the '<em>enlist1a Labeled Semicolon AB</em>' class.
@@ -3726,7 +3707,7 @@ public interface EditorPackage extends EPackage
    * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getenlister1a_Labeled_Semicolon()
    * @generated
    */
-  int ENLISTER1A_LABELED_SEMICOLON = 98;
+  int ENLISTER1A_LABELED_SEMICOLON = 97;
 
   /**
    * The feature id for the '<em><b>Statemnts</b></em>' containment reference list.
@@ -3754,7 +3735,7 @@ public interface EditorPackage extends EPackage
    * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getCurly_Labeled()
    * @generated
    */
-  int CURLY_LABELED = 99;
+  int CURLY_LABELED = 98;
 
   /**
    * The feature id for the '<em><b>Fp</b></em>' containment reference.
@@ -3782,7 +3763,7 @@ public interface EditorPackage extends EPackage
    * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getCurlyContents_Labeled()
    * @generated
    */
-  int CURLY_CONTENTS_LABELED = 100;
+  int CURLY_CONTENTS_LABELED = 99;
 
   /**
    * The feature id for the '<em><b>Fp</b></em>' containment reference.
@@ -3810,7 +3791,7 @@ public interface EditorPackage extends EPackage
    * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getCurlyContentsList_Labeled()
    * @generated
    */
-  int CURLY_CONTENTS_LIST_LABELED = 101;
+  int CURLY_CONTENTS_LIST_LABELED = 100;
 
   /**
    * The feature id for the '<em><b>Fp</b></em>' containment reference.
@@ -3847,7 +3828,7 @@ public interface EditorPackage extends EPackage
    * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getCurlyContentB_Labeled()
    * @generated
    */
-  int CURLY_CONTENT_BLABELED = 102;
+  int CURLY_CONTENT_BLABELED = 101;
 
   /**
    * The feature id for the '<em><b>Pred</b></em>' attribute.
@@ -3893,7 +3874,7 @@ public interface EditorPackage extends EPackage
    * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getDeclarationMacro()
    * @generated
    */
-  int DECLARATION_MACRO = 103;
+  int DECLARATION_MACRO = 102;
 
   /**
    * The feature id for the '<em><b>Mb</b></em>' containment reference.
@@ -3921,7 +3902,7 @@ public interface EditorPackage extends EPackage
    * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getDeclarationExtend()
    * @generated
    */
-  int DECLARATION_EXTEND = 104;
+  int DECLARATION_EXTEND = 103;
 
   /**
    * The feature id for the '<em><b>Si</b></em>' containment reference.
@@ -3949,7 +3930,7 @@ public interface EditorPackage extends EPackage
    * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getDeclarationLocal()
    * @generated
    */
-  int DECLARATION_LOCAL = 105;
+  int DECLARATION_LOCAL = 104;
 
   /**
    * The feature id for the '<em><b>Si</b></em>' containment reference.
@@ -3977,7 +3958,7 @@ public interface EditorPackage extends EPackage
    * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getDeclarationFree()
    * @generated
    */
-  int DECLARATION_FREE = 106;
+  int DECLARATION_FREE = 105;
 
   /**
    * The feature id for the '<em><b>Si</b></em>' containment reference.
@@ -4005,7 +3986,7 @@ public interface EditorPackage extends EPackage
    * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getDeclarationFluid()
    * @generated
    */
-  int DECLARATION_FLUID = 107;
+  int DECLARATION_FLUID = 106;
 
   /**
    * The feature id for the '<em><b>Si</b></em>' containment reference.
@@ -4033,7 +4014,7 @@ public interface EditorPackage extends EPackage
    * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getDeclarationDefault()
    * @generated
    */
-  int DECLARATION_DEFAULT = 108;
+  int DECLARATION_DEFAULT = 107;
 
   /**
    * The feature id for the '<em><b>Si</b></em>' containment reference.
@@ -4061,7 +4042,7 @@ public interface EditorPackage extends EPackage
    * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getDeclarationDefine()
    * @generated
    */
-  int DECLARATION_DEFINE = 109;
+  int DECLARATION_DEFINE = 108;
 
   /**
    * The feature id for the '<em><b>Si</b></em>' containment reference.
@@ -4089,7 +4070,7 @@ public interface EditorPackage extends EPackage
    * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getDeclarationFix()
    * @generated
    */
-  int DECLARATION_FIX = 110;
+  int DECLARATION_FIX = 109;
 
   /**
    * The feature id for the '<em><b>Si</b></em>' containment reference.
@@ -4117,7 +4098,7 @@ public interface EditorPackage extends EPackage
    * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getDeclarationInline()
    * @generated
    */
-  int DECLARATION_INLINE = 111;
+  int DECLARATION_INLINE = 110;
 
   /**
    * The feature id for the '<em><b>Si</b></em>' containment reference.
@@ -4154,7 +4135,7 @@ public interface EditorPackage extends EPackage
    * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getDeclarationImport()
    * @generated
    */
-  int DECLARATION_IMPORT = 112;
+  int DECLARATION_IMPORT = 111;
 
   /**
    * The feature id for the '<em><b>Si</b></em>' containment reference.
@@ -4191,7 +4172,7 @@ public interface EditorPackage extends EPackage
    * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getDeclarationExport()
    * @generated
    */
-  int DECLARATION_EXPORT = 113;
+  int DECLARATION_EXPORT = 112;
 
   /**
    * The feature id for the '<em><b>Ed</b></em>' containment reference.
@@ -4219,7 +4200,7 @@ public interface EditorPackage extends EPackage
    * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getE3()
    * @generated
    */
-  int E3 = 114;
+  int E3 = 113;
 
   /**
    * The feature id for the '<em><b>Fp</b></em>' containment reference.
@@ -4301,7 +4282,7 @@ public interface EditorPackage extends EPackage
    * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getE4()
    * @generated
    */
-  int E4 = 115;
+  int E4 = 114;
 
   /**
    * The feature id for the '<em><b>Fp</b></em>' containment reference.
@@ -4383,7 +4364,7 @@ public interface EditorPackage extends EPackage
    * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getE5()
    * @generated
    */
-  int E5 = 116;
+  int E5 = 115;
 
   /**
    * The feature id for the '<em><b>Fp</b></em>' containment reference.
@@ -4465,7 +4446,7 @@ public interface EditorPackage extends EPackage
    * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getE6()
    * @generated
    */
-  int E6 = 117;
+  int E6 = 116;
 
   /**
    * The feature id for the '<em><b>Fp</b></em>' containment reference.
@@ -4547,7 +4528,7 @@ public interface EditorPackage extends EPackage
    * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getE7()
    * @generated
    */
-  int E7 = 118;
+  int E7 = 117;
 
   /**
    * The feature id for the '<em><b>Fp</b></em>' containment reference.
@@ -4629,7 +4610,7 @@ public interface EditorPackage extends EPackage
    * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getE8()
    * @generated
    */
-  int E8 = 119;
+  int E8 = 118;
 
   /**
    * The feature id for the '<em><b>Fp</b></em>' containment reference.
@@ -4711,7 +4692,7 @@ public interface EditorPackage extends EPackage
    * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getE9()
    * @generated
    */
-  int E9 = 120;
+  int E9 = 119;
 
   /**
    * The feature id for the '<em><b>Fp</b></em>' containment reference.
@@ -4793,7 +4774,7 @@ public interface EditorPackage extends EPackage
    * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getE11_E12()
    * @generated
    */
-  int E11_E12 = 121;
+  int E11_E12 = 120;
 
   /**
    * The feature id for the '<em><b>Fp</b></em>' containment reference.
@@ -4875,7 +4856,7 @@ public interface EditorPackage extends EPackage
    * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getE11_Op()
    * @generated
    */
-  int E11_OP = 122;
+  int E11_OP = 121;
 
   /**
    * The feature id for the '<em><b>Fp</b></em>' containment reference.
@@ -4957,7 +4938,7 @@ public interface EditorPackage extends EPackage
    * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getE12()
    * @generated
    */
-  int E12 = 123;
+  int E12 = 122;
 
   /**
    * The feature id for the '<em><b>Fp</b></em>' containment reference.
@@ -5039,7 +5020,7 @@ public interface EditorPackage extends EPackage
    * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getE13()
    * @generated
    */
-  int E13 = 124;
+  int E13 = 123;
 
   /**
    * The feature id for the '<em><b>Fp</b></em>' containment reference.
@@ -5121,7 +5102,7 @@ public interface EditorPackage extends EPackage
    * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getArrowTok()
    * @generated
    */
-  int ARROW_TOK = 125;
+  int ARROW_TOK = 124;
 
   /**
    * The number of structural features of the '<em>Arrow Tok</em>' class.
@@ -5140,7 +5121,7 @@ public interface EditorPackage extends EPackage
    * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getLatticeTok()
    * @generated
    */
-  int LATTICE_TOK = 126;
+  int LATTICE_TOK = 125;
 
   /**
    * The number of structural features of the '<em>Lattice Tok</em>' class.
@@ -5159,7 +5140,7 @@ public interface EditorPackage extends EPackage
    * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getRelationTok()
    * @generated
    */
-  int RELATION_TOK = 127;
+  int RELATION_TOK = 126;
 
   /**
    * The number of structural features of the '<em>Relation Tok</em>' class.
@@ -5178,7 +5159,7 @@ public interface EditorPackage extends EPackage
    * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getSegTok()
    * @generated
    */
-  int SEG_TOK = 128;
+  int SEG_TOK = 127;
 
   /**
    * The number of structural features of the '<em>Seg Tok</em>' class.
@@ -5197,7 +5178,7 @@ public interface EditorPackage extends EPackage
    * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getPlusTok()
    * @generated
    */
-  int PLUS_TOK = 129;
+  int PLUS_TOK = 128;
 
   /**
    * The number of structural features of the '<em>Plus Tok</em>' class.
@@ -5216,7 +5197,7 @@ public interface EditorPackage extends EPackage
    * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getQuotientTok()
    * @generated
    */
-  int QUOTIENT_TOK = 130;
+  int QUOTIENT_TOK = 129;
 
   /**
    * The number of structural features of the '<em>Quotient Tok</em>' class.
@@ -5235,7 +5216,7 @@ public interface EditorPackage extends EPackage
    * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getTimesTok()
    * @generated
    */
-  int TIMES_TOK = 131;
+  int TIMES_TOK = 130;
 
   /**
    * The number of structural features of the '<em>Times Tok</em>' class.
@@ -5254,7 +5235,7 @@ public interface EditorPackage extends EPackage
    * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getPowerTok()
    * @generated
    */
-  int POWER_TOK = 132;
+  int POWER_TOK = 131;
 
   /**
    * The number of structural features of the '<em>Power Tok</em>' class.
@@ -5913,15 +5894,15 @@ public interface EditorPackage extends EPackage
   EReference getFlow_AnyStatement_N();
 
   /**
-   * Returns the meta object for the containment reference '{@link com.euclideanspace.aldor.editor.Flow_AnyStatement#getI2 <em>I2</em>}'.
+   * Returns the meta object for the attribute '{@link com.euclideanspace.aldor.editor.Flow_AnyStatement#getI2 <em>I2</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>I2</em>'.
+   * @return the meta object for the attribute '<em>I2</em>'.
    * @see com.euclideanspace.aldor.editor.Flow_AnyStatement#getI2()
    * @see #getFlow_AnyStatement()
    * @generated
    */
-  EReference getFlow_AnyStatement_I2();
+  EAttribute getFlow_AnyStatement_I2();
 
   /**
    * Returns the meta object for class '{@link com.euclideanspace.aldor.editor.Flow_BalStatement <em>Flow Bal Statement</em>}'.
@@ -6066,15 +6047,15 @@ public interface EditorPackage extends EPackage
   EReference getFlow_BalStatement_N2();
 
   /**
-   * Returns the meta object for the containment reference '{@link com.euclideanspace.aldor.editor.Flow_BalStatement#getI3 <em>I3</em>}'.
+   * Returns the meta object for the attribute '{@link com.euclideanspace.aldor.editor.Flow_BalStatement#getI3 <em>I3</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>I3</em>'.
+   * @return the meta object for the attribute '<em>I3</em>'.
    * @see com.euclideanspace.aldor.editor.Flow_BalStatement#getI3()
    * @see #getFlow_BalStatement()
    * @generated
    */
-  EReference getFlow_BalStatement_I3();
+  EAttribute getFlow_BalStatement_I3();
 
   /**
    * Returns the meta object for class '{@link com.euclideanspace.aldor.editor.GenBound <em>Gen Bound</em>}'.
@@ -6660,15 +6641,26 @@ public interface EditorPackage extends EPackage
   EClass getJright_Molecule();
 
   /**
-   * Returns the meta object for the containment reference '{@link com.euclideanspace.aldor.editor.Jright_Molecule#getRight <em>Right</em>}'.
+   * Returns the meta object for the containment reference '{@link com.euclideanspace.aldor.editor.Jright_Molecule#getLeft3 <em>Left3</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Right</em>'.
-   * @see com.euclideanspace.aldor.editor.Jright_Molecule#getRight()
+   * @return the meta object for the containment reference '<em>Left3</em>'.
+   * @see com.euclideanspace.aldor.editor.Jright_Molecule#getLeft3()
    * @see #getJright_Molecule()
    * @generated
    */
-  EReference getJright_Molecule_Right();
+  EReference getJright_Molecule_Left3();
+
+  /**
+   * Returns the meta object for the containment reference '{@link com.euclideanspace.aldor.editor.Jright_Molecule#getRight3 <em>Right3</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Right3</em>'.
+   * @see com.euclideanspace.aldor.editor.Jright_Molecule#getRight3()
+   * @see #getJright_Molecule()
+   * @generated
+   */
+  EReference getJright_Molecule_Right3();
 
   /**
    * Returns the meta object for class '{@link com.euclideanspace.aldor.editor.Jright_Atom <em>Jright Atom</em>}'.
@@ -6679,6 +6671,17 @@ public interface EditorPackage extends EPackage
    * @generated
    */
   EClass getJright_Atom();
+
+  /**
+   * Returns the meta object for the containment reference '{@link com.euclideanspace.aldor.editor.Jright_Atom#getLeft2 <em>Left2</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Left2</em>'.
+   * @see com.euclideanspace.aldor.editor.Jright_Atom#getLeft2()
+   * @see #getJright_Atom()
+   * @generated
+   */
+  EReference getJright_Atom_Left2();
 
   /**
    * Returns the meta object for the containment reference '{@link com.euclideanspace.aldor.editor.Jright_Atom#getRight2 <em>Right2</em>}'.
@@ -6713,15 +6716,15 @@ public interface EditorPackage extends EPackage
   EReference getJleft_Molecule_Be();
 
   /**
-   * Returns the meta object for the containment reference '{@link com.euclideanspace.aldor.editor.Jleft_Molecule#getM <em>M</em>}'.
+   * Returns the meta object for the attribute '{@link com.euclideanspace.aldor.editor.Jleft_Molecule#getM <em>M</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>M</em>'.
+   * @return the meta object for the attribute '<em>M</em>'.
    * @see com.euclideanspace.aldor.editor.Jleft_Molecule#getM()
    * @see #getJleft_Molecule()
    * @generated
    */
-  EReference getJleft_Molecule_M();
+  EAttribute getJleft_Molecule_M();
 
   /**
    * Returns the meta object for the containment reference list '{@link com.euclideanspace.aldor.editor.Jleft_Molecule#getBm <em>Bm</em>}'.
@@ -6733,6 +6736,17 @@ public interface EditorPackage extends EPackage
    * @generated
    */
   EReference getJleft_Molecule_Bm();
+
+  /**
+   * Returns the meta object for the containment reference '{@link com.euclideanspace.aldor.editor.Jleft_Molecule#getM2 <em>M2</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>M2</em>'.
+   * @see com.euclideanspace.aldor.editor.Jleft_Molecule#getM2()
+   * @see #getJleft_Molecule()
+   * @generated
+   */
+  EReference getJleft_Molecule_M2();
 
   /**
    * Returns the meta object for class '{@link com.euclideanspace.aldor.editor.Jleft_Atom <em>Jleft Atom</em>}'.
@@ -6756,15 +6770,15 @@ public interface EditorPackage extends EPackage
   EReference getJleft_Atom_Be();
 
   /**
-   * Returns the meta object for the containment reference '{@link com.euclideanspace.aldor.editor.Jleft_Atom#getA <em>A</em>}'.
+   * Returns the meta object for the attribute '{@link com.euclideanspace.aldor.editor.Jleft_Atom#getA <em>A</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>A</em>'.
+   * @return the meta object for the attribute '<em>A</em>'.
    * @see com.euclideanspace.aldor.editor.Jleft_Atom#getA()
    * @see #getJleft_Atom()
    * @generated
    */
-  EReference getJleft_Atom_A();
+  EAttribute getJleft_Atom_A();
 
   /**
    * Returns the meta object for the containment reference list '{@link com.euclideanspace.aldor.editor.Jleft_Atom#getBm4 <em>Bm4</em>}'.
@@ -6976,15 +6990,15 @@ public interface EditorPackage extends EPackage
   EClass getAtom();
 
   /**
-   * Returns the meta object for the containment reference '{@link com.euclideanspace.aldor.editor.Atom#getIden <em>Iden</em>}'.
+   * Returns the meta object for the attribute '{@link com.euclideanspace.aldor.editor.Atom#getIden <em>Iden</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Iden</em>'.
+   * @return the meta object for the attribute '<em>Iden</em>'.
    * @see com.euclideanspace.aldor.editor.Atom#getIden()
    * @see #getAtom()
    * @generated
    */
-  EReference getAtom_Iden();
+  EAttribute getAtom_Iden();
 
   /**
    * Returns the meta object for the attribute '{@link com.euclideanspace.aldor.editor.Atom#getLit <em>Lit</em>}'.
@@ -7008,15 +7022,15 @@ public interface EditorPackage extends EPackage
   EClass getName_();
 
   /**
-   * Returns the meta object for the containment reference '{@link com.euclideanspace.aldor.editor.Name#getName <em>Name</em>}'.
+   * Returns the meta object for the attribute '{@link com.euclideanspace.aldor.editor.Name#getName <em>Name</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Name</em>'.
+   * @return the meta object for the attribute '<em>Name</em>'.
    * @see com.euclideanspace.aldor.editor.Name#getName()
    * @see #getName_()
    * @generated
    */
-  EReference getName_Name();
+  EAttribute getName_Name();
 
   /**
    * Returns the meta object for the containment reference '{@link com.euclideanspace.aldor.editor.Name#getNo <em>No</em>}'.
@@ -7028,27 +7042,6 @@ public interface EditorPackage extends EPackage
    * @generated
    */
   EReference getName_No();
-
-  /**
-   * Returns the meta object for class '{@link com.euclideanspace.aldor.editor.Id <em>Id</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Id</em>'.
-   * @see com.euclideanspace.aldor.editor.Id
-   * @generated
-   */
-  EClass getId();
-
-  /**
-   * Returns the meta object for the attribute '{@link com.euclideanspace.aldor.editor.Id#getName <em>Name</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Name</em>'.
-   * @see com.euclideanspace.aldor.editor.Id#getName()
-   * @see #getId()
-   * @generated
-   */
-  EAttribute getId_Name();
 
   /**
    * Returns the meta object for class '{@link com.euclideanspace.aldor.editor.UnqualOp_ArrowTok <em>Unqual Op Arrow Tok</em>}'.
@@ -8610,12 +8603,12 @@ public interface EditorPackage extends EPackage
     EReference FLOW_ANY_STATEMENT__N = eINSTANCE.getFlow_AnyStatement_N();
 
     /**
-     * The meta object literal for the '<em><b>I2</b></em>' containment reference feature.
+     * The meta object literal for the '<em><b>I2</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference FLOW_ANY_STATEMENT__I2 = eINSTANCE.getFlow_AnyStatement_I2();
+    EAttribute FLOW_ANY_STATEMENT__I2 = eINSTANCE.getFlow_AnyStatement_I2();
 
     /**
      * The meta object literal for the '{@link com.euclideanspace.aldor.editor.impl.Flow_BalStatementImpl <em>Flow Bal Statement</em>}' class.
@@ -8724,12 +8717,12 @@ public interface EditorPackage extends EPackage
     EReference FLOW_BAL_STATEMENT__N2 = eINSTANCE.getFlow_BalStatement_N2();
 
     /**
-     * The meta object literal for the '<em><b>I3</b></em>' containment reference feature.
+     * The meta object literal for the '<em><b>I3</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference FLOW_BAL_STATEMENT__I3 = eINSTANCE.getFlow_BalStatement_I3();
+    EAttribute FLOW_BAL_STATEMENT__I3 = eINSTANCE.getFlow_BalStatement_I3();
 
     /**
      * The meta object literal for the '{@link com.euclideanspace.aldor.editor.impl.GenBoundImpl <em>Gen Bound</em>}' class.
@@ -9246,12 +9239,20 @@ public interface EditorPackage extends EPackage
     EClass JRIGHT_MOLECULE = eINSTANCE.getJright_Molecule();
 
     /**
-     * The meta object literal for the '<em><b>Right</b></em>' containment reference feature.
+     * The meta object literal for the '<em><b>Left3</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference JRIGHT_MOLECULE__RIGHT = eINSTANCE.getJright_Molecule_Right();
+    EReference JRIGHT_MOLECULE__LEFT3 = eINSTANCE.getJright_Molecule_Left3();
+
+    /**
+     * The meta object literal for the '<em><b>Right3</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference JRIGHT_MOLECULE__RIGHT3 = eINSTANCE.getJright_Molecule_Right3();
 
     /**
      * The meta object literal for the '{@link com.euclideanspace.aldor.editor.impl.Jright_AtomImpl <em>Jright Atom</em>}' class.
@@ -9262,6 +9263,14 @@ public interface EditorPackage extends EPackage
      * @generated
      */
     EClass JRIGHT_ATOM = eINSTANCE.getJright_Atom();
+
+    /**
+     * The meta object literal for the '<em><b>Left2</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference JRIGHT_ATOM__LEFT2 = eINSTANCE.getJright_Atom_Left2();
 
     /**
      * The meta object literal for the '<em><b>Right2</b></em>' containment reference feature.
@@ -9290,12 +9299,12 @@ public interface EditorPackage extends EPackage
     EReference JLEFT_MOLECULE__BE = eINSTANCE.getJleft_Molecule_Be();
 
     /**
-     * The meta object literal for the '<em><b>M</b></em>' containment reference feature.
+     * The meta object literal for the '<em><b>M</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference JLEFT_MOLECULE__M = eINSTANCE.getJleft_Molecule_M();
+    EAttribute JLEFT_MOLECULE__M = eINSTANCE.getJleft_Molecule_M();
 
     /**
      * The meta object literal for the '<em><b>Bm</b></em>' containment reference list feature.
@@ -9304,6 +9313,14 @@ public interface EditorPackage extends EPackage
      * @generated
      */
     EReference JLEFT_MOLECULE__BM = eINSTANCE.getJleft_Molecule_Bm();
+
+    /**
+     * The meta object literal for the '<em><b>M2</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference JLEFT_MOLECULE__M2 = eINSTANCE.getJleft_Molecule_M2();
 
     /**
      * The meta object literal for the '{@link com.euclideanspace.aldor.editor.impl.Jleft_AtomImpl <em>Jleft Atom</em>}' class.
@@ -9324,12 +9341,12 @@ public interface EditorPackage extends EPackage
     EReference JLEFT_ATOM__BE = eINSTANCE.getJleft_Atom_Be();
 
     /**
-     * The meta object literal for the '<em><b>A</b></em>' containment reference feature.
+     * The meta object literal for the '<em><b>A</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference JLEFT_ATOM__A = eINSTANCE.getJleft_Atom_A();
+    EAttribute JLEFT_ATOM__A = eINSTANCE.getJleft_Atom_A();
 
     /**
      * The meta object literal for the '<em><b>Bm4</b></em>' containment reference list feature.
@@ -9514,12 +9531,12 @@ public interface EditorPackage extends EPackage
     EClass ATOM = eINSTANCE.getAtom();
 
     /**
-     * The meta object literal for the '<em><b>Iden</b></em>' containment reference feature.
+     * The meta object literal for the '<em><b>Iden</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference ATOM__IDEN = eINSTANCE.getAtom_Iden();
+    EAttribute ATOM__IDEN = eINSTANCE.getAtom_Iden();
 
     /**
      * The meta object literal for the '<em><b>Lit</b></em>' attribute feature.
@@ -9540,12 +9557,12 @@ public interface EditorPackage extends EPackage
     EClass NAME = eINSTANCE.getName_();
 
     /**
-     * The meta object literal for the '<em><b>Name</b></em>' containment reference feature.
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference NAME__NAME = eINSTANCE.getName_Name();
+    EAttribute NAME__NAME = eINSTANCE.getName_Name();
 
     /**
      * The meta object literal for the '<em><b>No</b></em>' containment reference feature.
@@ -9554,24 +9571,6 @@ public interface EditorPackage extends EPackage
      * @generated
      */
     EReference NAME__NO = eINSTANCE.getName_No();
-
-    /**
-     * The meta object literal for the '{@link com.euclideanspace.aldor.editor.impl.IdImpl <em>Id</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see com.euclideanspace.aldor.editor.impl.IdImpl
-     * @see com.euclideanspace.aldor.editor.impl.EditorPackageImpl#getId()
-     * @generated
-     */
-    EClass ID = eINSTANCE.getId();
-
-    /**
-     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute ID__NAME = eINSTANCE.getId_Name();
 
     /**
      * The meta object literal for the '{@link com.euclideanspace.aldor.editor.impl.UnqualOp_ArrowTokImpl <em>Unqual Op Arrow Tok</em>}' class.

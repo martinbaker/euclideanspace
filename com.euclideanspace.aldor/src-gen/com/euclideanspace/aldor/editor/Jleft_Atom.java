@@ -4,6 +4,8 @@ package com.euclideanspace.aldor.editor;
 
 import org.eclipse.emf.common.util.EList;
 
+import org.eclipse.emf.ecore.EObject;
+
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Jleft Atom</b></em>'.
@@ -22,7 +24,7 @@ import org.eclipse.emf.common.util.EList;
  * @model
  * @generated
  */
-public interface Jleft_Atom extends Jright_Atom
+public interface Jleft_Atom extends EObject
 {
   /**
    * Returns the value of the '<em><b>Be</b></em>' containment reference list.
@@ -41,30 +43,30 @@ public interface Jleft_Atom extends Jright_Atom
   EList<BlockEnclosure> getBe();
 
   /**
-   * Returns the value of the '<em><b>A</b></em>' containment reference.
+   * Returns the value of the '<em><b>A</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>A</em>' containment reference isn't clear,
+   * If the meaning of the '<em>A</em>' attribute isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>A</em>' containment reference.
-   * @see #setA(Atom)
+   * @return the value of the '<em>A</em>' attribute.
+   * @see #setA(String)
    * @see com.euclideanspace.aldor.editor.EditorPackage#getJleft_Atom_A()
-   * @model containment="true"
+   * @model
    * @generated
    */
-  Atom getA();
+  String getA();
 
   /**
-   * Sets the value of the '{@link com.euclideanspace.aldor.editor.Jleft_Atom#getA <em>A</em>}' containment reference.
+   * Sets the value of the '{@link com.euclideanspace.aldor.editor.Jleft_Atom#getA <em>A</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>A</em>' containment reference.
+   * @param value the new value of the '<em>A</em>' attribute.
    * @see #getA()
    * @generated
    */
-  void setA(Atom value);
+  void setA(String value);
 
   /**
    * Returns the value of the '<em><b>Bm4</b></em>' containment reference list.

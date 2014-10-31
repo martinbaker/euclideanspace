@@ -57,7 +57,6 @@ import com.euclideanspace.aldor.editor.Flow_BalStatement;
 import com.euclideanspace.aldor.editor.ForLhs;
 import com.euclideanspace.aldor.editor.FromPart;
 import com.euclideanspace.aldor.editor.GenBound;
-import com.euclideanspace.aldor.editor.Id;
 import com.euclideanspace.aldor.editor.Infixed;
 import com.euclideanspace.aldor.editor.InfixedExpr;
 import com.euclideanspace.aldor.editor.InfixedExprs;
@@ -658,13 +657,6 @@ public class EditorPackageImpl extends EPackageImpl implements EditorPackage
    * @generated
    */
   private EClass nameEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass idEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -1750,9 +1742,9 @@ public class EditorPackageImpl extends EPackageImpl implements EditorPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getFlow_AnyStatement_I2()
+  public EAttribute getFlow_AnyStatement_I2()
   {
-    return (EReference)flow_AnyStatementEClass.getEStructuralFeatures().get(12);
+    return (EAttribute)flow_AnyStatementEClass.getEStructuralFeatures().get(12);
   }
 
   /**
@@ -1890,9 +1882,9 @@ public class EditorPackageImpl extends EPackageImpl implements EditorPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getFlow_BalStatement_I3()
+  public EAttribute getFlow_BalStatement_I3()
   {
-    return (EReference)flow_BalStatementEClass.getEStructuralFeatures().get(12);
+    return (EAttribute)flow_BalStatementEClass.getEStructuralFeatures().get(12);
   }
 
   /**
@@ -2460,9 +2452,19 @@ public class EditorPackageImpl extends EPackageImpl implements EditorPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getJright_Molecule_Right()
+  public EReference getJright_Molecule_Left3()
   {
     return (EReference)jright_MoleculeEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getJright_Molecule_Right3()
+  {
+    return (EReference)jright_MoleculeEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -2480,9 +2482,19 @@ public class EditorPackageImpl extends EPackageImpl implements EditorPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getJright_Atom_Right2()
+  public EReference getJright_Atom_Left2()
   {
     return (EReference)jright_AtomEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getJright_Atom_Right2()
+  {
+    return (EReference)jright_AtomEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -2510,9 +2522,9 @@ public class EditorPackageImpl extends EPackageImpl implements EditorPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getJleft_Molecule_M()
+  public EAttribute getJleft_Molecule_M()
   {
-    return (EReference)jleft_MoleculeEClass.getEStructuralFeatures().get(1);
+    return (EAttribute)jleft_MoleculeEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -2523,6 +2535,16 @@ public class EditorPackageImpl extends EPackageImpl implements EditorPackage
   public EReference getJleft_Molecule_Bm()
   {
     return (EReference)jleft_MoleculeEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getJleft_Molecule_M2()
+  {
+    return (EReference)jleft_MoleculeEClass.getEStructuralFeatures().get(3);
   }
 
   /**
@@ -2550,9 +2572,9 @@ public class EditorPackageImpl extends EPackageImpl implements EditorPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getJleft_Atom_A()
+  public EAttribute getJleft_Atom_A()
   {
-    return (EReference)jleft_AtomEClass.getEStructuralFeatures().get(1);
+    return (EAttribute)jleft_AtomEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -2760,9 +2782,9 @@ public class EditorPackageImpl extends EPackageImpl implements EditorPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getAtom_Iden()
+  public EAttribute getAtom_Iden()
   {
-    return (EReference)atomEClass.getEStructuralFeatures().get(0);
+    return (EAttribute)atomEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -2790,9 +2812,9 @@ public class EditorPackageImpl extends EPackageImpl implements EditorPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getName_Name()
+  public EAttribute getName_Name()
   {
-    return (EReference)nameEClass.getEStructuralFeatures().get(0);
+    return (EAttribute)nameEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -2803,26 +2825,6 @@ public class EditorPackageImpl extends EPackageImpl implements EditorPackage
   public EReference getName_No()
   {
     return (EReference)nameEClass.getEStructuralFeatures().get(1);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EClass getId()
-  {
-    return idEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EAttribute getId_Name()
-  {
-    return (EAttribute)idEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -3900,7 +3902,7 @@ public class EditorPackageImpl extends EPackageImpl implements EditorPackage
     createEReference(flow_AnyStatementEClass, FLOW_ANY_STATEMENT__GB);
     createEReference(flow_AnyStatementEClass, FLOW_ANY_STATEMENT__BAS4);
     createEReference(flow_AnyStatementEClass, FLOW_ANY_STATEMENT__N);
-    createEReference(flow_AnyStatementEClass, FLOW_ANY_STATEMENT__I2);
+    createEAttribute(flow_AnyStatementEClass, FLOW_ANY_STATEMENT__I2);
 
     flow_BalStatementEClass = createEClass(FLOW_BAL_STATEMENT);
     createEReference(flow_BalStatementEClass, FLOW_BAL_STATEMENT__C2);
@@ -3915,7 +3917,7 @@ public class EditorPackageImpl extends EPackageImpl implements EditorPackage
     createEReference(flow_BalStatementEClass, FLOW_BAL_STATEMENT__CA2);
     createEReference(flow_BalStatementEClass, FLOW_BAL_STATEMENT__GB2);
     createEReference(flow_BalStatementEClass, FLOW_BAL_STATEMENT__N2);
-    createEReference(flow_BalStatementEClass, FLOW_BAL_STATEMENT__I3);
+    createEAttribute(flow_BalStatementEClass, FLOW_BAL_STATEMENT__I3);
 
     genBoundEClass = createEClass(GEN_BOUND);
     createEReference(genBoundEClass, GEN_BOUND__CI);
@@ -4005,19 +4007,22 @@ public class EditorPackageImpl extends EPackageImpl implements EditorPackage
     createEReference(leftJuxtaposedEClass, LEFT_JUXTAPOSED__QT);
 
     jright_MoleculeEClass = createEClass(JRIGHT_MOLECULE);
-    createEReference(jright_MoleculeEClass, JRIGHT_MOLECULE__RIGHT);
+    createEReference(jright_MoleculeEClass, JRIGHT_MOLECULE__LEFT3);
+    createEReference(jright_MoleculeEClass, JRIGHT_MOLECULE__RIGHT3);
 
     jright_AtomEClass = createEClass(JRIGHT_ATOM);
+    createEReference(jright_AtomEClass, JRIGHT_ATOM__LEFT2);
     createEReference(jright_AtomEClass, JRIGHT_ATOM__RIGHT2);
 
     jleft_MoleculeEClass = createEClass(JLEFT_MOLECULE);
     createEReference(jleft_MoleculeEClass, JLEFT_MOLECULE__BE);
-    createEReference(jleft_MoleculeEClass, JLEFT_MOLECULE__M);
+    createEAttribute(jleft_MoleculeEClass, JLEFT_MOLECULE__M);
     createEReference(jleft_MoleculeEClass, JLEFT_MOLECULE__BM);
+    createEReference(jleft_MoleculeEClass, JLEFT_MOLECULE__M2);
 
     jleft_AtomEClass = createEClass(JLEFT_ATOM);
     createEReference(jleft_AtomEClass, JLEFT_ATOM__BE);
-    createEReference(jleft_AtomEClass, JLEFT_ATOM__A);
+    createEAttribute(jleft_AtomEClass, JLEFT_ATOM__A);
     createEReference(jleft_AtomEClass, JLEFT_ATOM__BM4);
 
     moleculeEClass = createEClass(MOLECULE);
@@ -4049,15 +4054,12 @@ public class EditorPackageImpl extends EPackageImpl implements EditorPackage
     createEAttribute(namesEClass, NAMES__SUBSEQUENT_NAMES);
 
     atomEClass = createEClass(ATOM);
-    createEReference(atomEClass, ATOM__IDEN);
+    createEAttribute(atomEClass, ATOM__IDEN);
     createEAttribute(atomEClass, ATOM__LIT);
 
     nameEClass = createEClass(NAME);
-    createEReference(nameEClass, NAME__NAME);
+    createEAttribute(nameEClass, NAME__NAME);
     createEReference(nameEClass, NAME__NO);
-
-    idEClass = createEClass(ID);
-    createEAttribute(idEClass, ID__NAME);
 
     unqualOp_ArrowTokEClass = createEClass(UNQUAL_OP_ARROW_TOK);
 
@@ -4277,8 +4279,6 @@ public class EditorPackageImpl extends EPackageImpl implements EditorPackage
     leftJuxtaposedEClass.getESuperTypes().add(this.getQualTail());
     jright_MoleculeEClass.getESuperTypes().add(this.getRightJuxtaposed());
     jleft_MoleculeEClass.getESuperTypes().add(this.getLeftJuxtaposed());
-    jleft_MoleculeEClass.getESuperTypes().add(this.getJright_Molecule());
-    jleft_AtomEClass.getESuperTypes().add(this.getJright_Atom());
     enclosureEClass.getESuperTypes().add(this.getMolecule());
     enclosureEClass.getESuperTypes().add(this.getBlockMolecule());
     enclosureEClass.getESuperTypes().add(this.getBlockEnclosure());
@@ -4434,7 +4434,7 @@ public class EditorPackageImpl extends EPackageImpl implements EditorPackage
     initEReference(getFlow_AnyStatement_Gb(), this.getGenBound(), null, "gb", null, 0, 1, Flow_AnyStatement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getFlow_AnyStatement_Bas4(), this.getBinding_AnyStatement(), null, "bas4", null, 0, 1, Flow_AnyStatement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getFlow_AnyStatement_N(), this.getName_(), null, "n", null, 0, 1, Flow_AnyStatement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getFlow_AnyStatement_I2(), this.getId(), null, "i2", null, 0, 1, Flow_AnyStatement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getFlow_AnyStatement_I2(), ecorePackage.getEString(), "i2", null, 0, 1, Flow_AnyStatement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(flow_BalStatementEClass, Flow_BalStatement.class, "Flow_BalStatement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getFlow_BalStatement_C2(), this.getCollection(), null, "c2", null, 0, 1, Flow_BalStatement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -4449,7 +4449,7 @@ public class EditorPackageImpl extends EPackageImpl implements EditorPackage
     initEReference(getFlow_BalStatement_Ca2(), this.getCases(), null, "ca2", null, 0, 1, Flow_BalStatement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getFlow_BalStatement_Gb2(), this.getGenBound(), null, "gb2", null, 0, 1, Flow_BalStatement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getFlow_BalStatement_N2(), this.getName_(), null, "n2", null, 0, 1, Flow_BalStatement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getFlow_BalStatement_I3(), this.getId(), null, "i3", null, 0, 1, Flow_BalStatement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getFlow_BalStatement_I3(), ecorePackage.getEString(), "i3", null, 0, 1, Flow_BalStatement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(genBoundEClass, GenBound.class, "GenBound", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getGenBound_Ci(), this.getCommaItem(), null, "ci", null, 0, 1, GenBound.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -4539,19 +4539,22 @@ public class EditorPackageImpl extends EPackageImpl implements EditorPackage
     initEReference(getLeftJuxtaposed_Qt(), this.getQualTail(), null, "qt", null, 0, 1, LeftJuxtaposed.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(jright_MoleculeEClass, Jright_Molecule.class, "Jright_Molecule", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getJright_Molecule_Right(), this.getJright_Atom(), null, "right", null, 0, 1, Jright_Molecule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getJright_Molecule_Left3(), this.getJleft_Molecule(), null, "left3", null, 0, 1, Jright_Molecule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getJright_Molecule_Right3(), this.getJright_Atom(), null, "right3", null, 0, 1, Jright_Molecule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(jright_AtomEClass, Jright_Atom.class, "Jright_Atom", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getJright_Atom_Left2(), this.getJleft_Atom(), null, "left2", null, 0, 1, Jright_Atom.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getJright_Atom_Right2(), this.getJright_Atom(), null, "right2", null, 0, 1, Jright_Atom.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(jleft_MoleculeEClass, Jleft_Molecule.class, "Jleft_Molecule", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getJleft_Molecule_Be(), this.getBlockEnclosure(), null, "be", null, 0, -1, Jleft_Molecule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getJleft_Molecule_M(), this.getMolecule(), null, "m", null, 0, 1, Jleft_Molecule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getJleft_Molecule_M(), ecorePackage.getEString(), "m", null, 0, 1, Jleft_Molecule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getJleft_Molecule_Bm(), this.getBlockMolecule(), null, "bm", null, 0, -1, Jleft_Molecule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getJleft_Molecule_M2(), this.getMolecule(), null, "m2", null, 0, 1, Jleft_Molecule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(jleft_AtomEClass, Jleft_Atom.class, "Jleft_Atom", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getJleft_Atom_Be(), this.getBlockEnclosure(), null, "be", null, 0, -1, Jleft_Atom.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getJleft_Atom_A(), this.getAtom(), null, "a", null, 0, 1, Jleft_Atom.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getJleft_Atom_A(), ecorePackage.getEString(), "a", null, 0, 1, Jleft_Atom.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getJleft_Atom_Bm4(), this.getBlockMolecule(), null, "bm4", null, 0, -1, Jleft_Atom.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(moleculeEClass, Molecule.class, "Molecule", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -4583,15 +4586,12 @@ public class EditorPackageImpl extends EPackageImpl implements EditorPackage
     initEAttribute(getNames_SubsequentNames(), ecorePackage.getEString(), "subsequentNames", null, 0, -1, Names.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(atomEClass, Atom.class, "Atom", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getAtom_Iden(), this.getId(), null, "iden", null, 0, 1, Atom.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getAtom_Iden(), ecorePackage.getEString(), "iden", null, 0, 1, Atom.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getAtom_Lit(), ecorePackage.getEString(), "lit", null, 0, 1, Atom.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(nameEClass, Name.class, "Name", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getName_Name(), this.getId(), null, "name", null, 0, 1, Name.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getName_Name(), ecorePackage.getEString(), "name", null, 0, 1, Name.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getName_No(), this.getNakedOp(), null, "no", null, 0, 1, Name.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(idEClass, Id.class, "Id", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getId_Name(), ecorePackage.getEString(), "name", null, 0, 1, Id.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(unqualOp_ArrowTokEClass, UnqualOp_ArrowTok.class, "UnqualOp_ArrowTok", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 

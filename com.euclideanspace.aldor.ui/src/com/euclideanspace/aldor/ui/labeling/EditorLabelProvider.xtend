@@ -88,6 +88,17 @@ import com.euclideanspace.aldor.editor.Names
 import com.euclideanspace.aldor.editor.Atom
 import com.euclideanspace.aldor.editor.CurlyContentsList_Labeled
 import com.euclideanspace.aldor.editor.CurlyContentB_Labeled
+import com.euclideanspace.aldor.editor.ArrowTok
+import com.euclideanspace.aldor.editor.LatticeTok
+import com.euclideanspace.aldor.editor.RelationTok
+import com.euclideanspace.aldor.editor.SegTok
+import com.euclideanspace.aldor.editor.PlusTok
+import com.euclideanspace.aldor.editor.QuotientTok
+import com.euclideanspace.aldor.editor.TimesTok
+import com.euclideanspace.aldor.editor.PowerTok
+import javax.lang.model.element.Name
+import com.euclideanspace.aldor.editor.Jright_Atom
+import com.euclideanspace.aldor.editor.Jleft_Atom
 
 /**
  * Provides labels for a EObjects.
@@ -415,22 +426,30 @@ class EditorLabelProvider extends org.eclipse.xtext.ui.label.DefaultEObjectLabel
 	}
 
     /*
-     * when uncommented this causes Unhandled event loop exception
+     * 
      */
-//	def String text(Jright_Atom ele) {
-//		  return "Jright_Atom";//+ele.getRight2();
-//	}
-
- 	def String text(Jleft_Molecule ele) {
-		  return "Jleft_Molecule";//+ele.getM();
+	def String text(Jright_Atom ele) {
+		  return "Jright_Atom";
 	}
 
     /*
-     * when uncommented this causes Unhandled event loop exception
+     * when uncommented no subnodes shown
+     * Unhandled event loop exception
+     * TODO re enable parameter display and check if it causes Unhandled event loop exception
      */
-//	def String text(Jleft_Atom ele) {
-//		  return "Jleft_Atom";//+ele.getBe();
-//	}
+ 	def String text(Jleft_Molecule ele) {
+	  if (ele.m !=null) return "Jleft_Molecule m="+ele.m;		
+	  if (ele.m2 !=null) return "Jleft_Molecule";		
+	  if (ele.be !=null) return "Jleft_Molecule #be="+ele.be.size();		
+	  return "Jleft_Molecule";
+	}
+
+    /*
+     *
+     */
+	def String text(Jleft_Atom ele) {
+		  return "Jleft_Atom";//+ele.getBe();
+	}
 
 	def String text(Molecule ele) {
 		  return "Molecule";
@@ -472,13 +491,51 @@ class EditorLabelProvider extends org.eclipse.xtext.ui.label.DefaultEObjectLabel
 		  return "Names";//+ele.getFirstName();
 	}
 
+	def String text(Name ele) {
+		  return "Name";//+ele.getFirstName();
+	}
+
 	def String text(Atom ele) {
-		  return "Atom";
+	  if (ele.iden !=null) return "Atom:"+ele.iden;		
+	  if (ele.lit !=null) return "Atom:"+ele.lit;		
+	  return "Atom";
 	}
 
 //	def String text(Id ele) {
 //		  return "Id";//+ele.getAB_Id();
 //	}
+
+	def String text(ArrowTok ele) {
+		  return "ArrowTok";
+	}
+	
+	def String text(LatticeTok ele) {
+		  return "LatticeTok";
+	}
+	
+	def String text(RelationTok ele) {
+		  return "RelationTok";
+	}
+	
+	def String text(SegTok ele) {
+		  return "SegTok";
+	}
+	
+	def String text(PlusTok ele) {
+		  return "PlusTok";
+	}
+	
+	def String text(QuotientTok ele) {
+		  return "QuotientTok";
+	}
+	
+	def String text(TimesTok ele) {
+		  return "TimesTok";
+	}
+	
+	def String text(PowerTok ele) {
+		  return "PowerTok";
+	}
 
 //	def String text(QualOp_ArrowTok ele) {
 //		  return "QualOp_ArrowTok :"+ele.getOqt();

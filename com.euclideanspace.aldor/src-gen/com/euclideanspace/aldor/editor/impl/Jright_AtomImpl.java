@@ -3,6 +3,7 @@
 package com.euclideanspace.aldor.editor.impl;
 
 import com.euclideanspace.aldor.editor.EditorPackage;
+import com.euclideanspace.aldor.editor.Jleft_Atom;
 import com.euclideanspace.aldor.editor.Jright_Atom;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -21,6 +22,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * <p>
  * The following features are implemented:
  * <ul>
+ *   <li>{@link com.euclideanspace.aldor.editor.impl.Jright_AtomImpl#getLeft2 <em>Left2</em>}</li>
  *   <li>{@link com.euclideanspace.aldor.editor.impl.Jright_AtomImpl#getRight2 <em>Right2</em>}</li>
  * </ul>
  * </p>
@@ -29,6 +31,16 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  */
 public class Jright_AtomImpl extends MinimalEObjectImpl.Container implements Jright_Atom
 {
+  /**
+   * The cached value of the '{@link #getLeft2() <em>Left2</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getLeft2()
+   * @generated
+   * @ordered
+   */
+  protected Jleft_Atom left2;
+
   /**
    * The cached value of the '{@link #getRight2() <em>Right2</em>}' containment reference.
    * <!-- begin-user-doc -->
@@ -58,6 +70,54 @@ public class Jright_AtomImpl extends MinimalEObjectImpl.Container implements Jri
   protected EClass eStaticClass()
   {
     return EditorPackage.Literals.JRIGHT_ATOM;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Jleft_Atom getLeft2()
+  {
+    return left2;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetLeft2(Jleft_Atom newLeft2, NotificationChain msgs)
+  {
+    Jleft_Atom oldLeft2 = left2;
+    left2 = newLeft2;
+    if (eNotificationRequired())
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, EditorPackage.JRIGHT_ATOM__LEFT2, oldLeft2, newLeft2);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setLeft2(Jleft_Atom newLeft2)
+  {
+    if (newLeft2 != left2)
+    {
+      NotificationChain msgs = null;
+      if (left2 != null)
+        msgs = ((InternalEObject)left2).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - EditorPackage.JRIGHT_ATOM__LEFT2, null, msgs);
+      if (newLeft2 != null)
+        msgs = ((InternalEObject)newLeft2).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - EditorPackage.JRIGHT_ATOM__LEFT2, null, msgs);
+      msgs = basicSetLeft2(newLeft2, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, EditorPackage.JRIGHT_ATOM__LEFT2, newLeft2, newLeft2));
   }
 
   /**
@@ -118,6 +178,8 @@ public class Jright_AtomImpl extends MinimalEObjectImpl.Container implements Jri
   {
     switch (featureID)
     {
+      case EditorPackage.JRIGHT_ATOM__LEFT2:
+        return basicSetLeft2(null, msgs);
       case EditorPackage.JRIGHT_ATOM__RIGHT2:
         return basicSetRight2(null, msgs);
     }
@@ -134,6 +196,8 @@ public class Jright_AtomImpl extends MinimalEObjectImpl.Container implements Jri
   {
     switch (featureID)
     {
+      case EditorPackage.JRIGHT_ATOM__LEFT2:
+        return getLeft2();
       case EditorPackage.JRIGHT_ATOM__RIGHT2:
         return getRight2();
     }
@@ -150,6 +214,9 @@ public class Jright_AtomImpl extends MinimalEObjectImpl.Container implements Jri
   {
     switch (featureID)
     {
+      case EditorPackage.JRIGHT_ATOM__LEFT2:
+        setLeft2((Jleft_Atom)newValue);
+        return;
       case EditorPackage.JRIGHT_ATOM__RIGHT2:
         setRight2((Jright_Atom)newValue);
         return;
@@ -167,6 +234,9 @@ public class Jright_AtomImpl extends MinimalEObjectImpl.Container implements Jri
   {
     switch (featureID)
     {
+      case EditorPackage.JRIGHT_ATOM__LEFT2:
+        setLeft2((Jleft_Atom)null);
+        return;
       case EditorPackage.JRIGHT_ATOM__RIGHT2:
         setRight2((Jright_Atom)null);
         return;
@@ -184,6 +254,8 @@ public class Jright_AtomImpl extends MinimalEObjectImpl.Container implements Jri
   {
     switch (featureID)
     {
+      case EditorPackage.JRIGHT_ATOM__LEFT2:
+        return left2 != null;
       case EditorPackage.JRIGHT_ATOM__RIGHT2:
         return right2 != null;
     }
