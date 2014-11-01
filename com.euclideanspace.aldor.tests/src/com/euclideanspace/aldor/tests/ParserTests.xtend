@@ -224,10 +224,6 @@ class ParserTests {
 		   }'''.parse.assertNoErrors
 	}
 
-	@Test def void testImplies() {
-		'''a implies b'''.parse.assertNoErrors
-	}
-
 	@Test def void testIfThen1() {
 		'''if a then b'''.parse.assertNoErrors
 	}
@@ -334,6 +330,12 @@ class ParserTests {
 
 	@Test def void testNever() {
 		'''never'''.parse.assertNoErrors
+	}
+
+/////// Exit Expression ///////////
+
+	@Test def void testExit1() {
+		'''a => error "an error"'''.parse.assertNoErrors
 	}
 
 /////// Prefix Operators ////////////////
@@ -444,6 +446,12 @@ class ParserTests {
 		'''a$b'''.parse.assertNoErrors
 	}
 
+/////// Qualified Operations ////////////////
+
+	@Test def void testQualifiedOperation1() {
+		'''a +$a b'''.parse.assertNoErrors
+	}
+
 /////// Assignments ////////////////
 
 	@Test def void testAssign1() {
@@ -464,6 +472,15 @@ class ParserTests {
 
 	@Test def void testAssign5() {
 		'''f(): () ==never'''.parse.assertNoErrors
+	}
+
+/////// Function Definition ////////////////
+
+    /**
+     * special form of =(a1:%,a2:%)
+     */
+	@Test def void testFunctionDefintion1() {
+		'''(a1: %) = (a2: %): Boolean == {a}'''.parse.assertNoErrors
 	}
 
 /////// Function Application ////////////////
@@ -493,33 +510,38 @@ class ParserTests {
 		'''a b'''.parse.assertNoErrors
 	}
 
-    /** juxtaposition associate left [should equal a (b c)]*/
+    /** juxtaposition associate left */
 	@Test def void testFunctionApplication7() {
+		'''a 3'''.parse.assertNoErrors
+	}
+
+    /** juxtaposition associate left [should equal a (b c)]*/
+	@Test def void testFunctionApplication8() {
 		'''a b c'''.parse.assertNoErrors
 	}
 
     /** juxtaposition associate right*/
-	@Test def void testFunctionApplication8() {
+	@Test def void testFunctionApplication9() {
 		'''a.b'''.parse.assertNoErrors
 	}
 
     /** juxtaposition associate right [should equal (a.b).c]*/
-	@Test def void testFunctionApplication9() {
+	@Test def void testFunctionApplication10() {
 		'''a.b.c'''.parse.assertNoErrors
 	}
 
     /** juxtaposition mixed*/
-	@Test def void testFunctionApplication10() {
+	@Test def void testFunctionApplication11() {
 		'''a.b c'''.parse.assertNoErrors
 	}
 
     /** juxtaposition mixed*/
-	@Test def void testFunctionApplication11() {
+	@Test def void testFunctionApplication12() {
 		'''a b.c'''.parse.assertNoErrors
 	}
 	
 	/** juxtaposition not */
-	@Test def void testFunctionApplication12() {
+	@Test def void testFunctionApplication13() {
 		'''not b'''.parse.assertNoErrors
 	}
 	

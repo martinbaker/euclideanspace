@@ -422,7 +422,7 @@ class EditorLabelProvider extends org.eclipse.xtext.ui.label.DefaultEObjectLabel
 	}
 
   	def String text(Jright_Molecule ele) {
-		  return "Jright_Molecule";//+ele.getRight();
+		  return "Jright_Molecule";
 	}
 
     /*
@@ -448,7 +448,8 @@ class EditorLabelProvider extends org.eclipse.xtext.ui.label.DefaultEObjectLabel
      *
      */
 	def String text(Jleft_Atom ele) {
-		  return "Jleft_Atom";//+ele.getBe();
+	  if (ele.a !=null) return "Jleft_Molecule a="+ele.a;		
+	  return "Jleft_Atom";
 	}
 
 	def String text(Molecule ele) {
@@ -496,8 +497,8 @@ class EditorLabelProvider extends org.eclipse.xtext.ui.label.DefaultEObjectLabel
 	}
 
 	def String text(Atom ele) {
-	  if (ele.iden !=null) return "Atom:"+ele.iden;		
-	  if (ele.lit !=null) return "Atom:"+ele.lit;		
+	  if (ele.iden !=null) return "Atom id:"+ele.iden;		
+	  if (ele.lit !=null) return "Atom lit:"+ele.lit;		
 	  return "Atom";
 	}
 

@@ -29,12 +29,6 @@ generate editor "http://www.euclideanspace.com/aldor/Editor"
  * Here we are using a LL(*) recursive-descent parser generator and this
  * may not be able to exactly replicate axl.z which is a
  * LALR(1) conflict-free grammar for Aldor.
- * 
- * known bugs
- * ----------
- * 1) a(c:d,e:f):b() = add {a} fails to parse '=' and 'add' are both infix so cannot be adjacent
- * 2) ':' does not yet work properly. We want it to bind most tightly.
- * 3) need to support qualified operations ex: +$a
  */
 
 /*
@@ -615,7 +609,7 @@ Flow(XX) -> Flow_AnyStatement or Flow_BalStatement
 //;
 */
 Flow_AnyStatement hidden(WS,KW_NEWLINE,TK_COMMENT):
- (c=Collection (st='implies' bas2=Binding_AnyStatement)?) // '.... for' or 'while ....'
+ (c=Collection (st=KW_IMPLIES bas2=Binding_AnyStatement)?) // '=>' is expression exit
 | (st='if' ci=CommaItem 'then' bbs=Binding_BalStatement (=>'else' bas=Binding_AnyStatement)?)
 | =>(Iterators st='repeat' bas3=Binding_AnyStatement) // 'for .... in' or 'while ....'
 | (st='repeat' bas=Binding_AnyStatement)
@@ -638,7 +632,7 @@ Flow_AnyStatement hidden(WS,KW_NEWLINE,TK_COMMENT):
 
 /*  */
 Flow_BalStatement hidden(WS,KW_NEWLINE,TK_COMMENT):
-	(c2=Collection (st2='implies' bbs3=Binding_BalStatement)?) // '.... for' or 'while ....'
+	(c2=Collection (st2=KW_IMPLIES bbs3=Binding_BalStatement)?) // '=>' is expression exit
 | (st2='if' ci2=CommaItem 'then' bbs4+=Binding_BalStatement (=>'else' bbs4+=Binding_BalStatement)?)
 | => (Iterators st2='repeat' bbs3=Binding_BalStatement) // 'for .... in' or 'while ....'
 | (st2='repeat' bbs5=Binding_BalStatement)
@@ -1089,8 +1083,9 @@ Jleft_Atom hidden(WS,KW_NEWLINE,TK_COMMENT):
                                 // so this is conventional function call with parenthesis
 // so change to:
 // TODO change back or make permanent
-| (a=Id (KW_DOT bm4+=BlockMolecule)*)
-| (=>a=Id be+=BlockEnclosure*)
+| (a=Id (KW_DOT bm4+=BlockMolecule)+)
+| (a=Id be+=BlockEnclosure+)
+| a2=Atom
 ;
 
 /*

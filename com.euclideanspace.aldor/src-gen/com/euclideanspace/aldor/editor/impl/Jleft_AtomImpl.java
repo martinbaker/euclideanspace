@@ -2,6 +2,7 @@
  */
 package com.euclideanspace.aldor.editor.impl;
 
+import com.euclideanspace.aldor.editor.Atom;
 import com.euclideanspace.aldor.editor.BlockEnclosure;
 import com.euclideanspace.aldor.editor.BlockMolecule;
 import com.euclideanspace.aldor.editor.EditorPackage;
@@ -33,6 +34,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link com.euclideanspace.aldor.editor.impl.Jleft_AtomImpl#getBe <em>Be</em>}</li>
  *   <li>{@link com.euclideanspace.aldor.editor.impl.Jleft_AtomImpl#getA <em>A</em>}</li>
  *   <li>{@link com.euclideanspace.aldor.editor.impl.Jleft_AtomImpl#getBm4 <em>Bm4</em>}</li>
+ *   <li>{@link com.euclideanspace.aldor.editor.impl.Jleft_AtomImpl#getA2 <em>A2</em>}</li>
  * </ul>
  * </p>
  *
@@ -79,6 +81,16 @@ public class Jleft_AtomImpl extends MinimalEObjectImpl.Container implements Jlef
    * @ordered
    */
   protected EList<BlockMolecule> bm4;
+
+  /**
+   * The cached value of the '{@link #getA2() <em>A2</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getA2()
+   * @generated
+   * @ordered
+   */
+  protected Atom a2;
 
   /**
    * <!-- begin-user-doc -->
@@ -157,6 +169,54 @@ public class Jleft_AtomImpl extends MinimalEObjectImpl.Container implements Jlef
    * <!-- end-user-doc -->
    * @generated
    */
+  public Atom getA2()
+  {
+    return a2;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetA2(Atom newA2, NotificationChain msgs)
+  {
+    Atom oldA2 = a2;
+    a2 = newA2;
+    if (eNotificationRequired())
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, EditorPackage.JLEFT_ATOM__A2, oldA2, newA2);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setA2(Atom newA2)
+  {
+    if (newA2 != a2)
+    {
+      NotificationChain msgs = null;
+      if (a2 != null)
+        msgs = ((InternalEObject)a2).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - EditorPackage.JLEFT_ATOM__A2, null, msgs);
+      if (newA2 != null)
+        msgs = ((InternalEObject)newA2).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - EditorPackage.JLEFT_ATOM__A2, null, msgs);
+      msgs = basicSetA2(newA2, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, EditorPackage.JLEFT_ATOM__A2, newA2, newA2));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
@@ -166,6 +226,8 @@ public class Jleft_AtomImpl extends MinimalEObjectImpl.Container implements Jlef
         return ((InternalEList<?>)getBe()).basicRemove(otherEnd, msgs);
       case EditorPackage.JLEFT_ATOM__BM4:
         return ((InternalEList<?>)getBm4()).basicRemove(otherEnd, msgs);
+      case EditorPackage.JLEFT_ATOM__A2:
+        return basicSetA2(null, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -186,6 +248,8 @@ public class Jleft_AtomImpl extends MinimalEObjectImpl.Container implements Jlef
         return getA();
       case EditorPackage.JLEFT_ATOM__BM4:
         return getBm4();
+      case EditorPackage.JLEFT_ATOM__A2:
+        return getA2();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -212,6 +276,9 @@ public class Jleft_AtomImpl extends MinimalEObjectImpl.Container implements Jlef
         getBm4().clear();
         getBm4().addAll((Collection<? extends BlockMolecule>)newValue);
         return;
+      case EditorPackage.JLEFT_ATOM__A2:
+        setA2((Atom)newValue);
+        return;
     }
     super.eSet(featureID, newValue);
   }
@@ -235,6 +302,9 @@ public class Jleft_AtomImpl extends MinimalEObjectImpl.Container implements Jlef
       case EditorPackage.JLEFT_ATOM__BM4:
         getBm4().clear();
         return;
+      case EditorPackage.JLEFT_ATOM__A2:
+        setA2((Atom)null);
+        return;
     }
     super.eUnset(featureID);
   }
@@ -255,6 +325,8 @@ public class Jleft_AtomImpl extends MinimalEObjectImpl.Container implements Jlef
         return A_EDEFAULT == null ? a != null : !A_EDEFAULT.equals(a);
       case EditorPackage.JLEFT_ATOM__BM4:
         return bm4 != null && !bm4.isEmpty();
+      case EditorPackage.JLEFT_ATOM__A2:
+        return a2 != null;
     }
     return super.eIsSet(featureID);
   }

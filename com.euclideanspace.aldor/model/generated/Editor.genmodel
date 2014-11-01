@@ -183,6 +183,7 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//Jleft_Atom/be"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Editor.ecore#//Jleft_Atom/a"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//Jleft_Atom/bm4"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//Jleft_Atom/a2"/>
     </genClasses>
     <genClasses ecoreClass="Editor.ecore#//Molecule"/>
     <genClasses ecoreClass="Editor.ecore#//Enclosure">

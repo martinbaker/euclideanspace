@@ -156,14 +156,23 @@ public class CustomLexer extends com.euclideanspace.aldor.parser.antlr.internal.
   /*
    * return true if supplied token cannot follow ; or {}
    * i.e. then else always in etc
+   * 
+   * TODO this is a hack - we should really be checking the token stream not the character
+   * stream. For instance isFollower("and",pos) would return 'false' if it read 'andy' for
+   * example.
    */
   public boolean isFollower(String keyw,int pos){
-		int i = 0;
-		while ( i<keyw.length() ) {
-		  if ( input.LA(pos+i)!=keyw.charAt(i) ) return false;
-		  i++;
-		}
-		return true;
+    int i = 0;
+    try {
+      // put in try/catch in case we go beyond end if input
+      while ( i<keyw.length() ) {
+        if ( input.LA(pos+i)!=keyw.charAt(i) ) return false;
+        i++;
+      }
+	} catch(Exception e) {
+	  System.out.println("CustomLexer.isFollower error="+e);
+	}
+	return true;
   }
 
   public String intToStr(int ch){

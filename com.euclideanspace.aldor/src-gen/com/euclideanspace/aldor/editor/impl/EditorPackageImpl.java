@@ -2592,6 +2592,16 @@ public class EditorPackageImpl extends EPackageImpl implements EditorPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  public EReference getJleft_Atom_A2()
+  {
+    return (EReference)jleft_AtomEClass.getEStructuralFeatures().get(3);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EClass getMolecule()
   {
     return moleculeEClass;
@@ -4024,6 +4034,7 @@ public class EditorPackageImpl extends EPackageImpl implements EditorPackage
     createEReference(jleft_AtomEClass, JLEFT_ATOM__BE);
     createEAttribute(jleft_AtomEClass, JLEFT_ATOM__A);
     createEReference(jleft_AtomEClass, JLEFT_ATOM__BM4);
+    createEReference(jleft_AtomEClass, JLEFT_ATOM__A2);
 
     moleculeEClass = createEClass(MOLECULE);
 
@@ -4556,6 +4567,7 @@ public class EditorPackageImpl extends EPackageImpl implements EditorPackage
     initEReference(getJleft_Atom_Be(), this.getBlockEnclosure(), null, "be", null, 0, -1, Jleft_Atom.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getJleft_Atom_A(), ecorePackage.getEString(), "a", null, 0, 1, Jleft_Atom.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getJleft_Atom_Bm4(), this.getBlockMolecule(), null, "bm4", null, 0, -1, Jleft_Atom.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getJleft_Atom_A2(), this.getAtom(), null, "a2", null, 0, 1, Jleft_Atom.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(moleculeEClass, Molecule.class, "Molecule", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 

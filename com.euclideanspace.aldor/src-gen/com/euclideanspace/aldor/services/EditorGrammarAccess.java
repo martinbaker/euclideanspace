@@ -1142,7 +1142,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cCCollectionParserRuleCall_0_0_0 = (RuleCall)cCAssignment_0_0.eContents().get(0);
 		private final Group cGroup_0_1 = (Group)cGroup_0.eContents().get(1);
 		private final Assignment cStAssignment_0_1_0 = (Assignment)cGroup_0_1.eContents().get(0);
-		private final Keyword cStImpliesKeyword_0_1_0_0 = (Keyword)cStAssignment_0_1_0.eContents().get(0);
+		private final RuleCall cStKW_IMPLIESTerminalRuleCall_0_1_0_0 = (RuleCall)cStAssignment_0_1_0.eContents().get(0);
 		private final Assignment cBas2Assignment_0_1_1 = (Assignment)cGroup_0_1.eContents().get(1);
 		private final RuleCall cBas2Binding_AnyStatementParserRuleCall_0_1_1_0 = (RuleCall)cBas2Assignment_0_1_1.eContents().get(0);
 		private final Group cGroup_1 = (Group)cAlternatives.eContents().get(1);
@@ -1300,7 +1300,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		////{ $$ = abNewNever(TPOS($1)); }
 		////;
 		// * / Flow_AnyStatement hidden(WS, KW_NEWLINE, TK_COMMENT):
-		//	c=Collection (st="implies" bas2=Binding_AnyStatement)? // '.... for' or 'while ....'
+		//	c=Collection (st=KW_IMPLIES bas2=Binding_AnyStatement)? // '=>' is expression exit
 		//	| st="if" ci=CommaItem "then" bbs=Binding_BalStatement ("else" bas=Binding_AnyStatement)? | // 'for .... in' or 'while ....'
 		//	=> (Iterators st="repeat" bas3=Binding_AnyStatement) | st="repeat" bas=Binding_AnyStatement | st="try"
 		//	bas=Binding_AnyStatement ("but" | "catch") be2=ButExpr apa=AlwaysPart_AnyStatement | st="select"
@@ -1311,7 +1311,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		//	i2=Id | st="never";
 		public ParserRule getRule() { return rule; }
 
-		//c=Collection (st="implies" bas2=Binding_AnyStatement)? // '.... for' or 'while ....'
+		//c=Collection (st=KW_IMPLIES bas2=Binding_AnyStatement)? // '=>' is expression exit
 		//| st="if" ci=CommaItem "then" bbs=Binding_BalStatement ("else" bas=Binding_AnyStatement)? | // 'for .... in' or 'while ....'
 		//=> (Iterators st="repeat" bas3=Binding_AnyStatement) | st="repeat" bas=Binding_AnyStatement | st="try"
 		//bas=Binding_AnyStatement ("but" | "catch") be2=ButExpr apa=AlwaysPart_AnyStatement | st="select"
@@ -1322,7 +1322,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		//| st="never"
 		public Alternatives getAlternatives() { return cAlternatives; }
 
-		//c=Collection (st="implies" bas2=Binding_AnyStatement)?
+		//c=Collection (st=KW_IMPLIES bas2=Binding_AnyStatement)?
 		public Group getGroup_0() { return cGroup_0; }
 
 		//c=Collection
@@ -1331,14 +1331,14 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		//Collection
 		public RuleCall getCCollectionParserRuleCall_0_0_0() { return cCCollectionParserRuleCall_0_0_0; }
 
-		//(st="implies" bas2=Binding_AnyStatement)?
+		//(st=KW_IMPLIES bas2=Binding_AnyStatement)?
 		public Group getGroup_0_1() { return cGroup_0_1; }
 
-		//st="implies"
+		//st=KW_IMPLIES
 		public Assignment getStAssignment_0_1_0() { return cStAssignment_0_1_0; }
 
-		//"implies"
-		public Keyword getStImpliesKeyword_0_1_0_0() { return cStImpliesKeyword_0_1_0_0; }
+		//KW_IMPLIES
+		public RuleCall getStKW_IMPLIESTerminalRuleCall_0_1_0_0() { return cStKW_IMPLIESTerminalRuleCall_0_1_0_0; }
 
 		//bas2=Binding_AnyStatement
 		public Assignment getBas2Assignment_0_1_1() { return cBas2Assignment_0_1_1; }
@@ -1680,7 +1680,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cC2CollectionParserRuleCall_0_0_0 = (RuleCall)cC2Assignment_0_0.eContents().get(0);
 		private final Group cGroup_0_1 = (Group)cGroup_0.eContents().get(1);
 		private final Assignment cSt2Assignment_0_1_0 = (Assignment)cGroup_0_1.eContents().get(0);
-		private final Keyword cSt2ImpliesKeyword_0_1_0_0 = (Keyword)cSt2Assignment_0_1_0.eContents().get(0);
+		private final RuleCall cSt2KW_IMPLIESTerminalRuleCall_0_1_0_0 = (RuleCall)cSt2Assignment_0_1_0.eContents().get(0);
 		private final Assignment cBbs3Assignment_0_1_1 = (Assignment)cGroup_0_1.eContents().get(1);
 		private final RuleCall cBbs3Binding_BalStatementParserRuleCall_0_1_1_0 = (RuleCall)cBbs3Assignment_0_1_1.eContents().get(0);
 		private final Group cGroup_1 = (Group)cAlternatives.eContents().get(1);
@@ -1793,7 +1793,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cSt2NeverKeyword_18_0 = (Keyword)cSt2Assignment_18.eContents().get(0);
 		
 		/// *  * / Flow_BalStatement hidden(WS, KW_NEWLINE, TK_COMMENT):
-		//	c2=Collection (st2="implies" bbs3=Binding_BalStatement)? // '.... for' or 'while ....'
+		//	c2=Collection (st2=KW_IMPLIES bbs3=Binding_BalStatement)? // '=>' is expression exit
 		//	| st2="if" ci2=CommaItem "then" bbs4+=Binding_BalStatement ("else" bbs4+=Binding_BalStatement)? | // 'for .... in' or 'while ....'
 		//	=> (Iterators st2="repeat" bbs3=Binding_BalStatement) | st2="repeat" bbs5=Binding_BalStatement | st2="try"
 		//	bbs2=Binding_AnyStatement ("but" | "catch") be=ButExpr apb=AlwaysPart_BalStatement | st2="select"
@@ -1804,7 +1804,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		//	st2="goto" i3=Id | st2="never";
 		public ParserRule getRule() { return rule; }
 
-		//c2=Collection (st2="implies" bbs3=Binding_BalStatement)? // '.... for' or 'while ....'
+		//c2=Collection (st2=KW_IMPLIES bbs3=Binding_BalStatement)? // '=>' is expression exit
 		//| st2="if" ci2=CommaItem "then" bbs4+=Binding_BalStatement ("else" bbs4+=Binding_BalStatement)? | // 'for .... in' or 'while ....'
 		//=> (Iterators st2="repeat" bbs3=Binding_BalStatement) | st2="repeat" bbs5=Binding_BalStatement | st2="try"
 		//bbs2=Binding_AnyStatement ("but" | "catch") be=ButExpr apb=AlwaysPart_BalStatement | st2="select"
@@ -1815,7 +1815,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		//i3=Id | st2="never"
 		public Alternatives getAlternatives() { return cAlternatives; }
 
-		//c2=Collection (st2="implies" bbs3=Binding_BalStatement)?
+		//c2=Collection (st2=KW_IMPLIES bbs3=Binding_BalStatement)?
 		public Group getGroup_0() { return cGroup_0; }
 
 		//c2=Collection
@@ -1824,14 +1824,14 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		//Collection
 		public RuleCall getC2CollectionParserRuleCall_0_0_0() { return cC2CollectionParserRuleCall_0_0_0; }
 
-		//(st2="implies" bbs3=Binding_BalStatement)?
+		//(st2=KW_IMPLIES bbs3=Binding_BalStatement)?
 		public Group getGroup_0_1() { return cGroup_0_1; }
 
-		//st2="implies"
+		//st2=KW_IMPLIES
 		public Assignment getSt2Assignment_0_1_0() { return cSt2Assignment_0_1_0; }
 
-		//"implies"
-		public Keyword getSt2ImpliesKeyword_0_1_0_0() { return cSt2ImpliesKeyword_0_1_0_0; }
+		//KW_IMPLIES
+		public RuleCall getSt2KW_IMPLIESTerminalRuleCall_0_1_0_0() { return cSt2KW_IMPLIESTerminalRuleCall_0_1_0_0; }
 
 		//bbs3=Binding_BalStatement
 		public Assignment getBbs3Assignment_0_1_1() { return cBbs3Assignment_0_1_1; }
@@ -4256,7 +4256,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		// * a(b)
 		// * a.b
 		// * a.b.c [should equal (a.b).c]
-		// * a().b <- not yet working TODO fix
+		// * a().b
 		// * a(b)(c)
 		// * a.b c
 		// * a[b]
@@ -4372,6 +4372,8 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cAIdParserRuleCall_2_0_0 = (RuleCall)cAAssignment_2_0.eContents().get(0);
 		private final Assignment cBeAssignment_2_1 = (Assignment)cGroup_2.eContents().get(1);
 		private final RuleCall cBeBlockEnclosureParserRuleCall_2_1_0 = (RuleCall)cBeAssignment_2_1.eContents().get(0);
+		private final Assignment cA2Assignment_3 = (Assignment)cAlternatives.eContents().get(3);
+		private final RuleCall cA2AtomParserRuleCall_3_0 = (RuleCall)cA2Assignment_3.eContents().get(0);
 		
 		/// * 
 		// * matches:
@@ -4391,7 +4393,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		//	// so this is conventional function call with parenthesis
 		//	// so change to:
 		//	// TODO change back or make permanent
-		//	| a=Id (KW_DOT bm4+=BlockMolecule)* | => a=Id be+=BlockEnclosure*;
+		//	| a=Id (KW_DOT bm4+=BlockMolecule)+ | a=Id be+=BlockEnclosure+ | a2=Atom;
 		public ParserRule getRule() { return rule; }
 
 		//"not" be+=BlockEnclosure // atom can be float which can mask following
@@ -4400,7 +4402,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		//// so this is conventional function call with parenthesis
 		//// so change to:
 		//// TODO change back or make permanent
-		//| a=Id (KW_DOT bm4+=BlockMolecule)* | => a=Id be+=BlockEnclosure*
+		//| a=Id (KW_DOT bm4+=BlockMolecule)+ | a=Id be+=BlockEnclosure+ | a2=Atom
 		public Alternatives getAlternatives() { return cAlternatives; }
 
 		//"not" be+=BlockEnclosure
@@ -4415,7 +4417,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		//BlockEnclosure
 		public RuleCall getBeBlockEnclosureParserRuleCall_0_1_0() { return cBeBlockEnclosureParserRuleCall_0_1_0; }
 
-		//a=Id (KW_DOT bm4+=BlockMolecule)*
+		//a=Id (KW_DOT bm4+=BlockMolecule)+
 		public Group getGroup_1() { return cGroup_1; }
 
 		//a=Id
@@ -4424,7 +4426,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		//Id
 		public RuleCall getAIdParserRuleCall_1_0_0() { return cAIdParserRuleCall_1_0_0; }
 
-		//(KW_DOT bm4+=BlockMolecule)*
+		//(KW_DOT bm4+=BlockMolecule)+
 		public Group getGroup_1_1() { return cGroup_1_1; }
 
 		//KW_DOT
@@ -4436,20 +4438,26 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		//BlockMolecule
 		public RuleCall getBm4BlockMoleculeParserRuleCall_1_1_1_0() { return cBm4BlockMoleculeParserRuleCall_1_1_1_0; }
 
-		//=> a=Id be+=BlockEnclosure*
+		//a=Id be+=BlockEnclosure+
 		public Group getGroup_2() { return cGroup_2; }
 
-		//=> a=Id
+		//a=Id
 		public Assignment getAAssignment_2_0() { return cAAssignment_2_0; }
 
 		//Id
 		public RuleCall getAIdParserRuleCall_2_0_0() { return cAIdParserRuleCall_2_0_0; }
 
-		//be+=BlockEnclosure*
+		//be+=BlockEnclosure+
 		public Assignment getBeAssignment_2_1() { return cBeAssignment_2_1; }
 
 		//BlockEnclosure
 		public RuleCall getBeBlockEnclosureParserRuleCall_2_1_0() { return cBeBlockEnclosureParserRuleCall_2_1_0; }
+
+		//a2=Atom
+		public Assignment getA2Assignment_3() { return cA2Assignment_3; }
+
+		//Atom
+		public RuleCall getA2AtomParserRuleCall_3_0() { return cA2AtomParserRuleCall_3_0; }
 	}
 
 	public class MoleculeElements extends AbstractParserRuleElementFinder {
@@ -7162,7 +7170,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 	////{ $$ = abNewNever(TPOS($1)); }
 	////;
 	// * / Flow_AnyStatement hidden(WS, KW_NEWLINE, TK_COMMENT):
-	//	c=Collection (st="implies" bas2=Binding_AnyStatement)? // '.... for' or 'while ....'
+	//	c=Collection (st=KW_IMPLIES bas2=Binding_AnyStatement)? // '=>' is expression exit
 	//	| st="if" ci=CommaItem "then" bbs=Binding_BalStatement ("else" bas=Binding_AnyStatement)? | // 'for .... in' or 'while ....'
 	//	=> (Iterators st="repeat" bas3=Binding_AnyStatement) | st="repeat" bas=Binding_AnyStatement | st="try"
 	//	bas=Binding_AnyStatement ("but" | "catch") be2=ButExpr apa=AlwaysPart_AnyStatement | st="select"
@@ -7180,7 +7188,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	/// *  * / Flow_BalStatement hidden(WS, KW_NEWLINE, TK_COMMENT):
-	//	c2=Collection (st2="implies" bbs3=Binding_BalStatement)? // '.... for' or 'while ....'
+	//	c2=Collection (st2=KW_IMPLIES bbs3=Binding_BalStatement)? // '=>' is expression exit
 	//	| st2="if" ci2=CommaItem "then" bbs4+=Binding_BalStatement ("else" bbs4+=Binding_BalStatement)? | // 'for .... in' or 'while ....'
 	//	=> (Iterators st2="repeat" bbs3=Binding_BalStatement) | st2="repeat" bbs5=Binding_BalStatement | st2="try"
 	//	bbs2=Binding_AnyStatement ("but" | "catch") be=ButExpr apb=AlwaysPart_BalStatement | st2="select"
@@ -7875,7 +7883,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 	// * a(b)
 	// * a.b
 	// * a.b.c [should equal (a.b).c]
-	// * a().b <- not yet working TODO fix
+	// * a().b
 	// * a(b)(c)
 	// * a.b c
 	// * a[b]
@@ -7921,7 +7929,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 	//	// so this is conventional function call with parenthesis
 	//	// so change to:
 	//	// TODO change back or make permanent
-	//	| a=Id (KW_DOT bm4+=BlockMolecule)* | => a=Id be+=BlockEnclosure*;
+	//	| a=Id (KW_DOT bm4+=BlockMolecule)+ | a=Id be+=BlockEnclosure+ | a2=Atom;
 	public Jleft_AtomElements getJleft_AtomAccess() {
 		return pJleft_Atom;
 	}

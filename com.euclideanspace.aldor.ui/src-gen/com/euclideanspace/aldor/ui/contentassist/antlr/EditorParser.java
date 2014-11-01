@@ -517,6 +517,7 @@ public class EditorParser extends AbstractContentAssistParser {
 					put(grammarAccess.getJleft_AtomAccess().getBm4Assignment_1_1_1(), "rule__Jleft_Atom__Bm4Assignment_1_1_1");
 					put(grammarAccess.getJleft_AtomAccess().getAAssignment_2_0(), "rule__Jleft_Atom__AAssignment_2_0");
 					put(grammarAccess.getJleft_AtomAccess().getBeAssignment_2_1(), "rule__Jleft_Atom__BeAssignment_2_1");
+					put(grammarAccess.getJleft_AtomAccess().getA2Assignment_3(), "rule__Jleft_Atom__A2Assignment_3");
 					put(grammarAccess.getDeclMoleculeAccess().getAAssignment_0_1(), "rule__DeclMolecule__AAssignment_0_1");
 					put(grammarAccess.getDeclMoleculeAccess().getBAssignment_1(), "rule__DeclMolecule__BAssignment_1");
 					put(grammarAccess.getParenedAccess().getOpAssignment_0(), "rule__Parened__OpAssignment_0");

@@ -2244,16 +2244,19 @@ ruleFlow_AnyStatement returns [EObject current=null]
 )
 )((
 (
-		lv_st_1_0=	'implies' 
-    {
-        newLeafNode(lv_st_1_0, grammarAccess.getFlow_AnyStatementAccess().getStImpliesKeyword_0_1_0_0());
-    }
- 
-	    {
+		lv_st_1_0=RULE_KW_IMPLIES
+		{
+			newLeafNode(lv_st_1_0, grammarAccess.getFlow_AnyStatementAccess().getStKW_IMPLIESTerminalRuleCall_0_1_0_0()); 
+		}
+		{
 	        if ($current==null) {
 	            $current = createModelElement(grammarAccess.getFlow_AnyStatementRule());
 	        }
-       		setWithLastConsumed($current, "st", lv_st_1_0, "implies");
+       		setWithLastConsumed(
+       			$current, 
+       			"st",
+        		lv_st_1_0, 
+        		"KW_IMPLIES");
 	    }
 
 )
@@ -3069,16 +3072,19 @@ ruleFlow_BalStatement returns [EObject current=null]
 )
 )((
 (
-		lv_st2_1_0=	'implies' 
-    {
-        newLeafNode(lv_st2_1_0, grammarAccess.getFlow_BalStatementAccess().getSt2ImpliesKeyword_0_1_0_0());
-    }
- 
-	    {
+		lv_st2_1_0=RULE_KW_IMPLIES
+		{
+			newLeafNode(lv_st2_1_0, grammarAccess.getFlow_BalStatementAccess().getSt2KW_IMPLIESTerminalRuleCall_0_1_0_0()); 
+		}
+		{
 	        if ($current==null) {
 	            $current = createModelElement(grammarAccess.getFlow_BalStatementRule());
 	        }
-       		setWithLastConsumed($current, "st2", lv_st2_1_0, "implies");
+       		setWithLastConsumed(
+       			$current, 
+       			"st2",
+        		lv_st2_1_0, 
+        		"KW_IMPLIES");
 	    }
 
 )
@@ -8076,12 +8082,8 @@ ruleJleft_Atom returns [EObject current=null]
 	    }
 
 )
-))*)
-    |(((
-(
-ruleId
-)
-)=>
+))+)
+    |((
 (
 		{ 
 	        newCompositeNode(grammarAccess.getJleft_AtomAccess().getAIdParserRuleCall_2_0_0()); 
@@ -8117,7 +8119,26 @@ ruleId
 	    }
 
 )
-)*))
+)+)
+    |(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getJleft_AtomAccess().getA2AtomParserRuleCall_3_0()); 
+	    }
+		lv_a2_7_0=ruleAtom		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getJleft_AtomRule());
+	        }
+       		set(
+       			$current, 
+       			"a2",
+        		lv_a2_7_0, 
+        		"Atom");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+))
 ;
 finally {
 	myHiddenTokenState.restore();

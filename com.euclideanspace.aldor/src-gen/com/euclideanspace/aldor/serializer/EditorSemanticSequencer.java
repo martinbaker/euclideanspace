@@ -1910,7 +1910,7 @@ public class EditorSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	/**
 	 * Constraint:
 	 *     (
-	 *         (c=Collection (st='implies' bas2=Binding_AnyStatement)?) | 
+	 *         (c=Collection (st=KW_IMPLIES bas2=Binding_AnyStatement)?) | 
 	 *         (st='if' ci=CommaItem bbs=Binding_BalStatement bas=Binding_AnyStatement?) | 
 	 *         (st='repeat' bas=Binding_AnyStatement) | 
 	 *         (st='try' bas=Binding_AnyStatement be2=ButExpr apa=AlwaysPart_AnyStatement) | 
@@ -1947,7 +1947,7 @@ public class EditorSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	/**
 	 * Constraint:
 	 *     (
-	 *         (c2=Collection (st2='implies' bbs3=Binding_BalStatement)?) | 
+	 *         (c2=Collection (st2=KW_IMPLIES bbs3=Binding_BalStatement)?) | 
 	 *         (st2='if' ci2=CommaItem bbs4+=Binding_BalStatement bbs4+=Binding_BalStatement?) | 
 	 *         (st2='repeat' bbs5=Binding_BalStatement) | 
 	 *         (st2='try' bbs2=Binding_AnyStatement be=ButExpr apb=AlwaysPart_BalStatement) | 
@@ -2066,7 +2066,7 @@ public class EditorSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	
 	/**
 	 * Constraint:
-	 *     (be+=BlockEnclosure | (a=Id bm4+=BlockMolecule*) | (a=Id be+=BlockEnclosure*))
+	 *     (be+=BlockEnclosure | (a=Id bm4+=BlockMolecule+) | (a=Id be+=BlockEnclosure+) | a2=Atom)
 	 */
 	protected void sequence_Jleft_Atom(EObject context, Jleft_Atom semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

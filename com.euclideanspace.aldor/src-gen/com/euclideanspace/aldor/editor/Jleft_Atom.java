@@ -17,6 +17,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link com.euclideanspace.aldor.editor.Jleft_Atom#getBe <em>Be</em>}</li>
  *   <li>{@link com.euclideanspace.aldor.editor.Jleft_Atom#getA <em>A</em>}</li>
  *   <li>{@link com.euclideanspace.aldor.editor.Jleft_Atom#getBm4 <em>Bm4</em>}</li>
+ *   <li>{@link com.euclideanspace.aldor.editor.Jleft_Atom#getA2 <em>A2</em>}</li>
  * </ul>
  * </p>
  *
@@ -83,5 +84,31 @@ public interface Jleft_Atom extends EObject
    * @generated
    */
   EList<BlockMolecule> getBm4();
+
+  /**
+   * Returns the value of the '<em><b>A2</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>A2</em>' containment reference isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>A2</em>' containment reference.
+   * @see #setA2(Atom)
+   * @see com.euclideanspace.aldor.editor.EditorPackage#getJleft_Atom_A2()
+   * @model containment="true"
+   * @generated
+   */
+  Atom getA2();
+
+  /**
+   * Sets the value of the '{@link com.euclideanspace.aldor.editor.Jleft_Atom#getA2 <em>A2</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>A2</em>' containment reference.
+   * @see #getA2()
+   * @generated
+   */
+  void setA2(Atom value);
 
 } // Jleft_Atom

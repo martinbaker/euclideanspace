@@ -241,6 +241,7 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="a" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="bm4" upperBound="-1" eType="#//BlockMolecule"
         containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="a2" eType="#//Atom" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Molecule"/>
   <eClassifiers xsi:type="ecore:EClass" name="Enclosure" eSuperTypes="#//Molecule #//BlockMolecule #//BlockEnclosure">

@@ -470,18 +470,6 @@ public class ParserTests {
   }
   
   @Test
-  public void testImplies() {
-    try {
-      StringConcatenation _builder = new StringConcatenation();
-      _builder.append("a implies b");
-      Model _parse = this._parseHelper.parse(_builder);
-      this._validationTestHelper.assertNoErrors(_parse);
-    } catch (Throwable _e) {
-      throw Exceptions.sneakyThrow(_e);
-    }
-  }
-  
-  @Test
   public void testIfThen1() {
     try {
       StringConcatenation _builder = new StringConcatenation();
@@ -782,6 +770,18 @@ public class ParserTests {
     try {
       StringConcatenation _builder = new StringConcatenation();
       _builder.append("never");
+      Model _parse = this._parseHelper.parse(_builder);
+      this._validationTestHelper.assertNoErrors(_parse);
+    } catch (Throwable _e) {
+      throw Exceptions.sneakyThrow(_e);
+    }
+  }
+  
+  @Test
+  public void testExit1() {
+    try {
+      StringConcatenation _builder = new StringConcatenation();
+      _builder.append("a => error \"an error\"");
       Model _parse = this._parseHelper.parse(_builder);
       this._validationTestHelper.assertNoErrors(_parse);
     } catch (Throwable _e) {
@@ -1102,6 +1102,18 @@ public class ParserTests {
   }
   
   @Test
+  public void testQualifiedOperation1() {
+    try {
+      StringConcatenation _builder = new StringConcatenation();
+      _builder.append("a +$a b");
+      Model _parse = this._parseHelper.parse(_builder);
+      this._validationTestHelper.assertNoErrors(_parse);
+    } catch (Throwable _e) {
+      throw Exceptions.sneakyThrow(_e);
+    }
+  }
+  
+  @Test
   public void testAssign1() {
     try {
       StringConcatenation _builder = new StringConcatenation();
@@ -1154,6 +1166,21 @@ public class ParserTests {
     try {
       StringConcatenation _builder = new StringConcatenation();
       _builder.append("f(): () ==never");
+      Model _parse = this._parseHelper.parse(_builder);
+      this._validationTestHelper.assertNoErrors(_parse);
+    } catch (Throwable _e) {
+      throw Exceptions.sneakyThrow(_e);
+    }
+  }
+  
+  /**
+   * special form of =(a1:%,a2:%)
+   */
+  @Test
+  public void testFunctionDefintion1() {
+    try {
+      StringConcatenation _builder = new StringConcatenation();
+      _builder.append("(a1: %) = (a2: %): Boolean == {a}");
       Model _parse = this._parseHelper.parse(_builder);
       this._validationTestHelper.assertNoErrors(_parse);
     } catch (Throwable _e) {
@@ -1237,10 +1264,25 @@ public class ParserTests {
   }
   
   /**
-   * juxtaposition associate left [should equal a (b c)]
+   * juxtaposition associate left
    */
   @Test
   public void testFunctionApplication7() {
+    try {
+      StringConcatenation _builder = new StringConcatenation();
+      _builder.append("a 3");
+      Model _parse = this._parseHelper.parse(_builder);
+      this._validationTestHelper.assertNoErrors(_parse);
+    } catch (Throwable _e) {
+      throw Exceptions.sneakyThrow(_e);
+    }
+  }
+  
+  /**
+   * juxtaposition associate left [should equal a (b c)]
+   */
+  @Test
+  public void testFunctionApplication8() {
     try {
       StringConcatenation _builder = new StringConcatenation();
       _builder.append("a b c");
@@ -1255,7 +1297,7 @@ public class ParserTests {
    * juxtaposition associate right
    */
   @Test
-  public void testFunctionApplication8() {
+  public void testFunctionApplication9() {
     try {
       StringConcatenation _builder = new StringConcatenation();
       _builder.append("a.b");
@@ -1270,7 +1312,7 @@ public class ParserTests {
    * juxtaposition associate right [should equal (a.b).c]
    */
   @Test
-  public void testFunctionApplication9() {
+  public void testFunctionApplication10() {
     try {
       StringConcatenation _builder = new StringConcatenation();
       _builder.append("a.b.c");
@@ -1285,7 +1327,7 @@ public class ParserTests {
    * juxtaposition mixed
    */
   @Test
-  public void testFunctionApplication10() {
+  public void testFunctionApplication11() {
     try {
       StringConcatenation _builder = new StringConcatenation();
       _builder.append("a.b c");
@@ -1300,7 +1342,7 @@ public class ParserTests {
    * juxtaposition mixed
    */
   @Test
-  public void testFunctionApplication11() {
+  public void testFunctionApplication12() {
     try {
       StringConcatenation _builder = new StringConcatenation();
       _builder.append("a b.c");
@@ -1315,7 +1357,7 @@ public class ParserTests {
    * juxtaposition not
    */
   @Test
-  public void testFunctionApplication12() {
+  public void testFunctionApplication13() {
     try {
       StringConcatenation _builder = new StringConcatenation();
       _builder.append("not b");

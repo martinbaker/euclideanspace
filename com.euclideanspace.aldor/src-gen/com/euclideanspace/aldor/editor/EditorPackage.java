@@ -2877,13 +2877,22 @@ public interface EditorPackage extends EPackage
   int JLEFT_ATOM__BM4 = 2;
 
   /**
+   * The feature id for the '<em><b>A2</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int JLEFT_ATOM__A2 = 3;
+
+  /**
    * The number of structural features of the '<em>Jleft Atom</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int JLEFT_ATOM_FEATURE_COUNT = 3;
+  int JLEFT_ATOM_FEATURE_COUNT = 4;
 
   /**
    * The meta object id for the '{@link com.euclideanspace.aldor.editor.impl.MoleculeImpl <em>Molecule</em>}' class.
@@ -6792,6 +6801,17 @@ public interface EditorPackage extends EPackage
   EReference getJleft_Atom_Bm4();
 
   /**
+   * Returns the meta object for the containment reference '{@link com.euclideanspace.aldor.editor.Jleft_Atom#getA2 <em>A2</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>A2</em>'.
+   * @see com.euclideanspace.aldor.editor.Jleft_Atom#getA2()
+   * @see #getJleft_Atom()
+   * @generated
+   */
+  EReference getJleft_Atom_A2();
+
+  /**
    * Returns the meta object for class '{@link com.euclideanspace.aldor.editor.Molecule <em>Molecule</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -9355,6 +9375,14 @@ public interface EditorPackage extends EPackage
      * @generated
      */
     EReference JLEFT_ATOM__BM4 = eINSTANCE.getJleft_Atom_Bm4();
+
+    /**
+     * The meta object literal for the '<em><b>A2</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference JLEFT_ATOM__A2 = eINSTANCE.getJleft_Atom_A2();
 
     /**
      * The meta object literal for the '{@link com.euclideanspace.aldor.editor.impl.MoleculeImpl <em>Molecule</em>}' class.
